@@ -31,7 +31,10 @@ is a list of books that can teach you Perl with some remarks on each book.
 <p>
 Also referred to as "the Llama Book". Considered
 one of the best books for people who are absolute beginners in Perl and even
-in programming in general.
+in programming in general. This book however, does not cover references, 
+modules, and objects and other important features of the Perl language. As 
+such, you'll usually need to complement your learning by using another
+resource.
 </p>
 
 <p>
@@ -47,7 +50,7 @@ http://learn.perl.org/library/beginning_perl/
 
 <book:info
     authors="Simon Cozens"
-    publisher="Wrox Press Inc."
+    publisher="wrox"
     isbn="1861003145"
     perlbooksid="100"
     />

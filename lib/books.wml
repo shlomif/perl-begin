@@ -2,6 +2,8 @@
 <ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
 <ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
 <ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
+<ifeq "%0" "wrox" "<a href="http://www.wrox.com/">Wrox Press Inc.</a>" />
+<ifeq "%0" "apress" "<a href="http://www.apress.com/">Apress</a>" />
 </define-tag>
 
 <define-tag book:store>
