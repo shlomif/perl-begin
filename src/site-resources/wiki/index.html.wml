@@ -1,0 +1,10 @@
+#include '../template.wml'
+
+<subject "Our Wiki" />
+
+<p>
+A Wiki is a site that can be freely edited by anybody using a web-browser.
+<a href="<wiki:link />">The Perl-Begin wiki</a> is yours to populate 
+with interersting content. Have fun!
+</p>
+

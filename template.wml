@@ -4,8 +4,12 @@
 use MyNavData;
 use Shlomif::NavMenu;
 
+my $filename = "$(FILENAME)";
+$filename =~ s!index\.html$!!;
+$filename = "/$filename";
+
 my $nav_bar = Shlomif::NavMenu->new(
-    'path_info' => "$(FILENAME)",
+    'path_info' => $filename,
     'current_host' => "berlios",
     MyNavData::get_params(),
     );
@@ -48,6 +52,14 @@ $nav_html = $rendered_results->{html};
 <head>
 <title>{#SUBJECT_LOC#}</title>
 <link rel="stylesheet" href="$(ROOT)/style.css" type="text/css" />
+<:{
+use CGI qw();
+
+while (my ($key, $url) = each(%$nav_links))
+{
+    print "<link rel=\"$key\" href=\"" . CGI::escapeHTML($url) . "\" />\n"
+}
+}:>
 </head>
 <body>
 
