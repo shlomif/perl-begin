@@ -21,6 +21,10 @@ h2
 {
     background-color : #ccffdd;
 }
+h2 a:hover
+{
+    background-color : #ff4f8a ;
+}
 h3
 {
     background-color : lemonchiffon;
