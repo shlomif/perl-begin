@@ -66,3 +66,20 @@ multi-methods.
 It is full with examples, and explanations, and is very comprehensive for its
 topic.
 </p>
+
+<h2><a href="http://www.oreilly.com/catalog/perlckbk2/">The Perl Cookbook</a></h2>
+
+<book:info
+    authors="Tom Christiansen, Nathan Torkington"
+    publisher="oreilly"
+    isbn="0596993137"
+    perlbooksid="203"
+    />
+
+<p>
+This book gives a long list of tasks to be accomplished and recipes that
+accomplish them. By looking at the recipes one can learn more about Perl
+and also know how to accomplish many common tasks in Perl.
+</p>
+
+
