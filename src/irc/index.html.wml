@@ -29,17 +29,22 @@ newbie questions, and you should use a different channel instead. Consult this
 page for more details.
 </p>
 
+<h2><a href="http://freenode.net/">FreeNode</a></h2>
+
+<p>
+This is most probably the best network for getting help in Perl and
+technical matters in general.
+</p>
+
+<p>
+Check the channels <tt>#perl</tt>, <tt>#mandrake</tt> and <tt>#modperl</tt>.
+</p>
+
 <h2><a href="http://www.efnet.org/">EF-Net</a></h2>
 
 <p>
 Check the channels <tt>#perlhelp</tt> (but not <tt>#perl</tt> which is
 intended for advanced discussion), and <tt>#html</tt>.
-</p>
-
-<h2><a href="http://freenode.net/">FreeNode (previously OpenProjects.net)</a></h2>
-
-<p>
-Check the channels <tt>#perl</tt>, <tt>#mandrake</tt> and <tt>#modperl</tt>.
 </p>
 
 <h2><a href="http://www.ircnet.org/">IRCnet</a></h2>
