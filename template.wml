@@ -133,7 +133,12 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <:{ print join("\n", @$nav_html); }:>
 
 <define-tag validhtml>
-<br /><br /><br /><br />
+<p>
+<a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=0&amp;t=70"><img 
+   style="margin-top:1em; border:0;" alt="Get Firefox!" 
+   title="Get Firefox! A safer, faster, better web-browser." 
+   src="$(ROOT)/images/get-firefox.gif" /></a>
+</p>
 <p>
 <a href="http://validator.w3.org/check/referer"><img 
     style="border:0" src="http://www.w3.org/Icons/valid-xhtml10" 

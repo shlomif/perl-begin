@@ -24,9 +24,19 @@ add_extra()
     echo "source/arcs"
 }
 
+list_images()
+{
+    find ./src -type f -not -name '*.wml' -not -name '.*' | 
+    grep -v '/\.svn' | 
+    grep -v '~$' | 
+    sed 's!^./src/!!'
+}
+
 (echo "PAGES = $(list_wmls | xargs)" ;
 echo
-echo "SUBDIRS = $(list_wmls | get_subdirs | add_extra | xargs)"
+echo "SUBDIRS = $(((list_wmls) ; (list_images))| get_subdirs | add_extra | xargs)"
+echo 
+echo "IMAGES = $(list_images | xargs)" ;
 echo ) > defs.mak
 
     

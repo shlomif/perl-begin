@@ -12,7 +12,7 @@ SOURCES = $(addprefix src/,$(addsuffix .html.wml,$(PAGES)))
 
 DESTS = $(patsubst src/%.html.wml,$(TARGET)/%.html,$(SOURCES))
 
-RAW_FILES = style.css
+RAW_FILES = $(IMAGES)
 RAW_FILES_SOURCES = $(addprefix src/,$(RAW_FILES))
 RAW_FILES_DEST = $(addprefix $(TARGET)/,$(RAW_FILES))
 
