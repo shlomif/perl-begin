@@ -34,12 +34,14 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
+LIBRARY_FILES = template.wml lib/books.wml
+
 all: dest $(SUBDIRS_DEST) $(DESTS) $(RAW_FILES_DEST)
 
 dest:
 	if [ ! -e $@ ] ; then mkdir $@ ; fi
 	
-$(DESTS) :: $(TARGET)/% : src/%.wml template.wml
+$(DESTS) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES)
 	(cd src && wml $(WML_FLAGS) -DFILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
 
 $(RAW_FILES_DEST) :: $(TARGET)/% : src/%
@@ -69,7 +71,7 @@ DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 .PHONY: 
 
-$(DEST_ARC_PAGE) :: $(TARGET)/% : src/%.wml template.wml .PHONY
+$(DEST_ARC_PAGE) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES) .PHONY
 	(cd src && wml $(WML_FLAGS) -DARCNAME=$(ARC_NAME) -DFILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
 
 arc: $(DEST_ARC_NAME) $(DEST_ARC_PAGE)

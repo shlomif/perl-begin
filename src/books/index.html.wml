@@ -1,48 +1,9 @@
 #include '../template.wml'
 
+#include "../lib/books.wml"
+
 <subject "Paper Books" />
 
-<define-tag get:ext:publisher whitespace="delete">
-<ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
-<ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
-<ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
-</define-tag>
-
-<define-tag book:store>
-<preserve isbn />
-<preserve store />
-<preserve title />
-<set-var %attributes />
-<ifeq "<get-var store />" "ukamazon" 
-    "<set-var ucstore="Amazon UK" />"
-    "<set-var ucstore="<:{print ucfirst("<get-var store />")}:>" />"
-    />
-<a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
-<restore title />
-<restore store />
-<restore isbn />
-</define-tag>
-
-<define-tag book:info>
-<preserve authors />
-<preserve publisher />
-<preserve isbn />
-<set-var %attributes />
-<set-var ext:publisher=<get:ext:publisher <get-var publisher /> /> />
-<div class="bookinfo">
-<h3>Book Information</h3>
-<b>Authors:</b> <get-var authors /><br />
-<b>Publisher:</b> <get-var ext:publisher /><br />
-<b>Buy From:</b> 
-<book:store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
-<book:store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
-<book:store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
-<br />
-</div>
-<restore isbn />
-<restore publisher />
-<restore authors />
-</define-tag>
 
 <h2>Note</h2>
 
