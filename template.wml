@@ -62,9 +62,12 @@ http://perl-begin.berlios.de/<get-var url />
 <define-tag lect:link><navbarlink "lecture/%0" "%1" host="vipe" /></define-tag>
 
 <define-tag links:group endtag="required">
-<ul class="navbarmain">
+<preserve myclass />
+<set-var myclass="<if "<match "%0" "nested" />" "navbarmain" "navbarnested" />" />
+<ul class="<get-var myclass />">
 %body
 </ul>
+<restore myclass />
 </define-tag>
 
 <define-tag wiki:link whitespace="delete">
@@ -100,6 +103,19 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <restore href />
 </define-tag>
 
+<define-tag navbar:menu:books>
+<links:group "nested">
+<li>
+<navbarlink "books/advanced/" "Advanced Books" title="Books that contain more information about Perl than the basics" />
+</li>
+<li>
+<navbarlink "books/topics/" "Topic-related Books" title="Books that cover certain topics in detail" />
+</li>
+</links:group>
+</define-tag>
+
+<define-tag navbar:menu:is:book><match "$(FILENAME)" "^books/" action="report" /></define-tag>
+
 <table summary="Layout Table: The first cell contains a navigation bar, the second the main page" border="0" width="99%">
 <tr>
 <td valign="top" class="navbar" style="width:20%">
@@ -108,7 +124,9 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <li><navbarlink "" "Home" /></li>
 <li><navbarlink "about.html" "About" /></li>
 <li><navbarlink "tutorials/" "Online Tutorials" /></li>
-<li><navbarlink "books/" "Books" /></li>
+<li><navbarlink "books/" "Books" />
+<if "<navbar:menu:is:book />" "<br /><navbar:menu:books />" />
+</li>
 <li><navbarlink "core-doc/" "Core Documentation" /></li>
 <li><navbarlink "articles/" "Article Collections" /></li>
 </links:group>
