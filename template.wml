@@ -193,7 +193,7 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
          /></a>
 </p>
 <p>
- <a href="http://jigsaw.w3.org/css-validator/"><img style="border:0"
+ <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%%3A//perl-begin.berlios.de/$(FILENAME)"><img style="border:0"
        src="http://jigsaw.w3.org/css-validator/images/vcss" 
        alt="Valid CSS!" /></a>
 </p>
@@ -201,7 +201,9 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 </p>
 </define-tag>
 
-<ifeq "$(FILENAME)" "index.html" "<validhtml />" "" />
+# <ifeq "$(FILENAME)" "index.html" "<validhtml />" "" />
+
+<validhtml />
 
 </td>
 <td valign="top" class="main">
