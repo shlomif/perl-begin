@@ -2,20 +2,31 @@ body { font-family : sans-serif }
 a:hover, img.highlight:hover { background-color : lightgreen }
 td.navbar 
 { 
-    background-color: #E6FAE6;
+    background-color: Moccasin;
     width : 20% ; 
     border-color : black;
     border-width : thick;
     border-style : double;
 }
-
-h2 
-{ 
-    font-family : serif ;
+h1, h2, h3
+{
+    font-family : serif;
     border-style : solid ; 
     border-width : thin;
-    background-color : #ccddff;
     padding-left: 0.2em;
+}
+h2
+{
+    background-color : #ccffdd;
+}
+h3
+{
+    background-color : lemonchiffon;
+}
+
+h1
+{
+    background-color : MediumOrchid;
 }
 
 td.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
@@ -32,15 +43,8 @@ div.rightalign { text-align : right }
     with a different colour. That's CSS 2.
     http://www.zvon.org/xxl/CSS2Tutorial/Examples/example3.html
 */
-td.navbar a:hover { background-color : orange }
 td.main { padding-left : 1em ; margin-left : 1em }
-h1 { font-family : serif }
 h2.plain{ color : black ; border : none ; font-family : serif }
-
-h3
-{
-    font-family : serif;
-}
     
 /* Make sure it is not underlined when inside a boxed heading */
 h2 a,h3 a
@@ -53,13 +57,6 @@ h1 a, h2 a, h3 a
     font-family : sans-serif;
 }
 
-h3
-{ 
-    border-style : solid ; 
-    border-width : thin;
-    background-color : lemonchiffon;
-    padding-left: 0.3em;
-}
 
 div.bookinfo h3
 {
