@@ -17,9 +17,10 @@ Some popular IRC clients include the cross-platform
 <a href="http://www.mozilla.org/projects/rt-messaging/chatzilla/">Chatzilla</a> 
 (which is part of <a href="http://www.mozilla.org/">the Mozilla project</a>), 
 the Windows-based <a href="http://www.mirc.com/">mIRC</a> and 
-<a href="http://www.xchat.org/">XChat</a>, an IRC client for all UNIX 
-systems including Linux and Mac OS X. By downloading either one, you can log 
-in to an IRC network and start chatting. 
+<a href="http://www.xchat.org/">XChat</a>, a cross-platform IRC client for all 
+UNIX  systems including Linux and Mac OS X, and with a 
+<a href="http://www.silverex.org/news/">port for Windows</a>. By 
+downloading one, you can log in to an IRC network and start chatting. 
 </p>
 
 <p>
