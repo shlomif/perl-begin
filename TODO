@@ -4,6 +4,13 @@
 
 * Add a news section.
 
+* Add URLs to the IRC channels - thanks to Kenneth Porter.
+
+* Add MAG-Net (irc.perl.org) to the IRC page.
+
+* Revamp the X-Chat documentation to say it can run on Windows and point
+to the Windows client.
+
 Long Term:
 ----------
 

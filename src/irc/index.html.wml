@@ -29,6 +29,29 @@ newbie questions, and you should use a different channel instead. Consult this
 page for more details.
 </p>
 
+<define-tag irc_channel whitespace="delete">
+<preserve net chan />
+<set-var %attributes />
+<:{
+    my $net = "<get-var net />";
+    my $chan = "<get-var chan />";
+    my %servers =
+    (
+        'freenode' => "irc.freenode.net",
+        'efnet' => "irc.Prison.NET",
+        'oftc' => "irc.oftc.net",
+        'undernet' => "us.undernet.org",
+        'ircnet' => "ircnet.demon.co.uk",
+    );
+    if (!exists($servers{$net}))
+    {
+        die "Unknown network!";
+    }
+    print "<a href=\"irc://" . $servers{$net} . "/%23$chan\"><tt>#$chan</tt></a>";
+}:>
+<restore net chan />
+</define-tag>
+
 <h2><a href="http://freenode.net/">FreeNode</a></h2>
 
 <p>
@@ -37,32 +60,37 @@ technical matters in general.
 </p>
 
 <p>
-Check the channels <tt>#perl</tt>, <tt>#mandrake</tt> and <tt>#modperl</tt>.
+Check the channels <irc_channel chan="perl" net="freenode" />,
+<irc_channel chan="mandrake" net="freenode" /> and
+<irc_channel chan="modperl" net="freenode" />.
 </p>
 
 <h2><a href="http://www.efnet.org/">EF-Net</a></h2>
 
 <p>
-Check the channels <tt>#perlhelp</tt> (but not <tt>#perl</tt> which is
-intended for advanced discussion), and <tt>#html</tt>.
+Check the channels <irc_channel chan="perlhelp" net="efnet" />
+(but not <tt>#perl</tt> which is intended for advanced discussion), and
+<irc_channel chan="html" net="efnet" /> (for issues related to Perl and
+the web).
 </p>
 
 <h2><a href="http://www.ircnet.org/">IRCnet</a></h2>
 
 <p>
-Try the channel <tt>#perl</tt>.
+Try the channel <irc_channel net="ircnet" chan="perl" />.
 </p>
 
 <h2><a href="http://www.oftc.net/">OFTC</a></h2>
 
 <p>
-The channel <tt>#perl</tt> accepts beginner questions.
+The channel <irc_channel net="oftc" chan="perl" /> accepts beginner questions.
 </p>
 
 <h2><a href="http://www.undernet.org/">Undernet</a></h2>
 
 <p>
-Check the channels <tt>#perl</tt> (not for CGI questions), and <tt>#cgi</tt>.
+Check the channels <irc_channel net="undernet" chan="perl" />
+(but not for CGI questions), and <irc_channel net="undernet" chan="cgi" />.
 </p>
 
 <h2>TODO</h2>
@@ -70,7 +98,4 @@ Check the channels <tt>#perl</tt> (not for CGI questions), and <tt>#cgi</tt>.
 <p>
 Add DAL-net and other networks that are fit for the purpose.
 </p>
-
-
-
 
