@@ -80,6 +80,9 @@ div.bookinfo
     border-width : thin;
     background-color : lightyellow;
     margin-left : 1em;
+    margin-right : 1em;
     padding-left : 1em;
+    padding-bottom : 0.3em;
+    padding-top : 0.3em;
 }
 tt { color : #8A2BE2 /* The BlueViolet Color */ }
