@@ -17,9 +17,14 @@ h1, h2, h3
     border-width : thin;
     padding-left: 0.2em;
 }
+h1
+{
+    background-color : MediumOrchid;
+}
 h2
 {
     background-color : #ccffdd;
+    margin-right : 1.5em;
 }
 h2 a:hover
 {
@@ -28,11 +33,7 @@ h2 a:hover
 h3
 {
     background-color : lemonchiffon;
-}
-
-h1
-{
-    background-color : MediumOrchid;
+    margin-right : 3em;
 }
 
 td.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
