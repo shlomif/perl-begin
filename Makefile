@@ -26,7 +26,7 @@ PODS_DESTS_PODS = $(patsubst %,$(TARGET)/%.pod,$(PODS))
 
 SUBDIRS_DEST = $(addprefix $(TARGET)/,$(SUBDIRS))
 
-WML_FLAGS += --passoption=2,-X --passoption=7,"-S imgsize" -DROOT~.
+WML_FLAGS += --passoption=2,-X --passoption=3,-I../lib/ --passoption=7,"-S imgsize" -DROOT~.
 
 RSYNC = rsync --progress --verbose --rsh=ssh 
 
