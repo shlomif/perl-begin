@@ -1,5 +1,5 @@
 body { font-family : sans-serif }
-a:hover, img.highlight:hover 
+:link:hover, :visited:hover, img.highlight:hover 
 { 
     /* LightGreen */
     background-color : #90EE90; 
@@ -14,6 +14,7 @@ td.navbar
     border-style : double;
     padding-top : 0.5em;
     padding-bottom: 0.5em;
+    padding-left : 0.2em;
 }
 h1, h2, h3
 {
@@ -34,12 +35,12 @@ h2
     background-color : #ccffdd;
     margin-right : 1.5em;
 }
-h2 a:hover
+h2 :link:hover, h2 :visited:hover
 {
     background-color : #ff4f8a ;
 }
 /* Override for the navbar so it won't be highligted as red there */
-.navbar h2 a:hover
+.navbar h2 :link:hover, .navbar h2 :visited:hover
 { 
     /* LightGreen */
     background-color : #90EE90; 
