@@ -1,0 +1,71 @@
+#include '../template.wml'
+
+<subject "IRC Channels for Perl Q&amp;A" />
+
+<h2>What is the IRC?</h2>
+
+<p>
+IRC stands for Internet Relay Chat, and it is a distributed, real-time form
+of communication, that was common from relatively early in the history of
+the Internet and is still very popular. IRC servers form a network of servers,
+and each network is separated from the other networks. This allows chat-rooms
+(called channels in IRC-jargon) with same name to exist in different networks.
+</p>
+
+<p>
+Some popular IRC clients include the cross-platform 
+<a href="http://www.mozilla.org/projects/rt-messaging/chatzilla/">Chatzilla</a> 
+(which is part of <a href="http://www.mozilla.org/">the Mozilla project</a>), 
+the Windows-based <a href="http://www.mirc.com/">mIRC</a> and 
+<a href="http://www.xchat.org/">XChat</a>, an IRC client for all UNIX 
+systems including Linux and Mac OS X. By downloading either one, you can log 
+in to an IRC network and start chatting. 
+</p>
+
+<p>
+IRC is a great way to get answers to questions quickly and easily. Just note 
+that the channel <tt>#perl</tt> on some of the networks is not dedicated for
+newbie questions, and you should use a different channel instead. Consult this
+page for more details.
+</p>
+
+<h2><a href="http://www.efnet.org/">EF-Net</a></h2>
+
+<p>
+Check the channels <tt>#perlhelp</tt> (but not <tt>#perl</tt> which is
+intended for advanced discussion), and <tt>#html</tt>.
+</p>
+
+<h2><a href="http://freenode.net/">FreeNode (previously OpenProjects.net)</a></h2>
+
+<p>
+Check the channels <tt>#perl</tt>, <tt>#mandrake</tt> and <tt>#modperl</tt>.
+</p>
+
+<h2><a href="http://www.ircnet.org/">IRCnet</a></h2>
+
+<p>
+Try the channel <tt>#perl</tt>.
+</p>
+
+<h2><a href="http://www.oftc.net/">OFTC</a></h2>
+
+<p>
+The channel <tt>#perl</tt> accepts beginner questions.
+</p>
+
+<h2><a href="http://www.undernet.org/">Undernet</a></h2>
+
+<p>
+Check the channels <tt>#perl</tt> (not for CGI questions), and <tt>#cgi</tt>.
+</p>
+
+<h2>TODO</h2>
+
+<p>
+Add DAL-net and other networks that are fit for the purpose.
+</p>
+
+
+
+

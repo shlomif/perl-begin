@@ -1,0 +1,23 @@
+#include '../template.wml'
+
+<subject "CLAN Code Downloads" />
+
+<h2 class="plain"><a href="./arcs">For Downloads Check here</a></h2>
+
+<h2>LKMB - The Linux Kernel Module Builder</h2>
+
+<p>
+Grab its latest version as it is the most complete. Currently it is a Perl 
+Package that creates a bootstrap package for a Linux module. It is still 
+very incomplete, but partially usable.
+</p>
+
+<h2>Putting the code on CPAN</h2>
+
+<p>
+Eventually, everything is going to be on 
+<a href="http://www.cpan.org/">CPAN</a>, but meanwhile I don't feel it'
+s quite usable to put it there yet.
+</p>
+
+

@@ -1,0 +1,126 @@
+#include '../template.wml'
+
+<subject "Paper Books" />
+
+<define-tag get:ext:publisher whitespace="delete">
+<ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
+<ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
+<ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
+</define-tag>
+
+<define-tag book:store>
+<preserve isbn />
+<preserve store />
+<preserve title />
+<set-var %attributes />
+<ifeq "<get-var store />" "ukamazon" 
+    "<set-var ucstore="Amazon UK" />"
+    "<set-var ucstore="<:{print ucfirst("<get-var store />")}:>" />"
+    />
+<a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
+<restore title />
+<restore store />
+<restore isbn />
+</define-tag>
+
+<define-tag book:info>
+<preserve authors />
+<preserve publisher />
+<preserve isbn />
+<set-var %attributes />
+<set-var ext:publisher=<get:ext:publisher <get-var publisher /> /> />
+<div class="bookinfo">
+<h3>Book Information</h3>
+<b>Authors:</b> <get-var authors /><br />
+<b>Publisher:</b> <get-var ext:publisher /><br />
+<b>Buy From:</b> 
+<book:store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
+<book:store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
+<book:store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
+<br />
+</div>
+<restore isbn />
+<restore publisher />
+<restore authors />
+</define-tag>
+
+<h2>Note</h2>
+
+<p>
+It is not absolutely necessary to read an organized book to learn Perl. But 
+occassionally many people like it better than reading an ad-hoc tutorial
+on their computer screeens, and then trying to understand the man pages. Here 
+is a list of books that can teach you Perl with some remarks on each book.
+</p>
+
+<h2><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h2>
+
+<book:info 
+    authors="Randal L. Schwartz and Tom Phoenix" 
+    publisher="oreilly" 
+    isbn="0596001320" 
+    />
+
+<p>
+Also referred to as "the Llama Book". Considered
+one of the best books for people who are absolute beginners in Perl and even
+in programming in general.
+</p>
+
+<p>
+Available online electronically for a registration as part of 
+<a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
+</p>
+
+<define-tag beginning:perl:url whitespace="delete">
+http://learn.perl.org/library/beginning_perl/
+</define-tag>
+
+<h2><a href="<beginning:perl:url />">Beginning Perl</a></h2>
+
+<book:info
+    authors="Simon Cozens"
+    publisher="Wrox Press Inc."
+    isbn="1861003145"
+    />
+
+<p>
+This book is intended for people who are new to programming and wish to learn
+programming with Perl. Those that already have a past experience in 
+programming, will find it easier, but, otherwise even those without
+will be able to learn through it.
+</p>
+
+<p>
+This book is <a href="<beginning:perl:url />">available 
+online for free download</a>.
+</p>
+
+<h2><a href="http://www.manning.com/Johnson/">Elements of Programming with Perl</a></h2>
+
+<book:info 
+    authors="Andrew L. Johnson" 
+    publisher="manning" 
+    isbn="1884777805"
+    />
+
+<p>
+A book that teaches Perl for people who have no programming experience. Takes
+an unusual approach of introducing them to Literate Programming as well,
+and using it for creating documentation and better organizing the examples.
+</p>
+
+<h2><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h2>
+
+<book:info
+    authors="Steve Oualline"
+    publisher="new-riders"
+    isbn="073571228X"
+    />
+
+<p>
+This book teaches Perl for experienced C Programmers. It is comperehensive
+and encompassing and tries to focus on Perl code that resembles C as much as 
+possible. If you don't know C either, it will probably be of little help.
+</p>
+

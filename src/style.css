@@ -1,0 +1,81 @@
+body { font-family : sans-serif }
+a:hover, img.highlight:hover { background-color : lightgreen }
+td.navbar 
+{ 
+    background-color: #E6FAE6;
+    width : 20% ; 
+    border-color : black;
+    border-width : thick;
+    border-style : double;
+}
+
+h2 
+{ 
+    font-family : serif ;
+    border-style : solid ; 
+    border-width : thin;
+    background-color : #ccddff;
+    padding-left: 0.2em;
+}
+
+td.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
+p.desc { margin-left : 3em }
+ul.navbarmain { padding-left : 1em ; margin-left : 1em ; font-size : 90%}
+ul.navbarnested { padding-left : 0em ; margin-left : 2em }
+h3.newsitem { text-indent: 3em }
+p.newsitem { margin-left : 6em }
+div.indent { margin-left : 3em }
+p.indent { margin-left : 3em  }
+div.rightalign { text-align : right }
+/*
+    Make sure the links inside the navigation bar are highlited
+    with a different colour. That's CSS 2.
+    http://www.zvon.org/xxl/CSS2Tutorial/Examples/example3.html
+*/
+td.navbar a:hover { background-color : orange }
+td.main { padding-left : 1em ; margin-left : 1em }
+h1 { font-family : serif }
+h2.plain{ color : black ; border : none ; font-family : serif }
+
+h3
+{
+    font-family : serif;
+}
+    
+/* Make sure it is not underlined when inside a boxed heading */
+h2 a,h3 a
+{
+    text-decoration : none
+}
+
+h1 a, h2 a, h3 a 
+{
+    font-family : sans-serif;
+}
+
+h3
+{ 
+    border-style : solid ; 
+    border-width : thin;
+    background-color : lemonchiffon;
+    padding-left: 0.3em;
+}
+
+div.bookinfo h3
+{
+    border : none;
+    margin-top : 0em;
+    color : green;
+    padding-left : 0em;
+    background-color : transparent;
+}
+
+div.bookinfo 
+{ 
+    border-style : dotted;
+    border-width : thin;
+    background-color : lightyellow;
+    margin-left : 1em;
+    padding-left : 1em;
+}
+tt { color : #8A2BE2 /* The BlueViolet Color */ }

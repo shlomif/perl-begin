@@ -1,0 +1,29 @@
+#include '../template.wml'
+
+<subject "Site Resources" />
+
+<h2><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Mailing List</a></h2>
+
+<p>
+Ask questions and receive answers by E-mail. Very convenient and instructive.
+One can find other mailing lists in our 
+<a href="$(ROOT)/mailing-lists/">mailing lists</a> section.
+</p>
+
+<h2><a href="<site:link url="cgi-bin/chiq_chaq/chiq.pl" />">Wiki</a></h2>
+
+<p>
+This is a portion of the site in which anyone can edit any page. It aims
+to eventually become a good reference for Perl beginners.
+</p>
+
+<h2><a href="http://developer.berlios.de/forum/forum.php?forum_id=2341">Web Forum</a></h2>
+
+<p>
+A place to put messages on the web and check them. Note that I'm not entirely
+happy with its implementation and am working on a new forum framework that 
+emulates the <a href="http://www.joelonsoftware.com/">Joel on Software</a> 
+forums. (I will gladly send you the code or accept contributions)
+</p>
+
+

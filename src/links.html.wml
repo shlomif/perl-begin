@@ -1,0 +1,59 @@
+#include '../template.wml'
+
+<subject "CLAN Links" />
+
+<h2>Documents</h2>
+
+<p>
+<a href="http://www.cpan.org/misc/ZCAN.html">The Zen of Comprehensive Archive
+Networks</a> - a document by Jarkko Hietaniemi, the CPAN master librarian
+on how to construct such comprehensive archive networks like we intend do.
+Brings some lessons from CPAN, and indicates why it has been successful.
+</p>
+
+<p>
+<a href="http://www.joelonsoftware.com/articles/fog0000000043.html">The Joel 
+Test : 12 Steps to Better Code</a> - an insightful article (orignallly
+derived from the McConnell Test) giving some guidelines for useful management
+of a "shrinkwrap" project. CLAN aims for just that.
+</p>
+
+<h2>Reference Projects</h2>
+
+<p>
+<a href="http://oprofile.sourceforge.net./">OProfile</a> - a system-wide
+profiler for GNU/Linux that contains an externally maintained kernel module.
+Provided reference for writing the appropriate makefile for the LKMB packages.
+</p>
+
+<h2>Similar Efforts for Other Systems</h2>
+
+<p>
+<a href="http://www.cpan.org/">CPAN - The Comperhensive Perl 
+Archive Network</a> - a repository of useful modules for the Perl programming
+language, that can be installed at ease while resolving all depenedencies. CLAN
+,in fact, will be available as a set of CPAN packages.
+</p>
+
+<p>
+<a href="http://www.debian.org/distrib/packages">The Debian Package Pool</a> -
+a comprehensive repository of packages for the Debian GNU/Linux distribution 
+that are maintained by volunteers. Easily installable and upgradable using
+a utility named "apt".
+</p>
+
+<p>
+<a href="http://www.linux-mandrake.com/cooker/urpmi.html">urpmi</a> - an
+interface around RPM created by MandrakeSoft to resolve the unique problems
+faced in handling the RPM package format. Extensively used in a Mandrake Linux
+environment and very convenient as well for maintaing the packages.
+</p>
+
+<p>
+<a href="http://www.freebsd.org/">FreeBSD</a> - its packages management is 
+source based and very configurable (you can specify configuration options for
+packages at compile time). Also look for 
+<a href="http://www.gentoo.org/">Gentoo Linux</a> which implemented a similar
+functionatily for a GNU/Linux system.
+</p>
+

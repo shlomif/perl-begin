@@ -1,0 +1,113 @@
+#include '../template.wml'
+
+<subject "Links" />
+
+<h2>Main Perl Resources</h2>
+
+<p>
+<a href="http://www.perl.com/">Perl.com</a> - O'Reilly's Perl Portal
+with many interesting articles, some sections and links.
+</p>
+
+<p>
+<a href="http://use.perl.org/">use Perl;</a> - a news site dedicated to Perl
+, Slashdot-style. (but with much fewer comment and such of higher 
+signal-to-noise ratio). Visit it to keep up to date with what's going on in
+Perl.
+</p>
+
+<p>
+<a href="http://www.perl.org/">Perl.org</a> - a Perl portal by the Perl Mongers
+Organization and the Perl Foundation.
+</p>
+
+<p>
+<a href="http://www.pm.org/">Perl Mongers</a> - The "Perl Mongers" Perl 
+user-groups world-wide.
+</p>
+
+<p>
+<a href="http://www.cpan.org/">CPAN - The Comprehensive Perl 
+Archive Network</a> - Contains a lot of modules for doing practically
+anything with Perl. Why re-invent the wheel when so many different types
+of them are available for free. Note that Perl distributions on various 
+systems contains an easy to use interface to install modules from it, 
+including dependencies.
+</p>
+
+<h2>Perl Culture</h2>
+
+<p>
+<a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Poetry/">Perl Poetry</a> - 
+Poems that are valid Perl programs.
+</p>
+
+<p>
+<a href="http://perlgolf.sourceforge.net/">Perl Golf</a> - competitions to
+find out the shortest Perl programs to achieve a certain task. Looking at
+the winning entries and analyzing them can actually teach you a lot about
+built-in Perl features. (some of them relatively obscure).
+</p>
+
+<p>
+<a href="http://perl.plover.com/qotw/">The Perl Quiz of the Week</a> - 
+a quiz to write a Perl program by Mark Jason Dominus.
+</p>
+
+<h2>Prominent Perl People</h2>
+
+<p>
+<a href="http://www.wall.org/~larry/">Larry Wall</a> - the father of Perl. A
+very colourful, amusing and interesting guy, who is also a competent UNIX
+hacker (invented patch, rn and other utilities), and a linguist by training.
+</p>
+
+<p>
+<a href="http://www.perl.com/pub/au/Christiansen_Tom">Tom Christiansen</a> -
+Perl's No. 2. Authored Several books and has been hacking with Perl and on Perl
+since its early beginning. 
+</p>
+
+<p>
+<a href="http://perl.plover.com/">Mark Jason Dominus</a> - Runs a web-site
+that contains a lot of random information and code about Perl.
+</p>
+
+<p>
+<a href="http://www.csse.monash.edu.au/~damian/">Damian Conway</a> - a computer
+science academic, who is obsessed with Perl. Wrote a book and some modules 
+(including one to write Perl in Latin - ;-)), and is considered one of the
+primary experts on Object-Oriented Programming in Perl. Now co-heads the Perl 6
+effort.
+</p>
+
+<p>
+<a href="http://www.stonehenge.com/merlyn/">Randal L. Schwartz</a> - co-authored
+some of Perl's most important books and one of the top experts on Perl on the
+planet.
+</p>
+
+<p>
+<a href="http://www.hut.fi/~jhi/">Jarkko Hietaniemi</a> - the 
+<a href="http://www.cpan.org/">CPAN</a> master librarian, a contributor to
+the core Perl distribution and external modules, and an all-around nice guy.
+</p>
+
+<h2>More Links</h2>
+
+<h3><a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/">The Google Directory Perl Category</a></h3>
+
+<p>
+a comprehensive hierarchy of links.
+</p>
+
+<h3><a href="http://dmoz.org/Computers/Programming/Languages/Perl/">DMoz' Perl Category</a></h3>
+
+<p>
+The source of the above, which is more up-to-date, but is slower and does not
+include Googlisms.
+</p>
+
+<h3><a href="http://dir.yahoo.com/Computers_and_Internet/Programming_and_Development/Languages/Perl/">Yahoo's Perl Category</a></h3>
+
+

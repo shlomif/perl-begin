@@ -1,0 +1,74 @@
+#include '../template.wml'
+
+<subject "Online Tutorials" />
+
+<h2>Note</h2>
+
+<p>
+The definitive sources for Perl are the <a href="http://www.perldoc.com/perl5.8.0/pod.html">online "man pages"</a> that come with
+the distribution and the book 
+<a href="http://www.oreilly.com/catalog/pperl3/">"Programming Perl"</a> by 
+<a href="http://www.oreilly.com/">O'Reilly and Associates</a>.
+However, none of them is suitable for beginners for various reasons. These
+online tutorials can provide an introduction to Perl so you can start writing
+your own scripts. Nevertheless, they don't teach everything there is
+to know about the language and one should still go over the man pages
+afterwards
+</p>
+
+<h2><a href="http://vipe.technion.ac.il/~shlomif/lecture/Perl/Newbies/">Haifux'
+Perl for Perl Newbies Series</a></h2>
+
+<p>
+Intended for People with basic knowledge of C or something similar or even no 
+knowledge of any programming language at all. Contains verbose slides filled
+with explanation, examples and anecdotes. Covers a basic subset of Perl, 
+without too many "other ways to do it". (you are still expected to read the
+man pages after the second lecture)
+</p>
+
+<h2><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h2>
+
+<p>
+A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a> 
+and others. Does not cover modules and objects, but should get you started
+on simple scripts.
+</p>
+
+<h2><a href="http://archive.ncsa.uiuc.edu/General/Training/PerlIntro/">Perl Intro from NCSA</a></h2>
+
+<p>
+Another tutorial which simplifies things considerably. Leaves out many caveats
+and simply wishes to get you started. Does not cover modules and objects.
+</p>
+
+<h2><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
+Beginners Introduction to Perl</a></h2>
+
+<p>
+A 6-part tutorial that covers the basics without too many details. Again, 
+reading the man pages is expected afterwards, but this tutorial should get
+you started.
+</p>
+
+<h2><a href="http://lea-linux.org/dev/perl.php3">French Intro to Perl</a></h2>
+
+<p>
+An introduction to Perl in the French language.
+</p>
+
+<h2><a href="http://cs.haifa.ac.il/~shlomo/perl/">Haifa University Perl Course</a></h2>
+
+<p>
+A perl course with online slides.
+</p>
+
+<h2><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h2>
+
+<p>
+Links to many other online tutorials.
+</p>
+
+
+
+

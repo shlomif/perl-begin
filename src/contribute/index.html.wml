@@ -1,0 +1,47 @@
+#include '../template.wml'
+
+<subject "Contribute to the Perl Beginners' Site" />
+
+<p>
+    We feel that the Perl Beginners' Site should be a community site
+    instead of a centralized "Cathedral"-like site. Thus, the entire source
+    code is available online and contributions from outsiders are welcome.
+    There is a <a href="./list/">list of contributors</a>, so make sure
+    your name appears there as soon as possible.
+</p>
+
+<p>
+    Here are ways in which you can contribute to the site:
+</p>
+
+<h2>Contribute to the Wiki</h2>
+
+<p>
+<a href="<wiki:link />">The Wiki</a> is a portion of the site that can
+be edited by anyone at any time. Feel free to add your own material there.
+</p>
+
+<h2>Join the Mailing List</h2>
+
+<p>
+By joining <a href="<mailing:list:link />">the mailing list</a>, you will 
+receive questions by E-mail, which you can answer. (or alternatively be able
+to ask your own)
+</p>
+
+<h2>Visit the Help Web Forum</h2>
+
+<p>
+The <a href="<web:forum:link />">Help Web Forum</a> is meant to help people
+with their Perl problems. You can visit it if you have questions or would like
+to help people with their problems.
+</p>
+
+<h2>Contribute to the Core Site</h2>
+
+<p>
+You can send patches or corrections to the HTML pages of the site. It is 
+preferable to send corrections to the <a href="$(ROOT)/source/">site's Web 
+Meta Language source</a>, because they can be applied immediately.
+</p>
+

@@ -1,0 +1,17 @@
+#include '../template.wml'
+
+<subject "Common Uses for Perl" />
+
+<p>
+Perl can be used and was utilized for a variety of uses. This section will
+cover some of the more common uses and explain how to get started with
+using Perl for them.
+</p>
+
+<h2><a href="./bio-info/">Bio-Informatics</a></h2>
+
+<h2><a href="./qa/">Quality Assurance (QA) and Testing</a></h2>
+
+<h2><a href="./sys-admin/">System Administration</a></h2>
+
+<h2><a href="./web/">Web and CGI Programming</a></h2>

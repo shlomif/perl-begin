@@ -1,0 +1,50 @@
+#include '../template.wml'
+
+<subject "Perl for CGI and Web Programming" />
+
+<p>
+Perl 5 was one of the first available technologies for automating a web-server,
+and is still considered one of the most powerful and most cost-effective 
+ones, today. Once you learn the core language, and some HTML and HTTP concepts, 
+programming a simple CGI callback or form handler is very easy and
+straightforward. 
+</p>
+
+<p>
+Users are recommended to use the excellent <a href="http://stein.cshl.org/WWW/software/CGI/">CGI.pm</a> module (which is included in every Perl 5 
+distribution), or one of the other interfaces to the web-server (like 
+HTML::Mason or Apache::ASP). Furthermore, there are many CPAN modules 
+available that can make many common CGI programming tasks much easier.
+</p>
+
+<h2>Interfaces</h2>
+
+<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
+
+<p>
+An implementation of the Active Server Pages for Perl on UNIXes. Compatible
+with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
+solution. 
+</p>
+
+<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
+
+<p>
+A portable solution for a dynamic maintenance of a Perl site. Very powerful
+and feature-rich.
+</p>
+
+<h2>Tutorials</h2>
+
+<h3><a href="http://www.cgi101.com/class/">CGI Programming 101</a></h3>
+
+<p>
+A free online course about CGI in Perl.
+</p>
+
+<h3><a href="<wiki:link url="CGI_Getting_Started" />">Our own CGI Getting Started</a></h3>
+
+<p>
+In the Wiki.
+</p>
+

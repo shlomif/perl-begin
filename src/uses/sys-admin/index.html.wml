@@ -1,0 +1,18 @@
+#include '../template.wml'
+
+<subject "Perl for System Administration" />
+
+<p>
+Perl can be used to perform or automate system administration tasks
+on all platforms on which it is available. Some UNIX beginners who learn
+Perl, use it at first where shell scripts may be more appropriate. This use
+is still OK, because Perl can be a good alterantive for them.
+</p>
+
+<p>
+Besides the core language, those who wish to use Perl for System Administration
+should focus on the <tt>perlfunc</tt> document (which covers the various
+functions available inside Perl), and on its regular expressions capabilities
+(which are handier than what shell scripts offer).
+</p>
+

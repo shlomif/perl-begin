@@ -1,0 +1,9 @@
+Before running make for the first time, one has to run "bash gen_helper.sh".
+This script generates the list of directories and pages inside defs.mak.
+
+This script also has to be invoked whenever new pages are added, or existing 
+ones are removed or renamed.
+
+Enjoy!
+
+    Shlomi Fish

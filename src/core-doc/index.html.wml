@@ -1,0 +1,40 @@
+#include '../template.wml'
+
+<subject "Perl Core Documentation" />
+
+<h2>Online Documentation</h2>
+
+<p>
+<a href="http://www.perldoc.com/">Perl-Doc</a> - contains searchable index
+for the core perl documentation. 
+</p>
+
+<p>
+<a href="http://www.mongueurs.net/perlfr/perl.html">French version of the Perl
+Manual</a> - a bit out-of-date, but still very pertinent for beginners.
+</p>
+
+
+<h2>Books</h2>
+
+<h3><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl, 3rd 
+Edition</a></h3>
+
+<p>
+The Bible of Perl. Makes an easier and more organized read than the online
+core documentation, and provides explanation for every last nuance of the 
+Perl language. Also contains a lot of jokes and Perl musings, and an 
+introduction to the culture behind Perl.
+</p>
+
+<p>
+Not recommended as an introducory Perl book, but still makes a very good read 
+after the language is learned to a working extent.
+</p>
+
+<h3><a href="http://www.oreilly.com/catalog/cookbook/">The Perl Cookbook</a></h3>
+
+<p>
+A book that contains a long list of code snippets for achieving certain tasks 
+in Perl, with some discussion on how they work and how to customize them.
+</p>

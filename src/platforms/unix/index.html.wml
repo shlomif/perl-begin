@@ -1,0 +1,19 @@
+#include '../template.wml'
+
+<subject "Perl on UNIX and Linux Systems" />
+
+<p>
+    If you are using a UNIX-compatible system (such as Linux or Solaris), most chances
+    are that Perl 5 is already installed there. To verify that, type <tt>perl -v</tt>
+    inside a command shell, and check that the version of Perl is recent enough. If so, you 
+    can easily run Perl scripts there.
+</p>
+
+<p>
+    Even if this is not the case, you can usually install it from the distribution you
+    are using, assuming you are an administrator of the system. Else, given enough quota it 
+    is possible to install the most recent version of Perl 5 under your home directory. 
+    This procedure can be followed by downloading the latest Perl source from CPAN, and 
+    following the instructions in the INSTALL file.
+</p>
+

@@ -1,0 +1,14 @@
+#include '../template.wml'
+
+<subject "Site's Source Code" />
+
+<p>
+This site is a static HTML site written in
+<a href="http://thewml.org/">Web Meta Language</a>. Its self-contained
+source code (that requires WML, GNU make, GNU basha nd a GNU
+system to be built) can be found on this page.
+</p>
+
+<h2><a href="./arcs/$(ARCNAME)">Get the Latest Source Code</a></h2>
+
+

@@ -1,0 +1,14 @@
+#include '../template.wml'
+
+<subject "Perl Beginners' Site - About" />
+
+<h2>About</h2>
+
+<p>
+Welcome to the unofficial Perl Beginners' Site. This site will provide
+links and references to on-line and off-line material that can be used
+to learn Perl. This site is directed both for people who learn Perl 
+after knowing one or more languages, or for people who are learning
+Perl as their first language.
+</p>
+

@@ -1,0 +1,33 @@
+#include '../template.wml'
+
+<subject "Perl Platforms" />
+
+<p>
+perl 5 (the most common implementation of the Perl language) was made very 
+portable and can run on almost any platform imaginable. (here's 
+<a href="http://www.perldoc.com/perl5.8.0/pod/perlport.html#Supported-Platforms">an exhaustive list</a>). Perl, however, started on UNIX platforms and still
+reflects the UNIX culture to a large extent.
+</p>
+
+<h2><a href="./mac/">Mac OS (PowerPC, etc.)</a></h2>
+
+<p>
+    Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as 
+    compiled and installed from the source. Mac OS Classic requires MacPerl,
+    which I never worked with. Mac OS X is still highly recommended from the
+    aspect of running Perl or otherwise.    
+</p>
+
+<h2><a href="./windows/">Windows</a></h2>
+
+<p>
+    Perl can easily run on Windows and makes for a very powerful and free
+    scripting language there. Complete Beginners should probably start
+    by downloading an ActiveState's <a href="http://www.activestate.com/Products/ActivePerl/">ActivePerl</a> build and experimenting with it.
+</p>
+
+<p>
+    Perl for Windows 32, is mostly compatible with Perl for UNIX, so scripts
+    and modules written on one platform will run on the other.
+</p>
+

@@ -1,0 +1,25 @@
+#include '../template.wml'
+
+<subject "LKMB - The Linux Kernel Module Builder" />
+
+<h2>About</h2>
+<p>
+The Linux Kernel Module Builder (or LKMB) for short is a kernel module
+that can be used to build self-contained packages that can be processed
+into kernel modules packages. By installing the Perl module system-wide,
+it relieves such duplicate functionality, that is needed to maintain
+such packages and allows for fast processing and analyzing of them.
+</p>
+
+<p>
+LKMB can be downloaded from the <a href="$(ROOT)/download/">downloads 
+section</a>, and expect it to be on CPAN soon.
+</p>
+
+<h2>Features</h2>
+
+<p>
+Currently, one can build a kernel module package that can be compiled against
+the current kernel. Most of the other functionality needs to be implemented.
+</p>
+

@@ -1,0 +1,214 @@
+# #use wml::des::navbar
+
+<define-tag email:link>
+<a href="mailto:%0">%0</a>
+</define-tag>
+
+# The Definition of the page itself
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<title>{#SUBJECT_LOC#}</title>
+<link rel="stylesheet" href="$(ROOT)/style.css" type="text/css" />
+</head>
+<body>
+
+<define-tag rellink whitespace="delete">
+<preserve url />
+<set-var %attributes />
+$(ROOT)/<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag site:link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+http://perl-begin.berlios.de/<get-var url />
+<restore url />
+</define-tag>
+
+
+<define-tag navbarlink whitespace="delete">
+<preserve title />
+<set-var %attributes />
+<set-var l="<rellink url="%0" />" />
+<set-var t="<if "<get-var title />" <attributes-quote title=<get-var title /> /> "" />" />
+<if
+    ;;; Determine if %0 matches this document
+    <ifeq "$(FILENAME)" "%0"
+        "1"
+        <ifeq "$(FILENAME)" "%0index.html"
+            "1"
+            <ifeq "$(FILENAME)" "%0/index.html" 
+                "1"
+                ""
+                />
+        />
+
+    />
+    ;;; If so - bolds the text
+    "<b>%1</b>"
+    ;;; If not - makes a hyperlink
+    "<a href="<get-var l />" <get-var t />>%1</a>"
+/>
+<restore title />
+</define-tag>
+
+
+<define-tag vipe:url>http://vipe.technion.ac.il/~shlomif/%0</define-tag>
+<define-tag lect:link><navbarlink "lecture/%0" "%1" host="vipe" /></define-tag>
+
+<define-tag links:group endtag="required">
+<ul class="navbarmain">
+%body
+</ul>
+</define-tag>
+
+<define-tag wiki:link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+<ifeq "<get-var url />" "" 
+    "" 
+    "<set-var url="?<get-var url />" />" 
+    />
+<site:link url="cgi-bin/chiq_chaq/chiq.pl" /><get-var url />
+<restore url />
+</define-tag>
+
+<define-tag mailing:list:link whitespace="delete">
+https://lists.berlios.de/mailman/listinfo/perl-begin-help
+</define-tag>
+
+<define-tag web:forum:link whitespace="delete">
+http://developer.berlios.de/forum/forum.php?forum_id=2341
+</define-tag>
+
+<define-tag nothing></define-tag>
+
+<define-tag navbar:head>
+<preserve href />
+<preserve title />
+<preserve hint />
+<set-var %attributes />
+<set-var title:attr="<if "<get-var hint />" <attributes-quote title=<get-var hint /> /> <nothing /> />" />
+<h2><a href="<get-var href />" <get-var title:attr />><get-var title /></a></h2>
+<restore hint />
+<restore title />
+<restore href />
+</define-tag>
+
+<table summary="Layout Table: The first cell contains a navigation bar, the second the main page" border="0" width="99%">
+<tr>
+<td valign="top" class="navbar" style="width:20%">
+
+<links:group>
+<li><navbarlink "" "Home" /></li>
+<li><navbarlink "about.html" "About" /></li>
+<li><navbarlink "tutorials/" "Online Tutorials" /></li>
+<li><navbarlink "books/" "Books" /></li>
+<li><navbarlink "core-doc/" "Core Documentation" /></li>
+<li><navbarlink "articles/" "Article Collections" /></li>
+</links:group>
+<links:group>
+<li><navbarlink "mailing-lists/" "Mailing Lists" title="Ask Questions and Receive Answers about Perl by E-mail" /></li>
+<li><navbarlink "web-forums/" "Web Forums" /></li>
+<li><navbarlink "irc/" "IRC Channels" title="Chat online about Perl using the Internet Relay Chat (=IRC)" /></li>
+</links:group>
+<links:group>
+<li><navbarlink "links/" "Links" /></li>
+</links:group>
+
+<navbar:head href="$(ROOT)/site-resources/" title="Site Resources" />
+
+<ul class="navbarmain">
+<li><a href="<mailing:list:link />" title="A mailing list for helping Beginners">Mailing List</a></li>
+<li><a href="<wiki:link />" title="A sub-site that can be freely edited with any information">Wiki</a></li>
+<li><a href="<web:forum:link />" title="A web-based forum where you can post messages.">Web Forum</a></li>
+</ul>
+
+<navbar:head href="$(ROOT)/platforms/" title="Platforms" />
+
+<ul class="navbarmain">
+<li><a href="$(ROOT)/platforms/mac/" title="Macintosh and PowerPC/PowerMac platforms">Mac OS</a></li>
+<li><a href="$(ROOT)/platforms/unix/">UNIX/Linux</a></li>
+<li><a href="$(ROOT)/platforms/windows/">Windows</a></li>
+</ul>
+
+<define-tag uses:link>
+<preserve href />
+<preserve caption />
+<preserve title />
+<preserve hide />
+<set-var %attributes />
+<set-var t="<if "<get-var title />" <attributes-quote title=<get-var title /> /> "" />" />
+<if "<ifeq "<get-var hide />" "1" "<match "$(FILENAME)" "^uses/" action="report" />" "1" />"
+    "<li><navbarlink "<get-var href />" "<get-var caption />" <get-var t /> /></li>"
+    ""
+    />
+<restore hide />
+<restore title />
+<restore caption />
+<restore href />
+</define-tag>
+
+<navbar:head href="$(ROOT)/uses/" title="Uses" hint="Common Uses for Perl" />
+<links:group>
+<uses:link href="uses/bio-info/" title="Perl for Bio-Informatics" caption="Bio-Informatics" hide="1" />
+<uses:link href="uses/qa/" title="Perl for Testing and Quality Assurance" caption="QA and Testing" hide="1" />
+<uses:link href="uses/sys-admin/" title="System Administration" caption="Sys Admin" />
+<uses:link href="uses/web/" title="Perl for the Web (CGI, etc.)" caption="Web/CGI" />
+</links:group>
+
+
+<navbar:head href="$(ROOT)/contribute/" title="Contribute" />
+<links:group>
+<li><navbarlink "source/" "Site's Source Code" /></li>
+</links:group>
+
+
+<define-tag validhtml>
+<br /><br /><br /><br />
+<p>
+<a href="http://validator.w3.org/check/referer"><img 
+    style="border:0" src="http://www.w3.org/Icons/valid-xhtml10" 
+         alt="Valid XHTML 1.0!"
+         /></a>
+</p>
+<p>
+ <a href="http://jigsaw.w3.org/css-validator/"><img style="border:0"
+       src="http://jigsaw.w3.org/css-validator/images/vcss" 
+       alt="Valid CSS!" /></a>
+</p>
+<p>
+</p>
+</define-tag>
+
+<ifeq "$(FILENAME)" "index.html" "<validhtml />" "" />
+
+</td>
+<td valign="top" class="main">
+<h1>{#SUBJECT_LOC#}</h1>
+{#BODY#}
+
+</td>
+</tr>
+</table>
+<hr />
+<p>
+<b>Webmaster:</b> <a href="mailto:shlomif@vipe.technion.ac.il">Shlomi Fish - shlomif@vipe.technion.ac.il</a>
+</p>
+
+</body>
+</html>
+
+<define-tag subject>
+{#SUBJECT_LOC#:%0:##}
+</define-tag>
+
+
+#   per default we are in body
+{#BODY#:
+

@@ -1,0 +1,69 @@
+#include '../template.wml'
+
+<subject "The Future Vision" />
+
+<p>
+After CLAN is installed on the system it compiles a basic kernel that 
+fullfills all of the system requirements. These may be found out using a 
+hardware manager (such as MandrakeSoft's hard-drake) or explicitly. It then 
+compiles a basic kernel and installs it. This requires a reboot.
+</p>
+
+<p>
+Afterwards, whenever the user needs a new module, he invokes CLAN (something 
+like ``clan -e shell'') and installs this module by downloading it, 
+verifying it for cryptographic validity (if necessary), compiling it 
+and installing it.
+</p>
+
+
+<p>
+That's not all. If CLAN detects that the current kernel does not 
+support this module it will accept the admin explicit or implicit 
+permission to recompile the kernel with this option added, and 
+install the new kernel as well.
+</p>
+
+
+<p>
+CLAN will require no bootstrapping. It would be able to prepare 
+standalone source kernel packages that can be compiled without 
+CLAN installed.
+</p>
+
+<p>
+And like I said earlier, installing a module will install all 
+of its dependencies as well.
+</p>
+
+
+<p>
+CLAN will support multiple sources for modules (controlled by editing a 
+text file), and will be able to handle source packages, binary packages 
+and restrict each one to various architectures (i386, SPARC, Alpha, ARM) 
+and sub- architectures (i386, i486, i586, i686).
+</p>
+
+<p>
+Some sources of CLAN will be able to carry non-GPL-compliant code and 
+so the free software ideals will not be violated anywhere.
+</p>
+
+<p>
+I hope that CLAN will be able to play nice with the underlying 
+package systems. I.e: build modules and kernels as RPMs on RPM based 
+systems , as deb packages on Debian and derived systems, etc.
+</p>
+
+<p>
+CLAN will interact and play nice with system loaders such as LILO, GRUB and
+loadlin. Generally it will not install a new kernel unless explicitly 
+instructed to
+</p>
+
+<p>
+All the kernel modules and subsystems will be available as CLAN packages and
+can be upgraded, configured and installed at home from a convenient CPAN or
+Apt like interface.
+</p>
+

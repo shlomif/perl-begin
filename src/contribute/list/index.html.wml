@@ -1,0 +1,32 @@
+#include '../template.wml'
+
+<subject "Contributors List" />
+
+<dl>
+<dt>
+<a href="http://t2.technion.ac.il/~shlomif/">Shlomi Fish</a>
+</dt>
+<dd>
+Founded perl-begin and did most of the work on the initial versions.
+</dd>
+<dt>
+<a href="http://www.cthulhu-burger.org/">Dave Goehrig</a>
+</dt>
+<dd>
+Contributed the essay "What the Books Don't Teach You" to the Wiki.
+</dd>
+<dt>
+Marilyn Matty
+</dt>
+<dd>
+Gave some web design and content tips.
+</dd>
+<dt>
+Mark Fowler
+</dt>
+<dd>
+Suggested two important additions to the articles section.
+</dd>
+</dl>
+
+

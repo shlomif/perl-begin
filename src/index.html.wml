@@ -1,0 +1,39 @@
+#include '../template.wml'
+
+<subject "Perl Beginners' Site" />
+
+<h2>About</h2>
+
+<p>
+Welcome to the unofficial Perl Beginners' Site. This site will provide
+links and references to on-line and off-line material that can be used
+to learn Perl. This site is intended for people who learn Perl 
+after knowing one or more languages, as well as for people who are learning
+Perl as their first language.
+</p>
+
+<h2>What is Perl?</h2>
+
+<p>
+<a href="http://www.perl.org/">Perl</a> is a flexible, feature-rich and
+powerful high-level language. It is many times referred to as a "scripting
+language" albeit this term is very misleading because it can be efficiently
+used for many other tasks besides scripting. It is in fact possible to write
+numercial applications, GUIs, graphics generation, database applications, WWW
+and network scripts, games, and even servers in Perl. And naturally, anything
+that combines two or more of these things. ;-) 
+</p>
+
+<p>
+Perl code can be written very quickly, and although not run as fast as the
+most optimized C code, will still usually be fast enough. It is very usual
+to achieve in one line of Perl what in ANSI C and many other languages 
+requires 100's of lines.
+</p>
+
+<p>
+Perl has a lot of easily installable ready made modules in 
+<a href="http://www.cpan.org/">CPAN</a> (the Comprehensive Perl Archive 
+Network), which make writing Perl code to achieve many tasks even easier.
+</p>
+
