@@ -2,3 +2,7 @@
 
 * Add the Uses (with CGI, Sys Admin, etc. underneath) section
 
+* Mention the new Subversion repository:
+    - https://opensvn.csie.org/perlbegin/perl-begin/trunk/
+    - http://opensvn.csie.org/perlbegin/perl-begin/trunk/
+
