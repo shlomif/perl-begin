@@ -1,11 +1,3 @@
 * Add the other books sections in separate pages.
 
-* Add the Uses (with CGI, Sys Admin, etc. underneath) section
-
-* Mention the new Subversion repository:
-    - https://opensvn.csie.org/perlbegin/perl-begin/trunk/
-    - http://opensvn.csie.org/perlbegin/perl-begin/trunk/
-
-* Change the colour of the navigation bar to something less intrusive.
-(possibly while changing the colours of the links as well.)
 
