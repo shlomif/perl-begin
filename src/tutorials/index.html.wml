@@ -16,6 +16,15 @@ to know about the language and one should still go over the man pages
 afterwards
 </p>
 
+<h2><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h2>
+
+<p>
+A comprehensive book for beginners by Simon Cozens that is available online. 
+Aims to teach Perl even for people with no prior experience in programming
+at all. Probably your best bet, unless you don't want to read too much to get
+started.
+</p>
+
 <h2><a href="http://vipe.technion.ac.il/~shlomif/lecture/Perl/Newbies/">Haifux'
 Perl for Perl Newbies Series</a></h2>
 
