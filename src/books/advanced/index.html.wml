@@ -1,6 +1,65 @@
 #include "../template.wml"
 
+#include "../lib/books.wml"
+
 <subject "Advanced Books" />
 
-<h2><font color="red">FILL IN</font></h2>
+<p>
+These books are recommended as further reading for the Perl programmer
+who has already been introduced to the language. The books here cover the
+core language and technologies of Perl. If you wish to learn about specific
+technologies then refer to the <a href="../topics/">topic-related books</a>.
+</p>
 
+<h2><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl</a></h2>
+
+<book:info
+    authors="Larry Wall, Tom Christiansen, Jon Orwant"
+    publisher="oreilly"
+    isbn="0596000278"
+    />
+
+<p>
+This is the classic reference to the Perl language, commonly known as 
+"The Camel Book". (after the camel on its cover). This book is highly readable,
+funny, and covers the entire Perl 5.6.1 language on all of its fine points.
+</p>
+
+<p>
+It is highly recommended as a book to read after you know your way around the
+core Perl language, so you can learn much more about it, and enjoy its many 
+jokes.
+</p>
+
+<h2><a href="http://www.apress.com/book/bookDisplay.html?bID=14">Writing Perl Modules for CPAN</a></h2>
+
+<book:info
+    authors="Sam Tregar"
+    publisher="apress"
+    isbn="159059018X"
+    />
+
+<p>
+This book covers the art and science of working on Perl modules, putting
+them on <a href="http://www.cpan.org/">CPAN</a> and maintaining them. It is
+written in a light style, and makes a very good and easy read.
+</p>
+
+<h2><a href="http://www.manning.com/Conway/">Object-Oriented Perl</a></h2>
+
+<book:info
+    authors="Damian Conway"
+    publisher="manning"
+    isbn="1884777791"
+    />
+
+<p>
+This book covers Object Oriented Programming using Perl, starting from simple
+modules objects up to advanced object oriented techniques like persistence or
+multi-methods.
+</p>
+
+<p>
+It is full with examples, and explanations, and is very comprehensive for its
+topic.
+</p>
