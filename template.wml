@@ -78,33 +78,6 @@ http://perl-begin.berlios.de/<get-var url />
 <restore url />
 </define-tag>
 
-
-<define-tag navbarlink whitespace="delete">
-<preserve title />
-<set-var %attributes />
-<set-var l="<rellink url="%0" />" />
-<set-var t="<if "<get-var title />" <attributes-quote title=<get-var title /> /> "" />" />
-<if
-    ;;; Determine if %0 matches this document
-    <ifeq "$(FILENAME)" "%0"
-        "1"
-        <ifeq "$(FILENAME)" "%0index.html"
-            "1"
-            <ifeq "$(FILENAME)" "%0/index.html" 
-                "1"
-                ""
-                />
-        />
-
-    />
-    ;;; If so - bolds the text
-    "<b>%1</b>"
-    ;;; If not - makes a hyperlink
-    "<a href="<get-var l />" <get-var t />>%1</a>"
-/>
-<restore title />
-</define-tag>
-
 <define-tag wiki:link whitespace="delete">
 <preserve url />
 <set-var %attributes />
