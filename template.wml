@@ -58,9 +58,6 @@ http://perl-begin.berlios.de/<get-var url />
 </define-tag>
 
 
-<define-tag vipe:url>http://vipe.technion.ac.il/~shlomif/%0</define-tag>
-<define-tag lect:link><navbarlink "lecture/%0" "%1" host="vipe" /></define-tag>
-
 <define-tag links:group endtag="required">
 <preserve myclass />
 <set-var myclass="<if "<match "%0" "nested" />" "navbarnested" "navbarmain" />" />
