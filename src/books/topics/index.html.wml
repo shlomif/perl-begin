@@ -1,6 +1,39 @@
 #include "../template.wml"
 
-<subject "Advanced Books" />
+<subject "Perl Books that cover Specific Topics" />
 
-<h2><font color="red">FILL IN</font></h2>
+<p>
+Perl has many third-party APIs available on CPAN, many of which interface it
+with existing APIs written in other languages. If you have a task that needs
+performing, chances are that Perl is exactly the right tool for the job.
+</p>
+
+<p>
+Many specialized books were written to cover the specific technologies and 
+their application to Perl. Alternatively, these books cover specific topics
+and in it cover several CPAN modules that can do the job.
+</p>
+
+<p>
+Since there are so many books like that out there, we will simply provides 
+links to the book pages on <a href="http://books.perl.org/">the Perl books 
+registry</a>, where you can find more information, and reviews
+</p>
+
+<h2>The Books List</h2>
+
+<ul>
+<li>
+<a href="http://books.perl.org/book/173">Perl &amp; XML</a>
+</li>
+<li>
+<a href="http://books.perl.org/book/143">Perl Graphics Programming</a> (from O'Reilly)
+</li>
+<li>
+<a href="http://books.perl.org/book/137">Graphics Programming with Perl</a> (from Manning)
+</li>
+<li>
+<a href="http://books.perl.org/book/104">Perl &amp; LWP</a> - covers libwww-perl (or LWP for short) which can be used to automate web document retrieval.
+</li>
+</ul>
 
