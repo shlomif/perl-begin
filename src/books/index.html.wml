@@ -25,6 +25,7 @@ is a list of books that can teach you Perl with some remarks on each book.
     authors="Randal L. Schwartz and Tom Phoenix" 
     publisher="oreilly" 
     isbn="0596001320" 
+    perlbooksid="101"
     />
 
 <p>
@@ -48,6 +49,7 @@ http://learn.perl.org/library/beginning_perl/
     authors="Simon Cozens"
     publisher="Wrox Press Inc."
     isbn="1861003145"
+    perlbooksid="100"
     />
 
 <p>
@@ -68,6 +70,7 @@ online for free download</a>.
     authors="Andrew L. Johnson" 
     publisher="manning" 
     isbn="1884777805"
+    perlbooksid="170"
     />
 
 <p>
@@ -82,6 +85,7 @@ and using it for creating documentation and better organizing the examples.
     authors="Steve Oualline"
     publisher="new-riders"
     isbn="073571228X"
+    
     />
 
 <p>

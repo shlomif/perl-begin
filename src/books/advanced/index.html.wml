@@ -17,6 +17,7 @@ technologies then refer to the <a href="../topics/">topic-related books</a>.
     authors="Larry Wall, Tom Christiansen, Jon Orwant"
     publisher="oreilly"
     isbn="0596000278"
+    perlbooksid="134"
     />
 
 <p>
@@ -37,6 +38,7 @@ jokes.
     authors="Sam Tregar"
     publisher="apress"
     isbn="159059018X"
+    perlbooksid="166"
     />
 
 <p>
@@ -51,6 +53,7 @@ written in a light style, and makes a very good and easy read.
     authors="Damian Conway"
     publisher="manning"
     isbn="1884777791"
+    perlbooksid="171"
     />
 
 <p>
