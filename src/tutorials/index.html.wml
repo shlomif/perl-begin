@@ -5,15 +5,15 @@
 <h2>Note</h2>
 
 <p>
-The definitive sources for Perl are the <a href="http://www.perldoc.com/perl5.8.0/pod.html">online "man pages"</a> that come with
-the distribution and the book 
-<a href="http://www.oreilly.com/catalog/pperl3/">"Programming Perl"</a> by 
-<a href="http://www.oreilly.com/">O'Reilly and Associates</a>.
-However, none of them is suitable for beginners for various reasons. These
-online tutorials can provide an introduction to Perl so you can start writing
-your own scripts. Nevertheless, they don't teach everything there is
-to know about the language and one should still go over the man pages
-afterwards
+These online tutorials can provide an introduction to Perl so you can start
+writing your own scripts. Nevertheless, they don't teach everything there is
+to know about the language and one should still take care to learn all other
+things on his own from other resources.
+</p>
+
+<p>
+If you prefer a tutorial in something else besides English, check the 
+<a href="./localizes/">foreign languages page</a>
 </p>
 
 <h2><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h2>
@@ -60,17 +60,12 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
-<h2><a href="http://lea-linux.org/dev/perl.php3">French Intro to Perl</a></h2>
-
-<p>
-An introduction to Perl in the French language.
-</p>
-
 <h2><a href="http://cs.haifa.ac.il/~shlomo/perl/">Haifa University Perl Course</a></h2>
 
 <p>
 A perl course with online slides.
 </p>
+
 
 <h2><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h2>
 

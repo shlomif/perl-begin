@@ -113,6 +113,16 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 
 <define-tag navbar:menu:is:book><match "$(FILENAME)" "^books/" action="report" /></define-tag>
 
+<define-tag navbar:menu:tutorials>
+<links:group "nested">
+<li>
+<navbarlink "tutorials/localized/" "In Other Languages" title="Tutorials in Other Languages" />
+</li>
+</links:group>
+</define-tag>
+
+<define-tag navbar:menu:is:tutorials><match "$(FILENAME)" "^tutorials/" action="report" /></define-tag>
+
 <table summary="Layout Table: The first cell contains a navigation bar, the second the main page" border="0" width="99%">
 <tr>
 <td valign="top" class="navbar" style="width:20%">
@@ -120,7 +130,9 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <links:group>
 <li><navbarlink "" "Home" /></li>
 <li><navbarlink "about.html" "About" /></li>
-<li><navbarlink "tutorials/" "Online Tutorials" /></li>
+<li><navbarlink "tutorials/" "Online Tutorials" />
+<if "<navbar:menu:is:tutorials />" "<br /><navbar:menu:tutorials />" />
+</li>
 <li><navbarlink "books/" "Books" />
 <if "<navbar:menu:is:book />" "<br /><navbar:menu:books />" />
 </li>

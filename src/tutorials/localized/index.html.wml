@@ -1,0 +1,16 @@
+#include '../template.wml'
+
+<subject "Tutorials in Foreign Languages" />
+
+<h2><a href="http://lea-linux.org/dev/perl.php3">French Intro to Perl</a></h2>
+
+<p>
+An introduction to Perl in the French language.
+</p>
+
+<h2><a href="http://code.semuel.co.il/perlhebtut/">Hebrew Perl Tutorial</a></h2>
+
+<p>
+A Tutorial for Perl in Hebrew written by Semuel Vomberg.
+</p>
+
