@@ -23,18 +23,25 @@
 <preserve authors />
 <preserve publisher />
 <preserve isbn />
+<preserve perlbooksid />
+<preserve perlbookslink />
 <set-var %attributes />
 <set-var ext:publisher=<get:ext:publisher <get-var publisher /> /> />
+<set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />"><b>Book Page at books.perl.org</b></a><br />" />
 <div class="bookinfo">
 <h3>Book Information</h3>
 <b>Authors:</b> <get-var authors /><br />
 <b>Publisher:</b> <get-var ext:publisher /><br />
+
+<if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
 <b>Buy From:</b> 
 <book:store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
 <book:store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
 <book:store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
 <br />
 </div>
+<restore perlbookslink />
+<restore perbooksid />
 <restore isbn />
 <restore publisher />
 <restore authors />
