@@ -4,8 +4,13 @@
 
 <subject "Paper Books" />
 
+<ul>
+<li><a href="#beginners">Books for Beginners</a></li>
+<li><a href="./advanced/">Books for Learning about More Advanced Parts of the Core Language</a></li>
+<li><a href="./topics/">Books for Learning about Specialized Technologies</a></li>
+</ul>
 
-<h2>Note</h2>
+<h2><a name="beginners">Note</a></h2>
 
 <p>
 It is not absolutely necessary to read an organized book to learn Perl. But 
