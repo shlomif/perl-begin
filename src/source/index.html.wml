@@ -5,10 +5,21 @@
 <p>
 This site is a static HTML site written in
 <a href="http://thewml.org/">Web Meta Language</a>. Its self-contained
-source code (that requires WML, GNU make, GNU basha nd a GNU
+source code (that requires WML, GNU make, GNU bash and a GNU
 system to be built) can be found on this page.
 </p>
 
 <h2><a href="./arcs/$(ARCNAME)">Get the Latest Source Code</a></h2>
 
+<h2>Version Control Repository</h2>
+
+<p>
+The most up-to-date source code for this site is now hosted in 
+<a href="http://opensvn.csie.org/perlbegin/perl-begin/trunk/">its own
+Subversion repository</a>. If you know how to use 
+<a href="http://subversion.tigris.org/">Subversion</a>, you can use it to
+contribute to it more easily. If not, then 
+<a href="http://svnbook.red-bean.com/">learning how to use it</a>
+will be well worth your time any way you look at it.
+</p>
 
