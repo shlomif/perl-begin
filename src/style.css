@@ -38,6 +38,13 @@ h2 a:hover
 {
     background-color : #ff4f8a ;
 }
+/* Override for the navbar so it won't be highligted as red there */
+.navbar h2 a:hover
+{ 
+    /* LightGreen */
+    background-color : #90EE90; 
+}
+
 h3
 {
     /* LemonChiffon */
