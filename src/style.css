@@ -7,6 +7,8 @@ td.navbar
     border-color : black;
     border-width : thick;
     border-style : double;
+    padding-top : 0.5em;
+    padding-bottom: 0.5em;
 }
 h1, h2, h3
 {
