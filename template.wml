@@ -63,7 +63,7 @@ http://perl-begin.berlios.de/<get-var url />
 
 <define-tag links:group endtag="required">
 <preserve myclass />
-<set-var myclass="<if "<match "%0" "nested" />" "navbarmain" "navbarnested" />" />
+<set-var myclass="<if "<match "%0" "nested" />" "navbarnested" "navbarmain" />" />
 <ul class="<get-var myclass />">
 %body
 </ul>
