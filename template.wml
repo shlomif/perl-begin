@@ -71,10 +71,10 @@ http://perl-begin.berlios.de/<get-var url />
 <preserve url />
 <set-var %attributes />
 <ifeq "<get-var url />" "" 
-    "" 
-    "<set-var url="?<get-var url />" />" 
+    "<set-var url="/Main/HomePage" />" 
+    "<set-var url="/<get-var url />" />" 
     />
-<site:link url="cgi-bin/chiq_chaq/chiq.pl" /><get-var url />
+<site:link url="Wiki/pmwiki/pmwiki.php" /><get-var url />
 <restore url />
 </define-tag>
 
