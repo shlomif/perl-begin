@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -fr Beginners
-svn export http://localhost:8080/svn/repos/Docs/Perl/sites/Beginners/
+svn export http://opensvn.csie.org/perlbegin/perl-begin/trunk/ Beginners
 date="$(date +%Y-%m-%d)"
 test -e last_date && old_date="$(cat last_date)"
 test -e rev && rev="$(cat rev)"
