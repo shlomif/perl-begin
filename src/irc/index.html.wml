@@ -7,9 +7,12 @@
 <p>
 IRC stands for Internet Relay Chat, and it is a distributed, real-time form
 of communication, that was common from relatively early in the history of
-the Internet and is still very popular. IRC servers form a network of servers,
-and each network is separated from the other networks. This allows chat-rooms
-(called channels in IRC-jargon) with same name to exist in different networks.
+the Internet and is still very popular. IRC servers form networks of servers
+- each network is separated from the other networks and the servers of each
+network share the same chat-rooms, user profiles and messages. Each network
+has different rules and conventions and a different culture. This allows 
+chat-rooms (called channels in IRC-jargon) with the same name to exist in 
+different networks.
 </p>
 
 <p>
