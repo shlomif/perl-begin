@@ -11,128 +11,127 @@ my $hosts =
 my $tree_contents =
 {
     'host' => "berlios",
-    'value' => "Perl Beginners' Site",
+    'text' => "Perl Beginners' Site",
     'title' => "A useful Portal for People New to Perl",
-    'expand_re' => "",
     'subs' =>
     [
         {
-            'value' => "Home",
+            'text' => "Home",
             'url' => "",
         },
         {
-            'value' => "About",
+            'text' => "About",
             'url' => "about.html",
         },
         {
-            'value' => "News",
+            'text' => "News",
             'url' => "news/",
             'title' => "Previous News Item",
         },
         {
-            'value' => "Online Tutorials",
+            'text' => "Online Tutorials",
             'url' => "tutorials/",
             'subs' =>
             [
                 {
-                    'value' => "In Other Languages",
+                    'text' => "In Other Languages",
                     'url' => "tutorials/localized/",
                     'title' => "Tutorials in languages other than English",
                 },
             ],
         },
         {
-            'value' => "Books",
+            'text' => "Books",
             'url' => "books/",
             'subs' =>
             [
                 {
                     'url' => "books/advanced/",
-                    'value' => "Advanced Books",
+                    'text' => "Advanced Books",
                     'title' => "Books that contain more information about Perl than the basics",
                 },
                 {
                     'url' => "books/topics/",
-                    'value' => "Topic-related Books",
+                    'text' => "Topic-related Books",
                     'title' => "Books that cover certain topics in detail",
                 },
             ],
         },
         {
             'url' => "core-doc/",
-            'value' => "Core Documentation",
+            'text' => "Core Documentation",
         },
         {
             'url' => "articles/",
-            'value' => "Article Collections",
+            'text' => "Article Collections",
         },
         {
             'separator' => 1,
             'skip' => 1,
         },
         {
-            'value' => "Mailing Lists",
+            'text' => "Mailing Lists",
             'url' => "mailing-lists/",
             'title' => "Ask questions and receive answers about Perl by E-mail",
         },
         {
-            'value' => "Web Forums",
+            'text' => "Web Forums",
             'url' => "web-forums/",
             'title' => "Ask questions and receive answers by using a web-browser",
         },
         {
-            'value' => "IRC Channels",
+            'text' => "IRC Channels",
             'url' => "irc/",
             'title' => "Chat online about Perl using the Internet Relay Chat (IRC)",
         },
         {
-            'value' => "Site Resources",
+            'text' => "Site Resources",
             'url' => "site-resources/",
             'role' => "header",
             'show_always' => 1,
             'subs' =>
             [
                 {
-                    'value' => "Mailing List",
+                    'text' => "Mailing List",
                     'url' => "site-resources/mailing-list/",
                     'title' => "A mailing list for helping Beginners",
                 },
                 {
-                    'value' => "Wiki",
+                    'text' => "Wiki",
                     'title' => "A sub-site that can be freely edited with any information",
                     'url' => "site-resources/wiki/",
                 },
                 {
-                    'value' => "Web Forum",
+                    'text' => "Web Forum",
                     'url' => "site-resources/web-forum/",
                     'title' => "A web-based forum where you can post messages",
                 },
             ],
         },
         {
-            'value' => "Platforms",
+            'text' => "Platforms",
             'url' => "platforms/",
             'role' => "header",
             'show_always' => 1,
             'subs' =>
             [
                 {
-                    'value' => "Mac OS",
+                    'text' => "Mac OS",
                     'url' => "platforms/mac/",
                     'title' => "Macintosh and PowerPC/PowerMac Platforms",
                 },
                 {
-                    'value' => "UNIX/Linux",
+                    'text' => "UNIX/Linux",
                     'url' => "platforms/unix/",
                 },
                 {
-                    'value' => "Windows",
+                    'text' => "Windows",
                     'url' => "platforms/windows/",
                 },
             ],
         },
         {
-            'value' => "Uses",
+            'text' => "Uses",
             'url' => "uses/",
             'title' => "Common Uses for Perl",
             'role' => "header",
@@ -140,26 +139,26 @@ my $tree_contents =
             'subs' =>
             [
                 {
-                    'value' => "Bio-Informatics",
+                    'text' => "Bio-Informatics",
                     'url' => "uses/bio-info/",
                 },
                 {
-                    'value' => "QA and Testing",
+                    'text' => "QA and Testing",
                     'url' => "uses/qa/",
                 },
                 {
-                    'value' => "Sys Admin",
+                    'text' => "Sys Admin",
                     'title' => "Using Perl for System Administration",
                     'url' => "uses/sys-admin/",
                 },
                 {
-                    'value' => "Web/CGI",
+                    'text' => "Web/CGI",
                     'url' => "uses/web/",
                 },
             ],
         },
         {
-            'value' => "Contribute",
+            'text' => "Contribute",
             'url' => "contribute/",
             'title' => "Contribute new content or corrections to this site",
             'role' => "header",
@@ -167,7 +166,7 @@ my $tree_contents =
             'subs' =>
             [
                 {
-                    'value' => "Site's Source Code",
+                    'text' => "Site's Source Code",
                     'url' => "source/",
                 },
             ],

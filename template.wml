@@ -2,32 +2,20 @@
 
 <:{
 use MyNavData;
-use Shlomif::NavMenu;
+use HTML::Widgets::NavMenu::HeaderRole;
 
 my $filename = "$(FILENAME)";
 $filename =~ s!index\.html$!!;
 $filename = "/$filename";
 
-my $nav_bar = Shlomif::NavMenu->new(
+my $nav_bar = HTML::Widgets::NavMenu::HeaderRole->new(
     'path_info' => $filename,
     'current_host' => "berlios",
     MyNavData::get_params(),
+    'ul_classes' => [ "navbarmain", ("navbarnested") x 10 ],
     );
 
-my $rendered_results = 
-        $nav_bar->render(
-            no_ie => 'true',
-            styles => 
-            {
-                'bar' => 'nav',
-                'level0' => 'navbarmain',
-                'level1' => 'navbarnested',
-                'level2' => "navbarnested",
-                'level3' => "navbarnested",
-                'level4' => "navbarnested",
-                'list' => "navbarmain",
-            },
-            );
+my $rendered_results = $nav_bar->render();
 
 use vars qw($nav_links);
 
@@ -55,8 +43,10 @@ $nav_html = $rendered_results->{html};
 <:{
 use CGI qw();
 
-while (my ($key, $url) = each(%$nav_links))
+my @keys = (sort { $a cmp $b } keys(%$nav_links));
+foreach my $key (@keys)
 {
+    my $url = $nav_links->{$key};
     print "<link rel=\"$key\" href=\"" . CGI::escapeHTML($url) . "\" />\n"
 }
 }:>
