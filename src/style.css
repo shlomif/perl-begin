@@ -1,8 +1,13 @@
 body { font-family : sans-serif }
-a:hover, img.highlight:hover { background-color : lightgreen }
+a:hover, img.highlight:hover 
+{ 
+    /* LightGreen */
+    background-color : #90EE90; 
+}
 td.navbar 
 { 
-    background-color: Moccasin;
+    /* Moccasin: FFE4B5 */
+    background-color: #FFE4B5;
     width : 20% ; 
     border-color : black;
     border-width : thick;
@@ -19,7 +24,10 @@ h1, h2, h3
 }
 h1
 {
-    background-color : MediumOrchid;
+    /* A colour like MediumOrchid only lighter and with less 
+       saturation.
+       */
+    background-color : #e187f7;
 }
 h2
 {
@@ -32,7 +40,8 @@ h2 a:hover
 }
 h3
 {
-    background-color : lemonchiffon;
+    /* LemonChiffon */
+    background-color : #FFFACD;
     margin-right : 3em;
 }
 
@@ -85,7 +94,8 @@ div.bookinfo
 { 
     border-style : dotted;
     border-width : thin;
-    background-color : lightyellow;
+    /* LightYellow */
+    background-color : #FFFFE0;
     margin-left : 1em;
     margin-right : 1em;
     padding-left : 1em;
