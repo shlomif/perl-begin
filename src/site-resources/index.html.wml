@@ -10,7 +10,7 @@ One can find other mailing lists in our
 <a href="$(ROOT)/mailing-lists/">mailing lists</a> section.
 </p>
 
-<h2><a href="<site:link url="cgi-bin/chiq_chaq/chiq.pl" />">Wiki</a></h2>
+<h2><a href="<wiki:link />">Wiki</a></h2>
 
 <p>
 This is a portion of the site in which anyone can edit any page. It aims
