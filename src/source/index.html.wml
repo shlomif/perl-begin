@@ -9,7 +9,7 @@ source code (that requires WML, GNU make, GNU bash and a GNU
 system to be built) can be found on this page.
 </p>
 
-<h2><a href="./arcs/$(ARCNAME)">Get the Latest Source Code</a></h2>
+<h2 class="plain"><a href="./arcs/$(ARCNAME)">Get the Latest Source Code</a></h2>
 
 <h2>Version Control Repository</h2>
 

@@ -44,7 +44,14 @@ div.rightalign { text-align : right }
     http://www.zvon.org/xxl/CSS2Tutorial/Examples/example3.html
 */
 td.main { padding-left : 1em ; margin-left : 1em }
-h2.plain{ color : black ; border : none ; font-family : serif }
+
+h2.plain
+{ 
+    color : black ; 
+    border : none ; 
+    font-family : serif; 
+    background: transparent;
+}
     
 /* Make sure it is not underlined when inside a boxed heading */
 h2 a,h3 a
