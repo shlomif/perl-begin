@@ -130,6 +130,8 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <links:group>
 <li><navbarlink "" "Home" /></li>
 <li><navbarlink "about.html" "About" /></li>
+<li><navbarlink "news/" "News" 
+    title="News about new things in this site" /></li>
 <li><navbarlink "tutorials/" "Online Tutorials" />
 <if "<navbar:menu:is:tutorials />" "<br /><navbar:menu:tutorials />" />
 </li>

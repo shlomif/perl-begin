@@ -110,3 +110,16 @@ div.bookinfo
     padding-top : 0.3em;
 }
 tt { color : #8A2BE2 /* The BlueViolet Color */ }
+.news
+{
+    /* LightYellow */
+    background-color : #FFFFE0;
+    float : right;
+    width : 20%;
+    margin-left : 0.5em;
+    margin-bottom : 1em;
+    border-color : black;
+    border-width : thick;
+    border-style : double;
+}
+

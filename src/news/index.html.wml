@@ -1,0 +1,18 @@
+#include '../template.wml'
+
+<subject "Perl Beginners' Site - News" />
+
+<h2><a name="news_29_Feb_2004">29-February-2004: New Wiki</a></h2>
+
+<p>
+We now have <a href="<wiki:link />">a new Wiki with a better 
+implementation</a>. The previous wiki was dumped because it was a Java Script
+hell and was quite lame in its conventions. The newer wiki implementation 
+(<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)
+is much better in this and other regards.
+</p>
+
+<p>
+All the content from the old wiki was transferred to the new one. We hope
+you'd like it better.
+</p>
