@@ -15,7 +15,7 @@
 </td>
 <td valign="top" class="main">
 <h1>{#LATEMP_SUBJECT_LOC#}</h1>
-{#BODY#}
+{#LATEMP_BODY#}
 
 </td>
 </tr>
@@ -29,5 +29,5 @@
 </html>
 
 #   per default we are in body
-{#BODY#:
+{#LATEMP_BODY#:
 
