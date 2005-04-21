@@ -3,4 +3,6 @@
 <define-tag email:link>
 <a href="mailto:%0">%0</a>
 </define-tag>
+<latemp_lang "en-US" />
+<latemp_encoding "iso-8859-1" />
 
