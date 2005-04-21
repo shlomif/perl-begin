@@ -1,10 +1,6 @@
 # #use wml::des::navbar
 <latemp_init_h_w_navmenu object_class="HTML::Widgets::NavMenu::HeaderRole" />
 
-<define-tag email:link>
-<a href="mailto:%0">%0</a>
-</define-tag>
-
 # The Definition of the page itself
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html 

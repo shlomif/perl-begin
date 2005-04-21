@@ -1,2 +1,6 @@
 #include "latemp/latemp-main.wml"
 
+<define-tag email:link>
+<a href="mailto:%0">%0</a>
+</define-tag>
+
