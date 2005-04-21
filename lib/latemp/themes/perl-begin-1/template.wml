@@ -5,6 +5,7 @@
 </td>
 </tr>
 </define-tag>
+
 <latemp_init_h_w_navmenu object_class="HTML::Widgets::NavMenu::HeaderRole" />
 
 <latemp_html_header standard="xhtml1.0-strict" />
