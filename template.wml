@@ -1,10 +1,46 @@
 #include "latemp/latemp-main.wml"
 
-<define-tag email:link>
-<a href="mailto:%0">%0</a>
-</define-tag>
+
 <latemp_lang "en-US" />
 <latemp_encoding "iso-8859-1" />
 <latemp_author "Shlomi Fish" />
 <latemp_common_keywords "Perl, perl, beginners, newbies, learn, web design, Berlios, system administration, Unix, unix, UNIX, Linux, Shlomi Fish" />
 
+<define-tag email:link>
+<a href="mailto:%0">%0</a>
+</define-tag>
+
+<define-tag rellink whitespace="delete">
+<preserve url />
+<set-var %attributes />
+$(ROOT)/<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag site:link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+http://perl-begin.berlios.de/<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag wiki:link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+<ifeq "<get-var url />" "" 
+    "<set-var url="/Main/HomePage" />" 
+    "<set-var url="/<get-var url />" />" 
+    />
+<site:link url="Wiki/pmwiki/pmwiki.php" /><get-var url />
+<restore url />
+</define-tag>
+
+<define-tag mailing:list:link whitespace="delete">
+https://lists.berlios.de/mailman/listinfo/perl-begin-help
+</define-tag>
+
+<define-tag web:forum:link whitespace="delete">
+http://developer.berlios.de/forum/forum.php?forum_id=2341
+</define-tag>
+
+<define-tag nothing></define-tag>

@@ -4,42 +4,6 @@
 <latemp_html_head_tag />
 <body>
 
-
-<define-tag rellink whitespace="delete">
-<preserve url />
-<set-var %attributes />
-$(ROOT)/<get-var url />
-<restore url />
-</define-tag>
-
-<define-tag site:link whitespace="delete">
-<preserve url />
-<set-var %attributes />
-http://perl-begin.berlios.de/<get-var url />
-<restore url />
-</define-tag>
-
-<define-tag wiki:link whitespace="delete">
-<preserve url />
-<set-var %attributes />
-<ifeq "<get-var url />" "" 
-    "<set-var url="/Main/HomePage" />" 
-    "<set-var url="/<get-var url />" />" 
-    />
-<site:link url="Wiki/pmwiki/pmwiki.php" /><get-var url />
-<restore url />
-</define-tag>
-
-<define-tag mailing:list:link whitespace="delete">
-https://lists.berlios.de/mailman/listinfo/perl-begin-help
-</define-tag>
-
-<define-tag web:forum:link whitespace="delete">
-http://developer.berlios.de/forum/forum.php?forum_id=2341
-</define-tag>
-
-<define-tag nothing></define-tag>
-
 <table summary="Layout Table: The first cell contains a navigation bar, the second the main page" border="0" width="99%">
 <tr>
 <td valign="top" class="navbar" style="width:20%">
