@@ -26,6 +26,11 @@
 <p>
 </p>
 </latemp_affiliations_buttons>
+<latemp_webmaster>
+<p>
+<b>Webmaster:</b> <a href="mailto:shlomif@iglu.org.il">Shlomi Fish - shlomif@iglu.org.il</a>
+</p>
+</latemp_webmaster>
 
 <define-tag email:link>
 <a href="mailto:%0">%0</a>
