@@ -8,7 +8,7 @@
 <tr>
 <td valign="top" class="navbar" style="width:20%">
 
-<:{ print join("\n", @$nav_html); }:>
+<latemp_get_nav_menu_html />
 
 <define-tag validhtml>
 <p>
