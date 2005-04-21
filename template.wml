@@ -1,6 +1,5 @@
 #include "latemp/latemp-main.wml"
 
-
 <latemp_lang "en-US" />
 <latemp_encoding "iso-8859-1" />
 <latemp_author "Shlomi Fish" />
