@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Our Wiki" />
+<latemp_subject "Our Wiki" />
 
 <p>
 A Wiki is a site that can be freely edited by anybody using a web-browser.

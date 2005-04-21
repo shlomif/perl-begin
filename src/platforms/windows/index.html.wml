@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl on Win32" />
+<latemp_subject "Perl on Win32" />
 
 <p>
     Perl can easily run on Windows and makes for a very powerful and free

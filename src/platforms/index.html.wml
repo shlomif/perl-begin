@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl Platforms" />
+<latemp_subject "Perl Platforms" />
 
 <p>
 perl 5 (the most common implementation of the Perl language) was made very 

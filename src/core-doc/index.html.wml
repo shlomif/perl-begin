@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl Core Documentation" />
+<latemp_subject "Perl Core Documentation" />
 
 <h2>Online Documentation</h2>
 

@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "CLAN Links" />
+<latemp_subject "CLAN Links" />
 
 <h2>Documents</h2>
 

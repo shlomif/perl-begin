@@ -1,6 +1,6 @@
 #include "../template.wml"
 
-<subject "Perl Books that cover Specific Topics" />
+<latemp_subject "Perl Books that cover Specific Topics" />
 
 <p>
 Perl has many third-party APIs available on CPAN, many of which interface it

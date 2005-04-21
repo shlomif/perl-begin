@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Links" />
+<latemp_subject "Links" />
 
 <h2>Main Perl Resources</h2>
 

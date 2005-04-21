@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Site's Source Code" />
+<latemp_subject "Site's Source Code" />
 
 <p>
 This site is a static HTML site written in

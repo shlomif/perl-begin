@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl Beginners' Site - About" />
+<latemp_subject "Perl Beginners' Site - About" />
 
 <h2>About</h2>
 

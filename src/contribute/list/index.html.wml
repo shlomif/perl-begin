@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Contributors List" />
+<latemp_subject "Contributors List" />
 
 <dl>
 <dt>

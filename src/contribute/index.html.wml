@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Contribute to the Perl Beginners' Site" />
+<latemp_subject "Contribute to the Perl Beginners' Site" />
 
 <p>
     We feel that the Perl Beginners' Site should be a community site

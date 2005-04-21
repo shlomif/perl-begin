@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "IRC Channels for Perl Q&amp;A" />
+<latemp_subject "IRC Channels for Perl Q&amp;A" />
 
 <h2>What is the IRC?</h2>
 

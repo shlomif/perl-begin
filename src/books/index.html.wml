@@ -2,7 +2,7 @@
 
 #include "../lib/books.wml"
 
-<subject "Paper Books" />
+<latemp_subject "Paper Books" />
 
 <ul>
 <li><a href="#beginners">Books for Beginners</a></li>

@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl for System Administration" />
+<latemp_subject "Perl for System Administration" />
 
 <p>
 Perl can be used to perform or automate system administration tasks

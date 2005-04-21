@@ -1,5 +1,5 @@
 #include '../template.wml'
 
-<subject "Perl for Bio-Informatics" />
+<latemp_subject "Perl for Bio-Informatics" />
 
 <h2>To be filled in.</h2>

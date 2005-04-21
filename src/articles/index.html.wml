@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Collection of Articles" />
+<latemp_subject "Collection of Articles" />
 
 <h2>External Collections of Articles</h2>
 

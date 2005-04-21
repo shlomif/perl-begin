@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Coding Conventions" />
+<latemp_subject "Coding Conventions" />
 
 <ul>
 <li>
