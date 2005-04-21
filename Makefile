@@ -26,7 +26,13 @@ PODS_DESTS_PODS = $(patsubst %,$(TARGET)/%.pod,$(PODS))
 
 SUBDIRS_DEST = $(addprefix $(TARGET)/,$(SUBDIRS))
 
-WML_FLAGS += --passoption=2,-X --passoption=3,-I../lib/ --passoption=7,"-S imgsize" -DROOT~.
+WML_FLAGS += -DLATEMP_THEME=perl-begin-1 -DLATEMP_SERVER=berlios
+
+LATEMP_WML_INCLUDE_PATH =$(shell latemp-config --wml-include-path)
+
+WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
+	--passoption=3,-w -I$(LATEMP_WML_INCLUDE_PATH) -I../ -DROOT~. \
+	-I../lib/ --passoption=7,"-S imgsize"
 
 RSYNC = rsync --progress --verbose --rsh=ssh 
 
@@ -42,7 +48,7 @@ dest:
 	if [ ! -e $@ ] ; then mkdir $@ ; fi
 	
 $(DESTS) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES)
-	(cd src && wml $(WML_FLAGS) -DFILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
+	(cd src && wml $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
 
 $(RAW_FILES_DEST) :: $(TARGET)/% : src/%
 	cp -f $< $@
