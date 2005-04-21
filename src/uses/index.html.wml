@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Common Uses for Perl" />
+<latemp_subject "Common Uses for Perl" />
 
 <p>
 Perl can be used and was utilized for a variety of uses. This section will

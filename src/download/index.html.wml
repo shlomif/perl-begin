@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "CLAN Code Downloads" />
+<latemp_subject "CLAN Code Downloads" />
 
 <h2 class="plain"><a href="./arcs">For Downloads Check here</a></h2>
 

@@ -2,7 +2,7 @@
 
 #include "../lib/books.wml"
 
-<subject "Advanced Books" />
+<latemp_subject "Advanced Books" />
 
 <p>
 These books are recommended as further reading for the Perl programmer

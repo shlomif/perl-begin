@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl for CGI and Web Programming" />
+<latemp_subject "Perl for CGI and Web Programming" />
 
 <p>
 Perl 5 was one of the first available technologies for automating a web-server,

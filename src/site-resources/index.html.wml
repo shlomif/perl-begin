@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Site Resources" />
+<latemp_subject "Site Resources" />
 
 <h2><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Mailing List</a></h2>
 

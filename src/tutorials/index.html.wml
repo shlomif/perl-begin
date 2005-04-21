@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Online Tutorials" />
+<latemp_subject "Online Tutorials" />
 
 <h2>Note</h2>
 

@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Perl on UNIX and Linux Systems" />
+<latemp_subject "Perl on UNIX and Linux Systems" />
 
 <p>
     If you are using a UNIX-compatible system (such as Linux or Solaris), most chances

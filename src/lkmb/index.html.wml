@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "LKMB - The Linux Kernel Module Builder" />
+<latemp_subject "LKMB - The Linux Kernel Module Builder" />
 
 <h2>About</h2>
 <p>

@@ -1,20 +1,7 @@
 <latemp_init_h_w_navmenu object_class="HTML::Widgets::NavMenu::HeaderRole" />
 
 <latemp_html_header standard="xhtml1.0-strict" />
-<head>
-<title>{#SUBJECT_LOC#}</title>
-<link rel="stylesheet" href="$(ROOT)/style.css" type="text/css" />
-<:{
-use CGI qw();
-
-my @keys = (sort { $a cmp $b } keys(%$nav_links));
-foreach my $key (@keys)
-{
-    my $url = $nav_links->{$key};
-    print "<link rel=\"$key\" href=\"" . CGI::escapeHTML($url) . "\" />\n"
-}
-}:>
-</head>
+<latemp_html_head_tag />
 <body>
 
 
@@ -85,7 +72,7 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 
 </td>
 <td valign="top" class="main">
-<h1>{#SUBJECT_LOC#}</h1>
+<h1>{#LATEMP_SUBJECT_LOC#}</h1>
 {#BODY#}
 
 </td>
@@ -98,11 +85,6 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 
 </body>
 </html>
-
-<define-tag subject>
-{#SUBJECT_LOC#:%0:##}
-</define-tag>
-
 
 #   per default we are in body
 {#BODY#:

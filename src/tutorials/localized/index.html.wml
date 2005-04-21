@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "Tutorials in Foreign Languages" />
+<latemp_subject "Tutorials in Foreign Languages" />
 
 <h2><a href="http://lea-linux.org/dev/perl.php3">French Intro to Perl</a></h2>
 

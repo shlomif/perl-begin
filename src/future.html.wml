@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<subject "The Future Vision" />
+<latemp_subject "The Future Vision" />
 
 <p>
 After CLAN is installed on the system it compiles a basic kernel that 
