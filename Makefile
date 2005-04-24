@@ -15,7 +15,7 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-LIBRARY_FILES = template.wml lib/books.wml
+DOCS_COMMON_DEPS = template.wml lib/books.wml
 
 all: latemp_targets
 
