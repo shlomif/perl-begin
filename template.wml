@@ -1,9 +1,13 @@
+<set-var latemp_navmenu_object_class="HTML::Widgets::NavMenu::HeaderRole" />
+<set-var latemp_with_xml_declaration="1" />
+<set-var latemp_html_standard="xhtml1.0-strict" />
 #include "latemp/latemp-main.wml"
 
 <latemp_lang "en-US" />
 <latemp_encoding "iso-8859-1" />
 <latemp_author "Shlomi Fish" />
 <latemp_common_keywords "Perl, perl, beginners, newbies, learn, web design, Berlios, system administration, Unix, unix, UNIX, Linux, Shlomi Fish" />
+<latemp_meta_desc "Perl Beginners' Site - a Portal for Perl Beginners" />
 <latemp_affiliations_buttons>
 <p>
 <a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=0&amp;t=70"><img 
