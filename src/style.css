@@ -4,7 +4,7 @@ body { font-family : sans-serif }
     /* LightGreen */
     background-color : #90EE90; 
 }
-td.navbar 
+.navbar 
 { 
     /* Moccasin: FFE4B5 */
     background-color: #FFE4B5;
@@ -14,7 +14,7 @@ td.navbar
     border-style : double;
     padding-top : 0.5em;
     padding-bottom: 0.5em;
-    padding-left : 0.2em;
+    padding-left : 0.5em;
 }
 h1, h2, h3
 {
@@ -53,7 +53,7 @@ h3
     margin-right : 3em;
 }
 
-td.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
+.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
 p.desc { margin-left : 3em }
 ul.navbarmain { padding-left : 1em ; margin-left : 1em ; font-size : 90%}
 ul.navbarnested { padding-left : 0em ; margin-left : 2em }
