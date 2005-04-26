@@ -123,4 +123,8 @@ tt { color : #8A2BE2 /* The BlueViolet Color */ }
     border-width : thick;
     border-style : double;
 }
+.bless
+{
+    border : none;
+}
 
