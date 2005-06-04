@@ -16,7 +16,9 @@ If you prefer a tutorial in something else besides English, check the
 <a href="./localizes/">foreign languages page</a>
 </p>
 
-<h2><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h2>
+<h2>Our List of Tutorials</h2>
+
+<h3><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
 
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online. 
@@ -25,8 +27,8 @@ at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
 
-<h2><a href="http://vipe.technion.ac.il/~shlomif/lecture/Perl/Newbies/">Haifux'
-Perl for Perl Newbies Series</a></h2>
+<h3><a href="http://vipe.technion.ac.il/~shlomif/lecture/Perl/Newbies/">Haifux'
+Perl for Perl Newbies Series</a></h3>
 
 <p>
 Intended for People with basic knowledge of C or something similar or even no 
@@ -36,7 +38,7 @@ without too many "other ways to do it". (you are still expected to read the
 man pages after the second lecture)
 </p>
 
-<h2><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h2>
+<h3><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
 
 <p>
 A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a> 
@@ -44,15 +46,15 @@ and others. Does not cover modules and objects, but should get you started
 on simple scripts.
 </p>
 
-<h2><a href="http://archive.ncsa.uiuc.edu/General/Training/PerlIntro/">Perl Intro from NCSA</a></h2>
+<h3><a href="http://archive.ncsa.uiuc.edu/General/Training/PerlIntro/">Perl Intro from NCSA</a></h3>
 
 <p>
 Another tutorial which simplifies things considerably. Leaves out many caveats
 and simply wishes to get you started. Does not cover modules and objects.
 </p>
 
-<h2><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
-Beginners Introduction to Perl</a></h2>
+<h3><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
+Beginners Introduction to Perl</a></h3>
 
 <p>
 A 6-part tutorial that covers the basics without too many details. Again, 
@@ -60,19 +62,24 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
-<h2><a href="http://cs.haifa.ac.il/~shlomo/perl/">Haifa University Perl Course</a></h2>
+<h3><a href="http://cs.haifa.ac.il/~shlomo/perl/">Haifa University Perl Course</a></h3>
 
 <p>
 A perl course with online slides.
 </p>
 
+<h2>Other Lists</h2>
 
-<h2><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h2>
+<h3><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h3>
 
 <p>
 Links to many other online tutorials.
 </p>
 
+<h3><a href="http://www.perl.com/cs/user/query/q/6?id_topic=74">Perl.com's
+List of Perl Tutorials</a></h3>
 
-
+<p>
+A comprehensive list of Perl tutorials.
+</p>
 
