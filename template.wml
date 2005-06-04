@@ -16,7 +16,7 @@
 </latemp_affiliations_buttons>
 <latemp_webmaster>
 <p>
-<b>Webmaster:</b> <a href="mailto:shlomif@iglu.org.il">Shlomi Fish - shlomif@iglu.org.il</a>
+<b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href="mailto:shlomif@iglu.org.il">Email - shlomif@iglu.org.il</a>)
 </p>
 </latemp_webmaster>
 
@@ -25,7 +25,7 @@
 <!-- Creative Commons License -->
 <a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img 
 alt="Creative Commons License"
-src="$(ROOT)/images/somerights20.png" /></a><br />
+src="$(ROOT)/images/somerights20.png" class="bless" /></a><br />
 This work is licensed under a <a rel="license" 
 href="http://creativecommons.org/licenses/by/2.0/">Creative Commons 
 License</a>.
