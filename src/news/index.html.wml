@@ -2,6 +2,19 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2><a name="news_06_Jun_2005">06-June-2005: Wiki Restored</a></h2>
+
+<p>
+The <a href="<wiki:link />">Wiki</a> was heavily spammed and so was taken
+off. Now, a new wiki was set up with a better implementation - 
+<a href="http://wikipedia.sourceforge.net/">MediaWiki</a>, and now we monitor
+the RSS feed and use other measurements to prevent Spam.
+</p>
+
+<p>
+All the content of the old wiki was restored.
+</p>
+
 <h2><a name="news_29_Feb_2004">29-February-2004: New Wiki</a></h2>
 
 <p>
