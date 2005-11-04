@@ -10,7 +10,7 @@
 <li><a href="./topics/">Books for Learning about Specialized Technologies</a></li>
 </ul>
 
-<h2><a name="beginners">Note</a></h2>
+<h2 id="beginners">Note</h2>
 
 <p>
 It is not absolutely necessary to read an organized book to learn Perl. But 
