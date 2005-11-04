@@ -4,12 +4,14 @@
 
 <p>
 This site is a static HTML site written in
-<a href="http://thewml.org/">Web Meta Language</a>. Its self-contained
-source code (that requires WML, GNU make, GNU bash and a GNU
-system to be built) can be found on this page.
+<a href="http://thewml.org/">Web Meta Language</a> and 
+<a href="http://web-cpan.berlios.de/latemp/">Latemp</a>. Its 
+source code (that requires WML, Latemp, 
+<a href="http://www.gnu.org/software/make/">GNU 
+make</a>, <a href="http://www.gnu.org/software/bash/bash.html">GNU 
+bash</a> and a GNU system to be built) can be found in its version control
+repository.
 </p>
-
-<h2 class="plain"><a href="./arcs/$(ARCNAME)">Get the Latest Source Code</a></h2>
 
 <h2>Version Control Repository</h2>
 
@@ -18,7 +20,7 @@ The most up-to-date source code for this site is now hosted in
 <a href="http://opensvn.csie.org/perlbegin/perl-begin/trunk/">its own
 Subversion repository</a>. If you know how to use 
 <a href="http://subversion.tigris.org/">Subversion</a>, you can use it to
-contribute to it more easily. If not, then 
+contribute to it more easily. If not, then
 <a href="http://svnbook.red-bean.com/">learning how to use it</a>
 will be well worth your time any way you look at it.
 </p>
