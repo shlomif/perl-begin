@@ -16,18 +16,25 @@ body { font-family : sans-serif }
     padding-top : 0.5em;
     padding-bottom: 0.5em;
     padding-left : 0.5em;
+    padding-right: 0.5em;
 }
 .main 
 {
-    padding-left : 1em;
+    padding-left : 10pt;
     margin-left : 24%;
+}
+.main p, .main ul, .main ol, .main dl
+{
+    margin-left: 14pt;
+    margin-right: 14pt;
 }
 h1, h2, h3
 {
     font-family : serif;
     border-style : solid ; 
     border-width : thin;
-    padding-left: 0.2em;
+    padding-left: 4pt;
+    padding-right: 4pt;
 }
 h1
 {
@@ -68,12 +75,6 @@ p.newsitem { margin-left : 6em }
 div.indent { margin-left : 3em }
 p.indent { margin-left : 3em  }
 div.rightalign { text-align : right }
-/*
-    Make sure the links inside the navigation bar are highlited
-    with a different colour. That's CSS 2.
-    http://www.zvon.org/xxl/CSS2Tutorial/Examples/example3.html
-*/
-td.main { padding-left : 1em ; margin-left : 1em }
 
 h2.plain
 { 
