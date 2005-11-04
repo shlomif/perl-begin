@@ -5,7 +5,7 @@
 <h2>Online Documentation</h2>
 
 <p>
-<a href="http://perldoc.perl.org/">Perl-Doc</a> - contains searchable index
+<a href="http://perldoc.perl.org/">Perldoc</a> - contains a searchable index
 for the core perl documentation.
 </p>
 
@@ -38,3 +38,4 @@ after the language is learned to a working extent.
 A book that contains a long list of code snippets for achieving certain tasks 
 in Perl, with some discussion on how they work and how to customize them.
 </p>
+

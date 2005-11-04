@@ -4,40 +4,56 @@
 
 <h2>External Collections of Articles</h2>
 
+<ul>
+<li>
 <p>
-<a href="http://www.perlmeme.org/">perlmeme.org</a> - a site for Perl beginners
+<a href="http://perlmeme.org/">perlmeme.org</a> - a site for Perl beginners
 with FAQs, HOWTOs and Tutorials. Its aim is to answer the question "Where can
 I learn about Perl?".
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://www.stonehenge.com/merlyn/columns.html">Randal L. Schwartz' Newspaper Columns</a> - a collection of articles by Randal L. Schwartz.
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://perl.plover.com/">Mark Jason Dominus' Perl Paraphernalia</a> -
 many articles, some of them quite high-level.
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://www.perl.com/">www.perl.com</a> - articles on Perl that are 
 on advanced or out-of-core topics, but mostly suitable for beginners.
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://www.perladvent.org/">The Perl Advent Calendar</a> - An online 
 calendar that contains articles about Perl.
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://www.theperlreview.com/">The Perl Review</a> - An online 
 journal with articles about Perl.
 </p>
+</li>
 
+<li>
 <p>
 <a href="http://articles.mongueurs.net/magazines/">Articles by the French Perl Mongers</a> -
 a collection of articles in French, that the French Perl Mongers are writing for the French
 Linux magazine.
 </p>
+</li>
+</ul>
 
 

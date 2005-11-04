@@ -44,7 +44,9 @@ jokes.
 <p>
 This book covers the art and science of working on Perl modules, putting
 them on <a href="http://www.cpan.org/">CPAN</a> and maintaining them. It is
-written in a light style, and makes a very good and easy read.
+written in a light style, and makes a very good and easy read. The book in
+PDF format is <a href="http://www.apress.com/free/">available online for 
+free download and reading.</a> 
 </p>
 
 <h2><a href="http://www.manning.com/Conway/">Object-Oriented Perl</a></h2>

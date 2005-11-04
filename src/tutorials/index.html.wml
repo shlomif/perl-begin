@@ -35,13 +35,13 @@ Intended for People with basic knowledge of C or something similar or even no
 knowledge of any programming language at all. Contains verbose slides filled
 with explanation, examples and anecdotes. Covers a basic subset of Perl, 
 without too many "other ways to do it". (you are still expected to read the
-man pages after the second lecture)
+POD documents after the second lecture)
 </p>
 
 <h3><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
 
 <p>
-A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a> 
+A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a>
 and others. Does not cover modules and objects, but should get you started
 on simple scripts.
 </p>
@@ -82,4 +82,12 @@ List of Perl Tutorials</a></h3>
 <p>
 A comprehensive list of Perl tutorials.
 </p>
+
+<h3><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
+
+<p>
+Several tutorials, "Frequently Asked Questions", and "Howto" documents
+on various subjects.
+</p>
+
 
