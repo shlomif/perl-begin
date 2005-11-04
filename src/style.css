@@ -6,6 +6,7 @@ body { font-family : sans-serif }
 }
 .navbar 
 { 
+    float : left;
     /* Moccasin: FFE4B5 */
     background-color: #FFE4B5;
     width : 20% ; 
@@ -15,6 +16,11 @@ body { font-family : sans-serif }
     padding-top : 0.5em;
     padding-bottom: 0.5em;
     padding-left : 0.5em;
+}
+.main 
+{
+    padding-left : 1em;
+    margin-left : 24%;
 }
 h1, h2, h3
 {
@@ -126,5 +132,24 @@ tt { color : #8A2BE2 /* The BlueViolet Color */ }
 .bless
 {
     border : none;
+}
+.footer
+{
+    clear : both;
+    margin-right : 30px;
+    padding-top: 0.5em;
+}
+/* Workaround to get the <hr /> element at the bottom to properly display 
+   with Konqueror 3.3.x
+   */
+.footer hr
+{
+    width:100%;
+    clear:both;
+}
+.banner
+{
+    text-align: center;
+    margin-bottom: 4pt;
 }
 

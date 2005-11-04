@@ -1,7 +1,7 @@
 
 TARGET = dest
 
-WML_FLAGS += -DLATEMP_THEME=perl-begin-1 -DLATEMP_SERVER=berlios
+WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=berlios
 
 LATEMP_WML_FLAGS =$(shell latemp-config --wml-flags)
 
