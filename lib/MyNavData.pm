@@ -59,7 +59,7 @@ my $tree_contents =
         },
         {
             'url' => "core-doc/",
-            'text' => "Core Documentation",
+            'text' => "Core Docs",
         },
         {
             'url' => "articles/",
@@ -139,8 +139,9 @@ my $tree_contents =
             'subs' =>
             [
                 {
-                    'text' => "Bio-Informatics",
+                    'text' => "Bio-Info",
                     'url' => "uses/bio-info/",
+                    'title' => "Using Perl for Bio-Informatics",
                 },
                 {
                     'text' => "QA and Testing",
