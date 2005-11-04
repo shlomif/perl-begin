@@ -1,8 +1,21 @@
 body { font-family : sans-serif }
+/* 
+This is to make sure the visited links look clear in Konqueror or other
+browsers where they are magenta by default.
+*/
+:visited
+{
+    color: #800080; /* Purple */
+}
 :link:hover, :visited:hover, img.highlight:hover 
 { 
+    /* A Yellow Greenish Color */
+    background-color : #EEFF40; 
+}
+.navbar :link:hover, .navbar :visited:hover, .navbar img.highlight:hover 
+{ 
     /* LightGreen */
-    background-color : #90EE90; 
+    background-color :  #90EE90;
 }
 .navbar 
 { 
@@ -23,10 +36,22 @@ body { font-family : sans-serif }
     padding-left : 10pt;
     margin-left : 24%;
 }
-.main p, .main ul, .main ol, .main dl
+/*
+Tweaks to make the margins and paddings of the elements inside the
+main content better.
+*/
+.main > p, .main > ul, .main > ol, .main > dl
 {
     margin-left: 14pt;
-    margin-right: 14pt;
+    margin-right: 14pt;    
+}
+.main > ul, .main > ol, .main > dl
+{
+    padding-left: 14pt;
+}
+.main > ul > li > p
+{
+    padding-left: 6pt;
 }
 h1, h2, h3
 {
