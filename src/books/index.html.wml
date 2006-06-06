@@ -6,6 +6,8 @@
 
 <ul>
 <li><a href="#beginners">Books for Beginners</a></li>
+<li><a href="#with_prev_knowledge">Books for Those with Previous Programming
+Knowledge</li>
 <li><a href="./advanced/">Books for Learning about More Advanced Parts of the Core Language</a></li>
 <li><a href="./topics/">Books for Learning about Specialized Technologies</a></li>
 </ul>
@@ -82,13 +84,36 @@ an unusual approach of introducing them to Literate Programming as well,
 and using it for creating documentation and better organizing the examples.
 </p>
 
-<h2><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h2>
+<h2 id="with_prev_knowledge">Books for Those with Previous Programming
+Knowledge</h2>
+
+<p>
+These books are intended for people with a solid knowledge of programming in
+at least one other programming language besides Perl, who would like to learn
+Perl.
+</p>
+
+<h3><a href="http://www.greglondon.com/iperl/">Impatient Perl</a></h3>
+
+<p>
+A book for people who need to learn Perl as soon as possible. Its full
+text is also available online for free download.
+</p>
+
+<h3><a href="http://greenteapress.com/perl/">Learning Perl the Hard 
+Way</a></h3>
+
+<p>
+Also intended for people who are already familiar with programming, and want
+to learn Perl quickly, and is available online for free download.
+</p>
+
+<h3><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
 
 <book:info
     authors="Steve Oualline"
     publisher="new-riders"
     isbn="073571228X"
-    
     />
 
 <p>
