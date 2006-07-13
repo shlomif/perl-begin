@@ -2,6 +2,22 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_07_Jul_2006">07-July-2006: The wiki is now part of <a href="http://perl.net.au/">perl.net.au</a></h2>
+
+<p>
+The contents of our wiki were integrated into the 
+<a href="http://perl.net.au/">perl.net.au MediaWiki</a> as 
+<a href="http://perl.net.au/wiki/New_to_Perl">its "New to Perl?" section</a>.
+This was done to consolidate the Perl wiki'ing efforts, because there's much
+more action on perl.net.au than there was on our wiki, and for ease of 
+maintenace. Our wiki will be removed soon.
+</p>
+
+<p>
+Also of note is <a href="$(ROOT)/wikis/">a new section of the site on
+Perl-related wikis</a>.
+</p>
+
 <h2 id="news_04_Nov_2005">04-November-2005: Perlmeme.org</h2>
 
 <p>
