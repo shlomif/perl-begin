@@ -4,10 +4,14 @@ TARGET = dest
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=berlios
 
 LATEMP_WML_FLAGS =$(shell latemp-config --wml-flags)
+COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib 
 
 WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 	--passoption=3,-w $(LATEMP_WML_FLAGS) -I../ -DROOT~. \
 	-I../lib/ --passoption=7,"-S imgsize"
+
+TTML_FLAGS += $(COMMON_PREPROC_FLAGS) -I lib
+WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 
 RSYNC = rsync --progress --verbose --rsh=ssh 
 

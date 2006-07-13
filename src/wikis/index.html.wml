@@ -1,0 +1,60 @@
+#include '../template.wml'
+
+<latemp_subject "Wikis for Perl and Perl Beginners" />
+
+<h2>Note</h2>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Wiki">A wiki</a> is a site that the main
+content of its pages be edited by web visitors by using their browsers. Wikis
+allow for a collaborative editing of resources, and for a quick enhancement
+and correction. Perl wikis can provide useful resources of information for
+Perl beginners and other people interested in Perl.
+</p>
+
+<h2>Central Perl Wikis</h2>
+
+<ul>
+<li>
+<a href="http://perl.net.au/">perl.net.au - Wiki for Perl 
+from Perl Australia</a> - a MediaWiki-based Wiki from Perl Australia. See
+<a href="http://perl.net.au/wiki/New_to_Perl">its resources for 
+Beginners</a>.
+</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Perl">Perl at the 
+English Wikipedia</a> - The wikipedia is a multi-lingual world-editable 
+encyclopedia. The Perl Page contains links to other pages inside the wikipedia
+about Perl.
+</li>
+<li>
+<a href="http://en.wikibooks.org/wiki/Programming:Perl">"Programming Perl" in
+the wikibooks</a> - a Book about Perl programming in the Wikibooks project.
+</li>
+</ul>
+
+<h2>Wikis on Specialised Topics</h2>
+
+<ul>
+<li>
+<a href="http://win32.perl.org/wiki/index.php?title=Main_Page">Win32 Perl
+Wiki</a> - a Wiki for Perl on Microsoft Windows.
+</li>
+<li>
+<a href="http://perl-qa.yi.org/">The Perl QA Wiki</a> - wiki about QA (Quality
+Assurance or testing) of Perl and with Perl.
+</li>
+</ul>
+
+<h2>Local Perl Groups' Wikis</h2>
+
+<ul>
+<li>
+<a href="http://wiki.perl.org.il/">Israeli Perl Mongers Wiki</a>. Also see
+<a href="http://wiki.osdc.org.il/">the wiki for the OSDC::Israel 
+conference</a>.
+</li>
+<li>
+<a href="http://pdx.pm.org/kwiki/">Portland Perl Mongers Wiki</a>.
+</li>
+</ul>

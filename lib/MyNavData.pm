@@ -85,6 +85,12 @@ my $tree_contents =
             'title' => "Chat online about Perl using the Internet Relay Chat (IRC)",
         },
         {
+            'text' => "Wikis",
+            'url' => "wikis/",
+            'title' => "Publicly editable sites with Lots of Useful Information",
+        },
+        
+        {
             'text' => "Site Resources",
             'url' => "site-resources/",
             'role' => "header",
