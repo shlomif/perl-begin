@@ -1,4 +1,6 @@
 body { font-family : sans-serif }
+[% SET navbar_width = "20%" %]
+[% PROCESS "shlomif/navbar.ttml" %]
 /* 
 This is to make sure the visited links look clear in Konqueror or other
 browsers where they are magenta by default.
@@ -19,17 +21,11 @@ browsers where they are magenta by default.
 }
 .navbar 
 { 
-    float : left;
     /* Moccasin: FFE4B5 */
     background-color: #FFE4B5;
-    width : 20% ; 
     border-color : black;
     border-width : thick;
     border-style : double;
-    padding-top : 0.5em;
-    padding-bottom: 0.5em;
-    padding-left : 0.5em;
-    padding-right: 0.5em;
 }
 .main 
 {
@@ -93,8 +89,8 @@ h3
 
 .navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
 p.desc { margin-left : 3em }
-ul.navbarmain { padding-left : 1em ; margin-left : 1em ; font-size : 90%}
-ul.navbarnested { padding-left : 0em ; margin-left : 2em }
+ul.navbarmain { font-size : 90%}
+
 h3.newsitem { text-indent: 3em }
 p.newsitem { margin-left : 6em }
 div.indent { margin-left : 3em }
