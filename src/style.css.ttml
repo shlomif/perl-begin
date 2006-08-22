@@ -1,4 +1,9 @@
-body { font-family : sans-serif }
+body 
+{ 
+   font-family : sans-serif;
+   background-image: url(images/coloured-kitten.jpg);
+   background-repeat: y;
+}
 [% SET navbar_width = "20%" %]
 [% PROCESS "shlomif/navbar.ttml" %]
 /* 
@@ -39,7 +44,9 @@ main content better.
 .main > p, .main > ul, .main > ol, .main > dl
 {
     margin-left: 14pt;
-    margin-right: 14pt;    
+    margin-right: 14pt;
+    background-color: #DEF;
+    padding : 3pt;
 }
 .main > ul, .main > ol, .main > dl
 {
@@ -59,10 +66,8 @@ h1, h2, h3
 }
 h1
 {
-    /* A colour like MediumOrchid only lighter and with less 
-       saturation.
-       */
-    background-color : #e187f7;
+    /* A green pastel colour. */
+    background-color : #0B5;       
 }
 h2
 {
@@ -174,4 +179,4 @@ tt { color : #8A2BE2 /* The BlueViolet Color */ }
     text-align: center;
     margin-bottom: 4pt;
 }
-
+[% PROCESS "shlomif/common_defs.ttml" %]
