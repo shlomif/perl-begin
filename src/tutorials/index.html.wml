@@ -27,8 +27,8 @@ at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
 
-<h3><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Haifux'
-Perl for Perl Newbies Series</a></h3>
+<h3><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl 
+Newbies Series</a></h3>
 
 <p>
 Intended for People with basic knowledge of C or something similar or even no 
@@ -38,12 +38,14 @@ without too many "other ways to do it". (you are still expected to read the
 POD documents after the second lecture)
 </p>
 
-<h3><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
+<h3><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc 
+Tutorials</a></h3>
 
 <p>
-A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a>
-and others. Does not cover modules and objects, but should get you started
-on simple scripts.
+The tutorials that ship as part of the perl core. Start with 
+<a href="http://perldoc.perl.org/perlintro.html">perlintro</a> and 
+<a href="http://perldoc.perl.org/index-tutorials.html">then continue with
+other tutorials</a>.
 </p>
 
 <h3><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
@@ -59,6 +61,14 @@ you started.
 
 <p>
 A perl course with online slides.
+</p>
+
+<h3><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
+
+<p>
+A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a>
+and others. Does not cover modules and objects, but should get you started
+on simple scripts.
 </p>
 
 <h2 id="other_lists">Other Lists</h2>
