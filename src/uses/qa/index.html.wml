@@ -2,4 +2,27 @@
 
 <latemp_subject "Perl for Quality Assurance and Testing" />
 
-<h2>To be filled in.</h2>
+<p>
+Perl is commonly used for testing software, hardware, networks and for
+quality assurance. The <a href="http://qa.perl.org/">Perl QA</a> project
+concentractes a lot of information about it. So does
+<a href="http://perl-qa.yi.org/index.php/Main_Page">the Perl QA Wiki</a>.
+</p>
+
+<h2>Tutorials and Courses</h2>
+
+<ul>
+
+<li>
+<a href="http://www.szabgab.com/talks/perl_in_testing/">Testing with Perl</a> -
+complete online slides for the course by 
+<a href="http://www.szabgab.com/">Gabor Szabo</a>.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/Test-Simple/lib/Test/Tutorial.pod">Test::Tutorial</a> -
+introduces writing tests with the Perl test modules. 
+</li>
+
+</ul>
+
