@@ -80,7 +80,13 @@ body {
 }
 
 .site-slogan  {
-	float: left; position: absolute; z-index: 2; width: 11.7em; top: 1.9em; left: 16px; margin: 0px; padding: 0px 3px 1px 3px; background-color: rgb(150,150,150);	color: rgb(225,225,225); font-weight: bold; font-size: 14px;
+	float: left; position: absolute; z-index: 2; width: 20em; top: 3em; left: 16px; margin: 0px; padding: 0px 3px 1px 3px; background-color: rgb(150,150,150);	color: rgb(225,225,225); font-weight: bold; font-size: 14px;
+}
+
+.site-name h1 {
+    font-size: x-large;
+    padding: 0;
+    margin: 0;
 }
 
 .img-header {

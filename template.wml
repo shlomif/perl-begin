@@ -37,9 +37,9 @@
 
     <!-- Sitename and Banner -->
     <div class="site-name">
-      Your Sitename.
+      <latemp_default_h1_tag />
       <div class="site-slogan">
-        Your slogan.
+        Perl - because programming should be fun.
       </div>
     </div>                 
     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
