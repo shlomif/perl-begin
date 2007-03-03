@@ -119,8 +119,15 @@ body {
 	clear: both; float: left; width: 160px; margin: 0px; padding: 0px;
 }
 
-.img-sidebanner {
-	width: 160px; margin: 0px; padding: 0px; border: none;
+.navbar-sidebanner {
+	width: 160px; 
+    margin: 0px; 
+    padding: 0px; 
+    border: none;
+}
+
+.navbar-sidebanner {
+    margin-top: 20pt;
 }
 
 /******************************/
@@ -1035,4 +1042,8 @@ hr {
 
 br {
 	clear: both;
+}
+
+.navbarmain {
+    clear:left;
 }

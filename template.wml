@@ -1,4 +1,12 @@
+<set-var latemp_with_xml_declaration="1" />
+<set-var latemp_html_standard="xhtml1.1" />
+<set-var latemp_with_head_meta_tags="1" />
+<set-var latemp_with_favicon="1" />
+
 #include "latemp/latemp-prelude.wml"
+
+<latemp_lang "en-US" />
+<latemp_encoding "utf-8" />
 <latemp_init_h_w_navmenu />
 
 <latemp_html_header />
@@ -50,7 +58,9 @@
     <h3 class="hide">Sub-Navigation</h3>
     <div class="sidebanner-frontpage">
     <div class="buffer"></div>
-      <img class="img-sidebanner" src="$(ROOT)/images/sidebanner.jpg" alt=""/>
+      <div class="navbar-sidebanner">
+      <latemp_get_nav_menu_html />
+      </div>
     </div>
 
     <!-- WRAP CONTENT AND SIDEBAR -->
