@@ -121,13 +121,13 @@ body {
 
 .navbar-sidebanner {
 	width: 160px; 
-    margin: 0px; 
-    padding: 0px; 
+    margin: 20pt 5pt 20pt 5pt; 
     border: none;
 }
 
-.navbar-sidebanner {
-    margin-top: 20pt;
+.navbar-sidebanner ul {
+    padding-left:0;
+    margin-left:2em;
 }
 
 /******************************/
