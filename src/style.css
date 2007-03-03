@@ -1,0 +1,1038 @@
+/*****************************************************/
+/*   Design:  GoFlexiblePro                          */
+/*            Stylesheet for screen rendering        */
+/*---------------------------------------------------*/
+/*   Author:  G. Wolfgang                            */
+/*   Email:   gw@actamail.com                        */
+/*   Date:    April 14, 2006                         */
+/*---------------------------------------------------*/
+/*   You can use this stylesheet freely under the    */
+/*   condition of giving proper author credits.      */
+/*---------------------------------------------------*/
+/*   Check out my favorite website: www.sda.org      */
+/*****************************************************/
+
+/*-----------------------------------------------------------------------*/
+/* REMARK: FONT-SIZE DEFINITIONS                                         */
+/*-----------------------------------------------------------------------*/
+/* Relative font-sizes in "em" are used where necessary. To make the     */
+/* "em"-units normed, the incoming font sizes are set to 1.0 em. The     */
+/* font-size variations throughout the webpage are then expressed in     */
+/* percentage values respective to the incoming font-size. To make       */
+/* calculations easier, the font definition in "body" is such that       */
+/* 1.0em = 10px. This makes life a real breeze!                          */
+/*-----------------------------------------------------------------------*/
+
+/*************************/
+/* SECTION 1 - MAIN BODY */
+/*************************/
+
+/*-------------------------------*/
+/* Section 1.1 - Page definition */
+/*-------------------------------*/
+
+body {
+	font-size: 62.5%; margin: 0em auto; padding: 0em; background: url(./images/background.gif) top center repeat-y; font-family: "trebuchet ms", verdana, arial, sans-serif;
+}
+
+#page-container {
+	width: 780px; margin: 0px auto; padding: 0px; border-left: solid 1px rgb(150,150,150); border-right: solid 1px rgb(150,150,150); background-color: rgb(237,237,237);
+}
+
+/**********************/
+/* SECTION 2 - HEADER */
+/**********************/
+
+/*--------------------------------------*/
+/* Section 2.1 - Global navigation menu */
+/*--------------------------------------*/
+
+.nav-global-container {
+	float: left; position: absolute; z-index: 3; width: 780px; top: 5px; background-color: transparent;
+}
+
+.nav-global ul {	
+	float: right; margin: 0px; padding: 0px; list-style: none;
+}	
+
+.nav-global li {
+	float: left; white-space: nowrap; text-transform: uppercase;
+}
+
+.nav-global li a {
+	display: block; margin: 0px; padding: 0px 5px 0px 5px; border-left: solid 1px rgb(150,150,150); background-color: rgb(255,255,255); color: rgb(150,150,150); text-decoration: none; font-size: 100%;
+}
+
+.nav-global a:hover {
+	background-color: rgb(255,255,255); color: rgb(0,0,0); text-decoration: underline;
+}
+
+.img-flag {
+	display: block; height: 1.2em; margin: 0px; padding: 0px; border: solid 1px rgb(0,0,0);
+}
+
+/*-----------------------------------*/
+/* Section 2.2 - Sitename and Banner */
+/*-----------------------------------*/
+
+.site-name  {
+	clear: both; float: left; position: absolute; z-index: 1; width: 700px; top: 20px; margin: 0px; padding-left: 14px; background-color: transparent; color: rgb(225,225,225); font-weight: bold; font-size: 24px;
+}
+
+.site-slogan  {
+	float: left; position: absolute; z-index: 2; width: 11.7em; top: 1.9em; left: 16px; margin: 0px; padding: 0px 3px 1px 3px; background-color: rgb(150,150,150);	color: rgb(225,225,225); font-weight: bold; font-size: 14px;
+}
+
+.img-header {
+	clear: both; float: left; width: 780px; height: 110px; margin: 0px; padding: 0px;
+}
+
+/*------------------------------------*/
+/* Section 2.3 - Main navigation menu */
+/*------------------------------------*/
+
+.nav-main {
+	clear: both; float: left; width: 780px; margin: 0px; padding: 0px; border-top: solid 1px rgb(125,125,125); border-bottom: solid 1px rgb(125,125,125); background-color: rgb(190,190,190);
+}
+
+.nav-main ul {	
+	list-style: none; margin: 0px; padding: 0px; font-weight: bold;
+}	
+
+.nav-main li {
+	float: left; display: block; white-space: nowrap; background-color: inherit;
+}
+
+.nav-main li a {
+	color: rgb(255,255,255); margin: 0px; padding: 0px 10px 0px 10px; border-right: solid 1px rgb(255,255,255); text-decoration: none; font-size: 130%;		
+}
+
+.nav-main a:hover, .nav-main a.selected {
+	background-color: inherit; color: rgb(110,110,110); text-decoration: none;
+}
+
+/*************************************/
+/* SECTION 3 - FRONT-PAGE SIDEBANNER */
+/*************************************/
+
+.sidebanner-frontpage {
+	clear: both; float: left; width: 160px; margin: 0px; padding: 0px;
+}
+
+.img-sidebanner {
+	width: 160px; margin: 0px; padding: 0px; border: none;
+}
+
+/******************************/
+/* SECTION 4 - SUB-NAVIGATION */
+/******************************/
+
+/*--------------------*/
+/* Section 4.1 - Size */
+/*--------------------*/
+
+.nav-sub {
+	clear: both; min-height: 400px; float: left; width: 160px; margin: 0px; padding: 0px; color: rgb(110,110,110);
+}
+
+/* IE6-hack for min-height. Also works for IE7-Beta2 */
+* html .nav-sub {
+	height: 400px;
+} 
+/* End IE-Hack */
+
+/*--------------------*/
+/* Section 4.2 - Menu */
+/*--------------------*/
+
+.nav-sub ul {	
+	float: left; list-style: none; width: 160px; margin: 0px; padding: 0px; border-bottom: solid 1px rgb(200,200,200);
+}	
+
+.nav-sub li {
+	margin: 0px; padding: 0px;
+}
+
+.nav-sub li.title {
+	vertical-align: top; margin: 0px; padding: 10px 7px 10px 14px; text-transform: uppercase; color: rgb(175,175,175); font-weight: bold; font-size: 140%;
+}
+
+.nav-sub li.group a {
+	display: block; min-height: 1.5em; margin: 0px; padding: 3px 7px 2px 10px; border-top: solid 1px rgb(200,200,200); border-left: solid 5px rgb(235,235,235); text-decoration: none; text-transform: uppercase; font-weight: bold; font-size: 120%;
+}
+
+/* IE6-hack for min-height. Also works for IE7-Beta2 */
+* html .nav-sub li.group a {
+	height: 1.5em;
+}
+/* End IE-Hack */
+	
+.nav-sub li a {
+	display: block; min-height: 1.5em; margin: 0px; padding: 3px 7px 2px 10px; border-left: solid 5px rgb(235,235,235); color: rgb(110,110,110); text-decoration: none; font-size: 120%;
+}
+
+/* IE6-hack for min-height. Also works for IE7-Beta2 */
+* html .nav-sub li a {
+	height: 1.5em;
+}
+/* End IE-Hack */
+
+.nav-sub li.group a:hover, .nav-sub li.group .selected {
+	border-left: solid 5px rgb(175,175,175); background-color: rgb(225,225,225); text-decoration: none;
+}
+
+.nav-sub a:hover, .nav-sub .selected {
+	border-left: solid 5px rgb(175,175,175); background-color: rgb(225,225,225); text-decoration: none;
+}
+
+.nav-sub-align {
+	text-align: left;
+}
+
+/*******************************************************************/
+/* SECTION 5 -  Extend left column height to footer                */
+/*-----------------------------------------------------------------*/
+/* TRICK: To nest the right two columns (content and sidebar) and  */
+/* give them a minimum height and white background. Then let the   */
+/* left column have transparent background so the light-grey color */
+/* from the global page definition comes through. However, nesting  */
+/* floats inside each other with identical widths may activate the */
+/* IE character duplicating bug, where the last characters of the  */
+/* last float statement are duplicated outside the float. The      */
+/* correction for this is to reduce the sidebar float so that the  */
+/* sum of the content and sidebar floats are 6px less than the     */
+/* container holding them. See Section 7.1, where this is done.    */
+/* ----------------------------------------------------------------*/
+/* RESTRICTION: For situations where the left navigation menu is   */
+/* expanding over the minimum 600px height, it must remain smaller */
+/* than the right columns. Otherwise the global page grey back-    */
+/* will shine through after the end of the content and sidebar     */
+/* columns. This situation may arise when you have very long left  */
+/* navigation menus, and short content and sidebars. If this is    */
+/* your situation, then simply increase the minimum height of the  */
+/* left column, as well as the container defined in this section.  */
+/*******************************************************************/
+
+/* Contain both right columns (content and sidebar) in one         */
+/* container and extended to a minimum height of 600 px            */
+/* The "!important" statement is for Firefox so that the           */
+/* "height" statement still allows the container to grow and       */
+/* not remain fixed size. Necessary because IE cannot render       */
+/* the "min-height" property                                       */
+
+.container-content-sidebar {
+   float: left; width: 620px; min-height: 400px; margin: 0px; padding: 0px; background-color: rgb(255,255,255);
+}
+
+/* IE6-hack for min-height. Also works for IE7-Beta2 */
+* html .container-content-sidebar {
+	height: 400px;
+} 
+/* End IE-Hack */
+
+/* Put a buffer between sub-navigation column and      */
+/* main-navigation so that the global page background  */
+/* color does not come through in this place           */
+
+.buffer {
+ 	float: left; width: 160px; height: 20px; margin: 0px; padding: 0px; background-color: rgb(255,255,255);	
+}
+
+/***********************/
+/* SECTION 6 - CONTENT */
+/***********************/
+
+/*--------------------*/
+/* Section 6.1 - Size */
+/*--------------------*/
+
+.content {
+	float: left; width: 425px; margin: 0px; padding: 30px 20px 0px 20px; background-color: rgb(255,255,255);	
+}
+
+/*-------------------------*/
+/* Section 6.2 - Pagetitle */
+/*-------------------------*/
+
+.content-pagetitle {
+	width: 390px; margin: 0px 0px 10px 0px; padding: 0px;
+}
+
+.content-pagetitle p {
+	padding: 0px; margin: 0px; font-weight: bold; font-size: 140%;
+}
+
+/*----------------------------------*/
+/* Section 6.3 - Extra container    */
+/*----------------------------------*/
+/* To ensure that no problems arise */
+/* with right and left floatings    */
+/* and make the implementation      */
+/* robuster.                        */
+/*----------------------------------*/
+
+.contentbox-container-full {
+	 float: left; width: 425px; margin: 0px 0px 1.5em 0px; padding: 0px;
+}
+
+.contentbox-container-left {
+	float: left; width: 205px; margin: 0px 0px 1.5em 0px; padding: 0px;
+}
+
+.contentbox-container-right {
+	float: right; width: 205px; margin: 0px 0px 1.5em 0px; padding: 0px;
+}
+
+/*-----------------------------*/
+/* Section 6.4 - Content title */
+/*-----------------------------*/
+
+.contentbox-title-noshading-noline {
+	display: block; margin: 0px; padding: 0px; background-color: transparent; text-transform: none; font-weight: bold; font-size: 150%;
+}
+
+.contentbox-title-noshading-line {
+	display: block; margin: 0px 0px 0.2em 0px; padding: 0px; border-bottom: solid 2px rgb(135,135,135); background-color: transparent; text-transform: none; font-weight: bold; font-size: 150%;
+}
+
+.contentbox-title-shading {
+  	margin: 0px; padding: 1px 0px 2px 3px; background-color: rgb(225,225,225); font-weight: bold; font-size: 150%;	
+}
+
+/*--------------------------------*/
+/* Section 6.5 - Contentbox size  */
+/*--------------------------------*/
+
+/* No shading */
+.contentbox-noshading {
+	margin: 0px; padding: 0.7em 0px 0px 0px; background-color: transparent;
+}
+
+/* Shading */
+.contentbox-shading {
+	margin: 0px; padding: 7px 10px 5px 10px; background-color: transparent;
+}
+
+/*-------------------------------*/
+/* Section 6.6 - Contentbox text */
+/*-------------------------------*/
+
+/* Heading */
+h1 {
+	clear: left; margin: 1.0em 0px 1.0em 0px; font-weight: bold; font-size: 150%;
+}
+
+h2 {
+	clear: left; margin: 1.5em 0px 1.0em 0px; font-weight: bold; font-size: 140%;
+}
+
+h3 {
+	clear: left; margin: 1.0em 0px 0.6em 0px;	font-weight: bold; font-size: 130%;
+}
+
+h4 {
+	clear: left; margin: 0.5em 0px 0.5em 0px;	font-weight: bold; font-style: italic; font-size: 130%;
+}
+
+/* Paragraph text */
+p {
+   clear: left; margin: 0em 0px 0.5em 0px; padding: 0px; font-size: 130%;
+}
+
+/* Quote */
+p.quote {
+   clear: left; margin: 0em 30px 0.6em 30px;	line-height: 120%; font-size: 120%;
+}
+
+/* Embedded */
+.embed {
+   float: left; width: 120px; margin: 2px 7px 2px 0px; padding: 5px 5px 5px 5px; background-color: rgb(225,225,225); font-style: italic; font-weight: bold;  line-height: 1.2em; font-size: 180%;
+}
+
+.embed-caption {
+   float: left; margin: 5px 0px 0px 0px; padding: 0px; font-style: italic; font-weight: normal; line-height: 1.2em; font-size: 50%;
+}
+
+/* Unordered list */
+.content ul {
+	margin: 0px 10px 0px 10px; padding: 0px 0px 0px 30px; list-style-type: disc; list-style-position: outside; font-size: 130%;
+}
+
+/* Ordered List */
+.content ol {
+	margin: 0px 10px 0px 17px; padding: 0px 0px 0px 30px; list-style-type: decimal; list-style-position: outside; font-size: 130%;
+}
+
+/*--------------------------*/
+/* Section 6.7 - Datatables */
+/*--------------------------*/
+
+.tabledata {
+	clear: left; margin: 0.5em 0px 0.2em 30px; border: solid 1px rgb(150,150,150); empty-cells: show; border-collapse: collapse; background-color: rgb(225,225,225);
+}
+
+.tabledata tr {
+	margin: 0px; padding: 0px;
+}
+
+.tabledata td {
+	padding: 2px 7px 2px 7px; border: solid 1px rgb(150,150,150); text-align: left; font-size: 120%;
+}
+
+.tabledata th {
+	margin: 0px; padding: 2px 7px 2px 7px; border: solid 1px rgb(150,150,150); empty-cells: show; text-align: left; font-size: 120%; 	
+}
+
+p.tabledata-caption {
+	margin: 0em 0px 10px 30px; padding: 0px; clear: both; text-align: left; font-size: 120%;
+}
+
+/*----------------------*/
+/* Section 6.8 - Images */
+/*----------------------*/
+
+/* No border */
+.img-left-noborder {
+	float: left; margin: 0.3em 7px 3px 0px;
+}
+
+.img-right-noborder {
+	float: right; margin: 0.3em 0px 3px 7px;
+}
+
+/* Border */
+.img-left-border {
+	float: left; margin: 0.3em 7px 3px 0px; border: solid 1px rgb(150,150,150);
+}
+
+.img-right-border {
+	float: right; margin: 0.3em 0px 3px 7px; border: solid 1px rgb(150,150,150);	
+}
+
+/***********************/
+/* SECTION 7 - SIDEBAR */
+/***********************/
+
+/*-----------------------------------------------*/
+/* Section 7.1 - Size                            */
+/*-----------------------------------------------*/
+/* Because of IE float-rendering bug, the width  */
+/* must be reduced by 6px, otherwise it will     */
+/* duplicate characters after the last float     */
+/* Reason: IE may not alwys allow nested floats  */
+/* have identical widths, but inside float must  */
+/* be smaller than outside float. This IE-bug is */
+/* somewhat unpredictable. See Section 5 header  */
+/* for more details on this topic.               */
+/*-----------------------------------------------*/
+
+.sidebar {
+	 float: right; width: 144px; margin: 0px ; padding: 57px 5px 0px 0px; background-color: rgb(255,255,255);
+}
+
+/*-----------------------*/
+/* Section 7.2 - Textbox */
+/*-----------------------*/
+
+.sidebarbox-noborder {
+	width: 140px; margin: 0em 0px 1.0em 0px; padding: 0px;
+}
+
+.sidebarbox-border {
+	width: 130px; margin: 0px 0px 1.0em 0px; padding: 4px 4px 4px 4px; border: solid 1px rgb(200,200,200);
+}
+
+/*-----------------------------*/
+/* Section 7.3 - Textbox title */
+/*-----------------------------*/
+
+.sidebarbox-title-noshading-noline {
+	 display: block; margin: 0px 0px 0.5em 0px; padding: 1px 0px 1px 0px;font-weight: bold; font-size: 120%;
+}
+
+.sidebarbox-title-noshading-line {
+	display: block; margin: 0px 0px 0.5em 0px; padding: 1px 0px 1px 0px; border-bottom: solid 1px rgb(135,135,135); background-color: transparent; font-weight: bold; font-size: 120%;
+}
+
+.sidebarbox-title-shading {
+	display: block; margin: 0px 0px 0.5em 0px; padding: 2px 5px 2px 5px; background-color: rgb(225,225,225); font-weight: bold; font-size: 120%;
+}
+
+/*------------------------------*/
+/* Section 7.4 - Paragraph text */
+/*------------------------------*/
+
+.sidebarbox-noborder p {
+	margin: 0px 4px 0.4em 4px; padding: 0px; background-color: transparent; font-size: 110%;
+}
+
+.sidebarbox-border p {
+	margin: 0px 0px 0.4em 0px; padding: 0px; background-color: transparent; font-size: 110%;
+}
+
+/**********************/
+/* SECTION 8 - FOOTER */
+/**********************/
+
+/* Somehow not possible to use percentage values to scale the font-size here. */
+/* Therefore the is the font-size definition given in the generic CSS-class   */
+/* "footer-font", even though those generic font classes should all have a    */
+/* normed size of 1.0em. But making footer an exception will not hurt us.     */
+
+.footer {
+	clear: both; width: 780px; margin: 0em 0px 0px 0px; padding: 5px 0px 5px 0px; border-top: solid 1px rgb(200,200,200); border-bottom: solid 1px rgb(200,200,200); background-color: rgb(255,255,255); text-align: center;	
+}
+
+/***************************************************/
+/* SECTION 9 - HYPERLINKS FOR NON-NAVIGATION TEXTS */
+/***************************************************/
+
+.content a, .sidebar a {
+	color: rgb(0,0,0); text-decoration: underline;
+}
+
+.content a:hover, .sidebar a:hover {
+	color: rgb(110,110,110); text-decoration: none;
+}
+
+.content a:visited, .sidebar a:visited {
+	color: rgb(110,110,110);
+}
+
+.footer a {
+	color: rgb(150,150,150); text-decoration: underline;
+}
+
+.footer a:hover {
+	color: rgb(0,0,0); text-decoration: none;
+}
+
+/********************************/
+/* SECTION 10 - GENERIC CLASSES */
+/********************************/
+
+/*------------------------------------------*/
+/* Section 10.1 - Global default fonts      */
+/*------------------------------------------*/
+/* Only applied to the main div-statements  */
+/* for the basic page regions.              */
+/*------------------------------------------*/
+
+.nav-global-font {
+	font-size: 1.0em;
+}
+
+.nav-main-font {
+	font-size: 1.0em;
+}
+
+.nav-sub-font {
+	font-size: 1.0em;
+}
+
+.content-font {
+	font-size: 1.0em; line-height: 1.7em; color: rgb(110,110,110);
+}
+
+.sidebar-font {
+	font-size: 1.0em; line-height: 1.4em; color: rgb(110,110,110);
+}
+
+/* Percentage value does not work in "footer", so we     */
+/* cannot give the normed size of "1.0em" here and scale */
+/* it up inside the "footer". Thus we define the final   */
+/* font-size here the way it will appear on screen.      */
+.footer-font {
+	font-size: 1.1em; color: rgb(150,150,150);
+}
+
+/*--------------------------------------*/
+/* Section 10.2 - Horizontal alignments */
+/*--------------------------------------*/
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/*-------------------------------------*/
+/* Section 10.3 - Title decoration box */
+/*-------------------------------------*/
+
+.box-on {
+	float: left; width: 1.0em; margin-right: 0.2em; padding-left: 0.3em;
+}
+
+.box-off {
+	display: none;
+}
+
+/*---------------------------*/
+/* Section 10.4  Text colors */
+/*---------------------------*/
+
+/* Basic Colors */
+.txt-white {
+	color: rgb(255,255,255);
+}
+
+.txt-black {
+	color: rgb(0,0,0);
+}
+
+/* Grey */
+.txt-grey01 {
+	color: rgb(242,242,242);
+}
+
+.txt-grey02 {
+	color: rgb(230,230,230);
+}
+
+.txt-grey03 {
+	color: rgb(217,217,217);
+}
+
+.txt-grey04 {
+	color: rgb(204,204,204);
+}
+
+.txt-grey05 {
+	color: rgb(191,191,191);
+}
+
+.txt-grey06 {
+	color: rgb(178,178,178);
+}
+
+.txt-grey07 {
+	color: rgb(153,153,153);
+}
+
+.txt-grey08 {
+	color: rgb(127,127,127);
+}
+
+.txt-grey09 {
+	color: rgb(89,89,89);
+}
+
+.txt-grey10 {
+	color: rgb(51,51,51);
+}
+
+/* Yellow */
+.txt-yellow01 {
+	color: rgb(254,252,232);
+}
+
+.txt-yellow02 {
+	color: rgb(253,249,201);
+}
+
+.txt-yellow03 {
+	color: rgb(253,246,185);
+}
+
+.txt-yellow04 {
+	color: rgb(252,243,162);
+}
+
+.txt-yellow05 {
+	color: rgb(251,239,139);
+}
+
+.txt-yellow06 {
+	color: rgb(250,236,116);
+}
+
+.txt-yellow07 {
+	color: rgb(249,233,93);
+}
+
+.txt-yellow08 {
+	color: rgb(249,230,69);
+}
+
+.txt-yellow09 {
+	color: rgb(248,227,46);
+}
+
+.txt-yellow10 {
+	color: rgb(247,224,23);
+}
+
+/* Blue */
+.txt-blue01 {
+	color: rgb(238,237,249);
+}
+
+.txt-blue02 {
+	color: rgb(222,220,242);
+}
+
+.txt-blue03 {
+	color: rgb(205,202,236);
+}
+
+.txt-blue04 {
+	color: rgb(189,185,229);
+}
+
+.txt-blue05 {
+	color: rgb(172,167,223);
+}
+
+.txt-blue06 {
+	color: rgb(155,149,217);
+}
+
+.txt-blue07 {
+	color: rgb(139,132,210);
+}
+
+.txt-blue08 {
+	color: rgb(122,114,204);
+}
+
+.txt-blue09 {
+	color: rgb(106,97,197);
+}
+
+.txt-blue10 {
+	color: rgb(89,79,191);
+}
+
+/* Green */
+.txt-green01 {
+	color: rgb(237,246,229);
+}
+
+.txt-green02 {
+	color: rgb(220,238,204);
+}
+
+.txt-green03 {
+	color: rgb(202,229,178);
+}
+
+.txt-green04 {
+	color: rgb(185,220,153);
+}
+
+.txt-green05 {
+	color: rgb(167,211,127);
+}
+
+.txt-green06 {
+	color: rgb(149,203,102);
+}
+
+.txt-green07 {
+	color: rgb(132,194,76);
+}
+
+.txt-green08 {
+	color: rgb(114,185,51);
+}
+
+.txt-green09 {
+	color: rgb(97,177,25);
+}
+
+.txt-green10 {
+	color: rgb(79,168,0);
+}
+
+/* Red */
+.txt-red01 {
+	color: rgb(252,235,233);
+}
+
+.txt-red02 {
+	color: rgb(248,216,211);
+}
+
+.txt-red03 {
+	color: rgb(245,196,188);
+}
+
+.txt-red04 {
+	color: rgb(242,177,166);
+}
+
+.txt-red05 {
+	color: rgb(238,157,144);
+}
+
+.txt-red06 {
+	color: rgb(235,137,122);
+}
+
+.txt-red07 {
+	color: rgb(232,118,100);
+}
+
+.txt-red08 {
+	color: rgb(229,98,77);
+}
+
+.txt-red09 {
+	color: rgb(225,79,55);
+}
+
+.txt-red10 {
+	color: rgb(222,59,33);
+}
+
+/*----------------------------------*/
+/* Section 10.5 - Background colors */
+/*----------------------------------*/
+
+/* Basic Colors */
+.bg-white {
+	background-color: rgb(255,255,255);
+}
+
+.bg-black {
+	background-color: rgb(0,0,0);
+}
+
+/* Grey */
+.bg-grey01 {
+	background-color: rgb(242,242,242);
+}
+
+.bg-grey02 {
+	background-color: rgb(230,230,230);
+}
+
+.bg-grey03 {
+	background-color: rgb(217,217,217);
+}
+
+.bg-grey04 {
+	background-color: rgb(204,204,204);
+}
+
+.bg-grey05 {
+	background-color: rgb(191,191,191);
+}
+
+.bg-grey06 {
+	background-color: rgb(178,178,178);
+}
+
+.bg-grey07 {
+	background-color: rgb(153,153,153);
+}
+
+.bg-grey08 {
+	background-color: rgb(127,127,127);
+}
+
+.bg-grey09 {
+	background-color: rgb(89,89,89);
+}
+
+.bg-grey10 {
+	background-color: rgb(51,51,51);
+}
+
+/* Yellow */
+.bg-yellow01 {
+	background-color: rgb(254,252,232);
+}
+
+.bg-yellow02 {
+	background-color: rgb(253,249,201);
+}
+
+.bg-yellow03 {
+	background-color: rgb(253,246,185);
+}
+
+.bg-yellow04 {
+	background-color: rgb(252,243,162);
+}
+
+.bg-yellow05 {
+	background-color: rgb(251,239,139);
+}
+
+.bg-yellow06 {
+	background-color: rgb(250,236,116);
+}
+
+.bg-yellow07 {
+	background-color: rgb(249,233,93);
+}
+
+.bg-yellow08 {
+	background-color: rgb(249,230,69);
+}
+
+.bg-yellow09 {
+	background-color: rgb(248,227,46);
+}
+
+.bg-yellow10 {
+	background-color: rgb(247,224,23);
+}
+
+/* Blue */
+.bg-blue01 {
+	background-color: rgb(238,237,249);
+}
+
+.bg-blue02 {
+	background-color: rgb(222,220,242);
+}
+
+.bg-blue03 {
+	background-color: rgb(205,202,236);
+}
+
+.bg-blue04 {
+	background-color: rgb(189,185,229);
+}
+
+.bg-blue05 {
+	background-color: rgb(172,167,223);
+}
+
+.bg-blue06 {
+	background-color: rgb(155,149,217);
+}
+
+.bg-blue07 {
+	background-color: rgb(139,132,210);
+}
+
+.bg-blue08 {
+	background-color: rgb(122,114,204);
+}
+
+.bg-blue09 {
+	background-color: rgb(106,97,197);
+}
+
+.bg-blue10 {
+	background-color: rgb(89,79,191);
+}
+
+/* Green */
+.bg-green01 {
+	background-color: rgb(237,246,229);
+}
+
+.bg-green02 {
+	background-color: rgb(220,238,204);
+}
+
+.bg-green03 {
+	background-color: rgb(202,229,178);
+}
+
+.bg-green04 {
+	background-color: rgb(185,220,153);
+}
+
+.bg-green05 {
+	background-color: rgb(167,211,127);
+}
+
+.bg-green06 {
+	background-color: rgb(149,203,102);
+}
+
+.bg-green07 {
+	background-color: rgb(132,194,76);
+}
+
+.bg-green08 {
+	background-color: rgb(114,185,51);
+}
+
+.bg-green09 {
+	background-color: rgb(97,177,25);
+}
+
+.bg-green10 {
+	background-color: rgb(79,168,0);
+}
+
+/* Red */
+.bg-red01 {
+	background-color: rgb(252,235,233);
+}
+
+.bg-red02 {
+	background-color: rgb(248,216,211);
+}
+
+.bg-red03 {
+	background-color: rgb(245,196,188);
+}
+
+.bg-red04 {
+	background-color: rgb(242,177,166);
+}
+
+.bg-red05 {
+	background-color: rgb(238,157,144);
+}
+
+.bg-red06 {
+	background-color: rgb(235,137,122);
+}
+
+.bg-red07 {
+	background-color: rgb(232,118,100);
+}
+
+.bg-red08 {
+	background-color: rgb(229,98,77);
+}
+
+.bg-red09 {
+	background-color: rgb(225,79,55);
+}
+
+.bg-red10 {
+	background-color: rgb(222,59,33);
+}
+
+/******************************/
+/* SECTION 11 - MISCELLANEOUS */
+/******************************/
+
+/* Horizontal line */
+hr {
+	clear: both; width: 425px; height: 1px; border: none;
+}
+
+/* HTML-code examples */
+.showcode {
+  font-family: monospace; font-weight: bold; font-size: 13px; color: rgb(255,0,0);
+}
+
+/* Hide HTML-tags. Good when no pagestyle supported by browser */
+.hide {
+	display: none;
+}
+
+br {
+	clear: both;
+}
