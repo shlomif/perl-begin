@@ -1,3 +1,4 @@
+<set-var latemp_navmenu_object_class="HTML::Widgets::NavMenu::HeaderRole" />
 <set-var latemp_with_xml_declaration="1" />
 <set-var latemp_html_standard="xhtml1.1" />
 <set-var latemp_with_head_meta_tags="1" />
@@ -33,9 +34,8 @@
     <div class="nav-global-container">
       <div class="nav-global nav-global-font">
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Impressum</a></li>
+          <li><a href="$(ROOT)/about.html">About Us</a></li>
+          <li><a href="$(ROOT)/contact/">Contact</a></li>
         </ul>
       </div>
     </div>        
@@ -76,7 +76,7 @@
     <div class="content content-font">
 
       <!-- Page title -->    
-      <div class="content-pagetitle"><p>WELCOME -- GoFlexiblePro</p></div>
+      <latemp_default_h1_tag />
       
 ;;;      <div class="contentbox-container-left">
 ;;;        <div class="contentbox-noshading">

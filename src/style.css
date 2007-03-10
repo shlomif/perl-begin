@@ -136,12 +136,21 @@ body {
 
 .navbar-sidebanner ul {
     padding-left:0;
-    margin-left:2em;
+    margin-left:20pt;
+}
+
+.navbar-sidebanner h2 {
+     margin-left: 7pt;
 }
 
 .navbar-sidebanner a:hover {
     color: red; text-decoration: none;
 }
+
+.navbar-sidebanner h2 a {
+    text-decoration: none;
+}
+
 /******************************/
 /* SECTION 4 - SUB-NAVIGATION */
 /******************************/
@@ -337,22 +346,43 @@ body {
 /*-------------------------------*/
 
 /* Heading */
-h1 {
-	clear: left; margin: 1.0em 0px 1.0em 0px; font-weight: bold; font-size: 150%;
+h1 
+{
+	clear: left;
+    margin: 1.0em 0px 1.0em 0px;
+    font-weight: bold;
+    font-size: 200%;
 }
 
-h2 {
-	clear: left; margin: 1.5em 0px 1.0em 0px; font-weight: bold; font-size: 140%;
+h2
+{
+	clear: left;
+    margin: 1.5em 0px 1.0em 0px;
+    font-weight: bold;
+    font-size: 180%;
 }
 
-h3 {
-	clear: left; margin: 1.0em 0px 0.6em 0px;	font-weight: bold; font-size: 130%;
+h3
+{
+	clear: left;
+    margin: 1.0em 0px 0.6em 0px;
+    font-weight: bold;
+    font-size: 160%;
 }
 
-h4 {
-	clear: left; margin: 0.5em 0px 0.5em 0px;	font-weight: bold; font-style: italic; font-size: 130%;
+h4
+{
+	clear: left;
+    margin: 0.5em 0px 0.5em 0px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 130%;
 }
 
+h1, h2, h3, h4
+{
+    color: black;
+}
 /* Paragraph text */
 p {
    clear: left; margin: 0em 0px 0.5em 0px; padding: 0px; font-size: 130%;
@@ -373,13 +403,17 @@ p.quote {
 }
 
 /* Unordered list */
-.content ul {
-	margin: 0px 10px 0px 10px; padding: 0px 0px 0px 30px; list-style-type: disc; list-style-position: outside; font-size: 130%;
+.content ul
+{
+	list-style-type: disc;
+    list-style-position: outside;
 }
 
 /* Ordered List */
-.content ol {
-	margin: 0px 10px 0px 17px; padding: 0px 0px 0px 30px; list-style-type: decimal; list-style-position: outside; font-size: 130%;
+.content ol
+{
+	list-style-type: decimal; 
+    list-style-position: outside;
 }
 
 /*--------------------------*/
