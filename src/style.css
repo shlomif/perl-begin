@@ -36,7 +36,7 @@ body {
 }
 
 #page-container {
-	width: 780px; margin: 0px auto; padding: 0px; border-left: solid 1px rgb(150,150,150); border-right: solid 1px rgb(150,150,150); background-color: rgb(237,237,237);
+	width: 780px; margin: 0px auto; padding: 0px; border-left: solid 1px rgb(150,150,150); border-right: solid 1px rgb(150,150,150); 
 }
 
 /**********************/
@@ -128,7 +128,10 @@ body {
 .navbar-sidebanner {
 	width: 160px; 
     margin: 20pt 5pt 20pt 5pt; 
-    border: none;
+    padding-bottom: 3em;
+    padding-top: 1.5em;
+    background-color: #CCE0FF;
+    border-top: thick solid black;
 }
 
 .navbar-sidebanner ul {
@@ -136,6 +139,9 @@ body {
     margin-left:2em;
 }
 
+.navbar-sidebanner a:hover {
+    color: red; text-decoration: none;
+}
 /******************************/
 /* SECTION 4 - SUB-NAVIGATION */
 /******************************/
@@ -501,11 +507,11 @@ p.tabledata-caption {
 /***************************************************/
 
 .content a, .sidebar a {
-	color: rgb(0,0,0); text-decoration: underline;
+	color: blue; text-decoration: underline;
 }
 
 .content a:hover, .sidebar a:hover {
-	color: rgb(110,110,110); text-decoration: none;
+	color: red; text-decoration: none;
 }
 
 .content a:visited, .sidebar a:visited {
