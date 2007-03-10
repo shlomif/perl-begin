@@ -127,7 +127,7 @@ body {
 
 .navbar-sidebanner {
 	width: 160px; 
-    margin: 20pt 5pt 20pt 5pt; 
+    margin: 20pt 20pt 20pt 5pt; 
     padding-bottom: 3em;
     padding-top: 1.5em;
     background-color: #CCE0FF;
@@ -248,8 +248,14 @@ body {
 /* not remain fixed size. Necessary because IE cannot render       */
 /* the "min-height" property                                       */
 
-.container-content-sidebar {
-   float: left; width: 620px; min-height: 400px; margin: 0px; padding: 0px; background-color: rgb(255,255,255);
+.container-content-sidebar
+{
+   float: left;
+   width: 620px;
+   min-height: 800px;
+   margin: 0px;
+   padding: 0px;
+   background-color: rgb(255,255,255);
 }
 
 /* IE6-hack for min-height. Also works for IE7-Beta2 */
@@ -274,8 +280,13 @@ body {
 /* Section 6.1 - Size */
 /*--------------------*/
 
-.content {
-	float: left; width: 425px; margin: 0px; padding: 30px 20px 0px 20px; background-color: rgb(255,255,255);	
+.content
+{
+	float: left;
+    width: 425px;
+    margin: 0px;
+    padding: 30px 20px 0px 20px;
+    background-color: rgb(255,255,255);	
 }
 
 /*-------------------------*/
@@ -495,6 +506,10 @@ p.tabledata-caption {
 	width: 130px; margin: 0px 0px 1.0em 0px; padding: 4px 4px 4px 4px; border: solid 1px rgb(200,200,200);
 }
 
+.sidebarbox-border ul
+{
+    padding-left: 1.5em;
+}
 /*-----------------------------*/
 /* Section 7.3 - Textbox title */
 /*-----------------------------*/
@@ -1093,3 +1108,29 @@ br {
 .navbarmain {
     clear:left;
 }
+
+/* Added by Shlomi Fish for the Perl Beginners' Site */
+
+div.bookinfo h3
+{
+    border : none;
+    margin-top : 0em;
+    color : green;
+    padding-left : 0em;
+    background-color : transparent;
+}
+
+div.bookinfo 
+{ 
+    border-style : dotted;
+    border-width : thin;
+    /* LightYellow */
+    background-color : #FFFFE0;
+    margin-left : 1em;
+    margin-right : 1em;
+    margin-bottom: 1.5em;
+    padding-left : 1em;
+    padding-bottom : 0.3em;
+    padding-top : 0.3em;
+}
+
