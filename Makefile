@@ -29,7 +29,7 @@ include rules.mak
 upload: upload_berlios
 
 upload_berlios: all
-	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/new-design-Plasu)
+	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
 
 upload_iglu: all
 	(cd dest && $(RSYNC) -r * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
