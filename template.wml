@@ -146,20 +146,6 @@ License</a>.
 
       {#PERL_BEGIN_NEWS#}
 
-      <div class="sidebarbox-border bg-blue02">
-        <div class="sidebarbox-title-shading bg-blue05 txt-white">Check out options!</div>
-        <p>This page shows only the basics of <b>GoFlexiblePro</b>. More options for  layout, picture, color and text, are found under <a href="options.html">Options</a>.</p>
-      </div>                        
-    
-      <div class="sidebarbox-border bg-green02">
-        <div class="sidebarbox-title-shading bg-green05 txt-white">It's free of charge</div>
-        <p>Enjoy the template at no cost. Feel free to retain my name as designer in the footer as a sign of your appreciation.</p>                 
-      </div>      
-  
-      <div class="sidebarbox-border bg-red02">
-        <div class="sidebarbox-title-shading bg-red05 txt-white">Any questions?</div>
-        <p>I am Gerhard, feel free to check one of my <a href="http://www.sda.org">favorite websites</a>. If you have any questions, simply mail me at <a href="mailto:gw@actamail.com">gw@actamail.com</a>.</p>                 
-      </div>      
     </div>
     
     <!-- END WRAP CONTENT AND SIDEBAR -->
