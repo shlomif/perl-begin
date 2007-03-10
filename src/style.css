@@ -1134,3 +1134,7 @@ div.bookinfo
     padding-top : 0.3em;
 }
 
+.footer b
+{
+    color: black;
+}
