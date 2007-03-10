@@ -442,6 +442,7 @@ p.quote {
 {
 	list-style-type: disc;
     list-style-position: outside;
+    font-size: 130%;
 }
 
 /* Ordered List */
@@ -583,12 +584,12 @@ p.tabledata-caption {
 	color: blue; text-decoration: underline;
 }
 
-.content a:hover, .sidebar a:hover {
-	color: red; text-decoration: none;
+.content a:visited, .sidebar a:visited {
+	color: #080; 
 }
 
-.content a:visited, .sidebar a:visited {
-	color: rgb(110,110,110);
+.content a:hover, .sidebar a:hover {
+	color: red; text-decoration: none;
 }
 
 .footer a {
@@ -623,7 +624,7 @@ p.tabledata-caption {
 }
 
 .content-font {
-	font-size: 1.0em; line-height: 1.7em; color: rgb(110,110,110);
+	font-size: 1.0em; line-height: 1.7em; 
 }
 
 .sidebar-font {
