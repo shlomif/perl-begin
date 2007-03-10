@@ -12,10 +12,12 @@ after knowing one or more languages, as well as for people who are learning
 Perl as their first language.
 </p>
 
-<h2><a href="$(ROOT)/news/">News</a></h2>
+<perl_begin_news>
+<div class="sidebarbox-border bg-yellow03">
+<div class="sidebarbox-title-shading bg-yellow07"><a href="$(ROOT)/news/">News</a></div>
 <ul>
 <li>
-07-Jul-06: <a href="$(ROOT)/news/#news_07_Jul_2006">Wiki moved to 
+07-Jul-06: <a href="$(ROOT)/news/#news_07_Jul_2006">Wiki moved to
 perl.net.au</a>.
 </li>
 <li>
@@ -25,6 +27,8 @@ perl.net.au</a>.
 <a href="$(ROOT)/news/">More news...</a>
 </li>
 </ul>
+</div>
+</perl_begin_news>
 
 <h2>What is Perl?</h2>
 
