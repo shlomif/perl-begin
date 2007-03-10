@@ -97,24 +97,49 @@ body {
 /* Section 2.3 - Main navigation menu */
 /*------------------------------------*/
 
-.nav-main {
-	clear: both; float: left; width: 780px; margin: 0px; padding: 0px; border-top: solid 1px rgb(125,125,125); border-bottom: solid 1px rgb(125,125,125); background-color: rgb(190,190,190);
+.nav-main
+{
+	clear: both;
+    float: left;
+    width: 780px;
+    margin: 0px;
+    padding: 0px;
+    border-top: solid 1px rgb(125,125,125);
+    border-bottom: solid 1px rgb(125,125,125);
+    background-color: rgb(190,190,190);
 }
 
-.nav-main ul {	
-	list-style: none; margin: 0px; padding: 0px; font-weight: bold;
+.nav-main ul
+{	
+	list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
 }	
 
-.nav-main li {
-	float: left; display: block; white-space: nowrap; background-color: inherit;
+.nav-main li
+{
+	float: left;
+    display: block;
+    white-space: nowrap;
+    background-color: inherit;
 }
 
-.nav-main li a {
-	color: rgb(255,255,255); margin: 0px; padding: 0px 10px 0px 10px; border-right: solid 1px rgb(255,255,255); text-decoration: none; font-size: 130%;		
+.nav-main li a
+{
+	color: rgb(255,255,255);
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    border-right: solid 1px rgb(255,255,255);
+    text-decoration: none;
+    font-size: 130%;		
 }
 
-.nav-main a:hover, .nav-main a.selected {
-	background-color: inherit; color: rgb(110,110,110); text-decoration: none;
+.nav-main a:hover, .nav-main a.selected
+{
+	background-color: inherit;
+    color: rgb(110,110,110);
+    text-decoration: none;
 }
 
 /*************************************/
