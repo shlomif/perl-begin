@@ -75,18 +75,43 @@ body {
 /* Section 2.2 - Sitename and Banner */
 /*-----------------------------------*/
 
-.site-name  {
-	clear: both; float: left; position: absolute; z-index: 1; width: 700px; top: 20px; margin: 0px; padding-left: 14px; background-color: transparent; color: rgb(225,225,225); font-weight: bold; font-size: 24px;
+.site-name
+{
+	clear: both;
+    float: left;
+    position: absolute;
+    z-index: 1;
+    width: 700px;
+    top: 20px;
+    margin: 0px; 
+    padding-left: 14px;
+    background-color: transparent;
+    color: rgb(225,225,225);
+    font-weight: bold;
+    font-size: 24px;
 }
 
-.site-slogan  {
-	float: left; position: absolute; z-index: 2; width: 20em; top: 3em; left: 16px; margin: 0px; padding: 0px 3px 1px 3px; background-color: rgb(150,150,150);	color: rgb(225,225,225); font-weight: bold; font-size: 14px;
+.site-slogan
+{
+	float: left;
+    position: absolute;
+    z-index: 2;
+    width: 20em;
+    top: 3em;
+    left: 16px;
+    margin: 0px;
+    padding: 0px 3px 1px 3px;
+    background-color: #080;
+    color: rgb(225,225,225);
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .site-name h1 {
-    font-size: x-large;
+    font-size: xx-large;
     padding: 0;
     margin: 0;
+    color: #BB4000;
 }
 
 .img-header {
