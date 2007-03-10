@@ -3,6 +3,7 @@
 <set-var latemp_html_standard="xhtml1.1" />
 <set-var latemp_with_head_meta_tags="1" />
 <set-var latemp_with_favicon="1" />
+<set-var latemp_with_breadcrumbs_trail="1" />
 
 #include "latemp/latemp-prelude.wml"
 
@@ -22,6 +23,10 @@
 
 <define-tag perl_begin_news endtag="required" whitespace="delete">
 {#PERL_BEGIN_NEWS#:%body:##}
+</define-tag>
+
+<define-tag latemp_theme_breadcrumbs_trail_html>
+<latemp_get_breadcrumbs_trail_unconditionally />
 </define-tag>
 
 
@@ -105,17 +110,13 @@ License</a>.
     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
     
     <!-- Main navigation -->                    
-    <h3 class="hide">Main Navigation</h3>    
-    <div class="nav-main nav-main-font">      
-      <ul>
-        <li><a href="index.html" class="selected">Front Page</a></li>
-        <li><a href="content.html">Content Page</a></li>
-        <li><a href="options.html">Options</a></li>        
-      </ul>
+    <h3 class="hide">Breadcrumbs Trail</h3>    
+    <div class="nav-main nav-main-font">
+      <latemp_get_breadcrumbs_trail />
     </div>
     
     <!-- FRONT PAGE SIDEBANNER -->
-    <h3 class="hide">Sub-Navigation</h3>
+    <h3 class="hide">Main Navigation</h3>
     <div class="sidebanner-frontpage">
     <div class="buffer"></div>
       <div class="navbar-sidebanner">
