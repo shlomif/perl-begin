@@ -125,12 +125,11 @@ body {
     background-color: inherit;
 }
 
-.nav-main li a
+.nav-main a
 {
 	color: rgb(255,255,255);
     margin: 0px;
     padding: 0px 10px 0px 10px;
-    border-right: solid 1px rgb(255,255,255);
     text-decoration: none;
     font-size: 130%;		
 }
