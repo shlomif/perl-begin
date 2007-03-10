@@ -3,31 +3,37 @@
 <set-var latemp_html_standard="xhtml1.1" />
 <set-var latemp_with_head_meta_tags="1" />
 <set-var latemp_with_favicon="1" />
+<set-var latemp_with_breadcrumbs_trail="1" />
 
-#include "latemp/latemp-main.wml"
-#include "shlomif/affiliations.wml"
+#include "latemp/latemp-prelude.wml"
 
 <latemp_lang "en-US" />
-<latemp_encoding "iso-8859-1" />
-<latemp_author "Shlomi Fish" />
-<latemp_common_keywords "Perl, perl, beginners, newbies, learn, web design, Berlios, system administration, Unix, unix, UNIX, Linux, Shlomi Fish" />
-<latemp_meta_desc "Perl Beginners' Site - a Portal for Perl Beginners" />
-<latemp_affiliations_buttons>
-<affil_collection_berlios />
-</latemp_affiliations_buttons>
-<latemp_webmaster>
-<p>
-<b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href="mailto:shlomif@iglu.org.il">Email - shlomif@iglu.org.il</a>)
-</p>
-</latemp_webmaster>
+<latemp_encoding "utf-8" />
+<latemp_init_h_w_navmenu />
+
+<latemp_html_header />
+<latemp_html_head_tag />
+
+<define-tag nav_global_flags>
+          <li><a href="#"><img class="img-flag" src="./img/flag_uk.gif" title="Website in English" alt=""/></a></li>
+          <li><a href="#"><img class="img-flag" src="./img/flag_spain.gif" title="Website en Espanol" alt=""/></a></li>
+          <li><a href="#"><img class="img-flag" src="./img/flag_france.gif" title ="Website en Francais" alt=""/></a></li>
+          <li><a href="#"><img class="img-flag" src="./img/flag_germany.gif" title ="Website auf Deutsch" alt=""/></a></li>
+</define-tag>
+
+<define-tag perl_begin_news endtag="required" whitespace="delete">
+{#PERL_BEGIN_NEWS#:%body:##}
+</define-tag>
+
+<define-tag latemp_theme_breadcrumbs_trail_html>
+<latemp_get_breadcrumbs_trail_unconditionally />
+</define-tag>
+
 
 <latemp_license>
 <p>
 <!-- Creative Commons License -->
-<a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img 
-alt="Creative Commons License"
-src="$(ROOT)/images/somerights20.png" class="bless" /></a><br />
-This work is licensed under a <a rel="license" 
+This work is <b>licensed</b> under a <a rel="license" 
 href="http://creativecommons.org/licenses/by/2.0/">Creative Commons 
 License</a>.
 <!-- /Creative Commons License -->
@@ -65,7 +71,96 @@ License</a>.
 -->
 </latemp_license>
 
+<latemp_webmaster>
+<p>
+<b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href=
+"mailto:shlomif@iglu.org.il">Email - shlomif@iglu.org.il</a>)
+</p>
+<p>
+<b>Original Design:</b> <a href="http://www.oswd.org/design/preview/id/2933">GoFlexiblePro</a>
+| Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a>
+|  <a href="http://validator.w3.org/check?uri=referer" title="Validate code as W3C XHTML 1.1 Strict Compliant">W3C XHTML 1.1</a>
+| <a href="http://jigsaw.w3.org/css-validator/" title="Validate Style Sheet as W3C CSS 2.0 Compliant">W3C CSS 2.0</a>
+</p>
+</latemp_webmaster>
 
+<body>
+
+  <div id="page-container">
+
+    <!-- HEADER -->
+    <!-- Global Navigation -->
+    <h3 class="hide">Global Navigation</h3>
+    <div class="nav-global-container">
+      <div class="nav-global nav-global-font">
+        <ul>
+          <li><a href="$(ROOT)/about.html">About Us</a></li>
+          <li><a href="$(ROOT)/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>        
+
+    <!-- Sitename and Banner -->
+    <div class="site-name">
+      <latemp_default_h1_tag />
+      <div class="site-slogan">
+        Perl - because programming should be fun.
+      </div>
+    </div>                 
+    <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
+    
+    <!-- Main navigation -->                    
+    <h3 class="hide">Breadcrumbs Trail</h3>    
+    <div class="nav-main nav-main-font">
+      <latemp_get_breadcrumbs_trail />
+    </div>
+    
+    <!-- FRONT PAGE SIDEBANNER -->
+    <h3 class="hide">Main Navigation</h3>
+    <div class="sidebanner-frontpage">
+    <div class="buffer"></div>
+      <div class="navbar-sidebanner">
+      <latemp_get_nav_menu_html />
+      </div>
+    </div>
+
+    <!-- WRAP CONTENT AND SIDEBAR -->
+    <div class="container-content-sidebar">            
+
+    <!--   CONTENT -->
+    <h3 class="hide">Content</h3>
+    <div class="content content-font">
+
+      <!-- Page title -->    
+      <latemp_default_h1_tag />
+      
+;;;      <div class="contentbox-container-left">
+;;;        <div class="contentbox-noshading">
+
+{#LATEMP_BODY#}
+;;;        </div>
+;;;      </div>
+    </div>
+    <!-- SIDEBAR -->
+    <h3 class="hide">Sidebar</h3>    
+    <div class="sidebar sidebar-font">
+
+      {#PERL_BEGIN_NEWS#}
+
+    </div>
+    
+    <!-- END WRAP CONTENT AND SIDEBAR -->
+    </div>    
+    
+    <!-- FOOTER -->
+    <h3 class="hide">Footer</h3>
+    <div class="footer footer-font">
+        <latemp_license_text />
+        <latemp_webmaster_text />
+    </div>
+  </div>
+</body>
+</html>
 
 <define-tag email:link>
 <a href="mailto:%0">%0</a>
@@ -105,3 +200,8 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 </define-tag>
 
 <define-tag nothing></define-tag>
+
+#   per default we are in body
+{#LATEMP_BODY#:
+
+
