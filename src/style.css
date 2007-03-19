@@ -1188,3 +1188,10 @@ div.bookinfo
 {
     color: black;
 }
+
+.bless
+{
+    border: none;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+}
