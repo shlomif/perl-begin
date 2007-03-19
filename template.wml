@@ -1,3 +1,4 @@
+
 <set-var latemp_navmenu_object_class="HTML::Widgets::NavMenu::HeaderRole" />
 <set-var latemp_with_xml_declaration="1" />
 <set-var latemp_html_standard="xhtml1.1" />
@@ -6,6 +7,13 @@
 <set-var latemp_with_breadcrumbs_trail="1" />
 
 #include "latemp/latemp-prelude.wml"
+
+#include "shlomif/affiliations.wml"
+
+
+<latemp_affiliations_buttons>
+<affil_collection_berlios />
+</latemp_affiliations_buttons>
 
 <latemp_lang "en-US" />
 <latemp_encoding "utf-8" />
@@ -120,7 +128,8 @@ License</a>.
     <div class="sidebanner-frontpage">
     <div class="buffer"></div>
       <div class="navbar-sidebanner">
-      <latemp_get_nav_menu_html />
+        <latemp_get_nav_menu_html />
+        <latemp_affiliations_buttons_text />
       </div>
     </div>
 
