@@ -98,9 +98,8 @@ body {
     z-index: 2;
     width: 20em;
     top: 3em;
-    left: 16px;
     margin: 0px;
-    padding: 0px 3px 1px 3px;
+    padding: 0px 3px 1px 10pt;
     background-color: #080;
     color: rgb(225,225,225);
     font-weight: bold;
@@ -111,7 +110,12 @@ body {
     font-size: xx-large;
     padding: 0;
     margin: 0;
-    color: #BB4000;
+    color: white; 
+    width: auto;
+    background-color:green;
+    display: inline;
+    padding-left: 5pt;
+    padding-right: 5pt;
 }
 
 .img-header {

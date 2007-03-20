@@ -34,6 +34,8 @@ upload_berlios: all
 upload_iglu: all
 	(cd dest && $(RSYNC) -r * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
 
+upload_beta: all
+	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/__Beta-Quop/)
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 # .PHONY: 
