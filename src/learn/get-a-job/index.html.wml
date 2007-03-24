@@ -38,7 +38,7 @@ smaller sites. Furthermore, it often plays a large part behind the scenes.
 <h3>Get a job.</h3>
 
 <p>
-There are plenty of jobs there looking for good Perl developes. You can find
+There are plenty of jobs there looking for good Perl developers. You can find
 them in:
 </p>
 
@@ -80,5 +80,31 @@ tutorials</a> or buy <a href="$(ROOT)/books/">a book</a>. Then browse
 <h2>What can I do with Perl?</h2>
 
 <p>
-TODO: Fill in.
+Almost anything. Traditionally, Perl has been used for writing 
+<b>system administation scripts</b>, and is still the solution that is the
+most reliable as well as ubiquitous, and probably still the most commonly
+used on UNIX systems. Its qualities of <b>interfacing</b> to all the host 
+operating system <b>system calls</b>, and providing <b>good abstractions</b>
+make writing <b>portable perl script</b> relatively easy, and they are more 
+reliable than 
+<a href="http://en.wikipedia.org/wiki/Bash">shell</a> or 
+<a href="http://en.wikipedia.org/wiki/AWK_%28programming_language%29">awk</a>,
+and can be made more modular as Perl is a more powerful language.
 </p>
+
+<p>
+When the Web revolution came and web sites cropped, Perl 5 was there to
+<b>power the Web</b>. Commonly referred to as "the glue of the Internet" Perl 
+5 was used to write server-side scripts using CGI and other technologies,
+and even write many large scale applications. Despite facing a some
+competition from other languages recently, like PHP or Python (see below),
+Perl 5 is still a very popular choice for that.
+</p>
+
+<p>
+Many other uses were later found for Perl: writing network servers, GUI
+programs, <a href="uses/bio-info/">Bio-informatics</a>, <a
+href="uses/qa/">Quality Assurance and Testing</a>, and web automation.
+</p>
+
+
