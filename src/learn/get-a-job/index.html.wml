@@ -1,0 +1,33 @@
+#include '../template.wml'
+
+<latemp_subject "Get a Job Doing Perl" />
+
+<p>
+<b><i>"When some people are confonted with a programming problem, they say to 
+themselves, "I know, I'll use Perl!" Now they have two problems.</i></b> 
+(with apologies to <a href="http://en.wikiquote.org/wiki/Jamie_Zawinski">Jamie 
+Zawinski</a>
+</p>
+
+<p>
+This slight mis-quote, illustrates a point - Perl penetrates bottom-up. One
+programmer comes to a company, he knows Perl and uses it to write his
+scripts. When given a task to write an application for which Perl is good,
+he quickly use Perl to write it quickly. And next thing you know, there is 
+a lot of Perl code in the organization that needs to be maintained, and more
+employees are trained in Perl, and start to like it, and the company needs
+Perl programmers to replace the ones that moved elsewhere, or to develop
+more rapidly.
+</p>
+
+<p>
+As a result Perl has become very popular. Not only that but a lot
+of open source code was written in it and was made available online. It is
+used by such very large, very busy, sites as 
+<a href="http://amazon.com/">Amazon.com</a>,
+<a href="http://slashdot.org/">Slashdot</a> and 
+<a href="http://www.livejournal.com/">Live Journal</a> and by countless of
+smaller sites. Furthermore, it often plays a large part behind the scenes.
+</p>
+
+
