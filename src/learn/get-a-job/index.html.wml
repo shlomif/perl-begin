@@ -2,32 +2,83 @@
 
 <latemp_subject "Get a Job Doing Perl" />
 
+<div class="quotation">
 <p>
 <b><i>"When some people are confonted with a programming problem, they say to 
 themselves, "I know, I'll use Perl!" Now they have two problems.</i></b> 
 (with apologies to <a href="http://en.wikiquote.org/wiki/Jamie_Zawinski">Jamie 
 Zawinski</a>
 </p>
+</div>
 
 <p>
-This slight mis-quote, illustrates a point - Perl penetrates bottom-up. One
-programmer comes to a company, he knows Perl and uses it to write his
+This slight mis-quote, illustrates a point - <b>Perl penetrates bottom-up</b>. 
+A  programmer comes to a company, he knows Perl and uses it to write his
 scripts. When given a task to write an application for which Perl is good,
-he quickly use Perl to write it quickly. And next thing you know, there is 
-a lot of Perl code in the organization that needs to be maintained, and more
-employees are trained in Perl, and start to like it, and the company needs
-Perl programmers to replace the ones that moved elsewhere, or to develop
+he <b>quickly use Perl to write it quickly</b>. The management is 
+<b>impressed</b>. And next thing you know, there is a lot of Perl code in the 
+organization that needs to be maintained, and <b>more employees are trained in 
+Perl</b>, and start to like it, and the company needs <b>more Perl 
+programmers</b> to replace the ones that moved elsewhere, or to develop
 more rapidly.
 </p>
 
 <p>
-As a result Perl has become very popular. Not only that but a lot
+As a result Perl has <b>become very popular</b>. Not only that but a lot
 of open source code was written in it and was made available online. It is
-used by such very large, very busy, sites as 
+used by such very large, very busy, sites as
 <a href="http://amazon.com/">Amazon.com</a>,
 <a href="http://slashdot.org/">Slashdot</a> and 
 <a href="http://www.livejournal.com/">Live Journal</a> and by countless of
 smaller sites. Furthermore, it often plays a large part behind the scenes.
 </p>
 
+<h2>We need you!</h2>
 
+<h3>Get a job.</h3>
+
+<p>
+There are plenty of jobs there looking for good Perl developes. You can find
+them in:
+</p>
+
+<ul>
+<li>
+<a href="http://jobs.perl.org/">jobs.perl.org</a>
+</li>
+<li>
+<a href="http://jobs.perl.com/a/jbb/find-jobs">jobs.perl.com</a>
+</li>
+<li>
+<a href="http://www.google.com/search?q=perl+jobs&amp;ie=UTF-8&amp;oe=UTF-8">Many
+other 
+sites</a>
+</li>
+</ul>
+
+<h3>Learn Perl</h3>
+
+<p>
+Are you already a programmer who wants to know Perl or your job requires you 
+to? Do you have little or any programming experience and wants or needs to
+start programming with Perl? <b>Welcome aboard!</b>
+</p>
+
+<p>
+Perl is an easy language to <b>get up to speed</b> with, and the more you
+learn about it the more you discover, and the more your <b>expressive power 
+grows</b>. Furthermore, its richness, psychology, power and availability 
+make it <b>excellent for beginning programmers</b>.
+</p>
+
+<p>
+<b>To learn Perl</b> see <a href="$(ROOT)/tutorials/">our list of online
+tutorials</a> or buy <a href="$(ROOT)/books/">a book</a>. Then browse
+<a href="$(ROOT)">the rest of the site</a>.
+</p>
+
+<h2>What can I do with Perl?</h2>
+
+<p>
+TODO: Fill in.
+</p>

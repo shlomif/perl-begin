@@ -1215,3 +1215,11 @@ div.bookinfo
     margin-right: auto;
     text-align: center;
 }
+
+.quotation
+{
+    border: black thin solid;
+    background-color: #ffa;
+    padding: 0.7em;
+    margin-bottom: 1em;
+}
