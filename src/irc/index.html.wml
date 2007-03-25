@@ -28,9 +28,8 @@ downloading one, you can log in to an IRC network and start chatting.
 
 <p>
 IRC is a great way to get answers to questions quickly and easily. Just note 
-that the channel <tt>#perl</tt> on some of the networks is not dedicated for
-newbie questions, and you should use a different channel instead. Consult this
-page for more details.
+that some networks are not recommended for asking Perl questions on, due to
+the treatment of beginner question, or general unfriendliness.
 </p>
 
 <define-tag irc_channel whitespace="delete">
@@ -65,23 +64,8 @@ technical matters in general.
 
 <p>
 Check the channels <irc_channel chan="perl" net="freenode" />,
-<irc_channel chan="mandrake" net="freenode" /> and
+<irc_channel chan="mandriva" net="freenode" /> and
 <irc_channel chan="modperl" net="freenode" />.
-</p>
-
-<h2><a href="http://www.efnet.org/">EF-Net</a></h2>
-
-<p>
-Check the channels <irc_channel chan="perlhelp" net="efnet" />
-(but not <tt>#perl</tt> which is intended for advanced discussion), and
-<irc_channel chan="html" net="efnet" /> (for issues related to Perl and
-the web).
-</p>
-
-<h2><a href="http://www.ircnet.org/">IRCnet</a></h2>
-
-<p>
-Try the channel <irc_channel net="ircnet" chan="perl" />.
 </p>
 
 <h2><a href="http://www.oftc.net/">OFTC</a></h2>
@@ -90,16 +74,4 @@ Try the channel <irc_channel net="ircnet" chan="perl" />.
 The channel <irc_channel net="oftc" chan="perl" /> accepts beginner questions.
 </p>
 
-<h2><a href="http://www.undernet.org/">Undernet</a></h2>
-
-<p>
-Check the channels <irc_channel net="undernet" chan="perl" />
-(but not for CGI questions), and <irc_channel net="undernet" chan="cgi" />.
-</p>
-
-<h2>TODO</h2>
-
-<p>
-Add DAL-net and other networks that are fit for the purpose.
-</p>
 
