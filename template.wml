@@ -110,7 +110,7 @@ License</a>.
 
     <!-- Sitename and Banner -->
     <div class="site-name">
-      <latemp_default_h1_tag />
+      <h1>Perl Beginners' Site</h1>
       <div class="site-slogan">
         Perl - because programming should be fun.
       </div>
