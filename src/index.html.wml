@@ -8,14 +8,23 @@ Work with Perl for a living! <a href="$(ROOT)/learn/get-a-job/">Learn
 More&hellip;</a>
 </p>
 </div>
-<h2>About</h2>
+
+<h2>Programming the Way You Would Love</h2>
 
 <p>
-Welcome to the unofficial Perl Beginners' Site. This site provides
-links and references to on-line and off-line material that can be used
-to learn Perl. It is intended for people who learn Perl 
-after knowing one or more languages, as well as for people who are learning
-Perl as their first language.
+<a href="http://www.perl.org/">Perl</a> is a flexible, feature-rich and
+powerful <a href="http://en.wikipedia.org/wiki/Dynamic_programming_language">dynamic 
+language</a>. Perl code is very
+<a href="http://www.paulgraham.com/power.html">succinct</a> and can be written 
+very quickly, and still perform well in most cases. It is very usual
+to achieve in one line of Perl what in ANSI C and many other languages 
+requires 100's of lines.
+</p>
+
+<p>
+Perl has a lot of easily installable ready made modules in 
+<a href="http://www.cpan.org/">CPAN</a> (the Comprehensive Perl Archive 
+Network), which make writing Perl code to achieve many tasks even easier.
 </p>
 
 <perl_begin_news>
@@ -36,28 +45,22 @@ perl.net.au</a>.
 </div>
 </perl_begin_news>
 
-<h2>What is Perl?</h2>
+<define-tag we_dont_need_no_hype>
+<h2>Hype? We don't need no stinkin' hype!</h2>
 
 <p>
-<a href="http://www.perl.org/">Perl</a> is a flexible, feature-rich and
-powerful high-level language. It is many times referred to as a "scripting
-language" albeit this term is very misleading because it can be efficiently
-used for many other tasks besides scripting. It is in fact possible to write
-numercial applications, GUIs, graphics generation, database applications, WWW
-and network scripts, games, and even servers in Perl. And naturally, anything
-that combines two or more of these things. ;-) 
+<a href="http://www.perl.org/">Perl</a> was probably <b>never hyped</b>. While
+many people said they liked Perl or that it superior to other languages in
+some respects, it <b>became popular by its qualities</b>, and being the right
+tool for the right job at the right time. On the contrary there's a lot of 
+<a href="http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt">Fear, 
+Uncertainty and Doubt (FUD)</a> flames about Perl.
 </p>
 
 <p>
-Perl code can be written very quickly, and although not run as fast as the
-most optimized C code, will still usually be fast enough. It is very usual
-to achieve in one line of Perl what in ANSI C and many other languages 
-requires 100's of lines.
+But we <b>don't want any hype</b>, and we don't mind the FUD. Perl is great, we
+like it, and it's often the right tool for the job. So if you want to learn
+Perl, welcome aboard!
 </p>
-
-<p>
-Perl has a lot of easily installable ready made modules in 
-<a href="http://www.cpan.org/">CPAN</a> (the Comprehensive Perl Archive 
-Network), which make writing Perl code to achieve many tasks even easier.
-</p>
+</define-tag>
 
