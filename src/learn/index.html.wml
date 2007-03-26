@@ -1,0 +1,82 @@
+#include '../template.wml'
+
+<latemp_subject "Why learn Perl?" />
+
+<h3>Why should I learn Perl?</h3>
+
+<p>
+So why should you learn Perl? Here goes nothing:
+</p>
+
+<h3 id="perl_is_fun">1. Perl is Fun</h3>
+
+<p>
+Writing Perl code is very fun and rewarding. You don't have to deal with
+a lot of idiosyncracies like memory allocation and freeing, passing a context 
+variable; the code is brief and effective; there is a lot of Do-What-I-Means
+(DWIMmeries) that make life simpler; with a small amount of awareness your
+code can be portable across all UNIXes, and even on Windows and other
+software; Perl is documented extensively and you can get a lot of interactive,
+human answers for your questions from 
+<a href="$(ROOT)/mailing-lists/">mailing lists</a>,
+<a href="$(ROOT)/irc/">online chats</a> and <a href="web-forums/">web 
+forums</a>.
+</p>
+
+<p>
+Most serious perl programmers <b>love their language</b> and love programming
+in it.
+</p>
+
+<h3 id="perl_is_useful">2. Perl is Useful</h3>
+
+<p>
+Perl has been successfully used for a lot of diverse tasks: text processing,
+system administration, web programming, web automation, GUI programming, games
+programming, code generation, bio-informatics and geneological research, 
+lingual and etymological research, number crunching, etc.
+</p>
+
+<h3 id="perl_is_portable">3. Perl is Open Source</h3>
+
+<p>
+Perl is fully <a href="http://en.wikipedia.org/wiki/Open-source_software">Free
+(both gratis and libre) and Open Source Software</a>, and is usable for almost
+any use. It can and has been used for in-house software, web software, open 
+source software, or open source or non-open-source commercial software (see
+<a href="http://www.movabletype.org/">Movable Type</a> or 
+<a href="http://bestpractical.com/rt">Request Tracker</a> for 
+instance).
+</p>
+
+<h3 id="perl_can_show_the_world">4. Perl can Show You the World</h3>
+
+<p>
+Perl 5 has borrowed the most important programmign paradigms, and implemented
+them in a consistent and fun way. It is a dynamic language, that supports
+Object-Oriented Programming, Functional Programming, Aspect-Oriented
+Programming, and lots of other buzzwords, while not trying to prevent you from
+writing quick and dirty code to get your work done.
+</p>
+
+<p>
+As such Perl is highly enlightening. If you know Perl well, you'll have no
+problem picking up such languages as 
+<a href="http://www.python.org/">Python</a>, 
+<a href="http://www.ruby-lang.org/">Ruby</a>, 
+<a href="http://www.php.net/">PHP</a>, 
+<a href="http://java.sun.com/">Java</a>,
+<a href="http://en.wikipedia.org/wiki/Microsoft_.NET">Microsoft .NET</a>,
+or more obscure languages such as 
+<a href="http://www.schemers.org/">Scheme</a>. In fact, Perl has proven
+very influential to a large extent on most of those languages.
+</p>
+
+<p>
+Perl is also a useful stepping stone for learning ANSI C and C++.
+</p>
+
+<p>
+If you understand Perl, you'll understand the world!
+</p>
+

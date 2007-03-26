@@ -18,6 +18,7 @@ my $tree_contents =
         {
             'text' => "Home",
             'url' => "",
+            role => "header",
         },
         {
             'text' => "About",
@@ -27,6 +28,27 @@ my $tree_contents =
             'text' => "News",
             'url' => "news/",
             'title' => "Previous News Item",
+        },
+        {
+            'text' => "Why?",
+            'url' => "learn/",
+            role => "header",
+            title => "Why learn Perl?",
+            'expand' => { 're' => "", },
+        },
+        {
+            'url' => "learn/get-a-job/",
+            'text' => "Get a Job!",
+        },
+        {
+            'url' => "learn/myth-dispelling/",
+            'text' => "Isn't Perl Bad?",
+        },
+        {
+            'url' => "resources/",
+            'text' => "Resources",
+            'title' => "Links to Online and Offline Resources for Learning Perl",
+            role => "header",
         },
         {
             'text' => "Online Tutorials",
