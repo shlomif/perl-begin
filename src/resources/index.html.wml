@@ -1,0 +1,45 @@
+#include '../template.wml'
+
+<latemp_subject "Resources for Learning Perl" />
+
+
+<h2 id="what_to_learn_from">What to Learn from?</h2>
+
+<dl>
+
+<dt id="tutorials">
+<a href="$(ROOT)/tutorials/">Tutorials</a>
+</dt>
+<dd>
+A list of recommended online tutorials for learning Perl and getting up to
+speed with it. Normally they don't teach everything you can possibly know,
+but they should be OK to start with if you're impatient. As such they are
+optimize for starting to write code, not reading that of much more experienced
+Perl programmers, or those that use a different style from you.
+</dd>
+
+<dt id="books">
+<a href="$(ROOT)/books/">Books</a>
+</dt>
+<dd>
+A list of online and offline (or otherwise books that require pay to 
+view online or download), for learning Perl.
+</dd>
+
+<dt id="core_doc">
+<a href="$(ROOT)/core-doc/">Core Documentation</a>
+</dt>
+<dd>
+The core documentation of Perl, which has been improving. Contains several
+tutorials for getting up to speed with many sujects.
+</dd>
+
+<dt id="article_collections">
+<a href="$(ROOT)/articles/">Article Collections</a>
+</dt>
+<dd>
+Collections of short, in-depth articles.
+</dd>
+
+</dl>
+
