@@ -37,7 +37,7 @@ There are many cases in which Perl is the right tool for the job:
 <ol>
 
 <li>
-Writing <b>system-administration scripts</b> - Perl is available on almost 
+<b>System Administration</b> - Perl is available on almost 
 every Unix system, and is easily installable for Microsoft Windows. It is
 more robust and more portable for many tasks than writing 
 <a href="http://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> scripts,
@@ -61,7 +61,13 @@ popular. It is extensively used by such large, highly scalable sites such as
 smaller sites. <a href="$(ROOT)/uses/web/">Read more&hellip;</a>.
 </li>
 
-
+<li>
+<b>Software Testing and Quality Assurance</b> - Perl has an extensive set
+of <a href="http://perl-qa.yi.org/">tools for automated or semi-automated
+software testing</a>. These tools can often be used to test applications
+written in other languages, and certainly network servers. 
+<a href="$(ROOT)/uses/qa/">Read more&hellip;</a>
+</li>
 
 </ol>
 
