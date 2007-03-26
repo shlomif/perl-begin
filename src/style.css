@@ -479,8 +479,13 @@ p.quote {
 {
 	list-style-type: decimal; 
     list-style-position: outside;
+    font-size: 130%;
 }
 
+.content ol li
+{
+    margin-bottom: 1em;
+}
 /*--------------------------*/
 /* Section 6.7 - Datatables */
 /*--------------------------*/

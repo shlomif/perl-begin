@@ -28,6 +28,44 @@ Perl has a lot of easily installable ready made modules in
 Network), which make writing Perl code to achieve many tasks even easier.
 </p>
 
+<h2>The Right Tool for the Job</h2>
+
+<p>
+There are many cases in which Perl is the right tool for the job:
+</p>
+
+<ol>
+
+<li>
+Writing <b>system-administration scripts</b> - Perl is available on almost 
+every Unix system, and is easily installable for Microsoft Windows. It is
+more robust and more portable for many tasks than writing 
+<a href="http://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> scripts,
+to say nothing of Win32's
+<a href="http://en.wikipedia.org/wiki/Cmd.exe">cmd.exe</a>. 
+<a href="$(ROOT)/uses/sys-admin/">Read more&hellip;</a>
+</li>
+
+<li>
+<b>Web automation</b> - some CPAN modules allow interacting with web sites
+easily and affordably. This is useful to automate such web sites, and to
+test web sites you created. 
+</li>
+
+<li>
+<b>Writing web applications</b> - Perl was the first popular solution for
+writing CGI scripts and even large scale web applications, and is still very
+popular. It is extensively used by such large, highly scalable sites such as 
+<a href="http://amazon.com/">Amazon.com</a> or 
+<a href="http://www.livejournal.com/">Live Journal</a>, and by countless of
+smaller sites. <a href="$(ROOT)/uses/web/">Read more&hellip;</a>.
+</li>
+
+
+
+</ol>
+
+
 <perl_begin_news>
 <div class="sidebarbox-border bg-yellow03">
 <div class="sidebarbox-title-shading bg-yellow07"><a href="$(ROOT)/news/">News</a></div>
