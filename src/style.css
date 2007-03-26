@@ -305,7 +305,7 @@ body {
 {
    float: left;
    width: 620px;
-   min-height: 1000px;
+   min-height: 1200px;
    margin: 0px;
    padding: 0px;
    background-color: rgb(255,255,255);
@@ -313,7 +313,7 @@ body {
 
 /* IE6-hack for min-height. Also works for IE7-Beta2 */
 * html .container-content-sidebar {
-	height: 400px;
+	height: 1200px;
 } 
 /* End IE-Hack */
 
@@ -471,7 +471,6 @@ p.quote {
 {
 	list-style-type: disc;
     list-style-position: outside;
-    font-size: 130%;
 }
 
 /* Ordered List */
@@ -479,7 +478,11 @@ p.quote {
 {
 	list-style-type: decimal; 
     list-style-position: outside;
-    font-size: 130%;
+}
+
+.content ol, .content ul, .content dl
+{
+    font-size: 130%;    
 }
 
 .content ol li
