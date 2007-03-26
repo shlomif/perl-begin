@@ -73,10 +73,31 @@ very influential to a large extent on most of those languages.
 </p>
 
 <p>
-Perl is also a useful stepping stone for learning ANSI C and C++.
+Perl is also a useful stepping stone for learning ANSI C and C++, and also
+will improve your code writing in any language.
 </p>
 
 <p>
 If you understand Perl, you'll understand the world!
+</p>
+
+<h3 id="perl_and_code_reuse">5. Don't re-invent the wheel! Re-use commonly
+used, proven code</h3>
+
+<p>
+Perl has <a href="http://www.cpan.org/">the Comprehensive Perl Archive 
+Network</a>, which is a huge collection of useful (and not-so-useful) 
+re-usable Perl modules, under an open source licence. They allow you to use 
+them as libraries to facilitate writing your code. So instead of starting
+to write something yourself, <a href="http://search.cpan.org/">do a CPAN 
+search</a>, or ask someone for a recommendation for a good CPAN module.
+</p>
+
+<h2 id="how_do_i_start">Great! Now how do I start?</h2>
+
+<p>
+See our <a href="$(ROOT)/resources/">resources page</a> for links to pages
+with online resources to get you up to speed, and then better and better with
+Perl.
 </p>
 
