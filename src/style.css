@@ -1228,3 +1228,8 @@ div.bookinfo
     padding: 0.7em;
     margin-bottom: 1em;
 }
+
+.quotation .q
+{
+    font-weight: bold;
+}
