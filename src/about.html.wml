@@ -2,13 +2,32 @@
 
 <latemp_subject "Perl Beginners' Site - About" />
 
-<h2>About</h2>
+<h2 id="about">About</h2>
 
 <p>
-Welcome to the unofficial Perl Beginners' Site. This site will provide
+Welcome to the unofficial Perl Beginners' Site. This site provides
 links and references to on-line and off-line material that can be used
 to learn Perl. This site is directed both for people who learn Perl 
 after knowing one or more languages, or for people who are learning
 Perl as their first language.
+</p>
+
+<h2 id="revamp">Site Revamp</h2>
+
+<p>
+Recently (as of 26-March-2007), this site has seen a huge revamp. Its look 
+and feel has been changed to one based on 
+<a href="http://www.oswd.org/design/preview/id/2933">an Open Source 
+Web-Design design</a>, and later on its contents were made more accessible,
+and more in accordance to 
+<a href="http://www.sparkthis.com/2006/02/slides_the_hack.html">some good 
+marketing advice</a>.
+</p>
+
+<p>
+On our agenda now is to finish the content revamp and then start better
+publicising this site. With the permission of the people of 
+<a href="http://www.perlfoundation.org/">the Perl Foundation</a> this site
+may hopefully gain a more official status.
 </p>
 
