@@ -630,11 +630,12 @@ p.tabledata-caption {
 }
 
 .footer a {
-	color: rgb(150,150,150); text-decoration: underline;
+	text-decoration: underline;
 }
 
 .footer a:hover {
-	color: rgb(0,0,0); text-decoration: none;
+	text-decoration: none;
+    color: red;
 }
 
 /********************************/
@@ -673,7 +674,7 @@ p.tabledata-caption {
 /* it up inside the "footer". Thus we define the final   */
 /* font-size here the way it will appear on screen.      */
 .footer-font {
-	font-size: 1.1em; color: rgb(150,150,150);
+	font-size: 1.1em; color: black;
 }
 
 /*--------------------------------------*/
