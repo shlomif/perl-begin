@@ -9,6 +9,7 @@
 #include "latemp/latemp-prelude.wml"
 
 #include "shlomif/affiliations.wml"
+#include "news.wml"
 
 
 <latemp_affiliations_buttons>
@@ -209,6 +210,10 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 </define-tag>
 
 <define-tag nothing></define-tag>
+
+<perl_begin_news>
+<perl_begin_news_boxes />
+</perl_begin_news>
 
 #   per default we are in body
 {#LATEMP_BODY#:

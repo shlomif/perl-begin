@@ -67,59 +67,6 @@ written in other languages, and certainly network servers.
 </ol>
 
 
-<perl_begin_news>
-
-<div class="sidebarbox-border bg-green01">
-<div class="sidebarbox-title-shading bg-green02">Testimonials</div>
-<p>
-Perl is used by:
-</p>
-
-<h3>Web sites</h3>
-
-<ul>
-<li>
-<a href="http://amazon.com/">Amazon.com</a>.
-</li>
-<li>
-<a href="http://www.livejournal.com/">LiveJournal.com</a>
-</li>
-<li>
-<a href="http://slasdhot.org/">Slasdhot</a>
-</li>
-</ul>
-
-<h3>Software</h3>
-
-<ul>
-<li>
-<a href="http://spamassassin.apache.org/">SpamAssassin</a>
-</li>
-<li>
-<a href="http://www.movabletype.org/">Movable Type</a>
-</li>
-<li>
-<a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
-</li>
-</ul>
-</div>
-
-<div class="sidebarbox-border bg-yellow03">
-<div class="sidebarbox-title-shading bg-yellow07"><a href="$(ROOT)/news/">News</a></div>
-<ul>
-<li>
-07-Jul-06: <a href="$(ROOT)/news/#news_07_Jul_2006">Wiki moved to
-perl.net.au</a>.
-</li>
-<li>
-04-Nov-05: <a href="$(ROOT)/news/#news_04_Nov_2005">Perlmeme.org</a>
-</li>
-<li>
-<a href="$(ROOT)/news/">More news...</a>
-</li>
-</ul>
-</div>
-</perl_begin_news>
 
 <define-tag we_dont_need_no_hype>
 <h2>Hype? We don't need no stinkin' hype!</h2>

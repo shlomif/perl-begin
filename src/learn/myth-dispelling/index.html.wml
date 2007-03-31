@@ -1,0 +1,75 @@
+#include '../template.wml'
+
+<latemp_subject "Isn't Perl Bad?" />
+
+<p>
+It's not uncommon to hear a lot of criticism about Perl. In fact it's very
+common. Among else you can hear:
+</p>
+
+<ul>
+<li>
+Perl code is ugly.
+</li>
+<li>
+Perl code is unmaintainable.
+</li>
+<li>
+Depending on Perl for a large project guarantees your failure.
+</li>
+<li>
+Perl does not scale to high loads or high codebases.
+</li>
+<li>
+Perl is slow.
+</li>
+<li>
+Perl is dying. (or even that Perl is dead).
+</li>
+<li>
+The Perl implementation has a horrible code.
+</li>
+<li>
+Perl, or some parts of it (like its Object Orientedness) is very weak.
+</li>
+<li>
+Perl is not suitable for writing web applications. (And PHP is).
+</li>
+<li>
+Etc.
+</li>
+</ul>
+
+<p>
+Some of these complaints were addressed 
+<a href="http://www.perl.com/pub/a/2000/01/10PerlMyths.html">in Simon Cozens'
+article "Ten Perl Myths"</a>. Here are some more observations.
+</p>
+
+<h2>When is Perl the right tool for the job?</h2>
+
+<p>
+We admit Perl has some problems. However, Perl 5 is still possibly the best
+solution for writing a large class of system administration scripts. And
+using the <a href="http://www.cpan.org/">Comprehensive Perl 
+Archive Network (CPAN)</a> you can usually get the job done much more quickly 
+and easily than with any other language. 
+</p>
+
+<p>
+Perl code can be written to be very maintenable, readable and elegant.
+Perl indeed has many features and behaviors to make writing short programs
+- often one liners - easier, because one knows this is most of the use people 
+do with it. However, there's nothing in Perl that slows one down from writing
+large-scale, maintainenable programs. And in fact 
+<a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
+programs have been written and are still successful.</a>
+</p>
+
+<p>
+Perl is probably not for everyone. To write in Perl you need good programmers.
+However, you must always have good programmers, because depending on bad
+programmers will introduce bugs, security holes, large delays and other
+factors.
+</p>
+
