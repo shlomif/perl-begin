@@ -68,6 +68,42 @@ written in other languages, and certainly network servers.
 
 
 <perl_begin_news>
+
+<div class="sidebarbox-border bg-green01">
+<div class="sidebarbox-title-shading bg-green02">Testimonials</div>
+<p>
+Perl is used by:
+</p>
+
+<h3>Web sites</h3>
+
+<ul>
+<li>
+<a href="http://amazon.com/">Amazon.com</a>.
+</li>
+<li>
+<a href="http://www.livejournal.com/">LiveJournal.com</a>
+</li>
+<li>
+<a href="http://slasdhot.org/">Slasdhot</a>
+</li>
+</ul>
+
+<h3>Software</h3>
+
+<ul>
+<li>
+<a href="http://spamassassin.apache.org/">SpamAssassin</a>
+</li>
+<li>
+<a href="http://www.movabletype.org/">Movable Type</a>
+</li>
+<li>
+<a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
+</li>
+</ul>
+</div>
+
 <div class="sidebarbox-border bg-yellow03">
 <div class="sidebarbox-title-shading bg-yellow07"><a href="$(ROOT)/news/">News</a></div>
 <ul>
