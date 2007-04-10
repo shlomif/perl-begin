@@ -10,6 +10,6 @@ can be found on his home site</a>.
 </p>
 
 <p>
-Furthermore, the site has <a href="$(site-resources)">some other resources</a>
-that may prove useful.
+Furthermore, the site has <a href="$(ROOT)/site-resources/">some other 
+resources</a> that may prove useful.
 </p>
