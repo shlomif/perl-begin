@@ -14,14 +14,13 @@ Now they have two problems.
 (with apologies to <a href="http://en.wikiquote.org/wiki/Jamie_Zawinski">Jamie 
 Zawinski</a>)
 </p>
-</p>
 </div>
 
 <p>
 This slight mis-quote, illustrates a point - <b>Perl penetrates bottom-up</b>. 
 A  programmer comes to a company, he knows Perl and uses it to write his
 scripts. When given a task to write an application for which Perl is good,
-he <b>quickly use Perl to write it quickly</b>. The management is 
+he <b>quickly uses Perl to write it quickly</b>. The management is 
 <b>impressed</b>. And next thing you know, there is a lot of Perl code in the 
 organization that needs to be maintained, and <b>more employees are trained in 
 Perl</b>, and start to like it, and the company needs <b>more Perl 
@@ -109,8 +108,8 @@ Perl 5 is still a very popular choice for that.
 
 <p>
 Many other uses were later found for Perl: writing network servers, GUI
-programs, <a href="uses/bio-info/">Bio-informatics</a>, <a
-href="uses/qa/">Quality Assurance and Testing</a>, and web automation.
+programs, <a href="$(ROOT)/uses/bio-info/">Bio-informatics</a>, <a
+href="$(ROOT)/uses/qa/">Quality Assurance and Testing</a>, and web automation.
 </p>
 
 

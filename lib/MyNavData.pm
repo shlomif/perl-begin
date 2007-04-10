@@ -18,7 +18,6 @@ my $tree_contents =
         {
             'text' => "Home",
             'url' => "",
-            role => "header",
         },
         {
             'text' => "About",

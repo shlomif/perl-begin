@@ -3,10 +3,25 @@
 <latemp_subject "Perl for Quality Assurance and Testing" />
 
 <p>
-Perl is commonly used for testing software, hardware, networks and for
+Perl is commonly used for testing software, hardware and networks and for
 quality assurance. The <a href="http://qa.perl.org/">Perl QA</a> project
 concentractes a lot of information about it. So does
 <a href="http://perl-qa.yi.org/index.php/Main_Page">the Perl QA Wiki</a>.
+</p>
+
+<h2>TAP - the "Test Anything Protocol"</h2>
+
+<p>
+<a href="http://testanything.org/">TAP</a> is a simple protocol for test
+scripts (in any programming language) to communicate with a test harness.
+Invented by Larry Wall for Perl 1, and having been evolved further, TAP is
+very suitable for universal language-independent testing.
+</p>
+
+<p>
+Perl has several
+<a href="http://testanything.org/wiki/index.php/TAP_Consumers">TAP
+Consumers</a> that can read TAP, process it and do something with the results.
 </p>
 
 <h2>Tutorials and Courses</h2>
