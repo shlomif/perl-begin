@@ -26,10 +26,13 @@ all: latemp_targets
 include include.mak
 include rules.mak
 
-upload: upload_berlios
+upload: upload_hexten
 
 upload_berlios: all
 	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
+
+upload_hexten: all
+	(cd dest && $(RSYNC) -r * perl-begin@ferrous.hexten.net:htdocs/)
 
 upload_iglu: all
 	(cd dest && $(RSYNC) -r * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
