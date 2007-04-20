@@ -3,8 +3,8 @@
 <latemp_subject "Isn't Perl Bad?" />
 
 <p>
-It's not uncommon to hear a lot of criticism about Perl. In fact it's very
-common. Among else you can hear:
+It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact it's 
+very common. Among else you can hear:
 </p>
 
 <ul>
@@ -41,9 +41,11 @@ Etc.
 </ul>
 
 <p>
-Some of these complaints were addressed 
+Some of these complaints are addressed 
 <a href="http://www.perl.com/pub/a/2000/01/10PerlMyths.html">in Simon Cozens'
-article "Ten Perl Myths"</a>. Here are some more observations.
+article "Ten Perl Myths"</a> and 
+<a href="http://perl.net.au/wiki/Perl_Myths">PerlNet's Perl Myth List</a>. 
+Here are some more observations.
 </p>
 
 <h2>When is Perl the right tool for the job?</h2>
@@ -57,19 +59,19 @@ and easily than with any other language.
 </p>
 
 <p>
-Perl code can be written to be very maintenable, readable and elegant.
+Perl code can be <b>written to be very maintenable, readable and elegant</b>.
 Perl indeed has many features and behaviors to make writing short programs
 - often one liners - easier, because one knows this is most of the use people 
-do with it. However, there's nothing in Perl that slows one down from writing
-large-scale, maintainenable programs. And in fact 
+do with it. However, <b>there's nothing in Perl</b> that prevents <b>writing
+large-scale, maintainenable programs</b>. And in fact
 <a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
 programs have been written and are still successful.</a>
 </p>
 
 <p>
-Perl is probably not for everyone. To write in Perl you need good programmers.
-However, you must always have good programmers, because depending on bad
-programmers will introduce bugs, security holes, large delays and other
-factors.
+Perl is probably not for everyone. To write in Perl <b>you need good 
+programmers</b>. However, you must always have good programmers, because
+<b>depending on bad programmers will introduce bugs</b>, security holes, large
+delays and other factors.
 </p>
 
