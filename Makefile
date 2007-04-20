@@ -38,6 +38,9 @@ upload_beta: all
 	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/__Beta-Quop/)
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
+upload_home: all
+	(cd dest && $(RSYNC) -r * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
+
 # .PHONY: 
 # 
 # $(DEST_ARC_PAGE) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES) .PHONY
