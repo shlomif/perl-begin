@@ -26,7 +26,7 @@ is a list of books that can teach you Perl with some remarks on each book.
 <book:info 
     authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
     publisher="oreilly" 
-    isbn="9780596101053" 
+    isbn="0596101058" 
     perlbooksid="101"
     />
 
@@ -40,20 +40,25 @@ resource.
 </p>
 
 <p>
+It is also <b>not intended for people who are absolute beginners</b> in
+programming.
+</p>
+
+<p>
 Available online electronically for a registration as part of 
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
-<define-tag beginning:perl:url whitespace="delete">
-http://learn.perl.org/library/beginning_perl/
+<define-tag beginning_perl_url whitespace="delete">
+http://www.perl.org/books/beginning-perl/
 </define-tag>
 
-<h2><a href="<beginning:perl:url />">Beginning Perl</a></h2>
+<h2><a href="<beginning_perl_url />">Beginning Perl</a></h2>
 
 <book:info
-    authors="Simon Cozens"
-    publisher="wrox"
-    isbn="1861003145"
+    authors="James Lee"
+    publisher="apress"
+    isbn="159059391X"
     perlbooksid="100"
     />
 
@@ -65,8 +70,8 @@ will be able to learn through it.
 </p>
 
 <p>
-This book is <a href="<beginning:perl:url />">available 
-online for free download</a>.
+The first edition of the book is 
+<a href="<beginning_perl_url />">available online for free download</a>.
 </p>
 
 <h2><a href="http://www.manning.com/Johnson/">Elements of Programming with Perl</a></h2>

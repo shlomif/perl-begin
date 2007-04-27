@@ -6,16 +6,28 @@
 <ifeq "%0" "apress" "<a href="http://www.apress.com/">Apress</a>" />
 </define-tag>
 
+<define-tag book_store_amazon>
+<preserve isbn title />
+<set-var %attributes />
+<a href="http://www.amazon.com/exec/obidos/ASIN/<get-var isbn />/ref=nosim/shlomifishhom-20/"><get-var title /></a>
+<restore isbn title />
+</define-tag>
+
 <define-tag book:store>
 <preserve isbn />
 <preserve store />
 <preserve title />
 <set-var %attributes />
-<ifeq "<get-var store />" "ukamazon" 
+<ifeq "<get-var store />" "ukamazon"
     "<set-var ucstore="Amazon UK" />"
     "<set-var ucstore="<:{print ucfirst("<get-var store />")}:>" />"
     />
-<a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
+<ifeq "<get-var store />" "amazon"
+      "<book_store_amazon %attributes />"
+      <group 
+            <a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
+      />
+      />
 <restore title />
 <restore store />
 <restore isbn />
