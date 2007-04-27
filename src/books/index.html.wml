@@ -24,9 +24,9 @@ is a list of books that can teach you Perl with some remarks on each book.
 <h2><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h2>
 
 <book:info 
-    authors="Randal L. Schwartz and Tom Phoenix" 
+    authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
     publisher="oreilly" 
-    isbn="0596001320" 
+    isbn="9780596101053" 
     perlbooksid="101"
     />
 
