@@ -3,38 +3,20 @@
 <latemp_subject "Perl for CGI and Web Programming" />
 
 <p>
-Perl 5 was one of the first available technologies for automating a web-server,
-and is still considered one of the most powerful and most cost-effective 
-ones, today. Once you learn the core language, and some HTML and HTTP concepts, 
-programming a simple CGI callback or form handler is very easy and
-straightforward. 
+Perl 5 was <b>one of the first available technologies</b> for automating a 
+web-server, and is still considered <b>one of the most powerful</b> and most 
+cost-effective ones, <b>today</b>. Once you learn the core language, and some 
+HTML and HTTP concepts, programming a simple CGI callback or form handler is 
+very easy and straightforward. 
 </p>
 
 <p>
-Users are recommended to use the excellent <a href="http://stein.cshl.org/WWW/software/CGI/">CGI.pm</a> module (which is included in every Perl 5 
-distribution), or one of the other interfaces to the web-server (like 
-HTML::Mason or Apache::ASP). Furthermore, there are many CPAN modules 
-available that can make many common CGI programming tasks much easier.
+Users are <b>recommended to start</b> by reading 
+<a href="http://users.easystreet.com/ovid/cgi_course/index.html">Ovid's
+CGI Course</a>. The other links here may also prove useful.
 </p>
 
-<h2>Interfaces</h2>
-
-<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
-
-<p>
-An implementation of the Active Server Pages for Perl on UNIXes. Compatible
-with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
-solution. 
-</p>
-
-<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
-
-<p>
-A portable solution for a dynamic maintenance of a Perl site. Very powerful
-and feature-rich.
-</p>
-
-<h2>Tutorials</h2>
+<h2 id="tutorials">Tutorials</h2>
 
 <h3><a href="http://users.easystreet.com/ovid/cgi_course/index.html">Ovid's CGI
 Course</a></h3>
@@ -54,5 +36,40 @@ A free online course about CGI in Perl.
 
 <p>
 In the Wiki.
+</p>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
+
+<p>
+An implementation of the Active Server Pages for Perl on UNIXes. Compatible
+with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
+solution. 
+</p>
+
+<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
+
+<p>
+A portable solution for a dynamic maintenance of a Perl site. Very powerful
+and feature-rich. Also cross-platform.
+</p>
+
+<h2 id="frameworks">Web Frameworks</h2>
+
+<h3><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
+
+<p>
+CGI::Application is a lightweight and flexible MVC framework for web
+application development. It doesn't give as much as more complex frameworks,
+but is still useful for organising your code and using templates.
+</p>
+
+<h3><a href="http://www.catalystframework.org/">Catalyst</a></h3>
+
+<p>
+A flexible web framework for Perl, with many useful modules for it on
+CPAN, that provide interfaces to many other modules. After learning it,
+one can build web applications with ease.
 </p>
 
