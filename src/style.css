@@ -1237,3 +1237,19 @@ div.bookinfo
 {
     font-weight: bold;
 }
+
+.further_reading
+{
+    float: right;
+    border: #99b double medium;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 130px;
+    background-color: #ddf;
+}
+
+.further_reading ul
+{
+    padding-left: 1.5em;
+
+}
