@@ -482,7 +482,7 @@ p.quote {
 
 .content ol, .content ul, .content dl
 {
-    font-size: 130%;    
+    font-size: medium;
 }
 
 .content ol li
