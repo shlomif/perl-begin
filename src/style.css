@@ -32,7 +32,11 @@
 /*-------------------------------*/
 
 body {
-	font-size: 62.5%; margin: 0em auto; padding: 0em; background: url(./images/background.gif) top center repeat-y; font-family: "trebuchet ms", verdana, arial, sans-serif;
+	margin: 0em auto; 
+    padding: 0em;
+    background: url(./images/background.gif) top center repeat-y; 
+    font-family: arial, verdana, sans-serif;
+    font-size:80%;
 }
 
 #page-container {
@@ -160,7 +164,6 @@ body {
     margin: 0px;
     padding: 0px 10px 0px 10px;
     text-decoration: none;
-    font-size: 130%;		
 }
 
 .nav-main a:hover, .nav-main a.selected
@@ -176,6 +179,7 @@ body {
 
 .sidebanner-frontpage {
 	clear: both; float: left; width: 160px; margin: 0px; padding: 0px;
+    font-size:80%;
 }
 
 .navbar-sidebanner {
@@ -415,7 +419,7 @@ h1
 	clear: left;
     margin: 1.0em 0px 1.0em 0px;
     font-weight: bold;
-    font-size: 200%;
+    font-size: 160%;
 }
 
 h2
@@ -423,7 +427,7 @@ h2
 	clear: left;
     margin: 1.5em 0px 1.0em 0px;
     font-weight: bold;
-    font-size: 180%;
+    font-size: 145%;
 }
 
 h3
@@ -431,7 +435,7 @@ h3
 	clear: left;
     margin: 1.0em 0px 0.6em 0px;
     font-weight: bold;
-    font-size: 160%;
+    font-size: 130%;
 }
 
 h4
@@ -440,7 +444,7 @@ h4
     margin: 0.5em 0px 0.5em 0px;
     font-weight: bold;
     font-style: italic;
-    font-size: 130%;
+    font-size: 115%;
 }
 
 h1, h2, h3, h4
@@ -449,7 +453,7 @@ h1, h2, h3, h4
 }
 /* Paragraph text */
 p {
-   clear: left; margin: 0em 0px 0.5em 0px; padding: 0px; font-size: 130%;
+   clear: left; margin: 0em 0px 0.5em 0px; padding: 0px;
 }
 
 /* Quote */
@@ -478,11 +482,6 @@ p.quote {
 {
 	list-style-type: decimal; 
     list-style-position: outside;
-}
-
-.content ol, .content ul, .content dl
-{
-    font-size: medium;
 }
 
 .content ol li
