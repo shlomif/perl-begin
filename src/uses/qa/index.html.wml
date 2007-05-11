@@ -9,7 +9,7 @@ concentractes a lot of information about it. So does
 <a href="http://perl-qa.hexten.net/wiki/index.php/Main_Page">the Perl QA Wiki</a>.
 </p>
 
-<h2>TAP - the "Test Anything Protocol"</h2>
+<h2 id="tap">TAP - the "Test Anything Protocol"</h2>
 
 <p>
 <a href="http://testanything.org/">TAP</a> is a simple protocol for test
@@ -24,17 +24,17 @@ Perl has several
 Consumers</a> that can read TAP, process it and do something with the results.
 </p>
 
-<h2>Tutorials and Courses</h2>
+<h2 id="tutorials">Tutorials and Courses</h2>
 
 <ul>
 
-<li>
+<li id="szabgab_course">
 <a href="http://www.szabgab.com/talks/perl_in_testing/">Testing with Perl</a> -
 complete online slides for the course by 
 <a href="http://www.szabgab.com/">Gabor Szabo</a>.
 </li>
 
-<li>
+<li id="test_tutorial">
 <a href="http://search.cpan.org/dist/Test-Simple/lib/Test/Tutorial.pod">Test::Tutorial</a> -
 introduces writing tests with the Perl test modules. 
 </li>
