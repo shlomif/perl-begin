@@ -29,6 +29,11 @@ my $tree_contents =
             'title' => "Previous News Item",
         },
         {
+            'text' => "Links",
+            'url' => "links/",
+            'title' => "External Links to Other Resources",
+        },
+        {
             'text' => "Why?",
             'url' => "learn/",
             role => "header",
