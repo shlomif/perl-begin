@@ -1,6 +1,11 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Online Tutorials" />
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
 
 <h2 id="note">Note</h2>
 
@@ -18,7 +23,7 @@ If you prefer a tutorial in something else besides English, check the
 
 <h2 id="our_list">Our List of Tutorials</h2>
 
-<h3><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
+<h3 id="beginning_perl"><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
 
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online. 
@@ -27,7 +32,7 @@ at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
 
-<h3><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl 
+<h3 id="perl_for_newbies"><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl 
 Newbies Series</a></h3>
 
 <p>
@@ -38,7 +43,7 @@ without too many "other ways to do it". (you are still expected to read the
 POD documents after the second lecture)
 </p>
 
-<h3><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc 
+<h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc 
 Tutorials</a></h3>
 
 <p>
@@ -57,13 +62,13 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
-<h3><a href="http://mila.cs.technion.ac.il/~yona/perl/">Haifa University Perl Course</a></h3>
+<h3 id="haifau_perl_course"><a href="http://mila.cs.technion.ac.il/~yona/perl/">Haifa University Perl Course</a></h3>
 
 <p>
 A perl course with online slides.
 </p>
 
-<h3><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
+<h3 id="picking_up_perl"><a href="http://www.ebb.org/PickingUpPerl/">Picking Up Perl</a></h3>
 
 <p>
 A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a>
@@ -73,24 +78,32 @@ on simple scripts.
 
 <h2 id="other_lists">Other Lists</h2>
 
-<h3><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h3>
+<h3 id="dmoz_category"><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h3>
 
 <p>
 Links to many other online tutorials.
 </p>
 
-<h3><a href="http://www.perl.com/cs/user/query/q/6?id_topic=74">Perl.com's
+<h3 id="perl_com"><a href="http://www.perl.com/cs/user/query/q/6?id_topic=74">Perl.com's
 List of Perl Tutorials</a></h3>
 
 <p>
 A comprehensive list of Perl tutorials.
 </p>
 
-<h3><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
+<h3 id="perlmeme"><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
 
 <p>
 Several tutorials, "Frequently Asked Questions", and "Howto" documents
 on various subjects.
 </p>
 
+<h3 id="perlmonks"><a 
+href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's
+Tutorials</a></h3>
+
+<p>
+Several tutorials as hosted on the popular "Perlmonks.org" site. Cover various
+topics.
+</p>
 
