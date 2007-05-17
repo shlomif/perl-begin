@@ -4,16 +4,19 @@
 
 <h2>Online Documentation</h2>
 
-<p>
+<ul>
+
+<li>
 <a href="http://perldoc.perl.org/">Perldoc</a> - contains a searchable index
 for the core perl documentation.
-</p>
+</li>
 
-<p>
-<a href="http://www.mongueurs.net/perlfr/perl.html">French version of the Perl
+<li>
+<a href="http://perl.enstimac.fr/">French version of the Perl
 Manual</a> - a bit out-of-date, but still very pertinent for beginners.
-</p>
+</li>
 
+</ul>
 
 <h2>Books</h2>
 
