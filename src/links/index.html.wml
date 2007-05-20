@@ -45,6 +45,10 @@ including dependencies.
 
 <ul>
 <li>
+<a href="http://perl.net.au/wiki/Perl_Humour">Perl Humor</a> - a list of links
+to Perl humor.
+</li>
+<li>
 <a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Poetry/">Perl Poetry</a> - 
 Poems that are valid Perl programs.
 </li>
@@ -59,6 +63,17 @@ built-in Perl features. (some of them relatively obscure).
 <li>
 <a href="http://perl.plover.com/qotw/">The Perl Quiz of the Week</a> - 
 a quiz to write a Perl program by Mark Jason Dominus.
+</li>
+
+<li>
+<a href="http://www.perlmonks.org/?node=Obfuscated%20Code">Obfuscated 
+Perl Code</a> - even worse than usual.
+</li>
+
+<li>
+<a href="http://en.wikipedia.org/wiki/Just_another_Perl_hacker">"Just another
+Perl hacker" (JAPHs)</a> - way to print the phrase in Perl in as imaginative
+a way as possible.
 </li>
 </ul>
 
