@@ -15,27 +15,37 @@ Perl beginners and other people interested in Perl.
 <h2>Central Perl Wikis</h2>
 
 <ul>
+
+<li>
+<a href="http://www.perlfoundation.org/perl5/index.cgi">The Perl 5 Wiki</a> -
+the Official Wiki for Perl 5.
+</li>
+
 <li>
 <a href="http://perl.net.au/">perl.net.au - Wiki for Perl 
 from Perl Australia</a> - a MediaWiki-based Wiki from Perl Australia. See
 <a href="http://perl.net.au/wiki/New_to_Perl">its resources for 
 Beginners</a>.
 </li>
+
 <li>
 <a href="http://perl.wikia.com/wiki/Main_Page">Perl Wiki at the Wikia</a> -
 a Perl wiki at <a href="http://www.wikia.com/wiki/Wikia">Wikia</a>, a 
-community MediaWiki hosting service. 
+community MediaWiki hosting service. Mostly unmaintained.
 </li>
+
 <li>
 <a href="http://en.wikipedia.org/wiki/Perl">Perl at the 
-English Wikipedia</a> - The wikipedia is a multi-lingual world-editable 
+English Wikipedia</a> - The wikipedia is a multi-lingual world-editable
 encyclopedia. The Perl Page contains links to other pages inside the wikipedia
 about Perl.
 </li>
+
 <li>
 <a href="http://en.wikibooks.org/wiki/Programming:Perl">"Programming Perl" in
 the wikibooks</a> - a Book about Perl programming in the Wikibooks project.
 </li>
+
 </ul>
 
 <h2>Wikis on Specialised Topics</h2>
@@ -61,5 +71,14 @@ conference</a>.
 </li>
 <li>
 <a href="http://pdx.pm.org/kwiki/">Portland Perl Mongers Wiki</a>.
+</li>
+</ul>
+
+<h2>More lists of Wikis</h2>
+
+<ul>
+<li>
+<a href="http://perl.net.au/wiki/List_of_all_known_Perl_Wikis">List
+of all Known Perl Wikis</a>
 </li>
 </ul>
