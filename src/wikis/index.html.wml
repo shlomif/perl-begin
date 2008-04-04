@@ -1,8 +1,9 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Wikis for Perl and Perl Beginners" />
 
-<h2>Note</h2>
+<h2 id="note">Note</h2>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Wiki">A wiki</a> is a site that the main
@@ -12,7 +13,10 @@ and correction. Perl wikis can provide useful resources of information for
 Perl beginners and other people interested in Perl.
 </p>
 
-<h2>Central Perl Wikis</h2>
+<h2*>Table of Contents</h2*>
+<toc />
+
+<h2 id="central">Central Perl Wikis</h2>
 
 <ul>
 
@@ -48,7 +52,7 @@ the wikibooks</a> - a Book about Perl programming in the Wikibooks project.
 
 </ul>
 
-<h2>Wikis on Specialised Topics</h2>
+<h2 id="specialised">Wikis on Specialised Topics</h2>
 
 <ul>
 <li>
@@ -61,7 +65,7 @@ Assurance or testing) of Perl and with Perl.
 </li>
 </ul>
 
-<h2>Local Perl Groups' Wikis</h2>
+<h2 id="local-groups">Local Perl Groups' Wikis</h2>
 
 <ul>
 <li>
@@ -74,7 +78,7 @@ conference</a>.
 </li>
 </ul>
 
-<h2>More lists of Wikis</h2>
+<h2 id="more-lists">More lists of Wikis</h2>
 
 <ul>
 <li>
