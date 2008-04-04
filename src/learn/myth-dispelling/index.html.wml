@@ -44,7 +44,14 @@ Etc.
 Some of these complaints are addressed 
 <a href="http://www.perl.com/pub/a/2000/01/10PerlMyths.html">in Simon Cozens'
 article "Ten Perl Myths"</a> and 
-<a href="http://perl.net.au/wiki/Perl_Myths">PerlNet's Perl Myth List</a>. 
+<a href="http://perl.net.au/wiki/Perl_Myths">PerlNet's Perl Myth List</a>.
+Tim Bunce focused on 
+<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">dispelling 
+three large Perl Myths</a> in a presentation he has given and made available
+online.
+</p>
+
+<p>
 Here are some more observations.
 </p>
 
