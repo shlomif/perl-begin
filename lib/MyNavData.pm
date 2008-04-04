@@ -115,31 +115,6 @@ my $tree_contents =
             'url' => "wikis/",
             'title' => "Publicly editable sites with Lots of Useful Information",
         },
-        
-        {
-            'text' => "Site Resources",
-            'url' => "site-resources/",
-            'role' => "header",
-            'show_always' => 1,
-            'subs' =>
-            [
-                {
-                    'text' => "Mailing List",
-                    'url' => "site-resources/mailing-list/",
-                    'title' => "A mailing list for helping Beginners",
-                },
-                {
-                    'text' => "Wiki",
-                    'title' => "A sub-site that can be freely edited with any information",
-                    'url' => "site-resources/wiki/",
-                },
-                {
-                    'text' => "Web Forum",
-                    'url' => "site-resources/web-forum/",
-                    'title' => "A web-based forum where you can post messages",
-                },
-            ],
-        },
         {
             'text' => "Platforms",
             'url' => "platforms/",
@@ -189,6 +164,12 @@ my $tree_contents =
                     'url' => "uses/web/",
                 },
             ],
+        },
+        {
+            'text' => "Site Resources",
+            'url' => "site-resources/",
+            'role' => "header",
+            'show_always' => 1,
         },
         {
             'text' => "Contribute",
