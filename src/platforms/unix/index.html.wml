@@ -3,17 +3,53 @@
 <latemp_subject "Perl on UNIX and Linux Systems" />
 
 <p>
-    If you are using a UNIX-compatible system (such as Linux or Solaris), most chances
-    are that Perl 5 is already installed there. To verify that, type <tt>perl -v</tt>
-    inside a command shell, and check that the version of Perl is recent enough. If so, you 
-    can easily run Perl scripts there.
+If you are using a <a href="http://en.wikipedia.org/wiki/Unix">UNIX-compatible 
+system</a> (such as <a href="http://www.linux.org/">Linux</a>, 
+<a href="http://www.sun.com/software/solaris/index.jsp">Solaris</a>,
+or a 
+<a href="http://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>), most
+chances are that Perl 5 is already installed there. To verify that, type
+<tt>perl -v</tt> inside a command shell, and check that the version of Perl is
+recent enough. If so, you can easily run Perl scripts there.
 </p>
 
 <p>
-    Even if this is not the case, you can usually install it from the distribution you
-    are using, assuming you are an administrator of the system. Else, given enough quota it 
-    is possible to install the most recent version of Perl 5 under your home directory. 
-    This procedure can be followed by downloading the latest Perl source from CPAN, and 
-    following the instructions in the INSTALL file.
+Even if this is not the case, you can usually install it from the
+distribution you are using, assuming you are an administrator of the system.
+Else, given enough quota it is possible to install the most recent version of
+Perl 5 under your home directory.  This procedure can be followed by
+downloading the latest Perl source from 
+<a href="http://www.cpan.org/">CPAN</a>, and following the instructions in
+the <tt>INSTALL</tt> file.
 </p>
+
+<h2 id="tips">Tips</h2>
+
+<h3 id="perldoc">Setting up a local Perldoc</h3>
+
+<p>
+The <a href="http://perldoc.perl.org/perldoc.html">perldoc</a> 
+documentation program is not always present in the default installation, as many
+non-programmers or non-Perl programmers are not going to use it. It can
+be installed by:
+</p>
+
+<ol>
+<li>
+Installing the "perl-doc" or "perldoc" package using your distribution's
+package manager. See its documentation or support for details
+</li>
+<li>
+Installing <a href="http://docperl.sourceforge.net/">DocPerl</a>
+which is a web-interface to the local Perl documentation.
+</li>
+<li>
+Installing <a href="http://search.cpan.org/perldoc?tkpod">tkpod</a>
+which is a Perl/Tk-based interface.
+</li>
+<li>
+Alternatively one can access the <a href="http://perldoc.perl.org/">online
+perl documentation</a>, which may deviate from what you have.
+</li>
+</ol>
 
