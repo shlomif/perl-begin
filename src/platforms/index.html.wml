@@ -5,20 +5,20 @@
 <p>
 perl 5 (the most common implementation of the Perl language) was made very 
 portable and can run on almost any platform imaginable. (here's 
-<a href="http://www.perldoc.com/perl5.8.0/pod/perlport.html#Supported-Platforms">an exhaustive list</a>). Perl, however, started on UNIX platforms and still
+<a href="http://perldoc.perl.org/perlport.html#Supported-Platforms">an exhaustive list</a>). Perl, however, started on UNIX platforms and still
 reflects the UNIX culture to a large extent.
 </p>
 
-<h2><a href="./mac/">Mac OS (PowerPC, etc.)</a></h2>
+<h2 id="mac-os"><a href="./mac/">Mac OS (PowerPC, Intel, etc.)</a></h2>
 
 <p>
     Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as 
     compiled and installed from the source. Mac OS Classic requires MacPerl,
-    which I never worked with. Mac OS X is still highly recommended from the
-    aspect of running Perl or otherwise.    
+    which I never worked with. Mac OS X is still much more preferable
+    from the aspect of running Perl or otherwise.
 </p>
 
-<h2><a href="./windows/">Windows</a></h2>
+<h2 id="windows"><a href="./windows/">Microsoft Windows</a></h2>
 
 <p>
     Perl can easily run on Windows and makes for a very powerful and free
@@ -29,5 +29,15 @@ reflects the UNIX culture to a large extent.
 <p>
     Perl for Windows 32, is mostly compatible with Perl for UNIX, so scripts
     and modules written on one platform will run on the other.
+</p>
+
+<h2 id="unix"><a href="./unix/">UNIX Flavours 
+(Linux, Solaris, FreeBSD, etc.)</a></h2>
+
+<p>
+Perl originated from UNIX, runs on most UNIX flavours and UNIX-clones (both
+open-source and non-open-source ones). A port or package of the Perl 5 
+implementation is normally available from the distributor of the operating 
+system or the distribution.
 </p>
 
