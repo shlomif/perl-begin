@@ -34,13 +34,15 @@
 body {
 	margin: 0em auto; 
     padding: 0em;
-    background: url(./images/background.gif) top center repeat-y; 
     font-family: arial, verdana, sans-serif;
     font-size:80%;
 }
 
 #page-container {
 	width: 780px; margin: 0px auto; padding: 0px; border-left: solid 1px rgb(150,150,150); border-right: solid 1px rgb(150,150,150); 
+    /* Adding per http://stackoverflow.com/questions/74570/css-bad-gray-line-to-the-side-of-the-navigation-bar-on-httpperl-beginorg :
+     * The background is transparent.*/
+    background-color: white;
 }
 
 /**********************/
