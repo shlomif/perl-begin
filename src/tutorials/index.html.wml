@@ -83,10 +83,18 @@ and others. Does not cover modules and objects, but should get you started
 on simple scripts.
 </p>
 
+<h3 id="lpw-perl-beginners"><a 
+href="http://www.slideshare.net/davorg/lpw-begin">LPW: Begginers Perl by Dave
+Cross</a></h3>
+
+<p>
+Presentation slides by Dave Cross.
+</p>
+
 <h2 id="advanced">Tutorials for Advanced Users</h2>
 
 <p>
-We don't know of any tutorails for advanced users in English, but
+We don't know of any tutorials for advanced users in English, but
 <a href="$(ROOT)/books/#with_prev_knowledge">there are some books just
 for that</a>, some of which are freely available online.
 </p>
