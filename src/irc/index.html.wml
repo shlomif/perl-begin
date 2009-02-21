@@ -2,12 +2,12 @@
 
 <latemp_subject "IRC Channels for Perl Q&amp;A" />
 
-<h2>What is the IRC?</h2>
+<h2 id="what-is-irc">What is the IRC?</h2>
 
 <p>
 IRC stands for Internet Relay Chat, and it is a distributed, real-time form
 of communication, that was common from relatively early in the history of
-the Internet and is still very popular. IRC servers form networks of servers
+the Internet, and is still very popular. IRC servers form networks of servers
 - each network is separated from the other networks and the servers of each
 network share the same chat-rooms, user profiles and messages. Each network
 has different rules and conventions and a different culture. This allows 
@@ -32,6 +32,27 @@ that some networks are not recommended for asking Perl questions on, due to
 the treatment of beginner question, or general unfriendliness.
 </p>
 
+<h2 id="links">Links for More Information</h2>
+
+<ul>
+
+<li>
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">Wikipedia page
+on the "Internet Relay Chat"</a>
+</li>
+
+<li>
+<a href="http://www.irchelp.org/">IRC Help</a> - comprehensive helps and FAQs
+about IRC.
+</li>
+
+<li>
+<a href="http://en.wikipedia.org/wiki/List_of_IRC_clients">The Wikipedia's
+List/Comparison of IRC Clients</a>
+</li>
+
+</ul>
+
 <define-tag irc_channel whitespace="delete">
 <preserve net chan />
 <set-var %attributes />
@@ -55,7 +76,7 @@ the treatment of beginner question, or general unfriendliness.
 <restore net chan />
 </define-tag>
 
-<h2><a href="http://freenode.net/">FreeNode</a></h2>
+<h2 id="freenode"><a href="http://freenode.net/">FreeNode</a></h2>
 
 <p>
 This is most probably the best network for getting help in Perl and
@@ -64,11 +85,10 @@ technical matters in general.
 
 <p>
 Check the channels <irc_channel chan="perl" net="freenode" />,
-<irc_channel chan="mandriva" net="freenode" /> and
-<irc_channel chan="modperl" net="freenode" />.
+and <irc_channel chan="modperl" net="freenode" />.
 </p>
 
-<h2><a href="http://www.oftc.net/">OFTC</a></h2>
+<h2 id="oftc"><a href="http://www.oftc.net/">OFTC</a></h2>
 
 <p>
 The channel <irc_channel net="oftc" chan="perl" /> accepts beginner questions.

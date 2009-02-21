@@ -30,20 +30,20 @@ include rules.mak
 upload: upload_hexten
 
 upload_berlios: all
-	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
+	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
 
 upload_hexten: all
-	(cd dest && $(RSYNC) -r * perl-begin@ferrous.hexten.net:htdocs/)
+	(cd dest && $(RSYNC) -a * perl-begin@ferrous.hexten.net:htdocs/)
 
 upload_iglu: all
-	(cd dest && $(RSYNC) -r * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
+	(cd dest && $(RSYNC) -a * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
 
 upload_beta: all
-	(cd dest && $(RSYNC) -r * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/__Beta-Quop/)
+	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/__Beta-Quop/)
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 upload_home: all
-	(cd dest && $(RSYNC) -r * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
+	(cd dest && $(RSYNC) -a * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
 
 # .PHONY: 
 # 
