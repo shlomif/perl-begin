@@ -100,3 +100,40 @@ covers functional programming techniques using Perl and "transforming
 programs with programs". It covers such topics as closures, iterators,
 tokenising, and parsing.
 </p>
+
+<h2><a href="http://oreilly.com/catalog/9780596001735/">Perl 
+Best Practices</a></h2>
+
+<book:info
+    authors="Damian Conway"
+    publisher="oreilly"
+    isbn="0596001738"
+    perlbooksid="239"
+    />
+
+<p>
+"Perl Best Practices" covers the author's opinion of what should be done
+when writing Perl programs, and what should not be done. It covers all levels
+of the Perl language. Some of the advice given in the book is controversial,
+and you should still judge it according to your style and preferences, but 
+it's still gives a lot of good advice, and a lot of food for thought and
+consideration.
+</p>
+
+<p>
+For more discussion of this book refer to:
+</p>
+
+<ul>
+
+<li>
+<a href="http://www.perlfoundation.org/perl5/index.cgi?pbp_module_recommendation_commentary">"Perl
+Best Practices Module Recommendation Commentary"</a>
+</li>
+
+<li>
+<a href="http://www.perl.com/pub/a/2005/07/14/bestpractices.html">Perl.com
+feature inspired by the book.</a>
+</li>
+
+</ul>
