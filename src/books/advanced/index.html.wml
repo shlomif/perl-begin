@@ -84,4 +84,19 @@ accomplish them. By looking at the recipes one can learn more about Perl
 and also know how to accomplish many common tasks in Perl.
 </p>
 
+<h2><a href="http://hop.perl.plover.com/">Higher-Order Perl</a></h2>
 
+<book:info
+    authors="Mark Jason Dominus"
+    publisher="morgan_kaufmann"
+    isbn="1558607013"
+    perlbooksid="230"
+    />
+
+<p>
+This book (whose text is 
+<a href="http://hop.perl.plover.com/">available online on its site</a>)
+covers functional programming techniques using Perl and "transforming
+programs with programs". It covers such topics as closures, iterators,
+tokenising, and parsing.
+</p>
