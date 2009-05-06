@@ -4,7 +4,7 @@
 
 <p>
 This site is a static HTML site written in
-<a href="http://thewml.org/">Web Meta Language</a> and 
+<a href="http://thewml.org/">Website Meta Language</a> and 
 <a href="http://web-cpan.berlios.de/latemp/">Latemp</a>. Its 
 source code (that requires WML, Latemp, 
 <a href="http://www.gnu.org/software/make/">GNU 
