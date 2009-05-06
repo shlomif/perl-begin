@@ -41,7 +41,7 @@ to help people with their problems.
 
 <p>
 You can send patches or corrections to the HTML pages of the site. It is 
-preferable to send corrections to the <a href="$(ROOT)/source/">site's Web 
-Meta Language source</a>, because they can be applied immediately.
+preferable to send corrections to the <a href="$(ROOT)/source/">site's 
+Website Meta Language source</a>, because they can be applied immediately.
 </p>
 
