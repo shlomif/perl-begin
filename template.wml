@@ -197,10 +197,10 @@ http://perl-begin.berlios.de/<get-var url />
 <preserve url />
 <set-var %attributes />
 <ifeq "<get-var url />" "" 
-    "<set-var url="Main_Page" />" 
-    "<set-var url="<get-var url />" />" 
+    "<set-var url="" />" 
+    "<set-var url="/<get-var url />" />" 
     />
-http://perl.net.au/wiki/Beginners/<get-var url />
+http://perl.net.au/wiki/Beginners<get-var url />
 <restore url />
 </define-tag>
 
