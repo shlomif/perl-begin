@@ -16,7 +16,7 @@ with many interesting articles, some sections and links.
 
 <li>
 <a href="http://use.perl.org/">use Perl;</a> - a news site dedicated to Perl
-, Slashdot-style. (but with much fewer comment and such of higher 
+, Slashdot-style. (but with much fewer comments and such of higher 
 signal-to-noise ratio). Visit it to keep up to date with what's going on in
 Perl.
 </li>
@@ -44,6 +44,18 @@ including dependencies.
 <a href="http://perlbuzz.com/">Perl Buzz</a> - a news feed about Perl
 with several sections, that aims to cover "the newest and best of
 the Perl world".
+</li>
+
+<li>
+<a href="http://www.perlfoundation.org/">The Perl Foundation</a> -
+a non-profit organisation dedicated to the advancement of the Perl
+programming language.
+</li>
+
+<li>
+<a href="http://www.enlightenedperl.org/">Enlightened Perl</a> -
+an organisation that "supports certain Perl-development efforts that
+ensure Perl's future as an enterprise-grade deevelopment platform."
 </li>
 
 </ul>
@@ -101,22 +113,25 @@ early beginning. Wrote several FAQs and essays on Perl.
 
 <li>
 <a href="http://perl.plover.com/">Mark Jason Dominus</a> - Runs a web-site
-that contains a lot of random information and code about Perl.
+that contains a lot of random information and code about Perl. Authored
+the book "Higher Order Perl".
 </li>
 
 <li>
 <a href="http://www.csse.monash.edu.au/~damian/">Damian Conway</a> - a computer
-science academic, who is obsessed with Perl. Wrote a book and some modules 
-(including one to write Perl in Latin - ;-)), and is considered one of the
-primary experts on Object-Oriented Programming in Perl. Now co-heads the Perl 6
+science academic, with a passion for Perl. Wrote some books and many
+CPAN modules (including 
+<a href="http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html">one 
+to write Perl in Latin</a> - ;-)), and is considered 
+one of the primary experts on Object-Oriented Programming in Perl. Now 
+co-heads the Perl 6
 effort.
 </li>
 
 <li>
 <a href="http://www.stonehenge.com/merlyn/">Randal L. Schwartz</a> - 
-co-authored
-some of Perl's most important books and one of the top experts on Perl on the
-planet.
+co-authored some of Perl's most important books and one of the top experts 
+on Perl on the planet.
 </li>
 
 <li>
@@ -135,7 +150,7 @@ the core Perl distribution and external modules, and an all-around nice guy.
 a comprehensive hierarchy of links.
 </p>
 
-<h3 id="dmoz_perl_category"><a href="http://dmoz.org/Computers/Programming/Languages/Perl/">DMoz' Perl Category</a></h3>
+<h3 id="dmoz_perl_category"><a href="http://dmoz.org/Computers/Programming/Languages/Perl/">DMoz's Perl Category</a></h3>
 
 <p>
 The source of the above, which is more up-to-date, but is slower and does not
