@@ -32,7 +32,7 @@ small amount of awareness your code can be <b>portable</b> across all UNIXes,
 and even on Windows and other platforms; Perl is <b>documented extensively</b> 
 and you can get a <b>lot of interactive, human answers</b> for your questions 
 from  <a href="$(ROOT)/mailing-lists/">mailing lists</a>,
-<a href="$(ROOT)/irc/">online chats</a> and <a href="web-forums/">web 
+<a href="$(ROOT)/irc/">online chats</a> and <a href="$(ROOT)/web-forums/">web 
 forums</a>.
 </p>
 
