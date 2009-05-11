@@ -19,8 +19,8 @@ Zawinski</a>)
 <p>
 This slight mis-quote, illustrates a point - <b>Perl penetrates bottom-up</b>. 
 A  programmer comes to a company, he knows Perl and uses it to write his
-scripts. When given a task to write an application for which Perl is good,
-he <b>quickly uses Perl to write it quickly</b>. The management is 
+scripts. When given a task to write an application for which Perl is a
+good choice, he <b>quickly uses Perl to write it quickly</b>. The management is 
 <b>impressed</b>. And next thing you know, there is a lot of Perl code in the 
 organization that needs to be maintained, and <b>more employees are trained in 
 Perl</b>, and start to like it, and the company needs <b>more Perl 
@@ -29,7 +29,7 @@ more rapidly.
 </p>
 
 <p>
-As a result Perl has <b>become very popular</b>. Not only that but a lot
+As a result, Perl has <b>become very popular</b>. Not only that, but a lot
 of open source code was written in it and was made available online. It is
 used by such very large, very busy, sites as
 <a href="http://amazon.com/">Amazon.com</a>,
@@ -78,7 +78,10 @@ make it <b>excellent for beginning programmers</b>.
 
 <p>
 <b>To learn Perl</b> see <a href="$(ROOT)/tutorials/">our list of online
-tutorials</a> or buy <a href="$(ROOT)/books/">a book</a>. Then browse
+tutorials</a>, read <a href="$(ROOT)/books/#with_prev_knowledge">a 
+book for people with previous knowledge of programming</a> online (some
+are available online free-of-charge)
+or buy <a href="$(ROOT)/books/">a different book</a>. Then browse
 <a href="$(ROOT)">the rest of the site</a>.
 </p>
 
@@ -90,7 +93,7 @@ Almost anything. Traditionally, Perl has been used for writing
 most reliable as well as ubiquitous, and probably still the most commonly
 used on UNIX systems. Its qualities of <b>interfacing</b> to all the host 
 operating system <b>system calls</b>, and providing <b>good abstractions</b>
-make writing <b>portable perl script</b> relatively easy, and they are more 
+make writing <b>portable Perl scripts</b> relatively easy, and they are more 
 reliable than 
 <a href="http://en.wikipedia.org/wiki/Bash">shell</a> or 
 <a href="http://en.wikipedia.org/wiki/AWK_%28programming_language%29">awk</a>,
@@ -99,10 +102,10 @@ and can be made more modular as Perl is a more powerful language.
 
 <p>
 When the Web revolution came and web sites cropped, Perl 5 was there to
-<b>power the Web</b>. Commonly referred to as "the glue of the Internet" Perl 
+<b>power the Web</b>. Commonly referred to as "the glue of the Internet", Perl 
 5 was used to write server-side scripts using CGI and other technologies,
-and even write many large scale applications. Despite facing a some
-competition from other languages recently, like PHP or Python (see below),
+and even write many large-scale applications. Despite facing a some
+competition from other languages recently, like PHP or Python,
 Perl 5 is still a very popular choice for that.
 </p>
 
@@ -111,5 +114,4 @@ Many other uses were later found for Perl: writing network servers, GUI
 programs, <a href="$(ROOT)/uses/bio-info/">Bio-informatics</a>, <a
 href="$(ROOT)/uses/qa/">Quality Assurance and Testing</a>, and web automation.
 </p>
-
 
