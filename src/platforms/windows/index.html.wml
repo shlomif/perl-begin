@@ -1,17 +1,14 @@
 #include '../template.wml'
+#include "win32.wml"
 
 <latemp_subject "Perl on Win32" />
 
-<p>
-    Perl can easily run on Windows and makes for a very powerful and free
-    scripting language there. Complete Beginners should probably start
-    by downloading an ActiveState's <a href="http://www.activestate.com/Products/ActivePerl/">ActivePerl</a> build and experimenting with it.
-</p>
+<win32_intro />
 
 <p>
-    Perl code can be written to run perfectly on both Windows and UNIXes, out
-    of the box. Most Perl code written by people who know what they are doing
-    will be such, and this is the case for most CPAN Perl modules as well.
+Perl code can be written to run perfectly on both Windows and UNIXes, out
+of the box. Most Perl code written by people who know what they are doing
+will be such, and this is the case for most CPAN Perl modules as well.
 </p>
 
 <h2>Resources</h2>
@@ -28,11 +25,11 @@ Portal</a>.
 <h3>Mailing Lists</h3>
 
 <p>
-    ActiveState has <a
-    href="http://lists.perl.org/showlist.cgi?name=perl-win32-users">a mailing
-    list for Win32 users</a>. Generally, Perl for Win32 questions can be
-    effectively answered in beginners mailing lists as well, but this mailing
-    list may also prove of help especially in regards to Win32-specific Perl
-    extensions.
+ActiveState has <a
+href="http://lists.perl.org/showlist.cgi?name=perl-win32-users">a mailing
+list for Win32 users</a>. Generally, Perl for Win32 questions can be
+effectively answered in beginners mailing lists as well, but this mailing
+list may also prove of help especially in regards to Win32-specific Perl
+extensions.
 </p>
 

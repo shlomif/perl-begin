@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "win32.wml"
 
 <latemp_subject "Perl Platforms" />
 
@@ -20,12 +21,7 @@ from the aspect of running Perl or otherwise.
 
 <h2 id="windows"><a href="./windows/">Microsoft Windows</a></h2>
 
-<p>
-Perl can easily run on Windows and makes for a very powerful and free
-scripting language there. Complete Beginners should probably start
-by downloading <a href="http://strawberryperl.com/">Strawberry Perl</a>
-and experimenting with it.
-</p>
+<win32_intro />
 
 <p>
 perl for Windows, is mostly compatible with Perl for UNIX, so scripts
