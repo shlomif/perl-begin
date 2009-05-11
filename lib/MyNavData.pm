@@ -180,6 +180,10 @@ my $tree_contents =
             'subs' =>
             [
                 {
+                    'text' => "Contributors List",
+                    'url' => "contribute/list/",
+                },
+                {
                     'text' => "Site's Source Code",
                     'url' => "source/",
                 },
