@@ -70,7 +70,7 @@ Perl code can be <b>written to be very maintenable, readable and elegant</b>.
 Perl indeed has many features and behaviors to make writing short programs
 - often one liners - easier, because one knows this is most of the use people 
 do with it. However, <b>there's nothing in Perl</b> that prevents <b>writing
-large-scale, maintainenable programs</b>. And in fact
+large-scale, maintainable programs</b>. And in fact
 <a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
 programs have been written and are still successful.</a>
 </p>
@@ -79,6 +79,6 @@ programs have been written and are still successful.</a>
 Perl is probably not for everyone. To write in Perl <b>you need good 
 programmers</b>. However, you must always have good programmers, because
 <b>depending on bad programmers will introduce bugs</b>, security holes, large
-delays and other factors.
+delays and other bad side-effects.
 </p>
 
