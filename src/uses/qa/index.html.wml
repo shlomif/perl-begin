@@ -14,7 +14,7 @@ concentractes a lot of information about it. So does
 <p>
 <a href="http://testanything.org/">TAP</a> is a simple protocol for test
 scripts (in any programming language) to communicate with a test harness.
-Invented by Larry Wall for Perl 1, and having been evolved further, TAP is
+Invented by Larry Wall for Perl 1, and having evolved further, TAP is
 very suitable for universal language-independent testing.
 </p>
 
