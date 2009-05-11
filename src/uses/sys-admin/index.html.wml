@@ -16,3 +16,38 @@ functions available inside Perl), and on its regular expressions capabilities
 (which are handier than what shell scripts offer).
 </p>
 
+<h2 id="modules">Modules</h2>
+
+<p>
+Useful modules for system administration are:
+</p>
+
+<ul>
+
+<li>
+<a href="http://perldoc.perl.org/File/Spec.html">File::Spec</a> - a core module
+to handle file and directory Paths portably.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/String-ShellQuote/">String-ShellQuote</a>
+- quote strings for passing through the shell. Also see the list forms of
+system.
+</li>
+
+<li>
+<a href="http://search.cpan.org/~dland/File-Path-2.07/">File-Path</a> - a
+core module to create or remove directory trees (portably).
+</li>
+
+<li>
+<a href="http://search.cpan.org/perldoc?File::Copy">File::Copy</a> - a core
+module to copy files.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/IO-All/">IO-All</a> - an all-in-one
+IO package with a lot of syntactic sugar. Non-core.
+</li>
+
+</ul>
