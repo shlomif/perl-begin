@@ -21,12 +21,21 @@ which have a more international focus.
 
 <h2>Resources of Interest</h2>
 
-<h3><a href="http://lists.cpan.org/">The Perl Mailing List Database</a></h3>
+<h3><a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">List
+of Mailing Lists on the Perl 5 Wiki</a></h3>
 
 <p>
-A comprehensive list of the Perl mailing lists worldwide. Some of them are
-for specific Perl technologies and not directly related to core or general use
-Perl functionality.
+A comprehensive list of the Perl mailing lists, that is under active
+work, and still work-in-progress.
+</p>
+
+<h3><a href="http://lists.cpan.org/" rel="nofollow">The 
+Perl Mailing List Database</a></h3>
+
+<p>
+An out-of-date list of the Perl mailing lists worldwide. Some of them are
+for specific Perl technologies and not directly related to "core" or 
+"general use" Perl functionality.
 </p>
 
 <h3><a href="http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1">Yahoo Groups Perl Lists</a></h3>
