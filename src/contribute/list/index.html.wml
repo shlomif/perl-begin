@@ -2,31 +2,28 @@
 
 <latemp_subject "Contributors List" />
 
-<dl>
-<dt>
-<a href="http://t2.technion.ac.il/~shlomif/">Shlomi Fish</a>
-</dt>
-<dd>
+<ul>
+
+<li>
+<a href="http://www.shlomifish.org/"><b>Shlomi Fish</b></a> -
 Founded perl-begin and did most of the work on the initial versions.
-</dd>
-<dt>
-<a href="http://www.cthulhu-burger.org/">Dave Goehrig</a>
-</dt>
-<dd>
+</li>
+
+<li>
+<a href="http://www.cthulhu-burger.org/"><b>Dave Goehrig</b></a> -
 Contributed the essay "What the Books Don't Teach You" to the Wiki.
-</dd>
-<dt>
-Marilyn Matty
-</dt>
-<dd>
+</li>
+
+<li>
+<b>Marilyn Matty</b> - 
 Gave some web design and content tips.
-</dd>
-<dt>
-Mark Fowler
-</dt>
-<dd>
+</li>
+
+<li>
+<b>Mark Fowler</b> - 
 Suggested two important additions to the articles section.
-</dd>
-</dl>
+</li>
+
+</ul>
 
 
