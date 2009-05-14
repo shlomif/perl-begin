@@ -2,6 +2,53 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
+
+<p>
+Recently, the <a href="$(ROOT)">Perl-Begin site</a> has
+seen many updates and corrections. Among them are:
+</p>
+
+<ul>
+
+<li>
+In <a href="$(ROOT)/platforms/windows/">the Perl on Windows
+page</a>, we now recommend the open-source
+and community-headed <a href="http://strawberryperl.com/">Strawberry
+Perl</a> instead of the proprietary and quirky ActivePerl.
+</li>
+
+<li>
+<a href="$(ROOT)/contribute/list/">The contributors list</a>
+is now in the global navigation menu. This makes sure it will be prominently
+features on all pages of the site, and won't be left out-of-date.
+</li>
+
+<li>
+<a href="$(ROOT)/uses/sys-admin/">The systems administration page</a> now
+contains links to many useful modules.
+</li>
+
+<li>
+Many new links have been added, both internal and external, and some broken
+links have been fixed.
+</li>
+
+<li>
+The licensing blurb at the bottom was clarified to be CC-by 2.0, or at your
+option a later version.
+</li>
+
+</ul>
+
+<p>
+Aside from all that, we'd like to note that our attention has been
+directed to an
+<a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">effort
+on the Perl 5 Wiki to list all Perl-related mailing lists</a>. This effort
+needs help, and there are instructions for that, at the link.
+</p>
+
 <h2 id="news_07_Jul_2006">07-July-2006: The wiki is now part of <a href="http://perl.net.au/">perl.net.au</a></h2>
 
 <p>
