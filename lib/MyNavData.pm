@@ -39,14 +39,21 @@ my $tree_contents =
             role => "header",
             title => "Why learn Perl?",
             'expand' => { 're' => "", },
-        },
-        {
-            'url' => "learn/get-a-job/",
-            'text' => "Get a Job!",
-        },
-        {
-            'url' => "learn/myth-dispelling/",
-            'text' => "Isn't Perl Bad?",
+            'subs' =>
+            [
+                {
+                    'url' => "learn/get-a-job/",
+                    'text' => "Get a Job!",
+                },
+                {
+                    'url' => "learn/myth-dispelling/",
+                    'text' => "Isn't Perl Bad?",
+                },
+                {
+                    'url' => "learn/who-is-using/",
+                    'text' => "Who is Using Perl?"
+                },
+            ],
         },
         {
             'url' => "resources/",

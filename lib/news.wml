@@ -1,40 +1,10 @@
 <define-tag perl_begin_news_boxes>
 <div class="sidebarbox-border bg-green01">
 <div class="sidebarbox-title-shading bg-green02">Testimonials</div>
+
 <p>
-Perl is used by:
+<a href="$(ROOT)/learn/who-is-using/">More…</a>
 </p>
-
-<h3>Web Companies</h3>
-
-<ul>
-<li>
-<a href="http://amazon.com/">Amazon.com</a>.
-</li>
-<li>
-<a href="http://www.livejournal.com/">LiveJournal.com</a>
-</li>
-<li>
-<a href="http://slashdot.org/">Slashdot</a>
-</li>
-<li>
-<a href="http://www.yahoo.com/">Yahoo</a>
-</li>
-</ul>
-
-<h3>Software</h3>
-
-<ul>
-<li>
-<a href="http://spamassassin.apache.org/">SpamAssassin</a>
-</li>
-<li>
-<a href="http://www.movabletype.org/">Movable Type</a>
-</li>
-<li>
-<a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
-</li>
-</ul>
 </div>
 
 <div class="sidebarbox-border bg-yellow03">

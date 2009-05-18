@@ -1,0 +1,37 @@
+#include '../template.wml'
+
+<latemp_subject "Testimonials and Companies and People Using Perl" />
+
+<h2 id="companies-and-projects">Companies and Projects</h2>
+
+<h3 id="web-companies">Web Companies</h3>
+
+<ul>
+<li>
+<a href="http://amazon.com/">Amazon.com</a>
+</li>
+<li>
+<a href="http://www.livejournal.com/">LiveJournal.com</a>
+</li>
+<li>
+<a href="http://slashdot.org/">Slashdot</a>
+</li>
+<li>
+<a href="http://www.yahoo.com/">Yahoo</a>
+</li>
+</ul>
+
+<h3 id="software">Software</h3>
+
+<ul>
+<li>
+<a href="http://spamassassin.apache.org/">SpamAssassin</a>
+</li>
+<li>
+<a href="http://www.movabletype.org/">Movable Type</a>
+</li>
+<li>
+<a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
+</li>
+</ul>
+
