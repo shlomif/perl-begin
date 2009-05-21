@@ -6,7 +6,7 @@
 
 <ul>
 
-<li>
+<li id="testimonial-saved-my-vacation">
 <p>
 <q>Perl saved my vacation!</q><br />
 -- 
@@ -42,7 +42,7 @@ L. Andrews credits Perl and the Perl Mongers</a> on a humanities thesis.
 </p>
 </li>
 
-<li>
+<li id="testimonial-ajt">
 <p>
 <q>We went live on budget, to specification and on time (itself an 
 achievement)… Perl contributed significantly to the project.

@@ -3,6 +3,17 @@
 <div class="sidebarbox-title-shading bg-green02">Testimonials</div>
 
 <p>
+<q>We went live on budget, to specification and on time</q>
+-- <a href="$(ROOT)/learn/who-is-using/#testimonial-ajt">ajt</a>
+</p>
+
+<p>
+<q>Perl saved my vacation!</q>
+-- <a href="$(ROOT)/learn/who-is-using/#testimonial-saved-my-vacation">Tom
+Moertel</a>
+</p>
+
+<p>
 <a href="$(ROOT)/learn/who-is-using/">More…</a>
 </p>
 </div>
