@@ -2,6 +2,32 @@
 
 <latemp_subject "Testimonials and Companies and People Using Perl" />
 
+<h2 id="testimonials">Testimonials</h2>
+
+<ul>
+
+<li>
+<p>
+<q>Perl saved my vacation!</q><br />
+-- 
+<a href="http://blog.moertel.com/articles/2009/04/25/perl-saved-my-vacation">Tom 
+Moertel</a>
+</p>
+</li>
+
+<li>
+<p>
+<q>
+Since then, I’ve programmed in other languages, including Java, C#, Python and
+PHP, but <b>I keep coming back to Perl</b>. The language has evolved and 
+matured, while new frameworks and libraries have made Web programming fun 
+again.</q><br />
+-- <a href="http://blog.webadmin.ufl.edu/2009/05/14/web-programming-in-perl/">Daniel 
+Westermann-Clark</a>
+</p>
+</li>
+</ul>
+
 <h2 id="companies-and-projects">Companies and Projects</h2>
 
 <h3 id="web-companies">Web Companies</h3>
