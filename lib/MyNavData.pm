@@ -91,6 +91,11 @@ my $tree_contents =
             ],
         },
         {
+            'url' => "IDEs-and-tools/",
+            'text' => "IDEs and Development Tools",
+            'title' => "Integrated Development Environments (IDEs), Programmer Editors, and other Development Tools for Perl",
+        },
+        {
             'url' => "core-doc/",
             'text' => "Core Docs",
         },

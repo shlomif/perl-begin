@@ -1,0 +1,49 @@
+#include '../template.wml'
+
+<latemp_subject "IDEs (Integrated Development Environments and Other Tools for Perl" />
+
+<h2 id="IDEs">IDEs</h2>
+
+<h3 id="padre"><a href="http://padre.perlide.org/">Padre - 
+the Perl IDE</a></h3>
+
+<p>
+Padre is a cross-platform, open-source, free, IDE for Perl, written in Perl, 
+which is under active development. It's probably the most recommended for
+most people who don't have a previous preference.
+</p>
+
+<h3 id="komodo"><a href="http://www.activestate.com/komodo_edit/">Komodo 
+Edit</a> and <a href="http://www.activestate.com/komodo/">Komodo IDE</a></h3>
+
+<p>
+Komod Edit is a cross-platform, costless, open-source editor for Perl and 
+other dynamic languages by ActiveState. Komodo IDE is a commercially-enhanced 
+version of it which is not open-source and costs money.
+</p>
+
+<h3 id="eclipse-epic"><a href="http://www.epic-ide.org/">EPIC - Perl Editor
+and IDE for Eclipse</a></h3>
+
+<p>
+EPIC is a set of plugins for the <a href="http://www.eclipse.org/">Eclipse
+Java-based IDE</a> that allows one to edit and manage Perl projects. Eclipse
+is cross-platform, free and open-source and so is EPIC.
+</p>
+
+<h3 id="vim"><a href="http://www.vim.org/">Vim</a></h3>
+
+<p>
+Vim is a popular open-source, cross-platform and free editor, with good
+support for editing Perl code. 
+<a href="http://www.perlfoundation.org/perl5/index.cgi?vim">the 
+Perl 5 Wiki page about Vim</a> contains more information.
+</p>
+
+<p>
+By default Vim behaves very much like the ubiquitous UNIX editor
+<a href="http://en.wikipedia.org/wiki/Vi">vi</a>, which may seem foreign
+to people used to the conventions of modern desktop environments. However,
+using 
+<a href="http://vimdoc.sourceforge.net/htmldoc/gui_w32.html#mswin.vim">mswin.vim</a> it can behave much more like Windows-based editors.
+</p>
