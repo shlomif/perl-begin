@@ -47,3 +47,16 @@ to people used to the conventions of modern desktop environments. However,
 using 
 <a href="http://vimdoc.sourceforge.net/htmldoc/gui_w32.html#mswin.vim">mswin.vim</a> it can behave much more like Windows-based editors.
 </p>
+
+<h3 id="TextMate"><a href="http://macromates.com/">TextMate</a>, 
+<a href="http://www.e-texteditor.com/">E Text Editor</a>
+and <a href="http://e-texteditor.com/blog/2009/releasing-the-source">E Text
+Editor for Linux/UNIX</a></h3>
+
+<p>
+TextMate is a commercial (and not open source) programmers' editor that has 
+become popular on Mac OS X, and E Text Editor is a commercial version of it 
+for Windows, with source available for compiling on Linux and other
+systems.
+</p>
+
