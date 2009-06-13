@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<latemp_subject "IDEs (Integrated Development Environments and Other Tools for Perl" />
+<latemp_subject "IDEs (Integrated Development Environments) and Other Tools for Perl" />
 
 <h2 id="IDEs">IDEs</h2>
 
