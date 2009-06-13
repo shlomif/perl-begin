@@ -1,6 +1,10 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "IDEs (Integrated Development Environments) and Other Tools for Perl" />
+
+<h2*>Table of Contents</h2*>
+<toc />
 
 <h2 id="IDEs">IDEs</h2>
 
