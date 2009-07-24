@@ -1,0 +1,37 @@
+#include '../template.wml'
+
+<latemp_subject "Links to Perl Blogs" />
+
+<h2 id="planets">Perl "Planets" and Aggregators</h2>
+
+<ul>
+
+<li>
+<a href="http://perlsphere.net/"><b>Perlsphere.net</b></a> - aggregates many
+Perl blogs.
+</li>
+
+<li>
+<a href="http://ironman.enlightenedperl.org/"><b>Planet Perl Iron Man</b></a> -
+an aggregator for the blogs of all participants in the
+<a href="http://www.enlightenedperl.org/ironman.html">Perl Iron Man Blogging
+Challenge</a> that encourages people to blog about Perl regularly. 
+</li>
+
+<li>
+<a href="http://planet.perl.org/">Planet Perl</a> - another aggregator with
+more official status, but one that lacks comprehensiveness.
+</li>
+
+<li>
+<a href="http://planetsix.perlfoundation.org/">Planet Perl Six</a> -
+an "aggregator of select Perl 6 related blogs</a>
+</li>
+
+<li>
+<a href="http://planet.catalystframework.org/">Planet Catalyst</a> -
+a Planet related to <a href="http://www.catalystframework.org/">Catalyst</a>,
+the elegant Perl-based web framework.
+</li>
+
+</ul>
