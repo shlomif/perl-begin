@@ -89,10 +89,11 @@ or buy <a href="$(ROOT)/books/">a different book</a>. Then browse
 
 <p>
 Almost anything. Traditionally, Perl has been used for writing 
-<b>system administation scripts</b>, and is still the solution that is the
-most reliable as well as ubiquitous, and probably still the most commonly
-used on UNIX systems. Its qualities of <b>interfacing</b> to all the host 
-operating system <b>system calls</b>, and providing <b>good abstractions</b>
+<b>system administation scripts</b>. It is still the solution for that
+which is the most reliable and ubiquitous, and probably is still very 
+commonly used for that on UNIX systems. Its qualities of <b>interfacing</b> to 
+all the host operating system <b>system calls</b>, and providing <b>good 
+abstractions</b>
 make writing <b>portable Perl scripts</b> relatively easy, and they are more 
 reliable than 
 <a href="http://en.wikipedia.org/wiki/Bash">shell</a> or 
