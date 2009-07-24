@@ -67,10 +67,10 @@ and easily than with any other language.
 
 <p>
 Perl code can be <b>written to be very maintainable, readable and elegant</b>.
-Perl indeed has many features and behaviors to make writing short programs
-- often one liners - easier, because one knows this is most of the use people 
-do with it. However, <b>there's nothing in Perl</b> that prevents <b>writing
-large-scale, maintainable programs</b>. And in fact
+Perl indeed sports many features and properties that make writing short 
+programs - often one liners - easier, because this is what people use it for
+most of the time. However, <b>there's nothing in Perl</b> that prevents 
+<b>writing large-scale, maintainable programs</b>. And in fact
 <a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
 programs have been written and are still successful.</a>
 </p>
