@@ -36,7 +36,7 @@ user-groups world-wide.
 Archive Network</a> - Contains a lot of modules for doing practically
 anything with Perl. Why re-invent the wheel when so many different types
 of them are available for free. Note that Perl distributions on various 
-systems contains an easy to use interface to install modules from it, 
+systems contain an easy to use interface to install modules from it, 
 including dependencies.
 </li>
 
