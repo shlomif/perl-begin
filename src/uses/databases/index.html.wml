@@ -111,3 +111,10 @@ hash/array DBM that supports transactions. Reported to be slow, however.
 
 </ul>
 
+<h2 id="xbase">XBase Databases</h2>
+
+<p>
+There seems to be <a href="http://search.cpan.org/dist/DBD-XBase/">an
+XBase module on CPAN</a> . It seems to be pure-Perl, so it may be slow.
+</p>
+
