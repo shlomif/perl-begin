@@ -114,7 +114,7 @@ Attribution License version 2.0</a> (or at your option any later version).
 
     <!-- Sitename and Banner -->
     <div class="site-name">
-      <h1>Perl Beginners' Site</h1>
+      <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
       <div class="site-slogan">
         Perl - because programming should be fun.
       </div>
