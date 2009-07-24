@@ -19,7 +19,7 @@ programming language</a>. Perl code is very
 <a href="http://www.paulgraham.com/power.html"><b>succinct</b></a> and can be 
 written very quickly, while still performing well in most cases. It is very 
 usual to <b>achieve in one line of Perl</b> what 
-<b>requires 100's of lines in C</b> and other languages. 
+<b>requires 100s of lines in C</b> and other languages. 
 <a href="$(ROOT)/learn/">Read more...</a>
 </p>
 
