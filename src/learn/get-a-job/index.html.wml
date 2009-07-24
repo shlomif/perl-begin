@@ -105,9 +105,9 @@ and can be made more modular as Perl is a more powerful language.
 When the Web revolution came and web sites cropped, Perl 5 was there to
 <b>power the Web</b>. Commonly referred to as "the glue of the Internet", Perl 
 5 was used to write server-side scripts using CGI and other technologies,
-and even write many large-scale applications. Despite facing a some
-competition from other languages recently, like PHP or Python,
-Perl 5 is still a very popular choice for that.
+and even write many large-scale applications. Despite facing some competition
+from other languages recently, like PHP or Python, Perl 5 is still a very
+popular choice for that.
 </p>
 
 <p>
