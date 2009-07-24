@@ -180,6 +180,10 @@ my $tree_contents =
                     'text' => "Web/CGI",
                     'url' => "uses/web/",
                 },
+                {
+                    'text' => "XML",
+                    'url' => "uses/xml/",
+                },
             ],
         },
         {
