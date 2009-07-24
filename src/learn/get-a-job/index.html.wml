@@ -96,7 +96,7 @@ all the host operating system <b>system calls</b>, and providing <b>good
 abstractions</b>
 make writing <b>portable Perl scripts</b> relatively easy, and they are more 
 reliable than 
-<a href="http://en.wikipedia.org/wiki/Bash">shell</a> or 
+<a href="http://en.wikipedia.org/wiki/Unix_shell">shell</a> or 
 <a href="http://en.wikipedia.org/wiki/AWK_%28programming_language%29">awk</a>,
 and can be made more modular as Perl is a more powerful language.
 </p>
