@@ -1,0 +1,39 @@
+#include '../template.wml'
+
+<latemp_subject "Graphical User Interface (GUI) Development in Perl" />
+
+<p>
+Graphical User Interfaces (or "GUIs") are rich, graphical programsa and
+applications that are displayed on the screen using windows, menus, buttons,
+input boxes, list boxes and other controls. Perl has extensive support
+for many GUI libraries.
+</p>
+
+<h2 id="wxperl"><a href="http://wxperl.sourceforge.net/">wxPerl</a></h2>
+
+<p>
+wxPerl is a Perl interface to the open source, cross-platform 
+<a href="http://www.wxwidgets.org/">wxWidgets library</a>, which provides
+native look and feel, while still providing a lot of convenience.
+</p>
+
+<p>
+<a href="http://padre.perlide.org/">Padre, the Perl IDE</a> is being
+written using wxPerl, and one can search its source code (using 
+<a href="http://betterthangrep.com/">ack</a> ,
+<a href="http://en.wikipedia.org/wiki/Grep">grep</a> or a similar tool)
+to find useful examples of wxPerl code in action.
+</p>
+
+<h2 id="perl-tk"><a href="http://search.cpan.org/dist/Tk/">Perl-Tk</a></h2>
+
+<p>
+Perl-Tk is a port of 
+<a href="http://en.wikipedia.org/wiki/Tk_%28framework%29">the Tk toolkit</a>
+that originated with Tcl, to Perl.
+It is cross-platform and open-source, but in provides relatively
+unattractive widgets/controls, which are not easily skinable. However, it 
+provides a high-level API with many convenient niceties, and is commonly 
+available. 
+</p>
+
