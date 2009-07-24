@@ -37,3 +37,13 @@ provides a high-level API with many convenient niceties, and is commonly
 available. 
 </p>
 
+<h2 id="gtk"><a href="http://gtk2-perl.sourceforge.net/">gtk2-perl</a></h2>
+
+<p>
+A set of Perl bindings for gtk+ and various related libraries (including
+those of the GNOME project). Provides an attractive look and feel on
+<a href="http://en.wikipedia.org/wiki/X_Window_System">X-Window</a>-based 
+UNIX systems (including Linux) which looks quite foreign on
+Microsoft Windows. A very capable and powerful GUI library.
+</p>
+
