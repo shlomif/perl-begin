@@ -37,8 +37,8 @@ provides a unified way to perform SQL queries across many database
 backends: <a href="http://search.cpan.org/dist/DBD-Pg/">PostgreSQL</a>,
 <a href="http://search.cpan.org/dist/DBD-SQLite/">SQLite</a>, 
 <a href="http://search.cpan.org/dist/DBD-mysql/">MySQL</a> (but see
-<a href="http://www.shlomifish.org/open-source/anti/mysql/">this page
-for some reason why you may prefer a different system</a>)
+<a href="http://www.shlomifish.org/open-source/anti/mysql/">this page</a>
+for some reasons why you may prefer a different system),
 <a href="http://search.cpan.org/dist/DBD-Oracle/">Oracle</a>,
 <a href="http://search.cpan.org/dist/DBD-InterBase/">Firebird</a>,
 and others.
