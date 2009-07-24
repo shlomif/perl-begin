@@ -76,7 +76,7 @@ Poems that are valid Perl programs.
 <a href="http://perlgolf.sourceforge.net/">Perl Golf</a> - competitions to
 find out the shortest Perl programs to achieve a certain task. Looking at
 the winning entries and analyzing them can actually teach you a lot about
-built-in Perl features. (some of them relatively obscure).
+built-in Perl features (some of them relatively obscure).
 </li>
 
 <li>
