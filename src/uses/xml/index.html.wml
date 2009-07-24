@@ -1,0 +1,72 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for XML Processing" />
+
+<h2 id="technologies">Technologies of Interest</h2>
+
+<h3 id="XML-LibXML"><a href="http://search.cpan.org/dist/XML-LibXML/">XML-LibXML</a></h3>
+
+<p>
+XML-LibXML is the de-facto standard for XML processing in Perl. It's a 
+comprehensive CPAN module based on the 
+<a href="http://xmlsoft.org/">libxml2</a> library, that provides DOM (Document
+Object Module), SAX (a stream parser), a pull parser, XPath, and 
+<a href="http://search.cpan.org/dist/XML-LibXSLT/">XSLT</a>
+support. XML-LibXML has good documentation and is actively maintained.
+</p>
+
+<p>
+One note is that you should be aware of XML namespaces and how they interact
+with the DOM and the XML-LibXML API before using this library.
+</p>
+
+<h2 id="web-pages">Web Pages about Perl and XML</h2>
+
+<h3><a href="http://perl-xml.sourceforge.net/">The Perl XML Project 
+Home Page</a></h3>
+
+<h4><a href="http://perl-xml.sourceforge.net/faq/">Their Frequently Asked
+Questions List (FAQ)</a></h4>
+
+<h2 id="what-to-avoid">What to Avoid</h2>
+
+<h3>XML-Simple</h3>
+
+<p>
+XML-Simple is not so simple when done properly and takes the wrong approach
+to dealing with XML. Please avoid using it. Look at XML-LibXML for an easy
+and fast alternative.
+</p>
+
+<h2 id="xml-grammars">Modules for Dealing with Specific Grammars</h2>
+
+<p>
+In addition to generic XML parsers and manipulators, there are many
+speciailised modules on the CPAN for dealing with specific XML grammars. Many
+of them reside under XML::. Some prominent examples include:
+</p>
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/XML-RSS/"><b>XML-RSS</b></a> - manipulate
+RSS (Really Simple Syndication) 0.9, 0.91, 1.0 and 2.0.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/XML-Atom/"><b>XML-Atom</b></a> - 
+manipulate Atom feeds. (Atom is an alternative syndication format) 
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/XML-Feed/"><b>XML-Feed</b></a> -
+generate, parse, mix and match web feeds (Atom or RSS).
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/OpenOffice-OODoc/"><b>OpenOffice-OODoc</b><a/> -
+manipulate OpenOffice.org-like ODF (OpenDocument format) files. 
+</li>
+
+</ul>
+
