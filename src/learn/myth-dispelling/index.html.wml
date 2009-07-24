@@ -66,7 +66,7 @@ and easily than with any other language.
 </p>
 
 <p>
-Perl code can be <b>written to be very maintenable, readable and elegant</b>.
+Perl code can be <b>written to be very maintainable, readable and elegant</b>.
 Perl indeed has many features and behaviors to make writing short programs
 - often one liners - easier, because one knows this is most of the use people 
 do with it. However, <b>there's nothing in Perl</b> that prevents <b>writing
