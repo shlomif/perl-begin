@@ -128,6 +128,11 @@ my $tree_contents =
             'title' => "Publicly editable sites with Lots of Useful Information",
         },
         {
+            'text' => "Blogs",
+            'url' => "blogs/",
+            'title' => "Links to Perl-related Blogs (a.k.a &quot;Weblogs&quot or online journals)",
+        },
+        {
             'text' => "Platforms",
             'url' => "platforms/",
             'role' => "header",
