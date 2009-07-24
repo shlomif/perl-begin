@@ -92,7 +92,7 @@ be much better now.
 <h2 id="news_06_Jun_2005">06-June-2005: Wiki Restored</h2>
 
 <p>
-The <a href="<wiki:link />">Wiki</a> was heavily spammed and so was taken
+The <a href="<wiki_link />">Wiki</a> was heavily spammed and so was taken
 off. Now, a new wiki was set up with a better implementation - 
 <a href="http://wikipedia.sourceforge.net/">MediaWiki</a>, and now we monitor
 the RSS feed and use other measurements to prevent Spam.
@@ -105,7 +105,7 @@ All the content of the old wiki was restored.
 <h2 id="news_29_Feb_2004">29-February-2004: New Wiki</h2>
 
 <p>
-We now have <a href="<wiki:link />">a new Wiki with a better 
+We now have <a href="<wiki_link />">a new Wiki with a better 
 implementation</a>. The previous wiki was dumped because it was a Java Script
 hell and was quite lame in its conventions. The newer wiki implementation 
 (<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)

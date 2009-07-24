@@ -17,14 +17,14 @@
 <h2>Contribute to the Wiki</h2>
 
 <p>
-<a href="<wiki:link />">The Wiki</a> is a portion of the site that can
+<a href="<wiki_link />">The Wiki</a> is a portion of the site that can
 be edited by anyone at any time. Feel free to add your own material there.
 </p>
 
 <h2>Join the Mailing List</h2>
 
 <p>
-By joining <a href="<mailing:list:link />">the mailing list</a>, you will 
+By joining <a href="<mailing_list_link />">the mailing list</a>, you will 
 receive questions by E-mail, which you can answer. (or alternatively be able
 to ask your own)
 </p>
@@ -32,7 +32,7 @@ to ask your own)
 <h2>Visit the Help Web Forum</h2>
 
 <p>
-The <a href="<web:forum:link />">Help Web Forum</a> is meant to help people
+The <a href="<web_forum_link />">Help Web Forum</a> is meant to help people
 with their Perl problems. You can visit it if you have questions or would like
 to help people with their problems.
 </p>
