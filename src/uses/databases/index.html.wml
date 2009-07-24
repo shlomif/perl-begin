@@ -61,7 +61,7 @@ to use Object-Oriented Interface to DBI.
 <p>
 <a href="http://search.cpan.org/dist/DBIx-Class/">DBIx-Class</a> - a
 powerful and convenient object-relational mapper. Use of the older and less 
-philosophiclly sound 
+philosophically sound 
 <a href="http://search.cpan.org/dist/Class-DBI/">Class-DBI</a> is
 heavily discouraged.
 </p>
@@ -83,4 +83,25 @@ as <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection
 vulnerabilities</a>.
 </p>
 
+<h2 id="dbm">DBM Databases</h2>
 
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/BerkeleyDB/">The BerkeleyDB CPAN
+module</a> is the standard module for working with 
+<a href="http://www.oracle.com/technology/products/berkeley-db/index.html">Oracle 
+Berkeley DB</a> (formerly Sleepy Cat Berkeley DB) and maps the ANSI C 
+library's API closely. Note that Berkeley DB is licensed under
+<a href="http://en.wikipedia.org/wiki/Sleepycat_License">the Sleepycat
+License</a> which is strong copyleft, and does not allow use for non-open-source
+programs.
+</li>
+
+<li>
+<a href="http://tokyocabinet.sourceforge.net/">Tokyo Cabinet</a> - a modern,
+fast and powerful DBM implementation available under the LGPL license (which
+permits use in non-open-source projects).
+</li>
+
+</ul>
