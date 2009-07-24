@@ -104,4 +104,10 @@ fast and powerful DBM implementation available under the LGPL license (which
 permits use in non-open-source projects).
 </li>
 
+<li>
+<a href="http://search.cpan.org/dist/DBM-Deep/">DBM-Deep</a> - a multi-level
+hash/array DBM that supports transactions. Reported to be slow, however.
+</li>
+
 </ul>
+
