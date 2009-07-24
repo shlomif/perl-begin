@@ -175,7 +175,7 @@ Attribution License version 2.0</a> (or at your option any later version).
 </body>
 </html>
 
-<define-tag email:link>
+<define-tag email_link>
 <a href="mailto:%0">%0</a>
 </define-tag>
 
@@ -186,14 +186,14 @@ $(ROOT)/<get-var url />
 <restore url />
 </define-tag>
 
-<define-tag site:link whitespace="delete">
+<define-tag site_link whitespace="delete">
 <preserve url />
 <set-var %attributes />
-http://perl-begin.berlios.de/<get-var url />
+http://perl-begin.org/<get-var url />
 <restore url />
 </define-tag>
 
-<define-tag wiki:link whitespace="delete">
+<define-tag wiki_link whitespace="delete">
 <preserve url />
 <set-var %attributes />
 <ifeq "<get-var url />" "" 
@@ -204,11 +204,11 @@ http://perl.net.au/wiki/Beginners<get-var url />
 <restore url />
 </define-tag>
 
-<define-tag mailing:list:link whitespace="delete">
+<define-tag mailing_list_link whitespace="delete">
 https://lists.berlios.de/mailman/listinfo/perl-begin-help
 </define-tag>
 
-<define-tag web:forum:link whitespace="delete">
+<define-tag web_forum_link whitespace="delete">
 http://developer.berlios.de/forum/forum.php?forum_id=2341
 </define-tag>
 
