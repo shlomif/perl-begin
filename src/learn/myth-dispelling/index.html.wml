@@ -15,7 +15,7 @@ Perl code is ugly.
 Perl code is unmaintainable.
 </li>
 <li>
-Depending on Perl for a large project guarantees your failure.
+Depending on Perl for a large project guarantees that one will fail.
 </li>
 <li>
 Perl does not scale to high loads or high codebases.
