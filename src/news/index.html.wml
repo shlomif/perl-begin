@@ -106,7 +106,7 @@ All the content of the old wiki was restored.
 
 <p>
 We now have <a href="<wiki_link />">a new Wiki with a better 
-implementation</a>. The previous wiki was dumped because it was a Java Script
+implementation</a>. The previous wiki was dumped because it was a JavaScript
 hell and was quite lame in its conventions. The newer wiki implementation 
 (<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)
 is much better in this and other regards.
