@@ -34,6 +34,15 @@ A list of online and offline (or otherwise books that require pay to
 view online or download), for learning Perl.
 </dd>
 
+<dt id="ides">
+<a href="$(ROOT)/IDEs-and-tools/">IDEs and Development Tools</a>
+</dt>
+
+<dd>
+Integrated Development Environments (IDEs) and other Development tools
+for Perl.
+</dd>
+
 <dt id="core_doc">
 <a href="$(ROOT)/core-doc/">Core Documentation</a>
 </dt>
@@ -78,4 +87,23 @@ or if you're not short on time and wants less interactive, but more in-depth
 discussions.
 </dd>
 
+</dl>
+
+<h2>Resources for Reference and Enlightenment</h2>
+
+<dl>
+
+<dt id="wikis"><a href="$(ROOT)/wikis/">Wikis</a></dt>
+
+<dd>
+Wikis are dynamically editable web-sites that allow for collaborative editing
+of useful information. Perl has many wikis with active contributors, that
+help write useful knowledge.
+</dd>
+
+<dt id="blogs"><a href="$(ROOT)/blogs/">Blogs</a></dt>
+
+<dd>
+Blogs, Weblogs or Online Journals where people write about Perl.
+</dd>
 </dl>
