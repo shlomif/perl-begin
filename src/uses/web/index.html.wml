@@ -10,19 +10,23 @@ HTML and HTTP concepts, programming a simple CGI callback or form handler is
 very easy and straightforward. 
 </p>
 
+<define-tag cgi_course_url whitespace="delete">
+http://jdporter.perlmonk.org/cgi_course/
+</define-tag>
+
 <p>
 Users are <b>recommended to start</b> by reading 
-<a href="http://users.easystreet.com/ovid/cgi_course/index.html">Ovid's
-CGI Course</a>. The other links here may also prove useful.
+<a href="<cgi_course_url />"><b>Ovid's
+CGI Course</b></a>. The other links here may also prove useful.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
 
-<h3><a href="http://users.easystreet.com/ovid/cgi_course/index.html">Ovid's CGI
+<h3><a href="<cgi_course_url />">Ovid's CGI
 Course</a></h3>
 
 <p>
-A free CGI Course by Curtis Poe for people who already know a little Perl and 
+A free CGI Course by Curtis Poe (Ovid) for people who already know a little Perl and 
 a little HTML.
 </p>
 
