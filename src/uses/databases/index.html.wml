@@ -1,0 +1,86 @@
+#include '../template.wml'
+
+<latemp_subject "Working with Databases in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+There are many types of databases:
+
+<ul>
+<li>
+If you want to work with databases based on <a href="http://en.wikipedia.org/wiki/SQL">SQL</a> (Structured
+Query Language), then refer to <a href="#sql">the SQL
+databases section of this page</a>. 
+</li>
+<li>
+If you want to use a DBM database (implementing keys→values dictionaries or
+mappings inside a file) refer to our 
+<a href="#dbm">DBM databases section</a>.
+</li>
+<li>
+If you want xBase (dBase / Clipper / FoxBase ) databases refer to our
+<a href="#xbase">xBase section</a>.
+</li>
+<li>
+If you want a distributed database (similar to Google's BigTable), see our 
+<a href="#distributed">distributed databases section</a>.
+</li>
+</ul>
+
+<h2 id="sql">SQL Databases</h2>
+
+<p>
+The de-facto standard for working with SQL databases in Perl is 
+<a href="http://dbi.perl.org/">DBI</a> (short for Database Interface). It
+provides a unified way to perform SQL queries across many database 
+backends: <a href="http://search.cpan.org/dist/DBD-Pg/">PostgreSQL</a>,
+<a href="http://search.cpan.org/dist/DBD-SQLite/">SQLite</a>, 
+<a href="http://search.cpan.org/dist/DBD-mysql/">MySQL</a> (but see
+<a href="http://www.shlomifish.org/open-source/anti/mysql/">this page
+for some reason why you may prefer a different system</a>)
+<a href="http://search.cpan.org/dist/DBD-Oracle/">Oracle</a>,
+<a href="http://search.cpan.org/dist/DBD-InterBase/">Firebird</a>,
+and others.
+</p>
+
+<p>
+Above DBI people wrote some useful abstractions:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/DBIx-Simple/">DBIx-Simple</a> - an easy
+to use Object-Oriented Interface to DBI.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/DBIx-Class/">DBIx-Class</a> - a
+powerful and convenient object-relational mapper. Use of the older and less 
+philosophiclly sound 
+<a href="http://search.cpan.org/dist/Class-DBI/">Class-DBI</a> is
+heavily discouraged.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Rose-DB/">Rose-DB</a> - another 
+ORM - seems to be much less popular than DBIx-Class, but still actively
+maintained.
+</p>
+</li>
+
+</ul>
+
+<p>
+When working with databases make sure you avoid common pitfalls such
+as <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection
+vulnerabilities</a>.
+</p>
+
+

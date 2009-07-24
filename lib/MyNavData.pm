@@ -168,6 +168,11 @@ my $tree_contents =
                     'title' => "Using Perl for Bio-Informatics",
                 },
                 {
+                    'text' => "Databases",
+                    'url' => "uses/databases/",
+                    'title' => "Working with Databases (SQL, etc.) Using Perl",
+                },
+                {
                     'text' => "QA and Testing",
                     'url' => "uses/qa/",
                 },
