@@ -118,3 +118,10 @@ There seems to be <a href="http://search.cpan.org/dist/DBD-XBase/">an
 XBase module on CPAN</a> . It seems to be pure-Perl, so it may be slow.
 </p>
 
+<h2 id="links">Links</h2>
+
+<ul>
+<li><a href="http://modperlbook.org/html/part3.html"><b>"Databases and mod_perl"
+part from Practical mod_perl</b></a> - provides many useful insights.</li>
+</ul>
+
