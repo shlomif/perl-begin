@@ -130,7 +130,7 @@ my $tree_contents =
         {
             'text' => "Blogs",
             'url' => "blogs/",
-            'title' => "Links to Perl-related Blogs (a.k.a &quot;Weblogs&quot or online journals)",
+            'title' => "Links to Perl-related Blogs (a.k.a &quot;Weblogs&quot; or online journals)",
         },
         {
             'text' => "Platforms",
