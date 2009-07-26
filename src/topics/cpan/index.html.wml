@@ -15,7 +15,7 @@ functionality.
 <p>
 One good advice in using CPAN is to <b>look for native packages for your
 operating system, distribution and Perl distribution</b>. Many such 
-distributions allow one to automatically installed pre-built CPAN packages
+distributions allow one to automatically install pre-built CPAN packages
 that can later on be easily and cleanly uninstalled. Look for such packages
 for distributions you need in the relevant repositories of the distribution
 of perl 5 that you are using. 
