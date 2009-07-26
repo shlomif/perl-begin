@@ -1,0 +1,67 @@
+#include '../template.wml'
+
+<latemp_subject "Using CPAN with Perl" />
+
+<p>
+"CPAN" stands for <a href="http://en.wikipedia.org/wiki/CPAN">the
+Comprehensive Perl Archive Network</a> and is an internationally mirrored 
+collection of over 16,000 packages of re-usable Perl code. To program
+in Perl 5 effectively, one needs to make a judicious, but liberal use of 
+CPAN code, due to the fact that the perl core distribution is kept relatively
+minimal and its maintainers expect people to use CPAN for any extraneous 
+functionality.
+</p>
+
+<p>
+One good advice in usign CPAN is to <b>look for native packages for your
+operating system, distribution and Perl distribution</b>. Many such 
+distributions allow one to automatically installed pre-built CPAN packages
+that can later on be easily and cleanly uninstalled. Look for such packages
+for distributions you need in the relevant repositories of the distribution
+of perl 5 that you are using. 
+</p>
+
+<p>
+If you cannot find packages for what you want, you can also try building
+a native package automatically from the equivalent CPAN package. 
+The <a href="http://perl.net.au/">PerlNet wiki</a> has the details about
+<a href="http://perl.net.au/wiki/CPAN#CPAN.pm.2FCPANPLUS.pm_Wrappers_for_Distributions">wrappers
+of CPAN modules for the various distributions</a>.
+</p>
+
+<h2 id="links">Links</h2>
+
+<h3 id="life-with-cpan">Life with CPAN</h3>
+
+<ul>
+
+<li>
+<a href="http://sial.org/howto/perl/life-with-cpan/non-root/">"Using 
+CPAN with a non-root account"</a>
+</li>
+
+<li>
+<a href="http://sial.org/howto/perl/life-with-cpan/">"Life with CPAN"</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/local-lib/">local::lib</a> - install
+CPAN modules under a local user directory.
+</li>
+
+</ul>
+
+<p>
+These resources provide a gentle introduction to how to effectively work
+with CPAN in case you want to use it directly. Read them in order. 
+</p>
+
+<h3 id="finding-stuff-on-the-cpan">Finding Stuff on the CPAN</h3>
+
+<ul>
+<li>
+<a href="http://www.catalyzed.org/2009/07/finding-stuff-on-the-cpan.html">"Finding 
+Stuff on the CPAN"</a> - a link to an article explaining how to find the
+good stuff on the CPAN.
+</li>
+</ul>
