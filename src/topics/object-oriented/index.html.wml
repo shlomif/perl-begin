@@ -29,7 +29,7 @@ object system for Perl. It supports a meta-object protocol, has a built-in
 type system, support roles, and is considered the modern way to do 
 object-oriented programming in Perl. 
 <a href="http://www.iinteractive.com/moose/">The Moose homepage</a> contains
-a lot of information abot it including introductory talks, articles, and
+a lot of information about it including introductory talks, articles, and
 links.
 </p>
 
