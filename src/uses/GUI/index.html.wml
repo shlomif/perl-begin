@@ -30,11 +30,10 @@ to find useful examples of wxPerl code in action.
 <p>
 Perl-Tk is a port of 
 <a href="http://en.wikipedia.org/wiki/Tk_%28framework%29">the Tk toolkit</a>
-that originated with Tcl, to Perl.
-It is cross-platform and open-source, but in provides relatively
-unattractive widgets/controls, which are not easily skinable. However, it 
-provides a high-level API with many convenient niceties, and is commonly 
-available. 
+that originated with Tcl, to Perl. It is cross-platform and open-source, but
+provides relatively unattractive widgets/controls, which are not easily
+skinable. However, it provides a high-level API with many convenient niceties,
+and is commonly available.
 </p>
 
 <h2 id="gtk"><a href="http://gtk2-perl.sourceforge.net/">gtk2-perl</a></h2>
