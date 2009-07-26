@@ -1,5 +1,6 @@
 #include '../template.wml'
 #include "xhtml/1.x/std/toc.wml"
+#include "beginning-perl.wml"
 
 <latemp_subject "Online Tutorials" />
 
@@ -23,14 +24,14 @@ If you prefer a tutorial in something else besides English, check the
 
 <h2 id="our_list">Our List of Tutorials</h2>
 
-<h3 id="beginning_perl"><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
-
+<beginning_perl_entry>
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online. 
 Aims to teach Perl even for people with no prior experience in programming
 at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
+</beginning_perl_entry>
 
 <h3 id="perl5_wiki"><a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials">The 
 Perl 5 Wiki Recommended Online Tutorials</a></h3>
