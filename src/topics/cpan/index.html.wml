@@ -13,7 +13,7 @@ functionality.
 </p>
 
 <p>
-One good advice in usign CPAN is to <b>look for native packages for your
+One good advice in using CPAN is to <b>look for native packages for your
 operating system, distribution and Perl distribution</b>. Many such 
 distributions allow one to automatically installed pre-built CPAN packages
 that can later on be easily and cleanly uninstalled. Look for such packages
