@@ -43,7 +43,7 @@ and fast alternative.
 <p>
 In addition to generic XML parsers and manipulators, there are many
 specialised modules on the CPAN for dealing with specific XML grammars. Many
-of them reside under XML::. Some prominent examples include:
+of them reside under XML:: namespace. Some prominent examples include:
 </p>
 
 <ul>
