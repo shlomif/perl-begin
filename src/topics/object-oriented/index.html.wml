@@ -25,7 +25,7 @@ OOP when one needs and wants to.
 
 <p>
 <a href="http://www.iinteractive.com/moose/"><b>Moose</b></a> is a post-modern
-object system for Perl. It suppors a meta-object protocol, has a built-in
+object system for Perl. It supports a meta-object protocol, has a built-in
 type system, support roles, and is considered the modern way to do 
 object-oriented programming in Perl. 
 <a href="http://www.iinteractive.com/moose/">The Moose homepage</a> contains
