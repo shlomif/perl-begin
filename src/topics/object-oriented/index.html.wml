@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "beginning-perl.wml"
 
 <latemp_subject "Object Oriented Programming in Perl" />
 
@@ -34,6 +35,15 @@ links.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
+
+<beginning_perl_entry>
+
+<p>
+The 11th chapter of this book for Perl beginners (including absolute beginners)
+covers Objects. This book was written by one of the foremost Perl experts.
+</p>
+
+</beginning_perl_entry>
 
 <h3 id="perl-for-newbies"><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl Newbies</a></h3>
 
