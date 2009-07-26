@@ -72,10 +72,10 @@ should you do?
 <dt id="irc"><a href="$(ROOT)/irc/">IRC (Internet Relay Chat)</a></dt>
 
 <dd>
-Internet Chat is probably the fastest way to receive answers to most common
-beginner questions. Please visit <a href="$(ROOT)/irc/">the link</a> to
-learn more about it, and see where it is best to ask, what to avoid doing
-and what to expect.
+Internet Relay Chat is probably the fastest way to receive answers to most
+common beginner questions. Please visit <a href="$(ROOT)/irc/">the link</a> to
+learn more about it, and see where it is best to ask, what to avoid doing and
+what to expect.
 </dd>
 
 <dt id="mailing-lists"><a href="$(ROOT)/mailing-lists/">Mailing Lists</a></dt>
