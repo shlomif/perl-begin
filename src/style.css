@@ -586,7 +586,7 @@ p.tabledata-caption {
 }
 
 .sidebarbox-title-shading {
-	display: block; margin: 0px 0px 0.5em 0px; padding: 2px 5px 5px 5px; background-color: rgb(225,225,225); font-weight: bold; font-size: 150%;
+	display: block; margin: 0px 0px 0.5em 0px; padding: 2px 5px 5px 5px; background-color: rgb(225,225,225); font-weight: bold; font-size: 120%; text-align: center;
 }
 
 /*------------------------------*/
