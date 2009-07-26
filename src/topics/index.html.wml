@@ -1,0 +1,16 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Development Topics" />
+
+<p>
+This section aims to cover various topics that one is likely to encounter
+when doing Perl development. They are mostly common to the particular task
+one is trying to achieve with Perl and its domain.
+</p>
+
+<h3 id="cpan"><a href="cpan/">Using CPAN with Perl</a></h3>
+
+<h3 id="debug"><a href="debugging/">Debugging Perl Programs</h3>
+
+<h3 id="oop"><a href="object-oriented/">Object-Oriented Programming (OOP) in Perl</h3>
+

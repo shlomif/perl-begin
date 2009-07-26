@@ -197,6 +197,31 @@ my $tree_contents =
             ],
         },
         {
+            'text' => "Perl Topics",
+            'url' => "topics/",
+            'title' => "Perl-related Topics",
+            'role' => "header",
+            'show_always' => 1,
+            'subs' =>
+            [
+                {
+                    'text' => "Debugging",
+                    'url' => "topics/debugging/",
+                    'title' => "Debugging Perl Programs",
+                },
+                {
+                    'text' => "Object Oriented Perl (OOP)",
+                    'url' => "topics/object-oriented/",
+                    'title' => "Object Oriented Programming and Design in Perl",
+                },
+                {
+                    'text' => "Using CPAN",
+                    'url' => "uses/cpan/",
+                    'title' => "Effectively using CPAN - the Comprehensive Perl Archive Network",
+                },
+            ],
+        },
+        {
             'text' => "Site Resources",
             'url' => "site-resources/",
             'role' => "header",
