@@ -17,8 +17,8 @@ repository.
 
 <p>
 The most up-to-date source code for this site is now hosted in 
-<a href="https://svn.berlios.de/svnroot/repos/perl-begin/perl-begin/trunk/">its
-own Subversion repository</a>. If you know how to use 
+<a href="http://svn.berlios.de/svnroot/repos/perl-begin/perl-begin/trunk">its own
+Subversion repository</a>. If you know how to use 
 <a href="http://subversion.tigris.org/">Subversion</a>, you can use it to
 contribute to the site more easily. If not, then
 <a href="http://svnbook.red-bean.com/">learning how to use it</a>
