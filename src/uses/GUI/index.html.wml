@@ -3,7 +3,7 @@
 <latemp_subject "Graphical User Interface (GUI) Development in Perl" />
 
 <p>
-Graphical User Interfaces (or "GUIs") are rich, graphical programsa and
+Graphical User Interfaces (or "GUIs") are rich, graphical programs and
 applications that are displayed on the screen using windows, menus, buttons,
 input boxes, list boxes and other controls. Perl has extensive support
 for many GUI libraries.
