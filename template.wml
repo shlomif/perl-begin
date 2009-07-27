@@ -10,6 +10,7 @@
 
 #include "shlomif/affiliations.wml"
 #include "news.wml"
+#include "share-this.wml"
 
 
 <latemp_affiliations_buttons>
@@ -151,6 +152,7 @@ Attribution License version 2.0</a> (or at your option any later version).
 ;;;        <div class="contentbox-noshading">
 
 {#LATEMP_BODY#}
+<share_this_button />
 ;;;        </div>
 ;;;      </div>
     </div>
