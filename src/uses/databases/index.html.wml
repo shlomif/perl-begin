@@ -69,8 +69,8 @@ heavily discouraged.
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/Rose-DB/">Rose-DB</a> - another 
-ORM - seems to be much less popular than DBIx-Class, but still actively
+<a href="http://search.cpan.org/dist/Rose-DB-Object/">Rose-DB-Object</a> - 
+another ORM - seems to be much less popular than DBIx-Class, but still actively
 maintained.
 </p>
 </li>
