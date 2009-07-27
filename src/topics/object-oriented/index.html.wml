@@ -1,5 +1,6 @@
 #include '../template.wml'
 #include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
 
 <latemp_subject "Object Oriented Programming in Perl" />
 
@@ -45,11 +46,12 @@ covers Objects. This book was written by one of the foremost Perl experts.
 
 </beginning_perl_entry>
 
-<h3 id="perl-for-newbies"><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl Newbies</a></h3>
+<perl_for_newbies_entry>
 
 <p>
 The third talk in the series explains objects in detail, although from a very
 low level and how they work behind the scenes.
 </p>
 
+</perl_for_newbies_entry>
 

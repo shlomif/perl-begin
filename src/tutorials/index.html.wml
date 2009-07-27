@@ -1,6 +1,7 @@
 #include '../template.wml'
 #include "xhtml/1.x/std/toc.wml"
 #include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
 
 <latemp_subject "Online Tutorials" />
 
@@ -40,8 +41,7 @@ Perl 5 Wiki Recommended Online Tutorials</a></h3>
 A list of recommended tutorials from the Perl 5 Wiki.
 </p>
 
-<h3 id="perl_for_newbies"><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Perl 
-Newbies Series</a></h3>
+<perl_for_newbies_entry>
 
 <p>
 Intended for People with basic knowledge of C or something similar or even no 
@@ -50,6 +50,8 @@ with explanation, examples and anecdotes. Covers a basic subset of Perl,
 without too many "other ways to do it". (you are still expected to read the
 POD documents after the second lecture)
 </p>
+
+</perl_for_newbies_entry>
 
 <h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc 
 Tutorials</a></h3>
