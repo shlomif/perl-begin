@@ -1,29 +1,19 @@
 * Add short descriptions (a paragraph or two) to the Perl Topics page.
 
-* Add a section about effectively using CPAN.
-    - Life with CPAN
-    - The "Catalyzed" Post.
-
 * Add a page about regexes (?)
 
 * Add a page about references (?)
 
-* Add a section about debugging.
-
-* Add a section about OO Programming.
+* OO Programming Section:
     - maybe add the list of OO modules I composed.
-
-* Prepare a news item for perlmeme.org.
 
 * Fix the site-resources/ Web Forum detail.
 
 * Link to Vomberg's Hebrew with Perl site.
 
-* Add a news section.
-
-* Add a Devel Tools and IDEs.
-
 * Revamp the Testimonials on the pages.
+
+* Add a section about graphical debugger front-ends.
 
 Long Term:
 ----------
