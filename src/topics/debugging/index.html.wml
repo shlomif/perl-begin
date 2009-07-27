@@ -1,0 +1,51 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Debugging Perl Programs" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+There are several ways to debug Perl programs, to find the cause of bugs,
+and to find a good solution for them. Many Perl beginners don't make use
+of the Perl's debuggers, such as the <tt>-d</tt> flag or the various
+<a href="http://search.cpan.org/search?query=Devel&mode=all">Devel::
+modules</a>. This is unfortunate because they are very convenient and
+can save a lot of time.
+</p>
+
+<h2 id="resources">Debugging Resources</h2>
+
+<h3 id="perldebtut"><a 
+href="http://perldoc.perl.org/perldebtut.html">perldebtut - the Perl 
+debugging Tutorial</a></h3>
+
+<p>
+Covers the default <tt>perl -d</tt> debugger.
+</p>
+
+<perl_for_newbies_entry>
+
+<p>
+The material of the second presentation contains a brief introduciton to
+using the perl -d Debugger.
+</p>
+
+</perl_for_newbies_entry>
+
+<h2 id="helpers">Debugging Aids</h2>
+
+<h3 id="devel-trace"><a href="http://search.cpan.org/dist/Devel-Trace/">Devel-Trace</a></h3>
+
+<p>
+Allows one to print each line before it is executed.
+</p>
+
+<h3 id="devel-linetrace"><a href="http://search.cpan.org/dist/Devel-LineTrace/">Devel-LineTrace</a></h3>
+
+<p>
+Allows one to assign code to be executed on individual lines in the program.
+This allows to use it instead of adding print's to the code, which later need
+to be removed.
+</p>
