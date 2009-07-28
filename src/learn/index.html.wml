@@ -1,6 +1,15 @@
 #include '../template.wml'
 
-<latemp_subject "Why learn Perl?" />
+<latemp_subject "Learn Perl Now" />
+
+<h2 id="how-to-learn">How to Learn Perl?</h2>
+
+<p>
+<a href="$(ROOT)/resources/"><b>See our resources for Perl Beginners</b></a> 
+and browse the site on its navigation menu.
+</p>
+
+<h2 id="why-learn">Why should I learn Perl?</h2>
 
 <div class="further_reading">
 <p>
@@ -14,8 +23,6 @@ Choice</a></li>
 Australia - Why Perl?</a></li>
 </ul>
 </div>
-
-<h3>Why should I learn Perl?</h3>
 
 <p>
 So why should you learn Perl? Here goes nothing:
