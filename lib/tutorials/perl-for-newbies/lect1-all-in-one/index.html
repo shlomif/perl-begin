@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
+
+
+
+
+<title>
+"Perl for Perl Newbies" Part 1
+</title>
+</head>
+<body><div class="page" id="page--DIR">
+
+<div class="center"><script type="text/javascript">
+google_ad_client = "pub-2480595666283917";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "336699";
+google_color_text = "000000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<b>Up</b></td>
+<td>
+<b>Prev</b></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a>
+</div>
+<h1>
+"Perl for Perl Newbies" Part 1
+</h1>
+<h2>Contents</h2>
+<ul class="contentsmain">
+<li><a href="#page--intro--DIR" class="contents">1. Introduction</a>
+<ul class="contents">
+<li><a href="#page--intro--capabilities--PAGE" class="contents">1.1. The capabilities of Perl</a>
+</li><li><a href="#page--intro--history--PAGE" class="contents">1.2. A brief history of Perl</a>
+</li><li><a href="#page--intro--devel_cycle--PAGE" class="contents">1.3. The perl development cycle</a>
+</li></ul>
+</li><li><a href="#page--output--DIR" class="contents">2. Basic Output (The "Hello World" program)</a>
+<ul class="contents">
+<li><a href="#page--output--semicolons--PAGE" class="contents">2.1. More about semicolons</a>
+</li></ul>
+</li><li><a href="#page--expressions--DIR" class="contents">3. Expressions</a>
+<ul class="contents">
+<li><a href="#page--expressions--operators--PAGE" class="contents">3.1. Operators and Precendence</a>
+</li><li><a href="#page--expressions--functions--PAGE" class="contents">3.2. Functions</a>
+</li><li><a href="#page--expressions--strings--DIR" class="contents">3.3. More about strings</a>
+<ul class="contents">
+<li><a href="#page--expressions--strings--escape--PAGE" class="contents">3.3.1. Escape Sequences</a>
+</li></ul>
+</li></ul>
+</li><li><a href="#page--variables--DIR" class="contents">4. Variables</a>
+<ul class="contents">
+<li><a href="#page--variables--plus-equal--PAGE" class="contents">4.1. "+=" and friends</a>
+</li></ul>
+</li><li><a href="#page--input--PAGE" class="contents">5. Input</a>
+</li><li><a href="#page--for_loop--PAGE" class="contents">6. The For Loop</a>
+</li><li><a href="#page--conditionals--DIR" class="contents">7. Conditionals</a>
+<ul class="contents">
+<li><a href="#page--conditionals--numerical--PAGE" class="contents">7.1. Numerical Comparison Operators</a>
+</li><li><a href="#page--conditionals--string--PAGE" class="contents">7.2. String Comparison Operators</a>
+</li><li><a href="#page--conditionals--boolean--PAGE" class="contents">7.3. Boolean Operators</a>
+</li><li><a href="#page--conditionals--true_vs_false--PAGE" class="contents">7.4. True Expressions vs. False Expressions</a>
+</li><li><a href="#page--conditionals--elsif--PAGE" class="contents">7.5. elsif</a>
+</li></ul>
+</li><li><a href="#page--while--DIR" class="contents">8. The While Loop</a>
+<ul class="contents">
+<li><a href="#page--while--last_and_next--PAGE" class="contents">8.1. last and next</a>
+</li></ul>
+</li><li><a href="#page--arrays--DIR" class="contents">9. Arrays</a>
+<ul class="contents">
+<li><a href="#page--arrays--comma--PAGE" class="contents">9.1. The ',' operator</a>
+</li><li><a href="#page--arrays--negative_indexes--PAGE" class="contents">9.2. Negative Indexes</a>
+</li><li><a href="#page--arrays--foreach--DIR" class="contents">9.3. The foreach loop</a>
+<ul class="contents">
+<li><a href="#page--arrays--foreach--for_and_dotdot--PAGE" class="contents">9.3.1. The for keyword and the .. operator</a>
+</li></ul>
+</li><li><a href="#page--arrays--functions--PAGE" class="contents">9.4. Built-In Array Functions</a>
+</li><li><a href="#page--arrays--x--PAGE" class="contents">9.5. The x operator</a>
+</li></ul>
+</li></ul>
+<h2>License</h2>
+<p>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/publicdomain/"><img alt="Creative Commons License" style="border:0"
+src="./somerights20.gif" /></a><br />
+This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/publicdomain/">Public Domain</a>.
+<!-- /Creative Commons License -->
+</p>
+<!--
+		<rdf:RDF xmlns="http://web.resource.org/cc/"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about=""
+			<license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	<dc:title>Perl for Perl Newbies</dc:title>
+	<dc:rights><Agent><dc:title>Shlomi Fish</dc:title></Agent></dc:rights>
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/0/"><permits rdf:resource="http://web.resource.org/cc/Reproduction" /><permits rdf:resource="http://web.resource.org/cc/Distribution" /><requires rdf:resource="http://web.resource.org/cc/Notice" /><requires rdf:resource="http://web.resource.org/cc/Attribution" /><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" /></License>
+		</rdf:RDF>
+-->
+<hr />
+
+</div>
+<div class="page" id="page--intro--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--capabilities--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--intro--DIR">Introduction</a>
+</div>
+<h1>
+1. Introduction
+</h1>
+<p>
+<i style="font-size:large">"There's more than one way to do it."</i>
+<b class="plain">(The Perl Motto)</b>
+</p>
+<ul class="contentsmain">
+<li><a href="#page--intro--capabilities--PAGE" class="contents">1.1. The capabilities of Perl</a>
+</li><li><a href="#page--intro--history--PAGE" class="contents">1.2. A brief history of Perl</a>
+</li><li><a href="#page--intro--devel_cycle--PAGE" class="contents">1.3. The perl development cycle</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--intro--capabilities--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--history--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--capabilities--PAGE">The capabilities of Perl</a>
+</div>
+<h1>
+1.1. The capabilities of Perl
+</h1>
+<ul class="point">
+<li>
+Strings and data structures that are unlimited in size,
+nested to any depth.
+</li>
+<li>
+Powerful syntax and built-in functions.
+</li>
+<li>
+Extended, built-in support for regular expressions.
+</li>
+<li>
+Support for namespaces, classes, and objects.
+</li>
+<li>
+Functional Programming capabilities such as closures
+and continuations.
+</li>
+<li>
+<a href="http://www.cpan.org/">CPAN</a> - a comprehensive on-line archive of
+easily installable and re-usable modules.
+</li>
+<li>
+Powerful debugger with optional visual front-ends.
+</li>
+<li>
+Runs on almost any platform imaginable.
+</li>
+<li>
+Relatively portable and secure code.
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page" id="page--intro--history--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--capabilities--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--devel_cycle--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--history--PAGE">A brief history of Perl</a>
+</div>
+<h1>
+1.2. A brief history of Perl
+</h1>
+<p>
+Perl was introduced in 1987 (4 years before Linux itself), when the
+author, <b class="plain">Larry Wall</b>, released version 1.000 of it.
+The reason for its creation was that Wall was unhappy by the
+functionality that sed, C, awk and the Bourne Shell offered him. He
+looked for a language that will combine all of their best features,
+while having as few disadvantages of its own.
+</p>
+<p>
+Since then, perl has seen several versions, each adding additional
+functionality. perl version 5, which was released in 1994, was a
+complete re-write of the perl interpreter, and introduced such things
+as hard references, modules, objects and lexical scoping. Several minor
+versions of perl appeared since then, and the most up-to-date stable
+version (as of October 2005) is 5.8.x.
+</p>
+<p>
+Perl became especially popular as a language for writing server-side
+scripts for web-servers. But that's not the only use of perl, as it is
+commonly used for system administration tasks, managing database data, as
+well as writing GUI applications.
+</p>
+<h3>Links:</h3>
+<p>
+<a href="http://history.perl.org/PerlTimeline.html">
+http://history.perl.org/PerlTimeline.html
+</a>
+- The perl TimeLine
+</p>
+<p>
+<a href="http://www.weblint.org/~neilb/perl/VHLL/slide01.html">
+http://www.weblint.org/~neilb/perl/VHLL/slide01.html
+</a> -
+<i>The Taming of the Camel</i>:
+a lecture by Larry Wall about the Evolution of Perl
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--intro--devel_cycle--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--history--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--output--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--devel_cycle--PAGE">The perl development cycle</a>
+</div>
+<h1>
+1.3. The perl development cycle
+</h1>
+<p>
+Perl is interpreted, so no compilation is needed. To use perl, one should
+create a text file that contains the Perl program. This file can be written
+using any text editor available on your system. It is recommended that
+you end the filenames of your perl scripts with ".pl" in order to designate
+them as perl scripts.
+</p>
+<p>
+After you are done, you should invoke the perl interpreter with the name of
+the file you created. Assuming your file is name "myscript.pl", you should
+type:
+</p>
+<div class="code_block"><pre>
+$ perl myscript.pl
+</pre></div>
+<p>
+At the command line (and press Enter). If your program contains errors or
+warnings they will be displayed. If your program does not contain errors, it
+will be executed.
+</p>
+<p>
+The fact that the program was executed does not mean it does what you want it
+to do. We will learn how to debug Perl programs, later on in this series.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--output--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--devel_cycle--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--output--semicolons--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--output--DIR">Basic Output (The "Hello World" program)</a>
+</div>
+<h1>
+2. Basic Output (The "Hello World" program)
+</h1>
+<p>
+In Perl we use the <tt>print</tt> command to echo strings and expressions
+to the screen.
+</p>
+<p>
+The neophyte "Hello World!" program can be written in perl as follows:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>Now here's some explanation (in case you need any):</p>
+<ol>
+<li>
+The string is enclosed in double-quotes(<tt>" ... "</tt>) because that's how
+string constants are represented in perl.
+</li>
+<li>
+<tt>\n</tt> is a special character that is called "newline". When you print a
+newline you will see that your output started on a new line.
+</li>
+<li>
+The semi-colon (<tt>;</tt>) at the end indicates that this is the end of
+a perl command. Every perl command should be terminated with a semicolon.
+</li>
+</ol>
+<hr />
+
+</div>
+<div class="page" id="page--output--semicolons--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--output--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--output--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--expressions--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--output--DIR">Basic Output (The "Hello World" program)</a> → <a href="#page--output--semicolons--PAGE">More about semicolons</a>
+</div>
+<h1>
+2.1. More about semicolons
+</h1>
+<p>
+A perl program can naturally include more than one command. To do so, you
+need to place a semicolon at the end of each command or otherwise the
+interpreter will be confused.
+</p>
+<p>
+It is not enough to put each command on a separate line. In fact it's not
+even necessary. The following two programs are equivalent:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">One Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Two Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Red Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Blue Fish.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+and
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">One Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>; <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Two Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Red Fish,</span><span class="Special">\n</span><span class="Constant">&quot;</span>; <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Blue Fish.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+However, for readability and easy debugging it is recommended that each
+statement will be on a separate line. And sometimes it's helpful to span
+one on more than one line.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--expressions--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--output--semicolons--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--expressions--operators--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--expressions--DIR">Expressions</a>
+</div>
+<h1>
+3. Expressions
+</h1>
+<p>
+Perl supports such mathematical operators as <tt>+</tt>, <tt>-</tt>,
+<tt>*</tt> (multiplication), and parenthesis (<tt>( ... )</tt>). An example
+is worth a thousand words:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">5 + 6 = </span><span class="Constant">&quot;</span>, <span class="Constant">5+6</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">(2 + 3) * 6 = </span><span class="Constant">&quot;</span>, (<span class="Constant">2+3</span>)*<span class="Constant">6</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2 + 3 * 6 = </span><span class="Constant">&quot;</span>, <span class="Constant">2+3</span>*<span class="Constant">6</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2 raised to the power of 8 is </span><span class="Constant">&quot;</span>, <span class="Constant">2</span>**<span class="Constant">8</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">10-5 = </span><span class="Constant">&quot;</span>, <span class="Constant">10-5</span>, <span class="Constant">&quot;</span><span class="Constant">. 5-10 = </span><span class="Constant">&quot;</span>, <span class="Constant">5-10</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2/3 = </span><span class="Constant">&quot;</span>, <span class="Constant">2</span>/<span class="Constant">3</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The output of this program is:
+</p>
+<div class="code_block"><pre>
+5 + 6 = 11
+(2 + 3) * 6 = 30
+2 + 3 * 6 = 20
+2 raised to the power of 8 is 256
+10-5 = 5. 5-10 = -5
+2/3 = 0.666666666666667
+</pre></div>
+<p>
+The operators have the same precendence as their mathemtical equivalents. The
+parenthesis are useful for making sure a sub-expression will be evaluated
+before all others do.
+</p>
+<table border="1" summary="">
+<tr>
+<td>
+<h3>Note:</h3>
+You can use commas to print more than one expression at once. It beats
+writing a separate <tt>print</tt> command for every expression you wish to
+output. However, for better readability, it is recommended that you will
+separate your expressions among several prints.
+</td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div class="page" id="page--expressions--operators--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--expressions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--expressions--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--expressions--functions--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--expressions--DIR">Expressions</a> → <a href="#page--expressions--operators--PAGE">Operators and Precendence</a>
+</div>
+<h1>
+3.1. Operators and Precendence
+</h1>
+<p>
+Here are some perl operators of interest.
+</p>
+<h2>+ , - , * , /</h2>
+<p>
+Respectively adds, subtracts, multiplies and divides two floating point
+numbers.
+</p>
+<h2>a ** b</h2>
+<p>
+Raises "a" to the power of "b". Works on floating point numbers too.
+</p>
+<h2>a . b</h2>
+<p>
+Concatenates two strings. The comma (<tt>,</tt>) as used by print does not
+really concatenates two strings, but rather prints them one after the other.
+(There's a subtle difference in functionality of the print command too, but we
+won't get into that, now).
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello,</span><span class="Constant">&quot;</span> . <span class="Constant">&quot;</span><span class="Constant"> </span><span class="Constant">&quot;</span> . <span class="Constant">&quot;</span><span class="Constant">World!</span><span class="Constant">&quot;</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span> .
+    <span class="Constant">&quot;</span><span class="Constant">And this is the second line.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<h2>a % b</h2>
+<p>
+Returns the modulo (remainder) of "b" from "a". If "a" and "b" are not
+integers they are rounded to an integral value.
+</p>
+<h2>( sub-expr )</h2>
+<p>
+Makes sure that <tt>sub-expr</tt> is evaluated as a separate sub-expression
+, an operation that could override the defualt operator precendence.
+</p>
+<hr />
+<p>
+There are many more, but they will be covered later. For a complete list and
+more detailed information about the various perl operators consult the
+<a href="http://perldoc.perl.org/perlop.html">"perlop" document</a>
+on your system.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--expressions--functions--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--expressions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--expressions--operators--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--expressions--strings--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--expressions--DIR">Expressions</a> → <a href="#page--expressions--functions--PAGE">Functions</a>
+</div>
+<h1>
+3.2. Functions
+</h1>
+<p>
+How many characters are in the perl motto? Perl can tell that right away:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Statement">length</span>(<span class="Constant">&quot;</span><span class="Constant">There's more than one way to do it</span><span class="Constant">&quot;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+<tt>length()</tt> is a built-in function that tells how many characters are in
+a string. A function is a named sub-routine that accepts several arguments
+and returns a value that can be further evaluated as part of a greater
+expression, or used directly.
+</p>
+<p>
+To help us understand functions further, let's inspect the perl function
+<tt>substr</tt> (short for "substring"). <tt>substr</tt> retrieves sub-strings
+of a given string. The first argument to it is a string, the second is the
+offset from which to take the substring, and the third is the length of the
+substring to be taken. The third one is optional and if unspecified, returns
+the substring till the end of the string.
+</p>
+<p>
+An example will illustrate it best:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Statement">substr</span>(<span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">3</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">substr</span>(<span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">1</span>, <span class="Constant">4</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">substr</span>(<span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">0</span>, <span class="Constant">6</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The output of this program is:
+</p>
+<div class="code_block"><pre>
+ong string
+ lon
+A long
+</pre></div>
+<p>( You may notice that the position of the first character is 0. )</p>
+<p>
+The commas are used to separate the arguments to the function and they
+are mandatory in perl. The parenthesis that enclose them are optional,
+though. The above program could have been re-written as:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> ((<span class="Statement">substr</span> <span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">3</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+<span class="Statement">print</span> ((<span class="Statement">substr</span> <span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">1</span>, <span class="Constant">4</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+<span class="Statement">print</span> ((<span class="Statement">substr</span> <span class="Constant">&quot;</span><span class="Constant">A long string</span><span class="Constant">&quot;</span>, <span class="Constant">0</span>, <span class="Constant">6</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+</pre></div>
+<p>
+We need an extra set of parenthesis so <tt>print</tt> (which is also a function)
+would not be confused and consider only the result of the <tt>substr</tt>
+operation as its argument. If it makes no sense, then it shouldn't; however,
+remember that a set of parenthesis, that wraps up the argument list
+of a function, can do you no harm.
+</p>
+<h2>The int() function</h2>
+<p>
+Another useful function is int(). This function takes a number and rounds it
+down to a near integer (= whole number). Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The whole part of 5.67 is </span><span class="Constant">&quot;</span> . <span class="Statement">int</span>(<span class="Constant">5.67</span>) . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--expressions--strings--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--expressions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--expressions--functions--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--expressions--strings--escape--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--expressions--DIR">Expressions</a> → <a href="#page--expressions--strings--DIR">More about strings</a>
+</div>
+<h1>
+3.3. More about strings
+</h1>
+<p>
+In perl, strings and numbers are seamlessly converted into each other
+depending on the context in which they are used.
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> ((<span class="Constant">&quot;</span><span class="Constant">5</span><span class="Constant">&quot;</span> + <span class="Constant">&quot;</span><span class="Constant">6</span><span class="Constant">&quot;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+<span class="Statement">print</span> ((<span class="Constant">56</span> . <span class="Constant">23</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+</pre></div>
+<p>
+The output of this program is:
+</p>
+<div class="code_block"><pre>
+11
+5623
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--expressions--strings--escape--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--expressions--strings--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--expressions--strings--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--variables--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--expressions--DIR">Expressions</a> → <a href="#page--expressions--strings--DIR">More about strings</a> → <a href="#page--expressions--strings--escape--PAGE">Escape Sequences</a>
+</div>
+<h1>
+3.3.1. Escape Sequences
+</h1>
+<p>
+We have already encountered the <tt>\n</tt> "escape sequence" which can come
+inside strings and designates a newline character. There are many others in
+perl. Here is a list of the most important ones:
+</p>
+<ul>
+<li>
+<tt>\\</tt> - designates an actual backslash (<tt>\</tt>)
+</li>
+<li>
+<tt>\"</tt> - designates an actual double-quote character (<tt>"</tt>)
+</li>
+<li>
+<tt>\$</tt> - an actual dollar sign (a real <tt>$</tt> does something else)
+</li>
+<li>
+<tt>\@</tt> - an actual at-sign (a non-escaped <tt>@</tt> does something else)
+</li>
+<li>
+<tt>\n</tt> - a newline character
+</li>
+<li>
+<tt>\r</tt> - a carriage return sign
+</li>
+<li>
+<tt>\t</tt> - a tab character
+</li>
+<li>
+<tt>\xDD</tt> - where "DD" are two hexadecimal digits - gives the character
+whose ASCII code is "DD".
+</li>
+</ul>
+<p>
+Here's an example to illustrate some of them:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">I said </span><span class="Special">\&quot;</span><span class="Constant">hi!</span><span class="Special">\&quot;</span><span class="Constant"> to myself, and received no reply.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">This program will cost you </span><span class="Special">\$</span><span class="Constant">100 dollars.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The KDE</span><span class="Special">\\</span><span class="Constant">GNOME holy war makes life in the Linux world </span><span class="Constant">&quot;</span> .
+      <span class="Constant">&quot;</span><span class="Constant">more interesting.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+whose output is:
+</p>
+<div class="code_block"><pre>
+I said "hi!" to myself, and received no reply.
+This program will cost you $100 dollars.
+The KDE\GNOME holy war makes life in the Linux world more interesting.
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--variables--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--expressions--strings--escape--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--variables--plus-equal--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--variables--DIR">Variables</a>
+</div>
+<h1>
+4. Variables
+</h1>
+<p>
+Variables are named cells stored in the computer memory that can hold any
+single Perl value. One can change the value that a variable holds, and one can
+later retrieve the last value assigned as many times as wanted.
+</p>
+<p>Variables in Perl start with a dollar sign (<tt>$</tt>) and proceed with any
+number of letters, digits and underscores (<tt>_</tt>) as long as the first
+letter after the dollar is a letter or underscore.</p>
+<p>To retrieve the value of a variable one simply places the variable name
+(again including the dollar sign) inside an expression.</p>
+<p>To assign value to a variable, one places the full variable name (including
+the dollar sign) in front of an equal sign (<tt>=</tt>) and places the value
+to the right of the equal sign. This form is considered a statement and should
+be followed by a semicolon. The value assigned may be an experssion that may
+contain other variables (including the assigned variable itself!).</p>
+<p>An example will illustrate it:</p>
+<div class="code_block"><pre>
+<span class="Identifier">$myvar</span> = <span class="Constant">17</span>;
+<span class="Identifier">$a</span> = <span class="Constant">2</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot;</span><span class="Constant"> * </span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> = <span class="Constant">10</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot;</span><span class="Constant"> * </span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> = <span class="Constant">75</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot;</span><span class="Constant"> * </span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> = <span class="Constant">24</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot;</span><span class="Constant"> * </span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The output of this program is:
+</p>
+<div class="code_block"><pre>
+17 * 2 = 34
+17 * 10 = 170
+17 * 75 = 1275
+17 * 24 = 408
+</pre></div>
+<p>
+Several things can be noticed:
+</p>
+<ol>
+<li>
+The value of <tt>$a</tt> changes throughout the program. It's perfectly fine,
+and usually even necessary to modify the value of a variable.
+</li>
+<li>
+By using <tt>$myvar</tt> we can ensure, that assuming we wish to change its
+value, we will only have to change it in one place, not in every place
+it appears.
+</li>
+</ol>
+<hr />
+
+</div>
+<div class="page" id="page--variables--plus-equal--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--variables--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--variables--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--input--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--variables--DIR">Variables</a> → <a href="#page--variables--plus-equal--PAGE">"+=" and friends</a>
+</div>
+<h1>
+4.1. "+=" and friends
+</h1>
+<p>
+Perl provides a shortcut for writing "$myvar = $myvar + $value", or
+"$myvar = $myvar / $value" and similar operations. Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">$a</span> = <span class="Constant">1</span>;
+<span class="Identifier">$b</span> = <span class="Constant">0</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Since the operations <tt>$a += 1</tt> and <tt>$a -= 1</tt> are so commonly used,
+they were also assigned a separate operator. One can use <tt>$a++</tt> and
+<tt>$a--</tt> to perform them. For example, the above program could have
+been written as:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">$a</span> = <span class="Constant">1</span>;
+<span class="Identifier">$b</span> = <span class="Constant">0</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">2^</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant">=</span><span class="Constant">&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--input--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--variables--plus-equal--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--for_loop--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--input--PAGE">Input</a>
+</div>
+<h1>
+5. Input
+</h1>
+<p>
+In order to receive a value from the user, perl supplies the <tt>&lt;&gt;</tt>
+operator. When entered, this operator reads a line from the command line, and
+returns it (along with the newline character).
+</p>
+<p>Here's an example:</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter your name:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$name</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$name</span>);
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, </span><span class="Constant">&quot;</span>, <span class="Identifier">$name</span>, <span class="Constant">&quot;</span><span class="Constant">!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Notice the <tt>chomp</tt> function which strips off the trailing
+newline character from the variable. You would usually want to use it,
+when getting input from the user.
+</p>
+<p>
+Here's another example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter a string:</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$string</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$string</span>);
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered contains </span><span class="Constant">&quot;</span>, <span class="Statement">length</span>(<span class="Identifier">$string</span>), <span class="Constant">&quot;</span><span class="Constant"> characters.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--for_loop--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--input--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--for_loop--PAGE">The For Loop</a>
+</div>
+<h1>
+6. The For Loop
+</h1>
+<p>
+The for loop enables us to iterate over a sequence of numbers and repeat
+the same set of operations for each number.
+</p>
+<p>
+For example, the following program prints all the numbers from 1 to 100:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">for</span> <span class="Identifier">$i</span> (<span class="Constant">1.</span>.<span class="Constant">100</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$i</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+Some explanations about the syntax:
+</p>
+<ol>
+<li>
+<tt>$i</tt> is the iteration variable. It receives the value 1, then the
+value 2, then 3 and so forth until it is equal to 100, afterwards the
+loop terminates.
+</li>
+<li>
+The curly brackets (<tt>{ ... }</tt>) encapsulate the loop block. The loop
+block is executed once for each value <tt>$i</tt> accepts. Within that
+block, called the loop body, you can use <tt>$i</tt> and you'll get its
+current value.
+</li>
+</ol>
+<p>
+We can nest loops, so for example the following program prints the
+multiplication board:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">for</span> <span class="Identifier">$y</span> (<span class="Constant">1</span> .. <span class="Constant">10</span>)
+{
+    <span class="Statement">for</span> <span class="Identifier">$x</span> (<span class="Constant">1</span> .. <span class="Constant">10</span>)
+    {
+        <span class="Identifier">$product</span> = <span class="Identifier">$y</span>*<span class="Identifier">$x</span>;
+        <span class="Comment"># Add as much whitespace as needed so the number will occupy</span>
+        <span class="Comment"># exactly 4 characters.</span>
+        <span class="Statement">for</span> <span class="Identifier">$whitespace</span> (<span class="Constant">1</span> .. (<span class="Constant">4</span>-<span class="Statement">length</span>(<span class="Identifier">$product</span>)))
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant"> </span><span class="Constant">&quot;</span>;
+        }
+        <span class="Statement">print</span> <span class="Identifier">$product</span>;
+    }
+    <span class="Comment"># Move to the next line</span>
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+You may have noticed the program's comments. In perl comments start with the
+sharp sign (<tt>#</tt>) and extend to the end of the line. Writing the
+multiplication boards with the labels that indicate which numbers are being
+multiplied is left as an exercise to the reader.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--for_loop--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--numerical--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a>
+</div>
+<h1>
+7. Conditionals
+</h1>
+<p>
+Conditionals enable us to execute a group of statements if a
+certain condition is met. For example the following program, reports to the
+user whether or not his name starts with the letter "A":
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter your name:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$name</span> = &lt;&gt;;
+<span class="Statement">if</span> (<span class="Statement">substr</span>(<span class="Identifier">$name</span>,<span class="Constant">0</span>,<span class="Constant">1</span>) <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">A</span><span class="Constant">&quot;</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name starts with 'A'!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name does not start with 'A'!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+The code <tt>substr($name,0,1) eq "A"</tt> is a condition expression which uses
+the perl <tt>eq</tt> operator, which returns true if and only if the strings
+are the same. There are more such operators and they will be explained shortly.
+</p>
+<p>
+Inside the curly brackets following the <tt>if</tt> there is the code to
+be executed by the conditional. That code can be as long as you like. The else
+part is executed assuming the conditional was found to be false, and is
+optional.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--numerical--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--string--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a> → <a href="#page--conditionals--numerical--PAGE">Numerical Comparison Operators</a>
+</div>
+<h1>
+7.1. Numerical Comparison Operators
+</h1>
+<p>
+Perl supplies the user with 6 numerical comparison operators which test
+for the comparison of two numbers. They are:
+</p>
+<table border="1" summary="">
+<tr>
+<td>
+<tt>$a == $b</tt>
+</td>
+<td>
+<tt>$a</tt> and <tt>$b</tt> are equal.
+</td>
+</tr>
+<tr>
+<td>
+<tt>$a &gt; $b</tt>
+</td>
+<td>
+<tt>$a</tt> is greater than <tt>$b</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$a &lt; $b</tt>
+</td>
+<td>
+<tt>$a</tt> is lesser than <tt>$b</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$a &gt;= $b</tt>
+</td>
+<td>
+<tt>$a</tt> is greater or equal to <tt>$b</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$a &lt;= $b</tt>
+</td>
+<td>
+<tt>$a</tt> is lesser or equal to <tt>$b</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$a != $b</tt>
+</td>
+<td>
+<tt>$a</tt> is not equal to <tt>$b</tt>
+</td>
+</tr>
+</table>
+<p>
+Those operators can be used inside conditionals and also outside,
+as part of a normal expression. The following program prints all the numbers
+between 1 and 100 that are not divisable by 3:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">1</span> .. <span class="Constant">100</span>)
+{
+    <span class="Statement">if</span> ((<span class="Identifier">$a</span> % <span class="Constant">3</span>) != <span class="Constant">0</span>)
+    {
+        <span class="Statement">print</span> <span class="Identifier">$a</span>,<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--string--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--numerical--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--boolean--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a> → <a href="#page--conditionals--string--PAGE">String Comparison Operators</a>
+</div>
+<h1>
+7.2. String Comparison Operators
+</h1>
+<p>
+In order to compare for string equality, or if one string is alphabetically
+bigger than another, you can use the six string comparison operators. Here
+are the string operators together with the numerical operators they correspond
+too:
+</p>
+<table border="1" summary="">
+<tr>
+<td>
+<b>String Operator</b>
+</td>
+<td>
+<b>Numerical Operator</b>
+</td>
+</tr>
+<tr>
+<td>
+<tt>eq</tt>
+</td>
+<td>
+<tt>==</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>ne</tt>
+</td>
+<td>
+<tt>!=</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>gt</tt>
+</td>
+<td>
+<tt>&gt;</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>lt</tt>
+</td>
+<td>
+<tt>&lt;</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>ge</tt>
+</td>
+<td>
+<tt>&gt;=</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>le</tt>
+</td>
+<td>
+<tt>&lt;=</tt>
+</td>
+</tr>
+</table>
+<p>
+Notice that the string operators are built from the initials of their
+abbreviated names. (E.g: eq = equal, gt = greater than). Perl's string
+comparison is case-sensitive. If you want a case insensitive
+string comparison, use the <tt>lc</tt> function to convert the strings to
+lowercase beforehand.
+</p>
+<p>Example:</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter your private name:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$name</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$name</span>);
+<span class="Statement">if</span> (<span class="Statement">lc</span>(<span class="Identifier">$name</span>) <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">rachel</span><span class="Constant">&quot;</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name is Rachel!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name is not Rachel!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--boolean--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--string--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--true_vs_false--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a> → <a href="#page--conditionals--boolean--PAGE">Boolean Operators</a>
+</div>
+<h1>
+7.3. Boolean Operators
+</h1>
+<p>
+Sometimes it is useful to check for the validation of more than one condition.
+For doing this, Perl supplies boolean operators.
+</p>
+<table border="1" summary="">
+<tr>
+<td>
+<h2>&amp;&amp;</h2>
+<p>
+<tt>$a &amp;&amp; $b</tt> evaluates to true if both <tt>$a</tt> and <tt>$b</tt> are true.
+It is called the logical and of the two operands <tt>$a</tt> and <tt>$b</tt>.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h2>||</h2>
+<p>
+<tt>$a || $b</tt> (called the logical or of <tt>$a</tt> and <tt>$b</tt>) is
+evaluated to true if one or both of its operands are true.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h2>!</h2>
+<p>
+<tt>! $a</tt> (pronounced "not <tt>$a</tt>") evaluates to true
+if <tt>$a</tt> is false.
+</p>
+</td>
+</tr>
+</table>
+<p>
+Note that if the first operand is evaluated to false in an
+<tt>&amp;&amp;</tt> operation, the second operand will not be evaluated at
+all. Similiarly, if the first operand of <tt>||</tt> was found to be true,
+the second one will not be evaluated either.
+</p>
+<p>
+If you wish both operands to be evaluated at all times you need to assign
+them to variables first.
+</p>
+<p>Here are some examples:</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the lower bound of the range:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$lower</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$lower</span>);
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the upper bound of the range:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$upper</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$upper</span>);
+<span class="Statement">if</span> (<span class="Identifier">$lower</span> &gt; <span class="Identifier">$upper</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">This is not a valid range!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter a number:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Identifier">$number</span> = &lt;&gt;;
+    <span class="Statement">chomp</span>(<span class="Identifier">$number</span>);
+    <span class="Statement">if</span> ((<span class="Identifier">$lower</span> &lt;= <span class="Identifier">$number</span>) &amp;&amp; (<span class="Identifier">$number</span> &lt;= <span class="Identifier">$upper</span>))
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The number is in the range!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+    <span class="Statement">else</span>
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The number is not in the range!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+}
+</pre></div>
+<hr />
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter your name:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$name</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$name</span>);
+<span class="Identifier">$fl</span> = <span class="Statement">lc</span>(<span class="Statement">substr</span>(<span class="Identifier">$name</span>, <span class="Constant">0</span>, <span class="Constant">1</span>));
+<span class="Statement">if</span> ((<span class="Identifier">$fl</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span>)||(<span class="Identifier">$fl</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">b</span><span class="Constant">&quot;</span>)||(<span class="Identifier">$fl</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">c</span><span class="Constant">&quot;</span>))
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name starts with one of the </span><span class="Constant">&quot;</span> .
+        <span class="Constant">&quot;</span><span class="Constant">first three letters of the ABC.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your name does not start with one of the </span><span class="Constant">&quot;</span> .
+        <span class="Constant">&quot;</span><span class="Constant">first three letters of the ABC.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+Note: The function <tt>lc()</tt> converts a string to lowercase.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--true_vs_false--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--boolean--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conditionals--elsif--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a> → <a href="#page--conditionals--true_vs_false--PAGE">True Expressions vs. False Expressions</a>
+</div>
+<h1>
+7.4. True Expressions vs. False Expressions
+</h1>
+<p>
+In Perl every expression is considered true except for the following three
+cases:
+</p>
+<ol>
+<li>
+The number <tt>0</tt>.
+</li>
+<li>
+The empty string (<tt>""</tt>).
+</li>
+<li>
+A special value called <tt>undef</tt>. This is the default value of every
+variable that was not initialized before it was accessed.
+</li>
+</ol>
+<p>
+One of the most convenient ways of cancelling code is to wrap it in an
+<tt>if (0) { ... }</tt> block. It usually is faster than adding comments to
+the beginning of each line. Of course, you should not distribute code that
+way, but it is useful for testing conjectures.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--conditionals--elsif--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conditionals--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--true_vs_false--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--while--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--conditionals--DIR">Conditionals</a> → <a href="#page--conditionals--elsif--PAGE">elsif</a>
+</div>
+<h1>
+7.5. elsif
+</h1>
+<p>
+The full syntax of the if statement is as follows:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">if</span> (<span class="Identifier">$condition0</span>)
+{
+}
+<span class="Statement">elsif</span> (<span class="Identifier">$condition1</span>)
+{
+}
+<span class="Statement">elsif</span> (<span class="Identifier">$condition2</span>)
+{
+}
+.
+.
+.
+<span class="Statement">else</span>
+{
+}
+</pre></div>
+<p>
+The N-th <tt>elsif</tt> block will be executed only if all the conditions
+in the previous blocks were not met <b>and</b> its own condition was met.
+</p>
+<p>
+You can do the same with nesting <tt>if</tt> statements inside <tt>else</tt>
+statements, but isn't it nice of perl to save you all those extra brackets
+and indentations?
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--while--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conditionals--elsif--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--while--last_and_next--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--while--DIR">The While Loop</a>
+</div>
+<h1>
+8. The While Loop
+</h1>
+<p>
+The <tt>while</tt> loop enables you to repeat a sequence of statements
+an arbitrary number of times for as long a condition is met. The syntax
+is very similar to the if statement and will be introduced in the following
+example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter a number:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$number</span>=&lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$number</span>);
+<span class="Identifier">$power_of_2</span> = <span class="Constant">1</span>;
+<span class="Statement">while</span> (<span class="Identifier">$power_of_2</span> &lt; <span class="Identifier">$number</span>)
+{
+    <span class="Identifier">$power_of_2</span> *= <span class="Constant">2</span>;
+}
+<span class="Statement">print</span> (<span class="Constant">&quot;</span><span class="Constant">The first power of 2 that is </span><span class="Constant">&quot;</span> .
+    <span class="Constant">&quot;</span><span class="Constant">greater than this number is </span><span class="Constant">&quot;</span> , <span class="Identifier">$power_of_2</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+</pre></div>
+<p>
+It is possible that a <tt>while</tt> loop will not be executed at all, if the
+condition is not met right on the start.
+</p>
+<hr />
+<p>
+The following program checks if a given string is made entirely of "a"
+characters:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter a string:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$string</span>=&lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$string</span>);
+
+<span class="Comment"># Initialize all_as to TRUE</span>
+<span class="Identifier">$all_as</span> = <span class="Constant">1</span>;
+
+<span class="Comment"># The first position in the string.</span>
+<span class="Identifier">$position</span> = <span class="Constant">0</span>;
+
+<span class="Statement">while</span> (<span class="Identifier">$all_as</span> &amp;&amp; (<span class="Identifier">$position</span> &lt; <span class="Statement">length</span>(<span class="Identifier">$string</span>)))
+{
+    <span class="Identifier">$char</span> = <span class="Statement">lc</span>(<span class="Statement">substr</span>(<span class="Identifier">$string</span>, <span class="Identifier">$position</span>, <span class="Constant">1</span>));
+
+    <span class="Statement">if</span> (<span class="Identifier">$char</span> <span class="Statement">ne</span> <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Identifier">$all_as</span> = <span class="Constant">0</span>;
+    }
+
+    <span class="Comment"># Increment the position</span>
+    <span class="Identifier">$position</span>++;
+}
+
+<span class="Statement">if</span> (<span class="Identifier">$all_as</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered is all A's!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">At least one of the characters in the string </span><span class="Constant">&quot;</span> .
+        <span class="Constant">&quot;</span><span class="Constant">you entered is not </span><span class="Special">\&quot;</span><span class="Constant">A</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--while--last_and_next--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--while--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--while--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--while--DIR">The While Loop</a> → <a href="#page--while--last_and_next--PAGE">last and next</a>
+</div>
+<h1>
+8.1. last and next
+</h1>
+<p>
+Within the <tt>while</tt> and <tt>for</tt> loops one can use two special
+commands, called <tt>last</tt> and <tt>next</tt>. <tt>last</tt> terminates a
+loop prematurely while <tt>next</tt> skips the rest of the remaining loop
+body, skips to the loop condition and if it is met, executes the loop again.
+</p>
+<p>
+By default, <tt>last</tt> and <tt>next</tt> operate on the most innermost loop.
+However, the loop to which they relate can be controlled by labeling
+the requested loop and specifying this label as a parameter to <tt>last</tt>
+or <tt>next</tt>.
+</p>
+<p>
+The following example is a rewrite of the "All A's" program using
+<tt>last</tt>:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter a string:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$string</span>=&lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$string</span>);
+
+<span class="Comment"># The first position in the string.</span>
+<span class="Identifier">$position</span> = <span class="Constant">0</span>;
+
+<span class="Statement">while</span> (<span class="Identifier">$position</span> &lt; <span class="Statement">length</span>(<span class="Identifier">$string</span>))
+{
+    <span class="Identifier">$char</span> = <span class="Statement">lc</span>(<span class="Statement">substr</span>(<span class="Identifier">$string</span>, <span class="Identifier">$position</span>, <span class="Constant">1</span>));
+
+    <span class="Statement">if</span> (<span class="Identifier">$char</span> <span class="Statement">ne</span> <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Statement">last</span>;
+    }
+
+    <span class="Comment"># Increment the position</span>
+    <span class="Identifier">$position</span>++;
+}
+
+<span class="Comment"># If the position is the end of the string it means the loop was not</span>
+<span class="Comment"># terminated prematurally, so an &quot;a&quot; was not encountered.</span>
+<span class="Statement">if</span> (<span class="Identifier">$position</span> == <span class="Statement">length</span>(<span class="Identifier">$string</span>))
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered is all A's!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">At least one of the characters in the string </span><span class="Constant">&quot;</span> .
+        <span class="Constant">&quot;</span><span class="Constant">you entered is not </span><span class="Special">\&quot;</span><span class="Constant">A</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+<p>This program prints a left-tilted pyramide:</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the length of the pyramide:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$size</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$size</span>);
+
+ROW_LOOP: <span class="Statement">for</span> <span class="Identifier">$row</span> (<span class="Constant">1</span> .. <span class="Identifier">$size</span>)
+{
+    <span class="Statement">for</span> <span class="Identifier">$column</span> (<span class="Constant">1</span> .. (<span class="Identifier">$size</span><span class="Constant">+1</span>))
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$column</span> &gt; <span class="Identifier">$row</span>)
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+            <span class="Statement">next</span> ROW_LOOP;
+        }
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">#</span><span class="Constant">&quot;</span>;
+    }
+}
+</pre></div>
+<p>
+"ROW_LOOP" is the label for the outer loop, and it can be seen that
+<tt>next</tt> uses it as a parameter. All in all, <tt>next</tt> and
+<tt>last</tt> are sometimes very convenient (but don't tell it to
+<a href="http://en.wikipedia.org/wiki/Edsger_Dijkstra">Edsgar W.
+Dijkstra</a>'s face!), so you will see them being used often.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--while--last_and_next--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--comma--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a>
+</div>
+<h1>
+9. Arrays
+</h1>
+<p>
+Arrays are a sequence of variables, whose members can be retrieved and
+assigned to by using their indices. An index passed to an array may well be,
+and usually is, another variable.
+</p>
+<p>
+To refer to the <tt>$i</tt>'th element of the array <tt>@myarray</tt>, one uses
+the syntax <tt>$myarray[$i]</tt>. This element can be assigned to or its
+value can be retrieved, with the same notation.
+</p>
+<p>
+Array indices are whole numbers and the first index is 0. As in the
+length of a string, the number of elements in an array is bounded only by
+the amount of available memory the computer has.
+</p>
+<p>
+The following program prints the primes up to 200:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">$num_primes</span> = <span class="Constant">0</span>;
+
+<span class="Comment"># Put 2 as the first prime so we won't have an empty array,</span>
+<span class="Comment"># what might confuse the interpreter</span>
+<span class="Identifier">$primes</span>[<span class="Identifier">$num_primes</span>] = <span class="Constant">2</span>;
+<span class="Identifier">$num_primes</span>++;
+
+MAIN_LOOP:
+<span class="Statement">for</span> <span class="Identifier">$number_to_check</span> (<span class="Constant">3</span> .. <span class="Constant">200</span>)
+{
+    <span class="Statement">for</span> <span class="Identifier">$p</span> (<span class="Constant">0</span> .. (<span class="Identifier">$num_primes</span><span class="Constant">-1</span>))
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$number_to_check</span> % <span class="Identifier">$primes</span>[<span class="Identifier">$p</span>] == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Comment"># If we reached this point it means $number_to_check is not</span>
+    <span class="Comment"># divisable by any prime number that came before it.</span>
+    <span class="Identifier">$primes</span>[<span class="Identifier">$num_primes</span>] = <span class="Identifier">$number_to_check</span>;
+    <span class="Identifier">$num_primes</span>++;
+}
+
+<span class="Statement">for</span> <span class="Identifier">$p</span> (<span class="Constant">0</span> .. (<span class="Identifier">$num_primes</span><span class="Constant">-1</span>))
+{
+    <span class="Statement">print</span> <span class="Identifier">$primes</span>[<span class="Identifier">$p</span>], <span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The notation <tt>scalar(@myarray)</tt> can be used to refer to the number
+of elements in an array. This number is equal to the maximal index which
+was assigned in the array plus one. You will also see the notation
+<tt>$#myarray</tt> which is equal to the maximal index itself (or -1 if the
+array is empty).
+</p>
+<p>
+Thus, for example, the above program could have been written as follows:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># Put 2 as the first prime so we won't have an empty array,</span>
+<span class="Comment"># what might confuse the interpreter</span>
+<span class="Identifier">$primes</span>[<span class="Constant">0</span>] = <span class="Constant">2</span>;
+
+MAIN_LOOP:
+<span class="Statement">for</span> <span class="Identifier">$number_to_check</span> (<span class="Constant">3</span> .. <span class="Constant">200</span>)
+{
+    <span class="Statement">for</span> <span class="Identifier">$p</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$number_to_check</span> % <span class="Identifier">$primes</span>[<span class="Identifier">$p</span>] == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Comment"># If we reached this point it means $number_to_check is not</span>
+    <span class="Comment"># divisable by any prime number that came before it.</span>
+    <span class="Identifier">$primes</span>[<span class="Statement">scalar</span>(<span class="Identifier">@primes</span>)] = <span class="Identifier">$number_to_check</span>;
+}
+
+<span class="Statement">for</span> <span class="Identifier">$p</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$primes</span>[<span class="Identifier">$p</span>], <span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--comma--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--negative_indexes--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--comma--PAGE">The ',' operator</a>
+</div>
+<h1>
+9.1. The ',' operator
+</h1>
+<p>
+In perl the comma (<tt>,</tt>) is an operator, which we encountered before
+in function calls. The comma concatenates two arrays. We can use it to
+initialize an array in one call:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">@lines</span> = (<span class="Constant">&quot;</span><span class="Constant">One fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Two fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Red fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Blue fish</span><span class="Constant">&quot;</span>);
+
+<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">0</span> .. <span class="Identifier">$#lines</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$lines</span>[<span class="Identifier">$a</span>], <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+We can also use it to concatenate two existing arrays:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">@primes1</span> = (<span class="Constant">2</span>,<span class="Constant">3</span>,<span class="Constant">5</span>);
+<span class="Identifier">@primes2</span> = (<span class="Constant">7</span>,<span class="Constant">11</span>,<span class="Constant">13</span>);
+<span class="Identifier">@primes</span> = (<span class="Identifier">@primes1</span>,<span class="Identifier">@primes2</span>,<span class="Constant">17</span>);
+<span class="Identifier">@primes</span> = (<span class="Identifier">@primes</span>,<span class="Constant">19</span>);
+
+<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$primes</span>[<span class="Identifier">$a</span>], <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+So why it is used in function calls? In perl every function accepts an array
+of arguments and returns an array of return values. That's why the comma is
+useful for calling functions which accept more than one argument.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--negative_indexes--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--comma--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--foreach--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--negative_indexes--PAGE">Negative Indexes</a>
+</div>
+<h1>
+9.2. Negative Indexes
+</h1>
+<p>
+The expression <tt>$myarray[-$n]</tt> is equivalent to
+<tt>$myarray[scalar(@myarray)-$n]</tt>. I.e: subscripts with negative indexes
+return the <tt>$n</tt>'th element from the end of the array. So to get the
+value of the last element you can write <tt>$myarray[-1]</tt> and for the
+second last <tt>$myarray[-2]</tt>,
+etc.
+</p>
+<p>
+Note that one should also make sure that array subscripts that are continuously
+decremented will not underflow below 0, or else one will start getting the
+elements from the end of the array.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--foreach--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--negative_indexes--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--foreach--for_and_dotdot--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--foreach--DIR">The foreach loop</a>
+</div>
+<h1>
+9.3. The foreach loop
+</h1>
+<p>
+By using the <tt>foreach</tt> loop we can iterate over all the elements of
+an array, and perform the same set of operations on each one of them. Here's
+an example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">@numbers</span> = (<span class="Constant">15</span>,<span class="Constant">5</span>,<span class="Constant">7</span>,<span class="Constant">3</span>,<span class="Constant">9</span>,<span class="Constant">1</span>,<span class="Constant">20</span>,<span class="Constant">13</span>,<span class="Constant">9</span>,<span class="Constant">8</span>,
+    <span class="Constant">15</span>,<span class="Constant">16</span>,<span class="Constant">2</span>,<span class="Constant">6</span>,<span class="Constant">12</span>,<span class="Constant">90</span>);
+
+<span class="Identifier">$max</span> = <span class="Identifier">$numbers</span>[<span class="Constant">0</span>];
+<span class="Identifier">$min</span> = <span class="Identifier">$numbers</span>[<span class="Constant">0</span>];
+
+<span class="Statement">foreach</span> <span class="Identifier">$i</span> (<span class="Identifier">@numbers</span>[<span class="Constant">1.</span>.<span class="Identifier">$#numbers</span>])
+{
+    <span class="Statement">if</span> (<span class="Identifier">$i</span> &gt; <span class="Identifier">$max</span>)
+    {
+        <span class="Identifier">$max</span> = <span class="Identifier">$i</span>;
+    }
+    <span class="Statement">elsif</span> (<span class="Identifier">$i</span> &lt; <span class="Identifier">$min</span>)
+    {
+        <span class="Identifier">$min</span> = <span class="Identifier">$i</span>;
+    }
+}
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The maximum is </span><span class="Constant">&quot;</span> . <span class="Identifier">$max</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The minimum is </span><span class="Constant">&quot;</span> . <span class="Identifier">$min</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The <tt>foreach</tt> loop in the example assigns each of the elements of the
+array which was passed to it to <tt>$i</tt> in turn, and executes the same
+set of commands for each value.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--foreach--for_and_dotdot--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--foreach--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--foreach--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--functions--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--foreach--DIR">The foreach loop</a> → <a href="#page--arrays--foreach--for_and_dotdot--PAGE">The for keyword and the .. operator</a>
+</div>
+<h1>
+9.3.1. The for keyword and the .. operator
+</h1>
+<p>
+The <tt>for</tt> keyword in Perl means exactly the same as <tt>foreach</tt> and
+you can use either one interchangeably.
+</p>
+<p>
+<tt>$a .. $b</tt> is a special operator that returns an array containing the
+sequence of consecutive integers from <tt>$a</tt> up to and including
+<tt>$b</tt>. Now one can fully understand the <tt>for $i (1 .. 10)</tt>
+construct that we used in the beginning of this lecture.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--functions--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--foreach--for_and_dotdot--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--arrays--x--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--functions--PAGE">Built-In Array Functions</a>
+</div>
+<h1>
+9.4. Built-In Array Functions
+</h1>
+<h2>push</h2>
+<p>
+The <tt>push</tt> function appends an element or an entire array to the
+end of an array variable. The syntax is <tt>push @array_to_append_to, @array_to_append</tt> or <tt>push @array, $elem1</tt>. For example, the primes program from earlier could be written as:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># Put 2 as the first prime so we won't have an empty array,</span>
+<span class="Comment"># what might confuse the interpreter</span>
+<span class="Identifier">@primes</span> = (<span class="Constant">2</span>);
+
+MAIN_LOOP:
+<span class="Statement">for</span> <span class="Identifier">$number_to_check</span> (<span class="Constant">3</span> .. <span class="Constant">200</span>)
+{
+    <span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$number_to_check</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Comment"># If we reached this point it means $number_to_check is not</span>
+    <span class="Comment"># divisable by any prime number that came before it.</span>
+    <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$number_to_check</span>;
+}
+
+<span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$p</span>, <span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Notice that <tt>push</tt> is equivalent to typing
+<tt>@array = (@array, $extra_elem)</tt>, but it is recommended
+to use it, because it minimizes error and it executes faster.
+</p>
+<h2>pop</h2>
+<p>
+<tt>pop</tt> extracts the last element from an array and returns it. Here's a
+short example to demonstrate it:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This program prints the numbers from 10 down to 1.</span>
+<span class="Identifier">@numbers</span> = (<span class="Constant">1</span> .. <span class="Constant">10</span>);
+<span class="Statement">while</span>(<span class="Statement">scalar</span>(<span class="Identifier">@numbers</span>) &gt; <span class="Constant">0</span>)
+{
+    <span class="Identifier">$i</span> = <span class="Statement">pop</span>(<span class="Identifier">@numbers</span>);
+    <span class="Statement">print</span> <span class="Identifier">$i</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<h2>shift</h2>
+<p>
+<tt>shift</tt> extracts the <b>first</b> element of an array and returns it. The
+array will be changed to contain only the elements that were present there
+previously, with the 1 to <tt>scalar(@array)-1</tt> indexes.
+</p>
+<p>
+Here's the above example, while using <tt>shift</tt> instead of <tt>pop</tt>:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This program prints the numbers 1 to 10.</span>
+<span class="Identifier">@numbers</span> = (<span class="Constant">1</span> .. <span class="Constant">10</span>);
+<span class="Statement">while</span>(<span class="Statement">scalar</span>(<span class="Identifier">@numbers</span>) &gt; <span class="Constant">0</span>)
+{
+    <span class="Identifier">$i</span> = <span class="Statement">shift</span>(<span class="Identifier">@numbers</span>);
+    <span class="Statement">print</span> <span class="Identifier">$i</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<h2>join</h2>
+<p>
+The syntax is <tt>join($separator, @array)</tt> and what it does is
+concatenates the elements of <tt>@array</tt> while putting <tt>$seperator</tt> in
+between. Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">@myarray</span> = (<span class="Constant">&quot;</span><span class="Constant">One fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Two fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Red Fish</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Blue Fish</span><span class="Constant">&quot;</span>);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@myarray</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<h2>reverse</h2>
+<p>
+The <tt>reverse</tt> function returns the array which contains the elements
+of the array passed to it as argument in reverse. Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Enter some lines:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Identifier">$line</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+<span class="Statement">while</span> (<span class="Identifier">$line</span>)
+{
+    <span class="Statement">push</span> <span class="Identifier">@mylines</span>, <span class="Identifier">$line</span>;
+    <span class="Identifier">$line</span> = &lt;&gt;;
+    <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+}
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Your lines in reverse are:</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">reverse</span>(<span class="Identifier">@mylines</span>)), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Note that by typing <tt>scalar(reverse($scalar))</tt> you get the string that
+contains the characters of <tt>$scalar</tt> in reverse.
+<tt>scalar(reverse(@array))</tt> concatenates the array into one string and then
+reverses its characters.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--arrays--x--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--arrays--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--arrays--functions--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<b>Next</b></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 1</a> → <a href="#page--arrays--DIR">Arrays</a> → <a href="#page--arrays--x--PAGE">The x operator</a>
+</div>
+<h1>
+9.5. The x operator
+</h1>
+<p>
+The expression <tt>(@array) x $num_times</tt> returns an array that is composed
+of <tt>$num_times</tt> copies of <tt>@array</tt> one after the other. The
+expression <tt>$scalar x $num_times</tt>, on the other hand, returns
+a string containing <tt>$num_times</tt> copies of <tt>$scalar</tt>
+concatenated together string-wise.
+</p>
+<p>
+Therefore it is important whether the left operand is wrapped in parenthesis
+or not. It is usually a good idea to assign the left part to a variable
+before using x so you'll have the final expression ready.
+</p>
+<p>Here's an example to illustrate the use:</p>
+<div class="code_block"><pre>
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Test 1:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">@myarray</span> = (<span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">World</span><span class="Constant">&quot;</span>);
+<span class="Identifier">@array2</span> = ((<span class="Identifier">@myarray</span>) x <span class="Constant">5</span>);
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, <span class="Identifier">@array2</span>), <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Test 2:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">@array3</span> = (<span class="Identifier">@myarray</span> x <span class="Constant">5</span>);
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, <span class="Identifier">@array3</span>), <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Test 3:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$string</span> = <span class="Constant">&quot;</span><span class="Constant">oncatc</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> ((<span class="Identifier">$string</span> x <span class="Constant">6</span>), <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>);
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Test 4:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, ((<span class="Constant">&quot;</span><span class="Constant">hello</span><span class="Constant">&quot;</span>) x <span class="Constant">5</span>)), <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Test 5:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, (<span class="Constant">&quot;</span><span class="Constant">hello</span><span class="Constant">&quot;</span> x <span class="Constant">5</span>)), <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Can you guess what the output of this program will be?
+</p>
+<p>Here's a spoiler</p>
+<div class="code_block"><pre>
+Test 1:
+Hello, World, Hello, World, Hello, World, Hello, World, Hello, World
+
+Test 2:
+22222
+
+Test 3:
+oncatconcatconcatconcatconcatconcatc
+
+Test 4:
+hello
+hello
+hello
+hello
+hello
+
+Test 5:
+hellohellohellohellohello
+</pre></div>
+<hr />
+
+</div>
+
+</body></html>

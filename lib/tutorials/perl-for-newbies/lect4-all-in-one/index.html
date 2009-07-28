@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
+
+
+
+
+<title>
+Perl for Newbies - Lecture 4
+</title>
+</head>
+<body><div class="page" id="page--DIR">
+
+<div class="center"><script type="text/javascript">
+google_ad_client = "pub-2480595666283917";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "336699";
+google_color_text = "000000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<b>Up</b></td>
+<td>
+<b>Prev</b></td>
+<td>
+<a href="#page--cpan--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a>
+</div>
+<h1>
+Perl for Newbies - Lecture 4
+</h1>
+<h2 id="contents">Contents</h2>
+<ul class="contentsmain">
+<li><a href="#page--cpan--DIR" class="contents">1. CPAN Modules</a>
+<ul class="contents">
+<li><a href="#page--cpan--manual--PAGE" class="contents">1.1. Manual Compilation</a>
+</li><li><a href="#page--cpan--mcpan--PAGE" class="contents">1.2. The -MCPAN Interface</a>
+</li></ul>
+</li><li><a href="#page--sprintf--DIR" class="contents">2. The sprintf function</a>
+<ul class="contents">
+<li><a href="#page--sprintf--conversions--PAGE" class="contents">2.1. Supported Conversions</a>
+</li><li><a href="#page--sprintf--flags--PAGE" class="contents">2.2. Flags to the conversions</a>
+</li><li><a href="#page--sprintf--width--PAGE" class="contents">2.3. Width and Max Width</a>
+</li></ul>
+</li><li><a href="#page--string-forms--DIR" class="contents">3. Alternate Forms for Writing Strings</a>
+<ul class="contents">
+<li><a href="#page--string-forms--q_qq--PAGE" class="contents">3.1. q{}, qq{} and Friends</a>
+</li><li><a href="#page--string-forms--here_doc--PAGE" class="contents">3.2. Here Document</a>
+</li></ul>
+</li><li><a href="#page--processes--DIR" class="contents">4. Executing Other Processes</a>
+<ul class="contents">
+<li><a href="#page--processes--system--PAGE" class="contents">4.1. The system() Command</a>
+</li><li><a href="#page--processes--backticks--PAGE" class="contents">4.2. Trapping Command Output with `...`</a>
+</li><li><a href="#page--processes--opens--PAGE" class="contents">4.3. open() for Command Execution</a>
+</li><li><a href="#page--processes--string-shellquote--PAGE" class="contents">4.4. String::ShellQuote</a>
+</li></ul>
+</li><li><a href="#page--and_or--DIR" class="contents">5. More about || and &amp;&amp;</a>
+<ul class="contents">
+<li><a href="#page--and_or--sort--PAGE" class="contents">5.1. For sort()</a>
+</li><li><a href="#page--and_or--english_and_or--PAGE" class="contents">5.2. The "and" and "or" Operators</a>
+</li></ul>
+</li><li><a href="#page--exceptions--DIR" class="contents">6. Exceptions</a>
+<ul class="contents">
+<li><a href="#page--exceptions--die_and_eval--PAGE" class="contents">6.1. die and eval</a>
+</li><li><a href="#page--exceptions--carp--PAGE" class="contents">6.2. The Carp module</a>
+</li><li><a href="#page--exceptions--error.pm--PAGE" class="contents">6.3. The Error.pm module</a>
+</li></ul>
+</li><li><a href="#page--system-funcs--DIR" class="contents">7. More System Functions</a>
+<ul class="contents">
+<li><a href="#page--system-funcs--dir--PAGE" class="contents">7.1. Directory Input Routines</a>
+</li><li><a href="#page--system-funcs--random_io--PAGE" class="contents">7.2. Random File I/O</a>
+</li><li><a href="#page--system-funcs--file-tests--PAGE" class="contents">7.3. File Tests (-e, -d...)</a>
+</li><li><a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE" class="contents">7.4. chdir(), getcwd() and mkdir().</a>
+</li><li><a href="#page--system-funcs--stat--PAGE" class="contents">7.5. The stat() Function</a>
+</li></ul>
+</li></ul>
+<h2 id="licence">Licence</h2>
+<p>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/publicdomain/"><img alt="Creative Commons License" style="border:0"
+src="./somerights20.gif" /></a><br />
+This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/publicdomain/">Public Domain</a>.
+<!-- /Creative Commons License -->
+</p>
+<!--
+		<rdf:RDF xmlns="http://web.resource.org/cc/"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about=""
+			<license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	<dc:title>Perl for Perl Newbies</dc:title>
+	<dc:rights><Agent><dc:title>Shlomi Fish</dc:title></Agent></dc:rights>
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/0/"><permits rdf:resource="http://web.resource.org/cc/Reproduction" /><permits rdf:resource="http://web.resource.org/cc/Distribution" /><requires rdf:resource="http://web.resource.org/cc/Notice" /><requires rdf:resource="http://web.resource.org/cc/Attribution" /><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" /></License>
+		</rdf:RDF>
+-->
+<hr />
+
+</div>
+<div class="page" id="page--cpan--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--cpan--manual--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a>
+</div>
+<h1>
+1. CPAN Modules
+</h1>
+<p>
+<a href="http://perl.net.au/wiki/CPAN">CPAN</a> stands for the "Comprehensive
+Perl Archive Network". It is a mirrored repository of Perl code,
+packaged in so-called <b>CPAN distributions</b> (or formerly known
+as <b>CPAN modules</b>) that can be installed (along with their dependencies)
+by issuing one command.
+</p>
+<p>
+This section will show, how to install a typical CPAN module, either
+manually or automatically.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--cpan--manual--PAGE" class="contents">1.1. Manual Compilation</a>
+</li><li><a href="#page--cpan--mcpan--PAGE" class="contents">1.2. The -MCPAN Interface</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--cpan--manual--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--cpan--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--cpan--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--cpan--mcpan--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a> → <a href="#page--cpan--manual--PAGE">Manual Compilation</a>
+</div>
+<h1>
+1.1. Manual Compilation
+</h1>
+<p>
+To compile a CPAN distribution manually, you first need to download it. You
+can start by browsing your nearest CPAN module and downloading from there. On
+UNIX the following command, will download version 2.31 of the XML::Parser
+module.
+</p>
+<div class="code_block"><pre>
+$ wget http://www.cpan.org/modules/by-module/XML/XML-Parser-2.31.tar.gz
+</pre></div>
+<p>
+Next unpack it using the "tar -xvf" command:
+</p>
+<div class="code_block"><pre>
+$ tar -xvf XML-Parser-2.31.tar.gz
+</pre></div>
+<p>
+(if you don't have GNU tar use "gunzip" and then "tar -xvf" instead. On
+Windows you can use WinZip.)
+</p>
+<p>
+Now cd to its directory and type "perl Makefile.PL" and "make".
+</p>
+<div class="code_block"><pre>
+$ cd XML-Parser-2.31
+$ perl Makefile.PL
+Checking if your kit is complete...
+Looks good
+Writing Makefile for XML::Parser::Expat
+Writing Makefile for XML::Parser
+$ make
+cp Parser/Encodings/x-sjis-cp932.enc blib/lib/XML/Parser/Encodings/x-sjis-cp932.enc
+cp Parser/Encodings/iso-8859-7.enc blib/lib/XML/Parser/Encodings/iso-8859-7.enc
+cp Parser/Encodings/x-euc-jp-unicode.enc blib/lib/XML/Parser/Encodings/x-euc-jp-unicode.enc
+cp Parser/Encodings/iso-8859-9.enc blib/lib/XML/Parser/Encodings/iso-8859-9.enc
+cp Parser/Encodings/README blib/lib/XML/Parser/Encodings/README
+cp Parser/Encodings/euc-kr.enc blib/lib/XML/Parser/Encodings/euc-kr.enc
+cp Parser/Encodings/big5.enc blib/lib/XML/Parser/Encodings/big5.enc
+cp Parser/Encodings/windows-1250.enc blib/lib/XML/Parser/Encodings/windows-1250.enc
+cp Parser/Encodings/Japanese_Encodings.msg blib/lib/XM
+.
+.
+.
+</pre></div>
+<p>
+After the wait, the module will be compiled. It is preferable to test it first, by invoking <tt>make test</tt>:
+</p>
+<div class="code_block"><pre>
+$ make test
+</pre></div>
+<p>
+Now you can install it, by becoming
+a super-user and typing <tt>make install</tt> at the command line.
+</p>
+<div class="code_block"><pre>
+$ su
+Password:
+# make install
+</pre></div>
+<h2 id="module-build">Module-Build</h2>
+<p>
+Note that some distributions are now using
+<a href="http://search.cpan.org/dist/Module-Build/">Module-Build</a>. If
+your distribution contains a <tt>Build.PL</tt> file, you should run
+the following commands instead:
+</p>
+<div class="code_block"><pre>
+perl Build.PL
+./Build
+./Build test
+./Build install
+</pre></div>
+<p>
+More information can be found in
+<a href="http://search.cpan.org/perldoc?Module::Build">the main Module-Build
+document</a>
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--cpan--mcpan--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--cpan--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--cpan--manual--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--sprintf--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a> → <a href="#page--cpan--mcpan--PAGE">The -MCPAN Interface</a>
+</div>
+<h1>
+1.2. The -MCPAN Interface
+</h1>
+<p>
+Perl has a module called CPAN with which one can install CPAN modules along
+with all of the modules they depend on. To invoke it type <tt>perl -MCPAN -e
+shell</tt> at the command line while being a super-user, and follow the
+instructions it gives you. The <tt>install</tt> command can be used to
+automatically install modules. For example: to install the XML::XSLT module,
+the following can be done from the CPAN prompt:
+</p>
+<div class="code_block"><pre>
+cpan&gt; install XML::XSLT
+</pre></div>
+<p>
+This will in turn install "XML::Parser" and other modules it needs.
+</p>
+<h2 id="cpanplus">CPANPLUS.pm</h2>
+<p>
+CPANPLUS.pm is a more modern, modular, and enhanced alternative to
+CPAN.pm. It is part of perl-5.10.x and above, but can be installed separately.
+As such, its use is more recommended.
+</p>
+<h2 id="distro-specific">Operating System/Distribution - Specific Ways</h2>
+<p>
+Normally, you should look for a suitable native package of the CPAN module
+for your operating system or
+<a href="http://en.wikipedia.org/wiki/Linux_distribution">distribution</a>. If
+that fails, you should consider building your own package. Consult your
+distribution's help channels for more information.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--sprintf--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--cpan--mcpan--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--sprintf--conversions--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a>
+</div>
+<h1>
+2. The sprintf function
+</h1>
+<p>
+The <tt>sprintf</tt> can be used to format a format string with some
+conversions embedded inside, and some paramters. Each conversion is specified
+by the starting character of the percent sign (<tt>%</tt>), and can
+have a type and several parameters that will dictate how it will be formatted
+in the output string. The output string is returned by <tt>sprintf</tt>.
+</p>
+<p>
+Here's an example that illustrates its use:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">Hello </span><span class="Special">\&quot;</span><span class="Constant">%s</span><span class="Special">\&quot;</span><span class="Constant">! Your lucky number is %i.</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Nathan</span><span class="Constant">&quot;</span>, <span class="Constant">65</span>);
+</pre></div>
+<p>
+The output is:
+</p>
+<div class="code_block"><pre>
+Hello "Nathan"! Your lucky number is 65.
+</pre></div>
+<p>
+As you can see, the first conversion is taken from the first argument, and the
+second one from the second argument. That's how sprintf works: processing
+the conversions from the arguments in order.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--sprintf--conversions--PAGE" class="contents">2.1. Supported Conversions</a>
+</li><li><a href="#page--sprintf--flags--PAGE" class="contents">2.2. Flags to the conversions</a>
+</li><li><a href="#page--sprintf--width--PAGE" class="contents">2.3. Width and Max Width</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--sprintf--conversions--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--sprintf--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--sprintf--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--sprintf--flags--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--conversions--PAGE">Supported Conversions</a>
+</div>
+<h1>
+2.1. Supported Conversions
+</h1>
+<p>
+Here are some of the supported conversions:
+</p>
+<table summary="">
+<tr>
+<td>
+<tt>%%</tt>
+</td>
+<td>
+An actual percent sign
+</td>
+</tr>
+<tr>
+<td>
+<tt>%c</tt>
+</td>
+<td>
+A character with the given ASCII number
+</td>
+</tr>
+<tr>
+<td>
+<tt>%s</tt>
+</td>
+<td>
+A string
+</td>
+</tr>
+<tr>
+<td>
+<tt>%d</tt>
+</td>
+<td>
+A signed integer, in decimal (also <tt>%i</tt>)
+</td>
+</tr>
+<tr>
+<td>
+<tt>%o</tt>
+</td>
+<td>
+An integer in octal
+</td>
+</tr>
+<tr>
+<td>
+<tt>%x</tt>
+</td>
+<td>
+An integer in hexadecimal. (use <tt>%X</tt> for
+uppercase hex)
+</td>
+</tr>
+<tr>
+<td>
+<tt>%e</tt>
+</td>
+<td>
+A floating point number, in scientific notation.
+</td>
+</tr>
+<tr>
+<td>
+<tt>%f</tt>
+</td>
+<td>
+A float in fixed decimal notation.
+</td>
+</tr>
+<tr>
+<td>
+<tt>%b</tt>
+</td>
+<td>
+An integer in binary
+</td>
+</tr>
+</table>
+<p>
+Here are some examples:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">There is %i%% of alcohol in this beverage</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">27</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">%s%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">This string</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant"> ends here.</span><span class="Constant">&quot;</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in hex is 0x%x</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in binary is 0b%b</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">3.2 + 1.6 == %f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.2+1.6</span>);
+</pre></div>
+<p>
+And their output is:
+</p>
+<div class="code_block"><pre>
+There is 27% of alcohol in this beverage
+This string ends here.
+650 in hex is 0x28a
+650 in binary is 0b1010001010
+3.2 + 1.6 == 4.800000
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--sprintf--flags--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--sprintf--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--sprintf--conversions--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--sprintf--width--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--flags--PAGE">Flags to the conversions</a>
+</div>
+<h1>
+2.2. Flags to the conversions
+</h1>
+<p>
+One can put various flags between the percent sign and before the
+conversion character, which alter the output. Here is a list of them:
+</p>
+<table class="bordered" summary="">
+<tr>
+<td>
+<tt>space</tt>
+</td>
+<td>
+Prefix positive number with a space
+</td>
+</tr>
+<tr>
+<td>
+<tt>+</tt>
+</td>
+<td>
+Prefix positive number with a + sign
+</td>
+</tr>
+<tr>
+<td>
+<tt>-</tt>
+</td>
+<td>
+Left justify the output within the specified field
+</td>
+</tr>
+<tr>
+<td>
+<tt>0</tt>
+</td>
+<td>
+Use zeros, not spaces to right justify.
+</td>
+</tr>
+<tr>
+<td>
+<tt>#</tt>
+</td>
+<td>
+Prefix non-zero octal with 0, non-zero hex with "0x", and non-zero
+binary with "0b"
+</td>
+</tr>
+</table>
+<p>
+For example (taken from <tt>perldoc -f sprintf</tt>):
+</p>
+<div class="code_block"><pre>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;% d&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt; 12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%+d&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;+12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%6s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;    12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%-6s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;12    &gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%06s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;000012&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%#x&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;0xc&gt;&quot;</span>
+</pre></div>
+<p>
+Note that <tt>printf</tt> formats its arguments using <tt>sprintf</tt> and
+then prints them using <tt>print</tt>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--sprintf--width--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--sprintf--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--sprintf--flags--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--string-forms--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--width--PAGE">Width and Max Width</a>
+</div>
+<h1>
+2.3. Width and Max Width
+</h1>
+<p>
+One can apply an optional width and max width (or for floating point numbers
+- precision), specifier for the conversion flags. This is a number followed
+by an optional dot and another number.
+</p>
+<p>
+Here are some examples:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;       <span class="Comment"># Prints &lt;     Hello&gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%-10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;      <span class="Comment"># Prints &lt;Hello     &gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%3.5s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Longstring</span><span class="Constant">&quot;</span>; <span class="Comment"># Prints &lt;Longs&gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%.2f&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.1415926535</span>;  <span class="Comment"># Prints &lt;3.14&gt;</span>
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--string-forms--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--sprintf--width--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--string-forms--q_qq--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a>
+</div>
+<h1>
+3. Alternate Forms for Writing Strings
+</h1>
+<p>
+Perl has several alternate forms to write the various type of strings
+it supports. This section will cover the variations on this theme.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--string-forms--q_qq--PAGE" class="contents">3.1. q{}, qq{} and Friends</a>
+</li><li><a href="#page--string-forms--here_doc--PAGE" class="contents">3.2. Here Document</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--string-forms--q_qq--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--string-forms--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--string-forms--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--string-forms--here_doc--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a> → <a href="#page--string-forms--q_qq--PAGE">q{}, qq{} and Friends</a>
+</div>
+<h1>
+3.1. q{}, qq{} and Friends
+</h1>
+<table class="bordered" summary="">
+<tr>
+<th>
+<b>Customary</b>
+</th>
+<th>
+<b>Generic</b>
+</th>
+<th>
+<b>Meaning</b>
+</th>
+<th>
+<b>Interpolates</b>
+</th>
+</tr>
+<tr>
+<td>
+''
+</td>
+<td>
+q{}
+</td>
+<td>
+Literal
+</td>
+<td>
+No.
+</td>
+</tr>
+<tr>
+<td>
+""
+</td>
+<td>
+qq{}
+</td>
+<td>
+Literal
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td>
+``
+</td>
+<td>
+qx{}
+</td>
+<td>
+Command
+</td>
+<td>
+Yes (unless the delimiter is '')
+</td>
+</tr>
+<tr>
+<td>
+(none)
+</td>
+<td>
+qw{}
+</td>
+<td>
+Word List
+</td>
+<td>
+No
+</td>
+</tr>
+<tr>
+<td>
+//
+</td>
+<td>
+m{}
+</td>
+<td>
+Pattern Match
+</td>
+<td>
+Yes (unless the delimiter is '')
+</td>
+</tr>
+<tr>
+<td>
+(none)
+</td>
+<td>
+qr{}
+</td>
+<td>
+Declaration of a Regex Pattern
+</td>
+<td>
+Yes (unless the delimiter is '')
+</td>
+</tr>
+<tr>
+<td>
+(none)
+</td>
+<td>
+s{}{}
+</td>
+<td>
+Substitution
+</td>
+<td>
+Yes (unless the delimiter is '')
+</td>
+</tr>
+<tr>
+<td>
+(none)
+</td>
+<td>
+tr{}{}
+</td>
+<td>
+Transliteration
+</td>
+<td>
+No
+</td>
+</tr>
+</table>
+<p>
+What it means, is that you can write an interpolated string as <tt>qq</tt>
+followed by a matching wrapping character, inside which the string can
+be placed. And likewise for the other strings. Here are some examples:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$h</span> = <span class="Constant">q{</span><span class="Constant">Hello There</span><span class="Constant">}</span>;
+<span class="Statement">print</span> <span class="Constant">qq|</span><span class="Identifier">$h</span><span class="Constant">, world!</span><span class="Special">\n</span><span class="Constant">|</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$t</span> = <span class="Constant">q#</span><span class="Constant">Router</span><span class="Constant">#</span>;
+<span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Constant">qq(</span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$t</span><span class="Constant">)</span>;
+<span class="Identifier">$y</span> =~ <span class="Statement">s!</span><span class="Constant">Hello</span><span class="Statement">!</span><span class="Constant">Hi</span><span class="Statement">!</span>;
+<span class="Statement">print</span> <span class="Constant">qq#</span><span class="Identifier">$y</span><span class="Special">\n</span><span class="Constant">#</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@a</span> = <span class="Constant">qw{</span><span class="Constant">one two three</span><span class="Constant">}</span>;
+<span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Constant">0</span> .. <span class="Identifier">$#a</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">$i: </span><span class="Identifier">$a</span><span class="Constant">[</span><span class="Identifier">$i</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+The output of this is:
+</p>
+<div class="code_block"><pre>
+Hello There, world!
+Hi There Hello There Hello There Router
+0: one
+1: two
+2: three
+</pre></div>
+<p>
+As one can see, the wrapping characters should match assuming they are a
+left/right pair (<tt>{</tt> to <tt>}</tt> etc.).
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--string-forms--here_doc--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--string-forms--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--string-forms--q_qq--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a> → <a href="#page--string-forms--here_doc--PAGE">Here Document</a>
+</div>
+<h1>
+3.2. Here Document
+</h1>
+<p>
+In a here document, one specifies an ending string to end the string
+on a separate line, and between it, one can place any string he wishes.
+This is useful if your string contains a lot of irregular characters.
+</p>
+<p>
+The syntax for a here document is a <tt>&lt;&lt;</tt> followed by
+the string ending sequence, followed by the end of the statement. In
+the lines afterwards, one places the string itself followed by its
+ending sequence.
+</p>
+<p>
+Here is an example:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$str</span> = <span class="Constant">&quot;</span><span class="Constant">There you go.</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$true</span> = <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Constant">&lt;&lt;&quot;END&quot;</span><span class="Constant">;</span>
+<span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">a is: &quot;</span><span class="Identifier">$a</span><span class="Constant">&quot;</span>
+<span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">str is: &quot;</span><span class="Identifier">$str</span><span class="Constant">&quot;</span>
+<span class="Constant">The value of true is: &quot;</span><span class="Identifier">$true</span><span class="Constant">&quot;</span>
+
+<span class="Constant">Hoola</span>
+
+<span class="Constant">END</span>
+</pre></div>
+<p>
+Its output is:
+</p>
+<div class="code_block"><pre>
+The value of $a is: "Hello"
+The value of $str is: "There you go."
+The value of true is: "False"
+
+Hoola
+
+
+</pre></div>
+<p>
+Note that if the delimeters on the terminator after the <tt>&lt;&lt;</tt>
+are double-quotes (<tt>"..."</tt>), then the here-document will interpolate,
+and if they are single-quotes (<tt>'...'</tt>), it will not.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--processes--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--string-forms--here_doc--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--processes--system--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a>
+</div>
+<h1>
+4. Executing Other Processes
+</h1>
+<p>
+Perl enables one to execute other system commands while returning
+control to the script. There are several different ways to do this,
+and they would be covered here.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--processes--system--PAGE" class="contents">4.1. The system() Command</a>
+</li><li><a href="#page--processes--backticks--PAGE" class="contents">4.2. Trapping Command Output with `...`</a>
+</li><li><a href="#page--processes--opens--PAGE" class="contents">4.3. open() for Command Execution</a>
+</li><li><a href="#page--processes--string-shellquote--PAGE" class="contents">4.4. String::ShellQuote</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--processes--system--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--processes--backticks--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--system--PAGE">The system() Command</a>
+</div>
+<h1>
+4.1. The system() Command
+</h1>
+<p>
+The <tt>system()</tt> function executes a shell command, while maintaining
+the same standard input, standard output and environment of the invoking
+script. If called with one argument, it passes this argument as is to the
+shell, which in turn will process it for special characters. If passed an
+array, it will call the command in the first member with the rest of the
+array as command line arguments.
+</p>
+<p>
+Here are some examples, that will only work on UNIX systems.
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">system</span>(<span class="Constant">&quot;</span><span class="Constant">ls -l /</span><span class="Constant">&quot;</span>);
+
+<span class="Statement">my</span> <span class="Identifier">@args</span> = (<span class="Constant">&quot;</span><span class="Constant">ls</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">-l</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">/</span><span class="Constant">&quot;</span>);
+<span class="Statement">system</span>(<span class="Identifier">@args</span>);
+
+<span class="Statement">system</span>(<span class="Constant">&quot;</span><span class="Constant">ls -l | grep ^d | wc -l</span><span class="Constant">&quot;</span>);
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--processes--backticks--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--processes--system--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--processes--opens--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--backticks--PAGE">Trapping Command Output with `...`</a>
+</div>
+<h1>
+4.2. Trapping Command Output with `...`
+</h1>
+<p>
+The backticks (or more generally <tt>qx{ ... }</tt>), can be used to trap
+the output of a shell command. It executes the command and returns
+all of its output. Interpolation is used.
+</p>
+<p>
+Here is an example for a program that counts the number of directories in
+a directory that is given as an argument:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$dir</span> = <span class="Statement">shift</span>;
+<span class="Comment"># Prepare $dir for placement inside a '...' argument</span>
+<span class="Identifier">$dir</span> =~ <span class="Statement">s!</span><span class="Constant">'</span><span class="Statement">!</span><span class="Constant">'</span><span class="Special">\\</span><span class="Constant">''</span><span class="Statement">!g</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$count</span> = <span class="Statement">`</span><span class="Constant">ls -l '</span><span class="Identifier">$dir</span><span class="Constant">' | grep ^d | wc -l</span><span class="Statement">`</span>;
+
+<span class="Identifier">$count</span> =~<span class="Statement"> /</span><span class="Special">(</span><span class="Special">\d</span><span class="Special">+)</span><span class="Statement">/</span>;
+<span class="Comment"># Retrieve the number via the special regex variable $1</span>
+<span class="Identifier">$count</span> = <span class="Identifier">$1</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">There are </span><span class="Identifier">$count</span><span class="Constant"> directories</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--processes--opens--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--processes--backticks--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--processes--string-shellquote--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--opens--PAGE">open() for Command Execution</a>
+</div>
+<h1>
+4.3. open() for Command Execution
+</h1>
+<p>
+The <tt>open</tt> command can be used for command execution. By prefixing
+the filename with a pipe (<tt>|</tt>), the rest of it is interpreted
+as a command invocation, which accepts standard input by printing to the
+filehandle, and is executed after the filehandle is closed. If the last
+character is a pipe, then the command is executed and its standard output
+is fed into the filehandle where it can be read using Perl's file input
+mechanisms.
+</p>
+<p>
+Here are some examples:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">/sbin/ifconfig |</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> (<span class="Identifier">$line</span>, <span class="Identifier">@addrs</span>);
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;I&gt;)
+{
+    <span class="Statement">if</span> (<span class="Identifier">$line</span> =~<span class="Statement"> /</span><span class="Constant">inet addr:</span><span class="Special">((</span><span class="Special">\d</span><span class="Special">+</span><span class="Special">\.</span><span class="Special">)+</span><span class="Special">\d</span><span class="Special">)</span><span class="Statement">/</span>)
+    {
+        <span class="Statement">push</span> <span class="Identifier">@addrs</span>, <span class="Identifier">$1</span>;
+    }
+}
+<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">You have the following addresses: </span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,<span class="Identifier">@addrs</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Comment"># Send an E-mail to myself</span>
+<span class="Comment"># Note: this is just an example - there are modules to do this on CPAN.</span>
+
+<span class="Statement">open</span> <span class="Identifier">MAIL</span>, <span class="Constant">&quot;</span><span class="Constant">|/usr/sbin/sendmail shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">To: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">From: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">Hello there, moi!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">close</span>(<span class="Identifier">MAIL</span>);
+</pre></div>
+<h2 id="open-pipe-list">Pipe to @args</h2>
+<p>
+Recent versions of Perl also have a syntax that allows opening a process
+for input or output using its command line arguments. These are:
+</p>
+<div class="code_block"><pre>
+open my $print_to_process, "|-", $cmd, @args;
+print {$print_to_process} ...;
+</pre></div>
+<p>
+and:
+</p>
+<div class="code_block"><pre>
+open my $read_from_process, "-|", $cmd, @args;
+while (my $line = &lt;$read_from_process&gt;)
+{
+.
+.
+.
+}
+</pre></div>
+<p>
+These are safer than using the interpolated version as a gigantic
+open string.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--processes--string-shellquote--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--processes--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--processes--opens--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--and_or--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--string-shellquote--PAGE">String::ShellQuote</a>
+</div>
+<h1>
+4.4. String::ShellQuote
+</h1>
+<p>
+When invoking raw shell commands (instead of passing a list of command
+line arguments) one can easily cause a situation where an interpolated
+string given as argument will place arbitrary code in the shell. If
+for example we have the following qx call:
+</p>
+<div class="code_block"><pre>
+my $ls_output = qx/ls '$dir'/;
+</pre></div>
+<p>
+Then <tt>$dir</tt> may be set to "<tt>' ; rm -fr ~ ; '</tt>",
+which will make the shell delete our entire home directory.
+</p>
+<p>
+To overcome such problems, one should make use of
+<a href="http://search.cpan.org/dist/String-ShellQuote/">the
+String-ShellQuote module</a> which provides functions for safely
+preventing shell-code injection.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--and_or--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--processes--string-shellquote--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--and_or--sort--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a>
+</div>
+<h1>
+5. More about || and &amp;&amp;
+</h1>
+<p>
+<tt>||</tt> and <tt>&amp;&amp;</tt> return the last argument that was
+evaluated. Thus, <tt>||</tt> is useful for assigning default values,
+like this:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Comment"># shift by default shifts from @ARGV in the main program</span>
+<span class="Statement">my</span> <span class="Identifier">$start</span> = <span class="Statement">shift</span> || <span class="Constant">1</span>;
+<span class="Statement">my</span> <span class="Identifier">$end</span> = <span class="Statement">shift</span> || (<span class="Identifier">$start</span><span class="Constant">+9</span>);
+
+<span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Identifier">$start</span> .. <span class="Identifier">$end</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<ul class="contentsmain">
+<li><a href="#page--and_or--sort--PAGE" class="contents">5.1. For sort()</a>
+</li><li><a href="#page--and_or--english_and_or--PAGE" class="contents">5.2. The "and" and "or" Operators</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--and_or--sort--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--and_or--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--and_or--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--and_or--english_and_or--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a> → <a href="#page--and_or--sort--PAGE">For sort()</a>
+</div>
+<h1>
+5.1. For sort()
+</h1>
+<p>
+The <tt>||</tt> operator can be used in <tt>sort</tt>, in conjunction
+with operators such as <tt>cmp</tt> or <tt>&lt;=&gt;</tt> to sort
+according to several criteria. For example, if you wish to sort
+according to the last name and if this is equal according to the first
+name as well, you can write the following:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@array</span> =
+(
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Amanda</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Jane</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Arden</span><span class="Constant">&quot;</span>,},
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Tony</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hoffer</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Shlomi</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Fish</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Chip</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Fish</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">John</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Peter</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Torry</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Michael</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hoffer</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Ben</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
+);
+
+<span class="Statement">my</span> <span class="Identifier">@sorted_array</span> =
+    (<span class="Statement">sort</span>
+        {
+            (<span class="Identifier">$a</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>} <span class="Statement">cmp</span> <span class="Identifier">$b</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>}) ||
+            (<span class="Identifier">$a</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>} <span class="Statement">cmp</span> <span class="Identifier">$b</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>})
+        }
+        <span class="Identifier">@array</span>
+    );
+
+<span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$record</span> (<span class="Identifier">@sorted_array</span>)
+{
+    <span class="Statement">print</span> <span class="Identifier">$record</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>} . <span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span> . <span class="Identifier">$record</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>} . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+Its output is:
+</p>
+<div class="code_block"><pre>
+Arden, Jane
+Fish, Chip
+Fish, Shlomi
+Hoffer, Michael
+Hoffer, Tony
+Smith, Amanda
+Smith, Ben
+Smith, John
+Torry, Peter
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--and_or--english_and_or--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--and_or--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--and_or--sort--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--exceptions--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a> → <a href="#page--and_or--english_and_or--PAGE">The "and" and "or" Operators</a>
+</div>
+<h1>
+5.2. The "and" and "or" Operators
+</h1>
+<p>
+Perl supplies two operators <tt>and</tt> and <tt>or</tt> which are equivalent
+to <tt>&amp;&amp;</tt> and <tt>||</tt> except that they have a very low
+precendence. (lower than any other operator in fact). There's also <tt>not</tt>
+which is the ultra-low precendence equivalent of <tt>!</tt>.
+</p>
+<p>
+You can use them after a statement to write error handlers.
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Comment"># Terminate if we cannot open a file.</span>
+<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">/hello.txt</span><span class="Constant">&quot;</span> <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Cannot open file!</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;</span><span class="Constant">Hello World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">close</span>(<span class="Identifier">O</span>);
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--exceptions--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--and_or--english_and_or--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--exceptions--die_and_eval--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--exceptions--DIR">Exceptions</a>
+</div>
+<h1>
+6. Exceptions
+</h1>
+<p>
+Exceptions are a mechanism to raise an error in a program which will propogate
+to outside blocks, until it is caught by an explicit catching block, or
+it terminates the program. It is a convenient way to manage errors.
+</p>
+<p>
+In Perl, there is a statement that throws an exception, and one that catches
+it. The exception may escape out of function calls as well.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--exceptions--die_and_eval--PAGE" class="contents">6.1. die and eval</a>
+</li><li><a href="#page--exceptions--carp--PAGE" class="contents">6.2. The Carp module</a>
+</li><li><a href="#page--exceptions--error.pm--PAGE" class="contents">6.3. The Error.pm module</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--exceptions--die_and_eval--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--exceptions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--exceptions--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--exceptions--carp--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--die_and_eval--PAGE">die and eval</a>
+</div>
+<h1>
+6.1. die and eval
+</h1>
+<p>
+The statement <tt>die</tt> throws an exception which can be any Perl
+scalar. The statement <tt>eval { ... }</tt> catches an excpetion that was
+given inside it, and after it sets the special variable <tt>$@</tt>
+to be the value of the exception or undef if none was caught.
+</p>
+<p>
+Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">read_text</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../hello/there.txt</span><span class="Constant">&quot;</span> ;
+    <span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open </span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;I&gt;);
+    <span class="Statement">close</span>(<span class="Identifier">I</span>);
+
+    <span class="Statement">return</span> <span class="Identifier">$text</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">write_text</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../there/hello.txt</span><span class="Constant">&quot;</span>;
+    <span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open </span><span class="Identifier">$filename</span><span class="Constant"> for writing</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Identifier">$text</span>;
+    <span class="Statement">close</span>(<span class="Identifier">O</span>);
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">read_and_write</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$text</span> = read_text();
+
+    write_text(<span class="Identifier">$text</span>);
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">perform_transaction</span>
+{
+    <span class="Statement">eval</span> {
+    read_and_write();
+    };
+    <span class="Statement">if</span> (<span class="Identifier">$@</span>)
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Could not perform the transaction. Reason is:</span><span class="Special">\n</span><span class="Identifier">$@</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+}
+
+<span class="Identifier">&amp;perform_transaction</span>();
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--exceptions--carp--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--exceptions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--exceptions--die_and_eval--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--exceptions--error.pm--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--carp--PAGE">The Carp module</a>
+</div>
+<h1>
+6.2. The Carp module
+</h1>
+<p>
+The <tt>Carp</tt> module warns or throws errors with a more useful information
+that the normal Perl behaviour. It supplies several such methods. For more
+information run <tt>perldoc Carp</tt>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--exceptions--error.pm--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--exceptions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--exceptions--carp--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--error.pm--PAGE">The Error.pm module</a>
+</div>
+<h1>
+6.3. The Error.pm module
+</h1>
+<p>
+The <a href="http://search.cpan.org/dist/Error/">Error.pm</a>
+module, which is available from CPAN, supplies object oriented
+exception handling. Namely, one can catch exceptions of a certian class
+explicitly, and differentiate between several types of exceptions.
+</p>
+<p>
+Error.pm provides a lot of syntactic sugar that tends to break easily.
+As such, its use is not too recommended.
+</p>
+<p>
+On the other side, there's the
+<a href="http://search.cpan.org/dist/Exception-Class/">Exception-Class
+module</a> which provides object-oriented exceptions with no special
+syntactic sugar, and which works very well. Its use is highly recommended.
+</p>
+<p>
+Throwing objects which are associated with classes is a good way to be able
+to handle one's exceptions programatically .
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--exceptions--error.pm--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--dir--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a>
+</div>
+<h1>
+7. More System Functions
+</h1>
+<p>
+Perl supplies the user with many functions useful for performing system
+tasks. This section will cover some of them for your own reference.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--system-funcs--dir--PAGE" class="contents">7.1. Directory Input Routines</a>
+</li><li><a href="#page--system-funcs--random_io--PAGE" class="contents">7.2. Random File I/O</a>
+</li><li><a href="#page--system-funcs--file-tests--PAGE" class="contents">7.3. File Tests (-e, -d...)</a>
+</li><li><a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE" class="contents">7.4. chdir(), getcwd() and mkdir().</a>
+</li><li><a href="#page--system-funcs--stat--PAGE" class="contents">7.5. The stat() Function</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--dir--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--random_io--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--dir--PAGE">Directory Input Routines</a>
+</div>
+<h1>
+7.1. Directory Input Routines
+</h1>
+<p>
+The <tt>opendir DIRHANDLE, EXPR</tt> function can be used to open the
+directory <tt>EXPR</tt> for reading its file and sub-directory entries.
+Afterwards <tt>readdir(DIRHANDLE)</tt> can be used to read one entry
+from there, or all the entries if used in list context.
+</p>
+<p>
+Use <tt>closedir()</tt> to close an opened directory.
+</p>
+<p>
+Here's an example that counts the number of mp3s in a directory:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_dir_files</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">opendir</span> <span class="Identifier">D</span>, <span class="Identifier">$dir_path</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Cannot open the directory </span><span class="Identifier">$dir_path</span><span class="Constant">&quot;</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">@entries</span>;
+    <span class="Identifier">@entries</span> = <span class="Statement">readdir</span>(<span class="Identifier">D</span>);
+    <span class="Statement">closedir</span>(<span class="Identifier">D</span>);
+
+    <span class="Statement">return</span> <span class="Identifier">\@entries</span>;
+}
+
+<span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">.</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$entries</span> = get_dir_files(<span class="Identifier">$dir_path</span>);
+<span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep</span> { <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> } <span class="Identifier">@$entries</span>);
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">You have </span><span class="Constant">&quot;</span> . <span class="Statement">scalar</span>(<span class="Identifier">@mp3s</span>) . <span class="Constant">&quot;</span><span class="Constant"> mp3s in </span><span class="Identifier">$dir_path</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--random_io--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--system-funcs--dir--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--file-tests--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--random_io--PAGE">Random File I/O</a>
+</div>
+<h1>
+7.2. Random File I/O
+</h1>
+<p>
+Perl provides mechanisms for moving to certain positions in files, and
+reading blocks of a certain size.
+</p>
+<p>
+<tt>seek FILEHANDLE, POSITION, WHENCE</tt> sets the filehandle position
+within the file in bytes. If you specify <tt>use Fcntl;</tt> at
+the beginning of your program, then WHENCE can be <tt>SEEK_SET</tt> for
+start of file, <tt>SEEK_CUR</tt> for the current position and
+<tt>SEEK_END</tt> for the end of file.
+</p>
+<p>
+<tt>tell FILEHANDLE</tt> returns the position of the current file cursor
+in bytes from the beginning of the file.
+</p>
+<p>
+<tt>read FILEHANDLE, SCALAR, LENGTH</tt> reads <tt>LENGTH</tt> characters
+from <tt>FILEHANDLE</tt> into the <tt>SCALAR</tt> variable.
+</p>
+<p>
+Here's an example that replaces bytes 64-127 in a file with their rot13
+equivalent:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl -w</span>
+
+<span class="Statement">use strict</span>;
+
+<span class="Statement">use </span>Fcntl;
+
+<span class="Statement">my</span> <span class="Identifier">$filename</span> = shifg;
+
+<span class="Statement">open</span> <span class="Identifier">F</span>, <span class="Constant">&quot;</span><span class="Constant">+&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open file</span><span class="Constant">&quot;</span>;
+
+<span class="Comment"># Read bytes 64-127 into $text</span>
+<span class="Statement">seek</span>(<span class="Identifier">F</span>, <span class="Constant">64</span>, SEEK_SET);
+
+<span class="Statement">my</span> <span class="Identifier">$text</span>;
+<span class="Statement">read</span>(<span class="Identifier">F</span>,<span class="Identifier">$text</span>,<span class="Constant">64</span>);
+<span class="Comment"># Do the actual rot13'ing with the tr command</span>
+<span class="Identifier">$text</span> =~ <span class="Statement">tr/</span><span class="Constant">A-Za-z</span><span class="Statement">/</span><span class="Constant">N-ZA-Mn-za-m</span><span class="Statement">/</span>;
+<span class="Comment"># Write them at poisition 64</span>
+<span class="Statement">seek</span>(<span class="Identifier">F</span>, <span class="Constant">64</span>, SEEK_SET);
+<span class="Statement">print</span> <span class="Identifier">F</span> <span class="Identifier">$text</span>
+<span class="Statement">close</span>(<span class="Identifier">F</span>);
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--file-tests--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--system-funcs--random_io--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--file-tests--PAGE">File Tests (-e, -d...)</a>
+</div>
+<h1>
+7.3. File Tests (-e, -d...)
+</h1>
+<p>
+Perl provides several file tests that can be used to test a filehandle
+or filename for various conditions. <tt>-e filename</tt> determines if
+<tt>filename</tt> exists. <tt>-r</tt> determines if the file is readable,
+<tt>-w</tt> if it's writable, <tt>-x</tt> if it is executable and so on.
+</p>
+<p>
+<tt>-d</tt> determines if the file is adirectory, and <tt>-f</tt> if it's
+a plain file. For a list of other file tests and their use consult
+<tt>perldoc -f -X</tt>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--chdir_getcwd_mkdir--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--system-funcs--file-tests--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--system-funcs--stat--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE">chdir(), getcwd() and mkdir().</a>
+</div>
+<h1>
+7.4. chdir(), getcwd() and mkdir().
+</h1>
+<p>
+The built-in function <tt>chdir EXPR</tt> can be used to change the working
+directory of the program to a new value. If <tt>EXPR</tt> is omitted
+it changes to the home directory.
+</p>
+<p>
+By <tt>use</tt>'ing the Cwd module, one can invoke the <tt>getcwd()</tt>
+function that will retrieve the current working directory. This is similar
+to the <tt>pwd</tt> command on UNIX shells.
+</p>
+<p>
+Finally, <tt>mkdir FILENAME, MASK</tt> can be used to create a new directory
+with the permissions mask of <tt>MASK</tt>
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--system-funcs--stat--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--system-funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<b>Next</b></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies - Lecture 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--stat--PAGE">The stat() Function</a>
+</div>
+<h1>
+7.5. The stat() Function
+</h1>
+<p>
+The <tt>stat</tt> function can be used to retrieve a 13-element array
+that gives status information for a given file or filehandle.
+</p>
+<p>
+The syntax is:
+</p>
+<div class="code_block"><pre>
+($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
+    $atime,$mtime,$ctime,$blksize,$blocks)
+        = stat($filename);
+</pre></div>
+<p>
+Here, <tt>$mode</tt> is the file mode, <tt>$size</tt> is the size of the
+file, <tt>$atime</tt> is the last access time (in seconds since the epoch),
+<tt>$mtime</tt> is the last modification time.
+</p>
+<p>
+For more information about <tt>stat</tt> consult <tt>perldoc -f stat</tt>
+or its entry in <tt>perlfunc</tt>.
+</p>
+<hr />
+
+</div>
+
+</body></html>

@@ -1,0 +1,3021 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
+
+
+
+
+<title>
+"Perl for Perl Newbies" Part 2
+</title>
+</head>
+<body><div class="page" id="page--DIR">
+
+<div class="center"><script type="text/javascript">
+google_ad_client = "pub-2480595666283917";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "336699";
+google_color_text = "000000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<b>Up</b></td>
+<td>
+<b>Prev</b></td>
+<td>
+<a href="#page--for--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a>
+</div>
+<h1>
+"Perl for Perl Newbies" Part 2
+</h1>
+<h2 id="contents">Contents</h2>
+<ul class="contentsmain">
+<li><a href="#page--for--DIR" class="contents">1. The for Loop</a>
+<ul class="contents">
+<li><a href="#page--for--next--PAGE" class="contents">1.1. Behaviour of next in the for Loop</a>
+</li><li><a href="#page--for--whence_for--PAGE" class="contents">1.2. Whence for?</a>
+</li></ul>
+</li><li><a href="#page--hashes--DIR" class="contents">2. Hashes</a>
+<ul class="contents">
+<li><a href="#page--hashes--functions--PAGE" class="contents">2.1. Hash-Related Functions</a>
+</li></ul>
+</li><li><a href="#page--my--DIR" class="contents">3. Declaring Local Variables with "my"</a>
+<ul class="contents">
+<li><a href="#page--my--use_strict--PAGE" class="contents">3.1. "use strict", Luke!</a>
+</li><li><a href="#page--my--use_warnings--PAGE" class="contents">3.2. "use warnings", Luke!</a>
+</li></ul>
+</li><li><a href="#page--functions--DIR" class="contents">4. Functions</a>
+<ul class="contents">
+<li><a href="#page--functions--recursion--PAGE" class="contents">4.1. Function Recursion</a>
+</li><li><a href="#page--functions--shift--PAGE" class="contents">4.2. Use of "shift" in Functions</a>
+</li></ul>
+</li><li><a href="#page--files--DIR" class="contents">5. File Input/Output</a>
+<ul class="contents">
+<li><a href="#page--files--print--PAGE" class="contents">5.1. Using "print" with Files</a>
+</li><li><a href="#page--files--readline--PAGE" class="contents">5.2. The &lt;FILEHANDLE&gt; Operator</a>
+</li></ul>
+</li><li><a href="#page--argv--PAGE" class="contents">6. The @ARGV Array</a>
+</li><li><a href="#page--regexps--DIR" class="contents">7. Regular Expressions</a>
+<ul class="contents">
+<li><a href="#page--regexps--syntax--PAGE" class="contents">7.1. Syntax</a>
+</li><li><a href="#page--regexps--multi_char--PAGE" class="contents">7.2. ".", "[ ... ]"</a>
+</li><li><a href="#page--regexps--asterisk--PAGE" class="contents">7.3. The "*" and Friends</a>
+</li><li><a href="#page--regexps--grouping--PAGE" class="contents">7.4. Grouping</a>
+</li><li><a href="#page--regexps--alternation--PAGE" class="contents">7.5. Alternation with "|"</a>
+</li><li><a href="#page--regexps--binding--PAGE" class="contents">7.6. Binding to the Beginning or the End of a String</a>
+</li><li><a href="#page--regexps--substitute--DIR" class="contents">7.7. Substituting using Regular Expressions</a>
+<ul class="contents">
+<li><a href="#page--regexps--substitute--e_switch--PAGE" class="contents">7.7.1. The "e" Switch</a>
+</li><li><a href="#page--regexps--substitute--ungreedy--PAGE" class="contents">7.7.2. Ungreedy Matching with *? and Friends</a>
+</li></ul>
+</li><li><a href="#page--regexps--flags--PAGE" class="contents">7.8. Useful Flags</a>
+</li><li><a href="#page--regexps--esc_seqs--PAGE" class="contents">7.9. Useful Escape Sequences</a>
+</li><li><a href="#page--regexps--next_step--PAGE" class="contents">7.10. The Next Step</a>
+</li></ul>
+</li><li><a href="#page--interpolation--PAGE" class="contents">8. String Interpolation</a>
+</li><li><a href="#page--useful_funcs--DIR" class="contents">9. Useful Functions</a>
+<ul class="contents">
+<li><a href="#page--useful_funcs--split--PAGE" class="contents">9.1. split</a>
+</li><li><a href="#page--useful_funcs--map--PAGE" class="contents">9.2. map</a>
+</li><li><a href="#page--useful_funcs--sort--DIR" class="contents">9.3. sort</a>
+<ul class="contents">
+<li><a href="#page--useful_funcs--sort--cmp--PAGE" class="contents">9.3.1. &lt;=&gt; and cmp</a>
+</li></ul>
+</li><li><a href="#page--useful_funcs--grep--PAGE" class="contents">9.4. grep</a>
+</li></ul>
+</li><li><a href="#page--references--DIR" class="contents">10. References</a>
+<ul class="contents">
+<li><a href="#page--references--hanoi--PAGE" class="contents">10.1. Example: The Towers of Hanoi</a>
+</li><li><a href="#page--references--backslash--PAGE" class="contents">10.2. \ - Taking a Reference to an Existing Variable</a>
+</li><li><a href="#page--references--square_brackets--PAGE" class="contents">10.3. [ @array ] - a Dynamic Reference to an Array</a>
+</li><li><a href="#page--references--curly_brackets--PAGE" class="contents">10.4. { %hash } - a Dynamic Reference to a Hash</a>
+</li><li><a href="#page--references--arrow--PAGE" class="contents">10.5. The Arrow Operators</a>
+</li><li><a href="#page--references--dereferencing--PAGE" class="contents">10.6. Dereferencing</a>
+</li></ul>
+</li><li><a href="#page--debugger--DIR" class="contents">11. Using the perl Debugger</a>
+<ul class="contents">
+<li><a href="#page--debugger--stepping--PAGE" class="contents">11.1. Stepping over and Stepping in</a>
+</li><li><a href="#page--debugger--breakpoints--PAGE" class="contents">11.2. Setting Breakpoints and Continuing</a>
+</li><li><a href="#page--debugger--perl_cmds--PAGE" class="contents">11.3. Executing Perl Commands inside the Debugger</a>
+</li><li><a href="#page--debugger--more_info--PAGE" class="contents">11.4. Getting More Information</a>
+</li></ul>
+</li><li><a href="#page--finale--PAGE" class="contents">12. Finale</a>
+</li></ul>
+<h2 id="licence">Licence</h2>
+<p>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/publicdomain/"><img alt="Creative Commons License" style="border:0"
+src="./somerights20.gif" /></a><br />
+This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/publicdomain/">Public Domain</a>.
+<!-- /Creative Commons License -->
+</p>
+<!--
+		<rdf:RDF xmlns="http://web.resource.org/cc/"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about=""
+			<license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	<dc:title>Perl for Perl Newbies</dc:title>
+	<dc:rights><Agent><dc:title>Shlomi Fish</dc:title></Agent></dc:rights>
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/0/"><permits rdf:resource="http://web.resource.org/cc/Reproduction" /><permits rdf:resource="http://web.resource.org/cc/Distribution" /><requires rdf:resource="http://web.resource.org/cc/Notice" /><requires rdf:resource="http://web.resource.org/cc/Attribution" /><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" /></License>
+		</rdf:RDF>
+-->
+<hr />
+
+</div>
+<div class="page" id="page--for--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--for--next--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--for--DIR">The for Loop</a>
+</div>
+<h1>
+1. The for Loop
+</h1>
+<p>
+The <tt>for</tt> loop has another syntax which can be used to encapsulate
+<tt>while</tt>-like loops in a more compact way, which also has some
+advantages.
+</p>
+<p>
+The syntax for this <tt>for</tt> loop is
+<tt>for({Initial Statements} ; {Condition} ; {Iteration Commands}) { ... }</tt>,
+where {Condition} is a boolean condition expression, and
+{Initial Statements} and {Iteration Commands} may contain one or more
+commands separated by commas.
+</p>
+<p>
+When The interpreter encounters a <tt>for</tt> loop it executes its initial
+statements, and then executes the commands within its block for as long
+as the condition is met. {Iteration Commands} are executed at the end
+of each iteration.
+</p>
+<p>
+The following simple example prints the multiplication board:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">for</span>(<span class="Identifier">$row</span> = <span class="Constant">1</span> ; <span class="Identifier">$row</span> &lt;= <span class="Constant">10</span> ; <span class="Identifier">$row</span>++)
+{
+    <span class="Statement">for</span>(<span class="Identifier">$column</span> = <span class="Constant">1</span> ; <span class="Identifier">$column</span> &lt;= <span class="Constant">10</span> ; <span class="Identifier">$column</span>++)
+    {
+        <span class="Identifier">$result</span> = <span class="Identifier">$row</span>*<span class="Identifier">$column</span>;
+        <span class="Identifier">$pad</span> = ( <span class="Constant">&quot;</span><span class="Constant"> </span><span class="Constant">&quot;</span>  x  (<span class="Constant">4</span>-<span class="Statement">length</span>(<span class="Identifier">$result</span>)) );
+        <span class="Statement">print</span> <span class="Identifier">$pad</span>, <span class="Identifier">$result</span>;
+    }
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--for--next--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--for--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--for--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--for--whence_for--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--next--PAGE">Behaviour of next in the for Loop</a>
+</div>
+<h1>
+1.1. Behaviour of next in the for Loop
+</h1>
+<p>
+An important difference between the <tt>for</tt> loop and the <tt>while</tt>
+loop is the behaviour of <tt>next</tt> inside it. In a <tt>for</tt> loop,
+<tt>next</tt> skips the rest of the iteration but still executes the
+iteration commands which were passed to the loop as arguments.
+</p>
+<p>
+For example, the following program prints the first 200 primes:
+</p>
+<div class="code_block"><pre>
+MAIN_LOOP: <span class="Statement">for</span>(
+    <span class="Identifier">@primes</span>=(<span class="Constant">2</span>), <span class="Identifier">$i</span>=<span class="Constant">3</span> ;
+    <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span> ;
+    <span class="Identifier">$i</span>++
+    )
+{
+    <span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
+}
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Now, the equivalent program using a while loop:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">@primes</span> = (<span class="Constant">2</span>);
+<span class="Identifier">$i</span> = <span class="Constant">3</span>;
+MAIN_LOOP:
+<span class="Statement">while</span> (<span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span>)
+{
+    <span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
+    <span class="Identifier">$i</span>++;
+}
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+gets stuck. (<b>why?</b>)
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--for--whence_for--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--for--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--for--next--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--hashes--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--whence_for--PAGE">Whence for?</a>
+</div>
+<h1>
+1.2. Whence for?
+</h1>
+<p>
+So far we have learned about three different kinds of for loops, so
+you are probably wondering when to use each one.
+</p>
+<p>
+A subtantial difference between the notation
+<tt>for($a=0 ; $a&lt;$b ; $a++)</tt> and between
+<tt>for $a (0 .. ($b-1))</tt> is that the first accommodates
+itself to changes in <tt>$b</tt>, while the second will iterate for a
+constant number of times. Of course, you can make the first one
+similar to the second by assigning the value of <tt>$b</tt> to a third
+variable that will remain constant. Still, the second notation is
+usually safer from that sense.
+</p>
+<p>
+The <tt>foreach $item (@array) </tt> loop is quite handy, but sometimes
+when iterating over an array of items the index of the item is of importance.
+In that case, one may prefer to use a normal <tt>for</tt> loop.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--hashes--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--for--whence_for--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--hashes--functions--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--hashes--DIR">Hashes</a>
+</div>
+<h1>
+2. Hashes
+</h1>
+<p>
+Hashes can be used to map a set of keys, each to his own value. Using a
+hash one can retrieve the value associated with each key, as well as get
+a list of all the keys present in the hash.
+</p>
+<p>
+To assign or retrieve the value of the key <tt>$mykey</tt> in the hash
+<tt>$myhash</tt> one uses the <tt>$myhash{$mykey}</tt> convention. To check if a
+key exists in a hash one should type <tt>exists($myhash{$mykey})</tt>
+which in turn returns a boolean value that corresponds to its existence.
+</p>
+<p>
+An array whose elements are the keys present in the hash can be retrieved
+by typing <tt>keys(%myhash)</tt>. Here's a short example, that runs a simple
+bank, that will illustrate this functionality:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># Initialize the valid operations collection</span>
+<span class="Identifier">$ops</span>{<span class="Constant">'</span><span class="Constant">create</span><span class="Constant">'</span>} = <span class="Constant">1</span>;
+<span class="Identifier">$ops</span>{<span class="Constant">'</span><span class="Constant">deposit</span><span class="Constant">'</span>} = <span class="Constant">1</span>;
+<span class="Identifier">$ops</span>{<span class="Constant">'</span><span class="Constant">status</span><span class="Constant">'</span>} = <span class="Constant">1</span>;
+<span class="Identifier">$ops</span>{<span class="Constant">'</span><span class="Constant">exit</span><span class="Constant">'</span>} = <span class="Constant">2</span>;
+
+<span class="Statement">while</span> (<span class="Constant">1</span>)
+{
+    <span class="Comment"># Get a valid input from the user.</span>
+    <span class="Statement">while</span> (<span class="Constant">1</span>)
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter what you want to do:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">(</span><span class="Constant">&quot;</span> . <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, <span class="Statement">keys</span>(<span class="Identifier">%ops</span>)) . <span class="Constant">&quot;</span><span class="Constant">)</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+        <span class="Identifier">$function</span> = &lt;&gt;;
+        <span class="Statement">chomp</span>(<span class="Identifier">$function</span>);
+
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$ops</span>{<span class="Identifier">$function</span>}))
+        {
+            <span class="Statement">last</span>;
+        }
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Unknown function!</span><span class="Special">\n</span><span class="Constant"> Please try again.</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>
+    }
+
+    <span class="Statement">if</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">exit</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Statement">last</span>;
+    }
+
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Enter the name of the account:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Identifier">$account</span> = &lt;&gt;;
+    <span class="Statement">chomp</span>(<span class="Identifier">$account</span>);
+    <span class="Statement">if</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">create</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Statement">if</span> (! <span class="Statement">exists</span>(<span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>}))
+        {
+            <span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>} = <span class="Constant">0</span>;
+        }
+    }
+    <span class="Statement">elsif</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">status</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Statement">if</span> (! <span class="Statement">exists</span> (<span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>}) )
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Error! The account does not exist.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+        <span class="Statement">else</span>
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">There are </span><span class="Constant">&quot;</span> . <span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>} .
+                <span class="Constant">&quot;</span><span class="Constant"> NIS in the account.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+    }
+    <span class="Statement">elsif</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">deposit</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>}) )
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">How much do you wish to deposit?</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+            <span class="Identifier">$how_much</span> = &lt;&gt;;
+            <span class="Statement">chomp</span>(<span class="Identifier">$how_much</span>);
+            <span class="Identifier">$bank_accounts</span>{<span class="Identifier">$account</span>} += <span class="Identifier">$how_much</span>;
+        }
+    }
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+The following example, which is considerably shorter, uses a hash to
+find out if a list of strings contains only unique strings:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">while</span>(<span class="Identifier">$string</span> = &lt;&gt;)
+{
+    <span class="Statement">chomp</span>(<span class="Identifier">$string</span>);
+    <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash</span>{<span class="Identifier">$string</span>}))
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string </span><span class="Special">\&quot;</span><span class="Constant">&quot;</span> . <span class="Identifier">$string</span> . <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant"> was already encountered!</span><span class="Constant">&quot;</span>;
+        <span class="Statement">last</span>;
+    }
+    <span class="Statement">else</span>
+    {
+        <span class="Identifier">$myhash</span>{<span class="Identifier">$string</span>} = <span class="Constant">1</span>;
+    }
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--hashes--functions--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--hashes--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--hashes--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--my--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--hashes--DIR">Hashes</a> → <a href="#page--hashes--functions--PAGE">Hash-Related Functions</a>
+</div>
+<h1>
+2.1. Hash-Related Functions
+</h1>
+<h2>delete</h2>
+<p>
+delete can be used to remove a key or a set of keys out of a hash.
+For example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">hello</span><span class="Constant">&quot;</span>} = <span class="Constant">&quot;</span><span class="Constant">world</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">perl</span><span class="Constant">&quot;</span>} = <span class="Constant">&quot;</span><span class="Constant">TMTOWTDI</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">shlomi</span><span class="Constant">&quot;</span>} = <span class="Constant">&quot;</span><span class="Constant">fish</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">perl</span><span class="Constant">&quot;</span>}))
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The key perl exists!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The key perl does not exist!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Statement">delete</span>(<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">perl</span><span class="Constant">&quot;</span>});
+
+<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash</span>{<span class="Constant">&quot;</span><span class="Constant">perl</span><span class="Constant">&quot;</span>}))
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The key perl exists!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The key perl does not exist!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<h2>The Comma Regarding Hashes</h2>
+<p>
+The comma can be used to combine two arrays into one larger one. Given the
+fact that a mini-hash with one key and one value can be specified using the
+<tt>$key =&gt; $value</tt> notation (which is essentially equivalent to
+<tt>$key, $value</tt>) a hash can be initialized in one statement.</p>
+<p>
+Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">%hash1</span> = (
+    <span class="Constant">&quot;</span><span class="Constant">shlomi</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">fish</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">orr</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">dunkelman</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">guy</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">keren</span><span class="Constant">&quot;</span>
+    );
+
+<span class="Identifier">%hash2</span> = (
+    <span class="Constant">&quot;</span><span class="Constant">george</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">washington</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">jules</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">verne</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">isaac</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">newton</span><span class="Constant">&quot;</span>
+    );
+
+<span class="Identifier">%combined</span> = (<span class="Identifier">%hash1</span>, <span class="Identifier">%hash2</span>);
+
+<span class="Statement">foreach</span> <span class="Identifier">$key</span> (<span class="Statement">keys</span>(<span class="Identifier">%combined</span>))
+{
+    <span class="Statement">print</span> <span class="Identifier">$key</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span>, <span class="Identifier">$combined</span>{<span class="Identifier">$key</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+If the two combined hashes contain several identical keys, then the values
+of the latter hash will win.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--my--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--hashes--functions--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--my--use_strict--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a>
+</div>
+<h1>
+3. Declaring Local Variables with "my"
+</h1>
+<p>
+Variables can be made local to their own scope by declaring them
+using a keyword called <tt>my</tt>. When the interpreter leaves the
+scope, the variable will be restored to its original value.
+</p>
+<p>
+Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Identifier">$a</span> = <span class="Constant">5</span>;
+<span class="Identifier">$b</span> = <span class="Constant">1000</span>;
+{
+    <span class="Statement">my</span> (<span class="Identifier">$b</span>);
+    <span class="Statement">for</span>(<span class="Identifier">$b</span>=<span class="Constant">0</span>;<span class="Identifier">$b</span>&lt;<span class="Constant">10</span>;<span class="Identifier">$b</span>++)
+    {
+        <span class="Statement">print</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Constant">*</span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Constant"> = </span><span class="Constant">&quot;</span>, (<span class="Identifier">$a</span>*<span class="Identifier">$b</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+}
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Now, </span><span class="Special">\$</span><span class="Constant">b is </span><span class="Constant">&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+If you wish to declare more than one variable as local you should use
+a set of parenthesis surrounding the variable list. For example:
+<tt>my (@array, $scalar1, %hash, $scalar2);</tt>. If you want to declare only
+one variable, then they are optional.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--my--use_strict--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--my--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--my--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--my--use_warnings--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_strict--PAGE">"use strict", Luke!</a>
+</div>
+<h1>
+3.1. "use strict", Luke!
+</h1>
+<p>
+Perl has a pragma (= an interpreter-related directive) known as
+<tt>use strict;</tt>, which among other things, makes sure all the variables
+you use will be declared with <tt>my</tt>. If you reference a variable
+that was not declared with <tt>my</tt> it will generate an error.
+</p>
+<p>
+Using <tt>use strict</tt> is in most cases a good idea, because it minimizes
+the number of errors because of typos. Just type <tt>use strict;</tt> at the
+beginning of your program and you can sleep better at nights.
+</p>
+<p>
+As an example, here is the primes program, <tt>use strict</tt>-ed:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">@primes</span>, <span class="Identifier">$i</span>);
+
+MAIN_LOOP: <span class="Statement">for</span>(
+    <span class="Identifier">@primes</span>=(<span class="Constant">2</span>), <span class="Identifier">$i</span>=<span class="Constant">3</span> ;
+    <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span> ;
+    <span class="Identifier">$i</span>++
+    )
+{
+    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
+        {
+            <span class="Statement">next</span> MAIN_LOOP;
+        }
+    }
+
+    <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
+}
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Notice the use of <tt>my</tt> in the declaration of the <tt>foreach</tt> loop.
+Such just-in-time declarations, inspired by C++, are possible in perl.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--my--use_warnings--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--my--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--my--use_strict--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--functions--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_warnings--PAGE">"use warnings", Luke!</a>
+</div>
+<h1>
+3.2. "use warnings", Luke!
+</h1>
+<p>
+There is another pragma which is called and typed as <tt>use warnings;</tt>,
+that causes the interpreter to emit many warnings to the command window in
+case you're doing wrong things (like using <tt>undef</tt> in an expression).
+It is also very useful to declare it at the beginning of the program, in
+addition to <tt>use strict;</tt>. So, from now on, our programs will
+include it as well.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--functions--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--my--use_warnings--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--functions--recursion--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--functions--DIR">Functions</a>
+</div>
+<h1>
+4. Functions
+</h1>
+<p>
+We already encountered some of Perl's built-in functions. Perl enables us to
+define our own functions using Perl code. Whenever you use a piece of code
+more than once in a program, it is a good idea to make it into a function.
+That way, you won't have to change it in more than one place.
+</p>
+<p>
+In Perl, every function accepts an array of arguments and returns an array of
+return values. The arguments (also known as "parameters") can be found in the
+<tt>@_</tt> variable. This variable is magical and need not and should not be
+declared with <tt>my</tt>. In order to return values from a function, one can
+use the <tt>return</tt> keyword.
+</p>
+<p>
+To declare a function use type <tt>sub function_name {</tt> at the beginning
+and a <tt>}</tt> at the end. Everything in between, is the function body.
+</p>
+<p>
+Here's an example, for a function that returns the maximum and the
+minimum of an array of numbers.
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">min_and_max</span>
+{
+    <span class="Statement">my</span> (<span class="Identifier">@numbers</span>);
+
+    <span class="Identifier">@numbers</span> = <span class="Identifier">@_</span>;
+
+    <span class="Statement">my</span> (<span class="Identifier">$min</span>, <span class="Identifier">$max</span>);
+
+    <span class="Identifier">$min</span> = <span class="Identifier">$numbers</span>[<span class="Constant">0</span>];
+    <span class="Identifier">$max</span> = <span class="Identifier">$numbers</span>[<span class="Constant">0</span>];
+
+    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Identifier">@numbers</span>)
+    {
+        <span class="Statement">if</span> (<span class="Identifier">$i</span> &gt; <span class="Identifier">$max</span>)
+        {
+            <span class="Identifier">$max</span> = <span class="Identifier">$i</span>;
+        }
+        <span class="Statement">elsif</span> (<span class="Identifier">$i</span> &lt; <span class="Identifier">$min</span>)
+        {
+            <span class="Identifier">$min</span> = <span class="Identifier">$i</span>;
+        }
+    }
+
+    <span class="Statement">return</span> (<span class="Identifier">$min</span>, <span class="Identifier">$max</span>);
+}
+
+<span class="Statement">my</span> (<span class="Identifier">@test_array</span>, <span class="Identifier">@ret</span>);
+<span class="Identifier">@test_array</span> = (<span class="Constant">123</span>, <span class="Constant">23</span> , <span class="Constant">-6</span>, <span class="Constant">7</span> , <span class="Constant">80</span>, <span class="Constant">300</span>, <span class="Constant">45</span>, <span class="Constant">2</span>, <span class="Constant">9</span>, <span class="Constant">1000</span>, <span class="Constant">-90</span>, <span class="Constant">3</span>);
+
+<span class="Identifier">@ret</span> = min_and_max(<span class="Identifier">@test_array</span>);
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The minimum is </span><span class="Constant">&quot;</span>, <span class="Identifier">$ret</span>[<span class="Constant">0</span>], <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The maximum is </span><span class="Constant">&quot;</span>, <span class="Identifier">$ret</span>[<span class="Constant">1</span>], <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+And here's another one for a function that calculates the hypotenuse of a
+right triangle according to its other sides:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">pythagoras</span>
+{
+    <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>);
+
+    (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
+
+    <span class="Statement">return</span> <span class="Statement">sqrt</span>(<span class="Identifier">$x</span>**<span class="Constant">2</span>+<span class="Identifier">$y</span>**<span class="Constant">2</span>);
+}
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The hypotenuse of a right triangle with sides 3 and 4 is </span><span class="Constant">&quot;</span>,
+    pythagoras(<span class="Constant">3</span>,<span class="Constant">4</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--functions--recursion--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--functions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--functions--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--functions--shift--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--recursion--PAGE">Function Recursion</a>
+</div>
+<h1>
+4.1. Function Recursion
+</h1>
+<p>
+Functions can call other functions. In fact, a function can call itself,
+either directly or indirectly. When a function calls itself it is known as
+<b>recursion</b>, a Computer Science methodology which can be implemented
+with or without functions.
+</p>
+<p>
+Here's an example where recursion is used to find all the permutations of
+splitting 10 among three numbers:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">mysplit</span>
+{
+    <span class="Statement">my</span> (<span class="Identifier">$total</span>, <span class="Identifier">$num_elems</span>, <span class="Identifier">@accum</span>) = <span class="Identifier">@_</span>;
+    <span class="Statement">my</span> (<span class="Identifier">@ret</span>, <span class="Identifier">@new_accum</span>);
+
+
+    <span class="Statement">if</span> (<span class="Identifier">$num_elems</span> == <span class="Constant">1</span>)
+    {
+        <span class="Statement">push</span> <span class="Identifier">@accum</span>, <span class="Identifier">$total</span>;
+        <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@accum</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+        <span class="Statement">return</span>;
+    }
+
+    <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
+    {
+        <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
+        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span><span class="Constant">-1</span>, <span class="Identifier">@new_accum</span>);
+    }
+}
+
+mysplit(<span class="Constant">10</span>,<span class="Constant">3</span>);
+</pre></div>
+<p>
+A couple of notes are in place. First of all, perl does not handle tail
+recursion very well, at least not in the current incarnation of the compiler.
+If your recursion can be done using a simple loop, do it with it.
+</p>
+<p>
+Secondly, some systems (such as Microsft Windows) limit an executable to a
+certain amount of stack, as far as such langauges as Assembler or C are
+concerned. This should not be of any concern to perl hackers, because the
+perl interpreter does not translate a perl function call into a C function
+call. (not to mention that the perl interpreter on those systems is compiled
+with enough stack for itself).
+</p>
+<p>
+Sometimes, recursion is helpful, but if you see that your recursion is getting
+too deep, you should consider using your own dedicated stack (which can be
+implemented as an array) instead. It's a good programming practice.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--functions--shift--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--functions--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--functions--recursion--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--files--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--shift--PAGE">Use of "shift" in Functions</a>
+</div>
+<h1>
+4.2. Use of "shift" in Functions
+</h1>
+<p>
+One can use the <tt>shift</tt> function to extract arguments out of the
+argument array. Since this use is so common, then simply typing <tt>shift</tt>
+without any arguments will do exactly that.
+</p>
+<p>
+Here is the split program from the previous slide, which was
+re-written using <tt>shift</tt>:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">mysplit</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$num_elems</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">@accum</span> = <span class="Identifier">@_</span>;
+    <span class="Statement">my</span> (<span class="Identifier">@ret</span>, <span class="Identifier">@new_accum</span>);
+
+
+    <span class="Statement">if</span> (<span class="Identifier">$num_elems</span> == <span class="Constant">1</span>)
+    {
+        <span class="Statement">push</span> <span class="Identifier">@accum</span>, <span class="Identifier">$total</span>;
+        <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@accum</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+        <span class="Statement">return</span>;
+    }
+
+    <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
+    {
+        <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
+        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span><span class="Constant">-1</span>, <span class="Identifier">@new_accum</span>);
+    }
+}
+
+mysplit(<span class="Constant">10</span>,<span class="Constant">3</span>);
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--files--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--functions--shift--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--files--print--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--files--DIR">File Input/Output</a>
+</div>
+<h1>
+5. File Input/Output
+</h1>
+<p>
+By now you are probably wondering how perl can be used to interact with
+the external world, and this is where <b>File Input/Output</b> enters the
+frame.
+</p>
+<p>
+In Perl, file I/O is handled by using sessions: you are opening a file for
+reading or writing (or both), do with it what you want, and then close it.
+In Perl, filehandles implemented as the so-called <tt>globs</tt> are placed on
+a separate namespace than that of the variables. It is generally marked with
+a starting asterik (<tt>*</tt>), which can be omitted if the first letter is a
+capital one.
+</p>
+<p>
+To open a file use the <tt>open MyFileHandle, $mode, $file_path;</tt>
+notation, and to close a file use the <tt>close(MyFileHandle);</tt> notation.
+The <tt>$mode</tt> determines whether the file will be
+open for reading, writing, appending or some of them. The following table
+should give you a quick reference:
+</p>
+<table border="1" summary="">
+<tr>
+<td>
+&gt;
+</td>
+<td>
+Writing (the original file will be erased before the function starts).
+</td>
+</tr>
+<tr>
+<td>
+&lt; (or nothing)
+</td>
+<td>
+Reading
+</td>
+</tr>
+<tr>
+<td>
+&gt;&gt;
+</td>
+<td>
+Appending (the file pointer will start at the end and the file will not be
+overriden)
+</td>
+</tr>
+<tr>
+<td>
++&lt;
+</td>
+<td>
+Read-write, or just write without truncating.
+</td>
+</tr>
+</table>
+<p>
+<tt>$file_path</tt> is the pathname of the file to open relative
+to the script current working directory (<b>CWD</b>). For instance, the
+command <tt>open I, "&lt;", "../hello.txt";</tt> opens the file "hello.txt"
+found a directory below the current directory to reading.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--files--print--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--files--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--files--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--files--readline--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--print--PAGE">Using "print" with Files</a>
+</div>
+<h1>
+5.1. Using "print" with Files
+</h1>
+<p>
+The print command which we encountered before can also be used to send output
+to files. In fact, the screen itself is a special filehandle, whose name is
+<tt>STDOUT</tt>, but since its use is so common, perl allows it to be omitted.
+</p>
+<p>
+The syntax of printing to a file is
+<tt>print File $string1, $string2, ... </tt>. Here's a short example that
+prepares a file with a pyramid in it:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$pyramid_side</span> = <span class="Constant">20</span>;
+
+<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">pyramid.txt</span><span class="Constant">&quot;</span>;
+<span class="Statement">for</span>(<span class="Identifier">$a</span>=<span class="Constant">1</span> ; <span class="Identifier">$a</span> &lt;= <span class="Identifier">$pyramid_side</span> ; <span class="Identifier">$a</span>++)
+{
+    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;</span><span class="Constant">X</span><span class="Constant">&quot;</span> x <span class="Identifier">$a</span>;
+    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">close</span>(<span class="Identifier">O</span>);
+</pre></div>
+<p>
+In order to print to more than one file at once, one needs to use two
+separate print statements. Here's an example, that prints to one file the
+sequnce 1, 1.1, 2, 2.1, 3, 3.1... and to the other the sequence 1, 1.5, 2, 2.5
+, 3, 3.5...
+</p>
+<div class="code_block"><pre>
+<span class="Statement">open</span> <span class="Identifier">SEQ1</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">seq1.txt</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">SEQ2</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">seq2.txt</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">for</span>(<span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;<span class="Constant">100</span>;<span class="Identifier">$a</span>++)
+{
+    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> (<span class="Identifier">$a</span><span class="Constant">+0.1</span>);
+    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> (<span class="Identifier">$a</span><span class="Constant">+0.5</span>);
+    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Statement">close</span>(<span class="Identifier">SEQ1</span>);
+<span class="Statement">close</span>(<span class="Identifier">SEQ2</span>);
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--files--readline--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--files--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--files--print--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--argv--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--readline--PAGE">The &lt;FILEHANDLE&gt; Operator</a>
+</div>
+<h1>
+5.2. The &lt;FILEHANDLE&gt; Operator
+</h1>
+<p>
+Just like <tt>print</tt> can be generalized to files, so can the
+<tt>&lt;&gt;</tt> which we encountered before. If you place the name of the
+filehandle inside the operator, it will read a line from the file opened by
+that filehandle.
+</p>
+<p>
+Here's an example, let's append the line numbers to a given file:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">$line_num</span>, <span class="Identifier">$line</span>);
+
+<span class="Identifier">$line_num</span> = <span class="Constant">0</span>;
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">input.txt</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">output.txt</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;I&gt;)
+{
+    <span class="Comment"># We aren't chomping it so we won't lose the newline.</span>
+    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Identifier">$line_num</span>, <span class="Constant">&quot;</span><span class="Constant">: </span><span class="Constant">&quot;</span>, <span class="Identifier">$line</span>;
+    <span class="Identifier">$line_num</span>++;
+}
+
+<span class="Statement">close</span> (<span class="Identifier">I</span>);
+<span class="Statement">close</span> (<span class="Identifier">O</span>);
+</pre></div>
+<p>
+And the following example counts the number of lines in a file that start with
+"A":
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">$filename</span>, <span class="Identifier">$lines_num</span>, <span class="Identifier">$line</span>, <span class="Identifier">$c</span>);
+
+<span class="Identifier">$lines_num</span> = <span class="Constant">0</span>;
+<span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">input.txt</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">I</span>,  <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Constant">&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;I&gt;)
+{
+    <span class="Identifier">$c</span> = <span class="Statement">substr</span>(<span class="Identifier">$line</span>, <span class="Constant">0</span>, <span class="Constant">1</span>);
+    <span class="Statement">if</span> (<span class="Statement">lc</span>(<span class="Identifier">$c</span>) <span class="Statement">eq</span> <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span>)
+    {
+        <span class="Identifier">$lines_num</span>++;
+    }
+}
+<span class="Statement">close</span>(<span class="Identifier">I</span>);
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">In </span><span class="Constant">&quot;</span> , <span class="Identifier">$filename</span>, <span class="Constant">&quot;</span><span class="Constant"> there are </span><span class="Constant">&quot;</span>,
+    <span class="Identifier">$lines_num</span>, <span class="Constant">&quot;</span><span class="Constant"> lines that start with </span><span class="Special">\&quot;</span><span class="Constant">A</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+The <tt>join("", &lt;FILEHANDLE&gt;)</tt> command returns the entire contents
+of the file from the current position onwards, and may prove to be useful.
+Examples for it will be given in the next section where regular expressions
+will be taught.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--argv--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--files--readline--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--argv--PAGE">The @ARGV Array</a>
+</div>
+<h1>
+6. The @ARGV Array
+</h1>
+<p>
+One can use the <tt>@ARGV</tt> variable to access the command line arguments
+passed to the perl script at the command line. Here's an example, that makes a
+backup of the file specified as its argument:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Identifier">$ARGV</span>[<span class="Constant">0</span>];
+
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Constant">&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Identifier">$filename</span>.<span class="Constant">&quot;</span><span class="Constant">.bak</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">O</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;I&gt;);
+<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">close</span>(<span class="Identifier">O</span>);
+</pre></div>
+<p>
+Using the command-line for specifying parameters to the program is usually
+more handy than using files, or modifying the script each time.
+</p>
+<p>
+Note that it is often convenient to use <tt>shift</tt> to draw arguments
+out of <tt>@ARGV</tt> one at a time. When used without parameters outside of
+functions, shift extract arguments out of <tt>@ARGV</tt>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--argv--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--syntax--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a>
+</div>
+<h1>
+7. Regular Expressions
+</h1>
+<p>
+Regular expressions are one of the most powerful features of Perl, but are
+also one of those that beginners find most difficult to understand. Don't let
+that fact discourage you: they are definitely worth your time.
+</p>
+<p>
+Basically, a regular expression tells the interpreter to search a string
+for a pattern. The pattern can be a simple one like the word "hello" or a
+complex one, such as the word "hello" followed by any number of instances of
+the word "one", followed by the word "triple". The latter will be
+written as <tt>hello(?:one)*triple</tt> inside a regular expression.
+</p>
+<p>
+The perl operators allow you to do three things with a regular expression:
+</p>
+<ol>
+<li>
+Check if it exists in the string at all.
+</li>
+<li>
+Retrieve various captures out of it.
+</li>
+<li>
+Retrieve all of its occurences.
+</li>
+<li>
+Substitute the first occurence or all of its occurences with some other string
+or (perl) expression.
+</li>
+</ol>
+<p>
+Some perl functions such as <tt>split</tt> and <tt>grep</tt> (which will be
+covered later) can utilize regular expressions to do other tasks.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--syntax--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--multi_char--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--syntax--PAGE">Syntax</a>
+</div>
+<h1>
+7.1. Syntax
+</h1>
+<p>
+The syntax for checking if a string contains the regular expression is
+<tt>$string =~ /$regexp/</tt>. For instance the following program checks if
+a given string contains the word hello (in all lowercase):
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>);
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Constant">hello</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string contains the word </span><span class="Special">\&quot;</span><span class="Constant">hello</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string does not contain the word </span><span class="Special">\&quot;</span><span class="Constant">hello</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+Note that alphanumeric characters in regular expressions stand for themselves,
+and that behaviour is guaranteed not to change in further versions of perl.
+Other characters may need to be prefixed with a backslash (<tt>\</tt>) if
+placed inside a regular expression.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--multi_char--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--syntax--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--asterisk--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--multi_char--PAGE">".", "[ ... ]"</a>
+</div>
+<h1>
+7.2. ".", "[ ... ]"
+</h1>
+<p>
+In this slide we will learn how to specify any character or that a character
+will be one of a range of several possible characters.
+</p>
+<h2>The "." stands for any character</h2>
+<p>
+By putting a <tt>.</tt> character inside a regular expression, it means
+that it can match any character, excluding a newline. For example,
+the following snippet matches 5 letter words that start with 'l' and end with
+'x':
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Constant">l</span><span class="Special">...</span><span class="Constant">x</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<h2>The [ ... ] specifies more than one option for a character</h2>
+<p>
+When square brackets appear, one can specify more than one character inside
+them as option for matching. If the first character is <tt>^</tt> then they
+will match everything that is <b>not</b> one of the characters.
+</p>
+<p>
+One can specify a range of characters with the hyphen. For example the pattern
+<tt>[a-zA-Z0-9_]</tt> matches every alpha-numeric character.
+</p>
+<p>
+Here's an example that checks if a valid identifier for a perl variable is
+present in the string:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Special">\$</span><span class="Special">[A-Za-z_]</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--asterisk--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--multi_char--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--grouping--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--asterisk--PAGE">The "*" and Friends</a>
+</div>
+<h1>
+7.3. The "*" and Friends
+</h1>
+<p>
+In order to repeat a character more than one time several repetition
+paterns can be used. The asterisk (<tt>*</tt>) can be used to indicate that
+the character should repeat zero or more times. The plus sign (<tt>+</tt>)
+can be used to indicate that the character should repeat one or more
+times. As for the question mark (<tt>?</tt>) it indicates an appearance of
+zero or one time.
+</p>
+<p>
+The following pattern <tt>/ab*c/</tt> matches "a" followed by as many
+times of b as we like and then c. The pattern <tt>/you k?now/</tt> matches
+both "you know" and "you now". The pattern <tt>/hello +world/</tt> matches
+the word "hello" followed by the word "world". (with some whitespace in
+between).
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--grouping--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--asterisk--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--alternation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--grouping--PAGE">Grouping</a>
+</div>
+<h1>
+7.4. Grouping
+</h1>
+<p>
+One can use the cluster grouping notation (<tt>(?: ... )</tt>) or the
+capture grouping notation (<tt>( ... )</tt>) to group several characters so
+the entire group can be repeated with <tt>+</tt>, <tt>*</tt> or <tt>?</tt>.
+</p>
+<p>
+The difference between clustering and capturing, is that with capturing the
+Perl interpreter also keeps track of the text matched by the captures in the
+<tt>$1</tt>, <tt>$2</tt>, <tt>$3</tt>, etc. variables. Clustering as a result
+is faster and less intrusive.
+</p>
+<p>
+For example, the following perl program sees if its argument is an entire
+sentence that starts with "the" and ends with "there":
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Constant">the</span><span class="Special">(?:</span><span class="Constant"> </span><span class="Special">+[a-z]+)*</span><span class="Constant"> </span><span class="Special">+</span><span class="Constant">there</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+It is possible to nest groupings, so for example the following matches a
+square brackets-enclosed semicolon separated list of curly braces-enclosed
+comma-separated lists of numbers:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Special">\[\{</span><span class="Special">[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+</span><span class="Special">\}</span><span class="Special">(?:</span><span class="Constant">;</span><span class="Special">\{</span><span class="Special">(?:[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+)</span><span class="Special">\}</span><span class="Special">)+</span><span class="Special">\]</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+So it matches strings like <tt>[{54,129};{236,78}]</tt> and
+<tt>[{54,129};{236,78};{78,100,808};{72,1009,8}]</tt>
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--alternation--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--grouping--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--binding--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--alternation--PAGE">Alternation with "|"</a>
+</div>
+<h1>
+7.5. Alternation with "|"
+</h1>
+<p>
+One can specify several possible matching for an expression to match with
+<tt>|</tt>. For instance, <tt>dog|cat|mouse</tt> will match either "dog" or
+"cat" or "mouse". But naturally the options can themselves be regular
+expression which are as complex as perl supports.
+</p>
+<p>
+The alternation operator will try to match as much of the expression as it can,
+so it is recommended to use grouping to bound it.
+(e.g: <tt>(?:dog|cat|mouse)</tt>)
+</p>
+<p>
+The following pattern matches a sentence that may contain numbers:
+</p>
+<div class="code_block"><pre>
+(?:[a-zA-Z]+|[0-9]+)(?: +(?:[a-zA-Z]+|[0-9]+))*
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--binding--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--alternation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--substitute--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--binding--PAGE">Binding to the Beginning or the End of a String</a>
+</div>
+<h1>
+7.6. Binding to the Beginning or the End of a String
+</h1>
+<p>
+In a regular expression a caret (<tt>^</tt>) at the beginning of the expression
+matches the beginning of the string and a dollar sign (<tt>$</tt>) at the
+<b>end</b> of the expression matches the end of the string.
+</p>
+<p>
+For example, the following program checks if a string is composed entirely of
+the letter A:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Constant">^</span><span class="Special">[Aa]*</span><span class="Constant">$</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered is all A's!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered is not all A's.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<p>
+It's much shorter than with using a loop and also much faster.
+</p>
+<p>
+Here's another example. Let's check if a string ends with three periods:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Special">\.\.\.</span><span class="Constant"> </span><span class="Special">*</span><span class="Constant">$</span><span class="Statement">/</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered ends with an ellipsis.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">The string you entered does not end with an ellipsis.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--substitute--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--binding--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--substitute--e_switch--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a>
+</div>
+<h1>
+7.7. Substituting using Regular Expressions
+</h1>
+<p>
+One can use regular expression to substitute an occurence
+of a regular expression found inside a string to something else. The operator
+used for this is <tt>s/$exp_to_search/$exp_to_subs_for/</tt>. The following
+simple program replaces a number with the string "Some Number":
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Identifier">$string</span> =~ <span class="Statement">s/</span><span class="Special">[0-9]+</span><span class="Statement">/</span><span class="Constant">Some Number</span><span class="Statement">/</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Notice that in this case, only the first occurence of the string will be
+substituted. The <tt>g</tt> switch which will be covered soon, enables us to
+substitute <b>all</b> of the occurences.
+</p>
+<p>
+One can include the captures that are matched in the expression as part of
+the substitution string. The first capture is <tt>$1</tt>, the
+second <tt>$2</tt> etc.
+</p>
+<p>
+Here's an example which reverses the order of two words at the beginning of a
+sentence:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Identifier">$string</span> =~ <span class="Statement">s/</span><span class="Constant">^</span><span class="Special">([A-Za-z]+)</span><span class="Constant"> </span><span class="Special">*([A-Za-z]+)</span><span class="Statement">/</span><span class="Identifier">$2</span><span class="Constant"> </span><span class="Identifier">$1</span><span class="Statement">/</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<table class="note" summary="">
+<tr class="note">
+<td class="note">
+<h3 class="note">Note</h3>
+<p>
+The <tt>$1</tt>, <tt>$2</tt> variables are also available after the regular
+expression match or substitution is performed, and can be used inside
+your perl code.
+</p>
+</td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--substitute--e_switch--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--substitute--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--substitute--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--substitute--ungreedy--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--e_switch--PAGE">The "e" Switch</a>
+</div>
+<h1>
+7.7.1. The "e" Switch
+</h1>
+<p>
+If an <tt>e</tt> is appended to the end of the substitution command,
+then the right side is treated as a normal Perl expression, giving you
+the ability to use operators and functions.
+</p>
+<p>
+The following example, replaces the first word in the sentence with its length:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Identifier">$string</span> =~ <span class="Statement">s/</span><span class="Constant">^</span><span class="Special">([A-Za-z]+)</span><span class="Statement">/</span><span class="Constant">length(</span><span class="Identifier">$1</span><span class="Constant">)</span><span class="Statement">/e</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+And the following example, converts the first word that starts with the letter
+"S" into uppercase:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Identifier">$string</span> =~ <span class="Statement">s/</span><span class="Special">([Ss][A-Za-z]*)</span><span class="Statement">/</span><span class="Constant">'&lt;'.uc(</span><span class="Identifier">$1</span><span class="Constant">).'&gt;'</span><span class="Statement">/e</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--substitute--ungreedy--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--substitute--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--substitute--e_switch--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--flags--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--ungreedy--PAGE">Ungreedy Matching with *? and Friends</a>
+</div>
+<h1>
+7.7.2. Ungreedy Matching with *? and Friends
+</h1>
+<p>
+By defualt, the regular expression repetition operators such as
+<tt>*</tt>, <tt>+</tt> and friends are greedy. Hence, they will try to
+match as much as possible of the string as they can.
+</p>
+<p>
+If you wish them to match as little as possible, append a question mark
+(<tt>?</tt>) after them. Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Constant">&quot;</span><span class="Constant">&lt;html&gt;Hello&lt;/html&gt;You&lt;/html&gt;</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$greedy</span> = <span class="Identifier">$string</span>;
+<span class="Identifier">$greedy</span> =~ <span class="Statement">s/</span><span class="Constant">&lt;html&gt;</span><span class="Special">.*</span><span class="Constant">&lt;</span><span class="Special">\/</span><span class="Constant">html&gt;</span><span class="Statement">/</span><span class="Constant">REPLACED</span><span class="Statement">/</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$ungreedy</span> = <span class="Identifier">$string</span>;
+<span class="Identifier">$ungreedy</span> =~ <span class="Statement">s/</span><span class="Constant">&lt;html&gt;</span><span class="Special">.*?</span><span class="Constant">&lt;</span><span class="Special">\/</span><span class="Constant">html&gt;</span><span class="Statement">/</span><span class="Constant">REPLACED</span><span class="Statement">/</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,
+    <span class="Identifier">$greedy</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,
+    <span class="Identifier">$ungreedy</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--flags--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--substitute--ungreedy--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--esc_seqs--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--flags--PAGE">Useful Flags</a>
+</div>
+<h1>
+7.8. Useful Flags
+</h1>
+<p>
+There are other flags besides <tt>e</tt> that can be appended to the end
+of the match or substitution.
+</p>
+<p>
+An <tt>i</tt> following the regular expression call, causes a case-insensitive
+operation on the string. Thus, for example, an "A" will match both "a" and "A".
+Note that the strings placed in <tt>$1</tt>, <tt>$2</tt> and friends will still
+retain their original case.
+</p>
+<p>
+A <tt>g</tt> causes the match or substitution to match <b>all</b> occurences,
+not just one. If used with a match in an array context
+(e.g: <tt>@occurences = ($string =~ /$regexp/g);</tt>) it retrieves all
+the matches and if used with a substitution it substitutes all the
+occurences with the string.
+</p>
+<p>
+This example replaces all the occurences of the word "hello" by the index of
+their occurence:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$index</span> = <span class="Constant">0</span>;
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">put_index</span>
+{
+    <span class="Identifier">$index</span>++;
+    <span class="Statement">return</span> <span class="Identifier">$index</span>;
+}
+
+<span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
+
+<span class="Identifier">$string</span> =~ <span class="Statement">s/</span><span class="Constant">hello</span><span class="Statement">/</span><span class="Constant">put_index()</span><span class="Statement">/gei</span>;
+
+<span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--esc_seqs--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--flags--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--regexps--next_step--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--esc_seqs--PAGE">Useful Escape Sequences</a>
+</div>
+<h1>
+7.9. Useful Escape Sequences
+</h1>
+<p>
+Perl has several escape sequences which are specific to regular expressions.
+Here is a list of some of the more useful ones:
+</p>
+<ul>
+<li>
+<tt>\w</tt> - matches a word character, equivalent to <tt>[A-Za-z_]</tt>. The
+corresponding sequence - <tt>\W</tt> matches a non-word character.
+</li>
+<li>
+<tt>\s</tt> - matches a whitespace character, usually space and tab. <tt>\S</tt>
+matches a non-whitespace character.
+</li>
+<li>
+<tt>\d</tt> - matches a digit. Equivalent to <tt>[0-9]</tt>. <tt>\D</tt> matches a
+non-digit.
+</li>
+<li>
+<tt>\b</tt> - matches a word boundary. This sequence in fact has a zero width
+but it is nevertheless highly useful. <tt>\B</tt> matches something that is not
+a word boundary.
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page" id="page--regexps--next_step--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--esc_seqs--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--interpolation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--next_step--PAGE">The Next Step</a>
+</div>
+<h1>
+7.10. The Next Step
+</h1>
+<p>
+This was just an introduction to perl's regular expressions. There is much
+more available functionality, and I am referring you to the following sources
+for more information:
+</p>
+<ul>
+<li>
+<a href="http://perldoc.perl.org/perlsyn.html">The perlsyn document</a>.
+</li>
+<li>
+<a href="http://perldoc.perl.org/perlrequick.html">perlrequick</a> (the regular
+expressions' quick start),
+<a href="http://perldoc.perl.org/perlretut.html">perlretut</a> (regular
+expressions tutorial) and
+<a href="http://perldoc.perl.org/perlreref.html">perlreref</a> (regular
+expressions reference).
+</li>
+<li>
+<a href="http://perldoc.perl.org/perlre.html">The perlre document</a>. The
+bugs section of it says that it "varies from difficult to understand to
+completely and utterly opaque".
+</li>
+<li>
+<a href="http://perldoc.perl.org/perlfaq6.html">The perlfaq6 document</a>
+that deals with regular expressions.
+</li>
+<li>
+The book <a href="http://www.oreilly.com/catalog/regex2/"><i>Mastering Regular Expressions</i> by Jeffrey Friedl</a>, published
+by <a href="http://www.oreilly.com/">O'Reilly and Associates</a>.
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page" id="page--interpolation--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--regexps--next_step--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--interpolation--PAGE">String Interpolation</a>
+</div>
+<h1>
+8. String Interpolation
+</h1>
+<p>
+Perl supports inserting variables into string constants simply by
+placing their name along with the dollars inside them. Here's an example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$name</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter your name:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$name</span> = &lt;&gt;;
+<span class="Statement">chomp</span>(<span class="Identifier">$name</span>);
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, </span><span class="Identifier">$name</span><span class="Constant">!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Note that perl will try to match as much as possible from the variable name,
+even if a variable by that name does not exist. Thus if you write <tt>$ab</tt>
+inside a string, it will not take <tt>$a</tt> and append "b" to it! To overcome
+this limitation, you can limit the variable name using curly braces:
+<tt>"Hello ${boy}and${girl}"</tt>.
+</p>
+<p>
+In any case, interpolation is especially useful for building regular
+expression, since the string may contain control characters.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--interpolation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--split--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a>
+</div>
+<h1>
+9. Useful Functions
+</h1>
+<p>
+Perl has many functions that allow batch operations on entire arrays. Those
+functions are not only convenient, but are also faster than unrolling them
+into <tt>for</tt> and <tt>foreach</tt> loops.
+</p>
+<p>
+This behaviour is sometimes referred to as the <b>perl pipeline</b> because
+it resembles the pipeline used by the UNIX shells.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--useful_funcs--split--PAGE" class="contents">9.1. split</a>
+</li><li><a href="#page--useful_funcs--map--PAGE" class="contents">9.2. map</a>
+</li><li><a href="#page--useful_funcs--sort--DIR" class="contents">9.3. sort</a>
+<ul class="contents">
+<li><a href="#page--useful_funcs--sort--cmp--PAGE" class="contents">9.3.1. &lt;=&gt; and cmp</a>
+</li></ul>
+</li><li><a href="#page--useful_funcs--grep--PAGE" class="contents">9.4. grep</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--split--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--map--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--split--PAGE">split</a>
+</div>
+<h1>
+9.1. split
+</h1>
+<p>
+The <tt>split</tt> function can be used to split a string according to
+a regular expression. The syntax of the split function is as follows:
+</p>
+<p>
+<tt>@components = split(/$regexp/, $string);</tt>
+</p>
+<p>
+Here's a simple example that retrieves the user-id of a given
+username:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">$line</span>, <span class="Identifier">@parts</span>);
+
+<span class="Statement">my</span> <span class="Identifier">$user_name</span> = <span class="Statement">shift</span>;
+
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">/etc/passwd</span><span class="Constant">&quot;</span>;
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;I&gt;)
+{
+    <span class="Identifier">@parts</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">:</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
+    <span class="Statement">if</span> (<span class="Identifier">$parts</span>[<span class="Constant">0</span>] <span class="Statement">eq</span> <span class="Identifier">$user_name</span>)
+    {
+        <span class="Statement">print</span> <span class="Identifier">$user_name</span> . <span class="Constant">&quot;</span><span class="Constant">'s user ID is </span><span class="Constant">&quot;</span> . <span class="Identifier">$parts</span>[<span class="Constant">2</span>] . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">exit</span>(<span class="Constant">0</span>);
+    }
+}
+<span class="Statement">close</span>(<span class="Identifier">I</span>);
+
+<span class="Statement">print</span> <span class="Identifier">$user_name</span> . <span class="Constant">&quot;</span><span class="Constant">'s user ID was not found!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">exit</span>(<span class="Constant">-1</span>);
+</pre></div>
+<p>
+The following code splits a sentence into words and prints them:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$sentence</span> = <span class="Statement">shift</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@words</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s</span><span class="Special">+</span><span class="Statement">/</span>, <span class="Identifier">$sentence</span>);
+
+<span class="Statement">my</span> <span class="Identifier">$i</span>;
+<span class="Statement">for</span>(<span class="Identifier">$i</span>=<span class="Constant">0</span>;<span class="Identifier">$i</span>&lt;<span class="Statement">scalar</span>(<span class="Identifier">@words</span>);<span class="Identifier">$i</span>++)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Constant">&quot;</span> . <span class="Identifier">$words</span>[<span class="Identifier">$i</span>] . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--map--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--split--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--sort--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--map--PAGE">map</a>
+</div>
+<h1>
+9.2. map
+</h1>
+<p>
+The map function traverses an array and maps each element to one or more (
+or zero) elements in a new array. It has a rather unorthodox syntax in that
+it is written as
+<tt>@new_array = (map { &lt;Some Expression with $_&gt; } @array)</tt>
+.
+</p>
+<p>
+For each element of the array @array, the variable <tt>$_</tt> is assigned
+its value, and within the curly brackets one can put an expression that is
+dependant on it.
+</p>
+<p>
+The following example multiplies each element of an array by two:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">20</span>, <span class="Constant">3</span>, <span class="Constant">1</span>, <span class="Constant">9</span>, <span class="Constant">100</span>, <span class="Constant">88</span>, <span class="Constant">75</span>);
+
+<span class="Statement">my</span> <span class="Identifier">@new_array</span> = (<span class="Statement">map</span> { <span class="Identifier">$_</span>*<span class="Constant">2</span>; } <span class="Identifier">@array</span>);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@new_array</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Using map is usually faster than using a
+<tt>foreach $elem (@array) { ... push @new_array, $new_elem; }</tt>
+loop, at least when the function performed is a relatively uncomplex one.
+</p>
+<p>
+The following program decodes a run-length encoding compression, in which each
+element of the array is a number followed by its number of times:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$default_input_string</span> = <span class="Constant">&quot;</span><span class="Constant">2-5,3-9,1-2,8-1,4-7,5-9,20-3,16-9</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$input_string</span> = <span class="Statement">shift</span> || <span class="Identifier">$default_input_string</span>;
+
+<span class="Comment"># RLE stands for Run-Length Encoding</span>
+<span class="Statement">my</span> <span class="Identifier">@rle_components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">,</span><span class="Statement">/</span>, <span class="Identifier">$input_string</span>);
+<span class="Statement">my</span> <span class="Identifier">@expanded_sequence</span> = (<span class="Statement">map</span>
+    {
+        <span class="Statement">my</span> (<span class="Identifier">$what</span>, <span class="Identifier">$times</span>) = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">-</span><span class="Statement">/</span>, <span class="Identifier">$_</span>);
+        ((<span class="Identifier">$what</span>) x <span class="Identifier">$times</span>);
+    }
+    <span class="Identifier">@rle_components</span>
+    );
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@expanded_sequence</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+As you can see, the expression at the end of the map iterator can be an
+array with more than one element. It can also be an empty array, which means
+that some elements can be filtered out.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--sort--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--map--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--sort--cmp--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--sort--DIR">sort</a>
+</div>
+<h1>
+9.3. sort
+</h1>
+<p>
+The <tt>sort</tt> function can sort an array based on a comparison expression.
+As with the <tt>map</tt> function, this expression can be as complex as you'd
+like and may actually include a call to a dedicated function.
+</p>
+<p>
+Within the comparison block, the variables <tt>$a</tt> and <tt>$b</tt> indicate
+the two elements to be compared. If the expression returns a negative value
+it means that <tt>$a</tt> should precede <tt>$b</tt>. If it's positive, it means
+that <tt>$b</tt> should come before <tt>$a</tt>. If it's zero it indicates that
+it does not matter which one will come first.
+</p>
+<p>
+The following example sorts an array of integers numerically:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">100</span>,<span class="Constant">5</span>,<span class="Constant">8</span>,<span class="Constant">92</span>,-<span class="Constant">7</span>,<span class="Constant">34</span>,<span class="Constant">29</span>,<span class="Constant">58</span>,<span class="Constant">8</span>,<span class="Constant">10</span>,<span class="Constant">24</span>);
+
+<span class="Statement">my</span> <span class="Identifier">@sorted_array</span> =
+    (<span class="Statement">sort</span>
+        {
+            <span class="Statement">if</span> (<span class="Identifier">$a</span> &lt; <span class="Identifier">$b</span>)
+            {
+                <span class="Statement">return</span> -<span class="Constant">1</span>;
+            }
+            <span class="Statement">elsif</span> (<span class="Identifier">$a</span> &gt; <span class="Identifier">$b</span>)
+            {
+                <span class="Statement">return</span> <span class="Constant">1</span>;
+            }
+            <span class="Statement">else</span>
+            {
+                <span class="Statement">return</span> <span class="Constant">0</span>;
+            }
+        }
+        <span class="Identifier">@array</span>
+    );
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@sorted_array</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--sort--cmp--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--useful_funcs--sort--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--sort--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--useful_funcs--grep--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--sort--DIR">sort</a> → <a href="#page--useful_funcs--sort--cmp--PAGE">&lt;=&gt; and cmp</a>
+</div>
+<h1>
+9.3.1. &lt;=&gt; and cmp
+</h1>
+<p>
+Perl has two operators <tt>&lt;=&gt;</tt> and <tt>cmp</tt>, which are very
+useful when wishing to sort arrays. <tt>$a &lt;=&gt; $b</tt> returns -1 if
+<tt>$a</tt> is numerically lesser than <tt>$b</tt>, 1 if it's greater, and
+zero if they are equal.
+</p>
+<p>
+<tt>cmp</tt> does the same for string comparison. For instance the previous
+example could be re-written as:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">100</span>,<span class="Constant">5</span>,<span class="Constant">8</span>,<span class="Constant">92</span>,-<span class="Constant">7</span>,<span class="Constant">34</span>,<span class="Constant">29</span>,<span class="Constant">58</span>,<span class="Constant">8</span>,<span class="Constant">10</span>,<span class="Constant">24</span>);
+
+<span class="Statement">my</span> <span class="Identifier">@sorted_array</span> = (<span class="Statement">sort {</span> <span class="Identifier">$a</span> &lt;=&gt; <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@array</span>);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">,</span><span class="Constant">&quot;</span>, <span class="Identifier">@sorted_array</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Much more civil, isn't it? The following example, sorts an array of strings
+in reverse:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@input</span> = (
+    <span class="Constant">&quot;</span><span class="Constant">Hello World!</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">You is all I need.</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">To be or not to be</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">There's more than one way to do it.</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">Absolutely Fabulous</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">Ci vis pacem, para belum</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">Give me liberty or give me death.</span><span class="Constant">&quot;</span>,
+    <span class="Constant">&quot;</span><span class="Constant">Linux - Because software problems should not cost money</span><span class="Constant">&quot;</span>,
+);
+
+<span class="Comment"># Do a case-insensitive sort</span>
+<span class="Statement">my</span> <span class="Identifier">@sorted</span> = (<span class="Statement">sort {</span> <span class="Statement">lc</span>(<span class="Identifier">$b</span>) <span class="Statement">cmp</span> <span class="Statement">lc</span>(<span class="Identifier">$a</span>); <span class="Statement">}</span> <span class="Identifier">@input</span>);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@sorted</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--useful_funcs--grep--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--sort--cmp--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--grep--PAGE">grep</a>
+</div>
+<h1>
+9.4. grep
+</h1>
+<p>
+The <tt>grep</tt> function can be used to filter items out of an array based
+on a boolean expression or a regular expression. The syntax for the block
+usage is similar to <tt>map</tt> while the syntax for the regexp usage is
+similar to <tt>split</tt>.
+</p>
+<p>
+Here is an example that takes a file and filters only the perl comments whose
+length is lesser than 80 characters:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">@lines</span>, <span class="Identifier">$l</span>);
+
+<span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Statement">shift</span>;
+
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Constant">&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">while</span> (<span class="Identifier">$l</span> = &lt;I&gt;)
+{
+    <span class="Statement">chomp</span>(<span class="Identifier">$l</span>);
+    <span class="Statement">push</span> <span class="Identifier">@lines</span>, <span class="Identifier">$l</span>;
+}
+<span class="Statement">close</span>(<span class="Identifier">I</span>);
+
+<span class="Comment"># Filter the comments</span>
+<span class="Statement">my</span> <span class="Identifier">@comments</span> = <span class="Statement">grep</span>(<span class="Statement">/</span><span class="Constant">^#</span><span class="Statement">/</span>, <span class="Identifier">@lines</span>);
+<span class="Comment"># Filter out the long comments</span>
+<span class="Statement">my</span> <span class="Identifier">@short_comments</span> = (<span class="Statement">grep</span> { <span class="Statement">length</span>(<span class="Identifier">$_</span>) &lt;= <span class="Constant">80</span> ; } <span class="Identifier">@comments</span>);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@short_comments</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+And here's how <tt>grep</tt> can help us find the first 100 primes:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@primes</span> = (<span class="Constant">2</span>);
+<span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$n</span>=<span class="Constant">3</span> ; <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">100</span> ; <span class="Identifier">$n</span>++)
+{
+    <span class="Statement">if</span> (<span class="Statement">scalar</span>(<span class="Statement">grep</span> { <span class="Identifier">$n</span> % <span class="Identifier">$_</span> == <span class="Constant">0</span> ; } <span class="Identifier">@primes</span>) == <span class="Constant">0</span>)
+    {
+        <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$n</span>;
+    }
+}
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--references--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--useful_funcs--grep--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--hanoi--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a>
+</div>
+<h1>
+10. References
+</h1>
+<p>
+Perl allows one to refer to the location of a certain variable in memory. An
+expression that holds such location is called a <b>reference</b>. Those that
+are familiar with C's or Pascal's pointers may think of references as
+pointers. There are however, two fundamental differences:
+</p>
+<ol>
+<li>
+There is no reference arithmetics in perl. If for example, a reference points
+to the fifth element of an array, then adding 1 to it will not refer you to the
+sixth element. In fact, adding or substracting integers from references is
+possible but quite meaningless.
+</li>
+<li>
+A reference is guaranteed to remain the same even if an array or a string are
+resized. In C, <tt>realloc</tt>ing an array yields a completely different
+pointer.
+</li>
+</ol>
+<p>
+Perl distinguishes between an array or a hash and a reference of it.
+The reference of any array may be taken, and a reference to an array
+may always be converted to its elements, but there is still a difference
+in functionality.
+</p>
+<p>
+The best way to change a variable in a different scope
+(such as inside a different function) is to pass its reference to the
+function. The called function can then dereference the variable to access
+or modify its value.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--references--hanoi--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--backslash--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--hanoi--PAGE">Example: The Towers of Hanoi</a>
+</div>
+<h1>
+10.1. Example: The Towers of Hanoi
+</h1>
+<p>
+In this example, which is intended to give a taste of the capabilities of
+references, we will solve the well-known <a href="http://www.cut-the-knot.org/recurrence/hanoi.shtml">Towers of Hanoi</a> problem. (Refer to the link to learn
+more about the problem.) The number of disks can be inputted from the command-line.
+The towers themselves will be represented as an array of three elements, each
+of which is a reference to an array.
+</p>
+<p>
+We will use the recursive solution in which in order to move a column of $N
+disks, we first move the upper column with $N-1 disks and then move the
+bottom most disk, and then move the $N-1 disks-long column on top of it.
+</p>
+<p>
+Here goes:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$num_disks</span> = <span class="Statement">shift</span> || <span class="Constant">9</span>;
+
+<span class="Statement">my</span> <span class="Identifier">@towers</span> = (
+    [ <span class="Statement">reverse</span>(<span class="Constant">1</span> .. <span class="Identifier">$num_disks</span>) ],  <span class="Comment"># A [ ... ] is a dynamic reference to </span>
+    [ ],                           <span class="Comment"># an array</span>
+    [ ]
+    );
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">print_towers</span>
+{
+    <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;<span class="Constant">3</span>;<span class="Identifier">$a</span>++)
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">: </span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant"> </span><span class="Constant">&quot;</span>, @{<span class="Identifier">$towers</span>[<span class="Identifier">$a</span>]}); <span class="Comment"># We de-reference the tower</span>
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">move_column</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$source</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$dest</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$how_many</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">if</span> (<span class="Identifier">$how_many</span> == <span class="Constant">0</span>)
+    {
+        <span class="Statement">return</span>;
+    }
+    <span class="Comment"># Find the third column </span>
+    <span class="Statement">my</span> <span class="Identifier">$intermediate</span> = <span class="Constant">0+1+2</span>-<span class="Identifier">$source</span>-<span class="Identifier">$dest</span>;
+    move_column(<span class="Identifier">$source</span>, <span class="Identifier">$intermediate</span>, <span class="Identifier">$how_many</span><span class="Constant">-1</span>);
+    <span class="Comment"># Print the current state</span>
+    print_towers();
+    <span class="Comment"># Move one disk. Notice the dereferncing of the arrays</span>
+    <span class="Comment"># using @{$ref}.</span>
+    <span class="Statement">push</span> @{<span class="Identifier">$towers</span>[<span class="Identifier">$dest</span>]}, <span class="Statement">pop</span>(@{<span class="Identifier">$towers</span>[<span class="Identifier">$source</span>]});
+    move_column(<span class="Identifier">$intermediate</span>, <span class="Identifier">$dest</span>, <span class="Identifier">$how_many</span><span class="Constant">-1</span>);
+}
+
+<span class="Comment"># Move the entire column</span>
+move_column(<span class="Constant">0</span>,<span class="Constant">1</span>,<span class="Identifier">$num_disks</span>);
+print_towers();
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--references--backslash--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--hanoi--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--square_brackets--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--backslash--PAGE">\ - Taking a Reference to an Existing Variable</a>
+</div>
+<h1>
+10.2. \ - Taking a Reference to an Existing Variable
+</h1>
+<p>
+In Perl the backslash (<tt>\</tt>) is an operator that returns the
+reference to an existing variable. It can also return a dynamic reference
+to a constant.
+</p>
+<p>
+Here is an example that uses a reference to update a sum:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$sum</span> = <span class="Constant">0</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">update_sum</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$ref_to_sum</span> = <span class="Statement">shift</span>;
+    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$item</span> (<span class="Identifier">@_</span>)
+    {
+        <span class="Comment"># The ${ ... } dereferences the variable </span>
+        ${<span class="Identifier">$ref_to_sum</span>} += <span class="Identifier">$item</span>;
+    }
+}
+
+update_sum(<span class="Identifier">\$sum</span>, <span class="Constant">5</span>, <span class="Constant">4</span>, <span class="Constant">9</span>, <span class="Constant">10</span>, <span class="Constant">11</span>);
+update_sum(<span class="Identifier">\$sum</span>, <span class="Constant">100</span>, <span class="Constant">80</span>, <span class="Constant">7</span>, <span class="Constant">24</span>);
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">sum is now </span><span class="Constant">&quot;</span>, <span class="Identifier">$sum</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+As can be seen, because the reference to <tt>$sum</tt> was used, its value
+changes throughout the program.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--references--square_brackets--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--backslash--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--curly_brackets--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--square_brackets--PAGE">[ @array ] - a Dynamic Reference to an Array</a>
+</div>
+<h1>
+10.3. [ @array ] - a Dynamic Reference to an Array
+</h1>
+<p>
+An array surrounded by square brackets (<tt>[ @array ]</tt>) returns a dynamic
+reference to an array. This reference does not affect other values directly, which is
+why it is called dynamic.
+</p>
+<p>
+We have already encountered such dynamic array references in the Hanoi
+example. But their use is not limited to such. Since a reference to an array
+is a scalar, it can serve as a hash value and therefore serve as an object
+member. (as will be seen later in the series).
+</p>
+<p>
+In this example, a function is given two arrays, and returns an array that
+is the element-wise sum of both of them:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">vector_sum</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$v1_ref</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$v2_ref</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">@ret</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">@v1</span> = @{<span class="Identifier">$v1_ref</span>};
+    <span class="Statement">my</span> <span class="Identifier">@v2</span> = @{<span class="Identifier">$v2_ref</span>};
+
+    <span class="Statement">if</span> (<span class="Statement">scalar</span>(<span class="Identifier">@v1</span>) != <span class="Statement">scalar</span>(<span class="Identifier">@v2</span>))
+    {
+        <span class="Statement">return</span> <span class="Statement">undef</span>;
+    }
+    <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$i</span>=<span class="Constant">0</span>;<span class="Identifier">$i</span>&lt;<span class="Statement">scalar</span>(<span class="Identifier">@v1</span>);<span class="Identifier">$i</span>++)
+    {
+        <span class="Statement">push</span> <span class="Identifier">@ret</span>, (<span class="Identifier">$v1</span>[<span class="Identifier">$i</span>] + <span class="Identifier">$v2</span>[<span class="Identifier">$i</span>]);
+    }
+
+    <span class="Statement">return</span> [ <span class="Identifier">@ret</span> ];
+}
+
+<span class="Statement">my</span> <span class="Identifier">$ret</span> = vector_sum(
+    [ <span class="Constant">5</span>, <span class="Constant">9</span>, <span class="Constant">24</span>, <span class="Constant">30</span> ],
+    [ <span class="Constant">8</span>, <span class="Constant">2</span>, <span class="Constant">10</span>, <span class="Constant">20</span> ]
+);
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, @{<span class="Identifier">$ret</span>}), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<table class="note" summary="">
+<tr class="note">
+<td class="note">
+<h3 class="note">Note</h3>
+<p>
+The fundamental difference between using <tt>\@myarray</tt> on an existing
+variable named <tt>@myarray</tt> to using <tt>[ @myarray ]</tt> is this: the latter
+forms creates a dynamic copy of <tt>@myarray</tt> and if this copy changes,
+<tt>@myarray</tt> will not change with it. On the other hand, changes made to
+a reference generated by backslash, will affect the original variable.
+</p>
+<p>
+Note that if the members of <tt>@myarray</tt> are themselves references, then
+the second form will not make a copy of them. Thus, they can be modified too,
+even in the second form.
+</p>
+</td>
+</tr>
+</table>
+<hr />
+
+</div>
+<div class="page" id="page--references--curly_brackets--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--square_brackets--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--arrow--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--curly_brackets--PAGE">{ %hash } - a Dynamic Reference to a Hash</a>
+</div>
+<h1>
+10.4. { %hash } - a Dynamic Reference to a Hash
+</h1>
+<p>
+In a similar way to the square brackets, putting a hash inside a pair
+of curly braces (<tt>{ ... }</tt>) will make it into a reference to a
+hash. Like an array reference, this reference is a scalar and can be
+used as an array element or a hash value. Plus, its own values can be
+references to other arrays or hashes.
+</p>
+<p>
+To demonstrate this let's see the code of part of the contents table of
+this very lecture, to demonstrate the multi-level data structure
+capabilities of perl:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$contents</span> =
+{
+    <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Contents</span><span class="Constant">&quot;</span>,
+    <span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span> =&gt;
+    [
+        {
+            <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">for</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">The for loop</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span> =&gt;
+            [
+                {
+                    <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">next.html</span><span class="Constant">&quot;</span>,
+                    <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Behaviour of next in the for loop</span><span class="Constant">&quot;</span>,
+                },
+                {
+                    <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">whence_for.html</span><span class="Constant">&quot;</span>,
+                    <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Whence for?</span><span class="Constant">&quot;</span>,
+                },
+            ],
+        },
+        {
+            <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">hashes</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hashes</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span> =&gt;
+            [
+                {
+                    <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">functions.html</span><span class="Constant">&quot;</span>,
+                    <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hash Functions</span><span class="Constant">&quot;</span>,
+                },
+            ],
+        },
+        {
+            <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">my</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Declaring Local Variables with </span><span class="Special">\&quot;</span><span class="Constant">my</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span> =&gt;
+            [
+                {
+                    <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">use_strict.html</span><span class="Constant">&quot;</span>,
+                    <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">use strict</span><span class="Special">\&quot;</span><span class="Constant">, Luke!</span><span class="Constant">&quot;</span>,
+                },
+            ],
+        },
+        {
+            <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">argv.html</span><span class="Constant">&quot;</span>,
+            <span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">The </span><span class="Special">\@</span><span class="Constant">ARGV array</span><span class="Constant">&quot;</span>,
+        },
+    ],
+    <span class="Constant">'</span><span class="Constant">images</span><span class="Constant">'</span> =&gt;
+    [
+        {
+            <span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span> =&gt; <span class="Constant">'</span><span class="Constant">style.css</span><span class="Constant">'</span>,
+            <span class="Constant">'</span><span class="Constant">type</span><span class="Constant">'</span> =&gt; <span class="Constant">'</span><span class="Constant">text/css</span><span class="Constant">'</span>,
+        }
+    ],
+};
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_contents</span>
+{
+    <span class="Statement">return</span> <span class="Identifier">$contents</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--references--arrow--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--curly_brackets--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--references--dereferencing--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--arrow--PAGE">The Arrow Operators</a>
+</div>
+<h1>
+10.5. The Arrow Operators
+</h1>
+<p>
+An arrow (<tt>-&gt;</tt>) followed by a square or curly brackets can be used
+to directly access the elements of an array or a hash referenced by a certain
+hash. For instance: <tt>$array_ref-&gt;[5]</tt> will retrieve the 5th element
+of the array pointed to by <tt>$array_ref</tt>.
+</p>
+<p>
+As an example let's print a tree of the contents of the part of the lecture
+that was presented in the previous slide:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">do</span> <span class="Constant">&quot;</span><span class="Constant">lol.pl</span><span class="Constant">&quot;</span>;         <span class="Comment"># Load the other file</span>
+
+<span class="Statement">my</span> <span class="Identifier">$cont</span> = get_contents();
+
+<span class="Statement">print</span> <span class="Identifier">$cont</span>-&gt;{<span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$cont</span>-&gt;{<span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span>}-&gt;[<span class="Constant">0</span>]-&gt;{<span class="Constant">'</span><span class="Constant">url</span><span class="Constant">'</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$cont</span>-&gt;{<span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span>}-&gt;[<span class="Constant">0</span>]-&gt;{<span class="Constant">'</span><span class="Constant">subs</span><span class="Constant">'</span>}-&gt;[<span class="Constant">1</span>]-&gt;{<span class="Constant">'</span><span class="Constant">title</span><span class="Constant">'</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+Note that the arrows following the first arrow are optional as perl sees
+that the programmer wishes to access the subseqeunt sub-items. However, the
+first one is mandatory because the expression <tt>$array_ref{'elem'}</tt> looks
+for the hash <tt>%array_ref</tt>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--references--dereferencing--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--arrow--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--dereferencing--PAGE">Dereferencing</a>
+</div>
+<h1>
+10.6. Dereferencing
+</h1>
+<p>
+The entire scalar or data structure pointed to by the reference can be
+retrieved by dereferncing. Dereferencing is done by using a <tt>$</tt>,
+a <tt>@</tt> or a <tt>%</tt> (depending if the reference refers to a scalar
+, array or a hash respectively), and then the reference inside curly braces.
+</p>
+<p>
+Here are some simple examples:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$ds1</span> =
+{
+    <span class="Constant">'</span><span class="Constant">h</span><span class="Constant">'</span> =&gt; [<span class="Constant">5</span>,<span class="Constant">6</span>,<span class="Constant">7</span>],
+    <span class="Constant">'</span><span class="Constant">y</span><span class="Constant">'</span> =&gt; { <span class="Constant">'</span><span class="Constant">t</span><span class="Constant">'</span> =&gt; <span class="Constant">'</span><span class="Constant">u</span><span class="Constant">'</span>, <span class="Constant">'</span><span class="Constant">o</span><span class="Constant">'</span> =&gt; <span class="Constant">'</span><span class="Constant">p</span><span class="Constant">'</span> },
+    <span class="Constant">'</span><span class="Constant">hello</span><span class="Constant">'</span> =&gt; <span class="Constant">'</span><span class="Constant">up</span><span class="Constant">'</span>,
+};
+
+<span class="Statement">my</span> <span class="Identifier">$array_ref</span> = [<span class="Constant">5</span>, <span class="Constant">6</span>, <span class="Constant">7</span>, <span class="Constant">10</span>, <span class="Constant">24</span>, <span class="Constant">90</span>, <span class="Constant">14</span>];
+<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;</span><span class="Constant">Hello World!</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$b</span> = <span class="Identifier">\$a</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">array_ref:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, @{<span class="Identifier">$array_ref</span>}), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\$</span><span class="Constant">ds1-&gt;{'h'}:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span>, @{<span class="Identifier">$ds1</span>-&gt;{<span class="Constant">'</span><span class="Constant">h</span><span class="Constant">'</span>}}), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">my</span> <span class="Identifier">%hash</span> = %{<span class="Identifier">$ds1</span>-&gt;{<span class="Constant">'</span><span class="Constant">y</span><span class="Constant">'</span>}};
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\%</span><span class="Constant">hash:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$k</span> (<span class="Statement">keys</span>(<span class="Identifier">%hash</span>))
+{
+    <span class="Statement">print</span> <span class="Identifier">$k</span>,  <span class="Constant">&quot;</span><span class="Constant"> =&gt; </span><span class="Constant">&quot;</span>, <span class="Identifier">$hash</span>{<span class="Identifier">$k</span>};
+}
+
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\$\$</span><span class="Constant">b:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">print</span> ${<span class="Identifier">$b</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+If the expression that yields the reference is a simple one than the curly
+brackets can be omitted (e.g: <tt>@$array_ref</tt> or <tt>$$ref</tt>).
+However, assuming you use curly brackets - the expression surrounded
+inside them can be as complex as you would like.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--debugger--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--references--dereferencing--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--debugger--stepping--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a>
+</div>
+<h1>
+11. Using the perl Debugger
+</h1>
+<p>
+Even if your perl code compiles and runs, it doesn't mean it is error free.
+Very often you will write programs that when given specific input, will behave
+very differently from their intended behaviour. Perl supplies the user with a
+debugger that can help in trapping such bugs in the program.
+</p>
+<p>
+The debugger is invoked simply by appending a "-d" switch before the script
+name. E.g: <tt>perl -d hello.pl</tt>. After typing "Return" at the shell command
+line, you will have an interactive debugging session at your disposal. At this
+session, you can control the execution of your program as well as enter any
+Perl command you like.
+</p>
+<p>
+The following chapter will cover the basics of using the perl debugger, and
+will give you pointers on where to find more information.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--debugger--stepping--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--debugger--breakpoints--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--stepping--PAGE">Stepping over and Stepping in</a>
+</div>
+<h1>
+11.1. Stepping over and Stepping in
+</h1>
+<p>
+The debugger displays the perl statement that is about to be executed in
+its display window, and below it the command prompt. It looks something like
+this:
+</p>
+<div class="code_block"><pre>
+shlomi:~/bin# perl -d add_cr.pl
+Default die handler restored.
+
+Loading DB routines from perl5db.pl version 1.07
+Editor support available.
+
+Enter h or `h h' for help, or `man perldebug' for more help.
+
+main::(add_cr.pl:5):	my ($contents);
+  DB&lt;1&gt;
+</pre></div>
+<p>
+The most commonly used command in the debugger is to have it execute one
+(and only one) perl statement. This is called stepping and there are two types
+of it: stepping over and stepping in.
+</p>
+<p>
+The difference is that stepping over does not enter the perl functions
+that were called in the expression that was evaluated. Stepping in, on
+the other hand, does enter such functions.
+</p>
+<p>
+To step over type <tt>n</tt> (short for "next") followed by enter
+, and you'll see the next perl command displayed. To step in type
+<tt>s</tt> (short for "step").
+</p>
+<p>
+And here's how the screen will look after a few step overs:
+</p>
+<div class="code_block"><pre>
+shlomi:~/bin# perl -d add_cr.pl test.txt
+Default die handler restored.
+
+Loading DB routines from perl5db.pl version 1.07
+Editor support available.
+
+Enter h or `h h' for help, or `man perldebug' for more help.
+
+main::(add_cr.pl:5):	my ($contents);
+  DB&lt;1&gt; n
+main::(add_cr.pl:7):	foreach my $file (@ARGV)
+main::(add_cr.pl:8):	{
+  DB&lt;1&gt; n
+main::(add_cr.pl:9):	    $contents = "";
+  DB&lt;1&gt; n
+main::(add_cr.pl:11):	    open I, "&lt;$file";
+  DB&lt;1&gt;
+</pre></div>
+<p>
+Note that sometimes an expression will take more than one step over to
+pass. Operations such as <tt>map</tt>, <tt>sort</tt> and friends are especially
+notorious for that. Breakpoints that will be covered in the next slide
+offer a solution to this problem.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--debugger--breakpoints--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--debugger--stepping--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--debugger--perl_cmds--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--breakpoints--PAGE">Setting Breakpoints and Continuing</a>
+</div>
+<h1>
+11.2. Setting Breakpoints and Continuing
+</h1>
+<p>
+When one places a breakpoint on a certain line in a program, he indicates
+that the execution of the program must be stopped when this line is
+reached. Then, one can cause the program to run freely using the continue
+command, and have it stop only at this line.
+</p>
+<p>
+Breakpoints generally save a lot of stepping. To set a breakpoint type
+<tt>b $line_number</tt> or <tt>b $function_name</tt> where $line_number is the
+line number and $function_name is the function name. A breakpoint on a function
+will stop the execution of the program as soon as the function is entered.
+</p>
+<p>
+To continue the execution of the program until a breakpoint is reached (or
+until the program terminates) type <tt>c</tt>. Here is an example session with
+the same program:
+</p>
+<div class="code_block"><pre>
+shlomi:~/bin# perl -d add_cr.pl test.txt
+Default die handler restored.
+
+Loading DB routines from perl5db.pl version 1.07
+Editor support available.
+
+Enter h or `h h' for help, or `man perldebug' for more help.
+
+main::(add_cr.pl:5):	my ($contents);
+  DB&lt;1&gt; b 11
+  DB&lt;2&gt; c
+main::(add_cr.pl:11):	    open I, "&lt;$file";
+  DB&lt;2&gt;
+</pre></div>
+<p>
+One can set a conditional breakpoint by typing
+<tt>b [line] [perl expression]</tt>. A conditional expression is one
+that stops the execution of the program only if the perl expression
+evaluates to true. The perl expression can be as complex as you like
+and may include whitespace.
+</p>
+<p>
+To delete a breakpoint type <tt>d [line]</tt>. After a breakpoint is deleted
+it will no longer affect the execution of your program.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--debugger--perl_cmds--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--debugger--breakpoints--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--debugger--more_info--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--perl_cmds--PAGE">Executing Perl Commands inside the Debugger</a>
+</div>
+<h1>
+11.3. Executing Perl Commands inside the Debugger
+</h1>
+<p>
+One can execute perl commands inside the debugger. For example, typing
+<tt>print $a</tt> at the debugger prompt will print the value of the
+<tt>$a</tt> variable. You can also modify the values of variables in this
+way, or run functions, etc.
+</p>
+<p>
+One special command that is also useful is <tt>x</tt>. <tt>x $var</tt>
+displays <tt>$var</tt> in a hierarchial manner, which is very useful for
+lists of lists etc. The <b>Data::Dumper</b> module which is available from
+<a href="http://www.cpan.org/">CPAN</a> offers a similiar functionality, from
+within your perl programs.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--debugger--more_info--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--debugger--perl_cmds--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--finale--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--more_info--PAGE">Getting More Information</a>
+</div>
+<h1>
+11.4. Getting More Information
+</h1>
+<p>
+The <tt>h</tt> command in the debugger displays the list of available
+debugger commands.
+</p>
+<p>
+Usage information about the perl debugger is available at the
+<a href="http://perldoc.perl.org/perldebug.html"><b>perldebug</b> document</a>.
+</p>
+<p>
+There are some front-ends to the perl debugger. One of them, which
+runs on Linux, is <a href="http://www.gnu.org/software/ddd/">ddd</a>.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--finale--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--debugger--more_info--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<b>Next</b></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" Part 2</a> → <a href="#page--finale--PAGE">Finale</a>
+</div>
+<h1>
+12. Finale
+</h1>
+<blockquote>
+<p>
+I'm reminded of the day my daughter came in, looked over my shoulder at
+some Perl 4 code, and said, "What is that, swearing?"
+</p>
+</blockquote>
+<p>
+<i>(Larry Wall (the father of Perl) in &lt;199806181642.JAA10629@wall.org&gt;)</i>
+</p>
+<p>
+But luckily the next back-end for Perl 5 -
+<a href="http://www.parrotcode.org/">Parrot</a> will support multiple
+syntax front-ends, so one will be
+able to write Perl in an alternate syntax that does not have all those
+pesky sigils. The question is: why would anyone ever want to do that?
+<b>:-)</b>
+</p>
+<p>
+No, seriously. We hoped you enjoyed the lecture series, but remember
+that it does not teach you everything that is to know about perl,
+much less how to understand other people's code.
+</p>
+<p>
+By now, you can probably understand the perl core documents, so it is
+recommended
+that you read them in case you are looking for more information. You can
+also refer to <a href="http://perl-begin.berlios.de/">the Perl Beginners'
+Site</a> for more sources of information as well as ways to get help online.
+</p>
+<p>
+We hope to continue this lecture with more presentations covering Perl's
+modules, objects and references to functions. Until then, stay cool and may
+the dollar sign be with you!
+</p>
+<hr />
+
+</div>
+
+</body></html>

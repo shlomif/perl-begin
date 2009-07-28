@@ -1,0 +1,1885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
+
+
+
+
+<title>
+Perl for Newbies, Lecture No. 3 : Modules and Objects
+</title>
+</head>
+<body><div class="page" id="page--DIR">
+
+<div class="center"><script type="text/javascript">
+google_ad_client = "pub-2480595666283917";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "336699";
+google_color_text = "000000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<b>Up</b></td>
+<td>
+<b>Prev</b></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a>
+</div>
+<h1>
+Perl for Newbies, Lecture No. 3 : Modules and Objects
+</h1>
+<h2 id="contents">Contents</h2>
+<ul class="contentsmain">
+<li><a href="#page--intro--DIR" class="contents">1. Introduction</a>
+<ul class="contents">
+<li><a href="#page--intro--refs_to_funcs--PAGE" class="contents">1.1. References to Functions</a>
+</li><li><a href="#page--intro--modules--PAGE" class="contents">1.2. Modules and Packages</a>
+</li><li><a href="#page--intro--objects--PAGE" class="contents">1.3. Objects</a>
+</li><li><a href="#page--intro--note_about_files--PAGE" class="contents">1.4. A Note about Source Files</a>
+</li></ul>
+</li><li><a href="#page--refs_to_funcs--DIR" class="contents">2. References to Functions</a>
+<ul class="contents">
+<li><a href="#page--refs_to_funcs--taking--PAGE" class="contents">2.1. Taking the Reference of a Function</a>
+</li><li><a href="#page--refs_to_funcs--calling--PAGE" class="contents">2.2. Calling a Function by its Reference</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--DIR" class="contents">2.3. Dynamic References to Functions</a>
+<ul class="contents">
+<li><a href="#page--refs_to_funcs--dynamic--behaviour--PAGE" class="contents">2.3.1. Behaviour of Functions inside Functions</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--dispatch--PAGE" class="contents">2.3.2. Demo: A Dispatch Function</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--lambda-calculus--PAGE" class="contents">2.3.3. Lambda Calculus</a>
+</li></ul>
+</li></ul>
+</li><li><a href="#page--modules--DIR" class="contents">3. Perl Modules</a>
+<ul class="contents">
+<li><a href="#page--modules--declaring--DIR" class="contents">3.1. Declaring a Package</a>
+<ul class="contents">
+<li><a href="#page--modules--declaring--where--PAGE" class="contents">3.1.1. Where to find a module</a>
+</li></ul>
+</li><li><a href="#page--modules--loading--DIR" class="contents">3.2. Loading Modules and Importing their Functions</a>
+<ul class="contents">
+<li><a href="#page--modules--loading--accessing--PAGE" class="contents">3.2.1. Accessing Functions from a Different Module</a>
+</li><li><a href="#page--modules--loading--exporting--PAGE" class="contents">3.2.2. Exporting and Importing Functions</a>
+</li><li><a href="#page--modules--loading--variables--PAGE" class="contents">3.2.3. Using Variables from a Different Namespace</a>
+</li></ul>
+</li><li><a href="#page--modules--begin_end--PAGE" class="contents">3.3. BEGIN and END</a>
+</li><li><a href="#page--modules--main--PAGE" class="contents">3.4. The "main" Namespace</a>
+</li><li><a href="#page--modules--difference--PAGE" class="contents">3.5. Difference between Namespaces and Modules</a>
+</li></ul>
+</li><li><a href="#page--objects--DIR" class="contents">4. Objects in Perl</a>
+<ul class="contents">
+<li><a href="#page--objects--how_it_works--PAGE" class="contents">4.1. How it Works behind the Scenes</a>
+</li><li><a href="#page--objects--object_use--DIR" class="contents">4.2. Object Use</a>
+<ul class="contents">
+<li><a href="#page--objects--object_use--methods--PAGE" class="contents">4.2.1. Calling the Methods of an Object</a>
+</li></ul>
+</li><li><a href="#page--objects--making--DIR" class="contents">4.3. Making Your Own Objects</a>
+<ul class="contents">
+<li><a href="#page--objects--making--constructor--PAGE" class="contents">4.3.1. The Constructor</a>
+</li><li><a href="#page--objects--making--methods--PAGE" class="contents">4.3.2. Defining Methods</a>
+</li><li><a href="#page--objects--making--inheritance--DIR" class="contents">4.3.3. Object Inheritance</a>
+<ul class="contents">
+<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overriden Methods of Base Classes</a>
+</li></ul>
+</li><li><a href="#page--objects--making--destructor--PAGE" class="contents">4.3.4. The Destructor</a>
+</li></ul>
+</li><li><a href="#page--objects--utils--PAGE" class="contents">4.4. Object Utility Functions - isa() and can()</a>
+</li></ul>
+</li><li><a href="#page--finale--DIR" class="contents">5. Finale</a>
+<ul class="contents">
+<li><a href="#page--finale--links--PAGE" class="contents">5.1. Links and References</a>
+</li></ul>
+</li></ul>
+<h2 id="licence">Licence</h2>
+<p>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/publicdomain/"><img alt="Creative Commons License" style="border:0"
+src="./somerights20.gif" /></a><br />
+This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/publicdomain/">Public Domain</a>.
+<!-- /Creative Commons License -->
+</p>
+<!--
+		<rdf:RDF xmlns="http://web.resource.org/cc/"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about=""
+			<license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	<dc:title>Perl for Perl Newbies</dc:title>
+	<dc:rights><Agent><dc:title>Shlomi Fish</dc:title></Agent></dc:rights>
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/0/"><permits rdf:resource="http://web.resource.org/cc/Reproduction" /><permits rdf:resource="http://web.resource.org/cc/Distribution" /><requires rdf:resource="http://web.resource.org/cc/Notice" /><requires rdf:resource="http://web.resource.org/cc/Attribution" /><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" /></License>
+		</rdf:RDF>
+-->
+<hr />
+
+</div>
+<div class="page" id="page--intro--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--refs_to_funcs--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--intro--DIR">Introduction</a>
+</div>
+<h1>
+1. Introduction
+</h1>
+<p>
+The two previous lectures supplied you with enough knowledge to know
+how to program most perl scripts. That is, with some help from the perl
+man pages, especially the
+<a href="http://aspn.activestate.com/ASPN/Perl/Products/ActivePerl/lib/Pod/perlfunc.html">
+perlfunc</a> one.
+</p>
+<p>
+If however, you wish to maintain a more complex perl program, you will
+probably outgrow the functionality that was covered so far. However, perl has
+certain mechanisms that make it to easier to write code that is
+more scalable, more modular and more re-usable.
+</p>
+<p>
+The purpose of a modular code is to make sure there isn't any duplicate code,
+and that parts of the code can later be used by others, with as little modification
+as possible. Perl, as most other languages, does not force writing modular code
+upon the programmer, but it does provide some language mechanisms that help do
+that.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--intro--refs_to_funcs--PAGE" class="contents">1.1. References to Functions</a>
+</li><li><a href="#page--intro--modules--PAGE" class="contents">1.2. Modules and Packages</a>
+</li><li><a href="#page--intro--objects--PAGE" class="contents">1.3. Objects</a>
+</li><li><a href="#page--intro--note_about_files--PAGE" class="contents">1.4. A Note about Source Files</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--intro--refs_to_funcs--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--modules--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--refs_to_funcs--PAGE">References to Functions</a>
+</div>
+<h1>
+1.1. References to Functions
+</h1>
+<p>
+Perl allows the programmer to store a reference to a function inside
+a scalar value. This variable can later be dereferenced in order to
+invoke the function with any number of arguments.
+</p>
+<p>
+By using this mechanism, one can implement callbacks, and make sure a wrapper
+function can invoke several helper functions which it will treat the same.
+</p>
+<h2>Closures</h2>
+<p>
+In perl it is possible to define dynamic subroutines, inside the code of
+the current scope. That scope can be a function or even another dynamic
+subroutine. These subroutines, which are sometimes refered to as closures,
+can see all the variables of the scope in which they were declared, even
+after the function that created them stopped running.
+</p>
+<p>
+Closures enable the program to pass state information into callbacks that
+do not accept state information, and are generally a very convenient
+mechanism.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--intro--modules--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--refs_to_funcs--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--objects--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--modules--PAGE">Modules and Packages</a>
+</div>
+<h1>
+1.2. Modules and Packages
+</h1>
+<p>
+<b>Packages</b> are the perl terminology for <b>namespaces</b>. Namespaces
+enable the programmer to declare several functions or variables with the same
+name, and use all of them in the same code, as long as each one was declared in
+a different namespace. By using namespaces wisely, a programmer can be more
+certain his code will not clash with code from another developer. Moreover,
+packages are the basis for Perl's objects system.
+</p>
+<p>
+<b>Modules</b> are files containing Perl code which can be loaded by programs
+or other modules. They allow the programmer to declare various functions in
+various packages (usually below the namespace that corresponds to the package
+name). Modules facilitate code reuse as the same module can be used by several
+modules and by several distinct programs.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--intro--objects--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--modules--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--intro--note_about_files--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--objects--PAGE">Objects</a>
+</div>
+<h1>
+1.3. Objects
+</h1>
+<p>
+An object is a set of variables and functions that are associated with
+this set. By calling these functions (commonly referred to as methods)
+one automatically has access to all the variables of the set. That
+way, it is possible to create and manage several instances of objects
+of the same class.
+</p>
+<p>
+In Perl, every class resides in its own namespace. Perl enables various
+associations to be performed on entire classes. For instance, one class
+can inherit one or more classes, and thus have access to all of their
+methods.
+</p>
+<p>
+By making a set of perl functions into a class, it is possible to make sure,
+they can be instantized and re-used. Furthermore, this class can later be
+expanded into a more powerful class, by making another class inherit it.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--intro--note_about_files--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--intro--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--objects--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--intro--DIR">Introduction</a> → <a href="#page--intro--note_about_files--PAGE">A Note about Source Files</a>
+</div>
+<h1>
+1.4. A Note about Source Files
+</h1>
+<p>
+In Perl, every module resides in his own file, and it is sometimes even
+necessary to put them inside a nested directory structure. (Note that it
+does not free a programmer from designating the module's name by a special
+header)
+</p>
+<p>
+So far all of our scripts were self-contained, but now we may have to see
+code of several files at once. To ease this transition every file will
+contain the filename in its header comment. The filename will be given in UNIX
+notation, with slashes (<i>/</i>) and all, and will be relative to
+the directory in which the script is executed.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--note_about_files--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--taking--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a>
+</div>
+<h1>
+2. References to Functions
+</h1>
+<p>
+One can take the reference of a function and store it inside a
+scalar variable (or an array or hash value). This value can
+later be dereferenced and called with some arguments.
+</p>
+<p>
+The effect of such call is exactly the same as the effect of calling the
+function directly.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--refs_to_funcs--taking--PAGE" class="contents">2.1. Taking the Reference of a Function</a>
+</li><li><a href="#page--refs_to_funcs--calling--PAGE" class="contents">2.2. Calling a Function by its Reference</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--DIR" class="contents">2.3. Dynamic References to Functions</a>
+<ul class="contents">
+<li><a href="#page--refs_to_funcs--dynamic--behaviour--PAGE" class="contents">2.3.1. Behaviour of Functions inside Functions</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--dispatch--PAGE" class="contents">2.3.2. Demo: A Dispatch Function</a>
+</li><li><a href="#page--refs_to_funcs--dynamic--lambda-calculus--PAGE" class="contents">2.3.3. Lambda Calculus</a>
+</li></ul>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--taking--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--calling--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--taking--PAGE">Taking the Reference of a Function</a>
+</div>
+<h1>
+2.1. Taking the Reference of a Function
+</h1>
+<p>
+To take the reference of an existing function use the notation
+<tt>\&amp;function_name</tt> where "function_name" is the name of the function.
+This is an r-value that can be assigned to a variable.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--calling--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--taking--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--calling--PAGE">Calling a Function by its Reference</a>
+</div>
+<h1>
+2.2. Calling a Function by its Reference
+</h1>
+<p>
+Assuming the reference of a function is stored in the variable <tt>$myref</tt>,
+there are two methods to call the function from it:
+</p>
+<ol>
+<li>
+<tt>&amp;{$myref}(@args)</tt>
+</li>
+<li>
+<tt>$myref-&gt;(@args)</tt>
+</li>
+</ol>
+<p>
+<tt>$myref</tt> can be as complex an expression as you would like,
+but you'll usually need parenthesis in the second notation.
+</p>
+<p>
+Here's an example to illustrate it:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Comment"># This is a value that can be inputted or outputted by the </span>
+<span class="Comment"># mini-interpreter.</span>
+<span class="Statement">my</span> <span class="Identifier">$a_value</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">do_print</span>
+{
+    <span class="Statement">if</span> (!<span class="Statement">defined</span>(<span class="Identifier">$a_value</span>))
+    {
+        <span class="Statement">print</span> <span class="Identifier">STDERR</span> <span class="Constant">&quot;</span><span class="Constant">Error! The value was not set yet.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">return</span>;
+    }
+
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">a_value is </span><span class="Constant">&quot;</span> . <span class="Identifier">$a_value</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">do_input</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the new value:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;;
+    <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+    <span class="Identifier">$a_value</span> = <span class="Identifier">$line</span>;
+}
+
+<span class="Statement">my</span> <span class="Identifier">$quit_program</span> = <span class="Constant">0</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">do_exit</span>
+{
+    <span class="Identifier">$quit_program</span> = <span class="Constant">1</span>;
+}
+
+<span class="Statement">my</span> <span class="Identifier">%operations</span> =
+    (
+        <span class="Constant">'</span><span class="Constant">print</span><span class="Constant">'</span> =&gt; <span class="Identifier">\&amp;do_print</span>,
+        <span class="Constant">'</span><span class="Constant">input</span><span class="Constant">'</span> =&gt; <span class="Identifier">\&amp;do_input</span>,
+        <span class="Constant">'</span><span class="Constant">exit</span><span class="Constant">'</span> =&gt; <span class="Identifier">\&amp;do_exit</span>,
+    );
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_operation</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Constant">&quot;&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$line</span>;
+    <span class="Statement">while</span> (<span class="Constant">1</span>)
+    {
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the operation (print, input, exit):</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Identifier">$line</span> = &lt;&gt;;
+        <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$operations{$line}</span>))
+        {
+            <span class="Statement">last</span>;
+        }
+        <span class="Statement">else</span>
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Unknown operation!</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+        }
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$line</span>;
+}
+
+<span class="Statement">while</span> (! <span class="Identifier">$quit_program</span>)
+{
+    <span class="Statement">my</span> <span class="Identifier">$op</span> = get_operation();
+
+    <span class="Statement">my</span> <span class="Identifier">$operation_ref</span> = <span class="Identifier">$operations{$op}</span>;
+
+    <span class="Identifier">$operation_ref</span>-&gt;();
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--dynamic--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--calling--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--behaviour--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--DIR">Dynamic References to Functions</a>
+</div>
+<h1>
+2.3. Dynamic References to Functions
+</h1>
+<p>
+It is possible to define a dynamic reference to a function. The code of
+its function is written as part of the assignment expression and can see
+all the variables in the scope in which it was defined. Here's an
+example:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+<span class="Statement">my</span> <span class="Identifier">$increment</span>;
+
+{
+    <span class="Statement">my</span> <span class="Identifier">$counter</span>;
+    <span class="Comment"># The definition of a dynamic reference to function comes inside</span>
+    <span class="Comment"># a &quot;sub {&quot; ... &quot;}&quot; closure</span>
+    <span class="Identifier">$increment</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">print</span> <span class="Identifier">$counter</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">return</span> <span class="Identifier">$counter</span>++;
+    };
+}
+
+<span class="Statement">while</span> (<span class="Identifier">$increment</span>-&gt;() &lt; <span class="Constant">100</span>)
+{
+    <span class="Comment"># Do Nothing</span>
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--dynamic--behaviour--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--dispatch--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--DIR">Dynamic References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--behaviour--PAGE">Behaviour of Functions inside Functions</a>
+</div>
+<h1>
+2.3.1. Behaviour of Functions inside Functions
+</h1>
+<p>
+One can define such a reference to a function within another function. It
+is possible that this reference will be made accessible to the outside world
+after the outer function has terminated. In that case, the the inner function
+(which is called a <b>closure</b>) will remember all the relevant variables
+of the outer function.
+</p>
+<p>
+Note that if two calls were made to the outer function, then the two resulting
+closures are by no mean related. Thus, changes in the variables of one closure
+will not affect the other. (unless, of course, they are global to both).
+</p>
+<p>
+Here's an example to illustrate this:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">create_counter</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$counter</span> = <span class="Constant">0</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$counter_func</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">return</span> (<span class="Identifier">$counter</span>++);
+    };
+
+    <span class="Statement">return</span> <span class="Identifier">$counter_func</span>;
+}
+
+<span class="Statement">my</span> <span class="Identifier">@counters</span> = (<span class="Identifier">&amp;create_counter</span>(), <span class="Identifier">&amp;create_counter</span>());
+
+<span class="Comment"># Initialize the random number generator to a constant value;</span>
+<span class="Statement">srand</span>(<span class="Constant">24</span>);
+
+<span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Constant">1</span> .. <span class="Constant">100</span>)
+{
+    <span class="Comment"># This call generates a random number that is either 0 or 1</span>
+    <span class="Statement">my</span> <span class="Identifier">$which_counter</span> = <span class="Statement">int</span>(<span class="Statement">rand</span>(<span class="Constant">2</span>));
+
+    <span class="Statement">my</span> <span class="Identifier">$value</span> = <span class="Identifier">$counters[$which_counter]</span>-&gt;();
+
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$which_counter</span><span class="Constant"> = </span><span class="Identifier">$value</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--dynamic--dispatch--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--behaviour--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--lambda-calculus--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--DIR">Dynamic References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--dispatch--PAGE">Demo: A Dispatch Function</a>
+</div>
+<h1>
+2.3.2. Demo: A Dispatch Function
+</h1>
+<p>
+It is possible to define more than one closure inside a function. Here is
+an example that uses closures to create a simple object-like construct. The
+code here borrows heavily from the book
+<a href="http://www-mitpress.mit.edu/sicp/">"Structure and Interpretation of Computer Programs"</a> in which a similar code can be found written in Scheme.
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">create_bank_account</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Constant">0</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$deposit</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
+
+        <span class="Identifier">$total</span> += <span class="Identifier">$how_much</span>;
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">$print</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">my</span> <span class="Identifier">$title</span> = <span class="Statement">shift</span>;
+
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> has </span><span class="Identifier">$total</span><span class="Constant"> NIS.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">$can_extract</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
+
+        <span class="Statement">if</span> (<span class="Identifier">$how_much</span> &lt;= <span class="Constant">0</span>)
+        {
+            <span class="Statement">return</span>;
+        }
+
+        <span class="Statement">if</span> (<span class="Identifier">$total</span> &gt;= <span class="Identifier">$how_much</span>)
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> can afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+        <span class="Statement">else</span>
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> cannot afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">%ops</span> =
+        (
+            <span class="Constant">&quot;</span><span class="Constant">deposit</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$deposit</span>,
+            <span class="Constant">&quot;</span><span class="Constant">print</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$print</span>,
+            <span class="Constant">&quot;</span><span class="Constant">can_extract</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$can_extract</span>,
+        );
+
+    <span class="Statement">my</span> <span class="Identifier">$dispatch</span> =<span class="Identifier"> </span><span class="Statement">sub</span><span class="Identifier"> </span>{
+        <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>;
+
+        <span class="Comment"># Call the matching operation with the rest of the arguments.</span>
+        <span class="Identifier">$ops{$op}</span>-&gt;(<span class="Identifier">@_</span>);
+    };
+
+    <span class="Statement">return</span> <span class="Identifier">$dispatch</span>;
+}
+
+<span class="Comment"># Create ten bank accounts</span>
+<span class="Statement">my</span> <span class="Identifier">@accounts</span> = (<span class="Statement">map</span> { <span class="Identifier">&amp;create_bank_account</span>(<span class="Constant">&quot;</span><span class="Constant">Person #</span><span class="Constant">&quot;</span>.<span class="Identifier">$_</span>) } (<span class="Constant">0</span> .. <span class="Constant">9</span>));
+
+<span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;)
+{
+    <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+    <span class="Statement">my</span> <span class="Identifier">@components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s</span><span class="Special">+</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
+    <span class="Statement">my</span> <span class="Identifier">$account_index</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
+    <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
+
+    <span class="Identifier">$accounts[$account_index]</span>-&gt;(<span class="Identifier">$op</span>, <span class="Identifier">@components</span>);
+}
+
+<span class="Comment"># Usage:</span>
+<span class="Comment"># [Account Number] [Operation] [Parameters]</span>
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--refs_to_funcs--dynamic--lambda-calculus--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--dispatch--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--refs_to_funcs--DIR">References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--DIR">Dynamic References to Functions</a> → <a href="#page--refs_to_funcs--dynamic--lambda-calculus--PAGE">Lambda Calculus</a>
+</div>
+<h1>
+2.3.3. Lambda Calculus
+</h1>
+<p>
+There's a model for computer programs called Lambda Calculus which
+proves that declaring closures and executing them is enough to perform
+all the operations provided by a full-fledged programming language. Perl
+supports Lambda-Calculus in a very straight-forward way, due to its
+support of lexical scoping.
+</p>
+<p>
+Teaching Lambda-Calculus is out of the scope of this lecture, as well as
+pretty much off-topic. The interested reader is referred to the following
+links:
+</p>
+<ul>
+<li>
+<a href="http://perl.plover.com/lambda/">Mark Jason Dominus' Perl and Lambda
+Calculus Page</a>
+</li>
+<li>
+<a href="http://www.shlomifish.org/lecture/Lambda-Calculus/">My Own
+Lecture about Scheme and Lambda Calculus</a>
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page" id="page--modules--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--refs_to_funcs--dynamic--lambda-calculus--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--declaring--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a>
+</div>
+<h1>
+3. Perl Modules
+</h1>
+<p>
+Perl modules are namespaces that contain function and variables. Two distinct
+modules may each contain a function (or a variable) with the same name, yet
+the perl interpreter will be able to tell them apart. Furthermore, both
+functions can be invoked from the same code.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--modules--declaring--DIR" class="contents">3.1. Declaring a Package</a>
+<ul class="contents">
+<li><a href="#page--modules--declaring--where--PAGE" class="contents">3.1.1. Where to find a module</a>
+</li></ul>
+</li><li><a href="#page--modules--loading--DIR" class="contents">3.2. Loading Modules and Importing their Functions</a>
+<ul class="contents">
+<li><a href="#page--modules--loading--accessing--PAGE" class="contents">3.2.1. Accessing Functions from a Different Module</a>
+</li><li><a href="#page--modules--loading--exporting--PAGE" class="contents">3.2.2. Exporting and Importing Functions</a>
+</li><li><a href="#page--modules--loading--variables--PAGE" class="contents">3.2.3. Using Variables from a Different Namespace</a>
+</li></ul>
+</li><li><a href="#page--modules--begin_end--PAGE" class="contents">3.3. BEGIN and END</a>
+</li><li><a href="#page--modules--main--PAGE" class="contents">3.4. The "main" Namespace</a>
+</li><li><a href="#page--modules--difference--PAGE" class="contents">3.5. Difference between Namespaces and Modules</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--modules--declaring--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--declaring--where--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--declaring--DIR">Declaring a Package</a>
+</div>
+<h1>
+3.1. Declaring a Package
+</h1>
+<p>
+In order to designate that a code belongs to a different namespace
+you should use the <tt>package</tt> directive. For instance, if you want
+your module name to be "MyModule" your file should look something like
+this:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This is the file MyModule.pm</span>
+<span class="Comment">#</span>
+
+<span class="Statement">package</span><span class="Type"> MyModule;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">a_function</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+Note that a module has to return a true value to the perl interpreter, which
+explains the use of "1;".
+</p>
+<p>
+A namespace may contain sub-namespaces. To separate namespace components,
+use the <tt>::</tt> separator. For example:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This is the file Hoola/Hoop.pm</span>
+<span class="Comment">#</span>
+
+<span class="Statement">package</span><span class="Type"> Hoola::Hoop;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$counter</span> = <span class="Constant">0</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_counter</span>
+{
+    <span class="Statement">return</span> <span class="Identifier">$counter</span>++;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--modules--declaring--where--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--declaring--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--declaring--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--loading--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--declaring--DIR">Declaring a Package</a> → <a href="#page--modules--declaring--where--PAGE">Where to find a module</a>
+</div>
+<h1>
+3.1.1. Where to find a module
+</h1>
+<p>
+A module is a separate file that may contain one or more different
+namespaces. That file is found in a place that corresponds to the module's
+name. To find the filename of the module relative to the script's directory,
+replace every <tt>::</tt> with a slash and add ".pm" to the name of the
+last component.
+</p>
+<p>
+For instance: the <tt>MyModule</tt> module will be found in the file
+"MyModule.pm"; the <tt>Hello::World</tt> module will be found in the
+file "World.pm" under the Hello sub-directory; etc.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--modules--loading--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--declaring--where--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--loading--accessing--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--loading--DIR">Loading Modules and Importing their Functions</a>
+</div>
+<h1>
+3.2. Loading Modules and Importing their Functions
+</h1>
+<p>
+In order to have access to a module from within your script (or from
+within another module) you can use the <tt>use</tt> directive followed
+by the name of the module as it is deduced from its path. Here's
+an example: assume that the file "MyModule.pm" is this:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This is the file MyModule.pm</span>
+<span class="Comment">#</span>
+
+<span class="Statement">package</span><span class="Type"> MyModule;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">a_function</span>
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+And this is your script:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>MyModule;
+
+<span class="Comment"># Notice that we use &quot;::&quot; to call the function out of the module.</span>
+MyModule::a_function();
+</pre></div>
+<p>
+That way, the program will print "Hello, World!" on the screen.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--modules--loading--accessing--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--loading--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--loading--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--loading--exporting--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--loading--DIR">Loading Modules and Importing their Functions</a> → <a href="#page--modules--loading--accessing--PAGE">Accessing Functions from a Different Module</a>
+</div>
+<h1>
+3.2.1. Accessing Functions from a Different Module
+</h1>
+<p>
+As could be seen from the last example, once the module has been
+<tt>use</tt>'d, its functions can be invoked by typing the
+full path of the package followed by <tt>::</tt> and followed by
+the function name.
+</p>
+<p>
+Note that if you are in package <tt>Foo</tt> and you are trying to access
+functions from package <tt>Foo::Bar</tt>, then typing <tt>Bar::my_func()</tt>
+will not do. You have to type the full path of the module.
+(<tt>Foo::Bar::my_func()</tt> in our case)
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--modules--loading--exporting--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--loading--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--loading--accessing--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--loading--variables--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--loading--DIR">Loading Modules and Importing their Functions</a> → <a href="#page--modules--loading--exporting--PAGE">Exporting and Importing Functions</a>
+</div>
+<h1>
+3.2.2. Exporting and Importing Functions
+</h1>
+<p>
+It is possible to make a functions of your module automatically available
+in any other namespace or script that uses it. To do so one needs to
+type the following code fragment near the beginning of the module:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use </span>Exporter;
+
+<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA @EXPORT</span><span class="Constant">)</span>;
+
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Exporter</span><span class="Constant">)</span>;
+
+<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;</span><span class="Constant">function1</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">function2</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">function3</span><span class="Constant">&quot;</span>);
+</pre></div>
+<p>
+What this fragment does is make the module inherit the <tt>Exporter</tt>
+module which is a special Perl module that can export symbols. Then
+it declares the special variable <tt>@EXPORT</tt> which should be filled
+with all the functions that one wishes to export.
+</p>
+<p>
+Here is an example which has a module called "Calc" and a script that uses it:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># File: Calc.pm</span>
+<span class="Comment">#</span>
+<span class="Statement">package</span><span class="Type"> Calc;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>Exporter;
+
+<span class="PreProc">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA @EXPORT</span><span class="Constant">)</span>;
+
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Exporter</span><span class="Constant">)</span>;
+
+<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;</span><span class="Constant">gcd</span><span class="Constant">&quot;</span>);
+
+<span class="Comment"># This function calculates the greatest common divisor of two integers </span>
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">gcd</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$b</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">if</span> (<span class="Identifier">$b</span> &gt; <span class="Identifier">$a</span>)
+    {
+        (<span class="Identifier">$a</span>, <span class="Identifier">$b</span>) = (<span class="Identifier">$b</span> , <span class="Identifier">$a</span>);
+    }
+
+    <span class="Statement">while</span> (<span class="Identifier">$a</span> % <span class="Identifier">$b</span> &gt; <span class="Constant">0</span>)
+    {
+        (<span class="Identifier">$a</span>, <span class="Identifier">$b</span>) = (<span class="Identifier">$b</span>, <span class="Identifier">$a</span> % <span class="Identifier">$b</span>);
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$b</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>Calc;
+
+<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">200</span>;
+<span class="Statement">my</span> <span class="Identifier">$b</span> = <span class="Constant">15</span>;
+
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">gcd(</span><span class="Special">\$</span><span class="Constant">a,</span><span class="Special">\$</span><span class="Constant">b) == </span><span class="Constant">&quot;</span> , gcd(<span class="Identifier">$a</span>,<span class="Identifier">$b</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<p>
+As you can see, the script invokes the "gcd" function of the "Calc" module
+without having to invoke it with <tt>Calc::gcd()</tt>. Exporting functions
+like that should be used with care, as the function names may conflict with
+those of the importing namespace.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--modules--loading--variables--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--loading--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--loading--exporting--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--begin_end--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--loading--DIR">Loading Modules and Importing their Functions</a> → <a href="#page--modules--loading--variables--PAGE">Using Variables from a Different Namespace</a>
+</div>
+<h1>
+3.2.3. Using Variables from a Different Namespace
+</h1>
+<p>
+It is also possible to use the global variables of different
+packages. However, such variables need to be declared using the
+<tt>use vars qw($myvar1 @myvar2)</tt> construct.
+</p>
+<p>
+Here's an example for a module that defines a variable and another one that
+access it:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This file is MyVar.pm</span>
+<span class="Comment">#</span>
+<span class="Statement">package</span><span class="Type"> MyVar;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Comment"># Declare a namespace-scoped variable named $myvar.</span>
+<span class="PreProc">use vars</span> <span class="Constant">qw(</span><span class="Constant">$myvar</span><span class="Constant">)</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">print_myvar</span>
+{
+    <span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>MyVar;
+
+<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;
+
+MyVar::print_myvar();
+
+<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;</span><span class="Constant">World</span><span class="Constant">&quot;</span>;
+
+MyVar::print_myvar();
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--modules--begin_end--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--loading--variables--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--main--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--begin_end--PAGE">BEGIN and END</a>
+</div>
+<h1>
+3.3. BEGIN and END
+</h1>
+<p>
+There are two special code blocks for perl modules - <tt>BEGIN</tt> and
+<tt>END</tt>. These blocks are executed when a module is first loaded,
+and when the perl interpreter is about to unload it, respectively.
+</p>
+<p>
+Here's an example for a logging module that makes use of this facility:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># File : MyLog.pm</span>
+<span class="Comment">#</span>
+
+<span class="Statement">package</span><span class="Type"> MyLog;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">BEGIN</span>
+{
+    <span class="Statement">open</span> <span class="Identifier">MYLOG</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">mylog.txt</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">log</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$what</span> = <span class="Statement">shift</span>;
+
+    <span class="Comment"># Strip the string of newline characters</span>
+    <span class="Identifier">$what</span> =~ <span class="Statement">s/</span><span class="Special">\n</span><span class="Statement">//g</span>;
+
+    <span class="Comment"># The MYLOG filehandle is already open by virtue of the BEGIN</span>
+    <span class="Comment"># block.</span>
+    <span class="Statement">print</span> <span class="Identifier">MYLOG</span> <span class="Identifier">$what</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="PreProc">END</span>
+{
+    <span class="Statement">close</span>(<span class="Identifier">MYLOG</span>);
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--modules--main--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--begin_end--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--modules--difference--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--main--PAGE">The "main" Namespace</a>
+</div>
+<h1>
+3.4. The "main" Namespace
+</h1>
+<p>
+One can access the main namespace (i.e, the namespace of the script),
+from any other namespace by designating <tt>main</tt> as the
+namespace path. For instance, <tt>main::hello()</tt> will invoke
+the function named "hello" in the script file.
+</p>
+<p>
+Usually, the "main" part can be omitted and the symbols be accessed
+with the notation of <tt>::hello()</tt> alone.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--modules--difference--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--modules--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--main--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--modules--DIR">Perl Modules</a> → <a href="#page--modules--difference--PAGE">Difference between Namespaces and Modules</a>
+</div>
+<h1>
+3.5. Difference between Namespaces and Modules
+</h1>
+<ul>
+<li>
+A <b>namespace</b> or <b>package</b> is a container for
+<tt>MyPackage::MySubPack::my_func()</tt> symbols.
+</li>
+<li>
+A <b>module</b>, on the other hand, is a file that can contain
+any number of namespaces, or simply drop everything into the
+current namespace (although it shouldn't).
+</li>
+<li>
+It is possible to switch to other packages using the <tt>package</tt>
+statement. However, you then have to remember not to <tt>use</tt> them,
+because Perl will look for a file corresponding to that name.
+</li>
+<li>
+A <tt>module</tt> can put itself in a completely different namespace than
+its designated module name. (e.g: a module loaded with <tt>use TheModule;</tt>
+can declare all of its identifiers in the <tt>CompletelyDifferentPackage</tt>
+namespace.)
+</li>
+<li>
+If this is a bit confusing, then it should be.
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page" id="page--objects--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--modules--difference--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--how_it_works--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a>
+</div>
+<h1>
+4. Objects in Perl
+</h1>
+<ul class="contentsmain">
+<li><a href="#page--objects--how_it_works--PAGE" class="contents">4.1. How it Works behind the Scenes</a>
+</li><li><a href="#page--objects--object_use--DIR" class="contents">4.2. Object Use</a>
+<ul class="contents">
+<li><a href="#page--objects--object_use--methods--PAGE" class="contents">4.2.1. Calling the Methods of an Object</a>
+</li></ul>
+</li><li><a href="#page--objects--making--DIR" class="contents">4.3. Making Your Own Objects</a>
+<ul class="contents">
+<li><a href="#page--objects--making--constructor--PAGE" class="contents">4.3.1. The Constructor</a>
+</li><li><a href="#page--objects--making--methods--PAGE" class="contents">4.3.2. Defining Methods</a>
+</li><li><a href="#page--objects--making--inheritance--DIR" class="contents">4.3.3. Object Inheritance</a>
+<ul class="contents">
+<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overriden Methods of Base Classes</a>
+</li></ul>
+</li><li><a href="#page--objects--making--destructor--PAGE" class="contents">4.3.4. The Destructor</a>
+</li></ul>
+</li><li><a href="#page--objects--utils--PAGE" class="contents">4.4. Object Utility Functions - isa() and can()</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page" id="page--objects--how_it_works--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--object_use--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--how_it_works--PAGE">How it Works behind the Scenes</a>
+</div>
+<h1>
+4.1. How it Works behind the Scenes
+</h1>
+<p>
+An object is basically a reference to a hash where the hash members
+are the object member variables. That reference is "blessed" to be associated
+with a module. Whenever the programmer makes a method call, the methods
+are being searched starting from that module. That module is the object's
+class.
+</p>
+<p>
+Method calls in perl are done using the
+<tt>$object_ref-&gt;method_name(@args)</tt> notation. Note that in Perl,
+passing the object reference is done explicitly and it is the first argument
+passed to the function.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--objects--object_use--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--how_it_works--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--object_use--methods--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--object_use--DIR">Object Use</a>
+</div>
+<h1>
+4.2. Object Use
+</h1>
+<p>
+Let's demonstrate the object use cycle on a very useful Perl class
+called <tt>Data::Dumper</tt>. This class accepts a set of perl
+data structures, and renders them into a string which is an easy-to-read
+Perl representation of them.
+</p>
+<p>
+Here's a program that uses it to display a perl data structure on the
+screen:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Comment"># Import the Data::Dumper class</span>
+<span class="PreProc">use </span>Data::Dumper;
+
+<span class="Comment"># Define a sample data structure</span>
+<span class="Statement">my</span> <span class="Identifier">$data</span> =
+{
+    <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span> =&gt; [ <span class="Constant">5</span>, <span class="Constant">100</span>, <span class="Constant">3</span> ],
+    <span class="Constant">&quot;</span><span class="Constant">hello</span><span class="Constant">&quot;</span> =&gt;
+    {
+        <span class="Constant">&quot;</span><span class="Constant">yes</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">no</span><span class="Constant">&quot;</span>,
+        <span class="Constant">&quot;</span><span class="Constant">r</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">l</span><span class="Constant">&quot;</span>,
+    },
+};
+
+<span class="Comment"># Construct a Data::Dumper instance that is associated with this data</span>
+<span class="Statement">my</span> <span class="Identifier">$dumper</span> = Data::Dumper-&gt;<span class="Statement">new</span>([ <span class="Identifier">$data</span>], [ <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">data</span><span class="Constant">&quot;</span> ]);
+
+<span class="Comment"># Call its method that renders it into a string.</span>
+<span class="Statement">print</span> <span class="Identifier">$dumper</span><span class="Identifier">-&gt;Dump</span>();
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--object_use--methods--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--object_use--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--object_use--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--object_use--DIR">Object Use</a> → <a href="#page--objects--object_use--methods--PAGE">Calling the Methods of an Object</a>
+</div>
+<h1>
+4.2.1. Calling the Methods of an Object
+</h1>
+<p>
+To call the methods of an object, one should use the
+<tt>$object_ref-&gt;method_name(@args)</tt> notation.
+</p>
+<p>
+Note that internally the method receives <tt>$object_ref</tt>
+as its first argument.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--object_use--methods--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--constructor--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a>
+</div>
+<h1>
+4.3. Making Your Own Objects
+</h1>
+<p>
+As was said earlier, each one of your own classes, resides in a
+package of its own. The next step is to code a constructor for the class, so
+it will be easy to construct an instance of that class.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--constructor--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--methods--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--constructor--PAGE">The Constructor</a>
+</div>
+<h1>
+4.3.1. The Constructor
+</h1>
+<p>
+Here is an example, constructor for the class <tt>Foo</tt>:
+</p>
+<div class="code_block"><pre>
+<span class="Comment">#</span>
+<span class="Comment"># Foo.pm</span>
+<span class="Comment">#</span>
+<span class="Statement">package</span><span class="Type"> Foo;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">new</span>
+{
+    <span class="Comment"># Retrieve the package's string.</span>
+    <span class="Comment"># It is not necessarily Foo, because this constructor may be</span>
+    <span class="Comment"># called from a class that inherits Foo.</span>
+    <span class="Statement">my</span> <span class="Identifier">$class</span> = <span class="Statement">shift</span>;
+
+    <span class="Comment"># $self is the the object. Let's initialize it to an empty hash</span>
+    <span class="Comment"># reference.</span>
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = {};
+
+    <span class="Comment"># Associate $self with the class $class. This is probably the most</span>
+    <span class="Comment"># important step.</span>
+    <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
+
+    <span class="Comment"># Now we can retrieve the other arguments passed to the </span>
+    <span class="Comment"># construtor.</span>
+
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">Fooish</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$number</span> = <span class="Statement">shift</span> || <span class="Constant">5</span>;
+
+    <span class="Comment"># Put these arguments inside class members</span>
+    <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span><span class="Identifier">}</span> = <span class="Identifier">$name</span>;
+    <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">number</span><span class="Constant">'</span><span class="Identifier">}</span> = <span class="Identifier">$number</span>;
+
+    <span class="Comment"># Return $self so the user can use it.</span>
+    <span class="Statement">return</span> <span class="Identifier">$self</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+And here is an example script that uses this constructor:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>Foo;
+
+<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;<span class="Statement">new</span>(<span class="Constant">&quot;</span><span class="Constant">MyFoo</span><span class="Constant">&quot;</span>, <span class="Constant">500</span>);
+
+<span class="Statement">print</span> <span class="Identifier">$foo-&gt;{</span><span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span><span class="Identifier">}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--methods--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--constructor--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--inheritance--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--methods--PAGE">Defining Methods</a>
+</div>
+<h1>
+4.3.2. Defining Methods
+</h1>
+<p>
+You define a method for this class by defining a function in that namespace
+that accepts the object's instance as its first argument.
+</p>
+<p>
+Here are two example methods in the class <tt>Foo</tt>, that retrieve and set
+its name:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_name</span>
+{
+    <span class="Comment"># This step is necessary so it will be treated as a method</span>
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span> <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>};
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">assign_name</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Comment"># Notice that we can pass regular arguments from now on.</span>
+    <span class="Statement">my</span> <span class="Identifier">$new_name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">Fooish</span><span class="Constant">&quot;</span>;
+
+    <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>} = <span class="Identifier">$new_name</span>;
+
+    <span class="Statement">return</span> <span class="Constant">0</span>;
+}
+</pre></div>
+<p>
+And here's a script that makes use of these functions. Can you guess what its
+output would be?
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use </span>Foo;
+
+<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;<span class="Statement">new</span>(<span class="Constant">&quot;</span><span class="Constant">MyFoo</span><span class="Constant">&quot;</span>, <span class="Constant">500</span>);
+
+<span class="Statement">print</span> <span class="Identifier">$foo</span><span class="Identifier">-&gt;get_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Identifier">$foo</span><span class="Identifier">-&gt;assign_name</span>(<span class="Constant">&quot;</span><span class="Constant">Shlomi Fish</span><span class="Constant">&quot;</span>);
+
+<span class="Statement">print</span> <span class="Identifier">$foo</span><span class="Identifier">-&gt;get_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--inheritance--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--methods--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--inheritance--super--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--inheritance--DIR">Object Inheritance</a>
+</div>
+<h1>
+4.3.3. Object Inheritance
+</h1>
+<p>
+Now, let's suppose we would like to create a class similar to <tt>Foo</tt>,
+that's also keeps track of the number of times its name was assigned. While
+we can write a completely different object, we can <b>inherit</b> from Foo
+and use what we already have in place.
+</p>
+<p>
+Here's a class derived from <tt>Foo</tt> that has a method
+<tt>assign_name_ext</tt> that keeps track of the number of times it was
+called, and a method <tt>get_num_times_assigned</tt> that retrieves this
+number:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Bar;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="Comment"># @ISA is not lexically scoped so it has to be declared with </span>
+<span class="Comment"># use vars.</span>
+<span class="Comment">#</span>
+<span class="Comment"># qw(My Constant String) is equivalent to split(/\s+/, &quot;My Constant String&quot;)</span>
+<span class="PreProc">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+
+<span class="Comment"># We use Foo during our inheritance so we should load it.</span>
+<span class="PreProc">use </span>Foo;
+
+<span class="Comment"># This command actually inherits Foo.</span>
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Foo</span><span class="Constant">)</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">assign_name_ext</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
+
+    <span class="Comment"># Call the method of the base class</span>
+    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self</span><span class="Identifier">-&gt;assign_name</span>(<span class="Identifier">$name</span>);
+    <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
+    {
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span>++;
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$ret</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_num_times_assigned</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span>
+        (<span class="Statement">exists</span>(<span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span>) ?
+            <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span> :
+            <span class="Constant">0</span>
+        );
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--inheritance--super--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--making--inheritance--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--inheritance--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--making--destructor--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--inheritance--DIR">Object Inheritance</a> → <a href="#page--objects--making--inheritance--super--PAGE">Calling Overriden Methods of Base Classes</a>
+</div>
+<h1>
+4.3.3.1. Calling Overriden Methods of Base Classes
+</h1>
+<p>
+It is possible to explicitly call the method of a base class even if it
+was over-riden by another method in the derived class. To do that use
+the <tt>SUPER::</tt> prefix before the method name.
+</p>
+<p>
+Here is a rewrite of the <tt>Bar</tt> class, this time with
+<tt>assign_name</tt> retaining its name.
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Bar2;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+
+<span class="PreProc">use </span>Foo;
+
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Foo</span><span class="Constant">)</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">assign_name</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
+
+    <span class="Comment"># Call the method of the base class</span>
+    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self</span><span class="Identifier">-&gt;SUPER</span>::assign_name(<span class="Identifier">$name</span>);
+    <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
+    {
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span>++;
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$ret</span>;
+}
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_num_times_assigned</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span>
+        (<span class="Statement">exists</span>(<span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span>) ?
+            <span class="Identifier">$self-&gt;{</span><span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span><span class="Identifier">}</span> :
+            <span class="Constant">0</span>
+        );
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--making--destructor--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--making--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--inheritance--super--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--objects--utils--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--destructor--PAGE">The Destructor</a>
+</div>
+<h1>
+4.3.4. The Destructor
+</h1>
+<p>
+A destructor is a special method that is called whenever the instance
+of the class goes out of scope. To define a destructor in Perl just define
+a method by the name of <tt>DESTROY</tt>.
+</p>
+<p>
+To demonstrate it, I present a class derived from <tt>Bar2</tt> that
+prints the number of times it's name was assigned to the screen before it is destroyed:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Count;</span>
+
+<span class="PreProc">use strict</span>;
+<span class="PreProc">use warnings</span>;
+
+<span class="PreProc">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+
+<span class="PreProc">use </span>Bar2;
+
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Bar2</span><span class="Constant">)</span>;
+
+<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">DESTROY</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">My name was assigned </span><span class="Constant">&quot;</span> . <span class="Identifier">$self</span><span class="Identifier">-&gt;get_num_times_assigned</span>() . <span class="Constant">&quot;</span><span class="Constant"> times.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<hr />
+
+</div>
+<div class="page" id="page--objects--utils--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--objects--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--making--destructor--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--finale--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--utils--PAGE">Object Utility Functions - isa() and can()</a>
+</div>
+<h1>
+4.4. Object Utility Functions - isa() and can()
+</h1>
+<p>
+<tt>isa()</tt> is a special method that is accasible in every object. When
+invoked with the name of a package as an argument, it returns whether
+or not this object inherits from this package (directly or indirectly).
+</p>
+<p>
+<tt>can()</tt> is a method that determines if an object can execute the method
+by the name given to it as argument.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--finale--DIR">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--objects--utils--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--finale--links--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--finale--DIR">Finale</a>
+</div>
+<h1>
+5. Finale
+</h1>
+<p>
+Wise use of the elements taught in this lecture can make your Perl code
+more modular and allow for cleaner and more efficient code reuse.
+</p>
+<p>
+I hope you enjoyed this lecture and would make a good use of this knowledge.
+</p>
+<hr />
+
+</div>
+<div class="page" id="page--finale--links--PAGE">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--finale--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--finale--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<b>Next</b></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">Perl for Newbies, Lecture No. 3 : Modules and Objects</a> → <a href="#page--finale--DIR">Finale</a> → <a href="#page--finale--links--PAGE">Links and References</a>
+</div>
+<h1>
+5.1. Links and References
+</h1>
+<h2>Relevant Perl Man Pages</h2>
+<ul>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perlref.html">perlref</a> - The Perl References Man Page - covers references to functions.
+</li>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perlmod.html">perlmod</a> - The Perl Modules Introduction
+</li>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perlboot.html">perlboot</a> - Perl's Beginner's Object Oriented Tutorial
+</li>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perltoot.html">perltoot</a> - Tom's Object-Oriented Tutorial
+</li>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perlobj.html">perlobj</a> - The Perl Objects Man-Page
+</li>
+<li>
+<a href="http://aspn.activestate.com/ASPN/Products/ActivePerl/lib/Pod/perlbot.html">perlbot</a> - The Perl Bag of Object Tricks
+</li>
+</ul>
+<h2>Articles</h2>
+<ul>
+<li>
+<a href="http://www.perl.com/pub/a/2002/05/29/closure.html">Achieving Closure</a> - an article by Simon Cozens about closures.
+</li>
+</ul>
+<hr />
+
+</div>
+
+</body></html>
