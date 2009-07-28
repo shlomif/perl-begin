@@ -1,27 +1,4 @@
 #include '../template.wml'
+#include "perl-for-newbies.wml"
 
-<latemp_extra_head_elements>
-<link rel="stylesheet" href="style.css" />
-</latemp_extra_head_elements>
-
-<:{
-{
-    use strict;
-    use warnings;
-    use IO::All;
-
-    use Encode (qw(decode));
-
-    binmode STDOUT, ":utf8";
-
-    my $contents = io()
-        ->file("../lib/tutorials/perl-for-newbies/lect1-all-in-one/index.html")
-        ->slurp()
-        ;
-
-    $contents =~ s{.*<body[^>]*>}{}ms;
-    $contents =~ s{</body>.*}{}ms;
-
-    print decode("UTF-8", $contents);
-}
-}:>
+<perl_for_newbies_tutorial_page idx="1" />

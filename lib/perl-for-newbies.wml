@@ -5,3 +5,37 @@ Newbies Series</a></h3>
 
 %body
 </define-tag>
+
+<define-tag perl_for_newbies_tutorial_page>
+<preserve idx />
+<set-var %attributes />
+
+<latemp_extra_head_elements>
+<link rel="stylesheet" href="style.css" />
+</latemp_extra_head_elements>
+
+<:{
+{
+    use strict;
+    use warnings;
+    use IO::All;
+
+    use Encode (qw(decode));
+
+    my $idx = "<get-var idx />";
+
+    binmode STDOUT, ":utf8";
+
+    my $contents = io()
+        ->file("../lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
+        ->slurp()
+        ;
+
+    $contents =~ s{.*<body[^>]*>}{}ms;
+    $contents =~ s{</body>.*}{}ms;
+
+    print decode("UTF-8", $contents);
+}
+}:>
+<restore idx />
+</define-tag>
