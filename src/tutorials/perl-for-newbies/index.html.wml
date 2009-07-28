@@ -1,0 +1,28 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for Perl Newbies Online Tutorial" />
+
+<p>
+This is a public domain tutorial for Perl written by Shlomi Fish, who
+also created the Perl Beginners' Site.
+</p>
+
+<ul>
+<li>
+<a href="part1/">Part 1 - The Basics</a>
+</li>
+
+<li>
+<a href="part2/">Part 2 - More Advanced Topics</a>
+</li>
+
+<li>
+<a href="part3/">Part 3 - Modules, Packages and Objects</a>
+</li>
+
+<li>
+<a href="part4/">Part 4 - Useful Perl Paradigms</a>
+</li>
+
+</ul>
+
