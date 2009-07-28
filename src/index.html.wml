@@ -4,8 +4,9 @@
 
 <div class="full_width_notice">
 <p>
-Work with Perl for a living! <a href="$(ROOT)/learn/get-a-job/">Learn 
-More&hellip;</a>
+<b>Learn Perl Now!</b> <a href="$(ROOT)/learn/">Learn 
+More…</a> And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
+Perl.
 </p>
 </div>
 
