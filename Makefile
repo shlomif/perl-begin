@@ -22,10 +22,11 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 DOCS_COMMON_DEPS = template.wml lib/books.wml
 
-all: latemp_targets
+all: latemp_targets perl_for_newbies_extra_data
 
 include include.mak
 include rules.mak
+include p4n.mak
 
 upload: upload_hexten
 
