@@ -34,10 +34,10 @@ my $tree_contents =
             'title' => "External Links to Other Resources",
         },
         {
-            'text' => "Why?",
+            'text' => "Learn Perl Now",
             'url' => "learn/",
             role => "header",
-            title => "Why learn Perl?",
+            title => "Why and how to learn Perl?",
             'expand' => { 're' => "", },
             'subs' =>
             [
