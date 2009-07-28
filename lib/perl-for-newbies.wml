@@ -14,6 +14,8 @@ Newbies Series</a></h3>
 <link rel="stylesheet" href="style.css" />
 <style type="text/css">
 a:hover { background-color: transparent; }
+.page-nav-bar, .bread { display: none; }
+.page-nav-bar.vis, .bread.vis { display: block; }
 </style>
 </latemp_extra_head_elements>
 
