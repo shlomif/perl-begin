@@ -25,6 +25,18 @@ If you prefer a tutorial in something else besides English, check the
 
 <h2 id="our_list">Our List of Tutorials</h2>
 
+<perl_for_newbies_entry>
+
+<p>
+Intended for People with basic knowledge of C or something similar or even no 
+knowledge of any programming language at all. Contains verbose slides filled
+with explanation, examples and anecdotes. Covers a basic subset of Perl, 
+without too many "other ways to do it". (you are still expected to read the
+POD documents after the second lecture)
+</p>
+
+</perl_for_newbies_entry>
+
 <beginning_perl_entry>
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online. 
@@ -40,18 +52,6 @@ List of Recommended Online Tutorials</a></h3>
 <p>
 An authoritative list of recommended tutorials.
 </p>
-
-<perl_for_newbies_entry>
-
-<p>
-Intended for People with basic knowledge of C or something similar or even no 
-knowledge of any programming language at all. Contains verbose slides filled
-with explanation, examples and anecdotes. Covers a basic subset of Perl, 
-without too many "other ways to do it". (you are still expected to read the
-POD documents after the second lecture)
-</p>
-
-</perl_for_newbies_entry>
 
 <h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc 
 Tutorials</a></h3>
