@@ -12,6 +12,9 @@ Newbies Series</a></h3>
 
 <latemp_extra_head_elements>
 <link rel="stylesheet" href="style.css" />
+<style type="text/css">
+a:hover { background-color: transparent; }
+</style>
 </latemp_extra_head_elements>
 
 <:{
