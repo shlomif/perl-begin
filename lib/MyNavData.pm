@@ -64,8 +64,37 @@ my $tree_contents =
         {
             'text' => "Online Tutorials",
             'url' => "tutorials/",
+            show_always => 1,
             'subs' =>
             [
+                {
+                    'text' => "Perl for Newbies",
+                    'url' => "tutorials/perl-for-newbies/",
+                    'title' => "Perl Tutorial for Beginners",
+                    'subs' =>
+                    [
+                        {
+                            'text' => "Part 1",
+                            'url' => "tutorials/perl-for-newbies/part1/",
+                            'title' => "Perl Basics",
+                        },
+                        {
+                            'text' => "Part 2",
+                            'url' => "tutorials/perl-for-newbies/part2/",
+                            'title' => "Real Programming with Perl",
+                        },
+                        {
+                            'text' => "Part 3",
+                            'url' => "tutorials/perl-for-newbies/part3/",
+                            'title' => "Modules and Objects",
+                        },
+                        {
+                            'text' => "Part 4",
+                            'url' => "tutorials/perl-for-newbies/part4/",
+                            'title' => "Useful Perl Paradigms",
+                        },
+                    ],
+                },
                 {
                     'text' => "In Other Languages",
                     'url' => "tutorials/localized/",
