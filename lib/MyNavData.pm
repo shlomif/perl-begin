@@ -255,13 +255,6 @@ my $tree_contents =
             'url' => "site-resources/",
             'role' => "header",
             'show_always' => 1,
-            'subs' =>
-            [
-                {
-                    'text' => "More",
-                    'url' => "site-resources/more/",
-                },
-            ],
         },
         {
             'text' => "Contribute",
