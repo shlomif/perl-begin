@@ -1260,3 +1260,7 @@ div.bookinfo
     text-decoration: none;
 }
 
+pre
+{
+    line-height:1.4em;
+}
