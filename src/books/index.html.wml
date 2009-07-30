@@ -5,6 +5,7 @@
 <latemp_subject "Paper Books" />
 
 <ul>
+<li><a href="#note">Note</a></li>
 <li><a href="#beginners">Books for Beginners</a></li>
 <li><a href="#with_prev_knowledge">Books for Those with Previous Programming
 Knowledge</a></li>
@@ -12,7 +13,7 @@ Knowledge</a></li>
 <li><a href="./topics/">Books for Learning about Specialized Technologies</a></li>
 </ul>
 
-<h2 id="beginners">Note</h2>
+<h2 id="note">Note</h2>
 
 <p>
 It is not absolutely necessary to read an organized book, in order to learn 
@@ -22,7 +23,9 @@ pages. Here is a list of books that can teach you Perl with some remarks on
 each book.
 </p>
 
-<h2><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h2>
+<h2 id="beginners">Books for Beginners</h2>
+
+<h3><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
 
 <book:info 
     authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
@@ -54,7 +57,7 @@ Available online electronically for a registration as part of
 http://www.perl.org/books/beginning-perl/
 </define-tag>
 
-<h2><a href="<beginning_perl_url />">Beginning Perl</a></h2>
+<h3><a href="<beginning_perl_url />">Beginning Perl</a></h3>
 
 <book:info
     authors="James Lee"
@@ -75,7 +78,7 @@ The first edition of the book is
 <a href="<beginning_perl_url />">available online for free download</a>.
 </p>
 
-<h2><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h2>
+<h3><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
 
 <book:info 
     authors="Andrew L. Johnson" 
