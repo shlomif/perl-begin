@@ -33,7 +33,10 @@ registry</a>, where you can find more information, and reviews
 <a href="http://books.perl.org/book/137">Graphics Programming with Perl</a> (from Manning)
 </li>
 <li>
-<a href="http://books.perl.org/book/104">Perl &amp; LWP</a> - covers libwww-perl (or LWP for short) which can be used to automate web document retrieval.
+<a href="http://books.perl.org/book/104">Perl &amp; LWP</a> - covers
+libwww-perl (or LWP for short) which can be used to automate web document
+retrieval. <a href="http://lwp.interglacial.com/">A free <b>online copy</b>
+is also available</a>.
 </li>
 </ul>
 
