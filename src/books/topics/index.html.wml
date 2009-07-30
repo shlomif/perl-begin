@@ -43,5 +43,11 @@ retrieval. <a href="http://lwp.interglacial.com/">A free <b>online copy</b>
 is also available</a>.
 </li>
 
+<li>
+<a href="http://books.perl.org/book/154">Programming the Perl DBI</a> -
+a book about Perl's DBI - the Database Interface. Also see our
+<a href="$(ROOT)/uses/databases/">resources about working with databases</a>.
+</li>
+
 </ul>
 
