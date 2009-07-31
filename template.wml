@@ -39,6 +39,14 @@
 <latemp_get_breadcrumbs_trail_unconditionally />
 </define-tag>
 
+<latemp_extra_head_elements>
+<script type="text/javascript" src="$(ROOT)/js/jq.js"></script>
+{#PAGE_EXTRA_HEAD_ELEMENTS#}
+</latemp_extra_head_elements>
+
+<define-tag page_extra_head_elements endtag="required" whitespace="delete">
+{#PAGE_EXTRA_HEAD_ELEMENTS#:%body:##}
+</define-tag>
 
 <latemp_license>
 <p>
