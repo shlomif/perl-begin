@@ -2,6 +2,89 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_27_July_2009">27-July-2009: Updates to Perl-Begin.org</h2>
+
+<p>
+After the last news item, a lot of work was invested into <a href="$(ROOT)">Perl-Begin.org, the Perl Beginners' Site</a>, making
+it even better than it used to be. Here's a summary of the changes:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="$(ROOT)learn/who-is-using/">A testimonials page</a>
+was added, with some honest-to-God testimonial quotes which are now featured in
+the Testimonials side-bar.  
+</p>
+</li>
+
+<li>
+<p>
+There's a new <a href="$(ROOT)IDEs-and-tools/">IDEs and
+tools page</a>, featuring some Integrated Development Environments.
+</p>
+</li>
+
+<li>
+<p>
+There's a new <a href="$(ROOT)blogs/">page sporting links
+to collections of blogs</a>.
+</p>
+</li>
+
+<li>
+<p>
+Several new topical pages were added:
+</p>
+<ol>
+
+<li><a href="$(ROOT)uses/databases/">Perl and Databases</a></li>
+
+<li><a href="$(ROOT)uses/GUI/">GUI Development in Perl</a></li>
+
+<li><a href="$(ROOT)uses/xml/">Perl for XML Processing</a></li>
+
+<li><a href="$(ROOT)topics/debugging/">Debugging</a></li>
+
+<li><a href="$(ROOT)topics/object-oriented/">Object-oriented 
+Programming in Perl</a></li>
+
+<li><a href="$(ROOT)topics/cpan/">Using CPAN</a></li>
+</ol>
+
+</li>
+
+<li>
+<p>
+A <a href="http://sharethis.com/">ShareThis</a> button was added to the
+bottom of every page for easy bookmarking and sharing.
+</p>
+</li>
+
+<li>
+<p>
+Many writing errors (spelling, grammar, syntax, phrasing, etc.) have been
+corrected by <a href="http://alanhaggai.org/">Alan Haggai Alavi</a>. He
+seems to have a good eye for catching such problems, and I am indebted to
+him.
+</p>
+</li>
+
+<li>
+<p>
+Corrected several broken links including those to Ovid's CGI course.
+</p>
+</li>
+
+</ul>
+
+<p>
+We hope you enjoy the new Perl Beginners' Site and please recommend it
+to your friends. All content on Perl-Begin is made available under the Creative
+Commons Attribution Licence which allows almost unlimited re-use.
+</p>
+
 <h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
 
 <p>
