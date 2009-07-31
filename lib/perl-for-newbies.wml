@@ -12,19 +12,13 @@ Newbies Series</a></h3>
 
 <page_extra_head_elements>
 <link rel="stylesheet" href="style.css" />
-<style type="text/css">
-a:hover { background-color: transparent; }
-.page-nav-bar, .bread { display: none; }
-.page-nav-bar.vis, .bread.vis { display: block; }
-</style>
+<link rel="stylesheet" href="$(ROOT)/p4n.css" />
 <script type="text/javascript" src="$(ROOT)/js/toggle-nav-controls.js"></script>
 </page_extra_head_elements>
 
-<p>
-<a id="toggle_nav_control" 
-href="javascript:toggle_nav_control()" 
-class="toggle_nav_control off">Show Navigation Controls</a>
-</p>
+<button id="toggle_nav_control" 
+onclick="javascript:toggle_nav_control()" 
+class="toggle_nav_control off">Show Navigation Controls</button>
 
 <:{
 {
