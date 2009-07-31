@@ -1,26 +1,4 @@
 #include '../template.wml'
 #include "perl-for-newbies.wml"
 
-<script type="text/javascript">
-function toggle_nav_control() {
-    var elem = $("#toggle_nav_control");
-
-    if (elem.hasClass("off")) {
-        elem.text("Hide Navigation Controls");
-    }
-    else {
-        elem.text("Show Navigation Controls");
-    }
-    $(".page-nav-bar, .bread").toggleClass("vis");
-    elem.toggleClass("off");
-    elem.toggleClass("on");
-}
-</script>
-
-<p>
-<a id="toggle_nav_control" 
-href="javascript:toggle_nav_control()" 
-class="toggle_nav_control off">Show Navigation Controls</a>
-</p>
-
 <perl_for_newbies_tutorial_page idx="1" />
