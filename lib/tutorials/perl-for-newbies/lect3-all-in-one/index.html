@@ -1534,7 +1534,7 @@ Here are two example methods in the class <tt>Foo</tt>, that retrieve and set
 its name:
 </p>
 <div class="code_block"><pre>
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_name</span>
+<span class="Statement">sub </span><span class="Identifier">get_name</span>
 {
     <span class="Comment"># This step is necessary so it will be treated as a method</span>
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
@@ -1542,7 +1542,7 @@ its name:
     <span class="Statement">return</span> <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>};
 }
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">assign_name</span>
+<span class="Statement">sub </span><span class="Identifier">assign_name</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 

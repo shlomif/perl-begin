@@ -1,6 +1,8 @@
 #!/usr/bin/perl -w
 
 use strict;
+use warnings;
+
 
 my $a = "Hello";
 my $str = "There you go.";

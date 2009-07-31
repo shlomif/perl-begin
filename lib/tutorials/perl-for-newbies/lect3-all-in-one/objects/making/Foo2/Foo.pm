@@ -3,6 +3,9 @@
 #
 package Foo;
 
+use strict;
+use warnings;
+
 sub new
 {
     # Retrieve the package's string.

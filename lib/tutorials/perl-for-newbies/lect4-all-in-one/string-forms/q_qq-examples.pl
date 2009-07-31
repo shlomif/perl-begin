@@ -1,6 +1,8 @@
 #!/usr/bin/perl -w
 
 use strict;
+use warnings;
+
 
 my $h = q{Hello There};
 print qq|$h, world!\n|;

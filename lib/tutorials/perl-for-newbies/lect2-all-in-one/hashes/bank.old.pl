@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 while (1)
 {
     print "Please enter what you want to do:\n";

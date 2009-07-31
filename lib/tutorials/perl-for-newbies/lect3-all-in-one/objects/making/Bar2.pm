@@ -1,6 +1,7 @@
 package Bar2;
 
 use strict;
+use warnings;
 
 use vars qw(@ISA);
 

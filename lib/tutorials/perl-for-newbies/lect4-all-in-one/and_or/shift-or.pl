@@ -1,6 +1,8 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 use strict;
+use warnings;
+
 
 # shift by default shifts from @ARGV in the main program
 my $start = shift || 1;

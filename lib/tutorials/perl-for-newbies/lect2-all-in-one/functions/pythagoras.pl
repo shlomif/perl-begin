@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 sub pythagoras
 {
     my ($x, $y);

@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 open SEQ1, ">", "seq1.txt";
 open SEQ2, ">", "seq2.txt";
 

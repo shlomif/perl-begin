@@ -1,4 +1,5 @@
 use strict;
+use warnings;
 
 my @input = (
     "Hello World!",

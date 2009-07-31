@@ -577,10 +577,11 @@ As an example, here is the primes program, <tt>use strict</tt>-ed:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
 <span class="Statement">my</span> (<span class="Identifier">@primes</span>, <span class="Identifier">$i</span>);
 
-MAIN_LOOP: <span class="Statement">for</span>(
+<span class="Statement">MAIN_LOOP:</span> <span class="Statement">for</span>(
     <span class="Identifier">@primes</span>=(<span class="Constant">2</span>), <span class="Identifier">$i</span>=<span class="Constant">3</span> ;
     <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span> ;
     <span class="Identifier">$i</span>++
@@ -713,7 +714,10 @@ And here's another one for a function that calculates the hypotenuse of a
 right triangle according to its other sides:
 </p>
 <div class="code_block"><pre>
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">pythagoras</span>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">pythagoras</span>
 {
     <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>);
 
@@ -755,7 +759,10 @@ Here's an example where recursion is used to find all the permutations of
 splitting 10 among three numbers:
 </p>
 <div class="code_block"><pre>
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">mysplit</span>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">mysplit</span>
 {
     <span class="Statement">my</span> (<span class="Identifier">$total</span>, <span class="Identifier">$num_elems</span>, <span class="Identifier">@accum</span>) = <span class="Identifier">@_</span>;
     <span class="Statement">my</span> (<span class="Identifier">@ret</span>, <span class="Identifier">@new_accum</span>);
@@ -772,7 +779,7 @@ splitting 10 among three numbers:
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
     {
         <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
-        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span><span class="Constant">-1</span>, <span class="Identifier">@new_accum</span>);
+        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span>-<span class="Constant">1</span>, <span class="Identifier">@new_accum</span>);
     }
 }
 
@@ -825,7 +832,10 @@ Here is the split program from the previous slide, which was
 re-written using <tt>shift</tt>:
 </p>
 <div class="code_block"><pre>
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">mysplit</span>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">mysplit</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$num_elems</span> = <span class="Statement">shift</span>;
@@ -844,7 +854,7 @@ re-written using <tt>shift</tt>:
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
     {
         <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
-        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span><span class="Constant">-1</span>, <span class="Identifier">@new_accum</span>);
+        mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$a</span>, <span class="Identifier">$num_elems</span>-<span class="Constant">1</span>, <span class="Identifier">@new_accum</span>);
     }
 }
 
@@ -982,6 +992,9 @@ sequnce 1, 1.1, 2, 2.1, 3, 3.1... and to the other the sequence 1, 1.5, 2, 2.5
 , 3, 3.5...
 </p>
 <div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 <span class="Statement">open</span> <span class="Identifier">SEQ1</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">seq1.txt</span><span class="Constant">&quot;</span>;
 <span class="Statement">open</span> <span class="Identifier">SEQ2</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">seq2.txt</span><span class="Constant">&quot;</span>;
 
@@ -989,8 +1002,8 @@ sequnce 1, 1.1, 2, 2.1, 3, 3.1... and to the other the sequence 1, 1.5, 2, 2.5
 {
     <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> (<span class="Identifier">$a</span><span class="Constant">+0.1</span>);
-    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> (<span class="Identifier">$a</span><span class="Constant">+0.5</span>);
+    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> (<span class="Identifier">$a</span>+<span class="Constant">0.1</span>);
+    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> (<span class="Identifier">$a</span>+<span class="Constant">0.5</span>);
     <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
@@ -1282,10 +1295,11 @@ present in the string:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
 
-<span class="Statement">if</span> (<span class="Identifier">$string</span> =~<span class="Statement"> /</span><span class="Special">\$</span><span class="Special">[A-Za-z_]</span><span class="Statement">/</span>)
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Special">\$</span><span class="Special">[A-Za-z_]</span><span class="Statement">/</span>)
 {
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
@@ -1652,6 +1666,9 @@ If you wish them to match as little as possible, append a question mark
 (<tt>?</tt>) after them. Here's an example:
 </p>
 <div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Constant">&quot;</span><span class="Constant">&lt;html&gt;Hello&lt;/html&gt;You&lt;/html&gt;</span><span class="Constant">&quot;</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$greedy</span> = <span class="Identifier">$string</span>;
@@ -2077,6 +2094,9 @@ it does not matter which one will come first.
 The following example sorts an array of integers numerically:
 </p>
 <div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 <span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">100</span>,<span class="Constant">5</span>,<span class="Constant">8</span>,<span class="Constant">92</span>,-<span class="Constant">7</span>,<span class="Constant">34</span>,<span class="Constant">29</span>,<span class="Constant">58</span>,<span class="Constant">8</span>,<span class="Constant">10</span>,<span class="Constant">24</span>);
 
 <span class="Statement">my</span> <span class="Identifier">@sorted_array</span> =
@@ -2130,6 +2150,9 @@ zero if they are equal.
 example could be re-written as:
 </p>
 <div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 <span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">100</span>,<span class="Constant">5</span>,<span class="Constant">8</span>,<span class="Constant">92</span>,-<span class="Constant">7</span>,<span class="Constant">34</span>,<span class="Constant">29</span>,<span class="Constant">58</span>,<span class="Constant">8</span>,<span class="Constant">10</span>,<span class="Constant">24</span>);
 
 <span class="Statement">my</span> <span class="Identifier">@sorted_array</span> = (<span class="Statement">sort {</span> <span class="Identifier">$a</span> &lt;=&gt; <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@array</span>);
@@ -2142,6 +2165,7 @@ in reverse:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
 <span class="Statement">my</span> <span class="Identifier">@input</span> = (
     <span class="Constant">&quot;</span><span class="Constant">Hello World!</span><span class="Constant">&quot;</span>,

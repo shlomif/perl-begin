@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 my $string = "<html>Hello</html>You</html>";
 
 my $greedy = $string;

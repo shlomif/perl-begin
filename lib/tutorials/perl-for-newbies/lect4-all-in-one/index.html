@@ -756,6 +756,8 @@ be placed. And likewise for the other strings. Here are some examples:
 <span class="PreProc">#!/usr/bin/perl -w</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 
 <span class="Statement">my</span> <span class="Identifier">$h</span> = <span class="Constant">q{</span><span class="Constant">Hello There</span><span class="Constant">}</span>;
 <span class="Statement">print</span> <span class="Constant">qq|</span><span class="Identifier">$h</span><span class="Constant">, world!</span><span class="Special">\n</span><span class="Constant">|</span>;
@@ -768,7 +770,7 @@ be placed. And likewise for the other strings. Here are some examples:
 <span class="Statement">my</span> <span class="Identifier">@a</span> = <span class="Constant">qw{</span><span class="Constant">one two three</span><span class="Constant">}</span>;
 <span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Constant">0</span> .. <span class="Identifier">$#a</span>)
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">$i: </span><span class="Identifier">$a</span><span class="Constant">[</span><span class="Identifier">$i</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Identifier">$a</span><span class="Constant">[</span><span class="Identifier">$i</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -822,6 +824,8 @@ Here is an example:
 <span class="PreProc">#!/usr/bin/perl -w</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 
 <span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;
 <span class="Statement">my</span> <span class="Identifier">$str</span> = <span class="Constant">&quot;</span><span class="Constant">There you go.</span><span class="Constant">&quot;</span>;
@@ -914,9 +918,10 @@ array as command line arguments.
 Here are some examples, that will only work on UNIX systems.
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
 <span class="Statement">system</span>(<span class="Constant">&quot;</span><span class="Constant">ls -l /</span><span class="Constant">&quot;</span>);
 
@@ -1125,13 +1130,15 @@ evaluated. Thus, <tt>||</tt> is useful for assigning default values,
 like this:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 
 <span class="Comment"># shift by default shifts from @ARGV in the main program</span>
 <span class="Statement">my</span> <span class="Identifier">$start</span> = <span class="Statement">shift</span> || <span class="Constant">1</span>;
-<span class="Statement">my</span> <span class="Identifier">$end</span> = <span class="Statement">shift</span> || (<span class="Identifier">$start</span><span class="Constant">+9</span>);
+<span class="Statement">my</span> <span class="Identifier">$end</span> = <span class="Statement">shift</span> || (<span class="Identifier">$start</span>+<span class="Constant">9</span>);
 
 <span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Identifier">$start</span> .. <span class="Identifier">$end</span>)
 {
@@ -1169,9 +1176,11 @@ according to the last name and if this is equal according to the first
 name as well, you can write the following:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
 
 <span class="Statement">my</span> <span class="Identifier">@array</span> =
 (
@@ -1317,22 +1326,24 @@ to be the value of the exception or undef if none was caught.
 Here's an example:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">read_text</span>
+
+<span class="Statement">sub </span><span class="Identifier">read_text</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../hello/there.txt</span><span class="Constant">&quot;</span> ;
     <span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
         <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open </span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>;
-    <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;I&gt;);
+    <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,<span class="Identifier">&lt;I&gt;</span>);
     <span class="Statement">close</span>(<span class="Identifier">I</span>);
 
     <span class="Statement">return</span> <span class="Identifier">$text</span>;
 }
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">write_text</span>
+<span class="Statement">sub </span><span class="Identifier">write_text</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../there/hello.txt</span><span class="Constant">&quot;</span>;
@@ -1342,14 +1353,14 @@ Here's an example:
     <span class="Statement">close</span>(<span class="Identifier">O</span>);
 }
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">read_and_write</span>
+<span class="Statement">sub </span><span class="Identifier">read_and_write</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$text</span> = read_text();
 
     write_text(<span class="Identifier">$text</span>);
 }
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">perform_transaction</span>
+<span class="Statement">sub </span><span class="Identifier">perform_transaction</span>
 {
     <span class="Statement">eval</span> {
     read_and_write();
@@ -1487,11 +1498,13 @@ Use <tt>closedir()</tt> to close an opened directory.
 Here's an example that counts the number of mp3s in a directory:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
-<span class="Statement">sub</span><span class="Identifier"> </span><span class="Identifier">get_dir_files</span>
+
+<span class="Statement">sub </span><span class="Identifier">get_dir_files</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
 
@@ -1502,13 +1515,13 @@ Here's an example that counts the number of mp3s in a directory:
     <span class="Identifier">@entries</span> = <span class="Statement">readdir</span>(<span class="Identifier">D</span>);
     <span class="Statement">closedir</span>(<span class="Identifier">D</span>);
 
-    <span class="Statement">return</span> <span class="Identifier">\@entries</span>;
+    <span class="Statement">return</span> \<span class="Identifier">@entries</span>;
 }
 
 <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">.</span><span class="Constant">&quot;</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$entries</span> = get_dir_files(<span class="Identifier">$dir_path</span>);
-<span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep</span> { <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> } <span class="Identifier">@$entries</span>);
+<span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep {</span> <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> <span class="Statement">}</span> <span class="Identifier">@$entries</span>);
 
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">You have </span><span class="Constant">&quot;</span> . <span class="Statement">scalar</span>(<span class="Identifier">@mp3s</span>) . <span class="Constant">&quot;</span><span class="Constant"> mp3s in </span><span class="Identifier">$dir_path</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -1555,9 +1568,10 @@ Here's an example that replaces bytes 64-127 in a file with their rot13
 equivalent:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl -w</span>
+<span class="PreProc">#!/usr/bin/perl</span>
 
 <span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
 
 <span class="Statement">use </span>Fcntl;
 
