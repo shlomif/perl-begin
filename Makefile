@@ -41,10 +41,16 @@ upload_iglu: all
 
 upload_beta: all
 	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/__Beta-Quop/)
+
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 upload_home: all
 	(cd dest && $(RSYNC) -a * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
+
+update_p4n:
+	touch src/tutorials/perl-for-newbies/*/*.wml
+
+rebuild_p4n: update_p4n all
 
 # .PHONY: 
 # 
