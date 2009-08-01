@@ -5,11 +5,17 @@
 <h2 id="about">About</h2>
 
 <p>
-Welcome to the unofficial Perl Beginners' Site. This site provides
-links and references to on-line and off-line material that can be used
-to learn Perl. This site is directed both for people who learn Perl 
-after knowing one or more languages, or for people who are learning
-Perl as their first language.
+Welcome to the Perl Beginners' Site. The mission of perl-begin.org is to
+provide Perl newcomers with the most high-quality and accessible material
+and references for learning the Perl progrmaming language as easily, as 
+accurately and as efficiently as possible. 
+</p>
+
+<p>
+This site provides links and references to on-line and off-line material
+that can be used to learn Perl. This site is directed both at people who
+learn Perl after knowing one or more languages, or at people who are
+learning Perl as their first language.
 </p>
 
 <h2 id="revamp">Site Revamp</h2>
