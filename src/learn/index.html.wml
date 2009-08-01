@@ -6,8 +6,28 @@
 
 <p>
 <a href="$(ROOT)/resources/"><b>See our resources for Perl Beginners</b></a> 
-and browse the site on its navigation menu.
+and browse the site on its navigation menu. Among them are:
 </p>
+
+<ul>
+
+<li>
+<a href="$(ROOT)/tutorials/">Online Tutorials</a> - online tutorials for
+learning Perl. Also see our 
+<a href="$(ROOT)/tutorials/perl-for-newbies/">local tutorial</a>.
+</li>
+
+<li>
+<a href="$(ROOT)/books/">Books</a> - some of them are legally available
+online.
+</li>
+
+<li>
+<a href="$(ROOT)/core-doc/">The Perl Core Documentation</a> - what ships
+with Perl. Contains topical tutorials and references.
+</li>
+
+</ul>
 
 <h2 id="why-learn"><strong>Why</strong> should I learn Perl?</h2>
 
