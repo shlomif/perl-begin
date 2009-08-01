@@ -35,6 +35,21 @@
 {#PERL_BEGIN_NEWS#:%body:##}
 </define-tag>
 
+<define-tag perl_begin_sidebar endtag="required" whitespace="delete">
+{#!PERL_BEGIN_SIDEBAR!#:%body:##}
+</define-tag>
+
+<perl_begin_sidebar>
+    <!-- SIDEBAR -->
+    <h3 class="hide">Sidebar</h3>    
+    <div class="sidebar sidebar-font">
+
+      {#PERL_BEGIN_NEWS#}
+
+    </div>
+    <!-- END WRAP CONTENT AND SIDEBAR -->
+</perl_begin_sidebar>
+
 <define-tag latemp_theme_breadcrumbs_trail_html>
 <latemp_get_breadcrumbs_trail_unconditionally />
 </define-tag>
@@ -105,7 +120,7 @@ Attribution License version 2.0</a> (or at your option any later version).
 </p>
 </latemp_webmaster>
 
-<body>
+<body{#LATEMP_BODY_ATTRIBUTES#}>
 
   <div id="page-container">
 
@@ -164,15 +179,8 @@ Attribution License version 2.0</a> (or at your option any later version).
 ;;;        </div>
 ;;;      </div>
     </div>
-    <!-- SIDEBAR -->
-    <h3 class="hide">Sidebar</h3>    
-    <div class="sidebar sidebar-font">
-
-      {#PERL_BEGIN_NEWS#}
-
-    </div>
     
-    <!-- END WRAP CONTENT AND SIDEBAR -->
+    {#PERL_BEGIN_SIDEBAR#}
     </div>    
     
     <!-- FOOTER -->

@@ -352,6 +352,11 @@ body {
     background-color: rgb(255,255,255);	
 }
 
+.no-news .content
+{
+    width: 550px;
+}
+
 /*-------------------------*/
 /* Section 6.2 - Pagetitle */
 /*-------------------------*/
