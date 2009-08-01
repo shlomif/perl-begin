@@ -1264,3 +1264,8 @@ pre
 {
     line-height:1.4em;
 }
+
+h2 strong
+{
+    color: #F00;
+}
