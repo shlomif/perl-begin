@@ -179,12 +179,17 @@ body {
 /*************************************/
 
 .sidebanner-frontpage {
-	clear: both; float: left; width: 160px; margin: 0px; padding: 0px;
+	clear: both;
+    float: left;
+    width: 209px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .navbar-sidebanner {
 	width: 160px; 
     margin: 20pt 20pt 20pt 5pt; 
+    padding-right: 1em;
     padding-bottom: 3em;
     padding-top: 1.5em;
     background-color: #CCE0FF;
@@ -197,6 +202,7 @@ body {
 }
 
 .navbar-sidebanner h2 {
+     font-size: 110%;
      margin-left: 7pt;
 }
 
@@ -308,7 +314,7 @@ body {
 .container-content-sidebar
 {
    float: left;
-   width: 620px;
+   width: 550px;
    min-height: 1200px;
    margin: 0px;
    padding: 0px;
@@ -340,9 +346,9 @@ body {
 .content
 {
 	float: left;
-    width: 425px;
+    width: 370px;
     margin: 0px;
-    padding: 30px 20px 0px 20px;
+    padding: 30px 20px 0px 10px;
     background-color: rgb(255,255,255);	
 }
 
@@ -552,7 +558,11 @@ p.tabledata-caption {
 /*-----------------------------------------------*/
 
 .sidebar {
-	 float: right; width: 144px; margin: 0px ; padding: 57px 5px 0px 0px; background-color: rgb(255,255,255);
+	 float: right;
+     width: 144px;
+     margin: 0px;
+     padding: 57px 5px 0px 0px;
+     background-color: rgb(255,255,255);
 }
 
 /*-----------------------*/
