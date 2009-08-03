@@ -11,8 +11,7 @@
 	<meta name="CLASSIFICATION" content="Perl Training Manual FAQ Beginners Guide Learn Perl Reference Manual">
 	<meta name="DESCRIPTION" content="This is a Perl Training manual and reference manual. It is geared towards people who are somewhat familiar with at least one programming language. It covers everything from the basics of variables to the advanced topics like Object Oriented Programming and regular expressions. Please check the authors website to make sure you have the latest copy: www.greglondon.com  Enjoy! Have fun! And spread the word.">
 	<meta name="KEYWORDS" content="Perl Training Manual FAQ Beginners Guide Learn Perl Reference Manual">
-	<style>
-	<!--
+	<style type="text/css">
 		@page { size: 8.5in 11in; margin-left: 1.25in; margin-right: 1.25in; margin-top: 1in; margin-bottom: 1in }
 		P { margin-bottom: 0.08in; page-break-inside: avoid; page-break-before: auto }
 		P.western { font-family: "Times", serif; font-weight: medium }
@@ -45,7 +44,6 @@
 		P.text-body-preceding-code-block-western { font-family: "Times", serif; font-weight: medium; page-break-after: avoid }
 		P.text-body-preceding-code-block-cjk { page-break-after: avoid }
 		P.text-body-preceding-code-block-ctl { page-break-after: avoid }
-	-->
 	</style>
 </head><body dir="LTR" lang="en-US">
 <p class="western" style="margin-bottom: 0in;"><br>
@@ -129,8 +127,8 @@ you.</font></p>
 </p>
 <p class="western" style="margin-bottom: 0in;"><br>
 </p>
-<div id="Table of Contents1" dir="LTR" style="background: transparent none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">
-	<div id="Table of Contents1_Head" dir="LTR">
+<div id="Table-of-Contents1" dir="LTR" style="background: transparent none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">
+	<div id="Table-of-Contents1_Head" dir="LTR">
 		<p style="margin-top: 0.17in; page-break-after: avoid;"><font face="Courier, monospace"><font style="font-size: 16pt;" size="4"><b>Table
 		of Contents</b></font></font></p>
 	</div>
@@ -1823,7 +1821,7 @@ strings and for comparing numbers.
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: avoid;">
 <br>
 </p>
-<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="100%" rules="NONE" bgcolor="#ffffff" border="1" bordercolor="#000000">
+<table style="page-break-inside: avoid; border: black solid thin;" cellpadding="4" cellspacing="0" width="100%" rules="NONE" bgcolor="#ffffff">
 	<col width="85*">
 	<col width="88*">
 	<col width="82*">
@@ -1982,7 +1980,7 @@ set has a higher precedence than the other set.
 The higher precedence logical operators are the '&amp;&amp;', '||',
 and '!' operators.</p>
 <div align="RIGHT">
-	<table style="page-break-after: avoid; page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="605" border="1" bordercolor="#000000">
+	<table style="page-break-after: avoid; page-break-inside: avoid; border: black solid thin;" cellpadding="4" cellspacing="0" width="605">
 		<col width="56">
 		<col width="58">
 		<col width="117">
@@ -2077,7 +2075,7 @@ and '!' operators.</p>
 <p class="western" style="page-break-before: auto; page-break-after: avoid;">
 The lower precedence logical operators are the 'and', 'or', 'not',
 and 'xor' operators.</p>
-<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="605" border="1" bordercolor="#000000">
+<table style="page-break-inside: avoid; border: black solid thin;" cellpadding="4" cellspacing="0" width="605">
 	<col width="56">
 	<col width="58">
 	<col width="124">
@@ -3804,7 +3802,7 @@ where you live because it lists your home address. Your license is a
 "reference". The "referent" is your home. And if
 you have forgotten where you live, you can take your license and
 "dereferencing" it to get yourself home.</p>
-<p class="western"><img src="iperl_files/iperl_html_m2efc85d6.jpg" name="Graphic1" height="136" width="606" align="LEFT" border="0"><br clear="LEFT"><br><br>
+<p class="western"><img src="iperl_files/iperl_html_m2efc85d6.jpg" height="136" width="606" align="LEFT" border="0" alt="references demo"><br clear="LEFT"><br><br>
 </p>
 <p class="western">It is possible that you have roommates, which
 would mean multiple references exist to point to the same home. But
@@ -3860,8 +3858,7 @@ dereference their licenses and get into the original %home hash.</p>
 <font face="Courier, monospace">&gt;          'fish' =&gt; 3</font></p>
 <p style="margin-left: 0.8in; margin-bottom: 0.14in; page-break-after: auto;">
 <font face="Courier, monospace">&gt;        };</font></p>
-<h3 class="western" style="page-break-inside: avoid;"><a name="2.5.1.Named Referents|outline"></a>
-2.5.1 Named Referents</h3>
+<h3 class="western" style="page-break-inside: avoid;" id="sec2.5.1.Named-Referents-outline">2.5.1 Named Referents</h3>
 <p class="text-body-preceding-code-block-western">A referent is any
 original data structure: a scalar, array, or hash. Below, we declare
 some named referents: age, colors, and pets. 
@@ -5673,13 +5670,13 @@ subroutine, use caller(0).</p>
 <p class="western" style="page-break-before: auto; page-break-after: avoid;">
 The caller() function returns a list of information in the following
 order</p>
-<table style="page-break-after: avoid; page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="593" border="1" bordercolor="#000000">
+<table style="page-break-after: avoid; page-break-inside: avoid; border: black solid thin;" cellpadding="4" cellspacing="0" width="593">
 	<col width="54">
 	<col width="117">
 	<col width="396">
 	<thead>
 		<tr>
-			<td sdval="0" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">0</font></p>
 			</td>
@@ -5695,7 +5692,7 @@ order</p>
 	</thead>
 	<tbody>
 		<tr>
-			<td sdval="1" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">1</font></p>
 			</td>
@@ -5709,7 +5706,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="2" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">2</font></p>
 			</td>
@@ -5724,7 +5721,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="3" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">3</font></p>
 			</td>
@@ -5738,7 +5735,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="4" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">4</font></p>
 			</td>
@@ -5753,7 +5750,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="5" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">5</font></p>
 			</td>
@@ -5767,7 +5764,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="6" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">6</font></p>
 			</td>
@@ -5781,7 +5778,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="7" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">7</font></p>
 			</td>
@@ -5796,7 +5793,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="8" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">8</font></p>
 			</td>
@@ -5810,7 +5807,7 @@ order</p>
 			</td>
 		</tr>
 		<tr>
-			<td sdval="9" sdnum="1033;" valign="BOTTOM" width="54">
+			<td valign="BOTTOM" width="54">
 				<p class="western" style="page-break-inside: avoid; page-break-after: avoid;" align="RIGHT">
 				<font face="Courier, monospace">9</font></p>
 			</td>
@@ -6647,7 +6644,7 @@ it. If this approach does not work for your application, you can
 change it with a module from CPAN.</p>
 <p class="western" style="page-break-after: avoid;">Imagine a Child
 module has the following family inheritance tree:</p>
-<p class="western" style="page-break-after: avoid;"><img src="iperl_files/iperl_html_m5238e28d.jpg" name="Graphic2" height="244" width="606" align="LEFT" border="0"><br clear="LEFT"><br><br>
+<p class="western" style="page-break-after: avoid;"><img src="iperl_files/iperl_html_m5238e28d.jpg" height="244" width="606" align="LEFT" border="0" alt="inheritance diagram"><br clear="LEFT"><br><br>
 </p>
 <p class="text-body-preceding-code-block-western">Perl will search
 for Child-&gt;Method through the inheritance tree in the following
@@ -8594,10 +8591,9 @@ in perl regular expression patterns:</p>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
  
 </p>
-<dl>
 	<dl>
 		<dd>
-		<table style="page-break-after: avoid; page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="528" border="1" bordercolor="#000000">
+		<table style="page-break-after: avoid; page-break-inside: avoid; border: black solid thin;" cellpadding="4" cellspacing="0" width="528">
 			<col width="51">
 			<col width="459">
 			<tbody><tr valign="TOP">
@@ -8726,7 +8722,6 @@ in perl regular expression patterns:</p>
 			</tr>
 		</tbody></table>
 	</dd></dl>
-</dl>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
 <br>
 </p>
@@ -9031,7 +9026,7 @@ as metacharacters and are interpreted as simple literal characters.
 <p class="text-body-preceding-code-block-western">Characters classes
 have their own special metacharacters.</p>
 <div align="RIGHT">
-	<table style="page-break-before: auto; page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="527" border="1" bordercolor="#000000">
+	<table style="page-break-before: auto; page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="527">
 		<col width="71">
 		<col width="438">
 		<tbody><tr valign="TOP">
@@ -9080,7 +9075,7 @@ have their own special metacharacters.</p>
 <p class="text-body-preceding-code-block-western">Perl has shortcut
 character classes for some more common classes.</p>
 <div align="RIGHT">
-	<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="526" border="1" bordercolor="#000000">
+	<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="526">
 		<col width="71">
 		<col width="132">
 		<col width="298">
@@ -9183,7 +9178,7 @@ match as many characters as possible and still be true.</p>
 <br>
 </p>
 <div align="RIGHT">
-	<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="526" border="1" bordercolor="#000000">
+	<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="526">
 		<col width="110">
 		<col width="398">
 		<tbody><tr valign="TOP">
@@ -9255,7 +9250,7 @@ after a quantifier disables greedyness, making them "non-greedy",
 "thrifty", or "minimal" quantifiers. Minimal
 quantifiers match as few characters as possible and still be true.</p>
 <div align="RIGHT">
-	<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="525" border="1" bordercolor="#000000">
+	<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="525">
 		<col width="110">
 		<col width="397">
 		<tbody><tr valign="TOP">
@@ -9345,7 +9340,7 @@ within the string. If a position anchor occurs within a pattern, the
 pattern before and after that anchor must occur within a certain
 position within the string.</p>
 <div align="RIGHT">
-	<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="526" border="1" bordercolor="#000000">
+	<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="526">
 		<col width="61">
 		<col width="448">
 		<tbody><tr valign="TOP">
@@ -9602,10 +9597,9 @@ modifiers can be used with m{}, s{}{}, or tr{}{}.</p>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
 <br>
 </p>
-<dl>
 	<dl>
 		<dd>
-		<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="526" border="1" bordercolor="#000000">
+		<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="526">
 			<col width="72">
 			<col width="436">
 			<tbody><tr valign="TOP">
@@ -9681,7 +9675,6 @@ modifiers can be used with m{}, s{}{}, or tr{}{}.</p>
 			</tr>
 		</tbody></table>
 	</dd></dl>
-</dl>
 <p class="western" style="page-break-inside: avoid; page-break-before: auto; page-break-after: auto;">
 <br><br>
 </p>
@@ -9834,10 +9827,9 @@ associated with the match.</p>
 20.12 Modifiers For m{} Operator</h2>
 <p class="text-body-preceding-code-block-western">The following
 modifiers apply to the m{pattern} operator only:</p>
-<dl>
 	<dl>
 		<dd>
-		<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="527" border="1" bordercolor="#000000">
+		<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="527">
 			<col width="71">
 			<col width="438">
 			<tbody><tr valign="TOP">
@@ -9863,7 +9855,6 @@ modifiers apply to the m{pattern} operator only:</p>
 			</tr>
 		</tbody></table>
 	</dd></dl>
-</dl>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
 <br>
 </p>
@@ -9874,10 +9865,9 @@ modifiers apply to the m{pattern} operator only:</p>
 20.13 Modifiers for s{}{} Operator</h2>
 <p class="text-body-preceding-code-block-western">The following
 modifiers apply to the s{oldpatt}{newpatt} operator only.</p>
-<dl>
 	<dl>
 		<dd>
-		<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="527" border="1" bordercolor="#000000">
+		<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="527">
 			<col width="71">
 			<col width="438">
 			<tbody><tr valign="TOP">
@@ -9903,7 +9893,6 @@ modifiers apply to the s{oldpatt}{newpatt} operator only.</p>
 			</tr>
 		</tbody></table>
 	</dd></dl>
-</dl>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
 <br>
 </p>
@@ -9911,10 +9900,9 @@ modifiers apply to the s{oldpatt}{newpatt} operator only.</p>
 20.14 Modifiers for tr{}{} Operator</h2>
 <p class="text-body-preceding-code-block-western">The following
 modifiers apply to the tr{oldset}{newset} operator only.</p>
-<dl>
 	<dl>
 		<dd>
-		<table style="page-break-inside: avoid;" cellpadding="4" cellspacing="0" width="527" border="1" bordercolor="#000000">
+		<table style="page-break-inside: avoid;border: black solid thin;" cellpadding="4" cellspacing="0" width="527">
 			<col width="71">
 			<col width="438">
 			<tbody><tr valign="TOP">
@@ -9946,7 +9934,6 @@ modifiers apply to the tr{oldset}{newset} operator only.</p>
 			</tr>
 		</tbody></table>
 	</dd></dl>
-</dl>
 <p class="western" style="margin-bottom: 0in; page-break-inside: avoid; page-break-after: auto;">
 <br>
 </p>
@@ -11424,11 +11411,9 @@ General Public License,</font></p>
 <p class="western" style="margin-bottom: 0in; page-break-before: always;">
 <br>
 </p>
-<multicol id="Alphabetical Index1" dir="LTR" cols="2" gutter="51">
-	<div id="Alphabetical Index2_Head" dir="LTR">
+	<div id="Alphabetical-Index2_Head" dir="LTR">
 		<p style="margin-top: 0.17in; page-break-after: avoid;"><font face="Courier, monospace"><font style="font-size: 16pt;" size="4"><b>Alphabetical
 		Index</b></font></font></p>
-	</div>
 	<p style="margin-bottom: 0in;"> <font face="Courier, monospace">\G	116</font></p>
 	<p style="margin-bottom: 0in;"><font face="Courier, monospace">`	105</font></p>
 	<p style="margin-bottom: 0in;"><font face="Courier, monospace">^	115</font></p>
@@ -11778,7 +11763,6 @@ General Public License,</font></p>
 	<p style="margin-bottom: 0in;"><font face="Courier, monospace">x
 	operator	12</font></p>
 	<p style="margin-bottom: 0in;"><font face="Courier, monospace">xor	24</font></p>
-</multicol>
 <p class="western" style="margin-bottom: 0in;"><br>
 </p>
 <p class="western" style="margin-bottom: 0in;"><br>
@@ -11787,8 +11771,5 @@ General Public License,</font></p>
 End<a href="http://www.greglondon.com/">.</a></font></p>
 <p class="western" style="margin-bottom: 0in;" align="CENTER"><br>
 </p>
-<div type="FOOTER">
-	<p style="margin-top: 0.2in; margin-bottom: 0in;" align="RIGHT"><sdfield type="PAGE" subtype="RANDOM" format="PAGE">138</sdfield>
-	<font face="Times, serif">of <sdfield type="DOCSTAT" subtype="PAGE" format="PAGE">139</sdfield></font></p>
 </div>
 </body></html>
