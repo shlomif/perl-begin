@@ -96,6 +96,11 @@ my $tree_contents =
                     ],
                 },
                 {
+                    'text' => "Impatient Perl",
+                    'url' => "tutorials/impatient-perl/",
+                    'title' => "Book for Quickly Learning Perl (based on previous knowledge)",
+                },
+                {
                     'text' => "In Other Languages",
                     'url' => "tutorials/localized/",
                     'title' => "Tutorials in languages other than English",
