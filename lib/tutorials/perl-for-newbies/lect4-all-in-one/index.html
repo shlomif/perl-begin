@@ -14,7 +14,7 @@
 "Perl for Perl Newbies" - Part 4
 </title>
 </head>
-<body><div class="page" id="page--DIR">
+<body><div class="page">
 
 <div class="center"><script type="text/javascript">
 google_ad_client = "pub-2480595666283917";
@@ -43,7 +43,7 @@ google_color_url = "008000";
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a>
 </div>
-<h1>
+<h1 id="page--DIR">
 "Perl for Perl Newbies" - Part 4
 </h1>
 <h2 id="contents">Contents</h2>
@@ -106,7 +106,7 @@ This work is published from
 <hr />
 
 </div>
-<div class="page" id="page--cpan--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -119,7 +119,7 @@ This work is published from
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a>
 </div>
-<h1>
+<h1 id="page--cpan--DIR">
 1. CPAN Modules
 </h1>
 <p>
@@ -140,7 +140,7 @@ manually or automatically.
 <hr />
 
 </div>
-<div class="page" id="page--cpan--manual--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -153,7 +153,7 @@ manually or automatically.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a> → <a href="#page--cpan--manual--PAGE">Manual Compilation</a>
 </div>
-<h1>
+<h1 id="page--cpan--manual--PAGE">
 1.1. Manual Compilation
 </h1>
 <p>
@@ -235,7 +235,7 @@ document</a>
 <hr />
 
 </div>
-<div class="page" id="page--cpan--mcpan--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -248,7 +248,7 @@ document</a>
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--cpan--DIR">CPAN Modules</a> → <a href="#page--cpan--mcpan--PAGE">The -MCPAN Interface</a>
 </div>
-<h1>
+<h1 id="page--cpan--mcpan--PAGE">
 1.2. The -MCPAN Interface
 </h1>
 <p>
@@ -282,7 +282,7 @@ distribution's help channels for more information.
 <hr />
 
 </div>
-<div class="page" id="page--sprintf--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -295,7 +295,7 @@ distribution's help channels for more information.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a>
 </div>
-<h1>
+<h1 id="page--sprintf--DIR">
 2. The sprintf function
 </h1>
 <p>
@@ -335,7 +335,7 @@ the conversions from the arguments in order.
 <hr />
 
 </div>
-<div class="page" id="page--sprintf--conversions--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -348,7 +348,7 @@ the conversions from the arguments in order.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--conversions--PAGE">Supported Conversions</a>
 </div>
-<h1>
+<h1 id="page--sprintf--conversions--PAGE">
 2.1. Supported Conversions
 </h1>
 <p>
@@ -442,7 +442,7 @@ Here are some examples:
 <span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">%s%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">This string</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant"> ends here.</span><span class="Constant">&quot;</span>);
 <span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in hex is 0x%x</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
 <span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in binary is 0b%b</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">3.2 + 1.6 == %f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.2+1.6</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">3.2 + 1.6 == %f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.2</span>+<span class="Constant">1.6</span>);
 </pre></div>
 <p>
 And their output is:
@@ -457,7 +457,7 @@ This string ends here.
 <hr />
 
 </div>
-<div class="page" id="page--sprintf--flags--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -470,7 +470,7 @@ This string ends here.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--flags--PAGE">Flags to the conversions</a>
 </div>
-<h1>
+<h1 id="page--sprintf--flags--PAGE">
 2.2. Flags to the conversions
 </h1>
 <p>
@@ -538,7 +538,7 @@ then prints them using <tt>print</tt>.
 <hr />
 
 </div>
-<div class="page" id="page--sprintf--width--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -551,7 +551,7 @@ then prints them using <tt>print</tt>.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--sprintf--DIR">The sprintf function</a> → <a href="#page--sprintf--width--PAGE">Width and Max Width</a>
 </div>
-<h1>
+<h1 id="page--sprintf--width--PAGE">
 2.3. Width and Max Width
 </h1>
 <p>
@@ -576,7 +576,7 @@ Here are some examples:
 <hr />
 
 </div>
-<div class="page" id="page--string-forms--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -589,7 +589,7 @@ Here are some examples:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a>
 </div>
-<h1>
+<h1 id="page--string-forms--DIR">
 3. Alternate Forms for Writing Strings
 </h1>
 <p>
@@ -603,7 +603,7 @@ it supports. This section will cover the variations on this theme.
 <hr />
 
 </div>
-<div class="page" id="page--string-forms--q_qq--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -616,7 +616,7 @@ it supports. This section will cover the variations on this theme.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a> → <a href="#page--string-forms--q_qq--PAGE">q{}, qq{} and Friends</a>
 </div>
-<h1>
+<h1 id="page--string-forms--q_qq--PAGE">
 3.1. q{}, qq{} and Friends
 </h1>
 <table class="bordered" summary="">
@@ -790,7 +790,7 @@ left/right pair (<tt>{</tt> to <tt>}</tt> etc.).
 <hr />
 
 </div>
-<div class="page" id="page--string-forms--here_doc--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -803,7 +803,7 @@ left/right pair (<tt>{</tt> to <tt>}</tt> etc.).
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--string-forms--DIR">Alternate Forms for Writing Strings</a> → <a href="#page--string-forms--here_doc--PAGE">Here Document</a>
 </div>
-<h1>
+<h1 id="page--string-forms--here_doc--PAGE">
 3.2. Here Document
 </h1>
 <p>
@@ -860,7 +860,7 @@ and if they are single-quotes (<tt>'...'</tt>), it will not.
 <hr />
 
 </div>
-<div class="page" id="page--processes--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -873,7 +873,7 @@ and if they are single-quotes (<tt>'...'</tt>), it will not.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a>
 </div>
-<h1>
+<h1 id="page--processes--DIR">
 4. Executing Other Processes
 </h1>
 <p>
@@ -890,7 +890,7 @@ and they would be covered here.
 <hr />
 
 </div>
-<div class="page" id="page--processes--system--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -903,7 +903,7 @@ and they would be covered here.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--system--PAGE">The system() Command</a>
 </div>
-<h1>
+<h1 id="page--processes--system--PAGE">
 4.1. The system() Command
 </h1>
 <p>
@@ -933,7 +933,7 @@ Here are some examples, that will only work on UNIX systems.
 <hr />
 
 </div>
-<div class="page" id="page--processes--backticks--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -946,7 +946,7 @@ Here are some examples, that will only work on UNIX systems.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--backticks--PAGE">Trapping Command Output with `...`</a>
 </div>
-<h1>
+<h1 id="page--processes--backticks--PAGE">
 4.2. Trapping Command Output with `...`
 </h1>
 <p>
@@ -970,7 +970,7 @@ a directory that is given as an argument:
 
 <span class="Statement">my</span> <span class="Identifier">$count</span> = <span class="Statement">`</span><span class="Constant">ls -l '</span><span class="Identifier">$dir</span><span class="Constant">' | grep ^d | wc -l</span><span class="Statement">`</span>;
 
-<span class="Identifier">$count</span> =~<span class="Statement"> /</span><span class="Special">(</span><span class="Special">\d</span><span class="Special">+)</span><span class="Statement">/</span>;
+<span class="Identifier">$count</span> =~ <span class="Statement">/</span><span class="Special">(</span><span class="Special">\d</span><span class="Special">+)</span><span class="Statement">/</span>;
 <span class="Comment"># Retrieve the number via the special regex variable $1</span>
 <span class="Identifier">$count</span> = <span class="Identifier">$1</span>;
 
@@ -979,7 +979,7 @@ a directory that is given as an argument:
 <hr />
 
 </div>
-<div class="page" id="page--processes--opens--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -992,7 +992,7 @@ a directory that is given as an argument:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--opens--PAGE">open() for Command Execution</a>
 </div>
-<h1>
+<h1 id="page--processes--opens--PAGE">
 4.3. open() for Command Execution
 </h1>
 <p>
@@ -1015,9 +1015,9 @@ Here are some examples:
 
 <span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">/sbin/ifconfig |</span><span class="Constant">&quot;</span>;
 <span class="Statement">my</span> (<span class="Identifier">$line</span>, <span class="Identifier">@addrs</span>);
-<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;I&gt;)
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
 {
-    <span class="Statement">if</span> (<span class="Identifier">$line</span> =~<span class="Statement"> /</span><span class="Constant">inet addr:</span><span class="Special">((</span><span class="Special">\d</span><span class="Special">+</span><span class="Special">\.</span><span class="Special">)+</span><span class="Special">\d</span><span class="Special">)</span><span class="Statement">/</span>)
+    <span class="Statement">if</span> (<span class="Identifier">$line</span> =~ <span class="Statement">/</span><span class="Constant">inet addr:</span><span class="Special">((</span><span class="Special">\d</span><span class="Special">+</span><span class="Special">\.</span><span class="Special">)+</span><span class="Special">\d</span><span class="Special">)</span><span class="Statement">/</span>)
     {
         <span class="Statement">push</span> <span class="Identifier">@addrs</span>, <span class="Identifier">$1</span>;
     }
@@ -1070,7 +1070,7 @@ open string.
 <hr />
 
 </div>
-<div class="page" id="page--processes--string-shellquote--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1083,7 +1083,7 @@ open string.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--processes--DIR">Executing Other Processes</a> → <a href="#page--processes--string-shellquote--PAGE">String::ShellQuote</a>
 </div>
-<h1>
+<h1 id="page--processes--string-shellquote--PAGE">
 4.4. String::ShellQuote
 </h1>
 <p>
@@ -1108,7 +1108,7 @@ preventing shell-code injection.
 <hr />
 
 </div>
-<div class="page" id="page--and_or--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1121,7 +1121,7 @@ preventing shell-code injection.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a>
 </div>
-<h1>
+<h1 id="page--and_or--DIR">
 5. More about || and &amp;&amp;
 </h1>
 <p>
@@ -1152,7 +1152,7 @@ like this:
 <hr />
 
 </div>
-<div class="page" id="page--and_or--sort--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1165,7 +1165,7 @@ like this:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a> → <a href="#page--and_or--sort--PAGE">For sort()</a>
 </div>
-<h1>
+<h1 id="page--and_or--sort--PAGE">
 5.1. For sort()
 </h1>
 <p>
@@ -1226,7 +1226,7 @@ Torry, Peter
 <hr />
 
 </div>
-<div class="page" id="page--and_or--english_and_or--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1239,7 +1239,7 @@ Torry, Peter
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--and_or--DIR">More about || and &amp;&amp;</a> → <a href="#page--and_or--english_and_or--PAGE">The "and" and "or" Operators</a>
 </div>
-<h1>
+<h1 id="page--and_or--english_and_or--PAGE">
 5.2. The "and" and "or" Operators
 </h1>
 <p>
@@ -1267,7 +1267,7 @@ You can use them after a statement to write error handlers.
 <hr />
 
 </div>
-<div class="page" id="page--exceptions--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1280,7 +1280,7 @@ You can use them after a statement to write error handlers.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--exceptions--DIR">Exceptions</a>
 </div>
-<h1>
+<h1 id="page--exceptions--DIR">
 6. Exceptions
 </h1>
 <p>
@@ -1300,7 +1300,7 @@ it. The exception may escape out of function calls as well.
 <hr />
 
 </div>
-<div class="page" id="page--exceptions--die_and_eval--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1313,7 +1313,7 @@ it. The exception may escape out of function calls as well.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--die_and_eval--PAGE">die and eval</a>
 </div>
-<h1>
+<h1 id="page--exceptions--die_and_eval--PAGE">
 6.1. die and eval
 </h1>
 <p>
@@ -1376,7 +1376,7 @@ Here's an example:
 <hr />
 
 </div>
-<div class="page" id="page--exceptions--carp--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1389,7 +1389,7 @@ Here's an example:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--carp--PAGE">The Carp module</a>
 </div>
-<h1>
+<h1 id="page--exceptions--carp--PAGE">
 6.2. The Carp module
 </h1>
 <p>
@@ -1400,7 +1400,7 @@ information run <tt>perldoc Carp</tt>.
 <hr />
 
 </div>
-<div class="page" id="page--exceptions--error.pm--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1413,7 +1413,7 @@ information run <tt>perldoc Carp</tt>.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--exceptions--DIR">Exceptions</a> → <a href="#page--exceptions--error.pm--PAGE">The Error.pm module</a>
 </div>
-<h1>
+<h1 id="page--exceptions--error.pm--PAGE">
 6.3. The Error.pm module
 </h1>
 <p>
@@ -1439,7 +1439,7 @@ to handle one's exceptions programatically .
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--DIR">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1452,7 +1452,7 @@ to handle one's exceptions programatically .
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--DIR">
 7. More System Functions
 </h1>
 <p>
@@ -1469,7 +1469,7 @@ tasks. This section will cover some of them for your own reference.
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--dir--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1482,7 +1482,7 @@ tasks. This section will cover some of them for your own reference.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--dir--PAGE">Directory Input Routines</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--dir--PAGE">
 7.1. Directory Input Routines
 </h1>
 <p>
@@ -1528,7 +1528,7 @@ Here's an example that counts the number of mp3s in a directory:
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--random_io--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1541,7 +1541,7 @@ Here's an example that counts the number of mp3s in a directory:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--random_io--PAGE">Random File I/O</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--random_io--PAGE">
 7.2. Random File I/O
 </h1>
 <p>
@@ -1595,7 +1595,7 @@ equivalent:
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--file-tests--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1608,7 +1608,7 @@ equivalent:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--file-tests--PAGE">File Tests (-e, -d...)</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--file-tests--PAGE">
 7.3. File Tests (-e, -d...)
 </h1>
 <p>
@@ -1625,7 +1625,7 @@ a plain file. For a list of other file tests and their use consult
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--chdir_getcwd_mkdir--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1638,7 +1638,7 @@ a plain file. For a list of other file tests and their use consult
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--chdir_getcwd_mkdir--PAGE">chdir(), getcwd() and mkdir().</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--chdir_getcwd_mkdir--PAGE">
 7.4. chdir(), getcwd() and mkdir().
 </h1>
 <p>
@@ -1658,7 +1658,7 @@ with the permissions mask of <tt>MASK</tt>
 <hr />
 
 </div>
-<div class="page" id="page--system-funcs--stat--PAGE">
+<div class="page">
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -1671,7 +1671,7 @@ with the permissions mask of <tt>MASK</tt>
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 4</a> → <a href="#page--system-funcs--DIR">More System Functions</a> → <a href="#page--system-funcs--stat--PAGE">The stat() Function</a>
 </div>
-<h1>
+<h1 id="page--system-funcs--stat--PAGE">
 7.5. The stat() Function
 </h1>
 <p>
