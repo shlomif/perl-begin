@@ -52,9 +52,11 @@ update_p4n:
 
 rebuild_p4n: update_p4n all
 
-iperl_extra_data: dest/tutorials/impatient-perl/iperl.html
+IMPATIENT_PERL_FILES = $(patsubst %,dest/tutorials/impatient-perl/%,iperl.html $(patsubst %,iperl_files/%,iperl_html_m2efc85d6.jpg iperl_html_m5238e28d.jpg))
 
-dest/tutorials/impatient-perl/iperl.html: lib/tutorials/impatient-perl/iperl.htm
+iperl_extra_data: $(IMPATIENT_PERL_FILES)
+
+$(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: lib/tutorials/impatient-perl/%
 	cp -f $< $@
 
 # .PHONY: 
