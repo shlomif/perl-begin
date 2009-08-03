@@ -39,6 +39,20 @@
 {#!PERL_BEGIN_SIDEBAR!#:%body:##}
 </define-tag>
 
+<define-tag latemp_before_body endtag="required" whitespace="delete">
+{#LATEMP_BEFORE_BODY#:%body:##}
+</define-tag>
+
+<latemp_before_body>
+<div class="full_width_notice">
+<p>
+<b>Learn Perl Now!</b> <a href="$(ROOT)/learn/">Learn 
+More…</a> And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
+Perl.
+</p>
+</div>
+</latemp_before_body>
+
 <perl_begin_sidebar>
     <!-- SIDEBAR -->
     <h3 class="hide">Sidebar</h3>    
@@ -174,6 +188,7 @@ Attribution License version 2.0</a> (or at your option any later version).
 ;;;      <div class="contentbox-container-left">
 ;;;        <div class="contentbox-noshading">
 
+{#LATEMP_BEFORE_BODY#}
 {#LATEMP_BODY#}
 <share_this_button />
 ;;;        </div>
