@@ -22,7 +22,7 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 DOCS_COMMON_DEPS = template.wml lib/books.wml
 
-all: latemp_targets perl_for_newbies_extra_data
+all: latemp_targets perl_for_newbies_extra_data iperl_extra_data
 
 include include.mak
 include rules.mak
@@ -51,6 +51,11 @@ update_p4n:
 	touch src/tutorials/perl-for-newbies/*/*.wml
 
 rebuild_p4n: update_p4n all
+
+iperl_extra_data: dest/tutorials/impatient-perl/iperl.html
+
+dest/tutorials/impatient-perl/iperl.html: lib/tutorials/impatient-perl/iperl.htm
+	cp -f $< $@
 
 # .PHONY: 
 # 

@@ -1,0 +1,18 @@
+#include '../template.wml'
+
+<latemp_subject "Impatient Perl Online Tutorial/Book" />
+
+<p>
+This is our own mirror of the book 
+<a href="http://www.greglondon.com/iperl/">Impatient Perl</a> by
+Greg London. It is distributed under the GNU Free Documentation License with 
+no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. 
+</p>
+
+<p>
+Impatient Perl is meant as a quick introduction to Perl, preferably to people
+who are already familiar with similar languages.
+</p>
+
+<h2><a href="iperl.html">Access the Online Text</a></h2>
+
