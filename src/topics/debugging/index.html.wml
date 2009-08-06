@@ -10,7 +10,7 @@
 There are several ways to debug Perl programs, to find the cause of bugs,
 and to find a good solution for them. Many Perl beginners don't make use
 of the Perl's debuggers, such as the <tt>-d</tt> flag or the various
-<a href="http://search.cpan.org/search?query=Devel&mode=all">Devel::
+<a href="http://search.cpan.org/search?query=Devel&amp;mode=all">Devel::
 modules</a>. This is unfortunate because they are very convenient and
 can save a lot of time.
 </p>

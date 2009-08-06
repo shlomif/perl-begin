@@ -13,7 +13,7 @@ it even better than it used to be. Here's a summary of the changes:
 
 <li>
 <p>
-<a href="$(ROOT)learn/who-is-using/">A testimonials page</a>
+<a href="$(ROOT)/learn/who-is-using/">A testimonials page</a>
 was added, with some honest-to-God testimonial quotes which are now featured in
 the Testimonials side-bar.  
 </p>
@@ -21,14 +21,14 @@ the Testimonials side-bar.
 
 <li>
 <p>
-There's a new <a href="$(ROOT)IDEs-and-tools/">IDEs and
+There's a new <a href="$(ROOT)/IDEs-and-tools/">IDEs and
 tools page</a>, featuring some Integrated Development Environments.
 </p>
 </li>
 
 <li>
 <p>
-There's a new <a href="$(ROOT)blogs/">page sporting links
+There's a new <a href="$(ROOT)/blogs/">page sporting links
 to collections of blogs</a>.
 </p>
 </li>
@@ -39,18 +39,18 @@ Several new topical pages were added:
 </p>
 <ol>
 
-<li><a href="$(ROOT)uses/databases/">Perl and Databases</a></li>
+<li><a href="$(ROOT)/uses/databases/">Perl and Databases</a></li>
 
-<li><a href="$(ROOT)uses/GUI/">GUI Development in Perl</a></li>
+<li><a href="$(ROOT)/uses/GUI/">GUI Development in Perl</a></li>
 
-<li><a href="$(ROOT)uses/xml/">Perl for XML Processing</a></li>
+<li><a href="$(ROOT)/uses/xml/">Perl for XML Processing</a></li>
 
-<li><a href="$(ROOT)topics/debugging/">Debugging</a></li>
+<li><a href="$(ROOT)/topics/debugging/">Debugging</a></li>
 
-<li><a href="$(ROOT)topics/object-oriented/">Object-oriented 
+<li><a href="$(ROOT)/topics/object-oriented/">Object-oriented 
 Programming in Perl</a></li>
 
-<li><a href="$(ROOT)topics/cpan/">Using CPAN</a></li>
+<li><a href="$(ROOT)/topics/cpan/">Using CPAN</a></li>
 </ol>
 
 </li>
@@ -88,7 +88,7 @@ Commons Attribution Licence which allows almost unlimited re-use.
 <h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
 
 <p>
-Recently, the <a href="$(ROOT)">Perl-Begin site</a> has
+Recently, the <a href="$(ROOT)/">Perl-Begin site</a> has
 seen many updates and corrections. Among them are:
 </p>
 
