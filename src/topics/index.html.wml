@@ -10,7 +10,21 @@ one is trying to achieve with Perl and its domain.
 
 <h3 id="cpan"><a href="cpan/">Using CPAN with Perl</a></h3>
 
+<p>
+CPAN is the Comprehensive Perl Archive Network, which contains a wealth
+of open-source and reusable source code, that can be used in your applications.
+Follow the link to learn how to effectively use CPAN.
+</p>
+
 <h3 id="debug"><a href="debugging/">Debugging Perl Programs</h3>
+
+<p>
+When bugs occur, learn how to find their cause and correct them effectively.
+</p>
 
 <h3 id="oop"><a href="object-oriented/">Object-Oriented Programming (OOP) in Perl</h3>
 
+<p>
+Learn about how to write classes, objects, and other concepts of
+Object-Oriented Programming in Perl.
+</p>
