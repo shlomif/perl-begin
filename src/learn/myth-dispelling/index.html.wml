@@ -1,10 +1,10 @@
 #include '../template.wml'
 
-<latemp_subject "Isn't Perl Bad?" />
+<latemp_subject "Why Perl isn't Bad?" />
 
 <p>
 It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact it's 
-very common. Among else you can hear:
+very common. Among the things you can hear:
 </p>
 
 <ul>
@@ -66,19 +66,25 @@ and easily than with any other language.
 </p>
 
 <p>
-Perl code can be <b>written to be very maintainable, readable and elegant</b>.
+Perl code can be written to be very maintainable, readable and elegant.
 Perl indeed sports many features and properties that make writing short 
 programs - often one liners - easier, because this is what people use it for
-most of the time. However, <b>there's nothing in Perl</b> that prevents 
-<b>writing large-scale, maintainable programs</b>. And in fact
+most of the time. However, there's nothing in Perl that prevents 
+writing large-scale, maintainable programs. And in fact
 <a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
 programs have been written and are still successful.</a>
 </p>
 
 <p>
-Perl is probably not for everyone. To write in Perl <b>you need good 
-programmers</b>. However, you must always have good programmers, because
-<b>depending on bad programmers will introduce bugs</b>, security holes, large
-delays and other bad side-effects.
+Perl is probably not for everyone. You need to be a good programmer to write
+in Perl. However, code written by bad programmers in other languages can
+be equally as problematic as code written by bad Perl programmers.
 </p>
 
+<p>
+The good news is that you can become a good Perl programmer using the resources
+on this site and elsewhere, and that learning Perl will improve your
+programming ability - not only in Perl, but in other languages as well. Are 
+you ready to take on the challenge? Great! Then 
+<a href="http://perl-begin.org/resources/">dive right in</a>.
+</p>
