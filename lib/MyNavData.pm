@@ -189,7 +189,7 @@ my $tree_contents =
             ],
         },
         {
-            'text' => "Uses",
+            'text' => "Common Uses",
             'url' => "uses/",
             'title' => "Common Uses for Perl",
             'role' => "header",
