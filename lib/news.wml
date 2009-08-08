@@ -18,8 +18,8 @@ Moertel</a>
 </p>
 </div>
 
-<div class="sidebarbox-border bg-yellow03">
-<div class="sidebarbox-title-shading bg-yellow07"><a href="$(ROOT)/news/">News</a></div>
+<div class="sidebarbox-border news-box">
+<div class="sidebarbox-title-shading news-box-title"><a href="$(ROOT)/news/">News</a></div>
 <ul>
 <li>
 03-August-09: <a href="$(ROOT)/news/#news_03_August_2009">More Updates</a>
