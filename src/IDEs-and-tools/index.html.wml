@@ -62,7 +62,7 @@ Eclipse.
 <h3 id="vim"><a href="http://www.vim.org/">Vim</a></h3>
 
 <p>
-Vim is a popular open-source, cross-platform and free editor, with good
+Vim is a popular open-source, cross-platform, and free editor, with good
 support for editing Perl code. 
 <a href="http://www.perlfoundation.org/perl5/index.cgi?vim">the 
 Perl 5 Wiki page about Vim</a> contains more information.
