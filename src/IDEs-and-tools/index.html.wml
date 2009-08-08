@@ -64,6 +64,18 @@ using
 <a href="http://vimdoc.sourceforge.net/htmldoc/gui_w32.html#mswin.vim">mswin.vim</a> it can behave much more like Windows-based editors.
 </p>
 
+<div class="screenshot">
+<a href="shots/gvim/gvim-perl-256.png" 
+title="Screenshot of gvim (Vim-X11)"><img 
+    src="shots/gvim/gvim-perl-thumb-256.png"
+    alt="Screenshot of gvim (Vim-X11)" /></a>
+
+<p>
+<a href="http://www.vim.org/">Vim</a>, a sophisticated cross-platform
+text-editor.
+</p>
+</div>
+
 <h3 id="TextMate"><a href="http://macromates.com/">TextMate</a>, 
 <a href="http://www.e-texteditor.com/">E Text Editor</a>
 and <a href="http://e-texteditor.com/blog/2009/releasing-the-source">E Text
