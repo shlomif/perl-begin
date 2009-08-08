@@ -78,7 +78,7 @@ Perl code and warns about possible bad practices that should be fixed.
 <p>
 perltidy is an auto-formatter for Perl code, that can keep its style
 consistent. It supports many different styles and style parameters. Perltidy
-has <a href="http://search.cpan.org/dist/tidyview/">frontend 
+has a <a href="http://search.cpan.org/dist/tidyview/">frontend 
 called tidyview</a> that allows one to visually customise the style and
 view the results.
 </p>
