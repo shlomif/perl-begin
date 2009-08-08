@@ -1226,11 +1226,16 @@ div.bookinfo
 .full_width_notice
 {
     border: black thin solid;
-    background-color: #faf;
+    background-color: #CCCCFF;
     font-size: 120%;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: 0.5em;
+}
+
+.full_width_notice:hover
+{
+    background-color: #EEEEFF;
 }
 
 .full_width_notice p
