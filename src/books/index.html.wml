@@ -2,7 +2,7 @@
 
 #include "../lib/books.wml"
 
-<latemp_subject "Paper Books" />
+<latemp_subject "Perl Books" />
 
 <ul>
 <li><a href="#note">Note</a></li>
