@@ -47,6 +47,18 @@ Java-based IDE</a> that allows one to edit and manage Perl projects. Eclipse
 is cross-platform, free and open-source and so is EPIC.
 </p>
 
+<div class="screenshot">
+<a href="shots/eclipse/eclipse-epic-256.png" 
+title="Screenshot of EPIC - Eclipse's Perl Mode"><img 
+    src="shots/eclipse/eclipse-epic-thumb-256.png" 
+    alt="Screenshot of Eclipse's Perl Mode" /></a>
+
+<p>
+<a href="http://www.epic-ide.org/">Epic, a Perl Editor and IDE based on
+Eclipse.
+</p>
+</div>
+
 <h3 id="vim"><a href="http://www.vim.org/">Vim</a></h3>
 
 <p>
