@@ -1289,3 +1289,11 @@ h2 strong
 {
     color: #F00;
 }
+
+.screenshot
+{
+    float: right;
+    border: black double 3pt;
+    padding: 0.5em;
+    margin: 0.5em;
+}

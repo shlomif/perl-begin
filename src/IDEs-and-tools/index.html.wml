@@ -17,6 +17,18 @@ which is under active development. It's probably the most recommended for
 most people who don't have a previous preference.
 </p>
 
+<div class="screenshot">
+<a href="shots/padre/padre-256.png" 
+title="Screenshot of Padre"><img 
+    src="shots/padre/padre-thumb-256.png"
+    alt="Screenshot of Padre" /></a>
+
+<p>
+<a href="http://padre.perlide.org/">Padre</a>, an IDE for Perl written in
+Perl.
+</p>
+</div>
+
 <h3 id="komodo"><a href="http://www.activestate.com/komodo_edit/">Komodo 
 Edit</a> and <a href="http://www.activestate.com/komodo/">Komodo IDE</a></h3>
 
