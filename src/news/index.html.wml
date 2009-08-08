@@ -2,6 +2,67 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_03_August_2009">03-August-2009: More updates to Perl-Begin.org</h2>
+
+<p>
+I thought <a href="$(ROOT)/">the Perl Beginners' Site</a>
+was perfect after 
+<a href="http://community.livejournal.com/shlomif_tech/30178.html">the 
+last update</a>, but boy I was wrong. A quick review and critique of the site 
+by a certain prominent Perl developer proved me wrong, and afterwards I
+had more stuff that I found lacking. So here's what has changed.
+</p>
+
+<p>
+We're now mirroring 
+<a href="$(ROOT)/tutorials/perl-for-newbies/">the 
+public domain "Perl for Newbies" tutorial</a> as well as the GFDLed book
+<A href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+Perl"</A> by <a href="http://www.greglondon.com/">Greg London</a>. Their
+presence on the site was done in order to preserve Perl-Begin's common look 
+and feel, and to make sure people would be able to access them without
+having to go to a different site, which may be blocked by over-zealous
+web-filters. We hope to mirror other freely distributable material that
+may prove useful to beginners on Perl-Begin in the future.
+</p>
+
+<p>
+The "call-for-action" notice at the beginning was changed to 
+"Learn Perl Now!" and now appears on all the pages.
+</p>
+
+<p>
+We also fixed several look and style glitches.   
+</p>
+
+<p>
+There are also several corrections to text and links.
+</p>
+
+<p>
+<a href="http://stackoverflow.com/">Stack Overflow</a> was added to
+<a href="$(ROOT)/web-forums/">the web-forums page</a>.
+</p>
+
+<p>
+There are now mentionings of
+<a href="$(ROOT)/books/topics/">two new topical books</a> - 
+"Perl &amp; LWP" and "Programming the Perl DBI".
+</p>
+
+<p>
+Finally, the 
+<a href="$(ROOT)/about.html">"About this site" page</a>
+was updated and made more modern.
+</p>
+
+<p>
+We hope you enjoy the new site. If you like it, please recommend it to
+your friends - if you don't - let us know and we'll see what we can do.
+</p>
+
+
+
 <h2 id="news_27_July_2009">27-July-2009: Updates to Perl-Begin.org</h2>
 
 <p>
