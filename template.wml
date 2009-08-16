@@ -46,8 +46,8 @@
 <latemp_before_body>
 <div class="full_width_notice">
 <p>
-<b>Learn Perl Now!</b> <a href="$(ROOT)/learn/">Learn 
-More…</a> And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
+<b>Learn Perl Now!</b> <a href="$(ROOT)/learn/">More…</a> 
+And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
 Perl.
 </p>
 </div>
