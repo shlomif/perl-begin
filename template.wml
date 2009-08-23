@@ -8,7 +8,7 @@
 
 #include "latemp/latemp-prelude.wml"
 
-#include "shlomif/affiliations.wml"
+# #include "shlomif/affiliations.wml"
 #include "news.wml"
 #include "share-this.wml"
 
