@@ -45,18 +45,16 @@
 
 <latemp_before_body>
 <div class="full_width_notice">
-<p>
-<b>Learn Perl Now!</b> <a href="$(ROOT)/learn/">More…</a> 
+<b><a href="$(ROOT)/learn/">Learn Perl Now!</a></b><br />
 And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
 Perl.
-</p>
 </div>
 </latemp_before_body>
 
 <perl_begin_sidebar>
     <!-- SIDEBAR -->
     <h3 class="hide">Sidebar</h3>    
-    <div class="sidebar sidebar-font">
+    <div id="right-sidebar">
 
       {#PERL_BEGIN_NEWS#}
 
@@ -70,6 +68,7 @@ Perl.
 
 <latemp_extra_head_elements>
 <script type="text/javascript" src="$(ROOT)/js/jq.js"></script>
+<script type="text/javascript" src="$(ROOT)/js/position_divs.js"></script>
 {#PAGE_EXTRA_HEAD_ELEMENTS#}
 </latemp_extra_head_elements>
 
@@ -78,13 +77,11 @@ Perl.
 </define-tag>
 
 <latemp_license>
-<p>
 <!-- Creative Commons License -->
 This work is <b>licensed</b> under the <a rel="license" 
 href="http://creativecommons.org/licenses/by/2.0/">Creative Commons 
-Attribution License version 2.0</a> (or at your option any later version).
+Attribution License version 2.0</a> (or at your option any later version).<br />
 <!-- /Creative Commons License -->
-</p>
 
 <!--
 
@@ -119,19 +116,14 @@ Attribution License version 2.0</a> (or at your option any later version).
 </latemp_license>
 
 <latemp_webmaster>
-<p>
 <b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href=
-"mailto:shlomif@iglu.org.il">Email - shlomif@iglu.org.il</a>)
-</p>
-<p>
+"mailto:shlomif@iglu.org.il">Email - shlomif@iglu.org.il</a>)<br />
 <b>Original Design:</b> <a href="http://www.oswd.org/design/preview/id/2933">GoFlexiblePro</a>
 | Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a>
 |  <a href="http://validator.w3.org/check?uri=referer" title="Validate code as W3C XHTML 1.1 Strict Compliant">W3C XHTML 1.1</a>
 | <a href="http://jigsaw.w3.org/css-validator/" title="Validate Style Sheet as W3C CSS 2.0 Compliant">W3C CSS 2.0</a>
-</p>
-<p>
+<br />
 <b>Hosted by:</b> <a href="http://hexten.net/">Hexten.net</a>.
-</p>
 <script type="text/javascript" src="$(ROOT)/js/selfl.js"></script>
 </latemp_webmaster>
 
@@ -141,59 +133,47 @@ Attribution License version 2.0</a> (or at your option any later version).
 
     <!-- HEADER -->
     <!-- Global Navigation -->
-    <h3 class="hide">Global Navigation</h3>
-    <div class="nav-global-container">
-      <div class="nav-global nav-global-font">
+    <div id='header'>
+
+<!-- Sitename and Banner -->
+      <div class="site-name" id="js-site-name">
+        <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
+      </div>
+      <div class="site-slogan" id="js-site-slogan">
+          Perl - because programming should be fun.
+      </div>                 
+      <!--<div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>-->
+      
+      <h3 class="hide">Global Navigation</h3>
+      <div class="nav-global" id="js-nav-global">
         <ul>
           <li><a href="$(ROOT)/about.html">About Us</a></li>
           <li><a href="$(ROOT)/contact/">Contact</a></li>
         </ul>
       </div>
-    </div>        
-
-    <!-- Sitename and Banner -->
-    <div class="site-name">
-      <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
-      <div class="site-slogan">
-        Perl - because programming should be fun.
-      </div>
-    </div>                 
-    <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
+    </div>
     
     <!-- Main navigation -->                    
     <h3 class="hide">Breadcrumbs Trail</h3>    
-    <div class="nav-main nav-main-font">
+    <div class="nav-main">
       <latemp_get_breadcrumbs_trail />
     </div>
     
-    <!-- FRONT PAGE SIDEBANNER -->
     <h3 class="hide">Main Navigation</h3>
-    <div class="sidebanner-frontpage">
-    <div class="buffer"></div>
-      <div class="navbar-sidebanner">
-        <latemp_get_nav_menu_html />
-        <latemp_affiliations_buttons_text />
-      </div>
+    <div id="left-sidebar">
+      <latemp_get_nav_menu_html />
+      <latemp_affiliations_buttons_text />
     </div>
-
-    <!-- WRAP CONTENT AND SIDEBAR -->
-    <div class="container-content-sidebar">            
 
     <!--   CONTENT -->
     <h3 class="hide">Content</h3>
-    <div class="content content-font">
-
-      <!-- Page title -->    
-      <latemp_default_h1_tag />
+    <div id='content'>
+        <!-- Page title -->   
+        <latemp_default_h1_tag />
       
-;;;      <div class="contentbox-container-left">
-;;;        <div class="contentbox-noshading">
-
-{#LATEMP_BEFORE_BODY#}
-{#LATEMP_BODY#}
-<share_this_button />
-;;;        </div>
-;;;      </div>
+        {#LATEMP_BEFORE_BODY#}
+        {#LATEMP_BODY#}
+        #<share_this_button />
     </div>
     
     {#PERL_BEGIN_SIDEBAR#}
@@ -201,7 +181,7 @@ Attribution License version 2.0</a> (or at your option any later version).
     
     <!-- FOOTER -->
     <h3 class="hide">Footer</h3>
-    <div class="footer footer-font">
+    <div id="footer">
         <latemp_license_text />
         <latemp_webmaster_text />
     </div>
