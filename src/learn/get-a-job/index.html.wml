@@ -2,6 +2,7 @@
 
 <latemp_subject "Get a Job Doing Perl" />
 
+<define-tag jwz_misquote_removed>
 <div class="quotation">
 <p class="q">
 "When some people are confronted with a programming problem, they say to 
@@ -15,9 +16,10 @@ Now they have two problems."
 Zawinski</a>)
 </p>
 </div>
+</define-tag>
 
 <p>
-This slight mis-quote, illustrates a point - <b>Perl penetrates bottom-up</b>. 
+<b>Perl penetrates bottom-up</b>. 
 A  programmer comes to a company, he knows Perl and uses it to write his
 scripts. When given a task to write an application for which Perl is a
 good choice, he <b>quickly uses Perl to write it quickly</b>. The management is 
