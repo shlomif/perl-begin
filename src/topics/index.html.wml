@@ -28,3 +28,11 @@ When bugs occur, learn how to find their cause and correct them effectively.
 Learn about how to write classes, objects, and other concepts of
 Object-Oriented Programming in Perl.
 </p>
+
+<h3 id="hashes"><a href="hashes/">About Hashes</a></h3>
+
+<p>
+Hashes (also known as "associative arrays", "maps" or "dictionaries") are
+one of Perl's three fundamental data structures and their least understood
+one. This page gives some resources for learning about hashes. 
+</p>

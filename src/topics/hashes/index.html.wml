@@ -1,0 +1,42 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Perl Hashes (a.k.a Associative Arrays or Maps)" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+<b>TODO</b>: FILL IN.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<h3 id="hash-cookbook"><a href="The_Hash_Cookbook.odp">The 
+Hash Cookbook</a></h3>
+
+<p>
+This is a presentation (in OpenDocument format) about hashes by "Jerusalem 
+Perl Monger" that was given by her at the 
+<a href="http://act.perl.org.il/ilpw2007/">Israeli 
+Perl Workshop of 2007</a> . It covers the main uses for hashes, with
+many code excerpts.
+</p>
+
+<beginning_perl_entry>
+
+<p>
+The 11th chapter of this book for Perl beginners (including absolute beginners)
+covers Objects. This book was written by one of the foremost Perl experts.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The second talk in the series discusses hashes.
+</p>
+
+</perl_for_newbies_entry>
+
