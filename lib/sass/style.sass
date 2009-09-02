@@ -1,0 +1,181 @@
+@import blueprint/screen.sass
+@import blueprint/modules/scaffolding.sass
+@import compass/reset.sass
+@import compass/utilities.sass
+
++blueprint-typography
++blueprint-debug
+
+#page-container
+  +container
+  :width 100%
+  :color #000
+
+.hide
+  :display none
+
+a
+  :color blue
+
+a:hover
+  :color red
+
+a:active
+  :color green
+
+a:visited
+  :color #006400
+
+a:visited:hover
+  :color red
+
+h1, h2, h3
+  :font-family arial,verdana,sans-serif !important
+  :font-weight bold
+
+#header
+  :position relative
+  :background-color #6a9850
+  :background-image url('./images/header.jpg')
+  :background-repeat no-repeat
+  :background-position center center
+  :height 110px
+
+  .site-name
+    :position absolute
+    :top 20px
+
+    h1
+      :margin 0px
+
+      a
+        :background-color #008000
+        :color #fff
+        :text-decoration none
+        :font-weight bold
+
+  .site-slogan
+    :position absolute
+    :top 70px
+    :background-color #008000
+    :color #e1e1e1
+    :font-weight bold
+    :font-size 1.3em
+
+  .nav-global
+    :position absolute
+    :top 2px
+    +horizontal-list
+
+    ul
+      :display block
+      :margin-left 100px
+
+      li
+        a
+          :font-size 1.2em
+          :text-transform uppercase
+          :color #969696
+          :text-decoration none
+          :border-left 1px solid
+          :padding-left 5px
+
+        a:hover
+          :color #000
+
+.nav-main
+  :border 1px solid #7d7d7d
+  :border 1px 0px
+  :background-color #bebebe
+  :padding-left 20px
+
+  a
+    :color #fff
+    :text-decoration none
+    :font-size 1.3em
+
+  a:hover
+    :color #6e6e6e
+
+#left-sidebar
+  +column(5)
+  :border-top 5px solid #000
+  :background-color #cce0ff
+  :padding-top 20px
+  :padding-left 5px
+  :font-size 1.2em
+  :margin 10px
+
+  h2
+    :font-size 1.4em
+    :font-weight bold
+
+#content
+  :width 500px
+  :float left
+  :padding-right 20px
+  :font-size 1.3em
+  :margin-top 20px
+
+  .full_width_notice
+    :font-size 1.2em
+    :background-color #ccccff
+    :text-align center
+    :border 1px solid #000
+    :width 400px
+    :margin 50px auto
+
+  .full_width_notice:hover
+    :background-color #eeeeff
+
+  .toggle_nav_control
+    :margin-top 20px
+
+  h1
+    :font-size 1.7em
+
+  h2
+    :font-size 1.5em
+
+  pre
+    :font-family monospace
+
+#right-sidebar
+  +column(4)
+  +last
+  :font-size 1.3em
+  :padding-top 20px
+  :padding-left 5px
+  :margin 10px
+  :color #6e6e6e
+
+  h2
+    :font-size 1.2em
+    :font-weight bold
+    :text-align center
+
+  .testimonials
+    :background-color #edf6e5
+    :border 1px solid #c8c8c8
+    :padding 5px
+
+    h2
+      :color #6e6e6e
+      :background-color #dceecc
+
+  .news-box
+    :margin-top 20px
+    :border 1px solid #c8c8c8
+    :padding 5px
+
+    h2
+      :background-color #e1e1e1
+
+      a
+        :color #008800
+
+#footer
+  :border-top 1px solid #7d7d7d
+  :text-align center
+  :font-size 1.2em
+  :margin-bottom 10px

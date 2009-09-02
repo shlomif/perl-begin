@@ -30,7 +30,7 @@ include p4n.mak
 
 run_compass: src/style.css
 
-src/style.css: config.rb src/sass/style.sass src/sass/print.sass
+src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass
 	compass
 
 upload: upload_hexten
