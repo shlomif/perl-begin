@@ -35,7 +35,6 @@ upload_berlios: all
 
 upload_hexten: all
 	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
-	# (cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/temp/)
 
 upload_iglu: all
 	(cd dest && $(RSYNC) -a * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
