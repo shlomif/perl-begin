@@ -1,14 +1,14 @@
 <define-tag perl_begin_news_boxes>
-<div class="sidebarbox-border bg-green01">
-<div class="sidebarbox-title-shading bg-green02">Testimonials</div>
+<div class="testimonials">
+<h2>Testimonials</h2>
 
 <p>
-<q>We went live on budget, to specification and on time</q>
+<q>"We went live on budget, to specification and on time"</q>
 -- <a href="$(ROOT)/learn/who-is-using/#testimonial-ajt">ajt</a>
 </p>
 
 <p>
-<q>Perl saved my vacation!</q>
+<q>"Perl saved my vacation!"</q>
 -- <a href="$(ROOT)/learn/who-is-using/#testimonial-saved-my-vacation">Tom
 Moertel</a>
 </p>
@@ -18,8 +18,8 @@ Moertel</a>
 </p>
 </div>
 
-<div class="sidebarbox-border news-box">
-<div class="sidebarbox-title-shading news-box-title"><a href="$(ROOT)/news/">News</a></div>
+<div class="news-box">
+<h2><a href="$(ROOT)/news/">News</a></h2>
 <ul>
 <li>
 03-August-09: <a href="$(ROOT)/news/#news_03_August_2009">More Updates</a>
