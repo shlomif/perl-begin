@@ -22,11 +22,16 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 DOCS_COMMON_DEPS = template.wml lib/books.wml
 
-all: latemp_targets perl_for_newbies_extra_data iperl_extra_data
+all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data
 
 include include.mak
 include rules.mak
 include p4n.mak
+
+run_compass: src/style.css
+
+src/style.css: config.rb src/sass/style.sass src/sass/print.sass
+	compass
 
 upload: upload_hexten
 
