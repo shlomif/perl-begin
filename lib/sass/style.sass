@@ -147,6 +147,16 @@ h1, h2, h3
   pre
     :font-family monospace
 
+=side-box
+  :border 1px solid #c8c8c8
+  :padding 2pt 8pt
+
+  &:hover
+    :border-color black
+
+  h2
+    :margin-top 3pt
+
 #right-sidebar
   +column(4)
   +last
@@ -162,35 +172,26 @@ h1, h2, h3
     :text-align center
 
   .testimonials
+    +side-box
     :background-color #edf6e5
-    :border 1px solid #c8c8c8
-    :padding 5px
 
     h2
       :color #6e6e6e
       :background-color #dceecc
-      :margin-top 3pt
-
-  .testimonials:hover
-    :border-color black
 
   .news-box
+    +side-box
     :margin-top 20px
-    :border 1px solid #c8c8c8
-    :padding 5px
 
     h2
       :background-color #e1e1e1
-      :margin-top 3pt
 
       a
         :color #008800
 
-      a:hover
-        :color red
+        &:hover
+          :color red
 
-  .news-box:hover
-    border-color: black
 
 #footer
   :border-top 1px solid #7d7d7d
