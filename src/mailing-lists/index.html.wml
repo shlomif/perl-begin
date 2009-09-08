@@ -1,10 +1,23 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Mailing Lists" />
 
-<h2>Overview</h2>
+<h2* id="toc">Table of Contents</h2*>
+<toc />
+
+<h2 id="overview">Overview</h2>
 
 <p> 
+An <a href="http://en.wikipedia.org/wiki/Electronic_mailing_list">electronic
+mailing list</a> is a way to send E-mail messages to several people using
+a single, convenient E-mail address. One can subscribe to a mailing list to
+receive messages that the other people have sent. More information can be
+found in <a href="http://en.wikipedia.org/wiki/Electronic_mailing_list">the
+wikipedia page</a>.
+</p>
+
+<p>
 Generally, your local Perl Mongers mailing list is considered a good place
 to ask <b>any</b> perl questions including beginners one. Refer to the <a
 href="http://www.pm.org/">Perl Mongers International homepage</a> for <a
@@ -19,17 +32,17 @@ Otherwise, you may consider joining one of the mailing lists listed here,
 which have a more international focus.
 </p>
 
-<h2>Resources of Interest</h2>
+<h2 id="resources">Resources of Interest</h2>
 
-<h3><a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">List
+<h3 id="perl-5-wiki-list"><a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">List
 of Mailing Lists on the Perl 5 Wiki</a></h3>
 
 <p>
 A comprehensive list of the Perl mailing lists, that is under active
-work, and still work-in-progress.
+work.
 </p>
 
-<h3><a href="http://lists.cpan.org/" rel="nofollow">The 
+<h3 id="perl-mailing-list-db"><a href="http://lists.cpan.org/" rel="nofollow">The 
 Perl Mailing List Database</a></h3>
 
 <p>
@@ -38,44 +51,45 @@ for specific Perl technologies and not directly related to "core" or
 "general use" Perl functionality.
 </p>
 
-<h3><a href="http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1">Yahoo Groups Perl Lists</a></h3>
+<h3 id="yahoogroups-list"><a href="http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1">Yahoo Groups Perl Lists</a></h3>
 
 <p>
 Many international Perl groups on many topics. Including some on very 
 specific Perl technologies.
 </p>
 
-<h2>Perl Beginners Mailing Lists</h2>
+<h2 id="beginners-mailing-lists">Perl Beginners Mailing Lists</h2>
 
-<h3><a href="http://learn.perl.org/">learn.perl.org's Mailing Lists</a></h3>
+<h3 id="learn-perl-org"><a href="http://learn.perl.org/">learn.perl.org's Mailing Lists</a></h3>
 
 <p>
-Some mailing lists for beginners, generally with a high or very high volume.
+Some mailing lists for beginners. Moderate volume.
 </p>
 
-<h3><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Our Own Mailing List</a></h3>
+<h3 id="perl-begin-mailing-list"><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Our Own Mailing List</a></h3>
 
 <p>
 If everybody else is doing it, why shouldn't we? Perl-begin has its own mailing 
 list on the site, which you can subscribe to. The volume is very low.
 </p>
 
-<h3><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
+<h3 id="yahoogroups-perl-beginner"><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
 
 <p>
 An international mailing list for beginners in English.
 </p>
 
 
-<h3><a href="http://tlali.iztacala.unam.mx/mailman/listinfo/perl">Spanish-Speaking Mailing List</a></h3>
+<h3 id="spanish-mailing-list"><a href="http://tlali.iztacala.unam.mx/mailman/listinfo/perl">Spanish-Speaking Mailing List</a></h3>
 
 <p>
-This mailing list has many beginners and several gurus that can help them. It accepts 
-beginners' questions, but every now and then there are higher level talks (which beginners
-may be able to benefit from). Its Lingua Franca is Spanish.
+This mailing list has many beginners and several gurus that can help them.
+It accepts beginners' questions, but every now and then there are higher level
+talks (which beginners may be able to benefit from). Its Lingua Franca is
+Spanish.
 </p>
 
-<h3>Insert your Mailing List Here</h3>
+<h3 id="insert-your-own">Insert your Mailing List Here</h3>
 
 <p>
 Do you have a Perl mailing list for beginners? If not, do you wish to 
