@@ -7,7 +7,10 @@
 <h2 id="intro">Introduction</h2>
 
 <p>
-<b>TODO</b>: FILL IN.
+<b>Hashes</b> (also known as "associative arrays", or in other languages
+"maps" or "dictionaries") allow the programmer to map arbitrary strings to 
+arbitrary values. Perl has a convenient syntax to support hashes as first
+order data structures.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
@@ -26,8 +29,7 @@ many code excerpts.
 <beginning_perl_entry>
 
 <p>
-The 11th chapter of this book for Perl beginners (including absolute beginners)
-covers Objects. This book was written by one of the foremost Perl experts.
+Chapter 3 of "Beginning Perl" discusses hashes.
 </p>
 
 </beginning_perl_entry>
