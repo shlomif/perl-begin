@@ -173,7 +173,7 @@ Attribution License version 2.0</a> (or at your option any later version).<br />
       
         {#LATEMP_BEFORE_BODY#}
         {#LATEMP_BODY#}
-        #<share_this_button />
+        <share_this_button />
     </div>
     
     {#PERL_BEGIN_SIDEBAR#}
