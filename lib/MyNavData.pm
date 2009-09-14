@@ -249,6 +249,11 @@ my $tree_contents =
                     'title' => "Hashes / Associative Arrays for Mapping Keys to Values",
                 },
                 {
+                    'text' => "References",
+                    'url' => "topics/references/",
+                    'title' => "Perl References",
+                },
+                {
                     'text' => "Object Oriented Perl",
                     'url' => "topics/object-oriented/",
                     'title' => "Object Oriented Programming and Design in Perl",

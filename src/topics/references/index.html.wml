@@ -1,0 +1,66 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "References in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+References allow the programmer to store an aggregate data structure in a
+simple variable, which can be passed around more easily, to represent complex,
+nested data structures, and also serve as the basis of Perl's object system. 
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<h3 id="perlreftut"><a href="http://perldoc.perl.org/perlreftut.html">perlreftut</a></h3>
+
+<p>
+The built-in references tutorial in the Perl 5 distribution. Also see the following documents:
+</p>
+
+<ul>
+
+<li>
+<a href="http://perldoc.perl.org/perlref.html">perlref - Perl 
+References and Nested Data Structures</a>
+</li>
+
+<li>
+<a href="http://perldoc.perl.org/perldsc.html">perldsc - Perl Data Structures</a>
+</li>
+
+<li>
+<a href="http://perldoc.perl.org/perllol.html">perllol - Perl Lists of Lists</a>
+</li>
+
+</ul>
+
+<h3 id="perlcafe-chat-log"><a href="perlcafe-references-chat.log.txt">#perlcafe
+chat log about Perl References</a></h3>
+
+<p>
+This is a log of the 
+<a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe">#perlcafe IRC
+channel</a> where we tried to explain about references to an inexperienced
+programmer who had problems understanding their concept. It may prove useful
+for some insights.
+</p>
+
+<beginning_perl_entry>
+
+<p>
+Chapter 7 of "Beginning Perl" discusses references.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The second presentation in the series discusses references.
+</p>
+
+</perl_for_newbies_entry>
+

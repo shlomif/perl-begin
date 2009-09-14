@@ -36,3 +36,13 @@ Hashes (also known as "associative arrays", "maps" or "dictionaries") are
 one of Perl's three fundamental data structures and their least understood
 one. This page gives some resources for learning about hashes. 
 </p>
+
+<h3 id="references"><a href="references/">References</a></h3>
+
+
+<p>
+References allow the programmer to store an aggregate data structure in a
+simple variable, which can be passed around more easily, to represent complex,
+nested data structures, and also serve as the basis of Perl's object system. 
+</p>
+
