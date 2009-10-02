@@ -72,6 +72,7 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
+<define-tag old_tutorials>
 <h3 id="haifau_perl_course"><a href="http://mila.cs.technion.ac.il/~yona/perl/">Haifa University Perl Course</a></h3>
 
 <p>
@@ -85,6 +86,7 @@ A comprehensive tutorial by <a href="http://www.ebb.org/">Bradley M. Kuhn</a>
 and others. Does not cover modules and objects, but should get you started
 on simple scripts.
 </p>
+</define-tag>
 
 <h3 id="lpw-perl-beginners"><a 
 href="http://www.slideshare.net/davorg/lpw-begin">LPW: Beginners Perl by Dave
@@ -113,6 +115,7 @@ Several tutorials as hosted on the popular "Perlmonks.org" site. Cover various
 topics.
 </p>
 
+<define-tag old_tutorials_lists>
 <h3 id="dmoz_category"><a href="http://dmoz.org/Computers/Programming/Languages/Perl/FAQs,_Help,_and_Tutorials/">Dmoz Category</a></h3>
 
 <p>
@@ -125,6 +128,7 @@ List of Perl Tutorials</a></h3>
 <p>
 A comprehensive list of Perl tutorials.
 </p>
+</define-tag>
 
 <h3 id="perlmeme"><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
 
