@@ -141,22 +141,24 @@ Attribution License version 2.0</a> (or at your option any later version).<br />
       </div>
       <div class="site-slogan" id="js-site-slogan">
           Perl - because programming should be fun.
-      </div>                 
-      <!--<div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>-->
-      
-      <h3 class="hide">Global Navigation</h3>
-      <div class="nav-global" id="js-nav-global">
-        <ul>
-          <li><a href="$(ROOT)/about.html">About Us</a></li>
-          <li><a href="$(ROOT)/contact/">Contact</a></li>
-        </ul>
       </div>
+
+#     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
+      
     </div>
     
     <!-- Main navigation -->                    
-    <h3 class="hide">Breadcrumbs Trail</h3>    
     <div class="nav-main">
+      <h3 class="hide">Breadcrumbs Trail</h3>    
+      <p class="breadcrumbs">
       <latemp_get_breadcrumbs_trail />
+      </p>
+      <h3 class="hide">Global Navigation</h3>
+      <ul class="about-links">
+        <li><a href="$(ROOT)/about.html">About Us</a></li>
+        <li><a href="$(ROOT)/contact/">Contact</a></li>
+      </ul>
+
     </div>
     
     <h3 class="hide">Main Navigation</h3>
@@ -177,15 +179,14 @@ Attribution License version 2.0</a> (or at your option any later version).<br />
     </div>
     
     {#PERL_BEGIN_SIDEBAR#}
-    </div>    
     
+  </div>
     <!-- FOOTER -->
     <h3 class="hide">Footer</h3>
     <div id="footer">
         <latemp_license_text />
         <latemp_webmaster_text />
     </div>
-  </div>
 </body>
 </html>
 
