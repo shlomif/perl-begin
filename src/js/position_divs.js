@@ -16,10 +16,5 @@ function position_divs() {
     );
 }
 
-$(document).ready( function() {
-        position_divs();
-} );
-
-$(window).resize( function() {
-        position_divs();
-} );
+$(document).ready(position_divs);
+$(window).resize(position_divs);
