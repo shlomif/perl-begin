@@ -9,13 +9,11 @@ function position_divs() {
     set_left("js-site-slogan");
 
     // Commenting out because it no longer exists.
-    // document.getElementById("js-nav-global").style.right = width / 2 - 20 + "px";
-    if ( ! $("#right-sidebar")) {
-        document.getElementById("content").style.width = client_w - 250 + "px";
-    }
-    else {
-        document.getElementById("content").style.width = client_w - 410 + "px";
-    }
+    // set_left("js-nav-global");
+
+    $("#content").css("width",
+        client_w - ($("#right-sidebar") ? 410 : 250) + "px"
+    );
 }
 
 $(document).ready( function() {
