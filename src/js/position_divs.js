@@ -3,12 +3,14 @@ function position_divs() {
     var width = client_w - 780;
     var js_site_w_str = width / 2 + 20 + "px";
 
-    document.getElementById("js-site-name").style.left = js_site_w_str;
-    document.getElementById("js-site-slogan").style.left = js_site_w_str;
+    var set_left = function (my_id) { $("#"+my_id).css("left", js_site_w_str);};
+
+    set_left("js-site-name");
+    set_left("js-site-slogan");
 
     // Commenting out because it no longer exists.
     // document.getElementById("js-nav-global").style.right = width / 2 - 20 + "px";
-    if ( document.getElementById("right-sidebar") == null ) {
+    if ( ! $("#right-sidebar")) {
         document.getElementById("content").style.width = client_w - 250 + "px";
     }
     else {
