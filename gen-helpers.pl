@@ -6,6 +6,8 @@ use warnings;
 use HTML::Latemp::GenMakeHelpers;
 use File::Find::Object::Rule;
 
+system("make", "-s", "src/style.css");
+
 my $generator = 
     HTML::Latemp::GenMakeHelpers->new(
         'hosts' =>
