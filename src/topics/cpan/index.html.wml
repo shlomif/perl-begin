@@ -49,6 +49,12 @@ CPAN with a non-root account"</a>
 CPAN modules under a local user directory.
 </li>
 
+<li>
+<a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">"But
+I 
+<i>can't</i> use CPAN!"</a> - an essay by Matt S. Trout explaining why
+you can almost always use CPAN, and the various ways you can do it. 
+</li>
 </ul>
 
 <p>
@@ -65,3 +71,4 @@ Stuff on the CPAN"</a> - a link to an article explaining how to find good stuff
 on the CPAN.
 </li>
 </ul>
+
