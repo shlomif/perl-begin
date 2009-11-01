@@ -14,11 +14,13 @@
 .hide
     :display none
 
+=hover-effect
+    &:hover
+        :color red
+
 a
     :color blue
-
-a:hover
-    :color red
+    +hover-effect
 
 a:active
     :color green
@@ -78,8 +80,7 @@ h1, h2, h3
         :text-decoration none
         :font-size 1.3em
 
-        &:hover
-            :color red
+        +hover-effect
 
     .breadcrumbs
         :float left
@@ -191,9 +192,7 @@ h1, h2, h3
             a
                 :color #008800
 
-                &:hover
-                    :color red
-
+                +hover-effect
 
 #footer
     :border-top 1px solid #7d7d7d
