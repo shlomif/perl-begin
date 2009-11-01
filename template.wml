@@ -169,7 +169,7 @@ Attribution License version 2.0</a> (or at your option any later version).<br />
 
     <!--   CONTENT -->
     <h3 class="hide">Content</h3>
-    <div id='content'>
+    <div id="content">
         <!-- Page title -->   
         <latemp_default_h1_tag />
       
