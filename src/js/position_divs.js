@@ -1,8 +1,11 @@
 function position_divs() {
     var client_w = document.body.clientWidth ;
     var width = client_w - 780;
-    document.getElementById("js-site-name").style.left   = width / 2 + 20 + "px";
-    document.getElementById("js-site-slogan").style.left = width / 2 + 20 + "px";
+    var js_site_w_str = width / 2 + 20 + "px";
+
+    document.getElementById("js-site-name").style.left = js_site_w_str;
+    document.getElementById("js-site-slogan").style.left = js_site_w_str;
+
     // Commenting out because it no longer exists.
     // document.getElementById("js-nav-global").style.right = width / 2 - 20 + "px";
     if ( document.getElementById("right-sidebar") == null ) {
