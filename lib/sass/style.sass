@@ -18,6 +18,10 @@
     &:hover
         :color red
 
+/* Headers positioning common elements mix-in */
+=headers-pos
+    :margin-left 40px
+
 a
     :color blue
     +hover-effect
@@ -50,6 +54,7 @@ h1, h2, h3
 
         h1
             :margin 0px
+            +headers-pos
 
             a
                 :background-color #008000
@@ -64,6 +69,8 @@ h1, h2, h3
         :color #e1e1e1
         :font-weight bold
         :font-size 1.3em
+        +headers-pos
+        
 
 
 .nav-main
@@ -121,6 +128,7 @@ h1, h2, h3
     :width 500px
     :float left
     :padding-right 20px
+    :padding-left 10px
     :font-size 1.3em
     :margin-top 20px
 
