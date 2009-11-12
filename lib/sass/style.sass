@@ -22,6 +22,16 @@
 =headers-pos
     :margin-left 40px
 
+=side-box
+    :border 1px solid #c8c8c8
+    :padding 2pt 8pt
+
+    &:hover
+        :border-color black
+
+    h2
+        :margin-top 3pt
+
 a
     :color blue
     +hover-effect
@@ -134,15 +144,13 @@ h1, h2, h3
     :margin-top 20px
 
     .full_width_notice
+        +side-box
         :font-size 1.2em
         :background-color #ccccff
         :text-align center
-        :border 1px solid #000
+        // :border 1px solid #000
         :width 400px
         :margin 50px auto
-
-    .full_width_notice:hover
-        :background-color #eeeeff
 
     .toggle_nav_control
         :margin-top 20px
@@ -159,15 +167,6 @@ h1, h2, h3
     pre, tt
         :font-family monospace
 
-=side-box
-    :border 1px solid #c8c8c8
-    :padding 2pt 8pt
-
-    &:hover
-        :border-color black
-
-    h2
-        :margin-top 3pt
 
 #right-sidebar
     +column(4)
