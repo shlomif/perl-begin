@@ -1,6 +1,18 @@
 #include '../template.wml'
+#include "why-perl.wml"
+#include "xhtml/1.x/std/toc.wml"
 
-<latemp_subject "Why Perl isn't Bad?" />
+<latemp_subject "Why Perl?" />
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="why-learn"><strong>Why</strong> should I learn Perl?</h2>
+
+<why_should_i_learn_perl />
+
+<h2 id="myth-dispelling">Myth Dispelling</h2>
 
 <p>
 It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact, it's 
@@ -55,7 +67,7 @@ online.
 Here are some more observations.
 </p>
 
-<h2>When is Perl the right tool for the job?</h2>
+<h2 id="right-tool">When is Perl the <strong>right</strong> tool for the job?</h2>
 
 <p>
 We admit Perl has some problems. However, Perl 5 is still possibly the best
