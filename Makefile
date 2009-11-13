@@ -33,6 +33,8 @@ run_compass: src/style.css
 src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass
 	compass
 
+dest/learn/index.html: lib/why-perl.wml
+
 # upload: upload_hexten
 upload: upload_beta
 
