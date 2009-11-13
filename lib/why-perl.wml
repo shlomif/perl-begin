@@ -19,17 +19,39 @@ So why should you learn Perl? Here goes nothing:
 <h3 id="perl_is_fun">1. Perl is Fun</h3>
 
 <p>
-Writing Perl code is very fun and rewarding. You don't have to <b>deal with
-a lot of idiosyncracies</b> like memory allocation and freeing, passing a 
-context  variable; the code is <b>brief and effective</b>; there is a 
-<b>lot of Do-What-I-Means</b> (DWIMmeries) that make life simpler; with a 
-small amount of awareness your code can be <b>portable</b> across all UNIXes, 
-and even on Windows and other platforms; Perl is <b>documented extensively</b> 
-and you can get a <b>lot of interactive, human answers</b> for your questions 
-from  <a href="$(ROOT)/mailing-lists/">mailing lists</a>,
-<a href="$(ROOT)/irc/">online chats</a> and <a href="$(ROOT)/web-forums/">web 
-forums</a>.
+Writing Perl code is very fun and rewarding:
 </p>
+
+<ol>
+
+<li>
+You can avoid dealing with many idiosyncracies like memory allocation and 
+freeing, passing a context variable to a function, or inconvenient syntax
+for complex data structures.
+</li>
+
+<li>
+The code is <b>brief</b> and effective.
+</li>
+
+<li>
+There is a lot of <b>Do-What-I-Means</b> (DWIMmeries) that make programming
+simpler.
+</li>
+
+<li>
+With a small amount of awareness your code can be <b>portable</b> across all 
+UNIXes, and even on Windows and other platforms.
+</li>
+
+<li>
+Perl is <b>documented</b> extensively and you can get a lot of interactive, 
+human answers for your questions from <a href="$(ROOT)/mailing-lists/">mailing
+lists</a>, <a href="$(ROOT)/irc/">online chats</a> and 
+<a href="$(ROOT)/web-forums/">web forums</a>.
+</li>
+
+</ol>
 
 <p>
 Most serious Perl programmers <b>love their language</b> and love programming
@@ -39,7 +61,7 @@ in it.
 <h3 id="perl_is_useful">2. Perl is Useful</h3>
 
 <p>
-Perl has been successfully <b>used for a lot of diverse tasks</b>: text 
+Perl has been successfully used for a lot of diverse tasks: text 
 processing, system administration, web programming, web automation, GUI 
 programming, games programming, code generation, bio-informatics and 
 geneological research,  lingual and etymological research, number crunching, 
@@ -61,8 +83,8 @@ instance).
 <h3 id="perl_can_show_the_world">4. Perl can Show You the World</h3>
 
 <p>
-Perl 5 has borrowed the <b>most important programming paradigms</b>, and 
-implemented them in a consistent and fun way. It is a <b>dynamic language</b>, 
+Perl 5 has borrowed the most important programming <b>paradigms</b>, and 
+implemented them in a consistent and fun way. It is a dynamic language, 
 that supports Object-Oriented Programming (<b>OOP</b>), Functional 
 Programming (<b>FP</b>), Aspect-Oriented Programming, and lots of other 
 buzzwords, while not trying to prevent you from writing quick and dirty code 
@@ -95,12 +117,12 @@ If you understand Perl, you'll understand the world!
 used, proven code</h3>
 
 <p>
-Perl has <a href="http://www.cpan.org/">the Comprehensive Perl Archive 
-Network</a>, which is a <b>huge collection of useful</b> (and not-so-useful) 
-re-usable Perl modules, under an open source licence. They allow you to use 
-them as libraries to facilitate writing your code. So instead of starting
-to write something yourself, <a href="http://search.cpan.org/">do a CPAN 
-search</a>, or ask someone for a recommendation for a good CPAN module.
+Perl has <a href="$(ROOT)/topics/cpan/">the <b>Comprehensive Perl Archive 
+Network (CPAN)</b></a>, which is a huge collection of useful (and 
+not-so-useful) re-usable Perl modules, under an open source licence. They 
+allow you to use them as libraries to facilitate writing your code. So instead 
+of starting to write something yourself, do a CPAN search, or ask someone for
+a recommendation for a good CPAN module.
 </p>
 
 <h2 id="how_do_i_start">Great! Now how do I start?</h2>
