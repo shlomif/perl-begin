@@ -33,8 +33,8 @@ run_compass: src/style.css
 src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass
 	compass
 
-upload: upload_hexten
-# upload: upload_beta
+# upload: upload_hexten
+upload: upload_beta
 
 upload_berlios: all
 	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
