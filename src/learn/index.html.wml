@@ -1,7 +1,12 @@
 #include '../template.wml'
 #include "why-perl.wml"
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Learn Perl Now" />
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
 
 <h2 id="how-to-learn"><strong>How</strong> to Learn Perl?</h2>
 
