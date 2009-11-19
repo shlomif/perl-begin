@@ -15,6 +15,19 @@
 
 <latemp_affiliations_buttons>
 # <affil_collection_berlios />
+<!-- Yahoo! Search -->
+<form method="get" action="http://search.yahoo.com/search">
+<div style="border: 1px solid #999; padding: 5px;">
+<a href="http://search.yahoo.com/"><img 
+src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif" 
+/></a><br />
+<input type="text" name="p" size=19 style="margin: 10px 0 0 0" /><br />
+<input type="radio" name="vs" style="vertical-align: middle" checked="checked" />Search the web<br />
+<input type="radio" name="vs" style="vertical-align: middle" value="perl-begin.org" />Search this site<br />
+<input type="hidden" name="fr" value="yscpb" />
+<input type="submit" value="Search" style="margin: 5px 0 0 0" /></div>
+</form>
+<!-- End Yahoo! Search -->
 </latemp_affiliations_buttons>
 
 <latemp_lang "en-US" />
