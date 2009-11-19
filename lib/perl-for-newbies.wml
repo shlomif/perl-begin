@@ -10,6 +10,7 @@ Newbies Series</a></h3>
 <preserve idx />
 <set-var %attributes />
 
+<latemp_subject "Perl for Newbies - Part <get-var idx /> - The Perl Beginners' Site" />
 <page_extra_head_elements>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="$(ROOT)/p4n.css" />
