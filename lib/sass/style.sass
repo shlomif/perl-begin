@@ -145,12 +145,16 @@ h1, h2, h3
 
     .full_width_notice
         +side-box
+        :border-color black
         :font-size 1.2em
         :background-color #ccccff
         :text-align center
         // :border 1px solid #000
         :width 400px
         :margin 50px auto
+
+        &:hover
+            :border-color #585858
 
     .toggle_nav_control
         :margin-top 20px
