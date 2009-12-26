@@ -119,6 +119,27 @@ There seems to be <a href="http://search.cpan.org/dist/DBD-XBase/">an
 XBase module on CPAN</a> . It seems to be pure-Perl, so it may be slow.
 </p>
 
+<h2 id="distributed">Distributed Databases ("No SQL", etc.)</h2>
+
+<p>
+Recently, to meet the growing demand for data of some web sites, some people
+have switched to using non-centralised, non-SQL based databases that use
+a cluster of servers to implement a distributed data storage. This has 
+been dubbed "No SQL". You most likely would prefer to use an SQL-based
+solution, which should be easily able to handle the data in your scope, but
+here is a list of distributed databases just for completeness sake.
+</p>
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/Net-CouchDb/">Net-CouchDb</a> - an
+interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
+</li>
+
+</ul>
+
+
 <h2 id="links">Links</h2>
 
 <ul>
