@@ -14,7 +14,7 @@ nested data structures, and also serve as the basis of Perl's object system.
 
 <h2 id="tutorials">Tutorials</h2>
 
-<h3 id="perlreftut"><a href="http://perldoc.perl.org/perlreftut.html">perlreftut</a></h3>
+<h3 id="perlreftut"><pdoc d="perlreftut"></pdoc></h3>
 
 <p>
 The built-in references tutorial in the Perl 5 distribution. Also see the following documents:
@@ -23,16 +23,15 @@ The built-in references tutorial in the Perl 5 distribution. Also see the follow
 <ul>
 
 <li>
-<a href="http://perldoc.perl.org/perlref.html">perlref - Perl 
-References and Nested Data Structures</a>
+<pdoc d="perlref"> - Perl References and Nested Data Structures</pdoc>
 </li>
 
 <li>
-<a href="http://perldoc.perl.org/perldsc.html">perldsc - Perl Data Structures</a>
+<pdoc d="perldsc"> - Perl Data Structures</pdoc>
 </li>
 
 <li>
-<a href="http://perldoc.perl.org/perllol.html">perllol - Perl Lists of Lists</a>
+<pdoc d="perllol"> - Perl Lists of Lists</pdoc>
 </li>
 
 </ul>

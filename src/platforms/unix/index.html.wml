@@ -28,7 +28,7 @@ the <tt>INSTALL</tt> file.
 <h3 id="perldoc">Setting up a local Perldoc</h3>
 
 <p>
-The <a href="http://perldoc.perl.org/perldoc.html">perldoc</a> 
+The <pdoc d="perldoc"></pdoc>
 documentation program is not always present in the default installation, as many
 non-programmers or non-Perl programmers are not going to use it. It can
 be installed by:

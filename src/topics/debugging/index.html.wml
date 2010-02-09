@@ -17,9 +17,7 @@ can save a lot of time.
 
 <h2 id="resources">Debugging Resources</h2>
 
-<h3 id="perldebtut"><a 
-href="http://perldoc.perl.org/perldebtut.html">perldebtut - the Perl 
-debugging Tutorial</a></h3>
+<h3 id="perldebtut"><pdoc d="perldebtut"> - the Perl debugging Tutorial</pdoc></h3>
 
 <p>
 Covers the default <tt>perl -d</tt> debugger.

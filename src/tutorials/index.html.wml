@@ -58,7 +58,7 @@ Tutorials</a></h3>
 
 <p>
 The tutorials that ship as part of the perl core. Start with 
-<a href="http://perldoc.perl.org/perlintro.html">perlintro</a> and 
+<pdoc d="perlintro"></pdoc> and 
 <a href="http://perldoc.perl.org/index-tutorials.html">then continue with
 other tutorials</a>.
 </p>

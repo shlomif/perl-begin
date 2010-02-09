@@ -17,13 +17,6 @@ code and would not be idiomatic.
 
 <h2 id="tutorials">Tutorials</h2>
 
-<define-tag pdoc whitespace="delete" endtag="required">
-<preserve d />
-<set-var %attributes />
-<a href="http://perldoc.perl.org/<get-var d />.html"><get-var d/>%body</a>
-<restore d />
-</define-tag>
-
 <h3 id="perlretut"><pdoc d="perlretut"></pdoc></h3>
 
 <p>
