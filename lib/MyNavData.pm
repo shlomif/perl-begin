@@ -254,6 +254,11 @@ my $tree_contents =
                     'title' => "Perl References",
                 },
                 {
+                    'text' => "Regular Expressions",
+                    'url' => "topics/regular-expressions/",
+                    'title' => "Regular Expressions in Perl",
+                },
+                {
                     'text' => "Object Oriented Perl",
                     'url' => "topics/object-oriented/",
                     'title' => "Object Oriented Programming and Design in Perl",

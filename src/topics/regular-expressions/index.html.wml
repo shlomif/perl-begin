@@ -1,0 +1,65 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Regular Expressions in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Regular expressions (also known as "regexes", "regexps" and "re's") allow
+the Perl programmer to easily locate simple or complex patterns in text, and
+process the text accordingly. Many beginners are intimidated by regular
+expressions, but they are well-worth to invest the time to learn and understand
+because processing text character-by-character would be slower, take more
+code and would not be idiomatic.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<define-tag pdoc whitespace="delete" endtag="required">
+<preserve d />
+<set-var %attributes />
+<a href="http://perldoc.perl.org/<get-var d />.html"><get-var d/>%body</a>
+<restore d />
+</define-tag>
+
+<h3 id="perlretut"><pdoc d="perlretut"></pdoc></h3>
+
+<p>
+The built-in regular expressions tutorial in the Perl 5 distribution. Also see the following documents:
+</p>
+
+<ul>
+
+<li>
+<pdoc d="perlrequick"> - Quick introduction to regular expressions</pdoc>.
+</li>
+
+<li>
+<pdoc d="perlreref"> - Regular expression reference</pdoc>.
+</li>
+
+<li>
+<pdoc d="perlre"> - regular expression description in Perl</pdoc> - not
+written in a very accessible way.
+</li>
+
+</ul>
+
+<beginning_perl_entry>
+
+<p>
+Chapter 5 of "Beginning Perl" discusses regular expressions.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The second presentation in the series introduces regular expressions.
+</p>
+
+</perl_for_newbies_entry>
+

@@ -1,0 +1,461 @@
+May 05 15:52:06 -->	sas123 (n=sas@59.95.17.77) has joined #perlcafe
+May 05 15:52:10 <sas123>	hi
+May 05 15:52:23 <rindolf>	Hi sas123 
+May 05 15:52:26 <sas123>	rindolf: I am here
+May 05 15:52:28 <rindolf>	sas123: OK.
+May 05 15:52:53 <sas123>	why this channel?
+May 05 15:52:58 <rindolf>	Try going over http://www.shlomifish.org/lecture/Perl/Newbies/ - at least the reference parts.
+May 05 15:53:12 <rindolf>	sas123: #perlcafe was supposed to host off-topic #perl discussion.
+May 05 15:53:17 <rindolf>	sas123: but that didn't work.
+May 05 15:53:29 <rindolf>	It now hosts a lot of discussion that we'd rather not see on #perl.
+May 05 15:53:34 <sas123>	what does it cater to now
+May 05 15:53:40 <sas123>	oh
+May 05 15:53:42 <rindolf>	And some more Perl-related discussion.
+May 05 15:53:46 <rindolf>	Or computer-related.
+May 05 15:53:57 <rindolf>	sas123: wait a sec.
+May 05 15:54:01 <rindolf>	perlbot: faq
+May 05 15:54:02 <perlbot>	The #perl FAQ is at http://perl.net.au/wiki/Freenode_Sharp_Perl_FAQ
+May 05 15:54:34 <rindolf>	sas123: http://perl.net.au/wiki/Freenode_Sharp_Perl_FAQ#.23perlcafe
+May 05 15:54:45 <sas123>	k
+May 05 15:54:54 <rindolf>	sas123: anyway, why aren't you using "use strict;" and "use warnings;"?
+May 05 15:55:05 <sas123>	a sec
+May 05 15:55:06 <rindolf>	sas123: you should as a general rule add them to all scripts.
+May 05 15:56:19 <sas123>	rindolf: ok
+May 05 15:57:35 <sas123>	rindolf: I HATE THOSE TWO
+May 05 15:57:55 <sas123>	rindolf: they make the learning curve steep
+May 05 15:58:21 <rindolf>	sas123: yes, but they prevent many common errors.
+May 05 15:58:28 <rindolf>	sas123: do you know my() and stuff?
+May 05 15:58:43 <sas123>	rindolf: yes 
+May 05 15:58:46 <rindolf>	sas123: or should I explain about declaring your variables?
+May 05 15:58:53 <sas123>	no
+May 05 15:59:08 <rindolf>	sas123: without use strict you can easily mistype the name of your variables.
+May 05 15:59:16 <sas123>	k
+May 05 15:59:52 <sas123>	I also know a bit about references but do not know how to use them
+May 05 16:01:11 <sas123>	rindolf: can you help me with the problem?
+May 05 16:01:30 <rindolf>	sas123: I can try.
+May 05 16:01:37 <rindolf>	sas123: OK - references.
+May 05 16:01:41 <sas123>	rindolf: shall I start ?
+May 05 16:01:50 <rindolf>	sas123: first read: http://www.shlomifish.org/lecture/Perl/Newbies/lecture2/references/
+May 05 16:01:56 <rindolf>	sas123: yes.
+May 05 16:02:19 <sas123>	rindolf: shall I read first or ask?
+May 05 16:02:27 <rindolf>	sas123: read first, it's not too long.
+May 05 16:05:02 <sas123>	rindolf: read it but did not get this - The reference of any array may be taken, and a reference to an array may always be converted to its elements, but there is still a difference in functionality.
+May 05 16:05:22 <rindolf>	sas123: ah.
+May 05 16:05:29 <rindolf>	sas123: OK, where do you see that?
+May 05 16:05:50 <sas123>	In the URL you gave
+May 05 16:06:08 <rindolf>	sas123: I meant that there's a difference between the contents of the array the reference points to and the reference itself.
+May 05 16:06:24 <rindolf>	sas123: are you familiar with how a computer works? RAM, memory, etc.?
+May 05 16:06:31 <sas123>	yes
+May 05 16:06:35 <rindolf>	sas123: OK.
+May 05 16:07:05 <rindolf>	sas123: so what a reference does is say: "This cell, instead of holding a string will hold a pointer to a data structure".
+May 05 16:07:16 <rindolf>	Let's say this data structure is an array.
+May 05 16:07:28 <rindolf>	So we access this array using @{$array_ref}
+May 05 16:07:35 <rindolf>	Or $array_ref->[0] or whatever.
+May 05 16:07:42 <rindolf>	And then treat as an array.
+May 05 16:07:53 <sas123>	you lost me 
+May 05 16:07:56 <rindolf>	Except that instead of being a first-order variable.
+May 05 16:07:59 <rindolf>	sas123: OK.
+May 05 16:08:02 <rindolf>	sas123: sorry.
+May 05 16:08:07 <sas123>	wait
+May 05 16:08:11 <rindolf>	sas123: maybe I should draw it.
+May 05 16:08:16 <sas123>	 "This cell, instead of holding a string
+May 05 16:08:17 <sas123>	                 will hold a pointer to a data structure".
+May 05 16:08:18 <rindolf>	I've got Inkscape here.
+May 05 16:08:20 <rindolf>	And dia.
+May 05 16:08:25 <rindolf>	sas123: yes.
+May 05 16:08:34 <sas123>	is the english right here?
+May 05 16:09:25 <sas123>	I didn't get the above line
+May 05 16:10:06 <sas123>	wait not technicially, but literally
+May 05 16:11:09 <rindolf>	sas123: yes.
+May 05 16:11:29 <rindolf>	Let's say you have a nice cell called $myvar OK. (short for myvariable.
+May 05 16:11:40 <rindolf>	$myvar==[ "Hello sas123"  ]
+May 05 16:11:47 <rindolf>	Which means it holds a string.
+May 05 16:11:53 <rindolf>	sas123: got it?
+May 05 16:12:02 <rindolf>	sas123: this is a simple scalar variable.
+May 05 16:12:06 <sas123>	$myvar = 'Hello sas123' ?
+May 05 16:12:15 <sas123>	yes
+May 05 16:12:20 <rindolf>	sas123: that's how you'll assign to it.
+May 05 16:12:33 -->	railbait (n=railbait@wsip-70-164-66-49.ok.ok.cox.net) has joined #perlcafe
+May 05 16:12:36 <rindolf>	sas123: but mynotation indicates that $myvar contains the string "Hello sas123".
+May 05 16:12:39 <rindolf>	These are its contents.
+May 05 16:12:43 <sas123>	k
+May 05 16:12:46 <rindolf>	sas123: OK.
+May 05 16:12:54 <sas123>	ok
+May 05 16:12:57 <rindolf>	sas123: now, we can put any string we want inside $myvar.
+May 05 16:13:29 <rindolf>	sas123: but, strings alone are hard to work with.
+May 05 16:13:36 <sas123>	ok
+May 05 16:13:39 <rindolf>	sas123: so Perl 5 added the concept of references.
+May 05 16:13:48 <rindolf>	sas123: which can also be thought of as pointers.
+May 05 16:14:12 <rindolf>	Now let's suppose I write in Perl «$myvar = [5,6,"sas123"];»
+May 05 16:14:14 <sas123>	ok
+May 05 16:14:35 <sas123>	what is that?
+May 05 16:14:38 <rindolf>	sas123: in this case what happens is that $myvar will hold the memory address of an array.
+May 05 16:14:44 <rindolf>	sas123: that's notation.
+May 05 16:14:49 <rindolf>	[ .... ] is a dynamic array.
+May 05 16:15:01 <sas123>	ok
+May 05 16:15:20 <rindolf>	But [....] is still technically a single (= "scalar") value.
+May 05 16:15:27 <sas123>	ok
+May 05 16:16:01 <rindolf>	sas123: Now what happens is that myvar would be $myvar==[ *MyPtr*] where *MyPtr* is a pointer to an array in memory.
+May 05 16:16:13 <rindolf>	sas123: let's try it.
+May 05 16:16:27 <rindolf>	buubot: my $myvar = [5, 6, "sas123"], [$myvar]
+May 05 16:16:35 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"], [$myvar]
+May 05 16:16:36 <buubot>	rindolf:  [undef]
+May 05 16:16:42 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"]; [$myvar]
+May 05 16:16:43 <buubot>	rindolf:  [[5,6,"sas123"]]
+May 05 16:16:45 <rindolf>	OK.
+May 05 16:16:50 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"]; ["$myvar"]
+May 05 16:16:51 <buubot>	rindolf:  ["ARRAY(0x9e9f7e8)"]
+May 05 16:16:54 <sas123>	a sec
+May 05 16:17:11 -->	ispy_ (n=ispyhuma@67.59.59.227) has joined #perlcafe
+May 05 16:17:46 <sas123>	ok
+May 05 16:18:05 <sas123>	wait
+May 05 16:18:15 <rindolf>	Hi ispy_ 
+May 05 16:18:23 <rindolf>	ispy_: we're explaining references to sas123 
+May 05 16:18:33 <sas123>	why is "" making a difference
+May 05 16:18:46 <ispy_>	Yo
+May 05 16:18:49 <rindolf>	sas123: because " stringifies a variable.
+May 05 16:19:12 <sas123>	ok
+May 05 16:20:00 <rindolf>	sas123: you cannot do too much with the string "ARRAY(0x...)" but as you see that what Perl displays if you tells it to.
+May 05 16:20:11 <sas123>	yes
+May 05 16:20:16 <rindolf>	sas123: it's just Perl's weird way of saying it's a reference as fer as she's concerned.
+May 05 16:20:33 <sas123>	yes
+May 05 16:20:46 <rindolf>	sas123: OK.
+May 05 16:20:50 <rindolf>	sas123: now if we do.
+May 05 16:21:05 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"]; $myvar->[0]
+May 05 16:21:06 <buubot>	rindolf:  5
+May 05 16:21:09 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"]; $myvar->[1]
+May 05 16:21:10 <buubot>	rindolf:  6
+May 05 16:21:12 <rindolf>	buubot: eval: my $myvar = [5, 6, "sas123"]; $myvar->[2]
+May 05 16:21:13 <buubot>	rindolf:  "sas123"
+May 05 16:21:29 <sas123>	wait
+May 05 16:21:34 <rindolf>	See? The -> allows us to access the array referred to by the reference.
+May 05 16:22:07 <sas123>	what would $myvar->[0] mean in English
+May 05 16:23:33 <sas123>	?
+May 05 16:25:19 <sas123>	rindolf: you there?
+May 05 16:25:41 <rindolf>	sas123: yes, sorry.
+May 05 16:25:44 <rindolf>	sas123: got distracted.
+May 05 16:25:49 <rindolf>	sas123: I'm going to disconnect my Inet now.
+May 05 16:25:52 <rindolf>	sas123: stay tuned.
+May 05 16:25:56 <rindolf>	sas123: meanwhile ask ispy_ 
+May 05 16:25:59 <rindolf>	Bye.
+May 05 16:26:01 <ispy_>	Sup.
+May 05 16:26:06 <ispy_>	Oh yeah...
+May 05 16:27:46 ---	Disconnected ().
+**** ENDING LOGGING AT Mon May  5 16:27:46 2008
+
+**** BEGIN LOGGING AT Mon May  5 16:28:09 2008
+
+May 05 16:28:09 -->	You are now talking on #perlcafe
+May 05 16:28:09 ---	Topic for #perlcafe is Happy Birthday Rindolf, you crazy bastard | <sili> my moths. let me show you them
+May 05 16:28:09 ---	Topic for #perlcafe set by rindolf at Mon May  5 11:41:11 2008
+May 05 16:28:14 <shlomif>	Hi.
+May 05 16:28:18 <shlomif>	sas123: I'm rindolf.
+May 05 16:29:19 <rindolf>	sas123: OK.
+May 05 16:29:43 <sas123>	ok
+May 05 16:29:50 <rindolf>	In English $myvar->[0] means "Give me the 0'th element ([0]) out of the array pointed to (->) by $myvar"
+May 05 16:30:05 <rindolf>	The notation is shorter because Perl is not COBOL.
+May 05 16:30:07 <sas123>	k
+May 05 16:30:29 <sas123>	ok
+May 05 16:30:30 <rindolf>	And we thank $DEITY that it isn't.
+May 05 16:30:35 <rindolf>	:-)
+May 05 16:31:36 <rindolf>	sas123: we can also do @{$myvar}
+May 05 16:31:43 <rindolf>	Which will give us the entire array.
+May 05 16:31:47 <rindolf>	Or ${$myvar}[0]
+May 05 16:32:01 <rindolf>	Which is like $myarray[0] for @myarray.
+May 05 16:32:02 <sas123>	ok
+May 05 16:32:49 <sas123>	what does ${$myvar}[0] give - is it same as $myvar->[0]
+May 05 16:34:21 <ispy_>	TMTOWTDI
+May 05 16:34:23 <ispy_>	=]
+May 05 16:34:48 <ispy_>	I think you should stick with ->.  It's clearly defined and modern imho.
+May 05 16:34:49 <sas123>	ok
+May 05 16:34:53 <sas123>	ok
+May 05 16:36:43 <rindolf>	sas123: yes, ${$myvar}[0] is the same as $myvar->[0]
+May 05 16:36:56 <rindolf>	But I was just showing that you can treat @{$myvar} as an array.
+May 05 16:37:04 <rindolf>	sas123: often the {...} are optional.
+May 05 16:38:20 <sas123>	rindolf: how is @{$myvar} read in english?
+May 05 16:38:46 <rindolf>	sas123: the array (@) referred to by the pointer contained in $myvar.
+May 05 16:39:51 <sas123>	oh ok
+May 05 16:41:07 <rindolf>	sas123: are you ready for more complicated examples?
+May 05 16:41:57 <sas123>	yes
+May 05 16:42:00 <rindolf>	sas123: ok.
+May 05 16:43:50 <rindolf>	sas123: well, now, every element of the array we refer to is also a full-fledged scalar.
+May 05 16:44:01 <rindolf>	sas123: and it in turn can hold references.
+May 05 16:44:05 <rindolf>	sas123: so I can say:
+May 05 16:44:47 <sas123>	a sec to read
+May 05 16:44:56 <rindolf>	buubot: eval: my $array_ref = [5,6, ["Hello", "sas123"], ["this", "is", "rindolf"],]; $array_ref->[2]->[1];
+May 05 16:44:57 <buubot>	rindolf:  "sas123"
+May 05 16:45:01 <sas123>	ok
+May 05 16:45:21 <sas123>	ok
+May 05 16:45:26 <rindolf>	sas123: got it.
+May 05 16:45:43 <rindolf>	sas123: now try to write "rindolf", using the $array_ref I gave.
+May 05 16:46:38 <sas123>	$array_ref->[3]->[2]
+May 05 16:46:56 <rindolf>	sas123: try it.
+May 05 16:47:06 <rindolf>	sas123: use "buubot: eval:"
+May 05 16:47:19 <rindolf>	sas123: are you using a GUI IRC client?
+May 05 16:47:46 <sas123>	no
+May 05 16:47:54 <rindolf>	sas123: ok.
+May 05 16:48:06 <rindolf>	sas123: then let me type it.
+May 05 16:48:17 <rindolf>	buubot: eval: my $array_ref = [5,6, ["Hello", "sas123"], ["this", "is", "rindolf"],]; $array_ref->[3]->[2]
+May 05 16:48:18 <buubot>	rindolf:  "rindolf"
+May 05 16:48:24 <rindolf>	Yay!
+May 05 16:48:26 <rindolf>	sas123++
+May 05 16:48:55 <rindolf>	sas123: OK. 
+May 05 16:49:14 <q[ender]>	rindolf, you are a really swell guy
+May 05 16:49:16 <rindolf>	sas123: naturally we can have array refs to array refs to array refs (and so on.)
+May 05 16:49:20 <rindolf>	q[ender]: thanks. :-)
+May 05 16:49:53 <sas123>	right
+May 05 16:50:30 <rindolf>	sas123: OK.
+May 05 16:50:35 <rindolf>	sas123: now, next lesson.
+May 05 16:50:40 <Diablo-D3>	okay hey guys
+May 05 16:50:43 <rindolf>	sas123: other types of her.
+May 05 16:50:45 <rindolf>	Diablo-D3: hi.
+May 05 16:50:52 <rindolf>	sas123: other types of *refs*.
+May 05 16:50:54 <rindolf>	Thinko.
+May 05 16:53:11 <sas123>	rindolf: ?
+May 05 16:54:15 <rindolf>	sas123: I'd like to continue the discussion.
+May 05 16:54:23 <railbait>	You can use the equivalence property of p-norms to rate your data
+May 05 16:54:28 <railbait>	And write it yourself
+May 05 16:54:31 <railbait>	You lazy fuck
+May 05 16:54:42 <rindolf>	sas123: or now you can hopefully go over http://www.shlomifish.org/lecture/Perl/Newbies/lecture2/references/ or perlreftut or whatever.
+May 05 16:54:52 <Diablo-D3>	[09:51:28] <Diablo-D3> I know how to do this, but is there a perl module that already does it for me?
+May 05 16:55:03 <railbait>	I doubt it
+May 05 16:55:04 <sas123>	rindolf: shall I ask my question
+May 05 16:55:08 <rindolf>	sas123: yes.
+May 05 16:55:45 <sas123>	http://pastebin.com/d267d4fc0
+May 05 16:56:01 <sas123>	In this how will %table look like
+May 05 16:56:31 <--	Getty has quit (heinlein.freenode.net irc.freenode.net)
+May 05 16:56:47 <sas123>	?
+May 05 16:58:37 <buubot>	sas123: The paste d267d4fc0 has been copied to http://erxz.com/pb/8952
+May 05 16:59:17 <rindolf>	sas123: yes, please use http://sial.org/pbot/ or something.
+May 05 16:59:21 <sas123>	rindolf: u there?
+May 05 16:59:28 <rindolf>	sas123: yes, I am.
+May 05 16:59:40 <rindolf>	sas123: first of all add "use strict;" and "use warnings;"
+May 05 16:59:47 <rindolf>	"use strict, Luke!"
+May 05 17:00:13 <sas123>	rindolf: that is old code
+May 05 17:00:45 <sas123>	rindolf: how will %table look like after while loop
+May 05 17:00:48 <rindolf>	sas123: ah, so revamp it.
+May 05 17:01:03 <rindolf>	sas123: you can't push into a string.
+May 05 17:01:12 <rindolf>	sas123: $city will be a string.
+May 05 17:01:35 <rindolf>	sas123: maybe you want my ($country, @cities) = split/:/, $_;
+May 05 17:01:47 <sas123>	rindolf: no
+May 05 17:01:55 <rindolf>	sas123: is city a single value?
+May 05 17:02:00 <rindolf>	Or is an array of values?
+May 05 17:02:05 <rindolf>	Make up your mind.
+May 05 17:02:06 <sas123>	rindolf: data file is country:singele_city
+May 05 17:04:22 <sas123>	rindolf: ?
+May 05 17:05:16 <sas123>	rindolf: are you there?
+May 05 17:06:56 <sas123>	rindolf: ping
+May 05 17:07:49 <rindolf>	sas123: hi.
+May 05 17:08:07 <rindolf>	sas123: ah.
+May 05 17:08:11 <Diablo-D3>	jesus fucking christ iron man looks cool
+May 05 17:08:17 <rindolf>	sas123: so why are you using push?
+May 05 17:09:40 <sas123>	data file format
+May 05 17:09:48 <sas123>	US:NYork
+May 05 17:09:55 <sas123>	US:NJ
+May 05 17:10:01 <sas123>	'UK:London
+May 05 17:10:04 <rindolf>	sas123: yes, but you don't need to push the city if it's just one string.
+May 05 17:10:16 <rindolf>	sas123: unless you want a one-element array.
+May 05 17:10:23 <sas123>	rindolf: no I need output like this
+May 05 17:10:28 <rindolf>	sas123: have you heard of the 0, 1, Infinity rule?
+May 05 17:10:37 <rindolf>	Ah.
+May 05 17:10:38 <sas123>	US:NYork,NJ
+May 05 17:10:40 <rindolf>	I got you.
+May 05 17:10:46 <sas123>	UK:London
+May 05 17:10:57 <rindolf>	sas123: just do push @{$table{$country}}, $city, and it will do the right thing.
+May 05 17:11:01 <rindolf>	sas123: it's a DWIMMery.
+May 05 17:11:07 <rindolf>	sas123: it's called auto-vivification.
+May 05 17:11:43 <sas123>	my question is after the while loop how will %table look like?
+May 05 17:12:02 <rindolf>	sas123: it will look somethign liek:
+May 05 17:13:03 <sili>	hoops
+May 05 17:13:07 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); \%table
+May 05 17:13:08 <buubot>	rindolf:  {uk => ["london","birmingham","inverness"],israel => ["telaviv","j-m","haifa","nesher"],usa => ["chicago","newyork","washington","portland"]}
+May 05 17:14:28 <sas123>	ok
+May 05 17:15:19 <sas123>	rindolf: Now I want a list of cities of USA from %table, how do I access it?
+May 05 17:15:25 -->	Getty (i=torsten@metaluna4.de) has joined #perlcafe
+May 05 17:15:48 <sili>	my $cities = $table{usa}; print "@$cities"
+May 05 17:15:56 <rindolf>	sili++
+May 05 17:16:21 <rindolf>	sas123: the {bareword} notation gives you a string in Perl.
+May 05 17:16:40 <rindolf>	You can do {'usa'} or {"usa"} to be on the safe side.
+May 05 17:16:56 <rindolf>	There's also key => "Value".
+May 05 17:17:18 <sas123>	sili: I didn't get that
+May 05 17:17:28 <sili>	sas123: which part?
+May 05 17:17:38 <sas123>	rindolf: how exactly?
+May 05 17:17:46 <rindolf>	sas123: pardon?
+May 05 17:18:05 <sas123>	sili: my $cities = $table{usa}; print "@$cities"
+May 05 17:18:13 <sili>	well
+May 05 17:18:15 <rindolf>	sas123: OK. let's try it.
+May 05 17:18:16 <sas123>	why do we need my cities
+May 05 17:18:24 <sas123>	my $cities
+May 05 17:18:34 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); [ $table{"uk"}->[0] ];
+May 05 17:18:34 <sili>	my is how we lexically declare variables
+May 05 17:18:35 <buubot>	rindolf:  ["london"]
+May 05 17:18:57 <sas123>	rindolf: no no
+May 05 17:19:00 <rindolf>	sas123: you should always use "use strict";
+May 05 17:19:01 <sili>	sas123: alternatively, you could just print "@{$cities{usa}}"
+May 05 17:19:07 <sas123>	rindolf: I want entire list
+May 05 17:19:24 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); [ @{$table{"uk"}} ];
+May 05 17:19:25 <buubot>	rindolf:  ["london","birmingham","inverness"]
+May 05 17:19:34 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); \@{$table{"uk"}} 
+May 05 17:19:35 <buubot>	rindolf:  ["london","birmingham","inverness"]
+May 05 17:19:42 <rindolf>	Sorry for spamming the channel.
+May 05 17:19:53 <sas123>	rindolf: what does this mean in englisg @{$cities{usa}}
+May 05 17:20:00 <rindolf>	OK.
+May 05 17:20:04 <rindolf>	%cities is the hash.
+May 05 17:20:28 <rindolf>	$cities{"usa"} is the value pointed by the string key "usa" of the hash %cities.
+May 05 17:20:44 <rindolf>	And @{ .... } is dereferencing into an array.
+May 05 17:22:18 <sas123>	ok
+May 05 17:22:33 <sas123>	but confusing
+May 05 17:26:34 <rindolf>	sas123: hmm...
+May 05 17:26:40 <sas123>	rindolf: how long are yu here?
+May 05 17:26:42 <rindolf>	sas123: you get used to it.
+May 05 17:26:48 <rindolf>	sas123: where? In #perlcafe ?
+May 05 17:26:59 <rindolf>	sas123: or in Freenode?
+May 05 17:27:00 <sas123>	on irc
+May 05 17:27:16 <rindolf>	sas123: I've been on IRC (not on Freenode though) since I was 17.
+May 05 17:27:25 <rindolf>	Which was 14 or 15 years ago.
+May 05 17:27:30 <rindolf>	But I took a long break.
+May 05 17:27:46 <sas123>	no I mean today, after this
+May 05 17:28:06 <sas123>	I have to go home, thee last bus goes in 10 mins
+May 05 17:28:20 <rindolf>	sas123: ah. I'll be here.
+May 05 17:28:25 <rindolf>	sas123: I'm going for a walk.
+May 05 17:28:33 <rindolf>	sas123: how long does the bus take?
+May 05 17:28:46 <rindolf>	sas123: anyway q[ender] can help you or whoever.
+May 05 17:28:50 <sas123>	1 hour
+May 05 17:29:03 <rindolf>	sas123: ah, plenty of time for me to go on a walk.
+May 05 17:29:05 <rindolf>	sas123: bye.
+May 05 17:29:29 <sas123>	great bye thank a lot
+May 05 17:29:40 <rindolf>	sas123: bye.
+May 05 19:25:58 <sas123>	rindolf: are you back
+May 05 19:26:03 <rindolf>	sas123: I'm here.
+May 05 19:26:10 <rindolf>	sas123: been a while.
+May 05 19:26:23 <rindolf>	sas123: I meant that I've been here for a while.
+May 05 19:26:34 <rindolf>	My sister is now preparing Pretzels for my B-day.
+May 05 19:26:54 <sas123>	rindolf: still not working - I have an hash of country:(list of cities)
+May 05 19:27:11 <rindolf>	sas123: please add "use strict" and "use warnings".
+May 05 19:27:17 <rindolf>	sas123: you'll thank me for it.
+May 05 19:27:29 <rindolf>	sas123: often when I look back at my old code, I also have to do many changes.
+May 05 19:27:29 <sas123>	rindolf: this does not print the list - print @{$table{"USA"}}, "\n";
+May 05 19:27:34 <rindolf>	sas123: that's life.
+May 05 19:27:45 <rindolf>	sas123: is it "USA" or "usa"?
+May 05 19:28:09 <sas123>	USA
+May 05 19:29:02 <sili>	rindolf: how young are you now?
+May 05 19:29:03 <rindolf>	sas123: ok.
+May 05 19:29:05 <sas123>	rindolf: it iis just printing last value
+May 05 19:29:08 <rindolf>	sili: I'm 31.
+May 05 19:29:33 <sili>	cool
+May 05 19:29:41 <rindolf>	sas123: then you're probably inputting it wrong.
+May 05 19:30:12 <sas123>	        push @{$table{$country}}, $city;
+May 05 19:30:38 <rindolf>	sas123: OK.
+May 05 19:30:45 <rindolf>	sas123: do you know perl -d?
+May 05 19:30:53 <rindolf>	sas123: or you can add traces.
+May 05 19:30:56 <rindolf>	sas123: or logs.
+May 05 19:30:59 <sas123>	no
+May 05 19:31:03 <rindolf>	perl -d would be the easiest.
+May 05 19:31:13 <rindolf>	sas123: have you added strict and warnings?
+May 05 19:31:18 <sas123>	shall I paste the code
+May 05 19:31:31 <rindolf>	sas123: sure to http://sial.org/pbot/
+May 05 19:31:51 <sas123>	rindolf: No, I hate it - for me it has no meaning 
+May 05 19:32:03 <rindolf>	sas123: it's very important.
+May 05 19:32:11 <rindolf>	sas123: they prevent many errors.
+May 05 19:32:25 <sas123>	rindolf: -w I might agree, but use strict SUCKS
+May 05 19:32:33 <rindolf>	sas123: no, it does NOT.
+May 05 19:33:01 <sas123>	rindolf: it gives errors in Hebrew
+May 05 19:33:03 <rindolf>	sas123: just use my.
+May 05 19:33:07 <rindolf>	sas123: Hebrew?
+May 05 19:33:14 <rindolf>	sas123: oh.
+May 05 19:33:20 <rindolf>	sas123: you need to set your locale.
+May 05 19:33:27 <rindolf>	sas123: LC_ALL=en_US.UTF-8
+May 05 19:33:40 <rindolf>	sas123: are you Israeli?
+May 05 19:33:42 <sas123>	hehehe
+May 05 19:33:42 <rindolf>	sas123: ah.
+May 05 19:33:46 <rindolf>	sas123: are you French?
+May 05 19:33:59 <rindolf>	Because English people would say Greek.
+May 05 19:34:12 <sas123>	Indian
+May 05 19:34:20 <rindolf>	While Israelis would say "Chinese"
+May 05 19:34:23 <rindolf>	sas123: ah.
+May 05 19:34:33 <rindolf>	sas123: Anyway, just set you LC_ALL.
+May 05 19:34:38 <rindolf>	your I mean.
+May 05 19:35:14 <sas123>	incidentally I m as old as Shlomi Fish the author of http://www.shlomifish.org/ - the URL u gave
+May 05 19:35:14 <rindolf>	Diablo-D3: overflow?
+May 05 19:35:21 <rindolf>	sas123: ah.
+May 05 19:35:27 <rindolf>	sas123: Shlomi Fish == me
+May 05 19:35:41 <sas123>	rindolf: What?
+May 05 19:35:42 <rindolf>	sas123: it's my birthday today.
+May 05 19:35:45 <rindolf>	sas123: I'm Shlomi Fish
+May 05 19:35:50 <rindolf>	sas123: /whois rindolf rindolf
+May 05 19:35:58 <rindolf>	sas123: and /msg NickServ INFO rindolf
+May 05 19:36:01 <sas123>	rindolf: I mean http://www.shlomifish.org
+May 05 19:36:16 <rindolf>	sas123: yes, that's my homesite.
+May 05 19:36:27 <sas123>	rindolf: it is my b'day day after
+May 05 19:36:34 <rindolf>	sas123: tomorrow?
+May 05 19:36:38 <Diablo-D3>	sas123: rindolf really is mr fish
+May 05 19:36:43 <Diablo-D3>	perlbot: paste
+May 05 19:36:43 <perlbot>	Paste your code to http://sial.org/pbot/perl http://erxz.com/pb or http://p3m.org/pfn/perl and #Perl will be able to view it.
+May 05 19:36:49 <sas123>	rindolf: 7th
+May 05 19:36:53 <rindolf>	sas123: ah.
+May 05 19:36:58 <rindolf>	sas123: I was born on 5 May.
+May 05 19:37:04 <rindolf>	sas123: so we're two days apart.
+May 05 19:37:16 <rindolf>	My friend in School was born 6 or 7 days before me.
+May 05 19:37:16 <Diablo-D3>	:<
+May 05 19:37:18 <sas123>	wowww! happy b'day
+May 05 19:37:22 <rindolf>	sas123: thanks.
+May 05 19:37:38 <Diablo-D3>	wtf no #perlcafe?
+May 05 19:37:50 <Diablo-D3>	there we go found one
+May 05 19:37:53 <Diablo-D3>	in the middle
+May 05 19:38:11 <rindolf>	sas123: happy B-day to you too.
+May 05 19:39:53 <rindolf>	Diablo-D3: isn't it in scalar context, something else.
+May 05 19:40:04 <sas123>	rindolf: http://sial.org/pbot/30963
+May 05 19:40:06 <Diablo-D3>	$row is an array ref
+May 05 19:40:09 <rindolf>	Diablo-D3: yes, but it may the number of elements in an array in scalar context.
+May 05 19:40:11 <Diablo-D3>	@$row is the array
+May 05 19:40:13 <rindolf>	sas123: thanks.
+May 05 19:40:22 <Diablo-D3>	@$row[2] is the array element
+May 05 19:40:32 <rindolf>	eval: my @array = (5); [@array+3]
+May 05 19:40:34 <buubot>	rindolf:  [4]
+May 05 19:40:38 <rindolf>	Diablo-D3: ^^^
+May 05 19:40:49 <Diablo-D3>	that... means nothing to me
+May 05 19:41:02 <rindolf>	sas123: looks fine.
+May 05 19:41:09 <sas123>	what s wrong?
+May 05 19:41:15 <rindolf>	sas123: use perl -d 
+May 05 19:41:29 <rindolf>	sas123: read http://www.shlomifish.org/lecture/Perl/Newbies/lecture2/debugger/
+May 05 19:41:30 <sas123>	how?
+May 05 19:42:26 <rindolf>	Diablo-D3: it still bites me in many places.
+May 05 19:42:40 <sas123>	rindolf: do u want data file also
+May 05 19:42:43 <rindolf>	Diablo-D3: first write it in a saner way.
+May 05 19:42:50 <Diablo-D3>	rindolf: whats wrong with it?
+May 05 19:42:55 <Diablo-D3>	its very sane
+May 05 19:43:01 <rindolf>	sas123: sure,nopaste it too.
+May 05 19:47:10 <sas123>	rindolf: so why is it not working
+May 05 19:47:15 <rindolf>	sas123: you should use chomp;
+May 05 19:47:40 <rindolf>	sas123: and do «open (FS, "<", "data"); »
+May 05 19:47:50 <sas123>	I changed the code
+May 05 19:47:58 <rindolf>	sas123: and I won't help you further unless you add use strict.
+May 05 19:48:00 <Diablo-D3>	rindolf: are you saying @$foo[1] is improper syntax?
+May 05 19:48:04 <sas123>	it is working now
+May 05 19:48:07 <rindolf>	sas123: and neiteher would most other people.
+May 05 19:48:08 <Diablo-D3>	$foo[1] is not valid, there is no variable named @foo
+May 05 19:48:17 <sas123>	rindolf: no please have pity
+May 05 19:48:19 <rindolf>	Diablo-D3: $foo->[1]
+May 05 19:48:21 <sas123>	:-)
+May 05 19:48:35 <rindolf>	sas123: "The Gods help those that help themselves."
+May 05 19:48:43 <rindolf>	sas123: "Reality to be conquered must be obeyed."
+May 05 19:48:48 <Diablo-D3>	rindolf: that seems a tad hacky
+May 05 19:49:06 <rindolf>	sas123: "If the mountain doesn't come to Muhhamad, Muhhamad will go to the mountain."
+May 05 19:49:07 <sas123>	rindolf: use strict would have been compulosary if it was essential
+May 05 19:49:33 <Diablo-D3>	rindolf: at any rate, we're not supposed to be discussing what syntaxes perl accepts
+May 05 19:49:46 <Diablo-D3>	rindolf: we're supposed to be laughing because I discovered that google, like nintendo, prints money
+May 05 19:49:47 <rindolf>	sas123: Perl 5 is backwards compatible to Perl 1, 2,3, and 4 which didn't have it.
+May 05 19:50:13 <rindolf>	sas123: and Perl 1 was kinda hacky.
+May 05 19:50:15 <sas123>	rindolf: it makes learning perl moer difficult
+May 05 19:50:20 <rindolf>	sas123: and didn't have lexical variables.
+May 05 19:50:26 <rindolf>	sas123: yes, Perl 5 has evolved.
+May 05 19:50:45 <rindolf>	sas123: but so did C, Pascal, Fortran, Lisp, and many other languages.
+May 05 19:50:46 <sas123>	rindolf: ? what r u taking about
+May 05 19:50:59 <rindolf>	sas123: my ($s) is a lexical variable.
+May 05 19:51:10 <rindolf>	sas123: what you are using are package-space variables.
+May 05 19:51:16 <rindolf>	sas123: also known as globals.
+May 05 19:51:22 <sas123>	lexical ????????
+May 05 19:51:28 <rindolf>	sas123: yes.
+May 05 19:51:37 <rindolf>	sas123: like in Scheme or ALGOL.
+May 05 19:51:42 <sas123>	what it means?
+May 05 19:52:07 <rindolf>	sas123: http://www.shlomifish.org/lecture/Perl/Newbies/lecture2/my/
