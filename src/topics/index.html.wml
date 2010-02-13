@@ -52,3 +52,9 @@ Regular expressions enable one to match simple or complex patterns in text
 , extract them, and process them.
 </p>
 
+<h3 id="date-and-time"><a href="date-and-time/">Date and Time Handling</a></h3>
+
+<p>
+Handling Dates and Times (Parsing, formatting, manipulating, etc.) in Perl.
+</p>
+

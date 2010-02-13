@@ -1,0 +1,40 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Date and Time in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Many newcomers to Perl ask how to properly handle, process and manipulate
+dates and times in Perl. The proper answer is that while Perl has basic
+facilities for this in <pdoc d="perlfunc"></pdoc> and the POSIX module, 
+one should use a good date-and-time module from CPAN. This page aims
+to lead people in the right direction.
+</p>
+
+<h2 id="cpan">CPAN Distributions for Date and Time Manipulation</h2>
+
+<h3 id="DateTime">DateTime</h3>
+
+<p>
+The <a href="http://search.cpan.org/dist/DateTime/"><b>DateTime</b></a> CPAN
+distribution is a highly recommended module for handling dates and times.
+Here are some useful helper packages for it:
+</p>
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/DateTime-Format-Strptime/">DateTime-Format-Strptime</a> 
+- parses dates in arbitrary formats.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/DateTime-Format-W3CDTF/">DateTime-Format-W3CDTF</a>, <a href="http://search.cpan.org/dist/DateTime-Format-Atom/">DateTime-Format-Atom</a> and other "DateTime-Format-" modules - useful for parsing
+and formatting dates using various standard date formats.
+</li>
+
+</ul>
+

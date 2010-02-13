@@ -239,6 +239,11 @@ my $tree_contents =
             'subs' =>
             [
                 {
+                    'text' => "Date and Time",
+                    'url' => "topics/date-and-time/",
+                    'title' => "Dates and Time Handling, Parsing and Processing",
+                },
+                {
                     'text' => "Debugging",
                     'url' => "topics/debugging/",
                     'title' => "Debugging Perl Programs",
