@@ -39,10 +39,16 @@ one. This page gives some resources for learning about hashes.
 
 <h3 id="references"><a href="references/">References</a></h3>
 
-
 <p>
 References allow the programmer to store an aggregate data structure in a
 simple variable, which can be passed around more easily, to represent complex,
 nested data structures, and also serve as the basis of Perl's object system. 
+</p>
+
+<h3 id="regexps"><a href="regular-expressions/">Regular Expressions</a></h3>
+
+<p>
+Regular expressions enable one to match simple or complex patterns in text
+, extract them, and process them.
 </p>
 
