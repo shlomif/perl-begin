@@ -6,7 +6,14 @@ use warnings;
 use HTML::Latemp::GenMakeHelpers;
 use File::Find::Object::Rule;
 
-system("make", "-s", "src/style.css");
+if (-f "Makefile")
+{
+    system("make", "-s", "src/style.css");
+}
+else
+{
+    system("compass");
+}
 
 my $generator = 
     HTML::Latemp::GenMakeHelpers->new(
