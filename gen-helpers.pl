@@ -6,7 +6,7 @@ use warnings;
 use HTML::Latemp::GenMakeHelpers;
 use File::Find::Object::Rule;
 
-if (-f "Makefile")
+if (-f "rules.mak")
 {
     system("make", "-s", "src/style.css");
 }
