@@ -37,13 +37,6 @@ src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif"
 <latemp_html_header />
 <latemp_html_head_tag />
 
-<define-tag nav_global_flags>
-          <li><a href="#"><img class="img-flag" src="./img/flag_uk.gif" title="Website in English" alt=""/></a></li>
-          <li><a href="#"><img class="img-flag" src="./img/flag_spain.gif" title="Website en Espanol" alt=""/></a></li>
-          <li><a href="#"><img class="img-flag" src="./img/flag_france.gif" title ="Website en Francais" alt=""/></a></li>
-          <li><a href="#"><img class="img-flag" src="./img/flag_germany.gif" title ="Website auf Deutsch" alt=""/></a></li>
-</define-tag>
-
 <define-tag perl_begin_news endtag="required" whitespace="delete">
 {#PERL_BEGIN_NEWS#:%body:##}
 </define-tag>

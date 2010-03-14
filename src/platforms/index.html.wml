@@ -10,7 +10,7 @@ portable and can run on almost any platform imaginable. (here's
 reflects the UNIX culture to a large extent.
 </p>
 
-<h2 id="mac-os"><a href="./mac/">Mac OS (PowerPC, Intel, etc.)</a></h2>
+<h2 id="mac-os"><a href="mac/">Mac OS (PowerPC, Intel, etc.)</a></h2>
 
 <p>
 Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as 
@@ -19,7 +19,7 @@ which I never worked with. Mac OS X is still much more preferable
 from the aspect of running Perl or otherwise.
 </p>
 
-<h2 id="windows"><a href="./windows/">Microsoft Windows</a></h2>
+<h2 id="windows"><a href="windows/">Microsoft Windows</a></h2>
 
 <win32_intro />
 
@@ -28,7 +28,7 @@ perl for Windows, is mostly compatible with Perl for UNIX, so scripts
 and modules written on one platform will run on the other.
 </p>
 
-<h2 id="unix"><a href="./unix/">UNIX Flavours 
+<h2 id="unix"><a href="unix/">UNIX Flavours 
 (Linux, Solaris, FreeBSD, etc.)</a></h2>
 
 <p>
