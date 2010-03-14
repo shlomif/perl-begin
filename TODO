@@ -4,6 +4,13 @@
 
 * Add a page about handling / parsing / processing dates.
 
+* Add a page about E-mail-handling.
+
+* Add a page about multi-tasking:
+    - warning about threads.
+    - POE and friends.
+    - fork() / multi-processing.
+
 * OO Programming Section:
     - maybe add the list of OO modules I composed.
 
