@@ -1,0 +1,21 @@
+#include '../template.wml'
+
+<latemp_subject "E-mail Handling with Perl" />
+
+<p>
+Perl provides many facilities for handling E-mail (e.g: sending, receiving,
+filtering, processing) available from the 
+<a href="$(ROOT)/topics/cpan/">CPAN (Comprehensive Perl Archive Network)</a>.
+This is a summary of the recommended ones.
+</p>
+
+<h2 id="perl_email_project"><a href="http://emailproject.perl.org/">The Perl
+Email Project</a></h2>
+
+<p>
+A project to create usable modules for handling E-mails in Perl. The page is
+currently only a placeholder, but you can find the modules using 
+<a href="http://search.cpan.org/search?query=email&amp;mode=all">a CPAN
+search for "Email"</a>. The Perl Email Project modules tend to be simple
+and easy to use.
+</p>

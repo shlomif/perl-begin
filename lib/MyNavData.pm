@@ -207,6 +207,11 @@ my $tree_contents =
                     'title' => "Working with Databases (SQL, etc.) Using Perl",
                 },
                 {
+                    'text' => "Email",
+                    'url' => "uses/email/",
+                    'title' => "Working with E-mail using Perl",
+                },
+                {
                     'text' => "GUI Development",
                     'url' => "uses/GUI/",
                     'title' => "Development of Graphical User Interface (GUIs) in Perl",
