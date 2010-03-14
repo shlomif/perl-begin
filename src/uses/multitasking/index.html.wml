@@ -1,0 +1,45 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for Multitasking and Networking" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+In multitasking, the program perform several tasks at once. Multitasking
+is closely related to networking where we have to handle several events
+or serve several clients at once.
+</p>
+
+<h2 id="technologies">Technologies of Interest</h2>
+
+<h3 id="poe"><a href="http://poe.perl.org/">POE: Perl Object
+Environment</a></h3>
+
+<p>
+A Perl framework for reactive systems, cooperative multitasking and network
+applications. 
+</p>
+
+<h2 id="threads">Threads?</h2>
+
+<p>
+Many people are tempted to use threads with Perl and web forums are 
+constantly frequented for help with threads in Perl. However, the use of
+Perl in threads is not recommended:
+</p>
+
+<ul>
+
+<li>
+Elizabeth Mattijsen has written
+<a href="http://www.perlmonks.org/index.pl?node_id=288022">an essay about
+the problems with threads in Perl</a> on Perlmonks.
+</li>
+
+<li>
+<a href="http://perldoc.perl.org/perlthrtut.html">See perlthrtut</a> for
+more information.
+</li>
+
+</ul>
+

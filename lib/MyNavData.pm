@@ -212,6 +212,11 @@ my $tree_contents =
                     'title' => "Development of Graphical User Interface (GUIs) in Perl",
                 },
                 {
+                    'text' => "Multitasking",
+                    'url' => "uses/multitasking/",
+                    'title' => "Perl for Multitasking and Networking",
+                },
+                {
                     'text' => "QA and Testing",
                     'url' => "uses/qa/",
                 },

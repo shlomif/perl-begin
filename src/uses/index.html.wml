@@ -14,6 +14,8 @@ using Perl for them.
 
 <h2><a href="GUI/">GUI (Graphical User Interface) Development</a></h2>
 
+<h2><a href="multitasking/">Multi-tasking and Networking</a></h2>
+
 <h2><a href="./qa/">Quality Assurance (QA) and Testing</a></h2>
 
 <h2><a href="./sys-admin/">System Administration</a></h2>
@@ -21,3 +23,4 @@ using Perl for them.
 <h2><a href="./web/">Web and CGI Programming</a></h2>
 
 <h2><a href="xml/">XML Manipulation</a></h2>
+
