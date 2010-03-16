@@ -22,13 +22,14 @@ Moertel</a>
 <h2><a href="$(ROOT)/news/">News</a></h2>
 <ul>
 <li>
+16-March-10: <a href="$(ROOT)/news/#news_16_March_2010">Topical and Uses
+Pages</a>
+</li>
+<li>
 03-August-09: <a href="$(ROOT)/news/#news_03_August_2009">More Updates</a>
 </li>
 <li>
 27-July-09: <a href="$(ROOT)/news/#news_27_July_2009">Many New Updates</a>
-</li>
-<li>
-14-May-09: <a href="$(ROOT)/news/#news_14_May_2009">Many New Updates</a>
 </li>
 <li>
 <a href="$(ROOT)/news/">More news...</a>
