@@ -2,6 +2,43 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_16_March_2010">16-March-2010: Topical and Uses Pages</h2>
+
+<p>
+We added a <a href="$(ROOT)/uses/email/">a page about using Perl for E-mail
+processing</a>, <a href="$(ROOT)/uses/multitasking/">a page about Perl for
+multitasking and networking</a>, a some topical pages:
+</p>
+
+<ul>
+
+<li>
+<a href="$(ROOT)/topics/date-and-time/">Date and Time</a>.
+</li>
+
+<li>
+<a href="$(ROOT)/topics/references/">References in Perl</a>. 
+</li>
+
+<li>
+<a href="$(ROOT)/topics/regular-expressions/">Regular Expressions</a>. 
+</li>
+
+<li>
+<a href="$(ROOT)/topics/hashes/">Hashes</a>.
+</li>
+
+</ul>
+
+<p>
+<a href="$(ROOT)/IDEs-and-tools/">The IDEs and Tools page</a> now contains
+screenshots.
+</p>
+
+<p>
+Many new links have been added and many typos have been corrected. Enjoy!
+</p>
+
 <h2 id="news_03_August_2009">03-August-2009: More updates to Perl-Begin.org</h2>
 
 <p>
