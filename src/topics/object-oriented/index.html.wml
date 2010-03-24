@@ -55,3 +55,33 @@ low level and how they work behind the scenes.
 
 </perl_for_newbies_entry>
 
+<h3 id="perldoc">Perldoc Tutorials</h3>
+
+<p>
+These are the Perldoc OOP tutorials that ship with Perl:
+</p>
+
+<ul>
+
+<li>
+<pdoc d="perlmod"></pdoc> - The Perl Modules Introduction
+</li>
+
+<li>
+<pdoc d="perlboot"></pdoc> - Perl's Beginner's Object Oriented Tutorial
+</li>
+
+<li>
+<pdoc d="perltoot"></pdoc> - Tom's Object-Oriented Tutorial
+</li>
+
+<li>
+<pdoc d="perlobj"></pdoc> - The Perl Objects Man-Page
+</li>
+
+<li>
+<pdoc d="perlbot"></pdoc> - The Perl Bag of Object Tricks
+</li>
+
+</ul>
+
