@@ -25,7 +25,7 @@ Writing Perl code is very fun and rewarding:
 <ol>
 
 <li>
-You can avoid dealing with many idiosyncracies like memory allocation and 
+You can avoid dealing with many idiosyncrasies like memory allocation and 
 freeing, passing a context variable to a function, or inconvenient syntax
 for complex data structures.
 </li>
@@ -92,7 +92,7 @@ to get your work done.
 </p>
 
 <p>
-As such Perl is highly enlightening. If you know Perl well, you'll have no
+As such, Perl is highly enlightening. If you know Perl well, you'll have no
 problem picking up such languages as 
 <a href="http://www.python.org/">Python</a>, 
 <a href="http://www.ruby-lang.org/">Ruby</a>, 
