@@ -60,7 +60,7 @@ Collections of short, in-depth articles.
 
 </dl>
 
-<h2>How to Get Help?</h2>
+<h2 id="get_help">How to Get Help?</h2>
 
 <p>
 Suppose you've read one of these resources and encountered a problem. Now what
@@ -87,9 +87,19 @@ or if you're not short on time and want less interactive, but more in-depth
 discussions.
 </dd>
 
+<dt id="web-forums"><a href="$(ROOT)/web-forums/">Web Forums</a></dt>
+
+<dd>
+Web forums are similar to mailing lists, but all interaction is done through
+a web-browser, and one can use 
+<a href="http://en.wikipedia.org/wiki/Web_feed">web feeds</a> to monitor them.
+We have concentrated a selection of Perl-related web forums on 
+<a href="$(ROOT)/web-forums/">the Web Forums page</a>.
+</dd>
+
 </dl>
 
-<h2>Resources for Reference and Enlightenment</h2>
+<h2 id="reading_resources">Resources for Reference and Enlightenment</h2>
 
 <dl>
 
