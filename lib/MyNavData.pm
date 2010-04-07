@@ -279,6 +279,11 @@ my $tree_contents =
                     'title' => "Object Oriented Programming and Design in Perl",
                 },
                 {
+                    'text' => "Scoping and Variables",
+                    'url' => "topics/scoping/",
+                    'title' => "Local variables, lexical scoping, package variables",
+                },
+                {
                     'text' => "Using CPAN",
                     'url' => "topics/cpan/",
                     'title' => "Effectively using CPAN - the Comprehensive Perl Archive Network",

@@ -1,0 +1,36 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Scoping and Variables in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Someone once said that time is Nature's way of making sure that everything
+did not happen at once. Likewise, scoping is Perl's way of making sure not
+all variables with the same name are the same. It is not unique to Perl - most
+modern programming languages have some concept of scoping.
+</p>
+
+<p>
+The <b>definitive explanation</b> of scoping in Perl is Mark Jason Dominus's
+<a href="http://perl.plover.com/FAQs/Namespaces.html"><b>"Coping 
+with Scoping"</b></a>, which was published in the Perl Journal and is hosted
+on his site. We recommend that you read it for general understanding.
+</p>
+
+<p>
+If you've talked about Perl code you've written in various forums you've likely
+received the advice that you should add "<tt>use strict;</tt>" and 
+"<tt>use warnings;</tt>" at the top of your code. While you indeed
+should add these statements because they catch many common programming
+mistakes, you may notice that after you add them you get something like:
+"<tt>Global symbol "$filename" requires explicit package name at test.pl 
+line 6.</tt>". This error (which is admitedlly not phrased very well, and
+is kept as such due to historical reasons) means that you haven't
+<b>declared</b> the variable. To fix it, you need to declare the variable using
+"<tt>my $filename = [VALUE];</tt>" in order to first use it.
+</p>
+
+

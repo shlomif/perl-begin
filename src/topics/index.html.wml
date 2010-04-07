@@ -58,3 +58,10 @@ Regular expressions enable one to match simple or complex patterns in text
 Handling Dates and Times (Parsing, formatting, manipulating, etc.) in Perl.
 </p>
 
+<h3 id="scoping"><a href="scoping/">Scoping and Variables in Perl</a></h3>
+
+<p>
+Scoping is Perl's way of making sure variables are localised and don't
+interfere with variables of the same name in different places (or alternatively,
+are not confused with different variables of similar names).
+</p>
