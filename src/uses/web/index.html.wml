@@ -36,23 +36,6 @@ a little HTML.
 In the Wiki.
 </p>
 
-<h2 id="interfaces">Interfaces</h2>
-
-<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
-
-<p>
-An implementation of the Active Server Pages for Perl on UNIXes. Compatible
-with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
-solution. 
-</p>
-
-<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
-
-<p>
-A portable solution for a dynamic maintenance of a Perl site. Very powerful
-and feature-rich. Also cross-platform.
-</p>
-
 <h2 id="frameworks">Web Frameworks</h2>
 
 <h3><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
@@ -71,3 +54,19 @@ CPAN, that provide interfaces to many other modules. After learning it,
 one can build web applications with ease.
 </p>
 
+<h2 id="interfaces">Interfaces</h2>
+
+<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
+
+<p>
+An implementation of the Active Server Pages for Perl on UNIXes. Compatible
+with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
+solution. 
+</p>
+
+<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
+
+<p>
+A portable solution for a dynamic maintenance of a Perl site. Very powerful
+and feature-rich. Also cross-platform.
+</p>
