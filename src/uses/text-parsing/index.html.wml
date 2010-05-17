@@ -121,6 +121,31 @@ valid texts of this language as a human would understand them.
 Using \G and /g</h3>
 
 <p>
-<b>TODO : FILL IN</b>
+Sometimes, you'll find that writing everything in one regular expression
+would be very hard and you'd like to parse a string incrementally - step by
+step. For that, Perl offers the 
+<a href="http://perldoc.perl.org/functions/pos.html">the pos()</a>
+function/operator that allows one to set the last matched position within
+a string. One can make a good use of it using the <tt>\G</tt> regular
+expression escape and the <tt>/g</tt> and <tt>/c</tt> regex modifiers.
 </p>
 
+<p>
+Here's an example:
+</p>
+
+<pre>
+\# String with names inside square brackets
+my $string = "Hello [Peter] , [Sophie] and [Jack] are here.";
+
+pos($string) = 0;
+while (my $string =~ m{\G.*\[([^\]+)\]}cg)
+{
+    my $name = $1;
+    print "Found name $name .\n";
+}
+</pre>
+
+<p>
+This example is a bit contrived, but should be illustrative enough.
+</p>
