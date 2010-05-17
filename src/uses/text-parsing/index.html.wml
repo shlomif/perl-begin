@@ -1,0 +1,58 @@
+#include '../template.wml'
+
+<latemp_subject "Text Parsing in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Perl has a rightful reputation as a good language for parsing text and even
+its name originally stands for "Practical Extraction and Report Language".
+However, many beginners, are tempted to use 
+<a href="$(ROOT)/topics/regular-expressions/">regular expressions</a>
+exclusively even for parsing the most complex texts (a la "If all you have is
+a hammer, everything starts to look like a nail."), and it should be
+avoided. Here we give some more options.
+</p>
+
+<h2 id="with-what-to-parse">With What to Parse Stuff?</h2>
+
+<ul>
+
+<li>
+<p>
+If you're going to parse <b>HTML</b>, don't use regular expressions,
+and instead look at <a href="http://htmlparsing.icenine.ca/">Perl HTML-parsing
+modules</a>. The canonical modules for that are 
+<a href="http://search.cpan.org/dist/HTML-Parser/">HTML-Parser</a>, which has
+built-in support for handling many of the irregularities of HTML in the wild,
+and <a href="http://search.cpan.org/dist/XML-LibXML/">XML-LibXML's 
+HTML support</a>. Those should generally not be used directly. Instead look at 
+one of their abstractions:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/">HTML-TreeBuilder-LibXML</a> - HTML::TreeBuilder and XPath compatible interface with libxml.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/perldoc?HTML::TreeBuilder">HTML::TreeBuilder</a> (and other modules in HTML::Tree).
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/HTML-TokeParser-Simple/">HTML-TokeParser-Simple</a> - 
+an event-based pull parser that is useful for very large HTMLs.
+</p>
+</li>
+
+</ol>
+</li>
+
+</ul>
+
