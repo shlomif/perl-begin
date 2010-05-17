@@ -54,5 +54,22 @@ an event-based pull parser that is useful for very large HTMLs.
 </ol>
 </li>
 
+<li>
+<p>
+In order to parse <b>XML</b>, look at <a href="$(ROOT)/uses/">our dedicated
+page about XML processing</a>.
+</p>
+</li>
+
+<li>
+<p>
+<b>Comma-separated values (CSV) files</b> should be parsed using
+<a href="http://search.cpan.org/dist/Text-CSV_XS/">Text-CSV_XS</a>, which is
+a fast, tried and tested module for parsing CSV that can handle most 
+edge-cases and irregularities that are present in CSV files that
+can be found in the wild.
+</p>
+</li>
+
 </ul>
 
