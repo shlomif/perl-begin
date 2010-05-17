@@ -73,3 +73,54 @@ can be found in the wild.
 
 </ul>
 
+<h2 id="advanced-parsing">Advanced Parsing Techniques</h2>
+
+<h3 id="parser-generators">Parser Generators</h3>
+
+<p>
+For many grammars (such as those of most programming languages, which involves
+such idioms as balanced brackets or operator precedence
+which are called <b>context-free languages</b>), regular expressions
+will not be enough and you may opt to use a 
+<a href="http://en.wikipedia.org/wiki/Comparison_of_parser_generators">parser 
+generator</a>. Some notable parser generators in Perl include:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Parse-RecDescent/">Parse-RecDescent</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Regexp-Grammars/">Regexp-Grammars</a> - 
+a more modern version of Parse-RecDescent by the same author that only
+works on perl-5.10.x and above.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Parse-Yapp/">Parse-Yapp</a> - old
+and has been unmaintained, but may still be good enough.
+</p>
+</li>
+
+</ol>
+
+<p>
+What a parser generator does is generate a parser for your language that
+can then yield an "abstract syntax tree (AST)" that will allow you to process
+valid texts of this language as a human would understand them.
+</p>
+
+<h3 id="incremental-extraction">Incremental Extraction in Regular Expressions
+Using \G and /g</h3>
+
+<p>
+<b>TODO : FILL IN</b>
+</p>
+
