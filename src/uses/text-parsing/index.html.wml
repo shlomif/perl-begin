@@ -56,7 +56,7 @@ an event-based pull parser that is useful for very large HTMLs.
 
 <li>
 <p>
-In order to parse <b>XML</b>, look at <a href="$(ROOT)/uses/">our dedicated
+In order to parse <b>XML</b>, look at <a href="$(ROOT)/uses/xml/">our dedicated
 page about XML processing</a>.
 </p>
 </li>
