@@ -34,7 +34,7 @@ one of their abstractions:
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/">HTML-TreeBuilder-LibXML</a> - HTML::TreeBuilder and XPath compatible interface with libxml.
+<a href="http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/">HTML-TreeBuilder-LibXML</a> - HTML::TreeBuilder and XPath compatible interface using libxml.
 </p>
 </li>
 
