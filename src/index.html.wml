@@ -59,6 +59,8 @@ written in other languages, and certainly network servers.
 
 </ol>
 
+;;; Due for removal in 2010-05-20
+<define-tag whs_note>
 <h2>Appreciation Note:</h2>
 
 <p>
@@ -68,6 +70,9 @@ it to serve you better. For those of you who need a specific
 <a href="http://www.webhostingsearch.com/">web host</a> (for example
 one that supports Perl and PHP) then we recommend you to pay them a visit.
 </p>
+</define-tag whs_note>
+
+<whs_note />
 
 <define-tag we_dont_need_no_hype>
 <h2>Hype? We don't need no stinkin' hype!</h2>
