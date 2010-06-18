@@ -8,6 +8,11 @@ my $hosts =
     },
 };
 
+sub get_hosts
+{
+    return $hosts;
+}
+
 my $tree_contents =
 {
     'host' => "berlios",
