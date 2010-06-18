@@ -143,6 +143,11 @@ my $tree_contents =
             'text' => "Article Collections",
         },
         {
+            'url' => "FAQs/",
+            'text' => "FAQs",
+            'title' => "Lists of Frequently Asked Questions with Answers",
+        },
+        {
             'separator' => 1,
             'skip' => 1,
         },
