@@ -8,7 +8,7 @@
 
 <li>
 <a href="$(ROOT)/FAQs/">A page containing a list of frequently
-asked questions (FAQs) was added.
+asked questions (FAQs)</a> was added.
 </li>
 
 <li>
@@ -82,8 +82,8 @@ had more stuff that I found lacking. So here's what has changed.
 We're now mirroring 
 <a href="$(ROOT)/tutorials/perl-for-newbies/">the 
 public domain "Perl for Newbies" tutorial</a> as well as the GFDLed book
-<A href="$(ROOT)/tutorials/impatient-perl/">"Impatient
-Perl"</A> by <a href="http://www.greglondon.com/">Greg London</a>. Their
+<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+Perl"</a> by <a href="http://www.greglondon.com/">Greg London</a>. Their
 presence on the site was done in order to preserve Perl-Begin's common look 
 and feel, and to make sure people would be able to access them without
 having to go to a different site, which may be blocked by over-zealous
