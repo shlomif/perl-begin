@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
 
 
 
@@ -16,21 +16,19 @@ Perl for Newbies - Part 3 - Modules and Objects
 </head>
 <body><div class="page">
 
-<div class="center"><script type="text/javascript">
-google_ad_client = "pub-2480595666283917";
-google_ad_width = 468;
-google_ad_height = 60;
-google_ad_format = "468x60_as";
-google_ad_type = "text";
-google_ad_channel ="";
-google_color_border = "336699";
-google_color_text = "000000";
-google_color_bg = "FFFFFF";
-google_color_link = "0000FF";
-google_color_url = "008000";
+<!-- Beginning of Project Wonderful ad code: -->
+<!-- Ad box ID: 42457 -->
+<script type="text/javascript">
+<!--
+var pw_d=document;
+pw_d.projectwonderful_adbox_id = "42457";
+pw_d.projectwonderful_adbox_type = "1";
+pw_d.projectwonderful_foreground_color = "";
+pw_d.projectwonderful_background_color = "";
+//-->
 </script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-</div>
+<script type="text/javascript" src="http://www.projectwonderful.com/ad_display.js"></script>
+<!-- End of Project Wonderful ad code. -->
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -420,16 +418,16 @@ Here's an example to illustrate it:
 {
     <span class="Statement">if</span> (!<span class="Statement">defined</span>(<span class="Identifier">$a_value</span>))
     {
-        <span class="Statement">print</span> <span class="Identifier">STDERR</span> <span class="Constant">&quot;</span><span class="Constant">Error! The value was not set yet.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Identifier">STDERR</span> <span class="Constant">&quot;Error! The value was not set yet.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
         <span class="Statement">return</span>;
     }
 
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">a_value is </span><span class="Constant">&quot;</span> . <span class="Identifier">$a_value</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">a_value is &quot;</span> . <span class="Identifier">$a_value</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 
 <span class="Statement">sub </span><span class="Identifier">do_input</span>
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the new value:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;Please enter the new value:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     <span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;;
     <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
     <span class="Identifier">$a_value</span> = <span class="Identifier">$line</span>;
@@ -444,9 +442,9 @@ Here's an example to illustrate it:
 
 <span class="Statement">my</span> <span class="Identifier">%operations</span> =
     (
-        <span class="Constant">'</span><span class="Constant">print</span><span class="Constant">'</span> =&gt; \<span class="Identifier">&amp;do_print</span>,
-        <span class="Constant">'</span><span class="Constant">input</span><span class="Constant">'</span> =&gt; \<span class="Identifier">&amp;do_input</span>,
-        <span class="Constant">'</span><span class="Constant">exit</span><span class="Constant">'</span> =&gt; \<span class="Identifier">&amp;do_exit</span>,
+        <span class="Constant">'print'</span> =&gt; \<span class="Identifier">&amp;do_print</span>,
+        <span class="Constant">'input'</span> =&gt; \<span class="Identifier">&amp;do_input</span>,
+        <span class="Constant">'exit'</span> =&gt; \<span class="Identifier">&amp;do_exit</span>,
     );
 
 <span class="Statement">sub </span><span class="Identifier">get_operation</span>
@@ -455,16 +453,16 @@ Here's an example to illustrate it:
     <span class="Statement">my</span> <span class="Identifier">$line</span>;
     <span class="Statement">while</span> (<span class="Constant">1</span>)
     {
-        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Please enter the operation (print, input, exit):</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Constant">&quot;Please enter the operation (print, input, exit):</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
         <span class="Identifier">$line</span> = &lt;&gt;;
         <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
-        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$operations</span>{<span class="Identifier">$line</span>}))
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$operations{$line}</span>))
         {
             <span class="Statement">last</span>;
         }
         <span class="Statement">else</span>
         {
-            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Unknown operation!</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
+            <span class="Statement">print</span> <span class="Constant">&quot;Unknown operation!</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
         }
     }
 
@@ -475,7 +473,7 @@ Here's an example to illustrate it:
 {
     <span class="Statement">my</span> <span class="Identifier">$op</span> = get_operation();
 
-    <span class="Statement">my</span> <span class="Identifier">$operation_ref</span> = <span class="Identifier">$operations</span>{<span class="Identifier">$op</span>};
+    <span class="Statement">my</span> <span class="Identifier">$operation_ref</span> = <span class="Identifier">$operations{$op}</span>;
 
     <span class="Identifier">$operation_ref</span>-&gt;();
 }
@@ -578,7 +576,7 @@ Here's an example to illustrate this:
     <span class="Statement">return</span> <span class="Identifier">$counter_func</span>;
 }
 
-<span class="Statement">my</span> <span class="Identifier">@counters</span> = (<span class="Identifier">&amp;create_counter</span>(), <span class="Identifier">&amp;create_counter</span>());
+<span class="Statement">my</span> <span class="Identifier">@counters</span> = (create_counter(), create_counter());
 
 <span class="Comment"># Initialize the random number generator to a constant value;</span>
 <span class="Statement">srand</span>(<span class="Constant">24</span>);
@@ -588,7 +586,7 @@ Here's an example to illustrate this:
     <span class="Comment"># This call generates a random number that is either 0 or 1</span>
     <span class="Statement">my</span> <span class="Identifier">$which_counter</span> = <span class="Statement">int</span>(<span class="Statement">rand</span>(<span class="Constant">2</span>));
 
-    <span class="Statement">my</span> <span class="Identifier">$value</span> = <span class="Identifier">$counters</span>[<span class="Identifier">$which_counter</span>]-&gt;();
+    <span class="Statement">my</span> <span class="Identifier">$value</span> = <span class="Identifier">$counters[$which_counter]</span>-&gt;();
 
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$which_counter</span><span class="Constant"> = </span><span class="Identifier">$value</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
@@ -661,32 +659,32 @@ code here borrows heavily from the book
 
     <span class="Statement">my</span> <span class="Identifier">%ops</span> =
         (
-            <span class="Constant">&quot;</span><span class="Constant">deposit</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$deposit</span>,
-            <span class="Constant">&quot;</span><span class="Constant">print</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$print</span>,
-            <span class="Constant">&quot;</span><span class="Constant">can_extract</span><span class="Constant">&quot;</span> =&gt; <span class="Identifier">$can_extract</span>,
+            <span class="Constant">&quot;deposit&quot;</span> =&gt; <span class="Identifier">$deposit</span>,
+            <span class="Constant">&quot;print&quot;</span> =&gt; <span class="Identifier">$print</span>,
+            <span class="Constant">&quot;can_extract&quot;</span> =&gt; <span class="Identifier">$can_extract</span>,
         );
 
     <span class="Statement">my</span> <span class="Identifier">$dispatch</span> = <span class="Statement">sub </span>{
         <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>;
 
         <span class="Comment"># Call the matching operation with the rest of the arguments.</span>
-        <span class="Identifier">$ops</span>{<span class="Identifier">$op</span>}-&gt;(<span class="Identifier">@_</span>);
+        <span class="Identifier">$ops{$op}</span>-&gt;(<span class="Identifier">@_</span>);
     };
 
     <span class="Statement">return</span> <span class="Identifier">$dispatch</span>;
 }
 
 <span class="Comment"># Create ten bank accounts</span>
-<span class="Statement">my</span> <span class="Identifier">@accounts</span> = (<span class="Statement">map {</span> <span class="Identifier">&amp;create_bank_account</span>(<span class="Constant">&quot;</span><span class="Constant">Person #</span><span class="Constant">&quot;</span>.<span class="Identifier">$_</span>) <span class="Statement">}</span> (<span class="Constant">0</span> .. <span class="Constant">9</span>));
+<span class="Statement">my</span> <span class="Identifier">@accounts</span> = (<span class="Statement">map {</span> create_bank_account(<span class="Constant">&quot;Person #&quot;</span>.<span class="Identifier">$_</span>) <span class="Statement">}</span> (<span class="Constant">0</span> .. <span class="Constant">9</span>));
 
 <span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;)
 {
     <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
-    <span class="Statement">my</span> <span class="Identifier">@components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s</span><span class="Special">+</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
+    <span class="Statement">my</span> <span class="Identifier">@components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s+</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
     <span class="Statement">my</span> <span class="Identifier">$account_index</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
     <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
 
-    <span class="Identifier">$accounts</span>[<span class="Identifier">$account_index</span>]-&gt;(<span class="Identifier">$op</span>, <span class="Identifier">@components</span>);
+    <span class="Identifier">$accounts[$account_index]</span>-&gt;(<span class="Identifier">$op</span>, <span class="Identifier">@components</span>);
 }
 
 <span class="Comment"># Usage:</span>
@@ -809,7 +807,7 @@ this:
 
 <span class="Statement">sub </span><span class="Identifier">a_function</span>
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 
 <span class="Constant">1</span>;
@@ -907,7 +905,7 @@ an example: assume that the file "MyModule.pm" is this:
 
 <span class="Statement">sub </span><span class="Identifier">a_function</span>
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;Hello, World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 
 <span class="Constant">1</span>;
@@ -987,11 +985,11 @@ type the following code fragment near the beginning of the module:
 <div class="code_block"><pre>
 <span class="Statement">use </span>Exporter;
 
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA @EXPORT</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw(@ISA @EXPORT)</span>;
 
-<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Exporter</span><span class="Constant">)</span>;
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(Exporter)</span>;
 
-<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;</span><span class="Constant">function1</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">function2</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">function3</span><span class="Constant">&quot;</span>);
+<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;function1&quot;</span>, <span class="Constant">&quot;function2&quot;</span>, <span class="Constant">&quot;function3&quot;</span>);
 </pre></div>
 <p>
 What this fragment does is make the module inherit the <tt>Exporter</tt>
@@ -1012,29 +1010,29 @@ Here is an example which has a module called "Calc" and a script that uses it:
 
 <span class="Statement">use </span>Exporter;
 
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA @EXPORT</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw(@ISA @EXPORT)</span>;
 
-<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Exporter</span><span class="Constant">)</span>;
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(Exporter)</span>;
 
-<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;</span><span class="Constant">gcd</span><span class="Constant">&quot;</span>);
+<span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;gcd&quot;</span>);
 
 <span class="Comment"># This function calculates the greatest common divisor of two integers </span>
 <span class="Statement">sub </span><span class="Identifier">gcd</span>
 {
-    <span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Statement">shift</span>;
-    <span class="Statement">my</span> <span class="Identifier">$b</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$m</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$n</span> = <span class="Statement">shift</span>;
 
-    <span class="Statement">if</span> (<span class="Identifier">$b</span> &gt; <span class="Identifier">$a</span>)
+    <span class="Statement">if</span> (<span class="Identifier">$n</span> &gt; <span class="Identifier">$m</span>)
     {
-        (<span class="Identifier">$a</span>, <span class="Identifier">$b</span>) = (<span class="Identifier">$b</span> , <span class="Identifier">$a</span>);
+        (<span class="Identifier">$m</span>, <span class="Identifier">$n</span>) = (<span class="Identifier">$n</span> , <span class="Identifier">$m</span>);
+    }
+    
+    <span class="Statement">while</span> (<span class="Identifier">$m</span> % <span class="Identifier">$n</span> &gt; <span class="Constant">0</span>)
+    {
+        (<span class="Identifier">$m</span>, <span class="Identifier">$n</span>) = (<span class="Identifier">$n</span>, <span class="Identifier">$m</span> % <span class="Identifier">$n</span>);
     }
 
-    <span class="Statement">while</span> (<span class="Identifier">$a</span> % <span class="Identifier">$b</span> &gt; <span class="Constant">0</span>)
-    {
-        (<span class="Identifier">$a</span>, <span class="Identifier">$b</span>) = (<span class="Identifier">$b</span>, <span class="Identifier">$a</span> % <span class="Identifier">$b</span>);
-    }
-
-    <span class="Statement">return</span> <span class="Identifier">$b</span>;
+    <span class="Statement">return</span> <span class="Identifier">$n</span>;
 }
 
 <span class="Constant">1</span>;
@@ -1047,10 +1045,10 @@ Here is an example which has a module called "Calc" and a script that uses it:
 
 <span class="Statement">use </span>Calc;
 
-<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">200</span>;
-<span class="Statement">my</span> <span class="Identifier">$b</span> = <span class="Constant">15</span>;
+<span class="Statement">my</span> <span class="Identifier">$m</span> = <span class="Constant">200</span>;
+<span class="Statement">my</span> <span class="Identifier">$n</span> = <span class="Constant">15</span>;
 
-<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">gcd(</span><span class="Special">\$</span><span class="Constant">a,</span><span class="Special">\$</span><span class="Constant">b) == </span><span class="Constant">&quot;</span> , gcd(<span class="Identifier">$a</span>,<span class="Identifier">$b</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;gcd(</span><span class="Identifier">$m</span><span class="Constant">,</span><span class="Identifier">$n</span><span class="Constant">) == &quot;</span> , gcd(<span class="Identifier">$m</span>,<span class="Identifier">$n</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
 As you can see, the script invokes the "gcd" function of the "Calc" module
@@ -1095,7 +1093,7 @@ access it:
 <span class="Statement">use warnings</span>;
 
 <span class="Comment"># Declare a namespace-scoped variable named $myvar.</span>
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">$myvar</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw($myvar)</span>;
 
 <span class="Statement">sub </span><span class="Identifier">print_myvar</span>
 {
@@ -1112,11 +1110,11 @@ access it:
 
 <span class="Statement">use </span>MyVar;
 
-<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;Hello&quot;</span>;
 
 MyVar::print_myvar();
 
-<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;</span><span class="Constant">World</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$</span><span class="Type">MyVar::</span><span class="Identifier">myvar</span> = <span class="Constant">&quot;World&quot;</span>;
 
 MyVar::print_myvar();
 </pre></div>
@@ -1158,7 +1156,7 @@ Here's an example for a logging module that makes use of this facility:
 
 <span class="PreProc">BEGIN</span>
 {
-    <span class="Statement">open</span> <span class="Identifier">MYLOG</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">mylog.txt</span><span class="Constant">&quot;</span>;
+    <span class="Statement">open</span> <span class="Identifier">MYLOG</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;mylog.txt&quot;</span>;
 }
 
 <span class="Statement">sub </span><span class="Identifier">log</span>
@@ -1363,19 +1361,19 @@ screen:
 <span class="Comment"># Define a sample data structure</span>
 <span class="Statement">my</span> <span class="Identifier">$data</span> =
 {
-    <span class="Constant">&quot;</span><span class="Constant">a</span><span class="Constant">&quot;</span> =&gt; [ <span class="Constant">5</span>, <span class="Constant">100</span>, <span class="Constant">3</span> ],
-    <span class="Constant">&quot;</span><span class="Constant">hello</span><span class="Constant">&quot;</span> =&gt;
+    <span class="Constant">&quot;a&quot;</span> =&gt; [ <span class="Constant">5</span>, <span class="Constant">100</span>, <span class="Constant">3</span> ],
+    <span class="Constant">&quot;hello&quot;</span> =&gt;
     {
-        <span class="Constant">&quot;</span><span class="Constant">yes</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">no</span><span class="Constant">&quot;</span>,
-        <span class="Constant">&quot;</span><span class="Constant">r</span><span class="Constant">&quot;</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">l</span><span class="Constant">&quot;</span>,
+        <span class="Constant">&quot;yes&quot;</span> =&gt; <span class="Constant">&quot;no&quot;</span>,
+        <span class="Constant">&quot;r&quot;</span> =&gt; <span class="Constant">&quot;l&quot;</span>,
     },
 };
 
 <span class="Comment"># Construct a Data::Dumper instance that is associated with this data</span>
-<span class="Statement">my</span> <span class="Identifier">$dumper</span> = Data::Dumper-&gt;new([ <span class="Identifier">$data</span>], [ <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">data</span><span class="Constant">&quot;</span> ]);
+<span class="Statement">my</span> <span class="Identifier">$dumper</span> = Data::Dumper-&gt;new([ <span class="Identifier">$data</span>], [ <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">data&quot;</span> ]);
 
 <span class="Comment"># Call its method that renders it into a string.</span>
-<span class="Statement">print</span> <span class="Identifier">$dumper</span>-&gt;Dump();
+<span class="Statement">print</span> <span class="Identifier">$dumper-&gt;Dump</span>();
 </pre></div>
 <hr />
 
@@ -1469,20 +1467,20 @@ Here is an example, constructor for the class <tt>Foo</tt>:
     <span class="Comment"># $self is the the object. Let's initialize it to an empty hash</span>
     <span class="Comment"># reference.</span>
     <span class="Statement">my</span> <span class="Identifier">$self</span> = {};
-
+    
     <span class="Comment"># Associate $self with the class $class. This is probably the most</span>
     <span class="Comment"># important step.</span>
     <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
 
     <span class="Comment"># Now we can retrieve the other arguments passed to the </span>
     <span class="Comment"># constructor.</span>
-
-    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">Fooish</span><span class="Constant">&quot;</span>;
+    
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;Fooish&quot;</span>;
     <span class="Statement">my</span> <span class="Identifier">$number</span> = <span class="Statement">shift</span> || <span class="Constant">5</span>;
-
+    
     <span class="Comment"># Put these arguments inside class members</span>
-    <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>} = <span class="Identifier">$name</span>;
-    <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">number</span><span class="Constant">'</span>} = <span class="Identifier">$number</span>;
+    <span class="Identifier">$self-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span> = <span class="Identifier">$name</span>;
+    <span class="Identifier">$self-&gt;{</span><span class="Constant">'number'</span><span class="Identifier">}</span> = <span class="Identifier">$number</span>;
 
     <span class="Comment"># Return $self so the user can use it.</span>
     <span class="Statement">return</span> <span class="Identifier">$self</span>;
@@ -1501,9 +1499,9 @@ And here is an example script that uses this constructor:
 
 <span class="Statement">use </span>Foo;
 
-<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;new(<span class="Constant">&quot;</span><span class="Constant">MyFoo</span><span class="Constant">&quot;</span>, <span class="Constant">500</span>);
+<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;new(<span class="Constant">&quot;MyFoo&quot;</span>, <span class="Constant">500</span>);
 
-<span class="Statement">print</span> <span class="Identifier">$foo</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>}, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$foo-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 
@@ -1537,8 +1535,8 @@ its name:
 {
     <span class="Comment"># This step is necessary so it will be treated as a method</span>
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
-
-    <span class="Statement">return</span> <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>};
+    
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span>;
 }
 
 <span class="Statement">sub </span><span class="Identifier">assign_name</span>
@@ -1546,9 +1544,9 @@ its name:
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Comment"># Notice that we can pass regular arguments from now on.</span>
-    <span class="Statement">my</span> <span class="Identifier">$new_name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">Fooish</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$new_name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;Fooish&quot;</span>;
 
-    <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">name</span><span class="Constant">'</span>} = <span class="Identifier">$new_name</span>;
+    <span class="Identifier">$self-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span> = <span class="Identifier">$new_name</span>;
 
     <span class="Statement">return</span> <span class="Constant">0</span>;
 }
@@ -1565,13 +1563,13 @@ output would be?
 
 <span class="Statement">use </span>Foo;
 
-<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;new(<span class="Constant">&quot;</span><span class="Constant">MyFoo</span><span class="Constant">&quot;</span>, <span class="Constant">500</span>);
+<span class="Statement">my</span> <span class="Identifier">$foo</span> = Foo-&gt;new(<span class="Constant">&quot;MyFoo&quot;</span>, <span class="Constant">500</span>);
 
-<span class="Statement">print</span> <span class="Identifier">$foo</span>-&gt;get_name(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$foo-&gt;get_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
-<span class="Identifier">$foo</span>-&gt;assign_name(<span class="Constant">&quot;</span><span class="Constant">Shlomi Fish</span><span class="Constant">&quot;</span>);
+<span class="Identifier">$foo-&gt;assign_name</span>(<span class="Constant">&quot;Shlomi Fish&quot;</span>);
 
-<span class="Statement">print</span> <span class="Identifier">$foo</span>-&gt;get_name(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$foo-&gt;get_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 
@@ -1614,25 +1612,25 @@ number:
 <span class="Comment"># use vars.</span>
 <span class="Comment">#</span>
 <span class="Comment"># qw(My Constant String) is equivalent to split(/\s+/, &quot;My Constant String&quot;)</span>
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw(@ISA)</span>;
 
 <span class="Comment"># We use Foo during our inheritance so we should load it.</span>
 <span class="Statement">use </span>Foo;
 
 <span class="Comment"># This command actually inherits Foo.</span>
-<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Foo</span><span class="Constant">)</span>;
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(Foo)</span>;
 
 <span class="Statement">sub </span><span class="Identifier">assign_name_ext</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
-
+    
     <span class="Comment"># Call the method of the base class</span>
-    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self</span>-&gt;assign_name(<span class="Identifier">$name</span>);
+    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self-&gt;assign_name</span>(<span class="Identifier">$name</span>);
     <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
     {
-        <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>}++;
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span>++;
     }
 
     <span class="Statement">return</span> <span class="Identifier">$ret</span>;
@@ -1643,8 +1641,8 @@ number:
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span>
-        (<span class="Statement">exists</span>(<span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>}) ?
-            <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>} :
+        (<span class="Statement">exists</span>(<span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span>) ?
+            <span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span> :
             <span class="Constant">0</span>
         );
 }
@@ -1685,23 +1683,23 @@ Here is a rewrite of the <tt>Bar</tt> class, this time with
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw(@ISA)</span>;
 
 <span class="Statement">use </span>Foo;
 
-<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Foo</span><span class="Constant">)</span>;
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(Foo)</span>;
 
 <span class="Statement">sub </span><span class="Identifier">assign_name</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
-
+    
     <span class="Comment"># Call the method of the base class</span>
-    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self</span>-&gt;SUPER::assign_name(<span class="Identifier">$name</span>);
+    <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self-&gt;SUPER</span>::assign_name(<span class="Identifier">$name</span>);
     <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
     {
-        <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>}++;
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span>++;
     }
 
     <span class="Statement">return</span> <span class="Identifier">$ret</span>;
@@ -1712,8 +1710,8 @@ Here is a rewrite of the <tt>Bar</tt> class, this time with
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span>
-        (<span class="Statement">exists</span>(<span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>}) ?
-            <span class="Identifier">$self</span>-&gt;{<span class="Constant">'</span><span class="Constant">num_times</span><span class="Constant">'</span>} :
+        (<span class="Statement">exists</span>(<span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span>) ?
+            <span class="Identifier">$self-&gt;{</span><span class="Constant">'num_times'</span><span class="Identifier">}</span> :
             <span class="Constant">0</span>
         );
 }
@@ -1754,17 +1752,17 @@ prints the number of times it's name was assigned to the screen before it is des
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">use vars</span> <span class="Constant">qw(</span><span class="Constant">@ISA</span><span class="Constant">)</span>;
+<span class="Statement">use vars</span> <span class="Constant">qw(@ISA)</span>;
 
 <span class="Statement">use </span>Bar2;
 
-<span class="Identifier">@ISA</span>=<span class="Constant">qw(</span><span class="Constant">Bar2</span><span class="Constant">)</span>;
+<span class="Identifier">@ISA</span>=<span class="Constant">qw(Bar2)</span>;
 
 <span class="Statement">sub </span><span class="Identifier">DESTROY</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
-
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">My name was assigned </span><span class="Constant">&quot;</span> . <span class="Identifier">$self</span>-&gt;get_num_times_assigned() . <span class="Constant">&quot;</span><span class="Constant"> times.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    
+    <span class="Statement">print</span> <span class="Constant">&quot;My name was assigned &quot;</span> . <span class="Identifier">$self-&gt;get_num_times_assigned</span>() . <span class="Constant">&quot; times.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 
 <span class="Constant">1</span>;

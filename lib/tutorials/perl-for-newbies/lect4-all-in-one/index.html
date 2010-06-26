@@ -16,21 +16,19 @@
 </head>
 <body><div class="page">
 
-<div class="center"><script type="text/javascript">
-google_ad_client = "pub-2480595666283917";
-google_ad_width = 468;
-google_ad_height = 60;
-google_ad_format = "468x60_as";
-google_ad_type = "text";
-google_ad_channel ="";
-google_color_border = "336699";
-google_color_text = "000000";
-google_color_bg = "FFFFFF";
-google_color_link = "0000FF";
-google_color_url = "008000";
+<!-- Beginning of Project Wonderful ad code: -->
+<!-- Ad box ID: 42457 -->
+<script type="text/javascript">
+<!--
+var pw_d=document;
+pw_d.projectwonderful_adbox_id = "42457";
+pw_d.projectwonderful_adbox_type = "1";
+pw_d.projectwonderful_foreground_color = "";
+pw_d.projectwonderful_background_color = "";
+//-->
 </script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-</div>
+<script type="text/javascript" src="http://www.projectwonderful.com/ad_display.js"></script>
+<!-- End of Project Wonderful ad code. -->
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -299,11 +297,12 @@ distribution's help channels for more information.
 2. The sprintf function
 </h1>
 <p>
-The <tt>sprintf</tt> can be used to format a format string with some
-conversions embedded inside, and some paramters. Each conversion is specified
-by the starting character of the percent sign (<tt>%</tt>), and can
-have a type and several parameters that will dictate how it will be formatted
-in the output string. The output string is returned by <tt>sprintf</tt>.
+The <tt>sprintf</tt> built-in function can be used to translate a format
+string with some conversions embedded inside, and some paramters into a
+formatted string. Each conversion is specified by the starting character of the
+percent sign (<tt>%</tt>), and can have a type and several parameters that will
+dictate how it will be formatted in the output string. The output string is
+returned by <tt>sprintf</tt>.
 </p>
 <p>
 Here's an example that illustrates its use:
@@ -314,7 +313,7 @@ Here's an example that illustrates its use:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">Hello </span><span class="Special">\&quot;</span><span class="Constant">%s</span><span class="Special">\&quot;</span><span class="Constant">! Your lucky number is %i.</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Nathan</span><span class="Constant">&quot;</span>, <span class="Constant">65</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;Hello </span><span class="Special">\&quot;</span><span class="Constant">%s</span><span class="Special">\&quot;</span><span class="Constant">! Your lucky number is %i.</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Nathan&quot;</span>, <span class="Constant">65</span>);
 </pre></div>
 <p>
 The output is:
@@ -438,11 +437,11 @@ Here are some examples:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">There is %i%% of alcohol in this beverage</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">27</span>);
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">%s%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">This string</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant"> ends here.</span><span class="Constant">&quot;</span>);
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in hex is 0x%x</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">650 in binary is 0b%b</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
-<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;</span><span class="Constant">3.2 + 1.6 == %f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.2</span>+<span class="Constant">1.6</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;There is %i%% of alcohol in this beverage</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">27</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;%s%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;This string&quot;</span>, <span class="Constant">&quot; ends here.&quot;</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;650 in hex is 0x%x</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;650 in binary is 0b%b</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">650</span>);
+<span class="Statement">print</span> <span class="Statement">sprintf</span>(<span class="Constant">&quot;3.2 + 1.6 == %f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.2</span>+<span class="Constant">1.6</span>);
 </pre></div>
 <p>
 And their output is:
@@ -524,12 +523,12 @@ binary with "0b"
 For example (taken from <tt>perldoc -f sprintf</tt>):
 </p>
 <div class="code_block"><pre>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;% d&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt; 12&gt;&quot;</span>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%+d&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;+12&gt;&quot;</span>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%6s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;    12&gt;&quot;</span>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%-6s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;12    &gt;&quot;</span>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%06s&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;000012&gt;&quot;</span>
-<span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">&lt;%#x&gt;</span><span class="Constant">'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;0xc&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;% d&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt; 12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;%+d&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;+12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;%6s&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;    12&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;%-6s&gt;'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;12    &gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;%06s&gt;'</span>, <span class="Constant">12</span>;  <span class="Comment"># prints &quot;&lt;000012&gt;&quot;</span>
+<span class="Statement">printf</span> <span class="Constant">'&lt;%#x&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;0xc&gt;&quot;</span>
 </pre></div>
 <p>
 Note that <tt>printf</tt> formats its arguments using <tt>sprintf</tt> and
@@ -568,10 +567,10 @@ Here are some examples:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;       <span class="Comment"># Prints &lt;     Hello&gt;</span>
-<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%-10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;      <span class="Comment"># Prints &lt;Hello     &gt;</span>
-<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%3.5s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">Longstring</span><span class="Constant">&quot;</span>; <span class="Comment"># Prints &lt;Longs&gt;</span>
-<span class="Statement">printf</span> <span class="Constant">&quot;</span><span class="Constant">&lt;%.2f&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.1415926535</span>;  <span class="Comment"># Prints &lt;3.14&gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;&lt;%10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Hello&quot;</span>;       <span class="Comment"># Prints &lt;     Hello&gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;&lt;%-10s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Hello&quot;</span>;      <span class="Comment"># Prints &lt;Hello     &gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;&lt;%3.5s&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Longstring&quot;</span>; <span class="Comment"># Prints &lt;Longs&gt;</span>
+<span class="Statement">printf</span> <span class="Constant">&quot;&lt;%.2f&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Constant">3.1415926535</span>;  <span class="Comment"># Prints &lt;3.14&gt;</span>
 </pre></div>
 <hr />
 
@@ -759,18 +758,18 @@ be placed. And likewise for the other strings. Here are some examples:
 <span class="Statement">use warnings</span>;
 
 
-<span class="Statement">my</span> <span class="Identifier">$h</span> = <span class="Constant">q{</span><span class="Constant">Hello There</span><span class="Constant">}</span>;
+<span class="Statement">my</span> <span class="Identifier">$h</span> = <span class="Constant">q{Hello There}</span>;
 <span class="Statement">print</span> <span class="Constant">qq|</span><span class="Identifier">$h</span><span class="Constant">, world!</span><span class="Special">\n</span><span class="Constant">|</span>;
 
-<span class="Statement">my</span> <span class="Identifier">$t</span> = <span class="Constant">q#</span><span class="Constant">Router</span><span class="Constant">#</span>;
+<span class="Statement">my</span> <span class="Identifier">$t</span> = <span class="Constant">q#Router#</span>;
 <span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Constant">qq(</span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$h</span><span class="Constant"> </span><span class="Identifier">$t</span><span class="Constant">)</span>;
 <span class="Identifier">$y</span> =~ <span class="Statement">s!</span><span class="Constant">Hello</span><span class="Statement">!</span><span class="Constant">Hi</span><span class="Statement">!</span>;
 <span class="Statement">print</span> <span class="Constant">qq#</span><span class="Identifier">$y</span><span class="Special">\n</span><span class="Constant">#</span>;
 
-<span class="Statement">my</span> <span class="Identifier">@a</span> = <span class="Constant">qw{</span><span class="Constant">one two three</span><span class="Constant">}</span>;
+<span class="Statement">my</span> <span class="Identifier">@a</span> = <span class="Constant">qw{one two three}</span>;
 <span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Constant">0</span> .. <span class="Identifier">$#a</span>)
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Identifier">$a</span><span class="Constant">[</span><span class="Identifier">$i</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Identifier">$a[$i]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -827,11 +826,11 @@ Here is an example:
 <span class="Statement">use warnings</span>;
 
 
-<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;</span><span class="Constant">Hello</span><span class="Constant">&quot;</span>;
-<span class="Statement">my</span> <span class="Identifier">$str</span> = <span class="Constant">&quot;</span><span class="Constant">There you go.</span><span class="Constant">&quot;</span>;
-<span class="Statement">my</span> <span class="Identifier">$true</span> = <span class="Constant">&quot;</span><span class="Constant">False</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;Hello&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$str</span> = <span class="Constant">&quot;There you go.&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$true</span> = <span class="Constant">&quot;False&quot;</span>;
 
-<span class="Statement">print</span> <span class="Constant">&lt;&lt;&quot;END&quot;</span><span class="Constant">;</span>
+<span class="Statement">print</span> <span class="Constant">&lt;&lt;&quot;END&quot;;</span>
 <span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">a is: &quot;</span><span class="Identifier">$a</span><span class="Constant">&quot;</span>
 <span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">str is: &quot;</span><span class="Identifier">$str</span><span class="Constant">&quot;</span>
 <span class="Constant">The value of true is: &quot;</span><span class="Identifier">$true</span><span class="Constant">&quot;</span>
@@ -856,6 +855,11 @@ Hoola
 Note that if the delimeters on the terminator after the <tt>&lt;&lt;</tt>
 are double-quotes (<tt>"..."</tt>), then the here-document will interpolate,
 and if they are single-quotes (<tt>'...'</tt>), it will not.
+</p>
+<p>
+An unquoted ending string causes the here-doc to interpolate, in case
+you encounter it in the wild. Note however, that in your code, you should
+always qoute it, so people won't have to guess what you meant.
 </p>
 <hr />
 
@@ -915,6 +919,16 @@ array, it will call the command in the first member with the rest of the
 array as command line arguments.
 </p>
 <p>
+If you receive an arbitrary array and you fear it may contain only
+one argument, you can use the <tt>system { $cmd_line[0] } @cmd_line</tt>
+notation (similar to <tt>print()</tt>'s ).
+</p>
+<p>
+On success, system() returns 0 (not a true value) and one should make
+sure to throw an exception upon failure while referencing the built-in
+error variable <tt>$?</tt>.
+</p>
+<p>
 Here are some examples, that will only work on UNIX systems.
 </p>
 <div class="code_block"><pre>
@@ -923,12 +937,15 @@ Here are some examples, that will only work on UNIX systems.
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">system</span>(<span class="Constant">&quot;</span><span class="Constant">ls -l /</span><span class="Constant">&quot;</span>);
+(<span class="Statement">system</span>(<span class="Constant">&quot;ls -l /&quot;</span>) == <span class="Constant">0</span>)
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;system 'ls -l /' failed - </span><span class="Identifier">$?</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">my</span> <span class="Identifier">@args</span> = (<span class="Constant">&quot;</span><span class="Constant">ls</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">-l</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">/</span><span class="Constant">&quot;</span>);
-<span class="Statement">system</span>(<span class="Identifier">@args</span>);
+<span class="Statement">my</span> <span class="Identifier">@args</span> = (<span class="Constant">&quot;ls&quot;</span>, <span class="Constant">&quot;-l&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
+(<span class="Statement">system</span>(<span class="Identifier">@args</span>) == <span class="Constant">0</span>)
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not ls -l / - </span><span class="Identifier">$?</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">system</span>(<span class="Constant">&quot;</span><span class="Constant">ls -l | grep ^d | wc -l</span><span class="Constant">&quot;</span>);
+(<span class="Statement">system</span>(<span class="Constant">&quot;ls -l | grep ^d | wc -l&quot;</span>) == <span class="Constant">0</span>)
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not pipeline - </span><span class="Identifier">$?</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 
@@ -955,6 +972,11 @@ the output of a shell command. It executes the command and returns
 all of its output. Interpolation is used.
 </p>
 <p>
+If assigned to a scalar, it returns the output as a complete string. If
+the output is assigned to an array, the array will contain the lines of
+the output.
+</p>
+<p>
 Here is an example for a program that counts the number of directories in
 a directory that is given as an argument:
 </p>
@@ -966,15 +988,26 @@ a directory that is given as an argument:
 
 <span class="Statement">my</span> <span class="Identifier">$dir</span> = <span class="Statement">shift</span>;
 <span class="Comment"># Prepare $dir for placement inside a '...' argument</span>
+<span class="Comment"># A safer way would be to use String::ShellQuote</span>
 <span class="Identifier">$dir</span> =~ <span class="Statement">s!</span><span class="Constant">'</span><span class="Statement">!</span><span class="Constant">'</span><span class="Special">\\</span><span class="Constant">''</span><span class="Statement">!g</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$count</span> = <span class="Statement">`</span><span class="Constant">ls -l '</span><span class="Identifier">$dir</span><span class="Constant">' | grep ^d | wc -l</span><span class="Statement">`</span>;
 
-<span class="Identifier">$count</span> =~ <span class="Statement">/</span><span class="Special">(</span><span class="Special">\d</span><span class="Special">+)</span><span class="Statement">/</span>;
-<span class="Comment"># Retrieve the number via the special regex variable $1</span>
-<span class="Identifier">$count</span> = <span class="Identifier">$1</span>;
+<span class="Statement">if</span> (<span class="Identifier">$?</span>)
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;Error returned by ls -l command is </span><span class="Identifier">$@</span><span class="Constant">.&quot;</span>;
+}
 
-<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">There are </span><span class="Identifier">$count</span><span class="Constant"> directories</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">if</span> (<span class="Identifier">$count</span> !~ <span class="Statement">/</span><span class="Special">(\d+)</span><span class="Statement">/</span>)
+{
+    <span class="Comment"># Retrieve the number via the special regex variable $1</span>
+    <span class="Identifier">$count</span> = <span class="Identifier">$1</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;There are </span><span class="Identifier">$count</span><span class="Constant"> directories</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+}
+<span class="Statement">else</span>
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;Wrong output.&quot;</span>
+}
 </pre></div>
 <hr />
 
@@ -1013,17 +1046,17 @@ Here are some examples:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">/sbin/ifconfig |</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;/sbin/ifconfig |&quot;</span>;
 <span class="Statement">my</span> (<span class="Identifier">$line</span>, <span class="Identifier">@addrs</span>);
 <span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
 {
-    <span class="Statement">if</span> (<span class="Identifier">$line</span> =~ <span class="Statement">/</span><span class="Constant">inet addr:</span><span class="Special">((</span><span class="Special">\d</span><span class="Special">+</span><span class="Special">\.</span><span class="Special">)+</span><span class="Special">\d</span><span class="Special">)</span><span class="Statement">/</span>)
+    <span class="Statement">if</span> (<span class="Identifier">$line</span> =~ <span class="Statement">/</span><span class="Constant">inet addr:</span><span class="Special">((\d+\.)+\d)</span><span class="Statement">/</span>)
     {
         <span class="Statement">push</span> <span class="Identifier">@addrs</span>, <span class="Identifier">$1</span>;
     }
 }
 <span class="Statement">close</span>(<span class="Identifier">I</span>);
-<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">You have the following addresses: </span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,<span class="Identifier">@addrs</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;You have the following addresses: </span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,<span class="Identifier">@addrs</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 <div class="code_block"><pre>
@@ -1035,11 +1068,11 @@ Here are some examples:
 <span class="Comment"># Send an E-mail to myself</span>
 <span class="Comment"># Note: this is just an example - there are modules to do this on CPAN.</span>
 
-<span class="Statement">open</span> <span class="Identifier">MAIL</span>, <span class="Constant">&quot;</span><span class="Constant">|/usr/sbin/sendmail shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org</span><span class="Constant">&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">To: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">From: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">MAIL</span>, <span class="Constant">&quot;|/usr/sbin/sendmail shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;To: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;From: Shlomi Fish &lt;shlomif</span><span class="Special">\@</span><span class="Constant">shlomifish.org&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 <span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;</span><span class="Constant">Hello there, moi!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">MAIL</span> <span class="Constant">&quot;Hello there, moi!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 <span class="Statement">close</span>(<span class="Identifier">MAIL</span>);
 </pre></div>
 <h2 id="open-pipe-list">Pipe to @args</h2>
@@ -1064,9 +1097,16 @@ while (my $line = &lt;$read_from_process&gt;)
 }
 </pre></div>
 <p>
-These are safer than using the interpolated version as a gigantic
-open string.
+Doing something like
+<tt>open my $print_to_process, "|-", "sendmail", $to_address;</tt>
+is safer than doing:
+<tt>open my $print_to_process, "|-", "sendmail $to_address";</tt>
+Because a malicious person may put some offending shell characters in
+<tt>$to_address</tt> and end up with something like:
 </p>
+<div class="code_block"><pre>
+sendmail ; rm -fr $HOME
+</pre></div>
 <hr />
 
 </div>
@@ -1184,29 +1224,29 @@ name as well, you can write the following:
 
 <span class="Statement">my</span> <span class="Identifier">@array</span> =
 (
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Amanda</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Jane</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Arden</span><span class="Constant">&quot;</span>,},
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Tony</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hoffer</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Shlomi</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Fish</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Chip</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Fish</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">John</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Peter</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Torry</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Michael</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Hoffer</span><span class="Constant">&quot;</span>, },
-    { <span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Ben</span><span class="Constant">&quot;</span>, <span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span> =&gt; <span class="Constant">&quot;</span><span class="Constant">Smith</span><span class="Constant">&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Amanda&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Smith&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Jane&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Arden&quot;</span>,},
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Tony&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Hoffer&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Shlomi&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Fish&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Chip&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Fish&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;John&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Smith&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Peter&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Torry&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Michael&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Hoffer&quot;</span>, },
+    { <span class="Constant">'first'</span> =&gt; <span class="Constant">&quot;Ben&quot;</span>, <span class="Constant">'last'</span> =&gt; <span class="Constant">&quot;Smith&quot;</span>, },
 );
 
 <span class="Statement">my</span> <span class="Identifier">@sorted_array</span> =
     (<span class="Statement">sort</span>
         {
-            (<span class="Identifier">$a</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>} <span class="Statement">cmp</span> <span class="Identifier">$b</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>}) ||
-            (<span class="Identifier">$a</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>} <span class="Statement">cmp</span> <span class="Identifier">$b</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>})
+            (<span class="Identifier">$a-&gt;{</span><span class="Constant">'last'</span><span class="Identifier">}</span> <span class="Statement">cmp</span> <span class="Identifier">$b-&gt;{</span><span class="Constant">'last'</span><span class="Identifier">}</span>) ||
+            (<span class="Identifier">$a-&gt;{</span><span class="Constant">'first'</span><span class="Identifier">}</span> <span class="Statement">cmp</span> <span class="Identifier">$b-&gt;{</span><span class="Constant">'first'</span><span class="Identifier">}</span>)
         }
         <span class="Identifier">@array</span>
     );
 
 <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$record</span> (<span class="Identifier">@sorted_array</span>)
 {
-    <span class="Statement">print</span> <span class="Identifier">$record</span>-&gt;{<span class="Constant">'</span><span class="Constant">last</span><span class="Constant">'</span>} . <span class="Constant">&quot;</span><span class="Constant">, </span><span class="Constant">&quot;</span> . <span class="Identifier">$record</span>-&gt;{<span class="Constant">'</span><span class="Constant">first</span><span class="Constant">'</span>} . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">$record-&gt;{</span><span class="Constant">'last'</span><span class="Identifier">}</span> . <span class="Constant">&quot;, &quot;</span> . <span class="Identifier">$record-&gt;{</span><span class="Constant">'first'</span><span class="Identifier">}</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -1245,8 +1285,8 @@ Torry, Peter
 <p>
 Perl supplies two operators <tt>and</tt> and <tt>or</tt> which are equivalent
 to <tt>&amp;&amp;</tt> and <tt>||</tt> except that they have a very low
-precendence. (lower than any other operator in fact). There's also <tt>not</tt>
-which is the ultra-low precendence equivalent of <tt>!</tt>.
+precedence. (lower than any other operator in fact). There's also <tt>not</tt>
+which is the ultra-low precedence equivalent of <tt>!</tt>.
 </p>
 <p>
 You can use them after a statement to write error handlers.
@@ -1258,9 +1298,9 @@ You can use them after a statement to write error handlers.
 <span class="Statement">use warnings</span>;
 
 <span class="Comment"># Terminate if we cannot open a file.</span>
-<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;</span><span class="Constant">/hello.txt</span><span class="Constant">&quot;</span> <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Cannot open file!</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;/hello.txt&quot;</span> <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Cannot open file!&quot;</span>;
 
-<span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;</span><span class="Constant">Hello World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;Hello World!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
 <span class="Statement">close</span>(<span class="Identifier">O</span>);
 </pre></div>
@@ -1334,9 +1374,9 @@ Here's an example:
 
 <span class="Statement">sub </span><span class="Identifier">read_text</span>
 {
-    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../hello/there.txt</span><span class="Constant">&quot;</span> ;
-    <span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;</span><span class="Constant">&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
-        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open </span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;../hello/there.txt&quot;</span> ;
+    <span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open </span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>;
     <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,<span class="Identifier">&lt;I&gt;</span>);
     <span class="Statement">close</span>(<span class="Identifier">I</span>);
 
@@ -1346,9 +1386,9 @@ Here's an example:
 <span class="Statement">sub </span><span class="Identifier">write_text</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$text</span> = <span class="Statement">shift</span>;
-    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;</span><span class="Constant">../there/hello.txt</span><span class="Constant">&quot;</span>;
-    <span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;</span><span class="Constant">&gt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
-        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open </span><span class="Identifier">$filename</span><span class="Constant"> for writing</span><span class="Constant">&quot;</span>;
+    <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Constant">&quot;../there/hello.txt&quot;</span>;
+    <span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;&gt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open </span><span class="Identifier">$filename</span><span class="Constant"> for writing&quot;</span>;
     <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Identifier">$text</span>;
     <span class="Statement">close</span>(<span class="Identifier">O</span>);
 }
@@ -1356,7 +1396,7 @@ Here's an example:
 <span class="Statement">sub </span><span class="Identifier">read_and_write</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$text</span> = read_text();
-
+    
     write_text(<span class="Identifier">$text</span>);
 }
 
@@ -1367,11 +1407,11 @@ Here's an example:
     };
     <span class="Statement">if</span> (<span class="Identifier">$@</span>)
     {
-        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">Could not perform the transaction. Reason is:</span><span class="Special">\n</span><span class="Identifier">$@</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Constant">&quot;Could not perform the transaction. Reason is:</span><span class="Special">\n</span><span class="Identifier">$@</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     }
 }
 
-<span class="Identifier">&amp;perform_transaction</span>();
+perform_transaction();
 </pre></div>
 <hr />
 
@@ -1507,9 +1547,9 @@ Here's an example that counts the number of mp3s in a directory:
 <span class="Statement">sub </span><span class="Identifier">get_dir_files</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
-
+    
     <span class="Statement">opendir</span> <span class="Identifier">D</span>, <span class="Identifier">$dir_path</span>
-        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Cannot open the directory </span><span class="Identifier">$dir_path</span><span class="Constant">&quot;</span>;
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Cannot open the directory </span><span class="Identifier">$dir_path</span><span class="Constant">&quot;</span>;
 
     <span class="Statement">my</span> <span class="Identifier">@entries</span>;
     <span class="Identifier">@entries</span> = <span class="Statement">readdir</span>(<span class="Identifier">D</span>);
@@ -1518,12 +1558,12 @@ Here's an example that counts the number of mp3s in a directory:
     <span class="Statement">return</span> \<span class="Identifier">@entries</span>;
 }
 
-<span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;</span><span class="Constant">.</span><span class="Constant">&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;.&quot;</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$entries</span> = get_dir_files(<span class="Identifier">$dir_path</span>);
 <span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep {</span> <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> <span class="Statement">}</span> <span class="Identifier">@$entries</span>);
 
-<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Constant">You have </span><span class="Constant">&quot;</span> . <span class="Statement">scalar</span>(<span class="Identifier">@mp3s</span>) . <span class="Constant">&quot;</span><span class="Constant"> mp3s in </span><span class="Identifier">$dir_path</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;You have &quot;</span> . <span class="Statement">scalar</span>(<span class="Identifier">@mp3s</span>) . <span class="Constant">&quot; mp3s in </span><span class="Identifier">$dir_path</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 
@@ -1577,8 +1617,8 @@ equivalent:
 
 <span class="Statement">my</span> <span class="Identifier">$filename</span> = shifg;
 
-<span class="Statement">open</span> <span class="Identifier">F</span>, <span class="Constant">&quot;</span><span class="Constant">+&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
-    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;</span><span class="Constant">Could not open file</span><span class="Constant">&quot;</span>;
+<span class="Statement">open</span> <span class="Identifier">F</span>, <span class="Constant">&quot;+&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open file&quot;</span>;
 
 <span class="Comment"># Read bytes 64-127 into $text</span>
 <span class="Statement">seek</span>(<span class="Identifier">F</span>, <span class="Constant">64</span>, SEEK_SET);
