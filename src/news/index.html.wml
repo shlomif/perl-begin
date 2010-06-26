@@ -2,6 +2,34 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_26_June_2010">26-June-2010: New Pages</h2>
+
+<ul>
+
+<li>
+<a href="$(ROOT)/FAQs/">A page containing a list of frequently
+asked questions (FAQs) was added.
+</li>
+
+<li>
+<a href="$(ROOT)/uses/text-parsing/">A page about text parsing</a> and
+<a href="$(ROOT)/uses/text-generation/">a page about text generation</a>,
+both with best practices and recommended technologies were added.
+</li>
+
+<li>
+Added 
+<a href="$(ROOT)/topics/scoping/">a page about scoping and variables</a>
+</li>
+
+</ul>
+
+<p>
+Aside from that, the ShareThis button was replaced by the 
+<a href="http://www.addtoany.com/">AddToAny</a> button which does not require
+JavaScript, loads faster and does not load Google Analytics.
+</p>
+
 <h2 id="news_16_March_2010">16-March-2010: Topical and Uses Pages</h2>
 
 <p>
