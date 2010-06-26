@@ -241,6 +241,11 @@ my $tree_contents =
                     'url' => "uses/sys-admin/",
                 },
                 {
+                    'text' => "Text Generation",
+                    'title' => "How to generate text using Perl",
+                    'url' => "uses/text-generation/",
+                },
+                {
                     'text' => "Text Parsing",
                     'title' => "How to parse various forms of text using Perl",
                     'url' => "uses/text-parsing/",

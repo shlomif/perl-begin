@@ -1,0 +1,52 @@
+#include '../template.wml'
+
+<latemp_subject "Text Generation in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Perl is a good language for generating text, and
+even its name originally stood for "Practical Extraction and <b>Report</b>
+Language". This page aims to list some of the facilities provided by Perl
+and <a href="$(ROOT)/topics/cpan/">CPAN</a> for generating text.
+</p>
+
+<h2 id="facilities">Text Generation Facilities</h2>
+
+<h3 id="sprintf"><a href="http://perldoc.perl.org/functions/sprintf.html">sprintf()</a></h3>
+
+<p>
+sprintf() is a built-in Perl function for formatting its arguments, similar
+to the sprintf function provided by C and other programming languages. Make
+sure you familiarize yourself with it.
+</p>
+
+<h4 id="named-sprintf"><a href="http://search.cpan.org/dist/Text-Sprintf-Named/">Text-Sprintf-Named</a></h4>
+
+<p>
+Text-Sprintf-Named allows one to pass an associative array to a sprintf-like
+function with named conversions. So one can do:
+</p>
+
+<pre>
+my $formatter =
+    Text::Sprintf::Named-&gt;new(
+        {fmt =&gt; &quot;Hello %(name)s! Today is %(day)s!&quot;}
+    );
+
+# Returns &quot;Hello Ayeleth! Today is Sunday!&quot;
+$formatter-&gt;format({args =&gt; {&#39;name&#39; =&gt; &quot;Ayeleth&quot;, &#39;day&#39; =&gt; &quot;Sunday&quot;}});
+</pre>
+
+<h3 id="template-toolkit"><a href="http://template-toolkit.org/">Template
+Toolkit</a></h3>
+
+<p>
+Template Toolkit is a sophisticated and powerful templating system for Perl,
+with many extensions on the CPAN. Also see 
+<a href="http://www.shlomifish.org/lecture/Perl/Template-Toolkit/">a
+presentation that Shlomi Fish gave</a> about Template Toolkit, that explains
+why one should use a template system and especially Template Toolkit.  
+</p>
+
+
