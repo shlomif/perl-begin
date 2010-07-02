@@ -84,3 +84,10 @@ A module for formatting fixed-width text. You should use it <b>instead</b> of
 the built-in <a href="http://perldoc.perl.org/perlform.html">perlform</a>
 facility.
 </p>
+
+<h3 id="text-table"><a href="http://search.cpan.org/dist/Text-Table/">Text::Table</a></h3>
+
+<p>
+A module for outputting text tables.
+</p>
+
