@@ -13,6 +13,34 @@ and <a href="$(ROOT)/topics/cpan/">CPAN</a> for generating text.
 
 <h2 id="facilities">Text Generation Facilities</h2>
 
+<h3 id="concatenation">String Concatenation</h3>
+
+<p>
+Perl allows you to easily concatenate two strings using the <tt>.</tt>
+and <tt>.=</tt> operators. While you can quickly outgrow it, it is often
+enough. You can also <b>interpolate</b> string values inside some types
+of string constants. Therefore, you can say:
+</p>
+
+<pre>
+my $name = "Sophie";
+my $city = "London";
+my $large_string = "Hello $name, welcome to $city!";
+\# $large_string is now "Hello Sophie, welcome to London!"
+</pre>
+
+<p>
+Perl also gives you a large selection of delimiters for strings as well as
+<a href="http://en.wikipedia.org/wiki/Here_document">here-documents</a>,
+which allow assigning multiple-line string constants with a user-specified
+terminating delimiter.
+</p>
+
+<p>
+Nevertheless, please <b>read on</b> to see what other and often better
+options exist.
+</p>
+
 <h3 id="sprintf"><a href="http://perldoc.perl.org/functions/sprintf.html">sprintf()</a></h3>
 
 <p>
