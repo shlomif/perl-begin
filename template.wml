@@ -30,6 +30,8 @@ src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif"
 <!-- End Yahoo! Search -->
 </latemp_affiliations_buttons>
 
+<latemp_common_keywords "Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction" />
+
 <latemp_lang "en-US" />
 <latemp_encoding "utf-8" />
 <latemp_init_h_w_navmenu />
