@@ -52,7 +52,7 @@ why one should use a template system and especially Template Toolkit.
 <h3 id="perl6-form"><a href="http://search.cpan.org/dist/Perl6-Form/">Perl6-Form</a></h3>
 
 <p>
-A module for formatting fixed-width text. You should use <b>instead</b> of
+A module for formatting fixed-width text. You should use it <b>instead</b> of
 the built-in <a href="http://perldoc.perl.org/perlform.html">perlform</a>
 facility.
 </p>
