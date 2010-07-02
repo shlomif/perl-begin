@@ -91,3 +91,9 @@ facility.
 A CPAN module for outputting text tables.
 </p>
 
+<h3 id="xml-writer"><a href="http://search.cpan.org/dist/XML-Writer/">XML-Writer</a></h3>
+
+<p>
+A convenient CPAN module for writing XML.
+</p>
+
