@@ -3,7 +3,7 @@
 
 
 	<meta http-equiv="CONTENT-TYPE" content="text/html; 
-charset=windows-1252">
+charset=utf-8">
 	<title></title>
 	<meta name="GENERATOR" content="OpenOffice.org 3.1  (Win32)">
 	<meta name="CREATED" content="20070902;21164000">
@@ -455,7 +455,7 @@ quick explanation of the revision history. </font></font></font>
 <p style="margin-bottom: 0in; font-weight: normal;" align="LEFT"><font 
 color="#000000"><font face="Courier-Bold, monospace"><font 
 style="font-size: 16pt;" size="4">I
-lost the original Open Office files for ìImpatient Perlî.
+lost the original Open Office files for ‚ÄúImpatient Perl‚Äù.
 To recover, I had to take the PDF, copy and paste the text, and then
 manually reformat the document to resemble its original layout. It
 was painfully tedious, but the revision on 17 February 2009 is that
@@ -468,7 +468,7 @@ style="font-size: 16pt;" size="4">One
 of the problems with that version is that the text had hard-returns
 coded into it from the cut/paste. It might look like there's a
 four-line paragraph on some page, but it's really four lines with
-hard-coded ì\nî at the end of each line.</font></font></font></p>
+hard-coded ‚Äú\n‚Äù at the end of each line.</font></font></font></p>
 <p style="margin-bottom: 0in; font-weight: normal;" align="LEFT"><br>
 </p>
 <p style="margin-bottom: 0in; font-weight: normal;" align="LEFT"><font 
@@ -732,7 +732,7 @@ href="data::Dumper"><font face="Courier, monospace"><font size="3">Data::Dumper<
 on some timing-critical project. But for learning </font></font><font 
 face="Courier, monospace"><font size="3">perl
 with simple scripts, the execution speed isn't that high of a
-priority. If you're writing a ìrealî script (i.e. one
+priority. If you're writing a ‚Äúreal‚Äù script (i.e. one
 where time-to-run and memory-usage are issues to be considered), then
 don't use </font></font><a href="data::Dumper"><font face="Courier, 
 monospace"><font size="3">Data::Dumper</font></font></a><font 
@@ -886,7 +886,7 @@ into a scalar and handle it. </font></font></font>
 </p>
 <p style="margin-bottom: 0in;" align="LEFT"><br>
 </p>
-<p class="code-western">my $diameter = 42; 		# The ìmyî
+<p class="code-western">my $diameter = 42; 		# The ‚Äúmy‚Äù
 keyword declares a lexical 
 </p>
 <p class="code-western">my $pi = 3.1415;		# variable. If you don't
@@ -1134,10 +1134,10 @@ peaches'...</p>
 <p style="margin-bottom: 0in;" align="LEFT"><font color="#000000"><font 
 face="Times-Roman, serif"><font size="3">Perl
 allows you to place a multi-line string in your code by using what it
-calls a "here documentî.</font></font></font></p>
+calls a "here document‚Äù.</font></font></font></p>
 <p style="margin-bottom: 0in;" align="LEFT"><br>
 </p>
-<p class="code-western">My $string = &lt;&lt;îENDOFDOCUMENTî;</p>
+<p class="code-western">My $string = &lt;&lt;‚ÄùENDOFDOCUMENT‚Äù;</p>
 <p style="margin-bottom: 0in;" align="LEFT"><font color="#000000"><font 
 face="Courier, monospace"><font size="3">Do
 What I Mean and</font></font></font></p>
@@ -1150,7 +1150,7 @@ unwanted</font></font></font></p>
 face="Courier, monospace"><font size="3">ENDOFDOCUMENT</font></font></font></p>
 <p style="margin-bottom: 0in;" align="LEFT"><br>
 </p>
-<p class="code-western">warn "string is '$string'î;</p>
+<p class="code-western">warn "string is '$string'‚Äù;</p>
 <p class="code-western">&gt; string is 'Do What I Mean and</p>
 <p class="code-western">&gt; Autovivification</p>
 <p class="code-western">&gt; sometimes unwanted' at ...</p>
@@ -4520,7 +4520,7 @@ lexical variables, and to show how lexical variables differ from
 <h2 class="western">4.5 Lexical Variables</h2>
 <p style="margin-bottom: 0in;" align="LEFT"><font color="#000000"><font 
 face="Times-Roman, serif"><font size="3">Lexical
-variables are declared with the ìmyî keyword. Lexical
+variables are declared with the ‚Äúmy‚Äù keyword. Lexical
 variables declared inside a lexical scope do not survive outside the
 lexical scope.</font></font></font></p>
 <p style="margin-bottom: 0in;" align="LEFT"><br>
@@ -4556,7 +4556,7 @@ scoped variables have three main features:</font></font></font></p>
 face="Times-Roman, serif"><font size="3">1)
 Lexical variables do not belong to any package namespace, so you
 cannot prefix them with a package name. The example below shows that
-ìmy $cntî is not the same as the ìmain::cntî:</font></font></font></p>
+‚Äúmy $cnt‚Äù is not the same as the ‚Äúmain::cnt‚Äù:</font></font></font></p>
 <p style="margin-bottom: 0in;" align="LEFT"><br>
 </p>
 <p class="code-western">no warnings;</p>
@@ -8243,7 +8243,7 @@ Smith";</p>
 <p style="margin-bottom: 0in;" align="LEFT"><font color="#000000"><font 
 face="Times-Roman, serif"><font size="3">Because
 capturing takes a little extra time to store the captured result into
-the $1, $2, Ö variables, sometimes you just want to cluster
+the $1, $2, ‚Ä¶ variables, sometimes you just want to cluster
 without the overhead of capturing. In the below example, we want to
 cluster "day|bye" so that the alternation symbol "|"
 will go with "day" or "bye". Without the
