@@ -20,10 +20,24 @@ A Perl framework for reactive systems, cooperative multitasking and network
 applications. 
 </p>
 
+<h3 id="ipc-run"><a href="http://search.cpan.org/dist/IPC-Run/">IPC-Run</a></h3>
+
+<p>
+A module that allows on to run background processes with piping, and ptys.
+Works on UNIXes as well as Windows.
+</p>
+
+<h3 id="expect"><a href="http://search.cpan.org/dist/Expect/">Expect</a></h3>
+
+<p>
+Allows one to control a terminal application interactively and wait for
+events.
+</p>
+
 <h2 id="threads">Threads?</h2>
 
 <p>
-Many people are tempted to use threads with Perl and web forums are 
+Many people are tempted to use threads with Perl and Internet forums are 
 constantly frequented for help with threads in Perl. However, the use of
 Perl in threads is not recommended:
 </p>
