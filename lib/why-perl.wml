@@ -119,7 +119,7 @@ used, proven code</h3>
 <p>
 Perl has <a href="$(ROOT)/topics/cpan/">the <b>Comprehensive Perl Archive 
 Network (CPAN)</b></a>, which is a huge collection of useful (and 
-not-so-useful) re-usable Perl modules, under an open source licence. They 
+not-so-useful) re-usable Perl modules, under open source licences. They 
 allow you to use them as libraries to facilitate writing your code. So instead 
 of starting to write something yourself, do a CPAN search, or ask someone for
 a recommendation for a good CPAN module.
