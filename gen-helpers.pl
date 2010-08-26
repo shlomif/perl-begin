@@ -12,7 +12,7 @@ if (-f "rules.mak")
 }
 else
 {
-    system("compass");
+    system("compass", "compile");
 }
 
 my $generator = 
