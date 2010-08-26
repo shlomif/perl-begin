@@ -11,6 +11,15 @@
       $hash{key} since it's not immediately obvious what's allowed in
       interpolation, especially if you come from a different language.
 
+* Add a page about best practices / the usual stuff to avoid / modern
+Perl / "how to write Perl and not make the experts angry" :
+
+    - <perlbot> rindolf: use strict; use warnings; use lexical filehandles
+      instead of globals (open my $tmp ..vs.. open TMP), use three argument
+      form of open, don't use prototypes unless you really want to. don't call
+      subs with & unless it's required (&sub() ..vs.. sub()). check for errors
+      (open (); ..vs..  open() or die $!)
+
 * Add a page about optimizing / profiling / etc.
 
 * Add a page about E-mail-handling.
