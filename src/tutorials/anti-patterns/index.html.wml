@@ -111,3 +111,26 @@ Or maybe:
 my @names_list;
 </pre>
 
+<h3 id="prototypes">Don't use prototypes for subroutines</h3>
+
+<p>
+Some people are tempted to declare their subroutines using 
+<tt>sub my_function ($$@)</tt>, with the signature of the accepted parameter 
+types, which is called a prototype. However, this tends to break code more
+often than not, and should be avoided.
+</p>
+
+<p>
+If you're looking for parameter lists to functions and methods, take a look
+at <a href="http://search.cpan.org/dist/Devel-Declare/">Devel-Declare</a> from
+CPAN. But don't use prototypes.
+</p>
+
+<h3 id="ampersand-in-subroutine-calls">Ampersand in Subroutine Calls</h3>
+
+<p>
+One should not call a subroutine using <tt>&amp;myfunc(@args)</tt> unless
+you're sure that is what you want to do (like overriding prototypes). Normally
+saying <tt>myfunc(@args)</tt> is better.
+</p>
+
