@@ -11,7 +11,7 @@ for using these, here is the document of the bad elements that people
 tend to use and better practices.
 </p>
 
-<h2 id="bad-elements">The List of Bad Elemeents</h2>
+<h2 id="bad-elements">The List of Bad Elements</h2>
 
 <h3 id="no-indentation">No Indentation</h3>
 
@@ -23,7 +23,91 @@ by using a shift of some space. This makes the code easier to read and follow.
 
 <p>
 Code without indentation is harder to read and so should be avoided. 
-<a href="http://en.wikipedia.org/wiki/Indent_style">The wikipedia article</a>
+<a href="http://en.wikipedia.org/wiki/Indent_style">The Wikipedia article</a>
 lists several styles - pick one and follow it.
 </p>
+
+<h3 id="no-strict-and-warnings">No "use strict;" and "use warnings;"</h3>
+
+<p>
+All modern Perl code should have the "use strict;" and "use warnings;" pragmas
+that prevent or warn against misspelling variable names, using undefined 
+values, and other bad practices. So start your code (in every file) with this:
+</p>
+
+<pre>
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+</pre>
+
+<p>
+Or:
+</p>
+
+<pre>
+package MyModule;
+
+use strict;
+use warnings;
+</pre>
+
+<h3 id="open-function-style">Correct style for using the open function</h3>
+
+<p>
+<a href="http://perldoc.perl.org/functions/open.html">The open function</a>
+is used to open files, sub-processes, etc. The correct style for it is:
+</p>
+
+<pre>
+open my $input_fh, "&lt;", $input_filename
+    or die "Could not open '$input_filename' - $!";
+</pre>
+
+the ultimately <b>wrong</b>, insecure and/or outdated styles are:
+
+<pre>
+\# Bareword filehandle (type glob), two arguments open (insecure) and no
+\# error handling
+open INPUT, "&lt;$filename"; 
+</pre>
+
+<h3 id="calling-variables-file">Calling variables "file"</h3>
+
+<p>
+Some people call their variables "file". However, file can mean either
+<a href="http://en.wikipedia.org/wiki/File_descriptor">file handles</a>,
+file names, or the contents of the file. As a result, this should be avoided
+and one can use the abbreviations "fh" for file handle, or "fn" for filenames
+instead.
+</p>
+
+<h3 id="identifiers-without-underscores">Identifiers without underscores</h3>
+
+<p>
+Some people name their identifiers as several words all in lowercase and 
+not separated by underscores ("_"). As a result, this makes the code harder
+to read. So instead of:
+</p>
+
+<pre>
+my @listofnames;
+</pre>
+
+<p>
+Say:
+</p>
+
+<pre>
+my @list_of_names;
+</pre>
+
+<p>
+Or maybe:
+</p>
+
+<pre>
+my @names_list;
+</pre>
 
