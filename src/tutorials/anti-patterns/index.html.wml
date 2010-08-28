@@ -2,6 +2,8 @@
 
 <latemp_subject "Perl Elements to Avoid" />
 
+<latemp_more_keywords "elements, antipatterns, anti, patterns, help, ancient, ancient perl, modern, modern perl, avoid, bad perl, old tutorials, what to avoid" />
+
 <p>
 Often when people ask for help with Perl code, they show Perl code that
 suffers from many bad or outdated elements. This is expected as there
