@@ -106,6 +106,11 @@ my $tree_contents =
                     'title' => "Book for Quickly Learning Perl (based on previous knowledge)",
                 },
                 {
+                    'text' => "Elements to Avoid",
+                    'url' => "tutorials/anti-patterns/",
+                    'title' => "Elements of Perl that should be avoided and what to replace them with", 
+                },
+                {
                     'text' => "In Other Languages",
                     'url' => "tutorials/localized/",
                     'title' => "Tutorials in languages other than English",

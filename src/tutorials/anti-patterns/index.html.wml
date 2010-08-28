@@ -1,0 +1,29 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Elements to Avoid" />
+
+<p>
+Often when people ask for help with Perl code, they show Perl code that
+suffers from many bad or outdated elements. This is expected as there
+are many bad Perl tutorials out there, and lots of bad code that people
+have learned from, but it is still not good. In order to not get "yelled at" 
+for using these, here is the document of the bad elements that people
+tend to use and better practices.
+</p>
+
+<h2 id="bad-elements">The List of Bad Elemeents</h2>
+
+<h3 id="no-indentation">No Indentation</h3>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Indent_style">Indentation</a> means 
+that the contents of every block are promoted from their containing environment
+by using a shift of some space. This makes the code easier to read and follow.
+</p>
+
+<p>
+Code without indentation is harder to read and so should be avoided. 
+<a href="http://en.wikipedia.org/wiki/Indent_style">The wikipedia article</a>
+lists several styles - pick one and follow it.
+</p>
+
