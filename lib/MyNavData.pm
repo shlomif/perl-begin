@@ -107,7 +107,7 @@ my $tree_contents =
                 },
                 {
                     'text' => "Elements to Avoid",
-                    'url' => "tutorials/anti-patterns/",
+                    'url' => "tutorials/bad-elements/",
                     'title' => "Elements of Perl that should be avoided and what to replace them with", 
                 },
                 {
