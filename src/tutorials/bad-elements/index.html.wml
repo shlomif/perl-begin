@@ -136,3 +136,53 @@ you're sure that is what you want to do (like overriding prototypes). Normally
 saying <tt>myfunc(@args)</tt> is better.
 </p>
 
+<h3 id="assigning-from-dollar-underscore">Assigning from $_</h3>
+
+<p>
+Some people write code like the following:
+</p>
+
+<pre>
+while (&lt;$my_fh&gt;)
+{
+    my $line = $_;
+    \# Do something with $line...
+}
+</pre>
+
+<p>
+Or:
+</p>
+
+<pre>
+foreach (@users)
+{
+    my $user = $_;
+
+    \# Process $user...
+}
+</pre>
+
+<p>
+However, you can easily assign the explicit and lexical variables in the
+loop's opening line like so:
+</p>
+
+<pre>
+while (my $line = &lt;$my_fh&gt;)
+{
+    \# Do something with $line...
+}
+</pre>
+
+<p>
+and:
+</p>
+
+<pre>
+foreach my $user (@users)
+{
+    \# Process $user...
+}
+</pre>
+
