@@ -186,3 +186,29 @@ foreach my $user (@users)
 }
 </pre>
 
+<h3 id="foreach-lines">Using "foreach" on lines</h3>
+
+<p>
+Some people may be tempted to write this code:
+</p>
+
+<pre>
+foreach my $line (&lt;$my_file_handle&gt;)
+{
+    \# Do something with $line.
+}
+</pre>
+
+<p>
+This code appears to work but what it does is read the entire contents of the 
+file pointed by $my_file_handle into a (potentially long) list of lines, and
+then iterate over them. This is inefficient. In order to read one line
+at a time, use this instead:
+</p>
+
+<pre>
+while (my $line = &lt;$my_file_handle&gt;)
+{
+    \# Do something with $line.
+}
+</pre>
