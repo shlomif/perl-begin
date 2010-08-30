@@ -11,6 +11,17 @@
       $hash{key} since it's not immediately obvious what's allowed in
       interpolation, especially if you come from a different language.
 
+* Add to the page about best practices:
+    - strings
+        - use here-docs (<<'EOF' and <<"EOF") where appropriate.
+        - always explicitly quote the here-doc (because it's not clear
+        whether it is <<'EOF' or <<"EOF"). 
+        - opt to use other delimiters.
+    - slurping a file.
+        - give the slurp function.
+        - File::Slurp, IO::All.
+    - 
+
 * Add a page about optimizing / profiling / etc.
 
 * Add a page about E-mail-handling.
