@@ -12,11 +12,6 @@
       interpolation, especially if you come from a different language.
 
 * Add to the page about best practices:
-    - strings
-        - use here-docs (<<'EOF' and <<"EOF") where appropriate.
-        - always explicitly quote the here-doc (because it's not clear
-        whether it is <<'EOF' or <<"EOF"). 
-        - opt to use other delimiters.
     - slurping a file.
         - give the slurp function.
         - File::Slurp, IO::All.

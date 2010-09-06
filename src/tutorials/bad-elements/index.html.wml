@@ -212,3 +212,37 @@ while (my $line = &lt;$my_file_handle&gt;)
     \# Do something with $line.
 }
 </pre>
+
+<h2 id="string-notation">String Notation</h2>
+
+<p>
+Perl has a flexible way to write strings and other delimiters, and you should
+utilize it for clarity. If you find yourself writing long strings, write them
+as <a href="http://en.wikipedia.org/wiki/Here_document">here-documents</a>:
+</p>
+
+<pre>
+my $long_string_without_interpolation = &lt;&lt;'EOF';
+Hello there. I am a long string.
+I am part of the string.
+And so am I.
+EOF
+
+# do stuff with $long_string_without_interpolation
+</pre>
+
+<p>
+There are also <tt>&lt;&lt;"EOF"</tt> for strings with interpolation
+and <tt>&lt;&lt;`EOF`</tt> for trapping command output. Make sure you never
+use bareword here documents <tt>&lt;&lt;EOF</tt> which are valid syntax,
+but people are never sure whether they are <tt>&lt;&lt;"EOF"</tt> or
+<tt>&lt;&lt;`EOF`</tt>.
+</p>
+
+<p>
+If your strings are not too long but contain the special characters that
+correspond with the default delimiters (e.g: <tt>'</tt>, <tt>"</tt>,
+<tt>`</tt>, <tt>/</tt> etc.), then you can use the initial letter followed
+by any arbitrary delimiter notation: <tt>m{\A/home/sophie/perl}</tt>,
+<tt>q/My name is 'Jack' and I called my dog "Diego"./</tt>.
+</p>
