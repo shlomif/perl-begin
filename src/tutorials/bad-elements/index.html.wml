@@ -246,3 +246,52 @@ correspond with the default delimiters (e.g: <tt>'</tt>, <tt>"</tt>,
 by any arbitrary delimiter notation: <tt>m{\A/home/sophie/perl}</tt>,
 <tt>q/My name is 'Jack' and I called my dog "Diego"./</tt>.
 </p>
+
+<h3 id="slurp">Slurping a file (i.e: Reading it all into memory)</h3>
+
+<p>
+One can see several bad ways to read a file into memory in Perl. Among them
+are:
+</p>
+
+<pre>
+\# Not portable and suffers from possible
+\# shell code injection.
+my $contents = `cat $filename`; 
+
+\# Wasteful of CPU and memory:
+my $contents = join("", &lt;$fh&gt;);
+
+\# Even more so:
+my $contents = '';
+while (my $line = &lt;$fh&gt;)
+{
+    $contents .= $line;
+}
+</pre>
+
+<p>
+You should avoid them all. Instead the proper way to read an entire file
+into a long string is to either use CPAN distributions for that such as 
+<a href="http://search.cpan.org/dist/File-Slurp/">File-Slurp</a> or
+<a href="http://search.cpan.org/dist/IO-All/">IO-All</a>, or alternatively
+write down the following function and use it:
+</p>
+
+<pre>
+sub _slurp
+{
+    my $filename = shift;
+
+    open my $in, "&lt;", $filename
+        or die "Cannot open '$filename' for slurping - $!";
+
+    local $/;
+    my $contents = &lt;$in&gt;;
+
+    close($in);
+
+    return $contents;
+}
+</pre>
+

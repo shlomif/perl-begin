@@ -12,12 +12,11 @@
       interpolation, especially if you come from a different language.
 
 * Add to the page about best practices:
-    - slurping a file.
-        - give the slurp function.
-        - File::Slurp, IO::All.
     - split the code into paragraphs with empty lines.
     - discuss commenting.
     - IO::Socket instead of lower-level socket/Socket.pm/etc. calls.
+    - chop instead of chomp.
+        - handling \r\n on Unix.
 
 * Add a page about optimizing / profiling / etc.
 
