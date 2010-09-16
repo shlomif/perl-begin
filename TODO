@@ -27,6 +27,10 @@
         - pass items from one subroutine to another.
             - use objects.
             - assign them to slots.
+    - ^ and $ in subroutines.
+        - ambiguous.
+        - better use \A and \z to mean start-of-string and end-of-string.
+        - with /m can be used for start-of-line / end-of-line.
 
 * Add a page about optimizing / profiling / etc.
 
