@@ -21,6 +21,8 @@
         - magic numbers.
         - duplicate code.
         - long functions and methods.
+    - accessing object slots directly
+        - use accessors.
 
 * Add a page about optimizing / profiling / etc.
 
