@@ -23,6 +23,10 @@
         - long functions and methods.
     - accessing object slots directly
         - use accessors.
+    - EEK 
+        - pass items from one subroutine to another.
+            - use objects.
+            - assign them to slots.
 
 * Add a page about optimizing / profiling / etc.
 
