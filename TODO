@@ -31,6 +31,7 @@
         - ambiguous.
         - better use \A and \z to mean start-of-string and end-of-string.
         - with /m can be used for start-of-line / end-of-line.
+    - Law of Demeter
 
 * Add a page about optimizing / profiling / etc.
 
