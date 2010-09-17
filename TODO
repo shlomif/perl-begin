@@ -12,7 +12,6 @@
       interpolation, especially if you come from a different language.
 
 * Add to the page about best practices:
-    - split the code into paragraphs with empty lines.
     - discuss commenting.
     - IO::Socket instead of lower-level socket/Socket.pm/etc. calls.
     - chop instead of chomp.
@@ -32,6 +31,7 @@
         - better use \A and \z to mean start-of-string and end-of-string.
         - with /m can be used for start-of-line / end-of-line.
     - Law of Demeter
+    - Mixing tabs and spaces.
 
 * Add a page about optimizing / profiling / etc.
 

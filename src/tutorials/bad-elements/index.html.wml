@@ -295,3 +295,11 @@ sub _slurp
 }
 </pre>
 
+<h3 id="paragraphs">Write code in Paragraphs using Empty Lines</h3>
+
+<p>
+If one of your blocks is long, split it into "code paragraphs", with empty
+lines between them and with each paragraph doing one thing. Then, it may be a
+good to precede each paragraph with a comment explaining what it does, or
+to extract it into its own function or method.
+</p>
