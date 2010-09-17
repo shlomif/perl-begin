@@ -13,7 +13,6 @@
 
 * Add to the page about best practices:
     - discuss commenting.
-    - IO::Socket instead of lower-level socket/Socket.pm/etc. calls.
     - chop instead of chomp.
         - handling \r\n on Unix.
     - refactoring:
