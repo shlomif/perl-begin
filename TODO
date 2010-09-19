@@ -33,6 +33,7 @@
     - Mixing tabs and spaces.
     - Always add an explicit return from the subroutine.
     - leading underscores ("_") for non-API methods and functions.
+    - print {$fh} @args instead of "print $fh @args" which is too easy to miss.
 
 * Add a page about optimizing / profiling / etc.
 
