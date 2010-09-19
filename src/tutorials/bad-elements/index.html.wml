@@ -313,3 +313,124 @@ lower-level socket()/connect()/bind()/etc. calls. As of this writing,
 <pdoc d="perlipc"></pdoc> contains outdated information demonstrating how
 to use the lowere-level API which is not recommended. 
 </p>
+
+<h3 id="subroutine-arguments">Subroutine Arguments Handling</h3>
+
+<p>
+The first thing to know about handling arguments for Subroutines is to avoid
+refering to them directly by index. Imagine you have the following code:
+</p>
+
+<pre>
+sub my_function
+{
+    my $first_name = $_[0];
+    my $street = $_[1];
+    my $city = $_[2];
+    my $country = $_[3];
+    .
+    .
+    .
+}
+</pre>
+
+<p>
+Now, what if you want to add <tt>$last_name</tt> between <tt>$first_name</tt>?
+You'll have to promote all the indexes afterwards! Instead do either:
+</p>
+
+<pre>
+sub my_function
+{
+    my $first_name = shift;
+    my $street = shift;
+    my $city = shift;
+    my $country = shift;
+    .
+    .
+    .
+}
+</pre>
+
+<p>
+Or:
+</p>
+
+<pre>
+sub my_function
+{
+    my ($first_name, $street, $city, $country) = @_;
+    .
+    .
+    .
+}
+</pre>
+
+<h4 id="clobbering-arrays-or-hashes">Don't clobber arrays or hashes</h4>
+
+<p>
+Often people ask how to pass arrays or hashes to subroutines. The answer is
+that the right way to do it is to pass them as a reference as an argument
+to the subroutine:
+</p>
+
+<pre>
+sub my_func
+{
+    my ($prefix, $array_ref) = @_;
+
+    foreach my $item (@{$array_ref})
+    {
+        print $prefix, ": ", $item, "\n";
+    }
+
+    return;
+}
+
+my @names = (qw(Jack Sophie John David Ernie));
+
+my_func("Please greet", \@names);
+</pre>
+
+<p>
+You shouldn't clobber the subroutine's arguments list with entire arrays
+or hashes (e.g: <tt>my_func(@array1, @array2);</tt> or 
+<tt>my_func(%myhash, $scalar)</tt> ), as this will make it difficult to
+extract from <tt>@_</tt>.
+</p>
+
+<h4 id="named-parameters">Named Parameters</h4>
+
+<p>
+If the number of parameters that your subroutine accepts gets too long, or
+if you have too many optional parameters, make sure you convert it to use
+named arguments. The standard way to do it is to pass a hash reference or
+a hash of arguments to the subroutine:
+</p>
+
+<pre>
+sub send_email
+{
+    my $args = shift;
+
+    my $from_address = $args-&gt;{from};
+    my $to_addresses = $args-&gt;{to};
+    my $subject = $args-&gt;{subject};
+    my $body = $args-&gt;{body};    
+    .
+    .
+    .
+}
+
+send_email(
+    {
+        from =&gt; 'shlomif@perl-begin.org',
+        to =&gt; ['shlomif@perl-begin.org', 'sophie@perl-begin.org'],
+        subject =&gt; 'Perl-Begin.org Additions',
+        .
+        .
+        .
+
+    }
+);
+</pre>
