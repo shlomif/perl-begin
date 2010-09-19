@@ -31,6 +31,13 @@
         - with /m can be used for start-of-line / end-of-line.
     - Law of Demeter
     - Mixing tabs and spaces.
+    - Accepting arguments from functions:
+        - don't refer to $_[0], $_[1], etc. directly.
+        - instead use perldoc -f shift or perldoc -f or 
+        my ($arg1, $arg2, $arg3) = @_;
+    - Don't clobber @_ with arrays or hashes (unless they are the only arg):
+        - pass them as references.
+    - Use named arguments if your subroutines takes too many arguments. 
 
 * Add a page about optimizing / profiling / etc.
 
