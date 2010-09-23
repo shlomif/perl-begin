@@ -13,8 +13,6 @@
 
 * Add to the page about best practices:
     - discuss commenting.
-    - chop instead of chomp.
-        - handling \r\n on Unix.
     - refactoring:
         - magic numbers.
         - duplicate code.

@@ -441,3 +441,34 @@ send_email(
     }
 );
 </pre>
+
+<h4 id="chop">Avoid using chop() to trim newlines characters from lines</h4>
+
+<p>
+Don't use <a href="http://perldoc.perl.org/functions/chop.html">the built-in
+function chop()</a> in order to remove newline characters from the end
+of lines read using the diamond operator (<tt>&lt;&gt;</tt>), because this
+may cause the last character in a line without a line feed character to be
+removed. Instead, use <a 
+href="http://perldoc.perl.org/functions/chomp.html">chomp()</a>. 
+</p>
+
+<p>
+If you expect to process DOS/Windows-like text files whose lines end with the
+dual Carriage Return-Line Feed character on Unix systems then use the
+following in order to trim them: <tt>$line =~ s/\x0d?\x0a\z//;</tt>.
+</p>
+
+<p>
+For more information see:
+</p>
+
+<ul>
+<li>
+<a href="http://onlamp.com/pub/a/onlamp/2006/08/17/understanding-newlines.html">"Understanding Newlines"</a> - by Xavier Noria on OnLAMP.com.
+</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Newline">Wikipedia article about newlines</a>
+</li>
+</ul>
+
