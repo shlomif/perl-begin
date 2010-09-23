@@ -5,7 +5,6 @@
 * Page about Text Generation:
     - string concatenation: .=, ., join, map, sort, grep, List::Util,
     List::MoreUtils, List::By.
-    - interpolation.
     - <tm604> rindolf: yes, maybe an example showing $string, $array[$idx] and
       $hash{key} since it's not immediately obvious what's allowed in
       interpolation, especially if you come from a different language.
