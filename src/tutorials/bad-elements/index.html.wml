@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Perl Elements to Avoid" />
 
@@ -14,6 +15,10 @@ have learned from, but it is still not good. In order to not get "yelled at"
 for using these, here is the document of the bad elements that people
 tend to use and better practices.
 </p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
 
 <h2 id="bad-elements">The List of Bad Elements</h2>
 
@@ -215,7 +220,7 @@ while (my $line = &lt;$my_file_handle&gt;)
 }
 </pre>
 
-<h2 id="string-notation">String Notation</h2>
+<h3 id="string-notation">String Notation</h3>
 
 <p>
 Perl has a flexible way to write strings and other delimiters, and you should
