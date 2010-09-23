@@ -3,7 +3,6 @@
 * Add screenshots to the IDEs page and other relevant pages.
 
 * Page about Text Generation:
-    - Text::Table.
     - string concatenation: .=, ., join, map, sort, grep, List::Util,
     List::MoreUtils, List::By.
     - interpolation.
