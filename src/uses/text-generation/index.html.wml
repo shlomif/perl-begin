@@ -135,3 +135,48 @@ A CPAN module for outputting text tables.
 A convenient CPAN module for outputting XML.
 </p>
 
+<h2 id="generating-using-lists">Generating Text Using Lists</h2>
+
+<p>
+An alternative option to generating text is to create arrays or more complex
+operations and serialise them into one large string (although this may be best
+done using <a href="#template-toolkit">Template Toolkit</a>). Here are some
+pointers to get you started:
+</p>
+
+<define-tag pdoc_f whitespace="delete" endtag="required">
+<preserve f />
+<set-var %attributes />
+<a href="http://perldoc.perl.org/functions/<get-var f />.html">%body</a>
+<restore f />
+</define-tag>
+
+<ul>
+<li>
+<p>
+<pdoc_f f="join">The built-in join()
+function</pdoc_f>
+</p>
+</li>
+<li>
+<p>
+Built-in list processing functions such as <pdoc_f f="map">map</pdoc_f>,
+<pdoc_f f="sort">sort</pdoc_f>, and <pdoc_f f="grep">grep</pdoc_f>.
+</p>
+<p>
+Functions like that are covered in 
+<a href="$(ROOT)/tutorials/perl-for-newbies/part2/">Part 2 of
+the Perl for Newbies presentation</a>.
+</p>
+</li>
+
+<li>
+<p>
+List processing CPAN modules such as 
+<a href="http://search.cpan.org/perldoc?List::Util">List::Util</a>,
+<a href="http://search.cpan.org/dist/List-MoreUtils/">List-MoreUtils</a>
+and <a href="http://search.cpan.org/dist/List-UtilsBy/">List-UtilsBy</a>.
+</p>
+</li>
+
+</ul>
