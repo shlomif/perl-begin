@@ -30,6 +30,44 @@ my $large_string = "Hello $name, welcome to $city!";
 </pre>
 
 <p>
+You can also interpolate array elements and hash keys:
+</p>
+
+<pre>
+my @colors = ("Red", "Orange", "Yellow", "Green", "Indigo", "Blue", "Violet");
+my %capitals = (
+    "France" =&gt; "Paris",
+    "Germany" =&gt; "Berlin",
+    "Spain" =&gt; "Madrid",
+    "Japan" =&gt; "Tokyo",
+);
+
+print "Japan has a flag with a $colors[0] circle, and a its capital is $capitals{Japan}\n";
+</pre>
+
+<p>
+Furthermore, one can interpolate more complex expressions using 
+<a href="http://www.catonmat.net/blog/secret-perl-operators/#turtle">the
+turtle operator</a> - <tt>@{[]}</tt>, although if you're resorting to doing
+it, you should probably use the more advanced techniques below:
+</p>
+
+<pre>
+\#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+print "Please enter a number:\n";
+my $n = &lt;&gt;;
+chomp($n);
+
+my $string = "$n is @{[($n % 2 == 0) ? 'even' : 'odd' ]}";
+
+print "$string\n";
+</pre>
+
+<p>
 Perl also gives you a large selection of delimiters for strings as well as
 <a href="http://en.wikipedia.org/wiki/Here_document">here-documents</a>,
 which allow assigning multiple-line string constants with a user-specified
