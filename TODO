@@ -27,6 +27,8 @@
     - starting modules / packages with a lowercase letter.
     - http://www.stonehenge.com/merlyn/UnixReview/col52.html
         - $object->new() to create a new instance.
+    - avoid using perlform - use Perl6::Form instead (also see the text
+    generation page).
 
 * Add a page about optimizing / profiling / etc.
 
