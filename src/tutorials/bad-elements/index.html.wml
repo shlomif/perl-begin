@@ -472,3 +472,38 @@ For more information see:
 </li>
 </ul>
 
+<h4 id="lowercase_modules_and_pkgs">Don't start Modules and Packages with a Lowercase Letter</h4>
+
+<p>
+Both modules and packages (the latter also known as namespaces) and all 
+intermediate components thereof should always start with an uppercase letter,
+because modules and packages that start with a lowercase letter are
+reserved for pragmas. So this is bad:
+</p>
+
+<pre>
+\# Bad code!
+\# This is file person.pm
+package person;
+
+use strict;
+use warnings;
+1;
+</pre>
+
+<p>
+And this would be better:
+</p>
+
+<pre>
+\# Better code!
+\# This is file MyProject/Person.pm
+package MyProject::Person;
+
+use strict;
+use warnings;
+.
+.
+.
+1;
+</pre>
