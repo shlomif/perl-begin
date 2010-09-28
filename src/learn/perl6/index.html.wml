@@ -1,0 +1,54 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+
+<latemp_subject "What about Perl 6?" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+A lot of people have been wondering about the relationship between the
+commonly used Perl language, currently versioned at a version of 5 (also known 
+as "Perl 5") and its so called "perl 5" implementation and the 
+under development language known as "Perl 6". In order to avoid confusion, 
+this page would like to clarify the situation.
+</p>
+
+<h2 id="different">Perl 6 is different from Perl 5</h2>
+
+<p>
+Perl 6 is a completely different language from Perl 5, and also incompatible. 
+To some extent, the Perl 6 community of developers is different than that of
+Perl 5. Perl 6 is not meant to displace Perl 5.
+</p>
+
+<h2 id="perl5_not_going_away">Perl 5 (the language) and 
+perl 5 (the implementation) are not going away</h2>
+
+<p>
+The perl 5 implementation is still under constant development, and is 
+constantly improved. There is a steady and growing flow of 
+<a href="$(ROOT)/topics/cpan/">CPAN</a> modules written in Perl 5, and there's
+an active community of Perl 5 users, contributors and developers. The original
+plan for Perl 6 was not to completely displace Perl 5, but rather to provide
+a radical rewrite (of both the implementation and the language) with many
+improvements (and incompatible with Perl 5). It is assumed that Perl 5 will
+be used, improved and supported for many years to come.
+</p>
+
+<h2 id="positive_influence">Perl 6 has positively influenced Perl 5</h2>
+
+<p>
+Perl 6 features have proved to be a useful inspiration for recent Perl 5 
+developments, such as core features in perl-5.10.x, perl-5.12.x and future
+versions, and CPAN distributions such as 
+<a href="http://www.iinteractive.com/moose/">Moose</a>,
+<a href="http://search.cpan.org/dist/autobox/">autobox</a>
+and 
+<a href="http://search.cpan.org/dist/Method-Signatures/">Method::Signatures</a>.
+Tim Bunce has written in his 
+<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">"Perl 
+Myths" presentation</a> that while some people think that "Perl 6 is killing
+Perl 5", it has in fact saved it and advanced it.
+</p>
+
+

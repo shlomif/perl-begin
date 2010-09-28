@@ -58,6 +58,10 @@ my $tree_contents =
                     'url' => "learn/who-is-using/",
                     'text' => "Who is Using Perl?"
                 },
+                {
+                    'url' => "learn/perl6/",
+                    'text' => "What about Perl 6?"
+                },
             ],
         },
         {
