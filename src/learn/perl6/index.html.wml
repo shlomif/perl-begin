@@ -51,4 +51,41 @@ Myths" presentation</a> that while some people think that "Perl 6 is killing
 Perl 5", it has in fact saved it and advanced it.
 </p>
 
+<h2 id="is_perl_6_still_perl">Is Perl 6 Still Perl?</h2>
+
+<p>
+That depends on who you ask. Some people feel that Perl 6 is so radically
+different from Perl 5 (which is in turn compatible with all the previous
+versions of the language) that it is no longer "Perl", enough to say that
+<q>Perl 6 will be a wonderful language. Too bad it won't be Perl.</q>. Other
+people claim that there are enough similarities, and that since it was also
+designed by Larry Wall, who is the father of Perl, it can be considered
+Perl. In our opinion, it doesn't make a difference whether Perl 6 is Perl or
+not, because it is already called Perl 6 and either people will like it as 
+such or not, regardless of the name.
+</p>
+
+<h2 id="how_to_learn_perl_6">How do I learn Perl 6?</h2>
+
+<p>
+The focus of Perl-Begin.org is about Perl 5. To learn Perl 6, you may wish
+to consider these resources:
+</p>
+
+<ol>
+
+<li>
+<a href="http://perl6.org/">The Perl 6 Homepage</a>
+</li>
+
+<li>
+<a href="http://perlgeek.de/blog-en/perl-5-to-6/00-intro.writeback">Moritz's
+"Perl 5 to 6" series</a>
+</li>
+
+<li>
+<a href="http://www.perlfoundation.org/perl6/">The Perl 6 Wiki</a>.
+</li>
+
+</ol>
 
