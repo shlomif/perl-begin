@@ -507,3 +507,23 @@ use warnings;
 .
 1;
 </pre>
+
+<h4 id="indirect-object-notation">Avoid Indirect Object Notation</h4>
+
+<p>
+Don't use the so-called "Indirect-object notation" which can be seen in a lot
+of old code and tutorials and is more prone to errors:
+</p>
+
+<pre>
+\# Bad code!
+my $new_object = new MyClass @params;
+</pre>
+
+<p>
+Instead use the <tt>MyClass-&gt;new(...)</tt> notation:
+</p>
+
+<pre>
+my $new_object = MyClass-&gt;new(@params);
+</pre>

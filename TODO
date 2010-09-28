@@ -29,7 +29,6 @@
     - avoid using perlform - use Perl6::Form instead (also see the text
     generation page).
     - don't overuse $_ - it's prune to errors.
-    - avoid indirect object notation.
 
 * Add a page about optimizing / profiling / etc.
 
