@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<latemp_subject "Perl for Perl Newbies Online Tutorial" />
+<latemp_subject "&quot;Perl for Perl Newbies&quot; Online Tutorial" />
 
 <p>
 This is a public domain tutorial for Perl written by Shlomi Fish, who

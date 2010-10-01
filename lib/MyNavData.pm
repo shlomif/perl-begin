@@ -77,7 +77,7 @@ my $tree_contents =
             'subs' =>
             [
                 {
-                    'text' => "Perl for Newbies",
+                    'text' => qq{The "Perl for Newbies" Tutorial},
                     'url' => "tutorials/perl-for-newbies/",
                     'title' => "Perl Tutorial for Beginners",
                     'subs' =>
