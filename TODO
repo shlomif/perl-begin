@@ -30,6 +30,8 @@
     generation page).
     - don't overuse $_ - it's prune to errors.
     - C-style for loops.
+    - $$myhash{$key}
+        - use $myhash->{$key} instead.
 
 * Add a page about optimizing / profiling / etc.
 
