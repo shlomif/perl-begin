@@ -32,6 +32,7 @@
     - C-style for loops.
     - $$myhash{$key}
         - use $myhash->{$key} instead.
+    - Always label your loops.
 
 * Add a page about optimizing / profiling / etc.
 
