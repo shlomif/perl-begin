@@ -37,7 +37,8 @@ Archive Network</a> - Contains a lot of modules for doing practically
 anything with Perl. Why re-invent the wheel when so many different types
 of them are available for free? Note that Perl distributions on various 
 systems contain an easy to use interface to install modules from it, 
-including dependencies.
+including dependencies. See <a href="$(ROOT)/topics/cpan/">our page about
+it for how to start with it</a>.
 </li>
 
 <li>
@@ -96,8 +97,8 @@ Perl Code</a> - even worse than usual.
 
 <li>
 <a href="http://en.wikipedia.org/wiki/Just_another_Perl_hacker">"Just another
-Perl hacker" (JAPHs)</a> - way to print the phrase in Perl in as imaginative
-a way as possible.
+Perl hacker" (JAPHs)</a> - ways to print the phrase
+"Just another Perl hacker" in Perlin as imaginative a way as possible.
 </li>
 </ul>
 
@@ -129,8 +130,7 @@ CPAN modules (including
 <a href="http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html">one 
 to write Perl in Latin</a> - ;-)), and is considered 
 one of the primary experts on Object-Oriented Programming in Perl. Now 
-co-heads the Perl 6
-effort.
+co-heads the Perl 6 effort.
 </li>
 
 <li>
@@ -145,6 +145,28 @@ on Perl on the planet.
 the core Perl distribution and external modules, and an all-around nice guy.
 </li>
 
+<li>
+<a href="http://ali.as/">Adam Kennedy</a> - a prolific Australian Perl
+developer and blogger who has written or adopted many CPAN distributions,
+and contributed a lot to the <a href="$(ROOT)/IDEs-and-tools/#padre">Padre 
+IDE for Perl and in Perl</a>.
+</li>
+
+<li>
+<a href="http://petdance.com/">Andy Lester</a> - author of some useful CPAN 
+distributions, and prolific and influential blogger (see 
+<a href="http://perlbuzz.com/">Perl Buzz</a>).
+</li>
+
+<li>
+<a href="http://schwern.dreamhosters.com/">Michael G. Schwern</a> -
+maintainer of some Perl modules, and prolific writer.
+</li>
+
+<li>
+<a href="http://szabgab.com/">Gabor Szabo (szabgab)</a> - Perl
+developer, trainer, and blogger, who has lead the Padre IDE project.
+</li>
 </ul>
 
 <h2 id="more_links">More Links</h2>
