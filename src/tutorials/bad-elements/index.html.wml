@@ -537,3 +537,59 @@ arrow operator - <tt>$myarray_ref-&gt;[$idx]</tt>. This also applies for
 hash references - <tt>$myhash_ref-&gt;{$key}</tt>.
 </p>
 
+<h4 id="c-style-for-loops">C-style for loops</h4>
+
+<p>
+Some beginners to Perl tend to use C-style-for-loops to loop over an array's
+elements:
+</p>
+
+<pre>
+for (my $i=0 ; $i &lt; @array ; $i++)
+{
+    \# Do something with $array[$i]
+}
+</pre>
+
+<p>
+However, iterating over the array itself would normally be preferable:
+</p>
+
+<pre>
+foreach my $elem (@array)
+{
+    \# Do something with $elem.
+}
+</pre>
+
+<p>
+If you still need the index, do:
+</p>
+
+<pre>
+foreach my $idx (0 .. $#array)
+{
+    my $elem = $array[$idx];
+
+    \# Do something with $idx and $elem.
+}
+
+\# perl-5.12.0 and above:
+foreach my $idx (keys(@array))
+{
+    my $elem = $array[$idx];
+
+    \# Do something with $idx and $elem.
+}
+
+\# Also perl-5.12.0 and above.
+while (my ($idx, $elem) = each(@array))
+{
+    \# Do something with $idx and $elem.
+}
+</pre>
+
+<p>
+An arbitrary C-style loop can be replaced with a while loop with 
+a <tt>continue</tt> block.
+</p>

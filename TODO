@@ -33,6 +33,8 @@
     - Always label your loops.
     - Accessing the last element using $array[$#array] - use $array[-1]
     instead.
+    - Array element: @array[$idx] instead of $array[$idx].
+    - modifying an array/hash while iterating over it.
 
 * Add a page about optimizing / profiling / etc.
 
