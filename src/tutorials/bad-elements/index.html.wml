@@ -527,3 +527,13 @@ Instead use the <tt>MyClass-&gt;new(...)</tt> notation:
 <pre>
 my $new_object = MyClass-&gt;new(@params);
 </pre>
+
+<h4 id="dollar-dollar">$$myarray_ref[$idx] or $$myhash_ref{$key}</h4>
+
+<p>
+Don't write <tt>$$myarray_ref[$idx]</tt>, which is cluttered and can be easily
+confused with <tt>(${$myarray_ref})-&gt;[$idx]</tt>. Instead, use the
+arrow operator - <tt>$myarray_ref-&gt;[$idx]</tt>. This also applies for
+hash references - <tt>$myhash_ref-&gt;{$key}</tt>.
+</p>
+

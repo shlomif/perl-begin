@@ -30,9 +30,9 @@
     generation page).
     - don't overuse $_ - it's prune to errors.
     - C-style for loops.
-    - $$myhash{$key}
-        - use $myhash->{$key} instead.
     - Always label your loops.
+    - Accessing the last element using $array[$#array] - use $array[-1]
+    instead.
 
 * Add a page about optimizing / profiling / etc.
 
