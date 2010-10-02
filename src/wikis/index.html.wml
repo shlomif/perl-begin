@@ -36,8 +36,15 @@ Beginners</a>.
 <a href="http://en.wikipedia.org/wiki/Perl">Perl at the 
 English Wikipedia</a> - The wikipedia is a multi-lingual world-editable
 encyclopedia. The Perl Page contains links to other pages inside the wikipedia
-about Perl.
+about Perl.<br />
+
+<ul>
+<li>
+<a href="http://en.wikipedia.org/wiki/Category:Perl">Wikipedia's Perl
+category</a> - a category of Perl-related Wikipedia articles with several
+sub-categories.
 </li>
+</ul>
 
 <li>
 <a href="http://en.wikibooks.org/wiki/Programming:Perl">"Programming Perl" in
