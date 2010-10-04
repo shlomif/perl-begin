@@ -3,6 +3,7 @@
 #include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Why Perl?" />
+<latemp_more_keywords "myths, myth, unreadable, unmaintainable, perl is dead, perl is alive, perl sucks, sucks, perl is good, perl is bad, bad, good, criticism, dispelling, dispel, ugly, ugly code, large codebase, scalability" />
 
 <h2* id="toc">Table of Contents</h2*>
 
@@ -46,6 +47,9 @@ Perl, or some parts of it (like its Object Orientedness) is very weak.
 </li>
 <li>
 Perl is not suitable for writing web applications. (And PHP is).
+</li>
+<li>
+Perl code is unreadable. All Perl code is obfuscated.
 </li>
 <li>
 Etc.
