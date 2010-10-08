@@ -242,7 +242,7 @@ EOF
 There are also <tt>&lt;&lt;"EOF"</tt> for strings with interpolation
 and <tt>&lt;&lt;`EOF`</tt> for trapping command output. Make sure you never
 use bareword here documents <tt>&lt;&lt;EOF</tt> which are valid syntax,
-but people are never sure whether they are <tt>&lt;&lt;"EOF"</tt> or
+but many people are never sure whether they are <tt>&lt;&lt;"EOF"</tt> or
 <tt>&lt;&lt;`EOF`</tt>.
 </p>
 
