@@ -32,8 +32,21 @@ Here are some useful helper packages for it:
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/DateTime-Format-W3CDTF/">DateTime-Format-W3CDTF</a>, <a href="http://search.cpan.org/dist/DateTime-Format-Atom/">DateTime-Format-Atom</a> and other "DateTime-Format-" modules - useful for parsing
+<a href="http://search.cpan.org/dist/DateTime-Format-W3CDTF/">DateTime-Format-W3CDTF</a>,
+<a href="http://search.cpan.org/dist/DateTime-Format-Atom/">DateTime-Format-Atom</a>
+and other "DateTime-Format-" modules - useful for parsing
 and formatting dates using various standard date formats.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/DateTime-Format-Natural/">DateTime-Format-Natural</a>
+allows one to convert dates in human-time to a DateTime object.
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/Time-Duration/">Time-Duration</a> converts a 
+duration (in seconds, which can be calculated from a DateTime object) into a human 
+readable expression of it (exact or rounded). Like "10 minutes ago", "1 hour ago", etc.
 </li>
 
 </ul>
