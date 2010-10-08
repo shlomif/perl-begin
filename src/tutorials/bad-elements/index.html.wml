@@ -596,6 +596,6 @@ while (my ($idx, $elem) = each(@array))
 </pre>
 
 <p>
-An arbitrary C-style loop can be replaced with a while loop with 
+An arbitrary C-style for loop can be replaced with a while loop with 
 a <tt>continue</tt> block.
 </p>
