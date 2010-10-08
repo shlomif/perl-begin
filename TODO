@@ -1,3 +1,7 @@
+* Create a tag for a link to a CPAN distribution
+(http://search.cpan.org/dist/MyDist-Here/), a self link (with MyDist-Here as the 
+contents), and a perldoc?MyModule::Here link.
+
 * Add Perl-Monks to more relevant pages.
 
 * Add screenshots to the IDEs page and other relevant pages.
@@ -35,6 +39,7 @@
     instead.
     - Array element: @array[$idx] instead of $array[$idx].
     - modifying an array/hash while iterating over it.
+    - qx/`....` instead of system().
 
 * Add a page about optimizing / profiling / etc.
 
@@ -59,6 +64,8 @@
     - This site focuses on Perl 5.
 
 * Add a page about modules.
+
+* Add a page about ssh/telnet.
 
 Long Term:
 ----------
