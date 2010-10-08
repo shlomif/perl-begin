@@ -382,21 +382,27 @@ to the subroutine:
 </p>
 
 <pre>
-sub my_func
+sub calc_polynomial
 {
-    my ($prefix, $array_ref) = @_;
+    my ($x, $coefficients) = @_;
 
-    foreach my $item (@{$array_ref})
+    my $x_power = 1;
+
+    my $result = 0;
+
+    foreach my $coeff (@{$coefficients})
     {
-        print $prefix, ": ", $item, "\n";
+        $result += $coeff * $x_power;
+    }
+    continue
+    {
+        $x_power *= $x;
     }
 
-    return;
+    return $result;
 }
 
-my @names = (qw(Jack Sophie John David Ernie));
-
-my_func("Please greet", \@names);
+print "(4*x^2 + 2x + 1)(x = 5) = ", calc_polynomial(5, [1, 2, 4]);
 </pre>
 
 <p>
