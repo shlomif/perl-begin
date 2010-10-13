@@ -40,6 +40,8 @@ contents), and a perldoc?MyModule::Here link.
     - Array element: @array[$idx] instead of $array[$idx].
     - modifying an array/hash while iterating over it.
     - qx/`....` instead of system().
+    - last/next/redo/etc. without explicit LABELs.
+    - using $a and $b as variable names.
 
 * Add a page about optimizing / profiling / etc.
 
