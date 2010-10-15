@@ -3,7 +3,7 @@ TARGET = dest
 
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=berlios
 
-LATEMP_WML_FLAGS =$(shell latemp-config --wml-flags)
+LATEMP_WML_FLAGS = $(shell latemp-config --wml-flags)
 COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib 
 
 WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
