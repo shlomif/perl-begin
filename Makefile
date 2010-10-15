@@ -14,7 +14,7 @@ WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 TTML_FLAGS += $(COMMON_PREPROC_FLAGS) -I lib
 WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 
-RSYNC = rsync --progress --verbose --rsh=ssh 
+RSYNC = rsync --progress --verbose --rsh=ssh
 
 ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
@@ -22,7 +22,8 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 DOCS_COMMON_DEPS = template.wml lib/books.wml
 
-all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data
+all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
+	todo_done_data
 
 include include.mak
 include rules.mak
@@ -65,6 +66,13 @@ IMPATIENT_PERL_FILES = $(patsubst %,dest/tutorials/impatient-perl/%,iperl.html $
 iperl_extra_data: $(IMPATIENT_PERL_FILES)
 
 $(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: lib/tutorials/impatient-perl/%
+	cp -f $< $@
+
+TODO_DONE = $(patsubst %,$(TARGET)/contribute/%.txt, TODO DONE)
+
+todo_done_data: $(TODO_DONE)
+
+$(TODO_DONE): $(TARGET)/contribute/%.txt: %
 	cp -f $< $@
 
 # .PHONY: 

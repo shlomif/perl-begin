@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "todo_done.wml"
 
 <latemp_subject "Contribute to the Perl Beginners' Site" />
 
@@ -45,3 +46,4 @@ preferable to send corrections to the <a href="$(ROOT)/source/">site's
 Website Meta Language source</a>, because they can be applied immediately.
 </p>
 
+<todo_done />
