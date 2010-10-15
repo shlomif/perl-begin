@@ -109,12 +109,12 @@ Perl::Critic is a Perl module (and a free web-service) that analyses one's
 Perl code and warns about possible bad practices that should be fixed.
 </p>
 
-<h3 id="perl-tidy"><a href="http://search.cpan.org/dist/Perl-Tidy/">perltidy</a></h3>
+<h3 id="perl-tidy"><cpan_dist d="Perl-Tidy">perltidy</cpan_dist></h3>
 
 <p>
 perltidy is an auto-formatter for Perl code, that can keep its style
 consistent. It supports many different styles and style parameters. Perltidy
-has a <a href="http://search.cpan.org/dist/tidyview/">frontend 
-called tidyview</a> that allows one to visually customise the style and
+has a <cpan_dist d="tidyview">frontend 
+called tidyview</cpan_dist> that allows one to visually customise the style and
 view the results.
 </p>

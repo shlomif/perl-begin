@@ -23,10 +23,10 @@ avoided. Here we give some more options.
 If you're going to parse <b>HTML</b>, don't use regular expressions,
 and instead look at <a href="http://htmlparsing.icenine.ca/">Perl HTML-parsing
 modules</a>. The canonical modules for that are 
-<a href="http://search.cpan.org/dist/HTML-Parser/">HTML-Parser</a>, which has
+<cpan_self_dist d="HTML-Parser" />, which has
 built-in support for handling many of the irregularities of HTML in the wild,
-and <a href="http://search.cpan.org/dist/XML-LibXML/">XML-LibXML's 
-HTML support</a>. Those should generally not be used directly. Instead look at 
+and <cpan_dist d="XML-LibXML">XML-LibXML's 
+HTML support</cpan_dist>. Those should generally not be used directly. Instead look at 
 one of their abstractions:
 </p>
 
@@ -34,7 +34,7 @@ one of their abstractions:
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/">HTML-TreeBuilder-LibXML</a> - HTML::TreeBuilder and XPath compatible interface using libxml.
+<cpan_self_dist d="HTML-TreeBuilder-LibXML" /> - HTML::TreeBuilder and XPath compatible interface using libxml.
 </p>
 </li>
 
@@ -46,7 +46,7 @@ one of their abstractions:
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/HTML-TokeParser-Simple/">HTML-TokeParser-Simple</a> - 
+<cpan_self_dist d="HTML-TokeParser-Simple" /> - 
 an event-based pull parser that is useful for very large HTMLs.
 </p>
 </li>
@@ -64,7 +64,7 @@ page about XML processing</a>.
 <li>
 <p>
 <b>Comma-separated values (CSV) files</b> should be parsed using
-<a href="http://search.cpan.org/dist/Text-CSV_XS/">Text-CSV_XS</a>, which is
+<cpan_self_dist d="Text-CSV_XS" />, which is
 a fast, tried and tested module for parsing CSV that can handle most 
 edge-cases and irregularities that are present in CSV files that
 can be found in the wild.
@@ -90,13 +90,13 @@ generator</a>. Some notable parser generators in Perl include:
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/Parse-RecDescent/">Parse-RecDescent</a>
+<cpan_self_dist d="Parse-RecDescent" />
 </p>
 </li>
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/Regexp-Grammars/">Regexp-Grammars</a> - 
+<cpan_self_dist d="Regexp-Grammars" /> - 
 a more modern version of Parse-RecDescent by the same author that only
 works on perl-5.10.x and above.
 </p>
@@ -104,7 +104,7 @@ works on perl-5.10.x and above.
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/Parse-Yapp/">Parse-Yapp</a> - old
+<cpan_self_dist d="Parse-Yapp" /> - old
 and has been unmaintained, but may still be good enough.
 </p>
 </li>

@@ -45,8 +45,8 @@ CPAN with a non-root account"</a>
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/local-lib/">local::lib</a> - install
-CPAN modules under a local user directory.
+<cpan_self_dist d="local-lib" /> - install CPAN modules under a local user
+directory.
 </li>
 
 <li>

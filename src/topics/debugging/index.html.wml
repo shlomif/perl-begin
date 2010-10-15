@@ -34,13 +34,13 @@ using the perl -d Debugger.
 
 <h2 id="helpers">Debugging Aids</h2>
 
-<h3 id="devel-trace"><a href="http://search.cpan.org/dist/Devel-Trace/">Devel-Trace</a></h3>
+<h3 id="devel-trace"><cpan_self_dist d="Devel-Trace" /></h3>
 
 <p>
 Allows one to print each line before it is executed.
 </p>
 
-<h3 id="devel-linetrace"><a href="http://search.cpan.org/dist/Devel-LineTrace/">Devel-LineTrace</a></h3>
+<h3 id="devel-linetrace"><cpan_self_dist d="Devel-LineTrace" /></h3>
 
 <p>
 Allows one to assign code to be executed on individual lines in the program.

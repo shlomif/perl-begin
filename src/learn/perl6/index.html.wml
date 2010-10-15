@@ -42,9 +42,9 @@ Perl 6 features have proved to be a useful inspiration for recent Perl 5
 developments, such as core features in perl-5.10.x, perl-5.12.x and future
 versions, and CPAN distributions such as 
 <a href="http://www.iinteractive.com/moose/">Moose</a>,
-<a href="http://search.cpan.org/dist/autobox/">autobox</a>
+<cpan_self_dist d="autobox" />
 and 
-<a href="http://search.cpan.org/dist/Method-Signatures/">Method::Signatures</a>.
+<cpan_self_dist d="Method-Signatures" />.
 Tim Bunce has written in his 
 <a href="http://blog.timbunce.org/2008/03/08/perl-myths/">"Perl 
 Myths" presentation</a> that while some people think that "Perl 6 is killing

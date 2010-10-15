@@ -131,7 +131,7 @@ often than not, and should be avoided.
 
 <p>
 If you're looking for parameter lists to functions and methods, take a look
-at <a href="http://search.cpan.org/dist/Devel-Declare/">Devel-Declare</a> from
+at <cpan_self_dist d="Devel-Declare" /> from
 CPAN. But don't use prototypes.
 </p>
 
@@ -280,8 +280,8 @@ while (my $line = &lt;$fh&gt;)
 <p>
 You should avoid them all. Instead the proper way to read an entire file
 into a long string is to either use CPAN distributions for that such as
-<a href="http://search.cpan.org/dist/File-Slurp/">File-Slurp</a> or
-<a href="http://search.cpan.org/dist/IO-All/">IO-All</a>, or alternatively
+<cpan_self_dist d="File-Slurp" /> or
+<cpan_self_dist d="IO-All" />, or alternatively
 write down the following function and use it:
 </p>
 

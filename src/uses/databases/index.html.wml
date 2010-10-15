@@ -35,13 +35,13 @@ If you want a distributed database (similar to Google's BigTable), see our
 The de-facto standard for working with SQL databases in Perl is 
 <a href="http://dbi.perl.org/">DBI</a> (short for Database Interface). It
 provides a unified way to perform SQL queries across many database 
-backends: <a href="http://search.cpan.org/dist/DBD-Pg/">PostgreSQL</a>,
-<a href="http://search.cpan.org/dist/DBD-SQLite/">SQLite</a>, 
-<a href="http://search.cpan.org/dist/DBD-mysql/">MySQL</a> (but see
+backends: <cpan_dist d="DBD-Pg">PostgreSQL</cpan_dist>,
+<cpan_dist d="DBD-SQLite">SQLite</cpan_dist>, 
+<cpan_dist d="DBD-mysql">MySQL</cpan_dist> (but see
 <a href="http://www.shlomifish.org/open-source/anti/mysql/">this page</a>
 for some reasons why you may prefer a different system),
-<a href="http://search.cpan.org/dist/DBD-Oracle/">Oracle</a>,
-<a href="http://search.cpan.org/dist/DBD-InterBase/">Firebird</a>,
+<cpan_dist d="DBD-Oracle">Oracle</cpan_dist>,
+<cpan_dist d="DBD-InterBase">Firebird</cpan_dist>,
 and others.
 </p>
 
@@ -53,24 +53,24 @@ Above DBI, people wrote some useful abstractions:
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/DBIx-Simple/">DBIx-Simple</a> - an easy
+<cpan_self_dist d="DBIx-Simple" /> - an easy
 to use Object-Oriented Interface to DBI.
 </p>
 </li>
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/DBIx-Class/">DBIx-Class</a> - a
+<cpan_self_dist d="DBIx-Class" /> - a
 powerful and convenient object-relational mapper. Use of the older and less 
 philosophically sound 
-<a href="http://search.cpan.org/dist/Class-DBI/">Class-DBI</a> is
+<cpan_self_dist d="Class-DBI" /> is
 heavily discouraged.
 </p>
 </li>
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/Rose-DB-Object/">Rose-DB-Object</a> - 
+<cpan_self_dist d="Rose-DB-Object" /> - 
 another ORM - seems to be much less popular than DBIx-Class, but still actively
 maintained.
 </p>
@@ -89,8 +89,8 @@ vulnerabilities</a>.
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/BerkeleyDB/">The BerkeleyDB CPAN
-module</a> is the standard module for working with 
+<cpan_dist d="BerkeleyDB">The BerkeleyDB CPAN module</cpan_dist> is the
+standard module for working with 
 <a href="http://www.oracle.com/technology/products/berkeley-db/index.html">Oracle 
 Berkeley DB</a> (formerly Sleepy Cat Berkeley DB) and maps the ANSI C 
 library's API closely. Note that Berkeley DB is licensed under
@@ -106,7 +106,7 @@ permits use in non-open-source projects).
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/DBM-Deep/">DBM-Deep</a> - a multi-level
+<cpan_self_dist d="DBM-Deep" /> - a multi-level
 hash/array DBM that supports transactions. Reported to be slow, however.
 </li>
 
@@ -115,8 +115,8 @@ hash/array DBM that supports transactions. Reported to be slow, however.
 <h2 id="xbase">XBase Databases</h2>
 
 <p>
-There seems to be <a href="http://search.cpan.org/dist/DBD-XBase/">an
-XBase module on CPAN</a> . It seems to be pure-Perl, so it may be slow.
+There seems to be <cpan_dist d="DBD-XBase">an
+XBase module on CPAN</cpan_dist> . It seems to be pure-Perl, so it may be slow.
 </p>
 
 <h2 id="distributed">Distributed Databases ("No SQL", etc.)</h2>
@@ -133,7 +133,7 @@ here is a list of distributed databases just for completeness sake.
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/Net-CouchDb/">Net-CouchDb</a> - an
+<cpan_self_dist d="Net-CouchDb" /> - an
 interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
 </li>
 

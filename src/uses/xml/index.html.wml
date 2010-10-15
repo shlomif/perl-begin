@@ -4,14 +4,14 @@
 
 <h2 id="technologies">Technologies of Interest</h2>
 
-<h3 id="XML-LibXML"><a href="http://search.cpan.org/dist/XML-LibXML/">XML-LibXML</a></h3>
+<h3 id="XML-LibXML"><cpan_self_dist d="XML-LibXML" /></h3>
 
 <p>
 XML-LibXML is the de-facto standard for XML processing in Perl. It's a 
 comprehensive CPAN module based on the 
 <a href="http://xmlsoft.org/">libxml2</a> library, that provides DOM (Document
 Object Module), SAX (a stream parser), a pull parser, XPath, and 
-<a href="http://search.cpan.org/dist/XML-LibXSLT/">XSLT</a>
+<cpan_dist d="XML-LibXSLT">XSLT</cpan_dist>
 support. XML-LibXML has good documentation and is actively maintained.
 </p>
 
@@ -49,22 +49,22 @@ of them reside under XML:: namespace. Some prominent examples include:
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/XML-RSS/"><b>XML-RSS</b></a> - manipulate
+<cpan_b_self_dist d="XML-RSS" /> - manipulate
 RSS (Really Simple Syndication) 0.9, 0.91, 1.0 and 2.0.
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/XML-Atom/"><b>XML-Atom</b></a> - 
+<cpan_b_self_dist d="XML-Atom" /> -
 manipulate Atom feeds. (Atom is an alternative syndication format) 
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/XML-Feed/"><b>XML-Feed</b></a> -
+<cpan_b_self_dist d="XML-Feed" /> -
 generate, parse, mix and match web feeds (Atom or RSS).
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/OpenOffice-OODoc/"><b>OpenOffice-OODoc</b></a> -
+<cpan_b_self_dist d="OpenOffice-OODoc" /> -
 manipulate OpenOffice.org-like ODF (OpenDocument format) files. 
 </li>
 

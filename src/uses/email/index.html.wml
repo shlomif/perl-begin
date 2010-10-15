@@ -20,7 +20,7 @@ search for "Email"</a>. The Perl Email Project modules tend to be simple
 and easy to use.
 </p>
 
-<h2 id="mail_box"><a href="http://search.cpan.org/dist/Mail-Box/">Mail-Box</a></h2>
+<h2 id="mail_box"><cpan_self_dist d="Mail-Box" /></h2>
 
 <p>
 An E-mail handling distribution for Perl 5 with a comprehensive API. Very large

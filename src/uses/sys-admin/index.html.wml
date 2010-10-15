@@ -30,7 +30,7 @@ to handle file and directory paths portably.
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/String-ShellQuote/">String-ShellQuote</a>
+<cpan_self_dist d="String-ShellQuote" />
 - quote strings for passing through the shell. Also see the list forms of
 system.
 </li>
@@ -45,7 +45,7 @@ core module to create or remove directory trees (portably).
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/IO-All/">IO-All</a> - an all-in-one
+<cpan_self_dist d="IO-All" /> - an all-in-one
 IO package with a lot of syntactic sugar. Non-core.
 </li>
 

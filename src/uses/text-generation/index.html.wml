@@ -87,7 +87,7 @@ to the sprintf function provided by C and other programming languages. Make
 sure you familiarize yourself with it.
 </p>
 
-<h4 id="named-sprintf"><a href="http://search.cpan.org/dist/Text-Sprintf-Named/">Text-Sprintf-Named</a></h4>
+<h4 id="named-sprintf"><cpan_self_dist d="Text-Sprintf-Named" /></h4>
 
 <p>
 Text-Sprintf-Named allows one to pass an associative array to a sprintf-like
@@ -115,7 +115,7 @@ presentation that Shlomi Fish gave</a> about Template Toolkit, that explains
 why one should use a template system and especially Template Toolkit.  
 </p>
 
-<h3 id="perl6-form"><a href="http://search.cpan.org/dist/Perl6-Form/">Perl6-Form</a></h3>
+<h3 id="perl6-form"><cpan_self_dist d="Perl6-Form" /></h3>
 
 <p>
 A module for formatting fixed-width text. You should use it <b>instead</b> of
@@ -123,13 +123,13 @@ the built-in <a href="http://perldoc.perl.org/perlform.html">perlform</a>
 facility.
 </p>
 
-<h3 id="text-table"><a href="http://search.cpan.org/dist/Text-Table/">Text::Table</a></h3>
+<h3 id="text-table"><cpan_self_dist d="Text-Table" /></h3>
 
 <p>
 A CPAN module for outputting text tables.
 </p>
 
-<h3 id="xml-writer"><a href="http://search.cpan.org/dist/XML-Writer/">XML-Writer</a></h3>
+<h3 id="xml-writer"><cpan_self_dist d="XML-Writer" /></h3>
 
 <p>
 A convenient CPAN module for outputting XML.
@@ -174,8 +174,8 @@ the Perl for Newbies presentation</a>.
 <p>
 List processing CPAN modules such as 
 <cpan_self_mod m="List::Util" />,
-<a href="http://search.cpan.org/dist/List-MoreUtils/">List-MoreUtils</a>
-and <a href="http://search.cpan.org/dist/List-UtilsBy/">List-UtilsBy</a>.
+<cpan_self_dist d="List-MoreUtils" />
+and <cpan_self_dist d="List-UtilsBy" />.
 </p>
 </li>
 

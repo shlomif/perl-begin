@@ -25,7 +25,7 @@ written using wxPerl, and one can search its source code (using
 to find useful examples of wxPerl code in action.
 </p>
 
-<h2 id="perl-tk"><a href="http://search.cpan.org/dist/Tk/">Perl-Tk</a></h2>
+<h2 id="perl-tk"><cpan_dist d="Tk">Perl-Tk</cpan_dist></h2>
 
 <p>
 Perl-Tk is a port of 

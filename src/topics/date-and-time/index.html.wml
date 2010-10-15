@@ -19,7 +19,7 @@ to lead people in the right direction.
 <h3 id="DateTime">DateTime</h3>
 
 <p>
-The <a href="http://search.cpan.org/dist/DateTime/"><b>DateTime</b></a> CPAN
+The <cpan_b_self_dist d="DateTime" /> CPAN
 distribution is a highly recommended module for handling dates and times.
 Here are some useful helper packages for it:
 </p>
@@ -27,24 +27,24 @@ Here are some useful helper packages for it:
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/DateTime-Format-Strptime/">DateTime-Format-Strptime</a> 
+<cpan_self_dist d="DateTime-Format-Strptime" />
 - parses dates in arbitrary formats.
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/DateTime-Format-W3CDTF/">DateTime-Format-W3CDTF</a>,
-<a href="http://search.cpan.org/dist/DateTime-Format-Atom/">DateTime-Format-Atom</a>
+<cpan_self_dist d="DateTime-Format-W3CDTF" />,
+<cpan_self_dist d="DateTime-Format-Atom" />
 and other "DateTime-Format-" modules - useful for parsing
 and formatting dates using various standard date formats.
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/DateTime-Format-Natural/">DateTime-Format-Natural</a>
+<cpan_self_dist d="DateTime-Format-Natural" />
 allows one to convert dates in human-time to a DateTime object.
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/Time-Duration/">Time-Duration</a> converts a 
+<cpan_self_dist d="Time-Duration" /> converts a 
 duration (in seconds, which can be calculated from a DateTime object) into a human 
 readable expression of it (exact or rounded). Like "10 minutes ago", "1 hour ago", etc.
 </li>

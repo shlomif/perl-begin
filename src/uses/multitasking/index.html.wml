@@ -20,14 +20,14 @@ A Perl framework for reactive systems, cooperative multitasking and network
 applications. 
 </p>
 
-<h3 id="ipc-run"><a href="http://search.cpan.org/dist/IPC-Run/">IPC-Run</a></h3>
+<h3 id="ipc-run"><cpan_self_dist d="IPC-Run" /></h3>
 
 <p>
 A module that allows on to run background processes with piping, and ptys.
 Works on UNIXes as well as Windows.
 </p>
 
-<h3 id="expect"><a href="http://search.cpan.org/dist/Expect/">Expect</a></h3>
+<h3 id="expect"><cpan_self_dist d="Expect" /></h3>
 
 <p>
 Allows one to control a terminal application interactively and wait for

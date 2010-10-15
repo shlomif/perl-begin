@@ -262,6 +262,27 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <restore m />
 </define-tag>
 
+<define-tag cpan_dist whitespace="delete" endtag="required">
+<preserve d />
+<set-var %attributes />
+<a href="http://search.cpan.org/dist/<get-var d />/">%body</a>
+<restore d />
+</define-tag>
+
+<define-tag cpan_self_dist whitespace="delete">
+<preserve d />
+<set-var %attributes />
+<cpan_dist d="<get-var d />"><get-var d /></cpan_dist>
+<restore d />
+</define-tag>
+
+<define-tag cpan_b_self_dist whitespace="delete">
+<preserve d />
+<set-var %attributes />
+<cpan_dist d="<get-var d />"><b><get-var d /></b></cpan_dist>
+<restore d />
+</define-tag>
+
 #   per default we are in body
 {#LATEMP_BODY#:
 
