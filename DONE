@@ -1,0 +1,4 @@
+* Create a macro for a link to a CPAN distribution
+(http://search.cpan.org/dist/MyDist-Here/), a self link (with MyDist-Here as 
+the contents), and a perldoc?MyModule::Here link.
+
