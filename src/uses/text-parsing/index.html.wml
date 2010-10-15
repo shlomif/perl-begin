@@ -40,7 +40,7 @@ one of their abstractions:
 
 <li>
 <p>
-<a href="http://search.cpan.org/perldoc?HTML::TreeBuilder">HTML::TreeBuilder</a> (and other modules in HTML::Tree).
+<cpan_self_mod m="HTML::TreeBuilder" /> (and other modules in HTML::Tree).
 </p>
 </li>
 

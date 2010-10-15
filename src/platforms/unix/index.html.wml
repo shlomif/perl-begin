@@ -44,8 +44,7 @@ Installing <a href="http://docperl.sourceforge.net/">DocPerl</a>
 which is a web-interface to the local Perl documentation.
 </li>
 <li>
-Installing <a href="http://search.cpan.org/perldoc?tkpod">tkpod</a>
-which is a Perl/Tk-based interface.
+Installing <cpan_self_mod m="tkpod" /> which is a Perl/Tk-based interface.
 </li>
 <li>
 Alternatively one can access the <a href="http://perldoc.perl.org/">online

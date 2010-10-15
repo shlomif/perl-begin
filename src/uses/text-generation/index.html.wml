@@ -173,7 +173,7 @@ the Perl for Newbies presentation</a>.
 <li>
 <p>
 List processing CPAN modules such as 
-<a href="http://search.cpan.org/perldoc?List::Util">List::Util</a>,
+<cpan_self_mod m="List::Util" />,
 <a href="http://search.cpan.org/dist/List-MoreUtils/">List-MoreUtils</a>
 and <a href="http://search.cpan.org/dist/List-UtilsBy/">List-UtilsBy</a>.
 </p>

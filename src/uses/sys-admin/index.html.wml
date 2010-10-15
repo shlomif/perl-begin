@@ -41,8 +41,7 @@ core module to create or remove directory trees (portably).
 </li>
 
 <li>
-<a href="http://search.cpan.org/perldoc?File::Copy">File::Copy</a> - a core
-module to copy files.
+<cpan_self_mod m="File::Copy" /> - a core module to copy files.
 </li>
 
 <li>

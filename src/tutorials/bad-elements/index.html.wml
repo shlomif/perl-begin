@@ -314,8 +314,8 @@ to extract it into its own function or method.
 <h3 id="io-socket">Use IO::Socket and friends instead of lower-level calls</h3>
 
 <p>
-One should use <a href="http://search.cpan.org/perldoc?IO::Socket">the
-IO::Socket</a> family of modules for networking Input/Output instead of the
+One should use <cpan_mod m="IO::Socket">the IO::Socket</cpan_mod> family of
+modules for networking Input/Output instead of the
 lower-level socket()/connect()/bind()/etc. calls. As of this writing,
 <pdoc d="perlipc"></pdoc> contains outdated information demonstrating how
 to use the lowere-level API which is not recommended.

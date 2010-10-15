@@ -248,6 +248,20 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <perl_begin_news_boxes />
 </perl_begin_news>
 
+<define-tag cpan_mod whitespace="delete" endtag="required">
+<preserve m />
+<set-var %attributes />
+<a href="http://search.cpan.org/perldoc?<get-var m />">%body</a>
+<restore m />
+</define-tag>
+
+<define-tag cpan_self_mod whitespace="delete">
+<preserve m />
+<set-var %attributes />
+<cpan_mod m="<get-var m />"><get-var m /></cpan_mod>
+<restore m />
+</define-tag>
+
 #   per default we are in body
 {#LATEMP_BODY#:
 
