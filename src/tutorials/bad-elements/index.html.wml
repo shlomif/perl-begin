@@ -599,3 +599,31 @@ while (my ($idx, $elem) = each(@array))
 An arbitrary C-style for loop can be replaced with a while loop with 
 a <tt>continue</tt> block.
 </p>
+
+<h4 id="non-intrusive-commenting">Avoid Intrusive Commenting</h4>
+
+<p>
+Some commenting is too intrusive and interrupts the flow of reading the code.
+Examples for that are the <tt>########################</tt> hard-rules that
+some people put in their code, the comments using multiple 
+<a href="http://en.wikipedia.org/wiki/Number_sign">number signs ("#")</a>,
+like <tt>####</tt>, or excessively long comment block. Please avoid all those.
+</p>
+
+<p>
+Some schools of software engineering argue that if the code's author feels
+that a comment is needed, it usually indicates that the code is not clear 
+and should be factored better (like extracting a method or a subroutine with
+a meaningful name.). It probably does not mean that you should avoid writing
+comments altogether, but excessive commenting could prove as a red flag.
+</p>
+
+<p>
+If you're interested in documenting the public interface of your modules and
+command-line programs, refer <pdoc d="perlpod">, Perl's Plain Old
+Documentation (POD)</pdoc>, which allows one to quickly and easily document
+one's code. POD has
+<a href="http://search.cpan.org/search?query=pod&amp;mode=all">many extensions
+available on CPAN</a>, which may prove of use.
+</p>
+

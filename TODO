@@ -3,7 +3,6 @@
 * Add screenshots to the IDEs page and other relevant pages.
 
 * Add to the page about best practices:
-    - discuss commenting.
     - refactoring:
         - magic numbers.
         - duplicate code.
