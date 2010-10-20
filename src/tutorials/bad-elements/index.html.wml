@@ -627,3 +627,37 @@ one's code. POD has
 available on CPAN</a>, which may prove of use.
 </p>
 
+<h4 id="accessing_object_slots_directly">Accessing Object Slots Directly</h4>
+
+<p>
+Since <a href="$(ROOT)/topics/object-oriented/">Perl objects</a> are simple
+references some programmers are tempted to access them directly: 
+</p>
+
+<pre>
+\# Bad code.
+$self-&gt;{'name'} = "John";
+print "I am ", $self-&gt;{'age'}, " years old\n";
+
+\# Or even (Really bad code:)
+$self-&gt;[NAME()] = "John";
+</pre>
+
+<p>
+However, this is sub-optimal as explained in
+<a href="http://www.shlomifish.org/lecture/Perl/Newbies/lecture5/accessors/">the
+Perl 
+for Newbies section about "Accessors"</a> and one should use accessors oneself
+using code like that:
+</p>
+
+<pre>
+\# Good code.
+$self-&gt;_name("John");
+print "I am ", $self-&gt;_age(), " years old\n";
+</pre>
+
+<p>
+As noted in the link, you can use one of CPAN's many accessor generators to
+generate accessors for you.
+</p>

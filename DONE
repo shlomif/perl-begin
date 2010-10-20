@@ -7,3 +7,5 @@ them and contribute.
 
 * Page about Bad Elements:
     - discuss commenting.
+    - accessing object slots directly
+        - use accessors.
