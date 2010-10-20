@@ -38,6 +38,7 @@
     - qx/`....` instead of system().
     - last/next/redo/etc. without explicit LABELs.
     - using $a and $b as variable names.
+    - comments and identifiers in a foreign language. 
 
 * Add a page about optimizing / profiling / etc.
 
