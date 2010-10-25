@@ -3,6 +3,12 @@
 * Add screenshots to the IDEs page and other relevant pages.
 
 * Add to the page about best practices:
+    - Reference the sources the advice was taken from and further reference:
+        - Perl Best Practices
+        - The Ancient Perl pages on the Perl 5 Wiki.
+        - chromatic's Modern Perl book.
+        - advice given by people on Freenode's #perl and on the Perl beginners
+        mailing list.
     - refactoring:
         - magic numbers.
         - duplicate code.
