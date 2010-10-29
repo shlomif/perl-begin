@@ -14,4 +14,8 @@ them and contribute.
         - The Ancient Perl pages on the Perl 5 Wiki.
         - chromatic's Modern Perl book.
         - advice given by people on Freenode's #perl and on the Perl beginners
+    - ^ and $ in regexes.
+        - ambiguous.
+        - better use \A and \z to mean start-of-string and end-of-string.
+        - with /m can be used for start-of-line / end-of-line.
         mailing list.
