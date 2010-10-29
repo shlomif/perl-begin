@@ -710,3 +710,14 @@ print "I am ", $self-&gt;_age(), " years old\n";
 As noted in the link, you can use one of CPAN's many accessor generators to
 generate accessors for you.
 </p>
+
+<h4 id="caret_and_dollar_sign_in_regexes">'^' and '$' in Regular Expressions</h4>
+
+<p>
+Some people use "^" and "$" in regular expressions to mean
+beginning-of-the-string or end-of-the-string. However, they can mean
+beginning-of-a-line and end-of-a-line respectively using the <tt>/m</tt> flag 
+which is confusing. It's a good idea to use <tt>\A</tt> for start-of-string
+and <tt>\z</tt> for end-of-string  always, and to specify the <tt>/m</tt> flag
+if one needs to use "^" and "$" for start/end of a line.
+</p>
