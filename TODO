@@ -4,7 +4,6 @@
 
 * Add to the page about best practices:
     - refactoring:
-        - magic numbers.
         - duplicate code.
         - long functions and methods.
     - EEK 
