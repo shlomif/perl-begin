@@ -23,48 +23,6 @@ in people. So in the spirit of liquidating negatives, this tutorial-in-reverse
 aims to show you what <b>not to do</b>.
 </p>
 
-<h3 id="sources_of_advice">Sources of This Advice</h3>
-
-<p>
-This is a short list of the sources from which this advice was taken which
-also contains material for further reading:
-</p>
-
-<ol>
-<li>
-<p>
-<a href="$(ROOT)/src/books/advanced/#pbp">The
-Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
-advice and food for thought, but sometimes should be deviated from.
-Also see the 
-<a href="https://www.socialtext.net/perl5/index.cgi?pbp_module_recommendation_commentary">"PBP 
-Module Recommendation Commentary"</a> on the Perl 5 Wiki.
-</p>
-</li>
-
-<li>
-<p>
-<a href="https://www.socialtext.net/perl5/index.cgi?ancient_perl">"Ancient 
-Perl"</a> on the Perl 5 Wiki.
-</p>
-</li>
-
-<li>
-<p>
-<a href="http://modernperlbooks.com/">chromatic's "Modern Perl" Book and
-Blog</a>
-</p>
-</li>
-
-<li>
-<p>
-Advice given by people on <a href="$(ROOT)/irc/#freenode">Freenode's #perl
-channel</a>, on the Perl Beginners mailing list, and on other Perl forums.
-</p>
-</li>
-
-</ol>
-
 <h2* id="toc">Table of Contents</h2*>
 
 <toc />
@@ -762,3 +720,46 @@ for my $i (0 .. $deck_size-1)
 (Of course in this case, you may opt to use a shuffle function from CPAN,
 but this is just for the sake of demonstration.).
 </p>
+
+<h2 id="sources_of_advice">Sources of This Advice</h2>
+
+<p>
+This is a short list of the sources from which this advice was taken which
+also contains material for further reading:
+</p>
+
+<ol>
+<li>
+<p>
+<a href="$(ROOT)/src/books/advanced/#pbp">The
+Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
+advice and food for thought, but sometimes should be deviated from.
+Also see the 
+<a href="https://www.socialtext.net/perl5/index.cgi?pbp_module_recommendation_commentary">"PBP 
+Module Recommendation Commentary"</a> on the Perl 5 Wiki.
+</p>
+</li>
+
+<li>
+<p>
+<a href="https://www.socialtext.net/perl5/index.cgi?ancient_perl">"Ancient 
+Perl"</a> on the Perl 5 Wiki.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://modernperlbooks.com/">chromatic's "Modern Perl" Book and
+Blog</a>
+</p>
+</li>
+
+<li>
+<p>
+Advice given by people on <a href="$(ROOT)/irc/#freenode">Freenode's #perl
+channel</a>, on the Perl Beginners mailing list, and on other Perl forums.
+</p>
+</li>
+
+</ol>
+
