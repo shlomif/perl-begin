@@ -455,7 +455,7 @@ send_email(
 );
 </pre>
 
-<h4 id="chop">Avoid using chop() to trim newlines characters from lines</h4>
+<h3 id="chop">Avoid using chop() to trim newlines characters from lines</h3>
 
 <p>
 Don't use <a href="http://perldoc.perl.org/functions/chop.html">the built-in
@@ -485,7 +485,7 @@ For more information see:
 </li>
 </ul>
 
-<h4 id="lowercase_modules_and_pkgs">Don't start Modules and Packages with a Lowercase Letter</h4>
+<h3 id="lowercase_modules_and_pkgs">Don't start Modules and Packages with a Lowercase Letter</h3>
 
 <p>
 Both modules and packages (the latter also known as namespaces) and all 
@@ -521,7 +521,7 @@ use warnings;
 1;
 </pre>
 
-<h4 id="indirect-object-notation">Avoid Indirect Object Notation</h4>
+<h3 id="indirect-object-notation">Avoid Indirect Object Notation</h3>
 
 <p>
 Don't use the so-called "Indirect-object notation" which can be seen in a lot
@@ -541,7 +541,7 @@ Instead use the <tt>MyClass-&gt;new(...)</tt> notation:
 my $new_object = MyClass-&gt;new(@params);
 </pre>
 
-<h4 id="dollar-dollar">$$myarray_ref[$idx] or $$myhash_ref{$key}</h4>
+<h3 id="dollar-dollar">$$myarray_ref[$idx] or $$myhash_ref{$key}</h3>
 
 <p>
 Don't write <tt>$$myarray_ref[$idx]</tt>, which is cluttered and can be easily
@@ -550,7 +550,7 @@ arrow operator - <tt>$myarray_ref-&gt;[$idx]</tt>. This also applies for
 hash references - <tt>$myhash_ref-&gt;{$key}</tt>.
 </p>
 
-<h4 id="c-style-for-loops">C-style for loops</h4>
+<h3 id="c-style-for-loops">C-style for loops</h3>
 
 <p>
 Some beginners to Perl tend to use C-style-for-loops to loop over an array's
@@ -607,7 +607,7 @@ An arbitrary C-style for loop can be replaced with a while loop with
 a <tt>continue</tt> block.
 </p>
 
-<h4 id="non-intrusive-commenting">Avoid Intrusive Commenting</h4>
+<h3 id="non-intrusive-commenting">Avoid Intrusive Commenting</h3>
 
 <p>
 Some commenting is too intrusive and interrupts the flow of reading the code.
@@ -634,7 +634,7 @@ one's code. POD has
 available on CPAN</a>, which may prove of use.
 </p>
 
-<h4 id="accessing_object_slots_directly">Accessing Object Slots Directly</h4>
+<h3 id="accessing_object_slots_directly">Accessing Object Slots Directly</h3>
 
 <p>
 Since <a href="$(ROOT)/topics/object-oriented/">Perl objects</a> are simple
@@ -669,7 +669,7 @@ As noted in the link, you can use one of CPAN's many accessor generators to
 generate accessors for you.
 </p>
 
-<h4 id="caret_and_dollar_sign_in_regexes">'^' and '$' in Regular Expressions</h4>
+<h3 id="caret_and_dollar_sign_in_regexes">'^' and '$' in Regular Expressions</h3>
 
 <p>
 Some people use "^" and "$" in regular expressions to mean
@@ -680,7 +680,7 @@ and <tt>\z</tt> for end-of-string always, and to specify the <tt>/m</tt> flag
 if one needs to use "^" and "$" for start/end of a line.
 </p>
 
-<h4 id="magic_numbers">Magic Numbers</h4>
+<h3 id="magic_numbers">Magic Numbers</h3>
 
 <p>
 Your code should not include <a href="http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Unnamed_numerical_constants">unnamed 
