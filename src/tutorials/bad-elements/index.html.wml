@@ -721,3 +721,44 @@ which is confusing. It's a good idea to use <tt>\A</tt> for start-of-string
 and <tt>\z</tt> for end-of-string always, and to specify the <tt>/m</tt> flag
 if one needs to use "^" and "$" for start/end of a line.
 </p>
+
+<h4 id="magic_numbers">Magic Numbers</h4>
+
+<p>
+Your code should not include <a href="http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Unnamed_numerical_constants">unnamed 
+numerical constants also known as "magic numbers" or "magic constants"</a>. 
+For example, there is one in this code to shuffle a deck of cards:
+</p>
+
+<pre>
+\# Bad code.
+for my $i (0 .. 51)
+{
+    my $j = $i + int(rand(52-$i));
+    @cards[$i,$j] = @cards[$j,$i];
+}
+</pre>
+
+<p>
+This code is bad because the meaning of 52 and 51 is not explained and they
+are arbitrary. A better code would be:
+</p>
+
+
+<pre>
+\# Good code.
+\# One of:
+my $deck_size = 52;
+Readonly my $deck_size =&gt; 52;
+
+for my $i (0 .. $deck_size-1)
+{
+    my $j = $i + int(rand($deck_size-$i));
+    @cards[$i,$j] = @cards[$j,$i];
+}
+</pre>
+
+<p>
+(Of course in this case, you may opt to use a shuffle function from CPAN,
+but this is just for the sake of demonstration.).
+</p>
