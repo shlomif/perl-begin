@@ -1,0 +1,91 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+
+<latemp_subject "Optimising and Profiling Perl Code" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Before you try to make your code run faster, you should first make
+sure that it is too slow for your needs. After all, spending time profiling
+and optimising an already performant code will not yield any benefits for
+production. So benchmark your code, see how well it performs and then continue
+reading this page if it is indeed too slow. As a corrolary, when writing
+code, always make sure you optimise for clarity and correctness first, not
+for speed.
+</p>
+
+<p>
+The first steps in optimising a code that is too slow is benchmarking and 
+profiling it to see which parts of the code consume the most time.
+</p>
+
+<h2 id="benchmarking">Benchmarking</h2>
+
+<h3 id="Benckmark.pm"><pdoc d="Benchmark"> - a module for 
+Benchmarking</pdoc></h3>
+
+<p>
+The Benchmark.pm module which is maintained as part of the Perl 5 core modules
+can be used for benchmarking different codes for performance.
+</p>
+
+<h2 id="profiling">Profiling</h2>
+
+<h3 id="nytprof"><cpan_self_dist d="Devel-NYTProf" /></h3>
+
+<p>
+<b>Devel-NYTProf</b> is a very powerful profiling framework for Perl, that 
+leaves all the previous attempts at providing a Perl profiler, way behind. Use
+it to determine where your Perl code spends most of its time.
+</p>
+
+<h2 id="optimisation">How to Optimise</h2>
+
+<p>
+Here are some collected resources about optimisation:
+</p>
+
+<ol>
+<li>
+<p>
+Shlomi Fish has written
+<a href="http://www.shlomifish.org/philosophy/computers/optimizing-code-for-speed/">an essay titled "Optimizing Code for Speed"</a> (a somewhat more 
+<a href="http://en.wikibooks.org/wiki/Optimizing_Code_for_Speed">up-to-date
+version</a> is available on <a href="http://en.wikibooks.org/">the English 
+Wikibooks site</a>).
+</p>
+</li>
+
+<li>
+<p>
+Jon Bentley's out-of-print book 
+<a href="http://en.wikibooks.org/wiki/Special:BookSources/013970244X">"Writing Efficient Programs"</a> is a previous treatment of the subject.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://community.livejournal.com/shlomif_tech/20200.html">"Shavin' 
+Another Second"</a> is a blog post by Shlomi Fish about how he optimised some
+Perl code of his.
+</p>
+</li>
+
+</ol>
+
+<h3 id="use_db">Use a database</h3>
+
+<p>
+If your program is not using <a href="$(ROOT)/uses/databases/">a database</a>
+of some sort, then using it may yield a substantial speed improvement.
+See <a href="$(ROOT)/uses/databases">our page</a> about using database with
+Perl for more information.
+</p>
+
+<h3 id="write_in_faster_lang">Optimise by Writing Code in a Faster Language</h3>
+
+<p>
+If all else fails, then writing your code 
+</p>

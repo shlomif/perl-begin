@@ -308,6 +308,11 @@ my $tree_contents =
                     'title' => "Object Oriented Programming and Design in Perl",
                 },
                 {
+                    'text' => "Optimising and Profiling",
+                    'url' => "topics/optimising-and-profiling/",
+                    'title' => "How (and When) to make your Perl programs faster",
+                },
+                {
                     'text' => "Scoping and Variables",
                     'url' => "topics/scoping/",
                     'title' => "Local variables, lexical scoping, package variables",
