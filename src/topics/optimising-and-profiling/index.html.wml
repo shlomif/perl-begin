@@ -84,8 +84,47 @@ See <a href="$(ROOT)/uses/databases">our page</a> about using database with
 Perl for more information.
 </p>
 
-<h3 id="write_in_faster_lang">Optimise by Writing Code in a Faster Language</h3>
+<h3 id="write_in_faster_lang">Optimise by 
+Writing Code in a Faster Language</h3>
 
 <p>
-If all else fails, then writing your code 
+If all else fails, then re-impelmenting the slow code in a faster language
+such as
+<a href="http://en.wikipedia.org/wiki/C_%28programming_language%29">C</a>
+or <a href=http://en.wikipedia.org/wiki/C%2B%2B"">C++</a> and embedding it
+inside Perl is an option. Here are some alternatives for writing extensions
+to Perl in C and other languages that are compiled to machine code:
 </p>
+
+<ol>
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/XS_%28Perl%29">XS</a> - XS is the original
+way to bind code in C or similar languages to Perl, and is still popular.
+However, it is difficult to perform correctly, and you may wish to look
+at the alternatives below.
+</p>
+</li>
+<li>
+<p>
+<cpan_self_mod m="Inline::C" /> - Inline::C provides a somewhat easier way to
+create Perl bindings to C subroutines. There are other Inline modules on CPAN.
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.swig.org/">SWIG</a> - SWIG is the so-called "Simplified
+Wrapper and Interface Generator" and allows to create bindings to Perl and
+many other languages from a common source.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://gitorious.org/perl-ctypes">perl-ctypes</a> - this is a port
+of Python's ctypes package, that will eventually allow invoking the subroutines
+of dynamically-loaded libraries from Perl at run-time.
+</p>
+</li>
+
+</ol>
