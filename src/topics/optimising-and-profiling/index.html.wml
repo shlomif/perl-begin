@@ -17,8 +17,8 @@ for speed.
 </p>
 
 <p>
-The first steps in optimising a code that is too slow is benchmarking and 
-profiling it to see which parts of the code consume the most time.
+The first steps in optimising a code that is too slow are benchmarking and 
+profiling it, in order to see which parts of the code consume the most time.
 </p>
 
 <h2 id="benchmarking">Benchmarking</h2>
@@ -36,8 +36,8 @@ can be used for benchmarking different codes for performance.
 <h3 id="nytprof"><cpan_self_dist d="Devel-NYTProf" /></h3>
 
 <p>
-<b>Devel-NYTProf</b> is a very powerful profiling framework for Perl, that 
-leaves all the previous attempts at providing a Perl profiler, way behind. Use
+<b>Devel-NYTProf</b> is a very powerful profiling framework for Perl that 
+leaves all the previous attempts at providing a Perl profiler way behind. Use
 it to determine where your Perl code spends most of its time.
 </p>
 
