@@ -29,6 +29,13 @@ aims to show you what <b>not to do</b>.
 
 <h2 id="bad-elements">The List of Bad Elements</h2>
 
+<define-tag main_list endtag="required" whitespace="delete">
+{#MAIN_LIST#:%body:##}
+</define-tag>
+
+{#MAIN_LIST#}
+
+<main_list>
 <h3 id="no-indentation">No Indentation</h3>
 
 <p>
@@ -768,45 +775,6 @@ for example if they are objects with overloaded stringification. But this is
 the exception rather than the rule.
 </p>
 
-<h2 id="sources_of_advice">Sources of This Advice</h2>
+</main_list>
 
-<p>
-This is a short list of the sources from which this advice was taken which
-also contains material for further reading:
-</p>
-
-<ol>
-<li>
-<p>
-<a href="$(ROOT)/src/books/advanced/#pbp">The
-Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
-advice and food for thought, but sometimes should be deviated from.
-Also see the 
-<a href="https://www.socialtext.net/perl5/index.cgi?pbp_module_recommendation_commentary">"PBP 
-Module Recommendation Commentary"</a> on the Perl 5 Wiki.
-</p>
-</li>
-
-<li>
-<p>
-<a href="https://www.socialtext.net/perl5/index.cgi?ancient_perl">"Ancient 
-Perl"</a> on the Perl 5 Wiki.
-</p>
-</li>
-
-<li>
-<p>
-<a href="http://modernperlbooks.com/">chromatic's "Modern Perl" Book and
-Blog</a>
-</p>
-</li>
-
-<li>
-<p>
-Advice given by people on <a href="$(ROOT)/irc/#freenode">Freenode's #perl
-channel</a>, on the Perl Beginners mailing list, and on other Perl forums.
-</p>
-</li>
-
-</ol>
-
+#include "bad-elements-sources.wml"
