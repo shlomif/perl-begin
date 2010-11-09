@@ -21,6 +21,7 @@ them and contribute.
         mailing list.
     - refactoring:
         - magic numbers.
+    - string variables interpolated by themselves - "$myvar".
 
 * Add Perl-Monks to more relevant pages.
 

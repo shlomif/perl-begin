@@ -721,6 +721,53 @@ for my $i (0 .. $deck_size-1)
 but this is just for the sake of demonstration.).
 </p>
 
+<h3 id="vars_in_quotes">String Variables Enclosed in Double Quotes</h3>
+
+<p>
+One can sometimes see people write code like that:
+</p>
+
+<pre>
+\# Bad code.
+my $name = shift(@ARGV);
+
+print "$name", \n";
+
+if ("$name" =~ m{\At}i)
+{
+    print "Your name begins with the letter 't'";
+}
+</pre>
+
+<p>
+However, it's not necessary to enclose $name in double quotes (i.e: 
+<tt>"$name"</tt>) because it's already a string. Using it byitself as 
+<tt>$name</tt> will do just fine:
+</p>
+
+<pre>
+\# Better code.
+my $name = shift(@ARGV);
+
+print $name, \n";
+
+if ($name =~ m{\At}i)
+{
+    print "Your name begins with the letter 't'";
+}
+</pre>
+
+<p>
+Also see <a href="$(ROOT)/uses/text-generation/">our page about text
+generation</a> for other ways to delimit text.
+</p>
+
+<p>
+Note that sometimes enclosing scalar variables in double-quotes makes sense -
+for example if they are objects with overloaded stringification. But this is
+the exception rather than the rule.
+</p>
+
 <h2 id="sources_of_advice">Sources of This Advice</h2>
 
 <p>
