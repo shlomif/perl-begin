@@ -242,6 +242,13 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <restore d />
 </define-tag>
 
+<define-tag pdoc_f whitespace="delete" endtag="required">
+<preserve f />
+<set-var %attributes />
+<a href="http://perldoc.perl.org/functions/<get-var f />.html">%body</a>
+<restore f />
+</define-tag>
+
 <define-tag nothing></define-tag>
 
 <perl_begin_news>

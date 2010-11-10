@@ -788,6 +788,32 @@ use an array slice such as <tt>@array[@indexes]</tt> or
 be used in list context.
 </p>
 
+<h3 id="vars-a-and-b">Variables called $a and $b</h3>
+
+<p>
+One should not create lexical variables called <tt>$a</tt> and <tt>$b</tt>
+because there are built-in-variables called that used for 
+<pdoc_f f="sort">sorting</pdoc_f> and other uses (such as reduce in
+<cpan_self_mod m="List::Util" />), which the lexical variables will interfere
+with:
+</p>
+
+<pre>
+\# Bad code:
+
+my ($a, $b) = @ARGV;
+.
+.
+.
+\# Won't work now.
+my @array = sort { length($a) &lt;=&gt; length($b) } @other_array; 
+</pre>
+
+<p>
+Instead, use other single-letter variable names such as 
+<tt>$x</tt> and <tt>$y</tt>, or better yet give more descriptive names.
+</p>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
