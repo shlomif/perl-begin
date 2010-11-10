@@ -775,6 +775,19 @@ for example if they are objects with overloaded stringification. But this is
 the exception rather than the rule.
 </p>
 
+<h3 id="at-array-for-subscripting">@array[$idx] for array subscripting</h3>
+
+<p>
+Some newcomers to Perl 5 would be tempted to write <tt>@array[$index]</tt> 
+to subscript a single element out of the array <tt>@array</tt>. However,
+<tt>@array[$index]</tt> is a single-element array <b>slice</b>. To get
+a single subscript out of <tt>@array</tt> use <tt>$array[$idx]</tt> (with
+a dollar sign). Note that if you want to extract several elements, you can
+use an array slice such as <tt>@array[@indexes]</tt> or 
+<tt>@array[$x,$y] = @array[$y,$x]</tt>. However, then it's a list which should
+be used in list context.
+</p>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
