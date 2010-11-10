@@ -35,8 +35,25 @@ aims to show you what <b>not to do</b>.
 
 {#MAIN_LIST#}
 
+<define-tag item endtag="required">
+
+<preserve id h />
+<set-var %attributes />
+
+<div class="element item">
+
+<h3 id="<get-var id />"><get-var h /></h3>
+
+%body
+
+</div>
+
+<restore id h />
+</define-tag>
+
 <main_list>
-<h3 id="no-indentation">No Indentation</h3>
+
+<item id="no-indentation" h="No Indentation">
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Indent_style">Indentation</a> means
@@ -50,7 +67,9 @@ Code without indentation is harder to read and so should be avoided.
 lists several styles - pick one and follow it.
 </p>
 
-<h3 id="no-strict-and-warnings">No "use strict;" and "use warnings;"</h3>
+</item>
+
+<item id="no-strict-and-warnings" h="No &quot;use strict;&quot; and &quot;use warnings;&quot;">
 
 <p>
 All modern Perl code should have the "use strict;" and "use warnings;" pragmas
@@ -76,7 +95,9 @@ use strict;
 use warnings;
 </pre>
 
-<h3 id="open-function-style">Correct style for using the open function</h3>
+</item>
+
+<item id="open-function-style" h="Correct style for using the open function">
 
 <p>
 <a href="http://perldoc.perl.org/functions/open.html">The open function</a>
@@ -96,7 +117,9 @@ the ultimately <b>wrong</b>, insecure and/or outdated styles are:
 open INPUT, "&lt;$filename";
 </pre>
 
-<h3 id="calling-variables-file">Calling variables "file"</h3>
+</item>
+
+<item id="calling-variables-file" h="Calling variables &quot;file&quot;">
 
 <p>
 Some people call their variables "file". However, file can mean either
@@ -106,7 +129,9 @@ and one can use the abbreviations "fh" for file handle, or "fn" for filenames
 instead.
 </p>
 
-<h3 id="identifiers-without-underscores">Identifiers without underscores</h3>
+</item>
+
+<item id="identifiers-without-underscores" h="Identifiers without underscores">
 
 <p>
 Some people name their identifiers as several words all in lowercase and
@@ -134,7 +159,9 @@ Or maybe:
 my @names_list;
 </pre>
 
-<h3 id="prototypes">Don't use prototypes for subroutines</h3>
+</item>
+
+<item id="prototypes" h="Don't use prototypes for subroutines">
 
 <p>
 Some people are tempted to declare their subroutines using
@@ -149,7 +176,9 @@ at <cpan_self_dist d="Devel-Declare" /> from
 CPAN. But don't use prototypes.
 </p>
 
-<h3 id="ampersand-in-subroutine-calls">Ampersand in Subroutine Calls</h3>
+</item>
+
+<item id="ampersand-in-subroutine-calls" h="Ampersand in Subroutine Calls">
 
 <p>
 One should not call a subroutine using <tt>&amp;myfunc(@args)</tt> unless
@@ -157,7 +186,9 @@ you're sure that is what you want to do (like overriding prototypes). Normally
 saying <tt>myfunc(@args)</tt> is better.
 </p>
 
-<h3 id="assigning-from-dollar-underscore">Assigning from $_</h3>
+</item>
+
+<item id="assigning-from-dollar-underscore" h="Assigning from $_">
 
 <p>
 Some people write code like the following:
@@ -207,7 +238,9 @@ foreach my $user (@users)
 }
 </pre>
 
-<h3 id="foreach-lines">Using "foreach" on lines</h3>
+</item>
+
+<item id="foreach-lines" h="Using &quot;foreach&quot; on lines">
 
 <p>
 Some people may be tempted to write this code:
@@ -234,7 +267,9 @@ while (my $line = &lt;$my_file_handle&gt;)
 }
 </pre>
 
-<h3 id="string-notation">String Notation</h3>
+</item>
+
+<item id="string-notation" h="String Notation">
 
 <p>
 Perl has a flexible way to write strings and other delimiters, and you should
@@ -268,7 +303,9 @@ by any arbitrary delimiter notation: <tt>m{\A/home/sophie/perl}</tt>,
 <tt>q/My name is 'Jack' and I called my dog "Diego"./</tt>.
 </p>
 
-<h3 id="slurp">Slurping a file (i.e: Reading it all into memory)</h3>
+</item>
+
+<item id="slurp" h="Slurping a file (i.e: Reading it all into memory)">
 
 <p>
 One can see several bad ways to read a file into memory in Perl. Among them
@@ -316,7 +353,9 @@ sub _slurp
 }
 </pre>
 
-<h3 id="paragraphs">Write code in Paragraphs using Empty Lines</h3>
+</item>
+
+<item id="paragraphs" h="Write code in Paragraphs using Empty Lines">
 
 <p>
 If one of your blocks is long, split it into "code paragraphs", with empty
@@ -325,7 +364,9 @@ good idea to precede each paragraph with a comment explaining what it does, or
 to extract it into its own function or method.
 </p>
 
-<h3 id="io-socket">Use IO::Socket and friends instead of lower-level calls</h3>
+</item>
+
+<item id="io-socket" h="Use IO::Socket and friends instead of lower-level calls">
 
 <p>
 One should use <cpan_mod m="IO::Socket">the IO::Socket</cpan_mod> family of
@@ -335,7 +376,9 @@ lower-level socket()/connect()/bind()/etc. calls. As of this writing,
 to use the lowere-level API which is not recommended.
 </p>
 
-<h3 id="subroutine-arguments">Subroutine Arguments Handling</h3>
+</item>
+
+<item id="subroutine-arguments" h="Subroutine Arguments Handling">
 
 <p>
 The first thing to know about handling arguments for Subroutines is to avoid
@@ -462,7 +505,9 @@ send_email(
 );
 </pre>
 
-<h3 id="chop">Avoid using chop() to trim newlines characters from lines</h3>
+</item>
+
+<item id="chop" h="Avoid using chop() to trim newlines characters from lines">
 
 <p>
 Don't use <a href="http://perldoc.perl.org/functions/chop.html">the built-in
@@ -492,7 +537,9 @@ For more information see:
 </li>
 </ul>
 
-<h3 id="lowercase_modules_and_pkgs">Don't start Modules and Packages with a Lowercase Letter</h3>
+</item>
+
+<item id="lowercase_modules_and_pkgs" h="Don't start Modules and Packages with a Lowercase Letter">
 
 <p>
 Both modules and packages (the latter also known as namespaces) and all 
@@ -528,7 +575,9 @@ use warnings;
 1;
 </pre>
 
-<h3 id="indirect-object-notation">Avoid Indirect Object Notation</h3>
+</item>
+
+<item id="indirect-object-notation" h="Avoid Indirect Object Notation">
 
 <p>
 Don't use the so-called "Indirect-object notation" which can be seen in a lot
@@ -548,7 +597,9 @@ Instead use the <tt>MyClass-&gt;new(...)</tt> notation:
 my $new_object = MyClass-&gt;new(@params);
 </pre>
 
-<h3 id="dollar-dollar">$$myarray_ref[$idx] or $$myhash_ref{$key}</h3>
+</item>
+
+<item id="dollar-dollar" h="$$myarray_ref[$idx] or $$myhash_ref{$key}">
 
 <p>
 Don't write <tt>$$myarray_ref[$idx]</tt>, which is cluttered and can be easily
@@ -557,7 +608,9 @@ arrow operator - <tt>$myarray_ref-&gt;[$idx]</tt>. This also applies for
 hash references - <tt>$myhash_ref-&gt;{$key}</tt>.
 </p>
 
-<h3 id="c-style-for-loops">C-style for loops</h3>
+</item>
+
+<item id="c-style-for-loops" h="C-style for loops">
 
 <p>
 Some beginners to Perl tend to use C-style-for-loops to loop over an array's
@@ -614,7 +667,9 @@ An arbitrary C-style for loop can be replaced with a while loop with
 a <tt>continue</tt> block.
 </p>
 
-<h3 id="non-intrusive-commenting">Avoid Intrusive Commenting</h3>
+</item>
+
+<item id="non-intrusive-commenting" h="Avoid Intrusive Commenting">
 
 <p>
 Some commenting is too intrusive and interrupts the flow of reading the code.
@@ -641,7 +696,9 @@ one's code. POD has
 available on CPAN</a>, which may prove of use.
 </p>
 
-<h3 id="accessing_object_slots_directly">Accessing Object Slots Directly</h3>
+</item>
+
+<item id="accessing_object_slots_directly" h="Accessing Object Slots Directly">
 
 <p>
 Since <a href="$(ROOT)/topics/object-oriented/">Perl objects</a> are simple
@@ -676,7 +733,9 @@ As noted in the link, you can use one of CPAN's many accessor generators to
 generate accessors for you.
 </p>
 
-<h3 id="caret_and_dollar_sign_in_regexes">'^' and '$' in Regular Expressions</h3>
+</item>
+
+<item id="caret_and_dollar_sign_in_regexes" h="'^' and '$' in Regular Expressions">
 
 <p>
 Some people use "^" and "$" in regular expressions to mean
@@ -687,7 +746,9 @@ and <tt>\z</tt> for end-of-string always, and to specify the <tt>/m</tt> flag
 if one needs to use "^" and "$" for start/end of a line.
 </p>
 
-<h3 id="magic_numbers">Magic Numbers</h3>
+</item>
+
+<item id="magic_numbers" h="Magic Numbers">
 
 <p>
 Your code should not include <a href="http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Unnamed_numerical_constants">unnamed 
@@ -728,7 +789,9 @@ for my $i (0 .. $deck_size-1)
 but this is just for the sake of demonstration.).
 </p>
 
-<h3 id="vars_in_quotes">String Variables Enclosed in Double Quotes</h3>
+</item>
+
+<item id="vars_in_quotes" h="String Variables Enclosed in Double Quotes">
 
 <p>
 One can sometimes see people write code like that:
@@ -775,7 +838,9 @@ for example if they are objects with overloaded stringification. But this is
 the exception rather than the rule.
 </p>
 
-<h3 id="at-array-for-subscripting">@array[$idx] for array subscripting</h3>
+</item>
+
+<item id="at-array-for-subscripting" h="@array[$idx] for array subscripting">
 
 <p>
 Some newcomers to Perl 5 would be tempted to write <tt>@array[$index]</tt> 
@@ -788,7 +853,9 @@ use an array slice such as <tt>@array[@indexes]</tt> or
 be used in list context.
 </p>
 
-<h3 id="vars-a-and-b">Variables called $a and $b</h3>
+</item>
+
+<item id="vars-a-and-b" h="Variables called $a and $b">
 
 <p>
 One should not create lexical variables called <tt>$a</tt> and <tt>$b</tt>
@@ -814,7 +881,9 @@ Instead, use other single-letter variable names such as
 <tt>$x</tt> and <tt>$y</tt>, or better yet give more descriptive names.
 </p>
 
-<h3 id="flow-stmts-without-labels">Flow Control Statements Without an Explicit Label</h3>
+</item>
+
+<item id="flow-stmts-without-labels" h="Flow Control Statements Without an Explicit Label">
 
 <p>
 One can sometimes see flow-control statements such as 
@@ -837,6 +906,8 @@ while (my $line = &lt;&gt;)
     }
 }
 </pre>
+
+</item>
 
 </main_list>
 
