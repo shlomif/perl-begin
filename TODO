@@ -1,5 +1,7 @@
 * Add screenshots to the IDEs page and other relevant pages.
 
+* Update the uses/ and topics/ pages with the sub-pages.
+
 * Add to the page about best practices:
     - refactoring:
         - duplicate code.
@@ -44,8 +46,6 @@
 * Add a section about graphical debugger front-ends.
 
 * Add a page about modules.
-
-* Add a page about ssh/telnet.
 
 Long Term:
 ----------

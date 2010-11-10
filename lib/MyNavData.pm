@@ -245,6 +245,11 @@ my $tree_contents =
                     'url' => "uses/qa/",
                 },
                 {
+                    'text' => "SSH/Telnet",
+                    'url' => "uses/remote-login-and-commands/",
+                    'title' => "Remote login and execution of commands (SSH, Telnet, etc.)",
+                },
+                {
                     'text' => "Sys Admin",
                     'title' => "Using Perl for System Administration",
                     'url' => "uses/sys-admin/",

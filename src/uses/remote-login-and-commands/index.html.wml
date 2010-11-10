@@ -1,0 +1,51 @@
+#include '../template.wml'
+
+<latemp_subject "SSH, Telnet and Other Remote Login and Commands Execution Protocols in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+This page will describe how to use Perl to execute commands on remote
+hosts using common Internet protocols such as 
+<a href="http://en.wikipedia.org/wiki/Telnet">Telnet</a> or
+the more modern and more secure
+<a href="http://en.wikipedia.org/wiki/Secure_Shell">SSH (Secure Shell)</a>.
+We are getting asked about these things a lot.
+</p>
+
+<h2 id="telnet">Telnet</h2>
+
+<h3 id="Net-Telnet"><cpan_self_dist d="Net-Telnet" /></h3>
+
+<p>
+Net-Telnet allows one to run a Telnet session from within Perl and to interact
+with it.
+</p>
+
+<h2 id="ssh">SSH (Secure Shell)</h2>
+
+<p>
+In SSH, the CPAN landscape is somewhat more hazy with many alternatives. Some
+of the commonly mentioned ones are:
+</p>
+
+<ul>
+
+<li>
+<cpan_self_dist d="Net-SSH-Perl" />
+</li>
+
+<li>
+<cpan_self_dist d="Net-OpenSSH" />
+</li>
+
+<li>
+<cpan_self_dist d="Net-SSH2" />
+</li>
+
+</ul>
+
+<p>
+You should try some of them (or all of them) and see which one works the best 
+for you.
+</p>
