@@ -22,6 +22,10 @@
 =headers-pos
     :margin-left 40px
 
+=header-style
+    :color white
+    :text-shadow 1px 1px 3px black
+
 =side-box
     :border 1px solid #c8c8c8
     :padding 2pt 8pt
@@ -67,16 +71,14 @@ h1, h2, h3
             +headers-pos
 
             a
-                :background-color #008000
-                :color #fff
+                +header-style
                 :text-decoration none
                 :font-weight bold
 
     .site-slogan
+        +header-style
         :position absolute
         :top 70px
-        :background-color #008000
-        :color #e1e1e1
         :font-weight bold
         :font-size 1.3em
         +headers-pos
