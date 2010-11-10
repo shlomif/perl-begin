@@ -814,6 +814,30 @@ Instead, use other single-letter variable names such as
 <tt>$x</tt> and <tt>$y</tt>, or better yet give more descriptive names.
 </p>
 
+<h3 id="flow-stmts-without-labels">Flow Control Statements Without an Explicit Label</h3>
+
+<p>
+One can sometimes see flow-control statements such as 
+<pdoc_f f="next"><b>next</b></pdoc_f>, <pdoc_f f="last"><b>last</b></pdoc_f> or
+<pdoc_f f="redo"><b>redo</b></pdoc_f> used without an explicit label following 
+them, in which case they default to re-iterating or breaking out of the 
+innermost loop. However, this is inadvisable, because later on, one may modify
+the code to insert a loop in between the innermost loop and the flow control
+statement, which will break the code. So always append a label to "next",
+"last" and "redo" and label your loops accordingly: 
+</p>
+
+<pre>
+LINES:
+while (my $line = &lt;&gt;)
+{
+    if ($line =~ m{\A#})
+    {
+        next LINES;
+    }
+}
+</pre>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
