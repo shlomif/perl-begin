@@ -47,3 +47,4 @@ them and contribute.
 * Page about Bad Elements:
     - Array element: @array[$idx] instead of $array[$idx].
     - using $a and $b as variable names.
+    - last/next/redo/etc. without explicit LABELs.

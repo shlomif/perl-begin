@@ -29,7 +29,6 @@
     - modifying an array/hash while iterating over it.
     - qx/`....` instead of system().
         - also open.
-    - last/next/redo/etc. without explicit LABELs.
     - comments and identifiers in a foreign language. 
     - STDIN instead of ARGV.
     - abuse of $#array (like $#array + 1 for array length).
