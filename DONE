@@ -46,6 +46,11 @@ them and contribute.
 
 * Update the uses/ and topics/ pages with the sub-pages.
 
+
+* Credit tm604 about the CSS style tip.
+
+* Typo in src/links/index.html.wml - "Perlin".
+
 * Page about Bad Elements:
     - Array element: @array[$idx] instead of $array[$idx].
     - using $a and $b as variable names.

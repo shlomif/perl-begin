@@ -1,9 +1,5 @@
 * Add screenshots to the IDEs page and other relevant pages.
 
-* Typo in src/links/index.html.wml - "Perlin".
-
-* Credit tm604 about the CSS style tip.
-
 * Add to the page about best practices:
     - refactoring:
         - duplicate code.
