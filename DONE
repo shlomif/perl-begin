@@ -44,7 +44,10 @@ them and contribute.
 
 * Add a page about ssh/telnet.
 
+* Update the uses/ and topics/ pages with the sub-pages.
+
 * Page about Bad Elements:
     - Array element: @array[$idx] instead of $array[$idx].
     - using $a and $b as variable names.
     - last/next/redo/etc. without explicit LABELs.
+
