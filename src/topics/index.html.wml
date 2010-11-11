@@ -65,3 +65,11 @@ Scoping is Perl's way of making sure variables are localised and don't
 interfere with variables of the same name in different places (or alternatively,
 are not confused with different variables of similar names).
 </p>
+
+<h3 id="optimise"><a href="optimising-and-profiling/">Optimising and Profiling</a></h3>
+
+<p>
+How to make your Perl programs run faster.
+</p>
+
+
