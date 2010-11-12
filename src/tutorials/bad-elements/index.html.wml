@@ -918,6 +918,31 @@ while (my $line = &lt;&gt;)
 
 </item>
 
+<item id="abuse_of_array_last_index" h="($#array + 1) and Other Abuses of $#.">
+
+<p>
+The <tt>$#array</tt> notation gives the last index in <tt>@array</tt> and
+is always equal to the array length minus one. Some people use it to signify
+the length of the array:
+</p>
+
+<pre>
+\# Bad code:
+my @flags = ((0) x ($#names +1))
+</pre>
+
+<p>
+However this is unnecessary because one can better do it by evaluating
+<tt>@names</tt> in scalar context, possibly by saying <tt>scalar(@names)</tt>.
+</p>
+
+<pre>
+\# Better code.
+my @flags = ((0) x @names);
+</pre>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
