@@ -31,7 +31,6 @@
     - STDIN instead of ARGV.
     - interpolating strings directly into regex.
         - either comment that you want to accept a regex or use \Q and \E.
-    - $array[$#array] instead of $array[-1]
 
 * Link to Fomberg's Hebrew with Perl site.
 
