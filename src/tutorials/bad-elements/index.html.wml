@@ -943,6 +943,19 @@ my @flags = ((0) x @names);
 
 </item>
 
+<item id="last_elems_of_array" h="$array[$#array], $array[$#array-1], etc.">
+
+<p>
+One can sometimes see people references the last elements of arrays using
+notation such as <tt>$array[$#array]</tt>, <tt>$array[$#array-1]</tt>
+or even <tt>$array[scalar(@array)-1]</tt>. This duplicates the identifier
+and is error prone and there's a better way to do it in Perl using
+negative indexes. <tt>$array[-1]</tt> is the last element of the array,
+<tt>$array[-2]</tt> is the second-to-last, etc. 
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
