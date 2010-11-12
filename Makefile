@@ -20,7 +20,7 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-DOCS_COMMON_DEPS = template.wml lib/books.wml
+DOCS_COMMON_DEPS = template.wml 
 
 all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data
@@ -38,6 +38,9 @@ dest/learn/index.html: lib/why-perl.wml
 
 # upload: upload_hexten
 upload: upload_beta
+
+# Add a dependency on books.wml
+$(filter dest/books/%.html,$(BERLIOS_DOCS_DEST)) : lib/books.wml
 
 upload_berlios: all
 	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
