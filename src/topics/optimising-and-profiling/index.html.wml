@@ -91,7 +91,7 @@ Writing Code in a Faster Language</h3>
 If all else fails, then re-impelmenting the slow code in a faster language
 such as
 <a href="http://en.wikipedia.org/wiki/C_%28programming_language%29">C</a>
-or <a href=http://en.wikipedia.org/wiki/C%2B%2B"">C++</a> and embedding it
+or <a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> and embedding it
 inside Perl is an option. Here are some alternatives for writing extensions
 to Perl in C and other languages that are compiled to machine code:
 </p>

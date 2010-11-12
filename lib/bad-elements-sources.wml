@@ -8,7 +8,7 @@ also contains material for further reading:
 <ol>
 <li>
 <p>
-<a href="$(ROOT)/src/books/advanced/#pbp">The
+<a href="$(ROOT)/books/advanced/#pbp">The
 Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
 advice and food for thought, but sometimes should be deviated from.
 Also see the 
