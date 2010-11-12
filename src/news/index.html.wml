@@ -11,7 +11,7 @@ New Page about Bad Perl Elements and other new pages.</h2>
 <p>
 We've added a comprehensive and growing 
 <a href="$(ROOT)/tutorials/bad-elements/">"Perl Elements
-to Avoid"</a> with many Perl paradigms that you should know better than to
+to Avoid"</a> page with many Perl paradigms that you should know better than to
 incorporate into your code.
 </p>
 </li>
