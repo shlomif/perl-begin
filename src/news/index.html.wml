@@ -18,7 +18,7 @@ incorporate into your code.
 
 <li>
 <p>
-<a href="http://perl-begin.org/tutorials/impatient-perl/">"Impatient
+<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
 Perl"</a> was updated to the latest version.
 </p>
 </li>
