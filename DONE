@@ -55,4 +55,5 @@ them and contribute.
     - Array element: @array[$idx] instead of $array[$idx].
     - using $a and $b as variable names.
     - last/next/redo/etc. without explicit LABELs.
+    - Add a note about using $ARGV[0] and $ARGV[1].
 

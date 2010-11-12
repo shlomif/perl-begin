@@ -430,6 +430,15 @@ sub my_function
 }
 </pre>
 
+<p>
+The same thing holds for unpacking <tt>@ARGV</tt>, the array containing the 
+command-line arguments for a Perl program, or any other array. Don't use 
+<tt>$ARGV[0]</tt>, <tt>$ARGV[1]</tt> etc. directly, but instead unpack 
+<tt>@ARGV</tt> using the methods given above. For processing
+command line arguments, you should also consider using 
+<cpan_self_mod m="Getopt::Long" />.
+</p>
+
 <h4 id="clobbering-arrays-or-hashes">Don't clobber arrays or hashes</h4>
 
 <p>

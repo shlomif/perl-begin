@@ -32,7 +32,6 @@
     - abuse of $#array (like $#array + 1 for array length).
     - interpolating strings directly into regex.
         - either comment that you want to accept a regex or use \Q and \E.
-    - Add a note about using $ARGV[0] and $ARGV[1].
 
 * Link to Fomberg's Hebrew with Perl site.
 
