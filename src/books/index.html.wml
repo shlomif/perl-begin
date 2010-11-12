@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-#include "../lib/books.wml"
+#include "books.wml"
 
 <latemp_subject "Perl Books" />
 
