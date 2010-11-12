@@ -53,9 +53,25 @@ Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
+<h3><a href="http://www.onyxneon.com/books/modern_perl/index.html">Modern Perl</a></h3>
+
+<p>
+A book by chromatic, a well-known Perl programmer, writer and author, about
+how to write Perl 5 in a good and modern way. Covers from the basics up to
+doing object-oriented programming using Moose, and a bit beyond. I've read this
+book and can recommend it.
+</p>
+
+<book:info
+    authors="chromatic"
+    publisher="onyx"
+    isbn="0977920151"
+    />
+
 <define-tag beginning_perl_url whitespace="delete">
 http://www.perl.org/books/beginning-perl/
 </define-tag>
+
 
 <h3><a href="<beginning_perl_url />">Beginning Perl</a></h3>
 
