@@ -13,7 +13,7 @@ technologies then refer to the <a href="../topics/">topic-related books</a>.
 
 <h2 id="camel_book"><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl</a></h2>
 
-<book:info
+<book_info
     authors="Larry Wall, Tom Christiansen, Jon Orwant"
     publisher="oreilly"
     isbn="0596000278"
@@ -34,7 +34,7 @@ jokes.
 
 <h2 id="writing_for_cpan"><a href="http://www.apress.com/book/bookDisplay.html?bID=14">Writing Perl Modules for CPAN</a></h2>
 
-<book:info
+<book_info
     authors="Sam Tregar"
     publisher="apress"
     isbn="159059018X"
@@ -51,7 +51,7 @@ free download and reading.</a>
 
 <h2 id="oo_perl"><a href="http://www.manning.com/Conway/">Object-Oriented Perl</a></h2>
 
-<book:info
+<book_info
     authors="Damian Conway"
     publisher="manning"
     isbn="1884777791"
@@ -71,7 +71,7 @@ topic.
 
 <h2 id="cookbook"><a href="http://www.oreilly.com/catalog/perlckbk2/">The Perl Cookbook</a></h2>
 
-<book:info
+<book_info
     authors="Tom Christiansen, Nathan Torkington"
     publisher="oreilly"
     isbn="0596993137"
@@ -86,7 +86,7 @@ and also know how to accomplish many common tasks in Perl.
 
 <h2 id="hop"><a href="http://hop.perl.plover.com/">Higher-Order Perl</a></h2>
 
-<book:info
+<book_info
     authors="Mark Jason Dominus"
     publisher="morgan_kaufmann"
     isbn="1558607013"
@@ -104,7 +104,7 @@ tokenising, and parsing.
 <h2 id="pbp"><a href="http://oreilly.com/catalog/9780596001735/">Perl 
 Best Practices</a></h2>
 
-<book:info
+<book_info
     authors="Damian Conway"
     publisher="oreilly"
     isbn="0596001738"

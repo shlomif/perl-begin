@@ -1,4 +1,4 @@
-<define-tag get:ext:publisher whitespace="delete">
+<define-tag get_ext_publisher whitespace="delete">
 <ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
 <ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
 <ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
@@ -15,7 +15,7 @@
 <restore isbn title />
 </define-tag>
 
-<define-tag book:store>
+<define-tag book_store>
 <preserve isbn />
 <preserve store />
 <preserve title />
@@ -35,25 +35,25 @@
 <restore isbn />
 </define-tag>
 
-<define-tag book:info>
+<define-tag book_info>
 <preserve authors />
 <preserve publisher />
 <preserve isbn />
 <preserve perlbooksid />
 <preserve perlbookslink />
 <set-var %attributes />
-<set-var ext:publisher=<get:ext:publisher <get-var publisher /> /> />
+<set-var ext_publisher=<get_ext_publisher <get-var publisher /> /> />
 <set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />"><b>Book Page at books.perl.org</b></a><br />" />
 <div class="bookinfo">
 <h3>Book Information</h3>
 <b>Authors:</b> <get-var authors /><br />
-<b>Publisher:</b> <get-var ext:publisher /><br />
+<b>Publisher:</b> <get-var ext_publisher /><br />
 
 <if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
 <b>Buy From:</b> 
-<book:store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
-<book:store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
-<book:store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
+<book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
+<book_store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
+<book_store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
 <br />
 </div>
 <restore perlbookslink />

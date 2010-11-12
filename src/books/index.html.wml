@@ -27,7 +27,7 @@ each book.
 
 <h3><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
 
-<book:info 
+<book_info 
     authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
     publisher="oreilly" 
     isbn="0596101058" 
@@ -62,7 +62,7 @@ doing object-oriented programming using Moose, and a bit beyond. I've read this
 book and can recommend it.
 </p>
 
-<book:info
+<book_info
     authors="chromatic"
     publisher="onyx"
     isbn="0977920151"
@@ -75,7 +75,7 @@ http://www.perl.org/books/beginning-perl/
 
 <h3><a href="<beginning_perl_url />">Beginning Perl</a></h3>
 
-<book:info
+<book_info
     authors="James Lee"
     publisher="apress"
     isbn="159059391X"
@@ -96,7 +96,7 @@ The first edition of the book is
 
 <h3><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
 
-<book:info 
+<book_info 
     authors="Andrew L. Johnson" 
     publisher="manning" 
     isbn="1884777805"
@@ -136,7 +136,7 @@ to learn Perl quickly, and is available online for free download.
 
 <h3><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
 
-<book:info
+<book_info
     authors="Steve Oualline"
     publisher="new-riders"
     isbn="073571228X"
