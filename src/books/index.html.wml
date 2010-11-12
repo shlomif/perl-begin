@@ -106,7 +106,8 @@ Perl.
 
 <p>
 A book for people who need to learn Perl as soon as possible. Its full
-text is also available online for free download.
+text is also available online for free download. We have a
+<a href="$(ROOT)/tutorials/impatient-perl/">local mirror</a>.
 </p>
 
 <h3><a href="http://greenteapress.com/perl/">Learning Perl the Hard 
