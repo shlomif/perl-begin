@@ -32,7 +32,6 @@
     - interpolating strings directly into regex.
         - either comment that you want to accept a regex or use \Q and \E.
     - $array[$#array] instead of $array[-1]
-    - packages starting with lowercase letters.
 
 * Link to Fomberg's Hebrew with Perl site.
 
