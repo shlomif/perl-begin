@@ -956,6 +956,56 @@ negative indexes. <tt>$array[-1]</tt> is the last element of the array,
 
 </item>
 
+<item id="re_string_interpolate" h="Interpolating String into Regular Expressions">
+
+<p>
+One can often see people interpolate strings directly into regular expressions:
+</p>
+
+<pre>
+\# Bad code:
+
+my $username = shift(@ARGV);
+
+open my $pass_fh, '&lt;', '/etc/passswd'
+    or die "Cannot open /etc/passwd";
+
+PASSWD:
+while (my $line = &lt;$pass_fh&gt;)
+{
+    if ($line =~ m{\A$username}) \# Bad code here.
+    {
+        print "Your username is in /etc/passwd\n";
+        last PASSWD;
+    }
+}
+close($pass_fh);
+</pre>
+
+<p>
+The problem is that when a string is interpolated into a regular expression
+it is interpolated as a mini-regex, and special characters there behave like
+they do in a regular expression. So if I input <tt>'.*'</tt> into the command
+line in the program above, it will match all lines. This is a special case
+of <a href="http://community.livejournal.com/shlomif_tech/35301.html">code
+or markup injection</a>.
+</p>
+
+<p>
+The solution to this is to use \Q and \E to signify a 
+<pdoc_f f="quotemeta">quotemeta()</pdoc_f> portion that will treat the
+interpolated strings as plaintext with all the special characters escaped.
+So the line becomes: <tt>if ($line =~ m{\A\Q$username\E})</tt>.
+</p>
+
+<p>
+Alternatively, if you do intend to interpolate a sub-regex, signify this
+fact with a comment. And be careful with regular expressions that are accepted
+from user input.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
