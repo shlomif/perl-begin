@@ -1090,6 +1090,21 @@ is considered true. So always type <tt>return;</tt> to return false.
 
 </item>
 
+<item id="varvarname" h="&quot;Varvarname&quot; - Using a variable as another variable's name.">
+
+<p>
+Mark Jason Dominus has written about
+<a href="http://perl.plover.com/varvarname.html">varvarname - 
+"Why it's stupid to `use a variable as a variable name'"</a>, namely if
+<tt>$myvar</tt> is <tt>'foobar'</tt> they want to operate on the value of
+<tt>$foobar</tt>. While there are ways to achieve similar things in Perl,
+the best way is to use <a href="$(ROOT)/topics/hashes/">hashes</a> (possibly 
+pointing to complex records with more information) and lookup them by
+the string you want to use. Read the link by MJD for more information.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

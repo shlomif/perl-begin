@@ -11,7 +11,6 @@
     - Law of Demeter
     - leading underscores ("_") for non-API methods and functions.
     - print {$fh} @args instead of "print $fh @args" which is too easy to miss.
-    - varvarname - using a variable as a different variable's name.
     - http://www.stonehenge.com/merlyn/UnixReview/col52.html
         - $object->new() to create a new instance.
     - avoid using perlform - use Perl6::Form instead (also see the text
