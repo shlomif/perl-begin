@@ -19,7 +19,6 @@
         - $object->new() to create a new instance.
     - avoid using perlform - use Perl6::Form instead (also see the text
     generation page).
-    - don't overuse $_ - it's prune to errors.
     - C-style for loops.
     - Always label your loops.
     - Accessing the last element using $array[$#array] - use $array[-1]

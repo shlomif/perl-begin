@@ -60,4 +60,5 @@ them and contribute.
     - $array[$#array] instead of $array[-1]
     - interpolating strings directly into regex.
         - either comment that you want to inject a sub-regex or use \Q and \E.
+    - don't overuse $_ - it's prune to errors.
 

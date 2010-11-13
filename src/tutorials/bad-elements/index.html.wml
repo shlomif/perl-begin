@@ -1006,6 +1006,24 @@ from user input.
 
 </item>
 
+<item id="overuse_dollar_underscore" h="Overusing $_">
+
+<p>
+It's a good idea not to overuse <tt>$_</tt> because using it, especially in
+large scopes, is prone to errors, including many subtle ones. Most Perl
+operations support operating on other variables and you should use lexical
+variables with meaningful names instead of $_ whenever possible. 
+</p>
+
+<p>
+Some places where you have to use <tt>$_</tt> are <pdoc_f f="map">map</pdoc_f>
+<pdoc_f f="grep">grep</pdoc_f> and other functions like that, but even in
+that case it might be desirable to set a lexical variable to the value of
+<tt>$_</tt> right away: <tt>map { my $line = $_; ... } @lines</tt>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
