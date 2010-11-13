@@ -4,10 +4,6 @@
     - refactoring:
         - duplicate code.
         - long functions and methods.
-    - EEK 
-        - pass items from one subroutine to another.
-            - use objects.
-            - assign them to slots.
 
 * Link to Fomberg's Hebrew with Perl site.
 

@@ -1371,6 +1371,22 @@ is not advisable, and should be avoided.
 
 </item>
 
+<item id="delegating_parameter_passing" h="Passing parameters in delegation">
+
+<p>
+Sometimes we encounter a case where subroutines each pass the same parameter
+to one another in delegation, just because the innermost subroutines in the
+callstack need it.
+</p>
+
+<p>
+To avoid it, create a class, and declare methods that operate on the
+fields of the class, where you can assign the delegated arguments.
+</p>
+
+</item>
+
+
 </main_list>
 
 #include "bad-elements-sources.wml"

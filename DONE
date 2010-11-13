@@ -82,4 +82,8 @@ them and contribute.
     - http://www.stonehenge.com/merlyn/UnixReview/col52.html
         - $object->new() to create a new instance.
     - Law of Demeter
+    - EEK 
+        - pass items from one subroutine to another.
+            - use objects.
+            - assign them to slots.
 
