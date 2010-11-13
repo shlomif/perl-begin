@@ -58,6 +58,8 @@ them and contribute.
     - Add a note about using $ARGV[0] and $ARGV[1].
     - abuse of $#array (like $#array + 1 for array length).
     - $array[$#array] instead of $array[-1]
+    - Accessing the last element using $array[$#array] - use $array[-1]
+    instead.
     - interpolating strings directly into regex.
         - either comment that you want to inject a sub-regex or use \Q and \E.
     - don't overuse $_ - it's prune to errors.
