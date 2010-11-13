@@ -14,7 +14,6 @@
     - avoid using perlform - use Perl6::Form instead (also see the text
     generation page).
     - C-style for loops.
-    - comments and identifiers in a foreign language. 
 
 * Link to Fomberg's Hebrew with Perl site.
 

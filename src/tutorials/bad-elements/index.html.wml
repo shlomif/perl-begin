@@ -1232,6 +1232,68 @@ and assignment. So do that instead.
 </p>
 </item>
 
+<item id="code_in_foreign_lang" h="Comments and Identifiers in a Foreign Language">
+
+<p>
+Apparently, many non-native English speakers write code with comments and
+even identifiers in their native language. The problem with this is that
+programmers who do not speak that language will have a hard time understanding
+what is going on here, especially after the writers of the foreign language
+code post it in to an Internet forum in order to get help with it.
+</p>
+
+<p>
+Consider what Eric Raymond wrote in
+<a href="http://www.catb.org/~esr/faqs/hacker-howto.html#skills4">his
+"How to Become a Hacker" document</a> (where hacker is a software enthusiast
+and not a computer intruder):
+</p>
+
+<blockquote>
+<p>
+4. If you don't have functional English, learn it.
+</p>
+
+<p>
+As an American and native English-speaker myself, I have previously been
+reluctant to suggest this, lest it be taken as a sort of cultural imperialism.
+But several native speakers of other languages have urged me to point out that
+English is the working language of the hacker culture and the Internet, and
+that you will need to know it to function in the hacker community.
+</p>
+
+<p>
+Back around 1991 I learned that many hackers who have English as a second
+language use it in technical discussions even when they share a birth tongue;
+it was reported to me at the time that English has a richer technical
+vocabulary than any other language and is therefore simply a better tool for
+the job. For similar reasons, translations of technical books written in
+English are often unsatisfactory (when they get done at all).
+</p>
+
+<p>
+Linus Torvalds, a Finn, comments his code in English (it apparently never
+occurred to him to do otherwise). His fluency in English has been an important
+factor in his ability to recruit a worldwide community of developers for Linux.
+It's an example worth following.
+</p>
+
+<p>
+Being a native English-speaker does not guarantee that you have language skills
+good enough to function as a hacker. If your writing is semi-literate,
+ungrammatical, and riddled with misspellings, many hackers (including myself)
+will tend to ignore you. While sloppy writing does not invariably mean sloppy
+thinking, we've generally found the correlation to be strong — and we have no
+use for sloppy thinkers. If you can't yet write competently, learn to.
+</p>
+</blockquote>
+
+<p>
+So if you're posting code for public scrutiny, make sure it is written with
+English identifiers and comments.
+</p>
+
+</item>
 
 </main_list>
 
