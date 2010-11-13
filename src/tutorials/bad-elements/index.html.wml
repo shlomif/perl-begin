@@ -1392,6 +1392,15 @@ functionality into subroutines, methods and classes.
 
 </item>
 
+<item id="long_functions" h="Long Functions and Methods">
+
+<p>
+Another common code smell is long subroutines and methods. The solution to
+these is to extract several shorter methods out, with meaningful names.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
