@@ -1295,6 +1295,17 @@ English identifiers and comments.
 
 </item>
 
+<item id="perlform" h="Using perlform for formatting text.">
+
+<p>
+One should not use <tt>perlform</tt> for formatting text, because it makes
+use of global identifiers, and should use the 
+<cpan_self_dist d="Perl6-Form" /> CPAN distribution instead. Also see 
+our <a href="$(ROOT)/uses/text-generation/">text generation page</a> for
+more information. (Inspired by "Perl Best Practices").
+</p>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"

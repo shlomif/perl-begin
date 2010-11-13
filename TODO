@@ -11,8 +11,6 @@
     - Law of Demeter
     - http://www.stonehenge.com/merlyn/UnixReview/col52.html
         - $object->new() to create a new instance.
-    - avoid using perlform - use Perl6::Form instead (also see the text
-    generation page).
     - C-style for loops.
 
 * Link to Fomberg's Hebrew with Perl site.

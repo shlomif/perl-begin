@@ -74,4 +74,6 @@ them and contribute.
     - STDIN instead of ARGV.
     - modifying an array/hash while iterating over it.
     - comments and identifiers in a foreign language. 
+    - avoid using perlform - use Perl6::Form instead (also see the text
+    generation page).
 
