@@ -1105,6 +1105,47 @@ the string you want to use. Read the link by MJD for more information.
 
 </item>
 
+<item id="leading_underscores" h="Use Leading Underscores ('_') for Internal Methods and Functions">
+
+<p>
+When writing a module use leading underscores in identifiers of methods and
+functions to signify those that are: 1. Subject to change. 2. Are used
+internally by the module. 3. Should not be used from outside. By using
+<cpan_self_dist d="Pod-Coverage" /> one can make sure that the external API
+of the module is documented and it will skip the identifiers with leading
+underscores, that can be thought of as "private" ones.
+</p>
+
+<p>
+Here's an example:
+</p>
+
+<pre>
+package Math::SumOfSquares;
+
+use strict;
+use warnings;
+
+use List::Utils qw(sum);
+
+sub _square
+{
+    my $n = shift;
+
+    return $n * $n;
+}
+
+sub sum_of_squares
+{
+    my ($numbers) = @_;
+
+    return sum(map { _square($_) } @$numbers);
+}
+
+1;
+</pre>
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
