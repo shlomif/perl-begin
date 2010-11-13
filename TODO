@@ -8,7 +8,6 @@
         - pass items from one subroutine to another.
             - use objects.
             - assign them to slots.
-    - Law of Demeter
 
 * Link to Fomberg's Hebrew with Perl site.
 

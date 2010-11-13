@@ -1359,6 +1359,18 @@ Schwartz's post "Constructing Objects"</a> for providing the insight to this).
 
 </item>
 
+<item id="law_of_demeter" h="Law of Demeter">
+
+<p>
+See the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Wikipedia article
+about "Law of Demeter" for more information</a>. Namely, doing many nested
+method calls like 
+<tt>$self-&gt;get_employee('sophie')-&gt;get_address()-&gt;get_street()</tt>
+is not advisable, and should be avoided.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

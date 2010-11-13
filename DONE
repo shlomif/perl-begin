@@ -81,4 +81,5 @@ them and contribute.
         accept. They are shorter than the eqvuivalent while...continue loops.
     - http://www.stonehenge.com/merlyn/UnixReview/col52.html
         - $object->new() to create a new instance.
+    - Law of Demeter
 
