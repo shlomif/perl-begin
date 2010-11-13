@@ -62,4 +62,6 @@ them and contribute.
         - either comment that you want to inject a sub-regex or use \Q and \E.
     - don't overuse $_ - it's prune to errors.
     - Mixing tabs and spaces.
+    - qx/`....` instead of system().
+        - also open.
 

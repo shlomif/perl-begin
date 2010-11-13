@@ -1037,6 +1037,40 @@ code.
 
 </item>
 
+<item id="qx_for_command_execution" h="`...` or qx// for Executing Commands">
+
+<p>
+Some people are tempted to use backticks (<tt>`...</tt>) or <tt>qx/.../</tt>
+for executing commands for their side-effects. E.g:
+</p>
+
+<pre>
+\# Bad code:
+
+use strict;
+use warnings;
+
+my $temp_file = "tempfile.txt";
+
+`rm -f $temp_file`;
+</pre>
+
+<p>
+However, this is not idiomatic because <tt>`...`</tt> and <tt>qx/.../</tt> are
+used to trap a command's output and to return it as a big string or as a list
+of lines. It would be a better idea to use
+<pdoc_f f="system">system()</pdoc_f> or to seek more idiomatic Perl-based
+solutions on CPAN or in the Perl core (such as using
+<pdoc_f f="unlink">unlink()</pdoc_f> to delete a file in our case.).
+</p>
+
+<p>
+Some people even go and ask how to make the <tt>qx/.../</tt> output go to
+the screen, which is a clear indication that they want to use system().
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

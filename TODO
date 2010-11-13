@@ -23,8 +23,6 @@
     - Accessing the last element using $array[$#array] - use $array[-1]
     instead.
     - modifying an array/hash while iterating over it.
-    - qx/`....` instead of system().
-        - also open.
     - comments and identifiers in a foreign language. 
     - STDIN instead of ARGV.
 
