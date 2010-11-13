@@ -109,12 +109,17 @@ open my $input_fh, "&lt;", $input_filename
     or die "Could not open '$input_filename' - $!";
 </pre>
 
+<p>
 the ultimately <b>wrong</b>, insecure and/or outdated styles are:
+</p>
 
 <pre>
 \# Bareword filehandle (type glob), two arguments open (insecure) and no
 \# error handling
 open INPUT, "&lt;$filename";
+
+\# Also opens from $INPUT.
+open INPUT;
 </pre>
 
 </item>
