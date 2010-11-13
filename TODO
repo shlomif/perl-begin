@@ -30,7 +30,7 @@
     - comments and identifiers in a foreign language. 
     - STDIN instead of ARGV.
     - interpolating strings directly into regex.
-        - either comment that you want to accept a regex or use \Q and \E.
+        - either comment that you want to inject a sub-regex or use \Q and \E.
 
 * Link to Fomberg's Hebrew with Perl site.
 
