@@ -33,6 +33,14 @@ aims to show you what <b>not to do</b>.
 {#MAIN_LIST#:%body:##}
 </define-tag>
 
+<define-tag bad_code endtag="required">
+<pre class="bad_code">
+\# Bad code:
+
+%body
+</pre>
+</define-tag>
+
 {#MAIN_LIST#}
 
 <define-tag item endtag="required">
@@ -562,15 +570,14 @@ because modules and packages that start with a lowercase letter are
 reserved for pragmas. So this is bad:
 </p>
 
-<pre>
-\# Bad code!
+<bad_code>
 \# This is file person.pm
 package person;
 
 use strict;
 use warnings;
 1;
-</pre>
+</bad_code>
 
 <p>
 And this would be better:
@@ -598,10 +605,9 @@ Don't use the so-called "Indirect-object notation" which can be seen in a lot
 of old code and tutorials and is more prone to errors:
 </p>
 
-<pre>
-\# Bad code!
+<bad_code>
 my $new_object = new MyClass @params;
-</pre>
+</bad_code>
 
 <p>
 Instead use the <tt>MyClass-&gt;new(...)</tt> notation:
@@ -719,14 +725,13 @@ Since <a href="$(ROOT)/topics/object-oriented/">Perl objects</a> are simple
 references some programmers are tempted to access them directly: 
 </p>
 
-<pre>
-\# Bad code.
+<bad_code>
 $self-&gt;{'name'} = "John";
 print "I am ", $self-&gt;{'age'}, " years old\n";
 
 \# Or even (Really bad code:)
 $self-&gt;[NAME()] = "John";
-</pre>
+</bad_code>
 
 <p>
 However, this is sub-optimal as explained in
@@ -770,14 +775,13 @@ numerical constants also known as "magic numbers" or "magic constants"</a>.
 For example, there is one in this code to shuffle a deck of cards:
 </p>
 
-<pre>
-\# Bad code.
+<bad_code>
 for my $i (0 .. 51)
 {
     my $j = $i + int(rand(52-$i));
     @cards[$i,$j] = @cards[$j,$i];
 }
-</pre>
+</bad_code>
 
 <p>
 This code is bad because the meaning of 52 and 51 is not explained and they
@@ -811,8 +815,7 @@ but this is just for the sake of demonstration.).
 One can sometimes see people write code like that:
 </p>
 
-<pre>
-\# Bad code.
+<bad_code>
 my $name = shift(@ARGV);
 
 print "$name", \n";
@@ -821,7 +824,7 @@ if ("$name" =~ m{\At}i)
 {
     print "Your name begins with the letter 't'";
 }
-</pre>
+</bad_code>
 
 <p>
 However, it's not necessary to enclose $name in double quotes (i.e: 
@@ -879,16 +882,14 @@ because there are built-in-variables called that used for
 with:
 </p>
 
-<pre>
-\# Bad code:
-
+<bad_code>
 my ($a, $b) = @ARGV;
 .
 .
 .
 \# Won't work now.
 my @array = sort { length($a) &lt;=&gt; length($b) } @other_array; 
-</pre>
+</bad_code>
 
 <p>
 Instead, use other single-letter variable names such as 
@@ -931,10 +932,9 @@ is always equal to the array length minus one. Some people use it to signify
 the length of the array:
 </p>
 
-<pre>
-\# Bad code:
+<bad_code>
 my @flags = ((0) x ($#names +1))
-</pre>
+</bad_code>
 
 <p>
 However this is unnecessary because one can better do it by evaluating
@@ -967,9 +967,7 @@ negative indexes. <tt>$array[-1]</tt> is the last element of the array,
 One can often see people interpolate strings directly into regular expressions:
 </p>
 
-<pre>
-\# Bad code:
-
+<bad_code>
 my $username = shift(@ARGV);
 
 open my $pass_fh, '&lt;', '/etc/passswd'
@@ -985,7 +983,7 @@ while (my $line = &lt;$pass_fh&gt;)
     }
 }
 close($pass_fh);
-</pre>
+</bad_code>
 
 <p>
 The problem is that when a string is interpolated into a regular expression
@@ -1049,16 +1047,14 @@ Some people are tempted to use backticks (<tt>`...</tt>) or <tt>qx/.../</tt>
 for executing commands for their side-effects. E.g:
 </p>
 
-<pre>
-\# Bad code:
-
+<bad_code>
 use strict;
 use warnings;
 
 my $temp_file = "tempfile.txt";
 
 `rm -f $temp_file`;
-</pre>
+</bad_code>
 
 <p>
 However, this is not idiomatic because <tt>`...`</tt> and <tt>qx/.../</tt> are
@@ -1170,9 +1166,7 @@ curly braces (so-called "dative block"). (Inspired by "Perl Best Practices").
 One can write code while reading from STDIN:
 </p>
 
-<pre>
-\# Bad code:
-
+<bad_code>
 use strict;
 use warnings;
 
@@ -1187,7 +1181,7 @@ while (my $line = &lt;STDIN&gt;)
     }
     print $line;
 }
-</pre>
+</bad_code>
 
 <p>
 However, it is usually better to use <tt>ARGV</tt> instead of <tt>STDIN</tt>
@@ -1313,9 +1307,7 @@ more information. (Inspired by "Perl Best Practices").
 Sometimes you can see class constructors such as:
 </p>
 
-<pre>
-\# Bad code:
-
+<bad_code>
 sub new
 {
     my $proto = shift;
@@ -1323,7 +1315,7 @@ sub new
     my $self  = {};
     ...
 }
-</pre>
+</bad_code>
 
 <p>
 The problem here is that this allows one to do 
