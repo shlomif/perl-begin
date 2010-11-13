@@ -76,4 +76,7 @@ them and contribute.
     - comments and identifiers in a foreign language. 
     - avoid using perlform - use Perl6::Form instead (also see the text
     generation page).
+    - C-style for loops.
+        - rejected because it is a PBP-recommendation that we do not necessarily
+        accept. They are shorter than the eqvuivalent while...continue loops.
 
