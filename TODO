@@ -17,7 +17,6 @@
     - Always label your loops.
     - Accessing the last element using $array[$#array] - use $array[-1]
     instead.
-    - modifying an array/hash while iterating over it.
     - comments and identifiers in a foreign language. 
 
 * Link to Fomberg's Hebrew with Perl site.

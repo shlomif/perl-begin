@@ -1216,6 +1216,23 @@ while (my $line = &lt;&gt;)
 
 </item>
 
+<item id="modifying_iterated_array" h="Modifying arrays or hashes while iterating through them.">
+
+<p>
+Some people ask about how to add or remove elements to an existing array or
+hash when iterating over them using <tt>foreach</tt> and other loops. The
+answer to that is that Perl will likely not handle it too well, and it expects
+that during loops the keys of a data structure will remain constant. 
+</p>
+
+<p>
+The best way to achieve something similar is to populate a new array or hash
+during the loop by using <pdoc_f f="push">push()</pdoc_f> or a hash lookup
+and assignment. So do that instead.
+</p>
+</item>
+
+
 </main_list>
 
 #include "bad-elements-sources.wml"

@@ -70,4 +70,5 @@ them and contribute.
     - leading underscores ("_") for non-API methods and functions.
     - print {$fh} @args instead of "print $fh @args" which is too easy to miss.
     - STDIN instead of ARGV.
+    - modifying an array/hash while iterating over it.
 
