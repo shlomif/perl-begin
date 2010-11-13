@@ -9,11 +9,11 @@
 
 <p>
 Often when people ask for help with Perl code, they show Perl code that
-suffers from many bad or outdated elements. This is expected as there
+suffers from many bad or outdated elements. This is expected, as there
 are many bad Perl tutorials out there, and lots of bad code that people
-have learned from, but it is still not good. In order to not get "yelled at"
-for using these, here is the document of the bad elements that people
-tend to use and some better practices that should be used instead.
+have learned from, but it is still not desirable. In order to not get
+"yelled at" for using these, here is the document of the bad elements that
+people tend to use and some better practices that should be used instead.
 </p>
 
 <p>
