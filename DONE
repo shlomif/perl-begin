@@ -64,4 +64,6 @@ them and contribute.
     - Mixing tabs and spaces.
     - qx/`....` instead of system().
         - also open.
+    - Always add an explicit return from the subroutine.
+        - <<return 0;>> instead of <<return;>>
 

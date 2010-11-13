@@ -1071,6 +1071,25 @@ the screen, which is a clear indication that they want to use system().
 
 </item>
 
+<item id="explicit_return" h="No Explicit Returns">
+
+<p>
+As noted in "Perl Best Practices", all functions must have an explicit 
+<tt>return</tt> statement, as otherwise they implicitly return the last
+expression, which would be subject to change upon changing the code. If you
+don't want the subroutine to return anything (i.e: it's a so-called
+"procedure"), then write <tt>return;</tt> to always return a false value,
+which the caller won't be able to do anything meaningful with. 
+</p>
+
+<p>
+Another mistake is to write "return 0;" or "return undef;" to return
+false, because in list context, they will return a one-element list which
+is considered true. So always type <tt>return;</tt> to return false. 
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
