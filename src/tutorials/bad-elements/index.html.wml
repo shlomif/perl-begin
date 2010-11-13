@@ -1306,6 +1306,59 @@ more information. (Inspired by "Perl Best Practices").
 </p>
 
 </item>
+
+<item id="obj_new" h="Using $obj->new for object construction.">
+
+<p>
+Sometimes you can see class constructors such as:
+</p>
+
+<pre>
+\# Bad code:
+
+sub new
+{
+    my $proto = shift;
+    my $class = ref($proto) || $proto;
+    my $self  = {};
+    ...
+}
+</pre>
+
+<p>
+The problem here is that this allows one to do 
+<tt>$my_object_instance-&gt;new</tt> to create a new instance of the object,
+but many people will expect it to be invalid or to clone the object. So don't
+do that and instead write your constructors as:
+</p>
+
+<pre>
+\# Better code:
+
+sub new
+{
+    my $class = shift;
+    my $self  = {};
+    
+    bless $self, $class;
+    ...
+}
+</pre>
+
+<p>
+Which will disable it and will just allow 
+<tt>ref($my_object_instance)-&gt;new(...)</tt>. If you need a clone method,
+then code one called "clone()" and don't use "new" for that.
+</p>
+
+<p>
+(Thanks to 
+<a href="http://www.stonehenge.com/merlyn/UnixReview/col52.html">Randal L.
+Schwartz's post "Constructing Objects"</a> for providing the insight to this).
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

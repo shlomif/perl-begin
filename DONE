@@ -79,4 +79,6 @@ them and contribute.
     - C-style for loops.
         - rejected because it is a PBP-recommendation that we do not necessarily
         accept. They are shorter than the eqvuivalent while...continue loops.
+    - http://www.stonehenge.com/merlyn/UnixReview/col52.html
+        - $object->new() to create a new instance.
 

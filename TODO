@@ -9,8 +9,6 @@
             - use objects.
             - assign them to slots.
     - Law of Demeter
-    - http://www.stonehenge.com/merlyn/UnixReview/col52.html
-        - $object->new() to create a new instance.
 
 * Link to Fomberg's Hebrew with Perl site.
 
