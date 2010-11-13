@@ -19,7 +19,6 @@
     instead.
     - modifying an array/hash while iterating over it.
     - comments and identifiers in a foreign language. 
-    - STDIN instead of ARGV.
 
 * Link to Fomberg's Hebrew with Perl site.
 

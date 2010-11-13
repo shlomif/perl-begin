@@ -69,4 +69,5 @@ them and contribute.
     - varvarname - using a variable as a different variable's name.
     - leading underscores ("_") for non-API methods and functions.
     - print {$fh} @args instead of "print $fh @args" which is too easy to miss.
+    - STDIN instead of ARGV.
 

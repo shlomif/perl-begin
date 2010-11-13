@@ -1164,6 +1164,58 @@ curly braces (so-called "dative block"). (Inspired by "Perl Best Practices").
 
 </item>
 
+<item id="STDIN_instead_of_ARGV" h="Using STDIN instead of ARGV">
+
+<p>
+One can write code while reading from STDIN:
+</p>
+
+<pre>
+\# Bad code:
+
+use strict;
+use warnings;
+
+\# Strip comments.
+
+LINES:
+while (my $line = &lt;STDIN&gt;)
+{
+    if ($line =~ m{\A *#})
+    {
+        next LINES;
+    }
+    print $line;
+}
+</pre>
+
+<p>
+However, it is usually better to use <tt>ARGV</tt> instead of <tt>STDIN</tt>
+because it also allows processing the filenames from the command line. This 
+can also be achieved by simply saying <tt>&lt;&gt;</tt>. So the code becomes:
+</p>
+
+<pre>
+\# Better code:
+
+use strict;
+use warnings;
+
+\# Strip comments.
+
+LINES:
+while (my $line = &lt;&gt;)
+{
+    if ($line =~ m{\A *#})
+    {
+        next LINES;
+    }
+    print $line;
+}
+</pre>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
