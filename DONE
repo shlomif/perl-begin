@@ -86,4 +86,4 @@ them and contribute.
         - pass items from one subroutine to another.
             - use objects.
             - assign them to slots.
-
+    - duplicate code.

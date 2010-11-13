@@ -1378,6 +1378,19 @@ fields of the class, where you can assign the delegated arguments.
 
 </item>
 
+<item id="duplicate_code" h="Duplicate Code">
+
+<p>
+As noted in 
+<a href="http://www.shlomifish.org/philosophy/books-recommends/#refactoring">Martin 
+Fowler's "Refactoring"</a> book (but held as a fact for a long time
+beforehand), 
+<a href="http://en.wikipedia.org/wiki/Duplicate_code">duplicate code</a> is a 
+code smell, and should be avoided. The solution is to extract duplicate
+functionality into subroutines, methods and classes.
+</p>
+
+</item>
 
 </main_list>
 

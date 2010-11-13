@@ -2,7 +2,6 @@
 
 * Add to the page about best practices:
     - refactoring:
-        - duplicate code.
         - long functions and methods.
 
 * Link to Fomberg's Hebrew with Perl site.
