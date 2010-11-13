@@ -1024,6 +1024,19 @@ that case it might be desirable to set a lexical variable to the value of
 
 </item>
 
+<item id="mixing_tabs_and_spaces" h="Mixing Tabs and Spaces">
+
+<p>
+Some improperly configured text editors may be used to write code that, while 
+indented well at a certain tab size looks terrible on other tab sizes, due
+to a mixture of tabs and spaces. So either use tabs for indentation or make
+sure your tab key expands to a constant number of spaces. You may also wish
+to make use of <cpan_self_dist d="Perl-Tidy" /> to properly format your
+code.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
