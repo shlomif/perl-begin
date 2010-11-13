@@ -1151,6 +1151,19 @@ sub sum_of_squares
 </pre>
 </item>
 
+<item id="print_to_fh" h="print $fh @args">
+
+<p>
+It is preferable to write <tt>print {$write_fh} @args</tt>
+over <tt>print $write_fh @args</tt> because the latter can more easily be 
+mistaken for <tt>print $write_fh, @args</tt> (which does something different)
+and does not provide enough visual hints that you are writing to the 
+<tt>$write_fh</tt> filehandle. Therefore, always wrap the file-handle in
+curly braces (so-called "dative block"). (Inspired by "Perl Best Practices").
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
