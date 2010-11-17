@@ -961,7 +961,7 @@ negative indexes. <tt>$array[-1]</tt> is the last element of the array,
 
 </item>
 
-<item id="re_string_interpolate" h="Interpolating String into Regular Expressions">
+<item id="re_string_interpolate" h="Interpolating Strings into Regular Expressions">
 
 <p>
 One can often see people interpolate strings directly into regular expressions:
