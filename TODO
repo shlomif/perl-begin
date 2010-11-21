@@ -10,6 +10,7 @@
 
 * Page about Bad Elements:
     - using map instead of for/foreach/while (each) for its side-effects.
+    - using grep instead of first/any/all/etc or a hash lookup.
 
 Long Term:
 ----------
