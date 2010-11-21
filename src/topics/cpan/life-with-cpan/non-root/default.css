@@ -1,0 +1,341 @@
+/* $Id: default.css,v 1.47 2006/07/10 04:24:27 jmates Exp $
+
+The author disclaims all copyrights and releases this document into
+the public domain.
+
+*/
+
+body
+{
+	color: black;
+	background-color: white;
+	font-family: "Verdana", sans-serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.bodymain
+{
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+a:link
+{
+	color: #804000;
+	text-decoration: underline;
+}
+
+a:hover { text-decoration: none; }
+span:hover { text-decoration: none; }
+a:visited { color: #333; }
+
+.navlinks
+{
+	font-size: smaller;
+	font-weight: normal;
+	padding-top: 0.75em;
+	padding-right: 0.75em;
+	line-height: 2em;
+	float: right;
+	text-align: right;
+}
+
+.header
+{
+	background-color: #804000;
+	font-family: "Georgia", serif;
+	color: white;
+	border-bottom: thin solid black;
+	border-top: thin solid #804000;
+}
+
+.header a { color: white; }
+
+h1, h2, h3, h4, h5, h6
+{
+	font-style: normal;
+	font-weight: bold;
+}
+
+h1
+{
+	color: white;
+	/*	padding-top: 0.5em; */
+	padding-left: 0.5em;
+	font-size: xx-large;
+	line-height: normal;
+	text-shadow: #333 0 2px 3px;
+}
+
+h2 { font-size: x-large; }
+h3, h4, h5, h6 { font-size: large; }
+
+h2, h3, h4, h5, h6
+{
+	margin-top: 1em;
+	margin-bottom: 0em;
+}
+
+ol, ul
+{
+	padding: none;
+	max-width: 50em;
+}
+
+li
+{
+	padding-bottom: 0.66em;
+	padding-top: 0.33em;
+}
+
+.info, .note, .warn
+{
+	line-height: 1.5em;
+	padding: 0.5em;
+	max-width: 50em;
+}
+
+em
+{
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* switchup <em> under shell examples so different from <input> and shell commands */
+.data-shell em
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #000080;
+}
+
+.data em
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #000080;
+}
+
+.subsection
+{
+	font-weight: bold;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	line-height: 1.5em;
+}
+
+.warn
+{
+	border-color: red;
+	border-width: thin;
+	border-style: dashed;
+}
+
+.rbr
+{
+	color: #339900;
+	font-size: 75%;
+}
+
+/* data and similar require monospaced font that can be set bold/italic 
+without issues-- Courier for sure, so try it first */
+
+.data
+{
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	background-color: #efefef;
+	padding: 0.5em;
+	white-space: pre;
+	border-color: #999;
+	border-width: 1px;
+	border-style: solid;
+	clear: both;
+	max-width: 50em;
+}
+
+.data-shell
+{
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	background-color: #efefef;
+	padding: 0.5em;
+	white-space: pre;
+	border-color: #999;
+	border-width: 1px;
+	border-style: solid;
+	clear: both;
+	max-width: 50em;
+}
+
+/* for outdated stuff users need to see for reference */
+.old-line { text-decoration: line-through; }
+
+/* footer tag, goes at bottom of document */
+.footer
+{
+	clear: both;
+	padding: 0.5em;
+	margin-top: 2em;
+	padding-bottom: 200px;
+	border-top: 1px solid gray;
+	/*	font-family: "Courier", "Bitstream Vera Sans Mono", monospace; */
+	/*	font-size: smaller; */
+}
+
+/* comments in <data> blocks */
+.comment { font-style: italic; }
+
+/* stuff that a human would type in, presumably... */
+.input { font-weight: bold; }
+.shell { font-weight: bold; }
+kbd { font-weight: bold; }
+
+/* computer data markup */
+.code
+{
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.file
+{
+	color: #007a00;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.file-glob
+{
+	color: #007a00;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.cmd
+{
+	color: #606;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.cmd-arg
+{
+	color: #606;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.gui
+{
+	color: #C30;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	font-size: larger;
+}
+
+.host
+{
+	color: #003366;
+	font-size: larger;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+}
+
+.man
+{
+	font-size: larger;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+}
+
+.perl-pod
+{
+	font-size: larger;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+}
+
+.perl-func
+{
+	font-size: larger;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+}
+
+.perl-module
+{
+	font-size: larger;
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+}
+
+.book { text-decoration: underline; }
+
+/* KLUGE following is for the pastebot */
+pre
+{
+	font-family: "Courier", "Bitstream Vera Sans Mono", monospace;
+	background-color: white;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+	white-space: pre;
+	border-color: #B46116;
+	border-width: 1px;
+	border-style: dashed;
+	line-height: 1.3em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	clear: both;
+}
+
+.pd { color: #404080; }
+
+/* pod-text */
+.c { color: #404080; }
+
+/* comment */
+.cm { color: #800097; }
+
+/* comma */
+.co { color: #800097; }
+
+/* colon */
+.h { color: #804848; }
+
+/* here-doc-target */
+.hh { color: #800000; }
+
+/* here-doc-text */
+.q { color: #800000; }
+
+/* quote */
+.v { color: #800000; }
+
+/* v-string */
+.i { color: #008080; }
+
+/* identifier */
+.k { color: #0000FF; }
+
+/* keyword */
+.n { color: #E02020; }
+
+/* numeric */
+.m { color: #C00080; }
+
+/* subroutine */
+.j { color: #C00080; }
+
+/* label */
+.w { color: #C00080; }
+
+/* bareword */
+.p { color: #800080; }
+
+/* paren */
+.s { color: #800080; }
+
+/* structure */
+.sc { color: #800080; }
+
+/* semicolon */
+.pu { color: #C44800; }
+
+/* punctuation */
