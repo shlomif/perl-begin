@@ -1019,7 +1019,7 @@ variables with meaningful names instead of $_ whenever possible.
 </p>
 
 <p>
-Some places where you have to use <tt>$_</tt> are <pdoc_f f="map">map</pdoc_f>
+Some places where you have to use <tt>$_</tt> are <pdoc_f f="map">map</pdoc_f>,
 <pdoc_f f="grep">grep</pdoc_f> and other functions like that, but even in
 that case it might be desirable to set a lexical variable to the value of
 <tt>$_</tt> right away: <tt>map { my $line = $_; ... } @lines</tt>.
