@@ -58,6 +58,14 @@ tutorials for getting up to speed with many sujects.
 Collections of short, in-depth articles.
 </dd>
 
+<dt id="exercises">
+<a href="$(ROOT)/exercises">Exercises and Challenges</a>
+</dt>
+<dd>
+Collections of exercises and challenges to be solved by writing programs.
+Learn how to program by programming.
+</dd>
+
 </dl>
 
 <h2 id="get_help">How to Get Help?</h2>

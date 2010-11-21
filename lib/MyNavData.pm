@@ -157,6 +157,11 @@ my $tree_contents =
             'title' => "Lists of Frequently Asked Questions with Answers",
         },
         {
+            'url' => "exercises/",
+            'text' => "Exercises and Challenges",
+            'title' => "Links to Exercises and Challenges for Practice",
+        },
+        {
             'separator' => 1,
             'skip' => 1,
         },

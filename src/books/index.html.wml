@@ -25,7 +25,8 @@ each book.
 
 <h2 id="beginners">Books for Beginners</h2>
 
-<h3><a href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
+<h3 id="learning-perl"><a
+href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
 
 <book_info 
     authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
