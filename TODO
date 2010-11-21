@@ -8,6 +8,9 @@
 
 * Add a page about modules.
 
+* Page about Bad Elements:
+    - using map instead of for/foreach/while (each) for its side-effects.
+
 Long Term:
 ----------
 
