@@ -36,6 +36,18 @@ skinnable. However, it provides a high-level API with many convenient niceties,
 and is commonly available.
 </p>
 
+<h3 id="qt"><a href="http://techbase.kde.org/Development/Languages/Perl">Perl/Qt and Perl/KDE</a></h3>
+
+<p>
+Perl bindings to the <a href="http://qt.nokia.com/">portable Qt library</a>
+and the various libraries of <a href="http://www.kde.org/">KDE (the K Desktop
+Environment)</a>, which is written using it. The licence of the bindings
+is the <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GNU
+General Public License</a> which is incompatible with many publicly distributed
+non-open-source and open-source licences, but using it for programs for
+in-house use is OK.
+</p>
+
 <h2 id="gtk"><a href="http://gtk2-perl.sourceforge.net/">gtk2-perl</a></h2>
 
 <p>
