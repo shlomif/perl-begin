@@ -89,3 +89,4 @@ them and contribute.
     - refactoring:
         - long functions and methods.
         - duplicate code.
+    - using map instead of for/foreach/while (each) for its side-effects.

@@ -1403,6 +1403,44 @@ shorter methods out, with meaningful names.
 
 </item>
 
+<item id="map_instead_of_foreach" h="Using map instead of foreach for side-effects">
+
+<p>
+You shouldn't be using <pdoc_f f="map">map</pdoc_f> to iterate on a list
+instead of foreach if you're not interested in constructing a new list and
+all you are interested in are the side-effects. For example:
+</p>
+
+<bad_code>
+
+use strict;
+use warnings;
+
+map { print "Hello $_!\n"; } @ARGV;
+</bad_code>
+
+<p>
+Would be better written as:
+</p>
+
+<pre>
+
+
+use strict;
+use warnings;
+
+foreach my $name (@ARGV)
+{
+    print "Hello $name!\n";
+}
+</pre>
+
+<p>
+Which better conveys one's intention and may be a bit more efficient.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
