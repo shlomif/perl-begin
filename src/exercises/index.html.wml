@@ -67,3 +67,19 @@ some insights.
 <p>
 But remember to always try to solve it on your own first.
 </p>
+
+<h3 id="qotw"><a href="http://perl.plover.com/qotw/">Perl 
+Quiz of the Week</a></h3>
+
+<p>
+A now inactive series of challenges for solving using Perl that was started
+by Mark Jason Dominus. One can go over the archives of the mailing lists
+for some interesting problems to solve and their solutions.
+</p>
+
+<h3 id="P_99_problems"><a href="https://sites.google.com/site/prologsite/prolog-problems">P-99: Ninety Nine Prolog Problems</a></h3>
+
+<p>
+A list of 99 challenges with a focus on the Prolog programming language,
+but which can be solved using Perl.
+</p>
