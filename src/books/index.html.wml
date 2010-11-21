@@ -74,7 +74,7 @@ http://www.perl.org/books/beginning-perl/
 </define-tag>
 
 
-<h3><a href="<beginning_perl_url />">Beginning Perl</a></h3>
+<h3 id="beginning-perl"><a href="<beginning_perl_url />">Beginning Perl</a></h3>
 
 <book_info
     authors="James Lee"
