@@ -1441,6 +1441,26 @@ Which better conveys one's intention and may be a bit more efficient.
 
 </item>
 
+<item id="grep_instead_of_any" h="Using grep instead of any and friends">
+
+<p>
+Sometimes one can see people using <pdoc_f f="grep">grep</pdoc_f> to find
+the first matching element in an array, or whether such an element exists at
+all. However, grep is intended to extract <b>all</b> matching elements out
+of a list, not just the first one, and as a result will not stop until it
+finds them all. To remedy this look at either <tt>first()</tt> from
+<cpan_self_mod m="List::Util" /> (to find the first match) or 
+"any/all/notall/none" from <cpan_self_mod m="List::MoreUtils" /> (to find
+whether a single element exists). These better convey one's intention
+and may be more efficient because they stop on the first match.
+</p>
+
+<p>
+One should note that if one does such lookups often, then they should try
+to use a <a href="$(ROOT)/topics/hashes/">hash</a> instead. 
+</p>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"
