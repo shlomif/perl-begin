@@ -7,14 +7,14 @@ account</title><link rel="stylesheet" type="text/css" href="default.css"><meta
 name="MSSmartTagsPreventParsing" content="TRUE"></head><body
 xmlns:xlink="http://www.w3.org/1999/xlink"><div class="header"><div
 class="navlinks"><a
-href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Parent
+href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Parent
 Page</a></div><h1><a name="s">Using CPAN with a non-root
 account</a></h1></div><div class="subsection"><a
-href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s2">Configuration</a>
+href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s2">Configuration</a>
 | <a
-href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s3">Customize
+href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s3">Customize
 <tt class="code">@INC</tt></a></div><div class="bodymain"><p class="info"><a
-href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+href="http://search.cpan.org/perldoc/CPAN"
 title="Documentation on the CPAN Perl module"><tt
 class="perl-module">CPAN</tt></a>
  can be configured differently for each user, and can install modules to custom
@@ -25,28 +25,28 @@ class="perl-module">CPAN</tt></a>
  special applications that run as non-privileged accounts: simply adjust the
  installation paths to suit the software depot in question.</p><p
  class="info">Consult <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Life
+ href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Life
  with CPAN</a> for more information about the <a
- href="http://web.archive.org/web/20080621084008/http://www.cpan.org/">Comprehensive
+ href="http://www.cpan.org/">Comprehensive
  Perl Archive Network (CPAN)</a>. Consider also <a
- href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/local::lib"
+ href="http://search.cpan.org/perldoc/local::lib"
  title="Documentation on the local::lib Perl module"><tt
  class="perl-module">local::lib</tt></a> to bootsrap custom Perl module
  installation directories.</p><h2><a name="s2">Configuration</a></h2><ol
  class="enum"><li>Download the sample <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
  class="file">MyConfig.pm</tt></a>, and move it to <tt
  class="file">~/.cpan/CPAN/MyConfig.pm</tt>.</li><p class="data-shell">$
  <kbd>mkdir -p ~/.cpan/CPAN</kbd><br>$ <kbd>mv MyConfig.pm
  ~/.cpan/CPAN</kbd></p><li>Customize the <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
  class="file">MyConfig.pm</tt></a> file.<br>&nbsp;</li><ol
  class="enum"><li>Change all occurences of <tt class="code">HOMEDIRFIX</tt> to
  your home directory, for example <tt
  class="file">/home/username</tt>.<br>&nbsp;</li><li>Review the <tt
  class="code">makepl_arg</tt> arguments. For more information on the arguments,
  see <a
- href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/ExtUtils::MakeMaker"
+ href="http://search.cpan.org/perldoc/ExtUtils::MakeMaker"
  title="Documentation on the ExtUtils::MakeMaker Perl module"><tt
  class="perl-module">ExtUtils::MakeMaker</tt></a>.<br>&nbsp;</li><li>Check the
  paths to various commands (e.g. <tt class="cmd">wget</tt>), proxy settings for
@@ -54,12 +54,12 @@ class="perl-module">CPAN</tt></a>
  class="note">Be sure to remove the <tt class="code">UNINST=1</tt> option on
  <tt class="code">make_install_arg</tt> for any non-system-wide configuration
  as otherwise <a
- href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+ href="http://search.cpan.org/perldoc/CPAN"
  title="Documentation on the CPAN Perl module"><tt
  class="perl-module">CPAN</tt></a> will attempt to remove “shadowing” versions
  of the module installed for the site <tt class="cmd">perl</tt>, leading to
  error messages involving <tt class="code">forceunlink</tt>.</p><li>Test <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ href="http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
  class="file">MyConfig.pm</tt></a> for problems.</li><p class="data-shell">$
  <kbd>perl -c MyConfig.pm</kbd><br>MyConfig.pm syntax OK</p></ol><li>See below
  for the required <tt class="code">PERL5LIB</tt> settings to customize <tt
@@ -69,7 +69,7 @@ class="perl-module">CPAN</tt></a>
  shell.<br>&nbsp;</li><li>Test the new configuration.</li><p class="info">To
  ensure <tt class="file">Makefile</tt> are being generated with the proper
  paths, <tt class="cmd">make</tt> a module from the <a
- href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+ href="http://search.cpan.org/perldoc/CPAN"
  title="Documentation on the CPAN Perl module"><tt
  class="perl-module">CPAN</tt></a> shell, then review at the paths set in the
  resulting <tt class="file">Makefile</tt>.</p><p class="data-shell">cpan&gt;
@@ -96,14 +96,14 @@ class="perl-module">CPAN</tt></a>
  uses the <tt class="code">@INC</tt> variable to hold library directories,
  though this varible must not be edited directly. For more information on <tt
  class="code">@INC</tt>, consult <a
- href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlvar.html"
+ href="http://perldoc.perl.org/perlvar.html"
  title="Perl programmers reference for perlvar"><tt
  class="perl-pod">perlvar</tt></a> (overview of variable), <a
- href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlrun.html"
+ href="http://perldoc.perl.org/perlrun.html"
  title="Perl programmers reference for perlrun"><tt
  class="perl-pod">perlrun</tt></a> (command line arguments and environment
  variables), or <a
- href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/lib"
+ href="http://search.cpan.org/perldoc/lib"
  title="Documentation on the lib Perl module"><tt
  class="perl-module">lib</tt></a> (<tt class="code">use lib</tt> pragma). Under
  a Bourne shell (such as <tt class="cmd">zsh</tt>), use the following to set
@@ -112,24 +112,24 @@ class="perl-module">CPAN</tt></a>
  PERL5LIB=${PERL5LIB:+$PERL5LIB:}$HOME/lib/perl5<br>fi<br>MANPATH=${MANPATH:+$MANPATH:}$HOME/share/man<br>export
  MANPATH PERL5LIB</p><p class="info">Code running under Taint mode may require
  the <a
- href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/lib.html"><tt
+ href="http://perldoc.perl.org/lib.html"><tt
  class="code">use lib</tt></a> statement: see <a
- href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlsec.html"
+ href="http://perldoc.perl.org/perlsec.html"
  title="Perl programmers reference for perlsec"><tt
  class="perl-pod">perlsec</tt></a> for details. Other applications may include
  different methods of setting custom environment setting, such as <tt
  class="code">SetEnv</tt> under <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/howto/apache/">Apache</a>:</p><p
+ href="http://web.archive.org/howto/apache/">Apache</a>:</p><p
  class="data">SetEnv PERL5LIB /home/username/lib/perl5:/sw/lib/perl5</p><div
  class="footer"><a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/"><img
+ href="http://web.archive.org/"><img
  style="float: right; margin-top: 1em; margin-right: 1em; margin-bottom: 5em;"
  src="Using%20CPAN%20with%20a%20non-root%20account_files/sial.html" width="64"
  height="64"></a><p>The author disclaims all copyrights and releases this
  document into the public domain.</p><p><a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/contact/">Questions
+ href="http://web.archive.org/contact/">Questions
  or comments about this page?</a> Current ruminations available on <a
- href="http://web.archive.org/web/20080621084008/http://web.archive.org/blog/">my
+ href="http://web.archive.org/blog/">my
  blog</a>
 
    <!-- base
