@@ -1,20 +1,144 @@
-<!--?xml version="1.0"?-->
-<html lang="en-US"><head xmlns:xlink="http://www.w3.org/1999/xlink">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Using CPAN with a non-root account</title><link rel="stylesheet" type="text/css" href="Using%20CPAN%20with%20a%20non-root%20account_files/default.css"><meta name="MSSmartTagsPreventParsing" content="TRUE"></head><body xmlns:xlink="http://www.w3.org/1999/xlink"><div class="header"><div class="navlinks"><a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Parent Page</a></div><h1><a name="s">Using CPAN with a non-root account</a></h1></div><div class="subsection"><a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s2">Configuration</a> | <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s3">Customize <tt class="code">@INC</tt></a></div><div class="bodymain"><p class="info"><a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN" title="Documentation on the CPAN Perl module"><tt class="perl-module">CPAN</tt></a>
- can be configured differently for each user, and can install modules to
- custom areas on a system. The sample configuration below installs 
-modules under <tt class="file">~/lib/perl5</tt>, man pages under <tt class="file">~/share/man</tt>
- and (hopefully) everything else under the home directory. This approach
- also works for individual software trees required for special 
-applications that run as non-privileged accounts: simply adjust the 
-installation paths to suit the software depot in question.</p><p class="info">Consult <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Life with CPAN</a> for more information about the <a href="http://web.archive.org/web/20080621084008/http://www.cpan.org/">Comprehensive Perl Archive Network (CPAN)</a>. Consider also <a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/local::lib" title="Documentation on the local::lib Perl module"><tt class="perl-module">local::lib</tt></a> to bootsrap custom Perl module installation directories.</p><h2><a name="s2">Configuration</a></h2><ol class="enum"><li>Download the sample <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt class="file">MyConfig.pm</tt></a>, and move it to <tt class="file">~/.cpan/CPAN/MyConfig.pm</tt>.</li><p class="data-shell">$ <kbd>mkdir -p ~/.cpan/CPAN</kbd><br>$ <kbd>mv MyConfig.pm ~/.cpan/CPAN</kbd></p><li>Customize the <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt class="file">MyConfig.pm</tt></a> file.<br>&nbsp;</li><ol class="enum"><li>Change all occurences of <tt class="code">HOMEDIRFIX</tt> to your home directory, for example <tt class="file">/home/username</tt>.<br>&nbsp;</li><li>Review the <tt class="code">makepl_arg</tt> arguments. For more information on the arguments, see <a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/ExtUtils::MakeMaker" title="Documentation on the ExtUtils::MakeMaker Perl module"><tt class="perl-module">ExtUtils::MakeMaker</tt></a>.<br>&nbsp;</li><li>Check the paths to various commands (e.g. <tt class="cmd">wget</tt>), proxy settings for your environment, the <tt class="code">urllist</tt>, and the shell.</li><p class="note">Be sure to remove the <tt class="code">UNINST=1</tt> option on <tt class="code">make_install_arg</tt> for any non-system-wide configuration as otherwise <a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN" title="Documentation on the CPAN Perl module"><tt class="perl-module">CPAN</tt></a> will attempt to remove “shadowing” versions of the module installed for the site <tt class="cmd">perl</tt>, leading to error messages involving <tt class="code">forceunlink</tt>.</p><li>Test <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt class="file">MyConfig.pm</tt></a> for problems.</li><p class="data-shell">$ <kbd>perl -c MyConfig.pm</kbd><br>MyConfig.pm syntax OK</p></ol><li>See below for the required <tt class="code">PERL5LIB</tt> settings to customize <tt class="code">@INC</tt>,
- if installing modules that depend on previously installed modules. Be 
-sure to load the changes into your shell environment before running <tt class="cmd">cpan</tt>, or to close and reopen your shell.<br>&nbsp;</li><li>Test the new configuration.</li><p class="info">To ensure <tt class="file">Makefile</tt> are being generated with the proper paths, <tt class="cmd">make</tt> a module from the <a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN" title="Documentation on the CPAN Perl module"><tt class="perl-module">CPAN</tt></a> shell, then review at the paths set in the resulting <tt class="file">Makefile</tt>.</p><p class="data-shell">cpan&gt; <kbd>make Text::Autoformat</kbd><br>…<br>cpan&gt; <kbd>look Text::Autoformat</kbd><br>…<br>$ <kbd>less Makefile</kbd><br>$ <kbd>grep /home/username Makefile</kbd><br>SITELIBEXP = /home/username/lib/perl5<br>PREFIX = /home/username/<br>INSTALLPRIVLIB = /home/username/lib/perl5<br>INSTALLSITELIB = /home/username/lib/perl5<br>INSTALLVENDORLIB = /home/username/lib/perl5<br>INSTALLARCHLIB = /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLSITEARCH = /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLVENDORARCH = /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLMAN1DIR = /home/username/share/man/man1<br>INSTALLSITEMAN1DIR = /home/username/share/man/man1<br>INSTALLMAN3DIR = /home/username/share/man/man3<br>INSTALLSITEMAN3DIR = /home/username/share/man/man3<br>$ <kbd>exit</kbd></p><p class="info">If the <tt class="file">Makefile</tt> has the wrong path set for any variables, update the <tt class="code">makepl_arg</tt> arguments in <tt class="file">MyConfig.pm</tt> to set these variables to install to the proper custom location.</p></ol><h2><a name="s3">Customize <tt class="code">@INC</tt></a></h2><p class="info">Perl must be made aware of the custom <tt class="file">/home/username/lib/perl5</tt> library directory. Perl uses the <tt class="code">@INC</tt> variable to hold library directories, though this varible must not be edited directly. For more information on <tt class="code">@INC</tt>, consult <a href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlvar.html" title="Perl programmers reference for perlvar"><tt class="perl-pod">perlvar</tt></a> (overview of variable), <a href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlrun.html" title="Perl programmers reference for perlrun"><tt class="perl-pod">perlrun</tt></a> (command line arguments and environment variables), or <a href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/lib" title="Documentation on the lib Perl module"><tt class="perl-module">lib</tt></a> (<tt class="code">use lib</tt> pragma). Under a Bourne shell (such as <tt class="cmd">zsh</tt>), use the following to set <tt class="code">PERL5LIB</tt> and <tt class="code">MANPATH</tt> environment variables.</p><p class="data">if [ -d $HOME/lib/perl5 ]; then<br>  PERL5LIB=${PERL5LIB:+$PERL5LIB:}$HOME/lib/perl5<br>fi<br>MANPATH=${MANPATH:+$MANPATH:}$HOME/share/man<br>export MANPATH PERL5LIB</p><p class="info">Code running under Taint mode may require the <a href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/lib.html"><tt class="code">use lib</tt></a> statement: see <a href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlsec.html" title="Perl programmers reference for perlsec"><tt class="perl-pod">perlsec</tt></a> for details. Other applications may include different methods of setting custom environment setting, such as <tt class="code">SetEnv</tt> under <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/howto/apache/">Apache</a>:</p><p class="data">SetEnv PERL5LIB /home/username/lib/perl5:/sw/lib/perl5</p><div class="footer"><a href="http://web.archive.org/web/20080621084008/http://web.archive.org/"><img style="float: right; margin-top: 1em; margin-right: 1em; margin-bottom: 5em;" src="Using%20CPAN%20with%20a%20non-root%20account_files/sial.html" width="64" height="64"></a><p>The author disclaims all copyrights and releases this document into the public domain.</p><p><a href="http://web.archive.org/web/20080621084008/http://web.archive.org/contact/">Questions or comments about this page?</a> Current ruminations available on <a href="http://web.archive.org/web/20080621084008/http://web.archive.org/blog/">my blog</a>
+<?xml version="1.0" encoding="utf-8" ?> 
+<html lang="en-US"> 
+<head xmlns:xlink="http://www.w3.org/1999/xlink">
+<meta http-equiv="content-type"
+content="text/html; charset=UTF-8"><title>Using CPAN with a non-root
+account</title><link rel="stylesheet" type="text/css" href="default.css"><meta
+name="MSSmartTagsPreventParsing" content="TRUE"></head><body
+xmlns:xlink="http://www.w3.org/1999/xlink"><div class="header"><div
+class="navlinks"><a
+href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Parent
+Page</a></div><h1><a name="s">Using CPAN with a non-root
+account</a></h1></div><div class="subsection"><a
+href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s2">Configuration</a>
+| <a
+href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/non-root/#s3">Customize
+<tt class="code">@INC</tt></a></div><div class="bodymain"><p class="info"><a
+href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+title="Documentation on the CPAN Perl module"><tt
+class="perl-module">CPAN</tt></a>
+ can be configured differently for each user, and can install modules to custom
+ areas on a system. The sample configuration below installs modules under <tt
+ class="file">~/lib/perl5</tt>, man pages under <tt
+ class="file">~/share/man</tt> and (hopefully) everything else under the home
+ directory. This approach also works for individual software trees required for
+ special applications that run as non-privileged accounts: simply adjust the
+ installation paths to suit the software depot in question.</p><p
+ class="info">Consult <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/">Life
+ with CPAN</a> for more information about the <a
+ href="http://web.archive.org/web/20080621084008/http://www.cpan.org/">Comprehensive
+ Perl Archive Network (CPAN)</a>. Consider also <a
+ href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/local::lib"
+ title="Documentation on the local::lib Perl module"><tt
+ class="perl-module">local::lib</tt></a> to bootsrap custom Perl module
+ installation directories.</p><h2><a name="s2">Configuration</a></h2><ol
+ class="enum"><li>Download the sample <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ class="file">MyConfig.pm</tt></a>, and move it to <tt
+ class="file">~/.cpan/CPAN/MyConfig.pm</tt>.</li><p class="data-shell">$
+ <kbd>mkdir -p ~/.cpan/CPAN</kbd><br>$ <kbd>mv MyConfig.pm
+ ~/.cpan/CPAN</kbd></p><li>Customize the <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ class="file">MyConfig.pm</tt></a> file.<br>&nbsp;</li><ol
+ class="enum"><li>Change all occurences of <tt class="code">HOMEDIRFIX</tt> to
+ your home directory, for example <tt
+ class="file">/home/username</tt>.<br>&nbsp;</li><li>Review the <tt
+ class="code">makepl_arg</tt> arguments. For more information on the arguments,
+ see <a
+ href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/ExtUtils::MakeMaker"
+ title="Documentation on the ExtUtils::MakeMaker Perl module"><tt
+ class="perl-module">ExtUtils::MakeMaker</tt></a>.<br>&nbsp;</li><li>Check the
+ paths to various commands (e.g. <tt class="cmd">wget</tt>), proxy settings for
+ your environment, the <tt class="code">urllist</tt>, and the shell.</li><p
+ class="note">Be sure to remove the <tt class="code">UNINST=1</tt> option on
+ <tt class="code">make_install_arg</tt> for any non-system-wide configuration
+ as otherwise <a
+ href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+ title="Documentation on the CPAN Perl module"><tt
+ class="perl-module">CPAN</tt></a> will attempt to remove “shadowing” versions
+ of the module installed for the site <tt class="cmd">perl</tt>, leading to
+ error messages involving <tt class="code">forceunlink</tt>.</p><li>Test <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/web/20080621084008/http://sial.org/howto/perl/life-with-cpan/MyConfig.pm"><tt
+ class="file">MyConfig.pm</tt></a> for problems.</li><p class="data-shell">$
+ <kbd>perl -c MyConfig.pm</kbd><br>MyConfig.pm syntax OK</p></ol><li>See below
+ for the required <tt class="code">PERL5LIB</tt> settings to customize <tt
+ class="code">@INC</tt>, if installing modules that depend on previously
+ installed modules. Be sure to load the changes into your shell environment
+ before running <tt class="cmd">cpan</tt>, or to close and reopen your
+ shell.<br>&nbsp;</li><li>Test the new configuration.</li><p class="info">To
+ ensure <tt class="file">Makefile</tt> are being generated with the proper
+ paths, <tt class="cmd">make</tt> a module from the <a
+ href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/CPAN"
+ title="Documentation on the CPAN Perl module"><tt
+ class="perl-module">CPAN</tt></a> shell, then review at the paths set in the
+ resulting <tt class="file">Makefile</tt>.</p><p class="data-shell">cpan&gt;
+ <kbd>make Text::Autoformat</kbd><br>…<br>cpan&gt; <kbd>look
+ Text::Autoformat</kbd><br>…<br>$ <kbd>less Makefile</kbd><br>$ <kbd>grep
+ /home/username Makefile</kbd><br>SITELIBEXP =
+ /home/username/lib/perl5<br>PREFIX = /home/username/<br>INSTALLPRIVLIB =
+ /home/username/lib/perl5<br>INSTALLSITELIB =
+ /home/username/lib/perl5<br>INSTALLVENDORLIB =
+ /home/username/lib/perl5<br>INSTALLARCHLIB =
+ /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLSITEARCH =
+ /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLVENDORARCH =
+ /home/username/lib/perl5/darwin-thread-multi-2level<br>INSTALLMAN1DIR =
+ /home/username/share/man/man1<br>INSTALLSITEMAN1DIR =
+ /home/username/share/man/man1<br>INSTALLMAN3DIR =
+ /home/username/share/man/man3<br>INSTALLSITEMAN3DIR =
+ /home/username/share/man/man3<br>$ <kbd>exit</kbd></p><p class="info">If the
+ <tt class="file">Makefile</tt> has the wrong path set for any variables,
+ update the <tt class="code">makepl_arg</tt> arguments in <tt
+ class="file">MyConfig.pm</tt> to set these variables to install to the proper
+ custom location.</p></ol><h2><a name="s3">Customize <tt
+ class="code">@INC</tt></a></h2><p class="info">Perl must be made aware of the
+ custom <tt class="file">/home/username/lib/perl5</tt> library directory. Perl
+ uses the <tt class="code">@INC</tt> variable to hold library directories,
+ though this varible must not be edited directly. For more information on <tt
+ class="code">@INC</tt>, consult <a
+ href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlvar.html"
+ title="Perl programmers reference for perlvar"><tt
+ class="perl-pod">perlvar</tt></a> (overview of variable), <a
+ href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlrun.html"
+ title="Perl programmers reference for perlrun"><tt
+ class="perl-pod">perlrun</tt></a> (command line arguments and environment
+ variables), or <a
+ href="http://web.archive.org/web/20080621084008/http://search.cpan.org/perldoc/lib"
+ title="Documentation on the lib Perl module"><tt
+ class="perl-module">lib</tt></a> (<tt class="code">use lib</tt> pragma). Under
+ a Bourne shell (such as <tt class="cmd">zsh</tt>), use the following to set
+ <tt class="code">PERL5LIB</tt> and <tt class="code">MANPATH</tt> environment
+ variables.</p><p class="data">if [ -d $HOME/lib/perl5 ]; then<br>
+ PERL5LIB=${PERL5LIB:+$PERL5LIB:}$HOME/lib/perl5<br>fi<br>MANPATH=${MANPATH:+$MANPATH:}$HOME/share/man<br>export
+ MANPATH PERL5LIB</p><p class="info">Code running under Taint mode may require
+ the <a
+ href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/lib.html"><tt
+ class="code">use lib</tt></a> statement: see <a
+ href="http://web.archive.org/web/20080621084008/http://perldoc.perl.org/perlsec.html"
+ title="Perl programmers reference for perlsec"><tt
+ class="perl-pod">perlsec</tt></a> for details. Other applications may include
+ different methods of setting custom environment setting, such as <tt
+ class="code">SetEnv</tt> under <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/howto/apache/">Apache</a>:</p><p
+ class="data">SetEnv PERL5LIB /home/username/lib/perl5:/sw/lib/perl5</p><div
+ class="footer"><a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/"><img
+ style="float: right; margin-top: 1em; margin-right: 1em; margin-bottom: 5em;"
+ src="Using%20CPAN%20with%20a%20non-root%20account_files/sial.html" width="64"
+ height="64"></a><p>The author disclaims all copyrights and releases this
+ document into the public domain.</p><p><a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/contact/">Questions
+ or comments about this page?</a> Current ruminations available on <a
+ href="http://web.archive.org/web/20080621084008/http://web.archive.org/blog/">my
+ blog</a>
 
-   <!-- base href="http://sial.org.wstub.archive.org/howto/perl/life-with-cpan/non-root/" -->
+   <!-- base
+        href="http://sial.org.wstub.archive.org/howto/perl/life-with-cpan/non-root/"
+        -->
 
 .
-      </p><p><tt>$Id: index.xml,v 1.6 2007/12/11 03:05:00 jmates Exp $</tt></p></div></div>
+      </p><p><tt>$Id: index.xml,v 1.6 2007/12/11 03:05:00 jmates Exp
+      $</tt></p></div></div>
 
 
 
@@ -24,35 +148,21 @@ sure to load the changes into your shell environment before running <tt class="c
 <script language="Javascript">
 <!--
 
-// FILE ARCHIVED ON 20080621084008 AND RETRIEVED FROM THE
-// INTERNET ARCHIVE ON 20101121191648.
-// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-// SECTION 108(a)(3)).
+// FILE ARCHIVED ON 20080621084008 AND RETRIEVED FROM THE // INTERNET ARCHIVE
+ON 20101121191648.  // JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT
+INTERNET ARCHIVE.  // ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17
+U.S.C.  // SECTION 108(a)(3)).
 
    var sWayBackCGI = "http://web.archive.org/web/20080621084008/";
 
-   function xResolveUrl(url) {
-      var image = new Image();
-      image.src = url;
-      return image.src;
-   }
-   function xLateUrl(aCollection, sProp) {
-      var i = 0;
-      for(i = 0; i < aCollection.length; i++) {
-         var url = aCollection[i][sProp];         if (typeof(url) == "string") { 
-          if (url.indexOf("mailto:") == -1 &&
-             url.indexOf("javascript:") == -1
-             && url.length > 0) {
-            if(url.indexOf("http") != 0) {
-                url = xResolveUrl(url);
-            }
-            url = url.replace('.wstub.archive.org','');
-            aCollection[i][sProp] = sWayBackCGI + url;
-         }
-         }
-      }
-   }
+   function xResolveUrl(url) { var image = new Image(); image.src = url; return
+   image.src; } function xLateUrl(aCollection, sProp) { var i = 0; for(i = 0; i
+   < aCollection.length; i++) { var url = aCollection[i][sProp];         if
+   (typeof(url) == "string") { if (url.indexOf("mailto:") == -1 &&
+   url.indexOf("javascript:") == -1 && url.length > 0) { if(url.indexOf("http")
+   != 0) { url = xResolveUrl(url); } url =
+   url.replace('.wstub.archive.org',''); aCollection[i][sProp] = sWayBackCGI +
+   url; } } } }
 
    xLateUrl(document.getElementsByTagName("IMG"),"src");
    xLateUrl(document.getElementsByTagName("A"),"href");
@@ -64,26 +174,17 @@ sure to load the changes into your shell environment before running <tt class="c
    xLateUrl(document.getElementsByTagName("EMBED"),"src");
    xLateUrl(document.getElementsByTagName("BODY"),"background");
    xLateUrl(document.getElementsByTagName("TD"),"background");
-   xLateUrl(document.getElementsByTagName("INPUT"),"src");
-   var forms = document.getElementsByTagName("FORM");
-   if (forms) {
-       var j = 0;
-       for (j = 0; j < forms.length; j++) {
-              f = forms[j];
-              if (typeof(f.action)  == "string") {
-                 if(typeof(f.method)  == "string") {
-                     if(typeof(f.method) != "post") {
-                        f.action = sWayBackCGI + f.action;
-                     }
-                  }
-              }
-        }
-    }
+   xLateUrl(document.getElementsByTagName("INPUT"),"src"); var forms =
+   document.getElementsByTagName("FORM"); if (forms) { var j = 0; for (j = 0; j
+   < forms.length; j++) { f = forms[j]; if (typeof(f.action)  == "string") {
+   if(typeof(f.method)  == "string") { if(typeof(f.method) != "post") {
+   f.action = sWayBackCGI + f.action; } } } } }
 
 
-//-->
-</script>
+//--> </script>
 
-</body><!-- SOME META URL'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK MACHINE
-OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF THE SESSION. --><!-- SOME LINK HREF'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK MACHINE
-OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF THE SESSION. --></html>
+</body><!-- SOME META URL'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK
+MACHINE OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF
+THE SESSION. --><!-- SOME LINK HREF'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE
+WAYBACK MACHINE OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL
+INTEGRITY OF THE SESSION. --></html>
