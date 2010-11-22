@@ -47,3 +47,6 @@ Allows one to assign code to be executed on individual lines in the program.
 This allows to use it instead of adding print's to the code, which later need
 to be removed.
 </p>
+
+#include "gui_db.wml"
+

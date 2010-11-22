@@ -118,3 +118,6 @@ has a <cpan_dist d="tidyview">frontend
 called tidyview</cpan_dist> that allows one to visually customise the style and
 view the results.
 </p>
+
+#include "gui_db.wml"
+

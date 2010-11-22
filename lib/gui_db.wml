@@ -1,0 +1,34 @@
+# This file contains the information about the graphical debugger front-ends.
+
+<h2 id="gui-debugger">Graphical Debugger Front-ends</h2>
+
+<p>
+While not full-fledged IDEs, these tools are useful as graphical debugger
+front-ends.
+</p>
+
+<ul>
+
+<li>
+<p>
+<cpan_self_dist d="Devel-ptkdb" /> - a Perl/Tk based graphical debugger. Was
+not maintained since 2004, but may still get the job done.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.gnu.org/software/ddd/">GNU DDD (The Data Display 
+Debugger)</a> - a Motif-based graphical front-end to several debuggers 
+including the perl debugger.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://curtmckelvey.tripod.com/perldbgui/">perldbgui</a> - another
+Perl/Tk GUI for the Perl debugger. Stuck at DR-1.
+</p>
+</li>
+
+</ul>
