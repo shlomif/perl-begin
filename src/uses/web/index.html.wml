@@ -66,6 +66,20 @@ interested in developing web applications quickly you should look at
 
 <h2 id="interfaces">Interfaces</h2>
 
+<h3 id="plack"><a href="http://plackperl.org/">Plack/PSGI</a></h3>
+
+<blockquote>
+<p>
+PSGI is an interface between Perl web applications and web servers, and Plack
+is a Perl module and toolkit that contains PSGI middleware, helpers and
+adapters to web servers.
+</p>
+</blockquote>
+
+<p>
+Using Plack and PSGI is more recommended than using the old CGI.pm interface.
+</p>
+
 <h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
 
 <p>

@@ -114,3 +114,5 @@ them and contribute.
     - 99 Problems in Lisp
     - Perl Quiz-of-the-Week
 
+* Add Plack/PSGI to src/uses/web/index.html.wml.
+
