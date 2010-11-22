@@ -116,3 +116,5 @@ them and contribute.
 
 * Add Plack/PSGI to src/uses/web/index.html.wml.
 
+* Fix the other links in the life-with-cpan.
+
