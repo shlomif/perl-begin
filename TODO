@@ -4,5 +4,8 @@
 
 * Fix the other links in the life-with-cpan.
 
+* Add Plack/PSGI to src/uses/web/index.html.wml.
+
 Long Term:
 ----------
+
