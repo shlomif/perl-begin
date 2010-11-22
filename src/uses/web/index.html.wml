@@ -38,20 +38,30 @@ In the Wiki.
 
 <h2 id="frameworks">Web Frameworks</h2>
 
-<h3><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
-
-<p>
-CGI::Application is a lightweight and flexible MVC framework for web
-application development. It doesn't give as much as more complex frameworks,
-but is still useful for organising your code and using templates.
-</p>
-
 <h3><a href="http://www.catalystframework.org/">Catalyst</a></h3>
 
 <p>
 A flexible web framework for Perl, with many useful modules for it on
 CPAN, that provide interfaces to many other modules. After learning it,
 one can build web applications with ease.
+</p>
+
+<h3 id="dancer"><a href="http://perldancer.org/">Dancer</a></h3>
+
+<p>
+A micro web development framework for Perl that is succinct and flexible
+and allows writing small or quick-and-dirty web applications with ease.
+It started as a Perl port of the Ruby micro-framework 
+<a href="http://www.sinatrarb.com/">Sinatra</a>.
+</p>
+
+<h3><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
+
+<p>
+CGI::Application is an older attempt at a web development framework for
+Perl, but is likely no longer recommended and is showing its age. If you're
+interested in developing web applications quickly you should look at
+<a href="#dancer">Dancer</a> instead.
 </p>
 
 <h2 id="interfaces">Interfaces</h2>
