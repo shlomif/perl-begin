@@ -1,5 +1,11 @@
 * Add a page about modules.
 
+* Pick up a better gvim colour scheme for the example code in the
+perl-for-newbies lecture.
+
+* Syntaxhighlight the examples in the other code excerpts in the site (especially
+the src/tutorials/bad-elements/ ).
+
 Long Term:
 ----------
 
