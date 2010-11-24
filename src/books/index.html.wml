@@ -54,7 +54,7 @@ Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
-<h3><a href="http://www.onyxneon.com/books/modern_perl/index.html">Modern Perl</a></h3>
+<h3 id="modern-perl"><a href="http://www.onyxneon.com/books/modern_perl/index.html">Modern Perl</a></h3>
 
 <p>
 A book by chromatic, a well-known Perl programmer, writer and author, about
@@ -95,7 +95,7 @@ The first edition of the book is
 <a href="<beginning_perl_url />">available online for free download</a>.
 </p>
 
-<h3><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
+<h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
 
 <book_info 
     authors="Andrew L. Johnson" 
@@ -119,7 +119,7 @@ at least one other programming language besides Perl, who would like to learn
 Perl.
 </p>
 
-<h3><a href="http://www.greglondon.com/iperl/">Impatient Perl</a></h3>
+<h3 id="impatient-perl"><a href="http://www.greglondon.com/iperl/">Impatient Perl</a></h3>
 
 <p>
 A book for people who need to learn Perl as soon as possible. Its full
@@ -127,7 +127,7 @@ text is also available online for free download. We have a
 <a href="$(ROOT)/tutorials/impatient-perl/">local mirror</a>.
 </p>
 
-<h3><a href="http://greenteapress.com/perl/">Learning Perl the Hard 
+<h3 id="hard-way"><a href="http://greenteapress.com/perl/">Learning Perl the Hard 
 Way</a></h3>
 
 <p>
@@ -135,7 +135,7 @@ Also intended for people who are already familiar with programming, and want
 to learn Perl quickly, and is available online for free download.
 </p>
 
-<h3><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
+<h3 id="perl-for-c"><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
 
 <book_info
     authors="Steve Oualline"

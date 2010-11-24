@@ -2,6 +2,7 @@
 #include "beginning-perl.wml"
 #include "perl-for-newbies.wml"
 #include "modules-pdocs.wml"
+#include "modern-perl-book.wml"
 
 <latemp_subject "Perl Modules and Packages" />
 
@@ -51,6 +52,12 @@ from a very low level and how they work behind the scenes.
 </p>
 
 </perl_for_newbies_entry>
+
+<modern_perl_entry>
+
+Covers modules.
+
+</modern_perl_entry>
 
 <modules_and_objects_perldocs />
 

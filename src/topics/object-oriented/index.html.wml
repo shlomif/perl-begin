@@ -1,6 +1,7 @@
 #include '../template.wml'
 #include "beginning-perl.wml"
 #include "perl-for-newbies.wml"
+#include "modern-perl-book.wml"
 #include "modules-pdocs.wml"
 
 <latemp_subject "Object Oriented Programming in Perl" />
@@ -37,6 +38,12 @@ links.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
+
+<modern_perl_entry>
+
+Has an "Objects" chapter.
+
+</modern_perl_entry>
 
 <beginning_perl_entry>
 
