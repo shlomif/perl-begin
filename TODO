@@ -6,6 +6,11 @@ perl-for-newbies lecture.
 * Syntaxhighlight the examples in the other code excerpts in the site (especially
 the src/tutorials/bad-elements/ ).
 
+* Page about bad elements:
+    - The FileHandle module.
+    - include/do/eval "$file_contents" instead of using a module.
+        - pre-req - the modules page.
+
 Long Term:
 ----------
 
