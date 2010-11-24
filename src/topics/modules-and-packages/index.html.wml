@@ -1,0 +1,75 @@
+#include '../template.wml'
+#include "beginning-perl.wml"
+#include "perl-for-newbies.wml"
+#include "modules-pdocs.wml"
+
+<latemp_subject "Perl Modules and Packages" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Perl Modules and Perl Packages are two closely related, but independent subjects
+that enable writing more reusable and more modular code. Furthermore, packages
+are the basis of Perl's <a href="$(ROOT)/topics/object-oriented/">Object
+Oriented Programming</a>.
+</p>
+
+<h3 id="modules">Modules</h3>
+
+<p>
+Modules allow to put some reusable Perl code into its own file, which can then
+be loaded from any Perl program, or from different module. One can then call
+subroutines from these modules or even import them into the current scope.
+</p>
+
+<h3 id="packages">Packages</h3>
+
+<p>
+Packages are known as namespaces in other languages, and are Perl's way of
+making sure not all symbols live in the same place. One can create an arbitrary
+number of packages in Perl and they can be nested. It is a good idea that
+the package and module names will correspond to avoid confusion.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<beginning_perl_entry>
+
+<p>
+Chapter 10 of this of this book for Perl beginners (including absolute
+beginners) covers modules. This book was written by one of the foremost
+Perl experts.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The third talk in the series explains modules and packages in detail, although
+from a very low level and how they work behind the scenes.
+</p>
+
+</perl_for_newbies_entry>
+
+<modules_and_objects_perldocs />
+
+# TODO : Add Modern Perl.
+
+<h2 id="cpan"><a href="$(ROOT)/topics/cpan/">CPAN</a></h2>
+
+<p>
+CPAN stands for the <b>Comprehensive Perl Archive Network</b> and is a
+repository of many re-usable, open-source, modules that can be used in one's
+Perl code. See the link for more information.
+</p>
+
+<h2 id="useful_tech">Useful Technologies</h2>
+
+<h3 id="sub_exporter"><cpan_self_dist d="Sub-Exporter" /></h3>
+
+<p>
+An alternative to the built-in Exporter.pm module which is much more powerful
+and easier to use.
+</p>
+

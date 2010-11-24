@@ -1,6 +1,7 @@
 #include '../template.wml'
 #include "beginning-perl.wml"
 #include "perl-for-newbies.wml"
+#include "modules-pdocs.wml"
 
 <latemp_subject "Object Oriented Programming in Perl" />
 
@@ -84,4 +85,8 @@ These are the Perldoc OOP tutorials that ship with Perl:
 </li>
 
 </ul>
+
+<modules_and_objects_perldocs />
+
+# TODO : Add Modern Perl.
 

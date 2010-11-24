@@ -22,6 +22,13 @@ Follow the link to learn how to effectively use CPAN.
 When bugs occur, learn how to find their cause and correct them effectively.
 </p>
 
+<h3 id="modules"><a href="modules-and-packages">Modules and Packages</a></h3>
+
+<p>
+Enacpsulate code in reusable units, and make sure symbols live in their own
+namespaces. The precursor for <a href="#oop">Object-Oriented Programming</a>.
+</p>
+
 <h3 id="oop"><a href="object-oriented/">Object-Oriented Programming (OOP) in Perl</a></h3>
 
 <p>

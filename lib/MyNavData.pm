@@ -303,6 +303,11 @@ my $tree_contents =
                     'title' => "Hashes / Associative Arrays for Mapping Keys to Values",
                 },
                 {
+                    'text' => "Modules and Packages",
+                    'url' => "topics/modules-and-packages/",
+                    'title' => "Encapsulate code in reusable units and use namespaces effectively.",
+                },
+                {
                     'text' => "References",
                     'url' => "topics/references/",
                     'title' => "Perl References",
