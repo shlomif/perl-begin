@@ -1,6 +1,5 @@
 #include '../template.wml'
 #include "tut_blocks.wml"
-#include "modules-pdocs.wml"
 
 <latemp_subject "Object Oriented Programming in Perl" />
 

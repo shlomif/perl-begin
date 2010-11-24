@@ -1,5 +1,4 @@
 #include '../template.wml'
-#include "modules-pdocs.wml"
 #include "tut_blocks.wml"
 
 <latemp_subject "Perl Modules and Packages" />
