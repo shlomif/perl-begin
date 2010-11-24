@@ -1,6 +1,4 @@
 #include '../template.wml'
-#include "beginning-perl.wml"
-#include "perl-for-newbies.wml"
 
 <latemp_subject "Optimising and Profiling Perl Code" />
 

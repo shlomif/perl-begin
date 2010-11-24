@@ -1,0 +1,25 @@
+<define-tag modern_perl_entry endtag="required">
+
+<h3 id="modern_perl"><a href="$(ROOT)/books/#modern-perl">Modern Perl
+(the Book)</a></h3>
+
+%body
+
+</define-tag>
+
+<define-tag beginning_perl_entry endtag="required">
+
+<h3 id="beginning_perl"><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
+
+%body
+
+</define-tag>
+
+<define-tag perl_for_newbies_entry endtag="required">
+
+<h3 id="perl_for_newbies"><a href="$(ROOT)/tutorials/perl-for-newbies/">Perl for Perl 
+Newbies Series</a></h3>
+
+%body
+</define-tag>
+

@@ -1,6 +1,6 @@
 #include '../template.wml'
-#include "beginning-perl.wml"
-#include "perl-for-newbies.wml"
+
+#include "tut_blocks.wml"
 
 <latemp_subject "Perl Hashes (a.k.a Associative Arrays or Maps)" />
 

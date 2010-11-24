@@ -1,8 +1,0 @@
-<define-tag modern_perl_entry endtag="required">
-
-<h3 id="modern_perl"><a href="$(ROOT)/books/#modern-perl">Modern Perl
-(the Book)</a></h3>
-
-%body
-
-</define-tag>

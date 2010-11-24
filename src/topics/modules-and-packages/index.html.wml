@@ -1,8 +1,6 @@
 #include '../template.wml'
-#include "beginning-perl.wml"
-#include "perl-for-newbies.wml"
 #include "modules-pdocs.wml"
-#include "modern-perl-book.wml"
+#include "tut_blocks.wml"
 
 <latemp_subject "Perl Modules and Packages" />
 

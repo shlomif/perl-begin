@@ -1,11 +1,3 @@
-<define-tag perl_for_newbies_entry endtag="required">
-
-<h3 id="perl_for_newbies"><a href="$(ROOT)/tutorials/perl-for-newbies/">Perl for Perl 
-Newbies Series</a></h3>
-
-%body
-</define-tag>
-
 <define-tag perl_for_newbies_tutorial_page>
 <preserve idx />
 <set-var %attributes />
