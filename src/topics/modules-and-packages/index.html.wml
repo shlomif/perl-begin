@@ -8,18 +8,18 @@
 <h2 id="intro">Introduction</h2>
 
 <p>
-Perl Modules and Perl Packages are two closely related, but independent subjects
-that enable writing more reusable and more modular code. Furthermore, packages
-are the basis of Perl's <a href="$(ROOT)/topics/object-oriented/">Object
-Oriented Programming</a>.
+Perl Modules and Perl Packages are two closely related - but independent -
+subjects that enable writing more reusable and more modular code. Furthermore,
+packages are the basis of Perl's
+<a href="$(ROOT)/topics/object-oriented/">Object Oriented Programming</a>.  
 </p>
 
 <h3 id="modules">Modules</h3>
 
 <p>
-Modules allow to put some reusable Perl code into its own file, which can then
-be loaded from any Perl program, or from different module. One can then call
-subroutines from these modules or even import them into the current scope.
+Modules allow you to put some reusable Perl code into its own file, which can
+then be loaded from any Perl program, or from a different module. One can then
+call subroutines from these modules or even import them into the current scope.
 </p>
 
 <h3 id="packages">Packages</h3>
