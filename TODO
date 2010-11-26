@@ -5,8 +5,6 @@ perl-for-newbies lecture.
 the src/tutorials/bad-elements/ ).
 
 * Page about bad elements:
-    - include/do/eval "$file_contents" instead of using a module.
-        - pre-req - the modules page.
     - global variables as an interface to a module.
 
 Long Term:

@@ -127,3 +127,6 @@ them and contribute.
 
 * Bad elements page:
     - The FileHandle module.
+    - include/do/eval "$file_contents" instead of using a module.
+        - pre-req - the modules page.
+

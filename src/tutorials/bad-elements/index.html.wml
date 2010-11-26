@@ -1471,6 +1471,34 @@ family of modules instead.
 </p>
 
 </item>
+
+<item id="file_includes" h="&quot;Including&quot; files instead of using Modules">
+
+<p>
+We are often asked how one can "include" a file in a Perl program (similar
+to <a href="http://php.net/manual/en/function.include.php">PHP's include</a>
+or <a href="http://ss64.com/bash/period.html">the shell's 
+"source" or "." operators</a>. The answer is that the better way is to extract
+the common functionality from all the programs into 
+<a href="$(ROOT)/topics/modules-and-packages/">modules</a> and load them by
+using "use" or "require".
+</p>
+
+<p>
+Note that <pdoc_f f="do">do</pdoc_f> can be used to evaluate a file (but in
+a different scope), but it's almost always not needed. 
+</p>
+
+<p>
+Some people are looking to supply a common configuration to their programs
+as global variables in the included files, and those people should look at
+CPAN configration modules such as <cpan_self_dist d="Config-IniFiles" />
+or <a href="http://search.cpan.org/search?query=json&amp;mode=all">the
+various JSON modules</a> for the ability to read configuration files
+in a safer and better way.
+</p>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"
