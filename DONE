@@ -125,3 +125,5 @@ them and contribute.
 * Add a recommendation to read Modern Perl in the various topical pages.
     - create a tag for that.
 
+* Bad elements page:
+    - The FileHandle module.

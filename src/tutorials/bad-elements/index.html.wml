@@ -1461,6 +1461,16 @@ to use a <a href="$(ROOT)/topics/hashes/">hash</a> instead.
 </p>
 
 </item>
+
+<item id="FileHandle_module" h="Using the FileHandle Module">
+
+<p>
+The FileHandle module is old and bad, and should not be used. One should
+use the <a href="http://perldoc.perl.org/IO/Handle.html">IO::Handle</a>
+family of modules instead.
+</p>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"
