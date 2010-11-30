@@ -6,6 +6,8 @@ the src/tutorials/bad-elements/ ).
 
 * Page about bad elements:
     - global variables as an interface to a module.
+    - declaring all variables at the top of the file, instead of when they
+    are first used, and in the innermost scope.
 
 Long Term:
 ----------
