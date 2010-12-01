@@ -1513,6 +1513,33 @@ about object oriented programming in Perl</a>.
 
 </item>
 
+<item id="declaring_all_vars_at_top" h="Declaring all variables at the top">
+
+<p>
+Some inexperienced Perl programmers, possibly by influence from languages
+such as C, like to declare all variables used by the program at the top of
+the program or the relevant subroutines. Like so:
+</p>
+
+<bad_code>
+my $first_name;
+my $last_name;
+my $address;
+my @people;
+my %cities;
+.
+.
+.
+</bad_code>
+
+<p>
+However, this is bad form in Perl, and the preferable way is to declare all
+the variables when they are first used, and at the innermost scope where they
+should retain their value. This will allow to keep track of them better.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

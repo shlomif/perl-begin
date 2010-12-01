@@ -1,12 +1,8 @@
 * Pick up a better gvim colour scheme for the example code in the
 perl-for-newbies lecture.
 
-* Syntaxhighlight the examples in the other code excerpts in the site (especially
-the src/tutorials/bad-elements/ ).
-
-* Page about bad elements:
-    - declaring all variables at the top of the file, instead of when they
-    are first used, and in the innermost scope.
+* Syntax-highlight the examples in the other code excerpts in the site
+(especially the src/tutorials/bad-elements/ ).
 
 Long Term:
 ----------
