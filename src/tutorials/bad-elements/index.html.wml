@@ -1499,6 +1499,20 @@ in a safer and better way.
 </p>
 
 </item>
+
+<item id="global_vars_iface" h="Using Global Variables as an Interface to the Module">
+
+<p>
+While it is possible to a large extent, one should generally not use global
+variables as an interface to a module, and should prefer having a procedural
+or an object oriented interface instead. For information about this see our
+<a href="$(ROOT)/topics/modules-and-packages/">page about modules and
+packages</a> and our <a href="$(ROOT)/topics/object-oriented/">our page
+about object oriented programming in Perl</a>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
