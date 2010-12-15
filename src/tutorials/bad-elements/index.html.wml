@@ -818,7 +818,7 @@ One can sometimes see people write code like that:
 <bad_code>
 my $name = shift(@ARGV);
 
-print "$name", \n";
+print "$name", "\n";
 
 if ("$name" =~ m{\At}i)
 {
@@ -836,7 +836,7 @@ However, it's not necessary to enclose $name in double quotes (i.e:
 \# Better code.
 my $name = shift(@ARGV);
 
-print $name, \n";
+print $name, "\n";
 
 if ($name =~ m{\At}i)
 {
