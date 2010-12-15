@@ -58,6 +58,11 @@ the top of the pages look nicer.
 </li>
 
 <li>
+<b>slakmagik</b> - reported a code typo in 
+<a href="$(ROOT)/tutorials/bad-elements/">bad Perl elements page</a>.
+</li>
+
+<li>
 <a href="http://www.webhostingsearch.com/">WebHostingSearch</a> - Sponsoring
 Perl-Begin since 2009.
 </li>
