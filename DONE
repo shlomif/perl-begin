@@ -125,6 +125,8 @@ them and contribute.
 * Add a recommendation to read Modern Perl in the various topical pages.
     - create a tag for that.
 
+* Add more id="" attributes to the <h2 /> | <h3 /> | etc. tags.
+
 * Bad elements page:
     - The FileHandle module.
     - include/do/eval "$file_contents" instead of using a module.
@@ -132,3 +134,4 @@ them and contribute.
     - global variables as an interface to a module.
     - declaring all variables at the top of the file, instead of when they
     are first used, and in the innermost scope.
+
