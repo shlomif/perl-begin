@@ -22,10 +22,10 @@ with the DOM and the XML-LibXML API before using this library.
 
 <h2 id="web-pages">Web Pages about Perl and XML</h2>
 
-<h3><a href="http://perl-xml.sourceforge.net/">The Perl XML Project 
+<h3 id="perl-xml-project"><a href="http://perl-xml.sourceforge.net/">The Perl XML Project 
 Home Page</a></h3>
 
-<h4><a href="http://perl-xml.sourceforge.net/faq/">Their Frequently Asked
+<h4 id="perl-xml-faq"><a href="http://perl-xml.sourceforge.net/faq/">Their Frequently Asked
 Questions List (FAQ)</a></h4>
 
 <h2 id="what-to-avoid">What to Avoid</h2>
