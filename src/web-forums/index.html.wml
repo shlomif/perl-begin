@@ -2,7 +2,7 @@
 
 <latemp_subject "Web Forums" />
 
-<h2><a href="http://www.perlmonks.org/">Perl Monks</a></h2>
+<h2 id="perlmonks"><a href="http://www.perlmonks.org/">Perl Monks</a></h2>
 
 <p>
 The premiere web forum for Perl people. It's in English, and offers
@@ -10,7 +10,7 @@ many interesting categories. Complete archive of all past discussions
 is available.
 </p>
 
-<h2><a href="http://stackoverflow.com/">Stack Overflow</a></h2>
+<h2 id="stackoverflow"><a href="http://stackoverflow.com/">Stack Overflow</a></h2>
 
 <p>
 A free-of-charge and high-quality Questions and Answers board which allows
@@ -20,7 +20,7 @@ people's questions. There's an active
 category</a> there.
 </p>
 
-<h2><a href="<get-var openstudy_group_url />">Perl for Beginners Study Group on OpenStudy</a></h2>
+<h2 id="openstudy"><a href="<get-var openstudy_group_url />">Perl for Beginners Study Group on OpenStudy</a></h2>
 
 <openstudy_button />
 
@@ -29,7 +29,7 @@ A study group for Perl beginners over at OpenStudy.com ("Make the world
 your study group.").
 </p>
 
-<h2><a href="http://use.perl.org/">use Perl; (use.perl.org)</a></h2>
+<h2 id="use_perl"><a href="http://use.perl.org/">use Perl; (use.perl.org)</a></h2>
 
 <p>
 A News site and a central blogs site for the Perl community. Uses the same
@@ -37,14 +37,14 @@ Perl-based and open-source engine as Slashdot, but tends to be much more
 civil. Complete archive of all past discussions is available.
 </p>
 
-<h2><a href="http://www.sitepoint.com/forums/forumdisplay.php?f=36">SitePoint's
+<h2 id="sitepoint"><a href="http://www.sitepoint.com/forums/forumdisplay.php?f=36">SitePoint's
 "Perl, Python and Other Languages"' Forum</a></h2>
 
 <p>
 A forum for Perl web-development.
 </p>
 
-<h2><a href="http://community.livejournal.com/perl/">The Perl Community on 
+<h2 id="livejournal"><a href="http://community.livejournal.com/perl/">The Perl Community on 
 LiveJournal</a></h2>
 
 <p>
@@ -52,9 +52,9 @@ A low-volume forum, but one that attracted many experts,
 and can offer a lot of good advice.
 </p>
 
-<h2>Localised Forums</h2>
+<h2 id="localised">Localised Forums</h2>
 
-<h3><a href="http://www.whatsup.org.il/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=23">Whatsup's Hebrew Programming Forum</a></h3>
+<h3 id="hebrew"><a href="http://www.whatsup.org.il/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=23">Whatsup's Hebrew Programming Forum</a></h3>
 
 <p>
 A forum in Hebrew hosted on the <a href="http://www.whatsup.org.il/">Whatsup.org.il Israeli Linux Portal</a>.
