@@ -1,6 +1,8 @@
 * Bad elements page:
     - Switch.pm.
 
+* Add more id="" attributes to the <h2 /> | <h3 /> | etc. tags.
+
 * Pick up a better gvim colour scheme for the example code in the
 perl-for-newbies lecture.
 
