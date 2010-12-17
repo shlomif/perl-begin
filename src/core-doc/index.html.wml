@@ -2,7 +2,7 @@
 
 <latemp_subject "Perl Core Documentation" />
 
-<h2>Online Documentation</h2>
+<h2 id="online-docs">Online Documentation</h2>
 
 <ul>
 
@@ -18,7 +18,7 @@ Manual</a> - a bit out-of-date, but still very pertinent for beginners.
 
 </ul>
 
-<h2>Books</h2>
+<h2 id="books">Books</h2>
 
 <h3><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl, 3rd 
 Edition</a></h3>

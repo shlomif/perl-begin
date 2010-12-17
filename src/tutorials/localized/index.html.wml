@@ -2,13 +2,13 @@
 
 <latemp_subject "Tutorials in Foreign Languages" />
 
-<h2><a href="http://www.lea-linux.org/documentations/index.php/Dev-perl">French Intro to Perl</a></h2>
+<h2 id="french-intro"><a href="http://www.lea-linux.org/documentations/index.php/Dev-perl">French Intro to Perl</a></h2>
 
 <p>
 An introduction to Perl in the French language.
 </p>
 
-<h2><a href="http://code.semuel.co.il/perlhebtut/">Hebrew Perl Tutorial</a></h2>
+<h2 id="perl-heb-tut"><a href="http://code.semuel.co.il/perlhebtut/">Hebrew Perl Tutorial</a></h2>
 
 <p>
 A Tutorial for Perl in Hebrew written by Semuel Fomberg.
