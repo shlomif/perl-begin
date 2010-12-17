@@ -20,13 +20,9 @@ people's questions. There's an active
 category</a> there.
 </p>
 
-<h2><a href="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org">Perl for Beginners Study Group on OpenStudy</a></h2>
+<h2><a href="<get-var openstudy_group_url />">Perl for Beginners Study Group on OpenStudy</a></h2>
 
-<p>
-<a href="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org"
-title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img 
-src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
-</p>
+<openstudy_button />
 
 <p>
 A study group for Perl beginners over at OpenStudy.com ("Make the world

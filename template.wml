@@ -13,6 +13,18 @@
 #include "share-this.wml"
 
 
+<set-var openstudy_group_url="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" />
+
+<define-tag openstudy_button>
+
+<p>
+<a href="<get-var openstudy_group_url />"
+title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img 
+src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
+</p>
+
+</define-tag>
+
 <latemp_affiliations_buttons>
 # <affil_collection_berlios />
 <!-- Yahoo! Search -->
@@ -28,6 +40,9 @@ src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif"
 <input type="submit" value="Search" style="margin: 5px 0 0 0" /></div>
 </form>
 <!-- End Yahoo! Search -->
+
+<openstudy_button />
+
 </latemp_affiliations_buttons>
 
 <latemp_common_keywords "Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers" />
