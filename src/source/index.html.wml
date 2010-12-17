@@ -14,7 +14,7 @@ bash</a> and a GNU system to be built) can be found in its version control
 repository.
 </p>
 
-<h2>Version Control Repository</h2>
+<h2 id="vcs">Version Control Repository</h2>
 
 <p>
 The most up-to-date source code for this site is now hosted in 

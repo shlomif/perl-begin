@@ -15,7 +15,7 @@ your name appears there as soon as possible.
 Here are some ways in which you can contribute to the site:
 </p>
 
-<h2>Publicise the Site</h2>
+<h2 id="publicise">Publicise the Site</h2>
 
 <p>
 You can publicise the Perl Beginners Site or individual pages thereof by
@@ -25,14 +25,14 @@ web-site or blog. You can use the "Add-to-any" button at the bottom of the
 pages to post it on various sites.
 </p>
 
-<h2>Contribute to the Wiki</h2>
+<h2 id="wiki">Contribute to the Wiki</h2>
 
 <p>
 <a href="<wiki_link />">The Wiki</a> is a portion of the site that can
 be edited by anyone at any time. Feel free to add your own material there.
 </p>
 
-<h2>Join the Mailing List</h2>
+<h2 id="mailing-list">Join the Mailing List</h2>
 
 <p>
 By joining <a href="<mailing_list_link />">the mailing list</a>, you will 
@@ -40,7 +40,7 @@ receive questions by E-mail, which you can answer. (or alternatively be able
 to ask your own)
 </p>
 
-<h2>Visit the Help Web Forum</h2>
+<h2 id="web-forum">Visit the Help Web Forum</h2>
 
 <p>
 The <a href="<web_forum_link />">Help Web Forum</a> is meant to help people
@@ -48,7 +48,7 @@ with their Perl problems. You can visit it if you have questions or would like
 to help people with their problems.
 </p>
 
-<h2>Contribute to the Core Site</h2>
+<h2 id="core-site">Contribute to the Core Site</h2>
 
 <p>
 You can send patches or corrections to the HTML pages of the site. It is 

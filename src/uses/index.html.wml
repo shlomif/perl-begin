@@ -8,27 +8,27 @@ cover some of the more common uses and explain how to get started with
 using Perl for them.
 </p>
 
-<h2><a href="bio-info/">Bio-Informatics</a></h2>
+<h2 id="bio-info"><a href="bio-info/">Bio-Informatics</a></h2>
 
-<h2><a href="databases/">Databases</a></h2>
+<h2 id="databases"><a href="databases/">Databases</a></h2>
 
-<h2><a href="email/">E-mail Handling with Perl</a></h2>
+<h2 id="email"><a href="email/">E-mail Handling with Perl</a></h2>
 
-<h2><a href="GUI/">GUI (Graphical User Interface) Development</a></h2>
+<h2 id="gui"><a href="GUI/">GUI (Graphical User Interface) Development</a></h2>
 
-<h2><a href="multitasking/">Multi-tasking and Networking</a></h2>
+<h2 id="networking"><a href="multitasking/">Multi-tasking and Networking</a></h2>
 
-<h2><a href="qa/">Quality Assurance (QA) and Testing</a></h2>
+<h2 id="qa"><a href="qa/">Quality Assurance (QA) and Testing</a></h2>
 
-<h2><a href="remote-login-and-commands/">Telnet/SSH (Remote login and command
+<h2 id="remote-login"><a href="remote-login-and-commands/">Telnet/SSH (Remote login and command
 execution)</a></h2>
 
-<h2><a href="sys-admin/">System Administration</a></h2>
+<h2 id="sys-admin"><a href="sys-admin/">System Administration</a></h2>
 
-<h2><a href="text-generation/">Text Generation</a></h2>
+<h2 id="text-gen"><a href="text-generation/">Text Generation</a></h2>
 
-<h2><a href="text-parsing/">Text Parsing</a></h2>
+<h2 id="text-parse"><a href="text-parsing/">Text Parsing</a></h2>
 
-<h2><a href="web/">Web and CGI Programming</a></h2>
+<h2 id="web"><a href="web/">Web and CGI Programming</a></h2>
 
-<h2><a href="xml/">XML Manipulation</a></h2>
+<h2 id="xml"><a href="xml/">XML Manipulation</a></h2>

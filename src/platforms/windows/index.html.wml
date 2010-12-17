@@ -11,9 +11,9 @@ of the box. Most Perl code written by people who know what they are doing
 will be such, and this is the case for most CPAN Perl modules as well.
 </p>
 
-<h2>Resources</h2>
+<h2 id="resources">Resources</h2>
 
-<h3>Web Sites</h3>
+<h3 id="web-sites">Web Sites</h3>
 
 <ul>
 <li>
@@ -22,7 +22,7 @@ Portal</a>.
 </li>
 </ul>
 
-<h3>Mailing Lists</h3>
+<h3 id="mailing-lists">Mailing Lists</h3>
 
 <p>
 ActiveState has <a

@@ -40,9 +40,9 @@ used by such very large, very busy, sites as
 smaller sites. Furthermore, it often plays a large part behind the scenes.
 </p>
 
-<h2>We need you!</h2>
+<h2 id="we-need-you">We need you!</h2>
 
-<h3>Get a job.</h3>
+<h3 id="get-a-job">Get a job.</h3>
 
 <p>
 There are plenty of jobs there looking for good Perl developers. You can find
@@ -87,7 +87,7 @@ or buy <a href="$(ROOT)/books/">a different book</a>. Then browse
 <a href="$(ROOT)">the rest of the site</a>.
 </p>
 
-<h2>What can I do with Perl?</h2>
+<h2 id="what_can_be_done">What can I do with Perl?</h2>
 
 <p>
 Almost anything. Traditionally, Perl has been used for writing 
