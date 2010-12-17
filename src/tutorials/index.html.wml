@@ -63,7 +63,7 @@ The tutorials that ship as part of the perl core. Start with
 other tutorials</a>.
 </p>
 
-<h3><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
+<h3 id="perl-com-intro"><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's 
 Beginners Introduction to Perl</a></h3>
 
 <p>

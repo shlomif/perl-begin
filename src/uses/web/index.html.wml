@@ -22,7 +22,7 @@ CGI Course</b></a>. The other links here may also prove useful.
 
 <h2 id="tutorials">Tutorials</h2>
 
-<h3><a href="<cgi_course_url />">Ovid's CGI
+<h3 id="ovid-cgi-course"><a href="<cgi_course_url />">Ovid's CGI
 Course</a></h3>
 
 <p>
@@ -30,7 +30,7 @@ A free CGI Course by Curtis Poe (Ovid) for people who already know a little Perl
 a little HTML.
 </p>
 
-<h3><a href="<wiki_link url="CGI_Getting_Started" />">Our own CGI Getting Started</a></h3>
+<h3 id="our-cgi-get-started"><a href="<wiki_link url="CGI_Getting_Started" />">Our own CGI Getting Started</a></h3>
 
 <p>
 In the Wiki.
@@ -38,7 +38,7 @@ In the Wiki.
 
 <h2 id="frameworks">Web Frameworks</h2>
 
-<h3><a href="http://www.catalystframework.org/">Catalyst</a></h3>
+<h3 id="catalyst"><a href="http://www.catalystframework.org/">Catalyst</a></h3>
 
 <p>
 A flexible web framework for Perl, with many useful modules for it on
@@ -55,7 +55,7 @@ It started as a Perl port of the Ruby micro-framework
 <a href="http://www.sinatrarb.com/">Sinatra</a>.
 </p>
 
-<h3><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
+<h3 id="cgi-app"><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
 
 <p>
 CGI::Application is an older attempt at a web development framework for
@@ -80,7 +80,7 @@ adapters to web servers.
 Using Plack and PSGI is more recommended than using the old CGI.pm interface.
 </p>
 
-<h3><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
+<h3 id="apache-asp"><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
 
 <p>
 An implementation of the Active Server Pages for Perl on UNIXes. Compatible
@@ -88,7 +88,7 @@ with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
 solution. 
 </p>
 
-<h3><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
+<h3 id="mason"><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
 
 <p>
 A portable solution for a dynamic maintenance of a Perl site. Very powerful

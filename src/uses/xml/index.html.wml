@@ -30,7 +30,7 @@ Questions List (FAQ)</a></h4>
 
 <h2 id="what-to-avoid">What to Avoid</h2>
 
-<h3>XML-Simple</h3>
+<h3 id="xml-simple">XML-Simple</h3>
 
 <p>
 XML-Simple is not so simple when done properly and takes the wrong approach

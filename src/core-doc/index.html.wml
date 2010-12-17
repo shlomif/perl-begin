@@ -20,7 +20,7 @@ Manual</a> - a bit out-of-date, but still very pertinent for beginners.
 
 <h2 id="books">Books</h2>
 
-<h3><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl, 3rd 
+<h3 id="camel-book"><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl, 3rd 
 Edition</a></h3>
 
 <p>
@@ -35,7 +35,7 @@ Not recommended as an introductory Perl book, but still makes a very good read
 after the language is learned to a working extent.
 </p>
 
-<h3><a href="http://www.oreilly.com/catalog/cookbook/">The Perl Cookbook</a></h3>
+<h3 id="cookbook"><a href="http://www.oreilly.com/catalog/cookbook/">The Perl Cookbook</a></h3>
 
 <p>
 A book that contains a long list of code snippets for achieving certain tasks 
