@@ -43,6 +43,12 @@ of the commonly mentioned ones are:
 <cpan_self_dist d="Net-SSH2" />
 </li>
 
+<li>
+<cpan_self_dist d="IPC-PerlSSH" /> and 
+<cpan_self_dist d="IPC-PerlSSH-Async" /> which is similar, but works with
+<cpan_self_dist d="Net-Async" />.
+</li>
+
 </ul>
 
 <p>
