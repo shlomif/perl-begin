@@ -236,6 +236,11 @@ my $tree_contents =
                     title => "Working with E-mail using Perl",
                 },
                 {
+                    text => "Games and Multimedia",
+                    url => "uses/games/",
+                    title => "Developing Games and Multimedia Applications in Perl",
+                },
+                {
                     text => "GUI Development",
                     url => "uses/GUI/",
                     title => "Development of Graphical User Interface (GUIs) in Perl",
