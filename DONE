@@ -135,3 +135,6 @@ them and contribute.
     - declaring all variables at the top of the file, instead of when they
     are first used, and in the innermost scope.
 
+* Add a page about games and multimedia programming using Perl.
+    - See the IRC conversation on #perl .
+
