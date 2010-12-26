@@ -62,6 +62,10 @@ my $tree_contents =
                     url => "learn/perl6/",
                     text => "What about Perl 6?"
                 },
+                {
+                    url => "learn/Perl-perl-but-not-PERL/",
+                    text => "&quot;Perl&quot;, and &quot;perl&quot;, but not &quot;PERL&quot;"
+                },
             ],
         },
         {

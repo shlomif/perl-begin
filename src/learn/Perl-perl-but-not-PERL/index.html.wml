@@ -1,0 +1,49 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+
+<latemp_subject "&quot;Perl&quot; and &quot;perl&quot; but not &quot;Perl&quot;" />
+
+<p>
+One can often see the Perl programming language referred to as "perl",
+"Perl" or even "PERL". This page aims to explain what is the difference between
+all of them to the uninitiated.
+</p>
+
+<ol>
+
+<li>
+<p>
+<b>"Perl"</b> is the name of the programming language itself. It had several
+versions starting from version 1 up to version 5 which is the current popular
+version as well as <a href="../perl6/">Perl 6</a> which is currently under
+development and won't be compatible with Perl 5 and below. So if you want to
+refer to the language say "Perl" with a capital "P" and the other letters
+as lowercase.
+</p>
+</li>
+
+<li>
+<p>
+<b>"perl"</b> (with all-lowercase) is the name of the command line executable 
+that compiles and runs Perl programs. The implementation if you may.
+</p>
+</li>
+
+<li>
+<p>
+In any case, one should <b>never write "PERL"</b> with all uppercase-letters,
+as Perl is not an acronym. If you encounter such a page, it usually indicates
+that its author does not know enough about Perl, as writing "Perl" or "perl"
+instead of "PERL" is a 
+<a href="http://en.wikipedia.org/wiki/Shibboleth">Shibboleth</a> that indicates
+that the speaker or writer knows what they are saying.
+</p>
+</li>
+
+</ol>
+
+<p>
+A popular idiom, attributed to Tom Christiansen, says that "Only perl can
+parse Perl.". Take some time to think about it.
+</p>
+
