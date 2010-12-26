@@ -1,7 +1,7 @@
 #include '../template.wml'
 #include "xhtml/1.x/std/toc.wml"
 
-<latemp_subject "&quot;Perl&quot; and &quot;perl&quot; but not &quot;Perl&quot;" />
+<latemp_subject "&quot;Perl&quot; and &quot;perl&quot; but not &quot;PERL&quot;" />
 
 <p>
 One can often see the Perl programming language referred to as "perl",
