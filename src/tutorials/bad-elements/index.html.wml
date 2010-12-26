@@ -1552,6 +1552,26 @@ plain <tt>if/elsif/else</tt> structures.
 </p>
 
 </item>
+
+<item id="threads" h="Using threads in Perl">
+
+<p>
+Some beginners, when thinking they need to multitask their programs start
+thinking they should use perl threads. However, as mentioned in 
+<pdoc d="perlthrtut">perlthrtut</pdoc>, perl threads are very much unlike
+the traditional thread modules, share nothing by default and are in fact
+heavyweight processes (instead of the usual lightweight ones). See also
+<a href="http://www.perlmonks.org/index.pl?node_id=288022">Elizabeth Mattijsen
+writeup about perl's ithreads on perlmonks</a>.
+</p>
+
+<p>
+To sum up, usually threads are the wrong answer and you should be using
+forking processes or something like POE (see our 
+<a href="$(ROOT)/uses/multitasking/">page about multitasking</a>) instead.
+</p>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"
