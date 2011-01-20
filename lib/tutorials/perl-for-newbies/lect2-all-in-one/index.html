@@ -963,13 +963,13 @@ prepares a file with a pyramid in it:
 
 <span class="Statement">my</span> <span class="Identifier">$pyramid_side</span> = <span class="Constant">20</span>;
 
-<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;pyramid.txt&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;pyramid.txt&quot;</span>;
 <span class="Statement">for</span>(<span class="Identifier">$a</span>=<span class="Constant">1</span> ; <span class="Identifier">$a</span> &lt;= <span class="Identifier">$pyramid_side</span> ; <span class="Identifier">$a</span>++)
 {
-    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;X&quot;</span> x <span class="Identifier">$a</span>;
-    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print {</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Constant">&quot;X&quot;</span> x <span class="Identifier">$a</span>;
+    <span class="Statement">print {</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
-<span class="Statement">close</span>(<span class="Identifier">O</span>);
+<span class="Statement">close</span>(<span class="Identifier">$out</span>);
 </pre></div>
 <p>
 In order to print to more than one file at once, one needs to use two
@@ -981,21 +981,21 @@ sequnce 1, 1.1, 2, 2.1, 3, 3.1... and to the other the sequence 1, 1.5, 2, 2.5
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">open</span> <span class="Identifier">SEQ1</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;seq1.txt&quot;</span>;
-<span class="Statement">open</span> <span class="Identifier">SEQ2</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;seq2.txt&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$seq1</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;seq1.txt&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$seq2</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;seq2.txt&quot;</span>;
 
 <span class="Statement">for</span>(<span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;<span class="Constant">100</span>;<span class="Identifier">$a</span>++)
 {
-    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> (<span class="Identifier">$a</span>+<span class="Constant">0.1</span>);
-    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> (<span class="Identifier">$a</span>+<span class="Constant">0.5</span>);
-    <span class="Statement">print</span> <span class="Identifier">SEQ1</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Identifier">SEQ2</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print {</span><span class="Identifier">$seq1</span><span class="Statement">}</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print {</span><span class="Identifier">$seq2</span><span class="Statement">}</span> <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print {</span><span class="Identifier">$seq1</span><span class="Statement">}</span> (<span class="Identifier">$a</span>+<span class="Constant">0.1</span>);
+    <span class="Statement">print {</span><span class="Identifier">$seq2</span><span class="Statement">}</span> (<span class="Identifier">$a</span>+<span class="Constant">0.5</span>);
+    <span class="Statement">print {</span><span class="Identifier">$seq1</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print {</span><span class="Identifier">$seq2</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 
-<span class="Statement">close</span>(<span class="Identifier">SEQ1</span>);
-<span class="Statement">close</span>(<span class="Identifier">SEQ2</span>);
+<span class="Statement">close</span>(<span class="Identifier">$seq1</span>);
+<span class="Statement">close</span>(<span class="Identifier">$seq2</span>);
 </pre></div>
 <hr />
 
@@ -1032,18 +1032,18 @@ Here's an example, let's append the line numbers to a given file:
 <span class="Statement">my</span> (<span class="Identifier">$line_num</span>, <span class="Identifier">$line</span>);
 
 <span class="Identifier">$line_num</span> = <span class="Constant">0</span>;
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Constant">&quot;input.txt&quot;</span>;
-<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;output.txt&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Constant">&quot;input.txt&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;output.txt&quot;</span>;
 
-<span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
 {
     <span class="Comment"># We aren't chomping it so we won't lose the newline.</span>
-    <span class="Statement">print</span> <span class="Identifier">O</span> <span class="Identifier">$line_num</span>, <span class="Constant">&quot;: &quot;</span>, <span class="Identifier">$line</span>;
+    <span class="Statement">print {</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Identifier">$line_num</span>, <span class="Constant">&quot;: &quot;</span>, <span class="Identifier">$line</span>;
     <span class="Identifier">$line_num</span>++;
 }
 
-<span class="Statement">close</span> (<span class="Identifier">I</span>);
-<span class="Statement">close</span> (<span class="Identifier">O</span>);
+<span class="Statement">close</span> (<span class="Identifier">$in</span>);
+<span class="Statement">close</span> (<span class="Identifier">$out</span>);
 </pre></div>
 <p>
 And the following example counts the number of lines in a file that start with
@@ -1057,8 +1057,8 @@ the letter "A" (case-insensitive).
 
 <span class="Identifier">$lines_num</span> = <span class="Constant">0</span>;
 <span class="Identifier">$filename</span> = <span class="Constant">&quot;input.txt&quot;</span>;
-<span class="Statement">open</span> <span class="Identifier">I</span>,  <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
-<span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>,  <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
 {
     <span class="Identifier">$c</span> = <span class="Statement">substr</span>(<span class="Identifier">$line</span>, <span class="Constant">0</span>, <span class="Constant">1</span>);
     <span class="Statement">if</span> (<span class="Statement">lc</span>(<span class="Identifier">$c</span>) <span class="Statement">eq</span> <span class="Constant">&quot;a&quot;</span>)
@@ -1066,7 +1066,7 @@ the letter "A" (case-insensitive).
         <span class="Identifier">$lines_num</span>++;
     }
 }
-<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Statement">print</span> <span class="Constant">&quot;In &quot;</span> , <span class="Identifier">$filename</span>, <span class="Constant">&quot; there are &quot;</span>,
     <span class="Identifier">$lines_num</span>, <span class="Constant">&quot; lines that start with </span><span class="Special">\&quot;</span><span class="Constant">A</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
@@ -1107,11 +1107,11 @@ backup of the file specified as its argument:
 
 <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Identifier">$ARGV[</span><span class="Constant">0</span><span class="Identifier">]</span>;
 
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
-<span class="Statement">open</span> <span class="Identifier">O</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Identifier">$filename</span>.<span class="Constant">&quot;.bak&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">O</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,<span class="Identifier">&lt;I&gt;</span>);
-<span class="Statement">close</span>(<span class="Identifier">I</span>);
-<span class="Statement">close</span>(<span class="Identifier">O</span>);
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Identifier">$filename</span>.<span class="Constant">&quot;.bak&quot;</span>;
+<span class="Statement">print {</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;<span class="Identifier">$in</span>&gt;);
+<span class="Statement">close</span>(<span class="Identifier">$in</span>);
+<span class="Statement">close</span>(<span class="Identifier">$out</span>);
 </pre></div>
 <p>
 Using the command-line for specifying parameters to the program is usually
@@ -1940,8 +1940,8 @@ username:
 
 <span class="Statement">my</span> <span class="Identifier">$user_name</span> = <span class="Statement">shift</span>;
 
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Constant">&quot;/etc/passwd&quot;</span>;
-<span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Constant">&quot;/etc/passwd&quot;</span>;
+<span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
 {
     <span class="Identifier">@parts</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">:</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
     <span class="Statement">if</span> (<span class="Identifier">$parts[</span><span class="Constant">0</span><span class="Identifier">]</span> <span class="Statement">eq</span> <span class="Identifier">$user_name</span>)
@@ -1950,7 +1950,7 @@ username:
         <span class="Statement">exit</span>(<span class="Constant">0</span>);
     }
 }
-<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Statement">print</span> <span class="Identifier">$user_name</span> . <span class="Constant">&quot;'s user ID was not found!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 <span class="Statement">exit</span>(-<span class="Constant">1</span>);
@@ -2211,13 +2211,13 @@ length is lesser than 80 characters:
 
 <span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Statement">shift</span>;
 
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
-<span class="Statement">while</span> (<span class="Identifier">$l</span> = <span class="Identifier">&lt;I&gt;</span>)
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
+<span class="Statement">while</span> (<span class="Identifier">$l</span> = &lt;<span class="Identifier">$in</span>&gt;)
 {
     <span class="Statement">chomp</span>(<span class="Identifier">$l</span>);
     <span class="Statement">push</span> <span class="Identifier">@lines</span>, <span class="Identifier">$l</span>;
 }
-<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Comment"># Filter the comments</span>
 <span class="Statement">my</span> <span class="Identifier">@comments</span> = <span class="Statement">grep</span>(<span class="Statement">/</span><span class="Constant">^#</span><span class="Statement">/</span>, <span class="Identifier">@lines</span>);

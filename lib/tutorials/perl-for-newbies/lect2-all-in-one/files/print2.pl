@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-open $seq1, ">", "seq1.txt";
-open $seq2, ">", "seq2.txt";
+open my $seq1, ">", "seq1.txt";
+open my $seq2, ">", "seq2.txt";
 
 for($a=0;$a<100;$a++)
 {

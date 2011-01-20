@@ -1034,16 +1034,19 @@ Here are some examples:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Statement">open</span> <span class="Identifier">I</span>, <span class="Constant">&quot;/sbin/ifconfig |&quot;</span>;
-<span class="Statement">my</span> (<span class="Identifier">$line</span>, <span class="Identifier">@addrs</span>);
-<span class="Statement">while</span> (<span class="Identifier">$line</span> = <span class="Identifier">&lt;I&gt;</span>)
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;/sbin/ifconfig |&quot;</span>;
+
+<span class="Statement">my</span> (<span class="Identifier">@addrs</span>);
+
+<span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
 {
     <span class="Statement">if</span> (<span class="Identifier">$line</span> =~ <span class="Statement">/</span><span class="Constant">inet addr:</span><span class="Special">((\d+\.)+\d)</span><span class="Statement">/</span>)
     {
         <span class="Statement">push</span> <span class="Identifier">@addrs</span>, <span class="Identifier">$1</span>;
     }
 }
-<span class="Statement">close</span>(<span class="Identifier">I</span>);
+<span class="Statement">close</span>(<span class="Identifier">$in</span>);
+
 <span class="Statement">print</span> <span class="Constant">&quot;You have the following addresses: </span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>,<span class="Identifier">@addrs</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
