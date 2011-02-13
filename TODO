@@ -10,6 +10,16 @@ perl-for-newbies lecture.
 
 * Further work on src/uses/chat-scripting/index.html.wml .
     - Maybe trim the introduction.
+        - remove the what is IRC? stuff almost completely and just say
+        "Perl has good support".
+            - we can assume people will know what it is, and if not
+            there's the link.
+    - Add Jabber/XMPP.
+    - Add the other frameworks:
+        - <perlbot> rindolf: Don't parse IRC with regex! See
+          POE::Component::IRC, Bot::BasicBot. Avoid Net::IRC. See also
+          http://poe.perl.org/ or Net::Async::IRC or AnyEvent::IRC .  
+        - Not sure it's a good idea.
 
 * Maybe a page on «What's next "after" perl?».
 
