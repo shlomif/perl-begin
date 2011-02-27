@@ -7,18 +7,16 @@
 <p>
 Since the advent of the <a href="$(ROOT)/irc/">IRC - the Internet Relay
 Chat protocol</a>, people have been automating it by writing dedicated
-robots or "bots", which are computer programs that sit an Internet host 
-somewhere and perform various functions. Examples for that are chat bots,
-which are used for amusement, infobots, which are used to collect various 
-and handily recall commonly used factoids, mathbots which can perform
-mathematical operations, and evalbots which are used to evaluate code in
-certain programming languages, but there are many others including many
-multi-purpose bots.
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots or 
+"bots"</a>, such as chat bots, which are used for amusement; 
+infobots, which are used to collect various and handily recall commonly used 
+factoids, evalbots which are used to evaluate code, but there are many others 
+including many multi-purpose bots.
 </p>
 
 <p>
 While IRC used to be considered a place for people who either wanted
-to waste time or were web low-life, it more recently gained much more
+to waste time or were Internet low-life, it more recently gained much more
 mainstream acceptance among open-source users and contributors and to some
 extent some more Internet users who are more laymen computer-wise. And
 even more recently, there has been some proliferation of different protocols
@@ -29,11 +27,10 @@ Facebook.com.
 </p>
 
 <p>
-So <b>what about Perl?</b> Perl allows one to write such robots and other
-forms of chat scripting (such as progrmaming special IRC or Jabber client 
-commands) with ease, and many active Perl programmers and contributors have
-got their feet wet in Perl after using it to write a simple bot or a chat
-script.
+Perl allows one to write such robots and other forms of chat scripting 
+(such as programming special IRC or Jabber client commands) with ease, and 
+many active Perl programmers and contributors have got their feet wet in Perl 
+after using it to write a simple bot or a chat script.
 </p>
 
 <h2 id="irc">For IRC</h2>
