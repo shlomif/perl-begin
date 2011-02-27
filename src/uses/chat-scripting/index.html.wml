@@ -77,3 +77,24 @@ Especially of note is
 a layer above POE-Component-IRC that is more user-friendly and straightfoward
 for writing a bot.
 </p>
+
+<h2 id="xmpp">For XMPP/Jabber</h2>
+
+<p>
+The following modules can be used to interact with the XMPP / Jabber protocol,
+which has become popular for instant messaging with such providers as
+GChat/GTalk, and Facebook.
+</p>
+
+<ul>
+
+<li>
+<b><cpan_self_dist d="Net-XMPP" /></b> - a generic module for talking
+using XMPP and Jabber.
+</li>
+
+<li>
+
+</li>
+
+</ul>
