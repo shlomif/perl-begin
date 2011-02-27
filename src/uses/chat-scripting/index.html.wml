@@ -5,6 +5,15 @@
 <h2 id="intro">Introduction</h2>
 
 <p>
+Perl allows one to write 
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots</a> and
+other forms of chat scripting 
+(such as programming special IRC or Jabber client commands) with ease, and 
+many active Perl programmers and contributors have got their feet wet in Perl 
+after using it to write a simple bot or a chat script.
+</p>
+
+<p>
 Since the advent of the <a href="$(ROOT)/irc/">IRC - the Internet Relay
 Chat protocol</a>, people have been automating it by writing dedicated
 <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots or 
@@ -24,13 +33,6 @@ for instant messaging or chat, such as the open-source
 <a href="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber/XMPP protocol</a>, which has gained some further popularity after
 it has been supported by providers such as Google Talk / Google Chat and
 Facebook.com. 
-</p>
-
-<p>
-Perl allows one to write such robots and other forms of chat scripting 
-(such as programming special IRC or Jabber client commands) with ease, and 
-many active Perl programmers and contributors have got their feet wet in Perl 
-after using it to write a simple bot or a chat script.
 </p>
 
 <h2 id="irc">For IRC</h2>
