@@ -62,7 +62,7 @@ to contribute to an existing codebase that uses these legacy methods, please
 make it a priority to convert it to a more modern IRC framework.
 </p>
 
-<h2 id="POE-Component-IRC"><a href="http://search.cpan.org/dist/POE-Component-IRC/">POE-Component-IRC</a></h2>
+<h2 id="POE-Component-IRC"><cpan_self_dist d="POE-Component-IRC" /></h2>
 
 <p>
 POE-Component-IRC (or PoCoIrc for short) has been the first successuful
@@ -73,7 +73,7 @@ multi-tasking framework for Perl</a>.
 
 <p>
 Especially of note is
-<a href="http://search.cpan.org/dist/Bot-BasicBot/">Bot-BasicBot</a> which is
+<cpan_self_dist d="Bot-BasicBot" /> which is
 a layer above POE-Component-IRC that is more user-friendly and straightfoward
 for writing a bot.
 </p>
@@ -91,10 +91,6 @@ GChat/GTalk, and Facebook.
 <li>
 <b><cpan_self_dist d="Net-XMPP" /></b> - a generic module for talking
 using XMPP and Jabber.
-</li>
-
-<li>
-
 </li>
 
 </ul>
