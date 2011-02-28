@@ -106,3 +106,37 @@ using XMPP and Jabber.
 </li>
 
 </ul>
+
+<h2 id="clients">Chat Clients with support for Perl Scripting</h2>
+
+<p>
+This is a partial list of chat clients which provide support for scripting
+using Perl:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://www.pidgin.im/">Pidgin</a> - an open-source,
+multi-protocol, and cross-platform chat client with support for Perl scripting.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://xchat.org/">X-Chat</a> - an open-source IRC client. Also see
+the costless <a href="http://www.silverex.org/">Silverex distribution</a>
+of X-Chat for Windows.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://irssi.org/">Irssi</a> - a powerful console / terminal 
+client, with support for scripting using Perl, and even integrating nicely
+with POE, and POE-Component-IRC.
+</p>
+</li>
+
+</ol>
