@@ -6,9 +6,9 @@
 
 <p>
 Perl allows one to write 
-<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots</a> and
-other forms of chat scripting 
-(such as programming special IRC or Jabber client commands) with ease, and 
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">IRC 
+robots</a> and other forms of chat automation 
+(such as special IRC or Jabber client commands) with ease, and 
 many active Perl programmers and contributors have got their feet wet in Perl 
 after using it to write a simple bot or a chat script.
 </p>
@@ -27,9 +27,9 @@ including many multi-purpose bots.
 While IRC used to be considered a place for people who either wanted
 to waste time or were Internet low-life, it more recently gained much more
 mainstream acceptance among open-source users and contributors and to some
-extent some more Internet users who are more laymen computer-wise. And
-even more recently, there has been some proliferation of different protocols
-for instant messaging or chat, such as the open-source 
+extent some more Internet users who are more laymen, computer-wise.
+Moreover, there has been some proliferation of different protocols
+for instant messaging or chat, such as the open-source and open-specification
 <a href="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber/XMPP protocol</a>, which has gained some further popularity after
 it has been supported by providers such as Google Talk / Google Chat and
 Facebook.com. 
@@ -61,7 +61,7 @@ to contribute to an existing codebase that uses these legacy methods, please
 make it a priority to convert it to a more modern IRC framework.
 </p>
 
-<h2 id="POE-Component-IRC"><cpan_self_dist d="POE-Component-IRC" /></h2>
+<h3 id="POE-Component-IRC"><cpan_self_dist d="POE-Component-IRC" /></h3>
 
 <p>
 POE-Component-IRC (or PoCoIrc for short) has been the first successuful
@@ -75,6 +75,19 @@ Especially of note is
 <cpan_self_dist d="Bot-BasicBot" /> which is
 a layer above POE-Component-IRC that is more user-friendly and straightfoward
 for writing a bot.
+</p>
+
+<h3 id="Net-Async-IRC"><cpan_self_dist d="Net-Async-IRC" /></h3>
+
+<p>
+An IRC component for IO::Async.
+</p>
+
+<h3 id="AnyEvent-IRC"><cpan_self_dist d="AnyEvent-IRC" /></h3>
+
+<p>
+An IRC component for <cpan_self_dist d="AnyEvent" />, which is an event system
+independent IRC protocol module.
 </p>
 
 <h2 id="xmpp">For XMPP/Jabber</h2>
