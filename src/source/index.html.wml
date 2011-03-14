@@ -18,12 +18,39 @@ repository.
 
 <p>
 The most up-to-date source code for this site is now hosted in 
-<a href="http://svn.berlios.de/svnroot/repos/perl-begin/perl-begin/trunk">its own
-Subversion repository</a>. If you know how to use 
-<a href="http://subversion.tigris.org/">Subversion</a>, you can use it to
-contribute to the site more easily. If not, then
-<a href="http://svnbook.red-bean.com/">learning how to use it</a>
-will be well worth your time any way you look at it.
+<a href="https://bitbucket.org/shlomif/perl-begin">a Mercurial (hg) 
+repository</a>
+on <a href="http://bitbucket.org/">Bitbucket.org</a>. In order to learn how
+to use Mercurial, see either one of:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://hgbook.red-bean.com/">"Mercurial: The Definitive Guide" 
+(The hgbook)</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://hginit.com/">Hg Init</a>: a Mercurial tutorial.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://mercurial.selenic.com/wiki/Tutorial">"A Tutorial on Using 
+Mercurial"</a> - on the Mercurial wiki.
+</p>
+</li>
+
+</ol>
+
+<p>
+After that, you can clone the repository on Bitbucket, and send us pull 
+requests.
 </p>
 
 <todo_done />
