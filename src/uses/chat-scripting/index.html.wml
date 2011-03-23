@@ -23,12 +23,15 @@ factoids, evalbots which are used to evaluate code, but there are many others
 including many multi-purpose bots.
 </p>
 
-<p>
+<define-tag irc_reject1>
 While IRC used to be considered a place for people who either wanted
 to waste time or were Internet low-life, it more recently gained much more
 mainstream acceptance among open-source users and contributors and to some
 extent some more Internet users who are more laymen, computer-wise.
-Moreover, there has been some proliferation of different protocols
+</define-tag>
+
+<p>
+Recently, there has been some proliferation of different protocols
 for instant messaging or chat, such as the open-source and open-specification
 <a href="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber/XMPP protocol</a>, which has gained some further popularity after
 it has been supported by providers such as Google Talk / Google Chat and
@@ -140,3 +143,9 @@ with POE, and POE-Component-IRC.
 </li>
 
 </ol>
+
+<h2 id="voip">Voice-over-IP (Asterisk/etc.) Support for Perl</h2>
+
+<p>
+
+</p>
