@@ -62,7 +62,7 @@ Regular expressions enable one to match simple or complex patterns in text
 <h3 id="date-and-time"><a href="date-and-time/">Date and Time Handling</a></h3>
 
 <p>
-Handling Dates and Times (Parsing, formatting, manipulating, etc.) in Perl.
+Handling Dates and Times (parsing, formatting, manipulating, etc.) in Perl.
 </p>
 
 <h3 id="scoping"><a href="scoping/">Scoping and Variables in Perl</a></h3>
