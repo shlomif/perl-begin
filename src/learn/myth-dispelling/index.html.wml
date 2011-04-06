@@ -37,7 +37,7 @@ Perl does not scale to high loads or high codebases.
 Perl is slow.
 </li>
 <li>
-Perl is dying. (or even that Perl is dead).
+Perl is dying. (Or even that Perl is dead).
 </li>
 <li>
 The Perl implementation has a horrible code.
