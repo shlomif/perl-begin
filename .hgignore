@@ -5,3 +5,4 @@ rules.mak
 .sass-cache
 src/style.css
 temp
+compile/
