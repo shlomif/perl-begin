@@ -75,10 +75,10 @@ Here are some more observations:
 
 <p>
 We admit Perl has some problems. However, Perl 5 is still possibly the best
-solution for writing a large class of system administration scripts. And
-using the <a href="http://www.cpan.org/">Comprehensive Perl 
-Archive Network (CPAN)</a> you can usually get the job done much more quickly 
-and easily than with any other language. 
+solution for writing a large class of system administration scripts. Using
+the <a href="http://www.cpan.org/">Comprehensive Perl Archive Network
+(CPAN)</a> you can usually get the job done much more quickly
+and easily than with any other language.
 </p>
 
 <p>
