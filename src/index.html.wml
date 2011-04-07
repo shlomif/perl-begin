@@ -13,7 +13,7 @@ programming language</a>. Perl code is very
 written very quickly, while still performing well in most cases. It is very 
 usual to <b>achieve in one line of Perl</b> what 
 <b>requires 100s of lines in C</b> and other languages. 
-<a href="$(ROOT)/learn/">Read more&hellip;</a>
+<a href="$(ROOT)/learn/">Read more…</a>
 </p>
 
 <h2 id="right-tool">The Right Tool for the Job</h2>
@@ -31,7 +31,7 @@ more robust and more portable for many tasks than writing
 <a href="http://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> scripts,
 to say nothing of Win32's
 <a href="http://en.wikipedia.org/wiki/Cmd.exe">cmd.exe</a>. 
-<a href="$(ROOT)/uses/sys-admin/">Read more&hellip;</a>
+<a href="$(ROOT)/uses/sys-admin/">Read more…</a>
 </li>
 
 <li>
@@ -46,7 +46,7 @@ writing CGI scripts and even large scale web applications, and is still very
 popular. It is extensively used by such large, highly scalable sites such as 
 <a href="http://amazon.com/">Amazon.com</a> or 
 <a href="http://www.livejournal.com/">Live Journal</a>, and by countless of
-smaller sites. <a href="$(ROOT)/uses/web/">Read more&hellip;</a>.
+smaller sites. <a href="$(ROOT)/uses/web/">Read more…</a>.
 </li>
 
 <li>
@@ -54,7 +54,7 @@ smaller sites. <a href="$(ROOT)/uses/web/">Read more&hellip;</a>.
 of <a href="http://perl-qa.yi.org/">tools for automated or semi-automated
 software testing</a>. These tools can often be used to test applications
 written in other languages, and certainly network servers. 
-<a href="$(ROOT)/uses/qa/">Read more&hellip;</a>
+<a href="$(ROOT)/uses/qa/">Read more…</a>
 </li>
 
 </ol>
