@@ -394,7 +394,7 @@ to use the lower-level API which is not recommended.
 <item id="subroutine-arguments" h="Subroutine Arguments Handling">
 
 <p>
-The first thing to know about handling arguments for Subroutines is to avoid
+The first thing to know about handling arguments for subroutines is to avoid
 refering to them directly by index. Imagine you have the following code:
 </p>
 
