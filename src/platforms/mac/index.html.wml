@@ -1,0 +1,10 @@
+#include '../template.wml'
+
+<latemp_subject "Perl on Mac OS" />
+
+<p>
+    Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as 
+    compiled and installed from the source. Mac OS Classic requires MacPerl,
+    which I never worked with. Mac OS X is still highly recommended from the
+    aspect of running Perl or otherwise.    
+</p>

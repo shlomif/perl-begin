@@ -1,0 +1,106 @@
+#include '../template.wml'
+#include "why-perl.wml"
+#include "xhtml/1.x/std/toc.wml"
+
+<latemp_subject "Why Perl?" />
+<latemp_more_keywords "myths, myth, unreadable, unmaintainable, perl is dead, perl is alive, perl sucks, sucks, perl is good, perl is bad, bad, good, criticism, dispelling, dispel, ugly, ugly code, large codebase, scalability" />
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="why-learn"><strong>Why</strong> should I learn Perl?</h2>
+
+<why_should_i_learn_perl />
+
+<h2 id="myth-dispelling">Myth Dispelling</h2>
+
+<p>
+It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact, it's 
+very common. Among the things you can hear:
+</p>
+
+<ul>
+<li>
+Perl code is ugly.
+</li>
+<li>
+Perl code is unmaintainable.
+</li>
+<li>
+Depending on Perl for a large project guarantees that one will fail.
+</li>
+<li>
+Perl does not scale to high loads or high codebases.
+</li>
+<li>
+Perl is slow.
+</li>
+<li>
+Perl is dying. (Or even that Perl is dead).
+</li>
+<li>
+The Perl implementation has a horrible code.
+</li>
+<li>
+Perl, or some parts of it (like its Object Orientedness) is very weak.
+</li>
+<li>
+Perl is not suitable for writing web applications. (And PHP is).
+</li>
+<li>
+Perl code is unreadable. All Perl code is obfuscated.
+</li>
+<li>
+Etc.
+</li>
+</ul>
+
+<p>
+Some of these complaints are addressed 
+<a href="http://www.perl.com/pub/a/2000/01/10PerlMyths.html">in Simon Cozens'
+article "Ten Perl Myths"</a> and 
+<a href="http://perl.net.au/wiki/Perl_Myths">PerlNet's Perl Myth List</a>.
+Tim Bunce focused on 
+<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">dispelling 
+three large Perl Myths</a> in a presentation he has given and made available
+online.
+</p>
+
+<p>
+Here are some more observations:
+</p>
+
+<h2 id="right-tool">When is Perl the <strong>right</strong> tool for the job?</h2>
+
+<p>
+We admit Perl has some problems. However, Perl 5 is still possibly the best
+solution for writing a large class of system administration scripts. Using
+the <a href="http://www.cpan.org/">Comprehensive Perl Archive Network
+(CPAN)</a>, you can usually get the job done much more quickly
+and easily than with any other language.
+</p>
+
+<p>
+Perl code can be written to be very maintainable, readable and elegant.
+Perl indeed sports many features and properties that make writing short 
+programs - often one liners - easier, because this is what people use it for
+most of the time. However, there's nothing in Perl that prevents 
+writing large-scale, maintainable programs. And in fact
+<a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
+programs have been written and are still successful.</a>
+</p>
+
+<p>
+Perl is probably not for everyone. You need to be a good programmer to write
+in Perl. However, code written by bad programmers in other languages can
+be equally as problematic as code written by bad Perl programmers.
+</p>
+
+<p>
+The good news is that you can become a good Perl programmer using the resources
+on this site and elsewhere, and that learning Perl will improve your
+programming ability - not only in Perl, but in other languages as well. Are 
+you ready to take on the challenge? Great! Then 
+<a href="http://perl-begin.org/resources/">dive right in</a>.
+</p>

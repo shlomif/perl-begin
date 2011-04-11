@@ -1,0 +1,46 @@
+After the last news item, a lot of work was invested on 
+http://perl-begin.org/ , the Perl Beginners' Site. making
+it even better than it used to be. Here's a summary of the changes:
+</p>
+
+* A testimonials page ( http://perl-begin.org/learn/who-is-using/ )
+was added, with some honest-to-God testimonial quotes which are now featured in
+the Testimonials side-bar.
+
+* There's a new IDEs and
+tools page:
+
+http://perl-begin.org/IDEs-and-tools/ , featuring some Integrated Development 
+Environments.
+
+* There's a new page sporting links to collections of blogs.
+
+* Several new topical pages were added:
+
+* * Perl and Databases
+
+* * GUI Development in Perl
+
+* * Perl for XML Processing
+
+* * Debugging
+
+* * Object-oriented Programming in Perl
+
+* * Using CPAN
+
+* A ShareThis ( http://sharethis.com/ ) button was added to the
+bottom of every page for easy bookmarking and sharing.
+
+* Many writing errors (spelling, grammar, syntax, phrasing, etc.) have been
+corrected by Alan Haggai Alavi ( http://alanhaggai.org/ ). He
+seems to have a good eye for catching such problems, and I am indebted to
+him.
+
+* Corrected several broken links including those to Ovid's CGI course.
+
+--
+
+We hope you enjoy the new Perl Beginners' Site and please recommend it
+to your friends.
+

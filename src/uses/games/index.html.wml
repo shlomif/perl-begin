@@ -1,0 +1,71 @@
+#include '../template.wml'
+
+<latemp_subject "Developing Games and Multimedia with Perl" />
+
+<p>
+What's the use of using a computer if you're not having fun? Many beginning
+programmers, especially young ones, like to get their feet wet by writing
+games, demos and other multimedia programs. And the good news is that they
+can do it with Perl.
+</p>
+
+<h2 id="sdl-perl"><a href="http://sdl.perl.org/">SDL Perl</a></h2>
+
+<p>
+SDL Perl provides Perl bindings to the open-source and cross-platform
+library
+<a href="http://www.libsdl.org/">SDL - the Simple DirectMedia Layer</a> which
+allows one to write games and other multimedia applications using it. SDL
+has been utilised in several Perl and many other non-Perl games, both
+open-source and commercial ones.
+</p>
+
+<h3 id="sdl-perl-resources">Resources for Learning about SDL-Perl</h3>
+
+<ul>
+
+<li>
+<p>
+<a href="http://sdlperl.ath.cx/releases/SDL_Manual.pdf">The SDL Perl Manual 
+in PDF</a>, and 
+<a href="http://sdlperl.ath.cx/releases/SDL_Manual.html">its HTML version</a>
+(the latter without images).
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://search.cpan.org/dist/SDL/">SDL Perl Reference Documentation
+on CPAN</a>.
+</p>
+</li>
+
+</ul>
+
+<h3 id="sdl-perl-examples">Example Games and Applications</h3>
+
+<ul>
+
+<li>
+<p>
+<a href="http://www.frozen-bubble.org/">Frozen Bubble</a> - fire coloured
+bubbles at the board in order to drop all bubbles.
+</p>
+</li>
+
+</ul>
+
+<h2 id="other-mediums">Other Mediums</h2>
+
+<p>
+One can also prepare desktop games using standard GUI (Graphical User 
+Interface) toolkits. For this, see our <a href="$(ROOT)/uses/GUI/">GUI 
+development using Perl</a> page. 
+</p>
+
+<p>
+Browser-based games are also an option (with some help from JavaScript
+and possibly AJAX) and you can see our <a href="$(ROOT)/uses/web/">Perl
+web development page</a> for more information.
+</p>
+

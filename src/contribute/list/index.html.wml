@@ -1,0 +1,76 @@
+#include '../template.wml'
+
+<latemp_subject "Contributors List" />
+
+<ul>
+
+<li>
+<a href="http://www.shlomifish.org/"><b>Shlomi Fish</b></a> -
+Founded perl-begin and did most of the work on the initial versions.
+</li>
+
+<li>
+<a href="http://www.cthulhu-burger.org/"><b>Dave Goehrig</b></a> -
+Contributed the essay "What the Books Don't Teach You" to the Wiki.
+</li>
+
+<li>
+<b>Marilyn Matty</b> - 
+Gave some web design and content tips.
+</li>
+
+<li>
+<b>Mark Fowler</b> - 
+Suggested two important additions to the articles section.
+</li>
+
+<li>
+<a href="mailto:gw@actamail.com">G. Wolfgang</a> - Contributed the
+GoFlexiblePro design on which the design of this site is based.
+</li>
+
+<li>
+<a href="http://stackoverflow.com/questions/74570/css-bad-gray-line-to-the-side-of-the-navigation-bar-on-http-perl-begin-org">Shog9, Stephen Wrighton and other
+Stack Overflow members</a> - Helped to fix a problem with the site's CSS.
+</li>
+
+<li>
+<a href="http://alanhaggai.org/">Alan Haggai Alavi</a> - Contributed many
+corrections to the text of the site and helped revamp the site style to
+make it fluid and stretchable.
+</li>
+
+<li>
+<a href="http://ali.as/">Adam Kennedy</a> - supplied important input for
+improving the site.
+</li>
+
+
+<li>
+<a href="http://szabgab.com/">Gabor Szabo (szabgab)</a> - reported some 
+broken links and typos, projected the Padre IDE project and has provided
+lots of other support for making Perl 5 and Perl 6 more accessible
+</li>
+
+<li>
+<b>tm604</b> - provided some input for the pages and gave a CSS tip for making
+the top of the pages look nicer.
+</li>
+
+<li>
+<b>slakmagik</b> - reported a code typo in 
+<a href="$(ROOT)/tutorials/bad-elements/">bad Perl elements page</a>.
+</li>
+
+<li>
+<a href="http://www.webhostingsearch.com/">WebHostingSearch</a> - Sponsoring
+Perl-Begin since 2009.
+</li>
+
+<li>
+<b>Seppo Yli-Olli</b> - reported a typo.
+</li>
+
+</ul>
+
+

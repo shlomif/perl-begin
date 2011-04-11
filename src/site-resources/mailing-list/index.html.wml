@@ -1,0 +1,16 @@
+#include '../template.wml'
+
+<latemp_subject "Our Mailing List" />
+
+<p>
+Archives, Usage information, and settings (for people who are subscribed)
+for our mailing list can be found in 
+<a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">its Mailman 
+Page</a>.
+</p>
+<p>
+Note that it is a very low volume mailing list, spoken in English. If you are
+interested in other mailing lists refer to 
+<a href="$(ROOT)/mailing-lists/">our mailing lists page</a>.
+</p>
+

@@ -1,0 +1,91 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+
+<latemp_subject "What about Perl 6?" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+A lot of people have been wondering about the relationship between the
+commonly used Perl language, currently versioned at a version of 5 (also known 
+as "Perl 5") and its so called "perl 5" implementation and the 
+under development language known as "Perl 6". In order to avoid confusion, 
+this page would like to clarify the situation.
+</p>
+
+<h2 id="different">Perl 6 is different from Perl 5</h2>
+
+<p>
+Perl 6 is a completely different language from Perl 5, and also incompatible. 
+To some extent, the Perl 6 community of developers is different than that of
+Perl 5. Perl 6 is not meant to displace Perl 5.
+</p>
+
+<h2 id="perl5_not_going_away">Perl 5 (the language) and 
+perl 5 (the implementation) are not going away</h2>
+
+<p>
+The perl 5 implementation is still under constant development, and is 
+constantly improved. There is a steady and growing flow of 
+<a href="$(ROOT)/topics/cpan/">CPAN</a> modules written in Perl 5, and there's
+an active community of Perl 5 users, contributors and developers. The original
+plan for Perl 6 was not to completely displace Perl 5, but rather to provide
+a radical rewrite (of both the implementation and the language) with many
+improvements (and incompatible with Perl 5). It is assumed that Perl 5 will
+be used, improved and supported for many years to come.
+</p>
+
+<h2 id="positive_influence">Perl 6 has positively influenced Perl 5</h2>
+
+<p>
+Perl 6 features have proved to be a useful inspiration for recent Perl 5 
+developments, such as core features in perl-5.10.x, perl-5.12.x and future
+versions, and CPAN distributions such as 
+<a href="http://www.iinteractive.com/moose/">Moose</a>,
+<cpan_self_dist d="autobox" />
+and 
+<cpan_self_dist d="Method-Signatures" />.
+Tim Bunce has written in his 
+<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">"Perl 
+Myths" presentation</a> that while some people think that "Perl 6 is killing
+Perl 5", it has in fact saved it and advanced it.
+</p>
+
+<h2 id="is_perl_6_still_perl">Is Perl 6 Still Perl?</h2>
+
+<p>
+That depends on who you ask. Some people feel that Perl 6 is so radically
+different from Perl 5 (which is in turn compatible with all the previous
+versions of the language) that it is no longer "Perl", enough to say that
+"Perl 6 will be a wonderful language. Too bad it won't be Perl.". Other
+people claim that there are enough similarities, and that since it was also
+designed by Larry Wall, who is the father of Perl, it can be considered
+Perl. In our opinion, it doesn't make a difference whether Perl 6 is Perl or
+not, because it is already called Perl 6 and either people will like it as 
+such or not, regardless of the name.
+</p>
+
+<h2 id="how_to_learn_perl_6">How do I learn Perl 6?</h2>
+
+<p>
+The focus of Perl-Begin.org is about Perl 5. To learn Perl 6, you may wish
+to consider these resources:
+</p>
+
+<ol>
+
+<li>
+<a href="http://perl6.org/">The Perl 6 Homepage</a>
+</li>
+
+<li>
+<a href="http://perlgeek.de/blog-en/perl-5-to-6/00-intro.writeback">Moritz's
+"Perl 5 to 6" series</a>
+</li>
+
+<li>
+<a href="http://www.perlfoundation.org/perl6/">The Perl 6 Wiki</a>.
+</li>
+
+</ol>
+

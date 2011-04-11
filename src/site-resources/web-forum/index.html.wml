@@ -1,0 +1,10 @@
+#include '../template.wml'
+
+<latemp_subject "Our Web-Forum" />
+
+<p>
+We have a 
+<a href="http://developer.berlios.de/forum/forum.php?forum_id=2341">web 
+forum</a> where one can ask questions (or generally start discussions)
+and receive answers by using a web-browser.
+</p>

@@ -1,0 +1,52 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for System Administration" />
+
+<p>
+Perl can be used to perform or automate system administration tasks
+on all platforms on which it is available. Some UNIX beginners who learn
+Perl, use it at first where shell scripts may be more appropriate. This use
+is still OK, because Perl can be a good alternative for them.
+</p>
+
+<p>
+Besides the core language, those who wish to use Perl for System Administration
+should focus on the <tt>perlfunc</tt> document (which covers the various
+functions available inside Perl), and on its regular expressions capabilities
+(which are handier than what shell scripts offer).
+</p>
+
+<h2 id="modules">Modules</h2>
+
+<p>
+Useful modules for system administration are:
+</p>
+
+<ul>
+
+<li>
+<a href="http://perldoc.perl.org/File/Spec.html">File::Spec</a> - a core module
+to handle file and directory paths portably.
+</li>
+
+<li>
+<cpan_self_dist d="String-ShellQuote" />
+- quote strings for passing through the shell. Also see the list forms of
+system.
+</li>
+
+<li>
+<a href="http://search.cpan.org/~dland/File-Path-2.07/">File-Path</a> - a
+core module to create or remove directory trees (portably).
+</li>
+
+<li>
+<cpan_self_mod m="File::Copy" /> - a core module to copy files.
+</li>
+
+<li>
+<cpan_self_dist d="IO-All" /> - an all-in-one
+IO package with a lot of syntactic sugar. Non-core.
+</li>
+
+</ul>

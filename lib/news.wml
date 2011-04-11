@@ -1,0 +1,41 @@
+<define-tag perl_begin_news_boxes>
+<div class="testimonials">
+<h2>Testimonials</h2>
+
+<p>
+<q>"We went live on budget, to specification and on time"</q>
+-- <a href="$(ROOT)/learn/who-is-using/#testimonial-ajt">ajt</a>
+</p>
+
+<p>
+<q>"Perl saved my vacation!"</q>
+-- <a href="$(ROOT)/learn/who-is-using/#testimonial-saved-my-vacation">Tom
+Moertel</a>
+</p>
+
+<p>
+<a href="$(ROOT)/learn/who-is-using/">More…</a>
+</p>
+</div>
+
+<div class="news-box">
+<h2><a href="$(ROOT)/news/">News</a></h2>
+<ul>
+<li>
+11-Nov-2010: <a href="$(ROOT)/news/#news_11_November_2010">Page about bad
+Perl elements, and other new pages</a>
+</li>
+<li>
+26-Jun-2010: <a href="$(ROOT)/news/#news_26_June_2010">New Pages</a>
+</li>
+<li>
+16-Mar-2010: <a href="$(ROOT)/news/#news_16_March_2010">Topical and Uses
+Pages</a>
+</li>
+<li>
+<a href="$(ROOT)/news/">More news...</a>
+</li>
+</ul>
+</div>
+</define-tag>
+

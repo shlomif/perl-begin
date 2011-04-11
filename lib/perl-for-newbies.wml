@@ -1,0 +1,45 @@
+<define-tag perl_for_newbies_tutorial_page>
+<preserve idx />
+<set-var %attributes />
+
+<latemp_subject "&quot;Perl for Newbies&quot; - Part <get-var idx /> - The Perl Beginners' Site" />
+<page_extra_head_elements>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="$(ROOT)/p4n.css" />
+<script type="text/javascript" src="$(ROOT)/js/toggle-nav-controls.js"></script>
+</page_extra_head_elements>
+
+<perl_begin_sidebar>
+<!-- Nothing -->
+</perl_begin_sidebar>
+{#LATEMP_BODY_ATTRIBUTES#: class="no-news":##}
+
+<button id="toggle_nav_control" 
+onclick="javascript:toggle_nav_control()" 
+class="toggle_nav_control off">Show Navigation Controls</button>
+
+<:{
+{
+    use strict;
+    use warnings;
+    use IO::All;
+
+    use Encode (qw(decode));
+
+    my $idx = "<get-var idx />";
+
+    binmode STDOUT, ":utf8";
+
+    my $contents = io()
+        ->file("../lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
+        ->slurp()
+        ;
+
+    $contents =~ s{.*<body[^>]*>}{}ms;
+    $contents =~ s{</body>.*}{}ms;
+
+    print decode("UTF-8", $contents);
+}
+}:>
+<restore idx />
+</define-tag>

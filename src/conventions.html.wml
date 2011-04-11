@@ -1,0 +1,39 @@
+#include '../template.wml'
+
+<latemp_subject "Coding Conventions" />
+
+<ul>
+<li>
+The packages that can be used to compile and install kernel modules and
+entire packages can assume that a GNU system is present. Namely that 
+GNU make, GNU install, gawk, gcc, etc. are present and at the appropriate
+places. It cannot assume that Perl is installed though.
+</li>
+<li>
+The CLAN code and the Module packager will be written in pure Perl 5, and
+can depend on whatever publicly available CPAN modules that are known to 
+be portable and common enough. Eventually, a CPAN bundle will be prepared
+to install everything including CLAN.
+</li>
+<li>
+Generally, maintaining a simple CLAN module will be possible without too deep a
+knowledge of Perl, but such knowledge may prove useful for advanced use.
+</li>
+<li>
+I'll try to avoid using Autoconf and friends for the modules for as long as 
+I can. If we assume a GNU system, we can make a lot of simplifying assumptions.
+</li>
+<li>
+Packages can be prepared along with a list of patches. They can be defined
+inside the package or the package can be built while specifying them.
+</li>
+<li>
+A kernel module package will contain an RPM Spec, Debianization file and other
+native distribution packaging systems.
+</li>
+<li>
+There should be planning but no over-engineering. I believe we can build
+the functionality incrementally without re-writing the entire code from scratch
+at a certain point. 
+</li>
+</ul>

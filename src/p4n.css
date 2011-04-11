@@ -1,0 +1,29 @@
+a:hover { background-color: transparent; }
+.page-nav-bar, .bread { display: none; }
+.page-nav-bar.vis, .bread.vis { display: block; }
+.toggle_nav_control, .toggle_nav_control:hover
+{
+    padding: 1em;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2pt solid black;
+}
+
+button.toggle_nav_control
+{
+    color: black;
+    text-decoration: none;
+}
+.toggle_nav_control
+{
+    border-color: black;
+    background-color: palegreen;
+}
+.toggle_nav_control:hover
+{
+    cursor: pointer;
+    border-color: red;
+    background-color: yellow;
+}
+

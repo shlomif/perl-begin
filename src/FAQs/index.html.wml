@@ -1,0 +1,25 @@
+#include '../template.wml'
+
+<latemp_subject "FAQs - Frequently Asked Questions Lists" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+<b>Frequently Asked Questions</b> Lists (or "FAQs" for short) are a useful
+resource to find answers for commonly asked questions. This page contains
+a list of FAQs for Perl.
+</p>
+
+<h2 id="perl-faq"><a href="http://faq.perl.org/">The Perl FAQ</a></h2>
+
+<p>
+The standard Perl FAQ. Also available as "perldoc -q &lt;phrase&gt;" from
+the command-line.
+</p>
+
+<h2 id="freenode-perl-faq"><a href="http://perl.net.au/wiki/Freenode_Sharp_Perl_FAQ">The Freenode #perl Channel FAQ</a></h2>
+
+<p>
+The FAQ for the Freenode #perl channel.
+</p>
+

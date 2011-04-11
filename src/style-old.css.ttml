@@ -1,0 +1,177 @@
+body { font-family : sans-serif }
+[% SET navbar_width = "20%" %]
+[% PROCESS "shlomif/navbar.ttml" %]
+/* 
+This is to make sure the visited links look clear in Konqueror or other
+browsers where they are magenta by default.
+*/
+:visited
+{
+    color: #800080; /* Purple */
+}
+:link:hover, :visited:hover, img.highlight:hover 
+{ 
+    /* A Yellow Greenish Color */
+    background-color : #EEFF40; 
+}
+.navbar :link:hover, .navbar :visited:hover, .navbar img.highlight:hover 
+{ 
+    /* LightGreen */
+    background-color :  #90EE90;
+}
+.navbar 
+{ 
+    /* Moccasin: FFE4B5 */
+    background-color: #FFE4B5;
+    border-color : black;
+    border-width : thick;
+    border-style : double;
+}
+.main 
+{
+    padding-left : 10pt;
+    margin-left : 24%;
+}
+/*
+Tweaks to make the margins and paddings of the elements inside the
+main content better.
+*/
+.main > p, .main > ul, .main > ol, .main > dl
+{
+    margin-left: 14pt;
+    margin-right: 14pt;    
+}
+.main > ul, .main > ol, .main > dl
+{
+    padding-left: 14pt;
+}
+.main > ul > li > p
+{
+    padding-left: 6pt;
+}
+h1, h2, h3
+{
+    font-family : serif;
+    border-style : solid ; 
+    border-width : thin;
+    padding-left: 4pt;
+    padding-right: 4pt;
+}
+h1
+{
+    /* A colour like MediumOrchid only lighter and with less 
+       saturation.
+       */
+    background-color : #e187f7;
+}
+h2
+{
+    background-color : #ccffdd;
+    margin-right : 1.5em;
+}
+h2 :link:hover, h2 :visited:hover
+{
+    background-color : #ff4f8a ;
+}
+/* Override for the navbar so it won't be highligted as red there */
+.navbar h2 :link:hover, .navbar h2 :visited:hover
+{ 
+    /* LightGreen */
+    background-color : #90EE90; 
+}
+
+h3
+{
+    /* LemonChiffon */
+    background-color : #FFFACD;
+    margin-right : 3em;
+}
+
+.navbar h2 { color: black ; border : none ; font-size : large ; margin-left : 0.5em ; background-color : transparent }
+p.desc { margin-left : 3em }
+ul.navbarmain { font-size : 90%}
+
+h3.newsitem { text-indent: 3em }
+p.newsitem { margin-left : 6em }
+div.indent { margin-left : 3em }
+p.indent { margin-left : 3em  }
+div.rightalign { text-align : right }
+
+h2.plain
+{ 
+    color : black ; 
+    border : none ; 
+    font-family : serif; 
+    background: transparent;
+}
+    
+/* Make sure it is not underlined when inside a boxed heading */
+h2 a,h3 a
+{
+    text-decoration : none
+}
+
+h1 a, h2 a, h3 a 
+{
+    font-family : sans-serif;
+}
+
+
+div.bookinfo h3
+{
+    border : none;
+    margin-top : 0em;
+    color : green;
+    padding-left : 0em;
+    background-color : transparent;
+}
+
+div.bookinfo 
+{ 
+    border-style : dotted;
+    border-width : thin;
+    /* LightYellow */
+    background-color : #FFFFE0;
+    margin-left : 1em;
+    margin-right : 1em;
+    padding-left : 1em;
+    padding-bottom : 0.3em;
+    padding-top : 0.3em;
+}
+tt { color : #8A2BE2 /* The BlueViolet Color */ }
+.news
+{
+    /* LightYellow */
+    background-color : #FFFFE0;
+    float : right;
+    width : 20%;
+    margin-left : 0.5em;
+    margin-bottom : 1em;
+    border-color : black;
+    border-width : thick;
+    border-style : double;
+}
+.bless
+{
+    border : none;
+}
+.footer
+{
+    clear : both;
+    margin-right : 30px;
+    padding-top: 0.5em;
+}
+/* Workaround to get the <hr /> element at the bottom to properly display 
+   with Konqueror 3.3.x
+   */
+.footer hr
+{
+    width:100%;
+    clear:both;
+}
+.banner
+{
+    text-align: center;
+    margin-bottom: 4pt;
+}
+[% PROCESS "shlomif/common_defs.ttml" %]

@@ -1,0 +1,37 @@
+I thought the Perl Beginners' Site - http://perl-begin.org/ 
+was perfect after the last update, but boy I was wrong. A quick review and 
+critique of the site by a certain prominent Perl developer revealed many
+issues with it, and afterwards I had found stuff that I found lacking. So 
+here's what has changed.
+
+We're now mirroring the public domain "Perl for Newbies" tutorial on
+http://perl-begin.org/tutorials/perl-for-newbies/ as well as the GFDLed book
+"Impatient Perl" by Greg London ( http://www.greglondon.com/ ). Their
+presence on the site was done in order to preserve Perl-Begin's common look 
+and feel, and to make sure people would be able to access them without
+having to go to a different site, which may be blocked by over-zealous
+web-filters. We hope to mirror other freely distributable material that
+may prove useful to beginners on Perl-Begin in the future.
+
+The "call-for-action" notice at the beginning was changed to 
+"Learn Perl Now!" and now appears on all the pages.
+
+We also fixed several look and style glitches.   
+
+There are also several corrections to the text and the hyperlinks.
+
+Stack Overflow was added to http://perl-begin.org/web-forums/ .
+
+There are now mentionings of two new topical books at
+http://perl-begin.org/books/topics/ - 
+"Perl &amp; LWP" and "Programming the Perl DBI".
+
+Finally, the "About this site" page at http://perl-begin.org/about.html 
+was updated and made more modern.
+
+We hope you enjoy the new site. If you like it, please recommend it to
+your friends - if you don't - let us know and we'll see what we can do. Unless
+mentioned otherwise, all the material on http://perl-begin.org/ is made
+available under the Creative Commons Attribution Licence (CC-by) for almost
+unlimited distribution and re-use.
+

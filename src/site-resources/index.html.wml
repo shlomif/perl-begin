@@ -1,0 +1,41 @@
+#include '../template.wml'
+
+<latemp_subject "Site Resources" />
+
+<h2 id="tutorial"><a href="$(ROOT)/tutorials/perl-for-newbies/">A 
+Local Tutorial</a></h2>
+
+<p>
+A local introductory tutorial that you can read on this site.
+</p>
+
+<h2 id="mailing-list"><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Mailing List</a></h2>
+
+<p>
+Ask questions and receive answers by E-mail. Very convenient and instructive.
+One can find other mailing lists in our 
+<a href="$(ROOT)/mailing-lists/">mailing lists</a> section.
+</p>
+
+<p>
+<b>Note:</b> The mailing list has become very quiet shortly after its
+inception. There are still some experts subscribed there, so you may still
+find it helpful but see <a href="$(ROOT)/mailing-lists/">the mailing lists
+section</a> for other alternatives.
+</p>
+
+<h2 id="wiki"><a href="<wiki_link />">Wiki</a></h2>
+
+<p>
+This is a portion of the site in which anyone can edit any page. It aims
+to eventually become a good reference for Perl beginners.
+</p>
+
+<h2 id="web-forum"><a href="http://developer.berlios.de/forum/forum.php?forum_id=2341">Web Forum</a></h2>
+
+<p>
+A place to put messages on the web and check them. It is defunct and should
+not be used. See <a href="$(ROOT)/web-forums/">web forums section</a> for
+alternatives.
+</p>
+

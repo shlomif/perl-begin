@@ -1,0 +1,14 @@
+#include '../template.wml'
+
+<latemp_subject "Our Wiki" />
+
+<p>
+A Wiki is a site that can be freely edited by anybody using a web-browser.
+The contents of our wiki were integrated into the 
+<a href="http://perl.net.au/">perl.net.au MediaWiki</a> as 
+<a href="http://perl.net.au/wiki/New_to_Perl">its "New to Perl?" section</a>.
+This was done to consolidate the Perl wiki'ing efforts, because there's much
+more action on perl.net.au than there was on our wiki, and for ease of 
+maintenace. The original wiki on this domain has been disabled.
+</p>
+
