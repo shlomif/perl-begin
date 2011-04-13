@@ -230,7 +230,7 @@ my $tree_contents =
                     title => "Using Perl for Bio-Informatics",
                 },
                 {
-                    text => "Chat Bots and Scripting",
+                    text => "Chat Bots and Scripting (IRC, XMPP)",
                     url => "uses/chat-scripting/",
                     title => "Writing chat (IRC, Jabber and other IM) bots in Perl and general chat scripting",
                 },
