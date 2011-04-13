@@ -17,7 +17,7 @@
 
 <define-tag openstudy_button>
 
-<p>
+<p class="study_group"> 
 <a href="<get-var openstudy_group_url />"
 title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img 
 src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
