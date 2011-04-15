@@ -5,7 +5,8 @@
 <h2 id="what-is-irc">What is the IRC?</h2>
 
 <p>
-IRC stands for Internet Relay Chat, and it is a distributed, real-time form
+IRC stands for <b>Internet Relay Chat</b>, and it is a distributed, real-time 
+form
 of communication, that was common from relatively early in the history of
 the Internet, and is still very popular. IRC servers form networks of servers
 - each network is separated from the other networks and the servers of each
