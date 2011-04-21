@@ -54,13 +54,22 @@ Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
-<h3 id="modern-perl"><a href="http://www.onyxneon.com/books/modern_perl/index.html">Modern Perl</a></h3>
+<define-tag modern_perl_book_url whitespace="delete">
+http://www.onyxneon.com/books/modern_perl/
+</define-tag>
+
+<h3 id="modern-perl"><a href="<modern_perl_book_url />">Modern Perl</a></h3>
 
 <p>
 A book by chromatic, a well-known Perl programmer, writer and author, about
 how to write Perl 5 in a good and modern way. Covers from the basics up to
 doing object-oriented programming using Moose, and a bit beyond. I've read this
 book and can recommend it.
+</p>
+
+<p>
+The book is <a href="<modern_perl_book_url />">available online for free
+download</a> and viewing.
 </p>
 
 <book_info
