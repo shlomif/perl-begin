@@ -25,35 +25,6 @@ each book.
 
 <h2 id="beginners">Books for Beginners</h2>
 
-<h3 id="learning-perl"><a
-href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
-
-<book_info 
-    authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
-    publisher="oreilly" 
-    isbn="0596101058" 
-    perlbooksid="101"
-    />
-
-<p>
-Also referred to as "the Llama Book". Considered
-one of the best books for people who are absolute beginners in Perl and even
-in programming in general. This book however, does not cover references, 
-modules, and objects and other important features of the Perl language. As 
-such, you'll usually need to complement your learning by using another
-resource.
-</p>
-
-<p>
-It is also <b>not intended for people who are absolute beginners</b> in
-programming.
-</p>
-
-<p>
-Available online electronically for a registration as part of 
-<a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
-</p>
-
 <define-tag modern_perl_book_url whitespace="delete">
 http://www.onyxneon.com/books/modern_perl/
 </define-tag>
@@ -102,6 +73,35 @@ will be able to learn through it.
 <p>
 The first edition of the book is 
 <a href="<beginning_perl_url />">available online for free download</a>.
+</p>
+
+<h3 id="learning-perl"><a
+href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
+
+<book_info 
+    authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
+    publisher="oreilly" 
+    isbn="0596101058" 
+    perlbooksid="101"
+    />
+
+<p>
+Also referred to as "the Llama Book". Considered
+one of the best books for people who are absolute beginners in Perl and even
+in programming in general. This book however, does not cover references, 
+modules, and objects and other important features of the Perl language. As 
+such, you'll usually need to complement your learning by using another
+resource.
+</p>
+
+<p>
+It is also <b>not intended for people who are absolute beginners</b> in
+programming.
+</p>
+
+<p>
+Available online electronically for a registration as part of 
+<a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
 <h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
