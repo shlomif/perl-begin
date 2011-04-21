@@ -39,6 +39,7 @@ jokes.
     publisher="apress"
     isbn="159059018X"
     perlbooksid="166"
+    online_url="http://www.apress.com/free/"
     />
 
 <p>
@@ -91,6 +92,7 @@ and also know how to accomplish many common tasks in Perl.
     publisher="morgan_kaufmann"
     isbn="1558607013"
     perlbooksid="230"
+    online_url="http://hop.perl.plover.com/"
     />
 
 <p>

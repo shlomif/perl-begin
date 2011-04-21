@@ -36,30 +36,29 @@
 </define-tag>
 
 <define-tag book_info>
-<preserve authors />
-<preserve publisher />
-<preserve isbn />
-<preserve perlbooksid />
-<preserve perlbookslink />
+
+<preserve authors publisher isbn perlbooksid perlbookslink online_url />
+
 <set-var %attributes />
 <set-var ext_publisher=<get_ext_publisher <get-var publisher /> /> />
-<set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />"><b>Book Page at books.perl.org</b></a><br />" />
+<set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />">Book Page at books.perl.org</a><br />" />
 <div class="bookinfo">
 <h3>Book Information</h3>
+
 <b>Authors:</b> <get-var authors /><br />
 <b>Publisher:</b> <get-var ext_publisher /><br />
 
+<if "<get-var online_url />" "<a href="<get-var online_url />"><b>Download/View Online</b></a><br />" "" />
 <if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
+
 <b>Buy From:</b> 
 <book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
 <book_store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
 <book_store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
 <br />
 </div>
-<restore perlbookslink />
-<restore perbooksid />
-<restore isbn />
-<restore publisher />
-<restore authors />
+
+<restore authors publisher isbn perlbooksid perlbookslink online />
+
 </define-tag>
 
