@@ -32,5 +32,3 @@ foreach my $idx (0 .. 12)
 <a href="epub/modern_perl.epub">Modern Perl EPUB</a>
 </p>
 
-<h2><a href="iperl.html">Access the Online Text</a></h2>
-
