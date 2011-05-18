@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h1 id="heading_id_2">Preface</h1>
+<p>Perl turns 23 years old later this year. The language has gone from a simple tool for system adminstration somewhere between shell scripting and C programming (Perl 1) to a powerful, general purpose language steeped in a rich heritage (Perl 5) and a consistent, coherent, rethinking of programming in general intended to last for another 25 years (Perl 6).</p>
+<p>Even so, most Perl 5 programs in the world take far too little advantage of the language. You <i>can</i> write Perl 5 programs as if they were Perl 4 programs (or Perl 3 or 2 or 1), but programs written to take advantage of everything amazing the worldwide Perl 5 community has invented, polished, and discovered are shorter, faster, more powerful, and easier to maintain than their alternatives.</p>
+<p><i>Modern Perl</i> is a loose description of how experienced and effective Perl 5 programers work. They use language idioms. They take advantage of the CPAN. They're recognizably Perlish, and they show good taste and craftsmanship and a full understanding of Perl.</p>
+<p>You can learn this too.</p>
+<h2 id="heading_id_3">Running Modern Perl</h2>
+<p>You don't have to install a new version of Perl to take advantage of most of this book, but the examples given assume that you're using Perl 5.10 or newer. Unless otherwise mentioned, code snippets always assume the basic skeleton of a program:</p>
+<div class="programlisting">
+<pre>
+<code>    #!/usr/bin/perl
+
+    use Modern::Perl;
+
+    # example code here
+    ...</code>
+</pre></div>
+<p>Other code snippets use testing functions such as <code>ok()</code>, <code>like()</code>, and <code>is()</code> (<a href="chapter_09.xhtml#testing">Testing</a>(testing)). That skeleton program is:</p>
+<div class="programlisting">
+<pre>
+<code>    #!/usr/bin/perl
+
+    use Modern::Perl;
+    <b>use Test::More 'no_Plan';</b>
+
+    # example code here
+    ...</code>
+</pre></div>
+<p>If you don't already have a modern version of Perl installed, you can install it yourself, using:</p>
+<div class="author">
+<pre>
+<code> * perlbrew
+ * Strawberry Perl
+ * local::lib</code>
+</pre></div>
+</body>
+</html>

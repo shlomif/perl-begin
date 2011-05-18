@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h2 id="heading_id_2">Writing Real Programs</h2>
+<div id="writing_real_programs"></div>
+<p>Writing simple example programs to solve example problems in a book helps you learn a language in the small. Yet writing real programs requires more than learning the syntax of a language, or its design principles, or even how to find and use its libraries.</p>
+<p>Practical programming requires you to manage code: to organize it, to know that it works, to make it robust in the face of errors of logic or intent, and to do all of this in a concise, clear, and maintainable fashion. Fortunately, modern Perl provides many tools and techniques to write real programs.</p>
+<h3 id="heading_id_3">Testing</h3>
+<div id="testing"></div>
+<div id="itesting_0"></div>
+<div id="itests_0"></div>
+<p><i>Testing</i> is the process of writing and running automated verifications that your software performs as intended, in whole or in part. At its heart, this is an automation of a process you've performed countless times already: write a bit of code, run it, and see if it works. The difference is in the <i>automation</i>. Rather than performing these manual steps and relying on humans to do everything perfectly every time, let the computer handle the repetition.</p>
+<p>Perl 5 provides great tools to help you write good and useful automated tests.</p>
+<h4 id="heading_id_4">Test::More</h4>
+<div id="iTest5858More_0"></div>
+<div id="iok4041_0"></div>
+<div id="itesting__iok4041_0"></div>
+<p>Perl testing begins with the core module <code>Test::More</code> and its single <code>ok()</code> function. <code>ok()</code> takes two parameters, a boolean value and a string describing the purpose of the test:</p>
+<div class="programlisting">
+<pre>
+<code>    ok(   1, 'the number one should be true'         );
+    ok(   0, '... and the number zero should not'    );
+    ok(  '', 'the empty string should be false'      );
+    ok( '!', '... and a non-empty string should not' );</code>
+</pre></div>
+<p>Ultimately, any condition you can test for in your program should become a binary value. Does the code work as I intended? A complex program may have thousands of these individual conditions. In general, the smaller the granularity the better. The purpose of writing individual assertions is to isolate individual features to understand what doesn't work as you intended and what ceases to work after you make changes in the future.</p>
+<div id="itesting__iplan_0"></div>
+<div id="itest_plan_0"></div>
+<div id="iTest5858More__iplan4041_0"></div>
+<p>This snippet isn't a complete test script, however. <code>Test::More</code> and related modules require the use of a <i>test plan</i>, which represents the number of individual tests you plan to run:</p>
+<div class="programlisting">
+<pre>
+<code>    use Test::More tests =&gt; 4;
+
+    ok(   1, 'the number one should be true'         );
+    ok(   0, '... and the number zero should not'    );
+    ok(  '', 'the empty string should be false'      );
+    ok( '!', '... and a non-empty string should not' );</code>
+</pre></div>
+<p>The <code>tests</code> argument to <code>Test::More</code> sets the test plan for the program. This gives the test an additional assertion. If fewer than four tests ran, something went wrong. If more than four tests ran, something went wrong. That assertion is unlikely to be useful in this simple scenario, but it <i>can</i> catch bugs in code that seems too simple to have errors <span class="footnote">(footnote: As a rule, any code you brag about being too simple to contain errors will contain errors at the least opportune moment.)</span>.</p>
+<div class="sidebar">
+<p>You don't have to provide <code>tests =&gt; ...</code> as an <code>import()</code> argument. At the end of your test program, call the function <code>done_testing()</code>. While a plan at the start with a fixed number of tests can verify that you ran only the expected number of tests, sometimes it's difficult or painful to verify that number. In those cases, <code>done_testing()</code> verifies that the test program completed successfully--otherwise, how would you <i>know</i>?</p>
+</div>
+<h4 id="heading_id_5">Running Tests</h4>
+<div id="running_tests"></div>
+<p>The resulting program is now a full-fledged Perl 5 program which produces the output:</p>
+<div class="screen">
+<pre>
+<code>    1..4
+
+    ok 1 - the number one should be true
+    not ok 2 - ... and the number zero should not
+    #   Failed test '... and the number zero should not'
+    #   at truth_values.t line 4.
+    not ok 3 - the empty string should be false
+    #   Failed test 'the empty string should be false'
+    #   at truth_values.t line 5.
+    ok 4 - ... and a non-empty string should not
+    # Looks like you failed 2 tests of 4.</code>
+</pre></div>
+<div id="iTAP_0"></div>
+<div id="itest_anything_protocol_0"></div>
+<div id="itesting__iTAP_0"></div>
+<p>This format adheres to a standard of test output called <i>TAP</i>, the <i>Test Anything Protocol</i> (<span class="url">http://testanything.org/</span>). Note that the failed tests provide diagnostic messages about what failed and where. This is a tremendous aid to debugging.</p>
+<div id="iTest5858Harness_0"></div>
+<div id="iprove_0"></div>
+<div id="itesting__iprove_0"></div>
+<div id="itesting__irunning_tests_0"></div>
+<p>The output of a test file containing multiple assertions (especially multiple <i>failed</i> assertions) can be verbose. In most cases, you want to know either that everything passed or that x, y, and z failed. The core module <code>Test::Harness</code> interprets TAP and displays only the most pertinent information. It also provides a program called <code>prove</code> which takes the hard work out of the process:</p>
+<div class="programlisting">
+<pre>
+<code>    $ <b>prove truth_values.t</b>
+    truth_values.t .. 1/4
+    #   Failed test '... and the number zero should not'
+    #   at truth_values.t line 4.
+
+    #   Failed test 'the empty string should be false'
+    #   at truth_values.t line 5.
+    # Looks like you failed 2 tests of 4.
+    truth_values.t .. Dubious, test returned 2 (wstat 512, 0x200)
+    Failed 2/4 subtests
+
+    Test Summary Report
+    -------------------
+    truth_values.t (Wstat: 512 Tests: 4 Failed: 2)
+      Failed tests:  2-3</code>
+</pre></div>
+<p>That's a lot of output to display what is already obvious: the second and third tests fail because zero and the empty string evaluate to false. It's easy to fix that failure by inverting the sense of the condition with the use of boolean coercion (<a href="chapter_03.xhtml#boolean_coercion">Boolean Coercion</a>(boolean_coercion)):</p>
+<div class="programlisting">
+<pre>
+<code>    ok(   <b>!</b> 0, '... and the number zero should not'  );
+    ok(  <b>!</b> '', 'the empty string should be false'    );</code>
+</pre></div>
+<p>With those two changes, <code>prove</code> now displays:</p>
+<div class="screen">
+<pre>
+<code>    $ <b>prove truth_values.t</b>
+    truth_values.t .. ok
+    All tests successful.</code>
+</pre></div>
+<h4 id="heading_id_6">Better Comparisons</h4>
+<p>Even though the heart of all automated testing is the boolean condition "is this true or false?", reducing everything to that boolean condition is tedious and offers few diagnostic possibilities. <code>Test::More</code> provides several other convenient functions to ensure that your code behaves as you intend.</p>
+<div id="iis4041_0"></div>
+<div id="itesting__iis4041_0"></div>
+<div id="iTest5858More__iis4041_0"></div>
+<p>The <code>is()</code> function compares two values. If they match, the test passes. Otherwise, the test fails and provides a relevant diagnostic message:</p>
+<div class="programlisting">
+<pre>
+<code>    is(         4, 2 + 2, 'addition should hold steady across the universe' );
+    is( 'pancake',   100, 'pancakes should have a delicious numeric value' );</code>
+</pre></div>
+<p>As you might expect, the first test passes and the second fails:</p>
+<div class="screen">
+<pre>
+<code>    t/is_tests.t .. 1/2
+    #   Failed test 'pancakes should have a delicious numeric value'
+    #   at t/is_tests.t line 8.
+    #          got: 'pancake'
+    #     expected: '100'
+    # Looks like you failed 1 test of 2.</code>
+</pre></div>
+<p>Where <code>ok()</code> only provides the line number of the failing test, <code>is()</code> displays the mismatched values.</p>
+<p><code>ok()</code> applies implicit scalar context to its values. This means, for example, that you can check the number of elements in an array without explicitly evaluating the array in scalar context:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cousins = qw( Rick Kristen Alex Kaycee Eric Corey );
+    is( @cousins, 6, 'I should have only six cousins' );</code>
+</pre></div>
+<p>... though some people prefer to write <code>scalar @cousins</code> for the sake of clarity.</p>
+<div id="iisnt4041_0"></div>
+<div id="itesting__iisnt4041_0"></div>
+<div id="iTest5858More__iisnt4041_0"></div>
+<p><code>Test::More</code> provides a corresponding <code>isnt()</code> function which passes if the provided values are not equal. Otherwise, it behaves the same way as <code>is()</code> with respect to scalar context and comparison types.</p>
+<div id="icmp_ok4041_0"></div>
+<div id="itesting__icmp_ok4041_0"></div>
+<div id="iTest5858More__icmp_ok4041_0"></div>
+<p>Both <code>is()</code> and <code>isnt()</code> perform <i>string comparisons</i> with the Perl 5 operators <code>eq</code> and <code>ne</code>. This almost always does the right thing, but for complex values such as objects with overloading (<a href="chapter_09.xhtml#overloading">Overloading</a>(overloading)) or dual vars (<a href="chapter_03.xhtml#dualvars">Dualvars</a>(dualvars)), you may prefer explicit comparison testing. The <code>cmp_ok()</code> function allows you to specify your own comparison operator:</p>
+<div class="programlisting">
+<pre>
+<code>    cmp_ok(     100, $cur_balance, '&lt;=', 'I should have at least $100' );
+    cmp_ok( $monkey,         $ape, '==', 'Simian numifications should agree' );</code>
+</pre></div>
+<div id="iisa_ok4041_0"></div>
+<div id="itesting__iisa_ok4041_0"></div>
+<div id="iTest5858More__iisa_ok4041_0"></div>
+<p>Classes and objects provide their own interesting ways to interact with tests. Test that a class or object extends another class (<a href="chapter_07.xhtml#inheritance">Inheritance</a>(inheritance)) with <code>isa_ok()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $chimpzilla = RobotMonkey-&gt;new();
+    isa_ok( $chimpzilla, 'Robot' );
+    isa_ok( $chimpzilla, 'Monkey' );</code>
+</pre></div>
+<p><code>isa_ok()</code> provides its own diagnostic message on failure.</p>
+<p><code>can_ok()</code> verifies that a class or object can perform the requested method (or methods):</p>
+<div class="programlisting">
+<pre>
+<code>    can_ok( $chimpzilla, 'eat_banana' );
+    can_ok( $chimpzilla, 'transform', 'destroy_tokyo' );</code>
+</pre></div>
+<p>The <code>is_deeply()</code> function compares two references to ensure that their contents are equal:</p>
+<div class="programlisting">
+<pre>
+<code>    use Clone;
+
+    my $numbers   = [ 4, 8, 15, 16, 23, 42 ];
+    my $clonenums = Clone::clone( $numbers );
+
+    is_deeply( $numbers, $clonenums,
+         'Clone::clone() should produce identical structures' );</code>
+</pre></div>
+<p>If the comparison fails, <code>Test::More</code> will do its best to provide a reasonable diagnostic indicating the position of the first inequality between the structures. See the CPAN modules <code>Test::Differences</code> and <code>Test::Deep</code> for more configurable tests.</p>
+<p><code>Test::More</code> has several more test functions, but these are the most useful.</p>
+<h4 id="heading_id_7">Organizing Tests</h4>
+<div id="itesting__i46t_files_0"></div>
+<div id="itesting__it47_directory_0"></div>
+<p>The standard CPAN approach for organizing tests is to create a <i>t/</i> directory containing one or more programs ending with the <i>.t</i> suffix. All of the CPAN distribution management tools (and the CPAN infrastructure itself) understand this system. By default, when you build a distribution with <code>Module::Build</code> or <code>ExtUtils::MakeMaker</code>, the testing step runs all of the <i>t/*.t</i> files, summarizes their output, and succeeds or fails on the results of the test suite as a whole.</p>
+<p>There are no concrete guidelines on how to manage the contents of individual <i>.t</i> files, though two strategies are popular:</p>
+<ul>
+<li>Each <i>.t</i> file should correspond to a <i>.pm</i> file</li>
+<li>Each <i>.t</i> file should correspond to a feature</li>
+</ul>
+<p>The important considerations are maintainability of the test files, as larger files are more difficult to maintain than smaller files, and the granularity of the test suite. A hybrid approach is the most flexible; one test can verify that all of your modules compile, while other tests verify that each module behaves as intended.</p>
+<p>It's often useful to run tests only for a specific feature under development. If you're adding the ability to breathe fire to your <code>RobotMonkey</code>, you may want only to run the <i>t/breathe_fire.t</i> test file. When you have the feature working to your satisfaction, run the entire test suite to verify that local changes have no unintended global effects.</p>
+<h4 id="heading_id_8">Coverage Testing and Profiling</h4>
+<div class="author">
+<p>What do we have here, <code>Devel::Cover</code>, <code>Devel::NYTProf</code> (iirc), etc. Very useful for knowing if that change would be expected to break that test. Profiler to test your code for performance. Both essential tools!</p>
+</div>
+<h4 id="heading_id_9">Other Testing Modules</h4>
+<div id="iTest5858Builder_0"></div>
+<div id="itesting__imodules_0"></div>
+<div id="itesting__iTest5858Builder_0"></div>
+<p><code>Test::More</code> relies on a testing backend known as <code>Test::Builder</code>. The latter module manages the test plan and coordinates the test output into TAP. This design allows multiple test modules to share the same <code>Test::Builder</code> backend. Consequently, the CPAN has hundreds of test modules available--and they can all work together in the same program.</p>
+<ul>
+<li><code>Test::Exception</code> provides functions to ensure that your code throws (and does not throw) exceptions appropriately.</li>
+<li><code>Test::MockObject</code> and <code>Test::MockModule</code> allow you to test difficult interfaces by <i>mocking</i> (emulating but producing different results).</li>
+<li><code>Test::WWW::Mechanize</code> allows you to test live web applications.</li>
+<li><code>Test::Database</code> provides functions to test the use and abuse of databases.</li>
+<li><code>Test::Class</code> offers an alternate mechanism for organizing test suites. It allows you to create classes in which specific methods group tests. You can inherit from test classes just as your code classes inherit from each other. This is an excellent way to reduce duplication in test suites. See the <code>Test::Class</code> series written by Curtis Poe at <span class="url">http://www.modernperlbooks.com/mt/2009/03/organizing-test-suites-with-testclass.html</span>.</li>
+</ul>
+<p>The Perl QA project (<span class="url">http://qa.perl.org/</span>) is a primary source of test modules as well as wisdom and practical experience making testing in Perl easy and effective.</p>
+<h3 id="heading_id_10">Files</h3>
+<div id="files"></div>
+<p>Most programs deal with the outside world in some fashion, and much of that interaction takes place with files: reading them, writing them, manipulating them in some other fashion. Perl's early history as a language for system administration and text processing has produced a language very well suited for file manipulation.</p>
+<h4 id="heading_id_11">Input and Output</h4>
+<div id="filehandle"></div>
+<div id="ifilehandle_0"></div>
+<div id="iSTDIN_0"></div>
+<div id="iSTDERR_0"></div>
+<div id="iSTDOUT_0"></div>
+<p>The primary mechanism of interacting with the world outside of a program is through a <i>filehandle</i>. Filehandles represent the state of some channel of input or output, such as the standard input or output of a program, a file from or two which to read or write, and the position in a given file. Every Perl 5 program has three standard filehandles available, <code>STDIN</code> (the input to the program), <code>STDOUT</code> (the output from the program), and <code>STDERR</code> (the error output from the program).</p>
+<p>By default, everything you <code>print</code> or <code>say</code> goes to <code>STDOUT</code>, while errors and warnings and everything you <code>warn()</code> goes to <code>STDERR</code>. This separation of output allows you to redirect useful output and errors to two different places--an output file and error logs, for example.</p>
+<div class="sidebar">
+<div id="iDATA_0"></div>
+<div id="i__DATA___0"></div>
+<div id="i__END___0"></div>
+<p>Another filehandle is available; <code>DATA</code> represents the current file. When Perl finishes compiling the file, it leaves the package global <code>DATA</code> available and open at the end of the compilation unit. If you store string data after <code>__DATA__</code> or <code>__END__</code>, you can read that from the <code>DATA</code> filehandle. This is useful for short, self-contained programs. <code>perldoc perldata</code> describes this feature in more detail.</p>
+</div>
+<div id="iopen_1"></div>
+<div id="ikeywords__iopen_0"></div>
+<p>Besides the standard filehandles, you can open your own filehandles with the <code>open</code> keyword. To open a file for reading:</p>
+<div class="programlisting">
+<pre>
+<code>    open my $fh, '&lt;', 'filename'
+        or die "Cannot read '$filename': $!\n";</code>
+</pre></div>
+<div id="iThe_first_operand_is_a_lexical_which_will_hold_the_opened_filehandle46_The_second_operand_is_the_file_mode_0"></div>
+, which determines the type of the filehandle operation. The final operand is the name of the file. If the <code>open</code> fails, the <code>die</code> clause will throw an exception, with the contents of <code>$!</code> giving the reason why the open failed.<i>Table: File Modes</i>
+<div id="file_modes_table"></div>
+<table>
+<tr>
+<th>Symbols</th>
+<th>Explanation</th>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Open for reading</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Open for writing, clobbering existing contents if the file exists and creating a new file otherwise.</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Open for writing, appending to any existing contents and creating a new file otherwise.</td>
+</tr>
+<tr>
+<td><code>+&lt;</code></td>
+<td>Open for reading <i>and</i> writing.</td>
+</tr>
+</table>
+<p>Besides files, you can open filehandles to scalars:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    my $captured_output;
+    open my $fh, '&gt;', \$captured_output;
+
+    do_something_awesome( $fh );</code>
+</pre></div>
+<p>Such filehandles support all of the existing file modes.</p>
+<p>You may encounter older code which uses the two-argument form of <code>open()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    open my $fh, "&gt; $some_file"
+        or die "Cannot write to '$some_file': $!\n";</code>
+</pre></div>
+<p>The lack of clean separation between the intended file mode and the name of the file allows the possibility of unintentional behaviors <span class="footnote">(footnote: When you read that phrase, train yourself to think "I wonder if that might produce security problems?")</span> when interpolating untrusted input into the second operand. You can safely replace the two-argument form of open with the three-argument form in every case without any loss of feature.</p>
+<div id="isysopen_0"></div>
+<div id="ikeywords__isysopen_0"></div>
+<p><code>perldoc perlopentut</code> offers far more details about more exotic uses of <code>open</code>, including its ability to launch and control other processes, as well as the use of <code>sysopen</code> for finer-grained control over input and output. <code>perldoc perlfaq5</code> includes working code for many common IO tasks.</p>
+<div id="ireadline_0"></div>
+<div id="ikeywords__ireadline_0"></div>
+<div id="i38lt5938gt59_0"></div>
+<div id="ioperators__i38lt5938gt59_0"></div>
+<h5 id="heading_id_12">Reading from Files</h5>
+<p>Given a filehandle opened for input, read from it with the <code>readline</code> operator, also written as <code>&lt;&gt;</code>. The most common idiom is to read a line at a time in a <code>while()</code> loop:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+    open my $fh, '&lt;', 'some_file';
+
+    while (&lt;$fh&gt;)
+    {
+        chomp;
+        say "Read a line '$_'";
+    }</code>
+</pre></div>
+<div id="ikeywords__ieof_0"></div>
+<div id="ieof_0"></div>
+<p>In scalar context, <code>readline</code> iterates through the lines available through the filehandle until it reaches the end of the file (<code>eof()</code>). Each iteration returns the next line. After reaching the end of the file, each iteration returns <code>undef</code>. This <code>while</code> idiom explicitly checks the definedness of the variable used for iteration, such that only the end of file condition ends the loop.</p>
+<div id="ikeywords__ichomp_0"></div>
+<div id="ichomp_0"></div>
+<p>Every line read from <code>readline</code> includes the character or characters which mark the end of a line. In most cases, this is a platform-specific sequence consisting of a newline (<code>\n</code>), a carriage return (<code>\r</code>), or a combination of the two (<code>\r\n</code>). Use <code>chomp</code> to remove your platform's specific newline sequence.</p>
+<p>With everything all together, the cleanest way to read from files in Perl 5 is:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&lt;', $filename;
+
+    while (my $line = &lt;$fh&gt;)
+    {
+        chomp $line;
+        ...
+    }</code>
+</pre></div>
+<h5 id="heading_id_13">Writing to Files</h5>
+<div id="iprint_0"></div>
+<div id="ikeywords__iprint_0"></div>
+<div id="isay_0"></div>
+<div id="ikeywords__isay_0"></div>
+<p>Given a filehandle open for output, you may <code>print</code> or <code>say</code> to it:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+    open my $out_fh, '&gt;', 'output_file.txt';
+
+    print $out_fh "Here's a line of text\n";
+    say   $out_fh "... and here's another";</code>
+</pre></div>
+<p>Note the lack of comma between the filehandle and the subsequent operand.</p>
+<div class="sidebar">
+<p>Damian Conway's <i>Perl Best Practices</i> recommends enclosing the filehandle in curly braces as a habit. This is necessary to disambiguate parsing of a filehandle contained in an aggregate variable, and it's a good habit to cultivate anyhow.</p>
+</div>
+<div id="i3644_0"></div>
+<div id="iglobals__i3644_0"></div>
+<div id="i36__1"></div>
+<div id="iglobals__i36__0"></div>
+<p>You may write an entire list of values to <code>print</code> or <code>say</code>, in which case Perl 5 uses the magic global <code>$,</code> as the separator between list values. Perl also uses any value of <code>$\</code> as the final argument to <code>print</code> or <code>say</code>.</p>
+<h5 id="heading_id_14">Closing Files</h5>
+<div id="iclose_0"></div>
+<div id="ikeywords__iclose_0"></div>
+<p>When you've finished working with a file, you may <code>close</code> it explicitly or allow its filehandle to go out of scope, in which case Perl will close it for you. The benefit of calling <code>close</code> explicitly is that you can check for--and recover from--specific errors, such as running out of space on a storage device or a broken network connection.</p>
+<p>As usual, <code>autodie</code> (<a href="chapter_12.xhtml#autodie">The autodie Pragma</a>(autodie)) handles these checks for you:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&gt;', $file;
+
+    ...
+
+    close $fh;</code>
+</pre></div>
+<h5 id="heading_id_15">Special File Handling Variables</h5>
+<div id="ivariables__i3646_0"></div>
+<div id="i3646_0"></div>
+<p>For every line read, Perl 5 increments the value of the variable <code>$.</code>, which serves as a line counter.</p>
+<div id="ivariables__i3646_1"></div>
+<div id="i3646_1"></div>
+<p><code>readline</code> uses the current contents of <code>$/</code> as the line-ending sequence (see example in <a href="chapter_05.xhtml#dynamic_scope">Dynamic Scope</a>(dynamic_scope)). The value of this variable defaults to the most appropriate line-ending character sequence for text files on your current platform. In truth, the word <i>line</i> is a misnomer. You can set <code>$/</code> to contain any sequence of characters <span class="footnote">(footnote: ... but never a regular expression, because Perl 5 does not support that.)</span>. This is useful for highly-structured data in which you want to read a <i>record</i> at a time.</p>
+<div id="ivariables__i36124_0"></div>
+<div id="i36124_1"></div>
+<div id="ibuffering_0"></div>
+<p>By default, Perl uses <i>buffered output</i>, where it performs IO only when it has enough data to exceed a threshold. This allows Perl to batch up expensive IO operations instead of always writing very small amounts of data. Yet sometimes you want to send data as soon as you have it without waiting for that buffering--especially if you're writing a command-line filter connected to other programs or a line-oriented network service.</p>
+<p>The <code>$|</code> variable controls buffering on the currently active output filehandle. When set to a non-zero value, Perl will flush the output after each write to the filehandle. When set to a zero value, Perl will use its default buffering strategy.</p>
+<div id="iIO5858File_0"></div>
+<div id="iIO5858File__iautoflush4041_0"></div>
+<p>In lieu of the global variable, use the <code>autoflush()</code> method on a lexical filehandle. Be sure to load <code>IO::File</code> first, as you cannot call methods on lexical filehandles otherwise:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+    use IO::File;
+
+    open my $fh, '&gt;', 'pecan.log';
+    $fh-&gt;autoflush( 1 );
+
+    ...</code>
+</pre></div>
+<div id="iIO5858File__iinput_line_number4041_0"></div>
+<div id="iIO5858File__iinput_record_separator4041_0"></div>
+<p>Once you have loaded <code>IO::File</code>, you may also use its <code>input_line_number()</code> and <code>input_record_separator()</code> methods instead of <code>$.</code> and <code>$/</code> respectively. See <code>perldoc IO::File</code> and <code>perldoc IO::Handle</code> for more information.</p>
+<h4 id="heading_id_16">Directories and Paths</h4>
+<div id="iopendir_0"></div>
+<div id="ikeywords__iopendir_0"></div>
+<p>You may also manipulate directories and file paths with Perl 5. Working with directories is similar to working with files, except that you cannot <i>write</i> to directories <span class="footnote">(footnote: Instead, you save and move and rename and remove files.)</span>. Open a directory handle with <code>opendir</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    opendir my $dirh, '/home/monkeytamer/tasks/';</code>
+</pre></div>
+<div id="ireaddir_0"></div>
+<div id="ikeywords__ireaddir_0"></div>
+<p>The keyword to read from a directory is <code>readdir</code>. As with <code>readline</code>, you may iterate over the contents of directories one at a time or you may assign them to a list in one swoop:</p>
+<div class="programlisting">
+<pre>
+<code>    # iteration
+    while (my $file = readdir $dirh )
+    {
+        ...
+    }
+
+    # flattening into a list
+    my @files = readdir $otherdirh;</code>
+</pre></div>
+<p>As a new feature available in 5.12, <code>readdir</code> in a <code>while</code> will set <code>$_</code>, just as does <code>readline</code> in <code>while</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    use 5.012;
+    use autodie;
+
+    opendir my $dirh, 'tasks/circus/';
+
+    while (readdir $dirh)
+    {
+        next if /^\./;
+        say "Found a task $_!";
+    }</code>
+</pre></div>
+<div id="iUnix__ihidden_files_0"></div>
+<div id="ifiles__ihidden_0"></div>
+<div id="ihidden_files_0"></div>
+<p>The curious regular expression in this example skips so-called <i>hidden files</i> on Unix and Unix-like systems, where a leading dot prevents them from appearing in directory listings by default. It also skips the first two files returned from every <code>readdir</code> invocation, specifically <code>.</code> and <code>..</code>. These two files represent the current directory and the parent directory, respectively.</p>
+<div id="ifiles__irelative_paths_0"></div>
+<div id="ifiles__iabsolute_paths_0"></div>
+<p>Be careful that the names returned from <code>readdir</code> are <i>relative</i> to the directory itself. In other words, if the <i>tasks/</i> directory contains three files named <i>eat</i>, <i>drink</i>, and <i>be_monkey</i>, <code>readdir</code> will return <code>eat</code>, <code>drink</code>, and <code>be_monkey</code> and <i>not</i> <i>tasks/eat</i>, <i>tasks/drink</i>, and <i>task/be_monkey</i>. In contrast, an <i>absolute</i> path is a path fully qualified to its filesystem.</p>
+<div id="iclosedir_0"></div>
+<div id="ikeywords__iclosedir_0"></div>
+<p>Close a directory handle by letting it go out of scope or with the <code>closedir</code> keyword.</p>
+<h5 id="heading_id_17">Manipulating Paths</h5>
+<p>Perl 5 offers a Unixish view of the world, or at least your filesystem. Even if you aren't using a Unix-like platform, Perl will interpret Unix-style paths appropriately for your operating system and filesystem. In other words, if you're using Microsoft Windows, you can use the path <i>C:/My Documents/Robots/Bender/</i> just as easily as you can use the path <i>C:\My Documents\Robots\Caprica Six\</i>.</p>
+<div id="iFile5858Spec_0"></div>
+<p>Even so, manipulating file paths in a safe and cross-platform manner suggests that you avoid string interpolation and concatenation. The core <code>File::Spec</code> module family provides abstractions to allow you to manipulate file paths in safe and portable fashions. Even so, it's not always easy to understand or to use correctly.</p>
+<div id="iPath5858Class_0"></div>
+<div id="iPath5858Class5858Dir_0"></div>
+<div id="iPath5858Class5858File_0"></div>
+<p>The <code>Path::Class</code> distribution on the CPAN provides a nicer interface around <code>File::Spec</code>. Use the <code>dir()</code> function to create an object representing a directory and the <code>file()</code> function to create an object repesenting a file:</p>
+<div class="programlisting">
+<pre>
+<code>    use Path::Class;
+
+    my $meals = dir( 'tasks', 'cooking' );
+    my $file  = file( 'tasks', 'health', 'exoskeleton_research.txt' );</code>
+</pre></div>
+<p>... and you can get file objects from directories:</p>
+<div class="programlisting">
+<pre>
+<code>    my $lunch = $meals-&gt;file( 'veggie_calzone.txt' );</code>
+</pre></div>
+<p>... and vice versa:</p>
+<div class="programlisting">
+<pre>
+<code>    my $robots_dir = $robot_list-&gt;dir();</code>
+</pre></div>
+<p>You can even open filehandles to directories and files:</p>
+<div class="programlisting">
+<pre>
+<code>    my $dir_fh    = $dir-&gt;open();
+    my $robots_fh = $robot_list-&gt;open( 'r' );</code>
+</pre></div>
+<p>See the documentation of <code>Path::Class::Dir</code> and <code>Path::Class::File</code> for more information.</p>
+<h4 id="heading_id_18">File Manipulation</h4>
+<div id="i45X_0"></div>
+<div id="ioperators__i45X_0"></div>
+<p>Besides reading and writing files, you can also manipulate them as you would directly from a command line or a file manager. The <code>-X</code> file test operators can give you information about the attributes of files and directories on your system. For example, to test that a file exists:</p>
+<div id="ioperators__i45e_0"></div>
+<div class="programlisting">
+<pre>
+<code>    say 'Present!' if -e $filename;</code>
+</pre></div>
+<p>The <code>-e</code> operator has a single operand, the name of a file or a file or directory handle. If the file exists, the expression will evaluate to a true value. <code>perldoc -f -X</code> lists several other file tests; the most popular are:</p>
+<div id="ioperators__i45f_0"></div>
+<div id="ioperators__i45d_0"></div>
+<div id="ioperators__i45r_0"></div>
+<div id="ioperators__i45z_0"></div>
+<ul>
+<li><code>-f</code>, which returns a true value if its operand is a plain file</li>
+<li><code>-d</code>, which returns a true value if its operand is a directory</li>
+<li><code>-r</code>, which returns a true value if the file permissions of its operand permit reading by the current user</li>
+<li><code>-z</code>, which returns a true value if its operand is a non-empty file</li>
+</ul>
+<p>As of Perl 5.10.1, you may look up the documentation for any of these operators with <code>perldoc -f -r</code>, for example.</p>
+<div class="sidebar">
+<div id="ichdir_0"></div>
+<div id="ikeywords__ichdir_0"></div>
+<div id="iCwd_0"></div>
+<p>Perl also allows you to change its notion of the current directory. By default, this is the active directory from where you launched the program. The core <code>Cwd</code> module allows you to determine this. The keyword <code>chdir</code> attempts to change the current working directory. This can be useful for performing file manipulations with relative--not absolute--paths.</p>
+</div>
+<div id="irename_0"></div>
+<div id="ikeywords__irename_0"></div>
+<p>The <code>rename</code> keyword can rename a file or move it between directories. It takes two operands, the old name of the file and the new name:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    rename 'death_star.txt', 'carbon_sink.txt';</code>
+</pre></div>
+<div id="iFile5858Copy_0"></div>
+<div id="iunlink_0"></div>
+<div id="ifiles__icopying_0"></div>
+<div id="ifiles__imoving_0"></div>
+<div id="ifiles__iremoving_0"></div>
+<div id="ifiles__ideleting_0"></div>
+<p>There's no core keyword to copy a file, but the core <code>File::Copy</code> module provides both <code>copy()</code> and <code>move()</code> functions. Use <code>unlink</code> to remove one or more files. These functions and keywords all return true values on success and set <code>$!</code> on error.</p>
+<div class="sidebar">
+<p><code>Path::Class</code> provides convenience methods to check certain file attribtes as well as to remove files completely, in a cross-platform fashion.</p>
+</div>
+<h3 id="heading_id_19">Exceptions</h3>
+<div id="exceptions"></div>
+<p>Programming would be simpler if everything always worked as intended. Unfortunately, files you expect to exist don't. Sometimes you run out of disk space. Your network connection vanishes. The database stops accepting new data.</p>
+<div id="iexceptions_0"></div>
+<p>Exceptional cases happen, and robust software must handle those exceptional conditions. If you can recover, great! If you can't, sometimes the best you can do is retry or at least log all of the relevant information for further debugging. Perl 5 handles exceptional conditions through the use of <i>exceptions</i>: a dynamically-scoped form of control flow that lets you handle errors in the most appropriate place.</p>
+<h4 id="heading_id_20">Throwing Exceptions</h4>
+<div id="throwing_exceptions"></div>
+<p>Consider the case where you need to open a file for logging. If you cannot open the file, something has gone wrong. Use <code>die</code> to throw an exception:</p>
+<div class="programlisting">
+<pre>
+<code>    sub open_log_file
+    {
+        my $name = shift;
+        open my $fh, '&gt;&gt;', $name
+            <b>or die "Can't open logging file '$name': $!";</b>
+        return $fh;
+    }</code>
+</pre></div>
+<div id="idie_0"></div>
+<div id="ikeywords__idie_0"></div>
+<div id="iexceptions__ithrowing_0"></div>
+<div id="iexceptions__idie_0"></div>
+<div id="i3664_1"></div>
+<div id="iglobal_variables__i3664_0"></div>
+<div id="iexceptions__i3664_0"></div>
+<p><code>die()</code> sets the global variable <code>$@</code> to its argument and immediately exits the current function <i>without returning anything</i>. If the calling function does not explicitly handle this exception, the exception will propagate upwards to every caller until something handles the exception or the program exits with an error message.</p>
+<div class="sidebar">
+<p>This dynamic scoping of exception throwing and handling is the same as the dynamic scoping of <code>local</code> symbols (<a href="chapter_05.xhtml#dynamic_scope">Dynamic Scope</a>(dynamic_scope)).</p>
+</div>
+<h4 id="heading_id_21">Catching Exceptions</h4>
+<div id="catching_exceptions"></div>
+<div id="iexceptions__icatching_0"></div>
+<p>Uncaught exceptions eventually terminate the program. Sometimes this is useful; a system administration program run from cron (a Unix jobs scheduler) might throw an exception when the error logs have filled; this could page an administrator that something has gone wrong. Yet many other exceptions should not be fatal; good programs can recover from them, or at least save their state and exit more cleanly.</p>
+<div id="ikeywords__ieval_0"></div>
+<div id="ikeywords__ieval_block_0"></div>
+<div id="ieval_0"></div>
+<div id="ieval__iblock_0"></div>
+<p>To catch an exception, use the block form of the <code>eval</code> operator:</p>
+<div class="programlisting">
+<pre>
+<code>    # log file may not open
+    my $fh = eval { open_log_file( 'monkeytown.log' ) };</code>
+</pre></div>
+<p>As with all blocks, the block argument to <code>eval</code> introduces a new scope. If the file open succeeds, <code>$fh</code> will contain the filehandle. If it fails, <code>$fh</code> will remain undefined, and Perl will move on to the next statement in the program.</p>
+<p>If <code>open_log_file()</code> called other functions which called other functions, and if one of those functions threw its own exception, this <code>eval</code> could catch it, if nothing else did. There is no requirement that your exception handlers catch only those exceptions you expect.</p>
+<p>To check which exception you've caught (or if you've caught an exception at all), check the value of <code>$@</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    # log file may not open
+    my $fh = eval { open_log_file( 'monkeytown.log' ) };
+
+    # caught exception
+    <b>if ($@) { ... }</b></code>
+</pre></div>
+<p>Of course, <code>$@</code> is a <i>global</i> variable. For optimal safety, <code>local</code>ize its value before you attempt to catch an exception:</p>
+<div class="programlisting">
+<pre>
+<code>    <b>local $@;</b>
+
+    # log file may not open
+    my $fh = eval { open_log_file( 'monkeytown.log' ) };
+
+    # caught exception
+    if ($@) { ... }</code>
+</pre></div>
+<div id="iexceptions__irethrowing_0"></div>
+<p>You may check the string value of <code>$@</code> against expected exceptions to see if you can handle the exception or if you should rethrow it:</p>
+<div class="programlisting">
+<pre>
+<code>    if (my $exception = $@)
+    {
+        die $exception unless $exception =~ /^Can't open logging file/;
+        $fh = log_to_syslog();
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>Copy <code>$@</code> to <code>$exception</code> to avoid the possibility of subsequent code clobbering the global variable <code>$@</code>. You never know what else has used an <code>eval</code> block elsewhere and reset $@.</p>
+</div>
+<p>Rethrow an exception by calling <code>die()</code> again, passing <code>$@</code>.</p>
+<div id="idie__iobject_0"></div>
+<div id="iexceptions__iexception_objects_0"></div>
+<p>You may find the idea of using regular expressions against the value of <code>$@</code> distasteful; you can also use an <i>object</i> with <code>die</code>. Admittedly, this is rare. <code>$@</code> <i>can</i> contain any arbitrary reference, but in practice it seems to be 95% strings and 5% objects.</p>
+<p>As an alternative to writing your own exception system, see the CPAN distribution <code>Exception::Class</code>.</p>
+<h4 id="heading_id_22">Exception Caveats</h4>
+<div id="exception_caveats"></div>
+<p>Using <code>$@</code> correctly can be tricky; the global nature of the variable leaves it open to several subtle flaws:</p>
+<ul>
+<li>Un<code>local</code>ized uses further down the dynamic scope may reset its value</li>
+<li>The destruction of any objects at scope exit from exception throwing may call <code>eval</code> and change its value</li>
+<li>It may contain an object which overrides its boolean value to return false</li>
+<li>A signal handler (especially the <code>DIE</code> signal handler) may change its value when you do not expect it</li>
+</ul>
+<p>Writing a perfectly safe and sane exception handler is difficult. The <code>Try::Tiny</code> distribution from the CPAN is short, easy to install, easy to understand, and very easy to use:</p>
+<div class="programlisting">
+<pre>
+<code>    use Try::Tiny;
+
+    my $fh = try   { open_log_file( 'monkeytown.log' ) }
+             catch { ... };</code>
+</pre></div>
+<p>Not only is the syntax somewhat nicer than the Perl 5 default, but the module handles all of those edge cases for you without your knowledge.</p>
+<h4 id="heading_id_23">Built-in Exceptions</h4>
+<div id="builtin_exceptions"></div>
+<div id="iexceptions__icore_0"></div>
+<p>Perl 5 has several exceptional conditions you can catch with an <code>eval</code> block. <code>perldoc perldiag</code> lists them as "trappable fatal errors". Most are syntax errors thrown during compilation. Others are runtime errors. Some of these may be worth catching; syntax errors rarely are.</p>
+<div class="author">
+<p>What's that list? The exhaustive exception list? The ones worth catching? The most interesting ones?</p>
+<p>A list header and/or some reordering could help.</p>
+</div>
+<ul>
+<li>Using a disallowed key in a locked hash (<a href="chapter_03.xhtml#locked_hashes">Locking Hashes</a>(locked_hashes))</li>
+<li>Blessing a non-reference (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references))</li>
+<li>Calling a method on an invalid invocant (<a href="chapter_07.xhtml#moose">Moose</a>(moose))</li>
+<li>Failing to find a method of the given name on the invocant</li>
+<li>Perl encountered a tainting violation (<a href="chapter_09.xhtml#taint">Taint</a>(taint))</li>
+<li>Modifying a read-only value</li>
+<li>Performing the wrong operation on the wrong type of reference (<a href="chapter_03.xhtml#references">References</a>(references))</li>
+</ul>
+<p>If you have enabled fatal lexical warnings (<a href="chapter_09.xhtml#registering_warnings">Registering Your Own Warnings</a>(registering_warnings)), you can catch the exceptions they throw. The same goes for exceptions from <code>autodie</code> (<a href="chapter_12.xhtml#autodie">The autodie Pragma</a>(autodie)).</p>
+<h3 id="heading_id_24">Handling Warnings</h3>
+<div id="handling_warnings"></div>
+<p>Perl 5 produces optional warnings for many confusing, unclear, and ambiguous situations. Even though you should almost always enable warnings unconditionally, certain circumstances dictate prudence in disabling certain warnings--and Perl supports this.</p>
+<h4 id="heading_id_25">Producing Warnings</h4>
+<div class="author">
+<p>warn Carp carp() and cluck() do they work with $SIG{__WARN__}? Must verify. perl -MCarp=verbose</p>
+</div>
+<h4 id="heading_id_26">Enabling and Disabling Warnings</h4>
+<div id="i45w_0"></div>
+<div id="icommand45line_arguments__i45w_0"></div>
+<p>Lexical encapsulation of warnings is as important as lexical encapsulation of variables. Older code may use the <code>-w</code> command-line argument to enable warnings throughout the program, even if other code has not specifically attempted to suppress warnings. It's all or nothing. If you have the wherewithal to eliminate warnings and potential warnings throughout the entire codebase, this can be useful.</p>
+<div id="iwarnings_0"></div>
+<div id="ipragmas__iwarnings_0"></div>
+<p>The modern approach is to use the <code>warnings</code> pragma. The presence of <code>use warnings;</code> or an equivalent <span class="footnote">(footnote: Such as <code>use Modern::Perl;</code>)</span> in code indicates that the authors intended that normal operation of the code should not produce warnings.</p>
+<div class="sidebar">
+<div id="i45W_0"></div>
+<div id="icommand45line_arguments__i45W_0"></div>
+<div id="i45X_1"></div>
+<div id="icommand45line_arguments__i45X_0"></div>
+<p>The <code>-W</code> flag enables warnings throughout the program unilaterally, regardless of lexical enabling or disabling through the <code>warnings</code> pragma. The <code>-X</code> flag <i>disables</i> warnings throughout the program unilaterally. Neither is common.</p>
+</div>
+<div id="i3694W_0"></div>
+<div id="iglobal_variables__i3694W_0"></div>
+<p>All of <code>-w</code>, <code>-W</code>, and <code>-X</code> affect the value of the global variable <code>$^W</code>. Code written before the <code>warnings</code> pragma (Perl 5.6.0 in spring 2000) may <code>local</code>ize <code>$^W</code> to suppress certain warnings within a given scope. New code should use the pragma instead.</p>
+<h4 id="heading_id_27">Disabling Warning Categories</h4>
+<p>To disable selective warnings within a scope, use <code>no warnings;</code> with an argument list. Omitting the argument list disables all warnings within that scope.</p>
+<p><code>perldoc perllexwarn</code> lists all of the warnings categories your version of Perl 5 understands with the <code>warnings</code> pragma. Most of them represent truly interesting conditions in which Perl may find your program. A few may be unhelpful in specific conditions. For example, the <code>recursion</code> warning will occur if Perl detects that a function has called itself more than a hundred times. If you are confident in your ability to write recursion-ending conditions, you may disable this warning within the scope of the recursion. (Alternately see <a href="chapter_05.xhtml#tail_calls">Tail Calls</a>(tail_calls).)</p>
+<p>If you're generating code (<a href="chapter_09.xhtml#code_generation">Code Generation</a>(code_generation)) or locally redefining symbols, you may wish to disable the <code>redefine</code> warnings.</p>
+<p>Some experienced Perl hackers disable the <code>uninitialized</code> value warnings in string-processing code which concatenates values from many sources. Careful initialization of variables can avoid the need to disable the warning, but local style and concision may render this warning moot.</p>
+<h4 id="heading_id_28">Making Warnings Fatal</h4>
+<div id="fatal_warnings"></div>
+<div id="iwarnings__ifatal_0"></div>
+<p>If your project considers warnings as onerous as errors, you can make them lexically fatal. To promote <i>all</i> warnings into exceptions:</p>
+<div class="programlisting">
+<pre>
+<code>    use warnings FATAL =&gt; 'all';</code>
+</pre></div>
+<p>You may also make specific categories of warnings fatal, such as the use of deprecated constructs:</p>
+<div class="programlisting">
+<pre>
+<code>    use warnings FATAL =&gt; 'deprecated';</code>
+</pre></div>
+<h4 id="heading_id_29">Catching Warnings</h4>
+<div id="isignal_handlers__i__WARN___0"></div>
+<div id="i__WARN___0"></div>
+<div id="i36SIG123__WARN__125_0"></div>
+<div id="iwarnings__icatching_0"></div>
+<p>Just as you can catch exceptions, so you can catch warnings. The <code>%SIG</code> variable holds handlers for all sorts of signals Perl or your operating system might throw. It also includes two slots for signal handlers for Perl 5 exceptions and warnings. To catch a warning, install an anonymous function into <code>$SIG{__WARN__}</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my $warning;
+        local $SIG{__WARN__} = sub { $warning .= shift };
+
+        # do something risky
+        say "Caught warning:\n$warning" if $warning;
+    }</code>
+</pre></div>
+<p>Within the warning handler, the first argument is the warning's message. Admittedly, this technique is less useful than disabling warnings lexically--but it can come to good use in test modules such as <code>Test::Warnings</code> from the CPAN, where the actual text of the warning is important.</p>
+<h4 id="heading_id_30">Registering Your Own Warnings</h4>
+<div id="registering_warnings"></div>
+<div id="iwarnings__iregistering_0"></div>
+<div id="ilexical_warnings_0"></div>
+<p>With the use of the <code>warnings::register</code> pragma you can even create your own lexical warnings so that users of your code can enable and disable lexical warnings as appropriate. This is easy to accomplish; from a module, <code>use</code> the <code>warnings::register</code> pragma:</p>
+<div class="programlisting">
+<pre>
+<code>    package Scary::Monkey;
+
+    <b>use warnings::register;</b>
+
+    1;</code>
+</pre></div>
+<p>This will create a new warnings category named after the package (in this case, <code>Scary::Monkey</code>). Users can enable it explicitly with <code>use warnings 'Scary::Monkey'</code> or disable it explicitly with <code>no warnings 'Scary::Monkey'</code>. To report a warning, use the <code>warnings::warn()</code> function in conjunction with <code>warnings::enabled()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    package Scary::Monkey;
+
+    use warnings::register;
+
+    <b>sub import</b>
+    <b>{</b>
+        <b>warnings::warn( __PACKAGE__ . ' used with empty import list' )</b>
+            <b>if @_ == 0 &amp;&amp; warnings::enabled();</b>
+    <b>}</b>
+
+    1;</code>
+</pre></div>
+<p>If <code>warnings::enabled()</code> is true, then the calling lexical scope has this warning enabled. You can also report warnings for an existing warnings category, such as the use of deprecated constructs:</p>
+<div class="programlisting">
+<pre>
+<code>    package Scary::Monkey;
+
+    use warnings::register;
+
+    <b>sub import</b>
+    <b>{</b>
+        <b>warnings::warnif( 'deprecated',
+            'empty imports from ' . __PACKAGE__ . ' are now deprecated' )
+            unless @_;</b>
+    <b>}</b>
+
+    1;</code>
+</pre></div>
+<p>The <code>warnings::warnif()</code> function checks the named warnings category and reports the error if it's active.</p>
+<p>See <code>perldoc perllexwarn</code> for more details.</p>
+<h3 id="heading_id_31">Modules</h3>
+<div id="modules"></div>
+<div id="imodule_1"></div>
+<p>A <i>module</i> is a package contained in its own file and loadable with <code>use</code> or <code>require</code>. A module must be valid Perl 5 code. It must end with an expression which evaluates to a true value so that the Perl 5 parser knows it has loaded and compiled the module successfully.</p>
+<p>There are no other requirements, only strong conventions.</p>
+<p>Packages correspond to files on disk in that when you load a module with <code>use</code> or <code>require</code>'s bareword form, Perl splits the package name on double-colons (<code>::</code>) and turns the components of the package name into a file path. Thus:</p>
+<div class="programlisting">
+<pre>
+<code>    use StrangeMonkey;</code>
+</pre></div>
+<p>... causes Perl to search for a file named <i>StrangeMonkey.pm</i> in every directory in <code>@INC</code>, in order, until it finds one or exhausts the list. As well:</p>
+<div class="programlisting">
+<pre>
+<code>    use StrangeMonkey::Persistence;</code>
+</pre></div>
+<p>... causes Perl to search for a file named <code>Persistence.pm</code> in every directory named <i>StrangeMonkey/</i> present in every directory in <code>@INC</code>, and so on. Finally:</p>
+<div class="programlisting">
+<pre>
+<code>    use StrangeMonkey::UI::Mobile;</code>
+</pre></div>
+<p>... causes Perl to search for a relative file path named <i>StrangeMonkey/UI/Mobile.pm</i> in every directory in <code>@INC</code>. In other words, if you want to load your module <code>StrangeMonkey::Test::Stress</code>, you must have a file named <i>StrangeMonkey/Test/Stress.pm</i> reachable from some directory in <code>@INC</code>.</p>
+<p><code>perldoc -l Module::Name</code> will print the full path to the relevant <i>.pm</i> file, provided that the <i>documentation</i> for that module exists in the <i>.pm</i> file.</p>
+<div class="sidebar">
+<p>There is no <i>technical</i> requirement that the file at that location contain any <code>package</code> declaration, let alone a <code>package</code> declaration matching the name of the file. Maintenance concerns highly recommend that convention, however.</p>
+</div>
+<h4 id="heading_id_32">Using and Importing</h4>
+<div id="iuse_0"></div>
+<div id="ikeywords__iuse_0"></div>
+<div id="iimport4041_0"></div>
+<div id="import"></div>
+<p>When you load a module with the <code>use</code> keyword, Perl loads it from disk, then calls its <code>import()</code> method, passing any arguments you provided. This occurs at compilation time:</p>
+<div class="programlisting">
+<pre>
+<code>    use strict;                  # calls strict-&gt;import()
+    use CGI ':standard';         # calls CGI-&gt;import( ':standard' )
+    use feature qw( say switch ) # calls feature-&gt;import( qw( say switch ) )</code>
+</pre></div>
+<p>You do not have to provide an <code>import()</code> method, and you may use it to do anything you wish, but the standard API expectation is that it takes a list of arguments of symbols (usually functions) to make available in the calling namespace. This is not a strong requirement; pragmas (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)) such as <code>strict</code> use arguments to change their behavior instead of exporting symbols.</p>
+<div id="ino_0"></div>
+<div id="iunimporting_0"></div>
+<p>The <code>no</code> keyword calls a module's <code>unimport()</code> method, if it exists, passing any arguments. While it's possible to remove exported symbols, it's more common to disable specific features of pragmas and other modules which introduce new behaviors through <code>import()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    use strict;
+
+    # no symbolic references, variable declaration required, no barewords
+    ...
+
+    {
+        no strict 'refs';
+
+        # symbolic references allowed
+        # variable declaration still required; barewords prohibited
+    }</code>
+</pre></div>
+<p>Like <code>use</code> and <code>import()</code>, <code>no</code> calls <code>unimport()</code> during compilation time. Effectively:</p>
+<div class="programlisting">
+<pre>
+<code>    use Module::Name qw( list of arguments );</code>
+</pre></div>
+<p>... is the same as:</p>
+<div class="programlisting">
+<pre>
+<code>    BEGIN
+    {
+        require 'Module/Name.pm';
+        Module::Name-&gt;import( qw( list of arguments ) );
+    }</code>
+</pre></div>
+<p>Similarly:</p>
+<div class="programlisting">
+<pre>
+<code>    no Module::Name qw( list of arguments );</code>
+</pre></div>
+<p>... is the same as:</p>
+<div class="programlisting">
+<pre>
+<code>    BEGIN
+    {
+        require 'Module/Name.pm';
+        Module::Name-&gt;unimport( qw( list of arguments ) );
+    }</code>
+</pre></div>
+<p>... including the <code>require</code> of the module.</p>
+<p>You may call <code>import()</code> and <code>unimport()</code> directly, though it makes little sense to unimport a pragma outside of a <code>BEGIN</code> block, as they often have compilation-time effects.</p>
+<div class="sidebar">
+<p>If <code>import()</code> or <code>unimport()</code> does not exist in the module, Perl will not give an error message. They are truly optional.</p>
+</div>
+<div id="imodules__icase45sensitivity_0"></div>
+<div id="iimporting__icase45sensitivity_0"></div>
+<div id="inamespaces__icase45sensitivity_0"></div>
+<div id="icase45sensitivity_0"></div>
+<p>Perl 5's <code>use</code> and <code>require</code> are case-sensitive, even if the underlying filesystem is not. While Perl knows the difference between <code>strict</code> and <code>Strict</code>, your combination of operating system and file system may not. If you were to write <code>use Strict;</code>, a case-sensitive filesystem would not find <i>strict.pm</i>. A case-insensitive filesystem would find <i>Strict.pm</i>. However, when Perl tries to call <code>Strict-&gt;import()</code> on the loaded module, nothing will happen because the package name is <code>strict</code>.</p>
+<p>Portable programs are strict about case even if they don't have to be.</p>
+<h4 id="heading_id_33">Exporting</h4>
+<div id="exporting"></div>
+<div id="iexporting_0"></div>
+<p>A module can make certain global symbols available to other packages through a process known as <i>exporting</i>. This is the flip side of passing arguments to <code>import()</code> through a <code>use</code> statement.</p>
+<p>The standard way of exporting functions or variables to other modules is through the core module <code>Exporter</code>. <code>Exporter</code> relies on the presence of package global variables--<code>@EXPORT_OK</code> and <code>@EXPORT</code> in particular--which contain a list of symbols to export when requested.</p>
+<p>Consider a <code>StrangeMonkey::Utilities</code> module which provides several standalone functions usable throughout the system:</p>
+<div class="programlisting">
+<pre>
+<code>    package StrangeMonkey::Utilities;
+
+    use Exporter 'import';
+
+    our @EXPORT_OK = qw( round_number translate screech );
+
+    ...
+
+    1;</code>
+</pre></div>
+<p>Anyone now can use this module and, optionally, import any or all of the three exported functions. You may also export variables:</p>
+<div class="programlisting">
+<pre>
+<code>    push @EXPORT_OK, qw( $spider $saki $squirrel );</code>
+</pre></div>
+<div class="sidebar">
+<p>The CPAN module <code>Sub::Exporter</code> provides a nicer interface to export functions without using package globals. It also offers more powerful options. However, <code>Exporter</code> can export variables, while <code>Sub::Exporter</code> only exports functions.</p>
+</div>
+<p>You <i>can</i> export symbols by default by listing them in <code>@EXPORT</code> instead of <code>@EXPORT_OK</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    our @EXPORT = qw( monkey_dance monkey_sleep );</code>
+</pre></div>
+<p>... so that any <code>use StrangeMonkey::Utilities;</code> will import both functions. Be aware that specifying symbols to import will <i>not</i> import default symbols. As well, you can load a module without importing any symbols by providing an explicit empty list:</p>
+<div class="programlisting">
+<pre>
+<code>    # make the module available, but import() nothing
+    use StrangeMonkey::Utilities ();</code>
+</pre></div>
+<p>Regardless of any import lists, you can always call functions in another package with their fully-qualified names:</p>
+<div class="programlisting">
+<pre>
+<code>    StrangeMonkey::Utilities::screech();</code>
+</pre></div>
+<h4 id="heading_id_34">Organizing Code with Modules</h4>
+<p>Perl 5 does not require you to use modules, nor packages, nor namespaces. You may put all of your code in a single <i>.pl</i> file, or in multiple <i>.pl</i> files you <code>do</code> or <code>require</code> as necessary. You have the flexibility to manage your code in the most appropriate way, given your development style, the formality and risk and reward of the project, your experience, and your comfort with Perl 5 deployment.</p>
+<p>Yet a good rule of thumb from experienced Perl 5 programmers is that a project with more than a couple of hundred lines of code receives multiple benefits from the process of creating modules.</p>
+<ul>
+<li>Modules help to enforce a logical separation between distinct entities in the system.</li>
+<li>Modules provide an API boundary, whether procedural or OO.</li>
+<li>Modules suggest a natural organization of source code.</li>
+<li>The Perl 5 ecosystem has many tools devoted to creating, maintaining, organizing, and deploying modules and distributions.</li>
+<li>Modules provide a mechanism of code reuse.</li>
+</ul>
+<p>Even if you do not use an object-oriented approach, modeling every distinct entity or responsibility in your system with its own module keeps related code together and separate code separate.</p>
+<h3 id="heading_id_35">Pragmas</h3>
+<div id="pragmas"></div>
+<p>Perl 5's extension mechanism is modules (<a href="chapter_09.xhtml#modules">Modules</a>(modules)). Most modules provide functions to call or they define classes (<a href="chapter_07.xhtml#moose">Moose</a>(moose)), but some modules instead influence the behavior of the language itself.</p>
+<div id="ipragma_0"></div>
+<div id="imodules__ipragmas_0"></div>
+<p>A module which influences the behavior of the compiler is a <i>pragma</i>. By convention, pragmas have lower-case names to differentiate them from other modules. You've heard of some before: <code>strict</code> and <code>warnings</code>, for example.</p>
+<h4 id="heading_id_36">Pragmas and Scope</h4>
+<div id="ipragmas__iscope_0"></div>
+<p>A pragma works by exporting specific behavior or information into the enclosing static scope. The scope of a pragma is the same as the scope of a lexical variable. In a way, you can think of lexical variable declaration as a sort of pragma with funny syntax. Pragma scope is clearer with an example:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        # $lexical is <b>not</b> visible; strict is <b>not</b> in effect
+        {
+            use strict;
+            my $lexical = 'available here';
+            # $lexical <b>is</b> visible; strict <b>is</b> in effect
+            ...
+        }
+        # $lexical is again <b>not</b> visible; strict is <b>not</b> in effect
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>A sufficiently motivated Perl guru could implement a poorly behaved pragma which ignores scoping, but that would be unneighborly.</p>
+</div>
+<p>Just as lexical declarations affect inner scopes, so do pragmas maintain their effects on inner scopes:</p>
+<div class="programlisting">
+<pre>
+<code>    # file scope
+    use strict;
+
+    {
+        # inner scope, but strict still in effect
+        my $inner = 'another lexical';
+        ...
+    }</code>
+</pre></div>
+<h4 id="heading_id_37">Using Pragmas</h4>
+<div id="ipragmas__ienabling_0"></div>
+<div id="ipragmas__icustomizing_0"></div>
+<p>Pragmas have the same usage mechanism as modules. As with modules, you may specify the desired version number of the pragma and you may pass a list of arguments to the pragma to control its behavior at a finer level:</p>
+<div class="programlisting">
+<pre>
+<code>    # require variable declaration; prohibit bareword function names
+    use strict qw( subs vars );</code>
+</pre></div>
+<div id="ipragmas__idisabling_0"></div>
+<p>Within a scope you may disable all or part of a pragma with the <code>no</code> keyword:</p>
+<div class="programlisting">
+<pre>
+<code>    use strict;
+
+    {
+        # get ready to manipulate the symbol table
+        no strict 'refs';
+        ...
+    }</code>
+</pre></div>
+<h4 id="heading_id_38">Useful Core Pragmas</h4>
+<div id="ipragmas__iuseful_0"></div>
+<p>Perl 5 includes several useful core pragmas:</p>
+<ul>
+<li>the <code>strict</code> pragma enables compiler checking of symbolic references, the use of barewords, and the declaration of variables</li>
+<li>the <code>warnings</code> pragma enables optional warnings for deprecated, unintended, and awkward behaviors that are not <i>necessarily</i> errors but may produce unwanted behaviors</li>
+<li>the <code>utf8</code> pragma enables the use of the UTF-8 encoding of source code</li>
+<li>the <code>autodie</code> pragma (new in 5.10.1) enables automatic error checking of system calls and keywords, reducing the need for manual error checking</li>
+<li>the <code>constant</code> pragma allows you to create compile-time constant values (though see <code>Readonly</code> from the CPAN for an alternative)</li>
+<li>the <code>vars</code> pragma allows you to declare package global variables, such as <code>$VERSION</code> or those for exporting (<a href="chapter_09.xhtml#exporting">Exporting</a>(exporting)) and manual OO (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references))</li>
+</ul>
+<p>Several useful pragmas exist on the CPAN as well. Two worth exploring in detail are <code>autobox</code>, which enables object-like behavior for Perl 5's core types (scalars, references, arrays, and hashes) and <code>perl5i</code>, which combines and enables many experimental language extensions into a coherent whole. These two pragmas may not belong yet in your production code without extensive testing and thoughtful consideration, but they demonstrate the power and utility of pragmas.</p>
+<h4 id="heading_id_39">Your own Pragmas</h4>
+<div class="author">
+<p>Is this ending worthwhile? What a downer.</p>
+</div>
+<p>Since Perl 5.10.0, generalized hooks to implement lexical pragmas are available. They are accessible directly from Perl code.</p>
+<p>See <code>perldoc perlpragma</code> for instructions to write your own pragmas. If you're interested in learning how it all works behind the scenes, the place to go is the <code>$^H</code> variable's explanation in <code>perldoc perlvar</code>.</p>
+<h3 id="heading_id_40">Distributions</h3>
+<div id="distributions"></div>
+<div id="idistribution_1"></div>
+<p>A <i>distribution</i> is a collection of one or more modules (<a href="chapter_09.xhtml#modules">Modules</a>(modules)) which forms a single redistributable, testable, and installable unit. Effectively it's a collection of module and metadata.</p>
+<p>The easiest way to manage software configuration, building, distribution, testing, and installation even within your organization is to create distributions compatible with the CPAN. The conventions of the CPAN--how to package a distribution, how to resolve its dependencies, where to install software, how to verify that it works, how to display documentation, how to manage a repository--have all arisen from the rough consensus of thousands of contributors working on tens of thousands of projects.</p>
+<p>In particular, the copious amount of testing and reporting and dependency checking achieved by CPAN developers exceeds the available information and quality of work in any other language community. A distribution built to CPAN standards can be tested on several versions of Perl 5 on several different hardware platforms within a few hours of its uploading--all without human intervention.</p>
+<p>You may choose never to release any of your code as public CPAN distributions, but you can reuse existing CPAN tools and designs as possible. The combination of intelligent defaults and customizability are likely to meet your specific needs.</p>
+<h4 id="heading_id_41">Attributes of a Distribution</h4>
+<p>A distribution obviously includes one or more modules. It also includes several other files and directories:</p>
+<ul>
+<li><i>Build.PL</i> or <i>Makefile.PL</i>, the program used to configure, build, test, bundle, and install the distribution.</li>
+<li><i>MANIFEST</i>, a list of all files contained in the distribution. This helps packaging tools produce an entire tarball and helps to verify that recipients of the tarball have all of the necessary files.</li>
+<li><i>META.yml</i>, a file containing metadata about the distribution and its dependencies.</li>
+<li><i>README</i>, a description of the distribution, its intent, and its copyright and licensing information.</li>
+<li><i>lib/</i>, the directory containing Perl modules.</li>
+<li><i>t/</i>, a directory containing test files.</li>
+</ul>
+<div id="ikwalitee_0"></div>
+<div id="iCPANTS_0"></div>
+<p>Additionally, a well-formed distribution must contain a unique name and single version number (often taken from its primary module). Any well-formed distribution you download from the public CPAN should conform to these standards. (The CPANTS service evaluates the kwalitee <span class="footnote">(footnote: Quality is difficult to measure with heuristics. Kwalitee is the automatable relative of quality.)</span> of all CPAN distributions and recommends improvements to make them easier to install and to manage.)</p>
+<h4 id="heading_id_42">CPAN Tools for Managing Distributions</h4>
+<p>The Perl 5 core includes several tools to manage distributions--not just installing them from the CPAN, but developing and managing your own:</p>
+<ul>
+<li><code>CPAN.pm</code> is the official CPAN client. While by default it installs distributions from the public CPAN, you can point it to your own repository instead of or in addition to the public repository.</li>
+<li><code>CPANPLUS</code> is an alternate CPAN client with a different design approach. It does some things better than <code>CPAN.pm</code>, but they are largely equivalent at this point. Use whichever you prefer.</li>
+<li><code>Module::Build</code> is a pure-Perl tool suite for configuring, building, installing, and testing distributions. It works with the <i>Build.PL</i> file mentioned earlier.</li>
+<li><code>ExtUtils::MakeMaker</code> is an older, legacy tool which <code>Module::Build</code> intends to replace. It is still in wide use, though it is in maintenance mode and receives only the most critical bugfixes. It works with the <i>Makefile.PL</i> file mentioned earlier.</li>
+<li><code>Test::More</code> (<a href="chapter_09.xhtml#testing">Testing</a>(testing)) is the basic and most widely used testing module used to write automated tests for Perl software.</li>
+<li><code>Test::Harness</code> and <code>prove</code> (<a href="chapter_09.xhtml#running_tests">Running Tests</a>(running_tests)) are the tools used to run tests and to interpret and report their results.</li>
+</ul>
+<p>In addition, several non-core CPAN modules make your life easier as a developer:</p>
+<ul>
+<li><code>App::cpanminus</code> is a new utility which provides almost configuration-free use of the public CPAN. It fulfills 90% of your needs to find and install modules.</li>
+<li><code>CPAN::Mini</code> and the <code>cpanmini</code> command allow you to create your own (private) mirror of the public CPAN. You can inject your own distributions into this repository and manage which versions of the public modules are available in your organization.</li>
+<li><code>Dist::Zilla</code> is a toolkit for managing distributions by automating away common tasks. It can replace the use of <code>Module::Build</code> or <code>ExtUtils::MakeMaker</code> in many cases.</li>
+<li><code>Test::Reporter</code> allows you to report the results of running the automated test suites of distributions you install, giving their authors more data on any failures.</li>
+</ul>
+<h4 id="heading_id_43">Designing Distributions</h4>
+<p>The process of designing a distribution could fill a book (see Sam Tregar's <i>Writing Perl Modules for CPAN</i>), but a few design principles will help you. Start with a utility such as <code>Module::Starter</code> or <code>Dist::Zilla</code> from the CPAN. The initial cost of learning the configuration and rules may seem like a steep investment, but the benefit of having everything set up the right way (and in the case of <code>Dist::Zilla</code>, <i>never</i> going out of date) relieves you of much tedious bookkeeping.</p>
+<p>Then consider several rules.</p>
+<ul>
+<li><i>Each distribution should have a single, well-defined purpose.</i> That purpose may be to process a particular type of data file or to gather together several related distributions into a single installable bundle. Decomposing your software into individual bundles allows you to manage their dependencies appropriately and to respect their encapsulation.</li>
+<li><i>Each distribution needs a single version number.</i> Version numbers must always increase. The semantic version policy (<span class="url">http://semver.org/</span>) is sane and compatible with the Perl 5 approach.</li>
+<li><i>Each distribution should have a well-defined API.</i> A comprehensive automated test suite can verify that you maintain this API across versions. If you use a local CPAN mirror to install your own distributions, you can re-use the CPAN infrastructure for testing distributions and their dependencies. You get easy access to integration testing across reusable components.</li>
+<li><i>Automate your distribution tests and make them repeatable and valuable.</i> Managing software effectively requires you to know when it works and how it fails if it fails.</li>
+<li><i>Present an effective and simple interface.</i> Avoid the use of global symbols and default exports; allow people to use only what they need and do not pollute their namespaces.</li>
+</ul>
+<div class="author">
+<p>local CPAN repository? - too advanced? Nice to discuss, if there's space</p>
+</div>
+<h3 id="heading_id_44">The UNIVERSAL Package</h3>
+<div id="universal"></div>
+<div id="iUNIVERSAL_1"></div>
+<p>Perl 5 provides a special package which is the ancestor of all other packages in a very object-oriented way. The <code>UNIVERSAL</code> package provides a few methods available for all other classes and objects.</p>
+<h4 id="heading_id_45">The isa() Method</h4>
+<div id="iUNIVERSAL5858isa_0"></div>
+<div id="iisa4041_1"></div>
+<p>The <code>isa()</code> method takes a string containing the name of a class or the name of a built-in type. You can call it as a class method or an instance method on an object. It returns true if the class or object is or derives from the named class, or if the object itself is a blessed reference to the given type.</p>
+<p>Given an object <code>$pepper</code>, a hash reference blessed into the <code>Monkey</code> class (which inherits from the <code>Mammal</code>) class:</p>
+<div class="programlisting">
+<pre>
+<code>    say $pepper-&gt;isa( 'Monkey'  );  # prints 1
+    say $pepper-&gt;isa( 'Mammal'  );  # prints 1
+    say $pepper-&gt;isa( 'HASH'    );  # prints 1
+    say Monkey-&gt;isa(  'Mammal'  );  # prints 1
+
+    say $pepper-&gt;isa( 'Dolphin' );  # prints 0
+    say $pepper-&gt;isa( 'ARRAY'   );  # prints 0
+    say Monkey-&gt;isa(  'HASH'    );  # prints 0</code>
+</pre></div>
+<div id="iSCALAR_0"></div>
+<div id="iARRAY_0"></div>
+<div id="iHASH_0"></div>
+<div id="iREGEX_0"></div>
+<div id="iIO_0"></div>
+<div id="iCODE_0"></div>
+<p>Built-in types are <code>SCALAR</code>, <code>ARRAY</code>, <code>HASH</code>, <code>REGEX</code>, <code>IO</code>, and <code>CODE</code>.</p>
+<p>You can override <code>isa()</code> in your own classes. This can be useful when working with mock objects (see <code>Test::MockObject</code> and <code>Test::MockModule</code> on the CPAN, for example) or with code that does not use roles (<a href="chapter_07.xhtml#roles">Roles</a>(roles)).</p>
+<h4 id="heading_id_46">The can() Method</h4>
+<div id="iUNIVERSAL5858can_1"></div>
+<div id="ican4041_1"></div>
+<p>The <code>can()</code> method takes the string containing the name of a method (though see <a href="chapter_11.xhtml#method_sub_equivalence">Method-Function Equivalence</a>(method_sub_equivalence) for a disclaimer). It returns a reference to the function which implements that method, if it exists. Otherwise, it returns false. You may call this on a class, an object, or the name of a package. In the latter case, it returns a reference to a function, not a method.</p>
+<p>Given a class named <code>SpiderMonkey</code> with a method named <code>screech</code>, you can get a reference to the method with:</p>
+<div class="programlisting">
+<pre>
+<code>    if (my $meth = SpiderMonkey-&gt;can( 'screech' )) { ... }
+
+    if (my $meth = $sm-&gt;can( 'screech' )
+    {
+        $sm-&gt;$meth();
+    }</code>
+</pre></div>
+<p>Given a plugin-style architecture, you can test to see if a package implements a specific function in a similar way:</p>
+<div class="programlisting">
+<pre>
+<code>    # a useful CPAN module
+    use UNIVERSAL::require;
+
+    die $@ unless $module-&gt;require();
+
+    if (my $register = $module-&gt;can( 'register' )
+    {
+        $register-&gt;();
+    }</code>
+</pre></div>
+<p>You can (and should) override <code>can()</code> in your own code if you use <code>AUTOLOAD()</code>. See <a href="chapter_05.xhtml#autoload_drawbacks">Drawbacks of AUTOLOAD</a>(autoload_drawbacks) for a longer explanation.</p>
+<div class="sidebar">
+<p>There is <i>one</i> known case where calling <code>UNIVERSAL::can()</code> as a function and not a method is not incorrect: to determine whether a class exists in Perl 5. If <code>UNIVERSAL::can( $classname, 'can' )</code> returns true, someone somewhere has defined a class of the name <code>$classname</code>. Alternately, <code>Moose</code>'s introspection is much more powerful and easier to use.</p>
+</div>
+<h4 id="heading_id_47">The VERSION() Method</h4>
+<div id="iUNIVERSAL5858VERSION_0"></div>
+<div id="iVERSION4041_1"></div>
+<p>The <code>VERSION()</code> method is available to all packages, classes, and objects. It returns the value of the <code>$VERSION</code> variable for the appropriate package or class. It takes a version number as an optional parameter. If you provide this version number, the method will throw an exception if the queried <code>$VERSION</code> is not equal to or greater than the parameter.</p>
+<p>Given a <code>HowlerMonkey</code> module of version <code>1.23</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    say HowlerMonkey-&gt;VERSION();    # prints 1.23
+    say $hm-&gt;VERSION();             # prints 1.23
+    say $hm-&gt;VERSION( 0.0  );       # prints 1.23
+    say $hm-&gt;VERSION( 1.23 );       # prints 1.23
+    say $hm-&gt;VERSION( 2.0  );       # throws exception</code>
+</pre></div>
+<p>You can override <code>VERSION()</code> in your own code, but there's little reason to do so.</p>
+<h4 id="heading_id_48">The DOES() Method</h4>
+<div id="iUNIVERSAL5858DOES_0"></div>
+<div id="iDOES4041_1"></div>
+<p>The <code>DOES()</code> method is new in Perl 5.10.0. It exists to support the use of roles (<a href="chapter_07.xhtml#roles">Roles</a>(roles)) in programs. Pass it an invocant and the name of a role, and the method will return true if the appropriate class somehow performs that role. (The class may do so through inheritance, through delegation, through composition, through role application, or any other mechanism.)</p>
+<p>The default implementation of <code>DOES()</code> falls back to <code>isa()</code>, because inheritance is one mechanism by which a class may perform a role. Given a <code>Cappuchin</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    say Cappuchin-&gt;DOES( 'Monkey'       );  # prints 1
+    say $cappy-&gt;DOES(    'Monkey'       );  # prints 1
+    say Cappuchin-&gt;DOES( 'Invertebrate' );  # prints 0</code>
+</pre></div>
+<p>You can (and should) override <code>DOES()</code> in your own code if you manually provide a role or other allomorphic behavior. Alternately, use <code>Moose</code> and don't worry about the details.</p>
+<h4 id="heading_id_49">Extending UNIVERSAL</h4>
+<p>It's tempting to store other methods in <code>UNIVERSAL</code> to make it available to all other classes and objects in Perl 5. Avoid this temptation; this global behavior can have subtle side effects because it is unconstrained.</p>
+<p>With that said, occasional abuse of <code>UNIVERSAL</code> for <i>debugging</i> purposes and to fix improper default behavior may be excusable. For example, Joshua ben Jore's <code>UNIVERSAL::ref</code> distribution makes the nearly-useless <code>ref()</code> operator usable. The <code>UNIVERSAL::can</code> and <code>UNIVERSAL::isa</code> distributions can help you find and eliminate old idioms which prevent good uses of polymorphism (though see <code>Perl::Critic</code> for a different approach with other advantages).</p>
+<p>The <code>UNIVERSAL::require</code> module adds useful behavior to help load modules and classes at runtime--though using a distribution such as <code>Module::Pluggable</code> is safer and less invasive.</p>
+<p>Outside of very carefully controlled code and very specific, very pragmatic situations, there's no reason to put code in <code>UNIVERSAL</code> directly. There are almost always much better design alternatives.</p>
+<h3 id="heading_id_50">Code Generation</h3>
+<div id="code_generation"></div>
+<p>Improving as a programmer requires you to search for better abstractions. The less code you have to write, the better. The more general your solutions, the better. When you can delete code and add features, you've achieved something great.</p>
+<p>Novice programmers write more code than they need to write, partly from unfamiliarity with their languages, libraries, and idioms, but also due to inexperience creating and maintaining good abstractions. They start by writing long lists of procedural code, then discover functions, then parameters, then objects, and--perhaps--higher-order functions and closures.</p>
+<div id="imetaprogramming_1"></div>
+<div id="icode_generation_0"></div>
+<p><i>Metaprogramming</i> (or <i>code generation</i>)--writing programs which write programs--is another abstraction technique. It can be as clear as exploiting higher-order programming capabilities or it can be a rathole down which you find yourself confused and frightened. The techniques are powerful and useful, however--and some of them form the basis of powerful tools such as Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)).</p>
+<p>The <code>AUTOLOAD</code> technique (<a href="chapter_05.xhtml#autoload">AUTOLOAD</a>(autoload)) for missing functions and methods demonstrates this technique in a constrained form; Perl 5's function and method dispatch system allows you to customize what happens when normal lookup fails.</p>
+<h4 id="heading_id_51">eval</h4>
+<div id="ieval_string_0"></div>
+<div id="ioperators__ieval_0"></div>
+<p>The simplest <span class="footnote">(footnote: At least <i>conceptually</i>....)</span> technique to generate code is to build a string containing a snippet of valid Perl and compile it with the <code>eval</code> string operator. Unlike the exception-catching <code>eval</code> block operator, <code>eval</code> string compiles the contents of the string within the current scope, including the current package and lexical bindings.</p>
+<p>A common use for this technique is providing a fallback if you can't (or don't want to) load an optional dependency:</p>
+<div class="programlisting">
+<pre>
+<code>    eval { require Monkey::Tracer }
+        or eval 'sub Monkey::Tracer::log {}';</code>
+</pre></div>
+<p>If <code>Monkey::Tracer</code> is not available, its <code>log()</code> function will exist, but will do nothing.</p>
+<div class="sidebar">
+<p>This isn't necessarily the <i>best</i> way to handle this feature, as the Null Object pattern offers more encapsulation, but it is <i>a</i> way to do things.</p>
+</div>
+<p>This simple example is deceptive. You must handle quoting issues to include variables within your <code>eval</code>d code. Add more complexity to interpolate some but not others:</p>
+<div class="programlisting">
+<pre>
+<code>    sub generate_accessors
+    {
+        my ($methname, $attrname) = @_;
+
+        eval &lt;&lt;"END_ACCESSOR";
+        sub get_$methname
+        {
+            my \$self = shift;
+
+            return \$self-&gt;{$attrname};
+        }
+
+        sub set_$methname
+        {
+            my (\$self, \$value) = \@_;
+
+            \$self-&gt;{$attrname} = \$value;
+        }
+    END_ACCESSOR
+    }</code>
+</pre></div>
+<p>Woe to you who forget a backslash! Good luck convincing your syntax highlighter what's happening! Worse yet, each invocation of <code>eval</code> string builds a new data structure representing the entire code. Compiling code isn't free, either--cheaper than performing IO, perhaps, but not free.</p>
+<p>Even so, this technique is simple and reasonably easy to understand.</p>
+<h4 id="heading_id_52">Parametric Closures</h4>
+<div id="iclosures__iparametric_0"></div>
+<p>While building accessors and mutators with <code>eval</code> is straightforward, closures (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) allow you to add parameters to generated code at compilation time without requiring additional evaluation:</p>
+<div class="programlisting">
+<pre>
+<code>    sub generate_accessors
+    {
+        my $attrname = shift;
+
+        my $getter = sub
+        {
+            my $self = shift;
+            return $self-&gt;{$attrname};
+        };
+
+        my $setter = sub
+        {
+            my ($self, $value) = @_;
+
+            $self-&gt;{$attrname} = $value;
+        };
+
+        return $getter, $setter;
+    }</code>
+</pre></div>
+<p>This code avoids unpleasant quoting issues. It also performs better, as there's only one compilation stage, no matter how many accessors you create. It even uses less memory by reusing the <i>same</i> compiled code for the bodies of the two functions. All that differs is the binding to the <code>$attrname</code> lexical. In a long-running process, or with a lot of accessors, this technique can be very useful.</p>
+<div id="iclosures__iinstalling_into_symbol_table_0"></div>
+<div id="isymbol_tables_2"></div>
+<p>Installing into symbol tables is reasonably easy, if ugly:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my ($getter, $setter) = generate_accessors( 'homecourt' );
+
+        no strict 'refs';
+        *{ 'get_homecourt' } = $getter;
+        *{ 'set_homecourt' } = $setter;
+    }</code>
+</pre></div>
+<p>The odd splatty hash looking syntax refers to a symbol in the current <i>symbol table</i>, which is the place in the current namespace which contains globally-accessible symbols such as package globals, functions, and methods. Assigning a reference to a symbol table entry installs or replaces the appropriate entry. To promote an anonymous function to a method, assign that function reference to the appropriate entry in the symbol table.</p>
+<p>This operation is a symbolic reference, so it's necessary to disable <code>strict</code> reference checking for the operation. Many programs have a subtle bug in similar code, as they perform the assignment and the generation in a single step:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        no strict 'refs';
+
+        *{ $methname } = sub {
+            # subtle bug: strict refs
+            # are disabled in here too
+        };
+    }</code>
+</pre></div>
+<p>This example disables strictures for the outer block as well as the inner block, the body of the function itself. Only the assignment violates strict reference checking, so disable strictures for that operation alone.</p>
+<div class="sidebar">
+<p>If the name of the method is a string literal in your source code, rather than the contents of a variable, you can assign to the relevant symbol directly rather than through a symbolic reference:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        no warnings 'once';
+        (*get_homecourt, *set_homecourt) = generate_accessors( 'homecourt' );
+    }</code>
+</pre></div>
+<p>This does not violate strictures, but it does produce a "used only once" warning unless you explicitly suppress it within the scope.</p>
+</div>
+<h4 id="heading_id_53">Compile-time Manipulation</h4>
+<p>Unlike code written explicitly as code, code generated through <code>eval</code> string gets compiled at runtime. Where you might expect a normal function to be available throughout the lifetime of your program, a generated function might not be available when you expect it.</p>
+<div id="iBEGIN_0"></div>
+<p>Force Perl to run code--to generate other code--during the compilation stage by wrapping it in a <code>BEGIN</code> block. When the Perl 5 parser encounters a block labeled <code>BEGIN</code>, it parses the entire block. Provided it contains no syntax errors, the block will run immediately. When it finishes, parsing will continue as if there were no interruption.</p>
+<p>In practical terms, the difference between writing:</p>
+<div class="programlisting">
+<pre>
+<code>    sub get_age    { ... }
+    sub set_age    { ... }
+
+    sub get_name   { ... }
+    sub set_name   { ... }
+
+    sub get_weight { ... }
+    sub set_weight { ... }</code>
+</pre></div>
+<p>... and:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_accessors { ... }
+
+    BEGIN
+    {
+        for my $accessor (qw( age name weight ))
+        {
+            my ($get, $set) = make_accessors( $accessor );
+
+            no strict 'refs';
+            *{ 'get_' . $accessor } = $get;
+            *{ 'set_' . $accessor } = $set;
+        }
+    }</code>
+</pre></div>
+<p>... is primarily one of maintainability.</p>
+<div id="iBEGIN__iimplicit_0"></div>
+<div id="imodules__iimplicit_BEGIN_0"></div>
+<p>Within a module, <code>BEGIN</code> concerns tend not to matter because <code>use</code> adds an implicit <code>BEGIN</code> around the <code>require</code> and <code>import</code> (<a href="chapter_05.xhtml#importing">Importing</a>(importing)). Any code outside of a function but inside the module will execute <i>before</i> the <code>import()</code> call occurs. If you <code>require</code> the module, however, there is no implicit <code>BEGIN</code> block. The execution of code outside of functions will happen at the <i>end</i> of parsing.</p>
+<p>Also beware of the interaction between lexical <i>declaration</i> (the association of a name with a scope) and lexical <i>assignment</i>. The former happens during compilation, while the latter occurs at the point of execution. This code has a subtle bug:</p>
+<div class="programlisting">
+<pre>
+<code>    use UNIVERSAL::require;
+
+    # buggy; do not use
+    my $wanted_package = 'Monkey::Jetpack';
+
+    BEGIN
+    {
+        $wanted_package-&gt;require();
+        $wanted_package-&gt;import();
+    }</code>
+</pre></div>
+<p>... because the <code>BEGIN</code> block will execute <i>before</i> the assignment of the string value to <code>$wanted_package</code> occurs. The result will be an exception from attempting to invoke the <code>require()</code> method on the undefined value.</p>
+<h4 id="heading_id_54">Class::MOP</h4>
+<div id="class_mop"></div>
+<div id="iClass5858MOP_1"></div>
+<div id="iMoose_0"></div>
+<div id="iobjects__imeta_object_protocol_0"></div>
+<div id="iMOP_1"></div>
+<div id="imeta_object_protocol_0"></div>
+<p>Unlike installing function references to populate namespaces and to create methods, there's no simple built-in way to create classes in Perl 5. Fortunately, a mature and powerful distribution is available from the CPAN to do just this. <code>Clas::MOP</code> is the library which makes <code>Moose</code> (<a href="chapter_07.xhtml#moose">Moose</a>(moose)) possible. It provides a <i>meta object protocol</i>--a mechanism for creating and manipulating an object system in terms of itself.</p>
+<p>Rather than writing your own fragile <code>eval</code> string code or trying to poke into symbol tables manually, you can manipulate the entities and abstractions of your program with objects and methods.</p>
+<p>To create a class:</p>
+<div class="programlisting">
+<pre>
+<code>    use Class::MOP;
+
+    my $class = Class::MOP::Class-&gt;create( 'Monkey::Wrench' );</code>
+</pre></div>
+<div id="imetaclass_0"></div>
+<div id="iOO__imetaclass_0"></div>
+<p>You can add attributes and methods to this class when you create it:</p>
+<div class="programlisting">
+<pre>
+<code>    my $class = Class::MOP::Class-&gt;create(
+        'Monkey::Wrench' =&gt;
+        (
+            attributes =&gt;
+            (
+                Class::MOP::Attribute-&gt;new( '$material' ),
+                Class::MOP::Attribute-&gt;new( '$color' ),
+            )
+            methods =&gt;
+            {
+                tighten =&gt; sub { ... },
+                loosen  =&gt; sub { ... },
+            }
+        ),
+    );</code>
+</pre></div>
+<p>... or add them to the <i>metaclass</i> (the object which represents that class) after you've created it:</p>
+<div class="programlisting">
+<pre>
+<code>    $class-&gt;add_attribute( experience  =&gt; Class::MOP::Attribute-&gt;new( '$xp' ) );
+    $class-&gt;add_method(    bash_zombie =&gt; sub { ... } );</code>
+</pre></div>
+<p>... and you can perform introspection on the metaclass:</p>
+<div class="programlisting">
+<pre>
+<code>    my @attrs = $class-&gt;get_all_attributes();
+    my @meths = $class-&gt;get_all_methods();</code>
+</pre></div>
+<p>You can similarly create and manipulate and introspect attributes and methods with <code>Class::MOP::Attribute</code> and <code>Class::MOP::Method</code>. This metaobject protocol and the flexibility it affords powers Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)).</p>
+<h3 id="heading_id_55">Overloading</h3>
+<div id="overloading"></div>
+<div id="ioverloading_0"></div>
+<p>Perl 5 is not a pervasively object oriented language. Its core data types (scalars, arrays, and hashes) are not objects with methods you can overload. Even so, you <i>can</i> control the behavior of your own classes and objects, especially when they undergo coercion or evaluation in various contexts. This is <i>overloading</i>.</p>
+<p>Overloading can be subtle but powerful. An interesting example is overloading how an object behaves in boolean context, especially if you use something like the Null Object pattern (<span class="url">http://www.c2.com/cgi/wiki?NullObject</span>). In boolean context, an object will be true... but not if you overload boolification.</p>
+<p>You can overload what the object does for almost every operation: stringification, numification, boolification, iteration, invocation, array access, hash access, arithmetic operations, comparison operations, smart match, bitwise operations, and even assignment.</p>
+<h4 id="heading_id_56">Overloading Common Operations</h4>
+<div id="ioverloading__iboolean_0"></div>
+<div id="ioverloading__inumeric_0"></div>
+<div id="ioverloading__istring_0"></div>
+<div id="ioverload_0"></div>
+<div id="ipragmas__ioverload_0"></div>
+<p>The most useful are often the most common: stringification, numification, and boolification. The <code>overload</code> pragma allows you to associate a function with an overloadable operation. Here's a class which overloads boolean evaluation:</p>
+<div class="programlisting">
+<pre>
+<code>    package Null;
+
+    use overload 'bool' =&gt; sub { 0 };</code>
+</pre></div>
+<p>In all boolean contexts, every instance of this class will evaluate to false.</p>
+<p>The arguments to the <code>overload</code> pragma are pairs where the key describes the type of overload and the value is a function reference to call in place of Perl's default behavior for that object.</p>
+<p>It's easy to add a stringification:</p>
+<div class="programlisting">
+<pre>
+<code>    package Null;
+
+    use overload
+        'bool' =&gt; sub { 0 },
+        <b>'""'   =&gt; sub { '(null)' };</b></code>
+</pre></div>
+<p>Overriding numification is more complex, because arithmetic operators tend to be binary ops (<a href="chapter_04.xhtml#arity">Arity</a>(arity)). Given two operands both with overloaded methods for addition, which takes precedence? The answer needs to be consistent, easy to explain, and understandable by people who haven't read the source code of the implementation.</p>
+<p><code>perldoc overload</code> attempts to explain this in the sections labeled <i>Calling Conventions for Binary Operations</i> and <i>MAGIC AUTOGENERATION</i>, but the easiest solution is to overload numification and tell <code>overload</code> to use the provided overloads as fallbacks where possible:</p>
+<div class="programlisting">
+<pre>
+<code>    package Null;
+
+    use overload
+        'bool'   =&gt; sub { 0 },
+        '""'     =&gt; sub { '(null)' },
+        <b>'0+'     =&gt; sub { 0 },</b>
+        <b>fallback =&gt; 1;</b></code>
+</pre></div>
+<p>Setting <code>fallback</code> to a true value lets Perl use any other defined overloads to compose the requested operation, if possible. If that's not possible, Perl will act as if there were no overloads in effect. This is often what you want.</p>
+<p>Without <code>fallback</code>, Perl will only use the specific overloadings you have provided. If someone tries to perform an operation you have not overloaded, Perl will throw an exception.</p>
+<h4 id="heading_id_57">Overload and Inheritance</h4>
+<div id="ioverloading__iinheritance_0"></div>
+<p>Subclasses inherit overloadings from their ancestors. They may override this behavior in one of two ways. If the parent class uses overloading as shown, with function references provided directly, a child class <i>must</i> override the parent's overloaded behavior by using <code>overload</code> directly.</p>
+<p>Parent classes can allow their descendents more flexibility by specifying the <i>name</i> of a method to call to perform the overloading, rather than hard-coding a function reference:</p>
+<div class="programlisting">
+<pre>
+<code>    package Null;
+
+    use overload
+        'bool'   =&gt; 'get_bool',
+        '""'     =&gt; 'get_string',
+        '0+'     =&gt; 'get_num',
+        fallback =&gt; 1;</code>
+</pre></div>
+<p>Child classes can override only the specified methods without having to use <code>overload</code> directly themselves.</p>
+<div class="sidebar">
+<p>The use of method names produces more flexible code, but developers use code references much more often. In this case, use whatever your developer team decides as a code standard.</p>
+</div>
+<h4 id="heading_id_58">Uses of Overloading</h4>
+<p>Overloading may seem like a tempting tool to use to produce symbolic shortcuts for new operations. The <code>IO::All</code> CPAN distribution pushes this idea to its limit to produce clever ideas for concise and composable code. Yet for every brilliant API refined through the appropriate use of overloading, a dozen more messes congeal. Sometimes the best code eschews cleverness in favor of simple and straightforward design.</p>
+<p>Overriding addition, multiplication, and even concatenation on a <code>Matrix</code> class makes sense, only because the existing notation for those operations is pervasive. A new problem domain without that established notation is a poor candidate for overloading, as is a problem domain where you have to squint to make Perl's existing operators match a different notation.</p>
+<p>Damian Conway's <i>Perl Best Practices</i> suggests that the other useful use of overloading is to prevent the accidental abuse of objects. For example, overloading numification to <code>croak()</code> for objects which have no reasonable single numeric representation can help you find real bugs in real programs. Overloading in Perl 5 is relatively rare, but this suggestion can improve the reliability and safety of programs.</p>
+<h3 id="heading_id_59">Taint</h3>
+<div id="taint"></div>
+<p>Perl gives you tools with which to write programs securely. These tools are no substitute for careful thought and planning, but they <i>reward</i> caution and understanding and can help you avoid subtle mistakes.</p>
+<h4 id="heading_id_60">Using Taint Mode</h4>
+<div id="itaint_0"></div>
+<div id="itaint_mode_0"></div>
+<p>A feature called <i>taint mode</i> or <i>taint</i> adds a small amount of metadata to all data which comes from sources outside of your program. Any data derived from tainted data is also tainted. You may use tainted data within your program, but if you use it to affect the outside world--if you use it insecurely--Perl will throw a fatal exception.</p>
+<p><code>perldoc perlsec</code> explains taint mode in copious detail.</p>
+<div id="i45T_0"></div>
+<p>To enable taint mode, launch your program with the <code>-T</code> flag. You can use this flag on the <code>#!</code> line of a program only if you make the program executable and do not launch it with <code>perl</code>; if you run it as <code>perl mytaintedappl.pl</code> and neglect the <code>-T</code> flag, Perl will exit with an exception. By the time Perl encounters the flag on the <code>#!</code> line, it's missed its opportunity to taint the environment data which makes up <code>%ENV</code>, for example.</p>
+<h4 id="heading_id_61">Sources of Taint</h4>
+<p>Taint can come from two places: file input and the program's operating environment. The former is anything you read from a file or collect from users in the case of web or network programming. The latter is more subtle. This includes any command-line arguments, environment variables, and data from system calls. Even operations such as reading from a directory handle (opened with <code>opendir()</code>) produces tainted data.</p>
+<div id="iScalar5858Util_5"></div>
+<div id="itainted4041_0"></div>
+<div id="itaint__ichecking_0"></div>
+<p>The <code>tainted()</code> function from the core module <code>Scalar::Util</code> returns true if its argument is tainted:</p>
+<div class="programlisting">
+<pre>
+<code>    die "Oh no!" if Scalar::Util::tainted( $some_suspicious_value );</code>
+</pre></div>
+<h4 id="heading_id_62">Removing Taint from Data</h4>
+<div id="itaint__iuntainting_0"></div>
+<div id="iuntainting_0"></div>
+<p>To remove taint, you must extract known-good portions of the data with a regular expression capture. The captured data will be untainted. If your user input consists of a US telephone number, you can untaint it with:</p>
+<div class="programlisting">
+<pre>
+<code>    die "Number still tainted!"
+        unless $tainted_number =~ /(\(/d{3}\) \d{3}-\d{4})/;
+
+    my $safe_number = $1;</code>
+</pre></div>
+<p>The more specific your pattern is about what you allow, the more secure your program can be. The opposite approach of <i>denying</i> specific items or forms runs the risk of overlooking something harmful. In the case of security, Perl prefers that you disallow something that's safe but unexpected than that you allow something harmful which appears safe. Even so, nothing prevents you from writing a capture for the entire contents of a variable--but in that case, why use taint?</p>
+<h4 id="heading_id_63">Removing Taint from the Environment</h4>
+<div id="itaint__iremoving_sources_of_0"></div>
+<p>One source of taint is the superglobal <code>%ENV</code>, which represents environment variables for the system. This data is tainted because forces outside of the program's control can manipulate values there. Any environment variable which modifies how Perl or the shell finds files and directories is an attack vector. A taint-sensitive program should delete several keys from <code>%ENV</code> and set <code>$ENV{PATH}</code> to a specific and well-secured path:</p>
+<div class="programlisting">
+<pre>
+<code>    delete @ENV{ qw( IFS CDPATH ENV BASH_ENV ) };
+    $ENV{PATH} = '/path/to/app/binaries/';</code>
+</pre></div>
+<p>If you do not set <code>$ENV{PATH}</code> appropriately, you will receive messages about its insecurity.</p>
+<div class="sidebar">
+<p>If this environment variable contained the current working directory, or if it contained relative directories, or if the directories specified had world-writable permissions, a clever attacker could hijack system calls to perform insecure operations.</p>
+</div>
+<p>For similar reasons, <code>@INC</code> does not contain the current working directory under taint mode. Perl will also ignore the <code>PERL5LIB</code> and <code>PERLLIB</code> environment variables. Use the <code>lib</code> pragma or the <code>-I</code> flag to <code>perl</code> if you need to add library directories to the program.</p>
+<h4 id="heading_id_64">Taint Gotchas</h4>
+<p>Taint mode is all or nothing. It's either on or off. This sometimes leads people to use permissive patterns to untaint data, and gives the illusion of security. Review untainting carefully.</p>
+<div id="i45t_0"></div>
+<p>Unfortunately, not all modules handle tainted data appropriately. This is a bug which CPAN authors should take seriously. If you have to make legacy code taint-safe, consider the use of the <code>-t</code> flag, which enables taint mode but reduces taint violations from exceptions to warnings. This is not a substitute for full taint mode, but it allows you to secure existing programs without the all or nothing approach of <code>-T</code>.</p>
+</body>
+</html>

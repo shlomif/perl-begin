@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h2 id="heading_id_2">Functions</h2>
+<div id="ifunction_0"></div>
+<div id="isubroutine_0"></div>
+<p>A <i>function</i> (or <i>subroutine</i>) in Perl is a discrete, encapsulated unit of behavior. It may or may not have a name. It may or may not consume incoming information. It may or may not produce outgoing information. It represents a type of control flow, where the execution of the program proceeds to another point in the source code.</p>
+<p>Functions are a prime mechanism for abstraction, encapsulation, and re-use in Perl 5; many other mechanisms build on the idea of the function.</p>
+<h3 id="heading_id_3">Functions</h3>
+<div id="functions"></div>
+<div id="isubroutines__ideclaration_0"></div>
+<div id="ifunctions__ideclaration_0"></div>
+<p>Use the <code>sub</code> keyword to declare a function:</p>
+<div class="programlisting">
+<pre>
+<code>    <b>sub</b> greet_me  { ... }</code>
+</pre></div>
+<p>Now <code>greet_me()</code> is available for invocation anywhere else within the program, provided that the symbol--the function's name--is visible.</p>
+<div id="iforward_declaration_0"></div>
+<div id="ifunctions__iforward_declaration_0"></div>
+<p>You do not have to <i>define</i> a function at the point you declare it. You may use a <i>forward declaration</i> to tell Perl that you intend for the function to exist, then delay its definition:</p>
+<div class="programlisting">
+<pre>
+<code>    sub greet_sun;</code>
+</pre></div>
+<div class="sidebar">
+<p>You do not have to declare Perl 5 functions before you use them, except in the special case where they modify <i>how</i> the parser parses them. See <a href="chapter_05.xhtml#attributes">Attributes</a>(attributes).</p>
+</div>
+<h3 id="heading_id_4">Invoking Functions</h3>
+<div id="isubroutines__iinvoking_0"></div>
+<div id="ifunctions__iinvoking_0"></div>
+<p>To invoke a function, mention its name and pass an optional list of arguments:</p>
+<div class="programlisting">
+<pre>
+<code>    greet_me( 'Jack', 'Brad' );
+    greet_me( 'Snowy' );
+    greet_me();</code>
+</pre></div>
+<div class="sidebar">
+<p>You can <i>often</i> omit parameter-grouping parentheses if your program runs correctly with the <code>strict</code> pragma enabled, but they provide clarity to the parser and, more importantly, the reader.</p>
+</div>
+<p>You can, of course, pass multiple <i>types</i> of arguments to a function:</p>
+<div class="programlisting">
+<pre>
+<code>    greet_me( $name );
+    greet_me( @authors );
+    greet_me( %editors );</code>
+</pre></div>
+<p>... though see the <a href="chapter_03.xhtml#references">References</a>(references) section for more details.</p>
+<h3 id="heading_id_5">Function Parameters</h3>
+<div id="function_parameters"></div>
+<div id="iparameters_0"></div>
+<div id="ifunctions__iparameters_0"></div>
+<div id="i64__1"></div>
+<div id="iparameter_flattening_0"></div>
+<div id="iflattening_0"></div>
+<div id="iparameters__iflattening_0"></div>
+<p>Inside the function, all parameters exist in a single array, <code>@_</code>. If <code>$_</code> corresponds to the English word <i>it</i>, <code>@_</code> corresponds to the word <i>them</i>. Perl <i>flattens</i> all incoming parameters into a single list. The function itself either must unpack all parameters into any variables it wishes to use or operate on <code>@_</code> directly:</p>
+<div class="programlisting">
+<pre>
+<code>    sub greet_one
+    {
+        <b>my ($name) = @_</b>;
+        say "Hello, $name!";
+    }
+
+    sub greet_all
+    {
+        say "Hello, <b>$_!" for @_</b>;
+    }</code>
+</pre></div>
+<p><code>@_</code> behaves as does any other array in Perl. You may refer to individual elements by index:</p>
+<div class="programlisting">
+<pre>
+<code>    sub greet_one_indexed
+    {
+        <b>my $name = $_[0]</b>;
+        say "Hello, $name!";
+
+        # or, less clear
+        say "Hello, $_[0]!";
+    }</code>
+</pre></div>
+<p>You may also <code>shift</code>, <code>unshift</code>, <code>push</code>, <code>pop</code>, <code>splice</code>, and use list slices on <code>@_</code>. Inside a function, the <code>shift</code> and <code>pop</code> operators operate on <code>@_</code> implicitly in the same way that they operate on <code>@ARGV</code> outside of any function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub greet_one_shift
+    {
+        <b>my $name = shift</b>;
+        say "Hello, $name!";
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>While writing <code>shift @_</code> may seem clearer initially, taking advantage of the implicit operand to <code>shift</code> is idiomatic in Perl 5.</p>
+</div>
+<p>Take care that assigning a scalar parameter from <code>@_</code> requires <code>shift</code>, indexed access to <code>@_</code>, or lvalue list context parentheses. Otherwise, Perl 5 will happily evaluate <code>@_</code> in scalar context for you and assign the number of parameters passed:</p>
+<div class="programlisting">
+<pre>
+<code>    sub bad_greet_one
+    {
+        <b>my $name = @_</b>;  # buggy
+        say "Hello, $name; you're looking quite numeric today!"
+    }</code>
+</pre></div>
+<p>List assignment of multiple parameters is often clearer than multiple lines of <code>shift</code>. Compare:</p>
+<div class="programlisting">
+<pre>
+<code>    sub calculate_value
+    {
+        # multiple shifts
+        my $left_value  = shift;
+        my $operation   = shift;
+        my $right_value = shift;
+        ...
+    }</code>
+</pre></div>
+<p>... to:</p>
+<div class="programlisting">
+<pre>
+<code>    sub calculate_value
+    {
+        <b>my ($left_value, $operation, $right_value) = @_;</b>
+        ...
+    }</code>
+</pre></div>
+<p>Occasionally it's necessary to extract a few parameters from <code>@_</code> and pass the rest to another function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub delegated_method
+    {
+        my $self = shift;
+        say 'Calling delegated_method()'
+
+        $self-&gt;delegate-&gt;delegated_method( @_ );
+    }</code>
+</pre></div>
+<p>The dominant practice seems to be to use <code>shift</code> only when your function must access a single parameter and list assignment when accessing multiple parameters.</p>
+<div class="sidebar">
+<p>See the <code>signatures</code>, <code>Method::Signatures</code>, and <code>MooseX::Method::Signatures</code> modules on the CPAN for declarative parameter handling.</p>
+</div>
+<h4 id="heading_id_6">Flattening</h4>
+<p>The flattening of parameters into <code>@_</code> happens on the caller side. Passing a hash as an argument produces a list of key/value pairs:</p>
+<div class="programlisting">
+<pre>
+<code>    sub show_pets
+    {
+        my %pets = @_;
+        while (my ($name, $type) = each %pets)
+        {
+            say "$name is a $type";
+        }
+    }
+
+    my %pet_names_and_types = (
+        Lucky   = &gt; 'dog',
+        Rodney  = &gt; 'dog',
+        Tuxedo  = &gt; 'cat',
+        Petunia = &gt; 'cat',
+    );
+
+    show_pets( %pet_names_and_types );</code>
+</pre></div>
+<p>The <code>show_pets()</code> function works because the <code>%pet_names_and_types</code> hash flattens into the list <code>'Lucky', 'dog', 'Rodney', 'dog', 'Tuxedo', 'cat', 'Petunia', 'cat'</code>. The hash assignment inside the function <code>show_pets()</code> works essentially as the more explicit assignment to <code>%pet_names_and_types</code> does.</p>
+<p>This is often useful, but you must be clear about your intentions if you pass some arguments as scalars and others as flattened lists. If you wish to make a <code>show_pets_of_type()</code> function, where one parameter is the <i>type</i> of pet to display, you must pass that type as the <i>first</i> parameter (or use <code>pop</code> to remove it from the end of <code>@_</code>):</p>
+<div class="programlisting">
+<pre>
+<code>    sub show_pets_by_type
+    {
+        <b>my ($type, %pets) = @_</b>;
+
+        while (my ($name, $species) = each %pets)
+        {
+            <b>next unless $species eq $type;</b>
+            say "$name is a $species";
+        }
+    }
+
+    my %pet_names_and_types = (
+        Lucky   = &gt; 'dog',
+        Rodney  = &gt; 'dog',
+        Tuxedo  = &gt; 'cat',
+        Petunia = &gt; 'cat',
+    );
+
+    show_pets_by_type( 'dog',   %pet_names_and_types );
+    show_pets_by_type( 'cat',   %pet_names_and_types );
+    show_pets_by_type( 'moose', %pet_names_and_types );</code>
+</pre></div>
+<h4 id="heading_id_7">Slurping</h4>
+<div id="parameter_slurping"></div>
+<div id="iparameter_slurping_0"></div>
+<p>As with any lvalue assignment to an aggregate, assigning to <code>%pets</code> within the function <i>slurps</i> all of the remaining values from <code>@_</code>. If the <code>$type</code> parameter came at the end of <code>@_</code>, Perl would attempt to assign an odd number of elements to the hash and would produce a warning. You <i>could</i> work around that:</p>
+<div class="programlisting">
+<pre>
+<code>    sub show_pets_by_type
+    {
+        <b>my $type = pop;</b>
+        <b>my %pets = @_;</b>
+
+        ...
+    }</code>
+</pre></div>
+<p>... at the expense of some clarity. The same principle applies when assigning to an array as a parameter, of course. See <a href="chapter_03.xhtml#references">References</a>(references) for ways to avoid flattening and slurping when passing aggregate parameters.</p>
+<h4 id="heading_id_8">Aliasing</h4>
+<div id="iparameter_aliasing_0"></div>
+<div id="ifunctions__ialiasing_parameters_0"></div>
+<p>One useful feature of <code>@_</code> can surprise the unwary: it contains aliases to the passed-in parameters, until you unpack <code>@_</code> into its own variables. This behavior is easiest to demonstrate with an example:</p>
+<div class="programlisting">
+<pre>
+<code>    sub modify_name
+    {
+        $_[0] = reverse $_[0];
+    }
+
+    my $name = 'Orange';
+    modify_name( $name );
+    say $name;
+
+    # prints <code>egnarO</code></code>
+</pre></div>
+<p>If you modify an element of <code>@_</code> directly, you will modify the original parameter directly. Be cautious.</p>
+<h3 id="heading_id_9">Namespaces</h3>
+<p>Every function lives in a namespace. Functions in an undeclared namespace--that is, functions not declared after an explicit <code>package ...</code> statement--live in the <code>main</code> namespace. You may specify a function's namespace outside of the current package at the point of declaration:</p>
+<div class="programlisting">
+<pre>
+<code>    sub <b>Extensions::Math::</b>add {
+        ...
+    }</code>
+</pre></div>
+<p>Any prefix on the function's name which follows the package naming format creates the function and inserts the function into the appropriate namespace, but not the current namespace. Because Perl 5 packages are open for modification at any point, you may do this even if the namespace does not yet exist, or if you have already declared functions in that namespace.</p>
+<p>You may only declare one function of the same name per namespace, lest Perl 5 warn you about about subroutine redefinition. If you're certain you want to <i>replace</i> an existing function, disable this warning with <code>no warnings 'redefine'</code>.</p>
+<p>You may call functions in other namespaces by using their fully-qualified names:</p>
+<div class="programlisting">
+<pre>
+<code>    package main;
+
+    Extensions::Math::add( $scalar, $vector );</code>
+</pre></div>
+<p>Functions in namespaces are <i>visible</i> outside of those namespaces in the sense that you can refer to them directly, but they are only <i>callable</i> by their short names from within the namespace in which they are declared--unless you have somehow made them available to the current namespace through the processes of importing and exporting (<a href="chapter_09.xhtml#exporting">Exporting</a>(exporting)).</p>
+<h4 id="heading_id_10">Importing</h4>
+<div id="importing"></div>
+<div id="ifunctions__iimporting_0"></div>
+<p>When loading a module with the <code>use</code> keyword (<a href="chapter_09.xhtml#modules">Modules</a>(modules)), Perl automatically calls a method named <code>import()</code> on the provided package name. Modules with procedural interfaces can provide their own <code>import()</code> which makes some or all defined symbols available in the calling package's namespace. Any arguments after the name of the module in the <code>use</code> statement get passed to the module's <code>import()</code> method. Thus:</p>
+<div class="programlisting">
+<pre>
+<code>    use strict;</code>
+</pre></div>
+<p>... loads the <i>strict.pm</i> module and calls <code>strict-&gt;import()</code> with no arguments, while:</p>
+<div class="programlisting">
+<pre>
+<code>    use strict 'refs';
+    use strict qw( subs vars );</code>
+</pre></div>
+<p>... loads the <i>strict.pm</i> module, calls <code>strict-&gt;import( 'refs' )</code>, then calls <code>strict-&gt;import( 'subs', vars' )</code>.</p>
+<p>You may call a module's <code>import()</code> method directly. The previous code example is equivalent to:</p>
+<div class="programlisting">
+<pre>
+<code>    BEGIN
+    {
+        require strict;
+        strict-&gt;import( 'refs' );
+        strict-&gt;import( qw( subs vars ) );
+    }</code>
+</pre></div>
+<p>Be aware that the <code>use</code> keyword adds an implicit <code>BEGIN</code> block around these statements so that the <code>import()</code> call happens <i>immediately</i> after the parser has compiled the entire statement. This ensures that any imported symbols are visible when compiling the rest of the program. Otherwise, any functions imported from other modules but not declared in the current file would look like undeclared barewords and <code>strict</code> would complain.</p>
+<h3 id="heading_id_11">Reporting Errors</h3>
+<div id="icaller_0"></div>
+<p>Within a function, you can get information about the context of the call with the <code>caller</code> operator. If passed no arguments, it returns a three element list containing the name of the calling package, the name of the file containing the call, and the line number of the package on which the call occurred:</p>
+<div class="programlisting">
+<pre>
+<code>    package main;
+
+    main();
+
+    sub main
+    {
+        show_call_information();
+    }
+
+    sub show_call_information
+    {
+        my ($package, $file, $line) = caller();
+        say "Called from $package in $file at $line";
+    }</code>
+</pre></div>
+<p>You may pass a single, optional integer argument to <code>caller()</code>. If provided, Perl will look back through the caller of the caller of the caller that many times and provide information about that particular call. In other words, if <code>show_call_information()</code> used <code>caller(0)</code>, it would receive information about the call from <code>main()</code>. If it used <code>caller(1)</code>, it would receive information about the call from the start of the program.</p>
+<p>While providing this optional parameter lets you inspect the callers of callers, it also provides more return values, including the name of the function and the context of the call:</p>
+<div class="programlisting">
+<pre>
+<code>    sub show_call_information
+    {
+        my ($package, $file, $line<b>, $func</b>) = caller(<b>0</b>);
+        say "Called <b>$func</b> from $package in $file at $line";
+    }</code>
+</pre></div>
+<div id="iCarp_0"></div>
+<div id="iCarp__icroak_0"></div>
+<div id="iCarp__icluck_0"></div>
+<p>The standard <code>Carp</code> module uses this technique to great effect for reporting errors and throwing warnings in functions. You may see <code>croak()</code> used to throw exceptions in place of <code>die</code> in library code. <code>croak()</code> throws an exception reported from the file and line number of its caller. The <code>carp()</code> function reports a warning from the file and line number of its caller.</p>
+<p>This behavior is most useful when validating parameters or preconditions of a function, when you want to indicate that the calling code is wrong somehow:</p>
+<div class="programlisting">
+<pre>
+<code>    use Carp 'croak';
+
+    sub add_two_numbers
+    {
+        croak 'add_two_numbers() takes two and only two arguments'
+            unless @_ == 2;
+
+        ...
+    }</code>
+</pre></div>
+<h4 id="heading_id_12">Validating Arguments</h4>
+<p>Defensive programming often benefits from checking types and values of arguments for appropriateness before performing further processing. By default, Perl 5 provides few built-in mechanisms for doing so (and don't expect <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) to help). You can check that the <i>number</i> of parameters passed to a function is correct by evaluating <code>@_</code> in scalar context:</p>
+<div class="programlisting">
+<pre>
+<code>    sub add_numbers
+    {
+        croak "Expected two numbers, but received: " . @_
+            unless @_ == 2;
+
+        ...
+    }</code>
+</pre></div>
+<p>Type checking is more difficult, because of Perl's operator-oriented type conversions (see <a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)). In cases where you need more strictness, consider the CPAN module <code>Params::Validate</code>.</p>
+<h3 id="heading_id_13">Advanced Functions</h3>
+<p>Functions may seem simple, but you can do much, much more with them (see <a href="chapter_05.xhtml#closures">Closures</a>(closures) and <a href="chapter_05.xhtml#anonymous_functions">Anonymous Functions</a>(anonymous_functions) for more details).</p>
+<h4 id="heading_id_14">Recursion</h4>
+<div id="recursion"></div>
+<div id="irecursion_0"></div>
+<div id="icall_frame_0"></div>
+<div id="ifunctions__icall_frame_0"></div>
+<p>Every call to a function in Perl creates a new <i>call frame</i>. This is an internal data structure which represents the call itself: in effect, incoming parameters, the point to which to return, and all of the control of the program leading up to the point of the call. As well, it captures the lexical environment of the specific and current invocation of the function. This means that a function can <i>recur</i>; it can call itself.</p>
+<p>Recursion is a deceptively simple concept, but it can seem daunting if you haven't encountered it before. Consider a case where you want to find an element in a sorted array. You <i>could</i> iterate through every element of the array individually, looking for the target, but on average, you'll have to look at half of the elements of the array every time.</p>
+<p>Another approach is to divide the array in half. Pick the element at the midpoint, compare, then see if you have to divide the lower half or the upper half and continue. You can write this algorithm with a loop yourself, or you could let Perl manage all of the state and tracking necessary with a recursive algorithm. That might look something like:</p>
+<div class="programlisting">
+<pre>
+<code>    use Modern::Perl;
+
+    use Test::More tests =&gt; 8;
+
+    my @elements = ( 1, 5, 6, 19, 48, 77, 997, 1025, 7777, 8192, 9999 );
+
+    ok   elem_exists(     1, @elements ), 'found first element in array';
+    ok   elem_exists(  9999, @elements ), 'found last element in array';
+    ok ! elem_exists(   998, @elements ), 'did not find element not in array';
+    ok ! elem_exists(    -1, @elements ), 'did not find element not in array';
+    ok ! elem_exists( 10000, @elements ), 'did not find element not in array';
+
+    ok   elem_exists(    77, @elements ), 'found midpoint element';
+    ok   elem_exists(    48, @elements ), 'found end of lower half element';
+    ok   elem_exists(   997, @elements ), 'found start of upper half element';
+
+    sub elem_exists
+    {
+        my ($item, @array) = @_;
+
+        # break recursion if there are no elements to search
+        return unless @array;
+
+        # bias down, if there are an odd number of elements
+        my $midpoint = int( (@array / 2) - 0.5 );
+        my $miditem  = $array[ $midpoint ];
+
+        # return true if the current element is the target
+        return 1 if $item  == $miditem;
+
+        # return false if the current element is the only element
+        return   if @array == 1;
+
+        # split the array down and recurse
+        return <b>elem_exists</b>( $item, @array[0 .. $midpoint] )
+            if $item &lt; $miditem;
+
+        # split the array up and recurse
+        return <b>elem_exists</b>( $item, @array[$midpoint + 1 .. $#array] );
+    }</code>
+</pre></div>
+<p>This isn't necessarily the best algorithm for searching a sorted list, but it demonstrates recursion. Again, you <i>can</i> write this code in a procedural way; but some algorithms are much clearer recursively.</p>
+<h4 id="heading_id_15">Lexicals</h4>
+<p>Every new invocation of a function creates its own <i>instance</i> of a lexical scope. In the case of the recursive example, even though the declaration of <code>elem_exists(</code>) creates a single scope for the lexicals <code>$item</code>, <code>@array</code>, <code>$midpoint</code>, and <code>$miditem</code>, every <i>call</i> to <code>elem_exists()</code>, even recursively, has separate storage for the values of those lexical variables. You can demonstrate that by adding debugging code to the function:</p>
+<div class="programlisting">
+<pre>
+<code>    <b>use Carp 'cluck';</b>
+
+    sub elem_exists
+    {
+        my ($item, @array) = @_;
+
+        <b>cluck "[$item] (@array)";</b>
+
+        # other code follows
+        ...
+    }</code>
+</pre></div>
+<p>The output demonstrates that not only can <code>elem_exists()</code> call itself safely, but the lexical variables do not interfere with each other.</p>
+<h4 id="heading_id_16">Tail Calls</h4>
+<div id="tail_calls"></div>
+<div id="irecursion__iguard_conditions_0"></div>
+<p>One <i>drawback</i> of recursion is that you must get your return conditions correct, lest your function call itself an infinite number of times. This is why the <code>elem_exists()</code> function has several <code>return</code> statements.</p>
+<p>Perl offers a helpful warning when it detects what might be runaway recursion: <code>Deep recursion on subroutine</code>. The limit is 100 recursive calls, which can be too few in certain circumstances but too many in others. Disable this warning with <code>no warnings 'recursion'</code> in the scope of the recursive call.</p>
+<div id="ifunctions__itail_call_elimination_0"></div>
+<p>Because each call to a function requires a new call frame, as well as space for the call to store its own lexical values, highly-recursive code can use more memory than iterative code. A feature called <i>tail call elimination</i> can help.</p>
+<div class="sidebar">
+<p>Tail call elimination may be most obvious when writing recursive code, but it can be useful in any case of a tail call. Many programming language implementations support automatic tail call elimination.</p>
+</div>
+<div id="itail_calls_0"></div>
+<div id="ifunctions__itail_calls_0"></div>
+<p>A <i>tail call</i> is a call to a function which directly returns that function's results. The lines:</p>
+<div class="programlisting">
+<pre>
+<code>        # split the array down and recurse
+        return elem_exists( $item, @array[0 .. $midpoint] )
+            if $item &lt; $miditem;
+
+        # split the array up and recurse
+        return elem_exists( $item, @array[$midpoint + 1 .. $#array] );</code>
+</pre></div>
+<p>... which return the results of the recursive <code>elem_exists()</code> calls directly, are candidates for tail call elimination. This elimination avoids returning to the current call and then returning to the parent call. Instead, it returns to the parent call directly.</p>
+<p>Perl 5 supports manual tail call elimination, but two recent CPAN modules provide a much better syntax (and even better performance). Yuval Kogman's <code>Sub::Call::Tail</code> is worth exploring if you find yourself with highly recursive code or code that could benefit from tail call elimination. <code>Sub::Call::Tail</code> is appropriate for tail calls of non-recursive code:</p>
+<div class="programlisting">
+<pre>
+<code>    use Sub::Call::Tail;
+
+    sub log_and_dispatch
+    {
+        my ($dispatcher, $request) = @_;
+        warn "Dispatching with $dispatcher\n";
+
+        return dispatch( $dispatcher, $request );
+    }</code>
+</pre></div>
+<p>In this example, you can replace the <code>return</code> with the new <code>tail</code> keyword with no functional changes (yet more clarity and improved performance):</p>
+<div class="programlisting">
+<pre>
+<code>        <b>tail</b> dispatch( $dispatcher, $request );</code>
+</pre></div>
+<div id="igoto_1"></div>
+<div id="ifunctions__igoto_0"></div>
+<p>If you really <i>must</i> perform your own manual tail call elimination, a special form of the <code>goto</code> keyword exists. Unlike the form which can often lead to spaghetti code, the <code>goto</code> function form replaces the current function call with a call to another function. You may use a function by name or by reference. You must always set <code>@_</code> yourself manually, if you want to pass different arguments:</p>
+<div class="programlisting">
+<pre>
+<code>        # split the array down and recurse
+        if ($item &lt; $miditem)
+        {
+            @_ = ($item, @array[0 .. $midpoint]);
+            <b>goto &amp;elem_exists;</b>
+        }
+
+        # split the array up and recurse
+        else
+        {
+            @_ = ($item, @array[$midpoint + 1 .. $#array] );
+            <b>goto &amp;elem_exists;</b>
+        }</code>
+</pre></div>
+<p>The comparative cleanliness of the CPAN versions is obvious.</p>
+<h3 id="heading_id_17">Pitfalls and Misfeatures</h3>
+<div id="ifunctions__ipitfalls_0"></div>
+<div id="ifunctions__imisfeatures_0"></div>
+<p>Not all features of Perl 5 functions are always helpful. In particular, <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) rarely do what you mean. They have their uses, but you can avoid them outside of a few cases.</p>
+<div class="editor">
+<p>Check the timeline, but I'm pretty sure about this.</p>
+</div>
+<div id="ifunctions__iPerl_4_0"></div>
+<div id="ifunctions__iPerl_1_0"></div>
+<p>As well, Perl 5 still supports old-style invocations of functions, carried over from older versions of Perl. While you may now invoke Perl functions by name, previous versions of Perl required you to invoke them with a leading ampersand (<code>&amp;</code>) character. Perl 1 required you to use the <code>do</code> keyword as well:</p>
+<div class="programlisting">
+<pre>
+<code>    # Perl 4 style; avoid
+    my $result = &amp;calculate_result( 52 );
+
+    # Perl 1 style; really truly avoid
+    my $result = do &amp;calculate_result( 42 );</code>
+</pre></div>
+<p>While they're visually noisy, with vestigial syntax, the leading ampersand form performs other behavior which can occasionally surprise you. First, it disables prototype checking (as if that often mattered). Second, if you do not pass arguments explicitly, it <i>implicitly</i> passes the contents of <code>@_</code> unmodified. Both can lead to surprising behavior.</p>
+<p>A final pitfall comes from leaving the parentheses off of function calls. The Perl 5 parser uses several heuristics to resolve ambiguity of barewords and the number of parameters passed to a function, but occasionally those heuristics guess wrong. While it's often wise to remove extraneous parentheses, compare the readability of these two lines of code:</p>
+<div class="programlisting">
+<pre>
+<code>    ok( elem_exists( 1, @elements ), 'found first element in array' );
+
+    # warning; contains a subtle bug
+    ok elem_exists 1, @elements, 'found first element in array';</code>
+</pre></div>
+<p>The subtle bug in the second form is that the call to <code>elem_exists()</code> will gobble up the test description intended as the second argument to <code>ok()</code>. Because <code>elem_exists()</code> uses a slurpy second parameter, this may go unnoticed until Perl produces warnings about comparing a non-number (the test description, which it cannot convert into a number) with the element in the array.</p>
+<p>This is admittedly an extreme case, but it is a case where proper parenthesization can clarify code and make subtle bugs obvious to the reader.</p>
+<div class="author">
+<p>Add <code>wantarray()</code> and Want.pm information?</p>
+</div>
+<h3 id="heading_id_18">Scope</h3>
+<div id="scope"></div>
+<div id="iscope_1"></div>
+<div id="iencapsulation_0"></div>
+<p><i>Scope</i> in Perl refers to the lifespan and visibility of symbols. Everything with a name in Perl (a variable, a function) has a scope. Scoping helps to enforce <i>encapsulation</i>--keeping related concepts together and preventing them from leaking out.</p>
+<h4 id="heading_id_19">Lexical Scope</h4>
+<div id="lexical_scope"></div>
+<div id="ilexical_scope_0"></div>
+<div id="iscope__ilexical_0"></div>
+<p>The most common form of scoping in modern Perl is lexical scoping. The Perl compiler resolves this scope during compilation. This scope is visible as you <i>read</i> a program.</p>
+<p>To create a new lexical scope, create a block delimited by curly braces. This block can be a bare block, the block of a loop construct, the block of a <code>sub</code> declaration, an <code>eval</code> block, or any other non-quoting block:</p>
+<div class="programlisting">
+<pre>
+<code>    # outer lexical scope
+    {
+        package My::Class;
+
+        # inner lexical scope
+        sub awesome_method
+        {
+            # further inner lexical scope
+            do {
+                ...
+            } while (@_);
+
+            # sibling inner lexical scope
+            for (@_)
+            {
+                ...
+            }
+        }
+    }</code>
+</pre></div>
+<div id="ivariables__ilexical_0"></div>
+<p>Lexical scope governs the visibility of variables declared with <code>my</code>; these are <i>lexical</i> variables. A lexical variable declared in one scope is visible in that scope and any scopes nested within it, but is invisible to sibling or outer scopes. Thus, in the code:</p>
+<div class="programlisting">
+<pre>
+<code>    # outer lexical scope
+    {
+        package My::Class;
+
+        my $outer;
+
+        sub awesome_method
+        {
+            my $inner;
+
+            do {
+                my $do_scope;
+                ...
+            } while (@_);
+
+            # sibling inner lexical scope
+            for (@_)
+            {
+                my $for_scope;
+                ...
+            }
+        }
+    }</code>
+</pre></div>
+<p>... <code>$outer</code> is visible in all four scopes. <code>$inner</code> is visible in the method, the <code>do</code> block, and the <code>for</code> loop. <code>$do_scope</code> is visible only in the <code>do</code> block and <code>$for_scope</code> within the <code>for</code> loop.</p>
+<div id="ilexical_shadowing_0"></div>
+<div id="iscope__ilexical_shadowing_0"></div>
+<p>Declaring a lexical in an inner scope with the same name as a lexical in an outer scope hides, or <i>shadows</i>, the outer lexical:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my $name = 'Jacob';
+
+        {
+            my $name = 'Edward';
+            say $name;
+        }
+
+        say $name;
+    }</code>
+</pre></div>
+<p>This program prints <code>Edward</code> and then <code>Jacob</code>. Even though redeclaring a lexical variable with the same name and type in a single lexical scope produces a warning message, shadowing a lexical in a nested scope does not; this is a feature of lexical shadowing.</p>
+<div class="sidebar">
+<p>Lexical shadowing can happen by accident, but if you limit the scope of variables and limit the nesting of scopes--as is good design anyhow--you lessen your risk.</p>
+</div>
+<p>Lexical declaration has its subtleties. For example, a lexical variable used as the iterator variable of a <code>for</code> loop has a scope <i>within</i> the loop block. It is not visible outside the block:</p>
+<div class="programlisting">
+<pre>
+<code>    my $cat = 'Bradley';
+
+    for my $cat (qw( Jack Daisy Petunia Tuxedo ))
+    {
+        say "Iterator cat is $cat";
+    }
+
+    say "Static cat is $cat";</code>
+</pre></div>
+<div id="ilexical_topic_0"></div>
+<div id="itopic__ilexical_0"></div>
+<p>Similarly, the <code>given</code> construct creates a <i>lexical topic</i> (akin to <code>my $_</code>) within its block:</p>
+<div class="programlisting">
+<pre>
+<code>    $_ = 'outside';
+
+    given ('inner')
+    {
+        say;
+        $_ = 'whomped inner';
+    }
+
+    say;</code>
+</pre></div>
+<p>... despite assignment to <code>$_</code> inside the block. You may explicitly lexicalize the topic yourself, though this is more useful when considering dynamic scope.</p>
+<p>Finally, lexical scoping facilitates closures (see <a href="chapter_05.xhtml#closures">Closures</a>(closures)). Beware creating closures accidentally.</p>
+<h5 id="heading_id_20">Our Scope</h5>
+<div id="our"></div>
+<div id="iour_1"></div>
+<div id="ipackage_scope_0"></div>
+<p>Within a given scope, you may declare an alias to a package variable with the <code>our</code> keyword. Like <code>my</code>, <code>our</code> enforces lexical scoping--of the alias. The fully-qualified name is available everywhere, but the lexical alias is visible only within its scope.</p>
+<p>The best use of <code>our</code> is for variables you absolutely <i>must</i> have, such as <code>$VERSION</code>.</p>
+<h4 id="heading_id_21">Dynamic Scope</h4>
+<div id="dynamic_scope"></div>
+<div id="idynamic_scope_0"></div>
+<div id="iscope__idynamic_0"></div>
+<p>Dynamic scope resembles lexical scope in its visibility rules, but instead of looking outward in compile-time scopes, lookup happens along the current calling context. Consider the example:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        our $scope;
+
+        sub inner
+        {
+            say $scope;
+        }
+
+        sub main
+        {
+            say $scope;
+            local $scope = 'main() scope';
+            middle();
+        }
+
+        sub middle
+        {
+            say $scope;
+            inner();
+        }
+
+        $scope = 'outer scope';
+        main();
+        say $scope;
+    }</code>
+</pre></div>
+<p>The program begins by declaring an <code>our</code> variable, <code>$scope</code>, as well as three functions. It ends by assigning to <code>$scope</code> and calling <code>main()</code>.</p>
+<div id="ilocal_0"></div>
+<p>Within <code>main()</code>, the program prints <code>$scope</code>'s current value, <code>outer scope</code>, then <code>local</code>izes the variable. This changes the visibility of the symbol within the current lexical scope <i>as well as</i> in any functions called from the current lexical scope. Thus, <code>$scope</code> contains <code>main() scope</code> within the body of both <code>middle()</code> and <code>inner()</code>. After <code>main()</code> returns--at the point of exiting the block containing the <code>local</code>ization of <code>$scope</code>, Perl restores the original value of the variable. The final <code>say</code> prints <code>outer scope</code> once again.</p>
+<p>Note that the variable is <i>visible</i> within all scopes, but the <i>value</i> of the variable changes depending on <code>local</code>ization and assignment. This feature can be tricky and subtle, but it is especially useful for changing the values of special variables.</p>
+<p>You may only <code>local</code>ize global and package global variables. You cannot <code>local</code>ize lexical variables.</p>
+<div class="sidebar">
+<p>You <i>can</i> localize functions and methods, but that's deep magic to avoid unless absolutely necessary.</p>
+</div>
+<div id="i3647_0"></div>
+<div id="ispecial_variables__i3647_0"></div>
+<div id="i3633_0"></div>
+<div id="ispecial_variables__i3633_0"></div>
+<div id="i3664_0"></div>
+<div id="ispecial_variables__i3664_0"></div>
+<div id="i36124_0"></div>
+<div id="ispecial_variables__i36124_0"></div>
+<div class="author">
+<p>Decide whether to use "special" or "magic".</p>
+</div>
+<p>It's common to <code>local</code>ize several special variables. For example, <code>$/</code>, the input record separator, governs how much data a <code>readline</code> operation will read from a filehandle. <code>$!</code>, the system error variable, contains the error number of the most recent system call. <code>$@</code>, the Perl <code>eval</code> error variable, contains any error from the most recent <code>eval</code> operation. <code>$|</code>, the autoflush variable, governs whether Perl will flush the currently <code>select</code>ed filehandle after every write operation.</p>
+<p>These are all special global variables; <code>local</code>izing them in the narrowest possible scope will avoid the action at a distance problem of modifying global variables used other places in your code.</p>
+<h4 id="heading_id_22">State Scope</h4>
+<div id="state"></div>
+<div id="istate_0"></div>
+<div id="iscope__istate_0"></div>
+<p>A final type of scope is new as of Perl 5.10. This is the scope of the <code>state</code> keyword. State scope resembles lexical scope in that it declares a lexical variable, but the value of that variable gets initialized <i>once</i>, and then persists:</p>
+<div class="programlisting">
+<pre>
+<code>    sub counter
+    {
+        <b>state</b> $count = 1;
+        return $count++;
+    }
+
+    say counter();
+    say counter();
+    say counter();</code>
+</pre></div>
+<p>On the first call to state, <code>$count</code> has never been initialized, so Perl executes the assignment. The program prints <code>1</code>, <code>2</code>, and <code>3</code>. If you change <code>state</code> to <code>my</code>, the program will print <code>1</code>, <code>1</code>, and <code>1</code>.</p>
+<p>You may also use an incoming parameter to set the initial value of the <code>state</code> variable:</p>
+<div class="programlisting">
+<pre>
+<code>    sub counter
+    {
+        state $count = shift;
+        return $count++;
+    }
+
+    say counter(<b>2</b>);
+    say counter(<b>4</b>);
+    say counter(<b>6</b>);</code>
+</pre></div>
+<p>Even though a simple reading of the code may suggest that the output should be <code>2</code>, <code>4</code>, and <code>6</code>, the output is actually <code>2</code>, <code>3</code>, and <code>4</code>. The first call to the sub <code>counter</code> sets the <code>$count</code> variable. Subsequent calls will not change its value. This behavior is as intended and documented, though its implementation can lead to surprising results:</p>
+<div class="programlisting">
+<pre>
+<code>    sub counter
+    {
+        state $count = shift;
+        say 'Second arg is: ', shift;
+        return $count++;
+    }
+
+    say counter(2, 'two');
+    say counter(4, 'four');
+    say counter(6, 'six');</code>
+</pre></div>
+<p>The counter for this program prints <code>2</code>, <code>3</code>, and <code>4</code> as expected, but the values of the intended second arguments to the <code>counter()</code> calls are <code>two</code>, <code>4</code>, and <code>6</code>--not because the integers are the second arguments passed, but because the <code>shift</code> of the first argument only happens in the first call to <code>counter()</code>.</p>
+<p><code>state</code> can be useful for establishing a default value or preparing a cache, but be sure to understand its initialization behavior if you use it.</p>
+<h3 id="heading_id_23">Anonymous Functions</h3>
+<div id="anonymous_functions"></div>
+<div id="ianonymous_function_0"></div>
+<div id="ifunctions__ianonymous_0"></div>
+<p>An <i>anonymous function</i> is a function without a name. It behaves like a named function--you can invoke it, pass arguments to it, return values from it, copy references to it--it can do anything a named function can do. The difference is that it has no name. You always deal with anonymous functions by reference (see <a href="chapter_03.xhtml#references">References</a>(references) and <a href="chapter_03.xhtml#function_references">Function References</a>(function_references)).</p>
+<h4 id="heading_id_24">Declaring Anonymous Functions</h4>
+<p>You may never declare an anonymous function on its own; you must construct it and assign it to a variable, invoke it immediately, or pass it as an argument to a function, either explicitly or implicitly. Explicit creation uses the <code>sub</code> keyword with no name:</p>
+<div class="programlisting">
+<pre>
+<code>    my $anon_sub = sub { ... };</code>
+</pre></div>
+<div id="idispatch_table_0"></div>
+<p>A common Perl 5 idiom known as a <i>dispatch table</i> uses hashes to associate input with behavior:</p>
+<div class="programlisting">
+<pre>
+<code>    my %dispatch =
+    (
+        plus     =&gt; sub { $_[0]  + $_[1] },
+        minus    =&gt; sub { $_[0]  - $_[1] },
+        times    =&gt; sub { $_[0]  * $_[1] },
+        goesinto =&gt; sub { $_[0]  / $_[1] },
+        raisedto =&gt; sub { $_[0] ** $_[1] },
+    );
+
+    sub dispatch
+    {
+        my ($left, $op, $right) = @_;
+
+        die "Unknown operation!"
+            unless exists $dispatch{ $op };
+
+        return $dispatch{ $op }-&gt;( $left, $right );
+    }</code>
+</pre></div>
+<p>The <code>dispatch()</code> function takes arguments of the form <code>(2, 'times', 2)</code> and returns the result of evaluating the operation.</p>
+<p>You may use anonymous functions in place of function references. To Perl, they're equivalent. Nothing <i>necessitates</i> the use of anonymous functions to perform these mathematical operations, but for functions this short, there's little drawback to writing them this way.</p>
+<p>You may rewrite <code>%dispatch</code> as:</p>
+<div class="programlisting">
+<pre>
+<code>    my %dispatch =
+    (
+        plus     =&gt; \&amp;add_two_numbers,
+        minus    =&gt; \&amp;subtract_two_numbers,
+        # ... and so on
+    );
+
+    sub add_two_numbers      { $_[0] + $_[1] }
+
+    sub subtract_two_numbers { $_[0] - $_[1] }</code>
+</pre></div>
+<p>... but the decision to do so depends more on maintainability concerns, safety, and your team's coding style than any language feature.</p>
+<div class="sidebar">
+<p>A benefit of indirection through the dispatch table is that it provides some protection against calling functions without verifying that it's safe to call those functions. If your dispatch function blindly assumed that the string given as the name of the operator corresponded directly to the name of a function to call, a malicious user could conceivably call any function in any other namespace by crafting an operator name of <code>'Internal::Functions::some_malicious_function'</code>.</p>
+</div>
+<p>You may also create anonymous functions on the spot when passing them as function parameters:</p>
+<div class="programlisting">
+<pre>
+<code>    sub invoke_anon_function
+    {
+        my $func = shift;
+        return $func-&gt;( @_ );
+    }
+
+    sub named_func
+    {
+        say 'I am a named function!';
+    }
+
+    invoke_anon_function( \&amp;named_func );
+    invoke_anon_function( sub { say 'I am an anonymous function' } );</code>
+</pre></div>
+<h4 id="heading_id_25">Anonymous Function Names</h4>
+<div id="ianonymous_functions__inames_0"></div>
+<p>There is one instance in which you can identify the difference between a reference to a named function and an anonymous function--anonymous functions do not (normally) have names. This may sound subtle and silly and obvious, but introspection shows the difference:</p>
+<div class="programlisting">
+<pre>
+<code>    package ShowCaller;
+
+    use Modern::Perl;
+
+    sub show_caller
+    {
+        my ($package, $filename, $line, $sub) = caller(1);
+        say "Called from $sub in $package at $filename : $line";
+    }
+
+    sub main
+    {
+        my $anon_sub = sub { show_caller() };
+        show_caller();
+        $anon_sub-&gt;();
+    }
+
+    main();</code>
+</pre></div>
+<p>The result may be surprising:</p>
+<pre>
+<code>    Called from ShowCaller::<b>main</b> in ShowCaller at anoncaller.pl : 20
+    Called from ShowCaller::<b>__ANON__</b> in ShowCaller at anoncaller.pl : 17</code>
+</pre>
+<p>The <code>__ANON__</code> in the second line of output demonstrates that the anonymous function has no name that Perl can identify. Even though this can be difficult to debug, there are ways around this anonymity.</p>
+<p>The CPAN module <code>Sub::Identify</code> provides a handful of functions useful to inspect the names of functions, given references to them. <code>sub_name()</code> is the most immediately obvious:</p>
+<div class="programlisting">
+<pre>
+<code>    use Sub::Identify 'sub_name';
+
+    sub main
+    {
+        say sub_name( \&amp;main );
+        say sub_name( sub {} );
+    }
+
+    main();</code>
+</pre></div>
+<p>As you might imagine, the lack of identifying information complicates debugging anonymous functions. The CPAN module <code>Sub::Name</code> can help. Its <code>subname()</code> function allows you to attach names to anonymous functions:</p>
+<div class="programlisting">
+<pre>
+<code>    use Sub::Name;
+    use Sub::Identify 'sub_name';
+
+    my $anon  = sub {};
+    say sub_name( $anon );
+
+    my $named = subname( 'pseudo-anonymous', $anon );
+    say sub_name( $named );
+    say sub_name( $anon );
+
+    say sub_name( sub {} );</code>
+</pre></div>
+<p>This program produces:</p>
+<pre>
+<code>    __ANON__
+    pseudo-anonymous
+    pseudo-anonymous
+    __ANON__</code>
+</pre>
+<p>Note that both references refer to the same underlying anonymous function. Calling <code>subname()</code> on <code>$anon</code> and returning into <code>$named</code> modifies that function, so any other reference to this function will see the same moniker.</p>
+<h4 id="heading_id_26">Implicit Anonymous Functions</h4>
+<div id="ianonymous_functions__iimplicit_0"></div>
+<p>All of these anonymous function declarations have been explicit. Perl 5 allows implicit anonymous functions through the use of prototypes (<a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes)). Though this feature exists nominally to enable programmers to write their own syntax such as that for <code>map</code> and <code>eval</code>, an interesting example is the use of <i>delayed</i> functions that don't look like functions. Consider the CPAN module <code>Test::Exception</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    use Test::More tests =&gt; 2;
+    use Test::Exception;
+
+    throws_ok { die "I croak!" }
+         qr/I croak/, 'die() should throw an exception';
+
+    lives_ok  { 1 + 1 }
+        'simple addition should not';</code>
+</pre></div>
+<p>Both <code>lives_ok()</code> and <code>throws_ok()</code> take an anonymous function as their first arguments. This code is equivalent to:</p>
+<div class="programlisting">
+<pre>
+<code>    throws_ok( <b>sub { die "I croak!" },</b>
+         qr/I croak/, 'die() should throw an exception' );
+
+    lives_ok( <b>sub { 1 + 1 },</b>
+        'simple addition should not' );</code>
+</pre></div>
+<p>... but is slightly easier to read.</p>
+<div class="sidebar">
+<p>Note the <i>lack</i> of a comma following the final curly brace of the implicit anonymous function in the implicit version. This is occasionally a confusing wart on otherwise helpful syntax, courtesy of a quirk of the Perl 5 parser.</p>
+</div>
+<p>The implementation of both functions does not care which mechanism you use to pass function references. You can pass named functions by reference as well:</p>
+<div class="programlisting">
+<pre>
+<code>    <b>sub croak { die 'I croak!' }</b>
+
+    <b>sub add   { 1 + 1 }</b>
+
+    throws_ok <b>\&amp;croak</b>,
+         qr/I croak/, 'die() should throw an exception';
+
+    lives_ok  <b>\&amp;add</b>,
+        'simple addition should not';</code>
+</pre></div>
+<p>... but you may <i>not</i> pass them as scalar references:</p>
+<div class="programlisting">
+<pre>
+<code>    sub croak { die 'I croak!' }
+
+    sub add   { 1 + 1 }
+
+    <b>my $croak = \&amp;croak;</b>
+    <b>my $add   = \&amp;add;</b>
+
+    throws_ok <b>$croak</b>,
+         qr/I croak/, 'die() should throw an exception';
+
+    lives_ok  <b>$add</b>,
+        'simple addition should not';</code>
+</pre></div>
+<p>... because the prototype changes the way the Perl 5 parser interprets this code. It cannot determine with 100% clarity <i>what</i> <code>$croak</code> and <code>$add</code> will contain when it evaluates the <code>throws_ok()</code> or <code>lives_ok()</code> calls, so it produces an error:</p>
+<div class="screen">
+<pre>
+<code>    Type of arg 1 to Test::Exception::throws_ok must be block or sub {}
+    (not private variable) at testex.pl line 13,
+    near "'die() should throw an exception';"</code>
+</pre></div>
+<p>This feature is occasionally useful despite its drawbacks. The syntactic clarity available by promoting bare blocks to anonymous functions can be helpful, but use it sparingly and document the API with care.</p>
+<h3 id="heading_id_27">Closures</h3>
+<div id="closures"></div>
+<p>You've seen how functions work (<a href="chapter_05.xhtml#functions">Functions</a>(functions)). You understand how scope works (<a href="chapter_05.xhtml#scope">Scope</a>(scope)). You know that every time control flow enters a function, that function gets a new environment representing that invocation's lexical scope. You can work with function references (<a href="chapter_03.xhtml#references">References</a>(references)) and anonymous functions (<a href="chapter_05.xhtml#anonymous_functions">Anonymous Functions</a>(anonymous_functions)).</p>
+<p>You know everything you need to know to understand closures.</p>
+<div class="sidebar">
+<p>Mark Jason Dominus's <i>Higher Order Perl</i> is the canonical reference on first-class functions, closures, and the amazing things you can do with them. You can read it online at <span class="url">http://hop.perl.plover.com/</span>.</p>
+</div>
+<h4 id="heading_id_28">Creating Closures</h4>
+<div id="iclosure_0"></div>
+<div id="ifunctions__iclosures_0"></div>
+<p>A <i>closure</i> is a function that closes over an outer lexical environment. You've probably already created and used closures without realizing it:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        package Invisible::Closure;
+
+        my $filename = shift @ARGV;
+
+        sub get_filename
+        {
+            return $filename;
+        }
+    }</code>
+</pre></div>
+<p>The behavior of this code is unsurprising. You may not have noticed anything special. <i>Of course</i> the <code>get_filename()</code> function can see the <code>$filename</code> lexical. That's how scope works! Yet closures can also close over <i>transient</i> lexical environments.</p>
+<p>Suppose you want to iterate over a list of items without managing the iterator yourself. You can create a function which returns a function that, when invoked, will return the next item in the iteration:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_iterator
+    {
+        my @items = @_;
+        my $count = 0;
+
+        return sub
+        {
+            return if $count == @items;
+            return $items[ $count++ ];
+        }
+    }
+
+    my $cousins = make_iterator(qw( Rick Alex Kaycee Eric Corey ));
+
+    say $cousins-&gt;() for 1 .. 5;</code>
+</pre></div>
+<p>Even though <code>make_iterator()</code> has returned, the anonymous function still refers to the lexical variables <code>@items</code> and <code>$count</code>. Their values persist (<a href="chapter_03.xhtml#reference_counts">Reference Counts</a>(reference_counts)). The anonymous function, stored in <code>$cousins</code>, has closed over these values in the specific lexical environment of the specific invocation of <code>make_iterator()</code>.</p>
+<p>It's easy to demonstrate that the lexical environment is independent between calls to <code>make_iterator()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $cousins = make_iterator(qw( Rick Alex Kaycee Eric Corey ));
+    my $aunts   = make_iterator(qw( Carole Phyllis Wendy ));
+
+    say $cousins-&gt;();
+    say $aunts-&gt;();
+    say $cousins-&gt;();
+    say $aunts-&gt;();</code>
+</pre></div>
+<p>Because every invocation of <code>make_iterator()</code> creates a separate lexical environment for its lexicals, the anonymous sub it creates and returns closes over a unique lexical environment.</p>
+<p>Because <code>make_iterator()</code> does not return these lexicals by value or by reference, no other Perl code besides the closure can access them. They're encapsulated as effectively as any other lexical encapsulation.</p>
+<p>Multiple closures can close over the same lexical variables; this is an idiom used occasionally to provide better encapsulation of what would otherwise be a file global variable:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my $private_variable;
+
+        sub set_private { $private_variable = shift }
+        sub get_private { $private_variable }
+    }</code>
+</pre></div>
+<p>... but be aware that you cannot <i>nest</i> named functions. Named functions have package global scope. Any lexical variables shared between nested functions will go unshared when the outer function destroys its first lexical environment <span class="footnote">(footnote: If that's confusing to you, imagine the implementation.)</span>.</p>
+<div class="sidebar">
+<p>The CPAN module <code>PadWalker</code> lets you violate lexical encapsulation, but anyone who uses it and breaks your code earns the right to fix any concomitant bugs without your help.</p>
+</div>
+<h4 id="heading_id_29">Uses of Closures</h4>
+<p>Closures can make effective iterators over fixed-size lists, but they demonstrate greater advantages when iterating over a list of items too expensive to refer to directly, either because it represents data which costs a lot to compute all at once or it's too large to fit into memory directly.</p>
+<p>Consider a function to create the Fibonacci series as you need its elements. Instead of recalculating the series recursively, use a cache and lazily create the elements you need:</p>
+<div class="programlisting">
+<pre>
+<code>    sub gen_fib
+    {
+        my @fibs = (0, 1, 1);
+
+        return sub
+        {
+            my $item = shift;
+
+            if ($item &gt;= @fibs)
+            {
+                for my $calc ((@fibs - 1) .. $item)
+                {
+                    $fibs[$calc] = $fibs[$calc - 2] + $fibs[$calc - 1];
+                }
+            }
+
+            return $fibs[$item];
+        }
+    }</code>
+</pre></div>
+<p>Every call to the function returned by <code>gen_fib()</code> takes one argument, the <i>n</i>th element of the Fibonacci series. The function generates all preceding values in the series as necessary, caching them, and returning the requested element. It delays computation until absolutely necessary.</p>
+<p>If all you ever need to do is to calculate Fibonacci numbers, this approach may seem overly complex. Consider, however, that the function <code>gen_fib()</code> can become amazingly generic: it initializes an array as a cache, performs some custom code to populate arbitrary elements of the cache, and returns the calculated or cached value. If you extract the behavior which calculates Fibonacci values, you can use this code to perform all sorts of cached, lazy iterator behaviors.</p>
+<p>In other words, you can extract a function, <code>generate_caching_closure()</code>, and rewrite <code>gen_fib()</code> in terms of that function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub gen_caching_closure
+    {
+        my ($calc_element, @cache) = @_;
+
+        return sub
+        {
+            my $item = shift;
+
+            $calc_element-&gt;($item, \@cache) unless $item &lt; @cache;
+
+            return $cache[$item];
+        };
+    }
+
+
+    sub gen_fib
+    {
+        my @fibs = (0, 1, 1);
+
+        return gen_caching_closure(
+            sub
+            {
+                my ($item, $fibs) = @_;
+
+                for my $calc ((@$fibs - 1) .. $item)
+                {
+                    $fibs-&gt;[$calc] = $fibs-&gt;[$calc - 2] + $fibs-&gt;[$calc - 1];
+                }
+            },
+            @fibs
+        );
+    }</code>
+</pre></div>
+<p>The program behaves the same way as it did before, but the use of higher order functions and closures allows the separation of the cache initialization behavior from the calculation of the next number in the Fibonacci series in an effective way. Customizing the behavior of code--in this case, <code>gen_caching_closure()</code>--by passing in a higher order function allows tremendous flexibility and abstraction.</p>
+<div class="sidebar">
+<p>In one sense, you can consider the builtins <code>map</code>, <code>grep</code>, and <code>sort</code> higher-order functions, especially if you compare them to <code>gen_caching_closure()</code>.</p>
+</div>
+<h4 id="heading_id_30">Closures and Partial Application</h4>
+<div id="partial_application"></div>
+<p>Closures can do more than abstract away structural details. They can allow you to customize specific behaviors. In one sense, they can also <i>remove</i> unnecessary genericity. Consider the case of a function which takes several parameters:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_sundae
+    {
+        my %args = @_;
+
+        my $ice_cream = get_ice_cream( $args{ice_cream} );
+        my $banana    = get_banana( $args{banana} );
+        my $syrup     = get_syrup( $args{syrup} );
+        ...
+    }</code>
+</pre></div>
+<p>All of the customization possibilities might work very well in your full-sized anchor store in a shopping complex, but if you have a little drive-through ice cream cart near the overpass where you only serve French vanilla ice cream on Cavendish bananas, every time you call <code>make_sundae()</code> you have to pass arguments that never change.</p>
+<div id="ipartial_application_0"></div>
+<p>A technique called <i>partial application</i> binds some arguments to a function such that you can fill in the rest at the point of call. This is easy enough to emulate with closures:</p>
+<div class="programlisting">
+<pre>
+<code>    my $make_cart_sundae = sub
+    {
+        return make_sundae( @_,
+            ice_cream =&gt; 'French Vanilla',
+            banana    =&gt; 'Cavendish',
+        );
+    };</code>
+</pre></div>
+<p>Now instead of calling <code>make_sundae()</code>, you can invoke <code>$make_cart_sundae-&gt;()</code> and pass only the interesting arguments, without worrying about forgetting the invariants or passing them incorrectly <span class="footnote">(footnote: You can even use <code>Sub::Install</code> from the CPAN to install this function into your namespace directly.)</span>.</p>
+<h3 id="heading_id_31">State versus Closures</h3>
+<div id="state"></div>
+<p>Closures (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) are an easy, effective, and safe way to make data persist between function invocations without using global variables. If you need to share variables between named functions, you can introduce a new scope (<a href="chapter_05.xhtml#scope">Scope</a>(scope)) for only those function declarations:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my $safety = 0;
+
+        sub enable_safety  { $safety = 1 }
+        sub disable_safety { $safety = 0 }
+
+        sub do_something_awesome
+        {
+            return if $safety;
+            ...
+        }
+    }</code>
+</pre></div>
+<p>The encapsulation of functions to toggle the safety allows all three functions to share state without exposing the lexical variable directly to external code. This idiom works well for cases where external code should be able to change internal state, but it's clunkier when only one function needs to manage that state.</p>
+<p>Suppose that you want to count the number of customers at your ice cream parlor. Every hundredth person gets free sprinkles:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my $cust_count = 0;
+
+        sub serve_customer
+        {
+            $cust_count++;
+
+            my $order = shift;
+
+            add_sprinkles($order) if $cust_count % 100 == 0)
+
+            ...
+        }
+    }</code>
+</pre></div>
+<div id="istate_1"></div>
+<p>This approach <i>works</i>, but creating a new lexical scope for a single function introduces more accidental complexity than is necessary. The <code>state</code> keyword allows you to declare a lexically scoped variable with a value that persists between invocations:</p>
+<div class="programlisting">
+<pre>
+<code>    sub serve_customer
+    {
+        <b>state $cust_count = 0;</b>
+        $cust_count++;
+
+        my $order = shift;
+        add_sprinkles($order) if $cust_count % 100 == 0)
+
+        ...
+    }</code>
+</pre></div>
+<div id="ifeature_0"></div>
+<div id="ifeature__istate_0"></div>
+<p>Note that you must enable this feature explicitly by using a module such as <code>Modern::Perl</code>, the <code>feature</code> pragma, or requiring a specific version of Perl of 5.10 or newer (with <code>use 5.010;</code> or <code>use 5.012;</code>, for example).</p>
+<p>You may also use <code>state</code> within anonymous functions, such as the canonical counter example:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_counter
+    {
+        return sub
+        {
+             <b>state $count = 0;</b>
+             return $count++;
+         }
+    }</code>
+</pre></div>
+<p>... though there are few obvious benefits to this approach.</p>
+<div class="sidebar">
+<p>Perl 5.10 deprecated a technique from previous versions of Perl by which you could effectively emulate <code>state</code>. Using a postfix conditional which evaluates to false with a <code>my</code> declaration avoids <i>reinitializing</i> a lexical variable to <code>undef</code> or its initialized value. In effect, a named function can close over its previous lexical scope by abusing a quirk of implementation.</p>
+<p>Any use of a postfix conditional expression modifying a lexical variable declaration now produces a deprecation warning. It's too easy to write inadvertently buggy code with this technique; use <code>state</code> instead where available, or a true closure otherwise. Avoid this idiom, but understand it if you encounter it:</p>
+<div class="programlisting">
+<pre>
+<code>    sub inadvertent_state
+    {
+        # DEPRECATED; do not use
+        my $counter = 1 if 0;
+
+        ...
+    }</code>
+</pre></div>
+</div>
+<h3 id="heading_id_32">Attributes</h3>
+<div id="attributes"></div>
+<p>Named entities in Perl--variables and functions--can have additional metadata attached to them in the form of <i>attributes</i>. Attributes are names (and, often, values) which allow certain types of metaprogramming (<a href="chapter_09.xhtml#code_generation">Code Generation</a>(code_generation)).</p>
+<div class="sidebar">
+<p>Declaring attributes can be awkward, and using them effectively is more art than science. They're relatively rare in most programs for good reason, though they <i>can</i> offer compelling benefits of maintenance and clarity.</p>
+</div>
+<h4 id="heading_id_33">Using Attributes</h4>
+<p>In its simplest form, an attribute is a colon-preceded identifier attached to a variable or function declaration:</p>
+<div class="programlisting">
+<pre>
+<code>    my $fortress      <b>:hidden</b>;
+
+    sub erupt_volcano <b>:ScienceProject</b> { ... }</code>
+</pre></div>
+<p>These declarations will cause the invocation of attribute handlers named <code>hidden</code> and <code>ScienceProject</code>, if they exist for the appropriate type (scalars and functions, respectively). If the appropriate handlers do not exist, Perl will throw a compile-time exception. These handlers could do <i>anything</i>.</p>
+<p>Attributes may include a list of parameters; Perl treats them as a list of constant strings, even if they may resemble other values, such as numbers or variables. The <code>Test::Class</code> module from the CPAN uses such parametric arguments to good effect:</p>
+<div class="programlisting">
+<pre>
+<code>    sub setup_tests :Test(setup) { ... }
+
+    sub test_monkey_creation :Test(10) { ... }
+
+    sub shutdown_tests :Test(teardown) { ... }</code>
+</pre></div>
+<p>The <code>Test</code> attribute identifies methods which include test assertions, and optionally identifies the number of assertions the method intends to run. While introspection (<a href="chapter_07.xhtml#reflection">Reflection</a>(reflection)) of these classes could discover the appropriate test methods, given well-designed solid heuristics, the <code>:Test</code> attribute makes the code and its intent unambiguous.</p>
+<p>The <code>setup</code> and <code>teardown</code> parameters allow test classes to define their own support methods without worrying about name clashes or other conflicts due to inheritance or other class design concerns. You <i>could</i> enforce a design where all test classes must override methods named <code>setup()</code> and <code>teardown()</code> themselves, but the attribute approach gives more flexibility of implementation.</p>
+<div class="sidebar">
+<p>The Catalyst web framework also uses attributes to determine the visibility and behavior of methods within web applications.</p>
+</div>
+<h4 id="heading_id_34">Drawbacks of Attributes</h4>
+<div id="ipragmas__iattributes_0"></div>
+<div id="iattributes46pm_0"></div>
+<div id="iAttribute5858Handlers_0"></div>
+<p>Attributes do have their drawbacks:</p>
+<ul>
+<li>The canonical pragma for working with attributes (the <code>attributes</code> pragma) has listed its interface as experimental for many years. Damian Conway's core module <code>Attribute::Handlers</code> simplifies their implementation. Prefer it to <code>attributes</code> whenever possible.</li>
+<li>Any module which declares attribute handlers must <i>inherit</i> from <code>Attribute::Handlers</code> to make the handlers visible to all packages which use them <span class="footnote">(footnote: You <i>could</i> also store them in <code>UNIVERSAL</code>, but that is global pollution and worse design.)</span>. This is due to the implementation of attributes in Perl 5 itself.</li>
+<li>Attribute handlers take effect during <code>CHECK</code> blocks, making them inopportune for projects which themselves manipulate the order of parsing and compilation, such as mod_perl.</li>
+<li>Any arguments provided to attributes are a list of constant strings. <code>Attribute::Handlers</code> performs some data conversion, but you may have to disable it occasionally.</li>
+</ul>
+<p>The worst feature of attributes is their propensity to produce weird syntactic action at a distance. Given a snippet of code with attributes, can you predict their effect? Good and accurate documentation helps, but if an innocent-looking declaration on a lexical variable stores a reference to that variable somewhere, your expectations of the destruction of its contents may be wrong, unless you read the documentation very carefully. Likewise, a handler may wrap a function in another function and replace it in the symbol table without your knowledge--consider a <code>:memoize</code> attribute which automatically invokes the <code>Memoize</code> module.</p>
+<p>Complex features can produce compact and idiomatic code. Perl allows developers to experiment with multiple designs to find the best representation for their ideas. Attributes and other advanced Perl features can help you solve complex problems, but they can also obfuscate the intent of code that could otherwise be simple.</p>
+<p>Most programs never need this feature.</p>
+<h3 id="heading_id_35">AUTOLOAD</h3>
+<div id="autoload"></div>
+<p>You do not have to define <i>every</i> function and method anyone will ever call. Perl provides a mechanism by which you can intercept calls to functions and methods which do not yet exist. You can use this to define only those functions you need, or to provide interesting error messages and warnings.</p>
+<p>Consider the program:</p>
+<div class="programlisting">
+<pre>
+<code>    #! perl
+
+    use Modern::Perl;
+
+    bake_pie( filling =&gt; 'apple' );</code>
+</pre></div>
+<p>When you run it, Perl will throw an exception due to the call to the undefined function <code>bake_pie()</code>. Now add a function called <code>AUTOLOAD()</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD {}</code>
+</pre></div>
+<p>Nothing obvious will happen, except that there is no error. The presence of a function named <code>AUTOLOAD()</code> in a package tells Perl to call that function whenever normal dispatch for that function or method fails. Change the <code>AUTOLOAD()</code> to emit a message to demonstrate this:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD { <b>say 'In AUTOLOAD()!'</b> }</code>
+</pre></div>
+<h4 id="heading_id_36">Basic Features of AUTOLOAD</h4>
+<p>The <code>AUTOLOAD()</code> function receives the arguments passed to the undefined function in <code>@_</code> directly. You may manipulate these arguments as you like:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD
+    {
+        # pretty-print the arguments
+        <b>local $" = ', ';</b>
+        <b>say "In AUTOLOAD(@_)!"</b>
+    }</code>
+</pre></div>
+<div id="i36AUTOLOAD_0"></div>
+<p>The <i>name</i> of the undefined function is available in the pseudo-global variable <code>$AUTOLOAD</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD
+    {
+        <b>our $AUTOLOAD;</b>
+
+        # pretty-print the arguments
+        local $" = ', ';
+        say "In AUTOLOAD(@_) <b>for $AUTOLOAD</b>!"
+    }</code>
+</pre></div>
+<p>The <code>our</code> declaration (<a href="chapter_05.xhtml#our">Our Scope</a>(our)) scopes this variable to the body of <code>AUTOLOAD()</code>. The variable contains the fully-qualified name of the undefined function. In this case, the function is <code>main::bake_pie</code>. A common idiom is to remove the package name:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD
+    {
+        <b>my ($name) = our $AUTOLOAD =~ /::(\w+)$/;</b>
+
+        # pretty-print the arguments
+        local $" = ', ';
+        say "In AUTOLOAD(@_) <b>for $name</b>!"
+    }</code>
+</pre></div>
+<p>Finally, whatever <code>AUTOLOAD()</code> returns, the original call receives:</p>
+<div class="programlisting">
+<pre>
+<code>    say secret_tangent( -1 );
+
+    sub AUTOLOAD { return 'mu' }</code>
+</pre></div>
+<p>So far, these examples have merely intercepted calls to undefined functions. You have other options.</p>
+<h4 id="heading_id_37">Redispatching Methods in AUTOLOAD()</h4>
+<div id="iAUTOLOAD__iredispatch_0"></div>
+<div id="iAUTOLOAD__idelegation_0"></div>
+<div id="iOO__idelegation_0"></div>
+<div id="idelegation_0"></div>
+<div id="iOO__iproxying_0"></div>
+<div id="iproxying_0"></div>
+<p>A common pattern in OO programming is to <i>delegate</i> or <i>proxy</i> certain methods in one object to another, often contained in or otherwise accessible from the former. This is an interesting and effective approach to logging:</p>
+<div class="programlisting">
+<pre>
+<code>    package Proxy::Log;
+
+    sub new
+    {
+        my ($class, $proxied) = @_;
+        bless \$class, $proxied;
+    }
+
+    sub AUTOLOAD
+    {
+        my ($name) = our $AUTOLOAD =~ /::(\w+)$/;
+        Log::method_call( $name, @_ );
+
+        my $self = shift;
+        return $$self-&gt;$name( @_ );
+    }</code>
+</pre></div>
+<p>This <code>AUTOLOAD()</code> logs the method call. Its real magic is a simple pattern; it dereferences the proxied object from a blessed scalar reference, extracts the name of the undefined method, then invokes the method of that name on the proxied object, passing the given arguments.</p>
+<h4 id="heading_id_38">Generating Code in AUTOLOAD()</h4>
+<div id="iAUTOLOAD__icode_installation_0"></div>
+<p>That double-dispatch trick is useful, but it is slower than necessary. Every method call on the proxy must go through normal dispatch and fail, then end up in <code>AUTOLOAD()</code>. You can instead install new methods into the proxy class as the program needs them:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD
+    {
+        <b>my ($name) = our $AUTOLOAD =~ /::(\w+)$/;</b>
+
+        my $method = sub
+        {
+            Log::method_call( $name, @_ );
+
+            my $self = shift;
+            return $self-&gt;$name( @_ );
+        }
+
+        <b>no strict 'refs';</b>
+        <b>*{ $AUTOLOAD } = $method;</b>
+        return $method-&gt;( @_ );
+    }</code>
+</pre></div>
+<p>The body of the previous <code>AUTOLOAD()</code> has become an anonymous function. The code creates a closure (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) bound over the <i>name</i> of the undefined method. Then it installs that closure in the appropriate symbol table so that all subsequent dispatch to that method will find the created closure and will avoid <code>AUTOLOAD()</code>. Finally, it invokes the method directly and returns the result.</p>
+<p>Though this approach is cleaner and almost always more transparent than handling the behavior directly in <code>AUTOLOAD()</code>, the code <i>called</i> by <code>AUTOLOAD()</code> may detect that dispatch has gone through <code>AUTOLOAD()</code>. In short, <code>caller()</code> will reflect the double-dispatch of both techniques shown so far. This may be an issue; certainly you can argue that it's an encapsulation violation to care, but it's also an encapsulation violation to let the details of <i>how</i> an object provides a method to leak out into the wider world.</p>
+<div id="itailcall_0"></div>
+<div id="igoto__itailcall_0"></div>
+<p>Another idiom is to use a tailcall (<a href="chapter_05.xhtml#tail_calls">Tail Calls</a>(tail_calls)) to <i>replace</i> the current invocation of <code>AUTOLOAD()</code> from <code>caller()</code>'s memory with a call to the destination method:</p>
+<div class="programlisting">
+<pre>
+<code>    sub AUTOLOAD
+    {
+        <b>my ($name) = our $AUTOLOAD =~ /::(\w+)$/;</b>
+
+        my $method = sub { ... }
+
+        no strict 'refs';
+        *{ $AUTOLOAD } = $method;
+        <b>goto &amp;$method;</b>
+    }</code>
+</pre></div>
+<p>This has the same effect as invoking <code>$method</code> directly, except that <code>AUTOLOAD()</code> will no longer appear in the list of calls available from <code>caller()</code>, so it looks like the generated method was simply called directly.</p>
+<h4 id="heading_id_39">Drawbacks of AUTOLOAD</h4>
+<div id="autoload_drawbacks"></div>
+<div id="iAUTOLOAD__idrawbacks_0"></div>
+<div id="iUNIVERSAL5858can_0"></div>
+<div id="ican4041_0"></div>
+<div id="isubs_0"></div>
+<div id="ipragmas__isubs_0"></div>
+<div id="ifunctions__ipre45declaration_0"></div>
+<p><code>AUTOLOAD()</code> can be a useful tool in certain circumstances, but it can be difficult to use properly. Consider other techniques, such as <code>Moose</code> and other abstractions, instead.</p>
+<p>The naïve approach to generating methods at runtime means that the <code>can()</code> method will not report the right information about the capabilities of objects and classes. You can solve this in several ways; one of the easiest is to pre-declare all functions you plan to AUTOLOAD with the <code>subs</code> pragma:</p>
+<div class="programlisting">
+<pre>
+<code>    use subs qw( red green blue ochre teal );</code>
+</pre></div>
+<p>That technique has the advantage of documenting your intent but the disadvantage that you have to maintain a static list of functions or methods.</p>
+<p>You can also provide your own <code>can()</code> to generate the appropriate functions:</p>
+<div class="programlisting">
+<pre>
+<code>    sub can
+    {
+        my ($self, $method) = @_;
+
+        # use results of parent can()
+        my $meth_ref = $self-&gt;SUPER::can( $method );
+        return $meth_ref if $meth_ref;
+
+        # add some filter here
+        return unless $self-&gt;should_generate( $method );
+
+        $meth_ref = sub { ... };
+        no strict 'refs';
+        return *{ $method } = $meth_ref;
+    }
+
+    sub AUTOLOAD
+    {
+        my ($self) = @_;
+        my ($name) = our $AUTOLOAD =~ /::(\w+)$/;&gt;
+
+        return unless my $meth_ref = $self-&gt;can( $name );
+        goto &amp;$meth_ref;
+    }</code>
+</pre></div>
+<p>Depending on the complexity of your needs, you may find it easier to maintain a data structure such as a package-scoped hash which contains acceptable names of methods to generate.</p>
+<p>Be aware that certain methods you do not intend to provide may go through <code>AUTOLOAD()</code>. A common culprit is <code>DESTROY()</code>, the destructor of objects. The simplest approach is to provide a <code>DESTROY()</code> method with no implementation; Perl will happily dispatch to this and ignore <code>AUTOLOAD()</code> altogether:</p>
+<div class="programlisting">
+<pre>
+<code>    # skip AUTOLOAD()
+    sub DESTROY {}</code>
+</pre></div>
+<div class="sidebar">
+<p>Special methods such as <code>import()</code>, <code>unimport()</code>, and <code>VERSION()</code> never go through <code>AUTOLOAD()</code>.</p>
+</div>
+<p>If you mix functions and methods in a single namespace which inherits from another package which provides its own <code>AUTOLOAD()</code>, you may get a strange error message:</p>
+<div class="screen">
+<pre>
+<code>  Use of inherited AUTOLOAD for non-method <i>slam_door</i>() is deprecated</code>
+</pre></div>
+<p>This occurs when you try to call a function which does not exist in a package which inherits from a class which contains its own <code>AUTOLOAD()</code>. This is almost never what you intend. The problem compounds in several ways: mixing functions and methods in a single namespace is often a design flaw, inheritance and <code>AUTOLOAD()</code> get complex very quickly, and reasoning about code when you don't know what methods objects can perform is difficult.</p>
+</body>
+</html>

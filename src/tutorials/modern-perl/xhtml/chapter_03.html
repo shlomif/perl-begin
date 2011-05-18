@@ -1,0 +1,2558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h2 id="heading_id_2">The Perl Language</h2>
+<p>The Perl language has several smaller parts which combine to form its syntax. Unlike spoken language, where nuance and tone of voice and intuition allow people to communicate despite slight misunderstandings and fuzzy concepts, computers and source code require precision. You can write effective Perl code without knowing every detail of every language feature, but you must understand how they work together to write Perl code well.</p>
+<h3 id="heading_id_3">Names</h3>
+<div id="names"></div>
+<div id="inames_0"></div>
+<div id="iidentifiers_0"></div>
+<p><i>Names</i> (or <i>identifiers</i>) are everywhere in Perl programs: variables, functions, packages, classes, and even filehandles have names. These names all start with a letter or an underscore. They may optionally include any combination of letters, numbers, and underscores. When the <code>utf8</code> pragma (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas), <a href="chapter_03.xhtml#unicode">Unicode and Strings</a>(unicode)) is in effect, you may use any valid UTF-8 characters in identifiers. These are all valid Perl identifiers:</p>
+<div class="programlisting">
+<pre>
+<code>    my $name;
+    my @_private_names;
+    my %Names_to_Addresses;
+
+    sub anAwkwardName3;
+
+    # with <code>use utf8;</code> enabled
+    package Ingy::Döt::Net;</code>
+</pre></div>
+<p>These are invalid Perl identifiers:</p>
+<div class="programlisting">
+<pre>
+<code>    my $invalid name;
+    my @3;
+    my %~flags;
+
+    package a-lisp-style-name;</code>
+</pre></div>
+<div id="isymbolic_lookups_0"></div>
+<p>These rules only apply to names which appear in literal form in source code; that is, if you've typed it directly like <code>sub fetch_pie</code> or <code>my $wafflemaker</code>.</p>
+<p>Perl's dynamic nature makes it possible to refer to entities with names generated at runtime or provided as input to a program. These are <i>symbolic lookups</i>. You get more flexibility this way at the expense of some safety. In particular, invoking functions or methods indirectly or looking up namespaced symbols lets you bypass Perl's parser, which is the only part of Perl that enforces these grammatic rules. Be aware that doing so can produce confusing code; a hash (<a href="chapter_03.xhtml#hashes">Hashes</a>(hashes)) or nested data structure (<a href="chapter_03.xhtml#nested_data_structures">Nested Data Structures</a>(nested_data_structures)) is often clearer.</p>
+<h4 id="heading_id_4">Variable Names and Sigils</h4>
+<div id="ivariables__inames_0"></div>
+<div id="iscalar_variables_0"></div>
+<div id="ivariables__iscalars_0"></div>
+<div id="iscalars_0"></div>
+<div id="iarray_variables_0"></div>
+<div id="ivariables__iarrays_0"></div>
+<div id="ihash_variables_0"></div>
+<div id="ivariables__ihashes_0"></div>
+<p><i>Variable names</i> always have a leading sigil which indicates the type of the variable's value. <i>Scalar variables</i> (<a href="chapter_03.xhtml#scalars">Scalars</a>(scalars)) have a leading dollar sign (<code>$</code>) character. <i>Array variables</i> (<a href="chapter_03.xhtml#arrays">Arrays</a>(arrays)) have a leading at sign (<code>@</code>) character. <i>Hash variables</i> (<a href="chapter_03.xhtml#hashes">Hashes</a>(hashes)) have a leading percent sign (<code>%</code>) character:</p>
+<div class="programlisting">
+<pre>
+<code>    my $scalar;
+    my @array;
+    my %hash;</code>
+</pre></div>
+<p>These sigils offer a sort of namespacing for the variables, where it's possible (though often confusing) to have variables of the same name but different types:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($bad_name, @bad_name, %bad_name);</code>
+</pre></div>
+<p>Perl won't get confused, but people reading the code will.</p>
+<div id="ivariant_sigils_0"></div>
+<p>Perl 5 uses <i>variant sigils</i>, where the sigil on a variable may change depending on what you do with it. For example, to access a (scalar) element of an array or a hash, the sigil changes to the dollar sign (<code>$</code>) character:</p>
+<div class="programlisting">
+<pre>
+<code>    my $hash_element  = $hash{ $key };
+    my $array_element = $array[ $index ]
+
+    $hash{ $key }     = 'value';
+    $array[ $index ]  = 'item';</code>
+</pre></div>
+<div id="ilvalue_0"></div>
+<div id="irvalue_0"></div>
+<p>In the latter two lines, using a scalar element of an aggregate as an <i>lvalue</i> (the target of an assignment, on the left side of the <code>=</code> character) imposes scalar context (<a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)) on the <i>rvalue</i> (the value assigned, on the right side of the <code>=</code> character).</p>
+<div id="islicing_0"></div>
+<p>Similarly, accessing multiple elements of a hash or an array--an operation known as <i>slicing</i>--uses the at symbol (<code>@</code>) as the leading sigil and enforces list context when used as an lvalue:</p>
+<div class="programlisting">
+<pre>
+<code>    my @hash_elements  = @hash{ @keys };
+    my @array_elements = @array[ @indexes ];</code>
+</pre></div>
+<div class="author">
+<p>Add an example that uses a hash slice as an lvalue? I.E.</p>
+<p>my %hash; @hash{ @keys } = @values;</p>
+</div>
+<p>The most reliable way to determine the type of a variable--scalar, array, or hash--is to look at the operations performed on it. Scalars support all basic operations, such as string, numeric, and boolean manipulations. Arrays support indexed access through square brackets. Hashes support keyed access through curly brackets.</p>
+<h4 id="heading_id_5">Package-Qualified Names</h4>
+<div id="ifully45qualified_name_0"></div>
+<p>Occasionally you may need to refer to functions or variables in a separate namespace. Often you will need to refer to a class by its <i>fully-qualified name</i>. These names are collections of package names joined by double colons (<code>::</code>). That is, <code>My::Fine::Package</code> refers to a logical collection of variables and functions.</p>
+<p>While the standard naming rules apply to package names, by convention user-defined packages all start with uppercase letters. The Perl core reserves lowercase package names for built-in pragmas (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)), such as <code>strict</code> and <code>warnings</code>. This is a policy enforced by community guidelines, rather than technical mechanisms.</p>
+<p>Namespaces do not nest in Perl 5. The relationship between between <code>Some::Package</code> and <code>Some::Package::Refinement</code> is only a storage mechanism, with no further implications on the relationships between parent and child or sibling packages. When Perl looks up a symbol in <code>Some::Package::Refinement</code>, it looks in the <code>main::</code> symbol table for a symbol representing the <code>Some::</code> namespace, then in there for the <code>Package::</code> namespace, and so on. It's your responsibility to make any <i>logical</i> relationships between entities obvious when you choose names and organize your code.</p>
+<h3 id="heading_id_6">Variables</h3>
+<div id="variables"></div>
+<div id="ivariable_0"></div>
+<p>A <i>variable</i> in Perl is a storage location for a value (<a href="chapter_03.xhtml#values">Values</a>(values)). You can work with values directly, but all but the most trivial code works with variables. A variable is a level of indirection; it's easier to explain the Pythagorean theorem in terms of the variables <code>a</code>, <code>b</code>, and <code>c</code> than with the side lengths of every right triangle you can imagine. This may seem basic and obvious, but to write robust, well-designed, testable, and composable programs, you must identify and exploit points of genericity wherever possible.</p>
+<h4 id="heading_id_7">Variable Naming</h4>
+<div id="ivariables__inames_1"></div>
+<p>Not all variables require names, but most of the variables you will encounter in your programs will have names. Variables in Perl 5 must conform to the standard rules of identifier naming (<a href="chapter_03.xhtml#names">Names</a>(names)). Variables also have leading sigils.</p>
+<div class="author">
+<p>the Variable Naming section seems quite redundant with the Variable Names and Sigils section from names.pod, which gets inserted directly above this section in chapter 3</p>
+</div>
+<h4 id="heading_id_8">Variable Scopes</h4>
+<div id="variable_scopes"></div>
+<div id="ivariables__iscope_0"></div>
+<div id="iscope_0"></div>
+<p>Variables also have visibility, depending on their scope (<a href="chapter_05.xhtml#scope">Scope</a>(scope)). Most of the variables you will encounter have lexical scope <a href="chapter_05.xhtml#lexical_scope">Lexical Scope</a>(lexical_scope)), as the expected visibility of these variables is local.</p>
+<p>Package variables have global visibility throughout the program, but they are only available when prefixed with the name of the containing package. For example:</p>
+<div class="programlisting">
+<pre>
+<code>    package Store::IceCream;
+
+    use vars '$num_flavors';
+    $num_flavors = 42;</code>
+</pre></div>
+<div id="ipragmas__ivars_0"></div>
+<div id="ivars_0"></div>
+<p>The <code>vars</code> pragma declares a global variable without violating the rules of the <code>strict</code> pragma. Within the <code>Store::IceCream</code> package, <code>$num_flavors</code> is available without a namespace prefix. Outside of that package, it is available as <code>$Store::IceCream::num_flavors</code>. If <code>$num_flavors</code> were a lexical variable (declared with <code>my</code>), it would not be available outside of the enclosing scope.</p>
+<div id="iour_0"></div>
+<div id="ikeywords__iour_0"></div>
+<p>You may also declare package variables with the <code>our</code> keyword. Unlike <code>vars</code> variables, these variables have a lexical scope:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        package Store::Candy;
+
+        our $jellybeans;
+    }
+
+    # $Store::Candy::jellybeans not visible as $jellybeans here</code>
+</pre></div>
+<p>... yet remember that files themselves have their own lexical scopes, where the <code>package</code> declaration on its own does not create a new scope:</p>
+<div class="programlisting">
+<pre>
+<code>    package Store::Toy;
+
+    our $discount = 0.10;
+
+    package Store::Music;
+
+    # $Store::Toy::discount still visible as $discount
+    say "Our current discount is $discount!";</code>
+</pre></div>
+<div class="sidebar">
+<div id="ilexicals__ipads_0"></div>
+<div id="ilexpads_0"></div>
+<div id="isymbol_tables_0"></div>
+<p>This difference in visibility between package variables and lexical variables is apparent in the different storage mechanisms of these variables within Perl 5 itself. Lexical variables get stored in <i>lexical pads</i> attached to scopes. Every new entry into such a lexical scope requires Perl to create a new pad to contain the values of the variables for that particular entry into the scope. (This is how a function can call itself and not clobber the values of existing variables.)</p>
+<p>Package variables have a storage mechanism called symbol tables. Each package has a single symbol table, and every package variable has an entry in this table. You can inspect and modify this symbol table from Perl; this is how importing works (<a href="chapter_05.xhtml#importing">Importing</a>(importing)).</p>
+</div>
+<h4 id="heading_id_9">Variable Sigils</h4>
+<div id="sigils"></div>
+<div id="ivariables__isigils_0"></div>
+<div id="isigils_0"></div>
+<p>In Perl 5, the sigil of the variable in a declaration determines the type of the variable, whether scalar, array, or hash. The sigil of the variable used to access the variable determines the type of access to its value. Sigils on variables vary depending on what you do to the variable. For example, you declare an array as <code>@values</code>. You access the first element--a single value--of the array with <code>$values[0]</code>. You access a list of values from the array with <code>@values[ @indices ]</code>. See the arrays (<a href="chapter_03.xhtml#arrays">Arrays</a>(arrays)) and hashes (<a href="chapter_03.xhtml#hashes">Hashes</a>(hashes)) sections for more.</p>
+<h4 id="heading_id_10">Anonymous Variables</h4>
+<div id="ianonymous_variables_0"></div>
+<div id="ivariables__ianonymous_0"></div>
+<p>Perl 5 variables do not <i>need</i> names; Perl can allocate storage space for variables without storing them in lexical pads or symbol tables. These are <i>anonymous</i> variables. The only way to access them is by reference (<a href="chapter_03.xhtml#references">References</a>(references)).</p>
+<h4 id="heading_id_11">Variables, Types, and Coercion</h4>
+<div id="ivariables__itypes_0"></div>
+<div id="itypes__icontainers_0"></div>
+<div id="itypes__ivariables_0"></div>
+<div id="icontainer_types_0"></div>
+<p>Perl 5 variables do not enforce types on their values. You may store a string in a variable in one line, append to that variable a number on the next, and reassign a reference to a function (<a href="chapter_03.xhtml#function_references">Function References</a>(function_references)) on the third. The types of the <i>values</i> is flexible (or dynamic), but the type of the <i>variable</i> is static. A scalar variable can only hold scalars. An array variable only contains lists. A hash variable must contain an even-sized list of key/value pairs.</p>
+<p>Assigning to a variable may cause coercion (<a href="chapter_03.xhtml#coercion">Coercion</a>(coercion)). The documented way to determine the number of entries in an array is to evaluate that array in scalar context (<a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)). Because a scalar variable can only ever contain a scalar, assigning an array to a scalar imposes scalar context on the operation and produces the number of elements in the array:</p>
+<div class="programlisting">
+<pre>
+<code>    my $count = @items;</code>
+</pre></div>
+<p>The relationship between variable types, sigils, and context is vital to a proper understanding of Perl.</p>
+<h3 id="heading_id_12">Values</h3>
+<div id="values"></div>
+<p>Effective Perl programs depend on the accurate representation and manipulation of values.</p>
+<div id="ivariables_0"></div>
+<div id="ivariables_1"></div>
+<p>Computer programs contain <i>variables</i>: containers which hold <i>values</i>. Values are the actual data the programs manipulate. While it's easy to explain what that data might be--your aunt's name and address, the distance between your office and a golf course on the moon, or the weight of all cookies you've eaten in the past year--the rules regarding the format of that data are often strict. Writing an effective program often means understanding the best (simplest, fastest, most compact, or easiest) way of representing that data.</p>
+<p>While the structure of a program depends heavily on the means by which you model your data with appropriate variables, these variables would be meaningless if they couldn't accurately contain the data itself--the values.</p>
+<h4 id="heading_id_13">Strings</h4>
+<div id="istrings_0"></div>
+<p>A <i>string</i> is a piece of data with no particular formatting, no particular contents, and no semantic meaning beyond the fact that it's a string. It could be your name. It could be the contents of an image file read from your hard drive. It could be the Perl program itself. A string has no meaning to the program until you give it meaning. A string is a fixed amount of data delineated by quotes of some form, yet Perl strings can grow or shrink as you add to or remove from them.</p>
+<p>Most strings use either single or double quotes:</p>
+<div class="programlisting">
+<pre>
+<code>    my $name    = <b>'Donner Odinson, Bringer of Despair'</b>;
+    my $address = <b>"Room 539, Bilskirnir, Valhalla"</b>;</code>
+</pre></div>
+<div id="istrings__isingle45quoted_0"></div>
+<p>Characters in a <i>single-quoted string</i> represent themselves literally, with two exceptions. You may embed a single quote inside a single-quoted string by escaping the quote with a leading backlash:</p>
+<div class="programlisting">
+<pre>
+<code>    my $reminder = 'Don<b>\'</b>t forget to escape the single quote!';</code>
+</pre></div>
+<p>If a backslash occurs at the end of the string, escape it with another backslash, lest the Perl parser believe you are trying to escape the trailing single quote:</p>
+<div class="programlisting">
+<pre>
+<code>    my $exception = 'This string ends with a backslash, not a quote: \\';</code>
+</pre></div>
+<div class="author">
+<p>Is it worth mentioning \\ here? Like, what happens when you put \ or \\ or \\\ or \\' or \\\' in a single-quoted string?</p>
+</div>
+<div id="istrings__idouble45quoted_0"></div>
+<p>A <i>double-quoted string</i> has more complex (and often, more useful) behavior. For example, you may encode non-printable characters in the string:</p>
+<div class="programlisting">
+<pre>
+<code>    my $tab       = "<b>\t</b>";
+    my $newline   = "<b>\n</b>";
+    my $carriage  = "<b>\r</b>";
+    my $formfeed  = "<b>\f</b>";
+    my $backspace = "<b>\b</b>";</code>
+</pre></div>
+<p>A string declaration may cross logical newlines, such that these two strings are equivalent:</p>
+<div class="programlisting">
+<pre>
+<code>    my $escaped = "two\nlines";
+    my $literal = "two
+    lines";
+    is( $escaped, $literal, '\n and newline are equivalent' );</code>
+</pre></div>
+<p>You <i>can</i> enter these characters directly in the strings, but it's often difficult to see the visual distinction between one tab character and four (or two or eight) spaces.</p>
+<div id="iinterpolation_0"></div>
+<div id="istrings__iinterpolation_0"></div>
+<p>You may also <i>interpolate</i> the value of a scalar variable or the values of an array within a double-quoted string directly:</p>
+<div class="programlisting">
+<pre>
+<code>    my $factoid = "Did you know that <b>$name</b> lives at <b>$address</b>?";</code>
+</pre></div>
+<p>You may include a literal double-quote inside a double-quoted string by escaping it with a leading backslash:</p>
+<div class="programlisting">
+<pre>
+<code>    my $quote = "\"Ouch,\", he cried.  \"That <i>hurt</i>!\"";</code>
+</pre></div>
+<div id="iquoting_operators_0"></div>
+<div id="iq_0"></div>
+<div id="ioperators__iq_0"></div>
+<div id="iqq_0"></div>
+<div id="ioperators__iqq_0"></div>
+<p>If you find that hideously ugly, you may use an alternate <i>quoting operator</i>. The <code>q</code> operator performs single quoting, while the <code>qq</code> operator performs double quoting. In each case, you may choose your own delimiter for the string. The character immediately following the operator determines the beginning and end of the string. If the character is the opening character of a balanced pair--such as opening and closing braces--the closing character will be the final delimiter. Otherwise, the character itself will be both the starting and ending delimiter.</p>
+<div class="programlisting">
+<pre>
+<code>    my $quote     = <b>qq{</b>"Ouch", he said.  "That <i>hurt</i>!"<b>}</b>;
+    my $reminder  = <b>q^</b>Didn't need to escape the single quote!<b>^</b>;
+    my $complaint = <b>q{</b>It's too early to be awake.<b>}</b>;</code>
+</pre></div>
+<div id="iheredocs_0"></div>
+<div id="istrings__iheredocs_0"></div>
+<p>Even though you can declare a complex string with a series of embedded escape characters, sometimes it's easier to declare a multi-line string on multiple lines. The <i>heredoc</i> syntax lets you assign one or more lines of a string with a different syntax:</p>
+<div class="programlisting">
+<pre>
+<code>    my $blurb =&lt;&lt;'END_BLURB';
+
+    He looked up.  "Time is never on our side, my child.  Do you see the irony?
+    All they know is change.  Change is the constant on which they all can
+    agree.  Whereas we, born out of time to remain perfect and perfectly
+    self-aware, can only suffer change if we pursue it.  It is against our
+    nature.  We rebel against that change.  Shall we consider them greater
+    for it?"
+    END_BLURB</code>
+</pre></div>
+<p>The <code>&lt;&lt;'END_BLURB'</code> syntax has three parts. The double angle-brackets introduce the heredoc. The quotes determine whether the heredoc obeys single-quoted or double-quoted behavior with regard to variable and escape character interpolation. They're optional; the default behavior is double-quoted interpolation. The <code>END_BLURB</code> itself is an arbitrary identifier which the Perl 5 parser uses as the ending delimiter.</p>
+<p>Be careful; regardless of the indentation of the heredoc declaration itself, the ending delimiter <i>must</i> begin in the first column of the program:</p>
+<div class="programlisting">
+<pre>
+<code>    sub some_function {
+        my $ingredients =&lt;&lt;'END_INGREDIENTS';
+        Two eggs
+        One cup flour
+        Two ounces butter
+        One-quarter teaspoon salt
+        One cup milk
+        One drop vanilla
+        Season to taste
+    END_INGREDIENTS
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>If the identifier begins with whitespace, that same whitespace must be present exactly in the ending delimiter. Even if you do indent the identifier, Perl 5 will <i>not</i> remove equivalent whitespace from the start of each line of the heredoc.</p>
+</div>
+<p>You may use a string in other contexts, such as boolean or numeric; its contents will determine the resulting value (<a href="chapter_03.xhtml#coercion">Coercion</a>(coercion)).</p>
+<h4 id="heading_id_14">Unicode and Strings</h4>
+<div id="unicode"></div>
+<div id="iunicode_0"></div>
+<p><i>Unicode</i> is a system for representing characters in the world's written languages. While most English text uses a character set of only 127 characters (which requires seven bits of storage and fits nicely into eight-bit bytes), it's naïve to believe that you won't someday need an umlaut, for example.</p>
+<p>Perl 5 strings can represent either of two related but different data types:</p>
+<div id="icodepoint_0"></div>
+<ul>
+<li>Sequences of Unicode characters</li>
+<li style="list-style: none; display: inline">
+<p>The Unicode character set contains characters from the scripts of most languages, and various other symbols. Each character has a <i>codepoint</i>, a own unique number which identifies it in the Unicode character set.</p>
+</li>
+<li>Sequences of octets</li>
+<li style="list-style: none; display: inline">
+<p>Binary data is a sequence of 8 bit numbers, each of which can represent a number between 0 and 255.</p>
+</li>
+</ul>
+<p>Unicode strings and binary strings look very similar. They each have a <code>length()</code>, and you can perform standard string operations on them such as concatenation, splicing, and regular expression processing. Any string which is not purely binary data is textual data, and should be a sequence of Unicode characters.</p>
+<p>However, because of how your operating system represents data on disk or from users or over the network--as sequences of octets--Perl can't know if the data you read is an image file or a text document or anything else. By default, Perl treats all incoming data as sequences of octets. Any additional meaning of the string's contents are your responsibility.</p>
+<h5 id="heading_id_15">Character Encodings</h5>
+<div id="iencoding_0"></div>
+<div id="iUnicode__iencoding_0"></div>
+<div id="iUTF458_0"></div>
+<div id="iASCII_0"></div>
+<div id="iLatin451_0"></div>
+<p>A Unicode string is a sequence of octets which represent a sequence of characters. A <i>Unicode encoding</i> maps octet sequences to characters. Some encodings, such as UTF-8, can encode all of the characters in the Unicode character set. Others, represent a subset of Unicode characters. For example, ASCII encodes plain English text with no accented characters and Latin-1 can represent text in most languages which use the Latin script.</p>
+<p>If you always decode to and from the appropriate encoding at the inputs and outputs of your program, you will avoid many problems.</p>
+<h5 id="heading_id_16">Unicode in Your Filehandles</h5>
+<div id="iopen_0"></div>
+<div id="iIO_layers_0"></div>
+<p>One source of Unicode input is filehandles. If you tell Perl that a specific filehandle works with encoded text, Perl can convert the data to Unicode strings automatically. To do this, add a IO layer to the mode of the <code>open</code> builtin. An <i>IO layer</i> wraps around input or output and performs some sort of conversion of the data. In this case, the <code>:utf8</code> layer performs decoding of UTF-8 data:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&lt;:utf8', $textfile;
+
+    my $unicode_string = &lt;$fh&gt;;</code>
+</pre></div>
+<div id="ibinmode_0"></div>
+<div id="ibuiltins__ibinmode_0"></div>
+<p>You may also modify an existing filehandle with <code>binmode</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    binmode $fh, ':utf8';</code>
+</pre></div>
+<p>This works for input as well as output:</p>
+<div class="programlisting">
+<pre>
+<code>    binmode STDOUT, ':utf8';
+    say $unicode_string;</code>
+</pre></div>
+<p>Without the <code>utf8</code> mode, printing Unicode strings to a filehandle will result in a warning (<code>Wide character in %s</code>), because files contain octets, not Unicode characters.</p>
+<h5 id="heading_id_17">Unicode in Your Data</h5>
+<div id="iEncode_0"></div>
+<div id="iEncode__idecode4041_0"></div>
+<div id="iEncode__iencode4041_0"></div>
+<p>The core module <code>Encode</code> provides a function named <code>decode()</code> to convert a scalar containing data in a known format to a Unicode string. For example, if you have UTF-8 data:</p>
+<div class="programlisting">
+<pre>
+<code>    my $string = decode('utf8', $data);</code>
+</pre></div>
+<p>The corresponding <code>encode()</code> function converts from Perl's internal encoding to the desired output encoding:</p>
+<div class="programlisting">
+<pre>
+<code>    my $latin1 = encode('iso-8859-1', $string);</code>
+</pre></div>
+<h5 id="heading_id_18">Unicode in Your Programs</h5>
+<div id="ipragmas__iutf8_0"></div>
+<div id="iutf8_0"></div>
+<div id="iencoding_1"></div>
+<p>You may include Unicode characters in your programs in three ways. The easiest is to use the <code>utf8</code> pragma (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)), which tells the Perl parser to interpret the rest of the source code file with the UTF-8 encoding This allows you to use Unicode characters in strings as well in identifiers:</p>
+<div class="programlisting">
+<pre>
+<code>    use utf8;
+
+    sub £_to_¥ { ... }
+
+    my $pounds = £_to_¥('1000£');</code>
+</pre></div>
+<p>To <i>write</i> this code, your text editor must understand UTF-8 and you must save the file with the appropriate encoding.</p>
+<div id="iescapes__i_x123125_0"></div>
+<div id="i_x123125_0"></div>
+<p>You may also use the Unicode escape sequence to represent character encodings. The syntax <code>\x{}</code> represents a single character; place the hex form of the character's Unicode number within the curly brackets:</p>
+<div class="programlisting">
+<pre>
+<code>    my $escaped_thorn = "\x{00FE}";</code>
+</pre></div>
+<div class="sidebar">
+<p>Note that these escapes interpolate only within double-quoted strings.</p>
+</div>
+<div id="icharnames_pragma_0"></div>
+<div id="ipragmas__icharnames_0"></div>
+<div id="iescapes__i_N123125_0"></div>
+<div id="i_N123125_0"></div>
+<p>Some Unicode characters have names. Though these are more verbose, they can be clearer to read than Unicode numbers. You must use the <code>charnames</code> pragma to enable them. Use the <code>\N{}</code> escape to refer to them:</p>
+<div class="programlisting">
+<pre>
+<code>    use charnames ':full';
+    use Test::More tests =&gt; 1;
+
+    my $escaped_thorn = "\x{00FE}";
+    my $named_thorn   = "\N{LATIN SMALL LETTER THORN}";
+
+    is( $escaped_thorn, $named_thorn, 'Thorn equivalence check' );</code>
+</pre></div>
+<p>You may use the <code>\x{}</code> and <code>\N{}</code> forms within regular expressions as well as anywhere else you may legitimately use a string or a character.</p>
+<h5 id="heading_id_19">Implicit Conversion</h5>
+<p>Most Unicode problems in Perl arise from the fact that a string could be either a sequence of octets or a sequence of characters. Perl allows you to combine these types through the use of implicit conversions. When these conversions are wrong, they're rarely <i>obviously</i> wrong.</p>
+<p>When Perl concatenates a sequences of octets with a sequence of Unicode characters, it implicitly decodes the octet sequence using the Latin-1 encoding. The resulting string contains Unicode characters. When you print Unicode characters, Perl encodes the string using UTF-8, because Latin-1 cannot represent the entire set of Unicode characters.</p>
+<p>This asymmetry can lead to Unicode strings encoded as UTF-8 for output and decoded as Latin-1 when input.</p>
+<p>Worse yet, when the text contains only English characters with no accents, the bug hides--because both encodings have the same representation for every such character.</p>
+<div class="programlisting">
+<pre>
+<code>    my $hello    = "Hello, ";
+    my $greeting = $hello . $name;</code>
+</pre></div>
+<p>If <code>$name</code> contains an English name such as <code>Alice</code> you will never notice any problem, because the Latin-1 representation is the same as the UTF-8 representation.</p>
+<p>If, on the other hand, <code>$name</code> contains a name like <code>José</code>, <code>$name</code> can contain several possible values:</p>
+<ul>
+<li><code>$name</code> contains four Unicode characters.</li>
+<li><code>$name</code> contains four Latin-1 octets representing four Unicode characters.</li>
+<li><code>$name</code> contains five UTF-8 octets representing four Unicode characters.</li>
+</ul>
+<p>The string literal has several possible scenarios:</p>
+<ul>
+<li>ASCII string literal</li>
+<li style="list-style: none; display: inline">
+<div class="programlisting">
+<pre>
+<code>    my $hello = "Hello, ";</code>
+</pre></div>
+<p>The string literal contains octets.</p>
+</li>
+<li>Latin-1 string literal with no explicit encoding, such as:</li>
+<li style="list-style: none; display: inline">
+<div class="programlisting">
+<pre>
+<code>    my $hello = "¡Hola, ";</code>
+</pre></div>
+<p>The string literal contains octets.</p>
+</li>
+<li>Non ASCII string literal with the <code>utf8</code> or <code>encoding</code> pragma:</li>
+<li style="list-style: none; display: inline">
+<div class="programlisting">
+<pre>
+<code>    use utf8;
+    my $hello = "שלום, ";</code>
+</pre></div>
+<p>The string literal contains Unicode characters.</p>
+</li>
+</ul>
+<p>If both <code>$hello</code> and <code>$name</code> are Unicode strings, the concatenation will produce another Unicode string.</p>
+<p>If both strings are octet streams, Perl will concatenate them into a new octet string. If both values are octets of the same encoding--both Latin-1, for example, the concatenation will work correctly. If the octets do not share an encoding, the concatenation append UTF-8 data to Latin-1 data, producing a sequence of octets which makes sense in <i>neither</i> encoding. This could happen if the user entered a name as UTF-8 data and the greeting were a Latin-1 string literal, but the program decoded neither.</p>
+<p>If only one of the values is a Unicode string, Perl will decode the other as Latin-1 data. If this is not the correct encoding, the resulting Unicode characters will be wrong. For example, if the user input were UTF-8 data and the string literal were a Unicode string, the name will be incorrectly decoded into five Unicode characters <code>JosÃ©</code> instead of <code>José</code> because the UTF-8 data means something else when decoded as Latin-1 data.</p>
+<p>See <code>perldoc perluniintro</code> for far more detail Unicode, encodings, and how to manage incoming and outgoing data in a Unicode world.</p>
+<h4 id="heading_id_20">Numbers</h4>
+<div id="inumbers_0"></div>
+<div id="iintegers_0"></div>
+<div id="ifloating45point_values_0"></div>
+<p>Perl also supports numbers, both integers and floating-point values. They support scientific notation as well as binary, octal, and hexadecimal representations:</p>
+<div class="programlisting">
+<pre>
+<code>    my $integer   = 42;
+    my $float     = 0.007;
+    my $sci_float = 1.02e14;
+    my $binary    = <b>0b</b>101010;
+    my $octal     = <b>0</b>52;
+    my $hex       = <b>0x</b>20;</code>
+</pre></div>
+<p>The emboldened characters are the numeric prefixes for binary, octal, and hex notation respectively. Be aware that the leading zero always indicates octal mode; this can occasionally produce unanticipated confusion.</p>
+<div id="inumbers__iunderscore_separator_0"></div>
+<div id="iunderscore_0"></div>
+<div class="sidebar">
+<p>Even though you can represent floating-point values explicitly in Perl 5 with perfect accuracy, Perl 5 stores them internally in a binary format. Comparing floating-point values is sometimes imprecise in specific ways; consult <code>perldoc perlnumber</code> for more details.</p>
+</div>
+<p>You may not use commas to separate thousands in numeric literals because the parser will interpret the commas as comma operators. You <i>can</i> use underscores in other places within the number, however. The parser will treat them as invisible characters. Your readers may not. These are equivalent:</p>
+<div class="programlisting">
+<pre>
+<code>    my $billion = 1000000000;
+    my $billion = 1_000_000_000;
+    my $billion = 10_0_00_00_0_0_0;</code>
+</pre></div>
+<p>Consider the most readable alternative, however.</p>
+<div id="iScalar5858Util_0"></div>
+<div id="ilooks_like_number_0"></div>
+<div id="iScalar5858Util__ilooks_like_number_0"></div>
+<p>Because of coercion (<a href="chapter_03.xhtml#coercion">Coercion</a>(coercion)), Perl programmers rarely have to worry about converting text read from outside the program to numbers. Perl will treat anything which looks like a number as a number in numeric contexts. Even though it almost always does so correctly, occasionally it's useful to know if something really does look like a number. The core module <code>Scalar::Util</code> contains a function named <code>looks_like_number</code> which returns a true value if Perl will consider the given argument numeric.</p>
+<div id="iRegexp5858Common_0"></div>
+<p>The <code>Regexp::Common</code> module from the CPAN also provides several well-tested regular expressions to identify valid <i>types</i> (whole number, integer, floating-point value) of numeric values.</p>
+<h4 id="heading_id_21">Undef</h4>
+<div id="iundef_0"></div>
+<p>Perl 5 has a value which represents an unassigned, undefined, and unknown value: <code>undef</code>. Declared but undefined scalar variables contain <code>undef</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $name = undef;   # unnecessary assignment
+    my $rank;           # also contains undef</code>
+</pre></div>
+<div id="iundef__icoercions_0"></div>
+<p><code>undef</code> evaluates to false in boolean context. Interpolating <code>undef</code> into a string--or evaluating it in a string context--produces an <code>uninitialized value</code> warning:</p>
+<div class="programlisting">
+<pre>
+<code>    my $undefined;
+    my $defined = $undefined . '... and so forth';</code>
+</pre></div>
+<p>... produces:</p>
+<div class="screen">
+<pre>
+<code>    Use of uninitialized value $undefined in concatenation (.) or string...</code>
+</pre></div>
+<h4 id="heading_id_22">The Empty List</h4>
+<div id="iempty_list_0"></div>
+<div id="i4041_0"></div>
+<p>When used on the right-hand side of an assignment, the <code>()</code> construct represents an empty list. When evaluated in scalar context, this evaluates to <code>undef</code>. In list context, it is effectively an empty list.</p>
+<p>When used on the left-hand side of an assignment, the <code>()</code> construct enforces list context. To count the number of elements returned from an expression in list context without using a temporary variable, you use the idiom (<a href="chapter_10.xhtml#idioms">Idioms</a>(idioms)):</p>
+<div class="programlisting">
+<pre>
+<code>    my $count = <b>()</b> = get_all_clown_hats();</code>
+</pre></div>
+<p>Because of the right associativity (<a href="chapter_04.xhtml#associativity">Associativity</a>(associativity)) of the assignment operator, Perl first evaluates the second assignment by calling <code>get_all_clown_hats()</code> in list context. This produces a list.</p>
+<p>Assignment to the empty list throws away all of the values of the list, but that assignment takes place in scalar context, which evaluates to the number of items on the right hand side of the assignment. As a result, <code>$count</code> contains the number of elements in the list returned from <code>get_all_clown_hats()</code>.</p>
+<p>You don't have to understand all of the implications of this code right now, but it does demonstrate how a few of Perl's fundamental design features can combine to produce interesting and useful behavior.</p>
+<h4 id="heading_id_23">Lists</h4>
+<div id="ilists_0"></div>
+<p>A list is a comma-separated group of one or more expressions.</p>
+<p>Lists may occur verbatim in source code as values:</p>
+<div class="programlisting">
+<pre>
+<code>    my @first_fibs = (1, 1, 2, 3, 5, 8, 13, 21);</code>
+</pre></div>
+<p>... as targets of assignments:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($package, $filename, $line) = caller();</code>
+</pre></div>
+<p>... or as lists of expressions:</p>
+<div class="programlisting">
+<pre>
+<code>    say name(), ' =&gt; ', age();</code>
+</pre></div>
+<p>Note that you do not need parentheses to <i>create</i> lists; where present, the parentheses in these examples group expressions to change the <i>precedence</i> of those expressions (<a href="chapter_04.xhtml#precedence">Precedence</a>(precedence)).</p>
+<div id="ioperators__irange_0"></div>
+<div id="ioperators__i4646_0"></div>
+<div id="i4646_0"></div>
+<div id="irange_operator_0"></div>
+<p>You may use the range operator to create lists of literals in a compact form:</p>
+<div class="programlisting">
+<pre>
+<code>    my @chars = 'a' .. 'z';
+    my @count = 13 .. 27;</code>
+</pre></div>
+<div id="iqw4041_0"></div>
+<div id="ioperators__iqw4041_0"></div>
+<div id="iqw4041_operator_0"></div>
+<p>... and you may use the <code>qw()</code> operator to split a literal string on whitespace to produce a list of strings:</p>
+<div class="programlisting">
+<pre>
+<code>    my @stooges = qw( Larry Curly Moe Shemp Joey Kenny );</code>
+</pre></div>
+<div class="sidebar">
+<p>Perl will produce a warning if a <code>qw()</code> contains a comma or the comment character (<code>#</code>), because not only are such characters rarely included in a <code>qw()</code>, their presence usually indicates an oversight.</p>
+</div>
+<p>Lists can (and often do) occur as the results of expressions, but these lists do not appear literally in source code.</p>
+<p>Lists and arrays are not interchangeable in Perl. Lists are values and arrays are containers. You may store a list in an array and you may coerce an array to a list, but they are separate entities. For example, indexing into a list is always occurs in list context. Indexing into an array can occur in scalar context (for a single element) or list context (for a slice):</p>
+<div class="programlisting">
+<pre>
+<code>    # you do not need to understand this all
+    sub context
+    {
+        my $context = wantarray;
+        say defined $context
+             ? $context
+                 ? 'list'
+                 : 'scalar'
+             : 'void';
+        return 0;
+    }
+
+    my @list_slice  = (1, 2, 3)[context()];
+    my @array_slice = @list_slice[context()];
+    my $array_index = $array_slice[context()];</code>
+</pre></div>
+<h3 id="heading_id_24">Control Flow</h3>
+<div id="control_flow"></div>
+<div id="icontrol_flow_0"></div>
+<p>Perl's basic <i>control flow</i> is straightforward. Program execution starts at the beginning (the first line of the file executed) and continues to the end:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'At start';
+    say 'In middle';
+    say 'At end';</code>
+</pre></div>
+<div id="icontrol_flow_directives_0"></div>
+<p>Most programs need more complex control flow. Perl's <i>control flow directives</i> change the order of execution--what happens next in the program--depending on the values of arbitrarily complex expressions.</p>
+<h4 id="heading_id_25">Branching Directives</h4>
+<div id="iif_0"></div>
+<div id="icontrol_flow_directives__iif_0"></div>
+<div id="ipostfix_if_0"></div>
+<div id="ipostfix_expressions__iif_0"></div>
+<p>The <code>if</code> directive evaluates a conditional expression and performs the associated action only when the conditional expression evaluates to a true value:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'Hello, Bob!' if $name eq 'Bob';</code>
+</pre></div>
+<p>This postfix form is useful for simple expressions. A block form groups multiple expressions into a single unit:</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name eq 'Bob')
+    {
+        say 'Hello, Bob!';
+        found_bob();
+    }</code>
+</pre></div>
+<p>Note that the postfix form does not <i>require</i> parentheses around its condition, while the block form does. The conditional expression may also be complex:</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name eq 'Bob' &amp;&amp; not greeted_bob())
+    {
+        say 'Hello, Bob!';
+        found_bob();
+    }</code>
+</pre></div>
+<p>... though in this case, parenthesization of the expression in postfix form may add clarity <span class="footnote">(footnote: It may also argue against using the postfix form.)</span>:</p>
+<div class="programlisting">
+<pre>
+<code>    greet_bob() if ($name eq 'Bob' &amp;&amp; not greeted_bob());</code>
+</pre></div>
+<div id="iunless_0"></div>
+<div id="icontrol_flow_directives__iunless_0"></div>
+<div id="ipostfix_unless_0"></div>
+<div id="ipostfix_expressions__iunless_0"></div>
+<p>The <code>unless</code> directive is a negated form of <code>if</code>. Perl will perform the requested action when the conditional expression evaluates to <i>false</i>:</p>
+<div class="programlisting">
+<pre>
+<code>    say "You're no Bob!" unless $name eq 'Bob';</code>
+</pre></div>
+<p>Like <code>if</code>, <code>unless</code> also has a block form. Unlike <code>if</code>, the block form of <code>unless</code> is much rarer than its postfix form:</p>
+<div class="programlisting">
+<pre>
+<code>    unless (is_leap_year() and is_full_moon())
+    {
+        frolic();
+        gambol();
+    }</code>
+</pre></div>
+<p><code>unless</code> works very well for postfix conditionals, especially parameter validation in functions (<a href="chapter_10.xhtml#postfix_parameter_validation">Postfix Parameter Validation</a>(postfix_parameter_validation)):</p>
+<div class="programlisting">
+<pre>
+<code>    sub frolic
+    {
+        return unless @_;
+
+        for my $chant (@_)
+        {
+            ...
+        }
+    }</code>
+</pre></div>
+<p><code>unless</code> can be difficult to read with multiple conditions; this is one reason it appears rarely in its block form.</p>
+<div id="ielse_0"></div>
+<div id="icontrol_flow_directives__ielse_0"></div>
+<p>The block forms of <code>if</code> and <code>unless</code> both work with the <code>else</code> directive, which provides code to run when the conditional expression does not evaluate to true (for <code>if</code>) or false (for <code>unless</code>):</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name eq 'Bob')
+    {
+        say 'Hi, Bob!';
+        greet_user();
+    }
+    else
+    {
+        say "I don't know you.";
+        shun_user();
+    }</code>
+</pre></div>
+<p><code>else</code> blocks allow you to rewrite <code>if</code> and <code>unless</code> conditionals in terms of each other:</p>
+<div class="programlisting">
+<pre>
+<code>    <b>unless</b> ($name eq 'Bob')
+    {
+        say "I don't know you.";
+        shun_user();
+    }
+    else
+    {
+        say 'Hi, Bob!';
+        greet_user();
+    }</code>
+</pre></div>
+<p>If you read the previous example out loud, you may notice the awkward pseudocode phrasing: "Unless this name is Bob, do this. Otherwise, do something else." The implied double negative can be confusing. Perl provides both <code>if</code> and <code>unless</code> to allow you to phrase your conditionals in the most natural and readable way. Likewise, you can choose between positive and negative assertions with regard to the comparison operators you use:</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name <b>ne</b> 'Bob')
+    {
+        say "I don't know you.";
+        shun_user();
+    }
+    else
+    {
+        say 'Hi, Bob!';
+        greet_user();
+    }</code>
+</pre></div>
+<p>The double negative implied by the presence of the <code>else</code> block argues against this particular phrasing.</p>
+<div id="ielsif_0"></div>
+<div id="icontrol_flow_directives__ielsif_0"></div>
+<p>One or more <code>elsif</code> directives may follow an <code>if</code> block form and may precede any single <code>else</code>. You may use as many <code>elsif</code> blocks as you like, but you may not change the order in which the block types appear:</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name eq 'Bob')
+    {
+        say 'Hi, Bob!';
+        greet_user();
+    }
+    elsif ($name eq 'Jim')
+    {
+        say 'Hi, Jim!';
+        greet_user();
+    }
+    else
+    {
+        say "You're not my uncle.";
+        shun_user();
+    }</code>
+</pre></div>
+<p>You may also use the <code>elsif</code> block with an <code>unless</code> chain, but the resulting code may be unclear. There is no <code>elseunless</code>.</p>
+<p>There is no <code>else if</code> construct; this is a syntax error:</p>
+<div class="programlisting">
+<pre>
+<code>    if ($name eq 'Rick')
+    {
+        say 'Hi, cousin!';
+    }
+
+    # warning; syntax error
+    else if ($name eq 'Kristen')
+    {
+        say 'Hi, cousin-in-law!';
+    }</code>
+</pre></div>
+<h4 id="heading_id_26">The Ternary Conditional Operator</h4>
+<div id="iternary_conditional_0"></div>
+<div id="icontrol_flow_directives__iternary_conditional_0"></div>
+<p>The <i>ternary conditional</i> operator offers an alternate approach to control flow. It evaluates a conditional expression and evaluates to one of two different results:</p>
+<div class="programlisting">
+<pre>
+<code>    my $time_suffix = after_noon($time) ? 'morning' : 'afternoon';</code>
+</pre></div>
+<p>The conditional expression precedes the question mark character (<code>?</code>) and the colon character (<code>:</code>) separates the alternatives. The alternatives are literals or (parenthesized) expressions of arbitrary complexity, including other ternary conditional expressions, though readability may suffer.</p>
+<div class="sidebar">
+<p>An interesting, though obscure, idiom is to use the ternary conditional to select between alternative <i>variables</i>, not only values:</p>
+<div class="programlisting">
+<pre>
+<code>    push @{ rand() &gt; 0.5 ? \@red_team : \@blue_team }, Player-&gt;new();</code>
+</pre></div>
+<p>Again, weigh the benefits of clarity versus the benefits of conciseness.</p>
+</div>
+<h5 id="heading_id_27">Short Circuiting</h5>
+<div id="ishort_circuiting_behavior_0"></div>
+<div id="ishort_circuiting_0"></div>
+<p>Perl performs a type of behavior known as <i>short-circuiting</i> when it encounters complex expressions--expressions composed of multiple evaluated expressions. If Perl can determine that a complex expression would succeed or fail as a whole without evaluating every subexpression, it will not evaluate subsequent subexpressions. This is most obvious with an example:</p>
+<div class="programlisting">
+<pre>
+<code>    say "Both true!" if ok(1, 'first subexpression')
+                     &amp;&amp; ok(1, 'second subexpression');</code>
+</pre></div>
+<div class="sidebar">
+<p>The return value of <code>ok()</code> (<a href="chapter_09.xhtml#testing">Testing</a>(testing)) is the boolean value obtained by evaluating the first argument.</p>
+</div>
+<p>This example prints:</p>
+<div class="screen">
+<pre>
+<code>    ok 1 - first subexpression
+    ok 2 - first subexpression
+    Both true!</code>
+</pre></div>
+<p>When the first subexpression--the first call to <code>ok</code>--evaluates to true, Perl must evaluate the second subexpression. When the first subexpression evaluates to false, the entire expression cannot succeed, and there is no need to check subsequent subexpressions:</p>
+<div class="programlisting">
+<pre>
+<code>    say "Both true!" if ok(0, 'first subexpression')
+                     &amp;&amp; ok(1, 'second subexpression');</code>
+</pre></div>
+<p>This example prints:</p>
+<div class="screen">
+<pre>
+<code>    not ok 1 - first subexpression</code>
+</pre></div>
+<p>Even though the second subexpression would obviously succeed, Perl never evaluates it. The logic is similar for a complex conditional expression where either subexpression must be true for the conditional as a whole to succeed:</p>
+<div class="programlisting">
+<pre>
+<code>    say "Either true!" if ok(1, 'first subexpression')
+                       || ok(1, 'second subexpression');</code>
+</pre></div>
+<p>This example prints:</p>
+<div class="screen">
+<pre>
+<code>    ok 1 - first subexpression
+    Either true!</code>
+</pre></div>
+<p>Again, with the success of the first subexpression, Perl can avoid evaluating the second subexpression. If the first subexpression were false, the result of evaluating the second subexpression would dictate the result of evaluating the entire expression.</p>
+<p>Besides allowing you to avoid potentially expensive computations, short circuiting can help you to avoid errors and warnings:</p>
+<div class="programlisting">
+<pre>
+<code>    if (exists $barbeque{pork} and $barbeque{pork} eq 'shoulder') { ... }</code>
+</pre></div>
+<h4 id="heading_id_28">Context for Conditional Directives</h4>
+<div id="icontext__iconditional_0"></div>
+<div id="itruth_0"></div>
+<div id="iboolean_truth_0"></div>
+<div id="itrue_value_0"></div>
+<div id="ifalse_value_0"></div>
+<p>The conditional directives--<code>if</code>, <code>unless</code>, and the ternary conditional operator--all evaluate an expression in boolean context (<a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)). As comparison operators such as <code>eq</code>, <code>==</code>, <code>ne</code>, and <code>!=</code> all produce boolean results when evaluated, Perl coerces the results of other expressions--including variables and values--into boolean forms. Empty hashes and arrays evaluate to false.</p>
+<p>Perl 5 has no single true value, nor a single false value. Any number that evaluates to 0 is false. This includes <code>0</code>, <code>0.0</code>, <code>0e0</code>, <code>0x0</code>, and so on. The empty string (<code>''</code>) and <code>"0"</code> evaluate to false, but the strings <code>"0.0"</code>, <code>"0e0"</code>, and so on do not. The idiom <code>"0 but true"</code> evaluates to 0 in numeric context but evaluates to true, thanks to its string contents. Both the empty list and <code>undef</code> evaluate to false. Empty arrays and hashes return the number 0 in scalar context, so they evaluate to false in boolean context.</p>
+<p>An array which contains a single element--even <code>undef</code>--evaluates to true in boolean context. A hash which contains any elements--even a key and a value of <code>undef</code>--evaluates to true in boolean context.</p>
+<div class="sidebar">
+<p>The <code>Want</code> module available from the CPAN allows you to detect boolean context within your own functions. The core <code>overloading</code> pragma (<a href="chapter_09.xhtml#overloading">Overloading</a>(overloading), <a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)) allows you to specify what your own data types produce when evaluated in a boolean context.</p>
+</div>
+<h4 id="heading_id_29">Looping Directives</h4>
+<div id="looping_directives"></div>
+<p>Perl also provides several directives for looping and iteration.</p>
+<p><code>foreach</code> <code>for</code> <code>looping directives; for</code> <code>looping directives; foreach</code></p>
+<p>The <i>foreach</i> style loop evaluates an expression which produces a list and executes a statement or block until it has consumed that list:</p>
+<div class="programlisting">
+<pre>
+<code>    foreach (1 .. 10)
+    {
+        say "$_ * $_ = ", $_ * $_;
+    }</code>
+</pre></div>
+<p>This example uses the <code>range</code> operator to produce a list of integers from one to ten inclusive. The <code>foreach</code> directive loops over them, setting the topic variable (<code>$_</code>) to each in turn. Perl executes the block for each integer and prints the squares of the integers.</p>
+<div class="sidebar">
+<p>Though this is a <i>foreach</i>-style loop, Perl treats the keywords <code>foreach</code> and <code>for</code> interchangeably. As only the <i>type</i> of the loop governs its behavior, there are no drawbacks to using the shorter <code>for</code> keyword.</p>
+</div>
+<p>Like <code>if</code> and <code>unless</code>, the <code>for</code> loop has a postfix form:</p>
+<div class="programlisting">
+<pre>
+<code>    say "$_ * $_ = ", $_ * $_ for 1 .. 10;</code>
+</pre></div>
+<p>Similar suggestions apply for clarity and complexity.</p>
+<p>You may provide a variable to which to assign the values of the expression in place of the topic variable:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $i (1 .. 10)
+    {
+        say "$i * $i = ", $i * $i;
+    }</code>
+</pre></div>
+<p>If you do so, Perl will not set the topic variable (<code>$_</code>) to the iterated values. Note also that the scope of the variable <code>$i</code> is only valid <i>within</i> the loop. If you have declared a lexical <code>$i</code> in an outer scope, that value will remain outside the loop:</p>
+<div class="programlisting">
+<pre>
+<code>    my $i = 'cow';
+
+    for my $i (1 .. 10)
+    {
+        say "$i * $i = ", $i * $i;
+    }
+
+    is( $i, 'cow', 'Lexical variable not overwritten in outer scope' );</code>
+</pre></div>
+<p>This localization occurs even if you do not redeclare the iteration variable as a lexical:</p>
+<div class="programlisting">
+<pre>
+<code>    my $i = 'horse';
+
+    for $i (1 .. 10)
+    {
+        say "$i * $i = ", $i * $i;
+    }
+
+    is( $i, 'horse', 'Lexical variable still not overwritten in outer scope' );</code>
+</pre></div>
+<h4 id="heading_id_30">Iteration and Aliasing</h4>
+<div id="iiteration_aliasing_0"></div>
+<div id="ialiasing_0"></div>
+<div id="ialiasing__iforeach_0"></div>
+<div id="ialiasing__iiteration_0"></div>
+<p>The <code>for</code> loop performs <i>aliasing</i> of the iterator variable to the values in the iteration such that you can modify values in place during iteration:</p>
+<div class="programlisting">
+<pre>
+<code>    my @nums = 1 .. 10;
+
+    $_ **= 2 for @nums;
+
+    is( $nums[0], 1, '1 * 1 is 1' );
+    is( $nums[1], 4, '2 * 2 is 4' );
+
+    ...
+
+    is( $nums[9], 100, '10 * 10 is 100' );</code>
+</pre></div>
+<p>This aliasing also works with the block style <code>foreach</code> loop:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $num (@nums)
+    {
+        $num **= 2;
+    }</code>
+</pre></div>
+<p>... as well as iteration with the topic variable:</p>
+<div class="programlisting">
+<pre>
+<code>    for (@nums)
+    {
+        $_ **= 2;
+    }</code>
+</pre></div>
+<p>You cannot use aliasing to modify <i>constant</i> values, however:</p>
+<div class="programlisting">
+<pre>
+<code>    lc for qw( Huey Dewey Louie );</code>
+</pre></div>
+<p>... as this will throw an exception about modification of read-only values. There's little point in doing so anyhow.</p>
+<p>You may occasionally see the use of <code>for</code> with a single scalar variable to alias <code>$_</code> to the variable:</p>
+<div class="programlisting">
+<pre>
+<code>    for ($user_input)
+    {
+        s/(\w)/\\$1/g;  # escape non-word characters
+        s/^\s*|\s$/g;   # trim whitespace
+    }</code>
+</pre></div>
+<h4 id="heading_id_31">Iteration and Scoping</h4>
+<div id="iiterator_scoping_0"></div>
+<div id="iscope__iiterator_0"></div>
+<div id="imy_36__0"></div>
+<div id="i36___ilexical_0"></div>
+<p>Iterator scoping with the topic variable provides one common source of confusion. In this case, <code>some_function()</code> modifies <code>$_</code> on purpose. If <code>some_function()</code> called other code which modified <code>$_</code> without explicitly localizing <code>$_</code>, the iterated value in <code>@values</code> would change. Debugging this can be troublesome:</p>
+<div class="programlisting">
+<pre>
+<code>    for (@values)
+    {
+        some_function();
+    }
+
+    sub some_function
+    {
+        s/foo/bar/;
+    }</code>
+</pre></div>
+<p>If you <i>must</i> use <code>$_</code> rather than a named variable, lexicalize the topic variable with <code>my $_</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    sub some_function_called_later
+    {
+        # was $_ = shift;
+        <b>my</b> $_ = shift;
+
+        s/foo/bar/;
+        s/baz/quux/;
+
+        return $_;
+    }</code>
+</pre></div>
+<p>Using a named iteration variable also prevents undesired aliasing behavior through <code>$_</code>.</p>
+<h4 id="heading_id_32">The C-Style For Loop</h4>
+<div id="ifor_loop_0"></div>
+<p>The C-style <i>for loop</i> allows the programmer to manage iteration manually:</p>
+<div class="programlisting">
+<pre>
+<code>    for (my $i = 0; $i &lt;= 10; $i += 2)
+    {
+        say "$i * $i = ", $i * $i;
+    }</code>
+</pre></div>
+<p>You must assign to an iteration variable manually, as there is no default assignment to the topic variable. Consequently there is no aliasing behavior either. Though the scope of any declared lexical variable is to the body of the block, a variable <i>not</i> declared explicitly in the iteration control section of this construct <i>will</i> overwrite its contents:</p>
+<div class="programlisting">
+<pre>
+<code>    my $i = 'pig';
+
+    for ($i = 0; $i &lt;= 10; $i += 2)
+    {
+        say "$i * $i = ", $i * $i;
+    }
+
+    isnt( $i, 'pig', '$i overwritten with a number' );</code>
+</pre></div>
+<p>This loop has three subexpressions in its looping construct. The first subexpression is an initialization section. It executes once, before the first execution of the loop body. The second subexpression is the conditional comparison subexpression. Perl evaluates this subexpression before each iteration of the loop body. When the subexpression evaluates to a true value, the loop iteration proceeds. When the subexpression evaluates to a false value, the loop iteration stops. The final subexpression executes after each iteration of the loop body.</p>
+<p>This may be more obvious with an example:</p>
+<div class="programlisting">
+<pre>
+<code>    # declared outside to avoid declaration in conditional
+    my $i;
+
+    for (
+        # loop initialization subexpression
+        say 'Initializing' and $i = 0;
+
+        # conditional comparison subexpression
+        say "Iteration: $i" and $i &lt; 10;
+
+        # iteration ending subexpression
+        say 'Incrementing $i' and $i++
+    )
+    {
+        say "$i * $i = ", $i * $i;
+    }</code>
+</pre></div>
+<p>Note the lack of a trailing semicolon at the iteration ending subexpression as well as the use of the low-precedence <code>and</code>; this syntax is surprisingly finicky. When possible, prefer the <code>foreach</code> style loop to the <code>for</code> loop.</p>
+<p>All three subexpressions are optional. You may write an infinite loop with:</p>
+<div class="programlisting">
+<pre>
+<code>    for (;;) { ... }</code>
+</pre></div>
+<h4 id="heading_id_33">While and Until</h4>
+<div id="iwhile_loop_0"></div>
+<div id="iloops__iwhile_0"></div>
+<p>A <i>while</i> loop continues until the loop conditional expression evaluates to a boolean false value. An infinite loop is much clearer when written:</p>
+<div class="programlisting">
+<pre>
+<code>    while (1) { ... }</code>
+</pre></div>
+<p>The means of evaluating the end of iteration condition in a <code>while</code> loop differs from a <code>foreach</code> loop in that the evaluation of the expression itself does not produce any side effects. If <code>@values</code> has one or more elements, this code is also an infinite loop:</p>
+<div class="programlisting">
+<pre>
+<code>    while (@values)
+    {
+        say $values[0];
+    }</code>
+</pre></div>
+<div id="idestructive_update_0"></div>
+<p>To prevent such an infinite <code>while</code> loop, you must perform a <i>destructive update</i> of the <code>@values</code> array by modifying the array with each loop iteration:</p>
+<div class="programlisting">
+<pre>
+<code>    while (my $value = shift @values)
+    {
+        say $value;
+    }</code>
+</pre></div>
+<div id="iuntil_loop_0"></div>
+<div id="iloops__iuntil_0"></div>
+<p>The <i>until</i> loop performs the opposite test as the <code>while</code> loop. Iteration continues while the loop conditional expression evaluates to false:</p>
+<div class="programlisting">
+<pre>
+<code>    until ($finished_running)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>The canonical use of the <code>while</code> loop is to iterate over input from a filehandle:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&lt;', $file;
+
+    while (&lt;$fh&gt;)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>Perl 5 interprets this <code>while</code> loop as if you had written:</p>
+<div class="programlisting">
+<pre>
+<code>    while (defined($_ = &lt;$fh&gt;))
+    {
+        ...
+    }</code>
+</pre></div>
+<p>Without the implicit <code>defined</code>, any line read from the filehandle which evaluated to false in a scalar context--a blank line or a line which contained only the character <code>0</code>--would end the loop. The <code>readline</code> operator returns an undefined value only when it has finished reading lines from the file.</p>
+<div class="sidebar">
+<p>One common mistake is to forget to remove the line-ending characters from each line; use the <code>chomp</code> keyword to do so.</p>
+</div>
+<p>Both <code>while</code> and <code>until</code> have postfix forms. The simplest infinite loop in Perl 5 is:</p>
+<div class="programlisting">
+<pre>
+<code>    1 while 1;</code>
+</pre></div>
+<p>Any single expression is suitable for a postfix <code>while</code> or <code>until</code>, such as the classic "Hello, world!" example from 8-bit computers of the early 1980s:</p>
+<div class="programlisting">
+<pre>
+<code>    print "Hello, world!  " while 1;</code>
+</pre></div>
+<p>Infinite loops may seem silly, but they're actually quite useful. A simple event loop for a GUI program or network server may be:</p>
+<div class="programlisting">
+<pre>
+<code>    $server-&gt;dispatch_results() until $should_shutdown;</code>
+</pre></div>
+<div id="ido__ilooping_0"></div>
+<div id="ilooping__ido_0"></div>
+<p>For more complex expressions, use a <code>do</code> block:</p>
+<div class="programlisting">
+<pre>
+<code>    do
+    {
+        say 'What is your name?';
+        my $name = &lt;&gt;;
+        chomp $name;
+        say "Hello, $name!" if $name;
+    } until (eof);</code>
+</pre></div>
+<p>For the purposes of parsing, a <code>do</code> block is itself a single expression, though it can contain several expressions. Unlike the <code>while</code> loop's block form, the <code>do</code> block with a postfix <code>while</code> or <code>until</code> will execute its body at least once. This construct is less common than the other loop forms, but no less powerful.</p>
+<h4 id="heading_id_34">Loops within Loops</h4>
+<div id="inested_loops_0"></div>
+<div id="iloops__inested_0"></div>
+<p>You may nest loops within other loops:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $suit (@suits)
+    {
+        for my $values (@card_values)
+        {
+            ...
+        }
+    }</code>
+</pre></div>
+<p>In this case, explicitly declaring named variables is essential to maintainability. The potential for confusion as to the scoping of iterator variables is too great when using the topic variable.</p>
+<p>A common mistake with nesting <code>foreach</code> and <code>while</code> loops is that it is easy to exhaust a filehandle with a <code>while</code> loop:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&lt;', $some_file;
+
+    for my $prefix (@prefixes)
+    {
+        # DO NOT USE; likely buggy code
+        while (&lt;$fh&gt;)
+        {
+            say $prefix, $_;
+        }
+    }</code>
+</pre></div>
+<p>Opening the filehandle outside of the <code>for</code> loop leaves the file position unchanged between each iteration of the <code>for</code> loop. On its second iteration, the <code>while</code> loop will have nothing to read and will not execute. To solve this problem, you may re-open the file inside the <code>for</code> loop (simple to understand, but not always a good use of system resources), slurp the entire file into memory (which may not work if the file is large), or <code>seek</code> the filehandle back to the beginning of the file for each iteration (an often overlooked option):</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+
+    open my $fh, '&lt;', $some_file;
+
+    for my $prefix (@prefixes)
+    {
+        while (&lt;$fh&gt;)
+        {
+            say $prefix, $_;
+        }
+
+        seek $fh, 0, 0;
+    }</code>
+</pre></div>
+<h4 id="heading_id_35">Loop Control</h4>
+<div id="iloop_control_0"></div>
+<p>Sometimes you need to break out of a loop before you have exhausted the iteration conditions. Perl 5's standard control mechanisms--exceptions and <code>return</code>--work, but you may also use <i>loop control</i> statements.</p>
+<div id="inext_0"></div>
+<p>The <i>next</i> statement restarts the loop at its next iteration. Use it when you've done all you need to in the current iteration. To loop over lines in a file but skip everything that looks like a comment, one which starts with the character <code>#</code>, you might write:</p>
+<div class="programlisting">
+<pre>
+<code>    while (&lt;$fh&gt;)
+    {
+        <b>next</b> if /\A#/;
+        ...
+    }</code>
+</pre></div>
+<div id="ilast_0"></div>
+<p>The <i>last</i> statement ends the loop immediately. To finish processing a file once you've seen the ending delimiter, you might write:</p>
+<div class="programlisting">
+<pre>
+<code>    while (&lt;$fh&gt;)
+    {
+        next if /\A#/;
+        <b>last</b> if /\A__END__/
+        ...
+    }</code>
+</pre></div>
+<div id="iredo_0"></div>
+<p>The <i>redo</i> statement restarts the current iteration without evaluating the conditional again. This can be useful in those few cases where you want to modify the line you've read in place, then start processing over from the beginning without clobbering it with another line. For example, you could implement a silly file parser that joins lines which end with a backslash with:</p>
+<div class="programlisting">
+<pre>
+<code>    while (my $line = &lt;$fh&gt;)
+    {
+        chomp $line;
+
+        # match backslash at the end of a line
+        if ($line =~ s{\\$}{})
+        {
+            $line .= &lt;$fh&gt;;
+            redo;
+        }
+
+        ...
+    }</code>
+</pre></div>
+<p>... though that's a contrived example.</p>
+<div id="ilabels_0"></div>
+<div id="iloops__ilabels_0"></div>
+<p>Nested loops can make the use of these loop control statements ambiguous. In those cases, a <i>loop label</i> can disambiguate:</p>
+<div class="programlisting">
+<pre>
+<code>    OUTER:
+    while (&lt;$fh&gt;)
+    {
+        chomp;
+
+        INNER:
+        for my $prefix (@prefixes)
+        {
+            next OUTER unless $prefix;
+            say "$prefix: $_";
+        }
+    }</code>
+</pre></div>
+<p>If you find yourself nesting loops such that you need labels to manage control flow, consider simplifying your code: perhaps extracting inner loops into functions for clarity.</p>
+<h4 id="heading_id_36">Continue</h4>
+<div id="icontinue_0"></div>
+<p>The <code>continue</code> construct behaves like the third subexpression of a <code>for</code> loop; Perl executes its block for each iteration of the loop, even when you exit an iteration with <code>next</code>. You may use it with may be used with a <code>while</code>, <code>until</code>, <code>with</code>, or <code>for</code> loop. Examples of <code>continue</code> are rare, but it's useful any time you want to guarantee that something occurs for every iteration of the loop regardless of how that iteration ends:</p>
+<div class="programlisting">
+<pre>
+<code>    while ($i &lt; 10 )
+    {
+        next unless $i % 2;
+        say $i;
+    }
+    continue
+    {
+        say 'Continuing...';
+        $i++;
+    }</code>
+</pre></div>
+<h4 id="heading_id_37">Given/When</h4>
+<div id="igiven_0"></div>
+<p>The <code>given</code> construct is a feature new to Perl 5.10. It assigns the value of an expression to the topic variable and introduces a block:</p>
+<div class="programlisting">
+<pre>
+<code>    given ($name)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>Unlike <code>for</code>, it does not iterate over an aggregate. It evaluates its value in scalar context, and always assigns to the topic variable:</p>
+<div class="programlisting">
+<pre>
+<code>    given (my $username = find_user())
+    {
+        is( $username, $_, 'topic assignment happens automatically' );
+    }</code>
+</pre></div>
+<p><code>given</code> also lexicalizes the topic variable to prevent accidental modification:</p>
+<div class="programlisting">
+<pre>
+<code>    given ('mouse')
+    {
+        say;
+        mouse_to_man( $_ );
+        say;
+    }
+
+    sub mouse_to_man
+    {
+        $_ = shift;
+        s/mouse/man/;
+    }</code>
+</pre></div>
+<div id="iwhen_0"></div>
+<div id="itopicalization_0"></div>
+<div id="itopicalize_0"></div>
+<p>By itself, this feature may seem less than useful. In combination with <code>when</code>, it is very useful. Use <code>given</code> to <i>topicalize</i> a value. Within the associated block, multiple <code>when</code> statements match the topic against expressions using <i>smart-match</i> semantics. Thus you might code a Rock, Paper, Scissors game:</p>
+<div class="author">
+<p>This seems like an rather verbose example. Also, I'm not sure how to work mention of continue into it. Perhaps something like this (pretty much ripped from perldoc perlsyn) might suffice?</p>
+<p>given($foo) { when (undef) { say '$foo is undefined'; } when ([2, 3, 5, 7, 11, 13, 17, 19]) { say '$foo is a prime less than 20'; continue; } when ($_ % 2){ say '$foo is odd'; continue; } when ($_ &lt; 20) { say '$foo is numerically less than 20'; } default { say q{I don't know what to say about $foo}; } }</p>
+</div>
+<div class="programlisting">
+<pre>
+<code>    my @options = ( \&amp;rock, \&amp;paper, \&amp;scissors );
+
+    do
+    {
+        say "Rock, Paper, Scissors!  Pick one: ";
+        chomp( my $user = &lt;STDIN&gt; );
+        my $computer_match = $options[ rand @options ];
+        $computer_match-&gt;( lc( $user ) );
+    } until (eof);
+
+    sub rock
+    {
+        print "I chose rock.  ";
+
+        given (shift)
+        {
+            when (/paper/)    { say 'You win!' };
+            when (/rock/)     { say 'We tie!'  };
+            when (/scissors/) { say 'I win!'   };
+            default           { say "I don't understand your move" };
+        }
+    }
+
+    sub paper
+    {
+        print "I chose paper.  ";
+
+        given (shift)
+        {
+            when (/paper/)    { say 'We tie!'  };
+            when (/rock/)     { say 'I win!'   };
+            when (/scissors/) { say 'You win!' };
+            default           { say "I don't understand your move" };
+        }
+    }
+
+    sub scissors
+    {
+        print "I chose scissors.  ";
+
+        given (shift)
+        {
+            when (/paper/)    { say 'I win!'   };
+            when (/rock/)     { say 'You win!' };
+            when (/scissors/) { say 'We tie!'  };
+            default           { say "I don't understand your move" };
+        }
+    }</code>
+</pre></div>
+<p>Perl executes the <code>default</code> rule when none of the other conditions match.</p>
+<div class="sidebar">
+<p>The CPAN module <code>MooseX::MultiMethods</code> demonstrates another technique which reduces this code further.</p>
+</div>
+<p>The <code>when</code> construct is even more powerful; it can match against many other types of expressions including scalars, aggregates, references, arbitrary comparison expressions, and even code references. The "Smart matching in detail" section of the <i>perlsyn</i> perldoc provides a useful table of all possible match types.</p>
+<div class="author">
+<p>Link to smart match.</p>
+</div>
+<h4 id="heading_id_38">Tailcalls</h4>
+<div id="itailcalls_0"></div>
+<div id="igoto_0"></div>
+<p>A <i>tailcall</i> occurs when the last expression within a function is a call to another function--the return value of the outer function is the return value of the inner function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub log_and_greet_person
+    {
+        my $name = shift;
+        log( "Greeting $name" );
+
+        return greet_person( $name );
+    }</code>
+</pre></div>
+<div id="ioptimization__itailcalls_0"></div>
+<div id="itailcall_optimization_0"></div>
+<p>In this circumstance, returning from <code>greet_person()</code> directly to the caller of <code>log_and_greet_person()</code> is more efficient than returning to <code>log_and_greet_person()</code> and immediately returning <i>from</i> <code>log_and_greet_person()</code>. Returning directly from <code>greet_person()</code> to the caller of <code>log_and_greet_person()</code> is an optimization known as <i>tailcall optimization</i>.</p>
+<p>Perl 5 cannot perform this optimization automatically, but you can perform it manually.</p>
+<div class="sidebar">
+<p>Why would you want to do this? Heavily recursive code (<a href="chapter_05.xhtml#recursion">Recursion</a>(recursion)), especially mutually recursive code, can quickly consume a lot of memory. Reducing the memory needed for internal bookkeeping of control flow can make otherwise expensive algorithms tractable.</p>
+</div>
+<div class="author">
+<p>Check Ruslan Zakirov's tailcall module for maturity and applicability here; it won't be core, but it may be worth mentioning. There are two other sections which mention tailcalls; which has primacy?</p>
+</div>
+<h3 id="heading_id_39">Scalars</h3>
+<div id="scalars"></div>
+<div id="iscalar_1"></div>
+<p>Perl 5's fundamental data type is the <i>scalar</i>, which represents a single, discrete value. That value may be a string, an integer, a floating point value, a filehandle, or a reference--but it is always a single value. Scalar values and scalar context have a deep connection; assigning to a scalar provides scalar context.</p>
+<p>Scalars may be lexical, package, or global (<a href="chapter_10.xhtml#globals">Global Variables</a>(globals)) variables. You may only declare lexical or package variables. The names of scalar variables must conform to the <a href="chapter_03.xhtml#names">Names</a>(names) guidelines. Scalar variables always use the leading dollar-sign (<code>$</code>) sigil (<a href="chapter_03.xhtml#sigils">Variable Sigils</a>(sigils)).</p>
+<div class="sidebar">
+<p>The converse is not <i>universally</i> true; the scalar sigil applied to an operation on an aggregate variable determines the amount type accessed through that operation (<a href="chapter_03.xhtml#arrays">Arrays</a>(arrays), <a href="chapter_03.xhtml#hashes">Hashes</a>(hashes)).</p>
+</div>
+<h4 id="heading_id_40">Scalars and Types</h4>
+<p>Perl 5 scalars do not have static typing. A scalar variable can contain any type of scalar value without special conversions or casts, and the type of value in a variable can change. This code is legal:</p>
+<div class="programlisting">
+<pre>
+<code>    my $value;
+    $value = 123.456;
+    $value = 77;
+    $value = "I am Chuck's big toe.";
+    $value = Store::IceCream-&gt;new();</code>
+</pre></div>
+<p>Yet even though this is <i>legal</i>, it can be confusing. Choose descriptive and unique names for your variables to avoid this confusion.</p>
+<p>The type context of evaluation of a scalar may cause Perl to perform a coercion of the value of that scalar (<a href="chapter_03.xhtml#coercion">Coercion</a>(coercion)). For example, you may treat the contents of a scalar as a string, even if you didn't explicitly assign it a string:</p>
+<div class="programlisting">
+<pre>
+<code>    my $zip_code        = 97006;
+    my $city_state_zip  = 'Beaverton, Oregon' . ' ' . $zip_code;</code>
+</pre></div>
+<p>You may also perform mathematical operations on strings:</p>
+<div class="programlisting">
+<pre>
+<code>    my $call_sign = 'KB7MIU';
+    my $next_sign = $call_sign++;
+
+    # also fine as
+    $next_sign    = ++$call_sign;
+
+    # but <i>does not work</i> as:
+    $next_sign    = $call_sign + 1;</code>
+</pre></div>
+<div id="iincrement__istring_0"></div>
+<div class="sidebar">
+<p>Note that this magical string increment behavior does not have a corresponding magical decrement behavior. You can't get the previous string value by writing <code>$call_sign--</code>.</p>
+</div>
+<p>This string increment operation turns <code>a</code> into <code>b</code> and <code>z</code> into <code>aa</code>, respecting character set and case. Note that <code>ZZ9</code> becomes <code>ZZ0</code> and <code>ZZ09</code> becomes <code>ZZ10</code>, however--numbers wrap around but do not carry to alphabetic components.</p>
+<div id="istringification_0"></div>
+<div id="inumification_0"></div>
+<p>Evaluating a reference (<a href="chapter_03.xhtml#references">References</a>(references)) in string context produces a string. Evaluating a reference in numeric context produces a number. Neither operation modifies the reference in place, but you cannot recreate the reference from either the string or numeric result:</p>
+<div class="programlisting">
+<pre>
+<code>    my $authors     = [qw( Pratchett Vinge Conway )];
+    my $stringy_ref = '' . $authors;
+    my $numeric_ref =  0 . $authors;</code>
+</pre></div>
+<p><code>$authors</code> is still useful as a reference, but <code>$stringy_ref</code> is a string with no connection to the reference and <code>$numeric_ref</code> is a number with no connection to the reference.</p>
+<div id="iScalar5858Util_1"></div>
+<div id="idualvars_0"></div>
+<div id="idualvar4041__iScalar5858Util_0"></div>
+<div id="ilooks_like_number4041_0"></div>
+<div id="ilooks_like_number59Scalar5858Util_0"></div>
+<p>All of these coercions and operations are possible because Perl 5 scalars can contain numeric parts as well as string parts. The internal data structure which represents a scalar in Perl 5 has a numeric slot and a string slot. Accessing a string in a numeric context eventually produces a scalar with both string and numeric values. The <code>dualvar()</code> function within the core <code>Scalar::Util</code> module allows you to manipulate both values directly within a single scalar. Similarly, the module's <code>looks_like_number()</code> function returns true if the scalar value provided is something Perl 5 would interpret as a number.</p>
+<div id="iboolean_0"></div>
+<div id="iscalars__iboolean_values_0"></div>
+<div id="iboolean_true_0"></div>
+<div id="iboolean_false_0"></div>
+<div id="istrings__itrue_0"></div>
+<div id="istrings__ifalse_0"></div>
+<div id="inumbers__itrue_0"></div>
+<div id="inumbers__ifalse_0"></div>
+<p>Scalars do not have a separate slot for boolean values. In boolean context, the empty string (<code>''</code>) and <code>'0'</code> are false. All other strings are true. In boolean context, numbers which evaluate to zero (<code>0</code>, <code>0.0</code>, and <code>0e0</code>) are false. All other numbers are true.</p>
+<p>Be careful that the <i>strings</i> <code>'0.0'</code> and <code>'0e0'</code> are true; this is one place where Perl 5 makes distinction what looks like a number and what really is a number.</p>
+<div id="iundef_1"></div>
+<p>One other value is always false: <code>undef</code>. This is the value of uninitialized variables as well as a value in its own right.</p>
+<h3 id="heading_id_41">Arrays</h3>
+<div id="arrays"></div>
+<div id="iarrays_0"></div>
+<div id="ifirst45class_0"></div>
+<p>Perl 5 <i>arrays</i> are data structures which store zero or more scalars. They're <i>first-class</i> data structures, which means that Perl 5 provides a separate data type at the language level. Arrays support indexed access; that is, you can access individual members of the array by integer indexes.</p>
+<p>The <code>@</code> sigil denotes an array. To declare an array:</p>
+<div class="programlisting">
+<pre>
+<code>    my @items;</code>
+</pre></div>
+<h4 id="heading_id_42">Array Elements</h4>
+<div id="ivariant_sigils_1"></div>
+<div id="isigils__ivariance_0"></div>
+<p><i>Accessing</i> an individual element of an array in Perl 5 requires the scalar sigil. Perl 5 (and you) can recognize that <code>$cats[0]</code> refers to the <code>@cats</code> array even despite the change of sigil because the square brackets (<code>[]</code>) always identify indexed access to an aggregate variable. In simpler terms, that means "look up one thing in a group of things by an integer".</p>
+<p>The first element of an array is at index zero:</p>
+<div class="programlisting">
+<pre>
+<code>    # @cats contains a list of Cat objects
+    my $first_cat = $cats[0];</code>
+</pre></div>
+<p>The last index of an array depends on the number of elements in the array. An array in scalar context (due to scalar assignment, string concatenation, addition, or boolean context) evaluates to the number of elements contained in the array:</p>
+<div class="programlisting">
+<pre>
+<code>    # scalar assignment
+    my $num_cats = @cats;
+
+    # string concatenation
+    say 'I have ' . @cats . ' cats!';
+
+    # addition
+    my $num_animals = @cats + @dogs + @fish;
+
+    # boolean context
+    say 'Yep, a cat owner!' if @cats;</code>
+</pre></div>
+<p>If you need the specific index of the final element of an array, subtract one from the number of elements of the array (because array indexes start at 0):</p>
+<div class="programlisting">
+<pre>
+<code>    my $first_index = 0;
+    my $last_index  = @cats - 1;
+
+    say   'My first cat has an index of $first_index, '
+        . 'and my last cat has an index of $last_index.'</code>
+</pre></div>
+<p>You can also use the special variable form of the array to find the last index; replace the <code>@</code> array sigil with the slightly more unwieldy <code>$#</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $first_index = 0;
+    <b>my $last_index  = $#cats;</b>
+
+    say   'My first cat has an index of $first_index, '
+        . 'and my last cat has an index of $last_index.'</code>
+</pre></div>
+<p>That may not read as nicely, however. Most of the time you don't need that syntax, as you can use negative offsets to access an array from the end instead of the start. The final element of an array is available at the index <code>-1</code>. The penultimate element of the array is available at index <code>-2</code>, and so on. For example:</p>
+<div class="programlisting">
+<pre>
+<code>    my $last_cat           = $cats[-1];
+    my $second_to_last_cat = $cats[-2];</code>
+</pre></div>
+<p>You can resize an array by assigning to <code>$#</code>. If you shrink an array, Perl will discard values which do not fit in the resized array. If you expand an array, Perl will fill in the expanded values with <code>undef</code>.</p>
+<h4 id="heading_id_43">Array Assignment</h4>
+<p>You can assign to individual positions in an array directly by index:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cats;
+    $cats[0] = 'Daisy';
+    $cats[1] = 'Petunia';
+    $cats[2] = 'Tuxedo';
+    $cats[3] = 'Jack';
+    $cats[4] = 'Brad';</code>
+</pre></div>
+<p>Perl 5 arrays are mutable. They do not have a static size; they expand or contract as necessary.</p>
+<div class="sidebar">
+<p>You don't have to assign in order, either. If you assign to an index beyond where you've assigned before, Perl will extend the array to account for the new size and will fill in all intermediary slots with <code>undef</code>.</p>
+</div>
+<p>Assignment in multiple lines can be tedious. You can initialize an array from a list in one step:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cats = ( 'Daisy', 'Petunia', 'Tuxedo', 'Jack', 'Brad' );</code>
+</pre></div>
+<div class="sidebar">
+<p>Remember that the parentheses <i>do not</i> create a list. Without parentheses, this would assign <code>Daisy</code> as the first and only element of the array, due to operator precedence (<a href="chapter_04.xhtml#precedence">Precedence</a>(precedence)).</p>
+</div>
+<p>Any expression which produces a list in list context can assign to an array:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cats     = get_cat_list();
+    my @timeinfo = localtime();
+    my @nums     = 1 .. 10;</code>
+</pre></div>
+<p>Assigning to a scalar element of an array enforces scalar context, while assigning to the array as a whole enforces list context.</p>
+<p>To clear an array, assign an empty list:</p>
+<div class="programlisting">
+<pre>
+<code>    my @dates = ( 1969, 2001, 2010, 2051, 1787 );
+    ...
+    @dates    = ();</code>
+</pre></div>
+<div class="sidebar">
+<p>As freshly-declared arrays start out empty, <code>my @items = ();</code> is a longer version of <code>my @items</code>. Prefer the latter.</p>
+</div>
+<h4 id="heading_id_44">Array Slices</h4>
+<div id="iarray_slice_0"></div>
+<div id="islices__iarray_0"></div>
+<p>You can also access elements of an array in list context with a construct known as an <i>array slice</i>. Unlike scalar access of an array element, this indexing operation takes a list of indices and uses the array sigil (<code>@</code>):</p>
+<div class="programlisting">
+<pre>
+<code>    my @youngest_cats = @cats[-1, -2];
+    my @oldest_cats   = @cats[0 .. 2];
+    my @selected_cats = @cats[ @indexes ];</code>
+</pre></div>
+<p>You can assign to an array slice as well:</p>
+<div class="programlisting">
+<pre>
+<code>    @users[ @replace_indices ] = @replace_users;</code>
+</pre></div>
+<p>A slice can contain zero or more elements--including one:</p>
+<div class="programlisting">
+<pre>
+<code>    # single-element array slice; function call in <i>list</i> context
+    @cats[-1] = get_more_cats();
+
+    # single-element array access; function call in <i>scalar</i> context
+    $cats[-1] = get_more_cats();</code>
+</pre></div>
+<p>The only syntactic difference between an array slice of one element and the scalar access of an array element is the leading sigil. The <i>semantic</i> difference is greater: an array slice always enforces list context. Any array slice evaluated in scalar context will produce a warning:</p>
+<div class="screen">
+<pre>
+<code>    Scalar value @cats[1] better written as $cats[1] at...</code>
+</pre></div>
+<p>An array slice imposes list context (<a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)) on the expression used as its index:</p>
+<div class="programlisting">
+<pre>
+<code>    # function called in list context
+    my @cats = @cats[ get_cat_indices() ];</code>
+</pre></div>
+<h4 id="heading_id_45">Array Operations</h4>
+<p>Managing array indices can be a hassle. Because Perl 5 can expand or contract arrays as necessary, the language also provides several operations to treat arrays as stacks, queues, and the like.</p>
+<div id="ipush_0"></div>
+<div id="ipop_0"></div>
+<p>The <code>push</code> and <code>pop</code> operators add and remove elements from the tail of the array, respectively:</p>
+<div class="programlisting">
+<pre>
+<code>    my @meals;
+
+    # what is there to eat?
+    push @meals, qw( hamburgers pizza lasagna turnip );
+
+    # ... but the nephew hates vegetables
+    pop @meals;</code>
+</pre></div>
+<p>You may <code>push</code> as many elements as you like onto an array. Its second argument is a list of values. You may only <code>pop</code> one argument at a time. <code>push</code> returns the updated number of elements in the array. <code>pop</code> returns the removed element.</p>
+<p>Similarly, <code>unshift</code> and <code>shift</code> add elements to and remove an element from the start of an array:</p>
+<div class="programlisting">
+<pre>
+<code>    # expand our culinary horizons
+    unshift @meals, qw( tofu curry spanakopita taquitos );
+
+    # rethink that whole soy idea
+    shift @meals;</code>
+</pre></div>
+<p><code>unshift</code> prepends a list of zero or more elements to the start of the array and returns the new number of elements in the array. <code>shift</code> removes and returns the first element of the array.</p>
+<div class="sidebar">
+<p>Few programs use the return values of <code>push</code> and <code>unshift</code>. Writing this chapter led to a patch to Perl 5 to optimize the use of <code>push</code> in void context.</p>
+</div>
+<div id="isplice_0"></div>
+<p><code>splice</code> is another important--if less frequently used--array operator. It removes and replaces elements from an array given an offset, a length of a list slice, and replacements. Both replacing and removing are optional; you may omit either behavior. The <code>perlfunc</code> description of <code>splice</code> demonstrates its equivalences with <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>. Note that the other operators are shorter and simpler to read and understand.</p>
+<p>Arrays often contain elements to process in a loop; see <a href="chapter_03.xhtml#looping_directives">Looping Directives</a>(looping_directives) for more detail about Perl 5 control flow and array processing.</p>
+<h4 id="heading_id_46">Arrays and Context</h4>
+<div id="ilist_context__iarrays_0"></div>
+<p>In list context, arrays flatten into lists. If you pass multiple arrays to a normal Perl 5 function, they will flatten into a single list:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cats = qw( Daisy Petunia Tuxedo Brad Jack );
+    my @dogs = qw( Rodney Lucky );
+
+    take_pets_to_vet( @cats, @dogs );
+
+    sub take_pets_to_vet
+    {
+        # do not use!
+        my (@cats, @dogs) = @_;
+        ...
+    }</code>
+</pre></div>
+<p>Within the function, <code>@_</code> will contain seven elements, not two.</p>
+<p>As well, list assignment to arrays is <i>greedy</i>. An array will consume as many elements from the list as possible. After the assignment, <code>@cats</code> will contain <i>every</i> argument passed to the function. <code>@dogs</code> will be empty.</p>
+<p>This flattening behavior sometimes confuses novices who attempt to create nested arrays in Perl 5:</p>
+<div class="programlisting">
+<pre>
+<code>    # creates a single array, not an array of arrays
+    my @array_of_arrays = ( 1 .. 10, ( 11 .. 20, ( 21 .. 30 ) ) );</code>
+</pre></div>
+<p>While some people may initially expect this code to produce an array where the first ten elements are the numbers one through ten and the eleventh element is an array containing the numbers eleven through 20 and an array containing the numbers twenty-one through thirty, this code instead produces an array containing the numbers one through 30, inclusive. Remember that parentheses do not <i>create</i> lists in these circumstances--they only group expressions.</p>
+<p>The solution to this flattening behavior is the same for passing arrays to functions and for creating nested arrays (<a href="chapter_03.xhtml#references">References</a>(references)).</p>
+<h4 id="heading_id_47">Array Interpolation</h4>
+<div id="iarray_interpolation_0"></div>
+<div id="iinterpolation__iarrays_0"></div>
+<div id="i3638quot59_0"></div>
+<div id="i36LIST_SEPARATOR_0"></div>
+<p>Arrays interpolate in double quoted strings as a list of the stringification of each item separated by the current value of the magic global <code>$"</code>. The default value of this variable is a single space. Its <i>English.pm</i> mnemonic is <code>$LIST_SEPARATOR</code>. Thus:</p>
+<div class="programlisting">
+<pre>
+<code>    my @alphabet = 'a' .. 'z';
+    say "[@alphabet]";
+    <b>[a b c d e f g h i j k l m n o p q r s t u v w x y z]</b></code>
+</pre></div>
+<p>Temporarily localizing and assigning another value to <code>$"</code> for debugging purposes is very handy <span class="footnote">(footnote: Due credit goes to Mark-Jason Dominus for demonstrating this example several years ago)</span>:</p>
+<div class="programlisting">
+<pre>
+<code>    # what's in this array again?
+    {
+        local $" = ')(';
+        say "(@sweet_treats)";
+    }</code>
+</pre></div>
+<p>... which produces the result:</p>
+<div class="screen">
+<pre>
+<code>    (pie)(cake)(doughnuts)(cookies)(raisin bread)</code>
+</pre></div>
+<h3 id="heading_id_48">Hashes</h3>
+<div id="hashes"></div>
+<div id="ihashes_0"></div>
+<div id="ihash_0"></div>
+<p>A <i>hash</i> is a first-class Perl data structure which associates string keys with scalar values. You might have encountered them as <i>tables</i>, <i>associative arrays</i>, <i>dictionaries</i>, or <i>maps</i> in other programming languages. In the same way that the name of a variable corresponds to a storage location, a key in a hash refers to a value.</p>
+<p>A well-respected, if hoary, analogy is to think of a hash like you would a telephone book: use your friend's name to look up her number.</p>
+<p>Hashes have two important properties. First, they store one scalar per unique key. Second, they do not provide any specific ordering of keys. A hash is a big container full of key/value pairs.</p>
+<h4 id="heading_id_49">Declaring Hashes</h4>
+<div id="ihashes__ideclaring_0"></div>
+<p>A hash has the <code>%</code> sigil. Declare a lexical hash with:</p>
+<div class="programlisting">
+<pre>
+<code>    my %favorite_flavors;</code>
+</pre></div>
+<p>A hash starts out empty, with no keys or values. In boolean context, a hash returns false if it contains no keys. Otherwise, it returns a string which evaluates to true.</p>
+<p>You can assign and access individual elements of a hash:</p>
+<div class="programlisting">
+<pre>
+<code>    my %favorite_flavors;
+    $favorite_flavors{Gabi}    = 'Mint chocolate chip';
+    $favorite_flavors{Annette} = 'French vanilla';</code>
+</pre></div>
+<p>Hashes use the scalar sigil <code>$</code> when accessing individual elements and curly braces <code>{ }</code> for string indexing.</p>
+<p>You may assign a list of keys and values to a hash in a single expression:</p>
+<div class="programlisting">
+<pre>
+<code>    my %favorite_flavors = (
+        'Gabi',    'Mint chocolate chip',
+        'Annette', 'French vanilla',
+    );</code>
+</pre></div>
+<div id="ifat_comma_0"></div>
+<p>If you assign an odd number of elements to the hash, you will receive a warning that the results are not what you anticipated. It's often more obvious to use the <i>fat comma</i> operator to associate values with keys, as it makes the required pairing more visible:</p>
+<div class="programlisting">
+<pre>
+<code>    my %favorite_flavors = (
+        Gabi    <b>=&gt;</b> 'Mint chocolate chip',
+        Annette <b>=&gt;</b> 'French vanilla',
+    );</code>
+</pre></div>
+<p>The fat comma operator acts like the regular comma, but it also causes the Perl parser to treat the previous bareword (<a href="chapter_11.xhtml#barewords">Barewords</a>(barewords)) as if it were a quoted word. The <code>strict</code> pragma will not warn about the bare word, and if you have a function with the same name as a hash key, the fat comma will <i>not</i> call the function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub name { 'Leonardo' }
+
+    my %address =
+    (
+        name =&gt; '1123 Fib Place',
+    );</code>
+</pre></div>
+<p>The key of the hash will be <code>name</code> and not <code>Leonardo</code>. If you intend to call the function to get the key, disambiguate your intent by making the call explicit:</p>
+<div class="programlisting">
+<pre>
+<code>    my %address =
+    (
+        <b>name()</b> =&gt; '1123 Fib Place',
+    );</code>
+</pre></div>
+<p>To empty a hash, assign to it an empty list <span class="footnote">(footnote: Unary <code>undef</code> also works, but it's somewhat more rare.)</span>:</p>
+<div class="programlisting">
+<pre>
+<code>    %favorite_flavors = ();</code>
+</pre></div>
+<h4 id="heading_id_50">Hash Indexing</h4>
+<div id="ihashes__iaccessing_values_0"></div>
+<div id="ihashes__ivalues_0"></div>
+<p>Because a hash is an aggregate, you can access individual values with an indexing operation. Use a key as an index (a <i>keyed access</i> operation) to retrieve a value from a hash:</p>
+<div class="programlisting">
+<pre>
+<code>    my $address = $addresses{$name};</code>
+</pre></div>
+<p>In this example, <code>$name</code> contains a string which is also a key of the hash. As with accessing an individual element of an array, the hash's sigil has changed from <code>%</code> to <code>$</code> to indicate keyed access to a scalar value.</p>
+<p>You may also use string literals as hash keys. Perl quotes barewords automatically according to the same rules as fat commas:</p>
+<div class="programlisting">
+<pre>
+<code>    # auto-quoted
+    my $address = $addresses{Victor};
+
+    # needs quoting; not a valid bareword
+    my $address = $addresses{<b>'</b>Sue-Linn<b>'</b>};
+
+    # function call needs disambiguation
+    my $address = $addresses{get_name<b>()</b>};</code>
+</pre></div>
+<p>You might find it clearer always to quote string literal hash keys, but the autoquoting behavior is so well established in Perl 5 culture that it's better to reserve the quotes for extraordinary circumstances, where they broadcast your intention to do something different.</p>
+<p>Even Perl 5 keywords get the autoquoting treatment:</p>
+<div class="programlisting">
+<pre>
+<code>    my %addresses =
+    (
+        Leonardo =&gt; '1123 Fib Place',
+        Utako    =&gt; 'Cantor Hotel, Room 1',
+    );
+
+    sub get_address_from_name
+    {
+        return $addresses{<b>+</b>shift};
+    }</code>
+</pre></div>
+<p>The unary plus (<a href="chapter_10.xhtml#unary_coercions">Unary Coercions</a>(unary_coercions); <a href="chapter_04.xhtml#numeric_operators">Numeric Operators</a>(numeric_operators)) turns what would be a bareword (<code>shift</code>) subject to autoquoting rules into an expression. As this implies, you can use an arbitrary expression--not only a function call--as the key of a hash:</p>
+<div class="programlisting">
+<pre>
+<code>    # don't actually <i>do</i> this though
+    my $address = $addresses{reverse 'odranoeL'};
+
+    # interpolation is fine
+    my $address = $addresses{"$first_name $last_name"};
+
+    # so are method calls
+    my $address = $addresses{ $user-&gt;name() };</code>
+</pre></div>
+<p>Anything that evaluates to a string is an acceptable hash key. Of course, hash keys can only be strings. If you use an object as a hash key, you'll get the stringified version of that object instead of the object itself:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $isbn (@isbns)
+    {
+        my $book = Book-&gt;fetch_by_isbn( $isbn );
+
+        # unlikely to do what you want
+        $books{$book} = $book-&gt;price;
+    }</code>
+</pre></div>
+<h4 id="heading_id_51">Hash Key Existence</h4>
+<div id="iexists_0"></div>
+<div id="ioperators__iexists_0"></div>
+<div id="ihashes__iexists_0"></div>
+<p>The <code>exists</code> operator returns a boolean value to indicate whether a hash contains the given key:</p>
+<div class="programlisting">
+<pre>
+<code>    my %addresses =
+    (
+        Leonardo =&gt; '1123 Fib Place',
+        Utako    =&gt; 'Cantor Hotel, Room 1',
+    );
+
+    say "Have Leonardo's address" if exists $addresses{Leonardo};
+    say "Have Warnie's address"   if exists $addresses{Warnie};</code>
+</pre></div>
+<p>Using <code>exists</code> instead of accessing the hash key directly avoids two problems. First, it does not check the boolean nature of the hash <i>value</i>; a hash key may exist with a value even if that value evaluates to a boolean false (including <code>undef</code>). Second, with nested data structures, it avoids autovivifying (<a href="chapter_03.xhtml#autovivification">Autovivification</a>(autovivification)) the value.</p>
+<div id="idefined_0"></div>
+<div id="ioperators__idefined_0"></div>
+<p>The corresponding operator for hash values is <code>defined</code>. If a hash key exists, its value may be <code>undef</code>. Check that with <code>defined</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    $addresses{Leibniz} = undef;
+
+    say "Gottfried lives at $addresses{Leibniz}"
+        if exists  $addresses{Leibniz}
+        &amp;&amp; defined $addresses{Leibniz};</code>
+</pre></div>
+<h4 id="heading_id_52">Accessing Hash Keys and Values</h4>
+<div id="ikeys_0"></div>
+<div id="ihashes__ikeys_0"></div>
+<div id="ioperators__ikeys_0"></div>
+<p>Hashes are aggregate variables, but they behave slightly differently from arrays. In particular, you can iterate over the keys of a hash, the values, of a hash, or pairs of keys and values. The <code>keys</code> operator returns a list of keys of the hash:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $addressee (keys %addresses)
+    {
+        say "Found an address for $addressee!";
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>You may assign a numeric value to <code>keys</code> to modify the expected size of the hash. This is a minor optimization you almost never need.</p>
+</div>
+<div id="ivalues_0"></div>
+<div id="ihashes__ivalues_1"></div>
+<div id="ioperators__ivalues_0"></div>
+<p>The <code>values</code> operator returns a list of values of the hash:</p>
+<div class="programlisting">
+<pre>
+<code>    for my $address (values %addresses)
+    {
+        say "Someone lives at $address";
+    }</code>
+</pre></div>
+<div id="ieach_0"></div>
+<div id="ihashes__ieach_0"></div>
+<div id="ioperators__ieach_0"></div>
+<p>The <code>each</code> operator returns a list of two-element lists of the key and the value:</p>
+<div class="programlisting">
+<pre>
+<code>    while (my ($addressee, $address) = each %addresses)
+    {
+        say "$addressee lives at $address";
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>The <code>while</code> loop is important to the <code>each</code> example, as you cannot declare multiple lexical loop iterator variables in a <code>for</code> loop.</p>
+</div>
+<p>Unlike arrays, there is no obvious ordering to the list of keys or values. The ordering depends on the internal implementation of the hash, which can depend both on the particular version of Perl you are using, the size of the hash, and a random factor. With that caveat in mind, the order of items in a hash is the same for <code>keys</code>, <code>values</code>, and <code>each</code>. Modifying the hash may change the order, but you can rely on that order if the hash remains the same.</p>
+<p>Each hash has only a <i>single</i> iterator for the <code>each</code> operator. You cannot reliably iterate over a hash with <code>each</code> more than once; if you begin a new iteration while another is in progress, the former will end prematurely and the latter will begin partway through the hash.</p>
+<p>Reset a hash's iterator with the use of <code>keys</code> or <code>values</code> in void context:</p>
+<div class="programlisting">
+<pre>
+<code>    # reset hash iterator
+    keys %addresses;
+
+    while (my ($addressee, $address) = each %addresses)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>You should also ensure that you do not call any function which may itself try to iterate over the hash with <code>each</code>.</p>
+<div class="sidebar">
+<p>The single hash iterator is a well-known caveat, but it doesn't come up as often as you might expect. Be cautious, but use <code>each</code> when you need it.</p>
+</div>
+<h4 id="heading_id_53">Hash Slices</h4>
+<div id="ihash_slices_0"></div>
+<div id="ihashes__islicing_0"></div>
+<div id="islices__ihash_0"></div>
+<p>As with arrays, you may access a list of elements of a hash in one operation. A <i>hash slice</i> is a list of keys or values of a hash. The simplest explanation is initialization of multiple elements of a hash used as an unordered set:</p>
+<div class="programlisting">
+<pre>
+<code>    my %cats;
+    @cats{qw( Jack Brad Mars Grumpy )} = (1) x 4;</code>
+</pre></div>
+<p>This is equivalent to the initialization:</p>
+<div class="programlisting">
+<pre>
+<code>    my %cats = map { $_ =&gt; 1 } qw( Jack Brad Mars Grumpy );</code>
+</pre></div>
+<p>... except that the hash slice initialization does not <i>replace</i> the existing contents of the hash.</p>
+<p>You may retrieve multiple values from a hash with a slice:</p>
+<div class="programlisting">
+<pre>
+<code>    my @buyer_addresses = @addresses{ @buyers };</code>
+</pre></div>
+<p>Note that, as with array slices, the sigil of the hash changes to indicate list context. You can still tell that <code>%addresses</code> is a hash by the use of the curly braces to indicate keyed access.</p>
+<p>Hash slices make it easy to merge two hashes:</p>
+<div class="programlisting">
+<pre>
+<code>    my %addresses        = ( ... );
+    my %canada_addresses = ( ... );
+
+    @addresses{ keys %canada_addresses } = values %canada_addresses;</code>
+</pre></div>
+<p>This is equivalent to looping over the contents of <code>%canada_addresses</code> manually, but is much shorter.</p>
+<div class="sidebar">
+<p>The choice between the two approaches depends on your merge strategy. What if the same key occurs in both hashes? The hash slice approach always overwrites existing key/value pairs in <code>%addresses</code>.</p>
+</div>
+<h4 id="heading_id_54">The Empty Hash</h4>
+<p>An empty hash contains no keys or values. It evaluates to false in a boolean context. A hash which contains at least one key/value pair evaluates to true in a boolean context even if all of the keys or all of the values or both would themselves evaluate to false in a boolean context.</p>
+<div class="programlisting">
+<pre>
+<code>    use Test::More 'no_plan';
+
+    my %empty;
+    nok( %empty, 'empty hash should evaluate to false' );
+
+    my %false_key = ( 0 =&gt; 'true value' );
+    ok( %false_key, 'hash containing false key should evaluate to true' );
+
+    my %false_value = ( 'true key' =&gt; 0 );
+    ok( %false_value, 'hash containing false value should evaluate to true' );
+
+    ...</code>
+</pre></div>
+<p>In scalar context, a hash evaluates to a string which represents the number of hash buckets used out of the number of hash buckets allocated. This is rarely useful, as it represents internal details about hashes that are almost always meaningless to Perl programs. You can safely ignore it.</p>
+<p>In list context, a hash evaluates to a list of key/value pairs similar to what you receive from the <code>each</code> operator. However, you <i>cannot</i> iterate over this list the same way you can iterate over the list produced by <code>each</code>, because there is no internal hash iteration provided when evaluating a hash in list context <span class="footnote">(footnote: The loop will loop forever, unless the hash is empty.)</span>.</p>
+<h4 id="heading_id_55">Hash Idioms</h4>
+<div id="ihashes__ifinding_uniques_0"></div>
+<p>Hashes have several uses, such as finding unique elements of lists or arrays. Because each key exists only once in a hash, assigning the same key to a hash multiple times stores only the most recent key:</p>
+<div class="programlisting">
+<pre>
+<code>    my %uniq;
+    undef @uniq{ @items };
+    my @uniques = keys %uniq;</code>
+</pre></div>
+<p>The use of the <code>undef</code> operator with the hash slice sets the values of the hash to <code>undef</code>. This is the cheapest way to determine if an item exists in a set.</p>
+<div id="ihashes__icounting_items_0"></div>
+<p>Hashes are also useful for counting elements, such as a list of IP addresses in a logfile:</p>
+<div class="programlisting">
+<pre>
+<code>    my %ip_addresses;
+
+    while (my $line = &lt;$logfile&gt;)
+    {
+        my ($ip, $resource) = analyze_line( $line );
+        $ip_addresses{$ip}++;
+        ...
+    }</code>
+</pre></div>
+<p>The initial value of a hash value is <code>undef</code>. The postincrement operator (<code>++</code>) treats that as zero. This in-place modification of the value increments an existing value for that key. If no value exists for that key, it creates a value (<code>undef</code>) and immediately increments it to one.</p>
+<div id="ihashes__icaching_0"></div>
+<div id="ihashes__iorcish_maneuver_0"></div>
+<div id="iorcish_maneuver_0"></div>
+<p>A variant of this strategy works very well for caching, where you might want to store the result of an expensive calculation with little overhead to store or fetch:</p>
+<div class="programlisting">
+<pre>
+<code>    {
+        my %user_cache;
+
+        sub fetch_user
+        {
+            my $id = shift;
+            $user_cache{$id} ||= create_user($id);
+            return $user_cache{$id};
+        }
+    }</code>
+</pre></div>
+<div id="idefined45or_0"></div>
+<div id="ioperators__i4747_0"></div>
+<div id="ioperators__idefined45or_0"></div>
+<p>This <i>orcish maneuver</i> <span class="footnote">(footnote: Or-cache, if you like puns.)</span> returns the value from the hash, if it exists. Otherwise, it calculates the value, caches it, and then returns it. Beware that the boolean-or assignment operator (<code>||=</code>) operates on boolean values; if your cached value evaluates to false in a boolean context, use the defined-or assignment operator (<code>//=</code>) instead:</p>
+<div class="programlisting">
+<pre>
+<code>        sub fetch_user
+        {
+            my $id = shift;
+            $user_cache{$id} <b>//=</b> create_user($id);
+            return $user_cache{$id};
+        }</code>
+</pre></div>
+<p>This lazy orcish maneuver tests for the definedness of the cached value, not its boolean truth. The defined-or assignment operator is new in Perl 5.10.</p>
+<div id="ihashes__inamed_parameters_0"></div>
+<p>Hashes can also collect named parameters passed to functions. If your function takes several arguments, you can use a slurpy hash (<a href="chapter_05.xhtml#parameter_slurping">Slurping</a>(parameter_slurping)) to gather key/value pairs into a single hash:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_sundae
+    {
+        my %parameters = @_;
+        ...
+    }
+
+    make_sundae( flavor =&gt; 'Lemon Burst', topping =&gt; 'cookie bits' );</code>
+</pre></div>
+<p>You can even set default parameters with this approach:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_sundae
+    {
+        my %parameters = @_;
+        <b>$parameters{flavor}    //= 'Vanilla';</b>
+        <b>$parameters{topping}   //= 'fudge';</b>
+        <b>$parameters{sprinkles} //= 100;</b>
+        ...
+    }</code>
+</pre></div>
+<p>... or include them in the initial declaration and assignment itself:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_sundae
+    {
+        my %parameters =
+        (
+            <b>flavor    =&gt; 'Vanilla',</b>
+            <b>topping   =&gt; 'fudge',</b>
+            <b>sprinkles =&gt; 100,</b>
+            @_,
+        );
+        ...
+    }</code>
+</pre></div>
+<p>... as subsequent declarations of the same key with a different value will overwrite the previous values.</p>
+<h4 id="heading_id_56">Locking Hashes</h4>
+<div id="locked_hashes"></div>
+<div id="ilocked_hashes_0"></div>
+<div id="ihashes__ilocked_0"></div>
+<div id="ihashes__ilocking_0"></div>
+<p>One drawback of hashes is that their keys are barewords which offer little typo protection (especially compared to the function and variable name protection offered by the <code>strict</code> pragma). The core module <code>Hash::Util</code> provides mechanisms to restrict the modification of a hash or the keys allowed in the hash.</p>
+<p>To prevent someone from accidentally adding a hash key you did not intend (presumably with a typo or with data from untrusted input), use the <code>lock_keys()</code> function to restrict the hash to its current set of keys. Any attempt to add a key/value pair to the hash where the key is not in the allowed set of keys will raise an exception.</p>
+<p>Of course, anyone who needs to do so can always use the <code>unlock_keys()</code> function to remove the protection, so do not rely on this as a security measure against misuse from other programmers.</p>
+<p>Similarly you can lock or unlock the existing value for a given key in the hash (<code>lock_value()</code> and <code>unlock_value()</code>) and make or unmake the entire hash read-only with <code>lock_hash()</code> and <code>unlock_hash()</code>.</p>
+<h3 id="heading_id_57">Coercion</h3>
+<div id="coercion"></div>
+<div id="icoercion_0"></div>
+<p>Unlike other languages, where a variable can hold only a particular type of value (a string, a floating-point number, an object), Perl relies on the context of operators to determine how to interpret values (<a href="chapter_01.xhtml#value_contexts">Numeric, String, and Boolean Context</a>(value_contexts)). If you treat a number as a string, Perl will do its best to convert that number into a string (and vice versa). This process is <i>coercion</i>.</p>
+<div id="iDWIM_1"></div>
+<p>By design, Perl attempts to do what you mean (<i>DWIM</i> stands for <i>do what I mean</i>), though you must be specific about your intentions.</p>
+<h4 id="heading_id_58">Boolean Coercion</h4>
+<div id="boolean_coercion"></div>
+<div id="icoercion__iboolean_0"></div>
+<div id="itruthiness_0"></div>
+<p>Boolean coercion occurs when you test the <i>truthiness</i> of a value <span class="footnote">(footnote: Truthiness is like truthfulness if you squint and say "Yeah, that's true, but....")</span>, such as in a <code>if</code> or <code>while</code> condition. Numeric 0 is false. The undefined value is false. The empty string is false, and so is the string <code>'0'</code>. The strings <code>'0.0'</code> and <code>'0e'</code> are <i>true</i>, however.</p>
+<p>All other values are true, including the idiomatic string <code>'0 but true'</code>. In the case of a scalar with both string and numeric portions (<a href="chapter_03.xhtml#dualvars">Dualvars</a>(dualvars)), Perl 5 prefers to check the string component for boolean truth. <code>'0 but true'</code> does evaluate to zero numerically, but is not the empty string, so it evaluates to true in boolean context.</p>
+<h4 id="heading_id_59">String Coercion</h4>
+<div id="icoercion__istring_0"></div>
+<div id="istringify_0"></div>
+<p>String coercion occurs when using string operators such as comparisons (<code>eq</code> and <code>cmp</code>, for example), concatenation, <code>split</code>, <code>substr</code>, and regular expressions. It also occurs when using a value as a hash key. The undefined value stringifies to an empty string, but it produces a "use of uninitialized value" warning. Numbers <i>stringify</i> to strings containing their values. That is, the value <code>10</code> stringifies to the string <code>10</code>, such that you can <code>split</code> a number into individual digits:</p>
+<div class="programlisting">
+<pre>
+<code>    my @digits = split '', 1234567890;</code>
+</pre></div>
+<h4 id="heading_id_60">Numeric Coercion</h4>
+<div id="numeric_coercion"></div>
+<div id="icoercion__inumeric_0"></div>
+<div id="inumify_0"></div>
+<p>Numeric coercion occurs when using numeric comparison operators (such as <code>==</code> and <code>&lt;=&gt;</code>), when performing mathematic operations, and when using a value as an array or list index. The undefined value <i>numifies</i> to zero, though it produces a "Use of uninitialized value" warning. Strings which do not begin with numeric portions also numify to zero, and they produce an "Argument isn't numeric" warning. Strings which begin with characters allowed in numeric literals numify to those values; that is, <code>10 leptons leaping</code> numifies to <code>10</code> the same way that <code>6.022e23 moles marauding</code> numifies to <code>6.022e23</code>.</p>
+<div id="iScalar5858Util_2"></div>
+<div id="iScalar5858Util__ilooks_like_number_1"></div>
+<p>The core module <code>Scalar::Util</code> contains a <code>looks_like_number()</code> function which uses the same parsing rules as the Perl 5 grammar to extract a number from a string.</p>
+<p>Note that the strings <code>Inf</code> and <code>Infinity</code> represent the infinite value and behave as numbers, in the sense that numifying them does not produce the "Argument isn't numeric" warning.</p>
+<h4 id="heading_id_61">Reference Coercion</h4>
+<div id="icoercion__ireference_0"></div>
+<div id="iautovivification_0"></div>
+<p>In certain circumstances, treating a value as a reference turns that value <i>into</i> a reference. This process of autovivification (<a href="chapter_03.xhtml#autovivification">Autovivification</a>(autovivification)) can be useful for nested data structures. It occurs when you use a dereferencing operation on a non-reference:</p>
+<div class="programlisting">
+<pre>
+<code>    my %users;
+
+    $users{Bradley}{id} = 228;
+    $users{Jack}{id}    = 229;</code>
+</pre></div>
+<p>Although the hash never contained values for <code>Bradley</code> and <code>Jack</code>, Perl 5 helpfully created hash references for those values, then assigned them each a key/value pair keyed on <code>id</code>.</p>
+<h4 id="heading_id_62">Cached Coercions</h4>
+<div id="cached_coercions"></div>
+<div id="icoercion__icached_0"></div>
+<p>Perl 5's internal storage mechanism for values allows each value to have a stringification and a numification <span class="footnote">(footnote: This is a simplification, but the gory details are truly gory.)</span>. Stringifying a numeric value does not replace the numeric value with a string. Instead, it <i>attaches</i> a stringified value to the value in addition to the numeric value. The same sort of operation happens when numifying a string value.</p>
+<p>You almost never need to know that this happens--perhaps once or twice a decade, if anecdotal evidence is admissible.</p>
+<p>Perl 5 may prefer one form over another. If a value has a cached representation in a form you do not expect, relying on an implicit conversion may produce surprising results. You almost never need to be explicit about what you expect, but know that caching does occur and you may be able to diagnose an odd situation when it occurs.</p>
+<h4 id="heading_id_63">Dualvars</h4>
+<div id="dualvars"></div>
+<div id="icoercion__idualvars_0"></div>
+<div id="idualvar4041_0"></div>
+<div id="iScalar5858Util_3"></div>
+<div id="idualvar_0"></div>
+<p>The caching of string and numeric values allows for the use of a rare-but-useful feature known as a <i>dualvar</i>, or a value that has divergent numeric and string values. The core module <code>Scalar::Util</code> provides a function <code>dualvar()</code> which allows you to create a value which has specified and divergent numeric and string values:</p>
+<div class="programlisting">
+<pre>
+<code>    use Scalar::Util 'dualvar';
+    my $false_name = dualvar 0, 'Sparkles &amp; Blue';
+
+    say 'Boolean false!' if        !! $false_name;
+    say 'Numeric false!' unless  0  + $false_name;
+    say 'String true!'   if     ''  . $false_name;</code>
+</pre></div>
+<h4 id="heading_id_64">Packages</h4>
+<div id="packages"></div>
+<div id="ipackage_0"></div>
+<div id="inamespace_0"></div>
+<p>A <i>namespace</i> in Perl is a mechanism which associates and encapsulates various named entities within a named category. It's like your family name or a brand name, except that it implies no relationship between entities other than categorization with that name. (Such a relationship often exists, but it does not have to exist.)</p>
+<p>A <i>package</i> in Perl 5 is a collection of code in a single namespace. In a sense, a package and a namespace are equivalent; the package represents the source code and the namespace represents the entity created when Perl parses that code <span class="footnote">(footnote: This distinction may be subtle.)</span>.</p>
+<div id="ikeywords__ipackage_0"></div>
+<p>The <code>package</code> keyword declares a package and a namespace:</p>
+<div class="programlisting">
+<pre>
+<code>    package MyCode;
+
+    our @boxes;
+
+    sub add_box { ... }</code>
+</pre></div>
+<div id="inamespaces__ifully_qualified_0"></div>
+<p>All global variables and functions declared or referred to after the package declaration refer to symbols within the <code>MyCode</code> namespace. With this code as written, you can refer to the <code>@boxes</code> variable from the <code>main</code> namespace only by its <i>fully qualified</i> name, <code>@MyCode::boxes</code>. Similarly, you can call the <code>add_box()</code> function only by <code>MyCode::add_box()</code>. A fully qualified name includes its complete package name.</p>
+<p>The default package is the <code>main</code> package. If you do not declare a package explicitly, whether in a one-liner on a command-line or in a standalone Perl program or even in a <i>.pm</i> file on disk, the current package will be the <code>main</code> package.</p>
+<div id="ipackages__iversion_0"></div>
+<div id="i36VERSION_0"></div>
+<p>Besides a package name (<code>main</code> or <code>MyCode</code> or any other allowable identifier), a package has a version and three implicit methods, <code>VERSION()</code>, <code>import()</code>, and <code>unimport()</code>.</p>
+<p>The package's version is a series of numbers contained in a package global named <code>$VERSION</code>. By convention, versions tend to be a series of integers separated by dots, as in <code>1.23</code> or <code>1.1.10</code>, where each segment is an integer, but there's little beyond convention.</p>
+<p>Perl 5.12 introduced a new syntax intended to simplify version numbers. If you can write code that does not need to run on earlier versions of Perl 5, you can avoid a lot of unnecessary complexity:</p>
+<div class="programlisting">
+<pre>
+<code>    package MyCode 1.2.1;</code>
+</pre></div>
+<p>In 5.10 and earlier, the simplest way to declare the version of a package is:</p>
+<div class="programlisting">
+<pre>
+<code>    package MyCode;
+
+    our $VERSION = 1.21;</code>
+</pre></div>
+<div id="iUNIVERSAL_0"></div>
+<div id="iVERSION4041_0"></div>
+<p>The <code>VERSION()</code> method is available to every package; they inherit it from the <code>UNIVERSAL</code> base class. It returns the value of <code>$VERSION</code>. You may override it if you wish, though there are few reasons to do so. Obtaining the version number of a package is easiest through the use of the <code>VERSION()</code> method:</p>
+<div class="programlisting">
+<pre>
+<code>    my $version = Some::Plugin-&gt;VERSION();
+
+    die "Your plugin $version is too old"
+        unless $version &gt; 2;</code>
+</pre></div>
+<h5 id="heading_id_65">Packages and Namespaces</h5>
+<div id="inamespaces_0"></div>
+<p>Every <code>package</code> declaration causes Perl to perform two tasks. It creates a new namespace if that namespace does not already exist. It also tells the parser to put all subsequent package global symbols (global variables and functions) into that namespace.</p>
+<div id="inamespaces__iopen_0"></div>
+<div id="iopen_namespaces_0"></div>
+<p>Perl has <i>open namespaces</i>. You can add functions or variables to a namespace at any point, either with a new package declaration:</p>
+<div class="programlisting">
+<pre>
+<code>    package Pack;
+
+    sub first_sub { ... }
+
+    package main;
+
+    Pack::first_sub();
+
+    package Pack;
+
+    sub second_sub { ... }
+
+    package main;
+
+    Pack::second_sub();</code>
+</pre></div>
+<p>... or by fully qualifying function names at the point of declaration:</p>
+<div class="programlisting">
+<pre>
+<code>    # implicit
+    package main;
+
+    sub Pack::third_sub { ... }</code>
+</pre></div>
+<p>Perl 5 packages are so open that you can add to them at any time during compilation or run time, or from separate files. Of course, that can be confusing, so avoid it when possible.</p>
+<div id="imulti45level_namespaces_0"></div>
+<div id="inamespaces__imulti45level_0"></div>
+<p>Namespaces can have as many levels as you like for organizational purposes. These are not hierarchical; there's no technical relationship between packages--only a semantic relationship to <i>readers</i> of the code.</p>
+<p>It's common to create a top-level namespace for a business or a project. This makes a convenient organizational tool not only for reading code and discovering the relationships between components but also to organizing code and packages on disk. Thus:</p>
+<ul>
+<li><code>StrangeMonkey</code> is the project name</li>
+<li><code>StrangeMonkey::UI</code> contains the top-level user interface code</li>
+<li><code>StrangeMonkey::Persistence</code> contains the top-level data management code</li>
+<li><code>StrangeMonkey::Test</code> contains the top-level testing code for the project</li>
+</ul>
+<p>... and so on.</p>
+<h4 id="heading_id_66">References</h4>
+<div id="references"></div>
+<p>Perl usually does what you expect, even if what you expect is subtle. Consider what happens when you pass values to functions:</p>
+<div class="programlisting">
+<pre>
+<code>    sub reverse_greeting
+    {
+        my $name = reverse shift;
+        return "Hello, $name!";
+    }
+
+    my $name = 'Chuck';
+    say reverse_greeting( $name );
+    say $name;</code>
+</pre></div>
+<p>You probably expect that, outside of the function, <code>$name</code> contains <code>Chuck</code>, even though the value passed into the function gets reversed into <code>kcuhC</code>--and that's what happens. The <code>$name</code> outside the function is a separate scalar from the <code>$name</code> inside the function, and each one has a distinct copy of the string. Modifying one has no effect on the other.</p>
+<p>This is useful and desirable default behavior. If you had to make explicit copies of every value before you did anything to them which could possibly cause changes, you'd write lots of extra, unnecessary code to defend against well-meaning but incorrect modifications.</p>
+<p>Other times it's useful to modify a value in place sometimes as well. If you have a hash full of data that you want to pass to a function to update or to delete a key/value pair, creating and returning a new hash for each change could be troublesome (to say nothing of inefficient).</p>
+<div id="ireference_0"></div>
+<div id="ireferences_0"></div>
+<p>Perl 5 provides a mechanism by which you can refer to a value without making a copy of that value. Any changes made to that <i>reference</i> will update the value in place, such that <i>all</i> references to that value will see the new value. A reference is a first-class, built-in scalar data type in Perl 5. It's not a string, an array, or a hash. It's a scalar which refers to another first-class data type.</p>
+<h5 id="heading_id_67">Scalar References</h5>
+<div id="ireferences__ioperator_0"></div>
+<div id="ioperators__ireference_0"></div>
+<div id="ioperators__i__0"></div>
+<div id="ireference_operator_0"></div>
+<div id="ireferences__iscalar_0"></div>
+<div id="iscalar_references_0"></div>
+<p>The reference operator is the backslash (<code>\</code>). In scalar context, it creates a single reference which refers to another value. In list context, it creates a list of references. Thus you can take a reference to <code>$name</code> from the previous example:</p>
+<div class="programlisting">
+<pre>
+<code>    my $name     = 'Larry';
+    my $name_ref = <b>\</b>$name;</code>
+</pre></div>
+<div id="idereference_0"></div>
+<div id="idereferencing_0"></div>
+<div id="ireferences__idereferencing_0"></div>
+<p>To access the value to which a reference refers, you must <i>dereference</i> it. Dereferencing requires you to add an extra sigil for each level of dereferencing:</p>
+<div class="programlisting">
+<pre>
+<code>    sub reverse_in_place
+    {
+        my $name_ref = shift;
+        reverse <b>$$name</b>;
+    }
+
+    my $name = 'Blabby';
+    reverse_in_place( <b>\</b>$name );
+    say $name;</code>
+</pre></div>
+<p>The double scalar sigil dereferences a scalar reference.</p>
+<div class="sidebar">
+<p>This example isn't useful in the obvious case; why not have the function return the modified value directly? Even so, scalar references are useful when processing <i>large</i> scalars; copying the contents of those scalars can use a lot of time and memory.</p>
+</div>
+<p>Complex references may require a curly-brace block to disambiguate portions of the expression. This is optional for simple dereferences, though it can be messy:</p>
+<div class="programlisting">
+<pre>
+<code>    sub reverse_in_place
+    {
+        my $name_ref = shift;
+        reverse <b>${ $name }</b>;
+    }</code>
+</pre></div>
+<p>If you forget to dereference a scalar reference, it will stringify or numify. The string value will be of the form <code>SCALAR(0x93339e8)</code>, and the numeric value will be the <code>0x93339e8</code> portion. This value encodes the type of reference (in this case, <code>SCALAR</code>) and the location in memory of the reference.</p>
+<div class="sidebar">
+<p>Perl does not offer native access to memory locations. The address of the reference is a value used as a mostly-unique identifier, as a reference does not necessarily have a name. Unlike pointers in a language such as C, you cannot modify the address or treat it as an address into memory.</p>
+<p>These addresses are only mostly unique because Perl may reuse storage locations if its garbage collector has reclaimed an unreferenced reference.</p>
+</div>
+<h5 id="heading_id_68">Array References</h5>
+<div id="iarray_references_0"></div>
+<div id="ireferences__iarrays_0"></div>
+<p>You can also create references to arrays, or <i>array references</i>. This is useful for several reasons:</p>
+<ul>
+<li>To pass and return arrays from functions without flattening</li>
+<li>To create multi-dimensional data structures</li>
+<li>To avoid unnecessary array copying</li>
+<li>To hold anonymous data structures</li>
+</ul>
+<div id="iarray_references__icreating_0"></div>
+<p>To take a reference to a declared array, use the reference operator:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cards     = qw( K Q J 10 9 8 7 6 5 4 3 2 A );
+    my $cards_ref = <b>\</b>@cards;</code>
+</pre></div>
+<p>Now <code>$cards_ref</code> contains a reference to the array. Any modifications made through <code>$cards_ref</code> will modify <code>@cards</code> as well, and vice versa.</p>
+<div id="iarray_references__idereferencing_0"></div>
+<p>You may access the entire array as a whole with the <code>@</code> sigil, whether to flatten the array into a list or count the number of elements it contains:</p>
+<div class="programlisting">
+<pre>
+<code>    my $card_count = <b>@$cards_ref</b>;
+    my @card_copy  = <b>@$cards_ref</b>;</code>
+</pre></div>
+<div id="ireferences__idereferencing_arrow_0"></div>
+<div id="i4538gt59_0"></div>
+<div id="ioperators__i4538gt59_0"></div>
+<div id="ioperators__idereferencing_arrow_0"></div>
+<p>You may also access individual elements by using the dereferencing arrow:</p>
+<div class="programlisting">
+<pre>
+<code>    my $first_card = <b>$cards_ref-&gt;[0]</b>;
+    my $last_card  = <b>$cards_ref-&gt;[-1]</b>;</code>
+</pre></div>
+<p>The arrow is necessary to distinguish between a scalar named <code>$cards_ref</code> and an array named <code>@cards_ref</code> from which you wish to access a single element.</p>
+<div class="sidebar">
+<p>An alternate syntax is available, where you prepend another scalar sigil to the array reference. It's shorter, but somewhat less readable, to write <code>my $first_card = <b>$$cards_ref[0]</b>;</code>.</p>
+</div>
+<p>You can slice an array through its reference with the curly-brace dereference grouping syntax:</p>
+<div class="programlisting">
+<pre>
+<code>    my @high_cards = <b>@{ $cards_ref }</b>[0 .. 2, -1];</code>
+</pre></div>
+<p>In this case, you <i>may</i> omit the curly braces, but the visual grouping they (and the whitespace) provide only helps readability in this case.</p>
+<div id="ireferences__ianonymous_arrays_0"></div>
+<div id="ianonymous_arrays_0"></div>
+<div id="iarrays__ianonymous_0"></div>
+<p>You may also create anonymous arrays in place without using named arrays. Surround a list of values or expressions with square brackets:</p>
+<div class="programlisting">
+<pre>
+<code>    my $suits_ref = [qw( Monkeys Robots Dinosaurs Cheese )];</code>
+</pre></div>
+<p>This array reference behaves the same as named array references, except that anonymous array references <i>always</i> create a new reference, while taking a reference to a named array always refers to the <i>same</i> array with regard to scoping. That is to say:</p>
+<div class="programlisting">
+<pre>
+<code>    my @meals      = qw( waffles sandwiches pizza );
+    my $sunday_ref = \@meals;
+    my $monday_ref = \@meals;
+
+    push @meals, 'ice cream sundae';</code>
+</pre></div>
+<p>... both <code>$sunday_ref</code> and <code>$monday_ref</code> now contain a dessert, while:</p>
+<div class="programlisting">
+<pre>
+<code>    my @meals      = qw( waffles sandwiches pizza );
+    my $sunday_ref = [ @meals ];
+    my $monday_ref = [ @meals ];
+
+    push @meals, 'berry pie';</code>
+</pre></div>
+<p>... neither <code>$sunday_ref</code> nor <code>$monday_ref</code> contains a dessert. Within the square braces used to create the anonymous array reference, the <code>@meals</code> array flattens in list context.</p>
+<h5 id="heading_id_69">Hash References</h5>
+<div id="ihash_references_0"></div>
+<div id="ireferences__ihashes_0"></div>
+<p>To create a <i>hash reference</i>, use the reference operator on a named hash:</p>
+<div class="programlisting">
+<pre>
+<code>    my %colors = (
+        black  =&gt; 'negro',
+        blue   =&gt; 'azul',
+        gold   =&gt; 'dorado',
+        red    =&gt; 'rojo',
+        yellow =&gt; 'amarillo',
+        purple =&gt; 'morado',
+    );
+
+    my $colors_ref = <b>\%</b>colors;</code>
+</pre></div>
+<p>Access the keys or values of the hash by prepending the reference with the hash sigil <code>%</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my @english_colors = keys   <b>%$colors_ref</b>;
+    my @spanish_colors = values <b>%$colors_ref</b>;</code>
+</pre></div>
+<p>You may access individual values of the hash (to store, delete, check the existence of, or retrieve) by using the dereferencing arrow:</p>
+<div class="programlisting">
+<pre>
+<code>    sub translate_to_spanish
+    {
+        my $color = shift;
+        return <b>$colors_ref-&gt;{$color}</b>;
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>As with array references, you may eschew the dereferencing arrow for a prepended scalar sigil: <code>$$colors_ref{$color}</code>, though the arrow is often much clearer.</p>
+</div>
+<p>You may also use hash slices by reference:</p>
+<div class="programlisting">
+<pre>
+<code>    my @colors = qw( red blue green );
+    my @colores = <b>@{ $colors_ref }{@colors}</b>;</code>
+</pre></div>
+<p>Note the use of curly brackets to denote a hash indexing operation and the use of the array sigil to denote a list operation on the reference.</p>
+<p>You may create anonymous hashes in place with curly braces:</p>
+<div class="programlisting">
+<pre>
+<code>    my $food_ref = <b>{</b>
+        'birthday cake' =&gt; 'la torta de cumpleaños',
+        candy           =&gt; 'dulces',
+        cupcake         =&gt; 'pancuecitos',
+        'ice cream'     =&gt; 'helado',
+    <b>}</b>;</code>
+</pre></div>
+<p>As with anonymous arrays, anonymous hashes create a new anonymous hash on every execution.</p>
+<div class="sidebar">
+<p>A common novice typo is to assign an anonymous hash to a standard hash. This produces a warning about an odd number of elements in the hash. Use parentheses for a named hash and curly brackets for an anonymous hash.</p>
+</div>
+<h5 id="heading_id_70">Function References</h5>
+<div id="function_references"></div>
+<div id="ifunction_references_0"></div>
+<div id="ireferences__ifunctions_0"></div>
+<div id="isubroutine_references_0"></div>
+<div id="ireferences__isubroutines_0"></div>
+<div id="ifunctions__ifirst45class_0"></div>
+<div id="ifirst45class_functions_0"></div>
+<p>Perl 5 supports <i>first-class functions</i>. A function is a data type just as is an array or hash, at least when you use <i>function references</i>. This feature enables many advanced features (<a href="chapter_05.xhtml#closures">Closures</a>(closures)). As with other data types, you may create a function reference by using the reference operator on the name of a function:</p>
+<div class="programlisting">
+<pre>
+<code>    sub bake_cake { say 'Baking a wonderful cake!' };
+
+    my $cake_ref = <b>\&amp;</b>bake_cake;</code>
+</pre></div>
+<div id="ifunction_sigil_0"></div>
+<div id="isigils__i38amp59_0"></div>
+<p>Note that you must use the <i>function sigil</i> (<code>&amp;</code>) with the name of the function. If you leave this off, you will take a reference to whatever the function itself returns.</p>
+<p>You may also create anonymous functions:</p>
+<div class="programlisting">
+<pre>
+<code>    my $pie_ref = <b>sub { say 'Making a delicious pie!' }</b>;</code>
+</pre></div>
+<p>The use of the <code>sub</code> keyword <i>without</i> a name compiles the function as normal, but does not install it in the current namespace. The only way to access this function is through the reference.</p>
+<p>You may invoke the function reference with the dereferencing arrow:</p>
+<div class="programlisting">
+<pre>
+<code>    $cake_ref-&gt;();
+    $pie_ref-&gt;();</code>
+</pre></div>
+<p>Think of the empty parentheses as performing an invocation dereferencing operation in the same way that square brackets perform an indexed lookup and curly brackets perform a hash lookup. You may pass arguments to the function within the parentheses:</p>
+<div class="programlisting">
+<pre>
+<code>    $bake_something_ref-&gt;( 'cupcakes' );</code>
+</pre></div>
+<p>You may also use function references as methods with objects (<a href="chapter_07.xhtml#moose">Moose</a>(moose)); this is most useful when you've already performed a method lookup:</p>
+<div class="programlisting">
+<pre>
+<code>    my $clean = $robot_maid-&gt;can( 'cleanup' );
+    $robot_maid-&gt;$clean( $kitchen );</code>
+</pre></div>
+<div class="sidebar">
+<p>You may see an alternate invocation syntax for function references which uses the function sigil (<code>&amp;</code>) instead of the dereferencing arrow. Avoid this syntax; it has implications for implicit argument passing.</p>
+</div>
+<h5 id="heading_id_71">Filehandle References</h5>
+<div id="lexical_filehandles"></div>
+<div id="ifilehandle_references_0"></div>
+<div id="ireferences__ifilehandles_0"></div>
+<p>Filehandles can be references as well. When you use <code>open</code>'s (and <code>opendir</code>'s) lexical filehandle form, you deal with filehandle references. Stringifying this filehandle produces something of the form <code>GLOB(0x8bda880)</code>.</p>
+<p>Internally, these filehandles are objects of the class <code>IO::Handle</code>. When you load that module, you can call methods on filehandles:</p>
+<div class="programlisting">
+<pre>
+<code>    use IO::Handle;
+    use autodie;
+
+    open my $out_fh, '&gt;', 'output_file.txt';
+    $out_fh-&gt;say( 'Have some text!' );</code>
+</pre></div>
+<p>You may see old code which takes references to typeglobs, such as:</p>
+<div class="programlisting">
+<pre>
+<code>    my $fh = do {
+        local *FH;
+        open FH, "&gt; $file" or die "Can't write to '$file': $!\n";
+        <b>\*FH</b>;
+    };</code>
+</pre></div>
+<p>This idiom predates lexical filehandles, introduced as part of Perl 5.6.0 in March 2000 <span class="footnote">(footnote: ... so you know how old that code is.)</span>. You may still use the reference operator on typeglobs to take references to package-global filehandles such as <code>STDIN</code>, <code>STDOUT</code>, <code>STDERR</code>, or <code>DATA</code>--but these represent global data anyhow. For all other filehandles, prefer lexical filehandles.</p>
+<p>Besides the benefit of using lexical scope instead of package or global scope, lexical filehandles allow you to manage the lifespan of filehandles. This is a nice feature of how Perl 5 manages memory and scopes.</p>
+<h5 id="heading_id_72">Reference Counts</h5>
+<div id="reference_counts"></div>
+<div id="ilexicals__ilifecycle_0"></div>
+<p>How does Perl know when it can safely release the memory for a variable and when it needs to keep it around? How does Perl know when it's safe to close the file opened in this inner scope:</p>
+<div class="programlisting">
+<pre>
+<code>    use autodie;
+    use IO::Handle;
+
+    sub show_off_scope
+    {
+        say 'file not open';
+
+        {
+            open my $fh, '&gt;', 'inner_scope.txt';
+            $fh-&gt;say( 'file open here' );
+        }
+
+        say 'file closed here';
+    }</code>
+</pre></div>
+<div id="ireference_counting_0"></div>
+<div id="ireferences__icounts_0"></div>
+<p>Perl 5 uses a memory management technique known as <i>reference counting</i>. Every value in the program has an attached counter. Perl increases this counter every time something takes a reference to the value, whether implicitly or explicitly. Perl decreases that counter every time a reference goes away. When the counter reaches zero, Perl can safely recycle that value.</p>
+<p>Within the inner block in the example, there's one <code>$fh</code>. (Multiple lines in the source code refer to it, but there's only one <i>reference</i> to it; <code>$fh</code> itself.) <code>$fh</code> is only in scope in the block and does not get assigned to anything outside of the block, so when the block ends, its reference count reaches zero. The recycling of <code>$fh</code> calls an implicit <code>close()</code> method on the filehandle, and so the file gets closed.</p>
+<p>You don't have to understand the details of how all of this works. You only need to understand that your actions in taking references and passing them around affect how Perl manages memory. (Though see <a href="chapter_03.xhtml#circular_references">Circular References</a>(circular_references) for one caveat.)</p>
+<h3 id="heading_id_73">Nested Data Structures</h3>
+<div id="nested_data_structures"></div>
+<div id="idata_structures_0"></div>
+<div id="inested_data_structures_0"></div>
+<p>Perl's aggregate data types--arrays and hashes--allow you to store scalars indexed by integers or string keys. Perl 5's references (<a href="chapter_03.xhtml#references">References</a>(references)) allow you to access aggregate data types indirectly, through special scalars. Nested data structures in Perl, such as an array of arrays or a hash of hashes, are possible through the use of references.</p>
+<h4 id="heading_id_74">Declaring Nested Data Structures</h4>
+<p>A simple declaration of an array of arrays might be:</p>
+<div class="programlisting">
+<pre>
+<code>    my @famous_triplets = (
+        [qw( eenie miney moe )],
+        [qw( huey dewey louie )],
+        [qw( duck duck goose )],
+    );</code>
+</pre></div>
+<p>... and a simple declaration of a hash of hashes might be:</p>
+<div class="programlisting">
+<pre>
+<code>    my %meals = (
+        breakfast =&gt; { entree =&gt; 'eggs',   side =&gt; 'hash browns' },
+        lunch     =&gt; { entree =&gt; 'panini', side =&gt; 'apple' },
+        dinner    =&gt; { entree =&gt; 'steak',  side =&gt; 'avocado salad' },
+    );</code>
+</pre></div>
+<div class="sidebar">
+<p>Perl allows but does not require the trailing comma so to ease adding new elements to the list.</p>
+</div>
+<h4 id="heading_id_75">Accessing Nested Data Structures</h4>
+<p>Accessing elements in nested data structures uses Perl's reference syntax. The sigil denotes the amount of data to retrieve, and the dereferencing arrow indicates that the value of one portion of the data structure is a reference:</p>
+<div class="programlisting">
+<pre>
+<code>    my $last_nephew = $famous_triplets[1]-&gt;[2];
+    my $breaky_side = $meals{breakfast}-&gt;{side};</code>
+</pre></div>
+<p>In the case of a nested data structure, the only way to nest a data structure is through references, thus the arrow is superfluous. This code is equivalent and clearer:</p>
+<div class="programlisting">
+<pre>
+<code>    my $last_nephew = $famous_triplets[1][2];
+    my $breaky_side = $meals{breakfast}{side};</code>
+</pre></div>
+<div class="sidebar">
+<p>You can avoid the arrow in every case except invoking a function reference stored in a nested data structure, where the arrow invocation syntax is the clearest mechanism of invocation.</p>
+</div>
+<p>Accessing components of nested data structures as if they were first-class arrays or hashes requires disambiguation blocks:</p>
+<div class="programlisting">
+<pre>
+<code>    my $nephew_count   = @{ $famous_triplets[1] };
+    my $dinner_courses = keys %{ $meals{dinner} };</code>
+</pre></div>
+<p>Similarly, slicing a nested data structure requires additional punctuation:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($entree, $side) = @{ $meals{breakfast} }{qw( entree side )};</code>
+</pre></div>
+<p>The use of whitespace helps, but it does not entirely eliminate the noise of this construct. Sometimes using temporary variables can clarify:</p>
+<div class="programlisting">
+<pre>
+<code>    my $breakfast_ref   = $meals{breakfast};
+    my ($entree, $side) = @$breakfast_ref{qw( entree side )};</code>
+</pre></div>
+<p><code>perldoc perldsc</code>, the data structures cookbook, gives copious examples of various types of data structures available in Perl with their syntax.</p>
+<h4 id="heading_id_76">Autovivification</h4>
+<div id="autovivification"></div>
+<div id="iautovivification_1"></div>
+<p>Perl's expressivity extends to nested data structures. When you attempt to write to a component of a nested data structure, Perl will create the path through the data structure to that piece if it does not exist:</p>
+<div class="programlisting">
+<pre>
+<code>    my @aoaoaoa;
+
+    $aoaoaoa[0][0][0][0] = 'nested deeply';</code>
+</pre></div>
+<p>After the second line of code, this array of arrays of arrays of arrays contains an array reference in an array reference in an array reference in an array reference. Each array reference contains one element. Similarly, treating an undefined value as if it were a hash reference in a nested data structure will create intermediary hashes, keyed appropriately:</p>
+<div class="programlisting">
+<pre>
+<code>    my %hohoh;
+
+    $hohoh{Robot}{Santa}{Claus} = 'mostly harmful';</code>
+</pre></div>
+<div id="iautovivification_2"></div>
+<p>This behavior is <i>autovivification</i>, and it's more often useful than it isn't. Its benefit is in reducing the initialization code of nested data structures. Its drawback is in its inability to distinguish between the honest intent to create missing elements in nested data structures and typos.</p>
+<p>The <code>autovivification</code> pragma on the CPAN (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)) lets you disable autovivification in a lexical scope for specific types of operations; it's worth your time to consider this in large projects, or projects with multiple developers.</p>
+<div class="sidebar">
+<p>You can also check for the existence of specific hash keys and the number of elements in arrays before dereferencing each level of a complex data structure, but that can produce tedious, lengthy code which many programmers prefer to avoid.</p>
+<p>You may wonder at the contradiction between taking advantage of autovivification while enabling <code>strictures</code>. The question is one of balance. is it more convenient to catch errors which change the behavior of your program at the expense of disabling those error checks for a few well-encapsulated symbolic references? Is it more convenient to allow data structures to grow rather than specifying their size and allowed keys?</p>
+<p>The answer to the latter question depends on your specific project.</p>
+</div>
+<h4 id="heading_id_77">Debugging Nested Data Structures</h4>
+<p>The complexity of Perl 5's dereferencing syntax combined with the potential for confusion with multiple levels of references can make debugging nested data structures difficult. Two good options exist for visualizing them.</p>
+<div id="iData5858Dumper_0"></div>
+<p>The core module <code>Data::Dumper</code> can stringify values of arbitrary complexity into Perl 5 code:</p>
+<div class="programlisting">
+<pre>
+<code>    use Data::Dumper;
+
+    print Dumper( $my_complex_structure );</code>
+</pre></div>
+<p>This is useful for identifying what a data structure contains, what you should access, and what you accessed instead. <code>Data::Dumper</code> can dump objects as well as function references (if you set <code>$Data::Dumper::Deparse</code> to a true value).</p>
+<p>While <code>Data::Dumper</code> is a core module and prints Perl 5 code, it also produces verbose output. Some developers prefer the use of the <code>YAML::XS</code> or <code>JSON</code> modules for debugging. You have to learn a different format to understand their outputs, but their outputs can be much clearer to read and to understand.</p>
+<h4 id="heading_id_78">Circular References</h4>
+<div id="circular_references"></div>
+<div id="icircular_references_0"></div>
+<div id="imemory_management__icircular_references_0"></div>
+<div id="imemory_management_0"></div>
+<div id="igarbage_collection_0"></div>
+<p>Perl 5's memory management system of reference counting (<a href="chapter_03.xhtml#reference_counts">Reference Counts</a>(reference_counts)) has one drawback apparent to user code. Two references which end up pointing to each other form a <i>circular reference</i> that Perl cannot destroy on its own. Consider a biological model, where each entity has two parents and can have children:</p>
+<div class="programlisting">
+<pre>
+<code>    my $alice  = { mother =&gt; '',     father =&gt; '',      children =&gt; [] };
+    my $robert = { mother =&gt; '',     father =&gt; '',      children =&gt; [] };
+    my $cianne = { mother =&gt; $alice, father =&gt; $robert, children =&gt; [] };
+
+    push @{ $alice-&gt;{children}  }, $cianne;
+    push @{ $robert-&gt;{children} }, $cianne;</code>
+</pre></div>
+<p>Because both <code>$alice</code> and <code>$robert</code> contain an array reference which contains <code>$cianne</code>, and because <code>$cianne</code> is a hash reference which contains <code>$alice</code> and <code>$robert</code>, Perl can never decrease the reference count of any of these three people to zero. It doesn't recognize that these circular references exist, and it can't manage the lifespan of these entities.</p>
+<div id="ireferences__iweak_0"></div>
+<div id="iweak_references_0"></div>
+<div id="iScalar5858Util_4"></div>
+<p>You must either break the reference count manually yourself (by clearing the children of <code>$alice</code> and <code>$bob</code> or the parents of <code>$cianne</code>), or take advantage of a feature called <i>weak references</i>. A weak reference is a reference which does not increase the reference count of its referent. Weak references are available through the core module <code>Scalar::Util</code>. Export the <code>weaken()</code> function and use it on a reference to prevent the reference count from increasing:</p>
+<div class="programlisting">
+<pre>
+<code>    use Scalar::Util 'weaken';
+
+    my $alice  = { mother =&gt; '',     father =&gt; '',      children =&gt; [] };
+    my $robert = { mother =&gt; '',     father =&gt; '',      children =&gt; [] };
+    my $cianne = { mother =&gt; $alice, father =&gt; $robert, children =&gt; [] };
+
+    push @{ $alice-&gt;{children}  }, $cianne;
+    push @{ $robert-&gt;{children} }, $cianne;
+
+    <b>weaken( $cianne-&gt;{mother} );</b>
+    <b>weaken( $cianne-&gt;{father} );</b></code>
+</pre></div>
+<p>With this accomplished, <code>$cianne</code> will retain references to <code>$alice</code> and <code>$robert</code>, but those references will not by themselves prevent Perl's garbage collector from destroying those data structures. You rarely have to use weak references if you design your data structures correctly, but they're useful in a few situations.</p>
+<h4 id="heading_id_79">Alternatives to Nested Data Structures</h4>
+<p>While Perl is content to process data structures nested as deeply as you can imagine, the human cost of understanding these data structures as well as the relationship of various pieces, not to mention the syntax required to access various portions, can be high. Beyond two or three levels of nesting, consider whether modeling various components of your system with classes and objects (<a href="chapter_07.xhtml#moose">Moose</a>(moose)) will allow you to operate on your data within encapsulation boundaries.</p>
+<p>Sometimes bundling data with behaviors appropriate to that data can clarify code.</p>
+</body>
+</html>
