@@ -40,6 +40,7 @@
 <preserve authors publisher isbn perlbooksid perlbookslink online_url />
 
 <set-var %attributes />
+
 <set-var ext_publisher=<get_ext_publisher <get-var publisher /> /> />
 <set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />">Book Page at books.perl.org</a><br />" />
 <div class="bookinfo">
