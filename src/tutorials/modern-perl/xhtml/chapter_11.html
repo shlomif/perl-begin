@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h2 id="heading_id_2">What to Avoid</h2>
+<p>Perl 5 isn't perfect. Some features seemed like good ideas at the time, but they're difficult to use correctly. Others don't work as anyone might expect. A few more are simply bad ideas. These features will likely persist--removing a feature from Perl is a serious process reserved for only the most egregious offenses--but you can and should avoid them in almost every case.</p>
+<h3 id="heading_id_3">Barewords</h3>
+<div id="barewords"></div>
+<p>Perl uses sigils and other punctuation pervasively to help both the parser and the programmer identify the categories of named entities. Even so, Perl is a malleable language. You can write programs in the most creative, maintainable, obfuscated, or bizarre fashion as you prefer. Maintainability is a concern of good programs, but the developers of Perl itself don't presume to dictate what <i>you</i> find most maintainable.</p>
+<div id="ibareword_0"></div>
+<p>Perl's parser understands the built-in Perl keywords and operators; it knows that <code>bless()</code> means you're making objects (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references)). These are rarely ambiguous... but Perl programmers can add complexity to parsing by using <i>barewords</i>. A bareword is an identifier without a sigil or other attached disambiguation as to its intended syntactical function. Because there's no Perl 5 keyword <code>curse</code>, the literal word <code>curse</code> appearing in source code is ambiguous. Did you intend to use a variable <code>$curse</code> or to call a function <code>curse()</code>? The <code>strict</code> pragma warns about use of such ambiguous barewords for good reason.</p>
+<p>Even so, barewords are permissible in several places in Perl 5 for good reason.</p>
+<h4 id="heading_id_4">Good Uses of Barewords</h4>
+<div id="ibarewords__ipros_0"></div>
+<div id="ihashes__ibareword_keys_0"></div>
+<p>Hash keys in Perl 5 are barewords. These are usually not ambiguous because their use as keys is sufficient for the parser to identify them as the equivalent of single-quoted strings. Yet be aware that attempting to evaluate a function call or a built-in operator (such as <code>shift</code>) to <i>produce</i> a hash key may not do what you expect, unless you disambiguate.</p>
+<div class="programlisting">
+<pre>
+<code>    # the literal 'shift' is the key
+    my $value = $items{<b>shift</b>};
+
+    # the value produced by shift is the key
+    my $value = $items{<b>shift @_</b>}
+
+    # unary plus is also sufficient to disambiguate
+    my $value = $items{<b>+</b>shift};</code>
+</pre></div>
+<div id="ipackages__ibareword_names_0"></div>
+<p>Package names in Perl 5 are barewords in a sense. Good naming conventions for packages (initial caps) help prevent unwanted surprises, but the parser uses a heuristic to determine whether <code>Package-&gt;method()</code> means to call a function named <code>Package()</code> and then call the <code>method()</code> method on its results or whether to treat <code>Package</code> as the name of a package. You can disambiguate this with the postfix package separator (<code>::</code>), but that's rare and admittedly ugly:</p>
+<div class="programlisting">
+<pre>
+<code>    # probably a class method
+    Package-&gt;method();
+
+    # definitely a class method
+    Package::-&gt;method();</code>
+</pre></div>
+<div id="iBEGIN_1"></div>
+<div id="iDESTROY_0"></div>
+<div id="iAUTOLOAD_1"></div>
+<div id="iINIT_0"></div>
+<div id="iUNITCHECK_0"></div>
+<div id="iCHECK_0"></div>
+<div id="iEND_0"></div>
+<p>The special named code blocks provide their own types of barewords. <code>AUTOLOAD</code>, <code>BEGIN</code>, <code>CHECK</code>, <code>DESTROY</code>, <code>END</code>, <code>INIT</code>, and <code>UNITCHECK</code> <i>declare</i> functions, but they do not need the <code>sub</code> keyword to do so. You may be familiar with the idiom of writing <code>BEGIN</code> without <code>sub</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    package Monkey::Butler;
+
+    BEGIN { initialize_simians( __PACKAGE__ ) }</code>
+</pre></div>
+<p>You <i>can</i> leave off the <code>sub</code> on <code>AUTOLOAD()</code> declarations, but that's uncommon.</p>
+<div id="iconstants__ibarewords_0"></div>
+<p>Constants declared with the <code>constant</code> pragma are usable as barewords:</p>
+<div class="programlisting">
+<pre>
+<code>    # don't use this for real authentication
+    use constant NAME     =&gt; 'Bucky';
+    use constant PASSWORD =&gt; '|38fish!head74|';
+
+    ...
+
+    return unless $name eq NAME &amp;&amp; $pass eq PASS;</code>
+</pre></div>
+<p>Be aware that these constants do <i>not</i> interpolate in interpolation contexts such as double-quoted strings.</p>
+<div id="iprototypes__ibarewords_0"></div>
+<p>Constants are a special case of prototyped functions (<a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes)). If you've pre-declared a prototype for a function, you may use that function as a bareword; Perl 5 knows everything it needs to know to parse all occurrences of that function appropriately. Note that all of the drawbacks of prototypes still apply.</p>
+<h4 id="heading_id_5">Ill-Advised Uses of Barewords</h4>
+<div id="ibarewords__icons_0"></div>
+<p>Barewords should be rare in modern Perl code; their ambiguity produces fragile code. You can avoid them in almost every case, but you may encounter several poor uses of barewords in legacy code.</p>
+<div id="ibarewords__ifilehandles_0"></div>
+<p>Prior to lexical filehandles (<a href="chapter_03.xhtml#lexical_filehandles">Filehandle References</a>(lexical_filehandles)), all file and directory handles used barewords. You can almost always safely rewrite this code to use lexical filehandles; the exceptions are <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code>.</p>
+<div id="ibarewords__ifunction_calls_0"></div>
+<p>Code written without <code>strict 'subs'</code> in effect may use bareword function names. You may safely parenthesize the argument lists to these functions without changing the intent of the code <span class="footnote">(footnote: Use <code>perl -MO=Deparse,-p</code> to discover how Perl parses them, then parenthesize accordingly.)</span>.</p>
+<div id="ibarewords__ihash_values_0"></div>
+<p>Along similar lines, old code may not take pains to quote the <i>values</i> of hash pairs appropriately:</p>
+<div class="programlisting">
+<pre>
+<code>    # poor style; do not use
+    my %parents =
+    (
+        mother =&gt; Annette,
+        father =&gt; Floyd,
+    );</code>
+</pre></div>
+<p>Because neither the <code>Floyd()</code> nor <code>Annette()</code> functions exist, Perl parses these hash values as strings. The <code>strict 'subs'</code> pragma makes the parser give an error in this situation.</p>
+<div id="ibarewords__isort_functions_0"></div>
+<div id="isort_0"></div>
+<div id="ioperators__isort_0"></div>
+<p>Finally, the built-in <code>sort</code> operator can take as its second argument the <i>name</i> of a function to use for sorting. Instead provide a <i>reference</i> to the function to use for sorting to avoid the use of barewords:</p>
+<div class="programlisting">
+<pre>
+<code>    # poor style; do not use
+    my @sorted = sort compare_lengths @unsorted;
+
+    # better style
+    my $comparison = \&amp;compare_lengths;
+    my @sorted     = sort $comparison @unsorted;</code>
+</pre></div>
+<p>The result is one line longer, but it avoids the use of a bareword. Unlike other bareword examples, Perl's parser needs no disambiguation for this syntax. There is only one way for it to interpret <code>compare_lengths</code>. Even so, the clarity of an explicit reference can help human readers.</p>
+<p>Even so, Perl 5's parser does not understand the single-line version:</p>
+<div class="programlisting">
+<pre>
+<code>    # does not work
+    my @sorted = sort \&amp;compare_lengths @unsorted;</code>
+</pre></div>
+<p>This is due to the special parsing of <code>sort</code>; you cannot use an arbitrary expression (such as taking a reference to a named function) where a block or a scalar might otherwise go.</p>
+<h3 id="heading_id_6">Indirect Objects</h3>
+<div id="indirect_objects"></div>
+<p>A constructor in Perl 5 is anything which returns an object; <code>new</code> is not a built-in function. By convention, constructors are class methods named <code>new()</code>, but you have the flexibility to choose a different approach to meet your needs. Several old Perl 5 object tutorials promote the use of C++ and Java-style constructor calls:</p>
+<div class="programlisting">
+<pre>
+<code>    my $q = <b>new</b> CGI; # DO NOT USE</code>
+</pre></div>
+<p>... instead of the unambiguous:</p>
+<div class="programlisting">
+<pre>
+<code>    my $q = CGI-&gt;new();</code>
+</pre></div>
+<p>These syntaxes are equivalent in behavior, except when they're not.</p>
+<div id="iindirect_object_notation_0"></div>
+<div id="iindirect_objects_0"></div>
+<div id="idative_notation_0"></div>
+<div id="idative_0"></div>
+<p>The first form is the indirect object form (more precisely, the <i>dative</i> case), where the verb (the method) precedes the noun to which it refers (the object). This is fine in spoken languages, but it introduces parsing ambiguities in Perl 5.</p>
+<h4 id="heading_id_7">Bareword Indirect Invocations</h4>
+<p>One problem is that the name of the method is a bareword (<a href="chapter_11.xhtml#barewords">Barewords</a>(barewords)). The parser must perform several heuristics to determine the proper interpretation. While these heuristics are well-tested and <i>almost</i> always correct, their failure modes are confusing. Worse, they're fragile in the face of the <i>order</i> of compilation and module loading.</p>
+<p>Parsing is more difficult for humans <i>and</i> the computer when the constructor takes arguments. The indirect style may resemble:</p>
+<div class="programlisting">
+<pre>
+<code>    # DO NOT USE
+    my $obj = new Class( arg =&gt; $value );</code>
+</pre></div>
+<p>... thus making the classname <code>Class</code> look like a function call. Perl 5 <i>can</i> disambiguate many of these cases, but its heuristics depend on which package names the parser has seen at the current point in the parse, which barewords it has already resolved (and how it resolved them), and the <i>names</i> of functions already declared in the current package.</p>
+<p>Imagine running afoul of a function with (prototypes) <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) with a name which just happens to conflict somehow with the name of a class or a method called indirectly. This is infrequent, but so difficult to debug that avoiding this syntax is always worthwhile.</p>
+<h4 id="heading_id_8">Indirect Notation Scalar Limitations</h4>
+<p>Another danger of the syntax is that the parser expects a single scalar expression as the object. Printing to a filehandle stored in an aggregate variable <i>seems</i> obvious, but it is not:</p>
+<div class="programlisting">
+<pre>
+<code>    # DOES NOT WORK AS WRITTEN
+    say $config-&gt;{output} "This is a diagnostic message!";</code>
+</pre></div>
+<p><code>print</code>, <code>close</code>, and <code>say</code>--all keywords which operate on filehandles--operate in an indirect fashion. This was fine when filehandles were package globals, but lexical filehandles (<a href="chapter_03.xhtml#lexical_filehandles">Filehandle References</a>(lexical_filehandles)) make the indirect object syntax problems obvious. In the previous example, Perl will try to call the <code>say</code> method on the <code>$config</code> object. The solution is to disambiguate the expression which produces the intended invocant:</p>
+<div class="programlisting">
+<pre>
+<code>    say <b>{</b>$config-&gt;{output}<b>}</b> "This is a diagnostic message!";</code>
+</pre></div>
+<h4 id="heading_id_9">Alternatives to Indirect Notation</h4>
+<p>Direct invocation notation does not suffer this ambiguity problem. To construct an object, call the constructor method on the class name directly:</p>
+<div class="programlisting">
+<pre>
+<code>    my $q   = CGI-&gt;new();
+    my $obj = Class-&gt;new( arg =&gt; $value );</code>
+</pre></div>
+<div id="iIO5858Handle_0"></div>
+<p>For the limited case of filehandle operations, the dative use is so prevalent that you can use the indirect invocation approach if you surround your intended invocant with curly brackets. Alternately, consider loading the core <code>IO::Handle</code> module which allows you to perform IO operations by calling methods on filehandle objects (such as lexical filehandles).</p>
+<div class="sidebar">
+<p>For supreme paranoia, you may disambiguate class method calls further by appending <code>::</code> to the end of class names, such as <code>CGI::-&gt;new()</code>. Very little code does this in practice, however.</p>
+</div>
+<div id="iPerl5858Critic5858Policy5858Dynamic5858NoIndirect__iCPAN_modules_0"></div>
+<div id="iPerl5858Critic5858Policy5858Dynamic5858NoIndirect_0"></div>
+<div id="iPerl5858Critic__iCPAN_modules_0"></div>
+<div id="iPerl5858Critic_0"></div>
+<div id="iindirect__iCPAN_modules_0"></div>
+<div id="iindirect_0"></div>
+<p>The CPAN module <code>Perl::Critic::Policy::Dynamic::NoIndirect</code> (a plugin for <code>Perl::Critic</code>) can identify indirect invocations during code reviews. The CPAN module <code>indirect</code> can identify and prohibit their use in running programs:</p>
+<div class="programlisting">
+<pre>
+<code>    # warn on indirect use
+    no indirect;
+
+    # throw exceptions on their use
+    no indirect ':fatal';</code>
+</pre></div>
+<h3 id="heading_id_10">Prototypes</h3>
+<div id="prototypes"></div>
+<div id="iprototypes_0"></div>
+<p>A <i>prototype</i> is a piece of optional metadata attached to a function declaration. Novices commonly assume that these prototypes serve as function signatures. They do not; instead they serve two separate purposes. They offer hints to the parser to change the way it parses functions and their arguments. They also modify the way Perl 5 handles arguments to those functions.</p>
+<p>To declare a function prototype, add it after the name:</p>
+<div class="programlisting">
+<pre>
+<code>    sub foo        (&amp;@);
+    sub bar        ($$) { ... }
+    my  $baz = sub (&amp;&amp;) { ... };</code>
+</pre></div>
+<p>You may add prototypes to function forward declarations. You may also omit them from forward declarations. If you use a forward declaration with a prototype, that prototype must be present in the full function declaration; Perl will give a prototype mismatch warning if not. The converse is not true: you may omit the prototype from a forward declaration and include it for the full declaration.</p>
+<div class="sidebar">
+<p>There's little reason to omit the prototype from a forward declaration except for the desire to write too-clever code.</p>
+</div>
+<p>The original intent of prototypes was to allow users to define their own functions which behaved like (certain) built-in operators. Consider the behavior of the <code>push</code> operator, which takes an array and a list. While Perl 5 would normally flatten the array and list into a single list at the call site, the Perl 5 parser knows that a call to <code>push</code> must effectively pass the array as a single unit so that <code>push</code> can operate on the array in place.</p>
+<div id="iprototype_0"></div>
+<div id="ikeywords__iprototype_0"></div>
+<p>The builtin <code>prototype</code> takes the name of a function and returns a string representing its prototype. To see the prototype of a built-in keyword, use the <code>CORE::</code> form:</p>
+<div class="programlisting">
+<pre>
+<code>    $ <b>perl -E "say prototype 'CORE::push';"</b>
+    \@@
+    $ <b>perl -E "say prototype 'CORE::keys';"</b>
+    \%
+    $ <b>perl -E "say prototype 'CORE::open';"</b>
+    *;$@</code>
+</pre></div>
+<p>Some builtins have prototypes you cannot emulate. In these cases, <code>prototype</code> will return <code>undef</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    $ <b>perl -E "say prototype 'CORE::system' // 'undef' "</b>
+    undef
+    # You can't emulate builtin function <code>system</code>'s calling convention.
+
+    $ <b>perl -E "say prototype 'CORE::prototype' // 'undef' "</b>
+    undef
+    # Builtin function <code>prototype</code> has no prototype.</code>
+</pre></div>
+<p>Look at <code>push</code> again:</p>
+<div class="programlisting">
+<pre>
+<code>    $ <b>perl -E "say prototype 'CORE::push';"</b>
+    \@@</code>
+</pre></div>
+<p>The <code>@</code> character represents a list. The backslash forces the use of a <i>reference</i> to the corresponding argument. Thus this function takes a reference to an array (because you can't take a reference to a list) and a list of values. <code>mypush</code> might be:</p>
+<div class="programlisting">
+<pre>
+<code>    sub mypush (\@@)
+    {
+        my ($array, @rest) = @_;
+        push @$array, @rest;
+    }</code>
+</pre></div>
+<p>Valid prototype characters include <code>$</code> to force a scalar argument, <code>%</code> to mark a hash (most often used as a reference), and <code>&amp;</code> which marks a code block. See <code>perldoc perlsub</code> for full documentation.</p>
+<h4 id="heading_id_11">The Problem with Prototypes</h4>
+<p>Prototypes can change the parsing of subsequent code and they can coerce the types of arguments. They don't serve as documentation to the number or types of arguments functions expect, nor do they map arguments to named parameters.</p>
+<p>Prototype coercions work in subtle ways, such as enforcing scalar context on incoming arguments:</p>
+<div class="programlisting">
+<pre>
+<code>    sub numeric_equality($$)
+    {
+        my ($left, $right) = @_;
+        return $left == $right;
+    }
+
+    my @nums = 1 .. 10;
+
+    say "They're equal, whatever that means!" if numeric_equality @nums, 10;</code>
+</pre></div>
+<p>... but do <i>not</i> work on anything more complex than a simple expression:</p>
+<div class="programlisting">
+<pre>
+<code>    sub mypush(\@@);
+
+    # compilation error: prototype mismatch
+    # (expected array, got scalar assignment)
+    mypush( my $elems = [], 1 .. 20 );</code>
+</pre></div>
+<p>Those aren't even the <i>subtler</i> kinds of confusion you can get from prototypes.</p>
+<h4 id="heading_id_12">Good Uses of Prototypes</h4>
+<p>As long as code maintainers do not confuse them for full function signatures, prototypes have a few valid uses.</p>
+<div id="ioverriding_core_keywords_0"></div>
+<div id="ioverriding__ikeywords_0"></div>
+<div id="ipragmas__isubs_1"></div>
+<div id="isubs_pragma_0"></div>
+<p>First, they are often necessary to emulate and override built-in keywords with user-defined functions. You must first check that you <i>can</i> override the built-in keyword by checking that <code>prototype</code> does not return <code>undef</code>. Once you know the prototype of the keyword, use a forward declaration of a function with the same name as the core keyword:</p>
+<div class="programlisting">
+<pre>
+<code>    use subs 'push';
+
+    sub push (\@@) { ... }</code>
+</pre></div>
+<p>Beware that the <code>subs</code> pragma is in effect for the remainder of the <i>file</i>, regardless of any lexical scoping.</p>
+<div id="iconstants_0"></div>
+<p>The second reason to use prototypes is to define compile-time constants. A function declared with an empty prototype (as opposed to <i>no</i> prototype) which evaluates to a single expression becomes a constant in the Perl 5 optree rather than a function call:</p>
+<div class="programlisting">
+<pre>
+<code>    sub PI () { 4 * atan2(1, 1) }</code>
+</pre></div>
+<p>After it processed that prototype declaration, the Perl 5 optimizer knows it should substitute the calculated value of pi whenever it encounters a bareword or parenthesized call to <code>PI</code> in the rest of the source code (with respect to scoping and visibility).</p>
+<div id="iconstant_pragma_0"></div>
+<div id="ipragmas__iconstant_0"></div>
+<div id="iReadonly_module_0"></div>
+<div id="imodules__iReadonly_0"></div>
+<p>Rather than defining constants directly, the core <code>constant</code> pragma handles the details for you and may be clearer to read. If you want to interpolate constants into strings, the <code>Readonly</code> module from the CPAN may be more useful.</p>
+<div id="iTest5858Exception_module_0"></div>
+<div id="imodules__iTest5858Exception_0"></div>
+<p>The final reason to use a prototype is to extend Perl's syntax to operate on anonymous functions as blocks. The CPAN module <code>Test::Exception</code> uses this to good effect to provide a nice API with delayed computation. Its <code>throws_ok()</code> function takes three arguments: a block of code to run, a regular expression to match against the string of the exception, and an optional description of the test. Suppose that you want to test Perl 5's exception message when attempting to invoke a method on an undefined value:</p>
+<div class="programlisting">
+<pre>
+<code>    use Test::More tests =&gt; 1;
+    use Test::Exception;
+
+    throws_ok
+        { my $not_an_object; $not_an_object-&gt;some_method() }
+        qr/Can't call method "some_method" on an undefined value/,
+        'Calling a method on an undefined invocant should throw exception';</code>
+</pre></div>
+<p>The exported <code>throws_ok()</code> function has a prototype of <code>&amp;$;$</code>. Its first argument is a block, which Perl upgrades to a full-fledged anonymous function. The second requirement is a scalar. The third argument is optional.</p>
+<p>The most careful readers may have spotted a syntax oddity notable in its absence: there is no trailing comma after the end of the anonymous function passed as the first argument to <code>throws_ok()</code>. This is a quirk of the Perl 5 parser. Adding the comma causes a syntax error. The parser expects whitespace, not the comma operator.</p>
+<div class="sidebar">
+<p>The "no commas here" rule is a drawback of the prototype syntax.</p>
+</div>
+<p>You can use this API without the prototype. It's slightly less attractive:</p>
+<div class="programlisting">
+<pre>
+<code>    use Test::More tests =&gt; 1;
+    use Test::Exception;
+
+    throws_ok<b>(</b>
+        <b>sub</b> { my $not_an_object; $not_an_object-&gt;some_method() }<b>,</b>
+        qr/Can't call method "some_method" on an undefined value/,
+        'Calling a method on an undefined invocant should throw exception'<b>)</b>;</code>
+</pre></div>
+<p>A sparing use of function prototypes to remove the need for the <code>sub</code> keyword is reasonable. Few other uses of prototypes are compelling enough to overcome their drawbacks.</p>
+<div class="sidebar">
+<p>Ben Tilly suggests a fourth: when defining a custom function to use with <code>sort</code>. Declare this function with a prototype of <code>($$)</code> and Perl will pass its arguments in <code>@_</code> rather than the package globals <code>$a</code> and <code>$b</code>. This is a rare case, but it can save you time debugging.</p>
+</div>
+<h3 id="heading_id_13">Method-Function Equivalence</h3>
+<div id="method_sub_equivalence"></div>
+<p>Perl 5's object system is deliberately minimal (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references)). Because a class is a package, Perl itself makes no strong distinction between a function stored in a package and a method stored in a package. The same keyword, <code>sub</code>, expresses both. Documentation and the convention of treating the first parameter as <code>$self</code> can imply intent to readers of the code, but Perl itself will treat any function of the appropriate name it can find in an appropriate package as a method if you try to call it as a method.</p>
+<p>Likewise, you can invoke a method as if it were a function--fully-qualified, exported, or as a reference--if you pass in your own invocant manually.</p>
+<p>Both have their problems; avoid them.</p>
+<h4 id="heading_id_14">Caller-side</h4>
+<p>Suppose you have a class which contains several methods:</p>
+<div class="programlisting">
+<pre>
+<code>    package Order;
+
+    use List::Util 'sum';
+
+    ...
+
+    sub calculate_price
+    {
+        my $self = shift;
+        return sum( 0, $self-&gt;get_items() );
+    }</code>
+</pre></div>
+<p>If you have an <code>Order</code> object <code>$o</code>, the following invocations of this method <i>may</i> seem equivalent:</p>
+<div class="programlisting">
+<pre>
+<code>    my $price = $o-&gt;calculate_price();
+
+    # broken; do not use
+    my $price = Order::calculate_price( $o );</code>
+</pre></div>
+<p>Though in this simple case, they produce the same output, the latter violates the encapsulation of objects in subtle ways. It avoids method lookup altogether.</p>
+<div id="imethods__icalling_as_functions_40avoid41_0"></div>
+<p>If <code>$o</code> were <i>not</i> an <code>Order</code> object, but instead a subclass or allomorph (<a href="chapter_07.xhtml#roles">Roles</a>(roles)) of <code>Order</code> which overrode <code>calculate_price()</code>, the method-as-a-function call would call the <i>wrong</i> method. As well, if the internal implementation of <code>calculate_price()</code> were to change--perhaps inherited from elsewhere or delegated through <code>AUTOLOAD()</code>--the caller might break.</p>
+<div id="imethods__icalling_with_references_0"></div>
+<div id="iUNIVERSAL__ican4041_0"></div>
+<div id="ican4041_2"></div>
+<p>Perl has one circumstance where this behavior may seem necessary. If you force method resolution without performing dispatch, how do you invoke the resulting method reference?</p>
+<div class="programlisting">
+<pre>
+<code>    my $meth_ref = $o-&gt;can( 'apply_discount' );</code>
+</pre></div>
+<p>There are two possibilities. The first is to discard the return value of the <code>can()</code> method:</p>
+<div class="programlisting">
+<pre>
+<code>    $o-&gt;apply_discount() if $o-&gt;can( 'apply_discount' );</code>
+</pre></div>
+<p>The second is to use the reference itself with method invocation syntax:</p>
+<div class="programlisting">
+<pre>
+<code>    if (my $meth_ref = $o-&gt;can( 'apply_discount' ))
+    {
+        $o-&gt;$meth_ref();
+    }</code>
+</pre></div>
+<p>When <code>$meth_ref</code> contains a function reference, Perl will invoke that reference with <code>$o</code> as the invocant. This works even under strictures, as it does when invoking a method with a scalar containing its name:</p>
+<div class="programlisting">
+<pre>
+<code>    my $name = 'apply_discount';
+    $o-&gt;$name();</code>
+</pre></div>
+<p>There is one small drawback in invoking a method by reference; if the structure of the program has changed in between storing the reference and invoking the reference, the reference may no longer refer to the current most appropriate method. If the <code>Order</code> class has changed such that <code>Order::apply_discount</code> is no longer the right method to call, the reference in <code>$meth_ref</code> will not have updated.</p>
+<p>If you use this form of invocation, limit the scope of the references.</p>
+<h4 id="heading_id_15">Callee-side</h4>
+<div id="imethods__icallable_as_functions_40avoid41_0"></div>
+<div id="ifunctions__icallable_as_methods_40avoid41_0"></div>
+<p>Because Perl 5 makes no distinction between functions and methods at the point of declaration and because it's <i>possible</i> (however inadvisable) to invoke a given function as a function or a method, it's possible to write a function callable as either.</p>
+<p>The core <code>CGI</code> module is a prime offender. Its functions manually inspect <code>@_</code> to determine whether the first argument is a likely invocant. If so, they perform particular manipulations to make sure that any object state the function needs to access is available. If the first argument is not a likely invocant, the function must consult global data elsewhere.</p>
+<p>As with all heuristics, there are corner cases. It's difficult to predict exactly which invocants are potentially valid for a given method, especially when considering that users can create their own subclasses. The documentation burden is also greater--the explanation of a combined procedural and object interface must reflect the dichotomy of the code--as is the potential for misuse. What happens when one part of the project uses the procedural interface and another uses the object interface?</p>
+<p>Providing separate procedural and object interfaces to a library may be justifiable. Some designs make some techniques more useful than others. Conflating the two into a single API will create a maintenance burden. Avoid it.</p>
+<h3 id="heading_id_16">Tie</h3>
+<div id="tie"></div>
+<div id="itie_0"></div>
+<div id="ikeywords__itie_0"></div>
+<div id="itying_0"></div>
+<p>Overloading (<a href="chapter_09.xhtml#overloading">Overloading</a>(overloading)) lets you give classes custom behavior for specific types of coercions and accesses. A similar mechanism exists for making variables act like built-in types (scalars, arrays, and hashes), but with more specific behaviors. This mechanism uses the <code>tie</code> keyword; it is <i>tying</i>.</p>
+<p>The original use of <code>tie</code> was to produce a hash stored on disk, rather than in memory. This allowed the use of dbm files from Perl, as well as the ability to access files larger than could fit in memory. The core module <code>Tie::File</code> provides a similar system by which to handle data files too large to fit in memory.</p>
+<p>The class to which you <code>tie</code> a variable must conform to a specific, well-documented interface for the specific data type. <code>perldoc perltie</code> is the primary source of information about these interfaces, though the core modules <code>Tie::StdScalar</code>, <code>Tie::StdArray</code>, and <code>Tie::StdHash</code> are more useful in practice. Inherit from them to start, and override only those specific methods you need to modify.</p>
+<div class="sidebar">
+<p>The documentation and implementations of these parent classes are in the <code>Tie::Scalar</code>, <code>Tie::Array</code>, and <code>Tie::Hash</code> modules. Consequently you must also <code>use Tie::Scalar</code> if you want to inherit from <code>Tie::StdScalar</code>. If <code>tie()</code> hasn't confused you, the organization of this code might.</p>
+</div>
+<h4 id="heading_id_17">Tying Variables</h4>
+<p>Given a variable to tie, tie it with the syntax:</p>
+<div class="programlisting">
+<pre>
+<code>    use Tie::File;
+    tie my @file, 'Tie::File', @args;</code>
+</pre></div>
+<p>... where the first argument is the variable to tie, the second is the name of the class into which to tie it, and <code>@args</code> is an optional list of arguments required for the tying function. In the case of <code>Tie::File</code>, this is the name of the file to which to tie the array.</p>
+<p>The tying function resembles a constructor: <code>TIESCALAR</code>, <code>TIEARRAY()</code>, <code>TIEHASH()</code>, or <code>TIEHANDLE()</code> for scalars, arrays, hashes, and filehandles respectively. These functions return a new object which the <code>tie()</code> keyword returns as well. Most people ignore it.</p>
+<p>The <code>tied()</code> operator returns the same object when used on a tied variable and <code>undef</code> otherwise. Again, few people use that object. Instead, they check the boolean value of this object when they use use <code>tied()</code> to determine whether the given variable is tied.</p>
+<h4 id="heading_id_18">Implementing Tied Variables</h4>
+<p>To implement the class of a tied variable, inherit from a core module such as <code>Tie::StdScalar</code>, then override the specific methods for the operations you want to change. In the case of a tied scalar, you probably need to override <code>FETCH</code> and <code>STORE</code>, may need to override <code>TIESCALAR()</code>, and probably can ignore <code>DESTROY()</code>.</p>
+<p>You can create a class which logs all reads from and writes to a scalar with very little code:</p>
+<div class="programlisting">
+<pre>
+<code>    package Tie::Scalar::Logged;
+
+    use Modern::Perl;
+
+    use Tie::Scalar;
+    use parent -norequire =&gt; 'Tie::StdScalar';
+
+    sub STORE
+    {
+        my ($self, $value) = @_;
+        Logger-&gt;log("Storing &lt;$value&gt; (was [$$self])", 1);
+        $$self = $value;
+    }
+
+    sub FETCH
+    {
+        my $self = shift;
+        Logger-&gt;log("Retrieving &lt;$$self&gt;", 1);
+        return $$self;
+    }
+
+    1;</code>
+</pre></div>
+<p>Assume that the <code>Logger</code> class method <code>log()</code> takes a string and the number of frames up the call stack of which to report the location. Be aware that <code>Tie::StdScalar</code> does not have its own <i>.pm</i> file, so you must use <code>Tie::Scalar</code> to make it available.</p>
+<p>Within the <code>STORE()</code> and <code>FETCH()</code> methods, <code>$self</code> works as a blessed scalar. Assigning to that scalar reference changes the value of the scalar and reading from it returns its value.</p>
+<p>Similarly, the methods of <code>Tie::StdArray</code> and <code>Tie::StdHash</code> act on blessed array and hash references, respectively. The <code>perldoc perltie</code> documentation explains the copious methods they support, as you can read or write multiple values from them, among other operations.</p>
+<div class="sidebar">
+<p>The <code>-norequire</code> option prevents the <code>parent</code> pragma from attempting to load a file for <code>Tie::StdScalar</code>, as that module is part of the file <i>Tie/Scalar.pm</i>.</p>
+</div>
+<h4 id="heading_id_19">When to use Tied Variables</h4>
+<p>Tied variables seem like fun opportunities for cleverness, but they make for confusing interfaces in almost all cases, due mostly to their rarity. Unless you have a very good reason for making objects behave as if they were built-in data types, avoid creating your own ties.</p>
+<p>Good reasons include to ease debugging (use the logged scalar to help you understand where a value changes) and to make certain impossible operations possible (accessing large files in a memory-efficient way). Tied variables are less useful as the primary interfaces to objects; it's often too difficult and constraining to try to fit your whole interface to that supported by <code>tie()</code>.</p>
+<p>The final word of warning is both sad and convincing; far too much code does not expect to work with tied variables. Code which violates encapsulation may prohibit good and valid uses of cleverness. This is unfortunate, but violating the expectations of library code tends to reveal bugs that are often out of your power to fix.</p>
+</body>
+</html>

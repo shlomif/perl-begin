@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h2 id="heading_id_2">The Perl Philosophy</h2>
+<p>Perl is a language for getting things done. It's flexible, forgiving, and malleable. In the hands of a capable programmer, it can perform almost any task, from one-liner calculations and automations to multi-programmer, multi-year projects and everything in between.</p>
+<p>Perl is powerful, and modern Perl--Perl which takes advantage of the best knowledge, deepest experience, and reusable idioms of the global Perl community--can be maintainable, fast, and easy to use. Perhaps most importantly, it can help you do what you need to do with little frustration and no ceremony.</p>
+<p>Perl is a pragmatic language. You, the programmer, are in charge. Rather than manipulating your mind and your problems to fit how the language designer thinks you should write programs, Perl allows you to solve your problems as you see fit.</p>
+<p>Perl is a language which can grow with you. You can write useful programs with the knowledge that you can learn in an hour of reading this book. Yet if you take the time to understand the philosophies behind the syntax, semantics, and design of the language, you can be far more productive.</p>
+<p>First, you need to know how to learn more.</p>
+<h4 id="heading_id_3">Perldoc</h4>
+<div id="perldoc"></div>
+<p>One of Perl's most useful and least appreciated features is the <code>perldoc</code> utility. This program is part of every complete Perl 5 installation <span class="footnote">(footnote: You may have to install an additional package on a free GNU/Linux distribution or another Unix-like system; on Debian and Ubuntu this is <code>perl-doc</code>.)</span>. It displays the documentation of every Perl module installed on the system--whether a core module or one installed from the Comprehensive Perl Archive Network (CPAN)--as well as thousands of pages of Perl's copious core documentation.</p>
+<div class="sidebar">
+<p>If you prefer an online version, <span class="url">http://perldoc.perl.org/</span> hosts recent versions of the Perl documentation. <span class="url">http://search.cpan.org/</span> displays the documentation of every module on the CPAN. Windows users, both ActivePerl and Strawberry Perl provide a link in your Start menu to the documentation.</p>
+</div>
+<p>The default behavior of <code>perldoc</code> is to display the documentation for a named module or a specific section of the core documentation:</p>
+<pre>
+<code>    $ <b>perldoc List::Util</b>
+    $ <b>perldoc perltoc</b>
+    $ <b>perldoc Moose::Manual</b></code>
+</pre>
+<p>The first example extracts documentation written for the <code>List::Util</code> module and displays it in a form appropriate for your screen. Community standards for CPAN modules (<a href="chapter_02.xhtml#cpan">The CPAN</a>(cpan)) suggest that additional libraries use the same documentation format and form as core modules, so there's no distinction between reading the documentation for a core library such as <code>Data::Dumper</code> or one installed from the CPAN. The standard documentation template includes a description of the module, demonstrates sample uses, and then contains a detailed explanation of the module and its interface. While the amount of documentation varies by author, the form of the documentation is remarkably consistent.</p>
+<p>The second example displays a pure documentation file, in this case the table of contents of the core documentation itself. This file describes each individual piece of the core documentation; browse it for a good understanding of Perl's breadth.</p>
+<p>The third example resembles the second; <code>Moose::Manual</code> is part of the Moose CPAN distribution (<a href="chapter_07.xhtml#moose">Moose</a>(moose)). It is also purely documentation; it contains no code.</p>
+<div class="sidebar">
+<p>Similarly, <code>perldoc perlfaq</code> will display the table of contents for Frequently Asked Questions about Perl 5. Skimming these questions is invaluable.</p>
+</div>
+<div id="iperldoc__i45q_0"></div>
+<p>The <code>perldoc</code> utility has many more abilities (see <code>perldoc perldoc</code>). Two of the most useful are the <code>-q</code> and the <code>-f</code> flags. The <code>-q</code> flag takes a keyword or keywords and searches only the Perl FAQ, displaying all results. Thus <code>perldoc -q sort</code> returns three questions: <i>How do I sort an array by (anything)?</i>, <i>How do I sort a hash (optionally by value instead of key)?</i>, and <i>How can I always keep my hash sorted?</i>.</p>
+<div id="iperldoc__i45f_0"></div>
+<p>The <code>-f</code> flag displays the core documentation for a builtin Perl function. <code>perldoc -f sort</code> explains the behavior of the <code>sort</code> operator. If you don't know the name of the function you want, use <code>perldoc perlfunc</code> to see a list of functions.</p>
+<div class="sidebar">
+<p><code>perldoc perlop</code> and <code>perldoc perlsyn</code> document Perl's symbolic operators and syntactic constructs; <code>perldoc perldiag</code> explains the meanings of Perl's warning messages.</p>
+</div>
+<div id="iPOD_0"></div>
+<p>Perl 5's documentation system is <i>POD</i>, or <i>Plain Old Documentation</i>. <code>perldoc perlpod</code> describes how POD works. The <code>perldoc</code> utility will display the POD in any Perl module you create and install for your project, and other POD tools such as <code>podchecker</code>, which validates the form of your POD, and <code>Pod::Webserver</code>, which displays local POD as HTML through a minimal webserver, will handle valid POD correctly.</p>
+<div id="iperldoc__i45l_0"></div>
+<div id="iperldoc__i45m_0"></div>
+<p><code>perldoc</code> has other uses. With the <code>-l</code> command-line flag, it displays the <i>path</i> to the documentation file rather than the contents of the documentation <span class="footnote">(footnote: Be aware that a module may have a separate <i>.pod</i> file in addition to its <i>.pm</i> file.)</span>. With the <code>-m</code> flag, it displays the entire <i>contents</i> of the module, code and all, without processing any POD instructions.</p>
+<h4 id="heading_id_4">Expressivity</h4>
+<div id="expressivity"></div>
+<div id="iWall44_Larry_0"></div>
+<div id="iLarry_Wall_0"></div>
+<p>Before Larry Wall created Perl, he studied linguistics and human languages. His experiences continue to influence Perl's design. There are many ways to write a Perl program depending on your project's style, the available time to create the program, the expected maintenance burden, or even your own personal sense of expression. You may write in a straightforward, top-to-bottom style. You may write many small and independent functions. You may model your problem with classes and objects. You may eschew or embrace advanced features.</p>
+<div id="iTIMTOWTDI_0"></div>
+<div id="iTim_Toady_0"></div>
+<p>Perl hackers have a slogan for this: <i>TIMTOWTDI</i>, pronounced "Tim Toady", or "There's more than one way to do it!"</p>
+<p>Where this expressivity can provide a large palette with which master craftsman can create amazing and powerful edifices, unwise conglomerations of various techniques can impede maintainability and comprehensibility. You can write good code or you can make a mess. The choice is yours <span class="footnote">(footnote: ... but be kind to other people, if you must make a mess.)</span>.</p>
+<p>Where other languages might suggest that one enforced way to perform any operation is the right solution, Perl allows you to optimize for your most important criteria. Within the realm of your own problems, you can choose from several good approaches--but be mindful of readability and future maintainability.</p>
+<p>As a novice to Perl, you may find certain constructs difficult to understand. The greater Perl community has discovered and promoted several idioms (<a href="chapter_10.xhtml#idioms">Idioms</a>(idioms)) which offer great power. Don't expect to understand them immediately. Some of Perl's features interact in subtle ways.</p>
+<div class="sidebar">
+<p>Learning Perl is like learning a second or third spoken language. You'll learn a few words, then string together some sentences, and eventually will be able to have small, simple conversations. Mastery comes with practice, both reading and writing. You don't have to understand all of the details of this chapter immediately to be productive with Perl. Keep the principles as you read the rest of this book.</p>
+</div>
+<p>Another design goal of Perl is to surprise experienced (Perl) programmers very little. For example, adding two scalars together with a numeric operator (<code>$first_num + $second_num</code>) is obviously a numeric operation; the operator must treat both scalars as numeric values to produce a numeric result. No matter what the contents of <code>$first_num</code> and <code>$second_num</code>, Perl will coerce them to numeric values (<a href="chapter_03.xhtml#numeric_coercion">Numeric Coercion</a>(numeric_coercion)) without requiring the user or programmer to perform this conversion manually. You've expressed your intent to treat them as numbers by choosing a numeric operator (<a href="chapter_04.xhtml#numeric_operators">Numeric Operators</a>(numeric_operators)), so Perl happily handles the rest.</p>
+<div id="iDWIM_0"></div>
+<div id="iprinciple_of_least_astonishment_0"></div>
+<p>In general, Perl programmers can expect Perl to do what you mean; this is the notion of <i>DWIM</i>--<i>do what I mean</i>. You may also see this mentioned as the <i>principle of least astonishment</i>. Given a cursory understanding of Perl (especially its <a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)), it should be possible to read a single unfamiliar Perl expression and understand its intent.</p>
+<div id="ibaby_Perl_0"></div>
+<p>If you're new to Perl, you will develop this skill over time. The flip side of Perl's expressivity is that Perl novices can write useful programs before they learn all of Perl's powerful features. The Perl community often refers to this as <i>baby Perl</i>. Though it may sound dismissive, please don't take offense; everyone was a novice once. Take the opportunity to learn from more experienced programmers and ask for explanations of idioms and constructs you don't yet understand.</p>
+<div class="sidebar">
+<p>A Perl novice might multiply a list of numbers by three by writing:</p>
+<div class="programlisting">
+<pre>
+<code>    my @tripled;
+    my $count = @numbers;
+
+    for (my $i = 0; $i &lt; $count; $i++)
+    {
+        $tripled[$i] = $numbers[$i] * 3;
+    }</code>
+</pre></div>
+<p>A Perl adept might write:</p>
+<div class="programlisting">
+<pre>
+<code>    my @tripled;
+
+    for my $num (@numbers)
+    {
+        push @tripled, $num * 3;
+    }</code>
+</pre></div>
+<p>An experienced Perl hacker might write:</p>
+<div class="programlisting">
+<pre>
+<code>    my @tripled = map { $_ * 3 } @numbers;</code>
+</pre></div>
+<p>Experience writing Perl will help you to focus on what you want to do rather than how to do it.</p>
+</div>
+<p>Perl is a language intended to grow with your understanding of programming. It won't punish you for writing simple programs. It allows you to refine and expand programs for clarity, expressivity, reuse, and maintainability. Take advantage of this philosophy. It's more important to accomplish your task well than to write a conceptually pure and beautiful program.</p>
+<p>The rest of this book demonstrates how to use Perl to your advantage.</p>
+<h4 id="heading_id_5">Context</h4>
+<div id="context_philosophy"></div>
+<div id="icontext_0"></div>
+<p>Spoken languages have a notion of <i>context</i> where the correct usage or meaning of a word or phrase depends on its surroundings. You may understand this in a spoken language, where the inappropriate pluralization of "Please give me one hamburgers!" <span class="footnote">(footnote: The pluralization of the noun differs from the amount.)</span> sounds wrong or the incorrect gender of "la gato" <span class="footnote">(footnote: The article is feminine, but the noun is masculine.)</span> makes native speakers chuckle.</p>
+<p>Context in Perl is similar; the language understands expectations of the amount of data to provide as well as what kind of data to provide. Perl will happily attempt to provide exactly what you ask for.</p>
+<p>One type of context in Perl means that certain operators have different behavior if you want zero, one, or many results. It's possible that a specific construct in Perl will do something different if you say "Fetch me zero results; I don't care about any" than if you say "Fetch me one result" or "Fetch me many results."</p>
+<p>Likewise, certain contexts make it clear that you expect a numeric value, a string value, or a value that's either true or false.</p>
+<p>Context can be tricky if you try to write or read Perl code as a series of single expressions which stand apart from from their environments. You may find yourself slapping your forehead after a long debugging session when you discover that your assumptions about context were incorrect. However, if you're cognizant of contexts, they can make your code clearer, more concise, and more flexible.</p>
+<h5 id="heading_id_6">Void, Scalar, and List Context</h5>
+<div id="amount_context"></div>
+<div id="icontext__iamount_0"></div>
+<div id="iamount_context_0"></div>
+<p>One of the aspects of context governs <i>how many</i> items you expect. This is <i>amount context</i>. Compare this context to subject-verb number agreement in English. Even if you haven't learned the formal description of the rule, you probably understand the error in the sentence "Perl are a fun language". The rule in Perl is that the number of items you request determines how many you get.</p>
+<div id="ivoid_context_0"></div>
+<div id="icontext__ivoid_0"></div>
+<p>Suppose you have a function (<a href="chapter_05.xhtml#functions">Functions</a>(functions)) called <code>some_expensive_operation()</code> which performs an expensive calculation and can produce many, many results. If you call the function on its own and never use its return value, you've called the function in <i>void context</i>:</p>
+<div class="programlisting">
+<pre>
+<code>    some_expensive_operation();</code>
+</pre></div>
+<div id="iscalar_context_0"></div>
+<p>Assigning the function's return value to a single element evaluates the function in <i>scalar context</i>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $single_result = some_expensive_operation();</code>
+</pre></div>
+<div id="ilist_context_0"></div>
+<p>Assigning the results of calling the function to an array (<a href="chapter_03.xhtml#arrays">Arrays</a>(arrays)) or a list, or using it in a list evaluates the function in <i>list context</i>:</p>
+<div class="programlisting">
+<pre>
+<code>    my @all_results        = some_expensive_operation();
+    my ($single_element)   = some_expensive_operation();
+    process_list_of_results( some_expensive_operation() );</code>
+</pre></div>
+<p>The second line of the previous example may look confusing; the parentheses there give a hint to the compiler that although there's only a single scalar, this assignment should occur in list context. It's semantically equivalent to assigning to a scalar and a temporary array, and then throwing away the array, except that no assignment to the array actually occurs:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($single_element, @rest) = some_expensive_operation();</code>
+</pre></div>
+<div class="sidebar">
+<p>Why is context interesting for functions? Suppose <code>some_expensive_operation()</code> calculates all of the tasks you have to do around the house, sorted in order of their priority. If you have only time to do one task, you can call the function in scalar context to get a useful task--perhaps not necessarily the most important, but important enough without having to go through your whole task list. In list context, the function can perform all of the sorting and searching and comparison and give you an exhaustive list in the proper order. If you want all of that work, but only have time for a couple of tasks, you can use a one or two-element list.</p>
+</div>
+<p>Evaluating a function or expression--except for assignment--in list context can produce confusion. Lists propagate list context to the expressions they contain. Both calls to <code>some_expensive_operation()</code> occur in list context:</p>
+<div class="programlisting">
+<pre>
+<code>    process_list_of_results( some_expensive_operation() );
+
+    my %results =
+    (
+        cheap_operation     =&gt; $cheap_operation_results,
+        expensive_operation =&gt; some_expensive_operation(), # OOPS!
+    );</code>
+</pre></div>
+<div id="ioperators__iscalar_0"></div>
+<div id="iscalar_0"></div>
+<p>The latter example often surprises novice programmers who expect scalar context for the call. Use the <code>scalar</code> operator to enforce it:</p>
+<div class="programlisting">
+<pre>
+<code>    my %results =
+    (
+        cheap_operation     =&gt; $cheap_operation_results,
+        expensive_operation =&gt; scalar some_expensive_operation(),
+    );</code>
+</pre></div>
+<h5 id="heading_id_7">Numeric, String, and Boolean Context</h5>
+<div id="value_contexts"></div>
+<div id="ivalue_context_0"></div>
+<div id="icontext__ivalue_0"></div>
+<p>Another type of context determines how Perl understands a piece of data--not <i>how many</i> pieces of data you want, but what the data means. You've probably already noticed that Perl's flexible about figuring out if you have a number or a string and converting between the two as you want them. This <i>value context</i> helps to explain how it does so. In exchange for not having to declare (or at least track) explicitly what <i>type</i> of data a variable contains or a function produces, Perl offers specific type contexts that tell the compiler how to treat a given value during an operation.</p>
+<p>Suppose you want to compare the contents of two strings. The <code>eq</code> operator tells you if the strings contain the same information:</p>
+<div class="programlisting">
+<pre>
+<code>    say "Catastrophic crypto fail!" if $alice eq $bob;</code>
+</pre></div>
+<p>You may have had a baffling experience where you <i>know</i> that the strings are different, but they still compare the same:</p>
+<div class="programlisting">
+<pre>
+<code>    my $alice = 'alice';
+    say "Catastrophic crypto fail!" if $alice == 'Bob';  # OOPS</code>
+</pre></div>
+<div id="istring_context_0"></div>
+<div id="inumeric_context_0"></div>
+<div id="icontext__istring_0"></div>
+<div id="icontext__inumeric_0"></div>
+<p>The <code>eq</code> operator treats its operands as strings by enforcing <i>string context</i> on them. The <code>==</code> operator enforces <i>numeric context</i>. The example code fails because the value of both strings when treated as numbers is <code>0</code>.</p>
+<div id="iboolean_context_0"></div>
+<div id="icontext__iboolean_0"></div>
+<p><i>Boolean context</i> occurs when you use a value in a conditional statement. In the previous examples, the <code>if</code> statement evaluated the results of the <code>eq</code> and <code>==</code> operators in boolean context.</p>
+<p>Perl will do its best to coerce values to the proper type (<a href="chapter_03.xhtml#coercion">Coercion</a>(coercion)), depending on the operators you use. Be sure to use the proper operator for the type of context you want.</p>
+<p>In rare circumstances, you may need to force an explicit context where no appropriately typed operator exists. To force a numeric context, add zero to a variable. To force a string context, concatenate a variable with the empty string. To force a boolean context, double the negation operator:</p>
+<div class="programlisting">
+<pre>
+<code>    my $numeric_x =  0 + $x;  # forces numeric context
+    my $stringy_x = '' . $x;  # forces string  context
+    my $boolean_x =    !!$x;  # forces boolean context</code>
+</pre></div>
+<p>In general, type contexts are less difficult to understand and see than the amount contexts. Once you understand that they exist and know which operators provide which contexts (<a href="chapter_04.xhtml#operator_types">Operator Types</a>(operator_types)), you'll rarely make mistakes with them.</p>
+<h4 id="heading_id_8">Implicit Ideas</h4>
+<div id="implicit_ideas"></div>
+<p>Like many spoken languages, Perl provides linguistic shortcuts. Context is one such feature. Both the compiler and a programmer reading the code can understand the expected number of results or the type of an operation from existing information without adding additional explicit information to disambiguate. Others also exist.</p>
+<h5 id="heading_id_9">The Default Scalar Variable</h5>
+<div id="idefault_scalar_variable_0"></div>
+<div id="ivariables__i36__0"></div>
+<div id="i36__0"></div>
+<p>The default scalar variable, <code>$_</code>, is the best example of a linguistic shortcut in Perl. It's most notable in its <i>absence</i>: many of Perl's built in operations perform their work on the contents of <code>$_</code> in the absence of an explicit variable. You can still use <code>$_</code> as the variable, but it's often unnecessary.</p>
+<p>For example, the <code>chomp</code> operator removes any trailing newline sequence from the given string:</p>
+<div class="programlisting">
+<pre>
+<code>    my $uncle = "Bob\n";
+    say "'$uncle'";
+    chomp $uncle;
+    say "'$uncle'";</code>
+</pre></div>
+<p>Without an explicit variable, <code>chomp</code> removes the trailing newline sequence from <code>$_</code>. Thus, these two lines of code are equivalent:</p>
+<div class="programlisting">
+<pre>
+<code>    chomp $_;
+    chomp;</code>
+</pre></div>
+<p>Similarly, the <code>say</code> and <code>print</code> builtins operate on <code>$_</code> in the absence of other arguments:</p>
+<div class="programlisting">
+<pre>
+<code>    print;  # prints $_ to the currently selected filehandle
+    say;    # prints $_ to the currently selected filehandle
+            # with a trailing newline</code>
+</pre></div>
+<p>Perl's regular expression facilities (<a href="chapter_06.xhtml#regular_expressions">Regular Expressions</a>(regular_expressions)) can also operate on <code>$_</code>, performing matches, substitutions, and transliterations:</p>
+<div class="programlisting">
+<pre>
+<code>    $_ = 'My name is Paquito';
+    say if /My name is/;
+
+    s/Paquito/Paquita/;
+
+    tr/A-Z/a-z/;
+    say;</code>
+</pre></div>
+<div class="author">
+<p>Check how many other string functions this includes?</p>
+</div>
+<p>Many of Perl's scalar operators work on the default scalar variable if you do not provide an alternative.</p>
+<p>Perl's looping directives (<a href="chapter_03.xhtml#looping_directives">Looping Directives</a>(looping_directives)) also set <code>$_</code>, such as <code>for</code> iterating over a list:</p>
+<div class="programlisting">
+<pre>
+<code>    say "#<b>$_</b>" for 1 .. 10;
+
+    for (1 .. 10)
+    {
+        say "#<b>$_</b>";
+    }</code>
+</pre></div>
+<p>... or <code>while</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    while (&lt;STDIN&gt;)
+    {
+        chomp;
+        say scalar reverse;
+    }</code>
+</pre></div>
+<p>... or <code>map</code> transforming a list:</p>
+<div class="programlisting">
+<pre>
+<code>    my @squares = map { <b>$_</b> * <b>$_</b> } 1 .. 10;
+    say for @squares;</code>
+</pre></div>
+<p>... or <code>grep</code> filtering a list:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'Brunch time!' if grep { /pancake mix/ } @pantry;</code>
+</pre></div>
+<p>If you call functions within code that uses <code>$_</code> whether implicitly or explicitly, they may overwrite the value of <code>$_</code>. Similarly, if you write a function which uses <code>$_</code>, you may clobber a caller function's use of <code>$_</code>. Perl 5.10 allows you to use <code>my</code> to declare <code>$_</code> as a lexical variable, which prevents this clobbering behavior. Be wise.</p>
+<div class="programlisting">
+<pre>
+<code>    while (&lt;STDIN&gt;)
+    {
+        chomp;
+
+        # BAD EXAMPLE
+        my $munged = calculate_value( $_ );
+        say "Original: $_";
+        say "Munged  : $munged";
+    }</code>
+</pre></div>
+<p>In this example, if <code>calculate_value()</code> or any other function it happened to call changed <code>$_</code>, it would remain changed throughout the <code>while</code> loop. Adding a <code>my</code> declaration prevents that behavior:</p>
+<div class="programlisting">
+<pre>
+<code>    while (my $_ = &lt;STDIN&gt;)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>Of course, using a named lexical can be just as clear:</p>
+<div class="programlisting">
+<pre>
+<code>    while (my $line = &lt;STDIN&gt;)
+    {
+        ...
+    }</code>
+</pre></div>
+<p>Use <code>$_</code> as you would the word "it" in formal writing: sparingly, in small and well-defined scopes.</p>
+<h5 id="heading_id_10">The Default Array Variables</h5>
+<div id="idefault_array_variables_0"></div>
+<div id="ivariables__i64__0"></div>
+<div id="i64__0"></div>
+<p>While Perl has a single implicit scalar variable, it has two implicit array variables. Perl passes arguments to functions in an array named <code>@_</code>. Array manipulation operations (<a href="chapter_03.xhtml#arrays">Arrays</a>(arrays)) performed inside functions affect this array by default. Thus, these two snippets of code are equivalent:</p>
+<div class="programlisting">
+<pre>
+<code>    sub foo
+    {
+        my $arg = shift;
+        ...
+    }
+
+    sub foo_explicit
+    {
+        my $arg = shift @_;
+        ...
+    }</code>
+</pre></div>
+<p><i>Unlike</i> <code>$_</code>, Perl automatically localizes <code>@_</code> for you when you call other functions. The array operators <code>shift</code> and <code>pop</code> operate on <code>@_</code> with no other operands provided.</p>
+<div id="ivariables__i64ARGV_0"></div>
+<div id="i64ARGV_0"></div>
+<p>Outside of all functions, the default array variable <code>@ARGV</code> contains the command-line arguments to the program. The same array operators which use <code>@_</code> implicitly <i>within</i> functions use <code>@ARGV</code> implicitly outside of functions. You cannot use <code>@_</code> when you mean <code>@ARGV</code>.</p>
+<div id="inull_filehandle_0"></div>
+<p><code>ARGV</code> has one special case. If you read from the null filehandle <code>&lt;&gt;</code>, Perl will treat every element in <code>@ARGV</code> as the <i>name</i> of a file to open for reading. (If <code>@ARGV</code> is empty, Perl will read from standard input.) This implicit <code>@ARGV</code> behavior is useful for writing short programs, such as this command-line filter which reverses its input:</p>
+<div class="programlisting">
+<pre>
+<code>    while (&lt;&gt;)
+    {
+        chomp;
+        say scalar reverse;
+    }</code>
+</pre></div>
+<div class="sidebar">
+<p>Why <code>scalar</code>? <code>say</code> imposes list context on its operands. <code>reverse</code> passes its context on to its operands, treating them as a list in list context and a concatenated string in scalar context. If this sounds confusing, it can be: if Perl 5 arguably should have had different operators for these different operations.</p>
+</div>
+<p>If you run it with a list of files:</p>
+<div class="screen">
+<pre>
+<code>    $ <b>perl reverse_lines.pl encrypted/*.txt</b></code>
+</pre></div>
+<p>... the result will be one long stream of output. Without any arguments, you can provide your own standard input by piping in from another program or typing directly.</p>
+</body>
+</html>

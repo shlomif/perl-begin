@@ -81,6 +81,11 @@ my $tree_contents =
             subs =>
             [
                 {
+                    text => "Modern Perl by chromatic",
+                    url => "tutorials/modern-perl/",
+                    title => "The book “Modern Perl” by chromatic.",
+                },
+                {
                     text => qq{The "Perl for Newbies" Tutorial},
                     url => "tutorials/perl-for-newbies/",
                     title => "Perl Tutorial for Beginners",
