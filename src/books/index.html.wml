@@ -40,7 +40,8 @@ book and can recommend it.
 
 <p>
 The book is <a href="<modern_perl_book_url />">available online for free
-download</a> and viewing.
+download</a> and viewing and we have 
+<a href="$(ROOT)/tutorials/modern-perl/">a local mirror</a>.
 </p>
 
 <book_info
@@ -66,10 +67,10 @@ http://www.perl.org/books/beginning-perl/
     />
 
 <p>
-This book is intended for people who are new to programming and wish to learn
-programming with Perl. Those that already have a past experience in 
-programming, will find it easier, but, otherwise even those without
-will be able to learn through it.
+This book is intended for people who are new to programming and wish to
+learn how to program using Perl. Those that already have a past experience in 
+programming, will find it easier, but otherwise, even those without
+prior experience will be able to learn using it.
 </p>
 
 <p>
