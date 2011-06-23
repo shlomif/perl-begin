@@ -667,7 +667,6 @@
 <p>It's common to <code>local</code>ize several special variables. For example, <code>$/</code>, the input record separator, governs how much data a <code>readline</code> operation will read from a filehandle. <code>$!</code>, the system error variable, contains the error number of the most recent system call. <code>$@</code>, the Perl <code>eval</code> error variable, contains any error from the most recent <code>eval</code> operation. <code>$|</code>, the autoflush variable, governs whether Perl will flush the currently <code>select</code>ed filehandle after every write operation.</p>
 <p>These are all special global variables; <code>local</code>izing them in the narrowest possible scope will avoid the action at a distance problem of modifying global variables used other places in your code.</p>
 <h4 id="heading_id_22">State Scope</h4>
-<div id="state"></div>
 <div id="istate_0"></div>
 <div id="iscope__istate_0"></div>
 <p>A final type of scope is new as of Perl 5.10. This is the scope of the <code>state</code> keyword. State scope resembles lexical scope in that it declares a lexical variable, but the value of that variable gets initialized <i>once</i>, and then persists:</p>
