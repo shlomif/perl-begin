@@ -1,5 +1,9 @@
 * Add some screenshots to the /uses/games page.
 
+* Add more information about:
+    - URI parsing.
+    - Filenames and paths parsing.
+
 * Pick up a better gvim colour scheme for the example code in the
 perl-for-newbies lecture.
 
