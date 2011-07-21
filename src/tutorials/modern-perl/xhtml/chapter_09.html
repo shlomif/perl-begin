@@ -93,7 +93,7 @@
     truth_values.t (Wstat: 512 Tests: 4 Failed: 2)
       Failed tests:  2-3</code>
 </pre></div>
-<p>That's a lot of output to display what is already obvious: the second and third tests fail because zero and the empty string evaluate to false. It's easy to fix that failure by inverting the sense of the condition with the use of boolean coercion (<a href="chapter_03.xhtml#boolean_coercion">Boolean Coercion</a>(boolean_coercion)):</p>
+<p>That's a lot of output to display what is already obvious: the second and third tests fail because zero and the empty string evaluate to false. It's easy to fix that failure by inverting the sense of the condition with the use of boolean coercion (<a href="chapter_03.html#boolean_coercion">Boolean Coercion</a>(boolean_coercion)):</p>
 <div class="programlisting">
 <pre>
 <code>    ok(   <b>!</b> 0, '... and the number zero should not'  );
@@ -142,7 +142,7 @@
 <div id="icmp_ok4041_0"></div>
 <div id="itesting__icmp_ok4041_0"></div>
 <div id="iTest5858More__icmp_ok4041_0"></div>
-<p>Both <code>is()</code> and <code>isnt()</code> perform <i>string comparisons</i> with the Perl 5 operators <code>eq</code> and <code>ne</code>. This almost always does the right thing, but for complex values such as objects with overloading (<a href="chapter_09.xhtml#overloading">Overloading</a>(overloading)) or dual vars (<a href="chapter_03.xhtml#dualvars">Dualvars</a>(dualvars)), you may prefer explicit comparison testing. The <code>cmp_ok()</code> function allows you to specify your own comparison operator:</p>
+<p>Both <code>is()</code> and <code>isnt()</code> perform <i>string comparisons</i> with the Perl 5 operators <code>eq</code> and <code>ne</code>. This almost always does the right thing, but for complex values such as objects with overloading (<a href="chapter_09.html#overloading">Overloading</a>(overloading)) or dual vars (<a href="chapter_03.html#dualvars">Dualvars</a>(dualvars)), you may prefer explicit comparison testing. The <code>cmp_ok()</code> function allows you to specify your own comparison operator:</p>
 <div class="programlisting">
 <pre>
 <code>    cmp_ok(     100, $cur_balance, '&lt;=', 'I should have at least $100' );
@@ -151,7 +151,7 @@
 <div id="iisa_ok4041_0"></div>
 <div id="itesting__iisa_ok4041_0"></div>
 <div id="iTest5858More__iisa_ok4041_0"></div>
-<p>Classes and objects provide their own interesting ways to interact with tests. Test that a class or object extends another class (<a href="chapter_07.xhtml#inheritance">Inheritance</a>(inheritance)) with <code>isa_ok()</code>:</p>
+<p>Classes and objects provide their own interesting ways to interact with tests. Test that a class or object extends another class (<a href="chapter_07.html#inheritance">Inheritance</a>(inheritance)) with <code>isa_ok()</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $chimpzilla = RobotMonkey-&gt;new();
@@ -340,7 +340,7 @@
 <div id="iclose_0"></div>
 <div id="ikeywords__iclose_0"></div>
 <p>When you've finished working with a file, you may <code>close</code> it explicitly or allow its filehandle to go out of scope, in which case Perl will close it for you. The benefit of calling <code>close</code> explicitly is that you can check for--and recover from--specific errors, such as running out of space on a storage device or a broken network connection.</p>
-<p>As usual, <code>autodie</code> (<a href="chapter_12.xhtml#autodie">The autodie Pragma</a>(autodie)) handles these checks for you:</p>
+<p>As usual, <code>autodie</code> (<a href="chapter_12.html#autodie">The autodie Pragma</a>(autodie)) handles these checks for you:</p>
 <div class="programlisting">
 <pre>
 <code>    use autodie;
@@ -357,7 +357,7 @@
 <p>For every line read, Perl 5 increments the value of the variable <code>$.</code>, which serves as a line counter.</p>
 <div id="ivariables__i3646_1"></div>
 <div id="i3646_1"></div>
-<p><code>readline</code> uses the current contents of <code>$/</code> as the line-ending sequence (see example in <a href="chapter_05.xhtml#dynamic_scope">Dynamic Scope</a>(dynamic_scope)). The value of this variable defaults to the most appropriate line-ending character sequence for text files on your current platform. In truth, the word <i>line</i> is a misnomer. You can set <code>$/</code> to contain any sequence of characters <span class="footnote">(footnote: ... but never a regular expression, because Perl 5 does not support that.)</span>. This is useful for highly-structured data in which you want to read a <i>record</i> at a time.</p>
+<p><code>readline</code> uses the current contents of <code>$/</code> as the line-ending sequence (see example in <a href="chapter_05.html#dynamic_scope">Dynamic Scope</a>(dynamic_scope)). The value of this variable defaults to the most appropriate line-ending character sequence for text files on your current platform. In truth, the word <i>line</i> is a misnomer. You can set <code>$/</code> to contain any sequence of characters <span class="footnote">(footnote: ... but never a regular expression, because Perl 5 does not support that.)</span>. This is useful for highly-structured data in which you want to read a <i>record</i> at a time.</p>
 <div id="ivariables__i36124_0"></div>
 <div id="i36124_1"></div>
 <div id="ibuffering_0"></div>
@@ -532,7 +532,7 @@
 <div id="iexceptions__i3664_0"></div>
 <p><code>die()</code> sets the global variable <code>$@</code> to its argument and immediately exits the current function <i>without returning anything</i>. If the calling function does not explicitly handle this exception, the exception will propagate upwards to every caller until something handles the exception or the program exits with an error message.</p>
 <div class="sidebar">
-<p>This dynamic scoping of exception throwing and handling is the same as the dynamic scoping of <code>local</code> symbols (<a href="chapter_05.xhtml#dynamic_scope">Dynamic Scope</a>(dynamic_scope)).</p>
+<p>This dynamic scoping of exception throwing and handling is the same as the dynamic scoping of <code>local</code> symbols (<a href="chapter_05.html#dynamic_scope">Dynamic Scope</a>(dynamic_scope)).</p>
 </div>
 <h4 id="heading_id_21">Catching Exceptions</h4>
 <div id="catching_exceptions"></div>
@@ -615,15 +615,15 @@
 <p>A list header and/or some reordering could help.</p>
 </div>
 <ul>
-<li>Using a disallowed key in a locked hash (<a href="chapter_03.xhtml#locked_hashes">Locking Hashes</a>(locked_hashes))</li>
-<li>Blessing a non-reference (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references))</li>
-<li>Calling a method on an invalid invocant (<a href="chapter_07.xhtml#moose">Moose</a>(moose))</li>
+<li>Using a disallowed key in a locked hash (<a href="chapter_03.html#locked_hashes">Locking Hashes</a>(locked_hashes))</li>
+<li>Blessing a non-reference (<a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references))</li>
+<li>Calling a method on an invalid invocant (<a href="chapter_07.html#moose">Moose</a>(moose))</li>
 <li>Failing to find a method of the given name on the invocant</li>
-<li>Perl encountered a tainting violation (<a href="chapter_09.xhtml#taint">Taint</a>(taint))</li>
+<li>Perl encountered a tainting violation (<a href="chapter_09.html#taint">Taint</a>(taint))</li>
 <li>Modifying a read-only value</li>
-<li>Performing the wrong operation on the wrong type of reference (<a href="chapter_03.xhtml#references">References</a>(references))</li>
+<li>Performing the wrong operation on the wrong type of reference (<a href="chapter_03.html#references">References</a>(references))</li>
 </ul>
-<p>If you have enabled fatal lexical warnings (<a href="chapter_09.xhtml#registering_warnings">Registering Your Own Warnings</a>(registering_warnings)), you can catch the exceptions they throw. The same goes for exceptions from <code>autodie</code> (<a href="chapter_12.xhtml#autodie">The autodie Pragma</a>(autodie)).</p>
+<p>If you have enabled fatal lexical warnings (<a href="chapter_09.html#registering_warnings">Registering Your Own Warnings</a>(registering_warnings)), you can catch the exceptions they throw. The same goes for exceptions from <code>autodie</code> (<a href="chapter_12.html#autodie">The autodie Pragma</a>(autodie)).</p>
 <h3 id="heading_id_24">Handling Warnings</h3>
 <div id="handling_warnings"></div>
 <p>Perl 5 produces optional warnings for many confusing, unclear, and ambiguous situations. Even though you should almost always enable warnings unconditionally, certain circumstances dictate prudence in disabling certain warnings--and Perl supports this.</p>
@@ -650,8 +650,8 @@
 <p>All of <code>-w</code>, <code>-W</code>, and <code>-X</code> affect the value of the global variable <code>$^W</code>. Code written before the <code>warnings</code> pragma (Perl 5.6.0 in spring 2000) may <code>local</code>ize <code>$^W</code> to suppress certain warnings within a given scope. New code should use the pragma instead.</p>
 <h4 id="heading_id_27">Disabling Warning Categories</h4>
 <p>To disable selective warnings within a scope, use <code>no warnings;</code> with an argument list. Omitting the argument list disables all warnings within that scope.</p>
-<p><code>perldoc perllexwarn</code> lists all of the warnings categories your version of Perl 5 understands with the <code>warnings</code> pragma. Most of them represent truly interesting conditions in which Perl may find your program. A few may be unhelpful in specific conditions. For example, the <code>recursion</code> warning will occur if Perl detects that a function has called itself more than a hundred times. If you are confident in your ability to write recursion-ending conditions, you may disable this warning within the scope of the recursion. (Alternately see <a href="chapter_05.xhtml#tail_calls">Tail Calls</a>(tail_calls).)</p>
-<p>If you're generating code (<a href="chapter_09.xhtml#code_generation">Code Generation</a>(code_generation)) or locally redefining symbols, you may wish to disable the <code>redefine</code> warnings.</p>
+<p><code>perldoc perllexwarn</code> lists all of the warnings categories your version of Perl 5 understands with the <code>warnings</code> pragma. Most of them represent truly interesting conditions in which Perl may find your program. A few may be unhelpful in specific conditions. For example, the <code>recursion</code> warning will occur if Perl detects that a function has called itself more than a hundred times. If you are confident in your ability to write recursion-ending conditions, you may disable this warning within the scope of the recursion. (Alternately see <a href="chapter_05.html#tail_calls">Tail Calls</a>(tail_calls).)</p>
+<p>If you're generating code (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)) or locally redefining symbols, you may wish to disable the <code>redefine</code> warnings.</p>
 <p>Some experienced Perl hackers disable the <code>uninitialized</code> value warnings in string-processing code which concatenates values from many sources. Careful initialization of variables can avoid the need to disable the warning, but local style and concision may render this warning moot.</p>
 <h4 id="heading_id_28">Making Warnings Fatal</h4>
 <div id="fatal_warnings"></div>
@@ -766,7 +766,7 @@
     use CGI ':standard';         # calls CGI-&gt;import( ':standard' )
     use feature qw( say switch ) # calls feature-&gt;import( qw( say switch ) )</code>
 </pre></div>
-<p>You do not have to provide an <code>import()</code> method, and you may use it to do anything you wish, but the standard API expectation is that it takes a list of arguments of symbols (usually functions) to make available in the calling namespace. This is not a strong requirement; pragmas (<a href="chapter_09.xhtml#pragmas">Pragmas</a>(pragmas)) such as <code>strict</code> use arguments to change their behavior instead of exporting symbols.</p>
+<p>You do not have to provide an <code>import()</code> method, and you may use it to do anything you wish, but the standard API expectation is that it takes a list of arguments of symbols (usually functions) to make available in the calling namespace. This is not a strong requirement; pragmas (<a href="chapter_09.html#pragmas">Pragmas</a>(pragmas)) such as <code>strict</code> use arguments to change their behavior instead of exporting symbols.</p>
 <div id="ino_0"></div>
 <div id="iunimporting_0"></div>
 <p>The <code>no</code> keyword calls a module's <code>unimport()</code> method, if it exists, passing any arguments. While it's possible to remove exported symbols, it's more common to disable specific features of pragmas and other modules which introduce new behaviors through <code>import()</code>:</p>
@@ -878,7 +878,7 @@
 <p>Even if you do not use an object-oriented approach, modeling every distinct entity or responsibility in your system with its own module keeps related code together and separate code separate.</p>
 <h3 id="heading_id_35">Pragmas</h3>
 <div id="pragmas"></div>
-<p>Perl 5's extension mechanism is modules (<a href="chapter_09.xhtml#modules">Modules</a>(modules)). Most modules provide functions to call or they define classes (<a href="chapter_07.xhtml#moose">Moose</a>(moose)), but some modules instead influence the behavior of the language itself.</p>
+<p>Perl 5's extension mechanism is modules (<a href="chapter_09.html#modules">Modules</a>(modules)). Most modules provide functions to call or they define classes (<a href="chapter_07.html#moose">Moose</a>(moose)), but some modules instead influence the behavior of the language itself.</p>
 <div id="ipragma_0"></div>
 <div id="imodules__ipragmas_0"></div>
 <p>A module which influences the behavior of the compiler is a <i>pragma</i>. By convention, pragmas have lower-case names to differentiate them from other modules. You've heard of some before: <code>strict</code> and <code>warnings</code>, for example.</p>
@@ -943,7 +943,7 @@
 <li>the <code>utf8</code> pragma enables the use of the UTF-8 encoding of source code</li>
 <li>the <code>autodie</code> pragma (new in 5.10.1) enables automatic error checking of system calls and keywords, reducing the need for manual error checking</li>
 <li>the <code>constant</code> pragma allows you to create compile-time constant values (though see <code>Readonly</code> from the CPAN for an alternative)</li>
-<li>the <code>vars</code> pragma allows you to declare package global variables, such as <code>$VERSION</code> or those for exporting (<a href="chapter_09.xhtml#exporting">Exporting</a>(exporting)) and manual OO (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references))</li>
+<li>the <code>vars</code> pragma allows you to declare package global variables, such as <code>$VERSION</code> or those for exporting (<a href="chapter_09.html#exporting">Exporting</a>(exporting)) and manual OO (<a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references))</li>
 </ul>
 <p>Several useful pragmas exist on the CPAN as well. Two worth exploring in detail are <code>autobox</code>, which enables object-like behavior for Perl 5's core types (scalars, references, arrays, and hashes) and <code>perl5i</code>, which combines and enables many experimental language extensions into a coherent whole. These two pragmas may not belong yet in your production code without extensive testing and thoughtful consideration, but they demonstrate the power and utility of pragmas.</p>
 <h4 id="heading_id_39">Your own Pragmas</h4>
@@ -955,7 +955,7 @@
 <h3 id="heading_id_40">Distributions</h3>
 <div id="distributions"></div>
 <div id="idistribution_1"></div>
-<p>A <i>distribution</i> is a collection of one or more modules (<a href="chapter_09.xhtml#modules">Modules</a>(modules)) which forms a single redistributable, testable, and installable unit. Effectively it's a collection of module and metadata.</p>
+<p>A <i>distribution</i> is a collection of one or more modules (<a href="chapter_09.html#modules">Modules</a>(modules)) which forms a single redistributable, testable, and installable unit. Effectively it's a collection of module and metadata.</p>
 <p>The easiest way to manage software configuration, building, distribution, testing, and installation even within your organization is to create distributions compatible with the CPAN. The conventions of the CPAN--how to package a distribution, how to resolve its dependencies, where to install software, how to verify that it works, how to display documentation, how to manage a repository--have all arisen from the rough consensus of thousands of contributors working on tens of thousands of projects.</p>
 <p>In particular, the copious amount of testing and reporting and dependency checking achieved by CPAN developers exceeds the available information and quality of work in any other language community. A distribution built to CPAN standards can be tested on several versions of Perl 5 on several different hardware platforms within a few hours of its uploading--all without human intervention.</p>
 <p>You may choose never to release any of your code as public CPAN distributions, but you can reuse existing CPAN tools and designs as possible. The combination of intelligent defaults and customizability are likely to meet your specific needs.</p>
@@ -979,8 +979,8 @@
 <li><code>CPANPLUS</code> is an alternate CPAN client with a different design approach. It does some things better than <code>CPAN.pm</code>, but they are largely equivalent at this point. Use whichever you prefer.</li>
 <li><code>Module::Build</code> is a pure-Perl tool suite for configuring, building, installing, and testing distributions. It works with the <i>Build.PL</i> file mentioned earlier.</li>
 <li><code>ExtUtils::MakeMaker</code> is an older, legacy tool which <code>Module::Build</code> intends to replace. It is still in wide use, though it is in maintenance mode and receives only the most critical bugfixes. It works with the <i>Makefile.PL</i> file mentioned earlier.</li>
-<li><code>Test::More</code> (<a href="chapter_09.xhtml#testing">Testing</a>(testing)) is the basic and most widely used testing module used to write automated tests for Perl software.</li>
-<li><code>Test::Harness</code> and <code>prove</code> (<a href="chapter_09.xhtml#running_tests">Running Tests</a>(running_tests)) are the tools used to run tests and to interpret and report their results.</li>
+<li><code>Test::More</code> (<a href="chapter_09.html#testing">Testing</a>(testing)) is the basic and most widely used testing module used to write automated tests for Perl software.</li>
+<li><code>Test::Harness</code> and <code>prove</code> (<a href="chapter_09.html#running_tests">Running Tests</a>(running_tests)) are the tools used to run tests and to interpret and report their results.</li>
 </ul>
 <p>In addition, several non-core CPAN modules make your life easier as a developer:</p>
 <ul>
@@ -1029,11 +1029,11 @@
 <div id="iIO_0"></div>
 <div id="iCODE_0"></div>
 <p>Built-in types are <code>SCALAR</code>, <code>ARRAY</code>, <code>HASH</code>, <code>REGEX</code>, <code>IO</code>, and <code>CODE</code>.</p>
-<p>You can override <code>isa()</code> in your own classes. This can be useful when working with mock objects (see <code>Test::MockObject</code> and <code>Test::MockModule</code> on the CPAN, for example) or with code that does not use roles (<a href="chapter_07.xhtml#roles">Roles</a>(roles)).</p>
+<p>You can override <code>isa()</code> in your own classes. This can be useful when working with mock objects (see <code>Test::MockObject</code> and <code>Test::MockModule</code> on the CPAN, for example) or with code that does not use roles (<a href="chapter_07.html#roles">Roles</a>(roles)).</p>
 <h4 id="heading_id_46">The can() Method</h4>
 <div id="iUNIVERSAL5858can_1"></div>
 <div id="ican4041_1"></div>
-<p>The <code>can()</code> method takes the string containing the name of a method (though see <a href="chapter_11.xhtml#method_sub_equivalence">Method-Function Equivalence</a>(method_sub_equivalence) for a disclaimer). It returns a reference to the function which implements that method, if it exists. Otherwise, it returns false. You may call this on a class, an object, or the name of a package. In the latter case, it returns a reference to a function, not a method.</p>
+<p>The <code>can()</code> method takes the string containing the name of a method (though see <a href="chapter_11.html#method_sub_equivalence">Method-Function Equivalence</a>(method_sub_equivalence) for a disclaimer). It returns a reference to the function which implements that method, if it exists. Otherwise, it returns false. You may call this on a class, an object, or the name of a package. In the latter case, it returns a reference to a function, not a method.</p>
 <p>Given a class named <code>SpiderMonkey</code> with a method named <code>screech</code>, you can get a reference to the method with:</p>
 <div class="programlisting">
 <pre>
@@ -1057,7 +1057,7 @@
         $register-&gt;();
     }</code>
 </pre></div>
-<p>You can (and should) override <code>can()</code> in your own code if you use <code>AUTOLOAD()</code>. See <a href="chapter_05.xhtml#autoload_drawbacks">Drawbacks of AUTOLOAD</a>(autoload_drawbacks) for a longer explanation.</p>
+<p>You can (and should) override <code>can()</code> in your own code if you use <code>AUTOLOAD()</code>. See <a href="chapter_05.html#autoload_drawbacks">Drawbacks of AUTOLOAD</a>(autoload_drawbacks) for a longer explanation.</p>
 <div class="sidebar">
 <p>There is <i>one</i> known case where calling <code>UNIVERSAL::can()</code> as a function and not a method is not incorrect: to determine whether a class exists in Perl 5. If <code>UNIVERSAL::can( $classname, 'can' )</code> returns true, someone somewhere has defined a class of the name <code>$classname</code>. Alternately, <code>Moose</code>'s introspection is much more powerful and easier to use.</p>
 </div>
@@ -1078,7 +1078,7 @@
 <h4 id="heading_id_48">The DOES() Method</h4>
 <div id="iUNIVERSAL5858DOES_0"></div>
 <div id="iDOES4041_1"></div>
-<p>The <code>DOES()</code> method is new in Perl 5.10.0. It exists to support the use of roles (<a href="chapter_07.xhtml#roles">Roles</a>(roles)) in programs. Pass it an invocant and the name of a role, and the method will return true if the appropriate class somehow performs that role. (The class may do so through inheritance, through delegation, through composition, through role application, or any other mechanism.)</p>
+<p>The <code>DOES()</code> method is new in Perl 5.10.0. It exists to support the use of roles (<a href="chapter_07.html#roles">Roles</a>(roles)) in programs. Pass it an invocant and the name of a role, and the method will return true if the appropriate class somehow performs that role. (The class may do so through inheritance, through delegation, through composition, through role application, or any other mechanism.)</p>
 <p>The default implementation of <code>DOES()</code> falls back to <code>isa()</code>, because inheritance is one mechanism by which a class may perform a role. Given a <code>Cappuchin</code>:</p>
 <div class="programlisting">
 <pre>
@@ -1098,8 +1098,8 @@
 <p>Novice programmers write more code than they need to write, partly from unfamiliarity with their languages, libraries, and idioms, but also due to inexperience creating and maintaining good abstractions. They start by writing long lists of procedural code, then discover functions, then parameters, then objects, and--perhaps--higher-order functions and closures.</p>
 <div id="imetaprogramming_1"></div>
 <div id="icode_generation_0"></div>
-<p><i>Metaprogramming</i> (or <i>code generation</i>)--writing programs which write programs--is another abstraction technique. It can be as clear as exploiting higher-order programming capabilities or it can be a rathole down which you find yourself confused and frightened. The techniques are powerful and useful, however--and some of them form the basis of powerful tools such as Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)).</p>
-<p>The <code>AUTOLOAD</code> technique (<a href="chapter_05.xhtml#autoload">AUTOLOAD</a>(autoload)) for missing functions and methods demonstrates this technique in a constrained form; Perl 5's function and method dispatch system allows you to customize what happens when normal lookup fails.</p>
+<p><i>Metaprogramming</i> (or <i>code generation</i>)--writing programs which write programs--is another abstraction technique. It can be as clear as exploiting higher-order programming capabilities or it can be a rathole down which you find yourself confused and frightened. The techniques are powerful and useful, however--and some of them form the basis of powerful tools such as Moose (<a href="chapter_07.html#moose">Moose</a>(moose)).</p>
+<p>The <code>AUTOLOAD</code> technique (<a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload)) for missing functions and methods demonstrates this technique in a constrained form; Perl 5's function and method dispatch system allows you to customize what happens when normal lookup fails.</p>
 <h4 id="heading_id_51">eval</h4>
 <div id="ieval_string_0"></div>
 <div id="ioperators__ieval_0"></div>
@@ -1142,7 +1142,7 @@
 <p>Even so, this technique is simple and reasonably easy to understand.</p>
 <h4 id="heading_id_52">Parametric Closures</h4>
 <div id="iclosures__iparametric_0"></div>
-<p>While building accessors and mutators with <code>eval</code> is straightforward, closures (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) allow you to add parameters to generated code at compilation time without requiring additional evaluation:</p>
+<p>While building accessors and mutators with <code>eval</code> is straightforward, closures (<a href="chapter_05.html#closures">Closures</a>(closures)) allow you to add parameters to generated code at compilation time without requiring additional evaluation:</p>
 <div class="programlisting">
 <pre>
 <code>    sub generate_accessors
@@ -1240,7 +1240,7 @@
 <p>... is primarily one of maintainability.</p>
 <div id="iBEGIN__iimplicit_0"></div>
 <div id="imodules__iimplicit_BEGIN_0"></div>
-<p>Within a module, <code>BEGIN</code> concerns tend not to matter because <code>use</code> adds an implicit <code>BEGIN</code> around the <code>require</code> and <code>import</code> (<a href="chapter_05.xhtml#importing">Importing</a>(importing)). Any code outside of a function but inside the module will execute <i>before</i> the <code>import()</code> call occurs. If you <code>require</code> the module, however, there is no implicit <code>BEGIN</code> block. The execution of code outside of functions will happen at the <i>end</i> of parsing.</p>
+<p>Within a module, <code>BEGIN</code> concerns tend not to matter because <code>use</code> adds an implicit <code>BEGIN</code> around the <code>require</code> and <code>import</code> (<a href="chapter_05.html#importing">Importing</a>(importing)). Any code outside of a function but inside the module will execute <i>before</i> the <code>import()</code> call occurs. If you <code>require</code> the module, however, there is no implicit <code>BEGIN</code> block. The execution of code outside of functions will happen at the <i>end</i> of parsing.</p>
 <p>Also beware of the interaction between lexical <i>declaration</i> (the association of a name with a scope) and lexical <i>assignment</i>. The former happens during compilation, while the latter occurs at the point of execution. This code has a subtle bug:</p>
 <div class="programlisting">
 <pre>
@@ -1263,7 +1263,7 @@
 <div id="iobjects__imeta_object_protocol_0"></div>
 <div id="iMOP_1"></div>
 <div id="imeta_object_protocol_0"></div>
-<p>Unlike installing function references to populate namespaces and to create methods, there's no simple built-in way to create classes in Perl 5. Fortunately, a mature and powerful distribution is available from the CPAN to do just this. <code>Clas::MOP</code> is the library which makes <code>Moose</code> (<a href="chapter_07.xhtml#moose">Moose</a>(moose)) possible. It provides a <i>meta object protocol</i>--a mechanism for creating and manipulating an object system in terms of itself.</p>
+<p>Unlike installing function references to populate namespaces and to create methods, there's no simple built-in way to create classes in Perl 5. Fortunately, a mature and powerful distribution is available from the CPAN to do just this. <code>Clas::MOP</code> is the library which makes <code>Moose</code> (<a href="chapter_07.html#moose">Moose</a>(moose)) possible. It provides a <i>meta object protocol</i>--a mechanism for creating and manipulating an object system in terms of itself.</p>
 <p>Rather than writing your own fragile <code>eval</code> string code or trying to poke into symbol tables manually, you can manipulate the entities and abstractions of your program with objects and methods.</p>
 <p>To create a class:</p>
 <div class="programlisting">
@@ -1305,7 +1305,7 @@
 <code>    my @attrs = $class-&gt;get_all_attributes();
     my @meths = $class-&gt;get_all_methods();</code>
 </pre></div>
-<p>You can similarly create and manipulate and introspect attributes and methods with <code>Class::MOP::Attribute</code> and <code>Class::MOP::Method</code>. This metaobject protocol and the flexibility it affords powers Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)).</p>
+<p>You can similarly create and manipulate and introspect attributes and methods with <code>Class::MOP::Attribute</code> and <code>Class::MOP::Method</code>. This metaobject protocol and the flexibility it affords powers Moose (<a href="chapter_07.html#moose">Moose</a>(moose)).</p>
 <h3 id="heading_id_55">Overloading</h3>
 <div id="overloading"></div>
 <div id="ioverloading_0"></div>
@@ -1336,7 +1336,7 @@
         'bool' =&gt; sub { 0 },
         <b>'""'   =&gt; sub { '(null)' };</b></code>
 </pre></div>
-<p>Overriding numification is more complex, because arithmetic operators tend to be binary ops (<a href="chapter_04.xhtml#arity">Arity</a>(arity)). Given two operands both with overloaded methods for addition, which takes precedence? The answer needs to be consistent, easy to explain, and understandable by people who haven't read the source code of the implementation.</p>
+<p>Overriding numification is more complex, because arithmetic operators tend to be binary ops (<a href="chapter_04.html#arity">Arity</a>(arity)). Given two operands both with overloaded methods for addition, which takes precedence? The answer needs to be consistent, easy to explain, and understandable by people who haven't read the source code of the implementation.</p>
 <p><code>perldoc overload</code> attempts to explain this in the sections labeled <i>Calling Conventions for Binary Operations</i> and <i>MAGIC AUTOGENERATION</i>, but the easiest solution is to overload numification and tell <code>overload</code> to use the provided overloads as fallbacks where possible:</p>
 <div class="programlisting">
 <pre>

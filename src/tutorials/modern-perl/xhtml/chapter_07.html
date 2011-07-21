@@ -191,7 +191,7 @@
 <p>Cannot assign a value to a read-only accessor at ....</p>
 </div>
 <div class="sidebar">
-<p>When should you use <code>ro</code> and when <code>rw</code>? It's a matter of design, convenience, and purity. One school of thought (<a href="chapter_07.xhtml#immutability">Immutability</a>(immutability)) suggests making all instance data <code>ro</code> and passing all relevant data into the constructor. In the <code>Cat</code> example, <code>age()</code> might still be an accessor, but the constructor could take the <i>year</i> of the cat's birth and calculate the age itself based on the current year, rather than relying on someone to update the age of all cats manually.</p>
+<p>When should you use <code>ro</code> and when <code>rw</code>? It's a matter of design, convenience, and purity. One school of thought (<a href="chapter_07.html#immutability">Immutability</a>(immutability)) suggests making all instance data <code>ro</code> and passing all relevant data into the constructor. In the <code>Cat</code> example, <code>age()</code> might still be an accessor, but the constructor could take the <i>year</i> of the cat's birth and calculate the age itself based on the current year, rather than relying on someone to update the age of all cats manually.</p>
 <p>This approach helps to consolidate all validation code and helps to ensure that all created objects have valid data. These are design goals worth considering, though Moose does not enforce any particular philosophy in this area.</p>
 </div>
 <p>Now that individual objects can have their own instance data, the value of object orientation may be more obvious. An object is a bookmark for the data it contains as well as the behavior appropriate to that data. An object is a collection of named data and behaviors. A class is the description of the data and behaviors that instances of that class possess.</p>
@@ -494,7 +494,7 @@
 </div>
 <h4 id="heading_id_16">Moose and Perl 5 OO</h4>
 <div id="imoose__iversus_Perl_5_OO_0"></div>
-<p>Moose provides many features you'd otherwise have to build for yourself with the default object orientation of Perl 5. While you <i>can</i> build everything you get with Moose yourself (see <a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references)), or cobble it together with a series of CPAN distributions, Moose is a coherent package which just works, includes good documentation, is part of many successful projects, and is under active development by an attentive and talented community.</p>
+<p>Moose provides many features you'd otherwise have to build for yourself with the default object orientation of Perl 5. While you <i>can</i> build everything you get with Moose yourself (see <a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references)), or cobble it together with a series of CPAN distributions, Moose is a coherent package which just works, includes good documentation, is part of many successful projects, and is under active development by an attentive and talented community.</p>
 <div id="imetaprogramming_0"></div>
 <div id="iMoose__iMOP_0"></div>
 <div id="iMoose__imetaprogramming_0"></div>
@@ -570,7 +570,7 @@
 <p>You've already seen the first two rules with Moose. The third rule is new. The <code>bless</code> keyword associates the name of a class with a reference, such that any method invocation performed on that reference uses the associated class for resolution. That sounds more complicated than it is.</p>
 <div class="sidebar">
 <p>Though these rules explain Perl 5's underlying object system, they are somewhat more minimal in practice than may be practical, especially for larger projects. In particular, they offer few facilities for metaprogramming (using APIs to manipulate the program itself).</p>
-<p>Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)) is a better choice for serious, modern Perl programs larger than a couple of hundred lines, but you will likely encounter bare-bones Perl 5 OO in existing code.</p>
+<p>Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is a better choice for serious, modern Perl programs larger than a couple of hundred lines, but you will likely encounter bare-bones Perl 5 OO in existing code.</p>
 </div>
 <div id="iconstructor_0"></div>
 <div id="iOO__iconstructor_0"></div>
@@ -685,7 +685,7 @@
 <div id="imro_0"></div>
 <div id="ipragmas__imro_0"></div>
 <p>Perl 5.10 added a pragma called <code>mro</code> which allows you to use a different method resolution scheme called C3. While the specific details can get complex in the case of complex multiple inheritance hierarchies, the important difference is that method resolution will visit all children of a parent before visiting the parent.</p>
-<p>While other techniques (such as <a href="chapter_07.xhtml#roles">Roles</a>(roles) and Moose method modifiers) allow you to avoid multiple inheritance, the <code>mro</code> pragma can help avoid surprising behavior with method dispatch. Enable it in your class with:</p>
+<p>While other techniques (such as <a href="chapter_07.html#roles">Roles</a>(roles) and Moose method modifiers) allow you to avoid multiple inheritance, the <code>mro</code> pragma can help avoid surprising behavior with method dispatch. Enable it in your class with:</p>
 <div class="programlisting">
 <pre>
 <code>    package InjuredPlayer;
@@ -697,7 +697,7 @@
 <div id="iAUTOLOAD_0"></div>
 <div id="iobjects__iAUTOLOAD_0"></div>
 <div id="imethods__iAUTOLOAD_0"></div>
-<p>If there is no applicable method in the invocant's class or any of its superclasses, Perl 5 will next look for an <code>AUTOLOAD</code> function in every class according to the selected method resolution order. Perl will invoke any <code>AUTOLOAD</code> it finds to provide or decline the desired method. See <a href="chapter_05.xhtml#autoload">AUTOLOAD</a>(autoload) for more details.</p>
+<p>If there is no applicable method in the invocant's class or any of its superclasses, Perl 5 will next look for an <code>AUTOLOAD</code> function in every class according to the selected method resolution order. Perl will invoke any <code>AUTOLOAD</code> it finds to provide or decline the desired method. See <a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload) for more details.</p>
 <p>As you might expect, this can get quite complex in the face of multiple inheritance and multiple potential <code>AUTOLOAD</code> targets.</p>
 <h4 id="heading_id_20">Method Overriding and SUPER</h4>
 <p>You may override methods in the default Perl 5 OO system as well as in Moose. Unfortunately, core Perl 5 provides no mechanism for indicating your <i>intent</i> to override a parent's method. Worse yet, any function you pre-declare, declare, or import into the child class may override a method in the parent class simply by existing and having the same name. While you may forget to use the <code>override</code> system of Moose, you have no such protection (even optional) in the default Perl 5 OO system.</p>
@@ -716,7 +716,7 @@
 <p>Beware that this dispatcher relies on the package into which the overridden method was originally compiled when redispatching to a parent method. This is a long-standing misfeature retained for the sake of backwards compatibility. If you export methods into other classes or compose roles into classes manually, you may run afoul of this feature. The <code>SUPER</code> module on the CPAN can work around this for you. Moose handles it nicely as well.</p>
 </div>
 <h4 id="heading_id_21">Strategies for Coping with Blessed References</h4>
-<p>Avoid <code>AUTOLOAD</code> where possible. If you <i>must</i> use it, use forward declarations of your functions (<a href="chapter_05.xhtml#functions">Functions</a>(functions)) to help Perl know which <code>AUTOLOAD</code> will provide the method implementation.</p>
+<p>Avoid <code>AUTOLOAD</code> where possible. If you <i>must</i> use it, use forward declarations of your functions (<a href="chapter_05.html#functions">Functions</a>(functions)) to help Perl know which <code>AUTOLOAD</code> will provide the method implementation.</p>
 <p>Use accessor methods rather than accessing instance data directly through the reference. This applies even within the bodies of methods within the class itself. Generating these yourself can be tedious; if you can't use Moose, consider using a module such as <code>Class::Accessor</code> to avoid repetitive boilerplate.</p>
 <p>Expect that someone, somewhere will eventually need to subclass (or delegate to or reimplement the interface of) your classes. Make it easier for them by not assuming details of the internals of your code, by using the two-argument form of <code>bless</code>, and by breaking your classes into the smallest responsible units of code.</p>
 <p>Do not mix functions and methods in the same class.</p>
@@ -726,8 +726,8 @@
 <div id="reflection"></div>
 <div id="ireflection_0"></div>
 <div id="iintrospection_0"></div>
-<p><i>Reflection</i> (or <i>introspection</i>) is the process of asking a program about itself as it runs. Even though you can write many useful programs without ever having to use reflection, techniques such as metaprogramming (<a href="chapter_09.xhtml#code_generation">Code Generation</a>(code_generation)) benefit from a deeper understanding of which entities are in the system.</p>
-<p><code>Class::MOP</code> (<a href="chapter_09.xhtml#class_mop">Class::MOP</a>(class_mop)) simplifies many reflection tasks for object systems, but many useful programs do not use objects pervasively, and many useful programs do not use <code>Class::MOP</code>. Several idioms (<a href="chapter_10.xhtml#idioms">Idioms</a>(idioms)) exist for performing reflection effectively in the absence of such a formal system.</p>
+<p><i>Reflection</i> (or <i>introspection</i>) is the process of asking a program about itself as it runs. Even though you can write many useful programs without ever having to use reflection, techniques such as metaprogramming (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)) benefit from a deeper understanding of which entities are in the system.</p>
+<p><code>Class::MOP</code> (<a href="chapter_09.html#class_mop">Class::MOP</a>(class_mop)) simplifies many reflection tasks for object systems, but many useful programs do not use objects pervasively, and many useful programs do not use <code>Class::MOP</code>. Several idioms (<a href="chapter_10.html#idioms">Idioms</a>(idioms)) exist for performing reflection effectively in the absence of such a formal system.</p>
 <h4 id="heading_id_23">Checking that a Package Exists</h4>
 <p>To check that a package exists somewhere in the system--that is, if some code somewhere has executed a <code>package</code> directive with a given name--check that the package inherits from <code>UNIVERSAL</code> by testing that the package can perform the <code>can()</code> method:</p>
 <div class="programlisting">
@@ -758,7 +758,7 @@
 </pre></div>
 <p>Nothing prevents other code from manipulating <code>%INC</code> itself. Depending on your paranoia level, you may check the path and the expected contents of the package yourself, but modules with good reasons for manipulating this variable (such as <code>Test::MockObject</code> or <code>Test::MockModule</code>) may do so. Code which manipulates <code>%INC</code> for poor reasons deserves replacing.</p>
 <h4 id="heading_id_26">Checking the Version of a Module</h4>
-<p>There is no guarantee that a given module provides a version. Even so, all modules inherit from <code>UNIVERSAL</code> (<a href="chapter_09.xhtml#universal">The UNIVERSAL Package</a>(universal)), so they all have a <code>VERSION()</code> method available:</p>
+<p>There is no guarantee that a given module provides a version. Even so, all modules inherit from <code>UNIVERSAL</code> (<a href="chapter_09.html#universal">The UNIVERSAL Package</a>(universal)), so they all have a <code>VERSION()</code> method available:</p>
 <div class="programlisting">
 <pre>
 <code>    my $mod_ver = $module-&gt;VERSION();</code>
@@ -770,7 +770,7 @@
 <pre>
 <code>    say "$func() exists" if $pkg-&gt;can( $func );</code>
 </pre></div>
-<p>Note that <code>$pkg</code> must be a valid invocant; wrap the method call in an <code>eval</code> block if you have any doubts about its validity. Beware that a function implemented in terms of <code>AUTOLOAD()</code> (<a href="chapter_05.xhtml#autoload">AUTOLOAD</a>(autoload)) may report the wrong answer if the function's package does not also override <code>can()</code> correctly. This is a bug in the other package.</p>
+<p>Note that <code>$pkg</code> must be a valid invocant; wrap the method call in an <code>eval</code> block if you have any doubts about its validity. Beware that a function implemented in terms of <code>AUTOLOAD()</code> (<a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload)) may report the wrong answer if the function's package does not also override <code>can()</code> correctly. This is a bug in the other package.</p>
 <p>You may use this technique to determine if a module's <code>import()</code> has imported a function into the current namespace:</p>
 <div class="programlisting">
 <pre>
@@ -788,7 +788,7 @@
 <p>See the "Symbol Tables" section in <code>perldoc perlmod</code> for more details, then prefer the other techniques in this section for reflection.</p>
 <h3 id="heading_id_30">Advanced OO Perl</h3>
 <div id="advanced_oo"></div>
-<p>Creating and using objects in Perl 5 with Moose (<a href="chapter_07.xhtml#moose">Moose</a>(moose)) is easy. <i>Designing</i> good object systems is not. Additional capabilities for abstraction also offer possibilities for obfuscation. Only practical experience can help you understand the most important design techniques... but several principles can guide you.</p>
+<p>Creating and using objects in Perl 5 with Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is easy. <i>Designing</i> good object systems is not. Additional capabilities for abstraction also offer possibilities for obfuscation. Only practical experience can help you understand the most important design techniques... but several principles can guide you.</p>
 <h4 id="heading_id_31">Favor Composition Over Inheritance</h4>
 <p>Novice OO designs often overuse inheritance. It's common to see class hierarchies which try to model all of the behavior for entities within the system in a single class. This adds a conceptual overhead to understanding the system, because you have to understand the hierarchy, and it adds technical weight to every class, because conflicting responsibilities and methods may get in the way of necessary behaviors or future modifications.</p>
 <p>The encapsulation provided by classes offers better ways to organize code. You don't have to inherit from superclasses to provide behavior to users of objects. A <code>Car</code> object does not have to inherit from a <code>Vehicle::Wheeled</code> object; it can contain several <code>Wheel</code> objects as instance attributes.</p>

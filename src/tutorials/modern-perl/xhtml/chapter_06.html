@@ -33,7 +33,7 @@
 <div id="ioperators__i33126_1"></div>
 <div id="iregular_expressions__iatom_0"></div>
 <div id="iatom_0"></div>
-<p>The match operator (<code>//</code> or, more formally, <code>m//</code>) contains a regular expression--in this example, <code>hat</code>. Even though that reads like a word, it means "the <code>h</code> character, followed by the <code>a</code> character, followed by the <code>t</code> character, appearing anywhere in the string." Each character is an <i>atom</i> in the regex: an indivisible unit of the pattern. The regex binding operator (<code>=~</code>) is an infix operator (<a href="chapter_04.xhtml#fixity">Fixity</a>(fixity)) which applies the regular expression on its right to the string produced by the expression on its left. When evaluated in scalar context, a match evaluates to a true value if it succeeds.</p>
+<p>The match operator (<code>//</code> or, more formally, <code>m//</code>) contains a regular expression--in this example, <code>hat</code>. Even though that reads like a word, it means "the <code>h</code> character, followed by the <code>a</code> character, followed by the <code>t</code> character, appearing anywhere in the string." Each character is an <i>atom</i> in the regex: an indivisible unit of the pattern. The regex binding operator (<code>=~</code>) is an infix operator (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) which applies the regular expression on its right to the string produced by the expression on its left. When evaluated in scalar context, a match evaluates to a true value if it succeeds.</p>
 <p>The negated form of the binding operator (<code>!~</code>) evaluates to a false value if the match succeeds.</p>
 <h3 id="heading_id_4">The qr// Operator and Regex Combinations</h3>
 <div id="ioperators__iqr4747_0"></div>
@@ -213,7 +213,7 @@
     }</code>
 </pre></div>
 <div id="iregular_expressions__i_w_0"></div>
-<p>Of course, if your list of potential matches were anything other than a list of words, this metacharacter could cause false positives, as it also matches punctuation characters, whitespace, numbers, and many other characters besides word characters. The <code>\w</code> metacharacter represents all alphanumeric characters (in a Unicode sense -- <a href="chapter_03.xhtml#unicode">Unicode and Strings</a>(unicode)) and the underscore:</p>
+<p>Of course, if your list of potential matches were anything other than a list of words, this metacharacter could cause false positives, as it also matches punctuation characters, whitespace, numbers, and many other characters besides word characters. The <code>\w</code> metacharacter represents all alphanumeric characters (in a Unicode sense -- <a href="chapter_03.html#unicode">Unicode and Strings</a>(unicode)) and the underscore:</p>
 <div class="programlisting">
 <pre>
 <code>        next unless $word =~ <b>/l</b>\w\w</code>m/;

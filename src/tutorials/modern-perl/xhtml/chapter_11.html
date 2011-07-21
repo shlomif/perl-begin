@@ -15,7 +15,7 @@
 <div id="barewords"></div>
 <p>Perl uses sigils and other punctuation pervasively to help both the parser and the programmer identify the categories of named entities. Even so, Perl is a malleable language. You can write programs in the most creative, maintainable, obfuscated, or bizarre fashion as you prefer. Maintainability is a concern of good programs, but the developers of Perl itself don't presume to dictate what <i>you</i> find most maintainable.</p>
 <div id="ibareword_0"></div>
-<p>Perl's parser understands the built-in Perl keywords and operators; it knows that <code>bless()</code> means you're making objects (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references)). These are rarely ambiguous... but Perl programmers can add complexity to parsing by using <i>barewords</i>. A bareword is an identifier without a sigil or other attached disambiguation as to its intended syntactical function. Because there's no Perl 5 keyword <code>curse</code>, the literal word <code>curse</code> appearing in source code is ambiguous. Did you intend to use a variable <code>$curse</code> or to call a function <code>curse()</code>? The <code>strict</code> pragma warns about use of such ambiguous barewords for good reason.</p>
+<p>Perl's parser understands the built-in Perl keywords and operators; it knows that <code>bless()</code> means you're making objects (<a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references)). These are rarely ambiguous... but Perl programmers can add complexity to parsing by using <i>barewords</i>. A bareword is an identifier without a sigil or other attached disambiguation as to its intended syntactical function. Because there's no Perl 5 keyword <code>curse</code>, the literal word <code>curse</code> appearing in source code is ambiguous. Did you intend to use a variable <code>$curse</code> or to call a function <code>curse()</code>? The <code>strict</code> pragma warns about use of such ambiguous barewords for good reason.</p>
 <p>Even so, barewords are permissible in several places in Perl 5 for good reason.</p>
 <h4 id="heading_id_4">Good Uses of Barewords</h4>
 <div id="ibarewords__ipros_0"></div>
@@ -71,12 +71,12 @@
 </pre></div>
 <p>Be aware that these constants do <i>not</i> interpolate in interpolation contexts such as double-quoted strings.</p>
 <div id="iprototypes__ibarewords_0"></div>
-<p>Constants are a special case of prototyped functions (<a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes)). If you've pre-declared a prototype for a function, you may use that function as a bareword; Perl 5 knows everything it needs to know to parse all occurrences of that function appropriately. Note that all of the drawbacks of prototypes still apply.</p>
+<p>Constants are a special case of prototyped functions (<a href="chapter_11.html#prototypes">Prototypes</a>(prototypes)). If you've pre-declared a prototype for a function, you may use that function as a bareword; Perl 5 knows everything it needs to know to parse all occurrences of that function appropriately. Note that all of the drawbacks of prototypes still apply.</p>
 <h4 id="heading_id_5">Ill-Advised Uses of Barewords</h4>
 <div id="ibarewords__icons_0"></div>
 <p>Barewords should be rare in modern Perl code; their ambiguity produces fragile code. You can avoid them in almost every case, but you may encounter several poor uses of barewords in legacy code.</p>
 <div id="ibarewords__ifilehandles_0"></div>
-<p>Prior to lexical filehandles (<a href="chapter_03.xhtml#lexical_filehandles">Filehandle References</a>(lexical_filehandles)), all file and directory handles used barewords. You can almost always safely rewrite this code to use lexical filehandles; the exceptions are <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code>.</p>
+<p>Prior to lexical filehandles (<a href="chapter_03.html#lexical_filehandles">Filehandle References</a>(lexical_filehandles)), all file and directory handles used barewords. You can almost always safely rewrite this code to use lexical filehandles; the exceptions are <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code>.</p>
 <div id="ibarewords__ifunction_calls_0"></div>
 <p>Code written without <code>strict 'subs'</code> in effect may use bareword function names. You may safely parenthesize the argument lists to these functions without changing the intent of the code <span class="footnote">(footnote: Use <code>perl -MO=Deparse,-p</code> to discover how Perl parses them, then parenthesize accordingly.)</span>.</p>
 <div id="ibarewords__ihash_values_0"></div>
@@ -131,7 +131,7 @@
 <div id="idative_0"></div>
 <p>The first form is the indirect object form (more precisely, the <i>dative</i> case), where the verb (the method) precedes the noun to which it refers (the object). This is fine in spoken languages, but it introduces parsing ambiguities in Perl 5.</p>
 <h4 id="heading_id_7">Bareword Indirect Invocations</h4>
-<p>One problem is that the name of the method is a bareword (<a href="chapter_11.xhtml#barewords">Barewords</a>(barewords)). The parser must perform several heuristics to determine the proper interpretation. While these heuristics are well-tested and <i>almost</i> always correct, their failure modes are confusing. Worse, they're fragile in the face of the <i>order</i> of compilation and module loading.</p>
+<p>One problem is that the name of the method is a bareword (<a href="chapter_11.html#barewords">Barewords</a>(barewords)). The parser must perform several heuristics to determine the proper interpretation. While these heuristics are well-tested and <i>almost</i> always correct, their failure modes are confusing. Worse, they're fragile in the face of the <i>order</i> of compilation and module loading.</p>
 <p>Parsing is more difficult for humans <i>and</i> the computer when the constructor takes arguments. The indirect style may resemble:</p>
 <div class="programlisting">
 <pre>
@@ -139,7 +139,7 @@
     my $obj = new Class( arg =&gt; $value );</code>
 </pre></div>
 <p>... thus making the classname <code>Class</code> look like a function call. Perl 5 <i>can</i> disambiguate many of these cases, but its heuristics depend on which package names the parser has seen at the current point in the parse, which barewords it has already resolved (and how it resolved them), and the <i>names</i> of functions already declared in the current package.</p>
-<p>Imagine running afoul of a function with (prototypes) <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) with a name which just happens to conflict somehow with the name of a class or a method called indirectly. This is infrequent, but so difficult to debug that avoiding this syntax is always worthwhile.</p>
+<p>Imagine running afoul of a function with (prototypes) <a href="chapter_11.html#prototypes">Prototypes</a>(prototypes) with a name which just happens to conflict somehow with the name of a class or a method called indirectly. This is infrequent, but so difficult to debug that avoiding this syntax is always worthwhile.</p>
 <h4 id="heading_id_8">Indirect Notation Scalar Limitations</h4>
 <p>Another danger of the syntax is that the parser expects a single scalar expression as the object. Printing to a filehandle stored in an aggregate variable <i>seems</i> obvious, but it is not:</p>
 <div class="programlisting">
@@ -147,7 +147,7 @@
 <code>    # DOES NOT WORK AS WRITTEN
     say $config-&gt;{output} "This is a diagnostic message!";</code>
 </pre></div>
-<p><code>print</code>, <code>close</code>, and <code>say</code>--all keywords which operate on filehandles--operate in an indirect fashion. This was fine when filehandles were package globals, but lexical filehandles (<a href="chapter_03.xhtml#lexical_filehandles">Filehandle References</a>(lexical_filehandles)) make the indirect object syntax problems obvious. In the previous example, Perl will try to call the <code>say</code> method on the <code>$config</code> object. The solution is to disambiguate the expression which produces the intended invocant:</p>
+<p><code>print</code>, <code>close</code>, and <code>say</code>--all keywords which operate on filehandles--operate in an indirect fashion. This was fine when filehandles were package globals, but lexical filehandles (<a href="chapter_03.html#lexical_filehandles">Filehandle References</a>(lexical_filehandles)) make the indirect object syntax problems obvious. In the previous example, Perl will try to call the <code>say</code> method on the <code>$config</code> object. The solution is to disambiguate the expression which produces the intended invocant:</p>
 <div class="programlisting">
 <pre>
 <code>    say <b>{</b>$config-&gt;{output}<b>}</b> "This is a diagnostic message!";</code>
@@ -320,7 +320,7 @@
 </div>
 <h3 id="heading_id_13">Method-Function Equivalence</h3>
 <div id="method_sub_equivalence"></div>
-<p>Perl 5's object system is deliberately minimal (<a href="chapter_07.xhtml#blessed_references">Blessed References</a>(blessed_references)). Because a class is a package, Perl itself makes no strong distinction between a function stored in a package and a method stored in a package. The same keyword, <code>sub</code>, expresses both. Documentation and the convention of treating the first parameter as <code>$self</code> can imply intent to readers of the code, but Perl itself will treat any function of the appropriate name it can find in an appropriate package as a method if you try to call it as a method.</p>
+<p>Perl 5's object system is deliberately minimal (<a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references)). Because a class is a package, Perl itself makes no strong distinction between a function stored in a package and a method stored in a package. The same keyword, <code>sub</code>, expresses both. Documentation and the convention of treating the first parameter as <code>$self</code> can imply intent to readers of the code, but Perl itself will treat any function of the appropriate name it can find in an appropriate package as a method if you try to call it as a method.</p>
 <p>Likewise, you can invoke a method as if it were a function--fully-qualified, exported, or as a reference--if you pass in your own invocant manually.</p>
 <p>Both have their problems; avoid them.</p>
 <h4 id="heading_id_14">Caller-side</h4>
@@ -349,7 +349,7 @@
 </pre></div>
 <p>Though in this simple case, they produce the same output, the latter violates the encapsulation of objects in subtle ways. It avoids method lookup altogether.</p>
 <div id="imethods__icalling_as_functions_40avoid41_0"></div>
-<p>If <code>$o</code> were <i>not</i> an <code>Order</code> object, but instead a subclass or allomorph (<a href="chapter_07.xhtml#roles">Roles</a>(roles)) of <code>Order</code> which overrode <code>calculate_price()</code>, the method-as-a-function call would call the <i>wrong</i> method. As well, if the internal implementation of <code>calculate_price()</code> were to change--perhaps inherited from elsewhere or delegated through <code>AUTOLOAD()</code>--the caller might break.</p>
+<p>If <code>$o</code> were <i>not</i> an <code>Order</code> object, but instead a subclass or allomorph (<a href="chapter_07.html#roles">Roles</a>(roles)) of <code>Order</code> which overrode <code>calculate_price()</code>, the method-as-a-function call would call the <i>wrong</i> method. As well, if the internal implementation of <code>calculate_price()</code> were to change--perhaps inherited from elsewhere or delegated through <code>AUTOLOAD()</code>--the caller might break.</p>
 <div id="imethods__icalling_with_references_0"></div>
 <div id="iUNIVERSAL__ican4041_0"></div>
 <div id="ican4041_2"></div>
@@ -391,7 +391,7 @@
 <div id="itie_0"></div>
 <div id="ikeywords__itie_0"></div>
 <div id="itying_0"></div>
-<p>Overloading (<a href="chapter_09.xhtml#overloading">Overloading</a>(overloading)) lets you give classes custom behavior for specific types of coercions and accesses. A similar mechanism exists for making variables act like built-in types (scalars, arrays, and hashes), but with more specific behaviors. This mechanism uses the <code>tie</code> keyword; it is <i>tying</i>.</p>
+<p>Overloading (<a href="chapter_09.html#overloading">Overloading</a>(overloading)) lets you give classes custom behavior for specific types of coercions and accesses. A similar mechanism exists for making variables act like built-in types (scalars, arrays, and hashes), but with more specific behaviors. This mechanism uses the <code>tie</code> keyword; it is <i>tying</i>.</p>
 <p>The original use of <code>tie</code> was to produce a hash stored on disk, rather than in memory. This allowed the use of dbm files from Perl, as well as the ability to access files larger than could fit in memory. The core module <code>Tie::File</code> provides a similar system by which to handle data files too large to fit in memory.</p>
 <p>The class to which you <code>tie</code> a variable must conform to a specific, well-documented interface for the specific data type. <code>perldoc perltie</code> is the primary source of information about these interfaces, though the core modules <code>Tie::StdScalar</code>, <code>Tie::StdArray</code>, and <code>Tie::StdHash</code> are more useful in practice. Inherit from them to start, and override only those specific methods you need to modify.</p>
 <div class="sidebar">
