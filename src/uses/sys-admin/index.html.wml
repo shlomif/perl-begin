@@ -71,15 +71,15 @@ the middle and 4) can return result objects instead of path names.
 
 <li>
 <p>
-<cpan_self_dist="File-Next" /> - an alternative with an iterative interface,
+<cpan_self_dist d="File-Next" /> - an alternative with an iterative interface,
 but incapable of being instantiated.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist="File-Find-Rule" />, which is still based on File::Find, and
-<cpan_self_dist="File-Find-Object-Rule" /> provide a more convenient and 
+<cpan_self_dist d="File-Find-Rule" />, which is still based on File::Find, and
+<cpan_self_dist d="File-Find-Object-Rule" /> provide a more convenient and 
 succinct interface for finding what you want.
 </p>
 </li>
