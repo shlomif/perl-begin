@@ -2,6 +2,93 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_22_July_2011">22-July-2011: The book Modern Perl, exercises and 
+challenges, and some new topical pages.</h2>
+
+<ol>
+
+<li>
+<p>
+The book <a href="$(ROOT)/books/#modern-perl">Modern Perl</a> is now
+recommended, and <a href="$(ROOT)/tutorials/modern-perl/">a local copy</a> of 
+it, under the CC-by-nc-sa licence is available on Perl-Begin, thanks to
+<a href="http://www.modernperlbooks.com/">chromatic</a>.
+</p>
+</li>
+
+<li>
+<p>
+We added <a href="$(ROOT)/exercises/">a Page</a> with links to <b>exercises
+and challenges</b>.
+</p>
+</li>
+
+<li>
+<p>
+There's a new topical page about <a href="$(ROOT)/topics/modules-and-packages/">Modules and Packages</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="$(ROOT)/uses/chat-scripting/">A page about using Perl for writing
+Chat robots and scripts</a> (IRC, Jabber, etc.) has been added. We also
+added <a href="$(ROOT)/uses/games/">a page about developing games with Perl</a>.
+</p>
+</li>
+
+<li>
+<p>
+More non-recommended Perl elements have been added to 
+<a href="$(ROOT)/tutorials/bad-elements/">“Perl Elements to Avoid” page</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="$(ROOT)/uses/web/">The web-development with Perl page</a>
+was enhanced with new frameworks and information.
+</p>
+</li>
+
+<li>
+<p>
+Added <a href="$(ROOT)/IDEs-and-tools/#gui-debugger">a list of GUI
+debuggers</a> to the IDEs and tools page.
+</p>
+</li>
+
+<li>
+<p>
+We're now mirroring the now offline <a href="$(ROOT)/topics/cpan/#life-with-cpan">“Life with CPAN” by Jeremy Mates</a>.
+</p>
+</li>
+
+<li>
+<p>
+A page about the
+<a href="$(ROOT)/learn/Perl-perl-but-not-PERL/">differences between “Perl”,
+“perl” and “PERL”</a> was added. It was inspired by 
+<a href="http://perl.org.il/misc.html#pl_vs_pl">a similar page</a> on 
+the Israeli Perl Mongers site.
+</p>
+</li>
+
+<li>
+<p>
+Many anchors were added to the pages using <tt>id=</tt> attributes.
+</p>
+</li>
+
+<li>
+<p>
+We're now maintaining the sources of the Perl Beginners' Site in
+<a href="http://perl-begin.org/source/#vcs">a bitbucket.org repository</a>
+and there are instructions for contributing in the link.
+</p>
+</li>
+</ol>
+
 <h2 id="news_11_November_2010">11-November-2010: 
 New Page about Bad Perl Elements and other new pages.</h2>
 
