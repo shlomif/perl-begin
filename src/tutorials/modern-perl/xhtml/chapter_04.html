@@ -26,7 +26,7 @@
 <div id="precedence"></div>
 <div id="iprecedence_0"></div>
 <p>The <i>precedence</i> of an operator helps determine when Perl should evaluate it in an expression. Evaluation order proceeds from highest to lowest precedence. For example, because the precedence of multiplication is higher than the precedence of addition, <code>7 + 7 * 10</code> evaluates to <code>77</code>, not <code>140</code>. You may force the evaluation of some operators before others by grouping their subexpressions in parentheses; <code>(7 + 7) * 10</code> <i>does</i> evaluate to <code>140</code>, as the addition operation becomes a single unit which must evaluate fully before multiplication can occur.</p>
-<p>In case of a tie--where two operators have the same precedence--other factors (<a href="chapter_04.xhtml#fixity">Fixity</a>(fixity) and <a href="chapter_04.xhtml#associativity">Associativity</a>(associativity)) break the tie.</p>
+<p>In case of a tie--where two operators have the same precedence--other factors (<a href="chapter_04.html#fixity">Fixity</a>(fixity) and <a href="chapter_04.html#associativity">Associativity</a>(associativity)) break the tie.</p>
 <p><code>perldoc perlop</code> contains a table of precedence. Almost no one has this table memorized. The best way to manage precedence is to keep your expressions simple. The second best way is to use parentheses to clarify precedence in complex expressions. If you find yourself drowning in a sea of parentheses, see the first rule again.</p>
 <h4 id="heading_id_5">Associativity</h4>
 <div id="associativity"></div>
@@ -61,7 +61,7 @@
 <code>    # probably buggy code
     say ( 1 + 2 + 3 ) * 4;</code>
 </pre></div>
-<p>... as Perl 5 happily interprets the parentheses as postcircumfix (<a href="chapter_04.xhtml#fixity">Fixity</a>(fixity)) operators denoting the arguments to <code>say</code>, not circumfix parentheses grouping an expression to change precedence. In other words, the code prints the value <code>6</code> and evaluates to the return value of <code>say</code> multiplied by <code>4</code>.</p>
+<p>... as Perl 5 happily interprets the parentheses as postcircumfix (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) operators denoting the arguments to <code>say</code>, not circumfix parentheses grouping an expression to change precedence. In other words, the code prints the value <code>6</code> and evaluates to the return value of <code>say</code> multiplied by <code>4</code>.</p>
 <h4 id="heading_id_7">Fixity</h4>
 <div id="fixity"></div>
 <div id="ifixity_0"></div>
@@ -79,7 +79,7 @@
 <p>The <i>fixity</i> of an operator is its position relative to its operands. The mathematic operators tend to be <i>infix</i> operators, where they appear between their operands. Other operators are <i>prefix</i>, where they appear before their operands; these tend to be unary operators, such as the prefix increment operator <code>++$x</code> or the mathematical and boolean negation operators (<code>-$x</code> and <code>!$x</code>, respectively). <i>Postfix</i> operators appear after their operands (such as postfix increment <code>$x++</code>). <i>Circumfix</i> operators surround their operands, such as the anonymous hash and anonymous array creation operators or quoting operators (<code>{ ... }</code> and <code>[ ... ]</code> or <code>qq{ ... }</code>, for example). <i>Postcircumfix</i> operators surround some operands but follow others, as in the case of array or hash indices (<code>$hash{ ... }</code> and <code>$array[ ... ]</code>, for example).</p>
 <h3 id="heading_id_8">Operator Types</h3>
 <div id="operator_types"></div>
-<p>Perl's pervasive contexts--especially value contexts (<a href="chapter_01.xhtml#value_contexts">Numeric, String, and Boolean Context</a>(value_contexts))--extend to the behavior of its operators. Perl operators provide value contexts to their operands. Choosing the most appropriate operator for a given situation requires you to understand what type of value you expect to receive as well as the type of values on which you wish to operate.</p>
+<p>Perl's pervasive contexts--especially value contexts (<a href="chapter_01.html#value_contexts">Numeric, String, and Boolean Context</a>(value_contexts))--extend to the behavior of its operators. Perl operators provide value contexts to their operands. Choosing the most appropriate operator for a given situation requires you to understand what type of value you expect to receive as well as the type of values on which you wish to operate.</p>
 <h4 id="heading_id_9">Numeric Operators</h4>
 <div id="numeric_operators"></div>
 <div id="ioperators__inumeric_0"></div>
@@ -111,7 +111,7 @@
 <div id="ioperators__i4545_0"></div>
 <div id="i4545_0"></div>
 <p>The numeric operators enforce numeric contexts on their operands. They consist of the standard arithmetic operators such as addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), exponentiation (<code>**</code>), modulo (<code>%</code>), their in-place variants (<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>**=</code>, and <code>%=</code>), and auto-decrement (<code>--</code>), whether postfix or prefix.</p>
-<p>While the auto-increment operator may seem like a numeric operator, it has special string behavior (<a href="chapter_04.xhtml#auto_increment_operator">Special Operators</a>(auto_increment_operator)).</p>
+<p>While the auto-increment operator may seem like a numeric operator, it has special string behavior (<a href="chapter_04.html#auto_increment_operator">Special Operators</a>(auto_increment_operator)).</p>
 <div id="ioperators__i6161_0"></div>
 <div id="i6161_0"></div>
 <div id="ioperators__i3361_0"></div>
@@ -220,7 +220,7 @@
 <div id="ioperators__iauto45increment_0"></div>
 <div id="iauto45increment_0"></div>
 <div id="ioperators__i4343_0"></div>
-<p>The auto-increment operator has a special case. If anything has ever used a variable in a numeric context (<a href="chapter_03.xhtml#cached_coercions">Cached Coercions</a>(cached_coercions)), it increments the numeric value of that variable. If the variable is obviously a string (and has never been evaluated in a numeric context), the string value increments with a carry, such that <code>a</code> increments to <code>b</code>, <code>zz</code> to <code>aaa</code>, and <code>a9</code> to <code>b0</code>.</p>
+<p>The auto-increment operator has a special case. If anything has ever used a variable in a numeric context (<a href="chapter_03.html#cached_coercions">Cached Coercions</a>(cached_coercions)), it increments the numeric value of that variable. If the variable is obviously a string (and has never been evaluated in a numeric context), the string value increments with a carry, such that <code>a</code> increments to <code>b</code>, <code>zz</code> to <code>aaa</code>, and <code>a9</code> to <code>b0</code>.</p>
 <div class="programlisting">
 <pre>
 <code>    my $num = 1;

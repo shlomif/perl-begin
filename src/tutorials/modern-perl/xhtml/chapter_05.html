@@ -32,7 +32,7 @@
 <code>    sub greet_sun;</code>
 </pre></div>
 <div class="sidebar">
-<p>You do not have to declare Perl 5 functions before you use them, except in the special case where they modify <i>how</i> the parser parses them. See <a href="chapter_05.xhtml#attributes">Attributes</a>(attributes).</p>
+<p>You do not have to declare Perl 5 functions before you use them, except in the special case where they modify <i>how</i> the parser parses them. See <a href="chapter_05.html#attributes">Attributes</a>(attributes).</p>
 </div>
 <h3 id="heading_id_4">Invoking Functions</h3>
 <div id="isubroutines__iinvoking_0"></div>
@@ -54,7 +54,7 @@
     greet_me( @authors );
     greet_me( %editors );</code>
 </pre></div>
-<p>... though see the <a href="chapter_03.xhtml#references">References</a>(references) section for more details.</p>
+<p>... though see the <a href="chapter_03.html#references">References</a>(references) section for more details.</p>
 <h3 id="heading_id_5">Function Parameters</h3>
 <div id="function_parameters"></div>
 <div id="iparameters_0"></div>
@@ -208,7 +208,7 @@
         ...
     }</code>
 </pre></div>
-<p>... at the expense of some clarity. The same principle applies when assigning to an array as a parameter, of course. See <a href="chapter_03.xhtml#references">References</a>(references) for ways to avoid flattening and slurping when passing aggregate parameters.</p>
+<p>... at the expense of some clarity. The same principle applies when assigning to an array as a parameter, of course. See <a href="chapter_03.html#references">References</a>(references) for ways to avoid flattening and slurping when passing aggregate parameters.</p>
 <h4 id="heading_id_8">Aliasing</h4>
 <div id="iparameter_aliasing_0"></div>
 <div id="ifunctions__ialiasing_parameters_0"></div>
@@ -244,11 +244,11 @@
 
     Extensions::Math::add( $scalar, $vector );</code>
 </pre></div>
-<p>Functions in namespaces are <i>visible</i> outside of those namespaces in the sense that you can refer to them directly, but they are only <i>callable</i> by their short names from within the namespace in which they are declared--unless you have somehow made them available to the current namespace through the processes of importing and exporting (<a href="chapter_09.xhtml#exporting">Exporting</a>(exporting)).</p>
+<p>Functions in namespaces are <i>visible</i> outside of those namespaces in the sense that you can refer to them directly, but they are only <i>callable</i> by their short names from within the namespace in which they are declared--unless you have somehow made them available to the current namespace through the processes of importing and exporting (<a href="chapter_09.html#exporting">Exporting</a>(exporting)).</p>
 <h4 id="heading_id_10">Importing</h4>
 <div id="importing"></div>
 <div id="ifunctions__iimporting_0"></div>
-<p>When loading a module with the <code>use</code> keyword (<a href="chapter_09.xhtml#modules">Modules</a>(modules)), Perl automatically calls a method named <code>import()</code> on the provided package name. Modules with procedural interfaces can provide their own <code>import()</code> which makes some or all defined symbols available in the calling package's namespace. Any arguments after the name of the module in the <code>use</code> statement get passed to the module's <code>import()</code> method. Thus:</p>
+<p>When loading a module with the <code>use</code> keyword (<a href="chapter_09.html#modules">Modules</a>(modules)), Perl automatically calls a method named <code>import()</code> on the provided package name. Modules with procedural interfaces can provide their own <code>import()</code> which makes some or all defined symbols available in the calling package's namespace. Any arguments after the name of the module in the <code>use</code> statement get passed to the module's <code>import()</code> method. Thus:</p>
 <div class="programlisting">
 <pre>
 <code>    use strict;</code>
@@ -319,7 +319,7 @@
     }</code>
 </pre></div>
 <h4 id="heading_id_12">Validating Arguments</h4>
-<p>Defensive programming often benefits from checking types and values of arguments for appropriateness before performing further processing. By default, Perl 5 provides few built-in mechanisms for doing so (and don't expect <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) to help). You can check that the <i>number</i> of parameters passed to a function is correct by evaluating <code>@_</code> in scalar context:</p>
+<p>Defensive programming often benefits from checking types and values of arguments for appropriateness before performing further processing. By default, Perl 5 provides few built-in mechanisms for doing so (and don't expect <a href="chapter_11.html#prototypes">Prototypes</a>(prototypes) to help). You can check that the <i>number</i> of parameters passed to a function is correct by evaluating <code>@_</code> in scalar context:</p>
 <div class="programlisting">
 <pre>
 <code>    sub add_numbers
@@ -330,9 +330,9 @@
         ...
     }</code>
 </pre></div>
-<p>Type checking is more difficult, because of Perl's operator-oriented type conversions (see <a href="chapter_01.xhtml#context_philosophy">Context</a>(context_philosophy)). In cases where you need more strictness, consider the CPAN module <code>Params::Validate</code>.</p>
+<p>Type checking is more difficult, because of Perl's operator-oriented type conversions (see <a href="chapter_01.html#context_philosophy">Context</a>(context_philosophy)). In cases where you need more strictness, consider the CPAN module <code>Params::Validate</code>.</p>
 <h3 id="heading_id_13">Advanced Functions</h3>
-<p>Functions may seem simple, but you can do much, much more with them (see <a href="chapter_05.xhtml#closures">Closures</a>(closures) and <a href="chapter_05.xhtml#anonymous_functions">Anonymous Functions</a>(anonymous_functions) for more details).</p>
+<p>Functions may seem simple, but you can do much, much more with them (see <a href="chapter_05.html#closures">Closures</a>(closures) and <a href="chapter_05.html#anonymous_functions">Anonymous Functions</a>(anonymous_functions) for more details).</p>
 <h4 id="heading_id_14">Recursion</h4>
 <div id="recursion"></div>
 <div id="irecursion_0"></div>
@@ -466,7 +466,7 @@
 <h3 id="heading_id_17">Pitfalls and Misfeatures</h3>
 <div id="ifunctions__ipitfalls_0"></div>
 <div id="ifunctions__imisfeatures_0"></div>
-<p>Not all features of Perl 5 functions are always helpful. In particular, <a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes) rarely do what you mean. They have their uses, but you can avoid them outside of a few cases.</p>
+<p>Not all features of Perl 5 functions are always helpful. In particular, <a href="chapter_11.html#prototypes">Prototypes</a>(prototypes) rarely do what you mean. They have their uses, but you can avoid them outside of a few cases.</p>
 <div class="editor">
 <p>Check the timeline, but I'm pretty sure about this.</p>
 </div>
@@ -605,7 +605,7 @@
     say;</code>
 </pre></div>
 <p>... despite assignment to <code>$_</code> inside the block. You may explicitly lexicalize the topic yourself, though this is more useful when considering dynamic scope.</p>
-<p>Finally, lexical scoping facilitates closures (see <a href="chapter_05.xhtml#closures">Closures</a>(closures)). Beware creating closures accidentally.</p>
+<p>Finally, lexical scoping facilitates closures (see <a href="chapter_05.html#closures">Closures</a>(closures)). Beware creating closures accidentally.</p>
 <h5 id="heading_id_20">Our Scope</h5>
 <div id="our"></div>
 <div id="iour_1"></div>
@@ -716,7 +716,7 @@
 <div id="anonymous_functions"></div>
 <div id="ianonymous_function_0"></div>
 <div id="ifunctions__ianonymous_0"></div>
-<p>An <i>anonymous function</i> is a function without a name. It behaves like a named function--you can invoke it, pass arguments to it, return values from it, copy references to it--it can do anything a named function can do. The difference is that it has no name. You always deal with anonymous functions by reference (see <a href="chapter_03.xhtml#references">References</a>(references) and <a href="chapter_03.xhtml#function_references">Function References</a>(function_references)).</p>
+<p>An <i>anonymous function</i> is a function without a name. It behaves like a named function--you can invoke it, pass arguments to it, return values from it, copy references to it--it can do anything a named function can do. The difference is that it has no name. You always deal with anonymous functions by reference (see <a href="chapter_03.html#references">References</a>(references) and <a href="chapter_03.html#function_references">Function References</a>(function_references)).</p>
 <h4 id="heading_id_24">Declaring Anonymous Functions</h4>
 <p>You may never declare an anonymous function on its own; you must construct it and assign it to a variable, invoke it immediately, or pass it as an argument to a function, either explicitly or implicitly. Explicit creation uses the <code>sub</code> keyword with no name:</p>
 <div class="programlisting">
@@ -851,7 +851,7 @@
 <p>Note that both references refer to the same underlying anonymous function. Calling <code>subname()</code> on <code>$anon</code> and returning into <code>$named</code> modifies that function, so any other reference to this function will see the same moniker.</p>
 <h4 id="heading_id_26">Implicit Anonymous Functions</h4>
 <div id="ianonymous_functions__iimplicit_0"></div>
-<p>All of these anonymous function declarations have been explicit. Perl 5 allows implicit anonymous functions through the use of prototypes (<a href="chapter_11.xhtml#prototypes">Prototypes</a>(prototypes)). Though this feature exists nominally to enable programmers to write their own syntax such as that for <code>map</code> and <code>eval</code>, an interesting example is the use of <i>delayed</i> functions that don't look like functions. Consider the CPAN module <code>Test::Exception</code>:</p>
+<p>All of these anonymous function declarations have been explicit. Perl 5 allows implicit anonymous functions through the use of prototypes (<a href="chapter_11.html#prototypes">Prototypes</a>(prototypes)). Though this feature exists nominally to enable programmers to write their own syntax such as that for <code>map</code> and <code>eval</code>, an interesting example is the use of <i>delayed</i> functions that don't look like functions. Consider the CPAN module <code>Test::Exception</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    use Test::More tests =&gt; 2;
@@ -915,7 +915,7 @@
 <p>This feature is occasionally useful despite its drawbacks. The syntactic clarity available by promoting bare blocks to anonymous functions can be helpful, but use it sparingly and document the API with care.</p>
 <h3 id="heading_id_27">Closures</h3>
 <div id="closures"></div>
-<p>You've seen how functions work (<a href="chapter_05.xhtml#functions">Functions</a>(functions)). You understand how scope works (<a href="chapter_05.xhtml#scope">Scope</a>(scope)). You know that every time control flow enters a function, that function gets a new environment representing that invocation's lexical scope. You can work with function references (<a href="chapter_03.xhtml#references">References</a>(references)) and anonymous functions (<a href="chapter_05.xhtml#anonymous_functions">Anonymous Functions</a>(anonymous_functions)).</p>
+<p>You've seen how functions work (<a href="chapter_05.html#functions">Functions</a>(functions)). You understand how scope works (<a href="chapter_05.html#scope">Scope</a>(scope)). You know that every time control flow enters a function, that function gets a new environment representing that invocation's lexical scope. You can work with function references (<a href="chapter_03.html#references">References</a>(references)) and anonymous functions (<a href="chapter_05.html#anonymous_functions">Anonymous Functions</a>(anonymous_functions)).</p>
 <p>You know everything you need to know to understand closures.</p>
 <div class="sidebar">
 <p>Mark Jason Dominus's <i>Higher Order Perl</i> is the canonical reference on first-class functions, closures, and the amazing things you can do with them. You can read it online at <span class="url">http://hop.perl.plover.com/</span>.</p>
@@ -957,7 +957,7 @@
 
     say $cousins-&gt;() for 1 .. 5;</code>
 </pre></div>
-<p>Even though <code>make_iterator()</code> has returned, the anonymous function still refers to the lexical variables <code>@items</code> and <code>$count</code>. Their values persist (<a href="chapter_03.xhtml#reference_counts">Reference Counts</a>(reference_counts)). The anonymous function, stored in <code>$cousins</code>, has closed over these values in the specific lexical environment of the specific invocation of <code>make_iterator()</code>.</p>
+<p>Even though <code>make_iterator()</code> has returned, the anonymous function still refers to the lexical variables <code>@items</code> and <code>$count</code>. Their values persist (<a href="chapter_03.html#reference_counts">Reference Counts</a>(reference_counts)). The anonymous function, stored in <code>$cousins</code>, has closed over these values in the specific lexical environment of the specific invocation of <code>make_iterator()</code>.</p>
 <p>It's easy to demonstrate that the lexical environment is independent between calls to <code>make_iterator()</code>:</p>
 <div class="programlisting">
 <pre>
@@ -1083,7 +1083,7 @@
 <p>Now instead of calling <code>make_sundae()</code>, you can invoke <code>$make_cart_sundae-&gt;()</code> and pass only the interesting arguments, without worrying about forgetting the invariants or passing them incorrectly <span class="footnote">(footnote: You can even use <code>Sub::Install</code> from the CPAN to install this function into your namespace directly.)</span>.</p>
 <h3 id="heading_id_31">State versus Closures</h3>
 <div id="state"></div>
-<p>Closures (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) are an easy, effective, and safe way to make data persist between function invocations without using global variables. If you need to share variables between named functions, you can introduce a new scope (<a href="chapter_05.xhtml#scope">Scope</a>(scope)) for only those function declarations:</p>
+<p>Closures (<a href="chapter_05.html#closures">Closures</a>(closures)) are an easy, effective, and safe way to make data persist between function invocations without using global variables. If you need to share variables between named functions, you can introduce a new scope (<a href="chapter_05.html#scope">Scope</a>(scope)) for only those function declarations:</p>
 <div class="programlisting">
 <pre>
 <code>    {
@@ -1165,7 +1165,7 @@
 </div>
 <h3 id="heading_id_32">Attributes</h3>
 <div id="attributes"></div>
-<p>Named entities in Perl--variables and functions--can have additional metadata attached to them in the form of <i>attributes</i>. Attributes are names (and, often, values) which allow certain types of metaprogramming (<a href="chapter_09.xhtml#code_generation">Code Generation</a>(code_generation)).</p>
+<p>Named entities in Perl--variables and functions--can have additional metadata attached to them in the form of <i>attributes</i>. Attributes are names (and, often, values) which allow certain types of metaprogramming (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)).</p>
 <div class="sidebar">
 <p>Declaring attributes can be awkward, and using them effectively is more art than science. They're relatively rare in most programs for good reason, though they <i>can</i> offer compelling benefits of maintenance and clarity.</p>
 </div>
@@ -1187,7 +1187,7 @@
 
     sub shutdown_tests :Test(teardown) { ... }</code>
 </pre></div>
-<p>The <code>Test</code> attribute identifies methods which include test assertions, and optionally identifies the number of assertions the method intends to run. While introspection (<a href="chapter_07.xhtml#reflection">Reflection</a>(reflection)) of these classes could discover the appropriate test methods, given well-designed solid heuristics, the <code>:Test</code> attribute makes the code and its intent unambiguous.</p>
+<p>The <code>Test</code> attribute identifies methods which include test assertions, and optionally identifies the number of assertions the method intends to run. While introspection (<a href="chapter_07.html#reflection">Reflection</a>(reflection)) of these classes could discover the appropriate test methods, given well-designed solid heuristics, the <code>:Test</code> attribute makes the code and its intent unambiguous.</p>
 <p>The <code>setup</code> and <code>teardown</code> parameters allow test classes to define their own support methods without worrying about name clashes or other conflicts due to inheritance or other class design concerns. You <i>could</i> enforce a design where all test classes must override methods named <code>setup()</code> and <code>teardown()</code> themselves, but the attribute approach gives more flexibility of implementation.</p>
 <div class="sidebar">
 <p>The Catalyst web framework also uses attributes to determine the visibility and behavior of methods within web applications.</p>
@@ -1252,7 +1252,7 @@
         say "In AUTOLOAD(@_) <b>for $AUTOLOAD</b>!"
     }</code>
 </pre></div>
-<p>The <code>our</code> declaration (<a href="chapter_05.xhtml#our">Our Scope</a>(our)) scopes this variable to the body of <code>AUTOLOAD()</code>. The variable contains the fully-qualified name of the undefined function. In this case, the function is <code>main::bake_pie</code>. A common idiom is to remove the package name:</p>
+<p>The <code>our</code> declaration (<a href="chapter_05.html#our">Our Scope</a>(our)) scopes this variable to the body of <code>AUTOLOAD()</code>. The variable contains the fully-qualified name of the undefined function. In this case, the function is <code>main::bake_pie</code>. A common idiom is to remove the package name:</p>
 <div class="programlisting">
 <pre>
 <code>    sub AUTOLOAD
@@ -1322,11 +1322,11 @@
         return $method-&gt;( @_ );
     }</code>
 </pre></div>
-<p>The body of the previous <code>AUTOLOAD()</code> has become an anonymous function. The code creates a closure (<a href="chapter_05.xhtml#closures">Closures</a>(closures)) bound over the <i>name</i> of the undefined method. Then it installs that closure in the appropriate symbol table so that all subsequent dispatch to that method will find the created closure and will avoid <code>AUTOLOAD()</code>. Finally, it invokes the method directly and returns the result.</p>
+<p>The body of the previous <code>AUTOLOAD()</code> has become an anonymous function. The code creates a closure (<a href="chapter_05.html#closures">Closures</a>(closures)) bound over the <i>name</i> of the undefined method. Then it installs that closure in the appropriate symbol table so that all subsequent dispatch to that method will find the created closure and will avoid <code>AUTOLOAD()</code>. Finally, it invokes the method directly and returns the result.</p>
 <p>Though this approach is cleaner and almost always more transparent than handling the behavior directly in <code>AUTOLOAD()</code>, the code <i>called</i> by <code>AUTOLOAD()</code> may detect that dispatch has gone through <code>AUTOLOAD()</code>. In short, <code>caller()</code> will reflect the double-dispatch of both techniques shown so far. This may be an issue; certainly you can argue that it's an encapsulation violation to care, but it's also an encapsulation violation to let the details of <i>how</i> an object provides a method to leak out into the wider world.</p>
 <div id="itailcall_0"></div>
 <div id="igoto__itailcall_0"></div>
-<p>Another idiom is to use a tailcall (<a href="chapter_05.xhtml#tail_calls">Tail Calls</a>(tail_calls)) to <i>replace</i> the current invocation of <code>AUTOLOAD()</code> from <code>caller()</code>'s memory with a call to the destination method:</p>
+<p>Another idiom is to use a tailcall (<a href="chapter_05.html#tail_calls">Tail Calls</a>(tail_calls)) to <i>replace</i> the current invocation of <code>AUTOLOAD()</code> from <code>caller()</code>'s memory with a call to the destination method:</p>
 <div class="programlisting">
 <pre>
 <code>    sub AUTOLOAD

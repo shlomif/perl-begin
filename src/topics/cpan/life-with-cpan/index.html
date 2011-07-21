@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding='utf-8' ?> <html lang="en-US"><head
-        xmlns:xlink="http://www.w3.org/1999/xlink"> <meta
-        http-equiv="content-type" content="text/html;
-        charset=UTF-8"><title>Life with CPAN</title><link rel="stylesheet"
-        type="text/css" href="default.css"><meta
-        name="MSSmartTagsPreventParsing" content="TRUE"></head><body
-        xmlns:xlink="http://www.w3.org/1999/xlink"><div class="header"><div
+<?xml version="1.0" encoding='utf-8' ?>
+<!DOCTYPE
+    html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Life with CPAN</title><link rel="stylesheet"
+        type="text/css" href="default.css" /><meta
+        name="MSSmartTagsPreventParsing" content="TRUE" /></head><body>
+        <div class="header"><div
                 class="navlinks"><a
                     href="http://web.archive.org/web/20080822232114/http://sial.org/howto/perl/">Parent
-                    Page</a></div><h1><a name="s">Life with
-                    CPAN</a></h1></div><div class="subsection"><a
+                    Page</a></div><h1 id="s">Life with
+                    CPAN</h1></div><div class="subsection"><a
                 href="#s2"><tt
                     class="cmd">perl</tt> Upgrade Bug</a> | <a
                 href="#s3">Active
@@ -50,8 +53,8 @@
      href="http://use.perl.org/article.pl?sid=06/11/08/1256207">submit
      module test results</a>. Try <a
      href="http://use.perl.org/%7EShlomi+Fish/journal/32367">SmokeAuto
-     for automated module testing</a>.</p><h3><a
-         name="s1.1">Alternatives</a></h3><p class="info">Other means of
+     for automated module testing</a>.</p><h3 id="s1.1">
+         Alternatives</h3><p class="info">Other means of
  installing <tt class="cmd">perl</tt> modules from <acronym
      title="Comprehensive Perl Archive Network">CPAN</acronym> include the
  following, which are not discussed in detail here.</p><ul class="list"><li><a
@@ -67,13 +70,13 @@
          title="Documentation on the CPAN Perl module"><tt
              class="perl-module">CPAN</tt></a> module. In  addition to fixing
      some long-standing problems, <tt class="code">CPAN++</tt> includes new
-     features, such as module uninstall.”<br>&nbsp;</li><li>PAR - <a
+     features, such as module uninstall.”<br />&nbsp;</li><li>PAR - <a
          href="http://par.perl.org/">Cross-Platform
-         Packaging and Deployment tool</a>.<br>&nbsp;</li><li><a
+         Packaging and Deployment tool</a>.<br />&nbsp;</li><li><a
          href="http://aspn.activestate.com/ASPN/Downloads/ActivePerl/PPM/">Perl
          Package Manager (PPM)</a> - Included with <a
          href="http://aspn.activestate.com/ASPN/Downloads/ActivePerl/">ActiveState
-         Perl</a>.<br>&nbsp;</li><li>Other. Some vendors make <tt
+         Perl</a>.<br />&nbsp;</li><li><p>Other. Some vendors make <tt
          class="cmd">perl</tt> modules available via other methods, such as
      ActiveState’s <a
          href="http://aspn.activestate.com/ASPN/Downloads/ActivePerl/PPM/"><acronym
@@ -84,7 +87,7 @@
          OS X, install XCode</a>, or use on of the various package systems
      available. These offer tight integration with the system in question, but
      may include outdated modules or use different naming conventions and
-     filesystem layouts.</li><p class="note">For example, <tt
+     filesystem layouts.</p><p class="note">For example, <tt
          class="code">p5-libwww</tt> is the FreeBSD port
 of the module distribution <tt class="code">libwww-perl</tt> on <acronym
     title="Comprehensive Perl Archive Network">CPAN</acronym>, and <a
@@ -98,8 +101,8 @@ command included with modern versions of <a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a>.</p><p class="data-shell">#
-<kbd>portinstall p5-libwww</kbd><br># <kbd>yum -y install
-    perl-libwww-perl</kbd><br># <kbd>cpan -i LWP::UserAgent</kbd></p><p
+<kbd>portinstall p5-libwww</kbd><br /># <kbd>yum -y install
+    perl-libwww-perl</kbd><br /># <kbd>cpan -i LWP::UserAgent</kbd></p><p
 class="info">To lookup the documentation for a module, use <tt
     class="code">http://search.cpan.org/perldoc/<kbd
         class="input">Module::Name</kbd></tt>. The documentation should also
@@ -114,7 +117,7 @@ include the <a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a> shell search
-features.</p><li>Conversion scripts. <a
+features.</p></li><li>Conversion scripts. <a
     href="http://perl.arix.com/cpan2rpm/"><tt
         class="cmd">cpan2rpm</tt></a> helps <a
     href="http://web.archive.org/howto/rpm/perl/">convert
@@ -123,8 +126,8 @@ features.</p><li>Conversion scripts. <a
     href="http://web.archive.org/howto/yum/">local
     Yellowdog Updater, Modified (YUM) server</a>. On Debian, try <tt
     class="cmd">dh-make-perl --install --cpan
-    Module::Name</tt>.</li></ul><h2><a name="s2"><tt class="cmd">perl</tt>
-    Upgrade Bug</a></h2><p class="info">The first time <a
+    Module::Name</tt>.</li></ul><h2 id="s2"><tt class="cmd">perl</tt>
+    Upgrade Bug</h2><p class="info">The first time <a
 href="http://search.cpan.org/perldoc/CPAN"
 title="Documentation on the CPAN Perl module"><tt
     class="perl-module">CPAN</tt></a> is invoked, it will run through a set of
@@ -181,8 +184,8 @@ title="Documentation on the CPAN Perl module"><tt
  versions of <a
      href="http://search.cpan.org/perldoc/CPAN"
      title="Documentation on the CPAN Perl module"><tt
-         class="perl-module">CPAN</tt></a>.</p><h2><a name="s3">Active FTP
-         versus Firewalls</a></h2><p class="info">Network problems may prevent
+         class="perl-module">CPAN</tt></a>.</p><h2 id="s3">Active FTP
+         versus Firewalls</h2><p class="info">Network problems may prevent
  access to <acronym title="Comprehensive Perl Archive Network">CPAN</acronym>
  mirror sites. The chief problem will be utilities set to use active <acronym
      title="File Transfer Protocol">FTP</acronym>, which most firewalls block.
@@ -207,9 +210,9 @@ title="Documentation on the CPAN Perl module"><tt
      class="cmd">cpan</tt>.</p><p class="data-shell"># <kbd>env FTP_PASSIVE=1
      cpan -i Net::FTP</kbd></p><p class="info">During the install of the <tt
      class="code">libnet</tt> distribution, enable passive <acronym title="File
-     Transfer Protocol">FTP</acronym>.</p><p class="data">…<br>Ah, I see you
- already have installed libnet before.<br><br>Do you want to modify/update your
- configuration (y|n) ? [no] <kbd class="input">y</kbd><br>…<br>Should all FTP
+     Transfer Protocol">FTP</acronym>.</p><p class="data">…<br />Ah, I see you
+ already have installed libnet before.<br /><br />Do you want to modify/update your
+ configuration (y|n) ? [no] <kbd class="input">y</kbd><br />…<br />Should all FTP
  connections be passive (y|n) ? [no] <kbd class="input">y</kbd></p><p
  class="info">If <a
      href="http://search.cpan.org/perldoc/Net::FTP"
@@ -218,17 +221,17 @@ title="Documentation on the CPAN Perl module"><tt
  <tt class="file">libnet.cfg</tt> configuration file to use passive <acronym
      title="File Transfer Protocol">FTP</acronym>.</p><p class="data-shell">$
  <kbd>perl -le 'for (@INC) { $_ .= "/".$ARGV[0]; print if -f }'
-     Net/libnet.cfg</kbd><br>/usr/local/lib/perl5/5.8.1/Net/libnet.cfg<br>$
- <kbd>grep passive /usr/local/lib/perl5/5.8.1/Net/libnet.cfg</kbd><br>
+     Net/libnet.cfg</kbd><br />/usr/local/lib/perl5/5.8.1/Net/libnet.cfg<br />$
+ <kbd>grep passive /usr/local/lib/perl5/5.8.1/Net/libnet.cfg</kbd><br />
  'ftp_int_passive' =&gt; 1,</p><p class="info">If <a
      href="http://search.cpan.org/perldoc/Net::FTP"
      title="Documentation on the Net::FTP Perl module"><tt
          class="perl-module">Net::FTP</tt></a> does not work, or certain
  utilities take too long to time out, consider the following options.</p><ul
-     class="list"><li>Disable <a
+     class="list"><li><p>Disable <a
          href="http://search.cpan.org/perldoc/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><tt
-             class="perl-module">Net::FTP</tt></a>.</li><p class="info">If <a
+             class="perl-module">Net::FTP</tt></a>.</p><p class="info">If <a
          href="http://search.cpan.org/perldoc/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><tt
              class="perl-module">Net::FTP</tt></a> does not work, try adding
@@ -245,26 +248,26 @@ title="Documentation on the CPAN Perl module"><tt
          href="http://search.cpan.org/perldoc/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><tt
              class="perl-module">Net::FTP</tt></a>.</p><p
-     class="data">'dontload_hash' =&gt; { 'Net::FTP' =&gt; 1 },</p><li>Disable
-     utilities that do not work</li><p class="info">To reconfigure <a
+     class="data">'dontload_hash' =&gt; { 'Net::FTP' =&gt; 1 },</p></li><li><p>Disable
+     utilities that do not work</p><p class="info">To reconfigure <a
          href="http://search.cpan.org/perldoc/CPAN"
          title="Documentation on the CPAN Perl module"><tt
              class="perl-module">CPAN</tt></a> to not call certain utilities,
      replace the path to the utility with a single space.</p><p
-     class="data-shell">$ <kbd>grep ncftp ~/.cpan/CPAN/MyConfig.pm</kbd><br>
-     'ncftp' =&gt; q[ ],<br>  'ncftpget' =&gt; q[ ],</p></ul><h2><a
-         name="s4">Preferences Questions</a></h2><p class="info"><a
+     class="data-shell">$ <kbd>grep ncftp ~/.cpan/CPAN/MyConfig.pm</kbd><br />
+     'ncftp' =&gt; q[ ],<br />  'ncftpget' =&gt; q[ ],</p></li></ul><h2 id="s4">
+         Preferences Questions</h2><p class="info"><a
      href="http://search.cpan.org/perldoc/CPAN"
      title="Documentation on the CPAN Perl module"><tt
          class="perl-module">CPAN</tt></a> will ask for preferences settings
  any time the <tt class="file">Config.pm</tt> preferences file does not exist
  or is out of date. The default choice should be acceptable for most.</p><ul
-     class="list"><li>CPAN build and cache directory? [<tt
-         class="file">/root/.cpan</tt>]</li><p class="info">I use <tt
+     class="list"><li><p>CPAN build and cache directory? [<tt
+         class="file">/root/.cpan</tt>]</p><p class="info">I use <tt
          class="file">/var/spool/cpan</tt>, as the root filesystem tends to be
      small on my systems, and the spool area makes more sense to
-     me.</p><li>Policy on building prerequisites (follow, ask or ignore)?
-     [ask]</li><p class="info">Leave this setting set to <kbd
+     me.</p></li><li><p>Policy on building prerequisites (follow, ask or ignore)?
+     [ask]</p><p class="info">Leave this setting set to <kbd
          class="input">ask</kbd> when upgrading <a
          href="http://search.cpan.org/perldoc/CPAN"
          title="Documentation on the CPAN Perl module"><tt
@@ -284,9 +287,9 @@ title="Documentation on the CPAN Perl module"><tt
      of <a
          href="http://search.cpan.org/perldoc/CPAN"
          title="Documentation on the CPAN Perl module"><tt
-             class="perl-module">CPAN</tt></a> is installed.</p><li>Where is
+             class="perl-module">CPAN</tt></a> is installed.</p></li><li><p>Where is
      your <tt class="file-glob">*</tt> program? [<tt
-         class="file-glob">*</tt>]</li><p class="info">This series of questions
+         class="file-glob">*</tt>]</p><p class="info">This series of questions
      lets one configure (or disable) paths to various utilities <a
          href="http://search.cpan.org/perldoc/CPAN"
          title="Documentation on the CPAN Perl module"><tt
@@ -297,14 +300,14 @@ title="Documentation on the CPAN Perl module"><tt
              class="perl-module">CPAN</tt></a> is left with at least one
      working program that can download modules and another to expand
      them.</p><p class="info">To disable a particular utility, use a single
-     space instead of a file path.</p><li>Parameters for the '<tt
-         class="cmd">make install</tt>' command?</li><p class="info">Set this
+     space instead of a file path.</p></li><li><p>Parameters for the '<tt
+         class="cmd">make install</tt>' command?</p><p class="info">Set this
      option to include <tt class="code">UNINST=1</tt> if installing as root.
      This properly cleans out files from older versions of a module being
      installed.  For user-specific setup, I never set the <tt
          class="code">UNINST</tt> option, to avoid remove warnings of
-     unremovable system files.</p><li>Now we need to know where your favorite
-     CPAN sites are located.</li><p class="info">Choose several <acronym
+     unremovable system files.</p></li><li><p>Now we need to know where your favorite
+     CPAN sites are located.</p><p class="info">Choose several <acronym
          title="Comprehensive Perl Archive Network">CPAN</acronym> mirror
      sites.  Use <tt class="cmd">traceroute</tt> or bandwidth testing tools to
      determine which mirrors are best for your system. Or, <a
@@ -317,7 +320,7 @@ will be slow downloads as <a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a> fails though the mirror
-list.</p></ul><h2><a name="s5">Reconfiguring CPAN</a></h2><p class="info">To
+list.</p></li></ul><h2 id="s5">Reconfiguring CPAN</h2><p class="info">To
 alter the <a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
@@ -328,28 +331,28 @@ following command in the CPAN shell.</p><p class="data-shell">cpan&gt; <kbd>o
 configuration option runs through all the configuration questions, which may be
 time consuming.  For example, other <tt class="cmd">o conf</tt> commands can be
 used to list, remove, and add mirror sites, and then to save the changes to
-disk.</p><p class="data-shell">cpan&gt; <kbd>o conf urllist</kbd><br>
-urllist<br>ftp://ftp.kernel.org/pub/CPAN/<br>Type 'o conf' to view
-configuration edit options<br><br><br>cpan&gt; <kbd>o conf urllist
-    shift</kbd><br><br>cpan&gt; <kbd>o conf urllist push
-    ftp://ftp-mirror.internap.com/pub/CPAN/</kbd><br><br>cpan&gt; <kbd>o conf
-    urllist</kbd><br>    urllist<br>
+disk.</p><p class="data-shell">cpan&gt; <kbd>o conf urllist</kbd><br />
+urllist<br />ftp://ftp.kernel.org/pub/CPAN/<br />Type 'o conf' to view
+configuration edit options<br /><br /><br />cpan&gt; <kbd>o conf urllist
+    shift</kbd><br /><br />cpan&gt; <kbd>o conf urllist push
+    ftp://ftp-mirror.internap.com/pub/CPAN/</kbd><br /><br />cpan&gt; <kbd>o conf
+    urllist</kbd><br />    urllist<br />
 
    <!-- base
    href="http://sial.org.wstub.archive.org/howto/perl/life-with-cpan/" -->
 
 ftp://ftp-mirror.internap.com/pub/CPAN/
-        <br>Type 'o conf' to view configuration edit
-        options<br><br><br>cpan&gt; <kbd>o conf commit</kbd><br>commit: wrote
-        /usr/local/lib/perl5/5.6.1/CPAN/Config.pm<br></p><p class="info">To
+        <br />Type 'o conf' to view configuration edit
+        options<br /><br /><br />cpan&gt; <kbd>o conf commit</kbd><br />commit: wrote
+        /usr/local/lib/perl5/5.6.1/CPAN/Config.pm<br /></p><p class="info">To
         manually edit the existing configuration file, either open the
         user-specific <tt class="file">~/.cpan/CPAN/MyConfig.pm</tt> directly,
         or locate the system-wide configuration file (stored somewhere under
         the <tt class="cmd">perl</tt> <tt class="code">@INC</tt> path list) to
         edit with the following command.</p><p class="data-shell">$ <kbd>perl
             -le 'for (@INC) { $_ .= $ARGV[0]; print if -f }'
-            /CPAN/Config.pm</kbd><br>/System/Library/Perl/CPAN/Config.pm</p><h2><a
-                name="s6">Usage Tips</a></h2><div class="subsection"><a
+            /CPAN/Config.pm</kbd><br />/System/Library/Perl/CPAN/Config.pm</p>
+            <h2 id="s6">Usage Tips</h2><div class="subsection"><a
                 href="#s6.1">Invocation</a>
             | <a
                 href="#s6.2"><tt
@@ -382,13 +385,13 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
             title="Documentation on the CPAN Perl module"><tt
                 class="perl-module">CPAN</tt></a> shell, run <tt
             class="cmd">reload cpan</tt> first.</p><p
-        class="data-shell">cpan&gt; <kbd>reload cpan</kbd><br>…<br>cpan&gt;
+        class="data-shell">cpan&gt; <kbd>reload cpan</kbd><br />…<br />cpan&gt;
         <kbd>install Bundle::CPAN</kbd></p><p class="info">The following
         sections outline various uses and caveats with <a
             href="http://search.cpan.org/perldoc/CPAN"
             title="Documentation on the CPAN Perl module"><tt
-                class="perl-module">CPAN</tt></a>.</p><h3><a
-                name="s6.1">Invocation</a></h3><p class="info">The latest
+                class="perl-module">CPAN</tt></a>.</p>
+                <h3 id="s6.1">Invocation</h3><p class="info">The latest
         version of <a
             href="http://search.cpan.org/perldoc/CPAN"
             title="Documentation on the CPAN Perl module"><tt
@@ -405,10 +408,10 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
         commands are equivalent.  Hereafter, the shorter <tt
             class="cmd">cpan</tt> method will be used.</p><p
         class="data-shell"><span class="comment"># enter the CPAN
-            shell</span><br># <kbd>perl -MCPAN -e shell</kbd><br>#
-        <kbd>cpan</kbd><br><br><span class="comment"># install the Acme::Bleach
-            module</span><br># <kbd>perl -MCPAN -e install
-            Acme::Bleach</kbd><br># <kbd>cpan -i Acme::Bleach</kbd></p><p
+            shell</span><br /># <kbd>perl -MCPAN -e shell</kbd><br />#
+        <kbd>cpan</kbd><br /><br /><span class="comment"># install the Acme::Bleach
+            module</span><br /># <kbd>perl -MCPAN -e install
+            Acme::Bleach</kbd><br /># <kbd>cpan -i Acme::Bleach</kbd></p><p
         class="note">Depending on the shell in question, one may need to issue
         the <tt class="cmd">hash -r</tt> or <tt class="cmd">rehash</tt> command
         to make the new <tt class="cmd">cpan</tt> command appear in the search
@@ -417,8 +420,8 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
             title="Documentation on the CPAN Perl module"><tt
                 class="perl-module">CPAN</tt></a> is installed.  Consult your
         shell’s documentation for more information on whether this is
-        required.</p><h3><a name="s6.2"><tt
-                    class="code">autobundle</tt></a></h3><p class="info">The <a
+        required.</p><h3 id="s6.2"><tt
+                    class="code">autobundle</tt></h3><p class="info">The <a
             href="http://search.cpan.org/perldoc/CPAN"
             title="Documentation on the CPAN Perl module"><tt
                 class="perl-module">CPAN</tt></a> <tt
@@ -427,11 +430,11 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
         containing all the installed modules of the current version of <tt
             class="cmd">perl</tt>.  This bundle can then be installed once the
         new version of <tt class="cmd">perl</tt> is installed.</p><p
-        class="data-shell">cpan&gt; <kbd>autobundle</kbd><br>…<br><br>Wrote
-        bundle file<br>
-        /var/spool/cpan/Bundle/Snapshot_2003_10_01_00.pm<br><br><br>cpan&gt;
-        <kbd>quit</kbd><br><br><span class="comment"># upgrade perl here
-            …</span><br><br># <kbd>cpan</kbd><br>cpan&gt; <kbd>install
+        class="data-shell">cpan&gt; <kbd>autobundle</kbd><br />…<br /><br />Wrote
+        bundle file<br />
+        /var/spool/cpan/Bundle/Snapshot_2003_10_01_00.pm<br /><br /><br />cpan&gt;
+        <kbd>quit</kbd><br /><br /><span class="comment"># upgrade perl here
+            …</span><br /><br /># <kbd>cpan</kbd><br />cpan&gt; <kbd>install
             Bundle::Snapshot_2003_10_01_00</kbd></p><p class="info">Autobundle
         appears to install the modules in alphabetical order; setting the <tt
             class="code">prerequisites_policy</tt> policy to <tt
@@ -440,8 +443,8 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
         to much recursion on the part of <a
             href="http://search.cpan.org/perldoc/CPAN"
             title="Documentation on the CPAN Perl module"><tt
-                class="perl-module">CPAN</tt></a>.</p><h3><a name="s6.3">Old
-                Modules</a></h3><p class="info">Some modules found by <a
+                class="perl-module">CPAN</tt></a>.</p><h3 id="s6.3">Old
+                Modules</h3><p class="info">Some modules found by <a
             href="http://search.cpan.org/perldoc/CPAN"
             title="Documentation on the CPAN Perl module"><tt
                 class="perl-module">CPAN</tt></a> are out of date, and will not
@@ -456,15 +459,15 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
                 href="http://search.cpan.org/perldoc/Mail::Cclient"
                 title="Documentation on the Mail::Cclient Perl module"><tt
                     class="perl-module">Mail::Cclient</tt></a>
-            <br>&nbsp;</li><li> <a
+            <br />&nbsp;</li><li> <a
                 href="http://search.cpan.org/perldoc/OpenGL"
                 title="Documentation on the OpenGL Perl module"><tt
-                    class="perl-module">OpenGL</tt></a> </li></ul><h3><a
-                name="s6.4">Mac OS X</a></h3><p class="info"><a
+                    class="perl-module">OpenGL</tt></a> </li></ul>
+                    <h3 id="s6.4">Mac OS X</h3><p class="info"><a
             href="macosx/">Problems
             with <acronym title="Comprehensive Perl Archive
-                Network">CPAN</acronym> on Mac OS X</a>.</p><h3><a
-              name="s6.5">Manual Build</a></h3><p class="info">On occasion one
+                Network">CPAN</acronym> on Mac OS X</a>.</p>
+                <h3 id="s6.5">Manual Build</h3><p class="info">On occasion one
       may need to manually build or test a module, or consult the module
       directory to read the documentation on any special needs the module may
       have.  This can be done with the <a
@@ -472,9 +475,9 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a> shell <tt class="cmd">look</tt>
 command.</p><p class="data-shell">cpan&gt; <kbd>look
-    Net::SSLeay</kbd><br>…<br>Working directory is
-/var/spool/cpan/build/Net_SSLeay.pm-1.25<br># <kbd>exit</kbd><br>cpan&gt;
-<kbd>&nbsp;</kbd></p><h3><a name="s6.6"><tt class="cmd">sudo</tt></a></h3><p
+    Net::SSLeay</kbd><br />…<br />Working directory is
+/var/spool/cpan/build/Net_SSLeay.pm-1.25<br /># <kbd>exit</kbd><br />cpan&gt;
+<kbd>&nbsp;</kbd></p><h3 id="s6.6"><tt class="cmd">sudo</tt></h3><p
 class="info">If <a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
@@ -495,7 +498,7 @@ problem, reset the <tt class="code">HOME</tt> environment variable with the <tt
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a>.</p><p class="data-shell">$ <kbd>sudo
-    -H cpan</kbd></p><h3><a name="s6.7">Uninstalling</a></h3><p class="info"><a
+    -H cpan</kbd></p><h3 id="s6.7">Uninstalling</h3><p class="info"><a
     href="http://search.cpan.org/perldoc/CPAN"
     title="Documentation on the CPAN Perl module"><tt
         class="perl-module">CPAN</tt></a> itself offers no uninstall method.
@@ -520,8 +523,8 @@ such as <a
     class="file">.packlist</tt> file for use by <a
     href="http://search.cpan.org/perldoc/ExtUtils::Packlist"
     title="Documentation on the ExtUtils::Packlist Perl module"><tt
-        class="perl-module">ExtUtils::Packlist</tt></a>.</p><h3><a
-        name="s6.8">Upgrading</a></h3><p class="info">How to upgrade all the
+        class="perl-module">ExtUtils::Packlist</tt></a>.</p><h3 id="s6.9">
+    Upgrading</h3><p class="info">How to upgrade all the
 modules on the system like <tt class="cmd">apt-get</tt> is actually documented
 in the <a
     href="http://search.cpan.org/perldoc/CPAN"
@@ -529,18 +532,18 @@ in the <a
         class="perl-module">CPAN</tt></a> manual; however, the question comes
 up often enough that I answer it here as well.</p><p class="data-shell"><span
     class="comment"># install everything that is outdated on my
-    disk:</span><br># <kbd>perl -MCPAN -e
+    disk:</span><br /># <kbd>perl -MCPAN -e
     'CPAN::Shell-&gt;install(CPAN::Shell-&gt;r)'</kbd></p><p
 class="info">Problems with this include new versions of modules that may break
 old module behavior, or various modules that cannot be upgraded due to build
 failures or system incompatibilities. Best to subject a test system to this
 sort of mass module
- upgrade before attempting it on a production system.</p><h2><a
-         name="s7">Debugging Module Build Problems</a></h2><p class="info">See
+ upgrade before attempting it on a production system.</p><h2 id="s7">
+         Debugging Module Build Problems</h2><p class="info">See
  the <a
      href="debug/">Debugging
-     CPAN Build Problems</a> guide for more information.</p><h2><a
-         name="s8">Using CPAN with a non-root account</a></h2><p
+     CPAN Build Problems</a> guide for more information.</p><h2 id="s8">
+         Using CPAN with a non-root account</h2><p
  class="info"><a
      href="non-root/">Notes
      on using CPAN with a non-root account</a>, or installing Perl modules to
@@ -549,11 +552,8 @@ sort of mass module
      href="http://search.cpan.org/perldoc/local::lib"
      title="Documentation on the local::lib Perl module"><tt
          class="perl-module">local::lib</tt></a> to bootsrap custom Perl module
- installation directories.</p><div class="footer"><a
-         href="http://web.archive.org/"><img
-         style="float: right; margin-top: 1em; margin-right: 1em;
-         margin-bottom: 5em;" src="Life%20with%20CPAN_files/sial.html"
-         width="64" height="64"></a><p><a
+ installation directories.</p><div class="footer">
+    <p><a
          href="http://web.archive.org/contact/">Questions
          or comments about this page?</a> Current ruminations available on <a
          href="http://web.archive.org/blog/">my

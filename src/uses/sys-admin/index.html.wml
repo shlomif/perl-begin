@@ -55,7 +55,7 @@ IO package with a lot of syntactic sugar. Non-core.
 
 <p>
 The built-in module for traversing a directory tree in Perl is 
-<cpan_self_mod="File::Find" />, but it has some severe limitations in interface
+<cpan_self_mod m="File::Find" />, but it has some severe limitations in interface
 and use. Some better alternatives are:
 </p>
 
