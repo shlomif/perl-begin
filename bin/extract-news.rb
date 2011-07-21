@@ -12,7 +12,7 @@ IO.foreach('src/news/index.html.wml') do |l|
         if (l =~ /^<h2/)
             finish = true
         else
-            $s += l.gsub(/\$\(ROOT\)/, 'http://perl-begin.org/')
+            $s += l.gsub(/\$\(ROOT\)/, 'http://perl-begin.org')
         end
     elsif extract1 then
         if (l =~ /<\/h2/)
