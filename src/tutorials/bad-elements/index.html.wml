@@ -1561,8 +1561,8 @@ thinking they should use perl threads. However, as mentioned in
 <pdoc d="perlthrtut">perlthrtut</pdoc>, perl threads are very much unlike
 the traditional thread modules, share nothing by default and are in fact
 heavyweight processes (instead of the usual lightweight ones). See also
-<a href="http://www.perlmonks.org/index.pl?node_id=288022">Elizabeth Mattijsen
-writeup about perl's ithreads on perlmonks</a>.
+<a href="http://www.perlmonks.org/index.pl?node_id=288022">Elizabeth
+Mattijsen’s writeup about perl's ithreads on perlmonks</a>.
 </p>
 
 <p>
