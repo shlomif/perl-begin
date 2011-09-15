@@ -729,7 +729,7 @@ references some programmers are tempted to access them directly:
 $self-&gt;{'name'} = "John";
 print "I am ", $self-&gt;{'age'}, " years old\n";
 
-\# Or even (Really bad code:)
+\# Or even: (Really bad code)
 $self-&gt;[NAME()] = "John";
 </bad_code>
 
@@ -737,7 +737,7 @@ $self-&gt;[NAME()] = "John";
 However, this is sub-optimal as explained in
 <a href="http://www.shlomifish.org/lecture/Perl/Newbies/lecture5/accessors/">the
 Perl 
-for Newbies section about "Accessors"</a> and one should use accessors oneself
+for Newbies section about "Accessors"</a>, and one should use accessors
 using code like that:
 </p>
 
