@@ -1,3 +1,5 @@
+The dependencies are listed in the file src/source/index.html.wml .
+
 Before running make for the first time, one has to run "./gen-helpers.pl".
 This script generates the list of directories and pages inside include.mak
 and rules.mak.
