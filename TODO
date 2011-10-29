@@ -1,3 +1,9 @@
+* Add a page about file/directory-handling :
+    - Will share a lot of content with the Sys Admin page.
+    - Refer to perldoc -f open and perldoc perlopentut.
+    - Other CPAN modules.
+    - inotify/etc.
+
 * Add some screenshots to the /uses/games page.
 
 * Add more information about:
