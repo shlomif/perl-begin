@@ -4,6 +4,17 @@
     - Other CPAN modules.
     - inotify/etc.
 
+* Add a page about web automation (maybe networking in general) :
+    - WWW::Mechanize.
+    - LWP
+    - WWW::Curl and LWP::Curl
+    - HTML::TreeBuilder / HTML::TreeBuilder::LibXML.
+    - WWW::Selenium
+    - Mozilla::Mechanize
+    - IE::Mechanize
+    - Networking modules for various protocols.
+        - refer to the email page.
+
 * Add a tutorial on how to create CPAN distributions.
     - an up-to-date one is really needed.
 
