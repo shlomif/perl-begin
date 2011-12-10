@@ -354,7 +354,7 @@ sub _slurp
 {
     my $filename = shift;
 
-    open my $in, "&lt;", $filename
+    open my $in, '&lt;', $filename
         or die "Cannot open '$filename' for slurping - $!";
 
     local $/;
