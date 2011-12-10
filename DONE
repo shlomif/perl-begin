@@ -144,3 +144,15 @@ them and contribute.
 
 * Add a page about "Perl"-vs.-"perl"-vs.-"PERL".
 
+*
+<<<
+I enjoyed the article, "Perl Elements to Avoid" at perl-begin.org.
+
+However, I suggest it isn't sufficient to tell people what to not do. They need
+suggestions on suitable alternatives. "Avoid  nested calls" is fair advice, but
+now the beginner is lost, with no alternatives. They can figure out to save
+intermediate results, and call routines on those, but that is just a more
+verbose  way of doing the same thing. The beginner is unlikely to consider
+delegation.
+>>>
+
