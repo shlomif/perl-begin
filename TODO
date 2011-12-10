@@ -2,6 +2,12 @@
     - Will share a lot of content with the Sys Admin page.
     - Refer to perldoc -f open and perldoc perlopentut.
     - Other CPAN modules.
+        - File::Spec
+        - File::Basename
+        - File::Find
+            - File::Find::Object
+        - IO::All
+        - File::Slurp
     - inotify/etc.
 
 * Add a page about web automation (maybe networking in general) :
