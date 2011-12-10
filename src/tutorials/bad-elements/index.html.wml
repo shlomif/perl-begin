@@ -709,7 +709,7 @@ comments altogether, but excessive commenting could prove as a red flag.
 
 <p>
 If you're interested in documenting the public interface of your modules and
-command-line programs, refer <pdoc d="perlpod">, Perl's Plain Old
+command-line programs, refer to <pdoc d="perlpod">, Perl's Plain Old
 Documentation (POD)</pdoc>, which allows one to quickly and easily document
 one's code. POD has
 <a href="http://search.cpan.org/search?query=pod&amp;mode=all">many extensions
