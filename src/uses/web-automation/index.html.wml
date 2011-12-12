@@ -1,0 +1,42 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for Web Automation" />
+
+<p>
+One can use Perl to automate web-sites: perform operations on them using
+a Perl-based web user-agent that speaks HTTP and HTTPS.
+</p>
+
+<p>
+This page aims to give a few pointers to popular and high-quality
+Perl resources for web-automation.
+</p>
+
+<h2 id="modules">Modules for Web Automation</h2>
+
+<h3 id="WWW-Mechanize"><cpan_self_dist d="WWW-Mechanize" /></h3>
+
+<p>
+WWW::Mechanize is the de-facto standard for web-automation for Perl, but you
+may find more convenient interfaces for many tasks.
+</p>
+
+<h3 id="parsers"><cpan_self_mod m="HTML::TreeBuilder" /> and 
+<cpan_self_dist d="HTML-TreeBuilder-LibXML" /></h3>
+
+<p>
+These are alterantive HTML parsers that provide more flexibility. For more
+information about HTML parsing see our <a href="$(ROOT)/uses/text-parsing/">text
+parsing page</a>.
+</p>
+
+<h2 id="browser-wrappers">Browser Wrappers</h2>
+
+<p>
+<cpan_self_mod m="WWW::Selenium" />, <cpan_self_mod m="Mozilla::Mechanize" />
+and <cpan_self_mod m="IE::Mechanize" /> allow one to perform web automation
+by interfacing with existing, full-fledged, JavaScript-enabled browsers, seeing
+everything from the browser's point-of-view.
+</p>
+
+

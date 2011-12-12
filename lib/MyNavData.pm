@@ -289,6 +289,11 @@ my $tree_contents =
                     url => "uses/text-parsing/",
                 },
                 {
+                    text => "Web Automation",
+                    title => "Perform operations on web-site programatically and automatically",
+                    url => "uses/web-automation/",
+                },
+                {
                     text => "Web/CGI",
                     url => "uses/web/",
                 },

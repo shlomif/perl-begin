@@ -20,6 +20,7 @@
     - IE::Mechanize
     - Networking modules for various protocols.
         - refer to the email page.
+    - Web::Scraper
 
 * Add a tutorial on how to create CPAN distributions.
     - an up-to-date one is really needed.
