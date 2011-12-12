@@ -39,4 +39,24 @@ by interfacing with existing, full-fledged, JavaScript-enabled browsers, seeing
 everything from the browser's point-of-view.
 </p>
 
+<h2 id="high-level">High-Level Web Automation Frameworks</h2>
+
+<p>
+<cpan_b_self_dist d="Web-Scraper" /> is a web scraper toolkit that is
+a high-level abstraction above WWW-Mechanize and other modules. 
+<cpan_b_self_dist d="Scrappy" /> is an even higher-level abstraction and
+integrates some other modules.
+</p>
+
+<h2 id="low-level">Lower Level Web Modules</h2>
+
+<p>
+<cpan_self_dist d="libwww-perl" />,
+<cpan_self_dist d="WWW-Curl" /> and <cpan_self_dist d="LWP-Curl" />
+provide lower-level access to HTTP, HTTPS and related protocols. libwww-perl
+(LWP) is the most popular API and is pure-Perl ; WWW-Curl is a wrapper to
+<a href="http://curl.haxx.se/libcurl/">libcurl</a> which is written in C and
+is fast, and LWP-Curl provides a libwww-perl-like interface above WWW-Curl.
+</p>
+
 
