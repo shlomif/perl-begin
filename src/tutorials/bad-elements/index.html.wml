@@ -189,6 +189,24 @@ at <cpan_self_dist d="Devel-Declare" /> from
 CPAN. But don't use prototypes.
 </p>
 
+<p>
+For more information, see:
+</p>
+
+<ol>
+
+<li>
+<a href="https://www.socialtext.net/perl5/prototype">Discussion on the Perl 5 Wiki</a> 
+</li>
+
+<li>
+<a href="http://stackoverflow.com/questions/297034/why-are-perl-5s-function-prototypes-bad">“Why
+are Perl 5’s function prototypes bad?”</a> on Stack Overflow.
+</li>
+
+</ol>
+
+
 </item>
 
 <item id="ampersand-in-subroutine-calls" h="Ampersand in Subroutine Calls">
