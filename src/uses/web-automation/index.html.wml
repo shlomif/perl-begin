@@ -42,7 +42,7 @@ everything from the browser's point-of-view.
 <h2 id="high-level">High-Level Web Automation Frameworks</h2>
 
 <p>
-<cpan_b_self_dist d="Web-Scraper" /> is a web scraper toolkit that is
+<cpan_b_self_dist d="Web-Scraper" /> is a web scraping toolkit that is
 a high-level abstraction above WWW-Mechanize and other modules. 
 <cpan_b_self_dist d="Scrappy" /> is an even higher-level abstraction and
 integrates some other modules.
