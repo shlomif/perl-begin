@@ -156,3 +156,15 @@ verbose  way of doing the same thing. The beginner is unlikely to consider
 delegation.
 >>>
 
+* Add a page about web automation (maybe networking in general) :
+    - WWW::Mechanize.
+    - LWP
+    - WWW::Curl and LWP::Curl
+    - HTML::TreeBuilder / HTML::TreeBuilder::LibXML.
+    - WWW::Selenium
+    - Mozilla::Mechanize
+    - IE::Mechanize
+    - Networking modules for various protocols.
+        - refer to the email page.
+    - Web::Scraper
+
