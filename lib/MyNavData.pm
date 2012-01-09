@@ -161,7 +161,7 @@ my $tree_contents =
             text => "Article Collections",
         },
         {
-            url => "trainining/",
+            url => "training/",
             text => "Training",
             title => "Take paid courses for learning Perl",
         },
