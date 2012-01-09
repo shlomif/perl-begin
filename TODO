@@ -10,6 +10,11 @@
         - File::Slurp
     - inotify/etc.
 
+* Add a page about training providers:
+    - http://pti.co.il/ - Perl Training Israel.
+    - http://perltraining.com.au/ - Perl Training Australia.
+    - http://perltraining.org/
+
 * Perhaps a page about working with network protocols in general.
 
 * Add a tutorial on how to create CPAN distributions.
