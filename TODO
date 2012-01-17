@@ -10,6 +10,13 @@
         - File::Slurp
     - inotify/etc.
 
+* Add to '/bad-elements/':
+    - calling too much for the shell for help.
+    - Code/Markup injection:
+        - shell code injection.
+        - cross-site-scripting / HTML injection.
+        - SQL injection.
+
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
     - http://perltraining.com.au/ - Perl Training Australia.
