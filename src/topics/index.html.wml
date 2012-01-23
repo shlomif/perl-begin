@@ -44,6 +44,12 @@ one of Perl's three fundamental data structures and their least understood
 one. This page gives some resources for learning about hashes. 
 </p>
 
+<h3 id="files-and-dirs"><a href="files-and-directories/">Files and Directories Handling</a></h3>
+
+<p>
+How to handle files and directories in Perl.
+</p>
+
 <h3 id="references"><a href="references/">References</a></h3>
 
 <p>
