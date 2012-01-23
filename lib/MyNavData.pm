@@ -327,6 +327,11 @@ my $tree_contents =
                     title => "Debugging Perl Programs",
                 },
                 {
+                    text => "Files and Directories",
+                    url => "topics/files-and-directories/",
+                    title => "Handling Files and Directories in Perl",
+                },
+                {
                     text => "Hashes",
                     url => "topics/hashes/",
                     title => "Hashes / Associative Arrays for Mapping Keys to Values",
