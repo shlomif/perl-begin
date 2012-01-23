@@ -8,7 +8,15 @@
             - File::Find::Object
         - IO::All
         - File::Slurp
-    - inotify/etc.
+    - TODO: inotify/etc.
+    - TODO: Add cookbook:
+        - reading files.
+        - copying files.
+        - appending to files.
+        - appending selected portion from a file to another file.
+        - deleting a directory tree.
+        - writing to a file.
+        - show all with IO::All and without it.
 
 * Add to '/bad-elements/':
     - calling too much for the shell for help.
