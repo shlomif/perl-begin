@@ -1,0 +1,1 @@
+Redirect permanent /learn/myth-dispelling/ /learn/why-perl/
