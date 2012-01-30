@@ -51,7 +51,7 @@ my $tree_contents =
                     text => "Get a Job!",
                 },
                 {
-                    url => "learn/myth-dispelling/",
+                    url => "learn/why-perl/",
                     text => "Why Perl is Good",
                 },
                 {

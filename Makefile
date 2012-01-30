@@ -23,7 +23,7 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 DOCS_COMMON_DEPS = template.wml 
 
 all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
-	todo_done_data
+	todo_done_data htaccess
 
 include include.mak
 include rules.mak
@@ -91,4 +91,11 @@ $(TODO_DONE): $(TARGET)/contribute/%.txt: %
 # 
 # upload_arc: arc
 # 	$(RSYNC) $(ARC_NAME) shlomif@shell.berlios.de:
-# 
+#
+#
+#
+
+htaccess: $(TARGET)/.htaccess
+
+$(TARGET)/.htaccess: lib/htaccess.txt
+	cp -f $< $@
