@@ -1,0 +1,6 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Humour" />
+
+#include "retrieved-html-parts/Perl_Humour.html"
+
