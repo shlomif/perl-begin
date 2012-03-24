@@ -1,6 +1,6 @@
 #include '../template.wml'
 
-<latemp_subject "Perl Humour" />
+<latemp_subject "Freenode’s #perl FAQ" />
 
 <p>
 This page was retrieved from the corresponding page at the currently offline
