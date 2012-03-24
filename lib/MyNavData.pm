@@ -4,7 +4,7 @@ my $hosts =
 {
     berlios => 
     {
-        base_url => "http://perl-begin.berlios.de/",
+        base_url => "http://perl-begin.org/",
     },
 };
 
