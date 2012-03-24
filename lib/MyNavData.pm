@@ -1,5 +1,11 @@
 package MyNavData;
 
+use strict;
+use warnings;
+
+# Temporarily commenting out - restore later.
+# use utf8;
+
 my $hosts =
 {
     berlios => 
@@ -37,6 +43,11 @@ my $tree_contents =
             text => "Links",
             url => "links/",
             title => "External Links to Other Resources",
+        },
+        {
+            text => "Perl Humour",
+            url => "humour/",
+            title => "Perl Humour and Links to Perl Humour resources",
         },
         {
             text => "Learn Perl Now",
@@ -169,6 +180,14 @@ my $tree_contents =
             url => "FAQs/",
             text => "FAQs",
             title => "Lists of Frequently Asked Questions with Answers",
+            subs =>
+            [
+                {
+                    url => "FAQs/freenode-perl/",
+                    text => "Freenode's #perl FAQ",
+                    title => "The Frequently Asked Questions List for the Freenode Perl Channel",
+                },
+            ],
         },
         {
             url => "exercises/",
