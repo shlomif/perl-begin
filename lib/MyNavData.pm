@@ -3,8 +3,7 @@ package MyNavData;
 use strict;
 use warnings;
 
-# Temporarily commenting out - restore later.
-# use utf8;
+use utf8;
 
 my $hosts =
 {
