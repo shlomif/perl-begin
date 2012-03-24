@@ -24,9 +24,9 @@ of perl 5 that you are using.
 <p>
 If you cannot find packages for what you want, you can also try building
 a native package automatically from the equivalent CPAN package. 
-The <a href="http://perl.net.au/">PerlNet wiki</a> has the details about
-<a href="http://perl.net.au/wiki/CPAN#CPAN.pm.2FCPANPLUS.pm_Wrappers_for_Distributions">wrappers
-of CPAN modules for the various distributions</a>.
+We have the details of <a href="wrappers-for-distributions/">wrappers
+of CPAN modules for the various distributions</a> (originally from the
+PerlNet wiki).
 </p>
 
 <h2 id="links">Links</h2>
