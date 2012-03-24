@@ -14,6 +14,14 @@
 </li>
 <li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/" title="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
 </li>
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mageia/">CPANPLUS-Dist-Mageia (Mageia)</a> <br />
+<ul>
+<li>
+<a href="http://search.cpan.org/dist/App-Magpie/">App-Magpie - Mageia Perl Integration Made Easy</a>
+</li>
+</ul>
+</li>
 <li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/" title="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
 </li></ul>
 </li>
