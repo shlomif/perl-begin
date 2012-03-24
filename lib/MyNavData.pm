@@ -21,7 +21,7 @@ sub get_hosts
 my $tree_contents =
 {
     host => "berlios",
-    text => "Perl Beginners' Site",
+    text => "Perl Beginners’ Site",
     title => "A useful Portal for People New to Perl",
     subs =>
     [
@@ -183,7 +183,7 @@ my $tree_contents =
             [
                 {
                     url => "FAQs/freenode-perl/",
-                    text => "Freenode's #perl FAQ",
+                    text => "Freenode’s #perl FAQ",
                     title => "The Frequently Asked Questions List for the Freenode Perl Channel",
                 },
             ],
@@ -410,7 +410,7 @@ my $tree_contents =
                     url => "contribute/list/",
                 },
                 {
-                    text => "Site's Source Code",
+                    text => "Site’s Source Code",
                     url => "source/",
                 },
             ],
