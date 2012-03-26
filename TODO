@@ -25,6 +25,10 @@
         - cross-site-scripting / HTML injection.
         - SQL injection.
     - missing semicolons in the last statements of blocks.
+    - nested top-level subroutines.
+        - sub outer { ... sub inner { ... } } 
+        - lexical variable initialisation problem.
+        - use closures instead.
 
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
