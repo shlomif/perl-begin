@@ -83,3 +83,17 @@ for some interesting problems to solve and their solutions.
 A list of 99 challenges with a focus on the Prolog programming language,
 but which can be solved using Perl.
 </p>
+
+<h3 id="ioi"><a href="http://www.ioinformatics.org/contest/prev.shtml">International Olympiad in Informatics’ Previous Contest Tasks</a></h3>
+
+<p>
+Contains some challenges.
+</p>
+
+<h3 id="rosetta-code"><a href="http://rosettacode.org/">Rosetta Code</a></h3>
+
+<p>
+Contains a series of tasks, with solutions presented in as many programming
+languages as possible. <b>Note:</b> the Perl solutions presented there can vary
+in quality. (As can the solutions in other languages.)
+</p>
