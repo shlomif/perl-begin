@@ -29,6 +29,10 @@
         - sub outer { ... sub inner { ... } } 
         - lexical variable initialisation problem.
         - use closures instead.
+    - list-form of open with potentially one argument:
+        - will be interpreted as a shell command.
+        - no way to avoid it for one argument.
+        - use IPC::Run or IPC::System::Simple
 
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
