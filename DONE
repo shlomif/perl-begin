@@ -172,3 +172,7 @@ delegation.
     - using the ternary conditional operator (?:) instead of
     if/else for statements with side-effects.
         - see http://www.nntp.perl.org/group/perl.beginners/2012/04/msg120480.html
+    - nested top-level subroutines.
+        - sub outer { ... sub inner { ... } } 
+        - lexical variable initialisation problem.
+        - use closures instead.

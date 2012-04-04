@@ -1514,6 +1514,67 @@ it in its entirety).
 
 </item>
 
+<item id="nested_top_level_subroutines" h="Nested top-level subroutines">
+
+<p>
+One should not nest an inner top-level subroutine declared using 
+<tt>sub inner</tt> inside of an outer one, like so:
+</p>
+
+<bad_code>
+sub outer
+{
+    sub inner
+    {
+        .
+        .
+        .
+    }
+
+    \# Use inner here
+}
+</bad_code>
+
+<p>
+This code will compile and run, but may break in subtle ways.
+</p>
+
+<p>
+The first problem with this approach is that <tt>inner()</tt> will still be 
+visible outside <tt>outer()</tt>, but the more serious problem is that the
+inner subroutine will only get one copy of the lexical variables inside 
+<tt>outer()</tt>.
+</p>
+
+<p>
+The proper and safer way to declare an inner subroutine is to declare
+a lexical variable and set it to an anonymous subroutine, which is
+also known as a closure:
+</p>
+
+<pre>
+sub outer
+{
+    my ($foo, $bar) = @_;
+
+    my $print_foo = sub {
+        print "Foo is '$foo'\n";
+
+        return;
+    };
+
+    $print_foo-&gt;();
+
+    $foo++;
+
+    $print_foo-&gt;();
+
+    return;
+}
+</pre>
+
+</item>
+
 <item id="grep_instead_of_any" h="Using grep instead of any and friends">
 
 <p>
