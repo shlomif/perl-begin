@@ -168,3 +168,7 @@ delegation.
         - refer to the email page.
     - Web::Scraper
 
+* Bad elements page:
+    - using the ternary conditional operator (?:) instead of
+    if/else for statements with side-effects.
+        - see http://www.nntp.perl.org/group/perl.beginners/2012/04/msg120480.html

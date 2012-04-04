@@ -1465,6 +1465,55 @@ Which better conveys one's intention and may be a bit more efficient.
 
 </item>
 
+<item id="ternary_operator_instead_of_if_else" h="Using the ternary operator for side-effects instead of if/else">
+
+<p>
+A similar symptom to the above is people who wish to use the ternary 
+inline- conditional operator (<tt>? :</tt>) for choosing to execute between
+two different statements with side-effects
+instead of using <tt>if</tt> and <tt>else</tt>. For example:
+</p>
+
+<bad_code>
+$cond_var ? ($hash{'if_true'} .= "Cond var is true")
+          : ($hash{'if_false'} .= "Cond var is false")
+</bad_code>
+
+<p>
+(This is assuming the ternary operator was indeed written correctly, which
+is not always the case).
+</p>
+
+<p>
+However, the ternary operator is meant to be an expression that is a choice 
+between two values and should not be used for its side-effects. To do the
+latter, just use <tt>if</tt> and <tt>else</tt>:
+</p>
+
+<pre>
+if ($cond_var)
+{
+    $hash{'if_true'} .= "Cond var is true";
+}
+else
+{
+    $hash{'if_false'} .= "Cond var is false";
+}
+</pre>
+
+<p>
+This is safer, and better conveys one’s intentions. 
+</p>
+
+<p>
+For more information, refer to
+<a href="http://www.nntp.perl.org/group/perl.beginners/2012/04/msg120480.html">a
+relevant thread on the Perl beginners mailing list</a> (just make sure you read
+it in its entirety).
+</p>
+
+</item>
+
 <item id="grep_instead_of_any" h="Using grep instead of any and friends">
 
 <p>
