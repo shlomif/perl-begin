@@ -31,6 +31,7 @@
         - use IPC::Run or IPC::System::Simple
     - Using string eval.
         - Two or more /e flags for s/// .
+    - Regular expressions starting or ending with .*? or .*
 
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
