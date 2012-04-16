@@ -179,6 +179,7 @@ my $tree_contents =
             url => "FAQs/",
             text => "FAQs",
             title => "Lists of Frequently Asked Questions with Answers",
+            show_always => 1,
             subs =>
             [
                 {
