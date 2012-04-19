@@ -100,9 +100,19 @@ programs.
 </li>
 
 <li>
-<a href="http://tokyocabinet.sourceforge.net/">Tokyo Cabinet</a> - a modern,
+<a href="http://fallabs.com/tokyocabinet/">Tokyo Cabinet</a> - a modern,
 fast and powerful DBM implementation available under the LGPL license (which
-permits use in non-open-source projects).
+permits use in non-open-source projects). There’s also 
+<a href="http://fallabs.com/kyotocabinet/">Kyoto Cabinet</a>, which is claimed
+to be better, but is under the GPL license (which is strong copyleft and does
+not permit use in non-open-source projects).
+</li>
+
+<li>
+<a href="http://code.google.com/p/leveldb/">LevelDB</a> from Google, a
+fast key-value storage library, open-source under the new BSD license (which
+allows use for non-open-source programs. Has Perl bindings on CPAN called 
+<cpan_self_dist d="Tie-LevelDB" />.
 </li>
 
 <li>
