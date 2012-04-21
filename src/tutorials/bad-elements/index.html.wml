@@ -1742,6 +1742,34 @@ implement it in pure-Perl code.
 
 </item>
 
+<item id="missing-semicolons-at-the-end-of-blocks" h="Missing Semicolons at the end of blocks">
+
+<p>
+The perl interpreter allows one to omit the last trailing semicolon (";") in 
+the containing block. Like so:
+</p>
+
+<bad_code>
+if ( COND() )
+{
+     print "Success!\n";
+     call_routine() \# No semicolon here.
+}
+</bad_code>
+
+<p>
+However, this isn't a good idea, because it is inconsistent, and may cause 
+errors (or obscure failures) if one-or-more statements are added afterwards.
+</p>
+
+<p>
+As a result, you should end every statement with a semicolon (";") even if 
+it’s the last one. A possible exception to this may be single-line and/or
+single-statement blocks like in <pdoc_f f="map">map</pdoc_f>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

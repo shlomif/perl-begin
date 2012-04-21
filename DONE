@@ -177,3 +177,4 @@ delegation.
         - lexical variable initialisation problem.
         - use closures instead.
     - calling too much for the shell for help.
+    - missing semicolons in the last statements of blocks.
