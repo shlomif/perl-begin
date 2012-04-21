@@ -176,3 +176,4 @@ delegation.
         - sub outer { ... sub inner { ... } } 
         - lexical variable initialisation problem.
         - use closures instead.
+    - calling too much for the shell for help.

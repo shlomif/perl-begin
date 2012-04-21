@@ -1707,6 +1707,41 @@ forking processes or something like POE (see our
 
 </item>
 
+<item id="calling-the-shell-too-much" h="Calling Shell Commands Too Much">
+
+<p>
+Some people are tempted to use shell commands for performing
+various tasks using <tt>`…`</tt>, <tt>qx/…/</tt>, <tt>system()</tt>,
+piped-open, etc. However, usually Perl has built-in routines or alternatively
+CPAN modules, which are more portable, and often would be faster than
+calling the shell for help, and they should be used instead.
+</p>
+
+<p>
+As an extreme example, the site <i>The Daily WTF</i>
+had <a href="http://thedailywtf.com/Articles/The_UNIX_Philosophy.aspx">a
+feature</a> which featured the following code to determine the file size
+in Perl:
+</p>
+
+<bad_code>
+my $filesize = `wc -c $file | cut -c0-8 | sed 's/ //g'`;
+</bad_code>
+
+<p>
+Reportedly, replacing this line with <tt>my $filesize = -s $file</tt> (which
+as noted earlier should have been called <tt>$filename</tt> instead), resulted
+in the program being 75 minutes faster on average (!).
+</p>
+
+<p>
+Normally, if you find yourself using UNIX text processing commands such as
+<tt>sed</tt>, <tt>awk</tt>, <tt>grep</tt>, and <tt>cut</tt>, you should
+implement it in pure-Perl code.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
