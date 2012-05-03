@@ -1770,6 +1770,33 @@ single-statement blocks like in <pdoc_f f="map">map</pdoc_f>.
 
 </item>
 
+<item id="list-form-of-open-with-one-arg" h="List form of open with one argument.">
+
+<p>
+Recent versions of of perl introduced the list-forms of piping to and from a 
+command, such as <tt>open my $fh, '-|', 'fortune', $collection</tt> or
+<tt>open my $printer, '|-', 'lpr', '-Plp1'</tt>. However, not only they are
+not implemented on Windows and other UNIX-like systems yet, but when one passes 
+only one argument to them, they pass it to the shell verbatim.
+</p>
+
+<p>
+As a result, if one passes an array variable to them, as in:
+</p>
+
+<bad_code>
+open my $fh, '-|', @foo
+    or die "Could not open program! - $!"
+</bad_code>
+
+<p>
+One can pass only a single argument to <tt>@foo</tt>, which would be dangerous.
+To mitigate that, one should use the <cpan_self_dist d="IPC-Run" />
+or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

@@ -178,3 +178,7 @@ delegation.
         - use closures instead.
     - calling too much for the shell for help.
     - missing semicolons in the last statements of blocks.
+    - list-form of open with potentially one argument:
+        - will be interpreted as a shell command.
+        - no way to avoid it for one argument.
+        - use IPC::Run or IPC::System::Simple
