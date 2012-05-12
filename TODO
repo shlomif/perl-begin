@@ -27,6 +27,12 @@
         - Two or more /e flags for s/// .
     - Regular expressions starting or ending with .*? or .*
 
+* perl-begin FAQ:
+    - references.
+        - What's the difference between an array reference and an array?
+        - Same for hash.
+        - "I've tried doing $my_array_ref[3] but it didn't work."
+
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
     - http://perltraining.com.au/ - Perl Training Australia.
