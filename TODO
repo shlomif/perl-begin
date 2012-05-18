@@ -29,6 +29,8 @@
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
+    - long lines in source code.
+    - trailing whitespace.
 
 * perl-begin FAQ:
     - references.
@@ -70,7 +72,7 @@ perl-for-newbies lecture.
     - Add the other frameworks:
         - <perlbot> rindolf: Don't parse IRC with regex! See
           POE::Component::IRC, Bot::BasicBot. Avoid Net::IRC. See also
-          http://poe.perl.org/ or Net::Async::IRC or AnyEvent::IRC .  
+          http://poe.perl.org/ or Net::Async::IRC or AnyEvent::IRC .
         - Not sure it's a good idea.
 
 * Maybe a page on «What's next "after" perl?».
