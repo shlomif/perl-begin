@@ -196,7 +196,7 @@
    }
 </pre>
 <h3 id="How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F"> How can I match anything-except-a-regex inside a Perl regular expression? </h3>
-<p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string &quot;bar&quot; as an example then the negated regex will look something like &quot;[^b]|b[^a]|ba[^r]&quot;, and so it isn&apos;t supported. One option to workaround this problem is to make a smart use of the?!~ operator, by matching a string and then using this operator to check if it doesn&apos;t match a regular expression. 
+<p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string &quot;bar&quot; as an example then the negated regex will look something like &quot;[^b]|b[^a]|ba[^r]&quot;, and so it isn&apos;t supported. One option to workaround this problem is to make a smart use of the =~ operator, by matching a string and then using this operator to check if it doesn&apos;t match a regular expression. 
 </p>
 <h3 id="Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F"> Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever? </h3>
 <p>See <a href="http://perl.net.au/wiki/Why_Learn_Perl" title="Why Learn Perl">Why Learn Perl</a>. 
