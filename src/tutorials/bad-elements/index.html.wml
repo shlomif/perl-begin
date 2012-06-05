@@ -430,8 +430,15 @@ sub my_function
 </pre>
 
 <p>
-Now, what if you want to add <tt>$last_name</tt> between <tt>$first_name</tt>?
-You'll have to promote all the indexes afterwards! Instead do either:
+Now, what if you want to add <tt>$last_name</tt> between <tt>$first_name</tt>
+and <tt>$street</tt>?
+You'll have to promote all the indexes after it! Moreover, this scheme
+is error-prone and you may reuse the same index more than once, or
+miss some indexes.
+</p>
+
+<p>
+Instead do either:
 </p>
 
 <pre>
