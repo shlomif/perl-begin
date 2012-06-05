@@ -31,6 +31,8 @@
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
     - long lines in source code.
     - trailing whitespace.
+    - "-param" (parameters starting with a dash) for subroutines or methods.
+        - should be plain names instead.
 
 * perl-begin FAQ:
     - references.
