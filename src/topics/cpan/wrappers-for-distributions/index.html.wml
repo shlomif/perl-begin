@@ -3,16 +3,16 @@
 <latemp_subject "CPAN Wrappers For Distributions" />
 
 <ul>
-<li> <a href="http://www.gentoo.org/proj/en/perl/g-cpan.xml" title="http://www.gentoo.org/proj/en/perl/g-cpan.xml">Gentoo</a>
+<li> <a href="http://www.gentoo.org/proj/en/perl/g-cpan.xml">Gentoo</a>
 </li>
 
-<li> RPMs: (for generating packages compatible with the <a href="http://www.rpm.org/" title="http://www.rpm.org/">rpm package manager</a>)
+<li> RPMs: (for generating packages compatible with the <a href="http://www.rpm.org/">rpm package manager</a>)
 <ul>
 <li> CPANPLUS-Dist based:
 <ul>
-<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Fedora/" title="http://search.cpan.org/dist/CPANPLUS-Dist-Fedora/">CPANPLUS-Dist-Fedora (Fedora / Red Hat Linux)</a>
+<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Fedora/">CPANPLUS-Dist-Fedora (Fedora / Red Hat Linux)</a>
 </li>
-<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/" title="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
+<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
 </li>
 <li>
 <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mageia/">CPANPLUS-Dist-Mageia (Mageia)</a> <br />
@@ -22,40 +22,40 @@
 </li>
 </ul>
 </li>
-<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/" title="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
+<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
 </li></ul>
 </li>
-<li> <a href="http://perl.arix.com/cpan2rpm/" title="http://perl.arix.com/cpan2rpm/">cpan2rpm</a>
+<li> <a href="http://perl.arix.com/cpan2rpm/">cpan2rpm</a>
 </li>
-<li> <a href="http://search.cpan.org/dist/Ovid/" title="http://search.cpan.org/dist/Ovid/">The "Ovid" distribution on CPAN</a> (Not to be confused with Curtis "Ovid" Poe.)
+<li> <a href="http://search.cpan.org/dist/Ovid/">The "Ovid" distribution on CPAN</a> (Not to be confused with Curtis "Ovid" Poe.)
 </li>
-<li> <a href="http://search.cpan.org/dist/RPM-Specfile/" title="http://search.cpan.org/dist/RPM-Specfile/">cpanflute2</a> (contained in the CPAN distribution of RPM-Specfile.)
+<li> <a href="http://search.cpan.org/dist/RPM-Specfile/">cpanflute2</a> (contained in the CPAN distribution of RPM-Specfile.)
 </li>
-<li> <a href="http://search.cpan.org/dist/makerpm/" title="http://search.cpan.org/dist/makerpm/">makerpm</a>
+<li> <a href="http://search.cpan.org/dist/makerpm/">makerpm</a>
 </li>
-<li> <a href="http://www.silug.org/~steve/software/scripts/perl/cpanspec" title="http://www.silug.org/~steve/software/scripts/perl/cpanspec">cpanspec</a>
+<li> <a href="http://www.silug.org/~steve/software/scripts/perl/cpanspec">cpanspec</a>
 </li>
-<li> <a href="http://search.cpan.org/dist/rpm-build-perl/" title="http://search.cpan.org/dist/rpm-build-perl/">rpm-build-perl</a>
+<li> <a href="http://search.cpan.org/dist/rpm-build-perl/">rpm-build-perl</a>
 </li>
-<li> <a href="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py" title="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py">dar-perl.py</a> - a Python script that automatically generates an RPMforge SPEC file based on CPAN information.
+<li> <a href="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py">dar-perl.py</a> - a Python script that automatically generates an RPMforge SPEC file based on CPAN information.
 </li></ul>
 </li>
 <li> Debs: (for generating .deb packages compatible with Debian and derivative distributions)
 <ul>
-<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Deb/" title="http://search.cpan.org/dist/CPANPLUS-Dist-Deb/">CPANPLUS-Dist-Deb</a>
+<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Deb/">CPANPLUS-Dist-Deb</a>
 </li>
-<li> <a href="http://packages.debian.org/search?keywords=dh-make-perl" title="http://packages.debian.org/search?keywords=dh-make-perl">dh-make-perl</a>
+<li> <a href="http://packages.debian.org/search?keywords=dh-make-perl">dh-make-perl</a>
 </li></ul>
 </li>
 <li> Archlinux:
 <ul>
-<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Arch/" title="http://search.cpan.org/dist/CPANPLUS-Dist-Arch/">CPANPLUS-Dist-Arch</a>
+<li> <a href="http://search.cpan.org/dist/CPANPLUS-Dist-Arch/">CPANPLUS-Dist-Arch</a>
 </li></ul>
 </li>
 <li> Links:
 <ul>
-<li> <a href="http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian" title="http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian">Packaging CPAN Modules for Debian</a>
+<li> <a href="http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian">Packaging CPAN Modules for Debian</a>
 </li>
-<li> <a href="http://nailingjelly.wordpress.com/2009/06/03/cpan-rpm-packaging/" title="http://nailingjelly.wordpress.com/2009/06/03/cpan-rpm-packaging/">CPAN RPM Packaging</a>
+<li> <a href="http://nailingjelly.wordpress.com/2009/06/03/cpan-rpm-packaging/">CPAN RPM Packaging</a>
 </li></ul>
 </li></ul>
