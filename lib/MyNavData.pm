@@ -389,6 +389,14 @@ my $tree_contents =
                     text => "Using CPAN",
                     url => "topics/cpan/",
                     title => "Effectively using CPAN - the Comprehensive Perl Archive Network",
+                    subs =>
+                    [
+                        {
+                            text => "CPAN Wrappers for Distributions",
+                            url => "topics/cpan/wrappers-for-distributions/",
+                            title => "Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.",
+                        }
+                    ],
                 },
             ],
         },
