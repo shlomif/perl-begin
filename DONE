@@ -183,3 +183,5 @@ delegation.
         - no way to avoid it for one argument.
         - use IPC::Run or IPC::System::Simple
     - trailing whitespace.
+    - Using string eval.
+        - Two or more /e flags for s/// .
