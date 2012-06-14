@@ -1014,7 +1014,7 @@ Here is an example which has a module called "Calc" and a script that uses it:
     {
         (<span class="Identifier">$m</span>, <span class="Identifier">$n</span>) = (<span class="Identifier">$n</span> , <span class="Identifier">$m</span>);
     }
-    
+
     <span class="Statement">while</span> (<span class="Identifier">$m</span> % <span class="Identifier">$n</span> &gt; <span class="Constant">0</span>)
     {
         (<span class="Identifier">$m</span>, <span class="Identifier">$n</span>) = (<span class="Identifier">$n</span>, <span class="Identifier">$m</span> % <span class="Identifier">$n</span>);
@@ -1455,17 +1455,17 @@ Here is an example, constructor for the class <tt>Foo</tt>:
     <span class="Comment"># $self is the the object. Let's initialize it to an empty hash</span>
     <span class="Comment"># reference.</span>
     <span class="Statement">my</span> <span class="Identifier">$self</span> = {};
-    
+
     <span class="Comment"># Associate $self with the class $class. This is probably the most</span>
     <span class="Comment"># important step.</span>
     <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
 
     <span class="Comment"># Now we can retrieve the other arguments passed to the </span>
     <span class="Comment"># constructor.</span>
-    
+
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;Fooish&quot;</span>;
     <span class="Statement">my</span> <span class="Identifier">$number</span> = <span class="Statement">shift</span> || <span class="Constant">5</span>;
-    
+
     <span class="Comment"># Put these arguments inside class members</span>
     <span class="Identifier">$self-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span> = <span class="Identifier">$name</span>;
     <span class="Identifier">$self-&gt;{</span><span class="Constant">'number'</span><span class="Identifier">}</span> = <span class="Identifier">$number</span>;
@@ -1523,7 +1523,7 @@ its name:
 {
     <span class="Comment"># This step is necessary so it will be treated as a method</span>
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
-    
+
     <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'name'</span><span class="Identifier">}</span>;
 }
 
@@ -1613,7 +1613,7 @@ number:
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
-    
+
     <span class="Comment"># Call the method of the base class</span>
     <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self-&gt;assign_name</span>(<span class="Identifier">$name</span>);
     <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
@@ -1682,7 +1682,7 @@ Here is a rewrite of the <tt>Bar</tt> class, this time with
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
-    
+
     <span class="Comment"># Call the method of the base class</span>
     <span class="Statement">my</span> <span class="Identifier">$ret</span> = <span class="Identifier">$self-&gt;SUPER</span>::assign_name(<span class="Identifier">$name</span>);
     <span class="Statement">if</span> (! <span class="Identifier">$ret</span>)
@@ -1749,7 +1749,7 @@ prints the number of times it's name was assigned to the screen before it is des
 <span class="Statement">sub </span><span class="Identifier">DESTROY</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
-    
+
     <span class="Statement">print</span> <span class="Constant">&quot;My name was assigned &quot;</span> . <span class="Identifier">$self-&gt;get_num_times_assigned</span>() . <span class="Constant">&quot; times.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 

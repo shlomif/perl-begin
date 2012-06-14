@@ -333,7 +333,7 @@ bank, that will illustrate this functionality:
 
         <span class="Identifier">$function</span> = &lt;&gt;;
         <span class="Statement">chomp</span>(<span class="Identifier">$function</span>);
-    
+
         <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$ops{$function}</span>))
         {
             <span class="Statement">last</span>;
@@ -345,7 +345,7 @@ bank, that will illustrate this functionality:
     {
         <span class="Statement">last</span>;
     }
-    
+
     <span class="Statement">print</span> <span class="Constant">&quot;Enter the name of the account:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     <span class="Identifier">$account</span> = &lt;&gt;;
     <span class="Statement">chomp</span>(<span class="Identifier">$account</span>);
@@ -761,7 +761,7 @@ splitting 10 among three numbers:
 
         <span class="Statement">return</span>;
     }
-        
+
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
     {
         <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
@@ -836,7 +836,7 @@ re-written using <tt>shift</tt>:
 
         <span class="Statement">return</span>;
     }
-        
+
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$a</span>=<span class="Constant">0</span>;<span class="Identifier">$a</span>&lt;=<span class="Identifier">$total</span>;<span class="Identifier">$a</span>++)
     {
         <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$a</span>);
