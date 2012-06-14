@@ -12,14 +12,14 @@ for many GUI libraries.
 <h2 id="wxperl"><a href="http://wxperl.sourceforge.net/">wxPerl</a></h2>
 
 <p>
-wxPerl is a Perl interface to the open source, cross-platform 
+wxPerl is a Perl interface to the open source, cross-platform
 <a href="http://www.wxwidgets.org/">wxWidgets library</a>, which provides
 native look and feel, while still providing a lot of convenience.
 </p>
 
 <p>
 <a href="http://padre.perlide.org/">Padre, the Perl IDE</a> is being
-written using wxPerl, and one can search its source code (using 
+written using wxPerl, and one can search its source code (using
 <a href="http://betterthangrep.com/">ack</a> ,
 <a href="http://en.wikipedia.org/wiki/Grep">grep</a> or a similar tool)
 to find useful examples of wxPerl code in action.
@@ -28,7 +28,7 @@ to find useful examples of wxPerl code in action.
 <h2 id="perl-tk"><cpan_dist d="Tk">Perl-Tk</cpan_dist></h2>
 
 <p>
-Perl-Tk is a port of 
+Perl-Tk is a port of
 <a href="http://en.wikipedia.org/wiki/Tk_%28framework%29">the Tk toolkit</a>
 that originated with Tcl, to Perl. It is cross-platform and open-source, but
 provides relatively unattractive widgets/controls, which are not easily
@@ -53,7 +53,7 @@ in-house use is OK.
 <p>
 A set of Perl bindings for GTK+ and various related libraries (including
 those of the GNOME project). Provides an attractive look and feel on
-<a href="http://en.wikipedia.org/wiki/X_Window_System">X-Window</a>-based 
+<a href="http://en.wikipedia.org/wiki/X_Window_System">X-Window</a>-based
 UNIX systems (including Linux) which looks quite foreign on
 Microsoft Windows. A very capable and powerful GUI library.
 </p>

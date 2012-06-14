@@ -2,7 +2,7 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
-<h2 id="news_22_July_2011">22-July-2011: The book Modern Perl, exercises and 
+<h2 id="news_22_July_2011">22-July-2011: The book Modern Perl, exercises and
 challenges, and some new topical pages.</h2>
 
 <ol>
@@ -10,7 +10,7 @@ challenges, and some new topical pages.</h2>
 <li>
 <p>
 The book <a href="$(ROOT)/books/#modern-perl">Modern Perl</a> is now
-recommended, and <a href="$(ROOT)/tutorials/modern-perl/">a local copy</a> of 
+recommended, and <a href="$(ROOT)/tutorials/modern-perl/">a local copy</a> of
 it, under the CC-by-nc-sa licence is available on Perl-Begin, thanks to
 <a href="http://www.modernperlbooks.com/">chromatic</a>.
 </p>
@@ -39,7 +39,7 @@ added <a href="$(ROOT)/uses/games/">a page about developing games with Perl</a>.
 
 <li>
 <p>
-More non-recommended Perl elements have been added to 
+More non-recommended Perl elements have been added to
 <a href="$(ROOT)/tutorials/bad-elements/">“Perl Elements to Avoid” page</a>.
 </p>
 </li>
@@ -68,8 +68,8 @@ We're now mirroring the now offline <a href="$(ROOT)/topics/cpan/#life-with-cpan
 <p>
 A page about the
 <a href="$(ROOT)/learn/Perl-perl-but-not-PERL/">differences between “Perl”,
-“perl” and “PERL”</a> was added. It was inspired by 
-<a href="http://perl.org.il/misc.html#pl_vs_pl">a similar page</a> on 
+“perl” and “PERL”</a> was added. It was inspired by
+<a href="http://perl.org.il/misc.html#pl_vs_pl">a similar page</a> on
 the Israeli Perl Mongers site.
 </p>
 </li>
@@ -89,14 +89,14 @@ and there are instructions for contributing in the link.
 </li>
 </ol>
 
-<h2 id="news_11_November_2010">11-November-2010: 
+<h2 id="news_11_November_2010">11-November-2010:
 New Page about Bad Perl Elements and other new pages.</h2>
 
 <ul>
 
 <li>
 <p>
-We've added a comprehensive and growing 
+We've added a comprehensive and growing
 <a href="$(ROOT)/tutorials/bad-elements/">"Perl Elements
 to Avoid"</a> page with many Perl paradigms that you should know better than to
 incorporate into your code.
@@ -113,13 +113,13 @@ Perl"</a> was updated to the latest version.
 <li>
 <p>
 There's a new topical page about
-<a href="$(ROOT)/uses/remote-login-and-commands/">SSH and Telnet</a>. 
+<a href="$(ROOT)/uses/remote-login-and-commands/">SSH and Telnet</a>.
 </p>
 </li>
 
 <li>
 <p>
-There's a new topical page 
+There's a new topical page
 about <a href="$(ROOT)/topics/optimising-and-profiling/">optimising
 and profiling Perl code</a>, in order to make it run faster.
 </p>
@@ -180,14 +180,14 @@ both with best practices and recommended technologies were added.
 </li>
 
 <li>
-Added 
+Added
 <a href="$(ROOT)/topics/scoping/">a page about scoping and variables</a>.
 </li>
 
 </ul>
 
 <p>
-Aside from that, the ShareThis button was replaced by the 
+Aside from that, the ShareThis button was replaced by the
 <a href="http://www.addtoany.com/">AddToAny</a> button which does not require
 JavaScript, loads faster and does not load Google Analytics.
 </p>
@@ -207,11 +207,11 @@ multitasking and networking</a>, a some topical pages:
 </li>
 
 <li>
-<a href="$(ROOT)/topics/references/">References in Perl</a>. 
+<a href="$(ROOT)/topics/references/">References in Perl</a>.
 </li>
 
 <li>
-<a href="$(ROOT)/topics/regular-expressions/">Regular Expressions</a>. 
+<a href="$(ROOT)/topics/regular-expressions/">Regular Expressions</a>.
 </li>
 
 <li>
@@ -233,20 +233,20 @@ Many new links have been added and many typos have been corrected. Enjoy!
 
 <p>
 I thought <a href="$(ROOT)/">the Perl Beginners' Site</a>
-was perfect after 
-<a href="http://community.livejournal.com/shlomif_tech/30178.html">the 
-last update</a>, but boy I was wrong. A quick review and critique of the site 
+was perfect after
+<a href="http://community.livejournal.com/shlomif_tech/30178.html">the
+last update</a>, but boy I was wrong. A quick review and critique of the site
 by a certain prominent Perl developer proved me wrong, and afterwards I
 had more stuff that I found lacking. So here's what has changed.
 </p>
 
 <p>
-We're now mirroring 
-<a href="$(ROOT)/tutorials/perl-for-newbies/">the 
+We're now mirroring
+<a href="$(ROOT)/tutorials/perl-for-newbies/">the
 public domain "Perl for Newbies" tutorial</a> as well as the GFDLed book
 <a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
 Perl"</a> by <a href="http://www.greglondon.com/">Greg London</a>. Their
-presence on the site was done in order to preserve Perl-Begin's common look 
+presence on the site was done in order to preserve Perl-Begin's common look
 and feel, and to make sure people would be able to access them without
 having to go to a different site, which may be blocked by over-zealous
 web-filters. We hope to mirror other freely distributable material that
@@ -254,12 +254,12 @@ may prove useful to beginners on Perl-Begin in the future.
 </p>
 
 <p>
-The "call-for-action" notice at the beginning was changed to 
+The "call-for-action" notice at the beginning was changed to
 "Learn Perl Now!" and now appears on all the pages.
 </p>
 
 <p>
-We also fixed several look and style glitches.   
+We also fixed several look and style glitches.
 </p>
 
 <p>
@@ -273,12 +273,12 @@ There are also several corrections to text and links.
 
 <p>
 There are now mentionings of
-<a href="$(ROOT)/books/topics/">two new topical books</a> - 
+<a href="$(ROOT)/books/topics/">two new topical books</a> -
 "Perl &amp; LWP" and "Programming the Perl DBI".
 </p>
 
 <p>
-Finally, the 
+Finally, the
 <a href="$(ROOT)/about.html">"About this site" page</a>
 was updated and made more modern.
 </p>
@@ -303,7 +303,7 @@ it even better than it used to be. Here's a summary of the changes:
 <p>
 <a href="$(ROOT)/learn/who-is-using/">A testimonials page</a>
 was added, with some honest-to-God testimonial quotes which are now featured in
-the Testimonials side-bar.  
+the Testimonials side-bar.
 </p>
 </li>
 
@@ -335,7 +335,7 @@ Several new topical pages were added:
 
 <li><a href="$(ROOT)/topics/debugging/">Debugging</a></li>
 
-<li><a href="$(ROOT)/topics/object-oriented/">Object-oriented 
+<li><a href="$(ROOT)/topics/object-oriented/">Object-oriented
 Programming in Perl</a></li>
 
 <li><a href="$(ROOT)/topics/cpan/">Using CPAN</a></li>
@@ -423,11 +423,11 @@ needs help, and there are instructions for that, at the link.
 <h2 id="news_07_Jul_2006">07-July-2006: The wiki is now part of <a href="http://perl.net.au/">perl.net.au</a></h2>
 
 <p>
-The contents of our wiki were integrated into the 
-<a href="http://perl.net.au/">perl.net.au MediaWiki</a> as 
+The contents of our wiki were integrated into the
+<a href="http://perl.net.au/">perl.net.au MediaWiki</a> as
 <a href="http://perl.net.au/wiki/New_to_Perl">its "New to Perl?" section</a>.
 This was done to consolidate the Perl wiki'ing efforts, because there's much
-more action on perl.net.au than there was on our wiki, and for ease of 
+more action on perl.net.au than there was on our wiki, and for ease of
 maintenace. Our wiki will be removed soon.
 </p>
 
@@ -443,15 +443,15 @@ There's <a href="http://perlmeme.org/">a new site for Perl beginners called
 Perlmeme.org</a>. It collects tutorials, howto documents, and frequently
 asked questions (FAQ) lists. I was referred to its developers by a mutual
 friend, and since then became heavily involved in its development. (E.g.: some of the material from
-my <a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl 
+my <a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl
 for Perl Newbies</a> series, was integrated there. )
 </p>
 
 <p>
-Perlmeme.org tries to be as up-to-date as possible and is certainly worth 
+Perlmeme.org tries to be as up-to-date as possible and is certainly worth
 checking out. On a different note, I'd like to mention that I went over the
-material in the 
-<a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl 
+material in the
+<a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl
 for Perl Newbies</a> series and heavily updated and corrected it. It should
 be much better now.
 </p>
@@ -464,7 +464,7 @@ be much better now.
 
 <p>
 The <a href="<wiki_link />">Wiki</a> was heavily spammed and so was taken
-off. Now, a new wiki was set up with a better implementation - 
+off. Now, a new wiki was set up with a better implementation -
 <a href="http://wikipedia.sourceforge.net/">MediaWiki</a>, and now we monitor
 the RSS feed and use other measurements to prevent Spam.
 </p>
@@ -476,9 +476,9 @@ All the content of the old wiki was restored.
 <h2 id="news_29_Feb_2004">29-February-2004: New Wiki</h2>
 
 <p>
-We now have <a href="<wiki_link />">a new Wiki with a better 
+We now have <a href="<wiki_link />">a new Wiki with a better
 implementation</a>. The previous wiki was dumped because it was a JavaScript
-hell and was quite lame in its conventions. The newer wiki implementation 
+hell and was quite lame in its conventions. The newer wiki implementation
 (<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)
 is much better in this and other regards.
 </p>

@@ -1810,13 +1810,13 @@ or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
 With many editors, it can be common to write new code or modify existing
 one, so that some lines will contain trailing whitespace, such as
 spaces (ASCII 32 or 0x20) or tabs characters. These trailing spaces normally
-do not cause much harm, but they are not needed and can be distracted. 
+do not cause much harm, but they are not needed and can be distracted.
 </p>
 
 <p>
 While you should not feel bad about having trailing space, it is a good idea
 to sometimes search for them using a command such as <tt>ack '[ \t]+$'</tt>
-(or <tt>ack -a '[ \t]+$'</tt> for completeness - see 
+(or <tt>ack -a '[ \t]+$'</tt> for completeness - see
 <a href="http://betterthangrep.com/">ack</a>, and get rid of them.
 </p>
 

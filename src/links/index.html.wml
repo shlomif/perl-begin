@@ -15,8 +15,8 @@ with many interesting articles, some sections and links.
 </li>
 
 <li>
-<a href="http://use.perl.org/">use Perl;</a> - a Slashdot-style news site 
-dedicated to Perl (but with much fewer comments and one of higher 
+<a href="http://use.perl.org/">use Perl;</a> - a Slashdot-style news site
+dedicated to Perl (but with much fewer comments and one of higher
 signal-to-noise ratio). Visit it to keep up to date with what's going on in
 Perl.
 </li>
@@ -27,16 +27,16 @@ Organization and the Perl Foundation.
 </li>
 
 <li>
-<a href="http://www.pm.org/">Perl Mongers</a> - The "Perl Mongers" Perl 
+<a href="http://www.pm.org/">Perl Mongers</a> - The "Perl Mongers" Perl
 user-groups world-wide.
 </li>
 
 <li>
-<a href="http://www.cpan.org/">CPAN - The Comprehensive Perl 
+<a href="http://www.cpan.org/">CPAN - The Comprehensive Perl
 Archive Network</a> - Contains a lot of modules for doing practically
 anything with Perl. Why re-invent the wheel when so many different types
-of them are available for free? Note that Perl distributions on various 
-systems contain an easy to use interface to install modules from it, 
+of them are available for free? Note that Perl distributions on various
+systems contain an easy to use interface to install modules from it,
 including dependencies. See <a href="$(ROOT)/topics/cpan/">our page about
 it for how to start with it</a>.
 </li>
@@ -74,7 +74,7 @@ Perl Programmer Should Know.
 to Perl humor.
 </li>
 <li>
-<a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Poetry/">Perl Poetry</a> - 
+<a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Poetry/">Perl Poetry</a> -
 Poems that are valid Perl programs.
 </li>
 
@@ -86,12 +86,12 @@ built-in Perl features (some of them relatively obscure).
 </li>
 
 <li>
-<a href="http://perl.plover.com/qotw/">The Perl Quiz of the Week</a> - 
+<a href="http://perl.plover.com/qotw/">The Perl Quiz of the Week</a> -
 a quiz to write a Perl program by Mark Jason Dominus.
 </li>
 
 <li>
-<a href="http://www.perlmonks.org/?node=Obfuscated%20Code">Obfuscated 
+<a href="http://www.perlmonks.org/?node=Obfuscated%20Code">Obfuscated
 Perl Code</a> - even worse than usual.
 </li>
 
@@ -113,7 +113,7 @@ hacker (invented patch, rn and other utilities), and a linguist by training.
 
 <li>
 <a href="http://www.perl.com/pub/au/Christiansen_Tom">Tom Christiansen</a> -
-Authored several books and has been hacking with Perl and on Perl since its 
+Authored several books and has been hacking with Perl and on Perl since its
 early beginning. Wrote several FAQs and essays on Perl.
 </li>
 
@@ -126,21 +126,21 @@ the book "Higher Order Perl".
 <li>
 <a href="http://www.csse.monash.edu.au/~damian/">Damian Conway</a> - a computer
 science academic, with a passion for Perl. Wrote some books and many
-CPAN modules (including 
-<a href="http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html">one 
-to write Perl in Latin</a> - ;-)), and is considered 
-one of the primary experts on Object-Oriented Programming in Perl. Now 
+CPAN modules (including
+<a href="http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html">one
+to write Perl in Latin</a> - ;-)), and is considered
+one of the primary experts on Object-Oriented Programming in Perl. Now
 co-heads the Perl 6 effort.
 </li>
 
 <li>
-<a href="http://www.stonehenge.com/merlyn/">Randal L. Schwartz</a> - 
-co-authored some of Perl's most important books and one of the top experts 
+<a href="http://www.stonehenge.com/merlyn/">Randal L. Schwartz</a> -
+co-authored some of Perl's most important books and one of the top experts
 on Perl on the planet.
 </li>
 
 <li>
-<a href="http://www.hut.fi/~jhi/">Jarkko Hietaniemi</a> - the 
+<a href="http://www.hut.fi/~jhi/">Jarkko Hietaniemi</a> - the
 <a href="http://www.cpan.org/">CPAN</a> master librarian, a contributor to
 the core Perl distribution and external modules, and an all-around nice guy.
 </li>
@@ -148,13 +148,13 @@ the core Perl distribution and external modules, and an all-around nice guy.
 <li>
 <a href="http://ali.as/">Adam Kennedy</a> - a prolific Australian Perl
 developer and blogger who has written or adopted many CPAN distributions,
-and contributed a lot to the <a href="$(ROOT)/IDEs-and-tools/#padre">Padre 
+and contributed a lot to the <a href="$(ROOT)/IDEs-and-tools/#padre">Padre
 IDE for Perl and in Perl</a>.
 </li>
 
 <li>
-<a href="http://petdance.com/">Andy Lester</a> - author of some useful CPAN 
-distributions, and prolific and influential blogger (see 
+<a href="http://petdance.com/">Andy Lester</a> - author of some useful CPAN
+distributions, and prolific and influential blogger (see
 <a href="http://perlbuzz.com/">Perl Buzz</a>).
 </li>
 
@@ -187,7 +187,7 @@ include Googlisms.
 <h3 id="yahoo_perl_category"><a href="http://dir.yahoo.com/Computers_and_Internet/Programming_and_Development/Languages/Perl/">Yahoo's Perl Category</a></h3>
 
 <p>
-<a href="http://www.yahoo.com/">The Yahoo Directory</a> used to be quite a 
+<a href="http://www.yahoo.com/">The Yahoo Directory</a> used to be quite a
 useful resource before DMoz and its mirrors (like the Google Directory) came
 along. Now it's relatively unmaintained, but may still contain some useful
 links.

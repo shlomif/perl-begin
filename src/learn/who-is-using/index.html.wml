@@ -9,19 +9,19 @@
 <li id="testimonial-saved-my-vacation">
 <p>
 <q>Perl saved my vacation!</q><br />
--- 
-<a href="http://blog.moertel.com/articles/2009/04/25/perl-saved-my-vacation">Tom 
+--
+<a href="http://blog.moertel.com/articles/2009/04/25/perl-saved-my-vacation">Tom
 Moertel</a>
 </p>
 </li>
 
 <li>
 <p>
-<q>Since then, I’ve programmed in other languages, including Java, C#, Python 
-and PHP, but <b>I keep coming back to Perl</b>. The language has evolved and 
-matured, while new frameworks and libraries have made Web programming fun 
+<q>Since then, I’ve programmed in other languages, including Java, C#, Python
+and PHP, but <b>I keep coming back to Perl</b>. The language has evolved and
+matured, while new frameworks and libraries have made Web programming fun
 again.</q><br />
--- <a href="http://blog.webadmin.ufl.edu/2009/05/14/web-programming-in-perl/">Daniel 
+-- <a href="http://blog.webadmin.ufl.edu/2009/05/14/web-programming-in-perl/">Daniel
 Westermann-Clark</a>
 </p>
 </li>
@@ -37,14 +37,14 @@ Westermann-Clark</a>
 
 <li>
 <p>
-<a href="http://www.eccentricity.org/oldblog/2009/02/making_my_gratitude_public.html">Tara 
+<a href="http://www.eccentricity.org/oldblog/2009/02/making_my_gratitude_public.html">Tara
 L. Andrews credits Perl and the Perl Mongers</a> on a humanities thesis.
 </p>
 </li>
 
 <li id="testimonial-ajt">
 <p>
-<q>We went live on budget, to specification and on time (itself an 
+<q>We went live on budget, to specification and on time (itself an
 achievement)… Perl contributed significantly to the project.</q>
 <br />
 -- <a href="http://perlisalive.com/articles/8">ajt</a>

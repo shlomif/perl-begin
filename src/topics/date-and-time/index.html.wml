@@ -7,7 +7,7 @@
 <p>
 Many newcomers to Perl ask how to properly handle, process and manipulate
 dates and times in Perl. The proper answer is that while Perl has basic
-facilities for this in <pdoc d="perlfunc"></pdoc> and the POSIX module, 
+facilities for this in <pdoc d="perlfunc"></pdoc> and the POSIX module,
 one should use a good date-and-time module from CPAN. This page aims
 to lead people in the right direction.
 </p>
@@ -42,8 +42,8 @@ allows one to convert dates in human-time to a DateTime object.
 </li>
 
 <li>
-<cpan_self_dist d="Time-Duration" /> converts a 
-duration (in seconds, which can be calculated from a DateTime object) into a human 
+<cpan_self_dist d="Time-Duration" /> converts a
+duration (in seconds, which can be calculated from a DateTime object) into a human
 readable expression of it (exact or rounded). Like "10 minutes ago", "1 hour ago", etc.
 </li>
 

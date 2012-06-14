@@ -15,13 +15,13 @@ for speed.
 </p>
 
 <p>
-The first steps in optimising a code that is too slow are benchmarking and 
+The first steps in optimising a code that is too slow are benchmarking and
 profiling it, in order to see which parts of the code consume the most time.
 </p>
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<h3 id="Benckmark.pm"><pdoc d="Benchmark"> - a module for 
+<h3 id="Benckmark.pm"><pdoc d="Benchmark"> - a module for
 Benchmarking</pdoc></h3>
 
 <p>
@@ -34,7 +34,7 @@ can be used for benchmarking different codes for performance.
 <h3 id="nytprof"><cpan_self_dist d="Devel-NYTProf" /></h3>
 
 <p>
-<b>Devel-NYTProf</b> is a very powerful profiling framework for Perl that 
+<b>Devel-NYTProf</b> is a very powerful profiling framework for Perl that
 leaves all the previous attempts at providing a Perl profiler way behind. Use
 it to determine where your Perl code spends most of its time.
 </p>
@@ -49,23 +49,23 @@ Here are some collected resources about optimisation:
 <li>
 <p>
 Shlomi Fish has written
-<a href="http://www.shlomifish.org/philosophy/computers/optimizing-code-for-speed/">an essay titled "Optimizing Code for Speed"</a> (a somewhat more 
+<a href="http://www.shlomifish.org/philosophy/computers/optimizing-code-for-speed/">an essay titled "Optimizing Code for Speed"</a> (a somewhat more
 <a href="http://en.wikibooks.org/wiki/Optimizing_Code_for_Speed">up-to-date
-version</a> is available on <a href="http://en.wikibooks.org/">the English 
+version</a> is available on <a href="http://en.wikibooks.org/">the English
 Wikibooks site</a>).
 </p>
 </li>
 
 <li>
 <p>
-Jon Bentley's out-of-print book 
+Jon Bentley's out-of-print book
 <a href="http://en.wikibooks.org/wiki/Special:BookSources/013970244X">"Writing Efficient Programs"</a> is a previous treatment of the subject.
 </p>
 </li>
 
 <li>
 <p>
-<a href="http://community.livejournal.com/shlomif_tech/20200.html">"Shavin' 
+<a href="http://community.livejournal.com/shlomif_tech/20200.html">"Shavin'
 Another Second"</a> is a blog post by Shlomi Fish about how he optimised some
 Perl code of his.
 </p>
@@ -82,7 +82,7 @@ See <a href="$(ROOT)/uses/databases">our page</a> about using database with
 Perl for more information.
 </p>
 
-<h3 id="write_in_faster_lang">Optimise by 
+<h3 id="write_in_faster_lang">Optimise by
 Writing Code in a Faster Language</h3>
 
 <p>
