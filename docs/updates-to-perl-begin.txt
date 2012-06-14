@@ -1,4 +1,4 @@
-After the last news item, a lot of work was invested on 
+After the last news item, a lot of work was invested on
 http://perl-begin.org/ , the Perl Beginners' Site. making
 it even better than it used to be. Here's a summary of the changes:
 </p>
@@ -10,7 +10,7 @@ the Testimonials side-bar.
 * There's a new IDEs and
 tools page:
 
-http://perl-begin.org/IDEs-and-tools/ , featuring some Integrated Development 
+http://perl-begin.org/IDEs-and-tools/ , featuring some Integrated Development
 Environments.
 
 * There's a new page sporting links to collections of blogs.
