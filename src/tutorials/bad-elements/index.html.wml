@@ -1844,6 +1844,28 @@ Show White Space</a>.
 </ul>
 
 </item>
+
+<item id="string-eval" h="Misusing String Eval">
+
+<p>
+String <pdoc_f f="eval">eval</pdoc_f> allows one to compile and execute
+(possibly generated) strings as Perl expressions. While it is a powerful
+feature, there are usually better and safer ways to achieve what you want
+using string <tt>eval ""</tt>. So you should only use it, if you are an expert
+and really know what you are doing.
+</p>
+
+<p>
+Related to string eval, is using two or more <tt>/e</tt> flags in the
+<tt>s///</tt> substitution. While one /e flag is often useful (for example
+when subtituting counters like in <tt>s/#\./($i++)."."/ge</tt>) the second
+/e flags just evals the generated expression again. This can easily be done
+with using string eval inside the right-hand-side, assuming it is needed which
+is normally not the case.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

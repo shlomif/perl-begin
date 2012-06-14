@@ -23,8 +23,6 @@
         - shell code injection.
         - cross-site-scripting / HTML injection.
         - SQL injection.
-    - Using string eval.
-        - Two or more /e flags for s/// .
     - Regular expressions starting or ending with .*? or .*
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
