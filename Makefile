@@ -57,6 +57,12 @@ upload_iglu: all
 upload_beta: all
 	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/)
 
+test:
+	prove Tests/*.t
+
+runtest:
+	runprove Tests/*.t
+
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 upload_home: all
