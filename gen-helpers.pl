@@ -15,7 +15,7 @@ else
     system("compass", "compile");
 }
 
-my $generator = 
+my $generator =
     HTML::Latemp::GenMakeHelpers->new(
         'hosts' =>
         [
@@ -31,7 +31,7 @@ my $generator =
             },
         ],
     );
-    
+
 $generator->process_all();
 
 {
@@ -41,7 +41,7 @@ $generator->process_all();
     foreach my $part_idx (1 .. 4)
     {
          # find all the .pm files in @INC
-         my @files = 
+         my @files =
             File::Find::Object::Rule
                 ->any(
                     (File::Find::Object::Rule
@@ -51,22 +51,22 @@ $generator->process_all();
                     ),
                     (File::Find::Object::Rule
                         ->file()
-                        ->exec(sub { 
-                                $_[0] ne "index\.html" 
+                        ->exec(sub {
+                                $_[0] ne "index\.html"
                         })
                     ),
                 )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/")
                 ;
-        
+
         foreach my $f (@files)
         {
             my $target = $f;
 
             # print $f, "\n";
             $target =~ s{\Alib/}{};
-           
+
             $target =~ s{/lect(\d+)-all-in-one/}{/part$1/};
-            
+
             $target = "\$(BERLIOS_DEST)/$target";
 
             push @targets, $target;

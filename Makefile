@@ -4,7 +4,7 @@ TARGET = dest
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=berlios
 
 LATEMP_WML_FLAGS = $(shell latemp-config --wml-flags)
-COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib 
+COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib
 
 WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 	--passoption=3,-w $(LATEMP_WML_FLAGS) -I../ -DROOT~. \
@@ -20,7 +20,7 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-DOCS_COMMON_DEPS = template.wml 
+DOCS_COMMON_DEPS = template.wml
 
 all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
@@ -81,17 +81,17 @@ todo_done_data: $(TODO_DONE)
 $(TODO_DONE): $(TARGET)/contribute/%.txt: %
 	cp -f $< $@
 
-# .PHONY: 
-# 
+# .PHONY:
+#
 # $(DEST_ARC_PAGE) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES) .PHONY
 # 	(cd src && wml $(WML_FLAGS) -DARCNAME=$(ARC_NAME) -DFILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
-# 
+#
 # arc: $(DEST_ARC_NAME) $(DEST_ARC_PAGE)
-# 
+#
 # $(DEST_ARC_NAME):
 # 	(cd temp && ./make-archive.sh)
 # 	mv temp/$(ARC_NAME) $@
-# 
+#
 # upload_arc: arc
 # 	$(RSYNC) $(ARC_NAME) shlomif@shell.berlios.de:
 #
