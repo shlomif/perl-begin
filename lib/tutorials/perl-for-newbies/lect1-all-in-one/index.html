@@ -1417,12 +1417,12 @@ characters:
 <span class="Statement">while</span> (<span class="Identifier">$all_as</span> &amp;&amp; (<span class="Identifier">$position</span> &lt; <span class="Statement">length</span>(<span class="Identifier">$string</span>)))
 {
     <span class="Identifier">$char</span> = <span class="Statement">lc</span>(<span class="Statement">substr</span>(<span class="Identifier">$string</span>, <span class="Identifier">$position</span>, <span class="Constant">1</span>));
-    
+
     <span class="Statement">if</span> (<span class="Identifier">$char</span> <span class="Statement">ne</span> <span class="Constant">&quot;a&quot;</span>)
     {
         <span class="Identifier">$all_as</span> = <span class="Constant">0</span>;
     }
-    
+
     <span class="Comment"># Increment the position</span>
     <span class="Identifier">$position</span>++;
 }
@@ -1483,12 +1483,12 @@ The following example is a rewrite of the "All A's" program using
 <span class="Statement">while</span> (<span class="Identifier">$position</span> &lt; <span class="Statement">length</span>(<span class="Identifier">$string</span>))
 {
     <span class="Identifier">$char</span> = <span class="Statement">lc</span>(<span class="Statement">substr</span>(<span class="Identifier">$string</span>, <span class="Identifier">$position</span>, <span class="Constant">1</span>));
-    
+
     <span class="Statement">if</span> (<span class="Identifier">$char</span> <span class="Statement">ne</span> <span class="Constant">&quot;a&quot;</span>)
     {
         <span class="Statement">last</span>;
     }
-    
+
     <span class="Comment"># Increment the position</span>
     <span class="Identifier">$position</span>++;
 }

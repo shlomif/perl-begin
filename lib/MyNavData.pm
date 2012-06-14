@@ -7,7 +7,7 @@ use utf8;
 
 my $hosts =
 {
-    berlios => 
+    berlios =>
     {
         base_url => "http://perl-begin.org/",
     },
@@ -131,7 +131,7 @@ my $tree_contents =
                 {
                     text => "Elements to Avoid",
                     url => "tutorials/bad-elements/",
-                    title => "Elements of Perl that should be avoided and what to replace them with", 
+                    title => "Elements of Perl that should be avoided and what to replace them with",
                 },
                 {
                     text => "In Other Languages",
@@ -429,7 +429,7 @@ my $tree_contents =
 
 sub get_params
 {
-    return 
+    return
         (
             hosts => $hosts,
             tree_contents => $tree_contents,

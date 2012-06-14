@@ -26,7 +26,7 @@
     />
 <ifeq "<get-var store />" "amazon"
       "<book_store_amazon %attributes />"
-      <group 
+      <group
             <a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
       />
       />
@@ -52,9 +52,9 @@
 <if "<get-var online_url />" "<a href="<get-var online_url />"><b>Download/View Online</b></a><br />" "" />
 <if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
 
-<b>Buy From:</b> 
-<book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> - 
-<book_store isbn="<get-var isbn />" store="powells" title="Powells" /> - 
+<b>Buy From:</b>
+<book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> -
+<book_store isbn="<get-var isbn />" store="powells" title="Powells" /> -
 <book_store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
 <br />
 </div>

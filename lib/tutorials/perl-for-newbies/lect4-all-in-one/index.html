@@ -1387,7 +1387,7 @@ Here's an example:
 <span class="Statement">sub </span><span class="Identifier">read_and_write</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$text</span> = read_text();
-    
+
     write_text(<span class="Identifier">$text</span>);
 }
 
@@ -1538,7 +1538,7 @@ Here's an example that counts the number of mp3s in a directory:
 <span class="Statement">sub </span><span class="Identifier">get_dir_files</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
-    
+
     <span class="Statement">opendir</span> <span class="Identifier">D</span>, <span class="Identifier">$dir_path</span>
         <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Cannot open the directory </span><span class="Identifier">$dir_path</span><span class="Constant">&quot;</span>;
 
