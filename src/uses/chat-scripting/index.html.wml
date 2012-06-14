@@ -5,21 +5,21 @@
 <h2 id="intro">Introduction</h2>
 
 <p>
-Perl allows one to write 
-<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">IRC 
-robots</a> and other forms of chat automation 
-(such as special IRC or Jabber client commands) with ease, and 
-many active Perl programmers and contributors have got their feet wet in Perl 
+Perl allows one to write
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">IRC
+robots</a> and other forms of chat automation
+(such as special IRC or Jabber client commands) with ease, and
+many active Perl programmers and contributors have got their feet wet in Perl
 after using it to write a simple bot or a chat script.
 </p>
 
 <p>
 Since the advent of the <a href="$(ROOT)/irc/">IRC - the Internet Relay
 Chat protocol</a>, people have been automating it by writing dedicated
-<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots or 
-"bots"</a>, such as chat bots, which are used for amusement; 
-infobots, which are used to collect various and handily recall commonly used 
-factoids, evalbots which are used to evaluate code, but there are many others 
+<a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots or
+"bots"</a>, such as chat bots, which are used for amusement;
+infobots, which are used to collect various and handily recall commonly used
+factoids, evalbots which are used to evaluate code, but there are many others
 including many multi-purpose bots.
 </p>
 
@@ -35,7 +35,7 @@ Recently, there has been some proliferation of different protocols
 for instant messaging or chat, such as the open-source and open-specification
 <a href="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber/XMPP protocol</a>, which has gained some further popularity after
 it has been supported by providers such as Google Talk / Google Chat and
-Facebook.com. 
+Facebook.com.
 </p>
 
 <h2 id="irc">For IRC</h2>
@@ -136,7 +136,7 @@ of X-Chat for Windows.
 
 <li>
 <p>
-<a href="http://irssi.org/">Irssi</a> - a powerful console / terminal 
+<a href="http://irssi.org/">Irssi</a> - a powerful console / terminal
 client, with support for scripting using Perl, and even integrating nicely
 with POE, and POE-Component-IRC.
 </p>

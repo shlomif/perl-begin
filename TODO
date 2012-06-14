@@ -87,6 +87,11 @@ perl-for-newbies lecture.
     - Peteris Krumins' Perl One-Liners Explained Book
         - TBD: which pages would be the best for it.
 
+* Mention Strawberry Perl and DWIM Perl on the MS Windows Page.
+
+* "So benchmark your code, see how well it performs and then continue
+reading this page if it is indeed too slow." - missing comma.
+
 Long Term:
 ----------
 

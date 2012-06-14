@@ -3,10 +3,10 @@
 <latemp_subject "Perl on UNIX and Linux Systems" />
 
 <p>
-If you are using a <a href="http://en.wikipedia.org/wiki/Unix">UNIX-compatible 
-system</a> (such as <a href="http://www.linux.org/">Linux</a>, 
+If you are using a <a href="http://en.wikipedia.org/wiki/Unix">UNIX-compatible
+system</a> (such as <a href="http://www.linux.org/">Linux</a>,
 <a href="http://www.sun.com/software/solaris/index.jsp">Solaris</a>,
-or a 
+or a
 <a href="http://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>), most
 chances are that Perl 5 is already installed there. To verify that, type
 <tt>perl -v</tt> inside a command shell, and check that the version of Perl is
@@ -18,7 +18,7 @@ Even if this is not the case, you can usually install it from the
 distribution you are using, assuming you are an administrator of the system.
 Else, given enough quota it is possible to install the most recent version of
 Perl 5 under your home directory.  This procedure can be followed by
-downloading the latest Perl source from 
+downloading the latest Perl source from
 <a href="http://www.cpan.org/">CPAN</a>, and following the instructions in
 the <tt>INSTALL</tt> file.
 </p>

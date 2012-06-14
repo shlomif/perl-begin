@@ -41,7 +41,7 @@ Object-Oriented Programming in Perl.
 <p>
 Hashes (also known as "associative arrays", "maps" or "dictionaries") are
 one of Perl's three fundamental data structures and their least understood
-one. This page gives some resources for learning about hashes. 
+one. This page gives some resources for learning about hashes.
 </p>
 
 <h3 id="files-and-dirs"><a href="files-and-directories/">Files and Directories Handling</a></h3>
@@ -55,7 +55,7 @@ How to handle files and directories in Perl.
 <p>
 References allow the programmer to store an aggregate data structure in a
 simple variable, which can be passed around more easily, to represent complex,
-nested data structures, and also serve as the basis of Perl's object system. 
+nested data structures, and also serve as the basis of Perl's object system.
 </p>
 
 <h3 id="regexps"><a href="regular-expressions/">Regular Expressions</a></h3>

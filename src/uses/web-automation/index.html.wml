@@ -21,7 +21,7 @@ WWW::Mechanize is the de-facto standard for web-automation for Perl, but you
 may find more convenient interfaces for many tasks.
 </p>
 
-<h3 id="parsers"><cpan_self_mod m="HTML::TreeBuilder" /> and 
+<h3 id="parsers"><cpan_self_mod m="HTML::TreeBuilder" /> and
 <cpan_self_dist d="HTML-TreeBuilder-LibXML" /></h3>
 
 <p>
@@ -43,7 +43,7 @@ everything from the browser's point-of-view.
 
 <p>
 <cpan_b_self_dist d="Web-Scraper" /> is a web scraping toolkit that is
-a high-level abstraction above WWW-Mechanize and other modules. 
+a high-level abstraction above WWW-Mechanize and other modules.
 <cpan_b_self_dist d="Scrappy" /> is an even higher-level abstraction and
 integrates some other modules.
 </p>

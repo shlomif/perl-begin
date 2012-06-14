@@ -8,18 +8,18 @@
 
 <h2 id="IDEs">IDEs</h2>
 
-<h3 id="padre"><a href="http://padre.perlide.org/">Padre - 
+<h3 id="padre"><a href="http://padre.perlide.org/">Padre -
 the Perl IDE</a></h3>
 
 <p>
-Padre is a cross-platform, open-source, free, IDE for Perl, written in Perl, 
+Padre is a cross-platform, open-source, free, IDE for Perl, written in Perl,
 which is under active development. It's probably the most recommended for
 most people who don't have a previous preference.
 </p>
 
 <div class="screenshot">
-<a href="shots/padre/padre-256.png" 
-title="Screenshot of Padre"><img 
+<a href="shots/padre/padre-256.png"
+title="Screenshot of Padre"><img
     src="shots/padre/padre-thumb-256.png"
     alt="Screenshot of Padre" /></a>
 
@@ -29,12 +29,12 @@ Perl.
 </p>
 </div>
 
-<h3 id="komodo"><a href="http://www.activestate.com/komodo_edit/">Komodo 
+<h3 id="komodo"><a href="http://www.activestate.com/komodo_edit/">Komodo
 Edit</a> and <a href="http://www.activestate.com/komodo/">Komodo IDE</a></h3>
 
 <p>
-Komodo Edit is a cross-platform, costless, open-source editor for Perl and 
-other dynamic languages by ActiveState. Komodo IDE is a commercially-enhanced 
+Komodo Edit is a cross-platform, costless, open-source editor for Perl and
+other dynamic languages by ActiveState. Komodo IDE is a commercially-enhanced
 version of it which is not open-source and costs money.
 </p>
 
@@ -48,9 +48,9 @@ is cross-platform, free and open-source and so is EPIC.
 </p>
 
 <div class="screenshot">
-<a href="shots/eclipse/eclipse-epic-256.png" 
-title="Screenshot of EPIC - Eclipse's Perl Mode"><img 
-    src="shots/eclipse/eclipse-epic-thumb-256.png" 
+<a href="shots/eclipse/eclipse-epic-256.png"
+title="Screenshot of EPIC - Eclipse's Perl Mode"><img
+    src="shots/eclipse/eclipse-epic-thumb-256.png"
     alt="Screenshot of Eclipse's Perl Mode" /></a>
 
 <p>
@@ -63,8 +63,8 @@ Eclipse.
 
 <p>
 Vim is a popular open-source, cross-platform, and free editor, with good
-support for editing Perl code. 
-<a href="http://www.perlfoundation.org/perl5/index.cgi?vim">the 
+support for editing Perl code.
+<a href="http://www.perlfoundation.org/perl5/index.cgi?vim">the
 Perl 5 Wiki page about Vim</a> contains more information.
 </p>
 
@@ -72,13 +72,13 @@ Perl 5 Wiki page about Vim</a> contains more information.
 By default Vim behaves very much like the ubiquitous UNIX editor
 <a href="http://en.wikipedia.org/wiki/Vi">vi</a>, which may seem foreign
 to people used to the conventions of modern desktop environments. However,
-using 
+using
 <a href="http://vimdoc.sourceforge.net/htmldoc/gui_w32.html#mswin.vim">mswin.vim</a> it can behave much more like Windows-based editors.
 </p>
 
 <div class="screenshot">
-<a href="shots/gvim/gvim-perl-256.png" 
-title="Screenshot of gvim (Vim-X11)"><img 
+<a href="shots/gvim/gvim-perl-256.png"
+title="Screenshot of gvim (Vim-X11)"><img
     src="shots/gvim/gvim-perl-thumb-256.png"
     alt="Screenshot of gvim (Vim-X11)" /></a>
 
@@ -88,14 +88,14 @@ text-editor.
 </p>
 </div>
 
-<h3 id="TextMate"><a href="http://macromates.com/">TextMate</a>, 
+<h3 id="TextMate"><a href="http://macromates.com/">TextMate</a>,
 <a href="http://www.e-texteditor.com/">E Text Editor</a>
 and <a href="http://e-texteditor.com/blog/2009/releasing-the-source">E Text
 Editor for Linux/UNIX</a></h3>
 
 <p>
-TextMate is a commercial (and not open source) programmers' editor that has 
-become popular on Mac OS X, and E Text Editor is a commercial version of it 
+TextMate is a commercial (and not open source) programmers' editor that has
+become popular on Mac OS X, and E Text Editor is a commercial version of it
 for Windows, with source available for compiling on Linux and other
 systems.
 </p>
@@ -114,7 +114,7 @@ Perl code and warns about possible bad practices that should be fixed.
 <p>
 perltidy is an auto-formatter for Perl code, that can keep its style
 consistent. It supports many different styles and style parameters. Perltidy
-has a <cpan_dist d="tidyview">frontend 
+has a <cpan_dist d="tidyview">frontend
 called tidyview</cpan_dist> that allows one to visually customise the style and
 view the results.
 </p>
