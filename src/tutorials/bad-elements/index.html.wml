@@ -1804,6 +1804,46 @@ or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
 
 </item>
 
+<item id="trailing-whitespace" h="Trailing Whitespace">
+
+<p>
+With many editors, it can be common to write new code or modify existing
+one, so that some lines will contain trailing whitespace, such as
+spaces (ASCII 32 or 0x20) or tabs characters. These trailing spaces normally
+do not cause much harm, but they are not needed and can be distracted. 
+</p>
+
+<p>
+While you should not feel bad about having trailing space, it is a good idea
+to sometimes search for them using a command such as <tt>ack '[ \t]+$'</tt>
+(or <tt>ack -a '[ \t]+$'</tt> for completeness - see 
+<a href="http://betterthangrep.com/">ack</a>, and get rid of them.
+</p>
+
+<p>
+Some editors also allow you to highlight trailing whitespace when present. See
+for example:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://vim.wikia.com/wiki/Highlight_unwanted_spaces">Highlight
+unwanted spaces in Vim</a>. Also see <a href="http://vim.wikia.com/wiki/Highlight_unwanted_spaces">this post</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://emacswiki.org/emacs/ShowWhiteSpace">EmacsWiki:
+Show White Space</a>.
+</p>
+</li>
+
+</ul>
+
+</item>
 </main_list>
 
 #include "bad-elements-sources.wml"

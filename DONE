@@ -182,3 +182,4 @@ delegation.
         - will be interpreted as a shell command.
         - no way to avoid it for one argument.
         - use IPC::Run or IPC::System::Simple
+    - trailing whitespace.
