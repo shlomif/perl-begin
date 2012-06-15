@@ -30,8 +30,11 @@
     - long lines in source code.
     - "-param" (parameters starting with a dash) for subroutines or methods.
         - should be plain names instead.
+    - initialising arrays (not array refs) using [...] and hashes (not
+    hashrefs) using { ... }.
+    - assigning a list to a scalar.
 
-* perl-begin FAQ:
+* #perl FAQ:
     - references.
         - What's the difference between an array reference and an array?
         - Same for hash.
