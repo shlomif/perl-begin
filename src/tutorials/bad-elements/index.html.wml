@@ -1866,6 +1866,49 @@ is normally not the case.
 
 </item>
 
+<item id="dash-starting-named-params" h="Named Parameters That Start With Dash">
+
+<p>
+If you're defining interfaces that accept a flattened hash or a hash reference
+of named parameters, there is no need to call the parameters with keys starting
+with a dash, like so:
+</p>
+
+<bad_code>
+my $obj = MyClass-&gt;new(
+    {
+        -name =&gt; "George",
+        -occupation =&gt; "carpenter",
+        -city =&gt; "Inverness",
+    }
+);
+</bad_code>
+
+<p>
+The dashes are not needed because Perl can safely escape and deal with plain
+names that only contain alphanumeric characters and underscores, and they
+just add clutter to the code. Named arguments starting with dashes were
+prevalent in some early modules such as <cpan_self_dist d="Tk" /> or
+<cpan_self_dist d="Config-IniFiles" />, but they should not be used in
+more modern modules.
+</p>
+
+<p>
+Instead, design your interfaces with calling conventions like so:
+</p>
+
+<pre>
+my $obj = MyClass-&gt;new(
+    {
+        name =&gt; "George",
+        occupation =&gt; "carpenter",
+        city =&gt; "Inverness",
+    }
+);
+</pre>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
