@@ -38,19 +38,11 @@ These are the Perldoc OOP tutorials that ship with Perl:
 </li>
 
 <li>
-<pdoc d="perlboot"></pdoc> - Perl's Beginner's Object Oriented Tutorial
-</li>
-
-<li>
-<pdoc d="perltoot"></pdoc> - Tom's Object-Oriented Tutorial
+<pdoc d="perlootut"></pdoc> - Object-Oriented Programming in Perl Tutorial
 </li>
 
 <li>
 <pdoc d="perlobj"></pdoc> - The Perl Objects Man-Page
-</li>
-
-<li>
-<pdoc d="perlbot"></pdoc> - The Perl Bag of Object Tricks
 </li>
 
 </ul>

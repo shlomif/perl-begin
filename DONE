@@ -185,3 +185,6 @@ delegation.
     - trailing whitespace.
     - Using string eval.
         - Two or more /e flags for s/// .
+
+* Update the modules_and_objects_perldocs block - remove perlboot, perltoot,
+perlbot, and add perlootut .
