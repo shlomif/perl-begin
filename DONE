@@ -189,6 +189,9 @@ delegation.
 * Update the modules_and_objects_perldocs block - remove perlboot, perltoot,
 perlbot, and add perlootut .
 
+* Mirror http://shlomif-tech.livejournal.com/35301.html (Code/Markup injection
+) locally and enhance it.
+
 * Bad elements page:
     - "-param" (parameters starting with a dash) for subroutines or methods.
         - should be plain names instead.

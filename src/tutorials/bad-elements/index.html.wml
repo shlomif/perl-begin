@@ -1935,8 +1935,8 @@ For more information, see:
 
 <li>
 <p>
-<a href="http://shlomif-tech.livejournal.com/35301.html">“Code/Markup Injection
-and Its Prevention post”</a> on Shlomi Fish’s Technical Journal.
+<a href="$(ROOT)/topics/security/code-markup-injection/">“Code/Markup Injection
+and Its Prevention”</a> resource on this site.
 </p>
 </li>
 
