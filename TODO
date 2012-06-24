@@ -19,10 +19,6 @@
         - show all with IO::All and without it.
 
 * Add to '/bad-elements/':
-    - Code/Markup injection:
-        - shell code injection.
-        - cross-site-scripting / HTML injection.
-        - SQL injection.
     - Regular expressions starting or ending with .*? or .*
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
@@ -92,6 +88,9 @@ perl-for-newbies lecture.
 
 * "So benchmark your code, see how well it performs and then continue
 reading this page if it is indeed too slow." - missing comma.
+
+* Mirror http://shlomif-tech.livejournal.com/35301.html (Code/Markup injection
+) locally and enhance it.
 
 Long Term:
 ----------

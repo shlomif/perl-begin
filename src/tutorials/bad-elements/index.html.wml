@@ -1909,6 +1909,58 @@ my $obj = MyClass-&gt;new(
 
 </item>
 
+<item id="code_and_markup_injection" h="Code and Markup Injection">
+
+<p>
+Care must be taken when constructing statements that are passed to an
+interpreter, when putting arbitrary strings inside (using string interpolation
+or other methods). This is because if the strings are subject to input from
+the outside world (including the users), then one can use specially crafted
+strings for executing arbitrary commands and exploiting the system.
+</p>
+
+<p>
+An example of this is outputting HTML using
+<tt>print "&lt;p&gt;" . $paragraph_text . "&lt;/p&gt;\n";</tt> which may allow
+inserting arbitrary, malicious, markup inside <tt>$paragraph_text</tt>,
+which may include malicious JavaScript, that can steal passwords or alter
+the page’s contents.
+</p>
+
+<p>
+For more information, see:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://shlomif-tech.livejournal.com/35301.html">“Code/Markup Injection
+and Its Prevention post”</a> on Shlomi Fish’s Technical Journal.
+</p>
+</li>
+
+<li>
+<p>
+Wikipedia articles about
+<a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a>
+and
+<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross-site
+scripting</a>.
+</p>
+</li>
+
+<li>
+<p>
+The site <a href="http://bobby-tables.com/">Bobby Tables</a> about SQL
+injections.
+</p>
+</li>
+
+</ol>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

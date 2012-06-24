@@ -192,3 +192,7 @@ perlbot, and add perlootut .
 * Bad elements page:
     - "-param" (parameters starting with a dash) for subroutines or methods.
         - should be plain names instead.
+    - Code/Markup injection:
+        - shell code injection.
+        - cross-site-scripting / HTML injection.
+        - SQL injection.
