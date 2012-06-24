@@ -1,0 +1,230 @@
+#include '../template.wml'
+
+<latemp_subject "Code/Markup Injection and Its Prevention" />
+<latemp_more_keywords "exploiting, sql, code, crack, prevention, regex, hacking, exploits, shell, eval, perl, coding, injection, hack, cracking, html" />
+
+<p>
+Starting from the early UNIXes and before, operating systems represented code
+and its data as sequences of units of a certain number of bits called
+<a href="http://en.wikipedia.org/wiki/Byte">bytes</a>. Starting from Unix,
+which was designed to run on such machines as the 16-bit PDP-11 and later on
+the 32-bit VAX family of computers, this unit has generally been 8-bits.
+Today, there are many 8-bit based text encodings (and many more binary
+encodings for binary data), and the interested reader is referred to
+<a href="http://www.joelonsoftware.com/articles/Unicode.html">Joel Spolsky’s
+introduction on the subject</a>
+and
+<a href="http://perldoc.perl.org/perlunitut.html">Juerd Waalboer’s
+perlunitut</a> or your language’s equivalent document.
+</p>
+
+<p>
+In any case, let’s suppose we have a string where we want to embed a
+variable containing a string. In Perl we can do:
+</p>
+
+<pre>
+my $total = "Hello " . $adjective " World!";
+</pre>
+
+<p>
+Or more simply:
+</p>
+
+<pre>
+my $total = "Hello $adjective World!";
+</pre>
+
+<p>
+So if we put <tt>"beautiful"</tt> in <tt>$adjective</tt>, we’ll get
+<tt>"Hello beautiful World!"</tt> in <tt>$total</tt> and if we put
+<tt>"cruel"</tt> there we’ll get <tt>"Hello cruel World!"</tt> there.
+</p>
+
+<p>
+So far so good, if it’s a plain string written in plaintext. However, what
+if it’s in a more well-formed format? Let’s say HTML:
+</p>
+
+<pre>
+# Untested
+my $input = get_input_from_user_somehow();
+print &lt;&lt;"EOF";
+&lt;p&gt;
+$input
+&lt;/p&gt;
+EOF
+
+</pre>
+
+<p>
+The alert reader will notice that $input was inserted as is into the HTML
+output. And since we didn’t check if it contains special characters or
+escaped its special characters, a malicious user can insert arbitrary HTML
+code and even JavaScript code there. This in turn can wreck havoc upon the
+users of the page.
+</p>
+
+<p>
+This form of HTML injection is called a
+<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">a
+cross-site-scripting attack (XSS)</a>. If present in web applications or
+web-sites, it may allow malicious crackers to set up traps to the unwary,
+and possibly gain access to sensitive information on the site, such as the
+passwords of users or administrators. And you did notice how easy it was
+to write code that exhibited this problem, right?
+</p>
+
+<p>
+Here are some other forms of code or markup injection:
+</p>
+
+<ol>
+<li>
+<p>
+<b>Shell Command Injection</b> - I’ve discussed it briefly
+<a href="http://community.livejournal.com/shlomif_tech/14671.html">in
+a different post about "shell variable injection" in Bash</a>, but it also
+exists in Perl. Imagine doing <tt>system("ls $dir");</tt> or
+as some newcomers are tempted to do <tt>`ls $dir`</tt>, which the latter
+still has some legitimate uses. Now I as a malicious user can put in the
+<tt>$dir</tt> variable some malicious shell code which will wreck havoc on
+the system of the user that is running the script.
+</p>
+
+<p>
+One way to avoid it is to properly escape the arguments using a module
+such as
+<a href="http://search.cpan.org/dist/String-ShellQuote/">String-ShellQuote</a>.
+A more preferable way is to use the list-forms of function arguments whenever
+possible.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a>
+allows a user to inject malevolent SQL code that can do untold damages
+in the database. It is very common in web applications and many
+other applications that use SQL code. If you do something like
+<tt>"SELECT id FROM users WHERE name='$name'"</tt> then by putting
+single-quotes in the name, and using SQL syntax one can insert arbitrary SQL
+there and do a lot of damage. There was also
+<a href="http://xkcd.com/327/">a very nice xkcd comic</a> about it.
+</p>
+</li>
+<li>
+<p>
+<b>Perl Code injection</b> - let’s suppose we want to construct an optimised
+anonymous function ( <tt>sub { ... }</tt> ) on the fly. We can build
+its code and then use
+<a href="http://perldoc.perl.org/functions/eval.html">the
+string eval - eval ""</a>. A lot of Perl programmers think it should be
+avoided at all costs, but
+<a href="http://en.wikipedia.org/wiki/Metaprogramming">metaprogramming</a>
+has some legitimate uses. Moreover, this can happen in other cases,
+like when we construct a Perl program (or a program of any other language
+on the fly and execute it).
+</p>
+<p>
+In any case, if we insert a variable into the <tt>eval ""</tt> which was input
+from the user without being escaped or validated, we can have an arbitrary
+code execution.
+</p>
+</li>
+
+<li>
+<p>
+<b>Regular expressions’ code injection</b> - imagine you want to see if a
+string is contained in a list of strings. One naïve way would be to concatenate
+the strings using a separator that is unlikely to be contained in them
+(such as <tt>\0</tt>) and then match this gigantic string using
+<tt>$haystack =~ m{$needle}</tt>. However, if $needle contains special regex characters,
+then the operation can take a lot of time to match or worse - yield an
+incorrect result. One way to avoid that is to use
+<a href="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f quotemeta</a> or its \Q and \E regular expression escapes -
+<tt>$haystack =~ m{\Q$needle\E}g</tt>. In this particular case, it is also
+probably better to use a hash, but naturally this was just one example
+where we’d like to embed some arbitrary (but plain) text inside a regular
+expression.
+</p>
+</li>
+
+<li>
+<p>
+<b>Path Injection</b> - if you append a shell path to another, using
+something like
+<tt>my $path = "/home/hello/$myar"; open my $fh, '&lt;', $path or die …</tt>
+then if someone puts some <tt>..</tt> in <tt>$myvar</tt>’s components, they
+can gain access to any arbitrary file in the system.
+</p>
+</li>
+
+<li>
+<p>
+<b>Perl open argument injection</b> - if you do
+<tt>open(my $fh, "/some/directory/$filename");</tt>, then one may put
+<tt>my $filename = "|echo h4x0r3d|";</tt> and execute arbitrary code. To avoid
+such things one should use Perl’s three-argument open.
+(thanks to Brian Phillips)
+</p>
+</li>
+
+</ol>
+
+<p>
+These are the prominent examples I can think of now, but they are not
+the only ones. Your program is in danger whenever it accepts text input from
+the user and passes it directly to an output format that has some grammar and
+syntax that can be influenced by this string.
+</p>
+
+<p>
+So how to mitigate such code injection problems? There are many ways -
+sometimes providing alternatives and sometimes complementing each other:
+</p>
+
+<ol>
+<li>
+Make sure you have enough <b>discipline</b> to escape the input before it
+is passed to the output venue. Write automated tests for that.
+</li>
+<li>
+If you still want to allow some user input, then make sure that you
+<b>analyse</b> it to make sure it does not contain any malicious code
+that can abuse the system. For example, you may wish to restrict input
+only to certain HTML tags and attributes.
+</li>
+<li>
+Taint your data using <b>unsafe typing</b> or "kinding" and make sure that
+it can only be output after either being escaped or being untainted. Joel
+on Software recommends
+<a href="http://www.joelonsoftware.com/articles/Wrong.html">making the
+wrong code look wrong</a>, which while desirable and important, is
+probably less preferable than the wrong code to <b>behave</b> wrong
+and abort with a huge "You suck!" error or something. This may not be
+very possible given certain limitations of the programming language, but it
+is a better ideal.
+</li>
+<li>
+Use auto-escaping features of your environment such as SQL place-holders
+(e.g: <tt>"SELECT * FROM mytable WHERE id = ?"</tt>), and the list argument of
+<a href="http://perldoc.perl.org/functions/system.html">"perldoc
+-f system"</a> (e.g: <tt>system { $cmd[0] } @cmd</tt>).
+</li>
+<li>
+Perform frequent code reviews, black box tests, and encourage hackers to
+find problems in your code.
+</li>
+<li>
+Use complementary security measures that make sure that even if a problem
+occurs, its damage is mitigated. As examples, you can try running the
+script under an underprivileged operating system user, or as a database
+user that lacks certain database privileges.
+</li>
+</ol>
+
+<p>
+In any case, be careful when writing code that may cause code or markup
+injection because the consequences may be dire.
+</p>
