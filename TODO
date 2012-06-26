@@ -24,8 +24,6 @@
         - assignment to a different value in the middle of the subroutine.
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
     - long lines in source code.
-    - initialising arrays (not array refs) using [...] and hashes (not
-    hashrefs) using { ... }.
     - assigning a list to a scalar.
 
 * #perl FAQ:

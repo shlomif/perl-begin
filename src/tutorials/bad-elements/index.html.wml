@@ -1961,6 +1961,48 @@ injections.
 
 </item>
 
+<item id="init_arrays_from_arrayrefs" h="Initializing Arrays and Hashes from Anonymous References">
+
+<p>
+Some beginners to Perl are tempted to use the anonymous array reference
+constructor (<tt>[ … ]</tt>) to initialise array variables, or alternatively
+anonymous hash references (<tt>{ … }</tt>) to initialise hash variables, like
+so:
+</p>
+
+<bad_code>
+my @arr = [1 .. 10];
+
+my %uk_info = { continent =&gt; "Europe", capital =&gt; "London", };
+</bad_code>
+
+<p>
+However, these reference constructors actually create a single scalar that
+contains a reference and, as a result, in the case of the array, one will have
+a single element array, and in case of the hash, one will have an error
+with a hash that was initialised only with a single key (that was converted
+to a non-sensical string).
+</p>
+
+<p>
+Array and hash variables should be initialized using lists enclosed in
+parentheses:
+</p>
+
+<pre>
+my @arr = (1 .. 100);
+
+my %uk_info = ( continent =&gt; "Europe", capital =&gt; "London", );
+</pre>
+
+<p>
+For more information about the difference between references and aggregate
+variables, refer to our <a href="$(ROOT)/topics/references/">references</a>
+page.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
