@@ -199,3 +199,5 @@ perlbot, and add perlootut .
         - shell code injection.
         - cross-site-scripting / HTML injection.
         - SQL injection.
+    - initialising arrays (not array refs) using [...] and hashes (not
+    hashrefs) using { ... }.
