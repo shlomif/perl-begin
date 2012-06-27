@@ -33,6 +33,11 @@ CPANPLUS-Dist based:<br />
 <ul>
 
 <li>
+<a href="https://metacpan.org/release/App-CPAN2Pkg">CPAN2pkg - generating
+native Linux packages from CPAN</a>
+</li>
+
+<li>
 <a href="http://search.cpan.org/dist/App-Magpie/">App-Magpie - Mageia Perl
 Integration Made Easy</a>
 </li>
