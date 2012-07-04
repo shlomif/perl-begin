@@ -201,3 +201,4 @@ perlbot, and add perlootut .
         - SQL injection.
     - initialising arrays (not array refs) using [...] and hashes (not
     hashrefs) using { ... }.
+    - long lines in source code.

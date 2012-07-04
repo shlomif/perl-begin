@@ -2003,6 +2003,25 @@ page.
 
 </item>
 
+<item id="long_lines" h="Overly Long Lines in the Source Code">
+
+<p>
+It is a good idea to avoid overly long lines in the source code, because
+they need to be scrolled to read, and may not fit within the margins of your
+co-developers’ text editors. If the lines are too long, you should break
+them or reformat them (for example, by adding a newline before or after an
+operator), and by breaking long string constants into several lines using
+the string concatenation operator - <tt>.</tt>.
+</p>
+
+<p>
+Many coding standards require lines to fit within 80 characters or
+78 characters or so, and you should standardise on a similar limit for your
+own code.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
