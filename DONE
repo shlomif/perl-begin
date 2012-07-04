@@ -203,3 +203,4 @@ perlbot, and add perlootut .
     hashrefs) using { ... }.
     - long lines in source code.
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
+    - assigning a list to a scalar.
