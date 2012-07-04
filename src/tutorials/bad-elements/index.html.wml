@@ -2022,6 +2022,43 @@ own code.
 
 </item>
 
+<item id="no_upwards_for_dirs" h="Getting rid of special entries in directory contents">
+
+<p>
+Calling <pdoc_f f="readdir">readdir()</pdoc_f> repetitevely, or calling it
+in list context will normally return the two special entries of <tt>.</tt>
+(the same directory) and <tt>..</tt> (the parent directory) which should not
+be checked, and should normally be ignored. One can often find that people
+are trying to skip them in various sub-optimal ways:
+</p>
+
+<bad_code>
+if ($dir_entry =~ m/\A\./) # Will skip all directories that start with dot.
+if ($dir_entry =~ m/^\./) # Same but \A is preferable for start-of-string.
+if ($dir_entry =~ m/\A\.\.?\z/) # Obfuscated.
+if ($dir_entry =~ m/\A\.{1,2}\z/) # Not much better.
+if ($dir_entry eq "." or $dir_entry eq "..") # May not be portable.
+</bad_code>
+
+<p>
+The best way to do that is to use <cpan_self_mod m="File::Spec" />’s
+<tt>no_upwards</tt> function:
+</p>
+
+<pre>
+foreach my $entry (File::Spec-&gt;no_upwards(readdir($dir_handle))
+{
+}
+</pre>
+
+<p>
+Note that <cpan_self_dist d="File-Slurp" /> wraps that for you in its
+<tt>read_dir()</tt> function and other file system abstraction modules provide
+similar functionality.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
