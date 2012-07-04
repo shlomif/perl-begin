@@ -23,7 +23,6 @@
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
-    - long lines in source code.
     - assigning a list to a scalar.
 
 * #perl FAQ:
@@ -86,6 +85,8 @@ perl-for-newbies lecture.
 
 * "So benchmark your code, see how well it performs and then continue
 reading this page if it is indeed too slow." - missing comma.
+
+* Update the copy of Modern Perl to the latest edition.
 
 Long Term:
 ----------
