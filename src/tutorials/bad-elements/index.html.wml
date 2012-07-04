@@ -2059,6 +2059,37 @@ similar functionality.
 
 </item>
 
+<item id="assigning_list_to_scalar" h="Assigining a List to a Scalar Variable">
+
+<p>
+Normally, assigning from a function or an expression that returns a list
+to a scalar variable, will not yield what you want:
+</p>
+
+<bad_code>
+my $characters = split(//, $string);
+</bad_code>
+
+<p>
+This will cause the list as returned by split to be evaluated in scalar
+context, and to return a single (and not very meaningful) scalar item.
+You normally want one of those:
+</p>
+
+<pre>
+my @characters = split(//, $string);
+my $chars_aref = [ split(//, $string) ];
+my $num_chars = () = split(//, $string); \# Use length instead in this case.
+</pre>
+
+<p>
+A lot of the confusion stems from the fact that people expect arrays in Perl
+to be contained directly in scalars. For more information about that,
+consult <a href="$(ROOT)/topics/references/">our page about references</a>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

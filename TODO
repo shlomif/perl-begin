@@ -22,7 +22,6 @@
     - Regular expressions starting or ending with .*? or .*
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
-    - assigning a list to a scalar.
     - Recursively iterating over directories and sub-directories instead of
     using File::Find, F::F::O, File::Next, etc.
 
