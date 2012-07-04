@@ -202,3 +202,4 @@ perlbot, and add perlootut .
     - initialising arrays (not array refs) using [...] and hashes (not
     hashrefs) using { ... }.
     - long lines in source code.
+    - grep !/\A\./ for getting rid of "." and ".." in readdir().
