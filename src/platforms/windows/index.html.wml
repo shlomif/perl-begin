@@ -28,8 +28,8 @@ Portal</a>.
 ActiveState has <a
 href="http://lists.perl.org/showlist.cgi?name=perl-win32-users">a mailing
 list for Win32 users</a>. Generally, Perl for Win32 questions can be
-effectively answered in beginners mailing lists as well, but this mailing
-list may also prove of help especially in regards to Win32-specific Perl
+effectively answered in beginners mailing lists as well. However, this
+mailing list may also prove to be helpful when dealing with Win32-specific Perl
 extensions.
 </p>
 
