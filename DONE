@@ -205,3 +205,6 @@ perlbot, and add perlootut .
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
     - assigning a list to a scalar.
     - Regular expressions starting or ending with .*? or .*
+
+* Update the copy of Modern Perl to the latest edition.
+
