@@ -24,6 +24,8 @@
         - assignment to a different value in the middle of the subroutine.
     - Recursively iterating over directories and sub-directories instead of
     using File::Find, F::F::O, File::Next, etc.
+    - Using File::Find and friends for listing the entries of a single
+    directory (non-recursively).
 
 * #perl FAQ:
     - references.
