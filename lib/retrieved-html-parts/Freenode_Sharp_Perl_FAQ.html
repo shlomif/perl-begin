@@ -1,0 +1,555 @@
+<div id="bodyContent">
+<h3 id="siteSub">From PerlNet</h3><div id="contentSub"></div><div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+<p>This is the FAQ for <a href="irc://irc.freenode.org/perl" title="irc://irc.freenode.org/perl">Freenode&apos;s #perl channel</a>.
+</p><table class="toc" id="toc" summary="Contents"><tr><td><div id="toctitle">
+<h2>Contents</h2></div><ul><li class="toclevel-1"><a href="#Commonly_Asked_Questions"><span class="tocnumber">1</span> <span class="toctext">Commonly Asked Questions</span></a><ul><li class="toclevel-2"><a href="#What_are_the_Rules_of_Conduct.3F"><span class="tocnumber">1.1</span> <span class="toctext">What are the Rules of Conduct?</span></a><ul><li class="toclevel-3"><a href="#Handling_criticism"><span class="tocnumber">1.1.1</span> <span class="toctext">Handling criticism</span></a></li><li class="toclevel-3"><a href="#English_usage"><span class="tocnumber">1.1.2</span> <span class="toctext">English usage</span></a></li></ul></li><li class="toclevel-2"><a href="#I.27ve_become_an_Operator._What_should_I_do_now.3F"><span class="tocnumber">1.2</span> <span class="toctext">I&apos;ve become an Operator. What should I do now?</span></a></li><li class="toclevel-2"><a href="#What_do_I_need_to_do_to_get_a_good_answer_to_my_question.3F"><span class="tocnumber">1.3</span> <span class="toctext">What do I need to do to get a good answer to my question?</span></a></li><li class="toclevel-2"><a href="#What_is_Considered_On-Topic.3F"><span class="tocnumber">1.4</span> <span class="toctext">What is Considered On-Topic?</span></a><ul><li class="toclevel-3"><a href="#Perl_Includes_CPAN"><span class="tocnumber">1.4.1</span> <span class="toctext">Perl Includes CPAN</span></a></li></ul></li><li class="toclevel-2"><a href="#I_need_help_with_tweaking_a_Perl_script_that_I_found.2C_and_I_don.27t_want_to_learn_Perl._Can_you_guys_help_me.3F"><span class="tocnumber">1.5</span> <span class="toctext">I need help with tweaking a Perl script that I found, and I don&apos;t want to learn Perl. Can you guys help me?</span></a></li><li class="toclevel-2"><a href="#I.27d_like_to_run_a_script_.28which_I_wrote_or_downloaded.29_on_a_cheap_.28or_free.29_web-hosting_that_only_gives_me_FTP._Can_you_help.3F"><span class="tocnumber">1.6</span> <span class="toctext">I&apos;d like to run a script (which I wrote or downloaded) on a cheap (or free) web-hosting that only gives me FTP. Can you help?</span></a></li><li class="toclevel-2"><a href="#I_need_help_with_a_non-Perl_Regular_Expression_.28PHP.2C_grep.2C_PCRE.2C_etc..29"><span class="tocnumber">1.7</span> <span class="toctext">I need help with a non-Perl Regular Expression (PHP, grep, PCRE, etc.)</span></a></li><li class="toclevel-2"><a href="#Can_you_recommend_a_good_Perl_Editor.2FIDE.3F"><span class="tocnumber">1.8</span> <span class="toctext">Can you recommend a good Perl Editor/IDE?</span></a></li><li class="toclevel-2"><a href="#Why_doesn.27t_my_script_run.3F"><span class="tocnumber">1.9</span> <span class="toctext">Why doesn&apos;t my script run?</span></a></li><li class="toclevel-2"><a href="#Why_doesn.27t_my_script_work.3F"><span class="tocnumber">1.10</span> <span class="toctext">Why doesn&apos;t my script work?</span></a></li><li class="toclevel-2"><a href="#How_should_I_write_my_code.3F"><span class="tocnumber">1.11</span> <span class="toctext">How should I write my code?</span></a></li><li class="toclevel-2"><a href="#I_need_to_parse_HTML_with_Perl_.28and_my_Regular_Expression_does_not_work.29"><span class="tocnumber">1.12</span> <span class="toctext">I need to parse HTML with Perl (and my Regular Expression does not work)</span></a></li><li class="toclevel-2"><a href="#Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F"><span class="tocnumber">1.13</span> <span class="toctext">Can I write Graphical User-Interfaces (GUIs) in Perl? And How?</span></a></li><li class="toclevel-2"><a href="#How_can_I_break.2Fskip_an_outer_loop.3F"><span class="tocnumber">1.14</span> <span class="toctext">How can I break/skip an outer loop?</span></a></li><li class="toclevel-2"><a href="#How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F"><span class="tocnumber">1.15</span> <span class="toctext">How can I include a script into a different script and still see the lexical (&quot;my&quot;) variables declared there?</span></a></li><li class="toclevel-2"><a href="#How_can_I_format_numbers_with_certain_digits.3F"><span class="tocnumber">1.16</span> <span class="toctext">How can I format numbers with certain digits?</span></a></li><li class="toclevel-2"><a href="#How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F"><span class="tocnumber">1.17</span> <span class="toctext">How can I have printf return a value instead of outputting to a filehandle?</span></a></li><li class="toclevel-2"><a href="#Where_else_can_I_go_for_help.3F"><span class="tocnumber">1.18</span> <span class="toctext">Where else can I go for help?</span></a></li><li class="toclevel-2"><a href="#How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F"><span class="tocnumber">1.19</span> <span class="toctext">How do I know the index of the element in a foreach loop?</span></a></li><li class="toclevel-2"><a href="#Is_there_anyway_to_compile_Perl_code_to_an_executable.3F"><span class="tocnumber">1.20</span> <span class="toctext">Is there anyway to compile Perl code to an executable?</span></a></li><li class="toclevel-2"><a href="#How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F"><span class="tocnumber">1.21</span> <span class="toctext">How do I perform operations on entire directories (delete them, copy them, etc.)?</span></a></li><li class="toclevel-2"><a href="#I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F"><span class="tocnumber">1.22</span> <span class="toctext">I want to run a shell command from Perl, and possibly trap its output. How?</span></a></li><li class="toclevel-2"><a href="#How_can_I_Merge_Two_Hashes.3F"><span class="tocnumber">1.23</span> <span class="toctext">How can I Merge Two Hashes?</span></a></li><li class="toclevel-2"><a href="#How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F"><span class="tocnumber">1.24</span> <span class="toctext">How can I match anything-except-a-regex inside a Perl regular expression?</span></a></li><li class="toclevel-2"><a href="#Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F"><span class="tocnumber">1.25</span> <span class="toctext">Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever?</span></a></li><li class="toclevel-2"><a href="#Is_Perl_better_than_PHP.2C_Python.2C_Ruby.2C_etc..3F"><span class="tocnumber">1.26</span> <span class="toctext">Is Perl better than PHP, Python, Ruby, etc.?</span></a></li><li class="toclevel-2"><a href="#Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F"><span class="tocnumber">1.27</span> <span class="toctext">Which method to do $TASK_X is faster? How can I optimise my Perl programs?</span></a></li><li class="toclevel-2"><a href="#Oh_no.21_CPAN_won.27t_use_the_packages_it_has_downloaded.21__It_says_the_checksums_are_invalid.21"><span class="tocnumber">1.28</span> <span class="toctext">Oh no! CPAN won&apos;t use the packages it has downloaded! It says the checksums are invalid!</span></a></li><li class="toclevel-2"><a href="#How_can_I_search_for_a_value_inside_an_array.3F"><span class="tocnumber">1.29</span> <span class="toctext">How can I search for a value inside an array?</span></a></li><li class="toclevel-2"><a href="#How_can_I_prepare_a_self-contained_Perl_executable.3F"><span class="tocnumber">1.30</span> <span class="toctext">How can I prepare a self-contained Perl executable?</span></a></li><li class="toclevel-2"><a href="#How_can_I_compile_my_code_to_obscure_.2F_obfuscate_the_source.3F"><span class="tocnumber">1.31</span> <span class="toctext">How can I compile my code to obscure / obfuscate the source?</span></a></li><li class="toclevel-2"><a href="#When_is_Perl_6_going_to_be_ready.3F"><span class="tocnumber">1.32</span> <span class="toctext">When is Perl 6 going to be ready?</span></a></li><li class="toclevel-2"><a href="#Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F"><span class="tocnumber">1.33</span> <span class="toctext">Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5?</span></a></li><li class="toclevel-2"><a href="#How_can_I_match_a_string_variable_inside_a_regex.3F"><span class="tocnumber">1.34</span> <span class="toctext">How can I match a string variable inside a regex?</span></a></li><li class="toclevel-2"><a href="#Where_can_I_find_lists_of_Programming_Challenges.3F"><span class="tocnumber">1.35</span> <span class="toctext">Where can I find lists of Programming Challenges?</span></a></li><li class="toclevel-2"><a href="#Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29"><span class="tocnumber">1.36</span> <span class="toctext">Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop)</span></a></li><li class="toclevel-2"><a href="#How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F"><span class="tocnumber">1.37</span> <span class="toctext">How can I store Perl Data Structures on the Hard Disk?</span></a></li><li class="toclevel-2"><a href="#How_can_I_do_a_switch_statement_in_Perl.3F"><span class="tocnumber">1.38</span> <span class="toctext">How can I do a switch statement in Perl?</span></a></li><li class="toclevel-2"><a href="#How_can_I_determine_the_type_of_a_reference_.28array.2C_hash.2C_scalar.2C_etc..29.3F"><span class="tocnumber">1.39</span> <span class="toctext">How can I determine the type of a reference (array, hash, scalar, etc.)?</span></a></li><li class="toclevel-2"><a href="#How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F"><span class="tocnumber">1.40</span> <span class="toctext">How can I parse a CSV (Comma separated value / comma delimited value) file?</span></a></li><li class="toclevel-2"><a href="#How_can_I_access_the_global_variables_in_my_script_from_a_different_module_and.2For_namespace"><span class="tocnumber">1.41</span> <span class="toctext">How can I access the global variables in my script from a different module and/or namespace</span></a></li><li class="toclevel-2"><a href="#How_can_I_set_up_a_timeout_for_a_blocking_operation.3F"><span class="tocnumber">1.42</span> <span class="toctext">How can I set up a timeout for a blocking operation?</span></a></li><li class="toclevel-2"><a href="#How_can_I_match_.28and_possibly_replace.29_the_Nth_expression_out_of_a_string.3F"><span class="tocnumber">1.43</span> <span class="toctext">How can I match (and possibly replace) the Nth expression out of a string?</span></a></li><li class="toclevel-2"><a href="#How_do_I_prepend_data_to_a_file.2C_take_out.2Fdelete_data_from_the_middle_of_the_file_or_insert_data_into_the_middle_of_the_file.3F"><span class="tocnumber">1.44</span> <span class="toctext">How do I prepend data to a file, take out/delete data from the middle of the file or insert data into the middle of the file?</span></a></li><li class="toclevel-2"><a href="#How_do_I_pass_a_reference_to_an_object.27s_method.3F_.28Also_known_as_class_subroutine_or_member_function.29"><span class="tocnumber">1.45</span> <span class="toctext">How do I pass a reference to an object&apos;s method? (Also known as class subroutine or member function)</span></a></li><li class="toclevel-2"><a href="#How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F"><span class="tocnumber">1.46</span> <span class="toctext">How do I trim leading and/or trailing whitespace from a string?</span></a></li><li class="toclevel-2"><a href="#How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29"><span class="tocnumber">1.47</span> <span class="toctext">How do I add directories to the list of paths where Perl searches for modules? (@INC)</span></a></li><li class="toclevel-2"><a href="#How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F"><span class="tocnumber">1.48</span> <span class="toctext">How can I get perl to print each line as it is executed (similar to the shell&apos;s -x flag)?</span></a></li><li class="toclevel-2"><a href="#I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F"><span class="tocnumber">1.49</span> <span class="toctext">I&apos;m trying to use threads to speed up my program. What should I know?</span></a></li><li class="toclevel-2"><a href="#Should_I_be_using_mod_perl.3F"><span class="tocnumber">1.50</span> <span class="toctext">Should I be using mod_perl?</span></a></li><li class="toclevel-2"><a href="#How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F"><span class="tocnumber">1.51</span> <span class="toctext">How can I find which modules a Perl program or module depends on?</span></a></li></ul></li><li class="toclevel-1"><a href="#Some_Related_IRC_Channels_on_Freenode"><span class="tocnumber">2</span> <span class="toctext">Some Related IRC Channels on Freenode</span></a><ul><li class="toclevel-2"><a href="#.23perlcafe"><span class="tocnumber">2.1</span> <span class="toctext">#perlcafe</span></a></li><li class="toclevel-2"><a href="#.23perl6"><span class="tocnumber">2.2</span> <span class="toctext">#perl6</span></a></li><li class="toclevel-2"><a href="#.23lispcafe"><span class="tocnumber">2.3</span> <span class="toctext">#lispcafe</span></a></li><li class="toclevel-2"><a href="#.23perl-cats"><span class="tocnumber">2.4</span> <span class="toctext">#perl-cats</span></a></li></ul></li><li class="toclevel-1"><a href="#People"><span class="tocnumber">3</span> <span class="toctext">People</span></a><ul><li class="toclevel-2"><a href="#Channel_Owner"><span class="tocnumber">3.1</span> <span class="toctext">Channel Owner</span></a><ul><li class="toclevel-3"><a href="#thrig"><span class="tocnumber">3.1.1</span> <span class="toctext">thrig</span></a></li></ul></li><li class="toclevel-2"><a href="#Channel_Operators"><span class="tocnumber">3.2</span> <span class="toctext">Channel Operators</span></a><ul><li class="toclevel-3"><a href="#apeiron"><span class="tocnumber">3.2.1</span> <span class="toctext">apeiron</span></a></li><li class="toclevel-3"><a href="#beth"><span class="tocnumber">3.2.2</span> <span class="toctext">beth</span></a></li><li class="toclevel-3"><a href="#Chris62vw"><span class="tocnumber">3.2.3</span> <span class="toctext">Chris62vw</span></a></li><li class="toclevel-3"><a href="#f00li5h"><span class="tocnumber">3.2.4</span> <span class="toctext">f00li5h</span></a></li><li class="toclevel-3"><a href="#mst"><span class="tocnumber">3.2.5</span> <span class="toctext">mst</span></a></li><li class="toclevel-3"><a href="#Paladin"><span class="tocnumber">3.2.6</span> <span class="toctext">Paladin</span></a></li><li class="toclevel-3"><a href="#rindolf"><span class="tocnumber">3.2.7</span> <span class="toctext">rindolf</span></a></li><li class="toclevel-3"><a href="#simcop2387"><span class="tocnumber">3.2.8</span> <span class="toctext">simcop2387</span></a></li></ul></li><li class="toclevel-2"><a href="#Channel_Regulars"><span class="tocnumber">3.3</span> <span class="toctext">Channel Regulars</span></a><ul><li class="toclevel-3"><a href="#ivantis.5B.5E3.5D.2A"><span class="tocnumber">3.3.1</span> <span class="toctext">ivantis[^3]*</span></a></li><li class="toclevel-3"><a href="#alanhaggai"><span class="tocnumber">3.3.2</span> <span class="toctext">alanhaggai</span></a></li><li class="toclevel-3"><a href="#dazjorz"><span class="tocnumber">3.3.3</span> <span class="toctext">dazjorz</span></a></li><li class="toclevel-3"><a href="#pkrumins"><span class="tocnumber">3.3.4</span> <span class="toctext">pkrumins</span></a></li><li class="toclevel-3"><a href="#whoppix"><span class="tocnumber">3.3.5</span> <span class="toctext">whoppix</span></a></li></ul></li><li class="toclevel-2"><a href="#Bots"><span class="tocnumber">3.4</span> <span class="toctext">Bots</span></a><ul><li class="toclevel-3"><a href="#perlbot"><span class="tocnumber">3.4.1</span> <span class="toctext">perlbot</span></a></li><li class="toclevel-3"><a href="#buubot"><span class="tocnumber">3.4.2</span> <span class="toctext">buubot</span></a></li><li class="toclevel-3"><a href="#CPAN2"><span class="tocnumber">3.4.3</span> <span class="toctext">CPAN2</span></a></li><li class="toclevel-3"><a href="#GumbyPAN"><span class="tocnumber">3.4.4</span> <span class="toctext">GumbyPAN</span></a></li><li class="toclevel-3"><a href="#GumbyBRAIN"><span class="tocnumber">3.4.5</span> <span class="toctext">GumbyBRAIN</span></a></li><li class="toclevel-3"><a href="#farnsworth"><span class="tocnumber">3.4.6</span> <span class="toctext">farnsworth</span></a></li><li class="toclevel-3"><a href="#perlbot2"><span class="tocnumber">3.4.7</span> <span class="toctext">perlbot2</span></a></li><li class="toclevel-3"><a href="#f00bot"><span class="tocnumber">3.4.8</span> <span class="toctext">f00bot</span></a></li><li class="toclevel-3"><a href="#ivantis3.5B.60_.5D.2A"><span class="tocnumber">3.4.9</span> <span class="toctext">ivantis3[`_]*</span></a></li></ul></li></ul></li><li class="toclevel-1"><a href="#Our_Milestone_Pictures"><span class="tocnumber">4</span> <span class="toctext">Our Milestone Pictures</span></a></li></ul></td></tr></table>
+<h2 id="Commonly_Asked_Questions"> Commonly Asked Questions </h2>
+<h3 id="What_are_the_Rules_of_Conduct.3F"> What are the Rules of Conduct? </h3><ol><li> Don&apos;t flood the channel with your paste. Instead use a pastebot - type <tt>perlbot paste</tt>. </li><li> Be civil and friendly. </li><li> Try to use proper English spelling, grammar, syntax, and phrasing. This will help the channel members understand your questions more easily and thus allow them to provide better answers. </li><li> Whenever someone helps you then: <ol><li> Thank them! </li><li> Bump their karma. For example if <tt>johndoe</tt> helps you then say <tt>johndoe++</tt>. </li></ol></li><li> When addressing a channel member, start your message with their nickname followed by a colon (&quot;:&quot;). For example <tt>johndoe: I understand it now.</tt> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <tt>@nick</tt> because most clients will not highlight it specially. </li><li> Do not private message (PM) a channel member using <tt>/msg</tt>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well. </li><li> Don&apos;t <b>overuse the evalbot</b> (<tt>eval: 5+6</tt>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <tt>/join #perlbot</tt>. </li><li> If someone needs too much help and handholding, please ask them to chat on one of the symbiont channels such as <tt>#perlcafe</tt> or <tt>#perl-cats</tt>. This will help increase the signal-to-noise ratio of #perl. </li></ol>
+
+<h4 id="Handling_criticism"> Handling criticism </h4>
+<p>As usual the rule is <b>Don&apos;t be right - be smart.</b>. When someone criticises you (and may be an op), you should: 1. Ask them what they mean. 2. Agree and empathise with them, 3. Try to negotiate a common ground. Don&apos;t try to be defensive-aggressive and try to prove the other side&apos;s wrong because that will only make them more angry at you.
+</p>
+<p>Naturally, this applies primarily to personal criticisms or those that influence one&apos;s behaviour in the channel. If you&apos;re having a &quot;colour of the bikeshed&quot; argument (i.e &quot;Subversion vs. git vs. bzr vs. hg vs....&quot;) or a discussion about whether <tt>$self-&gt;method(%args)</tt> is better than <tt>$self-&gt;method({%args})</tt>, a silly off-topic discussion about whether <a href="http://www.shlomifish.org/humour/bits/facts/Chuck-Norris/" title="http://www.shlomifish.org/humour/bits/facts/Chuck-Norris/">Chuck Norris</a> can beat Superman or Batman or not, or something like that, then probably much less is at stake there.
+</p>
+<p>For more information see:
+</p><ul><li><a href="http://www.shlomifish.org/philosophy/books-recommends/#feeling_good" title="http://www.shlomifish.org/philosophy/books-recommends/#feeling_good">Feeling Good</a></li><li><a href="http://geeketiquette.com/" title="http://geeketiquette.com/">Geek Etiquette</a></li></ul>
+
+<h4 id="English_usage"> English usage </h4>
+<p>Not all of the people on #perl are native English speakers. We also welcome people of all nationalities and native languages, even if their English is not perfect. However, we expect people to try to improve their written English in time, and learn from their mistakes. Improving your mastery of English will not only make it easier for you to communicate, but will also give you access to more high-quality material about Perl and programming in general (written either by native or non-native English speakers); allow you to better comment, document and communicate about your code; and finally, it will improve your skills as a programmer, because there is a general belief that people who speak and write human languages well, write better, more elegant and more idiomatic code.
+</p>
+<p>It&apos;s OK to have bad English, but you should try to improve it, because many native and non-native speakers (especially many geeks who are less capable of understanding the meaning of badly phrased sentences) will have a hard time understanding you.
+</p>
+<p>In addition to that, we should note that you should be tolerable of other people&apos;s not-so-idiomatic or possibly may-be-considered-derogatory English because they may speak, and think in a slightly different language than in English. For examples, in some languages there are non-derogatory words for a &quot;female guy&quot;, whereas in English &quot;girl&quot; and &quot;gal&quot; are somewhat derogatory. As a result, a non-native English speaker may use them this way. (See for example what <a href="http://shlomif.livejournal.com/55146.html" title="http://shlomif.livejournal.com/55146.html">Shlomi Fish (rindolf) wrote about Hebrew words to describe humans</a>).
+</p>
+<p>Moreover, in some languages it is more natural to say &quot;a guy from work&quot;, &quot;a girl from work&quot; than &quot;my co-worker&quot;, and most Indo-European and Semitic languages have compulsory genders, including for inanimate objects, so it&apos;s natural for their English to be not-so-idiomatic.
+</p>
+<p>Finally, some foreign or non-foreign people may try to emulate some American, British, Australian, etc. culture, which they see on Television, movies, etc. and while this may seem silly at times, should also be tolerated.
+</p>
+<p>So don&apos;t be too strict about which language is being said.
+</p>
+<h3 id="I.27ve_become_an_Operator._What_should_I_do_now.3F"> I&apos;ve become an Operator. What should I do now? </h3><ol><li> Don&apos;t remain an operator for too long. Become an operator only to change the topic or to warn someone that he would be kicked if they continue with their abusive beahviour, or to ban an abusive person (see below). Use /msg ChanServ OP #perl $my_nick to become an operator, and de-op yourself using your IRC client to switch back and forth. </li><li> You should kick someone only if: <ol><li> They are flooding the channel. </li><li> They have been warned about being annoying or abusive at least twice, while the person who has warned them has been an op, and still continue. Do not randomly kick people without warning them. We don&apos;t want #perl to be turned into another EF-Net. </li></ol></li><li> You should ban someone only if: <ol><li> They continuously join after being kicked several times. </li><li> They are spammers who spam the channel with ads or other things like that. </li></ol></li><li> The topic should remain in good taste. Don&apos;t put material that is sexist, racist, or otherwise insulting there. </li></ol>
+<h3 id="What_do_I_need_to_do_to_get_a_good_answer_to_my_question.3F"> What do I need to do to get a good answer to my question? </h3>
+<p>If you ask a bad question, you&apos;ll often get a bad answer, or no answer at all. As the questioner you probably won&apos;t realise that you are stating your question badly. When asking a question try to focus on the underlying task or goal, not the method you are currently trying.
+</p>
+<p>Try to step away from the problem you&apos;re working with and see if you can trim your data set to about 5 lines and your code to less than 10 and still demonstrate the problem. We don&apos;t want to understand how your whole application works just in order to understand your question.
+</p>
+<p>Please paste the code that reproduces the problem to one of the channel&apos;s pastebots, such as <a class="external free" href="http://erxz.com/pb/" title="http://erxz.com/pb/">http://erxz.com/pb/</a> . Paste the entire program, not selected parts of it and make sure you make your intentions clear. If the program is too long or is confidential, try to reduce it into a smaller testcase that still reproduces your problem.
+</p>
+<p>Show us that you&apos;ve put some effort into finding the answer yourself, or at least writing the question down well. This is much more likely to be rewarded by us giving you some of our time to help you fix whatever your problem is. Read the following resources for hints on how to ask questions that encourage answers. These techniques work on IRC channels, mailing lists and online forums.
+</p><ul><li><a href="http://perlmonks.org/?node_id=50427" title="http://perlmonks.org/?node_id=50427">On asking for help</a></li><li><a href="http://perl.plover.com/Questions.html" title="http://perl.plover.com/Questions.html">Why questions go unanswered</a></li><li><a href="http://www.catb.org/~esr/faqs/smart-questions.html" title="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a></li><li><a href="http://perlmonks.org/?node_id=172086" title="http://perlmonks.org/?node_id=172086">How (Not) To Ask A Question</a></li></ul>
+<h3 id="What_is_Considered_On-Topic.3F"> What is Considered On-Topic? </h3>
+<p>Almost everything, but not all. Things which are frowned upon are:
+</p><ol><li> Overly graphical depictions of pornography or violence. </li><li> Annoying trolling, preaching or sex advice. </li><li> Flooding the channel with large pastes. </li><li> Too much bot-playing. </li><li> Obscure or annoying political discussion. This is what #politics or #perlcafe are for. Note that some interesting polito-philosophical discussion may be tolerated. </li></ol>
+<p>Another negative trend was that sometimes two or three people kept discussing their own pet projects or the Pike language or whatever, and it was of little interest to the rest of the channel, and they were instructed to discuss it elsewhere.
+</p>
+<p>Otherwise we tolerate and like discussions about:
+</p><ol><li> Perl. (Naturally). </li><li> Computing in general. (UNIX, Linux, Mac OS X, history of computing, etc.) </li><li> Other programming languages - C and C++; Perl alternatives like PHP, Python or Ruby; Lisp and Scheme; Haskell, O&apos;Caml, etc.; Assembler; and more exotic languages. <ul><li> We still try to focus on Perl, though. </li></ul></li><li> Geography, culture, linguistics, languages, etc. </li><li> Science. </li><li> Philosophy. </li><li> Popular Culture </li><li> Etc. </li></ol>
+<p>It is considered polite to keep off-topic - that is, non-Perl-related - discussion to a minimum when people in the channel are genuinely trying to get Perl help, since it seems unfair that a topical discussion get swamped by a lot of off-topic messages. Please consider that people who are asking for help are more likely to have less experience with following separate discussions in IRC.
+</p>
+<p>The channel <a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe" title="Freenode Sharp Perlcafe">#perlcafe</a> was an attempt to move off-topic and advanced discussion out of #perl. However, it didn&apos;t work, but, on the other hand, #perlcafe now hosts a lot of discussion that we feel should better be kept out of #perl.
+</p>
+
+<h4 id="Perl_Includes_CPAN"> Perl Includes CPAN </h4>
+<p>One thing to note that is as opposed to some programming language channels on Freenode that limit themselves to the core language (which is sometimes fully specified in a standard), we not only have a problem in discussing non-core code, but even encourage you to use many high-quality, recommended, yet non-core, modules from <a href="http://perl.net.au/wiki/CPAN" title="CPAN">CPAN</a> - the Comprehensive Perl Archive Network. To quote Audrey Tang had said &quot;UNIX is my IDE, perl 5 is my VM, CPAN is my language.&quot;.
+</p>
+<p>Please read what <a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/" title="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">Matt Trout (mst) wrote about &quot;But I can&apos;t use CPAN&quot;</a>, and the <a href="http://podcats.in/development/share-and-share-alike.html" title="http://podcats.in/development/share-and-share-alike.html">continuation post by Altreus titled &quot;Share and Share-Alike&quot; for our motivation</a>. You may also get some help with some non-CPAN Perl code as long as you show some willingness to learn Perl, and <a href="http://community.livejournal.com/shlomif_tech/37969.html" title="http://community.livejournal.com/shlomif_tech/37969.html">to modernise and/or refactor it if necessary</a>.
+</p>
+<p>If this is homework, and your professor gives some constraints on what you can use (*sigh*) or your pointy-haired-boss (PHB) is constraining you in various ways (double *sigh*), please mention it when asking your question and we may still help you if the non-CPAN-enabled solution is, while not ideal, is still doable elegantly.
+</p>
+<h3 id="I_need_help_with_tweaking_a_Perl_script_that_I_found.2C_and_I_don.27t_want_to_learn_Perl._Can_you_guys_help_me.3F"> I need help with tweaking a Perl script that I found, and I don&apos;t want to learn Perl. Can you guys help me? </h3>
+<p>The best way to get assistance with a Perl problem is to demonstrate that you&apos;ve taken some steps to try to find the answer yourself. This involves learning Perl enough to be able to fix the problem yourself. Learning Perl is not too hard and will prove useful into the future.
+</p>
+<p>Alternatively, you can pay someone to help you. Just ask on the channel if someone wishes to be paid. If you&apos;re trying to modify a Perl script without <a href="http://perl.net.au/wiki/Learning_Perl" title="Learning Perl">learning Perl</a> (or paying someone who knows Perl) then we&apos;re not going to help. To quote <a href="http://en.wikipedia.org/wiki/Aesop" title="http://en.wikipedia.org/wiki/Aesop">Aesop</a>: &quot;The gods help them that help themselves.&quot;.
+</p>
+<h3 id="I.27d_like_to_run_a_script_.28which_I_wrote_or_downloaded.29_on_a_cheap_.28or_free.29_web-hosting_that_only_gives_me_FTP._Can_you_help.3F"> I&apos;d like to run a script (which I wrote or downloaded) on a cheap (or free) web-hosting that only gives me FTP. Can you help? </h3>
+<p>Perl due to its architecture usually requires a bit more than an el-cheapo or &quot;free&quot; web-hosting. You need at least an ssh account, and often also a virtual server. There ain&apos;t no such thing as a free lunch. While many web-services are free, one has to understand that maintaining a server costs money, and the bandwidth costs money, and there&apos;s a lot of other costs. If you want something good, you have to pay for it, even in the modern Internet world. If you can&apos;t pay for it, you can try to find someone who&apos;ll host you free-of-charge, but note that it&apos;s also not trivial.
+</p>
+<p>So please pay for hosting, have an ssh access, be able to install more CPAN modules, and let us know what the logs show. If you don&apos;t have money, just learn more Perl and become a Perl programmer. There&apos;s a huge demand for them, at the moment, and we could always <a href="http://perl-begin.org/learn/get-a-job/" title="http://perl-begin.org/learn/get-a-job/">use your help</a>.
+</p>
+<h3 id="I_need_help_with_a_non-Perl_Regular_Expression_.28PHP.2C_grep.2C_PCRE.2C_etc..29"> I need help with a non-Perl Regular Expression (PHP, grep, PCRE, etc.) </h3>
+<p>If you&apos;re looking for assistance with a non-Perl problem, you&apos;ve probably come to the wrong channel. You can try asking, but don&apos;t be surprised if you don&apos;t get an answer (or someone suggests you ask elsewhere) as Perl regular expressions are different from the regular expressions used by other programs and languages.
+</p>
+<h3 id="Can_you_recommend_a_good_Perl_Editor.2FIDE.3F"> Can you recommend a good Perl Editor/IDE? </h3>
+<p>See: <a href="http://padre.perlide.org/" title="http://padre.perlide.org/">Padre IDE</a>, <a href="http://perl.net.au/wiki/Perl_developer_tools" title="Perl developer tools">Perl developer tools</a>
+</p>
+<h3 id="Why_doesn.27t_my_script_run.3F"> Why doesn&apos;t my script run? </h3>
+<p>There can be several reasons:
+</p><ol><li> Are you sure you got the she-bang right? </li></ol><dl><dd> This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On Windows you can just write <tt>#!perl</tt> but it is recommended to write <tt>#!/usr/bin/perl</tt> (Windows will ignore the path). If you&apos;re writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the <a href="http://en.wikipedia.org/wiki/Carriage_return" title="http://en.wikipedia.org/wiki/Carriage_return">carriage return</a>. This won&apos;t be a problem if you&apos;re using any switches on this line. </dd></dl><ol><li> If you&apos;re using Unix or a Unix-like operating system, check that your program is set to be executable (<tt>chmod a+x &lt;file&gt;</tt>). </li><li> Are you sure your script compiles and runs? Test it locally (<tt>perl -c &lt;file&gt;</tt>), test it remotely. If it&apos;s a CGI script, check the error log. </li></ol>
+<h3 id="Why_doesn.27t_my_script_work.3F"> Why doesn&apos;t my script work? </h3>
+<p>First of all it would be useful for you to tell us exactly how it doesn&apos;t work. Does it produce the wrong output? Does it not do what you want to do?
+</p><ol><li> Turn on warnings. Add a -w to your she-bang line <tt>#!/usr/bin/perl -w</tt> and fix your code so no warnings are emitted. </li><li> Turn on strict. Add the line <tt>use strict;</tt> under the she-bang line and fix the errors that creates. </li><li> Use the perl debugger - <tt>perl -d</tt>, etc. to see where exactly it fails. </li></ol>
+<h3 id="How_should_I_write_my_code.3F"> How should I write my code? </h3>
+<p>Well, to quote the omniscient perlbot:
+</p><pre>  &lt;perlbot&gt; no strict no warnings no help. That&apos;s the #perl motto!
+</pre>
+<p>Make sure you add &quot;use strict;&quot; and &quot;use warnings;&quot; to your code. This is not the only thing you should do, though. Other good practices are:
+</p><ol><li> Use lexical file handles (<tt>open my $file_handle, ...</tt>) and three args open (<tt>open my $file_handle, &quot;&gt;&quot;, $filename</tt> instead of <tt>open my $file_handle &quot;&gt;$filename&quot;</tt>) and add trailing or&apos;s to your open statements (or alternatively use the &quot;Fatal&quot; or &quot;autodie&quot; modules.) </li><li> When extracting arguments out of @ARGV or @_ , don&apos;t do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html" title="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <tt>my ($param1, $param2...) = @_;</tt>. The reason for that is that if you insert an argument in the middle, you&apos;ll need to update all indices. <ul><li> For @ARGV also look at <a class="extiw" href="http://search.cpan.org/dist/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules. </li></ul></li><li> Don&apos;t abuse the default variable - <tt>$_</tt>. Use explicit variables instead whenever possible, and don&apos;t nest two <tt>$_</tt>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html" title="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html" title="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts. </li><li> To subscript an array/hash reference, don&apos;t do something like <tt>${$array_ref}[$index]</tt> (or worse - <tt>$$array_ref[$index]</tt> - instead use <tt>$array_ref-&gt;[$index]</tt> which is clearer and better. Note that if you want to take an array or hash slice, then you do need to use <tt>@{$array_ref}[@indexes]</tt> and that&apos;s ok. <ul><li> Also note that the second and subsequent subscripts have optional arrows so: <tt>$array_ref-&gt;[$index1]-&gt;{$key1}</tt> can be written as <tt>$array_ref-&gt;[$index]{$key1}</tt>. The first arrow is not optional so you cannot say <tt>$array_ref[$index1]</tt> which belongs to the array <tt>@array_ref</tt>. </li></ul></li></ol>
+<p>For more information refer to <a href="http://perl.net.au/wiki/Damian_Conway" title="Damian Conway">Damian Conway</a>&apos;s book <a href="http://perl.net.au/wiki/Perl_Best_Practices" title="Perl Best Practices">Perl Best Practices</a>.
+</p>
+<h3 id="I_need_to_parse_HTML_with_Perl_.28and_my_Regular_Expression_does_not_work.29"> I need to parse HTML with Perl (and my Regular Expression does not work) </h3>
+<p>If you want to parse HTML with Perl, then <a href="http://htmlparsing.icenine.ca/" title="http://htmlparsing.icenine.ca/">regular expressions are probably not the answer</a>. Instead look at:
+</p><ul><li><a href="http://search.cpan.org/perldoc?Web::Scraper" title="http://search.cpan.org/perldoc?Web::Scraper">Web::Scraper</a></li><li><a href="http://search.cpan.org/dist/HTML-Parser/lib/HTML/TokeParser.pm" title="http://search.cpan.org/dist/HTML-Parser/lib/HTML/TokeParser.pm">HTML::TokeParser</a> - a basic tokenising HTML parser. </li><li><a href="http://cpan.uwinnipeg.ca/htdocs/HTML-Tree/HTML/TreeBuilder.html" title="http://cpan.uwinnipeg.ca/htdocs/HTML-Tree/HTML/TreeBuilder.html">HTML::TreeBuilder</a> - an abstraction for searching the HTML document as a tree. </li><li><a href="http://search.cpan.org/dist/XML-LibXML/" title="http://search.cpan.org/dist/XML-LibXML/">XML::LibXML</a> - has an HTML Parser with a DOM/XPath interface. </li></ul>
+<h3 id="Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F"> Can I write Graphical User-Interfaces (GUIs) in Perl? And How? </h3>
+<p>Yes, you can. Here&apos;s how:
+</p><ol><li><a href="http://search.cpan.org/dist/Tkx/" title="http://search.cpan.org/dist/Tkx/">Tkx</a> - a cross-platform wrapper for Tcl/Tk, providing native look on every OS. Excellent tutorial at <a href="http://www.tkdocs.com/tutorial/" title="http://www.tkdocs.com/tutorial/">TkDocs</a>. </li><li><a href="http://www.perltk.org/" title="http://www.perltk.org/">Perl/Tk</a> - an old cross-platform toolkit, with a few limitations and a poor look and feel. Should be very flexible. </li><li><a href="http://wxperl.sourceforge.net/" title="http://wxperl.sourceforge.net/">wxPerl</a> - a cross-platform GUI toolkit that uses the system&apos;s native controls. </li><li><a href="http://gtk2-perl.sourceforge.net/" title="http://gtk2-perl.sourceforge.net/">Perl/Gtk2</a> - a GUI toolkit primarily intended for UNIXes, but also works on Windows with a very non-native look. wxWidgets uses it on UNIXes. </li><li><a href="http://perlqt.sourceforge.net/" title="http://perlqt.sourceforge.net/">PerlQt</a> - Perl using the Qt widget toolkit, on which KDE is based. Unmaintained. </li></ol>
+<h3 id="How_can_I_break.2Fskip_an_outer_loop.3F"> How can I break/skip an outer loop? </h3>
+<p>If you have two nested loops:
+</p><pre>   for my $person ($jack, $sophie, $alice, $bob, $eve)
+   {
+       for my $community ($hackers, $perlers, $australians)
+       {
+            $community-&gt;add_member($person);
+       }
+   }
+</pre>
+<p>And you want to break or skip an iteration out of the people loop in this case, then you can do a &quot;last LABEL&quot; or &quot;next LABEL&quot; feature, by labelling the method first:
+</p><pre>   PERSONS:
+   for my $person ($jack, $sophie, $alice, $bob, $eve)
+   {
+       for my $community ($hackers, $perlers, $australians)
+       {
+            if (! $community-&gt;add_member($person))
+            {
+                 warn &quot;Could not add &quot; . $person-&gt;name() . &quot; to &quot; . $community-&gt;name() . &quot;\n&quot;;
+                 next PERSONS; # Will skip out of the for my $person loop.
+            }
+       }
+   }
+</pre>
+<p>Read <a href="http://perldoc.perl.org/perlsyn.html" title="http://perldoc.perl.org/perlsyn.html">perlsyn</a> for more information.
+</p>
+<h3 id="How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F"> How can I include a script into a different script and still see the lexical (&quot;my&quot;) variables declared there? </h3>
+<p>The short answer is that when a file is being <tt>do</tt>&apos;ed, <tt>eval slurp($file)</tt>&apos;ed, <tt>require</tt>&apos;ed or <tt>use</tt>&apos;ed it happens in a nested scope to the invoked one. As a result lexical variables (those declared with <tt>my</tt>) are inaccessible from the calling scope. The Perl 5 designers considered merely including the code of another file in another program directly a bad idea.
+</p>
+<p>What you should do instead is either:
+</p><ol><li> Convert the included code to be a Perl module (a <tt>.pm</tt> file). Then use or require it. </li><li> Invoke the perl script as a separate process if it&apos;s appropriate. </li></ol>
+<p>If you want to access the variables of a different file, you need to declare them using <tt>our</tt> or the <tt>use vars</tt> pragma. A more advisable way would be to control access to them using functions.
+</p>
+<p>For more information see:
+</p><ol><li><a href="http://perl.plover.com/FAQs/Namespaces.html" title="http://perl.plover.com/FAQs/Namespaces.html">Mark Jason Dominus&apos; &quot;Coping with Scoping&quot;</a></li><li><a href="http://www.stonehenge.com/merlyn/UnixReview/col46.html" title="http://www.stonehenge.com/merlyn/UnixReview/col46.html">Randal L. Schwartz&apos; &quot;Variables and Scoping&quot;</a></li><li><a href="http://www.mail-archive.com/linux-il%40cs.huji.ac.il/msg33714.html" title="http://www.mail-archive.com/linux-il%40cs.huji.ac.il/msg33714.html">A post to the Linux-IL mailing list</a> explaining the difference between local and my by <a href="http://perl.net.au/wiki/Shlomi_Fish" title="Shlomi Fish">Shlomi Fish</a>. </li></ol>
+<h3 id="How_can_I_format_numbers_with_certain_digits.3F"> How can I format numbers with certain digits? </h3>
+<p>Use <a href="http://perldoc.perl.org/functions/sprintf.html" title="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>
+</p>
+<h3 id="How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F"> How can I have printf return a value instead of outputting to a filehandle? </h3>
+<p>See <a href="http://perldoc.perl.org/functions/sprintf.html" title="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>. sprintf is like printf, only it returns the output as a string. Its use is preferable over printf most of the time. Note that its semantics are different than C&apos;s sprintf. In C you do:
+</p><pre>  char buffer[1024];
+  sprintf(buffer, &quot;%d Days until %s&apos;s birthday.&quot;, days, name);
+</pre>
+<p>And in Perl you do:
+</p><pre>  my $string = sprintf(&quot;%d Days until %s&apos;s birthday.&quot;, $days, $name);
+</pre>
+<h3 id="Where_else_can_I_go_for_help.3F"> Where else can I go for help? </h3>
+<p>You may find these other resources useful as well:
+</p><ul><li><a href="http://www.pm.org/" title="http://www.pm.org/">Your local Perl Monger group</a></li><li><a href="http://perlmonks.org/" title="http://perlmonks.org/">Perl Monks forum</a></li></ul>
+<h3 id="How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F"> How do I know the index of the element in a foreach loop? </h3>
+<p>The short answer is that you don&apos;t. The obvious workaround is to write something like this:
+</p><pre>   foreach my $idx (0 .. $#array)
+   {
+        my $elem = $array[$idx];
+
+        # Do something with $elem and $idx
+   }
+</pre>
+<p>The longer answer is that there are often better ways to do it.
+</p>
+<h3 id="Is_there_anyway_to_compile_Perl_code_to_an_executable.3F"> Is there anyway to compile Perl code to an executable? </h3>
+<p>One option is <a href="http://par.perl.org/" title="http://par.perl.org/">PAR - The Perl Archiver</a>, which prepares an .exe that contains all your code, ready to run. This way is is easier to deploy on platforms that don&apos;t have perl5, some of the Perl modules or extensions, or certain C libraries.
+</p>
+<p>Alternatively, if you want to compile Perl code into machine code, then a partial solution was done by perlcc and the C:: namespace on CPAN. Note that it still includes the entire Perl run time (to handle string eval etc.), so it creates bloated executables.
+</p>
+<h3 id="How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F"> How do I perform operations on entire directories (delete them, copy them, etc.)? </h3>
+<p>First of all see <a href="http://perldoc.perl.org/File/Path.html" title="http://perldoc.perl.org/File/Path.html">the File::Path module</a> and see if it has what you want. It can delete an entire directory tree as well as do the equivalent of &quot;mkdir -p&quot;. To traverse an entire directory tree, see <a href="http://perladvent.pm.org/2006/2/" title="http://perladvent.pm.org/2006/2/">File::Find and its equivalents.</a>.
+</p>
+<p>To do the equivalent of &quot;cp -R&quot; (i.e: copy an entire directory tree recursively) in portable Perl, you&apos;ll either need to write something yourself or <a href="http://search.cpan.org/" title="http://search.cpan.org/">find a good CPAN module for that</a>.
+</p>
+<h3 id="I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F"> I want to run a shell command from Perl, and possibly trap its output. How? </h3>
+<p>1. To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html" title="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly to the executable, without prior processing by the shell. The <tt>system(&quot;$str&quot;)</tt> notation, which is explained below has different semantics.
+</p>
+<p>2. To do the same while capturing the output, the best way is to use <a href="http://perldoc.perl.org/perlopentut.html" title="http://perldoc.perl.org/perlopentut.html">the open function</a> like this:
+</p><pre>   open my $cmd, &apos;-|&apos;, $program_name, @args
+        or die &quot;Error in executing cmd. $!&quot;;
+   # Read from $cmd with &lt;$cmd&gt; or whatever.
+
+   .
+   .
+   .
+   close($cmd);
+</pre>
+<p>Note that this will not work in some older versions of perl5.
+</p>
+<p>3. If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html" title="http://perldoc.perl.org/functions/system.html">system(&quot;$string&quot;)</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators" title="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <tt>open &quot;cmd|&quot;</tt> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not properly escaped, they can be used to execute arbitrary shell code. Look at <a href="http://search.cpan.org/dist/String-ShellQuote/" title="http://search.cpan.org/dist/String-ShellQuote/">the String-ShellQuote module</a> on the CPAN for a portable way to quote strings for passage as parameters to shell commands in such execution strings.
+</p>
+<p>4. exec() is similar to system() and probably does not do what you want as it overwrites the current execution process of your Perl script with the new process.
+</p>
+<h3 id="How_can_I_Merge_Two_Hashes.3F"> How can I Merge Two Hashes? </h3>
+<p>If you simply do <tt>my %total = (%first_hash, %second_hash);</tt>, then <tt>%total</tt> will contain all the keys and values of <tt>%second_hash</tt>, along with all the keys in <tt>%first_hash</tt> that whose values were not run over by identical keys of <tt>%second_hash</tt>.
+</p>
+<p>Another option (which is probably slower) is to use:
+</p><pre>   @into{keys(%from)} = values(%from);
+</pre>
+<p>This will merge <tt>%into</tt> in place.
+</p>
+<p>If instead of completely overriding values, you want to make some combination of the values, you&apos;ll need to use something like that:
+</p><pre>   while (my ($key, $from_value) = each(%from))
+   {
+        $into{$key} = exists($into{$key})?? ACCUM_EXPR($key, $into{$key}, $from_value)?: $from{$key};
+   }
+</pre>
+<h3 id="How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F"> How can I match anything-except-a-regex inside a Perl regular expression? </h3>
+<p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string &quot;bar&quot; as an example then the negated regex will look something like &quot;[^b]|b[^a]|ba[^r]&quot;, and so it isn&apos;t supported. One option to workaround this problem is to make a smart use of the =~ operator, by matching a string and then using this operator to check if it doesn&apos;t match a regular expression.
+</p>
+<h3 id="Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F"> Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever? </h3>
+<p>See <a href="http://perl.net.au/wiki/Why_Learn_Perl" title="Why Learn Perl">Why Learn Perl</a>.
+</p>
+<h3 id="Is_Perl_better_than_PHP.2C_Python.2C_Ruby.2C_etc..3F"> Is Perl better than PHP, Python, Ruby, etc.? </h3>
+<p>See the above question.
+</p>
+<h3 id="Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F"> Which method to do $TASK_X is faster? How can I optimise my Perl programs? </h3>
+<p>Questions such as this come out very often on #perl. The answers to them are that:
+</p><ol><li> You can always Benchmark and see. See the <a class="extiw" href="http://search.cpan.org/dist/Benchmark" title="cpan:Benchmark">cpan:Benchmark</a> module which is part of the core. </li><li> Usually, the performance gained by doing micro-optimisations in Perl is not going to be worth the trouble. </li><li> If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl&apos;s XS or <a class="extiw" href="http://search.cpan.org/dist/Inline-C" title="cpan:Inline-C">cpan:Inline-C</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need. </li></ol>
+<p>The legendary computer scientist <a class="extiw" href="http://www.wikipedia.org/wiki/Donald_Knuth" title="wikipedia:Donald_Knuth">wikipedia:Donald Knuth</a> has quoted C.A.R. Hoare in saying that <a href="http://c2.com/cgi/wiki?PrematureOptimization" title="http://c2.com/cgi/wiki?PrematureOptimization">&quot;Premature Optimisation is the Root of All Evil&quot;</a>, so it&apos;s worth paying attention to. (More discussion on the link).
+</p>
+<h3 id="Oh_no.21_CPAN_won.27t_use_the_packages_it_has_downloaded.21__It_says_the_checksums_are_invalid.21"> Oh no! CPAN won&apos;t use the packages it has downloaded! It says the checksums are invalid! </h3>
+<p>There are two reasons for this happening:
+</p><ol><li> You have a dodgy mirror. Try a different mirror and see if it clears up. </li><li> For whatever reason, the file is being downloaded and saved as .tar (but still very much compressed). The file gets recompressed and as such the checksum operation fails to produce a correct checksum. </li></ol>
+<p>For the latter, there is a relatively simple solution - move the .tar files to .tar.gz and rerun. Aaron_Mason wrote a script that runs CPAN with the parameters you seek, then check for any stray .tar files with a corresponding .tar.gz and move the .tar over the .tar.gz. This solution is far from foolproof, but got through a CPAN upgrade. The script is as follows:
+</p><pre>#!/usr/local/bin/bash
+
+&gt;cpan-cycle.$$
+
+moved=1
+
+while [ $moved -eq 1 ]; do
+
+        cpan $@
+
+        moved=0
+
+        find ~/.cpan -name \*.tar &gt; cpan-cycle.$$
+
+        while read line; do
+                if [ -e &quot;${line}.gz&quot; ]; then
+                        mv &quot;${line}&quot; &quot;${line}.gz&quot;
+                        moved=1
+                fi
+        done &lt;cpan-cycle.$$
+done
+
+rm cpan-cycle.$$
+</pre>
+<h3 id="How_can_I_search_for_a_value_inside_an_array.3F"> How can I search for a value inside an array? </h3>
+<p>See <a href="http://perldoc.perl.org/perlfaq4.html#How-can-I-tell-whether-a-certain-element-is-contained-in-a-list-or-array%3f" title="http://perldoc.perl.org/perlfaq4.html#How-can-I-tell-whether-a-certain-element-is-contained-in-a-list-or-array%3f">the perlfaq question &quot;How can I tell whether a certain element is contained in a list or array?&quot;</a> for an exhaustive discussion of this topic. One final correction to it is that &quot;any&quot; from <a class="extiw" href="http://search.cpan.org/dist/List::MoreUtils" title="cpan:List::MoreUtils">cpan:List::MoreUtils</a> would sometimes be more preferable to &quot;first&quot;, either to better convey the meaning that one is not interested in the value itself, but for its existence, and in the case that one is specifically looking for an undef() value.
+</p>
+<p>Also see <a href="http://szabgab.com/blog/2009/03/1237284490.html" title="http://szabgab.com/blog/2009/03/1237284490.html">this discussion on Gábor Szabó&apos;s &quot;Perl 6 Tricks and Treats&quot; newsletter</a> (and the link to the Israeli Perl Mongers discussion) for further discussion.
+</p>
+<h3 id="How_can_I_prepare_a_self-contained_Perl_executable.3F"> How can I prepare a self-contained Perl executable? </h3>
+<p>Look at <a class="new" href="http://perl.net.au/wiki/?title=PAR&amp;action=edit" title="PAR">PAR</a> (the Perl archiver) or commercial alternatives such as perl2exe. They package the perl interpreter, the necessary perl modules, shared libraries, etc. into a self-contained .exe or .zip.
+</p>
+<h3 id="How_can_I_compile_my_code_to_obscure_.2F_obfuscate_the_source.3F"> How can I compile my code to obscure / obfuscate the source? </h3>
+<p>The perl interpreter must know the source code of the program in order to execute it. As a result, there&apos;s no sure-fire way to obfuscate your source code. There also is a Perl-to-C compiler that could compile the C code to binaries, but it&apos;s no longer actively maintained.
+</p>
+<p>See PAR::Filter::Obfuscate, PAR::Filter::Crypto, Filter::Crypto::CryptFile, Module::Crypt, B::C on CPAN.
+</p>
+<h3 id="When_is_Perl_6_going_to_be_ready.3F"> When is Perl 6 going to be ready? </h3>
+<p>The common answer to this question is &quot;Perl 6 will be ready by Christmas. But we don&apos;t know which one.&quot;. Seriously now. Most of the active development on a Perl 6 compiler started with Pugs (the &quot;Perl 6 Users Golfing System&quot;) which was based on <a class="new" href="http://perl.net.au/wiki/?title=Haskell&amp;action=edit" title="Haskell">Haskell</a> and GHC, and proved to be an evolutionary dead end. The Pugs project still gave important deliverables such as a comprehensive test suite. Nowadays most work on the Perl 6 compilers concentrates on <a class="new" href="http://perl.net.au/wiki/?title=Rakudo&amp;action=edit" title="Rakudo">Rakudo</a>, which is based on the <a href="http://perl.net.au/wiki/Parrot" title="Parrot">Parrot</a> virtual machine, that is already mature and is past a 1.0 release.
+</p>
+<p>Rakudo is progressing nicely, but still has many lacking features, some bugs and also performs very poorly in comparison to perl 5. As a result, it is not recommended to use it for production, and you should instead use perl 5 (or a different mature language if that&apos;s your cup of tea).
+</p>
+<p>All that put aside, Rakudo can already be used to experiment with Perl 6 and to play with it.
+</p>
+<p>We have some jokes about the Perl 6 development process in <a href="http://perl.net.au/wiki/Perl_Humour" title="Perl Humour">Perl Humour</a>.
+</p>
+<h3 id="Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F"> Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5? </h3>
+<p><b>Yes.</b> Perl 6 is not going to make Perl 5 obsolete. It is a different language in the same lineage as Perl 5. The Perl 5 language and the perl5 implementation (soon to be at version perl-5.16), are actively used, and actively enhanced and developed. As Perl 6 is a different language, perl 5 will continue to see active use and development as Perl 6 matures and becomes usable. Perl 5 is not going away.
+</p>
+<p>At the moment, the Perl 6 implementations are not ready for use in production (due to incompleteness, poor performance and other factors), and if you wish to use any of these two (quite different) languages called &quot;Perl&quot; in production, then Perl 5 is still the sanest choice.
+</p>
+<h3 id="How_can_I_match_a_string_variable_inside_a_regex.3F"> How can I match a string variable inside a regex? </h3>
+<p>First of all one should note that regular expressions interpolate, so you can just say:
+</p>
+<p><br />
+</p><pre>   my $needle = &quot;Perl&quot;;
+   my $string = &quot;We love programming in Perl, and we program in it a lot.&quot;
+
+   if ($string =~ /$needle/)
+   {
+       # Success
+   }
+</pre>
+<p>And it will work. <b>However</b>, this will also insert special regular expression characters inside the regular expression, so if you have special characters like &quot;.&quot;, &quot;*&quot;, &quot;+&quot;, &quot;[&quot; , &quot;]&quot;, &quot;{&quot;,&quot;?&quot;, etc. they can disrupt the match (or even open your code to security problems). To resolve this, you should refer to <a href="http://perldoc.perl.org/functions/quotemeta.html" title="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f quotemeta</a>, which allows quoting it and to the \Q and \E escapes inside regexes which allows quoting them with convenience. So our code becomes:
+</p><pre>   if ($string =~ /\Q$needle\E/)
+</pre>
+<p>Note that if you&apos;re interested in searching for a simple substring, then there are <a href="http://perldoc.perl.org/functions/quotemeta.html" title="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f index</a> and <a href="http://perldoc.perl.org/functions/quotemeta.html" title="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f rindex</a> for that which are faster than a regular expression match and potentially safer.
+</p>
+<h3 id="Where_can_I_find_lists_of_Programming_Challenges.3F"> Where can I find lists of Programming Challenges? </h3>
+<p>Here are some lists:
+</p><ol><li><a href="http://projecteuler.net/" title="http://projecteuler.net/">Project Euler</a> - mathematical problems that one is expected to solve using a computer. </li><li><a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html" title="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html">99 Problems in Lisp</a> - most are applicable to Perl too. </li><li><a href="http://perl.plover.com/qotw/" title="http://perl.plover.com/qotw/">Perl Quiz of the Week</a> - Used to be active, and people may still peruse the archives for problems and solutions. Note that newer challenges are only in the <a href="http://news.gmane.org/gmane.comp.lang.perl.qotw.discuss" title="http://news.gmane.org/gmane.comp.lang.perl.qotw.discuss">qotw-discuss archives</a>. </li><li> Some Perl books and tutorials contain exercises. See for example <a href="http://oreilly.com/catalog/9780596520106/" title="http://oreilly.com/catalog/9780596520106/">Learning Perl</a>. <ul><li> The book <a href="http://mitpress.mit.edu/sicp/" title="http://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs (SICP)</a> contains numerous exercises. Its text is available online. </li></ul></li></ol>
+<h3 id="Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29"> Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop) </h3>
+<p>The best REPL is probably <a class="extiw" href="http://search.cpan.org/dist/Devel-REPL" title="cpan:Devel-REPL">Devel-REPL</a> (a.k.a &quot;re.pl&quot;) which is actively maintained, feature rich and very polished. The perl -d flag can also serve as a rudimentary REPL.
+</p>
+<h3 id="How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F"> How can I store Perl Data Structures on the Hard Disk? </h3>
+<p>Sometimes we&apos;d like to store arbitrary Perl 5 Data Structures on the hard disk for various reasons including persistence and communication. This is called <b>serialisation</b> (or <b>serialization</b> in American spelling), and can be performed in several ways.
+</p><ol><li><a class="extiw" href="http://search.cpan.org/dist/Data-Dumper" title="cpan:Data-Dumper">Data-Dumper</a> allows one to serialise arbitrary data structures into a human readable Perl code (which is also capable of evaluation). Note that performing string eval for arbitrary Perl code like that is not recommended for security reasons, so make sure you can trust that data. </li><li><a class="extiw" href="http://search.cpan.org/dist/Storable" title="cpan:Storable">Storable</a> (another core module) serialises data structures to a binary format (make sure you use its portable format), and allows for serialising, deserialising, cloning a complex data structure, etc. This module is Perl 5-specific, though. </li><li><a class="new" href="http://perl.net.au/wiki/?title=JSON&amp;action=edit" title="JSON">JSON</a> is short for &quot;<a class="new" href="http://perl.net.au/wiki/?title=JavaScript&amp;action=edit" title="JavaScript">JavaScript</a> Object Notation&quot; and can be used to serialise data structures using JS notation. The <a class="extiw" href="http://search.cpan.org/dist/JSON-XS" title="cpan:JSON-XS">JSON-XS</a> CPAN module is recommended for that. Note that JavaScript does not support several Perl 5-specific features such as having a reference to a scalar. </li><li><a class="new" href="http://perl.net.au/wiki/?title=YAML&amp;action=edit" title="YAML">YAML</a> is a markup language (see <a class="extiw" href="http://search.cpan.org/dist/YAML-XS" title="cpan:YAML-XS">YAML-XS</a>) for represnting complex data structures. It is more complex than JSON, and more error-prone but also gives some user-friendly enhancements. </li></ol>
+<p>If you want random lookup, look at the various <a class="new" href="http://perl.net.au/wiki/?title=Wikiepdia:Embedded_database&amp;action=edit" title="Wikiepdia:Embedded database">embedded database</a> solutions, such as:
+</p><ul><li><a class="extiw" href="http://www.wikipedia.org/wiki/Berkeley_DB" title="wikipedia:Berkeley_DB">Berkeley DB</a> - very comprehensive and under a strong copyleft licence. </li><li><a href="http://1978th.net/tokyocabinet/" title="http://1978th.net/tokyocabinet/">Tokyo Cabinet</a> - a modern DBM implementation with high performance and a <a class="extiw" href="http://www.wikipedia.org/wiki/LGPL" title="wikipedia:LGPL">LGPL</a> licence. </li><li><a href="http://www.sqlite.org/" title="http://www.sqlite.org/">SQLite</a> - an embedded, high-performance <a class="new" href="http://perl.net.au/wiki/?title=SQL&amp;action=edit" title="SQL">SQL</a> database. </li></ul>
+<p><b>TODO</b>: add DBM, etc.
+</p>
+<h3 id="How_can_I_do_a_switch_statement_in_Perl.3F"> How can I do a switch statement in Perl? </h3>
+<p>perl-5.10.x and later have a <a href="http://www.perlmonks.org/?node_id=709120" title="http://www.perlmonks.org/?node_id=709120">given/when statement</a>. It is not available for perl-5.8.x and below.
+</p>
+<p>There&apos;s also <a href="http://perldoc.perl.org/Switch.html" title="http://perldoc.perl.org/Switch.html">Switch.pm</a> for earlier versions, but its use is not recommended because it&apos;s a source filter and tends to break a lot.
+</p>
+<p>Please consider using dispatch tables or if/elsif chains if you cannot use perl-5.10.x.
+</p>
+<h3 id="How_can_I_determine_the_type_of_a_reference_.28array.2C_hash.2C_scalar.2C_etc..29.3F"> How can I determine the type of a reference (array, hash, scalar, etc.)? </h3>
+<p>As is often the case, the answer is not as straightforward as one can expect. Part of the problem is that references can be blessed:
+</p><pre>   my $ref = {};
+   bless $ref, &quot;MyPackage&quot;;
+   # Will print MyPackage.
+   print &apos;ref($ref) = &apos;, ref($ref), &quot;\n&quot;;
+</pre>
+<p>The built-in function <a href="http://perldoc.perl.org/functions/ref.html" title="http://perldoc.perl.org/functions/ref.html">perldoc -f ref</a> demonstrated above will return the most basic class (in the OOP sense) that the reference is associated with (or its type if it isn&apos;t.). If you control the input and don&apos;t expect an edge case where it is was blessed, this would be OK.
+</p>
+<p>If you want to find the most basic type of the reference, you should use Scalar::Util&apos;s reftype() function. Scalar::Util is a core module since perl-5.8.0, and is easily installable from CPAN for several older perls. (Which you really should avoid using).
+</p>
+<p>Finally if you want to determine if an object reference belongs to a certain class you should use <a href="http://perldoc.perl.org/UNIVERSAL.html" title="http://perldoc.perl.org/UNIVERSAL.html">the -&gt;isa() built-in-method</a> (from the UNIVERSAL class which is the implicit parent class of all other classes.). There has been some criticism against using such notations as:
+</p><pre>  if (UNIVERSAL::isa($ref))
+  {
+  }
+</pre>
+<p>See for example <a href="http://search.cpan.org/dist/UNIVERSAL-isa/" title="http://search.cpan.org/dist/UNIVERSAL-isa/">UNIVERSAL-isa on CPAN</a>.
+</p>
+<p>That put aside, since Perl 5 (and Perl 6) is a symbolic language, one can call a method by name on every object that supports it regardless of its actually inheritance geneology. So using <tt>-&gt;isa</tt> may be a red flag in Perl, and you should rethink your strategy.
+</p>
+<h3 id="How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F"> How can I parse a CSV (Comma separated value / comma delimited value) file? </h3>
+<p>CSV parsing is very hard to get right using plain regexes, so please use <a class="extiw" href="http://search.cpan.org/dist/Text-CSV_XS" title="cpan:Text-CSV_XS">Text-CSV_XS</a> or <a class="extiw" href="http://search.cpan.org/dist/Text-CSV" title="cpan:Text-CSV">Text-CSV</a>.
+</p>
+<h3 id="How_can_I_access_the_global_variables_in_my_script_from_a_different_module_and.2For_namespace"> How can I access the global variables in my script from a different module and/or namespace </h3>
+<p>There is a way to do it, but you really shouldn&apos;t do it this way because it&apos;s most likely indicative of a bad design. Instead, pass the data to the module (preferably by defining a class (see <a class="extiw" href="http://search.cpan.org/dist/Moose" title="cpan:Moose">Moose</a> and other resources), instantiating an object and let it run. You can also implement an entire command line application as a module and a short, bootstrapping, script that invokes it.
+</p>
+<h3 id="How_can_I_set_up_a_timeout_for_a_blocking_operation.3F"> How can I set up a timeout for a blocking operation? </h3>
+<p>See <a href="http://perldoc.perl.org/functions/alarm.html" title="http://perldoc.perl.org/functions/alarm.html">the &quot;alarm()&quot; perl built-in</a> or <a href="http://poe.perl.org/" title="http://poe.perl.org/">POE</a> for more advanced uses.
+</p>
+<h3 id="How_can_I_match_.28and_possibly_replace.29_the_Nth_expression_out_of_a_string.3F"> How can I match (and possibly replace) the Nth expression out of a string? </h3>
+<p>Perl 5 does not provide a utilitarian built-in for doing that, but it is easy to do in several ways. The best way is probably to count the matches and replace them:
+</p><pre>   my $string = &quot;Hello Hi Howdy Hoorah Hallelujah&quot;;
+</pre> <pre>   {
+       my $count = 0;
+       $string =~ s{(H)}{(++$count == 3)?? &quot;G&quot;?: $1}ge;
+   }
+</pre>
+<p>You can also try using <a href="http://perl-begin.org/uses/text-parsing/#incremental-extraction" title="http://perl-begin.org/uses/text-parsing/#incremental-extraction">\g and /g</a> or alternatively match the expression n-1 times and then replace it:
+</p><pre>  my $pat = qr/H/;
+  $string =~ s{((?:$pat.*?){2})$pat}{${1}G};
+</pre>
+<h3 id="How_do_I_prepend_data_to_a_file.2C_take_out.2Fdelete_data_from_the_middle_of_the_file_or_insert_data_into_the_middle_of_the_file.3F"> How do I prepend data to a file, take out/delete data from the middle of the file or insert data into the middle of the file? </h3>
+<p>Files in UNIX can be thought of as big sequences of octets, and as such it is possible to overwrite existing bytes with new ones, to append to the end of the file, or to truncate a file from a position to the end (to create a file which is shorter than the existing one.). However, it&apos;s not easily possible to prepend data to the beginning of the file, to take out/delete data from the middle of the file or to insert it into the middle of the file while only using a single file handle to the file.
+</p>
+<p>The best way to achieve what you want with such operations is to write a new file with the modified content, then close both files and move the new file on top of the existing files using <a href="http://perldoc.perl.org/functions/rename.html" title="http://perldoc.perl.org/functions/rename.html">rename</a>. Here is an example for how to do a prepend:
+</p><pre>   #!/usr/bin/perl
+
+   use strict;
+   use warnings;
+
+   my $filename = shift(@ARGV);
+   my $new_fn = $filename . &apos;.new&apos;;
+
+   open my $in, &apos;&lt;&apos;, $filename
+       or die &quot;Cannot open $filename for reading - $!&quot;;
+   open my $out, &apos;&gt;&apos;, $new_fn
+       or die &quot;Cannot open $new_fn for writing - $!&quot;;
+
+   print {$out} &lt;&lt;&apos;EOF&apos;;
+   ENTHDR|1|3.0
+   STAGEHDR|Barcoded
+   EOF
+
+   while (my $line = &lt;$in&gt;)
+   {
+       print {$out} $line;
+   }
+
+   close($out);
+   close($in);
+
+   rename($new_fn, $filename);
+</pre>
+<p>You can also look at higher-level abstractions such as <a href="http://perldoc.perl.org/Tie/File.html" title="http://perldoc.perl.org/Tie/File.html">Tie::File</a> or <a href="http://search.cpan.org/dist/IO-All/" title="http://search.cpan.org/dist/IO-All/">IO-All</a> for more idiomatic ways to achieve the same thing.
+</p>
+<h3 id="How_do_I_pass_a_reference_to_an_object.27s_method.3F_.28Also_known_as_class_subroutine_or_member_function.29"> How do I pass a reference to an object&apos;s method? (Also known as class subroutine or member function) </h3>
+<p>You have several options to pass a reference to a method, which differ in their syntax and semantics. Here is the list:
+</p><ol><li> The first method is to do <tt>sub { return $self-&gt;my_method(@_); }</tt> within a scope that has the object reference $self valid. This will always call my_method on the physical $self reference. </li><li> You can pass the name of the method as a string and then do <tt>$some_obj-&gt;$some_method(@args)</tt>. This requires applying $some_method on an object explicitly and handles inheritance well. </li></ol>
+<h3 id="How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F"> How do I trim leading and/or trailing whitespace from a string? </h3>
+<p>Some languages provide a built-in function to remove leading and/or trailing whitespace from a string (such as <a href="http://php.net/manual/en/function.trim.php" title="http://php.net/manual/en/function.trim.php">PHP&apos;s trim</a>. Perl does not have it because it is fairly trivial to do using the <tt>s///</tt> built-in (see <a href="http://perl-begin.org/topics/regular-expressions/" title="http://perl-begin.org/topics/regular-expressions/">our resources about regular expressions</a> and there&apos;s also <a class="extiw" href="http://search.cpan.org/dist/String-Trim" title="cpan:String-Trim">String-Trim on CPAN</a>.
+</p>
+<h3 id="How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29"> How do I add directories to the list of paths where Perl searches for modules? (@INC) </h3>
+<p>There are several ways to do it:
+</p><ol><li> &apos;use lib&apos; <a href="http://perldoc.perl.org/lib.html" title="http://perldoc.perl.org/lib.html">perldoc lib</a>. </li><li> use the -I option to perl <a href="http://perldoc.perl.org/perlrun.html" title="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a>. </li><li> Set the PERLLIB or PERL5LIB environment variable <a href="http://perldoc.perl.org/perlrun.html" title="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a></li><li> Finally you may opt to recompile perl. </li></ol>
+<p>After that you can add <tt>use MyModule;</tt> to your code and it will work. Please don&apos;t resort to <tt>do &quot;/full/path/to/include.pl&quot;</tt> games.
+</p>
+<h3 id="How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F"> How can I get perl to print each line as it is executed (similar to the shell&apos;s -x flag)? </h3>
+<p>To do that use <a class="extiw" href="http://search.cpan.org/dist/Devel-Trace" title="cpan:Devel-Trace">Devel-Trace</a> from CPAN , and add the -d:Trace flag.
+</p>
+<p>You get an output like:
+</p><pre>   shlomif[cfg-ini]:$module$ perl -d:Trace tag-release.pl 2&gt;&amp;1 | head -10
+   &gt;&gt; tag-release.pl:9:     (map { m{\$VERSION *= *&apos;([^&apos;]+)&apos;}?? ($1)?: () }
+   &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All/Base.pm:44:         my $self = $class-&gt;new(@_);
+   &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All.pm:94:     my $self = shift;
+   &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All.pm:95:     my $package = ref($self) || $self;
+   &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All.pm:96:     my $new = bless Symbol::gensym(), $package;
+   &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:101:     my $name = &quot;GEN&quot; . $genseq++;
+   &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:102:     my $ref = \*{$genpkg . $name};
+   &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:102:     my $ref = \*{$genpkg . $name};
+   &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:103:     delete $$genpkg{$name};
+   &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:104:     $ref;
+</pre>
+<h3 id="I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F"> I&apos;m trying to use threads to speed up my program. What should I know? </h3>
+<p>Before you start implementing code using Perl&apos;s threads, please remember that Perl&apos;s threads are not like other threads. Please see <a href="http://perldoc.perl.org/perlthrtut.html" title="http://perldoc.perl.org/perlthrtut.html">perlthrtut</a> to learn more, specifically its &quot;What kind of threads are perl threads?&quot; section. Also see the document <a href="http://www.perlmonks.org/index.pl?node_id=288022" title="http://www.perlmonks.org/index.pl?node_id=288022">&quot;Things you need to know before programming Perl ithreads&quot;</a>.
+</p>
+<p>Note that threads don&apos;t work too well in most C-hosted languages similar to Perl, such as Python or Ruby, and we recommend looking into a different language for that. Some people believe that threads should be avoided in any programming language (see for example Eric Raymond&apos;s <a href="http://www.catb.org/~esr/writings/taoup/html/ch07s03.html#id2923889" title="http://www.catb.org/~esr/writings/taoup/html/ch07s03.html#id2923889">opinion about it</a> in the book <a href="http://www.catb.org/~esr/writings/taoup/" title="http://www.catb.org/~esr/writings/taoup/"><i>The Art of Unix Programming</i></a>), but many people believe threads have many legitimate uses, when done properly. See also <a href="http://www.nntp.perl.org/group/perl.beginners/2011/02/msg115714.html" title="http://www.nntp.perl.org/group/perl.beginners/2011/02/msg115714.html">this thread on the Perl beginners mailing list</a>.
+</p>
+<h3 id="Should_I_be_using_mod_perl.3F"> Should I be using mod_perl? </h3>
+<p>The short answer is: &quot;Most probably not.&quot;.
+</p>
+<p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX systems, however, it made a conscious choice of providing a lot of extra functionality, which proved to cost with complexity and sometimes quirkiness. Since then, FastCGI and similar technologies have matured (possibly legally) and there is now a new crop of popular web-servers, which aim to be very speedy (as well as less customisable and less suitable for hosting providers) such as <a class="extiw" href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29" title="wikipedia:Cherokee_(webserver)">Cherokee</a>, <a class="extiw" href="http://www.wikipedia.org/wiki/lighttpd" title="wikipedia:lighttpd">lighttpd</a> or <a class="extiw" href="http://www.wikipedia.org/wiki/nginx" title="wikipedia:nginx">nginx</a> that can utilise FastCGI as well, and you may opt to use instead of Apache, assuming your hosting is allows that.
+</p>
+<p>So even if you&apos;re using Apache (and you should definitely use Apache 2 - not Apache 1), there are better alternatives for speeding up your applications than mod_perl, and you should only use mod_perl if you need more sophisticated control and functionality of Apache 2, in which case you may wish to also be asking that on <a href="http://perl.apache.org/maillist/modperl.html" title="http://perl.apache.org/maillist/modperl.html">the mod_perl mailing list</a>, or on a similar forum, and you are expected to be an advanced user.
+</p>
+<h3 id="How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F"> How can I find which modules a Perl program or module depends on? </h3>
+<p>If you wish to use it on an program you have on the disk at run-time, then use <a class="extiw" href="http://search.cpan.org/dist/Devel-TraceUse" title="cpan:Devel-TraceUse">Devel-TraceUse</a>, which will report the used modules recursively.
+</p>
+<p>One can also use the <a href="http://deps.cpantesters.org/" title="http://deps.cpantesters.org/">CPAN dependencies</a> tool to determine the dependencies of a CPAN distribution or module.
+</p>
+<h2 id="Some_Related_IRC_Channels_on_Freenode"> Some Related IRC Channels on Freenode </h2>
+<h3 id="sharp_perlcafe"><a href="irc://irc.freenode.net/perlcafe" title="irc://irc.freenode.net/perlcafe">#perlcafe</a></h3>
+<p>The <a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe" title="Freenode Sharp Perlcafe">Perl Café</a> exists to move off-topic discussions out of #perl. The channel is very lax, but often heavy on the irony. Examples of conversation include:
+</p><ol><li> Café-speak (&quot;teh hawt&quot;, &quot;I buyed&quot;, &quot;teh ghey&quot;, &quot;n u&quot;) — you get the idea. </li><li> People discussing their love-lives (or their lack of them), their co-workers, their friends, and their enemies. </li><li> Unusual humour and lots of cursing (particularly at each other). </li><li> Discussing both obscure and everyday political issues. </li><li> Personal conversation during what would otherwise be a boring work day. </li></ol>
+<p>Sometimes the discussion gets more high-quality, but it&apos;s still a channel where chat occurs that some may find questionable. Viewer discretion is advised.
+</p>
+<p>Also see its own page at <a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe" title="Freenode Sharp Perlcafe">Freenode Sharp Perlcafe</a>.
+</p>
+<h3 id="sharp_perl6"><a href="irc://irc.freenode.net/perl6" title="irc://irc.freenode.net/perl6">#perl6</a></h3>
+<p>Discussion for the development of <a href="http://perl.net.au/wiki/Perl_6" title="Perl 6">Perl 6</a>, <a href="http://perl.net.au/wiki/Pugs" title="Pugs">Pugs</a> and <a class="new" href="http://perl.net.au/wiki/?title=Rakudo&amp;action=edit" title="Rakudo">Rakudo</a>, and as usual on Freenode, a lot of off-topic discussion. Don&apos;t ask Perl 5 technical questions there - ask them on #perl.
+</p>
+<h3 id="sharp_lispcafe"><a href="irc://irc.freenode.net/lispcafe" title="irc://irc.freenode.net/lispcafe">#lispcafe</a></h3>
+<p><a href="irc://irc.freenode.net/lispcafe" title="irc://irc.freenode.net/lispcafe">#lispcafe</a> is an off-shoot of #lisp and #perlcafe. The primary lisp channel #lisp is restricted to &quot;on-topic&quot; discussion of Common Lisp. Thus #lispcafe was founded to accept off-topic discussions. Unlike #perlcafe, #lispcafe attempts to be more civil. Discussions of Perl and other dynamic languages is acceptable on #lispcafe, so you might wish to visit it, introduce yourself and join the fun.
+</p><ol><li>lispcafe has <a href="http://www.cliki.net/lispcafe" title="http://www.cliki.net/lispcafe">its own page</a> on the Common Lisp wiki. </li></ol>
+<h3 id="sharp_perl-cats"><a href="irc://irc.freenode.net/perl-cats" title="irc://irc.freenode.net/perl-cats">#perl-cats</a></h3>
+<p>Since many #perl&apos;ers either like cats or even sometimes emulate ones, a channel was started for all things cats and Perl. It is pretty small, and we discuss many things besides cats. Some people there are just friends of regular #perl&apos;ers (who also happen to like Perl). #perl-cats tends to be more civil than #perlcafe , but expect a lot of cat overload.
+</p>
+<h2 id="People"> People </h2>
+<p><b>Note:</b> by matter a policy, a person may only add and edit their own entries, unless it is a cosmetic change.
+</p>
+<h3 id="Channel_Owner"> Channel Owner </h3>
+
+<h4 id="thrig"> thrig </h4>
+<p>The freenode #perl channel owner is thrig, also known as <a href="http://sial.org/" title="http://sial.org/">Jeremy Mates</a>. He holds the channel password and maintains the list of channel operators.
+</p>
+<p>Aside from that, thrig maintains the <a href="http://sial.org/" title="http://sial.org/">sial.org domain</a> with many useful resources for the channel or for Perl in general including <a href="http://sial.org/pbot/" title="http://sial.org/pbot/">a (now defunct) paste bot</a>, and <a href="http://sial.org/howto/perl/life-with-cpan/" title="http://sial.org/howto/perl/life-with-cpan/">&quot;Life with CPAN&quot;</a>.
+</p>
+<h3 id="Channel_Operators"> Channel Operators </h3>
+
+<h4 id="apeiron"> apeiron </h4>
+<p>He&apos;s just some guy, you know? apeiron is a USian with dreams of moving to Europe. As with most people and bots depicted here, Perl is his favorite language. Of the <a href="http://typelogic.com/intj.html" title="http://typelogic.com/intj.html">INTJ</a> personality type, he tends to focus more on solving problems than being the center of attention. Insatiably curious, he enjoys playing with new frameworks and applications. His interests are in free culture, free software, science, history, anthropology, music, philosophy, Shakespeare, and many other things. To be brief: a geek and a hippie.
+</p>
+
+<h4 id="beth"> beth </h4>
+<p>beth lives in <a class="extiw" href="http://www.wikipedia.org/wiki/Ithaca%2C_New_York" title="wikipedia:Ithaca,_New_York">Ithaca, New York</a>. She works with Perl at Cornell university as a <a class="extiw" href="http://www.wikipedia.org/wiki/Bioinformatics" title="wikipedia:Bioinformatics">bioinformatics</a> analyst and is one of #perl&apos;s resident gurus.
+</p>
+
+<h4 id="Chris62vw"> Chris62vw </h4>
+<p>Chris is an American living in Las Vegas. He&apos;s the author and maintainer of <a href="http://chrisangell.com/incoming/chrisbot/v3" title="http://chrisangell.com/incoming/chrisbot/v3">ChrisBot</a>, which is the codebase behind &quot;perlbot&quot;, our resident infobot. He is rather hands-off when it comes to policing the channel and believes in minimal usage of operator privileges. In his spare time he enjoys spending time at the shooting range, eating sushi, and drinking beer with his friends.
+</p>
+
+<h4 id="f00li5h"> f00li5h </h4>
+<p>I am he. While coding I like to have a candle burning, and the sun setting. I try to treat IRC as <a href="http://en.wikipedia.org/wiki/BitTorrent" title="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a> for programming knowledge and am often looking for short term perl contracts, ideally telecommute. You may find I behave like a cat from time to time, this is a <a href="http://www.netjeff.com/humor/item.cgi?file=hire.txt" title="http://www.netjeff.com/humor/item.cgi?file=hire.txt">desired behaviour</a> and not a bug.
+</p>
+
+<h4 id="mst"> mst </h4>
+<p>mst is the project founder of DBIx::Class, member of the Catalyst core team and lead tech at <a href="http://www.shadowcat.co.uk/" title="http://www.shadowcat.co.uk/">Shadowcat Systems</a>. He&apos;s also a sarcastic obnoxious english guy with a very dry sense of humour. Also known as &quot;wielder of the chainsaw&quot; for his high impact LARTing technique when somebody isn&apos;t paying attention to the people trying to help them.
+</p>
+
+<h4 id="Paladin"> Paladin </h4>
+<p>Paladin is a Canadian, living currently in New Westminster, BC. He is only around sporadically depending on the pressures of Real Life.
+</p>
+
+<h4 id="rindolf"> rindolf </h4>
+<p>rindolf, also known as <a href="http://www.shlomifish.org/" title="http://www.shlomifish.org/">Shlomi Fish</a>, or &quot;shlomif&quot;, is an Israeli programmer born in 1977. He tries to be as helpful and friendly as possible and often is too friendly. If he expresses interest in you, either just answer his questions, or tell him to stop.
+</p>
+<p>Shlomi has many interests including: programming and software development, open-source use, development and advocacy, creative writing, applied philosophy and writing essays, biking, science, logic and applied logic, cognitive psychology, mathematics and puzzles, linguistics, history of the Old World, etc. He has a Bachelor of Science from <a href="http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/" title="http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/">the Technion in Electrical Engineering</a>, but thinks it would be a stretch to call him an Electrical Engineer.
+</p>
+<p>Perl is his favourite language. Among his contributions to the Perl world are:
+</p><ol><li><a href="http://perl-begin.org/" title="http://perl-begin.org/">The Perl Beginners&apos; Site</a></li><li><a href="http://www.shlomifish.org/lecture/Perl/Newbies/" title="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Newbies</a> - a series of presentations with free onlne slides, introducing the core Perl language to beginners. </li><li><a href="http://search.cpan.org/~shlomif/" title="http://search.cpan.org/~shlomif/">Some CPAN Modules</a></li></ol>
+<p>He prides himself in being the &quot;Black Sheep&quot; of the Perl world, due to writing some controversial essays, and because he is considered a &quot;Persona Non-grata&quot; in some Perl communities.
+</p>
+
+<h4 id="simcop2387"> simcop2387 </h4>
+<p>simcop2387 is an American currently living in Georgia (the state, not the country). Perl is his favorite language and he spends most of his time coding strange esoteric projects in perl.
+</p>
+<h3 id="Channel_Regulars"> Channel Regulars </h3>
+
+<h4 id="ivantis.5B.5E3.5D.2A"> ivantis[^3]* </h4>
+<p>Awesome perl cat (mew). Living in Lawrence, KS. Enjoys freelance programming for Perl and PHP (well at least the perl part, who enjoys PHP?). Keeps <a href="http://irclogs.space-lab.us/perlstats.html" title="http://irclogs.space-lab.us/perlstats.html">#perl stats</a>.
+</p>
+
+<h4 id="alanhaggai"> alanhaggai </h4>
+<p>alanhaggai is a programmer and web developer who got converted to Perl. He maintains <a href="http://alanhaggai.org/" title="http://alanhaggai.org/">a website at http://alanhaggai.org/</a> where he experiments with new CSS designs. He also maintains <a href="http://use.perl.org/~alanhaggai/journal/" title="http://use.perl.org/~alanhaggai/journal/">a use Perl journal</a>.
+</p>
+
+<h4 id="dazjorz"> dazjorz </h4>
+<p>dazjorz is a Perl programmer by the name of Sjors Gielen. He mainly programs servers. His bot is DaZeus, but it&apos;s not in #perl, to his deep disappointment. His personal web site is at <a class="external free" href="http://dazjorz.com/" title="http://dazjorz.com/">http://dazjorz.com/</a>.
+</p>
+
+<h4 id="pkrumins"> pkrumins </h4>
+<p>pkrumins loves mathematics, physics and computer science. He has <a href="http://www.catonmat.net/" title="http://www.catonmat.net/">a blog titled <i>Good Coders Code - Great Reuse</i></a>.
+</p>
+
+<h4 id="whoppix"> whoppix </h4>
+<p>whoppix considers himself to be a rather average perl programmer. He does not have a livejournal, a blog, a website, a twitter account, or almost anything else web2.0 related. He is not at all interested and/or skilled in webdesign, relational databases and/or anything derived thereof. whoppix enjoys tinkering around with higher-level languages like perl, haskell, and sometimes writes implementations for simple esoteric languages, or even his own grammars (a task he regularly fails badly at). He also has some GTK+ experience, and is generally interested in event-based programming.
+</p>
+<p>In his spare time (when he&apos;s not programming) whoppix plays the piano and paints (and sometimes sells) sarcastic and/or post-ironic pictures, that reflect the dark gaping abyss of frustration in his soul. Or something like that.
+</p>
+<h3 id="Bots"> Bots </h3>
+
+<h4 id="perlbot"> perlbot </h4>
+<p>perlbot is the channel&apos;s infobot and utility bot. It only answers if addressed. Type &quot;perlbot: perl&quot; to learn about &quot;perl&quot;, &quot;perlbot: re&quot; to learn about &quot;re&quot;, etc. Originally Chris62vw&apos;s bot with the codebase in Chrisbot, it is not managed by simcop2387 and based on the superior buubot source (type &quot;perlbot: source&quot;).
+</p>
+
+<h4 id="buubot"> buubot </h4>
+<p>Another infobot written in perl, this time with plugins. buu wrote it and the source is also available and open-source.
+</p>
+
+<h4 id="CPAN2"> CPAN2 </h4>
+<p>(Deprecated (banned), replaced by GumbyPAN) An announcement bot for the <a href="http://perl.net.au/wiki/CPAN" title="CPAN">CPAN</a> - the Comprehensive Perl Archive Network. Also can be queried. Its daddy is Zoffix.
+</p>
+
+<h4 id="GumbyPAN"> GumbyPAN </h4>
+<p>See CPAN2.
+</p>
+
+<h4 id="GumbyBRAIN"> GumbyBRAIN </h4>
+<p>GumbyBRAIN has recently left #perl, because he&apos;s noisy and not especially helpful for perl programmers.
+</p><pre>f00li5h&gt; GumbyBRAIN: what do you want me to say about you in the wiki?
+GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it&apos;s like bla bla bla bla and no you really want do.
+</pre>
+<p>GumbyBRAIN is BinGOs&apos; experimental megahal bot and not an infobot (despite appearances to the contrary). Source at <a class="external free" href="http://www.gumbybrain.com/" title="http://www.gumbybrain.com/">http://www.gumbybrain.com/</a>
+</p>
+
+<h4 id="farnsworth"> farnsworth </h4>
+<p>Yet another bot written in perl created for testing the Math::Farnsworth module created by simcop2387, it features a Turing-complete programming language that rules all of its &quot;commands&quot;. Its primary function is for doing math with unit tracking and conversions, but it will also do language conversions, and date manipulation also.
+</p>
+
+<h4 id="perlbot2"> perlbot2 </h4>
+<p>ivantis&apos; home-made bot, written in perl (gu-duh!). Is currently banned by mst for being obnoxious, but may take his revenge soon! Replies to commands by name or by prefix character (&amp;).
+</p>
+
+<h4 id="f00bot"> f00bot </h4>
+<p>f00li5h&apos;s useless instance of buubot, it&apos;s safe to ignore him
+</p>
+
+<h4 id="ivantis3.5B.60_.5D.2A"> ivantis3[`_]* </h4>
+<p>ivantis&apos; log-keeping bot. He doesn&apos;t do much.
+</p>
+<h2 id="Our_Milestone_Pictures"> Our Milestone Pictures </h2>
+<p>Here are our milestone pictures:
+</p><ul><li><a href="http://www.shlomifish.org/Files/files/images/FreeNode-perl-400-participants.png" title="http://www.shlomifish.org/Files/files/images/FreeNode-perl-400-participants.png">400 Participants</a></li><li><a href="http://www.shlomifish.org/Files/files/images/Freenode-perl-500-participants.png" title="http://www.shlomifish.org/Files/files/images/Freenode-perl-500-participants.png">500 Participants</a></li><li><a href="http://www.shlomifish.org/Files/files/images/Freenode-perl-600-participants.png" title="http://www.shlomifish.org/Files/files/images/Freenode-perl-600-participants.png">600 Participants</a></li></ul></div>

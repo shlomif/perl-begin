@@ -1,0 +1,10 @@
+<define-tag todo_done>
+
+<p>
+We have put
+<a href="$(ROOT)/contribute/TODO.txt">the TODO file</a> (that contains
+tasks to be done) and <a href="$(ROOT)/contribute/DONE.txt">the DONE file</a>
+(that contains tasks to be done) online, for your perusal and contribution.
+</p>
+
+</define-tag>

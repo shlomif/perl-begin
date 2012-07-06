@@ -1,0 +1,151 @@
+#include '../template.wml'
+
+<latemp_subject "Text Parsing in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Perl has a rightful reputation as a good language for parsing text and even
+its name originally stands for "Practical Extraction and Report Language".
+However, many beginners, are tempted to use
+<a href="$(ROOT)/topics/regular-expressions/">regular expressions</a>
+exclusively even for parsing the most complex texts (a la "If all you have is
+a hammer, everything starts to look like a nail."), and it should be
+avoided. Here we give some more options.
+</p>
+
+<h2 id="with-what-to-parse">With What to Parse Stuff?</h2>
+
+<ul>
+
+<li>
+<p>
+If you're going to parse <b>HTML</b>, don't use regular expressions,
+and instead look at <a href="http://htmlparsing.icenine.ca/">Perl HTML-parsing
+modules</a>. The canonical modules for that are
+<cpan_self_dist d="HTML-Parser" />, which has
+built-in support for handling many of the irregularities of HTML in the wild,
+and <cpan_dist d="XML-LibXML">XML-LibXML's
+HTML support</cpan_dist>. Those should generally not be used directly. Instead look at
+one of their abstractions:
+</p>
+
+<ol>
+
+<li>
+<p>
+<cpan_self_dist d="HTML-TreeBuilder-LibXML" /> - HTML::TreeBuilder and XPath compatible interface using libxml.
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_mod m="HTML::TreeBuilder" /> (and other modules in HTML::Tree).
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="HTML-TokeParser-Simple" /> -
+an event-based pull parser that is useful for very large HTMLs.
+</p>
+</li>
+
+</ol>
+</li>
+
+<li>
+<p>
+In order to parse <b>XML</b>, look at <a href="$(ROOT)/uses/xml/">our dedicated
+page about XML processing</a>.
+</p>
+</li>
+
+<li>
+<p>
+<b>Comma-separated values (CSV) files</b> should be parsed using
+<cpan_self_dist d="Text-CSV_XS" />, which is
+a fast, tried and tested module for parsing CSV that can handle most
+edge-cases and irregularities that are present in CSV files that
+can be found in the wild.
+</p>
+</li>
+
+</ul>
+
+<h2 id="advanced-parsing">Advanced Parsing Techniques</h2>
+
+<h3 id="parser-generators">Parser Generators</h3>
+
+<p>
+For many grammars (such as those of most programming languages, which involves
+such idioms as balanced brackets or operator precedence
+which are called <b>context-free languages</b>), regular expressions
+will not be enough and you may opt to use a
+<a href="http://en.wikipedia.org/wiki/Comparison_of_parser_generators">parser
+generator</a>. Some notable parser generators in Perl include:
+</p>
+
+<ol>
+
+<li>
+<p>
+<cpan_self_dist d="Parse-RecDescent" />
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="Regexp-Grammars" /> -
+a more modern version of Parse-RecDescent by the same author that only
+works on perl-5.10.x and above.
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="Parse-Yapp" /> - old
+and has been unmaintained, but may still be good enough.
+</p>
+</li>
+
+</ol>
+
+<p>
+What a parser generator does is generate a parser for your language that
+can then yield an "abstract syntax tree (AST)" that will allow you to process
+valid texts of this language as a human would understand them.
+</p>
+
+<h3 id="incremental-extraction">Incremental Extraction in Regular Expressions
+Using \G and /g</h3>
+
+<p>
+Sometimes, you'll find that writing everything in one regular expression
+would be very hard and you'd like to parse a string incrementally - step by
+step. For that, Perl offers the
+<a href="http://perldoc.perl.org/functions/pos.html">the pos()</a>
+function/operator that allows one to set the last matched position within
+a string. One can make a good use of it using the <tt>\G</tt> regular
+expression escape and the <tt>/g</tt> and <tt>/c</tt> regex modifiers.
+</p>
+
+<p>
+Here's an example:
+</p>
+
+<pre>
+\# String with names inside square brackets
+my $string = "Hello [Peter] , [Sophie] and [Jack] are here.";
+
+pos($string) = 0;
+while (my $string =~ m{\G.*\[([^\]+)\]}cg)
+{
+    my $name = $1;
+    print "Found name $name .\n";
+}
+</pre>
+
+<p>
+This example is a bit contrived, but should be illustrative enough.
+</p>

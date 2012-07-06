@@ -1,0 +1,105 @@
+#include '../template.wml'
+
+<latemp_subject "Links to Perl Exercises and Challenges" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+In order to learn Perl well (or any other language), one eventually needs
+to write actual code with it. This page contains links to programming exercises
+and challenges that can be solved using Perl.
+</p>
+
+<h2 id="the_list">The List</h2>
+
+<h3 id="learning-perl"><a href="$(ROOT)/books/#learning-perl">Learning
+Perl</a></h3>
+
+<p>
+The book "Learning Perl" by Randal Schwartz et al contains many exercises
+for beginning Perl programmers.
+</p>
+
+<h3 id="beginning-perl"><a href="$(ROOT)/books/#beginning-perl">Beginning
+Perl</a></h3>
+
+<p>
+The book "Beginning Perl" by Simon Cozens and later on James Lee also contains
+some exercises. The first edition of the book is available online.
+</p>
+
+<h3 id="project-euler"><a href="http://projecteuler.net/">Project Euler</a></h3>
+
+<p>
+From the page:
+"Project Euler is a series of challenging mathematical/computer programming
+problems that will require more than just mathematical insights to solve".
+One can learn a lot from solving these challenges. In case you're having a
+difficulty, then you can find solutions to some of these problems here:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://bitbucket.org/shlomif/project-euler">Shlomi Fish's
+Solutions to Project Euler</a> - mostly in Perl.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.haskell.org/haskellwiki/Euler_problems">Solutions
+to the Euler Problems in the Haskell programming language</a> - on the Haskell
+Wiki.
+</p>
+</li>
+
+<li>
+<p>
+A web search for a "euler" and a particular question number may also provide
+some insights.
+</p>
+</li>
+
+</ol>
+
+<p>
+But remember to always try to solve the challenges on your own first.
+</p>
+
+<h3 id="qotw"><a href="http://perl.plover.com/qotw/">Perl
+Quiz of the Week</a></h3>
+
+<p>
+A now inactive series of challenges for solving using Perl that was started
+by Mark Jason Dominus. One can go over the archives of the mailing lists
+for some interesting problems to solve and their solutions.
+</p>
+
+<h3 id="P_99_problems"><a href="https://sites.google.com/site/prologsite/prolog-problems">P-99: Ninety Nine Prolog Problems</a></h3>
+
+<p>
+A list of 99 challenges with a focus on the Prolog programming language,
+but which can be solved using Perl.
+</p>
+
+<h3 id="martyr2_mega_list"><a href="http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/">Martyr2’s Mega Project Ideas List</a></h3>
+
+<p>
+A concentrated list of Project Ideas - on the <i>Dream in Code</i> forums.
+</p>
+
+<h3 id="ioi"><a href="http://www.ioinformatics.org/contest/prev.shtml">International Olympiad in Informatics’ Previous Contest Tasks</a></h3>
+
+<p>
+Contains some challenges.
+</p>
+
+<h3 id="rosetta-code"><a href="http://rosettacode.org/">Rosetta Code</a></h3>
+
+<p>
+Contains a series of tasks, with solutions presented in as many programming
+languages as possible. <b>Note:</b> the Perl solutions presented there can vary
+in quality. (As can the solutions in other languages.)
+</p>

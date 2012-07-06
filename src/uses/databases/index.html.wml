@@ -1,0 +1,159 @@
+#include '../template.wml'
+
+<latemp_subject "Working with Databases in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+There are many types of databases:
+</p>
+
+<ul>
+<li>
+If you want to work with databases based on <a href="http://en.wikipedia.org/wiki/SQL">SQL</a> (Structured
+Query Language), then refer to <a href="#sql">the SQL
+databases section of this page</a>.
+</li>
+<li>
+If you want to use a DBM database (implementing keys→values dictionaries or
+mappings inside a file) refer to our
+<a href="#dbm">DBM databases section</a>.
+</li>
+<li>
+If you want xBase (dBase / Clipper / FoxBase) databases refer to our
+<a href="#xbase">xBase section</a>.
+</li>
+<li>
+If you want a distributed database (similar to Google's BigTable), see our
+<a href="#distributed">distributed databases section</a>.
+</li>
+</ul>
+
+<h2 id="sql">SQL Databases</h2>
+
+<p>
+The de-facto standard for working with SQL databases in Perl is
+<a href="http://dbi.perl.org/">DBI</a> (short for Database Interface). It
+provides a unified way to perform SQL queries across many database
+backends: <cpan_dist d="DBD-Pg">PostgreSQL</cpan_dist>,
+<cpan_dist d="DBD-SQLite">SQLite</cpan_dist>,
+<cpan_dist d="DBD-mysql">MySQL</cpan_dist> (but see
+<a href="http://www.shlomifish.org/open-source/anti/mysql/">this page</a>
+for some reasons why you may prefer a different system),
+<cpan_dist d="DBD-Oracle">Oracle</cpan_dist>,
+<cpan_dist d="DBD-InterBase">Firebird</cpan_dist>,
+and others.
+</p>
+
+<p>
+Above DBI, people wrote some useful abstractions:
+</p>
+
+<ul>
+
+<li>
+<p>
+<cpan_self_dist d="DBIx-Simple" /> - an easy
+to use Object-Oriented Interface to DBI.
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="DBIx-Class" /> - a
+powerful and convenient object-relational mapper. Use of the older and less
+philosophically sound
+<cpan_self_dist d="Class-DBI" /> is
+heavily discouraged.
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="Rose-DB-Object" /> -
+another ORM - seems to be much less popular than DBIx-Class, but still actively
+maintained.
+</p>
+</li>
+
+</ul>
+
+<p>
+When working with databases make sure you avoid common pitfalls such
+as <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection
+vulnerabilities</a>.
+</p>
+
+<h2 id="dbm">DBM Databases</h2>
+
+<ul>
+
+<li>
+<cpan_dist d="BerkeleyDB">The BerkeleyDB CPAN module</cpan_dist> is the
+standard module for working with
+<a href="http://www.oracle.com/technology/products/berkeley-db/index.html">Oracle
+Berkeley DB</a> (formerly Sleepy Cat Berkeley DB) and maps the ANSI C
+library's API closely. Note that Berkeley DB is licensed under
+<a href="http://en.wikipedia.org/wiki/Sleepycat_License">the Sleepycat
+License</a> which is strong copyleft, and does not allow use for non-open-source
+programs.
+</li>
+
+<li>
+<a href="http://fallabs.com/tokyocabinet/">Tokyo Cabinet</a> - a modern,
+fast and powerful DBM implementation available under the LGPL license (which
+permits use in non-open-source projects). There’s also
+<a href="http://fallabs.com/kyotocabinet/">Kyoto Cabinet</a>, which is claimed
+to be better, but is under the GPL license (which is strong copyleft and does
+not permit use in non-open-source projects).
+</li>
+
+<li>
+<a href="http://code.google.com/p/leveldb/">LevelDB</a> from Google, a
+fast key-value storage library, open-source under the new BSD license (which
+allows use for non-open-source programs. Has Perl bindings on CPAN called
+<cpan_self_dist d="Tie-LevelDB" />.
+</li>
+
+<li>
+<cpan_self_dist d="DBM-Deep" /> - a multi-level
+hash/array DBM that supports transactions. Reported to be slow, however.
+</li>
+
+</ul>
+
+<h2 id="xbase">XBase Databases</h2>
+
+<p>
+There seems to be <cpan_dist d="DBD-XBase">an
+XBase module on CPAN</cpan_dist> . It seems to be pure-Perl, so it may be slow.
+</p>
+
+<h2 id="distributed">Distributed Databases ("No SQL", etc.)</h2>
+
+<p>
+Recently, to meet the growing demand for data of some web sites, some people
+have switched to using non-centralised, non-SQL based databases that use
+a cluster of servers to implement a distributed data storage. This has
+been dubbed "No SQL". You most likely would prefer to use an SQL-based
+solution, which should be easily able to handle the data in your scope, but
+here is a list of distributed databases just for completeness sake.
+</p>
+
+<ul>
+
+<li>
+<cpan_self_dist d="Net-CouchDb" /> - an
+interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
+</li>
+
+</ul>
+
+
+<h2 id="links">Links</h2>
+
+<ul>
+<li><a href="http://modperlbook.org/html/part3.html"><b>"Databases and mod_perl"
+part from Practical mod_perl</b></a> - provides many useful insights.</li>
+</ul>
+

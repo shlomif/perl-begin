@@ -1,0 +1,10 @@
+<define-tag win32_intro>
+
+<p>
+Perl can easily run on Windows and makes for a very powerful and free
+scripting language there. Complete Beginners should probably start
+by downloading <a href="http://strawberryperl.com/">Strawberry Perl</a>
+and experimenting with it.
+</p>
+
+</define-tag>
