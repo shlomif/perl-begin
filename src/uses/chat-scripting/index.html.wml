@@ -18,8 +18,8 @@ Since the advent of the <a href="$(ROOT)/irc/">IRC - the Internet Relay
 Chat protocol</a>, people have been automating it by writing dedicated
 <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_bot">robots or
 "bots"</a>, such as chat bots, which are used for amusement;
-infobots, which are used to collect various and handily recall commonly used
-factoids, evalbots which are used to evaluate code, but there are many others
+infobots, which are used to collect various factoids, and handily recall them,
+evalbots which are used to evaluate code, but there are many others
 including many multi-purpose bots.
 </p>
 
@@ -147,5 +147,4 @@ with POE, and POE-Component-IRC.
 <h2 id="voip">Voice-over-IP (Asterisk/etc.) Support for Perl</h2>
 
 <p>
-
 </p>
