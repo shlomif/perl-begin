@@ -232,3 +232,8 @@ reading this page if it is indeed too slow." - missing comma.
 * Books:
     - http://oreilly.com/catalog/9780596004927/ - Programming Perl, 4th ed.
     - http://oreilly.com/catalog/0636920018452/ - Learning Perl, 6th ed.
+
+* Add a tutorial on how to create CPAN distributions.
+    - an up-to-date one is really needed.
+    - There is one at http://www.perlmonks.org/?node_id=879515 .
+
