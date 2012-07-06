@@ -39,20 +39,9 @@
 
 * Perhaps a page about working with network protocols in general.
 
-* Add a tutorial on how to create CPAN distributions.
-    - an up-to-date one is really needed.
-
-* Add some screenshots to the /uses/games page.
-
 * Add more information about:
     - URI parsing.
     - Filenames and paths parsing.
-
-* Pick up a better gvim colour scheme for the example code in the
-perl-for-newbies lecture.
-
-* Syntax-highlight the examples in the other code excerpts in the site
-(especially the src/tutorials/bad-elements/ ).
 
 * Add http://rosettacode.org/wiki/Main_Page .
 
@@ -62,9 +51,15 @@ perl-for-newbies lecture.
     - Peteris Krumins' Perl One-Liners Explained Book
         - TBD: which pages would be the best for it.
 
-
 Long Term:
 ----------
 
 * Maybe a page on «What's next "after" perl?».
 
+* Pick up a better gvim colour scheme for the example code in the
+perl-for-newbies lecture.
+
+* Syntax-highlight the examples in the other code excerpts in the site
+(especially the src/tutorials/bad-elements/ ).
+
+* Add some screenshots to the /uses/games page.
