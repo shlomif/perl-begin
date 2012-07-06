@@ -58,8 +58,6 @@ perl-for-newbies lecture.
 
 * Books:
     - http://oreilly.com/catalog/0636920018476/ - Perl Pocket Reference.
-    - http://oreilly.com/catalog/9780596004927/ - Programming Perl, 4th ed.
-    - http://oreilly.com/catalog/0636920018452/ - Learning Perl, 6th ed.
         - All covering perl-5.14.x.
     - Peteris Krumins' Perl One-Liners Explained Book
         - TBD: which pages would be the best for it.
