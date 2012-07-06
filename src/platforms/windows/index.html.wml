@@ -22,6 +22,23 @@ Portal</a>.
 </li>
 </ul>
 
+<h3 id="strawberry-perl">Strawberry Perl and DWIM Perl</h3>
+
+<p>
+<a href="http://strawberryperl.com/">Strawberry Perl</a> is an open-source,
+free-of-charge, and usable, distribution of Perl for Windows (both 32-bit
+and 64-bit), which gives you the full power of CPAN on Windows and is highly
+recommended. As a result, it is now best to avoid ActivePerl, which is
+proprietary and less usable.
+</p>
+
+<p>
+One should also mention <a href="http://dwimperl.com/">DWIM
+Perl for Windows</a> which is based on Strawberry Perl, but contains more
+interesting packages, such as a large part of Task::Kensho, the Padre Perl IDE,
+Moose, database drivers, and lots of other stuff.
+</p>
+
 <h3 id="mailing-lists">Mailing Lists</h3>
 
 <p>

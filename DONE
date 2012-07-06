@@ -211,4 +211,5 @@ perlbot, and add perlootut .
 * "So benchmark your code, see how well it performs and then continue
 reading this page if it is indeed too slow." - missing comma.
 
+* Mention Strawberry Perl and DWIM Perl on the MS Windows Page.
 
