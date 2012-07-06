@@ -229,3 +229,6 @@ reading this page if it is indeed too slow." - missing comma.
           http://poe.perl.org/ or Net::Async::IRC or AnyEvent::IRC .
         - Not sure it's a good idea.
 
+* Books:
+    - http://oreilly.com/catalog/9780596004927/ - Programming Perl, 4th ed.
+    - http://oreilly.com/catalog/0636920018452/ - Learning Perl, 6th ed.

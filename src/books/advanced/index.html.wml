@@ -11,19 +11,19 @@ core language and technologies of Perl. If you wish to learn about specific
 technologies then refer to the <a href="../topics/">topic-related books</a>.
 </p>
 
-<h2 id="camel_book"><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl</a></h2>
+<h2 id="camel_book"><a href="http://shop.oreilly.com/product/9780596004927.do">Programming Perl</a></h2>
 
 <book_info
-    authors="Larry Wall, Tom Christiansen, Jon Orwant"
+    authors="Tom Christiansen, brian d foy, Larry Wall, Jon Orwant"
     publisher="oreilly"
-    isbn="0596000278"
+    isbn="0596004923"
     perlbooksid="134"
     />
 
 <p>
 This is the classic reference to the Perl language, commonly known as
-"The Camel Book". (after the camel on its cover). This book is highly readable,
-funny, and covers the entire Perl 5.6.1 language on all of its fine points.
+"The Camel Book", after the camel on its cover. This book is highly readable,
+funny, and covers the entire Perl 5.14.x language with all of its fine points.
 </p>
 
 <p>
