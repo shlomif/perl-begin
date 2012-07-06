@@ -204,3 +204,4 @@ perlbot, and add perlootut .
     - long lines in source code.
     - grep !/\A\./ for getting rid of "." and ".." in readdir().
     - assigning a list to a scalar.
+    - Regular expressions starting or ending with .*? or .*
