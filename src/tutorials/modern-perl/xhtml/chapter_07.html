@@ -3,153 +3,127 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../styles/style.css" type="text/css" />
 </head>
 <body>
-<h2 id="heading_id_2">Objects</h2>
-<p>Writing large programs requires more discipline than writing small programs, due to the difficulty of managing all of the details of your program simultaneously. Abstraction (finding and exploiting similarities and near-similarities) and encapsulation (grouping specific details together and accessing them where they belong) are essential to managing this complexity.</p>
-<p>Functions help, but functions by themselves aren't sufficient for the largest programs. Object orientation is a popular technique for grouping functions together into classes of related behaviors.</p>
-<p>Perl 5's default object system is minimal. It's very flexible--you can build almost any other object system you want on top of it--but it provides little assistance for performing the most common tasks simply and easily.</p>
-<h3 id="heading_id_3">Moose</h3>
+<h1 id="heading_id_2">Objects</h1>
+<p>Programming is a management activity. The larger the program, the more details you must manage. Our only hope to manage this complexity is to exploit abstraction (treating similar things similarly) and encapsulation (grouping related details together).</p>
+<div id="iOO_0"></div>
+<div id="iobjects_0"></div>
+<div id="iOO__iclasses_0"></div>
+<div id="iclasses_0"></div>
+<p>Functions alone are insufficient for large problems. Several techniques group functions into units of related behaviors. One popular technique is <em>object orientation</em> (OO), or <em>object oriented programming</em> (OOP), where programs work with <em>objects</em>--discrete, unique entities with their own identities.</p>
+<h2 id="heading_id_3">Moose</h2>
 <div id="moose"></div>
 <div id="imoose_0"></div>
-<p>Moose is a more complete object system for Perl 5. It builds on the existing Perl 5 system, and provides simpler defaults, better integration, and advanced features from several other languages, including Smalltalk, Common Lisp, and Perl 6. It's still worth learning the default Perl 5 object system, if only to write very simple programs where Moose is inappropriate or to maintain legacy code, but Moose is currently the best way to write object-oriented code in modern Perl 5.</p>
-<div id="iobject_orientation_0"></div>
-<div id="iobject_oriented_programming_0"></div>
-<div id="iOO_0"></div>
-<div id="iOOP_0"></div>
-<div id="iobjects_0"></div>
-<div id="iclasses_0"></div>
-<p><i>Object orientation</i>, or <i>object oriented programming</i>, is a way of managing programs by categorizing their components into discrete, unique entities. These are <i>objects</i>. In Moose terms, each object is an instance of a <i>class</i>, which serves as a template to describe any data the object contains as well as its specific behaviors.</p>
-<h4 id="heading_id_4">Classes</h4>
+<p>Perl 5's default object system is flexible, but minimal. You can build great things on top of it, but it provides little assistance for some basic tasks. <em>Moose</em> is a complete object system for Perl 5 <span class="footnote">(footnote: See <code>perldoc Moose::Manual</code> for more information.)</span>. It provides simpler defaults, and advanced features borrowed from languages such as Smalltalk, Common Lisp, and Perl 6. Moose code interoperates with the default object system and is currently the best way to write object oriented code in modern Perl 5.</p>
+<h3 id="heading_id_4">Classes</h3>
 <div id="iclasses_1"></div>
-<div id="ipackage_1"></div>
-<p>A class in Perl 5 is part of a package, which provides a namespace in which to store class data.</p>
+<div id="ibuiltins__ipackage_3"></div>
+<p>A Moose object is a concrete instance of a <em>class</em>, which is a template describing data and behavior specific to the object. Classes use packages (<a href="chapter_03.html#packages">Packages</a>(packages)) to provide namespaces:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package Cat;
-
+<code>    package Cat
+    {
         use Moose;
     }</code>
 </pre></div>
-<div class="author">
-<p>Classes can be anonymous. See <code>perldoc Moose::Meta::Class</code>.</p>
-</div>
-<div id="iinstance_0"></div>
 <div id="iOO__iinstances_0"></div>
-<p>This <code>Cat</code> class appears to do nothing, but Moose does a lot of work to define the class and register it with Perl. With that done, you can create objects (or <i>instances</i>) of the <code>Cat</code> class:</p>
+<p>This <code>Cat</code> class <em>appears</em> to do nothing, but that's all Moose needs to make a class. Create objects (or <em>instances</em>) of the <code>Cat</code> class with the syntax:</p>
 <div class="programlisting">
 <pre>
 <code>    my $brad = Cat-&gt;new();
     my $jack = Cat-&gt;new();</code>
 </pre></div>
-<p>The arrow syntax should look familiar. Just as an arrow dereferences a reference, an arrow calls a method on an object or class.</p>
-<h4 id="heading_id_5">Methods</h4>
-<div id="imethod_0"></div>
-<div id="iinvocant_0"></div>
-<p>A <i>method</i> is a function associated with a class. It resembles a fully-qualified function call in a superficial sense, but it differs in two important ways. First, a method call always has an <i>invocant</i> on which to perform the method. In the case of creating the two <code>Cat</code> objects, the name of the class (<code>Cat</code>) is the invocant:</p>
+<p>Just as an arrow dereferences a reference, an arrow calls a method on an object or class.</p>
+<h3 id="heading_id_5">Methods</h3>
+<div id="iOO__imethods_0"></div>
+<div id="iOO__iinvocants_0"></div>
+<p>A <em>method</em> is a function associated with a class. Just as functions belong to namespaces, so do methods belong to classes, with two differences. First, a method always operates on an <em>invocant</em>. Calling <code>new()</code> on <code>Cat</code> effectively sends the <code>Cat</code> class a message. The name of the class, <code>Cat</code>, is <code>new()</code>'s invocant. When you call a method on an object, that object is the invocant:</p>
 <div class="programlisting">
 <pre>
-<code>    my $fuzzy = <b>Cat</b>-&gt;new();</code>
+<code>    my $choco = <strong>Cat</strong>-&gt;new();
+    <strong>$choco</strong>-&gt;sleep_on_keyboard();</code>
 </pre></div>
 <div id="idispatch_0"></div>
 <div id="imethod_dispatch_0"></div>
-<p>Second, a method call always involves a <i>dispatch</i> strategy. The dispatch strategy describes how the object system decides <i>which</i> method to call. This may seem obvious when there's only a <code>Cat</code>, but method dispatch is fundamental to the design of object systems.</p>
-<p>The invocant of a method in Perl 5 is its first argument. For example, the <code>Cat</code> class could have a <code>meow()</code> method:</p>
+<div id="iOO__idispatch_0"></div>
+<div id="iOO__imethod_dispatch_0"></div>
+<p>Second, a method call always involves a <em>dispatch</em> strategy, where the object system selects the appropriate method. Given the simplicity of <code>Cat</code>, the dispatch strategy is obvious, but much of the power of OO comes from this idea.</p>
+<p>Inside a method, its first argument is the invocant. Idiomatic Perl 5 uses <code>$self</code> as its name. Suppose a <code>Cat</code> can <code>meow()</code>:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package Cat;
-
+<code>    package Cat
+    {
         use Moose;
 
-        <b>sub meow</b>
-        <b>{</b>
-            <b>my $self = shift;</b>
-            <b>say 'Meow!';</b>
-        <b>}</b>
+        <strong>sub meow</strong>
+        <strong>{</strong>
+            <strong>my $self = shift;</strong>
+            <strong>say 'Meow!';</strong>
+        <strong>}</strong>
     }</code>
 </pre></div>
 <p>Now all <code>Cat</code> instances can wake you up in the morning because they haven't eaten yet:</p>
 <div class="programlisting">
 <pre>
-<code>    my $alarm = Cat-&gt;new();
-    $alarm-&gt;meow();
-    $alarm-&gt;meow();
-    $alarm-&gt;meow();</code>
+<code>    my $fuzzy_alarm = Cat-&gt;new();
+    $fuzzy_alarm-&gt;meow() for 1 .. 3;</code>
 </pre></div>
 <div id="iclass_method_0"></div>
+<div id="iinstance_method_0"></div>
+<div id="iOO__iclass_methods_0"></div>
+<div id="iOO__iinstance_methods_0"></div>
 <div id="imethods__iclass_0"></div>
-<p>By convention, invocants in Perl methods are lexical variables named <code>$self</code>, but this is merely pervasive convention. The example implementation of <code>meow()</code> does not use the invocant, so it's irrelevant once method dispatch has completed. In that sense, <code>meow()</code> is like <code>new()</code>; you can safely use the name of the class (<code>Cat</code>) as its invocant. This is a <i>class method</i>:</p>
-<div class="programlisting">
-<pre>
-<code>    Cat-&gt;meow() for 1 .. 3;</code>
-</pre></div>
-<h4 id="heading_id_6">Attributes</h4>
-<div id="iattributes_40objects41_0"></div>
-<div id="iobjects__iattributes_0"></div>
-<div id="iinstance_data_0"></div>
-<div id="istate_2"></div>
-<div id="iobjects__istate_0"></div>
-<p>Every object in Perl 5 is unique. Objects can contain <i>attributes</i>, or private data associated with each object. You may also hear this described as <i>instance data</i> or <i>state</i>.</p>
+<div id="imethods__iinstance_0"></div>
+<p>Methods which access invocant data are <em>instance methods</em>, because they depend on the presence of an appropriate invocant to work correctly. Methods (such as <code>meow()</code>) which do not access instance data are <em>class methods</em>. You may invoke class methods on classes and class and instance methods on instances, but you cannot invoke instance methods on classes.</p>
+<div id="imethods__iconstructor_0"></div>
+<p><em>Constructors</em>, which <em>create</em> instances, are obviously class methods. Moose provides a default constructor for you.</p>
+<p>Class methods are effectively namespaced global functions. Without access to instance data, they have few advantages over namespaced functions. Most OO code rightly uses instance methods, as they have access to instance data.</p>
+<h3 id="heading_id_6">Attributes</h3>
+<div id="iattributes__iobjects_0"></div>
+<div id="iOO__iattributes_0"></div>
+<div id="iOO__istate_0"></div>
 <div id="iattributes__ityped_0"></div>
-<div id="iattributes__iro_0"></div>
-<div id="iattributes__iread_only_0"></div>
-<p>To define object attributes, describe them as part of the class:</p>
+<div id="iattributes__iro_40read_only41_0"></div>
+<p>Every object in Perl 5 is unique. Objects can contain private data associated with each unique object--these are <em>attributes</em>, <em>instance data</em>, or object <em>state</em>. Define an attribute by declaring it as part of the class:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package Cat;
-
+<code>    package Cat
+    {
         use Moose;
 
-        <b>has 'name', is =&gt; 'ro', isa =&gt; 'Str';</b>
+        <strong>has 'name', is =&gt; 'ro', isa =&gt; 'Str';</strong>
     }</code>
 </pre></div>
-<p>In English, that line of code means "<code>Cat</code> objects have a <code>name</code> attribute. It's readable but not writable, and it's a string." That single line of code creates an accessor method (<code>name()</code>) and allows you to pass a <code>name</code> parameter to the constructor:</p>
+<p>In English, that reads "<code>Cat</code> objects have a <code>name</code> attribute. It's read-only, and is a string."</p>
+<p>Moose provides the <code>has()</code> function, which declares an attribute. The first argument, <code>'name'</code> here, is the attribute's name. The <code>is =&gt; 'ro'</code> pair of arguments declares that this attribute is <code>r</code>ead <code>o</code>nly, so you cannot modify it after you've set it. Finally, the <code>isa =&gt; 'Str'</code> pair declares that the value of this attribute can only be a <code>str</code>ing.</p>
+<div id="imethods__iaccessor_0"></div>
+<div id="iOO__iaccessor_methods_0"></div>
+<p>As a result of <code>has</code>, Moose creates an <em>accessor</em> method named <code>name()</code> and allows you to pass a <code>name</code> parameter to <code>Cat</code>'s constructor:</p>
 <div class="programlisting">
 <pre>
-<code>    use Cat;
-
-    for my $name (qw( Tuxie Petunia Daisy ))
+<code>    for my $name (qw( Tuxie Petunia Daisy ))
     {
         my $cat = Cat-&gt;new( name =&gt; $name );
         say "Created a cat for ", $cat-&gt;name();
     }</code>
 </pre></div>
-<div id="iattributes__iuntyped_0"></div>
-<p>Attributes do not <i>need</i> to have types, in which case Moose will skip all of the verification and validation for you:</p>
-<div class="programlisting">
-<pre>
-<code>    {
-        package Cat;
-
-        use Moose;
-
-        has 'name', is =&gt; 'ro', isa =&gt; 'Str';
-        <b>has 'age',  is =&gt; 'ro';</b>
-    }
-
-    my $invalid = Cat-&gt;new( name =&gt; 'bizarre', age =&gt; 'purple' );</code>
-</pre></div>
-<p>This can be more flexible, but it can also lead to strange errors if someone tries to provide invalid data for an attribute. The balance between flexibility and correctness depends on your local coding standards and the type of errors you want to catch.</p>
 <div class="sidebar">
-<p>The Moose documentation uses parentheses to separate an attribute name from its characteristics:</p>
+<p>Moose's documentation uses parentheses to separate attribute names and characteristics:</p>
 <div class="programlisting">
 <pre>
 <code>        has 'name' =&gt; ( is =&gt; 'ro', isa =&gt; 'Str' );</code>
 </pre></div>
-<p>Perl parses both that form and the form used in this book the same way. You <i>could</i> achieve the same effect by writing either:</p>
+<p>This is equivalent to:</p>
 <div class="programlisting">
 <pre>
-<code>    has( 'name', 'is', 'ro', 'isa', 'Str' );
-    has( qw( name is ro isa Str ) );</code>
+<code>    has( 'name', 'is', 'ro', 'isa', 'Str' );</code>
 </pre></div>
-<p>... but in this case, extra punctuation adds clarity. The approach of the Moose documentation is most useful when dealing with multiple characteristics:</p>
+<p>Moose's approach works nicely for complex declarations:</p>
 <div class="programlisting">
 <pre>
 <code>    has 'name' =&gt; (
@@ -161,92 +135,106 @@
         lazy_build =&gt; 1,
     );</code>
 </pre></div>
-<p>... but for the sake of simplicity of introduction, this book prefers to use less punctuation. Perl gives you the flexibility to choose whichever approach makes the intent of your code most clear.</p>
+<p>... while this book prefers a low-punctuation approach for simple declarations. Choose the punctuation which offers you the most clarity.</p>
 </div>
-<div id="iattributes__irw_0"></div>
-<div id="iattributes__iread45write_0"></div>
-<div id="imutator_0"></div>
-<div id="imethods__imutator_0"></div>
-<p>If you mark an attribute as readable <i>and</i> writable (with <code>is =&gt; rw</code>), Moose will create a <i>mutator</i> method--a method you can use to change the value of an attribute:</p>
+<div id="iattributes__iuntyped_0"></div>
+<p>Moose will complain if you pass something which isn't a string. Attributes do not <em>need</em> to have types. In that case, anything goes:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package Cat;
+<code>    package Cat
+    {
+        use Moose;
 
+        has 'name', is =&gt; 'ro', isa =&gt; 'Str';
+        <strong>has 'age',  is =&gt; 'ro';</strong>
+    }
+
+    my $invalid = Cat-&gt;new( name =&gt; 'bizarre',
+                            age  =&gt; 'purple' );</code>
+</pre></div>
+<p>Specifying a type allows Moose to perform some data validations for you. Sometimes this strictness is invaluable.</p>
+<div id="iattributes__irw_40read45write41_0"></div>
+<div id="imethods__imutator_0"></div>
+<div id="iOO__imutator_methods_0"></div>
+<p>If you mark an attribute as readable <em>and</em> writable (with <code>is =&gt; rw</code>), Moose will create a <em>mutator</em> method which can change that attribute's value:</p>
+<div class="programlisting">
+<pre>
+<code>    package Cat
+    {
         use Moose;
 
         has 'name', is =&gt; 'ro', isa =&gt; 'Str';
         has 'age',  is =&gt; 'ro', isa =&gt; 'Int';
-        <b>has 'diet', is =&gt; 'rw';</b>
+        <strong>has 'diet', is =&gt; 'rw';</strong>
     }
 
-    my $fat = Cat-&gt;new( name =&gt; 'Fatty', age =&gt; 8, diet =&gt; 'Sea Treats' );
+    my $fat = Cat-&gt;new( name =&gt; 'Fatty',
+                        age  =&gt; 8,
+                        diet =&gt; 'Sea Treats' );
+
     say $fat-&gt;name(), ' eats ', $fat-&gt;diet();
 
-    <b>$fat-&gt;diet( 'Low Sodium Kitty Lo Mein' );</b>
+    <strong>$fat-&gt;diet( 'Low Sodium Kitty Lo Mein' );</strong>
     say $fat-&gt;name(), ' now eats ', $fat-&gt;diet();</code>
 </pre></div>
-<p>Trying to use a <code>ro</code> accessor as a mutator will throw an exception:</p>
-<div class="screen">
-<p>Cannot assign a value to a read-only accessor at ....</p>
-</div>
-<div class="sidebar">
-<p>When should you use <code>ro</code> and when <code>rw</code>? It's a matter of design, convenience, and purity. One school of thought (<a href="chapter_07.html#immutability">Immutability</a>(immutability)) suggests making all instance data <code>ro</code> and passing all relevant data into the constructor. In the <code>Cat</code> example, <code>age()</code> might still be an accessor, but the constructor could take the <i>year</i> of the cat's birth and calculate the age itself based on the current year, rather than relying on someone to update the age of all cats manually.</p>
-<p>This approach helps to consolidate all validation code and helps to ensure that all created objects have valid data. These are design goals worth considering, though Moose does not enforce any particular philosophy in this area.</p>
-</div>
-<p>Now that individual objects can have their own instance data, the value of object orientation may be more obvious. An object is a bookmark for the data it contains as well as the behavior appropriate to that data. An object is a collection of named data and behaviors. A class is the description of the data and behaviors that instances of that class possess.</p>
-<h4 id="heading_id_7">Encapsulation</h4>
+<p>An <code>ro</code> accessor used as a mutator will throw the exception <code>Cannot assign a value to a read-only accessor at ...</code>.</p>
+<p>Using <code>ro</code> or <code>rw</code> is a matter of design, convenience, and purity. Moose enforces no particular philosophy in this area. Some people suggest making all instance data <code>ro</code> such that you must pass instance data into the constructor (<a href="chapter_07.html#immutability">Immutability</a>(immutability)). In the <code>Cat</code> example, <code>age()</code> might still be an accessor, but the constructor could take the <em>year</em> of the cat's birth and calculate the age itself based on the current year. This approach consolidates validation code and ensure that all created objects have valid data.</p>
+<p>Instance data begins to demonstrate the value of object orientation. An object contains related data and can perform behaviors with that data. A class describes that data and those behaviors.</p>
+<h3 id="heading_id_7">Encapsulation</h3>
 <div id="iencapsulation_1"></div>
-<p>Moose allows you to declare <i>which</i> attributes class instances possess as well as how to treat those attributes. The examples shown so far do not describe <i>how</i> to store those attributes. This information is available if you really need it, but the declarative approach can actually improve your programs. In this way, Moose encourages <i>encapsulation</i>, or hiding the internal details of an object from external uses of that object.</p>
-<p>Consider a change to the age of a <code>Cat</code>; instead of requesting that directly from the constructor, calculate the age of a <code>Cat</code> based on the year of its birth:</p>
+<div id="iOO__iencapsulation_0"></div>
+<p>Moose allows you to declare <em>which</em> attributes class instances possess (a cat has a name) as well as the attributes of those attributes (you cannot change a cat's name; you can only read it). Moose itself decides how to <em>store</em> those attributes. You can change that if you like, but allowing Moose to manage your storage encourages <em>encapsulation</em>: hiding the internal details of an object from external users of that object.</p>
+<p>Consider a change to how <code>Cat</code>s manage their ages. Instead of passing a value for an age to the constructor, pass in the year of the cat's birth and calculate the age as needed:</p>
 <div class="programlisting">
 <pre>
-<code>    package Cat;
+<code>    package Cat
+    {
+        use Moose;
 
-    use Moose;
+        has 'name',        is =&gt; 'ro', isa =&gt; 'Str';
+        has 'diet',        is =&gt; 'rw';
+        <strong>has 'birth_year',  is =&gt; 'ro', isa =&gt; 'Int';</strong>
 
-    has 'name',        is =&gt; 'ro', isa =&gt; 'Str';
-    has 'diet',        is =&gt; 'rw';
-    <b>has 'birth_year',  is =&gt; 'ro', isa =&gt; 'Int';</b>
+        <strong>sub age</strong>
+        <strong>{</strong>
+            <strong>my $self = shift;</strong>
+            <strong>my $year = (localtime)[5] + 1900;</strong>
 
-    <b>sub age</b>
-    <b>{</b>
-        <b>my $self = shift;</b>
-        <b>my $year = (localtime)[5] + 1900;</b>
-
-        <b>return $year - $self-&gt;birth_year();</b>
-    <b>}</b></code>
+            <strong>return $year - $self-&gt;birth_year();</strong>
+        <strong>}</strong>
+    }</code>
 </pre></div>
-<p>While the syntax for <i>creating</i> <code>Cat</code> objects has changed, the syntax for <i>using</i> <code>Cat</code> objects has not. The <code>age()</code> method does the same thing it has always done, at least as far as all code outside of the <code>Cat</code> class understands. <i>How</i> it does that has changed, but that is a detail internal to the <code>Cat</code> class--encapsulated within that class itself.</p>
-<div class="sidebar">
-<p>The old syntax for <i>creating</i> <code>Cat</code> objects could remain in place; customize the generated <code>Cat</code> constructor to allow passing an <code>age</code> parameter and calculate <code>birth_year</code> appropriately from that. See <code>perldoc Moose::Manual::Attributes</code>.</p>
+<p>While the syntax for <em>creating</em> <code>Cat</code> objects has changed, the syntax for <em>using</em> <code>Cat</code> objects has not. Outside of <code>Cat</code>, <code>age()</code> behaves as it always has. <em>How</em> it works internally is a detail to the <code>Cat</code> class.</p>
+<div class="tip">
+<p>Retain the old syntax for <em>creating</em> <code>Cat</code> objects by customizing the generated <code>Cat</code> constructor to allow passing an <code>age</code> parameter. Calculate <code>birth_year</code> from that. See <code>perldoc Moose::Manual::Attributes</code>.</p>
 </div>
 <div id="iattributes__idefault_values_0"></div>
-<p>This new approach to calculating <code>Cat</code> ages has another advantage; you can use <i>default attribute values</i> to reduce the code necessary to create a <code>Cat</code> object:</p>
+<p>Calculating ages has another advantage. A <em>default attribute value</em> will do the right thing when someone creates a new <code>Cat</code> object without passing a birth year:</p>
 <div class="programlisting">
 <pre>
-<code>    package Cat;
+<code>    package Cat
+    {
+        use Moose;
 
-    use Moose;
+        has 'name', is =&gt; 'ro', isa =&gt; 'Str';
+        has 'diet', is =&gt; 'rw', isa =&gt; 'Str';
 
-    has 'name',        is =&gt; 'ro', isa =&gt; 'Str';
-    has 'diet',        is =&gt; 'rw', isa =&gt; 'Str';
-    <b>has 'birth_year',  is =&gt; 'ro', isa =&gt; 'Int',</b>
-                       <b>default =&gt; sub { (localtime)[5] + 1900 };</b></code>
+        <strong>has 'birth_year',</strong>
+            <strong>is      =&gt; 'ro',</strong>
+            <strong>isa     =&gt; 'Int',</strong>
+            <strong>default =&gt; sub { (localtime)[5] + 1900 };</strong>
+    }</code>
 </pre></div>
-<p>The <code>default</code> keyword on an attribute takes a function reference which returns the default value for that attribute when constructing a new object. If the constructor does not receive an appropriate value for that attribute, the object gets that default value instead. Now you can create a kitten:</p>
+<p>The <code>default</code> keyword on an attribute takes a function reference <span class="footnote">(footnote: You can use a simple value such as a number or string directly, but use a function reference for anything more complex.)</span> which returns the default value for that attribute when constructing a new object. If the code creating an object passes no constructor value for that attribute, the object gets the default value:</p>
 <div class="programlisting">
 <pre>
-<code>    my $kitten = Cat-&gt;new( name =&gt; 'Bitey' );</code>
+<code>    my $kitten = Cat-&gt;new( name =&gt; 'Choco' );</code>
 </pre></div>
 <p>... and that kitten will have an age of <code>0</code> until next year.</p>
-<div class="sidebar">
-<p>You can also use a simple value, such as a number or string, as a default value. Use a function reference when you need to calculate something unique for each object, including a hash or array reference.</p>
-</div>
-<h5 id="heading_id_8">Polymorphism</h5>
-<p>A program which deals with one type of data and one type of behavior on that data benefits little from the use of objects. A well-designed object-oriented program should be capable of managing many types of data. When well designed classes encapsulate specific details of objects into the appropriate places, something curious happens to the rest of the program: it has the opportunity to become <i>less</i> specific.</p>
-<p>In other words, moving the specifics of the details of what the program knows about individual <code>Cat</code>s (the attributes) and what the program knows that <code>Cat</code>s can do (the methods) into the <code>Cat</code> class means that code that deals with <code>Cat</code> instances can happily ignore <i>how</i> <code>Cat</code> does what it does.</p>
-<p>This is clearer with an example. Consider a function which describes an object:</p>
+<h4 id="heading_id_8">Polymorphism</h4>
+<p>Encapsulation is useful, but the real power of object orientation is much broader. A well-designed OO program can manage many types of data. When well-designed classes encapsulate specific details of objects into the appropriate places, something curious happens: the code often becomes <em>less</em> specific.</p>
+<p>Moving the details of what the program knows about individual <code>Cat</code>s (the attributes) and what the program knows that <code>Cat</code>s can do (the methods) into the <code>Cat</code> class means that code that deals with <code>Cat</code> instances can happily ignore <em>how</em> <code>Cat</code> does what it does.</p>
+<p>Consider a function which displays details of an object:</p>
 <div class="programlisting">
 <pre>
 <code>    sub show_vital_stats
@@ -258,17 +246,20 @@
         say 'I eat ',      $object-&gt;diet();
     }</code>
 </pre></div>
-<div id="ipolymorphism_0"></div>
-<p>It's obvious (in context) that you can pass a <code>Cat</code> object to this function and get sane results. It's less obvious that you can pass other types of objects and get sane results. This is an important object orientation property called <i>polymorphism</i>, where you can substitute an object of one class for an object of another class if they provide the same external interface in the same way.</p>
 <div id="igenericity_0"></div>
-<p>Any object of any class which provides the <code>name()</code>, <code>age()</code>, and <code>diet()</code> accessors will work with this function. The function is sufficiently generic that any object which respects this interface is a valid parameter.</p>
-<div class="sidebar">
+<div id="iOO__igenericity_0"></div>
+<p>It's obvious (in context) that this function works if you pass it a <code>Cat</code> object. In fact, it will do the right thing for any object with the appropriate three accessors, no matter <em>how</em> that object provides those accessors and no matter <em>what kind</em> of object it is: <code>Cat</code>, <code>Caterpillar</code>, or <code>Catbird</code>. The function is sufficiently generic that any object which respects this interface is a valid parameter.</p>
+<div id="ipolymorphism_0"></div>
+<div id="iOO__ipolymorphism_0"></div>
+<p>This property of <em>polymorphism</em> means that you can substitute an object of one class for an object of another class if they provide the same external interface.</p>
+<div class="tip">
 <div id="iduck_typing_0"></div>
-<p>Some languages and environments require a formal relationship between two classes before allowing a program to substitute instances of one class for another. Perl 5 provides ways to enforce these checks, but it does not require them. Its default ad-hoc system lets you treat any two instances with methods of the same name as equivalent enough. Some people call this <i>duck typing</i>, in the theory that any object which can <code>quack()</code> is sufficiently duck-like that you can treat it as a duck.</p>
+<div id="iOO__iduck_typing_0"></div>
+<p>Some languages and environments require a formal relationship between two classes before allowing a program to substitute instances for each other. Perl 5 provides ways to enforce these checks, but it does not require them. Its default ad-hoc system lets you treat any two instances with methods of the same name as equivalent enough. Some people call this <em>duck typing</em>, arguing that any object which can <code>quack()</code> is sufficiently duck-like that you can treat it as a duck.</p>
 </div>
-<p>The benefit of the genericity in <code>show_vital_stats()</code> is that neither the specific <i>type</i> nor the implementation of the object provided matters. Any invocant is valid if it supports three methods, <code>name()</code>, <code>age()</code>, and <code>diet()</code> which take no arguments and each return something which can concatenate in a string context. You may have a hundred different classes in your code, none of which have any obvious relationship between each other, but if they conform to this expectation of behavior, they will work with this method.</p>
-<p>This is an improvement over writing specific functions to extract and display this information for even a fraction of those hundred classes. This genericity requires less code, and using a well-defined interface as the mechanism to access this information means that any of those hundred classes can calculate that information in any way possible. The details of those calculations is where it matters most: in the bodies of the methods in the classes themselves.</p>
-<p>Of course, the mere existence of a method called <code>name()</code> or <code>age()</code> does not by itself imply the behavior of that object. A <code>Dog</code> object may have an <code>age()</code> which is an accessor such that you can discover <code>$rodney</code> is 8 but <code>$lucky</code> is 3. A <code>Cheese</code> object may have an <code>age()</code> method that lets you control how long to stow <code>$cheddar</code> so that it becomes sharp; in other words, <code>age()</code> may be an accessor in one class but not in another:</p>
+<p><code>show_vital_stats()</code> cares that an invocant is valid only in that it supports three methods, <code>name()</code>, <code>age()</code>, and <code>diet()</code> which take no arguments and each return something which can concatenate in a string context. You may have a hundred different classes in your code, none of which have any obvious relationships, but they will work with this method if they conform to this expected behavior.</p>
+<p>Consider how you might enumerate a zoo's worth of animals without this polymorphic function. The benefit of genericity should be obvious. As well, any specific details about how to calculate the age of an ocelot or octopus can belong in the relevant class--where it matters most.</p>
+<p>Of course, the mere existence of a method called <code>name()</code> or <code>age()</code> does not by itself imply the behavior of that object. A <code>Dog</code> object may have an <code>age()</code> which is an accessor such that you can discover <code>$rodney</code> is 9 but <code>$lucky</code> is 4. A <code>Cheese</code> object may have an <code>age()</code> method that lets you control how long to stow <code>$cheddar</code> to sharpen it. <code>age()</code> may be an accessor in one class but not in another:</p>
 <div class="programlisting">
 <pre>
 <code>    # how old is the cat?
@@ -277,61 +268,63 @@
     # store the cheese in the warehouse for six months
     $cheese-&gt;age();</code>
 </pre></div>
-<p>Sometimes it's useful to know <i>what</i> an object does. In other words, you need to understand its type.</p>
-<h4 id="heading_id_9">Roles</h4>
+<p>Sometimes it's useful to know <em>what</em> an object does and what that <em>means</em>.</p>
+<h3 id="heading_id_9">Roles</h3>
 <div id="roles"></div>
-<p>A <i>role</i> is a named collection of behavior and state. A class is like a role, with the vital difference that you can instantiate a class, but not a role. While a class is primarily a mechanism for organizing behaviors and state into a template for objects, a role is primarily a mechanism for organizing behaviors and state into a named collection.</p>
-<p>In short, a role is something a class does.</p>
-<p>The difference between some sort of <code>Animal</code>--with a <code>name()</code>, an <code>age()</code>, and a preferred <code>diet()</code>--and <code>Cheese</code>--which can <code>age()</code> in storage--may be that the <code>Animal</code> performs a <code>LivingBeing</code> role, while the <code>Cheese</code> performs a <code>Storable</code> role.</p>
-<p>While you <i>could</i> check that every object passed into <code>show_vital_stats()</code> is an instance of <code>Animal</code>, you lose some genericity that way. Instead, check that the object <i>performs</i> the <code>LivingBeing</code> role:</p>
+<div id="iroles_0"></div>
+<p>A <em>role</em> is a named collection of behavior and state <span class="footnote">(footnote: See the Perl 6 design documents on roles at <span class="url">http://feather.perl6.nl/syn/S14.html</span> and research on Smalltalk traits at <span class="url">http://scg.unibe.ch/research/traits</span> for copious details.)</span>. While a class organizes behaviors and state into a template for objects, a role organizes a named collection of behaviors and state. You can instantiate a class, but not a role. A role is something a class does.</p>
+<p>Given an <code>Animal</code> which has an age and a <code>Cheese</code> which can age, one difference may be that <code>Animal</code> does the <code>LivingBeing</code> role, while the <code>Cheese</code> does the <code>Storable</code> role:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package LivingBeing;
-
+<code>    package LivingBeing
+    {
         use Moose::Role;
 
         requires qw( name age diet );
     }</code>
 </pre></div>
-<p>Anything which performs this role must supply the <code>name()</code>, <code>age()</code>, and <code>diet()</code> methods. This does not happen automatically; the <code>Cat</code> class must explicitly mark that it performs the role:</p>
+<p>Anything which does this role must supply the <code>name()</code>, <code>age()</code>, and <code>diet()</code> methods. The <code>Cat</code> class must explicitly mark that it does the role:</p>
 <div class="programlisting">
 <pre>
-<code>    package Cat;
+<code>    package Cat
+    {
+        use Moose;
 
-    use Moose;
+        has 'name', is =&gt; 'ro', isa =&gt; 'Str';
+        has 'diet', is =&gt; 'rw', isa =&gt; 'Str';
 
-    has 'name',        is =&gt; 'ro', isa =&gt; 'Str';
-    has 'diet',        is =&gt; 'rw', isa =&gt; 'Str';
-    has 'birth_year',  is =&gt; 'ro', isa =&gt; 'Int',
-                       default =&gt; (localtime)[5] + 1900;
+        has 'birth_year',
+            is      =&gt; 'ro',
+            isa     =&gt; 'Int',
+            default =&gt; sub { (localtime)[5] + 1900 };
 
-    <b>with 'LivingBeing';</b>
+        <strong>with 'LivingBeing';</strong>
 
-    sub age { ... }</code>
+        sub age { ... }
+    }</code>
 </pre></div>
 <div id="iroles__icomposition_0"></div>
-<p>That single line has two functions. First, it tells Moose to note that the class performs the named role. Second, it composes the role into the class. This process checks that the class <i>somehow</i> provides all of the required methods and all of the required attributes without potential collisions.</p>
-<p>The <code>Cat</code> class provides <code>name()</code> and <code>diet()</code> methods as accessors to named attributes. It also declares its own <code>age()</code> method.</p>
-<div class="sidebar">
-<p>The <code>with</code> keyword used to apply roles to a class must occur <i>after</i> attribute declaration so that composition can identify any generated accessor methods.</p>
+<p>The <code>with</code> line causes Moose to <em>compose</em> the <code>LivingBeing</code> role into the <code>Cat</code> class. Composition ensures all of the attributes and methods of the role part of the class. <code>LivingBeing</code> requires any composing class to provide methods named <code>name()</code>, <code>age()</code>, and <code>diet()</code>. <code>Cat</code> satisfies these constraints. If <code>LivingBeing</code> were composed into a class which did not provide those methods, Moose would throw an exception.</p>
+<div class="tip">
+<p>The <code>with</code> keyword used to apply roles to a class must occur <em>after</em> attribute declaration so that composition can identify any generated accessor methods.</p>
 </div>
-<p>Now all <code>Cat</code> instances will return true when queried if they provide the <code>LivingBeing</code> role and <code>Cheese</code> objects should not:</p>
+<p>Now all <code>Cat</code> instances will return a true value when queried if they provide the <code>LivingBeing</code> role. <code>Cheese</code> objects should not:</p>
 <div class="programlisting">
 <pre>
-<code>    say 'Alive!' if $fluffy-&gt;does('LivingBeing');
-    say 'Moldy!' if $cheese-&gt;does('LivingBeing');</code>
+<code>    say 'Alive!' if $fluffy-&gt;DOES('LivingBeing');
+    say 'Moldy!' if $cheese-&gt;DOES('LivingBeing');</code>
 </pre></div>
-<p>This design approach may seem like extra bookkeeping, but it separates the <i>capabilities</i> of classes and objects from the <i>implementation</i> of those classes and objects. The special behavior of the <code>Cat</code> class, where it stores the birth year of the animal and calculates the age directly, could itself be a role:</p>
+<p>This design technique separates the <em>capabilities</em> of classes and objects from the <em>implementation</em> of those classes and objects. The birth year calculation behavior of the <code>Cat</code> class could itself be a role:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package CalculateAgeFromBirthYear;
-
+<code>    package CalculateAge::From::BirthYear
+    {
         use Moose::Role;
 
-        has 'birth_year', is =&gt; 'ro', isa =&gt; 'Int',
-                          default =&gt; sub { (localtime)[5] + 1900 };
+        has 'birth_year',
+            is      =&gt; 'ro',
+            isa     =&gt; 'Int',
+            default =&gt; sub { (localtime)[5] + 1900 };
 
         sub age
         {
@@ -342,49 +335,62 @@
         }
     }</code>
 </pre></div>
-<p>Moving this code out of the <code>Cat</code> class into a separate role makes it available to other classes. Now <code>Cat</code> can perform both roles:</p>
+<p>Extracting this role from <code>Cat</code> makes the useful behavior available to other classes. Now <code>Cat</code> can compose both roles:</p>
 <div class="programlisting">
 <pre>
-<code>    package Cat;
-
-    use Moose;
-
-    has 'name', is =&gt; 'ro', isa =&gt; 'Str';
-    has 'diet', is =&gt; 'rw';
-
-    <b>with 'LivingBeing', 'CalculateAgeFromBirthYear';</b></code>
-</pre></div>
-<div id="iallomorphism_0"></div>
-<div id="iroles__iallomorphism_0"></div>
-<p>The implementation of the <code>age()</code> method supplied by the <code>CalculateAgeFromBirthYear</code> satisfies the requirement of the <code>LivingBeing</code> role, and the composition succeeds. Checking that objects perform the <code>LivingBeing</code> role remains unchanged, regardless of <i>how</i> objects perform this role. A class could choose to provide its own <code>age()</code> method or obtain it from another role; that doesn't matter. All that matters is that it contains one. This is <i>allomorphism</i>.</p>
-<h5 id="heading_id_10">Roles and DOES()</h5>
-<div id="iDOES4041_0"></div>
-<div id="iMoose__iDOES4041_0"></div>
-<p>Applying a role to a class means that the class and its instances will return true when you call the <code>DOES()</code> method on them:</p>
-<div class="programlisting">
-<pre>
-<code>    say 'This Cat is alive!' if $kitten-&gt;DOES( 'LivingBeing' );</code>
-</pre></div>
-<h4 id="heading_id_11">Inheritance</h4>
-<div id="inheritance"></div>
-<div id="iinheritance_0"></div>
-<div id="iMoose__iinheritance_0"></div>
-<p>Another feature of Perl 5's object system is <i>inheritance</i>, where one class specializes another. This establishes a relationship between the two classes, where the child inherits attributes and behavior of the parent. As with two classes which provide the same role, you may substitute a child class for its parent. In one sense, a subclass provides the role implied by the existence of its parent class.</p>
-<div class="sidebar">
-<p>Recent experiments in role-based systems in Perl 5 demonstrate that you can replace almost every use of inheritance in a system with roles. The decision to use either one is largely a matter of familiarity. Roles provide composition-time safety, better type checking, better-factored and less coupled code, and finger-grained control over names and behaviors, but inheritance is more familiar to users of other languages. The design question is whether one class truly <i>extends</i> another or whether it provides additional (or, at least, <i>different</i>) behavior.</p>
-</div>
-<p>Consider a <code>LightSource</code> class which provides two public attributes (<code>candle_power</code> and <code>enabled</code>) and two methods (<code>light</code> and <code>extinguish</code>):</p>
-<div class="programlisting">
-<pre>
-<code>    {
-        package LightSource;
-
+<code>    package Cat
+    {
         use Moose;
 
-        has 'candle_power', is      =&gt; 'ro', isa     =&gt; 'Int',
+        has 'name', is =&gt; 'ro', isa =&gt; 'Str';
+        has 'diet', is =&gt; 'rw';
+
+        <strong>with 'LivingBeing',</strong>
+             <strong>'CalculateAge::From::BirthYear';</strong>
+    }</code>
+</pre></div>
+<p>Notice how the <code>age()</code> method of <code>CalculateAge::From::BirthYear</code> satisfies the requirement of the <code>LivingBeing</code> role. Notice also that any check that <code>Cat</code> performs <code>LivingBeing</code> returns a true value. Extracting <code>age()</code> into a role has only changed the details of <em>how</em> <code>Cat</code> calculates an age. It's still a <code>LivingBeing</code>. <code>Cat</code> can choose to implement its own age or get it from somewhere else. All that matters is that it provides an <code>age()</code> which satisfies the <code>LivingBeing</code> constraint.</p>
+<div id="iallomorphism_0"></div>
+<div id="iroles__iallomorphism_0"></div>
+<p>Just as polymorphism means that you can treat multiple objects with the same behavior in the same way, this <em>allomorphism</em> means that an object may implement the same behavior in multiple ways.</p>
+<p>Pervasive allomorphism can reduce the size of your classes and increase the code shared between them. It also allows you to name specific and discrete collections of behaviors--very useful for testing for capabilities instead of implementations.</p>
+<div id="iOO__imixins_0"></div>
+<div id="iOO__imultiple_inheritance_0"></div>
+<div id="iOO__imonkeypatching_0"></div>
+<p>To compare roles to other design techniques such as mixins, multiple inheritance, and monkeypatching, see <span class="url">http://www.modernperlbooks.com/mt/2009/04/the-why-of-perl-roles.html</span>.</p>
+<h4 id="heading_id_10">Roles and DOES()</h4>
+<div id="iDOES4041_0"></div>
+<div id="iMoose__iDOES4041_0"></div>
+<p>When you compose a role into a class, the class and its instances will return a true value when you call <code>DOES()</code> on them:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'This Cat is alive!'
+        if $kitten-&gt;DOES( 'LivingBeing' );</code>
+</pre></div>
+<h3 id="heading_id_11">Inheritance</h3>
+<div id="inheritance"></div>
+<div id="iinheritance_0"></div>
+<div id="iOO__iinheritance_0"></div>
+<div id="iMoose__iinheritance_0"></div>
+<p>Perl 5's object system supports <em>inheritance</em>, which establishes a relationship between two classes such that one specializes the other. The child class behaves the same way as its parent--it has the same number and types of attributes and can use the same methods. It may have additional data and behavior, but you may substitute any instance of a child where code expects its parent. In one sense, a subclass provides the role implied by the existence of its parent class.</p>
+<div class="tip">
+<p>Should you use roles or inheritance? Roles provide composition-time safety, better type checking, better factoring of code, and finer-grained control over names and behaviors, but inheritance is more familiar to experienced developers of other languages. Use inheritance when one class truly <em>extends</em> another. Use a role when a class needs additional behavior, and when you can give that behavior a meaningful name.</p>
+</div>
+<p>Consider a <code>LightSource</code> class which provides two public attributes (<code>enabled</code> and <code>candle_power</code>) and two methods (<code>light</code> and <code>extinguish</code>):</p>
+<div class="programlisting">
+<pre>
+<code>    package LightSource
+    {
+        use Moose;
+
+        has 'candle_power', is      =&gt; 'ro',
+                            isa     =&gt; 'Int',
                             default =&gt; 1;
-        has 'enabled',      is      =&gt; 'ro', isa     =&gt; 'Bool',
-                            default =&gt; 0,    _writer =&gt; '_set_enabled';
+
+        has 'enabled', is      =&gt; 'ro',
+                       isa     =&gt; 'Bool',
+                       default =&gt; 0,
+                       writer  =&gt; '_set_enabled';
 
         sub light
         {
@@ -399,108 +405,110 @@
         }
     }</code>
 </pre></div>
-<div class="sidebar">
-<p>The <code>_writer</code> option to the <code>enabled</code> attribute creates a private accessor usable within the class to set the value.</p>
-</div>
-<h5 id="heading_id_12">Inheritance and Attributes</h5>
-<p>Subclassing <code>LightSource</code> makes it possible to define a super candle which behaves the same way as <code>LightSource</code> but provides a hundred times the amount of light:</p>
+<p>(Note that <code>enabled</code>'s <code>writer</code> option creates a private accessor usable within the class to set the value.)</p>
+<h4 id="heading_id_12">Inheritance and Attributes</h4>
+<p>A subclass of <code>LightSource</code> could define a super candle which provides a hundred times the amount of light:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package LightSource::SuperCandle;
-
+<code>    package SuperCandle
+    {
         use Moose;
 
-        <b>extends 'LightSource'</b>;
+        <strong>extends 'LightSource'</strong>;
 
-        has '<b>+</b>candle_power', default =&gt; 100;
+        has '<strong>+</strong>candle_power', default =&gt; 100;
     }</code>
 </pre></div>
 <div id="iMoose__iextends_0"></div>
-<p>The <code>extends</code> syntax takes a list of class names to use as parents of the current class. The <code>+</code> at the start of the <code>candle_power</code> attribute name indicates that the current class extends the declaration of the attribute. In this case, the super candle overrides the default value of the light source, so any new <code>SuperCandle</code> created has a light value of 100 candles. The other attribute and both methods are available on <code>SuperCandle</code> instances; when you invoke <code>light</code> or <code>extinguish</code> on such an instance, Perl will look in <code>LightSource::SuperCandle</code> for the method, then in the list of parents of the class. Ultimately it finds them in <code>LightSource</code>.</p>
+<p><code>extends</code> takes a list of class names to use as parents of the current class. If that were the only line in this class, <code>SuperCandle</code> objects would behave the same as <code>LightSource</code> objects. It would have both the <code>candle_power</code> and <code>enabled</code> attributes as well as the <code>light()</code> and <code>extinguish()</code> methods.</p>
+<p>The <code>+</code> at the start of an attribute name (such as <code>candle_power</code>) indicates that the current class does something special with that attribute. Here the super candle overrides the default value of the light source, so any new <code>SuperCandle</code> created has a light value of 100 candles.</p>
+<p>When you invoke <code>light()</code> or <code>extinguish()</code> on a <code>SuperCandle</code> object, Perl will look in the <code>SuperCandle</code> class for the method, then in each parent. In this case, those methods are in the <code>LightSource</code> class.</p>
 <div id="iMoose__iattribute_inheritance_0"></div>
-<p>Attribute inheritance works in a similar fashion, except that the act of <i>constructing</i> the instance makes all of the appropriate attributes available in the proper fashion (see <code>perldoc Class::MOP</code>).</p>
+<p>Attribute inheritance works similarly (see <code>perldoc Class::MOP</code>).</p>
+<h4 id="heading_id_13">Method Dispatch Order</h4>
 <div id="imethods__iresolution_0"></div>
 <div id="imethod_resolution_order_0"></div>
 <div id="imethods__idispatch_order_0"></div>
 <div id="imultiple_inheritance_0"></div>
 <div id="iobjects__iinheritance_0"></div>
 <div id="iobjects__imultiple_inheritance_0"></div>
-<p>Method dispatch order is easy to understand in the case of single-parent inheritance. When a class has multiple parents (<i>multiple inheritance</i>), dispatch is less obvious. By default, Perl 5 provides a depth-first strategy of method resolution. It searches the class of the <i>first</i> named parent and all of its parents recursively before searching the classes of the subsequent named parents. This behavior is often confusing; avoid using multiple inheritance until you understand it and have exhausted all other alternatives. See <code>perldoc mro</code> for more details about method resolution and dispatch strategies.</p>
-<h5 id="heading_id_13">Inheritance and Methods</h5>
-<div id="iMoose__ioverride_method_0"></div>
-<p>You may override methods in subclasses. Imagine a light that you cannot extinguish:</p>
+<div id="iMRO_0"></div>
+<p><em>Method dispatch order</em> (or <em>method resolution order</em> or <em>MRO</em>) is obvious for single-parent classes. Look in the object's class, then its parent, and so on until you find the method or run out of parents. Classes which inherit from multiple parents (<em>multiple inheritance</em>)--<code>Hovercraft</code> extends both <code>Boat</code> and <code>Car</code>--require trickier dispatch. Reasoning about multiple inheritance is complex. Avoid multiple inheritance when possible.</p>
+<p>Perl 5 uses a depth-first method resolution strategy. It searches the class of the <em>first</em> named parent and all of that parent's parents recursively before searching the classes of subsequent parents. The <code>mro</code> pragma (<a href="chapter_08.html#pragmas">Pragmas</a>(pragmas)) provides alternate strategies, including the C3 MRO strategy which searches a given class's immediate parents before searching any of their parents.</p>
+<p>See <code>perldoc mro</code> for more details.</p>
+<h4 id="heading_id_14">Inheritance and Methods</h4>
+<div id="iMoose__ioverriding_methods_0"></div>
+<div id="iMoose__ioverride_0"></div>
+<p>As with attributes, subclasses may override methods. Imagine a light that you cannot extinguish:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package LightSource::Glowstick;
-
+<code>    package Glowstick
+    {
         use Moose;
 
         extends 'LightSource';
 
-        sub extinguish {};
+        sub extinguish {}
     }</code>
 </pre></div>
-<p>All calls to the <code>extinguish</code> method for objects of this class will do nothing. Perl's method dispatch system will find this method and will not look for any methods of this name in any of the parent classes.</p>
-<p>Sometimes an overridden method needs behavior from its parent as well. The <code>override</code> command tells Moose that the subclass deliberately overrides the named method. The <code>super()</code> function is available to dispatch from the overriding method to the overridden method:</p>
+<p>Calling <code>extinguish()</code> on a glowstick does nothing, even though <code>LightSource</code>'s method does something. Method dispatch will find the subclass's method. You may not have meant to do this. When you do, use Moose's <code>override</code> to express your intention clearly.</p>
+<p>Within an overridden method, Moose's <code>super()</code> allows you to call the overridden method:</p>
 <div class="programlisting">
 <pre>
-<code>    {
-        package LightSource::Cranky;
-
-        use Carp;
+<code>    package LightSource::Cranky
+    {
+        use Carp 'carp';
         use Moose;
 
         extends 'LightSource';
 
-        <b>override</b> light =&gt; sub
+        <strong>override</strong> light =&gt; sub
         {
             my $self = shift;
 
-            Carp::carp( "Can't light a lit light source!" )
+            carp "Can't light a lit light source!"
                 if $self-&gt;enabled;
 
-            <b>super()</b>;
+            <strong>super()</strong>;
         };
 
-        <b>override</b> extinguish =&gt; sub
+        <strong>override</strong> extinguish =&gt; sub
         {
             my $self = shift;
 
-            Carp::carp( "Can't extinguish an unlit light source!" )
+            carp "Can't extinguish unlit light source!"
                 unless $self-&gt;enabled;
 
-            <b>super()</b>;
+            <strong>super()</strong>;
         };
     }</code>
 </pre></div>
 <p>This subclass adds a warning when trying to light or extinguish a light source that already has the current state. The <code>super()</code> function dispatches to the nearest parent's implementation of the current method, per the normal Perl 5 method resolution order.</p>
-<div class="sidebar">
-<p>You can achieve the same behavior by using Moose method modifiers. See <code>perldoc Moose::Manual::MethodModifiers</code>.</p>
+<div class="tip">
+<p>Moose's method modifiers can do similar things--and more. See <code>perldoc Moose::Manual::MethodModifiers</code>.</p>
 </div>
-<h5 id="heading_id_14">Inheritance and isa()</h5>
+<h4 id="heading_id_15">Inheritance and isa()</h4>
 <div id="iisa4041_0"></div>
 <div id="iMoose__iisa4041_0"></div>
-<p>Inheriting from a parent class means that the child class and all of its instances will return true when you call the <code>isa()</code> method on them:</p>
+<p>Perl's <code>isa()</code> method returns true if its invocant is or extends a named class. That invocant may be the name of a class or an instance of an object:</p>
 <div class="programlisting">
 <pre>
-<code>    say 'Looks like a LightSource' if     $sconce-&gt;isa( 'LightSource' );
-    say 'Monkeys do not glow'      unless $chimpy-&gt;isa( 'LightSource' );</code>
+<code>    say 'Looks like a LightSource'
+        if $sconce-&gt;isa( 'LightSource' );
+
+    say 'Hominidae do not glow'
+        unless $chimpy-&gt;isa( 'LightSource' );</code>
 </pre></div>
-<h4 id="heading_id_15">Sub-types, Type coercion, lazy yet immutable data</h4>
-<div class="author">
-<p>To me this is one of the most exciting areas of development of Perl. sub-typing, along with type coercion rules (both in <code>Moose::Util::TypeConstraints</code>), type libraries (<code>MooseX::Types</code>) and read-only objects that you can still construct lazily allow you to efficiently layer assertions in a declarative fashion, into very easy to debug code. (Read-only objects will also later win when it comes to threading, STM, etc of course as people port their designs to Perl 6, but no need to scare readers with such crazy talk).</p>
-</div>
-<h4 id="heading_id_16">Moose and Perl 5 OO</h4>
-<div id="imoose__iversus_Perl_5_OO_0"></div>
-<p>Moose provides many features you'd otherwise have to build for yourself with the default object orientation of Perl 5. While you <i>can</i> build everything you get with Moose yourself (see <a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references)), or cobble it together with a series of CPAN distributions, Moose is a coherent package which just works, includes good documentation, is part of many successful projects, and is under active development by an attentive and talented community.</p>
+<h3 id="heading_id_16">Moose and Perl 5 OO</h3>
+<div id="iMoose__icompared_to_default_Perl_5_OO_0"></div>
+<p>Moose provides many features beyond Perl 5's default OO. While you <em>can</em> build everything you get with Moose yourself (<a href="chapter_07.html#blessed_references">Blessed References</a>(blessed_references)), or cobble it together with a series of CPAN distributions, Moose is worth using. It is a coherent whole, with good documentation. Many important projects use it successfully. Its development community is mature and attentive.</p>
 <div id="imetaprogramming_0"></div>
 <div id="iMoose__iMOP_0"></div>
 <div id="iMoose__imetaprogramming_0"></div>
 <div id="iClass5858MOP_0"></div>
 <div id="iClass5858MOP5858Class_0"></div>
-<p>By default, with Moose objects you do not have to worry about constructors and destructors, accessors, and encapsulation. Moose objects can extend and work with objects from the vanilla Perl 5 system. You also get <i>metaprogramming</i>--a way of accessing the implementation of the system through the system itself--and the concomitant extensibility. If you've ever wondered which methods are available on a class or an object or which attributes an object supports, this metaprogramming information is available with Moose:</p>
+<p>Moose takes care of constructors, destructors, accessors, and encapsulation. You must do the work of declaring what you want, but what you get back is safe and easy to use. Moose objects can extend and work with objects from the vanilla Perl 5 system.</p>
+<p>Moose also allows <em>metaprogramming</em>--manipulating your objects through Moose itself. If you've ever wondered which methods are available on a class or an object or which attributes an object supports, this information is available:</p>
 <div class="programlisting">
 <pre>
 <code>    my $metaclass = Monkey::Pants-&gt;meta();
@@ -511,7 +519,8 @@
 
     say 'Monkey::Pants instances support the methods:';
 
-    say $_-&gt;fully_qualified_name for $metaclass-&gt;get_all_methods;</code>
+    say $_-&gt;fully_qualified_name
+        for $metaclass-&gt;get_all_methods;</code>
 </pre></div>
 <p>You can even see which classes extend a given class:</p>
 <div class="programlisting">
@@ -523,60 +532,59 @@
     say $_ for $metaclass-&gt;subclasses;</code>
 </pre></div>
 <p>See <code>perldoc Class::MOP::Class</code> for more information about metaclass operations and <code>perldoc Class::MOP</code> for Moose metaprogramming information.</p>
-<div id="imetaprogramming__iMOP_0"></div>
-<div id="iMOP_0"></div>
-<p>Moose and its <i>meta-object protocol</i> (or MOP) offers the possibility of a better syntax for declaring and working with classes and objects in Perl 5. This is valid Perl 5 code:</p>
+<p>Moose and its <em>meta-object protocol</em> (or MOP) offers the possibility of a better syntax for declaring and working with classes and objects in Perl 5. This is valid Perl 5 code:</p>
 <div class="programlisting">
 <pre>
 <code>    use MooseX::Declare;
 
-    <b>role</b> LivingBeing { requires qw( name age diet ) }
+    <strong>role</strong> LivingBeing { requires qw( name age diet ) }
 
-    <b>role</b> CalculateAgeFromBirthYear
+    <strong>role</strong> CalculateAge::From::BirthYear
     {
-        has 'birth_year', is =&gt; 'ro', isa =&gt; 'Int',
-                          default =&gt; sub { (localtime)[5] + 1900 };
+        has 'birth_year',
+            is      =&gt; 'ro',
+            isa     =&gt; 'Int',
+            default =&gt; sub { (localtime)[5] + 1900 };
 
-        <b>method</b> age
+        <strong>method</strong> age
         {
-            return (localtime)[5] + 1900 - $self-&gt;birth_year();
+            return (localtime)[5] + 1900
+                                  - $self-&gt;birth_year();
         }
     }
 
-    <b>class Cat with LivingBeing with CalculateAgeFromBirthYear</b>
+    <strong>class Cat with LivingBeing</strong>
+              <strong>with CalculateAge::From::BirthYear</strong>
     {
         has 'name', is =&gt; 'ro', isa =&gt; 'Str';
         has 'diet', is =&gt; 'rw';
     }</code>
 </pre></div>
-<div id="iMooseX5858Declare_0"></div>
-<div id="iDevel5858Declare_0"></div>
-<p>The <code>MooseX::Declare</code> extension from the CPAN uses a clever module called <code>Devel::Declare</code> to add new syntax to Perl 5, specifically for Moose. The <code>class</code>, <code>role</code>, and <code>method</code> keywords reduce the amount of boilerplate necessary to write good OO code in Perl 5. Note specifically the declarative nature of this example, as well as the now unnecessary <code>my $self = shift;</code> line at the start of the <code>age</code> method.</p>
-<div class="author">
-<p>Certainly worth noting that the <code>Devel::Declare</code> infrastructure is essentially core in Perl 5.12, though I am unaware of <code>MooseX::</code> modules like <code>MooseX::Method::Signatures</code> being ported to that yet.</p>
+<div id="iCPAN__iMooseX5858Declare_0"></div>
+<div id="iCPAN__iDevel5858Declare_0"></div>
+<p>The <code>MooseX::Declare</code> CPAN distribution uses <code>Devel::Declare</code> to add new Moose-specific syntax. The <code>class</code>, <code>role</code>, and <code>method</code> keywords reduce the amount of boilerplate necessary to write good object oriented code in Perl 5. Note specifically the declarative nature of this example, as well as the lack of <code>my $self = shift;</code> in <code>age()</code>.</p>
+<p>While Moose is not a part of the Perl 5 core, its popularity ensures that it's available on many OS distributions. Perl 5 distributions such as Strawberry Perl and ActivePerl also include it. Even though Moose is a CPAN module and not a core library, its cleanliness and simplicity make it essential to modern Perl programming.</p>
+<div class="tip">
+<div id="iCPAN__iAny5858Moose_0"></div>
+<p>Moose isn't a small library, but it's powerful. The <code>Any::Moose</code> CPAN module helps reduce the cost of features you don't use.</p>
 </div>
-<p>One drawback of this approach is that you must be able to install CPAN modules (or a custom Perl 5 distribution such as Strawberry or Chocolate Perl which may include them for you), but in comparison to Perl 5's built-in object orientation, the advantage in cleanliness and simplicity of Moose should be obvious.</p>
-<p>See <code>perldoc Moose::Manual</code> for more information on using Moose.</p>
-<h3 id="heading_id_17">Blessed References</h3>
+<h2 id="heading_id_17">Blessed References</h2>
 <div id="blessed_references"></div>
-<p>Perl 5's default object system is deliberately minimal. Three simple rules combine to form the simple--though effective--basic object system:</p>
+<p>Perl 5's core object system is deliberately minimal. It has only three rules:</p>
 <ul>
 <li>A class is a package.</li>
 <li>A method is a function.</li>
 <li>A (blessed) reference is an object.</li>
 </ul>
-<div id="ibless_0"></div>
-<div id="ioperators__ibless_0"></div>
-<p>You've already seen the first two rules with Moose. The third rule is new. The <code>bless</code> keyword associates the name of a class with a reference, such that any method invocation performed on that reference uses the associated class for resolution. That sounds more complicated than it is.</p>
-<div class="sidebar">
-<p>Though these rules explain Perl 5's underlying object system, they are somewhat more minimal in practice than may be practical, especially for larger projects. In particular, they offer few facilities for metaprogramming (using APIs to manipulate the program itself).</p>
-<p>Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is a better choice for serious, modern Perl programs larger than a couple of hundred lines, but you will likely encounter bare-bones Perl 5 OO in existing code.</p>
-</div>
-<div id="iconstructor_0"></div>
-<div id="iOO__iconstructor_0"></div>
-<div id="iclass_method_1"></div>
+<p>You can build anything else out of those three rules, but that's all you get by default. This minimalism can be impractical for larger projects--in particular, the possibilities for greater abstraction through metaprogramming (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)) are awkward and limited. Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is a better choice for modern programs larger than a couple of hundred lines, although plenty of legacy code still uses Perl 5's default OO.</p>
+<div id="iOO__ibless_0"></div>
+<div id="ibuiltins__ibless_0"></div>
+<p>The final piece of Perl 5 core OO is the blessed reference. The <code>bless</code> builtin associates the name of a class with a reference. That reference is now a valid invocant, and Perl will perform method dispatch on it, using the associated class.</p>
+<div id="iOO__iconstructors_0"></div>
+<div id="iOO__iclass_methods_1"></div>
 <div id="imethods__iclass_1"></div>
-<p>The default Perl 5 object constructor is a method which creates and blesses a reference. By convention, constructors have the name <code>new()</code>, but this is not a requirement. Constructors are also almost always <i>class methods</i>:</p>
+<p>A constructor is a method which creates and blesses a reference. By convention, constructors have the name <code>new()</code>, but this is not a requirement. Constructors are also almost always <em>class methods</em>.</p>
+<p><code>bless</code> takes two arguments, a reference and a class name. It evaluates to the reference. The reference may be empty. The class does not have to exist yet. You may even use <code>bless</code> outside of a constructor or a class (though all but the simplest programs should use real constructors). The canonical constructor resembles:</p>
 <div class="programlisting">
 <pre>
 <code>    sub new
@@ -585,169 +593,148 @@
         bless {}, $class;
     }</code>
 </pre></div>
-<p><code>bless</code> takes two arguments, the reference to associate with a class and the name of a class. You may use <code>bless</code> outside of a constructor or a class--though abstraction recommends the use of the method. The class name does not have to exist yet.</p>
-<p>By design, this constructor receives the class name as the method's invocant. It's possible, but inadvisable, to hard-code the name of a class directly. The parametric constructor allows reuse of the method through inheritance, delegation, or exporting.</p>
-<div id="iinstance_data_1"></div>
+<p>By design, this constructor receives the class name as the method's invocant. You may also hard-code the name of a class, at the expense of flexibility. Parametric constructor allows reuse through inheritance, delegation, or exporting.</p>
 <div id="iOO__iinstance_data_0"></div>
-<p>The type of reference makes no difference when invoking methods on the object. It only governs how the object stores <i>instance data</i>--the object's own information. Hash references are most common, but you can bless any type of reference:</p>
+<p>The type of reference used is relevant only to how the object stores its own <em>instance data</em>. It has no other effect on the resulting object. Hash references are most common, but you can bless any type of reference:</p>
 <div class="programlisting">
 <pre>
 <code>    my $array_obj  = bless [], $class;
     my $scalar_obj = bless \$scalar, $class;
     my $sub_obj    = bless \&amp;some_sub, $class;</code>
 </pre></div>
-<p>Where classes built with Moose define their own object attributes declaratively, Perl 5's default OO is lax. A class representing basketball players which stores jersey number and position might use a constructor like:</p>
+<p>Moose classes define object attributes declaratively, but Perl 5's default OO is lax. A class representing basketball players which stores jersey number and position might use a constructor like:</p>
 <div class="programlisting">
 <pre>
-<code>    package Player;
-
-    sub new
+<code>    package Player
     {
-        my ($class, %attrs) = @_;
-
-        bless \%attrs, $class;
+        sub new
+        {
+            my ($class, %attrs) = @_;
+            bless \%attrs, $class;
+        }
     }</code>
 </pre></div>
 <p>... and create players with:</p>
 <div class="programlisting">
 <pre>
-<code>    my $joel = Player-&gt;new(
-        number   =&gt; 10,
-        position =&gt; 'center',
-    );
+<code>    my $joel  = Player-&gt;new( number  =&gt; 10,
+                            position =&gt; 'center' );
 
-    my $jerryd = Player-&gt;new(
-        number   =&gt; 4,
-        position =&gt; 'guard',
-    );</code>
+    my $dante = Player-&gt;new( number   =&gt; 33,
+                             position =&gt; 'forward' );</code>
 </pre></div>
-<p>Within the body of the class, methods can access hash elements directly:</p>
+<p>The class's methods can access object attributes as hash elements directly:</p>
 <div class="programlisting">
 <pre>
 <code>    sub format
     {
         my $self = shift;
-        return '#' . $self-&gt;{number} . ' plays ' . $self-&gt;{position};
+        return '#'       . $self-&gt;{number}
+             . ' plays ' . $self-&gt;{position};
     }</code>
 </pre></div>
-<p>Yet so can any code outside of the class. This violates encapsulation--in particular, it means that you can never change the object's internal representation without breaking external code or performing hacks--so it's safer to provide accessor methods:</p>
+<p>... but so can any other code, so any change to the object's internal representation may break other code. Accessor methods are safer:</p>
 <div class="programlisting">
 <pre>
 <code>    sub number   { return shift-&gt;{number}   }
     sub position { return shift-&gt;{position} }</code>
 </pre></div>
-<p>Even with two attributes, Moose is much more appealing in terms of code you don't have to write.</p>
-<div class="sidebar">
-<p>Moose's default behavior of accessor generation encourages you to do the right thing with regard to encapsulation as well as genericity.</p>
-</div>
-<h4 id="heading_id_18">Method Lookup and Inheritance</h4>
+<p>... and now you're starting to write manually what Moose gives you for free. Better yet, Moose encourages people to use accessors instead of direct access by hiding the accessor generation code. Goodbye, temptation.</p>
+<h3 id="heading_id_18">Method Lookup and Inheritance</h3>
 <div id="imethod_dispatch_1"></div>
-<div id="iobjects__imethods_0"></div>
-<p>Besides instance data, the other part of objects is method dispatch. Given an object (a blessed reference), a method call of the form:</p>
+<div id="iOO__imethods_1"></div>
+<p>Given a blessed reference, a method call of the form:</p>
 <div class="programlisting">
 <pre>
 <code>    my $number = $joel-&gt;number();</code>
 </pre></div>
-<p>... looks up the name of the class associated with the blessed reference <code>$joel</code>. In this case, the class is <code>Player</code>. Next, Perl looks for a function named <code>number</code> in the <code>Player</code> package. If the <code>Player</code> class inherits from another class, Perl looks in the parent class (and so on and so on) until it finds a <code>number</code> method. If one exists, Perl calls it with <code>$joel</code> as an invocant.</p>
-<div id="i64ISA_0"></div>
-<div id="ivariables__i64ISA_0"></div>
-<p>Moose classes store their inheritance information in a metamodel. Each class of a blessed reference stores information about its parents in a package global variable named <code>@ISA</code>. The method dispatcher looks in a class's <code>@ISA</code> to find the names of parent classes in which to search for the appropriate method. Thus, an <code>InjuredPlayer</code> class might contain <code>Player</code> in its <code>@ISA</code>. You could write this relationship as:</p>
-<div class="programlisting">
-<pre>
-<code>    package InjuredPlayer;
-
-    @InjuredPlayer::ISA = 'Player';</code>
-</pre></div>
-<div id="iparent_0"></div>
-<div id="ipragmas__iparent_0"></div>
-<p>Many existing Perl 5 projects do this, but it's easier and simpler to use the <code>parent</code> pragma instead:</p>
-<div class="programlisting">
-<pre>
-<code>    package InjuredPlayer;
-
-    use parent 'Player';</code>
-</pre></div>
-<div id="ibase_0"></div>
-<div id="ipragmas__ibase_0"></div>
-<div class="sidebar">
-<p>Perl 5.10 added <code>parent</code> to supersede the <code>base</code> pragma added in Perl 5.004_4. If you can't use Moose, use <code>parent</code>.</p>
+<p>... looks up the name of the class associated with the blessed reference <code>$joel</code>--in this case, <code>Player</code>. Next, Perl looks for a function <span class="footnote">(footnote: Remember that Perl 5 makes no distinction between functions in a namespace and methods.)</span> named <code>number()</code> in <code>Player</code>. If no such function exists and if <code>Player</code> extends class, Perl looks in the parent class (and so on and so on) until it finds a <code>number()</code>. If Perl finds <code>number()</code>, it calls that method with <code>$joel</code> as an invocant.</p>
+<div class="tip">
+<div id="iCPAN__inamespace5858autoclean_0"></div>
+<p>The <code>namespace::autoclean</code> CPAN module can help avoid unintentional collisions between imported functions and methods.</p>
 </div>
+<div id="i64ISA_0"></div>
+<div id="iOO__i64ISA_0"></div>
+<p>Moose provides <code>extends</code> to track inheritance relationships, but Perl 5 uses a package global variable named <code>@ISA</code>. The method dispatcher looks in each class's <code>@ISA</code> to find the names of its parent classes. If <code>InjuredPlayer</code> extends <code>Player</code>, you might write:</p>
+<div class="programlisting">
+<pre>
+<code>    package InjuredPlayer
+    {
+        @InjuredPlayer::ISA = 'Player';
+    }</code>
+</pre></div>
+<div id="iparent_pragma_0"></div>
+<div id="ipragmas__iparent_0"></div>
+<p>The <code>parent</code> pragma (<a href="chapter_08.html#pragmas">Pragmas</a>(pragmas)) is cleaner <span class="footnote">(footnote: Older code may use the <code>base</code> pragma, but <code>parent</code> superseded <code>base</code> in Perl 5.10.)</span>:</p>
+<div class="programlisting">
+<pre>
+<code>    package InjuredPlayer
+    {
+        use parent 'Player';
+    }</code>
+</pre></div>
+<p>Moose has its own metamodel which stores extended inheritance information; this offers additional features.</p>
 <div id="imultiple_inheritance_1"></div>
-<div id="iobjects__iinheritance_1"></div>
+<div id="iOO__iinheritance_1"></div>
 <p>You may inherit from multiple parent classes:</p>
 <div class="programlisting">
 <pre>
 <code>    package InjuredPlayer;
-
-    use parent qw( Player Hospital::Patient );</code>
+    {
+        use parent qw( Player Hospital::Patient );
+    }</code>
 </pre></div>
-<p>Perl 5 has traditionally preferred a depth-first search of parents when resolving method dispatch. That is to say, if <code>InjuredPlayer</code> inherits from both <code>Player</code> and <code>Hospital::Patient</code>, a method call on an <code>InjuredPlayer</code> instance will dispatch first to <code>InjuredPlayer</code>, then <code>Player</code>, then any of <code>Player</code>'s parents before dispatching in <code>Hospital::Patient</code>.</p>
-<div id="imro_0"></div>
-<div id="ipragmas__imro_0"></div>
-<p>Perl 5.10 added a pragma called <code>mro</code> which allows you to use a different method resolution scheme called C3. While the specific details can get complex in the case of complex multiple inheritance hierarchies, the important difference is that method resolution will visit all children of a parent before visiting the parent.</p>
-<p>While other techniques (such as <a href="chapter_07.html#roles">Roles</a>(roles) and Moose method modifiers) allow you to avoid multiple inheritance, the <code>mro</code> pragma can help avoid surprising behavior with method dispatch. Enable it in your class with:</p>
-<div class="programlisting">
-<pre>
-<code>    package InjuredPlayer;
-
-    use mro 'c3';</code>
-</pre></div>
-<p>Unless you're writing a complex framework with multiple interoperable plugins, you likely never need to use this.</p>
-<h4 id="heading_id_19">AUTOLOAD</h4>
+<p>... though the caveats about multiple inheritance and method dispatch complexity apply. Consider instead roles (<a href="chapter_07.html#roles">Roles</a>(roles)) or Moose method modifiers.</p>
+<h3 id="heading_id_19">AUTOLOAD</h3>
 <div id="iAUTOLOAD_0"></div>
-<div id="iobjects__iAUTOLOAD_0"></div>
+<div id="iOO__iAUTOLOAD_0"></div>
 <div id="imethods__iAUTOLOAD_0"></div>
-<p>If there is no applicable method in the invocant's class or any of its superclasses, Perl 5 will next look for an <code>AUTOLOAD</code> function in every class according to the selected method resolution order. Perl will invoke any <code>AUTOLOAD</code> it finds to provide or decline the desired method. See <a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload) for more details.</p>
-<p>As you might expect, this can get quite complex in the face of multiple inheritance and multiple potential <code>AUTOLOAD</code> targets.</p>
-<h4 id="heading_id_20">Method Overriding and SUPER</h4>
-<p>You may override methods in the default Perl 5 OO system as well as in Moose. Unfortunately, core Perl 5 provides no mechanism for indicating your <i>intent</i> to override a parent's method. Worse yet, any function you pre-declare, declare, or import into the child class may override a method in the parent class simply by existing and having the same name. While you may forget to use the <code>override</code> system of Moose, you have no such protection (even optional) in the default Perl 5 OO system.</p>
+<p>If there is no applicable method in the invocant's class or any of its superclasses, Perl 5 will next look for an <code>AUTOLOAD()</code> function (<a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload)) in every class according to the selected method resolution order. Perl will invoke any <code>AUTOLOAD()</code> it finds to provide or decline the desired method.</p>
+<p><code>AUTOLOAD()</code> makes multiple inheritance much more difficult to understand.</p>
+<h3 id="heading_id_20">Method Overriding and SUPER</h3>
+<p>As with Moose, you may override methods in the core Perl 5 OO. Unlike Moose, core Perl 5 provides no mechanism for indicating your <em>intent</em> to override a parent's method. Worse yet, any function you predeclare, declare, or import into the child class may override a method in the parent class by having the same name. Even if you forget to use the <code>override</code> system of Moose, at least it exists. Core Perl 5 OO offers no such protection.</p>
+<div id="ibuiltins__iSUPER5858_0"></div>
 <p>To override a method in a child class, declare a method of the same name as the method in the parent. Within an overridden method, call the parent method with the <code>SUPER::</code> dispatch hint:</p>
 <div class="programlisting">
 <pre>
 <code>    sub overridden
     {
         my $self = shift;
-        warn "Called overridden() in child!";
+        warn 'Called overridden() in child!';
         return $self-&gt;SUPER::overridden( @_ );
     }</code>
 </pre></div>
-<p>The <code>SUPER::</code> prefix to the method name tells the method dispatcher to dispatch to the named method in a <i>parent</i> implementation. You may pass any arguments to it you like, but it's safest to reuse <code>@_</code>.</p>
-<div class="sidebar">
-<p>Beware that this dispatcher relies on the package into which the overridden method was originally compiled when redispatching to a parent method. This is a long-standing misfeature retained for the sake of backwards compatibility. If you export methods into other classes or compose roles into classes manually, you may run afoul of this feature. The <code>SUPER</code> module on the CPAN can work around this for you. Moose handles it nicely as well.</p>
+<p>The <code>SUPER::</code> prefix to the method name tells the method dispatcher to dispatch to an overridden method of the appropriate name. You can provide your own arguments to the overridden method, but most code reuses <code>@_</code>. Be careful to <code>shift</code> off the invocant if you do.</p>
+<div class="tip">
+<div id="iCPAN__iSUPER_0"></div>
+<p><code>SUPER::</code> has a confusing misfeature: it dispatches to the parent of the package into which the overridden method was <em>compiled</em>. If you've imported this method from another package, Perl will happily dispatch to the <em>wrong</em> parent. The desire for backwards compatibility has kept this misfeature in place. The <code>SUPER</code> module from the CPAN offers a workaround. Moose's <code>super()</code> does not suffer the same problem.</p>
 </div>
-<h4 id="heading_id_21">Strategies for Coping with Blessed References</h4>
-<p>Avoid <code>AUTOLOAD</code> where possible. If you <i>must</i> use it, use forward declarations of your functions (<a href="chapter_05.html#functions">Functions</a>(functions)) to help Perl know which <code>AUTOLOAD</code> will provide the method implementation.</p>
-<p>Use accessor methods rather than accessing instance data directly through the reference. This applies even within the bodies of methods within the class itself. Generating these yourself can be tedious; if you can't use Moose, consider using a module such as <code>Class::Accessor</code> to avoid repetitive boilerplate.</p>
-<p>Expect that someone, somewhere will eventually need to subclass (or delegate to or reimplement the interface of) your classes. Make it easier for them by not assuming details of the internals of your code, by using the two-argument form of <code>bless</code>, and by breaking your classes into the smallest responsible units of code.</p>
-<p>Do not mix functions and methods in the same class.</p>
-<p>Use a single <i>.pm</i> file for each class, unless the class is a small, self-contained helper used from a single place.</p>
-<p>Consider using Moose and <code>Any::Moose</code> instead of bare-bones Perl 5 OO; they can interact with vanilla classes and objects with ease, alleviate almost of the tedium of declaring classes, and provide more and better features.</p>
-<h3 id="heading_id_22">Reflection</h3>
+<h3 id="heading_id_21">Strategies for Coping with Blessed References</h3>
+<p>If blessed references seem minimal and tricky and confusing, they are. Moose is a tremendous improvement. Use it whenever possible. If you do find yourself maintaining code which uses blessed references, or if you can't convince your team to use Moose in full yet, you can work around some of the problems of blessed references with discipline.</p>
+<div id="iClass5858Accessor_0"></div>
+<ul>
+<li>Use accessor methods pervasively, even within methods in your class. Consider using a module such as <code>Class::Accessor</code> to avoid repetitive boilerplate.</li>
+<li>Avoid <code>AUTOLOAD()</code> where possible. If you <em>must</em> use it, use forward declarations of your functions (<a href="chapter_05.html#functions">Declaring Functions</a>(functions)) to help Perl know which <code>AUTOLOAD()</code> will provide the method implementation.</li>
+<li>Expect that someone, somewhere will eventually need to subclass (or delegate to or reimplement the interface of) your classes. Make it easier for them by not assuming details of the internals of your code, by using the two-argument form of <code>bless</code>, and by breaking your classes into the smallest responsible units of code.</li>
+<li>Do not mix functions and methods in the same class.</li>
+<li>Use a single <em>.pm</em> file for each class, unless the class is a small, self-contained helper used from a single place.</li>
+</ul>
+<h2 id="heading_id_22">Reflection</h2>
 <div id="reflection"></div>
 <div id="ireflection_0"></div>
 <div id="iintrospection_0"></div>
-<p><i>Reflection</i> (or <i>introspection</i>) is the process of asking a program about itself as it runs. Even though you can write many useful programs without ever having to use reflection, techniques such as metaprogramming (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)) benefit from a deeper understanding of which entities are in the system.</p>
-<p><code>Class::MOP</code> (<a href="chapter_09.html#class_mop">Class::MOP</a>(class_mop)) simplifies many reflection tasks for object systems, but many useful programs do not use objects pervasively, and many useful programs do not use <code>Class::MOP</code>. Several idioms (<a href="chapter_10.html#idioms">Idioms</a>(idioms)) exist for performing reflection effectively in the absence of such a formal system.</p>
-<h4 id="heading_id_23">Checking that a Package Exists</h4>
-<p>To check that a package exists somewhere in the system--that is, if some code somewhere has executed a <code>package</code> directive with a given name--check that the package inherits from <code>UNIVERSAL</code> by testing that the package can perform the <code>can()</code> method:</p>
-<div class="programlisting">
-<pre>
-<code>    say "$pkg exists" if eval { $pkg-&gt;can( 'can' ) };</code>
-</pre></div>
-<p>Although you <i>may</i> use packages with the names <code>0</code> and <code>''</code> <span class="footnote">(footnote: ... only if you define them symbolically, as these are <i>not</i> identifiers forbidden by the Perl 5 parser.)</span>, the <code>can()</code> method will throw a method invocation exception if you use them as invocants. The <code>eval</code> block catches such an exception.</p>
-<p>You <i>could</i> also grovel through the symbol table, but this approach is quicker and easier to understand.</p>
-<h4 id="heading_id_24">Checking that a Class Exists</h4>
-<p>Because Perl 5 makes no strong distinction between packages and classes, the same technique for checking the existence of a package works for checking that a class exists. There is no generic way for determining if a package is a class. You <i>can</i> check that the package <code>can()</code> perform <code>new()</code>, but there is no guarantee that any <code>new()</code> found is a method, nor a constructor.</p>
-<h4 id="heading_id_25">Checking that a Module Has Loaded</h4>
+<p><em>Reflection</em> (or <em>introspection</em>) is the process of asking a program about itself as it runs. By treating code as data you can manage code in the same way that you manage data. This is a principle behind code generation (<a href="chapter_09.html#code_generation">Code Generation</a>(code_generation)).</p>
+<div id="iCPAN__iClass5858MOP_0"></div>
+<p>Moose's <code>Class::MOP</code> (<a href="chapter_09.html#class_mop">Class::MOP</a>(class_mop)) simplifies many reflection tasks for object systems. If you use Moose, its metaprogramming system will help you. If not, several other core Perl 5 idioms help you inspect and manipulate running programs.</p>
+<h3 id="heading_id_23">Checking that a Module Has Loaded</h3>
 <div id="i37INC_0"></div>
-<div id="i64INC_0"></div>
-<p>If you know the name of a module, you can check that Perl believes it has loaded that module from disk by looking in the <code>%INC</code> hash. This hash corresponds to <code>@INC</code>; when Perl 5 loads code with <code>use</code> or <code>require</code>, it stores an entry in <code>%INC</code> where the key is the pathified name of the module to load and the value is the full path on disk to that module. In other words, loading <code>Modern::Perl</code> effectively does:</p>
+<p>If you know the name of a module, you can check that Perl believes it has loaded that module by looking in the <code>%INC</code> hash. When Perl 5 loads code with <code>use</code> or <code>require</code>, it stores an entry in <code>%INC</code> where the key is the file path of the module to load and the value is the full path on disk to that module. In other words, loading <code>Modern::Perl</code> effectively does:</p>
 <div class="programlisting">
 <pre>
-<code>    $INC{'Modern/Perl.pm'} =&gt;
-        '/path/to/perl/lib/site_perl/5.12.1/Modern/Perl.pm';</code>
+<code>    $INC{'Modern/Perl.pm'} =
+        '.../lib/site_perl/5.12.1/Modern/Perl.pm';</code>
 </pre></div>
-<p>The details of the path will vary depending on your installation, but for the purpose of testing that Perl has successfully loaded a module, you can convert the name of the module into the canonical file form and test for existence within <code>%INC</code>:</p>
+<p>The details of the path will vary depending on your installation. To test that Perl has successfully loaded a module, convert the name of the module into the canonical file form and test for that key's existence within <code>%INC</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    sub module_loaded
@@ -756,56 +743,90 @@
         return exists $INC{ $modname . '.pm' };
     }</code>
 </pre></div>
-<p>Nothing prevents other code from manipulating <code>%INC</code> itself. Depending on your paranoia level, you may check the path and the expected contents of the package yourself, but modules with good reasons for manipulating this variable (such as <code>Test::MockObject</code> or <code>Test::MockModule</code>) may do so. Code which manipulates <code>%INC</code> for poor reasons deserves replacing.</p>
-<h4 id="heading_id_26">Checking the Version of a Module</h4>
-<p>There is no guarantee that a given module provides a version. Even so, all modules inherit from <code>UNIVERSAL</code> (<a href="chapter_09.html#universal">The UNIVERSAL Package</a>(universal)), so they all have a <code>VERSION()</code> method available:</p>
+<div id="i64INC_0"></div>
+<div id="iCPAN__iTest5858MockObject_0"></div>
+<div id="iCPAN__iTest5858MockModule_0"></div>
+<p>As with <code>@INC</code>, any code anywhere may manipulate <code>%INC</code>. Some modules (such as <code>Test::MockObject</code> or <code>Test::MockModule</code>) manipulate <code>%INC</code> for good reasons. Depending on your paranoia level, you may check the path and the expected contents of the package yourself.</p>
+<div id="iCPAN__iClass5858Load_0"></div>
+<p>The <code>Class::Load</code> CPAN module's <code>is_class_loaded()</code> function encapsulates this <code>%INC</code> check.</p>
+<h3 id="heading_id_24">Checking that a Package Exists</h3>
+<p>To check that a package exists somewhere in your program--if some code somewhere has executed a <code>package</code> directive with a given name--check that the package inherits from <code>UNIVERSAL</code>. Anything which extends <code>UNIVERSAL</code> must somehow provide the <code>can()</code> method. If no such package exists, Perl will throw an exception about an invalid invocant, so wrap this call in an <code>eval</code> block:</p>
+<div class="programlisting">
+<pre>
+<code>    say "$pkg exists" if eval { $pkg-&gt;can( 'can' ) };</code>
+</pre></div>
+<p>An alternate approach is groveling through Perl's symbol tables.</p>
+<h3 id="heading_id_25">Checking that a Class Exists</h3>
+<p>Because Perl 5 makes no strong distinction between packages and classes, the best you can do without Moose is to check that a package of the expected class name exists. You <em>can</em> check that the package <code>can()</code> provide <code>new()</code>, but there is no guarantee that any <code>new()</code> found is either a method or a constructor.</p>
+<h3 id="heading_id_26">Checking a Module Version Number</h3>
+<p>Modules do not have to provide version numbers, but every package inherits the <code>VERSION()</code> method from the universal parent class <code>UNIVERSAL</code> (<a href="chapter_09.html#universal">The UNIVERSAL Package</a>(universal)):</p>
 <div class="programlisting">
 <pre>
 <code>    my $mod_ver = $module-&gt;VERSION();</code>
 </pre></div>
-<p>If the given module does not override <code>VERSION()</code> or contain a package variable <code>$VERSION</code>, the method will return an undefined value. Likewise, if the module does not exist, the method call will fail.</p>
-<h4 id="heading_id_27">Checking that a Function Exists</h4>
-<p>The simplest mechanism by which to determine if a function exists is to use the <code>can()</code> method on the package name:</p>
+<p><code>VERSION()</code> returns the given module's version number, if defined. Otherwise it returns <code>undef</code>. If the module does not exist, the method will likewise return <code>undef</code>.</p>
+<h3 id="heading_id_27">Checking that a Function Exists</h3>
+<p>To check whether a function exists in a package, call <code>can()</code> as a class method on the package name:</p>
 <div class="programlisting">
 <pre>
 <code>    say "$func() exists" if $pkg-&gt;can( $func );</code>
 </pre></div>
-<p>Note that <code>$pkg</code> must be a valid invocant; wrap the method call in an <code>eval</code> block if you have any doubts about its validity. Beware that a function implemented in terms of <code>AUTOLOAD()</code> (<a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload)) may report the wrong answer if the function's package does not also override <code>can()</code> correctly. This is a bug in the other package.</p>
-<p>You may use this technique to determine if a module's <code>import()</code> has imported a function into the current namespace:</p>
+<p>Perl will throw an exception unless <code>$pkg</code> is a valid invocant; wrap the method call in an <code>eval</code> block if you have any doubts about its validity. Beware that a function implemented in terms of <code>AUTOLOAD()</code> (<a href="chapter_05.html#autoload">AUTOLOAD</a>(autoload)) may report the wrong answer if the function's package has not predeclared the function or overridden <code>can()</code> correctly. This is a bug in the other package.</p>
+<p>Use this technique to determine if a module's <code>import()</code> has imported a function into the current namespace:</p>
 <div class="programlisting">
 <pre>
 <code>    say "$func() imported!" if __PACKAGE__-&gt;can( $func );</code>
 </pre></div>
-<p>You may also root around in the symbol table and typeglobs to determine if a function exists, but this mechanism is simpler and easier to explain.</p>
-<h4 id="heading_id_28">Checking that a Method Exists</h4>
-<p>There is no generic way to determine whether a given function is a function or a method. Some functions perform dual duty as both functions and methods; though this is overly complex and usually a mistake, it is an allowed feature.</p>
-<h4 id="heading_id_29">Rooting Around in Symbol Tables</h4>
+<p>As with checking for the existence of a package, you <em>can</em> root around in symbol tables yourself, if you have the patience for it.</p>
+<h3 id="heading_id_28">Checking that a Method Exists</h3>
+<p>There is no foolproof way for reflection to distinguish between a function or a method.</p>
+<h3 id="heading_id_29">Rooting Around in Symbol Tables</h3>
 <div id="isymbol_tables_1"></div>
 <div id="itypeglobs_0"></div>
-<p>A Perl 5 symbol table is a special type of hash, where the keys are the names of package global symbols and the values are typeglobs. A <i>typeglob</i> is a core data structure which can contain any or all of a scalar, an array, a hash, a filehandle, and a function. Perl 5 uses typeglobs internally when it looks up these variables.</p>
-<p>You can access a symbol table as a hash by appending double-colons to the name of the package. For example, the symbol table for the MonkeyGrinder package is available as <code>%MonkeyGrinder::</code>.</p>
-<p>You <i>can</i> test the existence of specific symbol names within a symbol table with the <code>exists</code> operator (or manipulate the symbol table to <i>add</i> or <i>remove</i>) symbols, if you like). Yet be aware that certain changes to the Perl 5 core have modified what exists by default in each typeglob entry. In particular, earlier versions of Perl 5 have always provided a default scalar variable for every typeglob created, while modern versions of Perl 5 do not.</p>
-<p>See the "Symbol Tables" section in <code>perldoc perlmod</code> for more details, then prefer the other techniques in this section for reflection.</p>
-<h3 id="heading_id_30">Advanced OO Perl</h3>
+<p>A Perl 5 symbol table is a special type of hash, where the keys are the names of package global symbols and the values are typeglobs. A <em>typeglob</em> is an internal data structure which can contain any or all of a scalar, an array, a hash, a filehandle, and a function.</p>
+<p>Access a symbol table as a hash by appending double-colons to the name of the package. For example, the symbol table for the <code>MonkeyGrinder</code> package is available as <code>%MonkeyGrinder::</code>.</p>
+<p>You <em>can</em> test the existence of specific symbol names within a symbol table with the <code>exists</code> operator (or manipulate the symbol table to <em>add</em> or <em>remove</em> symbols, if you like). Yet be aware that certain changes to the Perl 5 core have modified the details of what typeglobs store and when and why.</p>
+<div id="iCPAN__iPackage5858Stash_0"></div>
+<p>See the "Symbol Tables" section in <code>perldoc perlmod</code> for more details, then prefer the other techniques in this section for reflection. If you really must manipulate symbol tables and typeglobs, consider using the <code>Package::Stash</code> CPAN module instead.</p>
+<h2 id="heading_id_30">Advanced OO Perl</h2>
 <div id="advanced_oo"></div>
-<p>Creating and using objects in Perl 5 with Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is easy. <i>Designing</i> good object systems is not. Additional capabilities for abstraction also offer possibilities for obfuscation. Only practical experience can help you understand the most important design techniques... but several principles can guide you.</p>
-<h4 id="heading_id_31">Favor Composition Over Inheritance</h4>
-<p>Novice OO designs often overuse inheritance. It's common to see class hierarchies which try to model all of the behavior for entities within the system in a single class. This adds a conceptual overhead to understanding the system, because you have to understand the hierarchy, and it adds technical weight to every class, because conflicting responsibilities and methods may get in the way of necessary behaviors or future modifications.</p>
-<p>The encapsulation provided by classes offers better ways to organize code. You don't have to inherit from superclasses to provide behavior to users of objects. A <code>Car</code> object does not have to inherit from a <code>Vehicle::Wheeled</code> object; it can contain several <code>Wheel</code> objects as instance attributes.</p>
+<p>Creating and using objects in Perl 5 with Moose (<a href="chapter_07.html#moose">Moose</a>(moose)) is easy. <em>Designing</em> good programs is not. You must balance between designing too little and too much. Only practical experience can help you understand the most important design techniques, but several principles can guide you.</p>
+<h3 id="heading_id_31">Favor Composition Over Inheritance</h3>
+<div id="iOO58_composition_0"></div>
+<div id="iOO__iinheritance_2"></div>
+<p>Novice OO designs often overuse inheritance to reuse code and to exploit polymorphism. The result is a deep class hierarchy with responsibilities scattered in the wrong places. Maintaining this code is difficult--who knows where to add or edit behavior? What happens when code in one place conflicts with code declared elsewhere?</p>
+<div id="iOO__iis45a_0"></div>
+<div id="iOO__ihas45a_0"></div>
+<p>Inheritance is but one of many tools. A <code>Car</code> may extend <code>Vehicle::Wheeled</code> (an <em>is-a relationship</em>), but <code>Car</code> may better <em>contain</em> several <code>Wheel</code> objects as instance attributes (a <em>has-a relationship</em>).</p>
 <p>Decomposing complex classes into smaller, focused entities (whether classes or roles) improves encapsulation and reduces the possibility that any one class or role will grow to do too much. Smaller, simpler, and better encapsulated entities are easier to understand, test, and maintain.</p>
-<h4 id="heading_id_32">Single Responsibility Principle</h4>
-<p>When you design your object system, model the problem in terms of responsibilities, or reasons why each specific entity may need to change. For example, an <code>Employee</code> object may represent specific information about a person's name, contact information, and other personal data, while a <code>Job</code> object may represent business responsibilities. A simple design might conflate the two into a single entity, but separating them allows the <code>Employee</code> class to consider only the problem of managing information specific to who the person is and the <code>Job</code> class to represent what the person does. (Two <code>Employees</code> may have a <code>Job</code>-sharing arrangement, for example.)</p>
-<p>When each class has a single responsibility, you can improve the encapsulation of class-specific data and behaviors and reduce coupling between classes.</p>
-<h4 id="heading_id_33">Don't Repeat Yourself</h4>
-<p>Complexity and duplication complicate development and maintenance activities. The DRY principle (Don't Repeat Yourself) is a reminder to seek out and to eliminate duplication within the system. Duplication exists in many forms, in data as well as in code. If you find yourself repeating configuration information, user data, and other artifacts within your system, instead find a canonical, single representation of that information, then generate all of the other artifacts from that representation.</p>
+<h3 id="heading_id_32">Single Responsibility Principle</h3>
+<div id="iOO__isingle_responsibility_principle_0"></div>
+<p>When you design your object system, consider the responsibilities of each entity. For example, an <code>Employee</code> object may represent specific information about a person's name, contact information, and other personal data, while a <code>Job</code> object may represent business responsibilities. Separating these entities in terms of their responsibilities allows the <code>Employee</code> class to consider only the problem of managing information specific to who the person is and the <code>Job</code> class to represent what the person does. (Two <code>Employee</code>s may have a <code>Job</code>-sharing arrangement, for example.)</p>
+<p>When each class has a single responsibility, you improve the encapsulation of class-specific data and behaviors and reduce coupling between classes.</p>
+<h3 id="heading_id_33">Don't Repeat Yourself</h3>
+<div id="iDRY_0"></div>
+<p>Complexity and duplication complicate development and maintenance. The DRY principle (Don't Repeat Yourself) is a reminder to seek out and to eliminate duplication within the system. Duplication exists in data as well as in code. Instead of repeating configuration information, user data, and other artifacts within your system, create a single, canonical representation of that information from which you can generate the other artifacts.</p>
 <p>This principle helps to reduce the possibility that important parts of your system can get unsynchronized, and helps you to find the optimal representation of the system and its data.</p>
-<h4 id="heading_id_34">Liskov Substitution Principle</h4>
-<p>The Liskov substitution principle suggests that subtypes of a given type (specializations of a class or role or subclasses of a class) should be substitutable for the parent type without narrowing the types of data they receive or expanding the types of data they produce. In other words, they should be as general as or more general at what they expect and as specific as or more specific about what they produce.</p>
-<h4 id="heading_id_35">Immutability</h4>
+<h3 id="heading_id_34">Liskov Substitution Principle</h3>
+<div id="iOO__iLiskov_Substitution_Principle_0"></div>
+<p>The Liskov substitution principle suggests that you should be able to substitute a specialization of a class or a role for the original without violating the API of the original. In other words, an object should be as or more general with regard to what it expects and at least as specific about what it produces.</p>
+<p>Imagine two classes, <code>Dessert</code> and its child class <code>PecanPie</code>. If the classes follow the Liskov substitution principle, you can replace every use of <code>Dessert</code> objects with <code>PecanPie</code> objects in the test suite, and everything should pass <span class="footnote">(footnote: See Reg Braithwaite's "IS-STRICTLY-EQUIVALENT-TO-A" for more details, <span class="url">http://weblog.raganwald.com/2008/04/is-strictly-equivalent-to.html</span>.)</span>.</p>
+<h3 id="heading_id_35">Subtypes and Coercions</h3>
+<div id="subtypes"></div>
+<div id="coercions"></div>
+<div id="itypes_0"></div>
+<div id="isubtypes_0"></div>
+<div id="icoercion_1"></div>
+<p>Moose allows you to declare and use types and extend them through subtypes to form ever more specialized descriptions of what your data represents and how it behaves. These type annotations help verify that the data on which you want to work in specific functions or methods is appropriate and even to specify mechanisms by which to coerce data of one type to data of another type.</p>
+<div id="iMoose5858Util5858TypeConstraints_0"></div>
+<div id="iMooseX5858Types_0"></div>
+<p>See <code>Moose::Util::TypeConstraints</code> and <code>MooseX::Types</code> for more information.</p>
+<h3 id="heading_id_36">Immutability</h3>
 <div id="immutability"></div>
-<p>A common pattern among programmers new to object orientation is to treat objects as if they were bundles of records which use methods to get and set internal values. While this is simple to implement and easy to understand, it can lead to the unfortunate temptation to spread the behavioral responsibilities among individual classes throughout the system.</p>
-<p>The most useful technique to working with objects effectively is to tell them what to do, not how to do it. If you find yourself accessing the instance data of objects (even through accessor methods), you may have too much access to the responsibilities of the class.</p>
-<p>One approach to preventing this behavior is to consider objects as immutable. Pass in all of the relevant configuration data to their constructors, then disallow any modifications of this information from outside the class. Do not expose any methods to mutate instance data.</p>
-<p>Some designs go as far as to prohibit the modification of instance data <i>within</i> the class itself, though this is much more difficult to achieve.</p>
+<div id="iOO__iimmutability_0"></div>
+<p>OO novices often treat objects as if they were bundles of records which use methods to get and set internal values. This simple technique leads to the unfortunate temptation to spread the object's responsibilities throughout the entire system.</p>
+<p>With a well-designed object, you tell it what to do and not how to do it. As a rule of thumb, if you find yourself accessing object instance data (even through accessor methods), you may have too much access to an object's internals.</p>
+<p>One approach to preventing this behavior is to consider objects as immutable. Provide the necessary data to their constructors, then disallow any modifications of this information from outside the class. Expose no methods to mutate instance data. The objects so constructed are always valid after their construction and cannot become invalid through external manipulation. This takes tremendous discipline to achieve, but the resulting systems are robust, testable, and maintainable.</p>
+<p>Some designs go as far as to prohibit the modification of instance data <em>within</em> the class itself, though this is much more difficult to achieve.</p>
 </body>
 </html>

@@ -3,256 +3,298 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../styles/style.css" type="text/css" />
 </head>
 <body>
-<h2 id="heading_id_2">Regular Expressions</h2>
+<h1 id="heading_id_2">Regular Expressions and Matching</h1>
+<div id="regex"></div>
 <div id="iregular_expressions_0"></div>
 <div id="iregex_0"></div>
-<div id="iregexp_0"></div>
-<div id="iregular_expression_engine_0"></div>
-<p>Perl's powerful ability to manipulate text comes in part from its inclusion of a computing concept known as <i>regular expressions</i>. A regular expression (often shortened to <i>regex</i> or <i>regexp</i>) is a <i>pattern</i> which describes characteristics of a string of text. A <i>regular expression engine</i> interprets a pattern and applies it to strings of text to identify those which match.</p>
-<p>Perl's core documentation describes Perl regular expressions in copious detail; see <code>perldoc perlretut</code>, <code>perldoc perlre</code>, and <code>perldoc perlreref</code> for a tutorial, the full documentation, and a reference guide, respectively. Jeffrey Friedl's book <i>Mastering Regular Expressions</i> explains the theory and the mechanics of how regular expressions work. Even though those references may seem daunting, regular expressions are like Perl--you can do many things with only a little knowledge.</p>
+<div id="iregex__iengine_0"></div>
+<p>Perl's text processing power comes from its use of <em>regular expressions</em>. A regular expression (<em>regex</em> or <em>regexp</em>) is a <em>pattern</em> which describes characteristics of a piece of text. A <em>regular expression engine</em> interprets patterns and applies them to match or modify pieces of text.</p>
+<p>Perl's core regex documentation includes a tutorial (<code>perldoc perlretut</code>), a reference guide (<code>perldoc perlreref</code>), and full documentation (<code>perldoc perlre</code>). Jeffrey Friedl's book <em>Mastering Regular Expressions</em> explains the theory and the mechanics of how regular expressions work. While mastering regular expressions is a daunting pursuit, a little knowledge will give you great power.</p>
 <div id="regular_expressions"></div>
-<h3 id="heading_id_3">Literals</h3>
-<p>The simplest regexes are simple substring patterns:</p>
+<h2 id="heading_id_3">Literals</h2>
+<div id="iregex__iliterals_0"></div>
+<p>Regexes can be as simple as substring patterns:</p>
 <div class="programlisting">
 <pre>
 <code>    my $name = 'Chatfield';
-    say "Found a hat!" if $name =~ <b>/hat/</b>;</code>
+    say 'Found a hat!' if $name =~ <strong>/hat/</strong>;</code>
 </pre></div>
 <div id="ioperators__imatch_0"></div>
 <div id="ioperators__i4747_2"></div>
 <div id="ioperators__im4747_0"></div>
-<div id="ioperators__iregex_bind_0"></div>
-<div id="ioperators__inegated_regex_bind_0"></div>
-<div id="ioperators__i61126_1"></div>
-<div id="ioperators__i33126_1"></div>
-<div id="iregular_expressions__iatom_0"></div>
+<div id="iregex__iatom_0"></div>
 <div id="iatom_0"></div>
-<p>The match operator (<code>//</code> or, more formally, <code>m//</code>) contains a regular expression--in this example, <code>hat</code>. Even though that reads like a word, it means "the <code>h</code> character, followed by the <code>a</code> character, followed by the <code>t</code> character, appearing anywhere in the string." Each character is an <i>atom</i> in the regex: an indivisible unit of the pattern. The regex binding operator (<code>=~</code>) is an infix operator (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) which applies the regular expression on its right to the string produced by the expression on its left. When evaluated in scalar context, a match evaluates to a true value if it succeeds.</p>
-<p>The negated form of the binding operator (<code>!~</code>) evaluates to a false value if the match succeeds.</p>
-<h3 id="heading_id_4">The qr// Operator and Regex Combinations</h3>
-<div id="ioperators__iqr4747_0"></div>
-<div id="iregular_expressions__iqr4747_0"></div>
-<div id="iregular_expressions__ifirst45class_0"></div>
-<p>Regexes are first-class entities in modern Perl when created with the <code>qr//</code> operator:</p>
+<p>The match operator (<code>m//</code>, abbreviated <code>//</code>) identifies a regular expression--in this example, <code>hat</code>. This pattern is <em>not</em> a word. Instead it means "the <code>h</code> character, followed by the <code>a</code> character, followed by the <code>t</code> character." Each character in the pattern is an indivisible element, or <em>atom</em>. It matches or it doesn't.</p>
+<div id="ioperators__i61126_1"></div>
+<div id="i61126__iregex_bind_0"></div>
+<div id="ioperators__i33126_1"></div>
+<div id="i33126__inegated_regex_bind_0"></div>
+<p>The regex binding operator (<code>=~</code>) is an infix operator (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) which applies the regex of its second operand to a string provided by its first operand. When evaluated in scalar context, a match evaluates to a true value if it succeeds. The negated form of the binding operator (<code>!~</code>) evaluates to a true value unless the match succeeds.</p>
+<div class="tip">
+<div id="ibuiltins__iindex_0"></div>
+<p>The <code>index</code> builtin can also search for a literal substring within a string. Using a regex engine for that is like flying your autonomous combat helicopter to the corner store to buy cheese--but Perl allows you to decide what you find most maintainable.</p>
+</div>
+<div id="ioperators__isubstitution_0"></div>
+<div id="ioperators__is474747_0"></div>
+<p>The substitution operator, <code>s///</code>, is in one sense a circumfix operator (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) with two operands. Its first operand is a regular expression to match when used with the regex binding operator. The second operand is a substring used to replace the matched portion of the first operand used with the regex binding operator. For example, to cure pesky summer allergies:</p>
 <div class="programlisting">
 <pre>
-<code>    my $hat = <b>qr/hat/</b>;
+<code>    my $status = 'I feel ill.';
+    $status    =~ s/ill/well/;
+    say $status;</code>
+</pre></div>
+<h2 id="heading_id_4">The qr// Operator and Regex Combinations</h2>
+<div id="ioperators__iqr4747_0"></div>
+<div id="iqr4747__icompile_regex_operator_0"></div>
+<div id="iregex__iqr4747_0"></div>
+<div id="iregex__ifirst45class_0"></div>
+<p>The <code>qr//</code> operator creates first-class regexes. Interpolate them into the match operator to use them:</p>
+<div class="programlisting">
+<pre>
+<code>    my $hat = <strong>qr/hat/</strong>;
     say 'Found a hat!' if $name =~ /$hat/;</code>
 </pre></div>
-<div class="sidebar">
-<p>The <code>like()</code> function from <code>Test::More</code> works much like <code>is()</code>, except that its second argument is a regular expression object produced by <code>qr//</code>.</p>
-</div>
-<p>You may interpolate and combine them into larger and more complex patterns:</p>
+<p>... or combine multiple regex objects into complex patterns:</p>
 <div class="programlisting">
 <pre>
 <code>    my $hat   = qr/hat/;
     my $field = qr/field/;
 
-    say 'Found a hat in a field!' if $name =~ /<b>$hat$field</b>/;
+    say 'Found a hat in a field!'
+        if $name =~ /<strong>$hat$field</strong>/;
 
-    # or
-
-    like( $name, qr/<b>$hat$field</b>/, 'Found a hat in a field!' );</code>
+    like( $name, qr/<strong>$hat$field</strong>/,
+                   'Found a hat in a field!' );</code>
 </pre></div>
-<h3 id="heading_id_5">Quantifiers</h3>
-<div id="iregular_expressions__iquantifiers_0"></div>
-<div id="ioperators__iindex_0"></div>
-<p>Regular expressions are far more powerful than previous examples have demonstrated; you can search for a literal substring within a string with the <code>index</code> operator. Using the regex engine for that is like flying your autonomous combat helicopter to the corner store to buy spare cheese.</p>
-<div id="iregex_quantifiers_0"></div>
-<div id="iregex_quantifiers__izero_or_one_0"></div>
-<p>Regular expressions get more powerful through the use of <i>regex quantifiers</i>, which allow you to specify how often a regex component may appear in a matching string. The simplest quantifier is the <i>zero or one quantifier</i>, or <code>?</code>:</p>
+<div class="tip">
+<div id="iCPAN__iTest5858More_0"></div>
+<div id="ilike_0"></div>
+<p><code>Test::More</code>'s <code>like</code> function tests that the first argument matches the regex provided as the second argument.</p>
+</div>
+<h2 id="heading_id_5">Quantifiers</h2>
+<div id="iregex__iquantifiers_0"></div>
+<div id="iregex__izero_or_one_quantifier_0"></div>
+<div id="i63__izero_or_one_regex_quantifier_0"></div>
+<p>Regular expressions get more powerful through the use of <em>regex quantifiers</em>, which allow you to specify how often a regex component may appear in a matching string. The simplest quantifier is the <em>zero or one quantifier</em>, or <code>?</code>:</p>
 <div class="programlisting">
 <pre>
-<code>    my $cat_or_ct = qr/ca<b>?</b>t/;
+<code>    my $cat_or_ct = qr/ca<strong>?</strong>t/;
 
     like( 'cat', $cat_or_ct, "'cat' matches /ca?t/" );
     like( 'ct',  $cat_or_ct, "'ct' matches /ca?t/"  );</code>
 </pre></div>
-<p>Any atom in a regular expression followed by the <code>?</code> character means "match zero or one of this atom." This regular expression matches if there are zero <code>a</code> characters immediately following a <code>c</code> character and immediately preceding a <code>t</code> character. It also matches if there is one and only one <code>a</code> character between the <code>c</code> and <code>t</code> characters.</p>
-<div id="iregex_quantifiers__ione_or_more_0"></div>
-<p>The <i>one or more quantifier</i>, or <code>+</code>, matches only if there is at least one of the preceding atom in the appropriate place in the string to match:</p>
+<p>Any atom in a regular expression followed by the <code>?</code> character means "match zero or one of this atom." This regular expression matches if zero or one <code>a</code> characters immediately follow a <code>c</code> character and immediately precede a <code>t</code> character, either the literal substring <code>cat</code> or <code>ct</code>.</p>
+<div id="iregex__ione_or_more_quantifier_0"></div>
+<div id="i43__ione_or_more_regex_quantifier_0"></div>
+<p>The <em>one or more quantifier</em>, or <code>+</code>, matches only if there is at least one of the quantified atom:</p>
 <div class="programlisting">
 <pre>
-<code>    my $one_or_more_a = qr/ca<b>+</b>t/;
+<code>    my $some_a = qr/ca<strong>+</strong>t/;
 
-    like( 'cat',    $one_or_more_a, "'cat' matches /ca+t/"    );
-    like( 'caat',   $one_or_more_a, "'caat' matches /ca+t/"   );
-    like( 'caaat',  $one_or_more_a, "'caaat' matches /ca+t/"  );
-    like( 'caaaat', $one_or_more_a, "'caaaat' matches /ca+t/" );
+    like( 'cat',    $some_a, "'cat' matches /ca+t/" );
+    like( 'caat',   $some_a, "'caat' matches/"      );
+    like( 'caaat',  $some_a, "'caaat' matches"      );
+    like( 'caaaat', $some_a, "'caaaat' matches"     );
 
-    unlike( 'ct',   $one_or_more_a, "'ct' does not match /ca+t/" );</code>
+    unlike( 'ct',   $some_a, "'ct' does not match"  );</code>
 </pre></div>
-<p>There is no theoretical limit to the number of quantified atoms which can match.</p>
+<p>There is no theoretical limit to the maximum number of quantified atoms which can match.</p>
 <div id="iquantifiers__izero_or_more_0"></div>
-<p>The <i>zero or more quantifier</i> is <code>*</code>; it matches if there are zero or more instances of the quantified atom in the string to match:</p>
+<div id="i42__izero_or_more_regex_quantifier_0"></div>
+<p>The <em>zero or more quantifier</em>, <code>*</code>, matches zero or more instances of the quantified atom:</p>
 <div class="programlisting">
 <pre>
-<code>    my $zero_or_more_a = qr/ca<b>*</b>t/;
+<code>    my $any_a = qr/ca<strong>*</strong>t/;
 
-    like( 'cat',    $zero_or_more_a, "'cat' matches /ca*t/"    );
-    like( 'caat',   $zero_or_more_a, "'caat' matches /ca*t/"   );
-    like( 'caaat',  $zero_or_more_a, "'caaat' matches /ca*t/"  );
-    like( 'caaaat', $zero_or_more_a, "'caaaat' matches /ca*t/" );
-    like( 'ct',     $zero_or_more_a, "'ct' matches /ca*t/"     );</code>
+    like( 'cat',    $any_a, "'cat' matches /ca*t/" );
+    like( 'caat',   $any_a, "'caat' matches"       );
+    like( 'caaat',  $any_a, "'caaat' matches"      );
+    like( 'caaaat', $any_a, "'caaaat' matches"     );
+    like( 'ct',     $any_a, "'ct' matches"         );</code>
 </pre></div>
-<p>This may seem useless, but it combines nicely with other regex features to indicate that you don't care about what may or may not be in that particular position in the string to match. Even so, <i>most</i> regular expressions benefit from using the <code>?</code> and <code>+</code> quantifiers far more than the <code>*</code> quantifier <span class="footnote">(footnote: Friedl's book explains why.)</span>.</p>
+<p>As silly as this seems, it allows you to specify optional components of a regex. Use it sparingly, though: it's a blunt and expensive tool. <em>Most</em> regular expressions benefit from using the <code>?</code> and <code>+</code> quantifiers far more than <code>*</code>. Precision of intent often improves clarity.</p>
 <div id="inumeric_quantifiers_0"></div>
-<p>Finally, you can specify the number of times an atom may match with <i>numeric quantifiers</i>. <code>{n}</code> means that a match must occur exactly <i>n</i> times.</p>
+<div id="i123125__iregex_numeric_quantifier_0"></div>
+<p><em>Numeric quantifiers</em> express specific numbers of times an atom may match. <code>{n}</code> means that a match must occur exactly <em>n</em> times.</p>
 <div class="programlisting">
 <pre>
 <code>    # equivalent to qr/cat/;
-    my $only_one_a = qr/ca<b>{1}</b>t/;
+    my $only_one_a = qr/ca<strong>{1}</strong>t/;
 
     like( 'cat', $only_one_a, "'cat' matches /ca{1}t/" );</code>
 </pre></div>
-<p><code>{n,}</code> means that a match must occur at least <i>n</i> times, but may occur more times:</p>
+<p><code>{n,}</code> matches an atom <em>at least</em> <em>n</em> times:</p>
 <div class="programlisting">
 <pre>
 <code>    # equivalent to qr/ca+t/;
-    my $at_least_one_a = qr/ca<b>{1,}</b>t/;
+    my $some_a = qr/ca<strong>{1,}</strong>t/;
 
-    like( 'cat',    $at_least_one_a, "'cat' matches /ca{1,}t/"    );
-    like( 'caat',   $at_least_one_a, "'caat' matches /ca{1,}t/"   );
-    like( 'caaat',  $at_least_one_a, "'caaat' matches /ca{1,}t/"  );
-    like( 'caaaat', $at_least_one_a, "'caaaat' matches /ca{1,}t/" );</code>
+    like( 'cat',    $some_a, "'cat' matches /ca{1,}t/" );
+    like( 'caat',   $some_a, "'caat' matches"          );
+    like( 'caaat',  $some_a, "'caaat' matches"         );
+    like( 'caaaat', $some_a, "'caaaat' matches"        );</code>
 </pre></div>
-<p><code>{n,m}</code> means that a match must occur at least <i>n</i> times and cannot occur more than <i>m</i> times:</p>
+<p><code>{n,m}</code> means that a match must occur at least <em>n</em> times and cannot occur more than <em>m</em> times:</p>
 <div class="programlisting">
 <pre>
-<code>    my $one_to_three_a = qr/ca<b>{1,3}</b>t/;
+<code>    my $few_a = qr/ca<strong>{1,3}</strong>t/;
 
-    like(   'cat',    $one_to_three_a, "'cat' matches /ca{1,3}t/"           );
-    like(   'caat',   $one_to_three_a, "'caat' matches /ca{1,3}t/"          );
-    like(   'caaat',  $one_to_three_a, "'caaat' matches /ca{1,3}t/"         );
-    unlike( 'caaaat', $one_to_three_a, "'caaaat' does not match /ca{1,3}t/" );</code>
+    like( 'cat',    $few_a, "'cat' matches /ca{1,3}t/" );
+    like( 'caat',   $few_a, "'caat' matches"           );
+    like( 'caaat',  $few_a, "'caaat' matches"          );
+
+    unlike( 'caaaat', $few_a, "'caaaat' doesn't match" );</code>
 </pre></div>
-<h3 id="heading_id_6">Greediness</h3>
+<p>You may express the symbolic quantifiers in terms of the numeric quantifiers, but most programs use the former far more often than the latter.</p>
+<h2 id="heading_id_6">Greediness</h2>
 <div id="igreedy_quantifiers_0"></div>
 <div id="iquantifiers__igreedy_0"></div>
-<p>The <code>+</code> and <code>*</code> quantifiers by themselves are <i>greedy quantifiers</i>; they match as many times as possible. This is particularly pernicious when using the tempting-but-troublesome "match any amount of anything" pattern <code>.*</code>:</p>
+<p>The <code>+</code> and <code>*</code> quantifiers are <em>greedy</em>, as they try to match as much of the input string as possible. This is particularly pernicious. Consider a naïve use of the "zero or more non-newline characters" pattern of <code>.*</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    # a poor regex
     my $hot_meal = qr/hot.*meal/;
 
-    say 'Found a hot meal!' if 'I have a hot meal' =~ $hot_meal;
     say 'Found a hot meal!'
-         if 'I did some one-shot, piecemeal work!' =~ $hot_meal;</code>
+        if 'I have a hot meal' =~ $hot_meal;
+
+    say 'Found a hot meal!'
+         if 'one-shot, piecemeal work!' =~ $hot_meal;</code>
 </pre></div>
-<p>The problem is more obvious when you expect to match a short portion of a string. Greediness always tries to match as much of the input string as possible <i>first</i>, backing off only when it's obvious that the match will not succeed. Thus you may not be able to fit all of the results into the four boxes in 7 Down if you go looking for "loam" with:</p>
+<p>Greedy quantifiers start by matching <em>everything</em> at first, and back off a character at a time only when it's obvious that the match will not succeed.</p>
+<div id="i63__izero_or_one_regex_quantifier_1"></div>
+<div id="i4263__inon45greedy_zero_or_one_regex_quantifier_0"></div>
+<p>The <code>?</code> quantifier modifier turns a greedy-quantifier parsimonious:</p>
 <div class="programlisting">
 <pre>
-<code>    my $seven_down = qr/l${letters_only}*m/;</code>
+<code>    my $minimal_greedy = qr/hot.*?meal/;</code>
 </pre></div>
-<p>You'll get <code>Alabama</code>, <code>Belgium</code>, and <code>Bethlehem</code> for starters. The soil might be nice there, but they're all too long--and the matches start in the middle of the words.</p>
-<div id="iregex_anchors_0"></div>
+<p>When given a non-greedy quantifier, the regular expression engine will prefer the <em>shortest</em> possible potential match and will increase the number of characters identified by the <code>.*?</code> token combination only if the current number fails to match. Because <code>*</code> matches zero or more times, the minimal potential match for this token combination is zero characters:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'Found a hot meal'
+    if 'ilikeahotmeal' =~ /$minimal_greedy/;</code>
+</pre></div>
+<div id="i4363__inon45greedy_one_or_more_regex_quantifier_0"></div>
+<p>Use <code>+?</code> to match one or more items non-greedily:</p>
+<div class="programlisting">
+<pre>
+<code>    my $minimal_greedy_plus = qr/hot.+?meal/;
+
+    unlike( 'ilikeahotmeal', $minimal_greedy_plus );
+
+    like( 'i like a hot meal', $minimal_greedy_plus );</code>
+</pre></div>
+<div id="i6363__inon45greedy_zero_or_one_regex_quantifier_0"></div>
+<p>The <code>?</code> quantifier modifier also applies to the <code>?</code> (zero or one matches) quantifier as well as the range quantifiers. In every case, it causes the regex to match as little of the input as possible.</p>
+<p>The greedy patterns <code>.+</code> and <code>.*</code> are tempting but dangerous. A cruciverbalist <span class="footnote">(footnote: A crossword puzzle afficionado.)</span> who needs to fill in four boxes of 7 Down ("Rich soil") will find too many invalid candidates with the pattern:</p>
+<div class="programlisting">
+<pre>
+<code>    my $seven_down   = qr/l$letters_only*m/;</code>
+</pre></div>
+<p>She'll have to discard <code>Alabama</code>, <code>Belgium</code>, and <code>Bethlehem</code> long before the program suggests <code>loam</code>. Not only are those words too long, but the matches start in the middle of the words. A working understanding of greediness helps, but there is no substitute for the copious testing with real, working data.</p>
+<h2 id="heading_id_7">Regex Anchors</h2>
+<div id="iregex__ianchors_0"></div>
 <div id="ianchors__istart_of_string_0"></div>
-<p><i>Regex anchors</i> force a match at a specific position in a string. The <i>start of string anchor</i> (<code>\A</code>) ensures that any match will start at the beginning of the string:</p>
+<div id="i_A__istart_of_string_regex_metacharacter_0"></div>
+<p><em>Regex anchors</em> force the regex engine to start or end a match at an absolute position. The <em>start of string anchor</em> (<code>\A</code>) dictates that any match must start at the beginning of the string:</p>
 <div class="programlisting">
 <pre>
 <code>    # also matches "lammed", "lawmaker", and "layman"
     my $seven_down = qr/\Al${letters_only}{2}m/;</code>
 </pre></div>
 <div id="ianchors__iend_of_string_0"></div>
-<p>Similarly, the <i>end of line string anchor</i> (<code>\Z</code>) ensures that any match will <i>end</i> at the end of the string.</p>
+<div id="i_Z__iend_of_string_regex_metacharacter_0"></div>
+<p>The <em>end of line string anchor</em> (<code>\Z</code>) requires that a match end at the end of a line within the string.</p>
 <div class="programlisting">
 <pre>
-<code>    # also matches "loom", which is close enough
+<code>    # also matches "loom", but an obvious improvement
     my $seven_down = qr/\Al${letters_only}{2}m\Z/;</code>
 </pre></div>
 <div id="iword_boundary_metacharacter_0"></div>
-<p>If you're not fortunate enough to have a Unix word dictionary file available, the <i>word boundary metacharacter</i> (<code>\b</code>) matches only at the boundary between a word character (<code>\w</code>) and a non-word character (<code>\W</code>):</p>
+<div id="i_b__iword_boundary_regex_metacharacter_0"></div>
+<p>The <em>word boundary anchor</em> (<code>\b</code>) matches only at the boundary between a word character (<code>\w</code>) and a non-word character (<code>\W</code>). Use an anchored regex to find <code>loam</code> while prohibiting <code>Belgium</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $seven_down = qr/\bl${letters_only}{2}m\b/;</code>
 </pre></div>
-<div class="sidebar">
-<p>Like Perl, there's more than one way to write a regular expression. Consider choosing the most expressive and maintainable one.</p>
-</div>
-<p>Sometimes you can't anchor a regular expression. In those cases, you can turn a greedy quantifier into a parsimonious quantifier by appending the <code>?</code> quantifier:</p>
-<div class="programlisting">
-<pre>
-<code>    my $minimal_greedy_match = qr/hot.*?meal/;</code>
-</pre></div>
-<p>In this case, the regular expression engine will prefer the <i>shortest</i> possible potential match, increasing the number of characters identified by the <code>.*?</code> token combination only if the current number fails to match. Because <code>*</code> matches zero or more times, the minimal potential match for this token combination is zero characters:</p>
-<div class="programlisting">
-<pre>
-<code>    say 'Found a hot meal' if 'ilikeahotmeal' =~ /$minimal_greedy_match/;</code>
-</pre></div>
-<p>If this isn't what you want, use the <code>+</code> quantifier to match one or more items:</p>
-<div class="programlisting">
-<pre>
-<code>    my $minimal_greedy_at_least_one = qr/hot.+?meal/;
-
-    unlike( 'ilikeahotmeal', $minimal_greedy_at_least_one );
-
-    like( 'i like a hot meal', $minimal_greedy_at_least_one );</code>
-</pre></div>
-<p>The <code>?</code> quantifier modifier also applies to the <code>?</code> (zero or one matches) quantifier as well as the range quantifiers. In every case, it causes the regex to match as few times as possible.</p>
-<p>In general, the greedy modifiers <code>.+</code> and <code>.*</code> are tempting but dangerous tools. For simple programs which need little maintenance, they may be quick and easy to write, but non-greedy matching seems to match human expectations better. If you find yourself writing a lot of regular expression with greedy matches, test them thoroughly with a comprehensive and automated test suite with representative data to lessen the possibility of unpleasant surprises.</p>
-<div class="author">
-<p>Greediness and captures? Chas. likes the idea.</p>
-</div>
-<h3 id="heading_id_7">Metacharacters</h3>
-<div id="iregular_expressions__imetacharacters_0"></div>
-<div id="iregular_expressions__i46_0"></div>
-<p>Regular expressions get more powerful as atoms get more general. For example, the <code>.</code> character in a regular expression means "match any character except a newline". If you wanted to search a list of dictionary words for every word which might match 7 Down ("Rich soil") in a crossword puzzle, you might write:</p>
+<h2 id="heading_id_8">Metacharacters</h2>
+<div id="iregex__imetacharacters_0"></div>
+<div id="iregex__imetacharacters_1"></div>
+<div id="imetacharacters__iregex_0"></div>
+<p>Perl interprets several characters in regular expressions as <em>metacharacters</em>, characters represent something other than their literal interpretation. Metacharacters give regex wielders power far beyond mere substring matches. The regex engine treats all metacharacters as atoms.</p>
+<div id="iregex__i46_0"></div>
+<div id="i46__ianything_but_newline_regex_metacharacter_0"></div>
+<p>The <code>.</code> metacharacter means "match any character except a newline". Remember that caveat; many novices forget it. A simple regex search--ignoring the obvious improvement of using anchors--for 7 Down might be <code>/l..m/</code>. Of course, there's always more than one way to get the right answer:</p>
 <div class="programlisting">
 <pre>
 <code>    for my $word (@words)
     {
         next unless length( $word ) == 4;
-        next unless $word =~ /l<b>..</b>m/;
+        next unless $word =~ /l<strong>..</strong>m/;
         say "Possibility: $word";
     }</code>
 </pre></div>
-<div id="iregular_expressions__i_w_0"></div>
-<p>Of course, if your list of potential matches were anything other than a list of words, this metacharacter could cause false positives, as it also matches punctuation characters, whitespace, numbers, and many other characters besides word characters. The <code>\w</code> metacharacter represents all alphanumeric characters (in a Unicode sense -- <a href="chapter_03.html#unicode">Unicode and Strings</a>(unicode)) and the underscore:</p>
+<div id="iregex__i_w_0"></div>
+<div id="i_w__ialphanumeric_regex_metacharacter_0"></div>
+<p>If the potential matches in <code>@words</code> are more than the simplest English words, you will get false positives. <code>.</code> also matches punctuation characters, whitespace, and numbers. Be specific! The <code>\w</code> metacharacter represents all alphanumeric characters (<a href="chapter_03.html#unicode">Unicode and Strings</a>(unicode)) and the underscore:</p>
 <div class="programlisting">
 <pre>
-<code>        next unless $word =~ <b>/l</b>\w\w</code>m/;
+<code>        next unless $word =~ /l<strong>\w\w</strong>m/;</code>
 </pre></div>
-<div id="iregular_expressions__i_d_0"></div>
-<p>The <code>\d</code> metacharacter matches digits--not just 0-9 as you expect, but any Unicode digit:</p>
+<div id="iregex__i_d_0"></div>
+<div id="i_d__idigit_regex_metacharacter_0"></div>
+<p>The <code>\d</code> metacharacter matches digits (also in the Unicode sense):</p>
 <div class="programlisting">
 <pre>
 <code>    # not a robust phone number matcher
-    next unless $potential_phone_number =~ /<b>\d</b>{3}-<b>\d</b>{3}-<b>\d</b>{4}/;
-    say "I have your number: $potential_phone_number";</code>
+    next unless $number =~ /<strong>\d</strong>{3}-<strong>\d</strong>{3}-<strong>\d</strong>{4}/;
+    say "I have your number: $number";</code>
 </pre></div>
-<div id="iregular_expressions__i_s_0"></div>
+<div id="iregex__i_s_0"></div>
+<div id="i_s__iwhitespace_regex_metacharacter_0"></div>
 <p>Use the <code>\s</code> metacharacter to match whitespace, whether a literal space, a tab character, a carriage return, a form-feed, or a newline:</p>
 <div class="programlisting">
 <pre>
-<code>    my $two_three_letter_words = qr/\w{3}<b>\s</b>\w{3}/;</code>
+<code>    my $two_three_letter_words = qr/\w{3}<strong>\s</strong>\w{3}/;</code>
 </pre></div>
-<div id="iregular_expressions__i_W_0"></div>
-<div id="iregular_expressions__i_D_0"></div>
-<div id="iregular_expressions__i_S_0"></div>
-<p>These three metacharacters have negated forms. To match any character <i>except</i> a word character, use <code>\W</code>. To match a non-digit character, use <code>\D</code>. To match anything but a space, use <code>\S</code>.</p>
-<h3 id="heading_id_8">Character Classes</h3>
-<div id="icharacter_classes_0"></div>
-<p>If the range of allowed characters in these four groups isn't specific enough, you can specify your own <i>character classes</i> by enclosing them in square brackets:</p>
-<div class="programlisting">
-<pre>
-<code>    my $vowels    = qr/<b>[</b>aeiou<b>]</b>/;
-    my $maybe_cat = qr/c${vowels}t/;</code>
-</pre></div>
-<div class="sidebar">
-<p>The curly braces around the name of the scalar variable <code>$vowels</code> helps disambiguate the variable name. Without that, the parser would interpret the variable name as <code>$vowelst</code>, which either causes a compile-time error about an unknown variable or interpolates the contents of an existing <code>$vowelst</code> into the regex.</p>
+<div id="iregex__i_B_0"></div>
+<div id="iregex__i_D_0"></div>
+<div id="iregex__i_S_0"></div>
+<div id="iregex__i_W_0"></div>
+<div id="i_B__inon45word_boundary_regex_metacharacter_0"></div>
+<div id="i_D__inon45digit_regex_metacharacter_0"></div>
+<div id="i_S__inon45whitespace_regex_metacharacter_0"></div>
+<div id="i_W__inon45alphanumeric_regex_metacharacter_0"></div>
+<div class="tip">
+<p>These metacharacters have negated forms. Use <code>\W</code> to match any character <em>except</em> a word character. Use <code>\D</code> to match a non-digit character. Use <code>\S</code> to match anything but whitespace. Use <code>\B</code> to match anywhere except a word boundary.</p>
 </div>
-<p>If the characters in your character set form a contiguous range, you can use the hyphen character (<code>-</code>) as a shortcut to express that range.</p>
+<h2 id="heading_id_9">Character Classes</h2>
+<div id="character_classes"></div>
+<div id="icharacter_classes_0"></div>
+<div id="i9193__icharacter_class_regex_metacharacters_0"></div>
+<p>When none of those metacharacters is specific enough, specify your own <em>character class</em> by enclosing them in square brackets:</p>
 <div class="programlisting">
 <pre>
-<code>    my $letters_only = qr/[a-zA-Z]/;</code>
+<code>    my $ascii_vowels = qr/<strong>[</strong>aeiou<strong>]</strong>/;
+    my $maybe_cat    = qr/c${ascii_vowels}t/;</code>
 </pre></div>
-<p>Move the hyphen character to the start or end of the class to include it in the class:</p>
+<div class="tip">
+<p>Without those curly braces, Perl's parser would interpret the variable name as <code>$ascii_vowelst</code>, which either causes a compile-time error about an unknown variable or interpolates the contents of an existing <code>$ascii_vowelst</code> into the regex.</p>
+</div>
+<div id="i45__icharacter_class_range_regex_metacharacter_0"></div>
+<p>The hyphen character (<code>-</code>) allows you to specify a contiguous range of characters in a class, such as this <code>$ascii_letters_only</code> regex:</p>
+<div class="programlisting">
+<pre>
+<code>    my $ascii_letters_only = qr/[a-zA-Z]/;</code>
+</pre></div>
+<p>To include the hyphen as a member of the class, move it to the start or end:</p>
 <div class="programlisting">
 <pre>
 <code>    my $interesting_punctuation = qr/[-!?]/;</code>
@@ -262,31 +304,31 @@
 <pre>
 <code>    my $line_characters = qr/[|=\-_]/;</code>
 </pre></div>
-<p>Just as the word and digit class metacharacters (<code>\w</code> and <code>\d</code>) have negations, so too you can negate a character class. Use the caret (<code>^</code>) as the first element of the character class to mean "anything <i>except</i> these characters":</p>
+<div id="i94__inegation_of_character_class_regex_metacharacter_0"></div>
+<p>Use the caret (<code>^</code>) as the first element of the character class to mean "anything <em>except</em> these characters":</p>
 <div class="programlisting">
 <pre>
-<code>    my $not_a_vowel = qr/[^aeiou]/;</code>
+<code>    my $not_an_ascii_vowel = qr/[^aeiou]/;</code>
 </pre></div>
-<div class="sidebar">
-<p>Use a caret anywhere but this position to make it a member of the character class. To include a hyphen in a negated character class, place it after the caret or at the end of the class, or escape it.</p>
+<div class="tip">
+<p>Use a caret anywhere but the first position to make it a member of the character class. To include a hyphen in a negated character class, place it after the caret or at the end of the class, or escape it.</p>
 </div>
-<h3 id="heading_id_9">Capturing</h3>
-<p>It's often useful to match part of a string and use it later; perhaps you want to extract an address or an American telephone number from a string:</p>
+<h2 id="heading_id_10">Capturing</h2>
+<div id="regex_captures"></div>
+<p>Regular expressions allow you to group and capture portions of the match for later use. To extract an American telephone number of the form <code>(202) 456-1111</code> from a string:</p>
 <div class="programlisting">
 <pre>
 <code>    my $area_code    = qr/\(\d{3}\)/;
     my $local_number = qr/\d{3}-?\d{4}/;
     my $phone_number = qr/$area_code\s?$local_number/;</code>
 </pre></div>
-<div class="sidebar">
-<p>Parentheses in regular expressions are metacharacters; <code>$area_code</code> escapes them.</p>
-</div>
-<h4 id="heading_id_10">Named Captures</h4>
+<p>Note especially the escaping of the parentheses within <code>$area_code</code>. Parentheses are special in Perl 5 regular expressions. They group atoms into larger units and also capture portions of matching strings. To match literal parentheses, escape them with backslashes as seen in <code>$area_code</code>.</p>
+<h3 id="heading_id_11">Named Captures</h3>
 <div id="named_captures"></div>
-<div id="icaptures_0"></div>
-<div id="inamed_captures_0"></div>
-<div id="icaptures__inamed_0"></div>
-<p>Given a string, <code>$contact_info</code>, which contains contact information, you can apply the <code>$phone_number</code> regular expression and <i>capture</i> any matches into a variable with <i>named captures</i>:</p>
+<div id="iregex__icaptures_0"></div>
+<div id="iregex__inamed_captures_0"></div>
+<div id="i406338lt5938gt5941__iregex_named_capture_0"></div>
+<p>Perl 5.10 added <em>named captures</em>, which allow you to capture portions of matches from applying a regular expression and access them later, such as finding a phone number in a string of contact information:</p>
 <div class="programlisting">
 <pre>
 <code>    if ($contact_info =~ /(?&lt;phone&gt;$phone_number)/)
@@ -294,17 +336,19 @@
         say "Found a number $+{phone}";
     }</code>
 </pre></div>
-<p>The capturing construct can look like a big wad of punctuation, but it's fairly simple when you can recognize as a single chunk:</p>
+<p>Regexes tend to look like punctuation soup until you can group various portions together as chunks. Named capture syntax has the form:</p>
 <div class="programlisting">
 <pre>
 <code>    (?&lt;capture name&gt; ... )</code>
 </pre></div>
-<p>The parentheses enclose the entire capture. The <code>?&lt; name &gt;</code> construct must follow the left parenthesis. It provides a name for the capture buffer. The rest of the construct within the parentheses is a regular expression. If and when the regex matches this fragment, Perl stores the captured portion of the string in the special variable <code>%+</code>: a hash where the key is the name of the capture buffer and the value is the portion of the string which matched the buffer's regex.</p>
-<p>Parentheses are special to Perl 5 regular expressions; by default they perform the same grouping behavior as parentheses do in regular Perl code. They also enclose one or more atoms to capture whatever portion of the matched string they match. To use literal parentheses in a regular expression, you must preface them with a backslash, just as in the <code>$area_code</code> variable.</p>
-<h4 id="heading_id_11">Anonymous Captures</h4>
-<div id="ianonymous_captures_0"></div>
-<div id="icaptures__ianonymous_0"></div>
-<p>Named captures are new in Perl 5.10, but captures have existed in Perl for many years. You may encounter <i>anonymous captures</i> as well:</p>
+<div id="i3743_0"></div>
+<div id="iglobal_variables__i3743_0"></div>
+<p>Parentheses enclose the capture. The <code>?&lt; name &gt;</code> construct names this particular capture and must immediately follow the left parenthesis. The remainder of the capture is a regular expression.</p>
+<p>When a match against the enclosing pattern succeeds, Perl stores the portion of the string which matches the enclosed pattern in the magic variable <code>%+</code>. In this hash, the key is the name of the capture and the value is the appropriate portion of the matched string.</p>
+<h3 id="heading_id_12">Numbered Captures</h3>
+<div id="iregex__inumbered_captures_0"></div>
+<div id="iregex__icaptures_1"></div>
+<p>Perl has supported <em>numbered captures</em> for ages:</p>
 <div class="programlisting">
 <pre>
 <code>    if ($contact_info =~ /($phone_number)/)
@@ -312,12 +356,13 @@
         say "Found a number $1";
     }</code>
 </pre></div>
-<p>The parentheses enclose the fragment to capture, but there is no regex directive giving the <i>name</i> of the capture. Instead, Perl stores the captured substring in a series of magic variables starting with <code>$1</code> and continuing for as many capture groups are present in the regex. The <i>first</i> matching capture that Perl finds goes into <code>$1</code>, the second into <code>$2</code>, and so on. Capture counts start at the <i>opening</i> parenthesis of the capture; thus the first left parenthesis begins the capture into <code>$1</code>, the second into <code>$2</code>, and so on.</p>
-<p>While the syntax for named captures is longer than for anonymous captures, it provides additional clarity. You do not have to count the number of opening parentheses to figure out whether a particular capture is <code>$4</code> or <code>$5</code>, and composing regexes from smaller regexes is much easier, as they're less sensitive to changes in position or the presence or absence of capturing in individual atoms.</p>
-<div class="sidebar">
-<p>Name collisions are still possible with named captures, though that's less frequent than number collisions with anonymous captures. Consider avoiding the use of captures in regex fragments; save it for top-level regexes.</p>
-</div>
-<p>Named captures are less frustrating when you evaluate a match in list context:</p>
+<div id="iregex__i361_0"></div>
+<div id="iregex__i362_0"></div>
+<div id="i361__iregex_metacharacter_0"></div>
+<div id="i362__iregex_metacharacter_0"></div>
+<p>This form of capture provides no identifying name and does not store in <code>%+</code>. Instead, Perl stores the captured substring in a series of magic variables. The <em>first</em> matching capture that Perl finds goes into <code>$1</code>, the second into <code>$2</code>, and so on. Capture counts start at the <em>opening</em> parenthesis of the capture; thus the first left parenthesis begins the capture into <code>$1</code>, the second into <code>$2</code>, and so on.</p>
+<p>While the syntax for named captures is longer than for numbered captures, it provides additional clarity. Counting left parentheses is tedious work, and combining regexes which each contain numbered captures is far too difficult. Named captures improve regex maintainability--though name collisions are possible, they're relatively infrequent. Minimize the risk by using named captures only in top-level regexes.</p>
+<p>In list context, a regex match returns a list of captured substrings:</p>
 <div class="programlisting">
 <pre>
 <code>    if (my ($number) = $contact_info =~ /($phone_number)/)
@@ -325,9 +370,17 @@
         say "Found a number $number";
     }</code>
 </pre></div>
-<p>Perl will assign to the lvalues in order of the captures.</p>
-<h3 id="heading_id_12">Grouping and Alternation</h3>
-<p>Previous examples have all applied quantifiers to simple atoms. They can also apply to more complex subpatterns as a whole:</p>
+<p>Numbered captures are also useful in simple substitutions, where named captures may be more verbose:</p>
+<div class="programlisting">
+<pre>
+<code>    my $order = 'Vegan brownies!';
+
+    $order =~ s/Vegan (\w+)/Vegetarian $1/;
+    # or
+    $order =~ s/Vegan (?&lt;food&gt;\w+)/Vegetarian $+{food}/;</code>
+</pre></div>
+<h2 id="heading_id_13">Grouping and Alternation</h2>
+<p>Previous examples have all applied quantifiers to simple atoms. You may apply them to any regex element:</p>
 <div class="programlisting">
 <pre>
 <code>    my $pork  = qr/pork/;
@@ -339,10 +392,14 @@
 <p>If you expand the regex manually, the results may surprise you:</p>
 <div class="programlisting">
 <pre>
-<code>    like( 'pork and beans', qr/\Apork?.*?beans/,
-         'maybe pork, definitely beans' );</code>
+<code>    my $pork_and_beans = qr/\Apork?.*beans/;
+
+    like( 'pork and beans', qr/$pork_and_beans/,
+        'maybe pork, definitely beans' );
+    like( 'por and beans', qr/$pork_and_beans/,
+         'wait... no phylloquinone here!' );</code>
 </pre></div>
-<p>This still matches, but consider a more specific pattern:</p>
+<p>Sometimes specificity helps pattern accuracy:</p>
 <div class="programlisting">
 <pre>
 <code>    my $pork  = qr/pork/;
@@ -352,81 +409,82 @@
     like( 'pork and beans', qr/\A$pork? $and? $beans/,
         'maybe pork, maybe and, definitely beans' );</code>
 </pre></div>
-<div id="ialternation_0"></div>
-<div id="iregex_alternation_0"></div>
-<p>Some regexes need to match one thing or another. Use the <i>alternation</i> metacharacter (<code>|</code>) to do so:</p>
+<div id="iregex__ialternation_0"></div>
+<div id="i124__ialternation_regex_metacharacter_0"></div>
+<p>Some regexes need to match either one thing or another. The <em>alternation</em> metacharacter (<code>|</code>) expresses this intent:</p>
 <div class="programlisting">
 <pre>
 <code>    my $rice  = qr/rice/;
     my $beans = qr/beans/;
 
-    like( 'rice',  qr/$rice|$beans/, 'Found some rice'  );
-    like( 'beans', qr/$rice|$beans/, 'Found some beans' );</code>
+    like( 'rice',  qr/$rice|$beans/, 'Found rice'  );
+    like( 'beans', qr/$rice|$beans/, 'Found beans' );</code>
 </pre></div>
-<p>The alternation metacharacter indicates that either preceding fragment may match. Be careful about what you interpret as a regex fragment, however:</p>
+<p>The alternation metacharacter indicates that either preceding fragment may match. Keep in mind that alternation has a lower precedence (<a href="chapter_04.html#precedence">Precedence</a>(precedence)) than even atoms:</p>
 <div class="programlisting">
 <pre>
-<code>    like(   'rice',  qr/rice|beans/, 'Found some rice'  );
-    like(   'beans', qr/rice|beans/, 'Found some beans' );
-    unlike( 'ricb',  qr/rice|beans/, 'Found some weird hybrid' );</code>
+<code>    like(   'rice',  qr/rice|beans/, 'Found rice'   );
+    like(   'beans', qr/rice|beans/, 'Found beans'  );
+    unlike( 'ricb',  qr/rice|beans/, 'Found hybrid' );</code>
 </pre></div>
-<p>It's possible to interpret the pattern <code>rice|beans</code> as meaning <code>ric</code>, followed by either <code>e</code> or <code>b</code>, followed by <code>eans</code>--but that's incorrect. Alternations always include the <i>entire</i> fragment to the nearest regex delimiter, whether the start or end of the pattern, an enclosing parenthesis, another alternation character, or a square bracket.</p>
-<div id="inon45capturing_groups_0"></div>
-<p>To reduce confusion, use named fragments in variables (<code>$rice|$beans</code>) or grouping alternation candidates in <i>non-capturing groups</i>:</p>
+<p>While it's easy to interpret <code>rice|beans</code> as meaning <code>ric</code>, followed by either <code>e</code> or <code>b</code>, followed by <code>eans</code>, alternations always include the <em>entire</em> fragment to the nearest regex delimiter, whether the start or end of the pattern, an enclosing parenthesis, another alternation character, or a square bracket.</p>
+<div id="iregex__i4041_0"></div>
+<div id="i4041__icapturing_regex_metacharacters_0"></div>
+<p>To reduce confusion, use named fragments in variables (<code>$rice|$beans</code>) or group alternation candidates in <em>non-capturing groups</em>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $starches = qr/(?:pasta|potatoes|rice)/;</code>
 </pre></div>
-<p>The <code>(?:)</code> sequence groups a series of atoms but suppresses capturing behavior. In this case, it groups three alternatives.</p>
-<div class="sidebar">
-<p>If you print a compiled regular expression, you'll see that its stringification includes an enclosing non-capturing group; <code>qr/rice|beans/</code> stringifies as <code>(?-xism:rice|beans)</code>.</p>
+<div id="i40635841__inon45capturing_regex_group_0"></div>
+<p>The <code>(?:)</code> sequence groups a series of atoms without making a capture.</p>
+<div class="tip">
+<p>A stringified regular expression includes an enclosing non-capturing group; <code>qr/rice|beans/</code> stringifies as <code>(?^u:rice|beans)</code>.</p>
 </div>
-<h3 id="heading_id_13">Other Escape Sequences</h3>
-<div id="iregex_metacharacters_0"></div>
-<div id="imetacharacters__iregex_0"></div>
-<p>Perl interprets several characters in regular expressions as <i>metacharacters</i>, which represent something different than their literal characters. Square brackets always denote a character class and parentheses group and optionally capture pattern fragments.</p>
-<div id="iescape_0"></div>
-<div id="imetacharacters__iescaping_0"></div>
-<p>To a <i>literal</i> instance of a metacharacter, <i>escape</i> it with a backslash (<code>\</code>). Thus <code>\(</code> refers to a single left parenthesis and <code>\]</code> refers to a single right square bracket. <code>\.</code> refers to a literal period character instead of the "match anything but an explicit newline character" atom.</p>
-<p>Other useful metacharacters that often need escaping are the pipe character (<code>|</code>) and the dollar sign (<code>$</code>). Don't forget about the quantifiers either: <code>*</code>, <code>+</code>, and <code>?</code> also qualify.</p>
-<div id="imetacharacters__idisabling_0"></div>
-<p>To avoid escaping everything (and worrying about forgetting to escape interpolated values), use the <i>metacharacter disabling characters</i>. The <code>\Q</code> metacharacter disables metacharacter processing until it reaches the <code>\E</code> sequence. This is especially useful when taking match text from a source you don't control when writing the program:</p>
+<h2 id="heading_id_14">Other Escape Sequences</h2>
+<div id="i___iregex_escaping_metacharacter_0"></div>
+<div id="iescaping_1"></div>
+<div id="iregex__iescaping_metacharacters_0"></div>
+<p>To match a <em>literal</em> instance of a metacharacter, <em>escape</em> it with a backslash (<code>\</code>). You've seen this before, where <code>\(</code> refers to a single left parenthesis and <code>\]</code> refers to a single right square bracket. <code>\.</code> refers to a literal period character instead of the "match anything but an explicit newline character" atom.</p>
+<p>You will likely need to escape the alternation metacharacter (<code>|</code>) as well as the end of line metacharacter (<code>$</code>) and the quantifiers (<code>+</code>, <code>?</code>, <code>*</code>).</p>
+<div id="i_Q__idisable_metacharacters_regex_metacharacter_0"></div>
+<div id="i_E__ireenable_metacharacters_regex_metacharacter_0"></div>
+<div id="iregex__idisabling_metacharacters_0"></div>
+<p>The <em>metacharacter disabling characters</em> (<code>\Q</code> and <code>\E</code>) disable metacharacter interpretation within their boundaries. This is especially useful when taking match text from a source you don't control when writing the program:</p>
 <div class="programlisting">
 <pre>
 <code>    my ($text, $literal_text) = @_;
 
     return $text =~ /\Q$literal_text\E/;</code>
 </pre></div>
-<p>The <code>$literal_text</code> argument can contain anything--the string <code>** ALERT **</code>, for example. With <code>\Q</code> and <code>\E</code>, Perl will not interpret the zero-or-more quantifier as a quantifier. Instead, it will parse the regex as <code>\*\* ALERT \*\*</code> and attempt to match literal asterisk characters.</p>
-<div class="note">
-<p>Be cautious when processing regular expressions from untrusted user input. It's possible to craft a malicious regular expression which can perform an effective denial-of-service attack against your program.</p>
+<p>The <code>$literal_text</code> argument can contain anything--the string <code>** ALERT **</code>, for example. Within the fragment bounded by <code>\Q</code> and <code>\E</code>, Perl interpret the regex as <code>\*\* ALERT \*\*</code> and attempt to match literal asterisk characters, rather than greedy quantifiers.</p>
+<div class="tip">
+<p>Be cautious when processing regular expressions from untrusted user input. A malicious regex master can craft a denial-of-service attack against your program.</p>
 </div>
-<h3 id="heading_id_14">Assertions</h3>
-<div id="iregex_assertions_0"></div>
-<p>The regex anchors (<code>\A</code> and <code>\Z</code>) are a form of <i>regex assertion</i>, which requires that a condition is present but doesn't actually match a character in the string. That is, the regex <code>qr/\A/</code> will <i>always</i> match, no matter what the string contains. The metacharacters <code>\b</code> and <code>\B</code> are also assertions.</p>
-<div id="iregex_assertions__izero45width_0"></div>
-<div id="izero45width_assertions_0"></div>
-<p><i>Zero-width assertions</i> match a <i>pattern</i>, not just a condition in the string. Most importantly, they do not consume the portion of the pattern that they match. For example, to find a cat on its own, you might use a word boundary assertion:</p>
+<h2 id="heading_id_15">Assertions</h2>
+<div id="iregex__iassertions_0"></div>
+<p>Regex anchors such as <code>\A</code>, <code>\b</code>, <code>\B</code>, and <code>\Z</code> are a form of <em>regex assertion</em>, which requires that the string meet some condition. These assertions do not match individual characters within the string. No matter what the string contains, the regex <code>qr/\A/</code> will <em>always</em> match..</p>
+<div id="iregex__izero45width_assertion_0"></div>
+<p><em>Zero-width assertions</em> match a <em>pattern</em>. Most importantly, they do not consume the portion of the pattern that they match. For example, to find a cat on its own, you might use a word boundary assertion:</p>
 <div class="programlisting">
 <pre>
 <code>    my $just_a_cat = qr/cat\b/;</code>
 </pre></div>
-<div id="iregex_assertions__izero45width_negative_look45ahead_0"></div>
-<div id="izero45width_negative_look45ahead_assertion_0"></div>
-<p>... but if you want to find a non-disastrous feline, you might use a <i>zero-width negative look-ahead assertion</i>:</p>
+<div id="iregex__izero45width_negative_look45ahead_assertion_0"></div>
+<div id="i40633346464641__izero45width_negative_look45ahead_regex_assertion_0"></div>
+<p>... but if you want to find a non-disastrous feline, you might use a <em>zero-width negative look-ahead assertion</em>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $safe_feline = qr/cat(?!astrophe)/;</code>
 </pre></div>
 <p>The construct <code>(?!...)</code> matches the phrase <code>cat</code> only if the phrase <code>astrophe</code> does not immediately follow.</p>
-<div id="iregex_assertions__izero45width_positive_look45ahead_0"></div>
-<div id="izero45width_positive_look45ahead_assertion_0"></div>
-<p>The <i>zero-width positive look-ahead assertion</i>:</p>
+<div id="iregex__izero45width_positive_look45ahead_assertion_0"></div>
+<div id="i40636146464641__izero45width_positive_look45ahead_regex_assertion_0"></div>
+<p>The <em>zero-width positive look-ahead assertion</em>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $disastrous_feline = qr/cat(?=astrophe)/;</code>
 </pre></div>
-<p>... matches the phrase <code>cat</code> only if the phrase <code>astrophe</code> immediately follows. This may seem useless, as a normal regular expression can accomplish the same thing, but consider if you want to find all non-catastrophic words in the dictionary which start with <code>cat</code>. One possibility is:</p>
+<p>... matches the phrase <code>cat</code> only if the phrase <code>astrophe</code> immediately follows. While a normal regular expression can accomplish the same thing, consider a regex to find all non-catastrophic words in the dictionary which start with <code>cat</code>:</p>
 <div class="programlisting">
 <pre>
 <code>    my $disastrous_feline = qr/cat(?!astrophe)/;
@@ -434,84 +492,136 @@
     while (&lt;$words&gt;)
     {
         chomp;
-        next unless /\A(?&lt;some_cat&gt;$disastrous_feline.*)\Z/;
-        say "Found a non-catastrophe '$+{some_cat}'";
+        next unless /\A(?&lt;cat&gt;$disastrous_feline.*)\Z/;
+        say "Found a non-catastrophe '$+{cat}'";
     }</code>
 </pre></div>
-<p>Because the assertion is zero-width, it consumes none of the source string. Thus the anchored <code>.*\Z</code> pattern fragment must be present; otherwise the capture would only capture the <code>cat</code> portion of the source string.</p>
-<h3 id="heading_id_15">Regex Modifiers</h3>
-<div id="iregex_modifiers_0"></div>
-<div id="iregular_expressions__imodifiers_0"></div>
-<div id="i47i_0"></div>
-<div id="iregular_expressions__icase45insensitive_0"></div>
-<p>The regular expression operators allow several modifiers to change the behavior of matches. These modifiers appear at the end of the match, substitution, and <code>qr//</code> operators. For example, to enable case-insensitive matching:</p>
+<p>The zero-width assertion consumes none of the source string, leaving the anchored fragment &lt;.*\Z&gt; to match. Otherwise, the capture would only capture the <code>cat</code> portion of the source string.</p>
+<div id="i406338lt593346464641__izero45width_negative_look45behind_regex_assertion_0"></div>
+<div id="i406338lt596146464641__izero45width_positive_look45behind_regex_assertion_0"></div>
+<div id="iregex__izero45width_positive_look45behind_assertion_0"></div>
+<div id="iregex__izero45width_negative_look45behind_assertion_0"></div>
+<p>To assert that your feline never occurs at the start of a line, you might use a <em>zero-width negative look-behind assertion</em>. These assertions must have fixed sizes; you may not use quantifiers:</p>
+<div class="programlisting">
+<pre>
+<code>    my $middle_cat = qr/(?&lt;!\A)cat/;</code>
+</pre></div>
+<p>The construct <code>(?&lt;!...)</code> contains the fixed-width pattern. You could also express that the <code>cat</code> must always occur immediately after a space character with a <em>zero-width positive look-behind assertion</em>:</p>
+<div class="programlisting">
+<pre>
+<code>    my $space_cat = qr/(?&lt;=\s)cat/;</code>
+</pre></div>
+<p>The construct <code>(?&lt;=...)</code> contains the fixed-width pattern. This approach can be useful when combining a global regex match with the <code>\G</code> modifier, but it's an advanced feature you likely won't use often.</p>
+<div id="i_K__ikeep_regex_assertion_0"></div>
+<div id="iregex__ikeep_assertion_0"></div>
+<p>A newer feature of Perl 5 regexes is the <em>keep</em> assertion <code>\K</code>. This zero-width positive look-behind assertion <em>can</em> have a variable length:</p>
+<div class="programlisting">
+<pre>
+<code>    my $spacey_cat = qr/\s+\Kcat/;
+
+    like( 'my cat has been to space', $spacey_cat );
+    like( 'my  cat  has  been  to  doublespace',
+         $spacey_cat );</code>
+</pre></div>
+<p><code>\K</code> is surprisingly useful for certain substitutions which remove the end of a pattern:</p>
+<div class="programlisting">
+<pre>
+<code>    my $exclamation = 'This is a catastrophe!';
+    $exclamation    =~ s/cat\K\w+!/./;
+
+    like( $exclamation, qr/\bcat\./,
+                          "That wasn't so bad!" );</code>
+</pre></div>
+<h2 id="heading_id_16">Regex Modifiers</h2>
+<div id="iregex__imodifiers_0"></div>
+<div id="iregex__i47i_modifier_0"></div>
+<div id="i47i__icase45insensitive_regex_modifier_0"></div>
+<div id="iregex__icase45insensitive_0"></div>
+<p>Several modifiers change the behavior of the regular expression operators. These modifiers appear at the end of the match, substitution, and <code>qr//</code> operators. For example, to enable case-insensitive matching:</p>
 <div class="programlisting">
 <pre>
 <code>    my $pet = 'CaMeLiA';
 
-    like( $pet, qr/Camelia/,  'You have a nice butterfly there'       );
-    like( $pet, qr/Camelia/i, 'Your butterfly has a broken shift key' );</code>
+    like( $pet, qr/Camelia/,  'Nice butterfly!'  );
+    like( $pet, qr/Camelia/i, 'shift key br0ken' );</code>
 </pre></div>
 <p>The first <code>like()</code> will fail, because the strings contain different letters. The second <code>like()</code> will pass, because the <code>/i</code> modifier causes the regex to ignore case distinctions. <code>M</code> and <code>m</code> are equivalent in the second regex due to the modifier.</p>
+<div id="iregex__iembedded_modifiers_0"></div>
 <p>You may also embed regex modifiers within a pattern:</p>
 <div class="programlisting">
 <pre>
 <code>    my $find_a_cat = qr/(?&lt;feline&gt;(?i)cat)/;</code>
 </pre></div>
-<p>The <code>(?i)</code> syntax enables case-insensitive matching only for its enclosing group: in this case, the entire <code>feline</code> capture group. You may use multiple modifiers with this form (provided they make sense for a portion of a pattern). You may also disable specific modifiers by preceding them with <code>-</code>:</p>
+<p>The <code>(?i)</code> syntax enables case-insensitive matching only for its enclosing group: in this case, the named capture. You may use multiple modifiers with this form. Disable specific modifiers by preceding them with the minus character (<code>-</code>):</p>
 <div class="programlisting">
 <pre>
-<code>    my $find_a_rational = qr/(?&lt;number&gt;(?-i)Rat/;</code>
+<code>    my $find_a_rational = qr/(?&lt;number&gt;(?-i)Rat)/;</code>
 </pre></div>
-<div id="i47m_0"></div>
-<div id="iregular_expressions__imultiline_0"></div>
-<div class="author">
-<p>How do I rephrase this paragraph?</p>
-</div>
-<p>Other modifiers include <code>/m</code>, the multiline operator. When this is active, the <code>^</code> and <code>$</code> anchors match at any start of line or end of line within the string, depending on your newline settings.</p>
-<div id="i47s_0"></div>
-<div id="iregular_expressions__isingle_line_0"></div>
-<p>The <code>/s</code> modifier treats the source string as a single line such that the <code>.</code> metacharacter matches the newline character. Damian Conway suggests a mnemonic that <code>/m</code> modifies the behavior of <i>multiple</i> regex metacharacters, while <code>/s</code> modifies the behavior of a <i>single</i> regex metacharacter.</p>
-<div id="i47x_0"></div>
-<div id="iregular_expressions__iextended_readability_0"></div>
-<p>The <code>/x</code> modifier allows you to embed additional whitespace and comments within patterns without changing their meaning. With this modifier in effect, the regex engine treats whitespace and the comment character (<code>#</code>) and everything following as comments; it ignores them. This allows you to write much more readable regular expressions:</p>
+<div id="i47m__imultiline_regex_modifier_0"></div>
+<div id="iregex__i47m_modifier_0"></div>
+<div id="iregex__imultiline_0"></div>
+<div id="i_A__istart_of_line_regex_metacharacter_0"></div>
+<div id="i_Z__iend_of_line_regex_metacharacter_0"></div>
+<p>The multiline operator, <code>/m</code>, allows the <code>\A</code> and <code>\Z</code> anchors to match at any newline embedded within the string.</p>
+<div id="i47s__isingle_line_regex_modifier_0"></div>
+<div id="iregex__i47s_modifier_0"></div>
+<div id="iregex__isingle_line_0"></div>
+<p>The <code>/s</code> modifier treats the source string as a single line such that the <code>.</code> metacharacter matches the newline character. Damian Conway suggests the mnemonic that <code>/m</code> modifies the behavior of <em>multiple</em> regex metacharacters, while <code>/s</code> modifies the behavior of a <em>single</em> regex metacharacter.</p>
+<div id="i47r__inon45destructive_substitution_modifier_0"></div>
+<div id="iregex__i47r_modifier_0"></div>
+<div id="iregex__inon45destructive_substitution_0"></div>
+<p>The <code>/r</code> modifier causes a substitution operation to return the result of the substitution, leaving the original string as-is. If the substitution succeeds, the result is a modified copy of the original. If the substitution fails (because the pattern does not match), the result is an unmodified copy of the original:</p>
+<div class="programlisting">
+<pre>
+<code>    my $status     = 'I am hungry for pie.';
+    my $newstatus  = $status =~ s/pie/cake/r;
+    my $statuscopy = $status
+                   =~ s/liver and onions/bratwurst/r;
+
+    is( $status, 'I am hungry for pie.',
+        'original string should be unmodified' );
+
+    like( $newstatus,    qr/cake/,      'cake wanted' );
+    unlike( $statuscopy, qr/bratwurst/, 'wurst not'   );</code>
+</pre></div>
+<div id="i47x__iextended_readability_regex_modifier_0"></div>
+<div id="iregex__i47x_modifier_0"></div>
+<div id="iregex__iextended_readability_0"></div>
+<p>The <code>/x</code> modifier allows you to embed additional whitespace and comments within patterns. With this modifier in effect, the regex engine ignores whitespace and comments. The results are often much more readable:</p>
 <div class="programlisting">
 <pre>
 <code>    my $attr_re = qr{
-        ^                     # start of line
+        \A                    # start of line
 
-        # miscellany
         (?:
-          [;\n\s]*            # blank spaces and spurious semicolons
+          [;\n\s]*            # spaces and semicolons
           (?:/\*.*?\*/)?      # C comments
         )*
 
-        # attribute marker
         ATTR
 
-        # type
         \s+
         (   U?INTVAL
           | FLOATVAL
           | STRING\s+\*
-          | PMC\s+\*
-          | \w*
         )
     }x;</code>
 </pre></div>
-<p>This regex isn't <i>simple</i>, but comments and whitespace improve its readability. Even if you compose regexes together from compiled fragments, the <code>/x</code> modifier can still improve your code.</p>
-<div id="i47g_0"></div>
-<div id="iregular_expressions__iglobal_match_0"></div>
-<p>The <code>/g</code> modifier performs a regex globally throughout a string. This makes sense when used with a substitution:</p>
+<p>This regex isn't <em>simple</em>, but comments and whitespace improve its readability. Even if you compose regexes together from compiled fragments, the <code>/x</code> modifier can still improve your code.</p>
+<div id="i47g__iglobal_match_regex_modifier_0"></div>
+<div id="iregex__iglobal_match_0"></div>
+<div id="iregex__i47g_modifier_0"></div>
+<p>The <code>/g</code> modifier matches a regex globally throughout a string. This makes sense when used with a substitution:</p>
 <div class="programlisting">
 <pre>
 <code>    # appease the Mitchell estate
     my $contents = slurp( $file );
     $contents    =~ s/Scarlett O'Hara/Mauve Midway/g;</code>
 </pre></div>
-<div id="i_G_0"></div>
-<div id="iregexes__iglobal_match_anchor_0"></div>
-<p>When used with a match--not a substitution--the <code>\G</code> metacharacter allows you to process a string within a loop one chunk at a time. <code>\G</code> matches at the position where the most recent match ended. To process a poorly-encoded file full of American numbers in logical chunks, you might write:</p>
+<div id="i_G__iglobal_match_anchor_regex_metacharacter_0"></div>
+<div id="iregex__i_G_0"></div>
+<div id="iregex__iglobal_match_anchor_0"></div>
+<p>When used with a match--not a substitution--the <code>\G</code> metacharacter allows you to process a string within a loop one chunk at a time. <code>\G</code> matches at the position where the most recent match ended. To process a poorly-encoded file full of American telephone numbers in logical chunks, you might write:</p>
 <div class="programlisting">
 <pre>
 <code>    while ($contents =~ /\G(\w{3})(\w{3})(\w{4})/g)
@@ -519,17 +629,75 @@
         push @numbers, "($1) $2-$3";
     }</code>
 </pre></div>
-<p>Be aware that the <code>\G</code> anchor will take up at the last point in the string where the previous iteration of the match occurred. If the previous match ended with a greedy match such as <code>.*</code>, the next match will have less available string to match. The use of lookahead assertions can become very important here, as they do not consume the available string to match.</p>
-<div id="i47e_0"></div>
-<div id="iregular_expressions__isubstitution_evaluation_0"></div>
-<p>The <code>/e</code> modifier allows you to write arbitrary Perl 5 code on the right side of a substitution operation. If the match succeeds, the regex engine will run the code, using its return value as the substitution value. The earlier global substitution example could be more robust about replacing some or all of an unfortunate protagonist's name with:</p>
+<p>Be aware that the <code>\G</code> anchor will take up at the last point in the string where the previous iteration of the match occurred. If the previous match ended with a greedy match such as <code>.*</code>, the next match will have less available string to match. Lookahead assertions can also help.</p>
+<div id="i47e__isubstitution_evaluation_regex_modifier_0"></div>
+<div id="iregex__i47e_modifier_0"></div>
+<div id="iregex__isubstitution_evaluation_0"></div>
+<p>The <code>/e</code> modifier allows you to write arbitrary Perl 5 code on the right side of a substitution operation. If the match succeeds, the regex engine will run the code, using its return value as the substitution value. The earlier global substitution example could be simpler with code like:</p>
 <div class="programlisting">
 <pre>
 <code>    # appease the Mitchell estate
-    my $contents = slurp( $file );
-    $contents    =~ s{Scarlett( O'Hara)?}
-                     { 'Mauve' . defined $1 ? ' Midway' : '' }ge;</code>
+    $sequel  =~ s{Scarlett( O'Hara)?}
+                 {
+                    'Mauve' . defined $1
+                            ? ' Midway'
+                            : ''
+                 }ge;</code>
 </pre></div>
-<p>You may add as many <code>/e</code> modifiers as you like to a substitution. Each additional occurrence of this modifier will perform another evaluation of the result of the expression, though only Perl golfers tend to use <code>/ee</code> or anything more complex.</p>
+<p>Each additional occurrence of the <code>/e</code> modifier will cause another evaluation of the result of the expression, though only Perl golfers use anything beyond <code>/ee</code>.</p>
+<h2 id="heading_id_17">Smart Matching</h2>
+<div id="smart_match"></div>
+<div id="ismart_match_0"></div>
+<div id="ioperators__ismart_match_0"></div>
+<div id="i126126__ismart_match_operator_0"></div>
+<div id="ioperators__i126126_0"></div>
+<div id="ibuiltins__igiven_1"></div>
+<p>The smart match operator, <code>~~</code>, compares two operands and returns a true value if they match. The fuzziness of the definition demonstrates the smartness of the operator: the type of comparison depends on the type of both operands. <code>given</code> (<a href="chapter_03.html#given_when">Given/When</a>(given_when)) performs an implicit smart match.</p>
+<div id="ioperators__i126126_1"></div>
+<div id="i126126__ismart_match_operator_1"></div>
+<p>The smart match operator is an infix operator:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'They match (somehow)' if $loperand ~~ $roperand;</code>
+</pre></div>
+<p>The type of comparison generally depends first on the type of the right operand and then on the left operand. For example, if the right operand is a scalar with a numeric component, the comparison will use numeric equality. If the right operand is a regex, the comparison will use a grep or a pattern match. If the right operand is an array, the comparison will perform a grep or a recursive smart match. If the right operand is a hash, the comparison will check the existence of one or more keys. A large and intimidating chart in <code>perldoc perlsyn</code> gives far more details about all the comparisons smart match can perform.</p>
+<p>A serious proposal for 5.16 suggests simplifying smart match substantially. The more complex your operands, the more likely you are to receive confusing results. Avoid comparing objects and stick to simple operations between two scalars or one scalar and one aggregate for the best results.</p>
+<p>With that said, smart match can be useful:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($x, $y) = (10, 20);
+    say 'Not equal numerically' unless $x ~~ $y;
+
+    my $z = '10 little endians';
+    say 'Equal numeric-ishally' if $x ~~ $z;
+
+    # regular expression match
+    my $needle = qr/needle/;
+
+    say 'Pattern match' if 'needle' ~~ $needle;
+
+    say 'Grep through array' if @haystack ~~ $needle;
+
+    say 'Grep through hash keys' if %hayhash ~~ $needle;
+
+    say 'Grep through array' if $needle ~~ @haystack;
+
+    say 'Array elements exist as hash keys'
+        if %hayhash    ~~ @haystack;
+
+    say 'Smart match elements' if @straw ~~ @haystack;
+
+    say 'Grep through hash keys' if $needle ~~ %hayhash;
+
+    say 'Array elements exist as hash keys'
+        if @haystack  ~~ %hayhash;
+
+    say 'Hash keys identical' if %hayhash ~~ %haymap;</code>
+</pre></div>
+<p>Smart match works even if one operand is a <em>reference</em> to the given data type:</p>
+<div class="programlisting">
+<pre>
+<code>    say 'Hash keys identical' if %hayhash ~~ \%hayhash;</code>
+</pre></div>
 </body>
 </html>

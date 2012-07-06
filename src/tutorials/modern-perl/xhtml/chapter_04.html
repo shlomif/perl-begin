@@ -3,47 +3,47 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../styles/style.css" type="text/css" />
 </head>
 <body>
-<h2 id="heading_id_2">Operators</h2>
+<h1 id="heading_id_2">Operators</h1>
 <div id="operators"></div>
 <div id="ioperators_0"></div>
 <div id="ioperands_0"></div>
-<p>An accurate, if irreverent, description of Perl is an "operator-oriented language". The interaction of operators with their operands gives Perl its expressivity and power. Understanding Perl requires understanding its operators and how they behave. For the sake of this discussion, a working definition of a Perl <i>operator</i> is a series of one or more symbols used as part of the syntax of a language. Each operator operates on zero or more <i>operands</i>; this definition is circular, as an operand is a value on which an operator operates.</p>
-<div class="sidebar">
-<p>The most accurate definition of operators is "What's in <code>perlop</code>", but even that leaves out some operators in <code>perlsyn</code> and includes built-in functions. Don't get too attached to a single definition.</p>
-</div>
-<h3 id="heading_id_3">Operator Characteristics</h3>
+<p>Some people call Perl an "operator-oriented language". To understand a Perl program, you must understand how its operators interact with their operands.</p>
+<p>A Perl <em>operator</em> is a series of one or more symbols used as part of the syntax of a language. Each operator operates on zero or more <em>operands</em>. Think of an operator as a special sort of function the parser understands and its operands as arguments.</p>
+<h2 id="heading_id_3">Operator Characteristics</h2>
 <div id="operator_characteristics"></div>
 <div id="ioperators__icharacteristics_0"></div>
-<p>Both <code>perldoc perlop</code> and <code>perldoc perlsyn</code> provide voluminous information about the behavior of Perl's operators. Even so, what they <i>don't</i> explain is more important to their understanding. The documentation assumes you have a familiarity with several concepts in language design. These concepts may sound imposing at first, but they're straightforward to understand.</p>
 <p>Every operator possesses several important characteristics which govern its behavior: the number of operands on which it operates, its relationship to other operators, and its syntactic possibilities.</p>
-<h4 id="heading_id_4">Precedence</h4>
+<p><code>perldoc perlop</code> and <code>perldoc perlsyn</code> provide voluminous information about Perl's operators, but the documentation assumes you're already familiar with some details of how they work. The essential computer science concepts may sound imposing at first, but once you get past their names, they're straightforward. You already understand them implicitly.</p>
+<h3 id="heading_id_4">Precedence</h3>
 <div id="precedence"></div>
 <div id="iprecedence_0"></div>
-<p>The <i>precedence</i> of an operator helps determine when Perl should evaluate it in an expression. Evaluation order proceeds from highest to lowest precedence. For example, because the precedence of multiplication is higher than the precedence of addition, <code>7 + 7 * 10</code> evaluates to <code>77</code>, not <code>140</code>. You may force the evaluation of some operators before others by grouping their subexpressions in parentheses; <code>(7 + 7) * 10</code> <i>does</i> evaluate to <code>140</code>, as the addition operation becomes a single unit which must evaluate fully before multiplication can occur.</p>
-<p>In case of a tie--where two operators have the same precedence--other factors (<a href="chapter_04.html#fixity">Fixity</a>(fixity) and <a href="chapter_04.html#associativity">Associativity</a>(associativity)) break the tie.</p>
-<p><code>perldoc perlop</code> contains a table of precedence. Almost no one has this table memorized. The best way to manage precedence is to keep your expressions simple. The second best way is to use parentheses to clarify precedence in complex expressions. If you find yourself drowning in a sea of parentheses, see the first rule again.</p>
-<h4 id="heading_id_5">Associativity</h4>
+<p>The <em>precedence</em> of an operator governs when Perl should evaluate it in an expression. Evaluation order proceeds from highest to lowest precedence. Because the precedence of multiplication is higher than the precedence of addition, <code>7 + 7 * 10</code> evaluates to <code>77</code>, not <code>140</code>.</p>
+<p>To force the evaluation of some operators before others, group their subexpressions in parentheses. In <code>(7 + 7) * 10</code>, grouping the addition into a single unit forces its evaluation before the multiplication. The result is <code>140</code>.</p>
+<p><code>perldoc perlop</code> contains a table of precedence. Read it, understand it, but don't bother memorizing it (almost no one does). Spend your time keeping your expressions simple, and then add parentheses to clarify your intent.</p>
+<p>In cases where two operators have the same precedence, other factors such as associativity (<a href="chapter_04.html#associativity">Associativity</a>(associativity)) and fixity (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) break the tie.</p>
+<h3 id="heading_id_5">Associativity</h3>
 <div id="associativity"></div>
 <div id="iassociativity_0"></div>
 <div id="iassociativity__ileft_0"></div>
-<div id="ileft_associative_0"></div>
+<div id="ileft_associativity_0"></div>
 <div id="iassociativity__iright_0"></div>
-<div id="iright_associative_0"></div>
-<p>The <i>associativity</i> of an operator governs whether it evaluates from left to right or right to left. Addition is left associative, such that <code>2 + 3 + 4</code> evaluates <code>2 + 3</code> first, then adds <code>4</code> to the result. Exponentiation is right associative, such that <code>2 ** 3 ** 4</code> performs <code>3 ** 4</code> first, then raises <code>2</code> to the 81st power.</p>
-<p>Simplifying complex expressions and using parentheses to demonstrate your intent is more important than memorizing associativity tables. Even so, memorizing the associativity of the mathematic operators is worthwhile.</p>
+<div id="iright_associativity_0"></div>
+<p>The <em>associativity</em> of an operator governs whether it evaluates from left to right or right to left. Addition is left associative, such that <code>2 + 3 + 4</code> evaluates <code>2 + 3</code> first, then adds <code>4</code> to the result. Exponentiation is right associative, such that <code>2 ** 3 ** 4</code> evaluates <code>3 ** 4</code> first, then raises <code>2</code> to the 81st power.</p>
+<p>It's worth your time to memorize the precedence and associativity of the common mathematical operators, but again simplicity rules the day. Use parentheses to make your intentions clear.</p>
 <div class="sidebar">
 <div id="iB5858Deparse_0"></div>
 <div id="iprecedence__idisambiguation_0"></div>
 <div id="iassociativity__idisambiguation_0"></div>
-<p>The core <code>B::Deparse</code> module can rewrite snippets of code to demonstrate exactly how Perl handles operator precedence and associativity; run <code>perl -MO=Deparse,-p</code> on a snippet of code. (The <code>-p</code> flag adds extra grouping parentheses which often clarify evaluation order.) Beware that Perl's optimizer will simplify mathematical operations as given as examples earlier in this section; use variables instead, as in <code>$x ** $y ** $z</code>.</p>
+<p>The core <code>B::Deparse</code> module is an invaluable debugging tool. Run <code>perl -MO=Deparse,-p</code> on a snippet of code to see exactly how Perl handles operator precedence and associativity. The <code>-p</code> flag adds extra grouping parentheses which often clarify evaluation order.</p>
+<p>Beware that Perl's optimizer will simplify mathematical operations as given as examples earlier in this section; use variables instead, as in <code>$x ** $y ** $z</code>.</p>
 </div>
-<h4 id="heading_id_6">Arity</h4>
+<h3 id="heading_id_6">Arity</h3>
 <div id="arity"></div>
 <div id="iarity_0"></div>
 <div id="ioperators__iarity_0"></div>
@@ -52,17 +52,16 @@
 <div id="ibinary_0"></div>
 <div id="itrinary_0"></div>
 <div id="ilistary_0"></div>
-<p>The <i>arity</i> of an operator is the number of operands on which it operates. A <i>nullary</i> operator operates on zero operands. A <i>unary</i> operator operates on one operand. A <i>binary</i> operator operates on two operands. A <i>trinary</i> operator operates on three operands. A <i>listary</i> operator operates on a list of operands.</p>
-<p>There's no single good rule for determining the arity of an operator, other than the fact that most operate on two, many, or one operands. The operator's documentation should make this clear.</p>
+<p>The <em>arity</em> of an operator is the number of operands on which it operates. A <em>nullary</em> operator operates on zero operands. A <em>unary</em> operator operates on one operand. A <em>binary</em> operator operates on two operands. A <em>trinary</em> operator operates on three operands. A <em>listary</em> operator operates on a list of operands. An operator's documentation and examples should make its arity clear.</p>
 <p>For example, the arithmetic operators are binary operators, and are usually left associative. <code>2 + 3 - 4</code> evaluates <code>2 + 3</code> first; addition and subtraction have the same precedence, but they're left associative and binary, so the proper evaluation order applies the leftmost operator (<code>+</code>) to the leftmost two operands (<code>2</code> and <code>3</code>) with the leftmost operator (<code>+</code>), then applies the rightmost operator (<code>-</code>) to the result of the first operation and the rightmost operand (<code>4</code>).</p>
-<p>One common source of confusion for Perl novices is the interaction of listary operators (especially function calls) with nested expressions. Using grouping parentheses to clarify your intent, yet watch out for confusion in code such as:</p>
+<p>Perl novices often find confusion between the interaction of listary operators--especially function calls--and nested expressions. Where parentheses usually help, beware of the parsing complexity of:</p>
 <div class="programlisting">
 <pre>
 <code>    # probably buggy code
     say ( 1 + 2 + 3 ) * 4;</code>
 </pre></div>
-<p>... as Perl 5 happily interprets the parentheses as postcircumfix (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) operators denoting the arguments to <code>say</code>, not circumfix parentheses grouping an expression to change precedence. In other words, the code prints the value <code>6</code> and evaluates to the return value of <code>say</code> multiplied by <code>4</code>.</p>
-<h4 id="heading_id_7">Fixity</h4>
+<p>... which prints the value <code>6</code> and (probably) evaluates as a whole to <code>4</code> (the return value of <code>say</code> multiplied by <code>4</code>). Perl's parser happily interprets the parentheses as postcircumfix (<a href="chapter_04.html#fixity">Fixity</a>(fixity)) operators denoting the arguments to <code>say</code>, not circumfix parentheses grouping an expression to change precedence.</p>
+<h3 id="heading_id_7">Fixity</h3>
 <div id="fixity"></div>
 <div id="ifixity_0"></div>
 <div id="ioperators__ifixity_0"></div>
@@ -76,107 +75,149 @@
 <div id="ifixity__icircumfix_0"></div>
 <div id="ipostcircumfix_0"></div>
 <div id="ifixity__ipostcircumfix_0"></div>
-<p>The <i>fixity</i> of an operator is its position relative to its operands. The mathematic operators tend to be <i>infix</i> operators, where they appear between their operands. Other operators are <i>prefix</i>, where they appear before their operands; these tend to be unary operators, such as the prefix increment operator <code>++$x</code> or the mathematical and boolean negation operators (<code>-$x</code> and <code>!$x</code>, respectively). <i>Postfix</i> operators appear after their operands (such as postfix increment <code>$x++</code>). <i>Circumfix</i> operators surround their operands, such as the anonymous hash and anonymous array creation operators or quoting operators (<code>{ ... }</code> and <code>[ ... ]</code> or <code>qq{ ... }</code>, for example). <i>Postcircumfix</i> operators surround some operands but follow others, as in the case of array or hash indices (<code>$hash{ ... }</code> and <code>$array[ ... ]</code>, for example).</p>
-<h3 id="heading_id_8">Operator Types</h3>
+<p>An operator's <em>fixity</em> is its position relative to its operands:</p>
+<div id="i46__iinfix_operator_0"></div>
+<div id="i4661__iinfix_operator_0"></div>
+<div id="i4646__iinfix_operator_0"></div>
+<div id="i464646__iinfix_operator_0"></div>
+<div id="i61126__iinfix_operator_0"></div>
+<div id="i33126__iinfix_operator_0"></div>
+<div id="i124__iinfix_operator_0"></div>
+<div id="i124124__iinfix_operator_0"></div>
+<div id="i4747__iinfix_operator_1"></div>
+<div id="i12461__iinfix_operator_0"></div>
+<div id="i12412461__iinfix_operator_0"></div>
+<div id="i474761__iinfix_operator_0"></div>
+<ul>
+<li><em>Infix</em> operators appear between their operands. Most mathematical operators are infix operators, such as the multiplication operator in <code>$length * $width</code>.</li>
+<li style="list-style: none; display: inline">
+<div id="i___iprefix_operator_0"></div>
+<div id="i126__iprefix_operator_0"></div>
+<div id="i4343__iprefix_operator_0"></div>
+<div id="i4545__iprefix_operator_0"></div>
+<div id="i43__iprefix_operator_0"></div>
+<div id="i45__iprefix_operator_0"></div>
+<div id="i33__iprefix_operator_0"></div>
+<div id="i3333__iprefix_operator_0"></div>
+</li>
+<li><em>Prefix</em> operators precede their operators. <em>Postfix</em> operators follow. These operators tend to be unary, such as mathematic negation (<code>-$x</code>), boolean negation (<code>!$y</code>), and postfix increment (<code>$z++</code>).</li>
+<li style="list-style: none; display: inline">
+<div id="i4041__icircumfix_operator_0"></div>
+<div id="i123125__icircumfix_operator_0"></div>
+<div id="i9193__icircumfix_operator_0"></div>
+<div id="i4747__icircumfix_operator_0"></div>
+<div id="i9696__icircumfix_operator_0"></div>
+<div id="i3835395938353959__icircumfix_operator_0"></div>
+<div id="i38quot5938quot59__icircumfix_operator_0"></div>
+</li>
+<li><em>Circumfix</em> operators surround their operands, as with the anonymous hash constructor (<code>{ ... }</code>) and quoting operators (<code>qq[ ... ]</code>).</li>
+<li style="list-style: none; display: inline">
+<div id="i4041__ipostcircumfix_operator_0"></div>
+<div id="i123125__ipostcircumfix_operator_0"></div>
+<div id="i9193__ipostcircumfix_operator_0"></div>
+</li>
+<li><em>Postcircumfix</em> operators follow certain operands and surround others, as seen in hash and array element access (<code>$hash{$x}</code> and <code>$array[$y]</code>).</li>
+</ul>
+<h2 id="heading_id_8">Operator Types</h2>
 <div id="operator_types"></div>
-<p>Perl's pervasive contexts--especially value contexts (<a href="chapter_01.html#value_contexts">Numeric, String, and Boolean Context</a>(value_contexts))--extend to the behavior of its operators. Perl operators provide value contexts to their operands. Choosing the most appropriate operator for a given situation requires you to understand what type of value you expect to receive as well as the type of values on which you wish to operate.</p>
-<h4 id="heading_id_9">Numeric Operators</h4>
+<p>Perl operators provide value contexts (<a href="chapter_01.html#value_contexts">Numeric, String, and Boolean Context</a>(value_contexts)) to their operands. To choose the appropriate operator, understand the values of the operands you provide as well as the value you expect to receive.</p>
+<h3 id="heading_id_9">Numeric Operators</h3>
 <div id="numeric_operators"></div>
 <div id="ioperators__inumeric_0"></div>
 <div id="ioperators__iarithmetic_0"></div>
 <div id="ioperators__i43_0"></div>
-<div id="i43_0"></div>
+<div id="i43__inumeric_operator_0"></div>
 <div id="ioperators__i45_0"></div>
-<div id="i45_0"></div>
+<div id="i45__inumeric_operator_0"></div>
 <div id="ioperators__i42_0"></div>
-<div id="i42_0"></div>
+<div id="i42__inumeric_operator_0"></div>
 <div id="ioperators__i47_0"></div>
-<div id="i47_0"></div>
+<div id="i47__inumeric_operator_0"></div>
 <div id="ioperators__i4242_0"></div>
-<div id="i4242_0"></div>
+<div id="i4242__inumeric_operator_0"></div>
 <div id="ioperators__i37_0"></div>
-<div id="i37_0"></div>
+<div id="i37__inumeric_operator_0"></div>
 <div id="ioperators__i4361_0"></div>
-<div id="i4361_0"></div>
+<div id="i4361__inumeric_operator_0"></div>
 <div id="ioperators__i4561_0"></div>
-<div id="i4561_0"></div>
+<div id="i4561__inumeric_operator_0"></div>
 <div id="ioperators__i4261_0"></div>
-<div id="i4261_0"></div>
+<div id="i4261__inumeric_operator_0"></div>
 <div id="ioperators__i4761_0"></div>
-<div id="i4761_0"></div>
+<div id="i4761__inumeric_operator_0"></div>
 <div id="ioperators__i424261_0"></div>
-<div id="i424261_0"></div>
+<div id="i424261__inumeric_operator_0"></div>
 <div id="ioperators__i3761_0"></div>
-<div id="i3761_0"></div>
+<div id="i3761__inumeric_operator_0"></div>
 <div id="ioperators__i4545_0"></div>
-<div id="i4545_0"></div>
-<p>The numeric operators enforce numeric contexts on their operands. They consist of the standard arithmetic operators such as addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), exponentiation (<code>**</code>), modulo (<code>%</code>), their in-place variants (<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>**=</code>, and <code>%=</code>), and auto-decrement (<code>--</code>), whether postfix or prefix.</p>
-<p>While the auto-increment operator may seem like a numeric operator, it has special string behavior (<a href="chapter_04.html#auto_increment_operator">Special Operators</a>(auto_increment_operator)).</p>
+<div id="i4545__inumeric_operator_0"></div>
+<p>Numeric operators impose numeric contexts on their operands. These operators are the standard arithmetic operators such as addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), exponentiation (<code>**</code>), modulo (<code>%</code>), their in-place variants (<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>**=</code>, and <code>%=</code>), and both postfix and prefix auto-decrement (<code>--</code>).</p>
+<p>The auto-increment operator has special string behavior (<a href="chapter_04.html#auto_increment_operator">Special Operators</a>(auto_increment_operator)).</p>
 <div id="ioperators__i6161_0"></div>
-<div id="i6161_0"></div>
 <div id="ioperators__i3361_0"></div>
-<div id="i3361_0"></div>
-<div id="ioperators__i38gt59_0"></div>
-<div id="i38gt59_0"></div>
 <div id="ioperators__i38lt59_0"></div>
-<div id="i38lt59_0"></div>
-<div id="ioperators__i38gt5961_0"></div>
-<div id="i38gt5961_0"></div>
+<div id="ioperators__i38gt59_0"></div>
 <div id="ioperators__i38lt5961_0"></div>
-<div id="i38lt5961_0"></div>
+<div id="ioperators__i38gt5961_0"></div>
 <div id="ioperators__i38lt596138gt59_0"></div>
-<div id="i38lt596138gt59_0"></div>
-<p>Several comparison operators enforce numeric contexts upon their operands. These are numeric equality (<code>==</code>), numeric inequality (<code>!=</code>), greater than (<code>&gt;</code>), less than (<code>&lt;</code>), greater than or equal to (<code>&gt;=</code>), less than or equal to (<code>&lt;=</code>), and the sort comparison operator (<code>&lt;=&gt;</code>).</p>
-<h4 id="heading_id_10">String Operators</h4>
+<div id="i3361__inumeric_comparison_operator_0"></div>
+<div id="i6161__inumeric_comparison_operator_0"></div>
+<div id="i38gt59__inumeric_comparison_operator_0"></div>
+<div id="i38lt59__inumeric_comparison_operator_0"></div>
+<div id="i38gt5961__inumeric_comparison_operator_0"></div>
+<div id="i38lt5961__inumeric_comparison_operator_0"></div>
+<div id="i38lt596138gt59__inumeric_comparison_operator_0"></div>
+<p>Several comparison operators impose numeric contexts upon their operands. These are numeric equality (<code>==</code>), numeric inequality (<code>!=</code>), greater than (<code>&gt;</code>), less than (<code>&lt;</code>), greater than or equal to (<code>&gt;=</code>), less than or equal to (<code>&lt;=</code>), and the sort comparison operator (<code>&lt;=&gt;</code>).</p>
+<h3 id="heading_id_10">String Operators</h3>
 <div id="ioperators__istring_0"></div>
 <div id="istrings__ioperators_0"></div>
 <div id="ioperators__i61126_0"></div>
-<div id="i61126_0"></div>
+<div id="i61126__istring_operator_0"></div>
 <div id="ioperators__i33126_0"></div>
-<div id="i33126_0"></div>
-<div id="ioperators__i46_0"></div>
-<div id="i46_0"></div>
-<p>The string operators enforce string contexts on their operands. They consist of the positive and negative regular expression binding operators (<code>=~</code> and <code>!~</code>, respectively), and the concatenation operator (<code>.</code>).</p>
+<div id="i33126__istring_operator_0"></div>
+<div id="ioperators__i46_1"></div>
+<div id="i46__istring_operator_0"></div>
+<p>String operators impose string contexts on their operands. These operators are positive and negative regular expression binding (<code>=~</code> and <code>!~</code>, respectively), and concatenation (<code>.</code>).</p>
 <div id="ioperators__ieq_0"></div>
-<div id="ieq_0"></div>
 <div id="ioperators__ine_0"></div>
-<div id="ine_0"></div>
 <div id="ioperators__igt_0"></div>
-<div id="igt_0"></div>
 <div id="ioperators__ilt_0"></div>
-<div id="ilt_0"></div>
 <div id="ioperators__ige_0"></div>
-<div id="ige_0"></div>
 <div id="ioperators__ile_0"></div>
-<div id="ile_0"></div>
 <div id="ioperators__icmp_0"></div>
-<div id="icmp_0"></div>
-<p>Several comparison operators enforce string contexts upon their operands. These are string equality (<code>eq</code>), string inequality (<code>ne</code>), greater than (<code>gt</code>), less than (<code>lt</code>), greater than or equal to (<code>ge</code>), less than or equal to (<code>le</code>), and the string sort comparison operator (<code>cmp</code>).</p>
-<h4 id="heading_id_11">Logical Operators</h4>
+<div id="ieq__istring_comparison_operator_0"></div>
+<div id="ine__istring_comparison_operator_0"></div>
+<div id="igt__istring_comparison_operator_0"></div>
+<div id="ilt__istring_comparison_operator_0"></div>
+<div id="ige__istring_comparison_operator_0"></div>
+<div id="ile__istring_comparison_operator_0"></div>
+<div id="icmp__istring_comparison_operator_0"></div>
+<p>Several comparison operators impose string contexts upon their operands. These are string equality (<code>eq</code>), string inequality (<code>ne</code>), greater than (<code>gt</code>), less than (<code>lt</code>), greater than or equal to (<code>ge</code>), less than or equal to (<code>le</code>), and the string sort comparison operator (<code>cmp</code>).</p>
+<h3 id="heading_id_11">Logical Operators</h3>
 <div id="ioperators__ilogical_0"></div>
 <div id="ioperators__i38amp5938amp59_0"></div>
-<div id="i38amp5938amp59_0"></div>
 <div id="ioperators__iand_0"></div>
-<div id="iand_0"></div>
 <div id="ioperators__i124124_0"></div>
-<div id="i124124_0"></div>
 <div id="ioperators__ior_0"></div>
-<div id="ior_0"></div>
 <div id="ioperators__i4747_1"></div>
-<div id="i4747_0"></div>
-<div id="ioperators__idefined45or_1"></div>
-<div id="idefined45or_1"></div>
 <div id="ioperators__i6358_0"></div>
-<div id="i6358_0"></div>
 <div id="ioperators__i33_0"></div>
-<div id="i33_0"></div>
 <div id="ioperators__inot_0"></div>
-<div id="inot_0"></div>
 <div id="ioperators__ixor_0"></div>
-<div id="ixor_0"></div>
-<div id="ishort45circuiting_0"></div>
-<p>The logical operators treat their operands in a boolean context. The <code>&amp;&amp;</code> and <code>and</code> operators test that both expressions are logically true, while the <code>||</code> and <code>or</code> operators test that either expression is true. All four are infix operators. All four perform <i>short-circuiting</i> behavior: if the evaluation of one expression will make the entire expression false, Perl will not evaluate the other expression. The word forms of these operators have lower precedence than the symbolic forms.</p>
-<p>The defined-or operator, <code>//</code>, tests the <i>definedness</i> of its operand. Unlike <code>||</code> which tests the truthiness of its operand, <code>//</code> evaluates to a true value if its operand evalutes to a numeric zero or the empty string. This is especially useful for setting default parameter values:</p>
+<div id="i38amp5938amp59__ilogical_operator_0"></div>
+<div id="iand__ilogical_operator_0"></div>
+<div id="i124124__ilogical_operator_0"></div>
+<div id="ior__ilogical_operator_0"></div>
+<div id="i4747__ilogical_operator_0"></div>
+<div id="i6358__ilogical_operator_0"></div>
+<div id="i33__ilogical_operator_0"></div>
+<div id="inot__ilogical_operator_0"></div>
+<div id="ixor__ilogical_operator_0"></div>
+<div id="ioperators__idefined45or_1"></div>
+<div id="idefined45or__ilogical_operator_0"></div>
+<div id="ishort45circuiting_1"></div>
+<p>Logical operators impose a boolean context on their operands. These operators are <code>&amp;&amp;</code>, <code>and</code>, <code>||</code>, and <code>or</code>. All are infix and all exhibit <em>short-circuiting</em> behavior (<a href="chapter_03.html#short_circuiting">Short Circuiting</a>(short_circuiting)). The word variants have lower precedence than their punctuation forms.</p>
+<p>The defined-or operator, <code>//</code>, tests the <em>definedness</em> of its operand. Unlike <code>||</code> which tests the <em>truth</em> of its operand, <code>//</code> evaluates to a true value even if its operand evaluates to a numeric zero or the empty string. This is especially useful for setting default parameter values:</p>
 <div class="programlisting">
 <pre>
 <code>    sub name_pet
@@ -185,42 +226,44 @@
         ...
     }</code>
 </pre></div>
-<p>The ternary conditional operator, <code>?:</code>, takes three operands. It evaluates the first in boolean context and evaluates to the second if the first is true and the third otherwise:</p>
+<div id="i6358__iternary_conditional_operator_0"></div>
+<p>The ternary conditional operator (<code>?:</code>) takes three operands. It evaluates the first in boolean context and evaluates to the second if the first is true and the third otherwise:</p>
 <div class="programlisting">
 <pre>
 <code>    my $truthiness = $value ? 'true' : 'false';</code>
 </pre></div>
-<p>The <code>!</code> and <code>not</code> operators return the logical opposite of the boolean value of their operands. <code>not</code> has a lower precedence than <code>!</code>. These are prefix operators.</p>
-<p>The <code>xor</code> operator is an infix operator which performs the exclusive or of its operands.</p>
-<h4 id="heading_id_12">Bitwise Operators</h4>
+<p>The prefix <code>!</code> and <code>not</code> operators return the logical opposite of the boolean value of their operands. <code>not</code> is a lower precedence version of <code>!</code>.</p>
+<p>The <code>xor</code> operator is an infix operator which evaluates to the exclusive-or of its operands.</p>
+<h3 id="heading_id_12">Bitwise Operators</h3>
 <div id="ioperators__ibitwise_0"></div>
 <div id="ioperators__i38lt5938lt59_0"></div>
-<div id="i38lt5938lt59_0"></div>
 <div id="ioperators__i38gt5938gt59_0"></div>
-<div id="i38gt5938gt59_0"></div>
 <div id="ioperators__i38amp59_0"></div>
-<div id="i38amp59_0"></div>
 <div id="ioperators__i124_0"></div>
-<div id="i124_0"></div>
 <div id="ioperators__i94_0"></div>
-<div id="i94_0"></div>
 <div id="ioperators__i38amp5961_0"></div>
-<div id="i38amp5961_0"></div>
 <div id="ioperators__i12461_0"></div>
-<div id="i12461_0"></div>
 <div id="ioperators__i9461_0"></div>
-<div id="i9461_0"></div>
 <div id="ioperators__i38lt5938lt5961_0"></div>
-<div id="i38lt5938lt5961_0"></div>
 <div id="ioperators__i38gt5938gt5961_0"></div>
-<div id="i38gt5938gt5961_0"></div>
-<p>The bitwise operators treat their operands numerically at the bit level. These are uncommon in most Perl 5 programs. They consist of left shift (<code>&lt;&lt;</code>), right shift (<code>&gt;&gt;</code>), bitwise and (<code>&amp;</code>), bitwise or (<code>|</code>), and binary or (<code>^</code>), as well as their in-place variants (<code>&amp;=</code>, <code>|=</code>, <code>^=</code>, <code>&lt;&lt;=</code>, and <code>&gt;&gt;=</code>).</p>
-<h4 id="heading_id_13">Special Operators</h4>
+<div id="i38lt5938lt59__ibitwise_operator_0"></div>
+<div id="i38gt5938gt59__ibitwise_operator_0"></div>
+<div id="i38amp59__ibitwise_operator_0"></div>
+<div id="i124__ibitwise_operator_0"></div>
+<div id="i94__ibitwise_operator_0"></div>
+<div id="i38amp5961__ibitwise_operator_0"></div>
+<div id="i12461__ibitwise_operator_0"></div>
+<div id="i9461__ibitwise_operator_0"></div>
+<div id="i38lt5938lt5961__ibitwise_operator_0"></div>
+<div id="i38gt5938gt5961__ibitwise_operator_0"></div>
+<p>Bitwise operators treat their operands numerically at the bit level. These operations are uncommon. They consist of left shift (<code>&lt;&lt;</code>), right shift (<code>&gt;&gt;</code>), bitwise and (<code>&amp;</code>), bitwise or (<code>|</code>), and bitwise xor (<code>^</code>), as well as their in-place variants (<code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&amp;=</code>, <code>|=</code>, and <code>^=</code>).</p>
+<h3 id="heading_id_13">Special Operators</h3>
 <div id="auto_increment_operator"></div>
 <div id="ioperators__iauto45increment_0"></div>
 <div id="iauto45increment_0"></div>
 <div id="ioperators__i4343_0"></div>
-<p>The auto-increment operator has a special case. If anything has ever used a variable in a numeric context (<a href="chapter_03.html#cached_coercions">Cached Coercions</a>(cached_coercions)), it increments the numeric value of that variable. If the variable is obviously a string (and has never been evaluated in a numeric context), the string value increments with a carry, such that <code>a</code> increments to <code>b</code>, <code>zz</code> to <code>aaa</code>, and <code>a9</code> to <code>b0</code>.</p>
+<div id="i4343__iauto45increment_operator_0"></div>
+<p>The auto-increment operator has special behavior. When used on a value with a numeric component (<a href="chapter_03.html#cached_coercions">Cached Coercions</a>(cached_coercions)), the operator increments that numeric component. If the value is obviously a string (and has no numeric component), the operator increments that string value such that <code>a</code> becomes <code>b</code>, <code>zz</code> becomes <code>aaa</code>, and <code>a9</code> becomes <code>b0</code>.</p>
 <div class="programlisting">
 <pre>
 <code>    my $num = 1;
@@ -228,40 +271,65 @@
 
     $num++;
     $str++;
-    is( $num,   2, 'numeric autoincrement should stay numeric' );
-    is( $str, 'b', 'string autoincrement should stay string' );
+    is( $num,   2, 'numeric autoincrement' );
+    is( $str, 'b', 'string autoincrement'  );
 
     no warnings 'numeric';
     $num += $str;
     $str++;
 
-    is( $num, 2, 'adding $str to $num should add numeric value of $str' );
-    is( $str, 1, '... but $str should now autoincrement its numeric part' );</code>
+    is( $num, 2, 'numeric addition with $str'    );
+    is( $str, 1, '... gives $str a numeric part' );</code>
 </pre></div>
 <div id="ioperators__irepetition_0"></div>
 <div id="ioperators__ix_0"></div>
-<div id="ix_0"></div>
-<div class="author">
-<p>Is there a better way to explain this? I may have confused myself writing it.</p>
-</div>
-<p>In list context, the repetition operator (<code>x</code>) changes its behavior based on its first operand. When given a list, it evaluates to that list repeated the number of times specified by its second operand. When given a scalar, it produces a string consisisting of the string value of its first operand concatenated to itself the number of times specified by its second operand. In scalar context, the operator always produces a concatenated string repeated appropriately.</p>
-<p>This is an infix operator:</p>
+<div id="ix__irepetition_operator_0"></div>
+<p>The repetition operator (<code>x</code>) is an infix operator with complex behavior. In list context, when given a list, it evaluates to that list repeated the number of times specified by its second operand. In list context when given a scalar, it produces a string consisting of the string value of its first operand concatenated to itself the number of times specified by its second operand.</p>
+<p>In scalar context, the operator always produces a concatenated string repeated appropriately. For example:</p>
 <div class="programlisting">
 <pre>
 <code>    my @scheherazade = ('nights') x 1001;
     my $calendar     =  'nights'  x 1001;
+    my $cal_length   =  length $calendar;
 
-    is( @scheherazade,                      1001, 'list repeated' );
-    is( length $calendar, 1001 * length 'nights', 'word repeated' );
+    is( @scheherazade, 1001, 'list repeated' );
+    is( $cal_length,   1001 * length 'nights',
+                       'word repeated' );
 
     my @schenolist   =  'nights'  x 1001;
     my $calscalar    = ('nights') x 1001;
 
-    is( @schenolist,                            1, 'no lvalue list'      );
-    is( length $calscalar, 1001 * length 'nights', 'word still repeated' );</code>
+    is( @schenolist, 1, 'no lvalue list' );
+    is( length $calscalar,
+        1001 * length 'nights', 'word still repeated' );</code>
 </pre></div>
-<div class="author">
-<p>Add readline, comma, range, flip-flop, and <code>...</code>.</p>
-</div>
+<div id="ioperators__irange_1"></div>
+<div id="irange_0"></div>
+<div id="ioperators__i4646_1"></div>
+<div id="i4646__irange_operator_1"></div>
+<p>The infix <em>range</em> operator (<code>..</code>) produces a list of items in list context:</p>
+<div class="programlisting">
+<pre>
+<code>    my @cards = ( 2 .. 10, 'J', 'Q', 'K', 'A' );</code>
+</pre></div>
+<p>It can produce simple, incrementing ranges (both as integers or strings), but it cannot intuit patterns or more complex ranges.</p>
+<div id="ioperators__iflip45flop_0"></div>
+<div id="iflip45flop_0"></div>
+<div id="i4646__iflip45flop_operator_0"></div>
+<p>In boolean context, the range operator becomes the <em>flip-flop</em> operator. This operator produces a false value until its left operand is true. That value stays true until the right operand is true, after which the value is false again until the left operand is true again. Imagine parsing the text of a formal letter with:</p>
+<div class="programlisting">
+<pre>
+<code>    while (/Hello, $user/ .. /Sincerely,/)
+    {
+        say "&gt; $_";
+    }</code>
+</pre></div>
+<div id="ioperators__icomma_0"></div>
+<div id="ioperators__i44_0"></div>
+<div id="i44__ioperator_0"></div>
+<div id="ioperators__i6138gt59_1"></div>
+<div id="i6138gt59__ifat_comma_operator_1"></div>
+<p>The <em>comma</em> operator (<code>,</code>) is an infix operator. In scalar context it evaluates its left operand then returns the value produced by evaluating its right operand. In list context, it evaluates both operands in left-to-right order.</p>
+<p>The fat comma operator (<code>=&gt;</code>) also automatically quotes any bareword used as its left operand (<a href="chapter_03.html#hashes">Hashes</a>(hashes)).</p>
 </body>
 </html>
