@@ -2090,6 +2090,19 @@ consult <a href="$(ROOT)/topics/references/">our page about references</a>.
 
 </item>
 
+<item id="dot_asterisk" h="Regular Expressions starting or ending with “.*”">
+
+<p>
+It is not necessary to put <tt>.*</tt> or <tt>.*?</tt> into the beginning or
+end of regular
+expressions to match something anywhere inside the string. So for example
+<tt>if ($hay_stack =~ /.*ab+c.*/)</tt> can be replaced with the simpler:
+<tt>if ($hay_stack =~ /ab+c/)</tt>. If you wish to match and extract the
+prefix, you should say <tt>(.*?)</tt> or <tt>(.*)</tt>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

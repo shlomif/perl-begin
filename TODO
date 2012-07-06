@@ -19,7 +19,6 @@
         - show all with IO::All and without it.
 
 * Add to '/bad-elements/':
-    - Regular expressions starting or ending with .*? or .*
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
     - Recursively iterating over directories and sub-directories instead of
