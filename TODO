@@ -25,6 +25,17 @@
     using File::Find, F::F::O, File::Next, etc.
     - Using File::Find and friends for listing the entries of a single
     directory (non-recursively).
+    - Populating an array of references with the same reference:
+        - ([]) x $count
+        - my @array;
+          my @array_of_arrays;
+          foreach my $elem (@other_array)
+          {
+              .
+              .
+              .
+              push @array_of_arrays, \@array;
+          }
 
 * #perl FAQ:
     - references.
