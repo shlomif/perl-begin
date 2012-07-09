@@ -19,8 +19,6 @@
         - show all with IO::All and without it.
 
 * Add to '/bad-elements/':
-    - Using one variable for two different purposes
-        - assignment to a different value in the middle of the subroutine.
 
 * #perl FAQ:
     - references.

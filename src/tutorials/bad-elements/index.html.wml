@@ -2232,6 +2232,17 @@ if (COND())
 
 </item>
 
+<item id="one_var_for_two_purposes" h="Using One Variable for Two (or More) Different Purposes">
+
+<p>
+Within the scope of its declaration, a variable should serve one purpose, and
+serve it well. One should not re-use a variable for a completely different
+purpose later on in the scope. Creating new variables is cheap in Perl and
+should not be a concern to avoid clarity.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
