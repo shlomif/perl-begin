@@ -257,3 +257,6 @@ reading this page if it is indeed too slow." - missing comma.
         - my $x if EXPR();
     - Using one variable for two different purposes
         - assignment to a different value in the middle of the subroutine.
+
+* Add http://rosettacode.org/wiki/Main_Page .
+
