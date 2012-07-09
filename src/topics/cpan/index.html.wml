@@ -66,10 +66,36 @@ with CPAN in case you want to use it directly. Read them in order.
 <h3 id="finding-stuff-on-the-cpan">Finding Stuff on the CPAN</h3>
 
 <ul>
+
 <li>
 <a href="http://www.catalyzed.org/2009/07/finding-stuff-on-the-cpan.html">"Finding
 Stuff on the CPAN"</a> - a link to an article explaining how to find good stuff
 on the CPAN.
 </li>
+
+<li>
+<a href="http://metacpan.org/">metacpan.org</a> - an enhanced and open-source
+interface for searching CPAN and finding information about CPAN modules.
+</li>
+
 </ul>
 
+<h3 id="preparing-dists">Preparing Your Own CPAN-like Distributions</h3>
+
+<ul>
+
+<li>
+<a href="http://www.perlmonks.org/?node_id=879515">“RFC:
+How to Release Modules on CPAN in 2011”</a> - a modern and comprehensive
+guide by <a href="http://www.perlmonks.org/?node_id=720219">Elisheva</a>
+on Perlmonks.org.
+</li>
+
+<li>
+<a href="http://www.slideshare.net/thaljef/cpan-for-private-code">CPAN
+for Private Code</a> - why you should prepare CPAN-like distibutions, even
+for code intended for internal use only. SlideShare presentation by
+<a href="http://search.cpan.org/~thaljef/">Jeffrey Thalhammer</a>.
+</li>
+
+</ul>
