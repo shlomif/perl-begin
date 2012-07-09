@@ -2135,6 +2135,73 @@ File::Find and friends should be reserved for a recursive traversal.
 
 </item>
 
+<item id="populating_array_with_same_reference" h="Populating an Array with Multiple Copies of the Same Reference">
+
+<p>
+You can sometimes see code like that:
+</p>
+
+<bad_code>
+my @array_of_arrays = ([]) x $num_rows;
+</bad_code>
+
+<p>
+Or:
+</p>
+
+<bad_code>
+my @row;
+my @array_of_rows;
+
+foreach my $elem (@existing_array)
+{
+    @row = generate_row($elem);
+    push @array_of_rows, \@row;
+}
+</bad_code>
+
+<p>
+The problem with code like this is that the same referent (see
+<a href="$(ROOT)/topics/references/">our resources about references in
+Perl</a>) is being used in all places in the array, and so they will
+always be synchronised to the same contents.
+</p>
+
+<p>
+As a result, the two code exercpts should be written as such instead:
+</p>
+
+<pre>
+my @array_of_arrays = map { [] } (1 .. $num_rows);
+</pre>
+
+<p>And:</p>
+
+<pre>
+my @array_of_rows;
+
+foreach my $elem (@existing_array)
+{
+    my @row = generate_row($elem);
+    push @array_of_rows, \@row;
+}
+</p>
+
+<p>
+Or alternatively:
+</p>
+
+<pre>
+my @array_of_rows;
+
+foreach my $elem (@existing_array)
+{
+    push @array_of_rows, [generate_row($elem)];
+}
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
