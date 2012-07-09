@@ -2103,6 +2103,38 @@ prefix, you should say <tt>(.*?)</tt> or <tt>(.*)</tt>.
 
 </item>
 
+<item id="recursive_directory_traversal" h="Recursive Directory Traversal Without Using File::Find and Friends">
+
+<p>
+Some beginners to Perl are tempted to write a recursive directory traversal
+(i.e: finding all files in a directory, its sub-directories, its
+sub-sub-directories, etc.) by using procedural recursion or other sub-optimal
+means. However, the idiomatic way is to use the core module File::Find or
+its CPAN friends. For more information, see
+<a href="$(ROOT)/uses/sys-admin/#directory_traversal">our resources about
+directory traversal</a>.
+</p>
+
+</item>
+
+<item id="non_recursive_file_find" h="Using File::Find for listing the contents of a directory non-recursively">
+
+<p>
+Alternatively, sometimes people are tempted to use File::Find or similar
+modules to non-recursively list the contents of a single directory. However,
+in this case, it is a better idea to simply use
+<pdoc_f f="opendir">opendir()</pdoc_f>,
+<pdoc_f f="readdir">readdir()</pdoc_f> and
+<pdoc_f f="closedir">closedir()</pdoc_f>, in conjunction with
+<a href="#no_upwards_for_dirs">no_upwards</a>, or an abstraction of them.
+</p>
+
+<p>
+File::Find and friends should be reserved for a recursive traversal.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

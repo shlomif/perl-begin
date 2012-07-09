@@ -21,10 +21,6 @@
 * Add to '/bad-elements/':
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
-    - Recursively iterating over directories and sub-directories instead of
-    using File::Find, F::F::O, File::Next, etc.
-    - Using File::Find and friends for listing the entries of a single
-    directory (non-recursively).
     - Populating an array of references with the same reference:
         - ([]) x $count
         - my @array;
