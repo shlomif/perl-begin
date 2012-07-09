@@ -2,7 +2,7 @@
 
 <latemp_subject "Site Resources" />
 
-<h2 id="tutorial"><a href="$(ROOT)/tutorials/perl-for-newbies/">A 
+<h2 id="tutorial"><a href="$(ROOT)/tutorials/perl-for-newbies/">A
 Local Tutorial</a></h2>
 
 <p>
@@ -13,7 +13,7 @@ A local introductory tutorial that you can read on this site.
 
 <p>
 Ask questions and receive answers by E-mail. Very convenient and instructive.
-One can find other mailing lists in our 
+One can find other mailing lists in our
 <a href="$(ROOT)/mailing-lists/">mailing lists</a> section.
 </p>
 

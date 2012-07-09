@@ -26,8 +26,8 @@ open-source and commercial ones.
 
 <li>
 <p>
-<a href="http://sdlperl.ath.cx/releases/SDL_Manual.pdf">The SDL Perl Manual 
-in PDF</a>, and 
+<a href="http://sdlperl.ath.cx/releases/SDL_Manual.pdf">The SDL Perl Manual
+in PDF</a>, and
 <a href="http://sdlperl.ath.cx/releases/SDL_Manual.html">its HTML version</a>
 (the latter without images).
 </p>
@@ -58,9 +58,9 @@ bubbles at the board in order to drop all bubbles.
 <h2 id="other-mediums">Other Mediums</h2>
 
 <p>
-One can also prepare desktop games using standard GUI (Graphical User 
-Interface) toolkits. For this, see our <a href="$(ROOT)/uses/GUI/">GUI 
-development using Perl</a> page. 
+One can also prepare desktop games using standard GUI (Graphical User
+Interface) toolkits. For this, see our <a href="$(ROOT)/uses/GUI/">GUI
+development using Perl</a> page.
 </p>
 
 <p>

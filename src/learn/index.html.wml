@@ -11,7 +11,7 @@
 <h2 id="how-to-learn"><strong>How</strong> to Learn Perl?</h2>
 
 <p>
-<a href="$(ROOT)/resources/"><b>See our resources for Perl Beginners</b></a> 
+<a href="$(ROOT)/resources/"><b>See our resources for Perl Beginners</b></a>
 and browse the site on its navigation menu. Among them are:
 </p>
 
@@ -19,7 +19,7 @@ and browse the site on its navigation menu. Among them are:
 
 <li>
 <a href="$(ROOT)/tutorials/">Online Tutorials</a> - online tutorials for
-learning Perl. Also see our 
+learning Perl. Also see our
 <a href="$(ROOT)/tutorials/perl-for-newbies/">local tutorial</a>.
 </li>
 

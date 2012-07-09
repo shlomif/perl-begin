@@ -36,7 +36,7 @@ system.
 </li>
 
 <li>
-<cpan_self_mod m="File::Path" /> - a core module to create or remove directory 
+<cpan_self_mod m="File::Path" /> - a core module to create or remove directory
 trees (portably).
 </li>
 
@@ -54,7 +54,7 @@ IO package with a lot of syntactic sugar. Non-core.
 <h3 id="directory_traversal">Directory Traversal</h3>
 
 <p>
-The built-in module for traversing a directory tree in Perl is 
+The built-in module for traversing a directory tree in Perl is
 <cpan_self_mod m="File::Find" />, but it has some severe limitations in interface
 and use. Some better alternatives are:
 </p>
@@ -79,7 +79,7 @@ but incapable of being instantiated.
 <li>
 <p>
 <cpan_self_dist d="File-Find-Rule" />, which is still based on File::Find, and
-<cpan_self_dist d="File-Find-Object-Rule" /> provide a more convenient and 
+<cpan_self_dist d="File-Find-Object-Rule" /> provide a more convenient and
 succinct interface for finding what you want.
 </p>
 </li>

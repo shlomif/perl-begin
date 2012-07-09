@@ -14,8 +14,8 @@
 </perl_begin_sidebar>
 {#LATEMP_BODY_ATTRIBUTES#: class="no-news":##}
 
-<button id="toggle_nav_control" 
-onclick="javascript:toggle_nav_control()" 
+<button id="toggle_nav_control"
+onclick="javascript:toggle_nav_control()"
 class="toggle_nav_control off">Show Navigation Controls</button>
 
 <:{

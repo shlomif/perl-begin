@@ -8,7 +8,7 @@
 <p>
 References allow the programmer to store an aggregate data structure in a
 simple variable, which can be passed around more easily, to represent complex,
-nested data structures, and also serve as the basis of Perl's object system. 
+nested data structures, and also serve as the basis of Perl's object system.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
@@ -39,7 +39,7 @@ The built-in references tutorial in the Perl 5 distribution. Also see the follow
 chat log about Perl References</a></h3>
 
 <p>
-This is a log of the 
+This is a log of the
 <a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe">#perlcafe IRC
 channel</a> where we tried to explain about references to an inexperienced
 programmer who had problems understanding their concept. It may prove useful

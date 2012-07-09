@@ -1,7 +1,7 @@
 body { font-family : sans-serif }
 [% SET navbar_width = "20%" %]
 [% PROCESS "shlomif/navbar.ttml" %]
-/* 
+/*
 This is to make sure the visited links look clear in Konqueror or other
 browsers where they are magenta by default.
 */
@@ -9,25 +9,25 @@ browsers where they are magenta by default.
 {
     color: #800080; /* Purple */
 }
-:link:hover, :visited:hover, img.highlight:hover 
-{ 
+:link:hover, :visited:hover, img.highlight:hover
+{
     /* A Yellow Greenish Color */
-    background-color : #EEFF40; 
+    background-color : #EEFF40;
 }
-.navbar :link:hover, .navbar :visited:hover, .navbar img.highlight:hover 
-{ 
+.navbar :link:hover, .navbar :visited:hover, .navbar img.highlight:hover
+{
     /* LightGreen */
     background-color :  #90EE90;
 }
-.navbar 
-{ 
+.navbar
+{
     /* Moccasin: FFE4B5 */
     background-color: #FFE4B5;
     border-color : black;
     border-width : thick;
     border-style : double;
 }
-.main 
+.main
 {
     padding-left : 10pt;
     margin-left : 24%;
@@ -39,7 +39,7 @@ main content better.
 .main > p, .main > ul, .main > ol, .main > dl
 {
     margin-left: 14pt;
-    margin-right: 14pt;    
+    margin-right: 14pt;
 }
 .main > ul, .main > ol, .main > dl
 {
@@ -52,14 +52,14 @@ main content better.
 h1, h2, h3
 {
     font-family : serif;
-    border-style : solid ; 
+    border-style : solid ;
     border-width : thin;
     padding-left: 4pt;
     padding-right: 4pt;
 }
 h1
 {
-    /* A colour like MediumOrchid only lighter and with less 
+    /* A colour like MediumOrchid only lighter and with less
        saturation.
        */
     background-color : #e187f7;
@@ -75,9 +75,9 @@ h2 :link:hover, h2 :visited:hover
 }
 /* Override for the navbar so it won't be highligted as red there */
 .navbar h2 :link:hover, .navbar h2 :visited:hover
-{ 
+{
     /* LightGreen */
-    background-color : #90EE90; 
+    background-color : #90EE90;
 }
 
 h3
@@ -98,20 +98,20 @@ p.indent { margin-left : 3em  }
 div.rightalign { text-align : right }
 
 h2.plain
-{ 
-    color : black ; 
-    border : none ; 
-    font-family : serif; 
+{
+    color : black ;
+    border : none ;
+    font-family : serif;
     background: transparent;
 }
-    
+
 /* Make sure it is not underlined when inside a boxed heading */
 h2 a,h3 a
 {
     text-decoration : none
 }
 
-h1 a, h2 a, h3 a 
+h1 a, h2 a, h3 a
 {
     font-family : sans-serif;
 }
@@ -126,8 +126,8 @@ div.bookinfo h3
     background-color : transparent;
 }
 
-div.bookinfo 
-{ 
+div.bookinfo
+{
     border-style : dotted;
     border-width : thin;
     /* LightYellow */
@@ -161,7 +161,7 @@ tt { color : #8A2BE2 /* The BlueViolet Color */ }
     margin-right : 30px;
     padding-top: 0.5em;
 }
-/* Workaround to get the <hr /> element at the bottom to properly display 
+/* Workaround to get the <hr /> element at the bottom to properly display
    with Konqueror 3.3.x
    */
 .footer hr

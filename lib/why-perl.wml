@@ -7,7 +7,7 @@ For further reading see:
 <ul>
 <li><a href="http://www.perl.org/advocacy/whyperl.html">Why Perl is a Valid
 Choice</a></li>
-<li><a href="http://perltraining.com.au/whyperl.html">Perl Training 
+<li><a href="http://perltraining.com.au/whyperl.html">Perl Training
 Australia - Why Perl?</a></li>
 </ul>
 </div>
@@ -25,7 +25,7 @@ Writing Perl code is very fun and rewarding:
 <ol>
 
 <li>
-You can avoid dealing with many idiosyncrasies like memory allocation and 
+You can avoid dealing with many idiosyncrasies like memory allocation and
 freeing, passing a context variable to a function, or inconvenient syntax
 for complex data structures.
 </li>
@@ -40,14 +40,14 @@ simpler.
 </li>
 
 <li>
-With a small amount of awareness your code can be <b>portable</b> across all 
+With a small amount of awareness your code can be <b>portable</b> across all
 UNIXes, and even on Windows and other platforms.
 </li>
 
 <li>
-Perl is <b>documented</b> extensively and you can get a lot of interactive, 
+Perl is <b>documented</b> extensively and you can get a lot of interactive,
 human answers for your questions from <a href="$(ROOT)/mailing-lists/">mailing
-lists</a>, <a href="$(ROOT)/irc/">online chats</a> and 
+lists</a>, <a href="$(ROOT)/irc/">online chats</a> and
 <a href="$(ROOT)/web-forums/">web forums</a>.
 </li>
 
@@ -61,10 +61,10 @@ in it.
 <h3 id="perl_is_useful">2. Perl is Useful</h3>
 
 <p>
-Perl has been successfully used for a lot of diverse tasks: text 
-processing, system administration, web programming, web automation, GUI 
-programming, games programming, code generation, bio-informatics and 
-geneological research,  lingual and etymological research, number crunching, 
+Perl has been successfully used for a lot of diverse tasks: text
+processing, system administration, web programming, web automation, GUI
+programming, games programming, code generation, bio-informatics and
+geneological research,  lingual and etymological research, number crunching,
 and testing and quality assurance.
 </p>
 
@@ -73,39 +73,39 @@ and testing and quality assurance.
 <p>
 Perl is fully <a href="http://en.wikipedia.org/wiki/Open-source_software">Free
 (both gratis and libre) and Open Source Software</a>, and is usable for almost
-any use. It can and has been used for in-house software, web software, open 
+any use. It can and has been used for in-house software, web software, open
 source software, or open source or non-open-source commercial software (see
-<a href="http://www.movabletype.org/">Movable Type</a> or 
-<a href="http://bestpractical.com/rt">Request Tracker</a> for 
+<a href="http://www.movabletype.org/">Movable Type</a> or
+<a href="http://bestpractical.com/rt">Request Tracker</a> for
 instance).
 </p>
 
 <h3 id="perl_can_show_the_world">4. Perl can Show You the World</h3>
 
 <p>
-Perl 5 has borrowed the most important programming <b>paradigms</b>, and 
-implemented them in a consistent and fun way. It is a dynamic language, 
-that supports Object-Oriented Programming (<b>OOP</b>), Functional 
-Programming (<b>FP</b>), Aspect-Oriented Programming, and lots of other 
-buzzwords, while not trying to prevent you from writing quick and dirty code 
+Perl 5 has borrowed the most important programming <b>paradigms</b>, and
+implemented them in a consistent and fun way. It is a dynamic language,
+that supports Object-Oriented Programming (<b>OOP</b>), Functional
+Programming (<b>FP</b>), Aspect-Oriented Programming, and lots of other
+buzzwords, while not trying to prevent you from writing quick and dirty code
 to get your work done.
 </p>
 
 <p>
 As such, Perl is highly enlightening. If you know Perl well, you'll have no
-problem picking up such languages as 
-<a href="http://www.python.org/">Python</a>, 
-<a href="http://www.ruby-lang.org/">Ruby</a>, 
-<a href="http://www.php.net/">PHP</a>, 
+problem picking up such languages as
+<a href="http://www.python.org/">Python</a>,
+<a href="http://www.ruby-lang.org/">Ruby</a>,
+<a href="http://www.php.net/">PHP</a>,
 <a href="http://java.sun.com/">Java</a>,
 <a href="http://en.wikipedia.org/wiki/Microsoft_.NET">Microsoft .NET</a>,
-or more obscure languages such as 
+or more obscure languages such as
 <a href="http://www.schemers.org/">Scheme</a>. In fact, Perl has proven
 very influential on most of these languages, to a large extent .
 </p>
 
 <p>
-Perl is also a useful stepping stone for learning <a href="http://en.wikipedia.org/wiki/C_(programming_language)">ANSI C</a> and 
+Perl is also a useful stepping stone for learning <a href="http://en.wikipedia.org/wiki/C_(programming_language)">ANSI C</a> and
 C++, and also will improve your code writing in any language.
 </p>
 
@@ -117,10 +117,10 @@ If you understand Perl, you'll understand the world!
 used, proven code</h3>
 
 <p>
-Perl has <a href="$(ROOT)/topics/cpan/">the <b>Comprehensive Perl Archive 
-Network (CPAN)</b></a>, which is a huge collection of useful (and 
-not-so-useful) re-usable Perl modules, under open source licences. They 
-allow you to use them as libraries to facilitate writing your code. So instead 
+Perl has <a href="$(ROOT)/topics/cpan/">the <b>Comprehensive Perl Archive
+Network (CPAN)</b></a>, which is a huge collection of useful (and
+not-so-useful) re-usable Perl modules, under open source licences. They
+allow you to use them as libraries to facilitate writing your code. So instead
 of starting to write something yourself, do a CPAN search, or ask someone for
 a recommendation for a good CPAN module.
 </p>
@@ -129,7 +129,7 @@ a recommendation for a good CPAN module.
 
 <p>
 See our <a href="$(ROOT)/resources/">resources page</a> for links to pages
-with online resources to get you up to speed with Perl, and then become better 
+with online resources to get you up to speed with Perl, and then become better
 at it.
 </p>
 </define-tag>

@@ -1,6 +1,6 @@
 May 05 15:52:06 -->	sas123 (n=sas@59.95.17.77) has joined #perlcafe
 May 05 15:52:10 <sas123>	hi
-May 05 15:52:23 <rindolf>	Hi sas123 
+May 05 15:52:23 <rindolf>	Hi sas123
 May 05 15:52:26 <sas123>	rindolf: I am here
 May 05 15:52:28 <rindolf>	sas123: OK.
 May 05 15:52:53 <sas123>	why this channel?
@@ -25,7 +25,7 @@ May 05 15:57:35 <sas123>	rindolf: I HATE THOSE TWO
 May 05 15:57:55 <sas123>	rindolf: they make the learning curve steep
 May 05 15:58:21 <rindolf>	sas123: yes, but they prevent many common errors.
 May 05 15:58:28 <rindolf>	sas123: do you know my() and stuff?
-May 05 15:58:43 <sas123>	rindolf: yes 
+May 05 15:58:43 <sas123>	rindolf: yes
 May 05 15:58:46 <rindolf>	sas123: or should I explain about declaring your variables?
 May 05 15:58:53 <sas123>	no
 May 05 15:59:08 <rindolf>	sas123: without use strict you can easily mistype the name of your variables.
@@ -52,7 +52,7 @@ May 05 16:07:16 <rindolf>	Let's say this data structure is an array.
 May 05 16:07:28 <rindolf>	So we access this array using @{$array_ref}
 May 05 16:07:35 <rindolf>	Or $array_ref->[0] or whatever.
 May 05 16:07:42 <rindolf>	And then treat as an array.
-May 05 16:07:53 <sas123>	you lost me 
+May 05 16:07:53 <sas123>	you lost me
 May 05 16:07:56 <rindolf>	Except that instead of being a first-order variable.
 May 05 16:07:59 <rindolf>	sas123: OK.
 May 05 16:08:02 <rindolf>	sas123: sorry.
@@ -109,8 +109,8 @@ May 05 16:16:54 <sas123>	a sec
 May 05 16:17:11 -->	ispy_ (n=ispyhuma@67.59.59.227) has joined #perlcafe
 May 05 16:17:46 <sas123>	ok
 May 05 16:18:05 <sas123>	wait
-May 05 16:18:15 <rindolf>	Hi ispy_ 
-May 05 16:18:23 <rindolf>	ispy_: we're explaining references to sas123 
+May 05 16:18:15 <rindolf>	Hi ispy_
+May 05 16:18:23 <rindolf>	ispy_: we're explaining references to sas123
 May 05 16:18:33 <sas123>	why is "" making a difference
 May 05 16:18:46 <ispy_>	Yo
 May 05 16:18:49 <rindolf>	sas123: because " stringifies a variable.
@@ -136,7 +136,7 @@ May 05 16:25:41 <rindolf>	sas123: yes, sorry.
 May 05 16:25:44 <rindolf>	sas123: got distracted.
 May 05 16:25:49 <rindolf>	sas123: I'm going to disconnect my Inet now.
 May 05 16:25:52 <rindolf>	sas123: stay tuned.
-May 05 16:25:56 <rindolf>	sas123: meanwhile ask ispy_ 
+May 05 16:25:56 <rindolf>	sas123: meanwhile ask ispy_
 May 05 16:25:59 <rindolf>	Bye.
 May 05 16:26:01 <ispy_>	Sup.
 May 05 16:26:06 <ispy_>	Oh yeah...
@@ -199,7 +199,7 @@ May 05 16:48:17 <rindolf>	buubot: eval: my $array_ref = [5,6, ["Hello", "sas123"
 May 05 16:48:18 <buubot>	rindolf:  "rindolf"
 May 05 16:48:24 <rindolf>	Yay!
 May 05 16:48:26 <rindolf>	sas123++
-May 05 16:48:55 <rindolf>	sas123: OK. 
+May 05 16:48:55 <rindolf>	sas123: OK.
 May 05 16:49:14 <q[ender]>	rindolf, you are a really swell guy
 May 05 16:49:16 <rindolf>	sas123: naturally we can have array refs to array refs to array refs (and so on.)
 May 05 16:49:20 <rindolf>	q[ender]: thanks. :-)
@@ -295,7 +295,7 @@ May 05 17:19:01 <sili>	sas123: alternatively, you could just print "@{$cities{us
 May 05 17:19:07 <sas123>	rindolf: I want entire list
 May 05 17:19:24 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); [ @{$table{"uk"}} ];
 May 05 17:19:25 <buubot>	rindolf:  ["london","birmingham","inverness"]
-May 05 17:19:34 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); \@{$table{"uk"}} 
+May 05 17:19:34 <rindolf>	buubot: eval: my %table = ('usa' => ["chicago", "newyork", "washington", "portland"], "israel" => ["telaviv", "j-m", "haifa", "nesher"], "uk" => ["london", "birmingham", "inverness"],); \@{$table{"uk"}}
 May 05 17:19:35 <buubot>	rindolf:  ["london","birmingham","inverness"]
 May 05 17:19:42 <rindolf>	Sorry for spamming the channel.
 May 05 17:19:53 <sas123>	rindolf: what does this mean in englisg @{$cities{usa}}
@@ -354,7 +354,7 @@ May 05 19:31:03 <rindolf>	perl -d would be the easiest.
 May 05 19:31:13 <rindolf>	sas123: have you added strict and warnings?
 May 05 19:31:18 <sas123>	shall I paste the code
 May 05 19:31:31 <rindolf>	sas123: sure to http://sial.org/pbot/
-May 05 19:31:51 <sas123>	rindolf: No, I hate it - for me it has no meaning 
+May 05 19:31:51 <sas123>	rindolf: No, I hate it - for me it has no meaning
 May 05 19:32:03 <rindolf>	sas123: it's very important.
 May 05 19:32:11 <rindolf>	sas123: they prevent many errors.
 May 05 19:32:25 <sas123>	rindolf: -w I might agree, but use strict SUCKS
@@ -416,7 +416,7 @@ May 05 19:40:38 <rindolf>	Diablo-D3: ^^^
 May 05 19:40:49 <Diablo-D3>	that... means nothing to me
 May 05 19:41:02 <rindolf>	sas123: looks fine.
 May 05 19:41:09 <sas123>	what s wrong?
-May 05 19:41:15 <rindolf>	sas123: use perl -d 
+May 05 19:41:15 <rindolf>	sas123: use perl -d
 May 05 19:41:29 <rindolf>	sas123: read http://www.shlomifish.org/lecture/Perl/Newbies/lecture2/debugger/
 May 05 19:41:30 <sas123>	how?
 May 05 19:42:26 <rindolf>	Diablo-D3: it still bites me in many places.

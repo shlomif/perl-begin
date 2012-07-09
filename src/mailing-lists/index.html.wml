@@ -8,7 +8,7 @@
 
 <h2 id="overview">Overview</h2>
 
-<p> 
+<p>
 An <a href="http://en.wikipedia.org/wiki/Electronic_mailing_list">electronic
 mailing list</a> is a way to send E-mail messages to several people using
 a single, convenient E-mail address. One can subscribe to a mailing list to
@@ -42,19 +42,19 @@ A comprehensive list of the Perl mailing lists, that is under active
 work.
 </p>
 
-<h3 id="perl-mailing-list-db"><a href="http://lists.cpan.org/" rel="nofollow">The 
+<h3 id="perl-mailing-list-db"><a href="http://lists.cpan.org/" rel="nofollow">The
 Perl Mailing List Database</a></h3>
 
 <p>
 An out-of-date list of the Perl mailing lists worldwide. Some of them are
-for specific Perl technologies and not directly related to "core" or 
+for specific Perl technologies and not directly related to "core" or
 "general use" Perl functionality.
 </p>
 
 <h3 id="yahoogroups-list"><a href="http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1">Yahoo Groups Perl Lists</a></h3>
 
 <p>
-Many international Perl groups on many topics. Including some on very 
+Many international Perl groups on many topics. Including some on very
 specific Perl technologies.
 </p>
 
@@ -69,7 +69,7 @@ Some mailing lists for beginners. Moderate volume.
 <h3 id="perl-begin-mailing-list"><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Our Own Mailing List</a></h3>
 
 <p>
-If everybody else is doing it, why shouldn't we? Perl-begin has its own mailing 
+If everybody else is doing it, why shouldn't we? Perl-begin has its own mailing
 list on the site, which you can subscribe to. The volume is very low.
 </p>
 
@@ -92,7 +92,7 @@ in Spanish.
 <h3 id="insert-your-own">Insert your Mailing List Here</h3>
 
 <p>
-Do you have a Perl mailing list for beginners? If not, do you wish to 
+Do you have a Perl mailing list for beginners? If not, do you wish to
 start one? Let us know and we'll link to it from here. The more the better.
 </p>
 
