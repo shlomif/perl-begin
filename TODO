@@ -18,8 +18,6 @@
         - writing to a file.
         - show all with IO::All and without it.
 
-* Add to '/bad-elements/':
-
 * #perl FAQ:
     - references.
         - What's the difference between an array reference and an array?
