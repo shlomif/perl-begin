@@ -22,15 +22,16 @@ Moertel</a>
 <h2><a href="$(ROOT)/news/">News</a></h2>
 <ul>
 <li>
+9-Jul-2012: <a href="$(ROOT)/news/#news_9_July_2012">Perl Humour page, #perl
+FAQ, and other new pages</a>
+</li>
+<li>
 22-Jul-2011: <a href="$(ROOT)/news/#news_22_July_2011">The book Modern Perl,
 exercises and challenges, and some new topical pages</a>
 </li>
 <li>
 11-Nov-2010: <a href="$(ROOT)/news/#news_11_November_2010">Page about bad
 Perl elements, and other new pages</a>
-</li>
-<li>
-26-Jun-2010: <a href="$(ROOT)/news/#news_26_June_2010">New Pages</a>
 </li>
 <li>
 <a href="$(ROOT)/news/">More news...</a>
