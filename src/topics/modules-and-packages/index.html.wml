@@ -71,7 +71,7 @@ Perl code. See the link for more information.
 <h3 id="sub_exporter"><cpan_self_dist d="Sub-Exporter" /></h3>
 
 <p>
-An alternative to the built-in Exporter.pm module which is much more powerful
-and easier to use.
+A more powerful and easier to use alternative to the built-in
+Exporter.pm module.
 </p>
 
