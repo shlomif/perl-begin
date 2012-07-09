@@ -21,17 +21,6 @@
 * Add to '/bad-elements/':
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
-    - Populating an array of references with the same reference:
-        - ([]) x $count
-        - my @array;
-          my @array_of_arrays;
-          foreach my $elem (@other_array)
-          {
-              .
-              .
-              .
-              push @array_of_arrays, \@array;
-          }
     - Conditional "my"s:
         - my $x if EXPR();
 
