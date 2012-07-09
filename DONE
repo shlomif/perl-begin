@@ -237,3 +237,8 @@ reading this page if it is indeed too slow." - missing comma.
     - an up-to-date one is really needed.
     - There is one at http://www.perlmonks.org/?node_id=879515 .
 
+* Bad elements page:
+    - Recursively iterating over directories and sub-directories instead of
+    using File::Find, F::F::O, File::Next, etc.
+    - Using File::Find and friends for listing the entries of a single
+    directory (non-recursively).
