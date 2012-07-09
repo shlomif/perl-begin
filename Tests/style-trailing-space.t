@@ -6,7 +6,8 @@ use warnings;
 use Test::More tests => 1;
 
 {
-    open my $ack_fh, '-|', 'ack', '-l', q/[ \t]+$/, '.'
+    open my $ack_fh, '-|', 'ack', '-l', q/[ \t]+$/,
+        '.', glob('lib/sass/*.sass')
         or die "Cannot open ack for input - $!";
 
     my $count_lines = 0;
