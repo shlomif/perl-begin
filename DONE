@@ -255,3 +255,5 @@ reading this page if it is indeed too slow." - missing comma.
           }
     - Conditional "my"s:
         - my $x if EXPR();
+    - Using one variable for two different purposes
+        - assignment to a different value in the middle of the subroutine.
