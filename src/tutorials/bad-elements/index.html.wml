@@ -2202,6 +2202,36 @@ foreach my $elem (@existing_array)
 
 </item>
 
+<item id="conditional_my_decls" h="Conditional my declarations.">
+
+<p>
+It is not a good idea to append a trailing if statement modifier to a
+declaration of a lexical variable using <tt>my</tt>:
+</p>
+
+<bad_code>
+my $var = VALUE() if (COND());
+
+my ($var1, @array2) if (COND());
+</bad_code>
+
+<p>
+This code might compile and appear to run but you probably want to declare
+a lexical variable for the rest of its scope. If you need to assign to it
+conditionally, then do it in a separate statement:
+</p>
+
+<pre>
+my $var;
+
+if (COND())
+{
+    $var = VALUE();
+}
+</pre>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"

@@ -253,3 +253,5 @@ reading this page if it is indeed too slow." - missing comma.
               .
               push @array_of_arrays, \@array;
           }
+    - Conditional "my"s:
+        - my $x if EXPR();

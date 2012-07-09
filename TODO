@@ -21,8 +21,6 @@
 * Add to '/bad-elements/':
     - Using one variable for two different things
         - assignment to a different value in the middle of the subroutine.
-    - Conditional "my"s:
-        - my $x if EXPR();
 
 * #perl FAQ:
     - references.
