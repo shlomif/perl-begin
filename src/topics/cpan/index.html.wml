@@ -85,17 +85,27 @@ interface for searching CPAN and finding information about CPAN modules.
 <ul>
 
 <li>
+
+<p>
 <a href="http://www.perlmonks.org/?node_id=879515">“RFC:
 How to Release Modules on CPAN in 2011”</a> - a modern and comprehensive
 guide by <a href="http://www.perlmonks.org/?node_id=720219">Elisheva</a>
 on Perlmonks.org.
+</p>
+
 </li>
 
 <li>
+
+<p>
 <a href="http://www.slideshare.net/thaljef/cpan-for-private-code">CPAN
 for Private Code</a> - why you should prepare CPAN-like distibutions, even
 for code intended for internal use only. SlideShare presentation by
 <a href="http://search.cpan.org/~thaljef/">Jeffrey Thalhammer</a>.
+(<a href="cpan-for-private-code.pdf">Local mirror</a> under the CC-by
+licence)
+</p>
+
 </li>
 
 </ul>
