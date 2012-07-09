@@ -17,7 +17,7 @@ Environment</a></h3>
 
 <p>
 A Perl framework for reactive systems, cooperative multitasking and network
-applications. 
+applications.
 </p>
 
 <h3 id="ipc-run"><cpan_self_dist d="IPC-Run" /></h3>
@@ -37,7 +37,7 @@ events.
 <h2 id="threads">Threads?</h2>
 
 <p>
-Many people are tempted to use threads with Perl and Internet forums are 
+Many people are tempted to use threads with Perl and Internet forums are
 constantly frequented for help with threads in Perl. However, the use of
 Perl in threads is not recommended:
 </p>

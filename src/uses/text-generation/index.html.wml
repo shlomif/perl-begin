@@ -46,7 +46,7 @@ print "Japan has a flag with a $colors[0] circle, and a its capital is $capitals
 </pre>
 
 <p>
-Furthermore, one can interpolate more complex expressions using 
+Furthermore, one can interpolate more complex expressions using
 <a href="http://www.catonmat.net/blog/secret-perl-operators/#turtle">the
 turtle operator</a> - <tt>@{[]}</tt>, although if you're resorting to doing
 it, you should probably use the more advanced techniques below:
@@ -109,10 +109,10 @@ Toolkit</a></h3>
 
 <p>
 Template Toolkit is a sophisticated and powerful templating system for Perl,
-with many extensions on the CPAN. Also see 
+with many extensions on the CPAN. Also see
 <a href="http://www.shlomifish.org/lecture/Perl/Template-Toolkit/">a
 presentation that Shlomi Fish gave</a> about Template Toolkit, that explains
-why one should use a template system and especially Template Toolkit.  
+why one should use a template system and especially Template Toolkit.
 </p>
 
 <h3 id="perl6-form"><cpan_self_dist d="Perl6-Form" /></h3>
@@ -164,7 +164,7 @@ Built-in list processing functions such as <pdoc_f f="map">map</pdoc_f>,
 <pdoc_f f="sort">sort</pdoc_f>, and <pdoc_f f="grep">grep</pdoc_f>.
 </p>
 <p>
-Functions like that are covered in 
+Functions like that are covered in
 <a href="$(ROOT)/tutorials/perl-for-newbies/part2/">Part 2 of
 the Perl for Newbies presentation</a>.
 </p>
@@ -172,7 +172,7 @@ the Perl for Newbies presentation</a>.
 
 <li>
 <p>
-List processing CPAN modules such as 
+List processing CPAN modules such as
 <cpan_self_mod m="List::Util" />,
 <cpan_self_dist d="List-MoreUtils" />
 and <cpan_self_dist d="List-UtilsBy" />.

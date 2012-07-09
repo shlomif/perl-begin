@@ -15,12 +15,12 @@ Contributed the essay "What the Books Don't Teach You" to the Wiki.
 </li>
 
 <li>
-<b>Marilyn Matty</b> - 
+<b>Marilyn Matty</b> -
 Gave some web design and content tips.
 </li>
 
 <li>
-<b>Mark Fowler</b> - 
+<b>Mark Fowler</b> -
 Suggested two important additions to the articles section.
 </li>
 
@@ -47,7 +47,7 @@ improving the site.
 
 
 <li>
-<a href="http://szabgab.com/">Gabor Szabo (szabgab)</a> - reported some 
+<a href="http://szabgab.com/">Gabor Szabo (szabgab)</a> - reported some
 broken links and typos, projected the Padre IDE project and has provided
 lots of other support for making Perl 5 and Perl 6 more accessible
 </li>
@@ -58,7 +58,7 @@ the top of the pages look nicer.
 </li>
 
 <li>
-<b>slakmagik</b> - reported a code typo in 
+<b>slakmagik</b> - reported a code typo in
 <a href="$(ROOT)/tutorials/bad-elements/">bad Perl elements page</a>.
 </li>
 

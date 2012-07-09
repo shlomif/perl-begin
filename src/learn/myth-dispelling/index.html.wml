@@ -16,7 +16,7 @@
 <h2 id="myth-dispelling">Myth Dispelling</h2>
 
 <p>
-It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact, it's 
+It's not uncommon to <b>hear a lot of criticism</b> about Perl. In fact, it's
 very common. Among the things you can hear:
 </p>
 
@@ -57,12 +57,12 @@ Etc.
 </ul>
 
 <p>
-Some of these complaints are addressed 
+Some of these complaints are addressed
 <a href="http://www.perl.com/pub/a/2000/01/10PerlMyths.html">in Simon Cozens'
-article "Ten Perl Myths"</a> and 
+article "Ten Perl Myths"</a> and
 <a href="http://perl.net.au/wiki/Perl_Myths">PerlNet's Perl Myth List</a>.
-Tim Bunce focused on 
-<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">dispelling 
+Tim Bunce focused on
+<a href="http://blog.timbunce.org/2008/03/08/perl-myths/">dispelling
 three large Perl Myths</a> in a presentation he has given and made available
 online.
 </p>
@@ -83,9 +83,9 @@ and easily than with any other language.
 
 <p>
 Perl code can be written to be very maintainable, readable and elegant.
-Perl indeed sports many features and properties that make writing short 
+Perl indeed sports many features and properties that make writing short
 programs - often one liners - easier, because this is what people use it for
-most of the time. However, there's nothing in Perl that prevents 
+most of the time. However, there's nothing in Perl that prevents
 writing large-scale, maintainable programs. And in fact
 <a href="http://tech.groups.yahoo.com/group/hackers-il/message/4104">such
 programs have been written and are still successful.</a>
@@ -100,7 +100,7 @@ be equally as problematic as code written by bad Perl programmers.
 <p>
 The good news is that you can become a good Perl programmer using the resources
 on this site and elsewhere, and that learning Perl will improve your
-programming ability - not only in Perl, but in other languages as well. Are 
-you ready to take on the challenge? Great! Then 
+programming ability - not only in Perl, but in other languages as well. Are
+you ready to take on the challenge? Great! Then
 <a href="http://perl-begin.org/resources/">dive right in</a>.
 </p>

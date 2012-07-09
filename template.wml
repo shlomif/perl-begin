@@ -17,9 +17,9 @@
 
 <define-tag openstudy_button>
 
-<p class="study_group"> 
+<p class="study_group">
 <a href="<get-var openstudy_group_url />"
-title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img 
+title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img
 src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
 </p>
 
@@ -30,8 +30,8 @@ src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
 <!-- Yahoo! Search -->
 <form method="get" action="http://search.yahoo.com/search">
 <div style="border: 1px solid #999; padding: 5px;">
-<a href="http://search.yahoo.com/"><img 
-src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif" 
+<a href="http://search.yahoo.com/"><img
+src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif"
 /></a><br />
 <input type="text" name="p" size=19 style="margin: 10px 0 0 0" /><br />
 <input type="radio" name="vs" style="vertical-align: middle" checked="checked" />Search the web<br />
@@ -69,14 +69,14 @@ src="http://us.i1.yimg.com/us.yimg.com/i/us/search/ysan/ysanlogo.gif"
 <latemp_before_body>
 <div class="full_width_notice">
 <b><a href="$(ROOT)/learn/">Learn Perl Now!</a></b><br />
-And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing 
+And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing
 Perl.
 </div>
 </latemp_before_body>
 
 <perl_begin_sidebar>
     <!-- SIDEBAR -->
-    <h3 class="hide">Sidebar</h3>    
+    <h3 class="hide">Sidebar</h3>
     <div id="right-sidebar">
 
       {#PERL_BEGIN_NEWS#}
@@ -101,9 +101,9 @@ Perl.
 
 <latemp_license>
 <!-- Creative Commons License -->
-This work is <b>licensed</b> under the <a rel="license" 
-href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 
-Attribution 3.0 Unported License</a> (or at your option any later 
+This work is <b>licensed</b> under the <a rel="license"
+href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+Attribution 3.0 Unported License</a> (or at your option any later
 version).<br />
 <!-- /Creative Commons License -->
 
@@ -168,12 +168,12 @@ version).<br />
       </div>
 
 #     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
-      
+
     </div>
-    
-    <!-- Main navigation -->                    
+
+    <!-- Main navigation -->
     <div class="nav-main">
-      <h3 class="hide">Breadcrumbs Trail</h3>    
+      <h3 class="hide">Breadcrumbs Trail</h3>
       <p class="breadcrumbs">
       <latemp_get_breadcrumbs_trail />
       </p>
@@ -184,7 +184,7 @@ version).<br />
       </ul>
 
     </div>
-    
+
     <h3 class="hide">Main Navigation</h3>
     <div id="left-sidebar">
       <latemp_get_nav_menu_html />
@@ -194,16 +194,16 @@ version).<br />
     <!--   CONTENT -->
     <h3 class="hide">Content</h3>
     <div id="content">
-        <!-- Page title -->   
+        <!-- Page title -->
         <latemp_default_h1_tag />
-      
+
         {#LATEMP_BEFORE_BODY#}
         {#LATEMP_BODY#}
         <share_this_button />
     </div>
-    
+
     {#PERL_BEGIN_SIDEBAR#}
-    
+
   </div>
     <!-- FOOTER -->
     <h3 class="hide">Footer</h3>
@@ -235,9 +235,9 @@ http://perl-begin.org/<get-var url />
 <define-tag wiki_link whitespace="delete">
 <preserve url />
 <set-var %attributes />
-<ifeq "<get-var url />" "" 
-    "<set-var url="" />" 
-    "<set-var url="/<get-var url />" />" 
+<ifeq "<get-var url />" ""
+    "<set-var url="" />"
+    "<set-var url="/<get-var url />" />"
     />
 http://perl.net.au/wiki/Beginners<get-var url />
 <restore url />

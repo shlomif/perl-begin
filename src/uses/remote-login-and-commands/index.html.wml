@@ -6,7 +6,7 @@
 
 <p>
 This page will describe how to use Perl to execute commands on remote
-hosts using common Internet protocols such as 
+hosts using common Internet protocols such as
 <a href="http://en.wikipedia.org/wiki/Telnet">Telnet</a> or
 the more modern and more secure
 <a href="http://en.wikipedia.org/wiki/Secure_Shell">SSH (Secure Shell)</a>.
@@ -44,7 +44,7 @@ of the commonly mentioned ones are:
 </li>
 
 <li>
-<cpan_self_dist d="IPC-PerlSSH" /> and 
+<cpan_self_dist d="IPC-PerlSSH" /> and
 <cpan_self_dist d="IPC-PerlSSH-Async" /> which is similar, but works with
 <cpan_self_dist d="Net-Async" />.
 </li>
@@ -52,6 +52,6 @@ of the commonly mentioned ones are:
 </ul>
 
 <p>
-You should try some of them (or all of them) and see which one works the best 
+You should try some of them (or all of them) and see which one works the best
 for you.
 </p>

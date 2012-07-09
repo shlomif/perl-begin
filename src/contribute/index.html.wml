@@ -35,7 +35,7 @@ be edited by anyone at any time. Feel free to add your own material there.
 <h2 id="mailing-list">Join the Mailing List</h2>
 
 <p>
-By joining <a href="<mailing_list_link />">the mailing list</a>, you will 
+By joining <a href="<mailing_list_link />">the mailing list</a>, you will
 receive questions by E-mail, which you can answer. (or alternatively be able
 to ask your own)
 </p>
@@ -51,8 +51,8 @@ to help people with their problems.
 <h2 id="core-site">Contribute to the Core Site</h2>
 
 <p>
-You can send patches or corrections to the HTML pages of the site. It is 
-preferable to send corrections to the <a href="$(ROOT)/source/">site's 
+You can send patches or corrections to the HTML pages of the site. It is
+preferable to send corrections to the <a href="$(ROOT)/source/">site's
 Website Meta Language source</a>, because they can be applied immediately.
 </p>
 

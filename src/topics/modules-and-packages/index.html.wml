@@ -9,7 +9,7 @@
 Perl Modules and Perl Packages are two closely related - but independent -
 subjects that enable writing more reusable and more modular code. Furthermore,
 packages are the basis of Perl's
-<a href="$(ROOT)/topics/object-oriented/">Object Oriented Programming</a>.  
+<a href="$(ROOT)/topics/object-oriented/">Object Oriented Programming</a>.
 </p>
 
 <h3 id="modules">Modules</h3>

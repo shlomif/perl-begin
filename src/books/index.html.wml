@@ -16,10 +16,10 @@ Knowledge</a></li>
 <h2 id="note">Note</h2>
 
 <p>
-It is not absolutely necessary to read an organized book, in order to learn 
-Perl. However, occassionally many people like it better than reading an ad-hoc 
-tutorial on their computer screeens, and then trying to understand the man 
-pages. Here is a list of books that can teach you Perl with some remarks on 
+It is not absolutely necessary to read an organized book, in order to learn
+Perl. However, occassionally many people like it better than reading an ad-hoc
+tutorial on their computer screeens, and then trying to understand the man
+pages. Here is a list of books that can teach you Perl with some remarks on
 each book.
 </p>
 
@@ -40,7 +40,7 @@ book and can recommend it.
 
 <p>
 The book is <a href="<modern_perl_book_url />">available online for free
-download</a> and viewing and we have 
+download</a> and viewing and we have
 <a href="$(ROOT)/tutorials/modern-perl/">a local mirror</a>.
 </p>
 
@@ -68,31 +68,31 @@ http://www.perl.org/books/beginning-perl/
 
 <p>
 This book is intended for people who are new to programming and wish to
-learn how to program using Perl. Those that already have a past experience in 
+learn how to program using Perl. Those that already have a past experience in
 programming, will find it easier, but otherwise, even those without
 prior experience will be able to learn using it.
 </p>
 
 <p>
-The first edition of the book is 
+The first edition of the book is
 <a href="<beginning_perl_url />">available online for free download</a>.
 </p>
 
 <h3 id="learning-perl"><a
 href="http://www.oreilly.com/catalog/lperl3/">Learning Perl</a></h3>
 
-<book_info 
-    authors="Randal L. Schwartz, Tom Phoenix and brian d foy" 
-    publisher="oreilly" 
-    isbn="0596101058" 
+<book_info
+    authors="Randal L. Schwartz, Tom Phoenix and brian d foy"
+    publisher="oreilly"
+    isbn="0596101058"
     perlbooksid="101"
     />
 
 <p>
 Also referred to as "the Llama Book". Considered
 one of the best books for people who are absolute beginners in Perl and even
-in programming in general. This book however, does not cover references, 
-modules, and objects and other important features of the Perl language. As 
+in programming in general. This book however, does not cover references,
+modules, and objects and other important features of the Perl language. As
 such, you'll usually need to complement your learning by using another
 resource.
 </p>
@@ -103,15 +103,15 @@ programming.
 </p>
 
 <p>
-Available online electronically for a registration as part of 
+Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
 
 <h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
 
-<book_info 
-    authors="Andrew L. Johnson" 
-    publisher="manning" 
+<book_info
+    authors="Andrew L. Johnson"
+    publisher="manning"
     isbn="1884777805"
     perlbooksid="170"
     />
@@ -139,7 +139,7 @@ text is also available online for free download. We have a
 <a href="$(ROOT)/tutorials/impatient-perl/">local mirror</a>.
 </p>
 
-<h3 id="hard-way"><a href="http://greenteapress.com/perl/">Learning Perl the Hard 
+<h3 id="hard-way"><a href="http://greenteapress.com/perl/">Learning Perl the Hard
 Way</a></h3>
 
 <p>
@@ -157,7 +157,7 @@ to learn Perl quickly, and is available online for free download.
 
 <p>
 This book teaches Perl for experienced C Programmers. It is comperehensive
-and encompassing and tries to focus on Perl code that resembles C as much as 
+and encompassing and tries to focus on Perl code that resembles C as much as
 possible. If you don't know C either, it will probably be of little help.
 </p>
 
