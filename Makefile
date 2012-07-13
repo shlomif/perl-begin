@@ -45,6 +45,8 @@ upload: upload_beta
 # Add a dependency on books.wml
 $(filter dest/books/%.html,$(BERLIOS_DOCS_DEST)) : lib/books.wml
 
+dest/uses/sys-admin/index.html dest/topics/files-and-directories/index.html: lib/files_dirs_modules.wml
+
 upload_berlios: all
 	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
 
