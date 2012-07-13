@@ -121,6 +121,11 @@ my $tree_contents =
                             url => "tutorials/perl-for-newbies/part4/",
                             title => "Useful Perl Paradigms",
                         },
+                        {
+                            text => "Part 5",
+                            url => "tutorials/perl-for-newbies/part5/",
+                            title => "Good Programming Practices",
+                        },
                     ],
                 },
                 {

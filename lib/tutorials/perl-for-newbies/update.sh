@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for I in 1 2 3 4 ; do
+for I in 1 2 3 4 5 ; do
     (
         echo "Processing Part #$I"
         cd lect"$I"-all-in-one
