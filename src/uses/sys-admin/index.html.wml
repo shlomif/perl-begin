@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "files_dirs_modules.wml"
 
 <latemp_subject "Perl for System Administration" />
 
@@ -16,72 +17,4 @@ functions available inside Perl), and on its regular expressions capabilities
 (which are handier than what shell scripts offer).
 </p>
 
-<h2 id="modules">Modules</h2>
-
-<p>
-Useful modules for system administration are:
-</p>
-
-<ul>
-
-<li>
-<a href="http://perldoc.perl.org/File/Spec.html">File::Spec</a> - a core module
-to handle file and directory paths portably.
-</li>
-
-<li>
-<cpan_self_dist d="String-ShellQuote" />
-- quote strings for passing through the shell. Also see the list forms of
-system.
-</li>
-
-<li>
-<cpan_self_mod m="File::Path" /> - a core module to create or remove directory
-trees (portably).
-</li>
-
-<li>
-<cpan_self_mod m="File::Copy" /> - a core module to copy files.
-</li>
-
-<li>
-<cpan_self_dist d="IO-All" /> - an all-in-one
-IO package with a lot of syntactic sugar. Non-core.
-</li>
-
-</ul>
-
-<h3 id="directory_traversal">Directory Traversal</h3>
-
-<p>
-The built-in module for traversing a directory tree in Perl is
-<cpan_self_mod m="File::Find" />, but it has some severe limitations in interface
-and use. Some better alternatives are:
-</p>
-
-<ul>
-
-<li>
-<p>
-<a href="http://www.shlomifish.org/open-source/projects/File-Find-Object/">File-Find-Object</a> - an object-oriented replacement for File::Find that:
-1) can be instantiated 2) has an iterative interface 3) can be interrupted in
-the middle and 4) can return result objects instead of path names.
-</p>
-</li>
-
-<li>
-<p>
-<cpan_self_dist d="File-Next" /> - an alternative with an iterative interface,
-but incapable of being instantiated.
-</p>
-</li>
-
-<li>
-<p>
-<cpan_self_dist d="File-Find-Rule" />, which is still based on File::Find, and
-<cpan_self_dist d="File-Find-Object-Rule" /> provide a more convenient and
-succinct interface for finding what you want.
-</p>
-</li>
-
-</ul>
+<files_and_directories_modules />
