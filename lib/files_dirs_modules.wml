@@ -39,6 +39,12 @@ trees (portably).
 IO package with a lot of syntactic sugar. Non-core.
 </li>
 
+<li>
+<cpan_self_dist d="File-Slurp" /> - a module for fast and easy input
+and output from files and directories. The interface is procedural
+and quite spartan, but is still useful.
+</li>
+
 </ul>
 
 <h3 id="directory_traversal">Directory Traversal</h3>
