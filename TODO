@@ -1,3 +1,7 @@
+* Extract the common modules section out of src/uses/sys-admin/index.html.wml
+and src/topics/files-and-directories/index.html.wml
+    - Add File::Basename
+
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
     - Refer to perldoc -f open and perldoc perlopentut.
