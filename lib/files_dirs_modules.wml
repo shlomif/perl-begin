@@ -14,6 +14,12 @@ to handle file and directory paths portably.
 </li>
 
 <li>
+<a href="http://perldoc.perl.org/File/Basename.html">File::Basename</a> - a
+core module to portably extract the basename, the dirname, the suffix and
+other file paths parsing.
+</li>
+
+<li>
 <cpan_self_dist d="String-ShellQuote" />
 - quote strings for passing through the shell. Also see the list forms of
 system.
