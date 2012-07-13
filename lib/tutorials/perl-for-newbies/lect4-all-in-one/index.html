@@ -754,10 +754,10 @@ be placed. And likewise for the other strings. Here are some examples:
 <span class="Identifier">$y</span> =~ <span class="Statement">s!</span><span class="Constant">Hello</span><span class="Statement">!</span><span class="Constant">Hi</span><span class="Statement">!</span>;
 <span class="Statement">print</span> <span class="Constant">qq#</span><span class="Identifier">$y</span><span class="Special">\n</span><span class="Constant">#</span>;
 
-<span class="Statement">my</span> <span class="Identifier">@a</span> = <span class="Constant">qw{one two three}</span>;
+<span class="Statement">my</span> <span class="Identifier">@arr</span> = <span class="Constant">qw{one two three}</span>;
 <span class="Statement">for</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Constant">0</span> .. <span class="Identifier">$#a</span>)
 {
-    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Identifier">$a[$i]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: </span><span class="Identifier">$arr[$i]</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -814,12 +814,12 @@ Here is an example:
 <span class="Statement">use warnings</span>;
 
 
-<span class="Statement">my</span> <span class="Identifier">$a</span> = <span class="Constant">&quot;Hello&quot;</span>;
+<span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Constant">&quot;Hello&quot;</span>;
 <span class="Statement">my</span> <span class="Identifier">$str</span> = <span class="Constant">&quot;There you go.&quot;</span>;
 <span class="Statement">my</span> <span class="Identifier">$true</span> = <span class="Constant">&quot;False&quot;</span>;
 
 <span class="Statement">print</span> <span class="Constant">&lt;&lt;&quot;END&quot;;</span>
-<span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">a is: &quot;</span><span class="Identifier">$a</span><span class="Constant">&quot;</span>
+<span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">x is: &quot;</span><span class="Identifier">$x</span><span class="Constant">&quot;</span>
 <span class="Constant">The value of </span><span class="Special">\$</span><span class="Constant">str is: &quot;</span><span class="Identifier">$str</span><span class="Constant">&quot;</span>
 <span class="Constant">The value of true is: &quot;</span><span class="Identifier">$true</span><span class="Constant">&quot;</span>
 
@@ -831,7 +831,7 @@ Here is an example:
 Its output is:
 </p>
 <div class="code_block"><pre>
-The value of $a is: "Hello"
+The value of $x is: "Hello"
 The value of $str is: "There you go."
 The value of true is: "False"
 

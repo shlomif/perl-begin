@@ -709,14 +709,14 @@ contain other variables (including the assigned variable itself!).</p>
 <p>An example will illustrate it:</p>
 <div class="code_block"><pre>
 <span class="Identifier">$myvar</span> = <span class="Constant">17</span>;
-<span class="Identifier">$a</span> = <span class="Constant">2</span>;
-<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> = <span class="Constant">10</span>;
-<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> = <span class="Constant">75</span>;
-<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> = <span class="Constant">24</span>;
-<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$a</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">2</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$x</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">10</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$x</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">75</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$x</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">24</span>;
+<span class="Statement">print</span> <span class="Identifier">$myvar</span>, <span class="Constant">&quot; * &quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot; = &quot;</span> , (<span class="Identifier">$myvar</span>*<span class="Identifier">$x</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
 The output of this program is:
@@ -732,7 +732,7 @@ Several things can be noticed:
 </p>
 <ol>
 <li>
-The value of <tt>$a</tt> changes throughout the program. It's perfectly fine,
+The value of <tt>$x</tt> changes throughout the program. It's perfectly fine,
 and usually even necessary to modify the value of a variable.
 </li>
 <li>
@@ -765,40 +765,40 @@ Perl provides a shortcut for writing "$myvar = $myvar + $value", or
 "$myvar = $myvar / $value" and similar operations. Here's an example:
 </p>
 <div class="code_block"><pre>
-<span class="Identifier">$a</span> = <span class="Constant">1</span>;
-<span class="Identifier">$b</span> = <span class="Constant">0</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span> += <span class="Constant">1</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">1</span>;
+<span class="Identifier">$y</span> = <span class="Constant">0</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span> += <span class="Constant">1</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Since the operations <tt>$a += 1</tt> and <tt>$a -= 1</tt> are so commonly used,
-they were also assigned a separate operator. One can use <tt>$a++</tt> and
-<tt>$a--</tt> to perform them. For example, the above program could have
+Since the operations <tt>$x += 1</tt> and <tt>$x -= 1</tt> are so commonly used,
+they were also assigned a separate operator. One can use <tt>$x++</tt> and
+<tt>$x--</tt> to perform them. For example, the above program could have
 been written as:
 </p>
 <div class="code_block"><pre>
-<span class="Identifier">$a</span> = <span class="Constant">1</span>;
-<span class="Identifier">$b</span> = <span class="Constant">0</span>;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Identifier">$a</span> *= <span class="Constant">2</span>; <span class="Identifier">$b</span>++;
-<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$b</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$a</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> = <span class="Constant">1</span>;
+<span class="Identifier">$y</span> = <span class="Constant">0</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Identifier">$x</span> *= <span class="Constant">2</span>; <span class="Identifier">$y</span>++;
+<span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
 
@@ -994,50 +994,50 @@ for the comparison of two numbers. They are:
 <table border="1" summary="">
 <tr>
 <td>
-<tt>$a == $b</tt>
+<tt>$x == $y</tt>
 </td>
 <td>
-<tt>$a</tt> and <tt>$b</tt> are equal.
-</td>
-</tr>
-<tr>
-<td>
-<tt>$a &gt; $b</tt>
-</td>
-<td>
-<tt>$a</tt> is greater than <tt>$b</tt>
+<tt>$x</tt> and <tt>$y</tt> are equal.
 </td>
 </tr>
 <tr>
 <td>
-<tt>$a &lt; $b</tt>
+<tt>$x &gt; $y</tt>
 </td>
 <td>
-<tt>$a</tt> is lesser than <tt>$b</tt>
-</td>
-</tr>
-<tr>
-<td>
-<tt>$a &gt;= $b</tt>
-</td>
-<td>
-<tt>$a</tt> is greater or equal to <tt>$b</tt>
+<tt>$x</tt> is greater than <tt>$y</tt>
 </td>
 </tr>
 <tr>
 <td>
-<tt>$a &lt;= $b</tt>
+<tt>$x &lt; $y</tt>
 </td>
 <td>
-<tt>$a</tt> is lesser or equal to <tt>$b</tt>
+<tt>$x</tt> is lesser than <tt>$y</tt>
 </td>
 </tr>
 <tr>
 <td>
-<tt>$a != $b</tt>
+<tt>$x &gt;= $y</tt>
 </td>
 <td>
-<tt>$a</tt> is not equal to <tt>$b</tt>
+<tt>$x</tt> is greater or equal to <tt>$y</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$x &lt;= $y</tt>
+</td>
+<td>
+<tt>$x</tt> is lesser or equal to <tt>$y</tt>
+</td>
+</tr>
+<tr>
+<td>
+<tt>$x != $y</tt>
+</td>
+<td>
+<tt>$x</tt> is not equal to <tt>$y</tt>
 </td>
 </tr>
 </table>
@@ -1047,11 +1047,11 @@ as part of a normal expression. The following program prints all the numbers
 between 1 and 100 that are not divisible by 3:
 </p>
 <div class="code_block"><pre>
-<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">1</span> .. <span class="Constant">100</span>)
+<span class="Statement">for</span> <span class="Identifier">$n</span> (<span class="Constant">1</span> .. <span class="Constant">100</span>)
 {
-    <span class="Statement">if</span> ((<span class="Identifier">$a</span> % <span class="Constant">3</span>) != <span class="Constant">0</span>)
+    <span class="Statement">if</span> ((<span class="Identifier">$n</span> % <span class="Constant">3</span>) != <span class="Constant">0</span>)
     {
-        <span class="Statement">print</span> <span class="Identifier">$a</span>,<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        <span class="Statement">print</span> <span class="Identifier">$n</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     }
 }
 </pre></div>
@@ -1187,8 +1187,8 @@ For doing this, Perl supplies boolean operators.
 <td>
 <h2>&amp;&amp;</h2>
 <p>
-<tt>$a &amp;&amp; $b</tt> evaluates to true if both <tt>$a</tt> and <tt>$b</tt> are true.
-It is called the logical and of the two operands <tt>$a</tt> and <tt>$b</tt>.
+<tt>$x &amp;&amp; $y</tt> evaluates to true if both <tt>$x</tt> and <tt>$y</tt> are true.
+It is called the “logical and” of the two operands <tt>$x</tt> and <tt>$y</tt>.
 </p>
 </td>
 </tr>
@@ -1196,7 +1196,7 @@ It is called the logical and of the two operands <tt>$a</tt> and <tt>$b</tt>.
 <td>
 <h2>||</h2>
 <p>
-<tt>$a || $b</tt> (called the logical or of <tt>$a</tt> and <tt>$b</tt>) is
+<tt>$x || $y</tt> (called the “logical or” of <tt>$x</tt> and <tt>$y</tt>) is
 evaluated to true if one or both of its operands are true.
 </p>
 </td>
@@ -1205,8 +1205,8 @@ evaluated to true if one or both of its operands are true.
 <td>
 <h2>!</h2>
 <p>
-<tt>! $a</tt> (pronounced "not <tt>$a</tt>") evaluates to true
-if <tt>$a</tt> is false.
+<tt>! $x</tt> (pronounced “not <tt>$x</tt>”) evaluates to true
+if <tt>$x</tt> is false.
 </p>
 </td>
 </tr>
@@ -1529,7 +1529,7 @@ The following example is a rewrite of the "All A's" program using
 "ROW_LOOP" is the label for the outer loop, and it can be seen that
 <tt>next</tt> uses it as a parameter. All in all, <tt>next</tt> and
 <tt>last</tt> are sometimes very convenient (but don't tell it to
-<a href="http://en.wikipedia.org/wiki/Edsger_Dijkstra">Edsgar W.
+<a href="http://en.wikipedia.org/wiki/Edsger_Dijkstra">Edsger W.
 Dijkstra</a>'s face!), so you will see them being used often.
 </p>
 <hr />
@@ -1664,9 +1664,9 @@ initialise an array in one call:
 <div class="code_block"><pre>
 <span class="Identifier">@lines</span> = (<span class="Constant">&quot;One fish&quot;</span>, <span class="Constant">&quot;Two fish&quot;</span>, <span class="Constant">&quot;Red fish&quot;</span>, <span class="Constant">&quot;Blue fish&quot;</span>);
 
-<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">0</span> .. <span class="Identifier">$#lines</span>)
+<span class="Statement">for</span> <span class="Identifier">$idx</span> (<span class="Constant">0</span> .. <span class="Identifier">$#lines</span>)
 {
-    <span class="Statement">print</span> <span class="Identifier">$lines[$a]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">$lines[$idx]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -1678,9 +1678,9 @@ We can also use it to concatenate two existing arrays:
 <span class="Identifier">@primes</span> = (<span class="Identifier">@primes1</span>,<span class="Identifier">@primes2</span>,<span class="Constant">17</span>);
 <span class="Identifier">@primes</span> = (<span class="Identifier">@primes</span>,<span class="Constant">19</span>);
 
-<span class="Statement">for</span> <span class="Identifier">$a</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
+<span class="Statement">for</span> <span class="Identifier">$idx</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
 {
-	<span class="Statement">print</span> <span class="Identifier">$primes[$a]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+	<span class="Statement">print</span> <span class="Identifier">$primes[$idx]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -1795,9 +1795,9 @@ The <tt>for</tt> keyword in Perl means exactly the same as <tt>foreach</tt> and
 you can use either one interchangeably.
 </p>
 <p>
-<tt>$a .. $b</tt> is a special operator that returns an array containing the
-sequence of consecutive integers from <tt>$a</tt> up to and including
-<tt>$b</tt>. Now one can fully understand the <tt>for $i (1 .. 10)</tt>
+<tt>$x .. $y</tt> is a special operator that returns an array containing the
+sequence of consecutive integers from <tt>$x</tt> up to and including
+<tt>$y</tt>. Now one can fully understand the <tt>for $i (1 .. 10)</tt>
 construct that we used in the beginning of this lecture.
 </p>
 <hr />

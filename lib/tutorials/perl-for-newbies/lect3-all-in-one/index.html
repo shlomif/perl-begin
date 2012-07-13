@@ -398,7 +398,7 @@ Here's an example to illustrate it:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Comment"># This is a value that can be inputted or outputted by the </span>
+<span class="Comment"># This is a value that can be inputted or outputted by the</span>
 <span class="Comment"># mini-interpreter.</span>
 <span class="Statement">my</span> <span class="Identifier">$a_value</span>;
 
@@ -605,78 +605,7 @@ code here borrows heavily from the book
 <a href="http://www-mitpress.mit.edu/sicp/">"Structure and Interpretation of Computer Programs"</a> in which a similar code can be found written in Scheme.
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
 
-<span class="Statement">use strict</span>;
-<span class="Statement">use warnings</span>;
-
-<span class="Statement">sub </span><span class="Identifier">create_bank_account</span>
-{
-    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
-    <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Constant">0</span>;
-
-    <span class="Statement">my</span> <span class="Identifier">$deposit</span> = <span class="Statement">sub </span>{
-        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
-
-        <span class="Identifier">$total</span> += <span class="Identifier">$how_much</span>;
-    };
-
-    <span class="Statement">my</span> <span class="Identifier">$print</span> = <span class="Statement">sub </span>{
-        <span class="Statement">my</span> <span class="Identifier">$title</span> = <span class="Statement">shift</span>;
-
-        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> has </span><span class="Identifier">$total</span><span class="Constant"> NIS.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    };
-
-    <span class="Statement">my</span> <span class="Identifier">$can_extract</span> = <span class="Statement">sub </span>{
-        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
-
-        <span class="Statement">if</span> (<span class="Identifier">$how_much</span> &lt;= <span class="Constant">0</span>)
-        {
-            <span class="Statement">return</span>;
-        }
-
-        <span class="Statement">if</span> (<span class="Identifier">$total</span> &gt;= <span class="Identifier">$how_much</span>)
-        {
-            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> can afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-        }
-        <span class="Statement">else</span>
-        {
-            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> cannot afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-        }
-    };
-
-    <span class="Statement">my</span> <span class="Identifier">%ops</span> =
-        (
-            <span class="Constant">&quot;deposit&quot;</span> =&gt; <span class="Identifier">$deposit</span>,
-            <span class="Constant">&quot;print&quot;</span> =&gt; <span class="Identifier">$print</span>,
-            <span class="Constant">&quot;can_extract&quot;</span> =&gt; <span class="Identifier">$can_extract</span>,
-        );
-
-    <span class="Statement">my</span> <span class="Identifier">$dispatch</span> = <span class="Statement">sub </span>{
-        <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>;
-
-        <span class="Comment"># Call the matching operation with the rest of the arguments.</span>
-        <span class="Identifier">$ops{$op}</span>-&gt;(<span class="Identifier">@_</span>);
-    };
-
-    <span class="Statement">return</span> <span class="Identifier">$dispatch</span>;
-}
-
-<span class="Comment"># Create ten bank accounts</span>
-<span class="Statement">my</span> <span class="Identifier">@accounts</span> = (<span class="Statement">map {</span> create_bank_account(<span class="Constant">&quot;Person #&quot;</span>.<span class="Identifier">$_</span>) <span class="Statement">}</span> (<span class="Constant">0</span> .. <span class="Constant">9</span>));
-
-<span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;)
-{
-    <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
-    <span class="Statement">my</span> <span class="Identifier">@components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s+</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
-    <span class="Statement">my</span> <span class="Identifier">$account_index</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
-    <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
-
-    <span class="Identifier">$accounts[$account_index]</span>-&gt;(<span class="Identifier">$op</span>, <span class="Identifier">@components</span>);
-}
-
-<span class="Comment"># Usage:</span>
-<span class="Comment"># [Account Number] [Operation] [Parameters]</span>
 </pre></div>
 <hr />
 
@@ -1004,7 +933,7 @@ Here is an example which has a module called "Calc" and a script that uses it:
 
 <span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;gcd&quot;</span>);
 
-<span class="Comment"># This function calculates the greatest common divisor of two integers </span>
+<span class="Comment"># This function calculates the greatest common divisor of two integers</span>
 <span class="Statement">sub </span><span class="Identifier">gcd</span>
 {
     <span class="Statement">my</span> <span class="Identifier">$m</span> = <span class="Statement">shift</span>;
@@ -1460,7 +1389,7 @@ Here is an example, constructor for the class <tt>Foo</tt>:
     <span class="Comment"># important step.</span>
     <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
 
-    <span class="Comment"># Now we can retrieve the other arguments passed to the </span>
+    <span class="Comment"># Now we can retrieve the other arguments passed to the</span>
     <span class="Comment"># constructor.</span>
 
     <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;Fooish&quot;</span>;
@@ -1596,7 +1525,7 @@ number:
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
-<span class="Comment"># @ISA is not lexically scoped so it has to be declared with </span>
+<span class="Comment"># @ISA is not lexically scoped so it has to be declared with</span>
 <span class="Comment"># use vars.</span>
 <span class="Comment">#</span>
 <span class="Comment"># qw(My Constant String) is equivalent to split(/\s+/, &quot;My Constant String&quot;)</span>
