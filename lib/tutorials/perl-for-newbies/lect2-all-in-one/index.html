@@ -970,8 +970,8 @@ prepares a file with a pyramid in it:
 <p>
 In order to print to more than one file at once, one needs to use two
 separate print statements. Here's an example, that prints to one file the
-sequnce 1, 1.1, 2, 2.1, 3, 3.1... and to the other the sequence 1, 1.5, 2, 2.5
-, 3, 3.5...
+sequence 0, 0.1, 1, 1.1, 2, 2.1, 3, 3.1…, and to the other the sequence
+0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5….
 </p>
 <div class="code_block"><pre>
 <span class="Statement">use strict</span>;
@@ -1310,7 +1310,7 @@ present in the string:
 7.3. The "*" and Friends
 </h1>
 <p>
-In order to repeat a character more than one time several repetition
+In order to repeat a character more than one time, several repetition
 paterns can be used. The asterisk (<tt>*</tt>) can be used to indicate that
 the character should repeat zero or more times. The plus sign (<tt>+</tt>)
 can be used to indicate that the character should repeat one or more
@@ -1318,11 +1318,11 @@ times. As for the question mark (<tt>?</tt>) it indicates an appearance of
 zero or one time.
 </p>
 <p>
-The following pattern <tt>/ab*c/</tt> matches "a" followed by as many
-times of b as we like and then c. The pattern <tt>/you k?now/</tt> matches
-both "you know" and "you now". The pattern <tt>/hello +world/</tt> matches
-the word "hello" followed by the word "world". (with some whitespace in
-between).
+The following pattern <tt>/ab*c/</tt> matches "a", followed by as many
+times of b as we like (including zero), and then c. The pattern
+<tt>/you k?now/</tt> matches both "you know" and "you now".
+The pattern <tt>/hello +world/</tt> matches the word "hello" followed by the
+word "world". (with some whitespace in between).
 </p>
 <hr />
 
