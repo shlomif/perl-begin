@@ -104,6 +104,21 @@ works on perl-5.10.x and above.
 
 <li>
 <p>
+<cpan_self_dist d="Parser-MGC" /> - allows one to build simple
+recursive-descent parsers by using methods and closures.
+</p>
+</li>
+
+<li>
+<p>
+<cpan_self_dist d="Marpa-XS" /> - a parser generator that aims to fully
+parse all context-free grammars. See also <cpan_self_dist d="Marpa-PP"> for
+its pure-Perl and slower version.
+</p>
+</li>
+
+<li>
+<p>
 <cpan_self_dist d="Parse-Yapp" /> - old
 and has been unmaintained, but may still be good enough.
 </p>
