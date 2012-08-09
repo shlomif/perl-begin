@@ -15,7 +15,9 @@ very easy and straightforward.
 </define-tag>
 
 <p>
-Users are <b>recommended to start</b> by reading
+Users are <b>recommended to start</b> by first reading
+<a href="http://htmldog.com/">the HTML Dog tutorials</a> for learning XHTML
+and CSS (without coverage of Perl) and then
 <a href="<cgi_course_url />"><b>Ovid's
 CGI Course</b></a>. The other links here may also prove useful.
 </p>
