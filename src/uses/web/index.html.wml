@@ -11,7 +11,7 @@ very easy and straightforward.
 </p>
 
 <define-tag cgi_course_url whitespace="delete">
-http://jdporter.perlmonk.org/cgi_course/
+./ovids_cgi_course/
 </define-tag>
 
 <p>
