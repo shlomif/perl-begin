@@ -40,7 +40,7 @@ function showTrackers(val) {
 	if(val == "inline") {
 		document.getElementById("displayYearEl").style.color = "#ec008c";
 		document.getElementById("displayMonthEl").style.color = "#ec008c";
-		document.getElementById("displayDayEl").style.color = "#ec008c";		
+		document.getElementById("displayDayEl").style.color = "#ec008c";
 	} else {
 		document.getElementById("displayYearEl").innerHTML = displayYear;
 		document.getElementById("displayYearEl").style.color = "#ff0";
@@ -55,8 +55,8 @@ function showTrackers(val) {
 }
 function getElementX2(obj) {
 	var thing = jQuery(obj);
-	if((thing == undefined) 
-			|| (typeof thing == "undefined") 
+	if((thing == undefined)
+			|| (typeof thing == "undefined")
 			|| (typeof thing.offset == "undefined")) {
 		return getElementX(obj);
 	}
@@ -86,8 +86,8 @@ function trackMouseMove(event,element) {
 	if(monthOff % 2 == 1) {
 		day = 15;
 	}
-	var dateString = 
-		zeroPad(year + firstYear) + 
+	var dateString =
+		zeroPad(year + firstYear) +
 		zeroPad(monthOfYear+1,2) +
 		zeroPad(day,2) + "000000";
 
@@ -130,49 +130,49 @@ function trackMouseMove(event,element) {
        </td>
        <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
            <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
-			
+
            <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
            <tr style="width:110px;height:16px;font-size:10px!important;">
            	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_1.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="13 Nov 2009"><strong>NOV</strong></a>
-		                
+
                </td>
                <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 7:55:11 Aug 24, 2010">AUG</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        Sep
-                       
+
                </td>
            </tr>
 
            <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
            <tr>
                <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="lesson_1.html" title="18:31:58 Nov 13, 2009" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
-		                
+
                </td>
                <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 7:55:11 Aug 24, 2010">24</td>
 				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
                        <img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
-                       
+
 			    </td>
            </tr>
 
            <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
            <tr style="width:110px;height:13px;font-size:9px!important;">
 				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2009
-                       
+
                </td>
                <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 7:55:11 Aug 24, 2010">2010</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2011
-                       
+
 				</td>
            </tr>
            </tbody></table>
@@ -188,7 +188,7 @@ function trackMouseMove(event,element) {
        <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
        <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
 			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
-				onmouseover="showTrackers('inline');" 
+				onmouseover="showTrackers('inline');"
 				onmouseout="showTrackers('none');"
 				onmousemove="trackMouseMove(event,this)"
 				alt="sparklines"
@@ -196,16 +196,16 @@ function trackMouseMove(event,element) {
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/wayback.archive.org/web/jsp/graph.jsp"></img>
-			<img id="wbMouseTrackYearImg" 
+			<img id="wbMouseTrackYearImg"
 				style="display:none; position:absolute; z-index:9010;"
-				width="25" 
+				width="25"
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
 			<img id="wbMouseTrackMonthImg"
-				style="display:none; position:absolute; z-index:9011; " 
+				style="display:none; position:absolute; z-index:9011; "
 				width="2"
-				height="27" 
+				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
        </div>
@@ -283,7 +283,7 @@ print "&lt;/body&gt;&lt;/html&gt;";</pre></div>
 
 <p><img src="file:///home/shlomif/OVID_CGI/web.archive.org/web/20100824075511im_/http:/jdporter.perlmonk.org/cgi_course/lesson_one_a.jpg" alt="Output of first CGI program" border="0" width="471" height="185">
 </p>
- 
+
 <p>Actually, there's nothing <em>really</em> wrong with this program, but
 it's bad programming style. Throughout this course, we'll concentrate
 on doing things the <strong>right</strong> way. This means that we'll
@@ -352,7 +352,7 @@ code. It will warn you if a variable is only mentioned once (you probably
 mistyped a variable name), attempts to write to a read-only file handle, using
 arrays as scalars and many other things. This switch will save you many hours
 of debugging and should be used on all Perl programs, not just CGI
-programs.</p> 
+programs.</p>
 
 <p class="security"><img src="file:///home/shlomif/OVID_CGI/web.archive.org/web/20100824075511im_/http:/jdporter.perlmonk.org/cgi_course/checkpoint.gif" alt="Security Checkpoint" align="left" border="0" width="26" height="28">
 The <tt>-T</tt> switch may be new to you. This switch enables what is known as
@@ -394,13 +394,13 @@ covers three things: vars, subs, and refs.</p>
 
 <ol>
   <li><tt>use strict 'vars';</tt>
-  
+
   <p>You must predeclare a variable, fully qualify it (e.g.: $package::foo), or
   import it. In practice, you'll find predeclaring variables to be your
   most significant issue.</p></li>
 
   <li><tt>use strict 'subs';</tt>
-  
+
   <p>This prohibits you from using barewords to call a subroutine, unless the
   subroutine has already been declared (e.g., using "somesub" instead
   of "&amp;somesub" or "somesub()"). Personally, I find the
@@ -413,7 +413,7 @@ covers three things: vars, subs, and refs.</p>
   discuss these as appropriate.</p></li>
 
   <li><tt>use strict 'refs';</tt>
-  
+
   <p>This pragma prohibits you from using symbolic references. If you already
   know what this means, I apologize for having you wade through all of this
   <tt>strict</tt> stuff. If you don't know what this means, suffice it to
@@ -549,7 +549,7 @@ complicated, but we'll leave it at that for now.</p>
 <h4><tt>$query-&gt;start_html(-title =&gt; "My First CGI Script" ... $query-&gt;end_html;</tt></h4>
 
 <p>Yup, we're just slurping up all of the rest of that as we'll go into
-using CGI.pm more in the next lesson. For now, just trust us, it works. 
+using CGI.pm more in the next lesson. For now, just trust us, it works.
 What follows is an alternate method of generating that web page
 using a what is known as a 'here' document.</p>
 
@@ -591,7 +591,7 @@ variations which you are likely to see in other programs.</p>
 
 <ol>
   <li>
-    What's wrong with the following script? 
+    What's wrong with the following script?
 
 <div class="program"><pre>#!/usr/bin/perl -wT
 use strict;

@@ -2185,7 +2185,7 @@ foreach my $elem (@existing_array)
     my @row = generate_row($elem);
     push @array_of_rows, \@row;
 }
-</p>
+</pre>
 
 <p>
 Or alternatively:
@@ -2198,7 +2198,7 @@ foreach my $elem (@existing_array)
 {
     push @array_of_rows, [generate_row($elem)];
 }
-</p>
+</pre>
 
 </item>
 

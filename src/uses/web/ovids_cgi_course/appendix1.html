@@ -40,7 +40,7 @@ function showTrackers(val) {
 	if(val == "inline") {
 		document.getElementById("displayYearEl").style.color = "#ec008c";
 		document.getElementById("displayMonthEl").style.color = "#ec008c";
-		document.getElementById("displayDayEl").style.color = "#ec008c";		
+		document.getElementById("displayDayEl").style.color = "#ec008c";
 	} else {
 		document.getElementById("displayYearEl").innerHTML = displayYear;
 		document.getElementById("displayYearEl").style.color = "#ff0";
@@ -55,8 +55,8 @@ function showTrackers(val) {
 }
 function getElementX2(obj) {
 	var thing = jQuery(obj);
-	if((thing == undefined) 
-			|| (typeof thing == "undefined") 
+	if((thing == undefined)
+			|| (typeof thing == "undefined")
 			|| (typeof thing.offset == "undefined")) {
 		return getElementX(obj);
 	}
@@ -86,8 +86,8 @@ function trackMouseMove(event,element) {
 	if(monthOff % 2 == 1) {
 		day = 15;
 	}
-	var dateString = 
-		zeroPad(year + firstYear) + 
+	var dateString =
+		zeroPad(year + firstYear) +
 		zeroPad(monthOfYear+1,2) +
 		zeroPad(day,2) + "000000";
 
@@ -130,49 +130,49 @@ function trackMouseMove(event,element) {
        </td>
        <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
            <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
-			
+
            <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
            <tr style="width:110px;height:16px;font-size:10px!important;">
            	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        Oct
-                       
+
                </td>
                <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 15:05:04 Nov 12, 2009">NOV</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        Dec
-                       
+
                </td>
            </tr>
 
            <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
            <tr>
                <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
                        <img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" />
-                       
+
                </td>
                <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 15:05:04 Nov 12, 2009">12</td>
 				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
                        <img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
-                       
+
 			    </td>
            </tr>
 
            <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
            <tr style="width:110px;height:13px;font-size:9px!important;">
 				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2008
-                       
+
                </td>
                <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 15:05:04 Nov 12, 2009">2009</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2010
-                       
+
 				</td>
            </tr>
            </tbody></table>
@@ -188,7 +188,7 @@ function trackMouseMove(event,element) {
        <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
        <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
 			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
-				onmouseover="showTrackers('inline');" 
+				onmouseover="showTrackers('inline');"
 				onmouseout="showTrackers('none');"
 				onmousemove="trackMouseMove(event,this)"
 				alt="sparklines"
@@ -196,16 +196,16 @@ function trackMouseMove(event,element) {
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/wayback.archive.org/web/jsp/graph.jsp"></img>
-			<img id="wbMouseTrackYearImg" 
+			<img id="wbMouseTrackYearImg"
 				style="display:none; position:absolute; z-index:9010;"
-				width="25" 
+				width="25"
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
 			<img id="wbMouseTrackMonthImg"
-				style="display:none; position:absolute; z-index:9011; " 
+				style="display:none; position:absolute; z-index:9011; "
 				width="2"
-				height="27" 
+				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
        </div>
@@ -240,7 +240,7 @@ answers you need here.</p>
 
 <p>What follows is a sort of checklist to help you solve the
 problem quickly yourself. It is divided into four parts:</p>
-                                                                  
+
 <ol type="a">
 <li><a href="appendix1.html#A">Before uploading to the Server</a></li>
 <li><a href="appendix1.html#B">Uploading to the Server</a></li>
@@ -332,7 +332,7 @@ And to add Perl to the path:
 <h4>Syntax Errors</h4>
 
 <pre>perl -c test.pl
-String found where operator expected at test.pl line 1, 
+String found where operator expected at test.pl line 1,
 near "printt "Hello World!""
 (Do you need to predeclare printt?)
 syntax error at test.pl line 1, near "printt "Hello World!""
@@ -351,7 +351,7 @@ write your script in Latin! To use them they need to be
 installed.</p>
 
 <pre>perl -c test.pl
-Can't locate Some/Module.pm in @INC (@INC contains: 
+Can't locate Some/Module.pm in @INC (@INC contains:
 C:/Perl/lib C:/Perl/site/lib .) at test.pl line 1.
 BEGIN failed--compilation aborted at test.pl line 1.
 
@@ -372,7 +372,7 @@ later on.</p>
 <h3>2. Are you using strict and warnings?</h3>
 
 <pre>
-#!/usr/bin/perl <a href="http://perlmonks.org/?node=53947"><tt>-w</tt></a> # "-w" turns on all sorts of warnings about probable errors. 
+#!/usr/bin/perl <a href="http://perlmonks.org/?node=53947"><tt>-w</tt></a> # "-w" turns on all sorts of warnings about probable errors.
 use <a href="http://perlmonks.org/?node=doc://diagnostics"><tt>diagnostics;</tt></a>   # optional; causes warnings to be explained in greater detail.
 use <a href="http://perlmonks.org/?node=doc://strict"><tt>strict;</tt></a>        # generates compile and run-time errors for certain unsafe constructs.
 </pre>
@@ -400,7 +400,7 @@ my $q = new CGI;    # create new CGI object
 my $name     = $q-&gt;param('name');
 
 # now get an array of values of all form parameters named 'option'
-my @options  = $q-&gt;param('option');  
+my @options  = $q-&gt;param('option');
 </pre>
 
 <p>As you can see it is very easy to use CGI.pm. Besides this
@@ -441,7 +441,7 @@ scripts. Typically this will be something like:</p>
 </pre>
 
 <p>
-If you're not sure, ask your system administrator about it. 
+If you're not sure, ask your system administrator about it.
 Whatever the correct directory is, that is where you will want to
 upload your scripts into.
 </p>
@@ -457,7 +457,7 @@ is how CGI works in a nutshell:</p>
 script, say via a link like:</p>
 
 <pre>  &lt;a href="http://www.mydomain.com/cgi-bin/myscript.cgi"&gt;Run my script&lt;/a&gt;
- 
+
 </pre>
 
 <p>(ii) The server receives the request and goes "Ah ha! This is a
@@ -651,7 +651,7 @@ installed. Some modules come with perl (like CGI.pm) but others
 need to be installed. If you have followed the advice so far you
 will get the typical:</p>
 
-<pre>Can't locate Some/Module.pm in @INC (@INC contains: 
+<pre>Can't locate Some/Module.pm in @INC (@INC contains:
 C:/Perl/lib C:/Perl/site/lib .) at test.pl line 12.
 </pre>
 
@@ -680,7 +680,7 @@ Further improvements were made or suggested by:
 <li> <a href="http://perlmonks.org/?node=sierrathedog04">sierrathedog04</a> </li>
 <li> <a href="http://perlmonks.org/?node_id=17361">converter</a> </li>
 </ul>
-It is now collaboratively maintained by the 
+It is now collaboratively maintained by the
 <a href="http://perlmonks.org/?node_id=591017">PerlMonks Pedagogues</a>.
 </p>
 
@@ -699,10 +699,10 @@ a Windows box, see
 </p>
 
 <p>
-If you know of any other good tutorials, please go to 
+If you know of any other good tutorials, please go to
 <a href="http://perlmonks.org/">PerlMonks</a> and inform the
 <a href="http://perlmonks.org/?node_id=591017">Pedagogues</a> group
-about it. (They're the ones who maintain the 
+about it. (They're the ones who maintain the
 <a href="http://perlmonks.org/?node=Tutorials">Tutorials</a> hosted
 on that site.)
 </p>
