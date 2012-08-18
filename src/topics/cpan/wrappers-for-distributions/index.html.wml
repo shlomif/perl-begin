@@ -42,6 +42,10 @@ native Linux packages from CPAN</a>
 Integration Made Easy</a>
 </li>
 
+<li>
+See <a href="http://blogs.perl.org/users/shlomi_fish/2012/08/tech-tip-how-to-package-and-maintain-cpan-distributions-in-mageia.html">the post “Tech Tip: How to Package and Maintain CPAN Distributions in Mageia”</a> for more information.
+</li>
+
 </ul>
 
 </li>
