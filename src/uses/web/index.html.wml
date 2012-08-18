@@ -11,7 +11,7 @@ very easy and straightforward.
 </p>
 
 <define-tag cgi_course_url whitespace="delete">
-./ovids_cgi_course/
+http://ovid-cgi-course.perl-begin.org/cgi-course/
 </define-tag>
 
 <p>
