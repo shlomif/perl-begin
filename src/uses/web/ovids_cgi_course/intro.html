@@ -39,7 +39,7 @@ function showTrackers(val) {
 	if(val == "inline") {
 		document.getElementById("displayYearEl").style.color = "#ec008c";
 		document.getElementById("displayMonthEl").style.color = "#ec008c";
-		document.getElementById("displayDayEl").style.color = "#ec008c";		
+		document.getElementById("displayDayEl").style.color = "#ec008c";
 	} else {
 		document.getElementById("displayYearEl").innerHTML = displayYear;
 		document.getElementById("displayYearEl").style.color = "#ff0";
@@ -54,8 +54,8 @@ function showTrackers(val) {
 }
 function getElementX2(obj) {
 	var thing = jQuery(obj);
-	if((thing == undefined) 
-			|| (typeof thing == "undefined") 
+	if((thing == undefined)
+			|| (typeof thing == "undefined")
 			|| (typeof thing.offset == "undefined")) {
 		return getElementX(obj);
 	}
@@ -85,8 +85,8 @@ function trackMouseMove(event,element) {
 	if(monthOff % 2 == 1) {
 		day = 15;
 	}
-	var dateString = 
-		zeroPad(year + firstYear) + 
+	var dateString =
+		zeroPad(year + firstYear) +
 		zeroPad(monthOfYear+1,2) +
 		zeroPad(day,2) + "000000";
 
@@ -129,49 +129,49 @@ function trackMouseMove(event,element) {
        </td>
        <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
            <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
-			
+
            <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
            <tr style="width:110px;height:16px;font-size:10px!important;">
            	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        Jul
-                       
+
                </td>
                <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 6:58:03 Aug 24, 2010">AUG</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        Sep
-                       
+
                </td>
            </tr>
 
            <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
            <tr>
                <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
                        <img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" />
-                       
+
                </td>
                <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 6:58:03 Aug 24, 2010">24</td>
 				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="intro.html" title="9:07:23 Sep 1, 2010" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
-		                
+
 			    </td>
            </tr>
 
            <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
            <tr style="width:110px;height:13px;font-size:9px!important;">
 				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2009
-                       
+
                </td>
                <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 6:58:03 Aug 24, 2010">2010</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2011
-                       
+
 				</td>
            </tr>
            </tbody></table>
@@ -187,7 +187,7 @@ function trackMouseMove(event,element) {
        <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
        <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
 			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
-				onmouseover="showTrackers('inline');" 
+				onmouseover="showTrackers('inline');"
 				onmouseout="showTrackers('none');"
 				onmousemove="trackMouseMove(event,this)"
 				alt="sparklines"
@@ -195,16 +195,16 @@ function trackMouseMove(event,element) {
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/wayback.archive.org/web/jsp/graph.jsp"></img>
-			<img id="wbMouseTrackYearImg" 
+			<img id="wbMouseTrackYearImg"
 				style="display:none; position:absolute; z-index:9010;"
-				width="25" 
+				width="25"
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
 			<img id="wbMouseTrackMonthImg"
-				style="display:none; position:absolute; z-index:9011; " 
+				style="display:none; position:absolute; z-index:9011; "
 				width="2"
-				height="27" 
+				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
        </div>
@@ -234,10 +234,10 @@ function trackMouseMove(event,element) {
 <h3>Why another online web programming tutorial?</h3>
 
 <p>
-This tutorial is brought to you courtesy of 
+This tutorial is brought to you courtesy of
 <a href="http://perlmonks.org/">PerlMonks</a>,
 an online community of Perl programmers and aficionados.
-It was originally authored by Archbishop 
+It was originally authored by Archbishop
 <a href="http://perlmonks.org/?node_id=17000">Ovid</a>
 as a way of giving back to the community,
 and is now collaboratively maintained.
@@ -266,10 +266,10 @@ If you ever have a question about anything in this tutorial, please consider
 asking on <a href="http://perlmonks.org/">PerlMonks</a>.
 In particular, see the FAQ
 <a href="http://perlmonks.org/?node_id=17974">I want to ask a question of the Perl Monks; where do I start?</a>
-Further information is found in 
+Further information is found in
 <a href="http://perlmonks.org/?node_id=519263">Understanding and Using PerlMonks</a>.
 </p><p>
-If you're looking for a deeper, more comprehensive tutorial, we recommend the book 
+If you're looking for a deeper, more comprehensive tutorial, we recommend the book
 <a href="http://oreilly.com/catalog/9781565924192/index.html"><i>CGI Programming with Perl</i>, 2nd Ed.</a>, from O'Reilly.
 </p>
 
@@ -286,8 +286,8 @@ course:
 <p class="security">First and foremost, every lesson in this course
 discusses security at least once, because security
 is the single biggest failure of most online CGI courses. You
-will be encountering "Security Checkpoints" throughout this course 
-to help reinforce these concepts. 
+will be encountering "Security Checkpoints" throughout this course
+to help reinforce these concepts.
 Each "Security Checkpoint" paragraph is marked by the icon you see
 to the left of this paragraph.  It signifies that you
 should pay special attention to the content of that paragraph.
@@ -315,7 +315,7 @@ my server. Chances are I was used to spam these news groups.
 </blockquote>
 
 <p>
-Indeed, it could have been much worse. Remember those huge 
+Indeed, it could have been much worse. Remember those huge
 <a href="http://www.cert.org/homeusers/ddos.html">distributed denial-of-service attacks</a>
 on <a href="http://www.yahoo.com/">Yahoo!</a>
 and other large web sites? The attackers needed to break into other
@@ -334,7 +334,7 @@ you're up against than to wonder what they can do to you.</p>
 
 <p>This course assumes that you already have some basic knowledge of Perl.
 You don't need to be an expert, but you should at least be fairly
-comfortable writing simple programs. 
+comfortable writing simple programs.
 For resources on learning Perl, check out the
 <a href="http://perlmonks.org/?node_id=519264">Getting Started with Perl</a>
 tutorials on PerlMonks.
@@ -343,7 +343,7 @@ tutorials on PerlMonks.
 <h3>HTML</h3>
 
 <p>You should know basic HTML. There's no point in trying to learn CGI
-without knowing basic HTML. 
+without knowing basic HTML.
 <a href="http://www.webmonkey.com/tutorial/tag/web_basics">Webmonkey's web basics tutorials</a>
 should bring you up to speed fairly quickly.
 </p>
@@ -354,7 +354,7 @@ should bring you up to speed fairly quickly.
 better learn how to deconstruct a HTTP/1.1 header. You need to
 understand MIME types and what different HTTP request methods are.
 However, the emphasis in this course is on learning
-<strong>fast</strong>, so it will 
+<strong>fast</strong>, so it will
 skip <em>Why It Works</em> (when practical) and will focus on
 <em>How It Works</em>.
 This is how most programmers learn anyway. But make no mistake:

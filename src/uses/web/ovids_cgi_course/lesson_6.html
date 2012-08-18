@@ -40,7 +40,7 @@ function showTrackers(val) {
 	if(val == "inline") {
 		document.getElementById("displayYearEl").style.color = "#ec008c";
 		document.getElementById("displayMonthEl").style.color = "#ec008c";
-		document.getElementById("displayDayEl").style.color = "#ec008c";		
+		document.getElementById("displayDayEl").style.color = "#ec008c";
 	} else {
 		document.getElementById("displayYearEl").innerHTML = displayYear;
 		document.getElementById("displayYearEl").style.color = "#ff0";
@@ -55,8 +55,8 @@ function showTrackers(val) {
 }
 function getElementX2(obj) {
 	var thing = jQuery(obj);
-	if((thing == undefined) 
-			|| (typeof thing == "undefined") 
+	if((thing == undefined)
+			|| (typeof thing == "undefined")
 			|| (typeof thing.offset == "undefined")) {
 		return getElementX(obj);
 	}
@@ -86,8 +86,8 @@ function trackMouseMove(event,element) {
 	if(monthOff % 2 == 1) {
 		day = 15;
 	}
-	var dateString = 
-		zeroPad(year + firstYear) + 
+	var dateString =
+		zeroPad(year + firstYear) +
 		zeroPad(monthOfYear+1,2) +
 		zeroPad(day,2) + "000000";
 
@@ -130,49 +130,49 @@ function trackMouseMove(event,element) {
        </td>
        <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
            <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
-			
+
            <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
            <tr style="width:110px;height:16px;font-size:10px!important;">
            	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_6.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="11 May 2009"><strong>MAY</strong></a>
-		                
+
                </td>
                <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 7:55:17 Aug 24, 2010">AUG</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_6.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="23 Oct 2010"><strong>OCT</strong></a>
-		                
+
                </td>
            </tr>
 
            <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
            <tr>
                <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="lesson_6.html" title="3:13:51 May 11, 2009" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
-		                
+
                </td>
                <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 7:55:17 Aug 24, 2010">24</td>
 				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="lesson_6.html" title="18:36:17 Oct 23, 2010" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
-		                
+
 			    </td>
            </tr>
 
            <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
            <tr style="width:110px;height:13px;font-size:9px!important;">
 				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_6.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="11 May 2009"><strong>2009</strong></a>
-		                
+
                </td>
                <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 7:55:17 Aug 24, 2010">2010</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2011
-                       
+
 				</td>
            </tr>
            </tbody></table>
@@ -188,7 +188,7 @@ function trackMouseMove(event,element) {
        <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
        <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
 			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
-				onmouseover="showTrackers('inline');" 
+				onmouseover="showTrackers('inline');"
 				onmouseout="showTrackers('none');"
 				onmousemove="trackMouseMove(event,this)"
 				alt="sparklines"
@@ -196,16 +196,16 @@ function trackMouseMove(event,element) {
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/wayback.archive.org/web/jsp/graph.jsp"></img>
-			<img id="wbMouseTrackYearImg" 
+			<img id="wbMouseTrackYearImg"
 				style="display:none; position:absolute; z-index:9010;"
-				width="25" 
+				width="25"
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
 			<img id="wbMouseTrackMonthImg"
-				style="display:none; position:absolute; z-index:9011; " 
+				style="display:none; position:absolute; z-index:9011; "
 				width="2"
-				height="27" 
+				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
        </div>
@@ -339,7 +339,7 @@ taint mode.</p></div>
 </tbody></table>
 <input value="Roll!" type="submit"></div>
 
-<p class="notice">Whenever you need a quick refresher on CGI.pm's HTML generating functions, you can refer to 
+<p class="notice">Whenever you need a quick refresher on CGI.pm's HTML generating functions, you can refer to
 <a href="http://perlmonks.org/?node=mod://CGI">the CGI.pm documentation</a>.</p>
 
 <p>The code for the form looks something like this:</p>
@@ -522,7 +522,7 @@ attributes.  However, you're probably used to seeing something like this:</p>
 keys to be the numeric values represented by the constants.  We'll see why in a
 bit, but first, let's look at the dropdown we'll create for the form.  This
 drop down lets the person choose which race of character they wish to
-create.</p> 
+create.</p>
 
 <div class="program"><pre> 1  my $dropdown = make_dropdown(%races);
  2
@@ -622,16 +622,16 @@ them together.</p>
 <div class="program"><pre>  1 #!/usr/local/bin/perl -Tw
   2 use strict;
   3 use CGI::Pretty qw/:standard/;
-  4 
+  4
   5 use constant STR =&gt; 0;
   6 use constant INT =&gt; 1;
   7 use constant WIS =&gt; 2;
   8 use constant CON =&gt; 3;
   9 use constant DEX =&gt; 4;
  10 use constant CHA =&gt; 5;
- 11 
+ 11
  12 my $TITLE = 'Generate Characters';
- 13 
+ 13
  14 my @stats = qw/
  15     Strength
  16     Intelligence
@@ -640,23 +640,23 @@ them together.</p>
  19     Dexterity
  20     Charisma
  21 /;
- 22 
+ 22
  23 my %races = (
  24     human =&gt; {},
  25     elf   =&gt; {
- 26         DEX, +1, 
+ 26         DEX, +1,
  27         INT, -1
  28     },
  29     dwarf =&gt; {
- 30         STR, +1, 
+ 30         STR, +1,
  31         WIS, -1
  32     },
  33 );
- 34 
+ 34
  35 my $dropdown  = make_dropdown(%races);
  36 my $character = generate_character(\@stats, \%races);
- 37 
- 38 print header, 
+ 37
+ 38 print header,
  39     &lt;&lt;END_HTML;
  40 &lt;!DOCTYPE html
  41         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -678,7 +678,7 @@ them together.</p>
  57   &lt;/body&gt;
  58 &lt;/html&gt;
  59 END_HTML
- 60 
+ 60
  61 sub generate_character {
  62     my ($stats, $races) = @_;
  63     my $_race  = param('race');
@@ -692,7 +692,7 @@ them together.</p>
  71         if (exists $this_race-&gt;{$stat_index}) {
  72             $roll += $this_race-&gt;{$stat_index};
  73         }
- 74         $rows .= &lt;&lt;END_ROW; 
+ 74         $rows .= &lt;&lt;END_ROW;
  75       &lt;tr&gt;
  76         &lt;td&gt;$label: &lt;/td&gt;
  77         &lt;td&gt;$roll&lt;/td&gt;
@@ -703,7 +703,7 @@ them together.</p>
  82     my $table = "$description&lt;table&gt;$rows&lt;/table&gt;";
  83     return $table;
  84 }
- 85 
+ 85
  86 sub make_dropdown {
  87     my %races = @_;
  88     my $options = "";
@@ -714,14 +714,14 @@ them together.</p>
  93     my $select = qq|&lt;select name="race"&gt;$options&lt;/select&gt;\n|;
  94     return $select;
  95 }
- 96 
+ 96
  97 sub roll_dice {
  98     my ($rolls, $sides) = @_;
  99     my $total = 0;
 100     $total += roll($sides) for 1 .. $rolls;
 101     return $total;
 102 }
-103 
+103
 104 sub roll {
 105     my $sides = shift;
 106     return int(rand($sides)) + 1;

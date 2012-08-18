@@ -40,7 +40,7 @@ function showTrackers(val) {
 	if(val == "inline") {
 		document.getElementById("displayYearEl").style.color = "#ec008c";
 		document.getElementById("displayMonthEl").style.color = "#ec008c";
-		document.getElementById("displayDayEl").style.color = "#ec008c";		
+		document.getElementById("displayDayEl").style.color = "#ec008c";
 	} else {
 		document.getElementById("displayYearEl").innerHTML = displayYear;
 		document.getElementById("displayYearEl").style.color = "#ff0";
@@ -55,8 +55,8 @@ function showTrackers(val) {
 }
 function getElementX2(obj) {
 	var thing = jQuery(obj);
-	if((thing == undefined) 
-			|| (typeof thing == "undefined") 
+	if((thing == undefined)
+			|| (typeof thing == "undefined")
 			|| (typeof thing.offset == "undefined")) {
 		return getElementX(obj);
 	}
@@ -86,8 +86,8 @@ function trackMouseMove(event,element) {
 	if(monthOff % 2 == 1) {
 		day = 15;
 	}
-	var dateString = 
-		zeroPad(year + firstYear) + 
+	var dateString =
+		zeroPad(year + firstYear) +
 		zeroPad(monthOfYear+1,2) +
 		zeroPad(day,2) + "000000";
 
@@ -130,49 +130,49 @@ function trackMouseMove(event,element) {
        </td>
        <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
            <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
-			
+
            <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
            <tr style="width:110px;height:16px;font-size:10px!important;">
            	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_7.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="11 May 2009"><strong>MAY</strong></a>
-		                
+
                </td>
                <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 7:54:47 Aug 24, 2010">AUG</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_7.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 Oct 2010"><strong>OCT</strong></a>
-		                
+
                </td>
            </tr>
 
            <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
            <tr>
                <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="lesson_7.html" title="3:26:08 May 11, 2009" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
-		                
+
                </td>
                <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 7:54:47 Aug 24, 2010">24</td>
 				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
-               
+
 		                <a href="lesson_7.html" title="22:26:12 Oct 1, 2010" style="background-color:transparent;border:none;"><img src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
-		                
+
 			    </td>
            </tr>
 
            <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
            <tr style="width:110px;height:13px;font-size:9px!important;">
 				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
 		                <a href="lesson_7.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="11 May 2009"><strong>2009</strong></a>
-		                
+
                </td>
                <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 7:54:47 Aug 24, 2010">2010</td>
 				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
-               
+
                        2011
-                       
+
 				</td>
            </tr>
            </tbody></table>
@@ -188,7 +188,7 @@ function trackMouseMove(event,element) {
        <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
        <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
 			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
-				onmouseover="showTrackers('inline');" 
+				onmouseover="showTrackers('inline');"
 				onmouseout="showTrackers('none');"
 				onmousemove="trackMouseMove(event,this)"
 				alt="sparklines"
@@ -196,16 +196,16 @@ function trackMouseMove(event,element) {
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/wayback.archive.org/web/jsp/graph.jsp"></img>
-			<img id="wbMouseTrackYearImg" 
+			<img id="wbMouseTrackYearImg"
 				style="display:none; position:absolute; z-index:9010;"
-				width="25" 
+				width="25"
 				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
 			<img id="wbMouseTrackMonthImg"
-				style="display:none; position:absolute; z-index:9011; " 
+				style="display:none; position:absolute; z-index:9011; "
 				width="2"
-				height="27" 
+				height="27"
 				border="0"
 				src="file:///home/shlomif/OVID_CGI/staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
        </div>
@@ -278,7 +278,7 @@ at these:</p>
   <dd>The expiration date of the cookie.  The cookie will not be sent after this date.</dd>
   <dt><tt>domain</tt></dt>
   <dd>The domain to which the cookie will be sent.  Must start with a dot and
-  contain at least two dots (e.g., <tt>.example.com</tt>) to prevent someone 
+  contain at least two dots (e.g., <tt>.example.com</tt>) to prevent someone
   setting a cookie for the <tt>.com</tt> domain.</dd>
   <dt><tt>path</tt></dt>
   <dd>The path on the domain for which the cookie may be returned.</dd>
@@ -364,10 +364,10 @@ Her parents found the journal, whereupon they forced her to delete it.
 the browser cache and history.  She neglected, however, to clear the cookies.
 The parents were able to determine the web site, since cookies always identify
 the site they're associated with.
-This mere fact would have been innocent enough... but there was 
+This mere fact would have been innocent enough... but there was
 one little problem:  the cookie (in this case) also stored her username!
 This led the parents right to her journal.
-</p><p><strong>The fix:</strong> 
+</p><p><strong>The fix:</strong>
 <em>Don't store identifying information in cookies!</em></p>
 
 <p>Anecdote 3:  This is a doozy.</p>
@@ -455,8 +455,8 @@ use constant DEFAULT =&gt; 'Enter your name';
 
 my $cgi     = CGI-&gt;new;
 my $session = CGI::Session-&gt;new(
-    "driver:File", 
-    $cgi, 
+    "driver:File",
+    $cgi,
     { Directory =&gt; File::Spec-&gt;tmpdir }
 );
 $session-&gt;expire('+1h'); # this is for security!
@@ -498,7 +498,7 @@ print $cgi-&gt;header(-cookie =&gt; $cookie),
       $cgi-&gt;br,
       $cgi-&gt;submit(
         -name  =&gt; 'delete',
-        -value =&gt; 'Delete your name', 
+        -value =&gt; 'Delete your name',
       ),
       $cgi-&gt;end_form,
       $cgi-&gt;p('session name: ',encode_entities($session-&gt;param('name'))),
