@@ -10,7 +10,7 @@ account</title><link rel="stylesheet" type="text/css" href="default.css" /><meta
 name="MSSmartTagsPreventParsing" content="TRUE" /></head><body>
 <div class="header"><div
 class="navlinks"><a
-href="/../">Parent
+href="../">Parent
 Page</a></div><h1 id="s">Using CPAN with a non-root
 account</h1></div><div class="subsection"><a
 href="#s2">Configuration</a>
@@ -28,7 +28,7 @@ class="perl-module">CPAN</tt></a>
  special applications that run as non-privileged accounts: simply adjust the
  installation paths to suit the software depot in question.</p><p
  class="info">Consult <a
- href="/../">Life
+ href="../">Life
  with CPAN</a> for more information about the <a
  href="http://www.cpan.org/">Comprehensive
  Perl Archive Network (CPAN)</a>. Consider also <a
@@ -36,14 +36,14 @@ class="perl-module">CPAN</tt></a>
  title="Documentation on the local::lib Perl module"><tt
  class="perl-module">local::lib</tt></a> to bootsrap custom Perl module
  installation directories.</p><h2 id="s2">Configuration</h2><ol
- class="enum"><li><p>Download the sample <a
- href="/../MyConfig.pm"><tt
- class="file">MyConfig.pm</tt></a>, and move it to <tt
+ class="enum"><li><p>Download the sample
+ <tt
+ class="file">MyConfig.pm</tt>, and move it to <tt
  class="file">~/.cpan/CPAN/MyConfig.pm</tt>.</p><p class="data-shell">$
  <kbd>mkdir -p ~/.cpan/CPAN</kbd><br />$ <kbd>mv MyConfig.pm
-     ~/.cpan/CPAN</kbd></p></li><li><p>Customize the <a
- href="/../MyConfig.pm"><tt
- class="file">MyConfig.pm</tt></a> file.<br />&nbsp;</p><ol class="enum">
+     ~/.cpan/CPAN</kbd></p></li><li><p>Customize the
+ <tt
+ class="file">MyConfig.pm</tt> file.<br />&nbsp;</p><ol class="enum">
  <li>Change all occurences of <tt class="code">HOMEDIRFIX</tt> to
  your home directory, for example <tt
  class="file">/home/username</tt>.<br />&nbsp;</li><li>Review the <tt
@@ -61,9 +61,8 @@ class="perl-module">CPAN</tt></a>
  title="Documentation on the CPAN Perl module"><tt
  class="perl-module">CPAN</tt></a> will attempt to remove “shadowing” versions
  of the module installed for the site <tt class="cmd">perl</tt>, leading to
- error messages involving <tt class="code">forceunlink</tt>.</p></li><li><p>Test <a
- href="/../MyConfig.pm"><tt
- class="file">MyConfig.pm</tt></a> for problems.</p><p class="data-shell">$
+ error messages involving <tt class="code">forceunlink</tt>.</p></li><li><p>Test <tt
+ class="file">MyConfig.pm</tt> for problems.</p><p class="data-shell">$
  <kbd>perl -c MyConfig.pm</kbd><br />MyConfig.pm syntax OK</p></li></ol></li><li>See below
  for the required <tt class="code">PERL5LIB</tt> settings to customize <tt
  class="code">@INC</tt>, if installing modules that depend on previously

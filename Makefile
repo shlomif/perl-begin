@@ -59,6 +59,9 @@ upload_iglu: all
 upload_beta: all
 	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/)
 
+upload_local: all
+	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/)
+
 test:
 	prove Tests/*.t
 

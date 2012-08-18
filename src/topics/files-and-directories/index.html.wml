@@ -6,7 +6,7 @@
 <p>
 Perl has strong support for handling files and directories, which are the
 bread-and-butter of dealing with the disk and the filesystem. Many modules
-on <a href="$(ROOT)/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
+on <a href="$(ROOT)/topics/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
 aim to facilitate the task even further.
 </p>
 
