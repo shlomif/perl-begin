@@ -9,8 +9,17 @@ use HTML::Tidy;
 use File::Find::Object::Rule;
 use IO::All;
 
+local $SIG{__WARN__} = sub {
+    my $w = shift;
+    if ($w !~ /\AUse of uninitialized/)
+    {
+        die $w;
+    }
+    return;
+};
+
 my $tidy = HTML::Tidy->new({ output_xhtml => 1, });
-# $tidy->ignore( type => TIDY_WARNING, typed => TIDY_INFO );
+$tidy->ignore( type => TIDY_WARNING, type => TIDY_INFO );
 
 my $error_count = 0;
 
