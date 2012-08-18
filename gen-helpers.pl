@@ -38,7 +38,7 @@ $generator->process_all();
     open my $out_fh, ">", "p4n.mak";
 
     my @targets;
-    foreach my $part_idx (1 .. 4)
+    foreach my $part_idx (1 .. 5)
     {
          # find all the .pm files in @INC
          my @files =
