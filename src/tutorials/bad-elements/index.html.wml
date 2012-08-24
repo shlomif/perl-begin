@@ -217,6 +217,12 @@ you're sure that is what you want to do (like overriding prototypes). Normally
 saying <tt>myfunc(@args)</tt> is better.
 </p>
 
+<p>
+For more information see
+<a href="https://www.socialtext.net/perl5/subroutines_called_with_the_ampersand">the
+relevant page</a> on the Perl 5 Wiki.
+</p>
+
 </item>
 
 <item id="assigning-from-dollar-underscore" h="Assigning from $_">
