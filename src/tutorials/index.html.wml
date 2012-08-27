@@ -25,6 +25,12 @@ If you prefer a tutorial in something else besides English, check the
 
 <h2 id="our_list">Our List of Tutorials</h2>
 
+<h3 id="perl_tut_org"><a href="http://perl-tutorial.org/">Perl Tutorial Hub</a></h3>
+
+<p>
+An authoritative list of recommended tutorials. An <a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials" id="perl5_wiki">older list</a> can be found on the Perl 5 Wiki.
+</p>
+
 <perl_for_newbies_entry>
 
 <p>
@@ -45,13 +51,6 @@ at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
 </beginning_perl_entry>
-
-<h3 id="perl5_wiki"><a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials">A
-List of Recommended Online Tutorials</a></h3>
-
-<p>
-An authoritative list of recommended tutorials.
-</p>
 
 <h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc
 Tutorials</a></h3>
