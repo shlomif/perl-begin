@@ -2,6 +2,8 @@
 and src/topics/files-and-directories/index.html.wml
     - Add File::Basename
 
+* Add a link to perlweekly.com somewhere.
+
 * Bad elements page:
     - clarify and expand the section about the open function:
         - give more examples for the anti-patterns:
