@@ -166,6 +166,14 @@ my $tree_contents =
             url => "IDEs-and-tools/",
             text => "IDEs and Development Tools",
             title => "Integrated Development Environments (IDEs), Programmer Editors, and other Development Tools for Perl",
+            subs =>
+            [
+                {
+                    url => "IDEs-and-tools/Perl_developer_tools/",
+                    text => "From perl.net.au",
+                    title => "Restored page from perl.net.au",
+                },
+            ],
         },
         {
             url => "core-doc/",
