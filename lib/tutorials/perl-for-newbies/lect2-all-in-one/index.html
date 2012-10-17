@@ -112,7 +112,7 @@
   </a>
   <br />
   To the extent possible under law, <a href="http://www.shlomifish.org/" rel="dct:publisher"><span>Shlomi Fish</span></a>
-  has waived all copyright and related or neighboring rights to
+  has waived all copyright and related or neighbouring rights to
   <span>Perl for Perl Newbies</span>.
 This work is published from
 <span>Israel</span>.
@@ -267,7 +267,7 @@ So far we have learned about three different kinds of for loops, so
 you are probably wondering when to use each one.
 </p>
 <p>
-A subtantial difference between the notation
+A substantial difference between the notation
 <tt>for($i=0 ; $i&lt;$limit ; $i++)</tt> and between
 <tt>for $i (0 .. ($limit-1))</tt> is that the first accommodates
 itself to changes in <tt>$limit</tt>, while the second will iterate for a
@@ -775,8 +775,8 @@ recursion very well, at least not in the current incarnation of the compiler.
 If your recursion can be done using a simple loop, do it with it.
 </p>
 <p>
-Secondly, some systems (such as Microsft Windows) limit an executable to a
-certain amount of stack, as far as such langauges as Assembler or C are
+Secondly, some systems (such as Microsoft Windows) limit an executable to a
+certain amount of stack, as far as such languages as Assembler or C are
 concerned. This should not be of any concern to perl hackers, because the
 perl interpreter does not translate a perl function call into a C function
 call. (not to mention that the perl interpreter on those systems is compiled
@@ -871,7 +871,7 @@ In Perl, file I/O is handled by using sessions: you are opening a file for
 reading or writing (or both), do with it what you want, and then close it.
 In Perl, filehandles implemented as the so-called <tt>globs</tt> are placed on
 a separate namespace than that of the variables. It is generally marked with
-a starting asterik (<tt>*</tt>), which can be omitted if the first letter is a
+a starting asterisk (<tt>*</tt>), which can be omitted if the first letter is a
 capital one.
 </p>
 <p>
@@ -904,7 +904,7 @@ Reading
 </td>
 <td>
 Appending (the file pointer will start at the end and the file will not be
-overriden)
+overridden)
 </td>
 </tr>
 <tr>
@@ -1160,10 +1160,10 @@ Check if it exists in the string at all.
 Retrieve various captures out of it.
 </li>
 <li>
-Retrieve all of its occurences.
+Retrieve all of its occurrences.
 </li>
 <li>
-Substitute the first occurence or all of its occurences with some other string
+Substitute the first occurrence or all of its occurrences with some other string
 or (perl) expression.
 </li>
 </ol>
@@ -1311,7 +1311,7 @@ present in the string:
 </h1>
 <p>
 In order to repeat a character more than one time, several repetition
-paterns can be used. The asterisk (<tt>*</tt>) can be used to indicate that
+patterns can be used. The asterisk (<tt>*</tt>) can be used to indicate that
 the character should repeat zero or more times. The plus sign (<tt>+</tt>)
 can be used to indicate that the character should repeat one or more
 times. As for the question mark (<tt>?</tt>) it indicates an appearance of
@@ -1520,7 +1520,7 @@ Here's another example. Let's check if a string ends with three periods:
 7.7. Substituting using Regular Expressions
 </h1>
 <p>
-One can use regular expression to substitute an occurence
+One can use regular expression to substitute an occurrence
 of a regular expression found inside a string to something else. The operator
 used for this is <tt>s/$exp_to_search/$exp_to_subs_for/</tt>. The following
 simple program replaces a number with the string "Some Number":
@@ -1536,9 +1536,9 @@ simple program replaces a number with the string "Some Number":
 <span class="Statement">print</span> <span class="Identifier">$string</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Notice that in this case, only the first occurence of the string will be
+Notice that in this case, only the first occurrence of the string will be
 substituted. The <tt>g</tt> switch which will be covered soon, enables us to
-substitute <b>all</b> of the occurences.
+substitute <b>all</b> of the occurrences.
 </p>
 <p>
 One can include the captures that are matched in the expression as part of
@@ -1696,15 +1696,15 @@ Note that the strings placed in <tt>$1</tt>, <tt>$2</tt> and friends will still
 retain their original case.
 </p>
 <p>
-A <tt>g</tt> causes the match or substitution to match <b>all</b> occurences,
+A <tt>g</tt> causes the match or substitution to match <b>all</b> occurrences,
 not just one. If used with a match in an array context
-(e.g: <tt>@occurences = ($string =~ /$regexp/g);</tt>) it retrieves all
+(e.g: <tt>@occurrences = ($string =~ /$regexp/g);</tt>) it retrieves all
 the matches and if used with a substitution it substitutes all the
-occurences with the string.
+occurrences with the string.
 </p>
 <p>
-This example replaces all the occurences of the word "hello" by the index of
-their occurence:
+This example replaces all the occurrences of the word "hello" by the index of
+their occurrence:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">use strict</span>;
@@ -2268,7 +2268,7 @@ pointers. There are however, two fundamental differences:
 <li>
 There is no reference arithmetics in perl. If for example, a reference points
 to the fifth element of an array, then adding 1 to it will not refer you to the
-sixth element. In fact, adding or substracting integers from references is
+sixth element. In fact, adding or subtracting integers from references is
 possible but quite meaningless.
 </li>
 <li>
@@ -2311,7 +2311,7 @@ or modify its value.
 <p>
 In this example, which is intended to give a taste of the capabilities of
 references, we will solve the well-known <a href="http://www.cut-the-knot.org/recurrence/hanoi.shtml">Towers of Hanoi</a> problem. (Refer to the link to learn
-more about the problem.) The number of disks can be inputted from the command-line.
+more about the problem.) The number of disks can be input from the command-line.
 The towers themselves will be represented as an array of three elements, each
 of which is a reference to an array.
 </p>
@@ -2361,7 +2361,7 @@ Here goes:
     move_column(<span class="Identifier">$source</span>, <span class="Identifier">$intermediate</span>, <span class="Identifier">$how_many</span>-<span class="Constant">1</span>);
     <span class="Comment"># Print the current state</span>
     print_towers();
-    <span class="Comment"># Move one disk. Notice the dereferncing of the arrays</span>
+    <span class="Comment"># Move one disk. Notice the dereferencing of the arrays</span>
     <span class="Comment"># using @{$ref}.</span>
     <span class="Statement">push</span> <span class="Identifier">@{$towers[$dest]}</span>, <span class="Statement">pop</span>(<span class="Identifier">@{$towers[$source]}</span>);
     move_column(<span class="Identifier">$intermediate</span>, <span class="Identifier">$dest</span>, <span class="Identifier">$how_many</span>-<span class="Constant">1</span>);
@@ -2674,7 +2674,7 @@ for the hash <tt>%array_ref</tt>.
 </h1>
 <p>
 The entire scalar or data structure pointed to by the reference can be
-retrieved by dereferncing. Dereferencing is done by using a <tt>$</tt>,
+retrieved by dereferencing. Dereferencing is done by using a <tt>$</tt>,
 a <tt>@</tt> or a <tt>%</tt> (depending if the reference refers to a scalar
 , array or a hash respectively), and then the reference inside curly braces.
 </p>
@@ -2861,7 +2861,7 @@ offer a solution to this problem.
 </h1>
 <p>
 When the user places a breakpoint on a certain line in a program, they
-insruct the debugger to stop the execution of the program when this line is
+instruct the debugger to stop the execution of the program when this line is
 reached. Then, one can cause the program to run freely using the continue
 command, and have it stop only at this line.
 </p>
@@ -2929,9 +2929,9 @@ way, or run functions, etc.
 </p>
 <p>
 One special command that is also useful is <tt>x</tt>. <tt>x $var</tt>
-displays <tt>$var</tt> in a hierarchial manner, which is very useful for
+displays <tt>$var</tt> in a hierarchical manner, which is very useful for
 lists of lists etc. The <b>Data::Dumper</b> module which is available from
-<a href="http://www.cpan.org/">CPAN</a> offers a similiar functionality, from
+<a href="http://www.cpan.org/">CPAN</a> offers a similar functionality, from
 within your perl programs.
 </p>
 <hr />

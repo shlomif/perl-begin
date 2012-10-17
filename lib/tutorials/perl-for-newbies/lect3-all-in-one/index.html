@@ -81,7 +81,7 @@ Perl for Newbies - Part 3 - Modules and Objects
 </li><li><a href="#page--objects--making--methods--PAGE" class="contents">4.3.2. Defining Methods</a>
 </li><li><a href="#page--objects--making--inheritance--DIR" class="contents">4.3.3. Object Inheritance</a>
 <ul class="contents">
-<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overriden Methods of Base Classes</a>
+<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overridden Methods of Base Classes</a>
 </li></ul>
 </li><li><a href="#page--objects--making--destructor--PAGE" class="contents">4.3.4. The Destructor</a>
 </li></ul>
@@ -99,7 +99,7 @@ Perl for Newbies - Part 3 - Modules and Objects
   </a>
   <br />
   To the extent possible under law, <a href="http://www.shlomifish.org/" rel="dct:publisher"><span>Shlomi Fish</span></a>
-  has waived all copyright and related or neighboring rights to
+  has waived all copyright and related or neighbouring rights to
   <span>Perl for Perl Newbies</span>.
 This work is published from
 <span>Israel</span>.
@@ -180,7 +180,7 @@ function can invoke several helper functions which it will treat the same.
 <p>
 In perl it is possible to define dynamic subroutines, inside the code of
 the current scope. That scope can be a function or even another dynamic
-subroutine. These subroutines, which are sometimes refered to as closures,
+subroutine. These subroutines, which are sometimes referred to as closures,
 can see all the variables of the scope in which they were declared, even
 after the function that created them stopped running.
 </p>
@@ -605,7 +605,78 @@ code here borrows heavily from the book
 <a href="http://www-mitpress.mit.edu/sicp/">"Structure and Interpretation of Computer Programs"</a> in which a similar code can be found written in Scheme.
 </p>
 <div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
 
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">create_bank_account</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$name</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Constant">0</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$deposit</span> = <span class="Statement">sub </span>{
+        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
+
+        <span class="Identifier">$total</span> += <span class="Identifier">$how_much</span>;
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">$print</span> = <span class="Statement">sub </span>{
+        <span class="Statement">my</span> <span class="Identifier">$title</span> = <span class="Statement">shift</span>;
+
+        <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> has </span><span class="Identifier">$total</span><span class="Constant"> NIS.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">$can_extract</span> = <span class="Statement">sub </span>{
+        <span class="Statement">my</span> <span class="Identifier">$how_much</span> = <span class="Statement">shift</span>;
+
+        <span class="Statement">if</span> (<span class="Identifier">$how_much</span> &lt;= <span class="Constant">0</span>)
+        {
+            <span class="Statement">return</span>;
+        }
+
+        <span class="Statement">if</span> (<span class="Identifier">$total</span> &gt;= <span class="Identifier">$how_much</span>)
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> can afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+        <span class="Statement">else</span>
+        {
+            <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$name</span><span class="Constant"> cannot afford to pay it!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+        }
+    };
+
+    <span class="Statement">my</span> <span class="Identifier">%ops</span> =
+        (
+            <span class="Constant">&quot;deposit&quot;</span> =&gt; <span class="Identifier">$deposit</span>,
+            <span class="Constant">&quot;print&quot;</span> =&gt; <span class="Identifier">$print</span>,
+            <span class="Constant">&quot;can_extract&quot;</span> =&gt; <span class="Identifier">$can_extract</span>,
+        );
+
+    <span class="Statement">my</span> <span class="Identifier">$dispatch</span> = <span class="Statement">sub </span>{
+        <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>;
+
+        <span class="Comment"># Call the matching operation with the rest of the arguments.</span>
+        <span class="Identifier">$ops{$op}</span>-&gt;(<span class="Identifier">@_</span>);
+    };
+
+    <span class="Statement">return</span> <span class="Identifier">$dispatch</span>;
+}
+
+<span class="Comment"># Create ten bank accounts</span>
+<span class="Statement">my</span> <span class="Identifier">@accounts</span> = (<span class="Statement">map {</span> create_bank_account(<span class="Constant">&quot;Person #&quot;</span>.<span class="Identifier">$_</span>) <span class="Statement">}</span> (<span class="Constant">0</span> .. <span class="Constant">9</span>));
+
+<span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;&gt;)
+{
+    <span class="Statement">chomp</span>(<span class="Identifier">$line</span>);
+    <span class="Statement">my</span> <span class="Identifier">@components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Special">\s+</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
+    <span class="Statement">my</span> <span class="Identifier">$account_index</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
+    <span class="Statement">my</span> <span class="Identifier">$op</span> = <span class="Statement">shift</span>(<span class="Identifier">@components</span>);
+
+    <span class="Identifier">$accounts[$account_index]</span>-&gt;(<span class="Identifier">$op</span>, <span class="Identifier">@components</span>);
+}
+
+<span class="Comment"># Usage:</span>
+<span class="Comment"># [Account Number] [Operation] [Parameters]</span>
 </pre></div>
 <hr />
 
@@ -1199,7 +1270,7 @@ If this is a bit confusing, then it should be.
 </li><li><a href="#page--objects--making--methods--PAGE" class="contents">4.3.2. Defining Methods</a>
 </li><li><a href="#page--objects--making--inheritance--DIR" class="contents">4.3.3. Object Inheritance</a>
 <ul class="contents">
-<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overriden Methods of Base Classes</a>
+<li><a href="#page--objects--making--inheritance--super--PAGE" class="contents">4.3.3.1. Calling Overridden Methods of Base Classes</a>
 </li></ul>
 </li><li><a href="#page--objects--making--destructor--PAGE" class="contents">4.3.4. The Destructor</a>
 </li></ul>
@@ -1580,14 +1651,14 @@ number:
 <a href="#page--objects--making--destructor--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">Perl for Newbies - Part 3 - Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--inheritance--DIR">Object Inheritance</a> → <a href="#page--objects--making--inheritance--super--PAGE">Calling Overriden Methods of Base Classes</a>
+<a href="#page--DIR">Perl for Newbies - Part 3 - Modules and Objects</a> → <a href="#page--objects--DIR">Objects in Perl</a> → <a href="#page--objects--making--DIR">Making Your Own Objects</a> → <a href="#page--objects--making--inheritance--DIR">Object Inheritance</a> → <a href="#page--objects--making--inheritance--super--PAGE">Calling Overridden Methods of Base Classes</a>
 </div>
 <h1 id="page--objects--making--inheritance--super--PAGE">
-4.3.3.1. Calling Overriden Methods of Base Classes
+4.3.3.1. Calling Overridden Methods of Base Classes
 </h1>
 <p>
 It is possible to explicitly call the method of a base class even if it
-was over-riden by another method in the derived class. To do that use
+was overridden by another method in the derived class. To do that use
 the <tt>SUPER::</tt> prefix before the method name.
 </p>
 <p>
@@ -1704,7 +1775,7 @@ prints the number of times it's name was assigned to the screen before it is des
 4.4. Object Utility Functions - isa() and can()
 </h1>
 <p>
-<tt>isa()</tt> is a special method that is accasible in every object. When
+<tt>isa()</tt> is a special method that can be used on every object. When
 invoked with the name of a package as an argument, it returns whether
 or not this object inherits from this package (directly or indirectly).
 </p>

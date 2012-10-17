@@ -84,7 +84,7 @@
   </a>
   <br />
   To the extent possible under law, <a href="http://www.shlomifish.org/" rel="dct:publisher"><span>Shlomi Fish</span></a>
-  has waived all copyright and related or neighboring rights to
+  has waived all copyright and related or neighbouring rights to
   <span>Perl for Perl Newbies</span>.
 This work is published from
 <span>Israel</span>.
@@ -286,7 +286,7 @@ distribution's help channels for more information.
 </h1>
 <p>
 The <tt>sprintf</tt> built-in function can be used to translate a format
-string with some conversions embedded inside, and some paramters into a
+string with some conversions embedded inside, and some parameters into a
 formatted string. Each conversion is specified by the starting character of the
 percent sign (<tt>%</tt>), and can have a type and several parameters that will
 dictate how it will be formatted in the output string. The output string is
@@ -847,7 +847,7 @@ and if they are single-quotes (<tt>'...'</tt>), it will not.
 <p>
 An unquoted ending string causes the here-doc to interpolate, in case
 you encounter it in the wild. Note however, that in your code, you should
-always qoute it, so people won't have to guess what you meant.
+always quote it, so people won't have to guess what you meant.
 </p>
 <hr />
 
@@ -1315,7 +1315,7 @@ You can use them after a statement to write error handlers.
 6. Exceptions
 </h1>
 <p>
-Exceptions are a mechanism to raise an error in a program which will propogate
+Exceptions are a mechanism to raise an error in a program which will propagate
 to outside blocks, until it is caught by an explicit catching block, or
 it terminates the program. It is a convenient way to manage errors.
 </p>
@@ -1450,7 +1450,7 @@ information run <tt>perldoc Carp</tt>.
 <p>
 The <a href="http://search.cpan.org/dist/Error/">Error.pm</a>
 module, which is available from CPAN, supplies object oriented
-exception handling. Namely, one can catch exceptions of a certian class
+exception handling. Namely, one can catch exceptions of a certain class
 explicitly, and differentiate between several types of exceptions.
 </p>
 <p>
@@ -1606,7 +1606,7 @@ equivalent:
 
 <span class="Statement">use </span>Fcntl;
 
-<span class="Statement">my</span> <span class="Identifier">$filename</span> = shifg;
+<span class="Statement">my</span> <span class="Identifier">$filename</span> = <span class="Statement">shift</span>;
 
 <span class="Statement">open</span> <span class="Identifier">F</span>, <span class="Constant">&quot;+&lt;</span><span class="Identifier">$filename</span><span class="Constant">&quot;</span>
     <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open file&quot;</span>;
@@ -1618,7 +1618,7 @@ equivalent:
 <span class="Statement">read</span>(<span class="Identifier">F</span>,<span class="Identifier">$text</span>,<span class="Constant">64</span>);
 <span class="Comment"># Do the actual rot13'ing with the tr command</span>
 <span class="Identifier">$text</span> =~ <span class="Statement">tr/</span><span class="Constant">A-Za-z</span><span class="Statement">/</span><span class="Constant">N-ZA-Mn-za-m</span><span class="Statement">/</span>;
-<span class="Comment"># Write them at poisition 64</span>
+<span class="Comment"># Write them at position 64</span>
 <span class="Statement">seek</span>(<span class="Identifier">F</span>, <span class="Constant">64</span>, SEEK_SET);
 <span class="Statement">print</span> <span class="Identifier">F</span> <span class="Identifier">$text</span>
 <span class="Statement">close</span>(<span class="Identifier">F</span>);
@@ -1646,10 +1646,10 @@ equivalent:
 Perl provides several file tests that can be used to test a filehandle
 or filename for various conditions. <tt>-e filename</tt> determines if
 <tt>filename</tt> exists. <tt>-r</tt> determines if the file is readable,
-<tt>-w</tt> if it's writable, <tt>-x</tt> if it is executable and so on.
+<tt>-w</tt> if it's writeable, <tt>-x</tt> if it is executable and so on.
 </p>
 <p>
-<tt>-d</tt> determines if the file is adirectory, and <tt>-f</tt> if it's
+<tt>-d</tt> determines if the file is a directory, and <tt>-f</tt> if it's
 a plain file. For a list of other file tests and their use consult
 <tt>perldoc -f -X</tt>.
 </p>
