@@ -40,9 +40,6 @@ and src/topics/files-and-directories/index.html.wml
         - What's the difference between an array reference and an array?
         - Same for hash.
         - "I've tried doing $my_array_ref[3] but it didn't work."
-    - randomising an array:
-        - shuffle.
-        - picking a random element: $my_array[rand @my_array]
 
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.

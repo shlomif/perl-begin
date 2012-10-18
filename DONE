@@ -260,3 +260,7 @@ reading this page if it is indeed too slow." - missing comma.
 
 * Add http://rosettacode.org/wiki/Main_Page .
 
+* #perl FAQ:
+    - randomising an array:
+        - shuffle.
+        - picking a random element: $my_array[rand @my_array]
