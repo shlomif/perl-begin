@@ -60,7 +60,8 @@
 <li class="toclevel-2"><a href="#I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F"><span class="tocnumber">1.49</span> <span class="toctext">I&apos;m trying to use threads to speed up my program. What should I know?</span></a></li>
 <li class="toclevel-2"><a href="#Should_I_be_using_mod_perl.3F"><span class="tocnumber">1.50</span> <span class="toctext">Should I be using mod_perl?</span></a></li>
 <li class="toclevel-2"><a href="#How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F"><span class="tocnumber">1.51</span> <span class="toctext">How can I find which modules a Perl program or module depends on?</span></a></li></ul></li>
-<li class="toclevel-2"><a href="#randomise-array"><span class="tocnumber">1.51</span> <span class="toctext">How can I randomise an array? E.g: pick a random element or shuffle it?</span></a></li></ul></li>
+<li class="toclevel-2"><a href="#randomise-array"><span class="tocnumber">1.52</span> <span class="toctext">How can I randomise an array? E.g: pick a random element or shuffle it?</span></a></li></ul></li>
+<li class="toclevel-2"><a href="#array-vs-array-ref"><span class="tocnumber">1.53</span> <span class="toctext">What is the difference between an array and an array reference? What about a hash vs. a hash reference?</span></a></li></ul></li>
 <li class="toclevel-1"><a href="#Some_Related_IRC_Channels_on_Freenode"><span class="tocnumber">2</span> <span class="toctext">Some Related IRC Channels on Freenode</span></a><ul>
 <li class="toclevel-2"><a href="#.23perlcafe"><span class="tocnumber">2.1</span> <span class="toctext">#perlcafe</span></a></li>
 <li class="toclevel-2"><a href="#.23perl6"><span class="tocnumber">2.2</span> <span class="toctext">#perl6</span></a></li>
@@ -522,18 +523,38 @@ rm cpan-cycle.$$
 </p>
 <p>One can also use the <a href="http://deps.cpantesters.org/" title="http://deps.cpantesters.org/">CPAN dependencies</a> tool to determine the dependencies of a CPAN distribution or module.
 </p>
-<h3 id="randomise-array"> How can I randomise an array? E.g: pick a random element or shuffle it? </h3>
+
+<h3 id="array-vs-array-ref">What is the difference between an array and an array reference? What about a hash vs. a hash reference?</h3>
 
 <p>
-If you want to pick a random element out of an array, you can use:
-<tt>$my_array[rand(@my_array)]</tt> (note that rand forces <tt>@my_array</tt>
-to be in a scalar context which thus becomes its length).
+There are several differences between arrays and array references. Array
+references are scalars and can be stores inside other arrays or hashes to
+create nested or composite data structures. Arrays have a more convenient
+syntax. Arrays and scalars are accessed differently:
 </p>
 
+<ol>
+    <li>
+    <p>
+    One uses <tt>$my_array[$idx]</tt> to access an element of an array,
+    and <tt>$my_array_ref-&gt;[$idx]</tt> to access an element of an array
+    reference (or alternatively the more cluttered
+    <tt>$$my_array_ref[$idx]</tt> or <tt>${$my_array_ref}[$idx]</tt>
+    </p>
+    </li>
+    <li>
+    <p>
+    One uses <tt>@my_array</tt> to access the array as a whole and
+    <tt>@$my_array_ref</tt> to access the array referred to by the array
+    reference as a whole.
+    </p>
+    </li>
+</ol>
+
 <p>
-For shuffling an array (i.e: arranging all its elements in a random order)
-see
-<a href="http://perldoc.perl.org/perlfaq4.html#How-do-I-shuffle-an-array-randomly?">the perlfaq4 question “How do I shuffle an array randomly?”</a>
+For more information, see some
+<a href="http://perl-begin.org/topics/references/">resources
+    about references in Perl</a>.
 </p>
 
 <h2 id="Some_Related_IRC_Channels_on_Freenode"> Some Related IRC Channels on Freenode </h2>

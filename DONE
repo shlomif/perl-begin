@@ -264,3 +264,7 @@ reading this page if it is indeed too slow." - missing comma.
     - randomising an array:
         - shuffle.
         - picking a random element: $my_array[rand @my_array]
+    - references.
+        - What's the difference between an array reference and an array?
+        - Same for hash.
+        - "I've tried doing $my_array_ref[3] but it didn't work."

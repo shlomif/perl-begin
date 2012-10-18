@@ -35,12 +35,6 @@ and src/topics/files-and-directories/index.html.wml
     - http://blog.sei.cmu.edu/post.cfm/the-cert-perl-secure-coding-standard
     - https://www.securecoding.cert.org/confluence/display/perl/CERT+Perl+Secure+Coding+Standard
 
-* #perl FAQ:
-    - references.
-        - What's the difference between an array reference and an array?
-        - Same for hash.
-        - "I've tried doing $my_array_ref[3] but it didn't work."
-
 * Add a page about training providers:
     - http://pti.co.il/ - Perl Training Israel.
     - http://perltraining.com.au/ - Perl Training Australia.
