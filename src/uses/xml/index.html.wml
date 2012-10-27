@@ -38,6 +38,31 @@ to dealing with XML. Please avoid using it. Look at XML-LibXML for an easy
 and fast alternative.
 </p>
 
+<h3 id="parsing-xml-using-regexes">Parsing XML Using Regular Expressions</h3>
+
+<p>
+You should also avoid parsing XML using regular expressions, because it
+is difficult to handle the non-regular grammar of XML using them. Use a
+parser. For more information see:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://www.codinghorror.com/blog/2009/11/parsing-html-the-cthulhu-way.html">“Parsing HTML the Cthulhu Way”</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">Comment on Stack Overflow</a> (funny).
+</p>
+</li>
+
+</ol>
+
+
 <h2 id="xml-grammars">Modules for Dealing with Specific Grammars</h2>
 
 <p>
