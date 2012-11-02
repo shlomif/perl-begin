@@ -268,3 +268,6 @@ reading this page if it is indeed too slow." - missing comma.
         - What's the difference between an array reference and an array?
         - Same for hash.
         - "I've tried doing $my_array_ref[3] but it didn't work."
+
+* Page about Bad Elements:
+    - Premature Optimization.

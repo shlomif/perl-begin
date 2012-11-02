@@ -13,7 +13,6 @@ and src/topics/files-and-directories/index.html.wml
     - Using version control.
     - Writing automated tests.
     - Packaging as a CPAN distribution.
-    - Premature Optimization.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
 
 * Add a page about file/directory-handling :
