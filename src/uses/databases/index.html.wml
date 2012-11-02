@@ -147,6 +147,11 @@ here is a list of distributed databases just for completeness sake.
 interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
 </li>
 
+<li>
+<cpan_self_dist d="MongoDB" /> - an
+interface to <a href="http://www.mongodb.org/">MongoDB</a>.
+</li>
+
 </ul>
 
 
