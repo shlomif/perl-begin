@@ -2249,6 +2249,26 @@ should not be a concern to avoid clarity.
 
 </item>
 
+<item id="premature_optimization" h="Premature Optimisation">
+
+<p>
+On various online Perl forums, we are often getting asked questions like:
+“What is the speediest way to do task X?” or “Which of these pieces of code
+will run faster?”. The answer is that in this day and age of extremely fast
+computers, you should optimise for clarity and modularity first, and worry
+about speed when and if you find it becomes a problem. Remember Professor
+Don Knuth’s words that “Premature Optimisation is the root of all evil.”
+(attributing it to C.A.R. Hoare).
+</p>
+
+<p>
+If you do find that your program runs too slowly, refer to our
+<a href="$(ROOT)/topics/optimising-and-profiling/">page about Optimising and
+Profiling Perl code</a>, but don't opimize prematurely.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
