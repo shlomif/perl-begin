@@ -10,6 +10,9 @@ and src/topics/files-and-directories/index.html.wml
             - not using lexical filehandles
             - using two-args open.
             - not using autodie or "or die".
+    - Using version control.
+    - Writing automated tests.
+    - Packaging as a CPAN distribution.
 
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
