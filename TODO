@@ -13,6 +13,7 @@ and src/topics/files-and-directories/index.html.wml
     - Using version control.
     - Writing automated tests.
     - Packaging as a CPAN distribution.
+    - Premature Optimization.
 
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
