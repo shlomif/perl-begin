@@ -14,6 +14,7 @@ and src/topics/files-and-directories/index.html.wml
     - Writing automated tests.
     - Packaging as a CPAN distribution.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
+    - Generating Invalid markup (HTML, etc.)
 
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
