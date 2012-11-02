@@ -31,7 +31,7 @@ Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>
         my $dom = XML::LibXML->load_html(
             location => "./tutorials/modern-perl/$chapter_xhtml_fn",
         );
-        my $title = $dom->findvalue('//h2');
+        my $title = $dom->findnodes('//h2')->[0]->textContent();
 
         printf qq{<li><b>Chapter %d</b> (<a href="%s">HTML</a> , <a href="pdf/%s.pdf">PDF</a>) - %s.</li>\n},
             ($idx, $chapter_xhtml_fn, $chapter_frag, CGI::escapeHTML($title))
