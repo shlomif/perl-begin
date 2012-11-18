@@ -5,11 +5,6 @@ and src/topics/files-and-directories/index.html.wml
 * Add a link to perlweekly.com somewhere.
 
 * Bad elements page:
-    - clarify and expand the section about the open function:
-        - give more examples for the anti-patterns:
-            - not using lexical filehandles
-            - using two-args open.
-            - not using autodie or "or die".
     - Using version control.
     - Writing automated tests.
     - Packaging as a CPAN distribution.
