@@ -17,6 +17,8 @@ and src/topics/files-and-directories/index.html.wml
     - Generating Invalid markup (HTML, etc.)
     - flushing using $| = 1; instead of STDOUT->autoflush(1).
     - Generally - don't use punctuation variables.
+    - change @list_of_names to @names_of_presidents in the example
+        - Thanks GlitchMr
 
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
