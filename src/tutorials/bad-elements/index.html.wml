@@ -118,17 +118,28 @@ open my $input_fh, "&lt;", $input_filename
 </pre>
 
 <p>
-the ultimately <b>wrong</b>, insecure and/or outdated styles are:
+some <b>wrong</b>, insecure and/or outdated styles are:
 </p>
 
-<pre>
+<bad_code>
 \# Bareword filehandle (type glob), two arguments open (insecure) and no
 \# error handling
 open INPUT, "&lt;$filename";
 
 \# Also opens from $INPUT.
 open INPUT;
-</pre>
+
+\# Bareword filehandle with three args open and no exception thrown.
+open INPUT, "&lt;", $filename;
+
+\# Bareword filehandle with two-args open and exception (rare, but possible):
+open INPUT, "&lt;$filename"
+    or die "Cannot open $filename - $!";
+
+\# Lexical file handle with two-args open (instead of three-args open)
+\# and no exception
+open my $input_fh, "&lt;$filename";
+</bad_code>
 
 </item>
 
