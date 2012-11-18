@@ -2280,6 +2280,66 @@ Profiling Perl code</a>, but don't opimize prematurely.
 
 </item>
 
+<item id="version_control" h="Not Using Version Control">
+
+<p>
+For everything except for short throwaway scripts, or otherwise incredibly
+short programs, there is no good excuse, not to use a version control system
+(a.k.a: "revision control systems", "source control systems", or more in
+general as part of "software configuration management"). This is especially
+true nowadays given the availability of several powerful, easy to use,
+open-source (and as a result free-of-charge), and cross-platform, version
+control systems, that you should have not a lot of problems to deploy, learn
+and use.
+</p>
+
+<p>
+For more information and the motivation behind using version control systems,
+see
+<a href="$(ROOT)/tutorials/perl-for-newbies/part5/#page--version-control--DIR">the
+relevant section out of the fifth part of “Perl for Perl Newbies”</a>
+for more discussion about the motivation behind that, some links and a
+demonstration.
+</p>
+
+<p>
+Some links for further discussion:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://better-scm.shlomifish.org/">The Better SCM Site</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://producingoss.com/en/vc-systems.html">The Free Version Control
+Systems Appendix of <i>Producing Open Source Software</i></a>.
+</p>
+</li>
+
+<li>
+<p>
+The Wikipedia
+<a href="http://en.wikipedia.org/wiki/List_of_revision_control_software">List
+of revision control software</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://perlhacks.com/2012/03/you-must-hate-version-control-systems/">“You
+Must Hate Version Control Systems”</a> - a discussion on Dave Cross’ blog
+about best practices in the software development industry.
+</p>
+</li>
+</ul>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
