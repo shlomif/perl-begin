@@ -271,3 +271,8 @@ reading this page if it is indeed too slow." - missing comma.
 
 * Page about Bad Elements:
     - Premature Optimization.
+    - clarify and expand the section about the open function:
+        - give more examples for the anti-patterns:
+            - not using lexical filehandles
+            - using two-args open.
+            - not using autodie or "or die".
