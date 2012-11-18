@@ -164,7 +164,7 @@ to read. So instead of:
 </p>
 
 <pre>
-my @listofnames;
+my @namesofpresidents;
 </pre>
 
 <p>
@@ -172,7 +172,7 @@ Say:
 </p>
 
 <pre>
-my @list_of_names;
+my @names_of_presidents;
 </pre>
 
 <p>
@@ -180,7 +180,7 @@ Or maybe:
 </p>
 
 <pre>
-my @names_list;
+my @presidents_names;
 </pre>
 
 </item>
