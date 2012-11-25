@@ -277,3 +277,4 @@ reading this page if it is indeed too slow." - missing comma.
             - using two-args open.
             - not using autodie or "or die".
     - Using version control.
+    - Writing automated tests.

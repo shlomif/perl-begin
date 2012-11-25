@@ -2341,6 +2341,23 @@ about best practices in the software development industry.
 
 </item>
 
+<item id="automated_tests" h="Writing Automated Tests">
+
+<p>
+Automated tests help verify that the code is working correctly, that bugs
+are not introduced due to refactoring or the addition of new feature, and also
+provide specifications and interface documentation to the code. As a result,
+automated tests have been considered a good practise for a long time.
+</p>
+
+<p>
+For more information about how to write automated tests, see
+<a href="$(ROOT)/uses/qa/">our page about quality assurance in
+Perl</a>.
+</p>
+
+</item>
+
 </main_list>
 
 #include "bad-elements-sources.wml"
