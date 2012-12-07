@@ -39,5 +39,21 @@ complete online slides for the course by
 introduces writing tests with the Perl test modules.
 </li>
 
+<li id="modern_perl">
+<a href="$(ROOT)/tutorials/modern-perl/"><i>Modern Perl</i></a> -
+the book by chromatic has chapter 9 dedicated to Testing.
+</li>
+
+<li id="perl_for_newbies">
+<a href="$(ROOT)/tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
+the fifth part of this tutorial covers testing among other good practises.
+</li>
+
+<li>
+<a href="http://shop.oreilly.com/product/9780596100926.do"><i>Perl Testing:
+A Developer’s Notebook</i></a> - a comprehensive and informative
+book (but somewhat out-of-date) about testing in Perl.
+</li>
+
 </ul>
 
