@@ -35,7 +35,7 @@ complete online slides for the course by
 </li>
 
 <li id="test_tutorial">
-<a href="http://search.cpan.org/dist/Test-Simple/lib/Test/Tutorial.pod">Test::Tutorial</a> -
+<a href="http://metacpan.org/module/Test::Tutorial">Test::Tutorial</a> -
 introduces writing tests with the Perl test modules.
 </li>
 
