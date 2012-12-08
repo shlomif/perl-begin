@@ -55,6 +55,17 @@ and src/topics/files-and-directories/index.html.wml
     - Peteris Krumins' Perl One-Liners Explained Book
         - TBD: which pages would be the best for it.
 
+* Tutorials:
+    - http://qntm.org/files/perl/perl.html
+        - “Learn Perl in about 2 hours 30 minutes”
+            - Upsides:
+                - Short.
+                - To the point.
+                - Informative.
+            - Downsides
+                - Does not mention/cover CPAN.
+                - Does not Moose/Mouse/Moo/etc..
+
 Long Term:
 ----------
 
