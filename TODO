@@ -13,6 +13,14 @@ and src/topics/files-and-directories/index.html.wml
     - Generally - don't use punctuation variables.
     - change @list_of_names to @names_of_presidents in the example
         - Thanks GlitchMr
+    - Conditional/temporary "use".
+        - use is compile-time and will always be done.
+        - use "require" or (less-prefarably) string-eval instead.
+    - Unrelated packages (e.g: OtherModule) inside MyModule.
+        - Preferably every package should be inside one module (except for
+        private ones).
+    - Non-explicit imports.
+        - hard to track where identifiers come from.
 
 * Add a page about file/directory-handling :
     - Will share a lot of content with the Sys Admin page.
