@@ -2,6 +2,9 @@
 and src/topics/files-and-directories/index.html.wml
     - Add File::Basename
 
+* Add the hyperpolyglot:
+    - http://hyperpolyglot.org/scripting
+
 * Add a link to perlweekly.com somewhere.
 
 * Bad elements page:
