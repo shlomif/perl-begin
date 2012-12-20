@@ -42,8 +42,8 @@ and fast alternative.
 
 <p>
 You should also avoid parsing XML using regular expressions, because it
-is difficult to handle the non-regular grammar of XML using them. Use a
-parser. For more information see:
+is difficult to handle the non-regular grammar of XML using them. Instead,
+use a parser. For more information see:
 </p>
 
 <ol>
