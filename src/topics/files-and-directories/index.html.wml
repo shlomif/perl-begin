@@ -90,3 +90,70 @@ copy($source_filename, $dest_filename);
 </div>
 
 </div>
+
+<h3 id="processing_lines_of_a_file">Processing the Lines of a File</h3>
+
+<div class="tabs">
+
+<ul>
+
+<li><a href="#processing_lines_of_a_file__file_slurp">File::Slurp</a></li>
+
+<li><a href="#processing_lines_of_a_file_core">Core Perl</a></li>
+
+<li><a href="#processing_lines_of_a_file_cmd_line">Command Line</a></li>
+
+</ul>
+
+<div id="processing_lines_of_a_file__file_slurp">
+
+<perl_code>
+use File::Slurp;
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
+}
+</perl_code>
+
+</div>
+
+<div id="processing_lines_of_a_file_core">
+
+<perl_code>
+use autodie;
+use File::Temp ( qw(tempfile) );
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    open my $in, '&lt;', $fn;
+    my ($tempout, $temp_fn) = tempfile();
+
+    while (my $line = &lt;$in&gt;)
+    {
+        chomp($line);
+        \# Perform the operation here.
+        $line =~ s/\bFrom\b/To/g;
+
+        print {$tempout} "$new_line\n";
+    }
+
+    close($in);
+    close($tempout);
+
+    rename($temp_fn, $fn);
+}
+</perl_code>
+</div>
+
+<div id="processing_lines_of_a_file_cmd_line">
+<pre>
+\$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+</pre>
+</div>
+
+</div>
