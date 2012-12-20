@@ -4,5 +4,6 @@ p4n.mak
 rules.mak
 .sass-cache
 src/style.css
+src/vim_syntax_highlighting.css
 temp
 compile/
