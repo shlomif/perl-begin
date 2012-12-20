@@ -42,9 +42,8 @@ core modules, and if relevant ones from the command line.
 <:{
     use Text::VimColor;
 
-    my $s = <<'EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM';
-#!/usr/bin/perl
-
+    my $sh_bang = qq{#!/usr/bin/perl\n\n};
+    my $s = $sh_bang . <<'EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM';
 use strict;
 use warnings;
 %body
