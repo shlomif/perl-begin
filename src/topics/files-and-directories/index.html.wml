@@ -39,12 +39,24 @@ core modules, and if relevant ones from the command line.
 
 <define-tag perl_code endtag="required">
 <pre class="perl">
-\#!/usr/bin/perl
+<:{
+    use Text::VimColor;
+
+    my $s = <<'EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM';
+#!/usr/bin/perl
 
 use strict;
 use warnings;
 %body
+EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
+
+    my $tvc = Text::VimColor->new(
+        string => \$s,
+        filetype => 'perl',
+    );
+    print $tvc->html() =~ s{(class=")syn}{$1}gr;
 </pre>
+}:>
 </define-tag>
 
 <script type="text/javascript">
@@ -152,7 +164,7 @@ foreach my $fn (@filenames)
 
 <div id="processing_lines_of_a_file_cmd_line">
 <pre>
-\$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
 </pre>
 </div>
 

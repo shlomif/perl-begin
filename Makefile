@@ -31,7 +31,7 @@ include p4n.mak
 
 run_compass: src/style.css
 
-src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass
+src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass
 	compass compile
 
 dest/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
