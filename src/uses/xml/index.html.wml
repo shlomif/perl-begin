@@ -78,6 +78,18 @@ To learn about XPath, consult the following resources:
 
 </ul>
 
+<div class="sub_section">
+
+<h4 id="custom_xpath_functions">Custom XPath Functions</h4>
+
+<p>
+XML::LibXML allows the programmer to register custom XPath functions, coded
+in Perl, in order to help working with XPath. For more information, see
+<cpan_self_mod m="XML::LibXML::XPathContext" /> .
+</p>
+
+</div>
+
 </div>
 
 <div class="sub_section">
