@@ -52,6 +52,32 @@ such as jQuery. So you can, for example, write
 inside a <tt>ul</tt> element with a CSS class of <tt>myclass</tt>.
 </p>
 
+<p>
+To learn about XPath, consult the following resources:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XPathTutorial/Output/">Zvon XPath Tutorial</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://zvon.org/comp/r/ref-XPath_1.html">Zvon XPath Reference</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://ponderer.org/download/xpath/">Interactive XPath tester</a>
+</p>
+</li>
+
+</ul>
+
 <h3 id="xslt">XSLT</h3>
 
 <p>
@@ -82,6 +108,16 @@ extensive use of <a href="#path">XPath</a>, so you should learn it first.
 Zvon XSLT Reference</a> - provides a useful reference.
 </p>
 </li>
+
+<li>
+<p>
+<a href="http://www.xsltcake.com/">Interactive XSLT tester</a> - it seems
+that the best results are achieved with the Mozilla Firefox browser, because
+Google Chromium/Google Chrome and Opera do not handle XML namespaces with XSLT
+well.
+</p>
+</li>
+
 </ul>
 
 </div>
