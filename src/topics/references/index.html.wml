@@ -62,3 +62,9 @@ The second presentation in the series discusses references.
 
 </perl_for_newbies_entry>
 
+<h3 id="merlyn_show_me_your_refs"><a href="http://www.stonehenge.com/merlyn/UnixReview/col68.html">Randal Schwartz's “Show Me Your References”</a></h3>
+
+<p>
+A brief article by Randal Schwratz that covers references in Perl and the
+syntaxes for using them.
+</p>
