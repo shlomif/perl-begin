@@ -30,6 +30,8 @@ One note is that you should be aware of XML namespaces and how they interact
 with the DOM and the XML-LibXML API before using this library.
 </p>
 
+<div class="sub_section">
+
 <h3 id="xpath">XPath</h3>
 
 <p>
@@ -81,6 +83,8 @@ Zvon XSLT Reference</a> - provides a useful reference.
 </p>
 </li>
 </ul>
+
+</div>
 
 <h2 id="web-pages">Web Pages about Perl and XML</h2>
 
