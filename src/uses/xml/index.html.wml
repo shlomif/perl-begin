@@ -89,6 +89,11 @@ using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
 </p>
 
 <p>
+(Please avoid using <cpan_self_dist d="XML-XSLT" /> which is old, and largely
+unmaintained, and use XML-LibXSLT instead.)
+</p>
+
+<p>
 For more about XSLT, see the following links, but note that XSLT makes
 extensive use of <a href="#path">XPath</a>, so you should learn it first.
 </p>
