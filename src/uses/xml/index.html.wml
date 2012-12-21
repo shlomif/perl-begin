@@ -36,7 +36,8 @@ with the DOM and the XML-LibXML API before using this library.
 <a href="https://en.wikipedia.org/wiki/XPath">XPath</a> is an
 XML-related technology (but not notated in XML) that allows one
 to locate nodes in XML files using a compact syntax. One can use it using
-<tt>XML::LibXML</tt>, and should avoid using the old, slow, and largely
+<a href="#XML-LibXML">XML::LibXML</a>, and should avoid using the old, slow,
+and largely
 unmaintained <tt>XML::XPath</tt> CPAN distribution.
 </p>
 
@@ -48,6 +49,38 @@ such as jQuery. So you can, for example, write
 <code>selector_to_xpath('ul.myclass a')</code> to find all <tt>a</tt> elements
 inside a <tt>ul</tt> element with a CSS class of <tt>myclass</tt>.
 </p>
+
+<h3 id="xslt">XSLT</h3>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/XSLT">XSLT</a> stands for
+Extensible Stylesheet Langauge Transformations and is a language for
+transforming XML documents into other XML documents or other formats such
+as HTML or plain text. Perl has good support for version 1.0 of XSLT by
+using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
+</p>
+
+<p>
+For more about XSLT, see the following links, but note that XSLT makes
+extensive use of <a href="#path">XPath</a>, so you should learn it first.
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XSLTutorial/Output/">The Zvon XSLT Tutorial</a>
+- with many examples.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XSLTreference/Output/">The
+Zvon XSLT Reference</a> - provides a useful reference.
+</p>
+</li>
+</ul>
 
 <h2 id="web-pages">Web Pages about Perl and XML</h2>
 
