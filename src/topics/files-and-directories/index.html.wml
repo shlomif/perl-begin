@@ -54,8 +54,8 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
         filetype => 'perl',
     );
     print $tvc->html() =~ s{(class=")syn}{$1}gr;
-</pre>
 }:>
+</pre>
 </define-tag>
 
 <script type="text/javascript">
@@ -82,7 +82,7 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
 use IO::All;
 
 my ($source_filename, $dest_filename) = @_;
-io-&gt;file($source_filename) &gt; io-&gt;file($dest_filename);
+io->file($source_filename) > io->file($dest_filename);
 </perl_code>
 
 </div>
