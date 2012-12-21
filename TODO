@@ -94,7 +94,10 @@ perl-for-newbies lecture.
 
 * XML Page:
     - mention XPath and XSLT / XML::LibXSLT .
-    - Recommend against XML::XPath and XML::XSLT .
+        - Done.
+    - Recommend against XML::XPath
+        - Done.
+    - Recommend against XML::XSLT .
     - mention http://metacpan.org/release/HTML-Selector-XPath
     - mention XML::Twig, XML::Easy .
     - Refer to the Zvon tutorials:
@@ -103,7 +106,9 @@ perl-for-newbies lecture.
          - http://www.zvon.org/comp/r/ref-XPath_1.html (Requires enabling
          JS).
          - http://zvon.org/xxl/XSLTutorial/Output/
+            - Done.
          - http://zvon.org/xxl/XSLTreference/Output/
+            - Done.
     - http://ponderer.org/download/xpath/ - Interactive XPath tester.
     - http://www.xsltcake.com/ - Interactive XSLT tester.
         - Best results are achieved with Firefox, because Google Chromium
