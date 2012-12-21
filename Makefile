@@ -29,9 +29,12 @@ include include.mak
 include rules.mak
 include p4n.mak
 
-run_compass: src/style.css
+run_compass: src/style.css src/jqui-override.css
 
-src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass lib/sass/jqui-override.sass
+src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass
+	compass compile
+
+src/jqui-override.css: lib/sass/jqui-override.sass
 	compass compile
 
 dest/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
