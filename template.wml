@@ -334,7 +334,7 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <define-tag cpan_mod whitespace="delete" endtag="required">
 <preserve m />
 <set-var %attributes />
-<a href="http://search.cpan.org/perldoc?<get-var m />">%body</a>
+<a href="http://metacpan.org/module/<get-var m />">%body</a>
 <restore m />
 </define-tag>
 
@@ -348,7 +348,7 @@ http://developer.berlios.de/forum/forum.php?forum_id=2341
 <define-tag cpan_dist whitespace="delete" endtag="required">
 <preserve d />
 <set-var %attributes />
-<a href="http://search.cpan.org/dist/<get-var d />/">%body</a>
+<a href="http://metacpan.org/release/<get-var d />">%body</a>
 <restore d />
 </define-tag>
 
