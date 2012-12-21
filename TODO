@@ -91,3 +91,21 @@ perl-for-newbies lecture.
 (especially the src/tutorials/bad-elements/ ).
 
 * Add some screenshots to the /uses/games page.
+
+* XML Page:
+    - mention XPath and XSLT / XML::LibXSLT .
+    - Recommend against XML::XPath and XML::XSLT .
+    - mention http://metacpan.org/release/HTML-Selector-XPath
+    - mention XML::Twig, XML::Easy .
+    - Refer to the Zvon tutorials:
+         - http://www.zvon.org/comp/r/tut-XPath_1.html#intro (Requires enabling
+         JS).
+         - http://www.zvon.org/comp/r/ref-XPath_1.html (Requires enabling
+         JS).
+         - http://zvon.org/xxl/XSLTutorial/Output/
+         - http://zvon.org/xxl/XSLTreference/Output/
+    - http://ponderer.org/download/xpath/ - Interactive XPath tester.
+    - http://www.xsltcake.com/ - Interactive XSLT tester.
+        - Best results are achieved with Firefox, because Google Chromium
+        and Opera do not handle XML namespaces well.
+
