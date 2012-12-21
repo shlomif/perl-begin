@@ -262,4 +262,19 @@ ul, ol
 .study_group
     :margin-top 2em
 
+=indent
+    :margin-left 3em
+
+.indent
+    +indent
+
+.sub_section
+    padding-left: 1.5em
+    border-left: black solid 3pt
+    padding-top: 0.3em
+    padding-bottom: 0.3em
+    // border-radius: 5pt
+    &:hover
+        border-left-color: #555555
+
 @import "vim_syntax_highlighting"
