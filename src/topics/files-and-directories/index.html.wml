@@ -1,4 +1,5 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 #include "files_dirs_modules.wml"
 
 <page_extra_head_elements>
@@ -15,6 +16,10 @@ bread-and-butter of dealing with the disk and the filesystem. Many modules
 on <a href="$(ROOT)/topics/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
 aim to facilitate the task even further.
 </p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
 
 <h2 id="basics">The Basics</h2>
 
