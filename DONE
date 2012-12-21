@@ -278,3 +278,23 @@ reading this page if it is indeed too slow." - missing comma.
             - not using autodie or "or die".
     - Using version control.
     - Writing automated tests.
+
+* XML Page: ( src/uses/xml/index.html.wml )
+    - mention XPath and XSLT / XML::LibXSLT .
+    - Recommend against XML::XPath
+    - Recommend against XML::XSLT .
+    - mention http://metacpan.org/release/HTML-Selector-XPath
+    - Refer to the Zvon tutorials:
+         - http://www.zvon.org/comp/r/tut-XPath_1.html#intro (Requires enabling
+         JS).
+         - http://www.zvon.org/comp/r/ref-XPath_1.html (Requires enabling
+         JS).
+         - http://zvon.org/xxl/XSLTutorial/Output/
+            - Done.
+         - http://zvon.org/xxl/XSLTreference/Output/
+            - Done.
+    - http://ponderer.org/download/xpath/ - Interactive XPath tester.
+    - http://www.xsltcake.com/ - Interactive XSLT tester.
+        - Best results are achieved with Firefox, because Google Chromium
+        and Opera do not handle XML namespaces well.
+
