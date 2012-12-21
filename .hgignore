@@ -3,6 +3,7 @@ include.mak
 p4n.mak
 rules.mak
 .sass-cache
+src/jqui-override.css
 src/style.css
 src/vim_syntax_highlighting.css
 temp
