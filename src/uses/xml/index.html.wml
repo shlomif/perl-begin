@@ -1,6 +1,16 @@
 #include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
 
 <latemp_subject "Perl for XML Processing" />
+
+<p>
+This page will cover how to properly process XML using Perl and
+various recommended modules from CPAN (= Comprehensive Perl Archive Network).
+</p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
 
 <h2 id="technologies">Technologies of Interest</h2>
 
@@ -18,6 +28,25 @@ support. XML-LibXML has good documentation and is actively maintained.
 <p>
 One note is that you should be aware of XML namespaces and how they interact
 with the DOM and the XML-LibXML API before using this library.
+</p>
+
+<h3 id="xpath">XPath</h3>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/XPath">XPath</a> is an
+XML-related technology (but not notated in XML) that allows one
+to locate nodes in XML files using a compact syntax. One can use it using
+<tt>XML::LibXML</tt>, and should avoid using the old, slow, and largely
+unmaintained <tt>XML::XPath</tt> CPAN distribution.
+</p>
+
+<p>
+Another useful module is <cpan_self_dist d="HTML-Selector-XPath" />
+which allows one to convert <strong>CSS-style selectors</strong> to XPath and
+provide functionality similar to that offered by such JavaScript libraries
+such as jQuery. So you can, for example, write
+<code>selector_to_xpath('ul.myclass a')</code> to find all <tt>a</tt> elements
+inside a <tt>ul</tt> element with a CSS class of <tt>myclass</tt>.
 </p>
 
 <h2 id="web-pages">Web Pages about Perl and XML</h2>
