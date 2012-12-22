@@ -1,8 +1,7 @@
 # About this repository
 
-These are the sources of [http://perl-begin.org/](The Perl Beginners’ Site) ,
-which requires [http://bitbucket.org/shlomif/website-meta-language](Website
-Meta Language), [http://bitbucket.org/shlomif/latemp](Latemp) and other
+These are the sources of [The Perl Beginners’ Site](http://perl-begin.org/) ,
+which requires [Website Meta Language](http://bitbucket.org/shlomif/website-meta-language), [Latemp](http://bitbucket.org/shlomif/latemp) and other
 dependencies to be built (so they may not be for the uninitiated).
 
 ## Finding the Dependencies
@@ -18,4 +17,4 @@ ones are removed or renamed.
 
 Enjoy!
 
-— [http://www.shlomifish.org/](Shlomi Fish) (E-mail: shlomif@cpan.org ).
+— [Shlomi Fish](http://www.shlomifish.org/) (E-mail: shlomif@cpan.org ).
