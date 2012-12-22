@@ -82,10 +82,32 @@ Presentation slides by Dave Cross.
 <h2 id="advanced">Tutorials for Advanced Users</h2>
 
 <p>
-We don't know of any tutorials for advanced users in English, but
-<a href="$(ROOT)/books/#with_prev_knowledge">there are some books just
+These are tutorials for advanced users in English, and there are also
+<a href="$(ROOT)/books/#with_prev_knowledge">some books just
 for that</a>, some of which are freely available online.
 </p>
+
+<div class="sub_section">
+
+<h3 id="hyperpolyglot"><a href="http://hyperpolyglot.org/scripting">Hyperpolyglot for PHP, Perl, Python and Ruby</a></h3>
+
+<p>
+A “side-by-side reference sheet” (or lingo) for Perl, as well as PHP, Python
+and Ruby, with many commonly used idioms. Useful for looking up idioms from
+a language you are better familiar with in Perl. (Creative Commons
+Attribution-ShareAlike 3.0 License).
+</p>
+
+<h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
+
+<p>
+A tutorial which is short, to the point, and information, but on the other
+hand does not mention, cover <a href="$(ROOT)/topics/cpan/">CPAN</a>,
+or Moose/Mouse/Moo and other modern ways for doing Perl object-oriented
+programming.
+</p>
+
+</div>
 
 <h2 id="other_lists">Other Lists</h2>
 
