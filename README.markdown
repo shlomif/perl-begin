@@ -1,7 +1,8 @@
 # About this repository
 
 These are the sources of [The Perl Beginners’ Site](http://perl-begin.org/) ,
-which requires [Website Meta Language](http://bitbucket.org/shlomif/website-meta-language), [Latemp](http://bitbucket.org/shlomif/latemp) and other
+which require [Website Meta Language](http://bitbucket.org/shlomif/website-meta-language),
+[Latemp](http://bitbucket.org/shlomif/latemp) and other
 dependencies to be built (so they may not be for the uninitiated).
 
 ## Finding the Dependencies
