@@ -1,6 +1,7 @@
 #include '../template.wml'
 #include "xhtml/1.x/std/toc.wml"
 #include "tut_blocks.wml"
+#include "hyperpolyglot.wml"
 
 <latemp_subject "Online Perl Tutorials" />
 <latemp_more_keywords "tutorial, perl tutorial, tutorials, perl tutorials, start, begin, newbies, online, beginners, learn" />
@@ -89,14 +90,7 @@ for that</a>, some of which are freely available online.
 
 <div class="sub_section">
 
-<h3 id="hyperpolyglot"><a href="http://hyperpolyglot.org/scripting">Hyperpolyglot for PHP, Perl, Python and Ruby</a></h3>
-
-<p>
-A “side-by-side reference sheet” (or lingo) for Perl, as well as PHP, Python
-and Ruby, with many commonly used idioms. Useful for looking up idioms from
-a language you are better familiar with in Perl. (Creative Commons
-Attribution-ShareAlike 3.0 License).
-</p>
+<hyperpolyglot_php_perl_python_ruby />
 
 <h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
 

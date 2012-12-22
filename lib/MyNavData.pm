@@ -227,6 +227,15 @@ my $tree_contents =
             title => "Chat online about Perl using the Internet Relay Chat (IRC)",
         },
         {
+            separator => 1,
+            skip => 1,
+        },
+        {
+            text => "Reference Resources",
+            url => "reference-resources/",
+            title => "Resources for reference about Perl and looking up information.",
+        },
+        {
             text => "Wikis",
             url => "wikis/",
             title => "Publicly editable sites with Lots of Useful Information",
