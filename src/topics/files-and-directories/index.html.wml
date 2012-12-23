@@ -1,0 +1,176 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+#include "files_dirs_modules.wml"
+
+<page_extra_head_elements>
+<script type="text/javascript" src="$(ROOT)/js/jquery-ui-1.9.2.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="$(ROOT)/css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="$(ROOT)/jqui-override.css" media="screen, projection" />
+</page_extra_head_elements>
+
+<latemp_subject "Files and Directories Handling in Perl" />
+
+<p>
+Perl has strong support for handling files and directories, which are the
+bread-and-butter of dealing with the disk and the filesystem. Many modules
+on <a href="$(ROOT)/topics/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
+aim to facilitate the task even further.
+</p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="basics">The Basics</h2>
+
+<p>
+For the basics, read about the open function (on
+<pdoc d="perlopentut"></pdoc> or
+on <a href="$(ROOT)/resources/">recommended books or tutorials</a>) as well as
+other built-ins such as
+<pdoc_f f="opendir">opendir</pdoc_f>, <pdoc_f f="readdir">readdir</pdoc_f>,
+<pdoc_f f="closedir">closedir</pdoc_f>, <pdoc_f f="mkdir">mkdir</pdoc_f>. There
+are also many UNIX-oriented file-system-builtins listed on <pdoc d="perlfunc"></pdoc> which may prove of utility.
+</p>
+
+<files_and_directories_modules />
+
+<h2 id="examples">Examples</h2>
+
+<p>
+These are a set of examples for manipulating files and directories using Perl.
+Each will be shown in several versions including ones using IO-All, ones using
+core modules, and if relevant ones from the command line.
+</p>
+
+<define-tag perl_code endtag="required">
+<pre class="perl">
+<:{
+    use Text::VimColor;
+
+    my $sh_bang = qq{#!/usr/bin/perl\n\n};
+    my $s = $sh_bang . <<'EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM';
+use strict;
+use warnings;
+%body
+EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
+
+    my $tvc = Text::VimColor->new(
+        string => \$s,
+        filetype => 'perl',
+    );
+    print $tvc->html() =~ s{(class=")syn}{$1}gr;
+}:>
+</pre>
+</define-tag>
+
+<script type="text/javascript">
+    $(function() {
+        $(".tabs").tabs();
+    });
+</script>
+
+<h3 id="copying_a_file">Copying a file</h3>
+
+<div class="tabs">
+
+<ul>
+
+<li><a href="#copying_a_file_io_all">IO-All</a></li>
+
+<li><a href="#copying_a_file_core">Core Perl</a></li>
+
+</ul>
+
+<div id="copying_a_file_io_all">
+
+<perl_code>
+use IO::All;
+
+my ($source_filename, $dest_filename) = @_;
+io->file($source_filename) > io->file($dest_filename);
+</perl_code>
+
+</div>
+
+<div id="copying_a_file_core">
+
+<perl_code>
+
+use File::Copy qw(copy);
+
+my ($source_filename, $dest_filename) = @_;
+
+copy($source_filename, $dest_filename);
+</perl_code>
+
+</div>
+
+</div>
+
+<h3 id="processing_lines_of_a_file">Processing the Lines of a File</h3>
+
+<div class="tabs">
+
+<ul>
+
+<li><a href="#processing_lines_of_a_file__file_slurp">File::Slurp</a></li>
+
+<li><a href="#processing_lines_of_a_file_core">Core Perl</a></li>
+
+<li><a href="#processing_lines_of_a_file_cmd_line">Command Line</a></li>
+
+</ul>
+
+<div id="processing_lines_of_a_file__file_slurp">
+
+<perl_code>
+use File::Slurp;
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
+}
+</perl_code>
+
+</div>
+
+<div id="processing_lines_of_a_file_core">
+
+<perl_code>
+use autodie;
+use File::Temp ( qw(tempfile) );
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    open my $in, '&lt;', $fn;
+    my ($tempout, $temp_fn) = tempfile();
+
+    while (my $line = &lt;$in&gt;)
+    {
+        chomp($line);
+        \# Perform the operation here.
+        $line =~ s/\bFrom\b/To/g;
+
+        print {$tempout} "$new_line\n";
+    }
+
+    close($in);
+    close($tempout);
+
+    rename($temp_fn, $fn);
+}
+</perl_code>
+</div>
+
+<div id="processing_lines_of_a_file_cmd_line">
+<pre>
+$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+</pre>
+</div>
+
+</div>

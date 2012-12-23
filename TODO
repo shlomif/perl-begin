@@ -1,0 +1,93 @@
+* Extract the common modules section out of src/uses/sys-admin/index.html.wml
+and src/topics/files-and-directories/index.html.wml
+    - Add File::Basename
+
+* Add a link to perlweekly.com somewhere.
+
+* Bad elements page:
+    - Using \1 instead of $1 (on the Right Hand Side).
+    - Packaging as a CPAN distribution.
+    - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
+    - Generating Invalid markup (HTML, etc.)
+    - flushing using $| = 1; instead of STDOUT->autoflush(1).
+    - Generally - don't use punctuation variables.
+    - change @list_of_names to @names_of_presidents in the example
+        - Thanks GlitchMr
+    - Conditional/temporary "use".
+        - use is compile-time and will always be done.
+        - use "require" or (less-prefarably) string-eval instead.
+    - Unrelated packages (e.g: OtherModule) inside MyModule.
+        - Preferably every package should be inside one module (except for
+        private ones).
+    - Non-explicit imports.
+        - hard to track where identifiers come from.
+    - Using my $i = 0 ; $array[$i++] = $value_to_append instead of
+    perldoc -f push.
+
+* Add a page about file/directory-handling :
+    - Will share a lot of content with the Sys Admin page.
+    - Refer to perldoc -f open and perldoc perlopentut.
+    - Other CPAN modules.
+        - File::Spec
+        - File::Basename
+        - File::Find
+            - File::Find::Object
+        - IO::All
+        - File::Slurp
+    - TODO: inotify/etc.
+    - TODO: Add cookbook:
+        - reading files.
+        - copying files.
+        - appending to files.
+        - appending selected portion from a file to another file.
+        - deleting a directory tree.
+        - writing to a file.
+        - show all with IO::All and without it.
+
+* Link to:
+    - http://blog.sei.cmu.edu/post.cfm/the-cert-perl-secure-coding-standard
+    - https://www.securecoding.cert.org/confluence/display/perl/CERT+Perl+Secure+Coding+Standard
+
+* Add a page about training providers:
+    - http://pti.co.il/ - Perl Training Israel.
+    - http://perltraining.com.au/ - Perl Training Australia.
+    - http://perltraining.org/
+
+* Perhaps a page about working with network protocols in general.
+
+* Add more information about:
+    - URI parsing.
+    - Filenames and paths parsing.
+
+* Books:
+    - http://oreilly.com/catalog/0636920018476/ - Perl Pocket Reference.
+        - All covering perl-5.14.x.
+    - Peteris Krumins' Perl One-Liners Explained Book
+        - TBD: which pages would be the best for it.
+
+* Tutorials:
+    - http://qntm.org/files/perl/perl.html
+        - “Learn Perl in about 2 hours 30 minutes”
+            - Upsides:
+                - Short.
+                - To the point.
+                - Informative.
+            - Downsides
+                - Does not mention/cover CPAN.
+                - Does not Moose/Mouse/Moo/etc..
+
+Long Term:
+----------
+
+* Maybe a page on «What's next "after" perl?».
+
+* Pick up a better gvim colour scheme for the example code in the
+perl-for-newbies lecture.
+
+* Syntax-highlight the examples in the other code excerpts in the site
+(especially the src/tutorials/bad-elements/ ).
+
+* Add some screenshots to the /uses/games page.
+
+* XML Page:
+    - mention XML::Twig, XML::Easy .

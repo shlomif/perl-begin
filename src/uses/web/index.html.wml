@@ -1,0 +1,122 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for CGI and Web Programming" />
+
+<p>
+Perl 5 was <b>one of the first available technologies</b> for automating a
+web-server, and is still considered <b>one of the most powerful</b> and most
+cost-effective ones, <b>today</b>. Once you learn the core language, and some
+HTML and HTTP concepts, programming a simple CGI callback or form handler is
+very easy and straightforward.
+</p>
+
+<define-tag cgi_course_url whitespace="delete">
+http://ovid-cgi-course.perl-begin.org/cgi-course/
+</define-tag>
+
+<p>
+Users are <b>recommended to start</b> by first reading
+<a href="http://htmldog.com/">the HTML Dog tutorials</a> for learning XHTML
+and CSS (without coverage of Perl) and then
+<a href="<cgi_course_url />"><b>Ovid's
+CGI Course</b></a>. The other links here may also prove useful.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<h3 id="htmldog"><a href="http://htmldog.com/">HTML Dog HTML &amp; CSS Tutorials</a></h3>
+
+<p>
+Recommended best practice tutorials for getting up-to-speed with XHTML and
+CSS, teaching valid code and good practices.
+</p>
+
+<h3 id="ovid-cgi-course"><a href="<cgi_course_url />">Ovid's CGI
+Course</a></h3>
+
+<p>
+A free CGI Course by Curtis Poe (Ovid) for people who already know a little Perl and
+a little HTML.
+</p>
+
+<h3 id="our-cgi-get-started"><a href="<wiki_link url="CGI_Getting_Started" />">Our own CGI Getting Started</a></h3>
+
+<p>
+In the Wiki.
+</p>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<h3 id="plack"><a href="http://plackperl.org/">Plack/PSGI</a></h3>
+
+<blockquote>
+<p>
+PSGI is an interface between Perl web applications and web servers, and Plack
+is a Perl module and toolkit that contains PSGI middleware, helpers and
+adapters to web servers.
+</p>
+</blockquote>
+
+<p>
+Using Plack and PSGI is more recommended than using the old CGI.pm interface.
+</p>
+
+<h2 id="frameworks">Web Frameworks</h2>
+
+<h3 id="catalyst"><a href="http://www.catalystframework.org/">Catalyst</a></h3>
+
+<p>
+A flexible web framework for Perl, with many useful modules for it on
+CPAN, that provide interfaces to many other modules. After learning it,
+one can build web applications with ease.
+</p>
+
+<h3 id="dancer"><a href="http://perldancer.org/">Dancer</a></h3>
+
+<p>
+A micro web development framework for Perl that is succinct and flexible
+and allows writing small or quick-and-dirty web applications with ease.
+It started as a Perl port of the Ruby micro-framework
+<a href="http://www.sinatrarb.com/">Sinatra</a>.
+</p>
+
+<h3 id="mojo"><a href="http://www.mojolicious.org/">Mojolicious and Mojolicious::Lite</a></h3>
+
+<p>
+Self-contained web-development frameworks for Perl 5.
+“Mojolicious” is similar in scope to Catalyst, while “Mojolicious::Lite” is
+a micro-web-development framework, similar to <a href="#dancer">Dancer</a>.
+</p>
+
+<p>
+Being self-contained ("The Web in a box"), Mojolicious re-invents many
+<a href="$(ROOT)/topics/cpan/">CPAN</a> wheels (possibly better, but still
+different), which may be a good or a bad thing.
+</p>
+
+<h3 id="cgi-app"><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
+
+<p>
+CGI::Application is an older attempt at a web development framework for
+Perl, but is likely no longer recommended and is showing its age. If you're
+interested in developing web applications quickly you should look at
+<a href="#dancer">Dancer</a> instead.
+</p>
+
+<h2 id="preproc">Frameworks as Preprocessors</h2>
+
+<h3 id="mason"><a href="http://www.masonhq.com/">HTML::Mason</a></h3>
+
+<p>
+A portable solution for a dynamic maintenance of a Perl site. Very powerful
+and feature-rich. Also cross-platform.
+</p>
+
+<h3 id="apache-asp"><a href="http://www.apache-asp.org/">Apache::ASP</a></h3>
+
+<p>
+An implementation of the Active Server Pages for Perl on UNIXes. Compatible
+with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
+solution.
+</p>
+

@@ -1,0 +1,163 @@
+#include '../template.wml'
+
+#include "books.wml"
+
+<latemp_subject "Perl Books" />
+
+<ul>
+<li><a href="#note">Note</a></li>
+<li><a href="#beginners">Books for Beginners</a></li>
+<li><a href="#with_prev_knowledge">Books for Those with Previous Programming
+Knowledge</a></li>
+<li><a href="advanced/">Books for Learning about More Advanced Parts of the Core Language</a></li>
+<li><a href="topics/">Books for Learning about Specialized Technologies</a></li>
+</ul>
+
+<h2 id="note">Note</h2>
+
+<p>
+It is not absolutely necessary to read an organized book, in order to learn
+Perl. However, occassionally many people like it better than reading an ad-hoc
+tutorial on their computer screeens, and then trying to understand the man
+pages. Here is a list of books that can teach you Perl with some remarks on
+each book.
+</p>
+
+<h2 id="beginners">Books for Beginners</h2>
+
+<define-tag modern_perl_book_url whitespace="delete">
+http://www.onyxneon.com/books/modern_perl/
+</define-tag>
+
+<h3 id="modern-perl"><a href="<modern_perl_book_url />">Modern Perl</a></h3>
+
+<p>
+A book by chromatic, a well-known Perl programmer, writer, and author, about
+how to write Perl 5 in a good and modern way. Covers from the basics up to
+doing object-oriented programming using Moose, and a bit beyond. I've read this
+book and can recommend it.
+</p>
+
+<p>
+The book is <a href="<modern_perl_book_url />">available online for free
+download</a> and viewing and we have
+<a href="$(ROOT)/tutorials/modern-perl/">a local mirror</a>.
+</p>
+
+<book_info
+    authors="chromatic"
+    publisher="onyx"
+    isbn="0977920151"
+    online_url="<modern_perl_book_url />"
+    />
+
+<define-tag beginning_perl_url whitespace="delete">
+http://www.perl.org/books/beginning-perl/
+</define-tag>
+
+
+<h3 id="beginning-perl"><a href="<beginning_perl_url />">Beginning Perl</a></h3>
+
+<book_info
+    authors="James Lee"
+    publisher="apress"
+    isbn="159059391X"
+    perlbooksid="100"
+    online_url="<beginning_perl_url />"
+    />
+
+<p>
+This book is intended for people who are new to programming and wish to
+learn how to program using Perl. Those that already have a past experience in
+programming, will find it easier, but otherwise, even those without
+prior experience will be able to learn using it.
+</p>
+
+<p>
+The first edition of the book is
+<a href="<beginning_perl_url />">available online for free download</a>.
+</p>
+
+<h3 id="learning-perl"><a
+href="http://shop.oreilly.com/product/0636920018452.do">Learning Perl</a></h3>
+
+<book_info
+    authors="Randal L. Schwartz, Tom Phoenix and brian d foy"
+    publisher="oreilly"
+    isbn="1449303587"
+    perlbooksid="101"
+    />
+
+<p>
+Also referred to as "the Llama Book". Considered
+one of the best books for people who are absolute beginners in Perl and even
+in programming in general. This book however, does not cover references,
+modules, and objects and other important features of the Perl language. As
+such, you'll usually need to complement your learning by using another
+resource.
+</p>
+
+<p>
+It is also <b>not intended for people who are absolute beginners</b> in
+programming.
+</p>
+
+<p>
+Available online electronically for a registration as part of
+<a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
+</p>
+
+<h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
+
+<book_info
+    authors="Andrew L. Johnson"
+    publisher="manning"
+    isbn="1884777805"
+    perlbooksid="170"
+    />
+
+<p>
+A book that teaches Perl for people who have no programming experience. Takes
+an unusual approach of introducing them to Literate Programming as well,
+and using it for creating documentation and better organizing the examples.
+</p>
+
+<h2 id="with_prev_knowledge">Books for Those with Previous Programming
+Knowledge</h2>
+
+<p>
+These books are intended for people with a solid knowledge of programming in
+at least one other programming language besides Perl, who would like to learn
+Perl.
+</p>
+
+<h3 id="impatient-perl"><a href="http://www.greglondon.com/iperl/">Impatient Perl</a></h3>
+
+<p>
+A book for people who need to learn Perl as soon as possible. Its full
+text is also available online for free download. We have a
+<a href="$(ROOT)/tutorials/impatient-perl/">local mirror</a>.
+</p>
+
+<h3 id="hard-way"><a href="http://greenteapress.com/perl/">Learning Perl the Hard
+Way</a></h3>
+
+<p>
+Also intended for people who are already familiar with programming, and want
+to learn Perl quickly, and is available online for free download.
+</p>
+
+<h3 id="perl-for-c"><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
+
+<book_info
+    authors="Steve Oualline"
+    publisher="new-riders"
+    isbn="073571228X"
+    />
+
+<p>
+This book teaches Perl for experienced C Programmers. It is comperehensive
+and encompassing and tries to focus on Perl code that resembles C as much as
+possible. If you don't know C either, it will probably be of little help.
+</p>
+

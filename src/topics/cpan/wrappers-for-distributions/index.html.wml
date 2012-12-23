@@ -1,0 +1,157 @@
+#include '../template.wml'
+
+<latemp_subject "CPAN Wrappers For Distributions" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+This page lists some technologies to automatically generate
+native-system-packages from CPAN distributions. Before you go further, please
+read <a href="../">our page about Using CPAN with Perl</a>, which will
+provide an introduction to what CPAN is all about and where these wrappers
+fit in.
+</p>
+
+<h2 id="the-list">The List</h2>
+
+<ul>
+
+<li>
+<a href="http://www.gentoo.org/proj/en/perl/g-cpan.xml">Gentoo</a>
+</li>
+
+<li>
+RPMs: (for generating packages compatible with the
+<a href="http://www.rpm.org/">rpm package manager</a>)
+
+<ul>
+
+<li>
+CPANPLUS-Dist based:<br />
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Fedora/">CPANPLUS-Dist-Fedora (Fedora / Red Hat Linux)</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mageia/">CPANPLUS-Dist-Mageia (Mageia)</a> <br />
+
+<ul>
+
+<li>
+<a href="https://metacpan.org/release/App-CPAN2Pkg">CPAN2pkg - generating
+native Linux packages from CPAN</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/App-Magpie/">App-Magpie - Mageia Perl
+Integration Made Easy</a>
+</li>
+
+<li>
+See <a href="http://blogs.perl.org/users/shlomi_fish/2012/08/tech-tip-how-to-package-and-maintain-cpan-distributions-in-mageia.html">the post “Tech Tip: How to Package and Maintain CPAN Distributions in Mageia”</a> for more information.
+</li>
+
+</ul>
+
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
+</li>
+
+</ul>
+
+</li>
+
+
+<li>
+<a href="http://perl.arix.com/cpan2rpm/">cpan2rpm</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/Ovid/">The "Ovid" distribution on CPAN</a> (Not to be confused with Curtis "Ovid" Poe.)
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/RPM-Specfile/">cpanflute2</a> (contained
+in the CPAN distribution of RPM-Specfile.)
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/makerpm/">makerpm</a>
+</li>
+
+<li>
+<a href="http://www.silug.org/~steve/software/scripts/perl/cpanspec">cpanspec</a>
+</li>
+
+<li>
+<a href="http://search.cpan.org/dist/rpm-build-perl/">rpm-build-perl</a>
+</li>
+
+<li>
+<a
+href="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py">dar-perl.py</a>
+- a Python script that automatically generates an RPMforge SPEC file based on
+CPAN information.
+</li>
+
+</ul>
+
+</li>
+
+<li>
+Debs: (for generating .deb packages compatible with Debian and
+derivative distributions)<br />
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Deb/">CPANPLUS-Dist-Deb</a>
+</li>
+
+<li>
+<a href="http://packages.debian.org/search?keywords=dh-make-perl">dh-make-perl</a>
+</li>
+
+</ul>
+
+</li>
+
+<li>
+Archlinux:<br />
+
+<ul>
+
+<li>
+<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Arch/">CPANPLUS-Dist-Arch</a>
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+<h2 id="links">Links</h2>
+
+<ul>
+
+<li>
+<a href="http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian">Packaging
+CPAN Modules for Debian</a>
+</li>
+
+<li>
+<a href="http://nailingjelly.wordpress.com/2009/06/03/cpan-rpm-packaging/">CPAN
+RPM Packaging</a>
+</li>
+
+</ul>

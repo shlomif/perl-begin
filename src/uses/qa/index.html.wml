@@ -1,0 +1,59 @@
+#include '../template.wml'
+
+<latemp_subject "Perl for Quality Assurance and Testing" />
+
+<p>
+Perl is commonly used for testing software, hardware and networks and for
+quality assurance. The <a href="http://qa.perl.org/">Perl QA</a> project
+has a lot of information about it. So does
+<a href="http://perl-qa.hexten.net/wiki/index.php/Main_Page">the Perl QA Wiki</a>.
+</p>
+
+<h2 id="tap">TAP - the "Test Anything Protocol"</h2>
+
+<p>
+<a href="http://testanything.org/">TAP</a> is a simple protocol for test
+scripts (in any programming language) to communicate with a test harness.
+Invented by Larry Wall for Perl 1, and having evolved further, TAP is
+very suitable for universal language-independent testing.
+</p>
+
+<p>
+Perl has several
+<a href="http://testanything.org/wiki/index.php/TAP_Consumers">TAP
+Consumers</a> that can read TAP, process it and do something with the results.
+</p>
+
+<h2 id="tutorials">Tutorials and Courses</h2>
+
+<ul>
+
+<li id="szabgab_course">
+<a href="http://www.szabgab.com/talks/perl_in_testing/">Testing with Perl</a> -
+complete online slides for the course by
+<a href="http://www.szabgab.com/">Gabor Szabo</a>.
+</li>
+
+<li id="test_tutorial">
+<a href="http://metacpan.org/module/Test::Tutorial">Test::Tutorial</a> -
+introduces writing tests with the Perl test modules.
+</li>
+
+<li id="modern_perl">
+<a href="$(ROOT)/tutorials/modern-perl/"><i>Modern Perl</i></a> -
+the book by chromatic has chapter 9 dedicated to Testing.
+</li>
+
+<li id="perl_for_newbies">
+<a href="$(ROOT)/tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
+the fifth part of this tutorial covers testing among other good practises.
+</li>
+
+<li>
+<a href="http://shop.oreilly.com/product/9780596100926.do"><i>Perl Testing:
+A Developer’s Notebook</i></a> - a comprehensive and informative
+book (but somewhat out-of-date) about testing in Perl.
+</li>
+
+</ul>
+

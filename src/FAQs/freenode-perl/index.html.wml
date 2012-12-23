@@ -1,0 +1,15 @@
+#include '../template.wml'
+
+<latemp_subject "Freenode’s #perl FAQ" />
+
+<p>
+This page was retrieved from the corresponding page at the currently offline
+perl.net.au wiki. There it was maintained by several people, including
+Shlomi Fish, and was licensed under the
+<a href="http://creativecommons.org/licenses/by-sa/2.5/au/">CC-by-sa
+Australia</a> and the original Perl Artistic License. It was restored here
+from the wayback machine.
+</p>
+
+#include "retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html"
+

@@ -1,0 +1,52 @@
+#include '../template.wml'
+
+#include "tut_blocks.wml"
+
+<latemp_subject "Perl Hashes (a.k.a Associative Arrays or Maps)" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+<b>Hashes</b> (also known as "associative arrays", or in other languages
+"maps" or "dictionaries") allow the programmer to map arbitrary strings to
+arbitrary values. Perl has a convenient syntax to support hashes as first
+order data structures.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<h3 id="hash-cookbook"><a href="The_Hash_Cookbook.odp">The
+Hash Cookbook</a></h3>
+
+<p>
+This is a presentation (in OpenDocument format) about hashes by "Jerusalem
+Perl Monger" that was given by her at the
+<a href="http://act.perl.org.il/ilpw2007/">Israeli
+Perl Workshop of 2007</a> . It covers the main uses for hashes, with
+many code excerpts.
+</p>
+
+<modern_perl_entry>
+
+<p>
+Chapter 3 of <i>Modern Perl</i> discusses hashes.
+</p>
+
+</modern_perl_entry>
+
+<beginning_perl_entry>
+
+<p>
+Chapter 3 of "Beginning Perl" discusses hashes.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The second talk in the series discusses hashes.
+</p>
+
+</perl_for_newbies_entry>
+

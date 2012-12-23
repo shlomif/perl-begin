@@ -1,0 +1,65 @@
+<define-tag get_ext_publisher whitespace="delete">
+<ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
+<ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
+<ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
+<ifeq "%0" "wrox" "<a href="http://www.wrox.com/">Wrox Press Inc.</a>" />
+<ifeq "%0" "apress" "<a href="http://www.apress.com/">Apress</a>" />
+<ifeq "%0" "morgan_kaufmann" "<a href="http://en.wikipedia.org/wiki/Morgan_Kaufmann_Publishers">Morgan Kaufmann Publishers</a>" />
+<ifeq "%0" "onyx" "<a href="http://www.onyxneon.com/">Onyx Neon Press</a>" />
+</define-tag>
+
+<define-tag book_store_amazon>
+<preserve isbn title />
+<set-var %attributes />
+<a href="http://www.amazon.com/exec/obidos/ASIN/<get-var isbn />/ref=nosim/shlomifishhom-20/"><get-var title /></a>
+<restore isbn title />
+</define-tag>
+
+<define-tag book_store>
+<preserve isbn />
+<preserve store />
+<preserve title />
+<set-var %attributes />
+<ifeq "<get-var store />" "ukamazon"
+    "<set-var ucstore="Amazon UK" />"
+    "<set-var ucstore="<:{print ucfirst("<get-var store />")}:>" />"
+    />
+<ifeq "<get-var store />" "amazon"
+      "<book_store_amazon %attributes />"
+      <group
+            <a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
+      />
+      />
+<restore title />
+<restore store />
+<restore isbn />
+</define-tag>
+
+<define-tag book_info>
+
+<preserve authors publisher isbn perlbooksid perlbookslink online_url />
+
+<set-var %attributes />
+
+<set-var ext_publisher=<get_ext_publisher <get-var publisher /> /> />
+<set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />">Book Page at books.perl.org</a><br />" />
+<div class="bookinfo">
+<h3>Book Information</h3>
+
+<b>Authors:</b> <get-var authors /><br />
+<b>Publisher:</b> <get-var ext_publisher /><br />
+
+<if "<get-var online_url />" "<a href="<get-var online_url />"><b>Download/View Online</b></a><br />" "" />
+<if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
+
+<b>Buy From:</b>
+<book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> -
+<book_store isbn="<get-var isbn />" store="powells" title="Powells" /> -
+<book_store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
+<br />
+</div>
+
+<restore authors publisher isbn perlbooksid perlbookslink online />
+
+</define-tag>
+

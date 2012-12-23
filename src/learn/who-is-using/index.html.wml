@@ -1,0 +1,96 @@
+#include '../template.wml'
+
+<latemp_subject "Testimonials and Companies and People Using Perl" />
+
+<h2 id="testimonials">Testimonials</h2>
+
+<ul>
+
+<li id="testimonial-saved-my-vacation">
+<p>
+<q>Perl saved my vacation!</q><br />
+--
+<a href="http://blog.moertel.com/articles/2009/04/25/perl-saved-my-vacation">Tom
+Moertel</a>
+</p>
+</li>
+
+<li>
+<p>
+<q>Since then, I’ve programmed in other languages, including Java, C#, Python
+and PHP, but <b>I keep coming back to Perl</b>. The language has evolved and
+matured, while new frameworks and libraries have made Web programming fun
+again.</q><br />
+-- <a href="http://blog.webadmin.ufl.edu/2009/05/14/web-programming-in-perl/">Daniel
+Westermann-Clark</a>
+</p>
+</li>
+
+<li>
+
+<p>
+<q>Perl People are Great!</q><br />
+-- <a href="http://blog.laufeyjarson.com/2009/05/perl-people-are-great/">Laufeyjarson</a>
+</p>
+
+</li>
+
+<li>
+<p>
+<a href="http://www.eccentricity.org/oldblog/2009/02/making_my_gratitude_public.html">Tara
+L. Andrews credits Perl and the Perl Mongers</a> on a humanities thesis.
+</p>
+</li>
+
+<li id="testimonial-ajt">
+<p>
+<q>We went live on budget, to specification and on time (itself an
+achievement)… Perl contributed significantly to the project.</q>
+<br />
+-- <a href="http://perlisalive.com/articles/8">ajt</a>
+</p>
+</li>
+
+<li id="testimonial-acme-read">
+<p>
+<q>How Perl helps me read</q>
+<br />
+-- <a href="http://blogs.perl.org/users/acme/2011/01/how-i-read.html">Léon Brocard</a>
+</p>
+</li>
+
+</ul>
+
+<h2 id="companies-and-projects">Companies and Projects</h2>
+
+<h3 id="web-companies">Web Companies</h3>
+
+<ul>
+<li>
+<a href="http://amazon.com/">Amazon.com</a>
+</li>
+<li>
+<a href="http://www.livejournal.com/">LiveJournal.com</a>
+</li>
+<li>
+<a href="http://slashdot.org/">Slashdot</a>
+</li>
+<li>
+<a href="http://www.yahoo.com/">Yahoo</a>
+</li>
+</ul>
+
+<h3 id="software">Software</h3>
+
+<ul>
+<li>
+<a href="http://spamassassin.apache.org/">SpamAssassin</a>
+</li>
+<li>
+<a href="http://www.movabletype.org/">Movable Type</a>
+</li>
+<li>
+<a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
+</li>
+</ul>
+

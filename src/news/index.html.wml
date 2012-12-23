@@ -1,0 +1,576 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Beginners' Site - News" />
+
+<h2 id="news_9_July_2012">9-July-2012: Perl Humour page, #perl FAQ, and other
+new pages</h2>
+
+<p>
+The last update on the news feed for
+<a href="http://perl-begin.org/">The Perl Beginners’s site</a> was almost a
+year ago. While the site continued to improve, I neglected writing a new
+entry until now, so I hope this one will compensate for that.
+</p>
+
+<p>
+So without further ado, here is what is new:
+</p>
+
+<ol>
+
+<li>
+<p>
+We now have a page about <a href="http://perl-begin.org/humour/">Perl
+Humour</a>, which was restored from a page in the now offline perl.net.au
+wiki.
+</p>
+</li>
+
+<li>
+<p>
+Also originally from that wiki is the <a
+href="http://perl-begin.org/FAQs/freenode-perl/">Freenode’s #perl channel
+Frequently Asked Questions (FAQ) List</a>, which is well worth a read.
+</p>
+</li>
+
+<li>
+<p>
+Another restored page is
+<a href="http://perl-begin.org/topics/cpan/wrappers-for-distributions/">the
+list of CPAN Wrappers for Distributions</a>.
+</p>
+</li>
+
+<li>
+<p>
+We added <a href="http://perl-begin.org/uses/web-automation/">a page</a>
+about web automation in Perl, and <a
+href="http://perl-begin.org/topics/files-and-directories/">one about
+manipulating files and directories</a>.
+</p>
+</li>
+
+<li>
+<p>
+The
+<a href="http://perl-begin.org/platforms/windows/">Perl on Windows page</a>
+was enhanced with new links to Strawberry Perl and DWIM Perl.
+</p>
+</li>
+
+
+<li>
+<p>
+We have a new page about
+<a href="http://perl-begin.org/training/">Perl Training Providers</a>, which
+currently only contains a link to <a href="http://perltraining.org/">the Perl
+Training Directory</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://perl-begin.org/tutorials/bad-elements/">The “Perl
+Elements to Avoid” page</a> contains many new entries.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://perl-begin.org/tutorials/modern-perl/">Our mirror of
+the book <i>Modern Perl</i> by chromatic</a> was updated to its latest
+edition.
+</p>
+</li>
+</ol>
+
+<p>
+We hope you find these additions useful or enlightening.
+</p>
+
+<h2 id="news_22_July_2011">22-July-2011: The book Modern Perl, exercises and
+challenges, and some new topical pages.</h2>
+
+<ol>
+
+<li>
+<p>
+The book <a href="$(ROOT)/books/#modern-perl">Modern Perl</a> is now
+recommended, and <a href="$(ROOT)/tutorials/modern-perl/">a local copy</a> of
+it, under the CC-by-nc-sa licence is available on Perl-Begin, thanks to
+<a href="http://www.modernperlbooks.com/">chromatic</a>.
+</p>
+</li>
+
+<li>
+<p>
+We added <a href="$(ROOT)/exercises/">a Page</a> with links to <b>exercises
+and challenges</b>.
+</p>
+</li>
+
+<li>
+<p>
+There's a new topical page about <a href="$(ROOT)/topics/modules-and-packages/">Modules and Packages</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="$(ROOT)/uses/chat-scripting/">A page about using Perl for writing
+Chat robots and scripts</a> (IRC, Jabber, etc.) has been added. We also
+added <a href="$(ROOT)/uses/games/">a page about developing games with Perl</a>.
+</p>
+</li>
+
+<li>
+<p>
+More non-recommended Perl elements have been added to
+<a href="$(ROOT)/tutorials/bad-elements/">“Perl Elements to Avoid” page</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="$(ROOT)/uses/web/">The web-development with Perl page</a>
+was enhanced with new frameworks and information.
+</p>
+</li>
+
+<li>
+<p>
+Added <a href="$(ROOT)/IDEs-and-tools/#gui-debugger">a list of GUI
+debuggers</a> to the IDEs and tools page.
+</p>
+</li>
+
+<li>
+<p>
+We're now mirroring the now offline <a href="$(ROOT)/topics/cpan/#life-with-cpan">“Life with CPAN” by Jeremy Mates</a>.
+</p>
+</li>
+
+<li>
+<p>
+A page about the
+<a href="$(ROOT)/learn/Perl-perl-but-not-PERL/">differences between “Perl”,
+“perl” and “PERL”</a> was added. It was inspired by
+<a href="http://perl.org.il/misc.html#pl_vs_pl">a similar page</a> on
+the Israeli Perl Mongers site.
+</p>
+</li>
+
+<li>
+<p>
+Many anchors were added to the pages using <tt>id=</tt> attributes.
+</p>
+</li>
+
+<li>
+<p>
+We're now maintaining the sources of the Perl Beginners' Site in
+<a href="http://perl-begin.org/source/#vcs">a bitbucket.org repository</a>
+and there are instructions for contributing in the link.
+</p>
+</li>
+</ol>
+
+<h2 id="news_11_November_2010">11-November-2010:
+New Page about Bad Perl Elements and other new pages.</h2>
+
+<ul>
+
+<li>
+<p>
+We've added a comprehensive and growing
+<a href="$(ROOT)/tutorials/bad-elements/">"Perl Elements
+to Avoid"</a> page with many Perl paradigms that you should know better than to
+incorporate into your code.
+</p>
+</li>
+
+<li>
+<p>
+<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+Perl"</a> was updated to the latest version.
+</p>
+</li>
+
+<li>
+<p>
+There's a new topical page about
+<a href="$(ROOT)/uses/remote-login-and-commands/">SSH and Telnet</a>.
+</p>
+</li>
+
+<li>
+<p>
+There's a new topical page
+about <a href="$(ROOT)/topics/optimising-and-profiling/">optimising
+and profiling Perl code</a>, in order to make it run faster.
+</p>
+</li>
+
+<li>
+<p>
+There's a new page <a href="$(ROOT)/learn/perl6/">"What about Perl 6?"</a>.
+</p>
+</li>
+
+<li>
+<p>
+The <a href="$(ROOT)/uses/text-generation/">page about text generation</a> was
+greatly enhanced.
+</p>
+</li>
+
+
+<li>
+<p>
+<a href="$(ROOT)/contribute/">The how-to contribute to the site section</a> now
+includes the TODO and DONE files, which previously only existed in the
+Subversion repository.
+</p>
+</li>
+
+<li>
+<p>
+The headers at the top of the page were styled better after applying some
+input from "tm604".
+</p>
+</li>
+
+<li>
+<p>
+There are many other small improvments to the site both user-visible ones
+and ones that were done to its internals.
+</p>
+</li>
+
+</ul>
+
+
+<h2 id="news_26_June_2010">26-June-2010: New Pages</h2>
+
+<ul>
+
+<li>
+<a href="$(ROOT)/FAQs/">A page containing a list of frequently
+asked questions (FAQs)</a> was added.
+</li>
+
+<li>
+<a href="$(ROOT)/uses/text-parsing/">A page about text parsing</a> and
+<a href="$(ROOT)/uses/text-generation/">a page about text generation</a>,
+both with best practices and recommended technologies were added.
+</li>
+
+<li>
+Added
+<a href="$(ROOT)/topics/scoping/">a page about scoping and variables</a>.
+</li>
+
+</ul>
+
+<p>
+Aside from that, the ShareThis button was replaced by the
+<a href="http://www.addtoany.com/">AddToAny</a> button which does not require
+JavaScript, loads faster and does not load Google Analytics.
+</p>
+
+<h2 id="news_16_March_2010">16-March-2010: Topical and Uses Pages</h2>
+
+<p>
+We added a <a href="$(ROOT)/uses/email/">a page about using Perl for E-mail
+processing</a>, <a href="$(ROOT)/uses/multitasking/">a page about Perl for
+multitasking and networking</a>, a some topical pages:
+</p>
+
+<ul>
+
+<li>
+<a href="$(ROOT)/topics/date-and-time/">Date and Time</a>.
+</li>
+
+<li>
+<a href="$(ROOT)/topics/references/">References in Perl</a>.
+</li>
+
+<li>
+<a href="$(ROOT)/topics/regular-expressions/">Regular Expressions</a>.
+</li>
+
+<li>
+<a href="$(ROOT)/topics/hashes/">Hashes</a>.
+</li>
+
+</ul>
+
+<p>
+<a href="$(ROOT)/IDEs-and-tools/">The IDEs and Tools page</a> now contains
+screenshots.
+</p>
+
+<p>
+Many new links have been added and many typos have been corrected. Enjoy!
+</p>
+
+<h2 id="news_03_August_2009">03-August-2009: More updates to Perl-Begin.org</h2>
+
+<p>
+I thought <a href="$(ROOT)/">the Perl Beginners' Site</a>
+was perfect after
+<a href="http://community.livejournal.com/shlomif_tech/30178.html">the
+last update</a>, but boy I was wrong. A quick review and critique of the site
+by a certain prominent Perl developer proved me wrong, and afterwards I
+had more stuff that I found lacking. So here's what has changed.
+</p>
+
+<p>
+We're now mirroring
+<a href="$(ROOT)/tutorials/perl-for-newbies/">the
+public domain "Perl for Newbies" tutorial</a> as well as the GFDLed book
+<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+Perl"</a> by <a href="http://www.greglondon.com/">Greg London</a>. Their
+presence on the site was done in order to preserve Perl-Begin's common look
+and feel, and to make sure people would be able to access them without
+having to go to a different site, which may be blocked by over-zealous
+web-filters. We hope to mirror other freely distributable material that
+may prove useful to beginners on Perl-Begin in the future.
+</p>
+
+<p>
+The "call-for-action" notice at the beginning was changed to
+"Learn Perl Now!" and now appears on all the pages.
+</p>
+
+<p>
+We also fixed several look and style glitches.
+</p>
+
+<p>
+There are also several corrections to text and links.
+</p>
+
+<p>
+<a href="http://stackoverflow.com/">Stack Overflow</a> was added to
+<a href="$(ROOT)/web-forums/">the web-forums page</a>.
+</p>
+
+<p>
+There are now mentionings of
+<a href="$(ROOT)/books/topics/">two new topical books</a> -
+"Perl &amp; LWP" and "Programming the Perl DBI".
+</p>
+
+<p>
+Finally, the
+<a href="$(ROOT)/about.html">"About this site" page</a>
+was updated and made more modern.
+</p>
+
+<p>
+We hope you enjoy the new site. If you like it, please recommend it to
+your friends - if you don't - let us know and we'll see what we can do.
+</p>
+
+
+
+<h2 id="news_27_July_2009">27-July-2009: Updates to Perl-Begin.org</h2>
+
+<p>
+After the last news item, a lot of work was invested into <a href="$(ROOT)">Perl-Begin.org, the Perl Beginners' Site</a>, making
+it even better than it used to be. Here's a summary of the changes:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="$(ROOT)/learn/who-is-using/">A testimonials page</a>
+was added, with some honest-to-God testimonial quotes which are now featured in
+the Testimonials side-bar.
+</p>
+</li>
+
+<li>
+<p>
+There's a new <a href="$(ROOT)/IDEs-and-tools/">IDEs and
+tools page</a>, featuring some Integrated Development Environments.
+</p>
+</li>
+
+<li>
+<p>
+There's a new <a href="$(ROOT)/blogs/">page sporting links
+to collections of blogs</a>.
+</p>
+</li>
+
+<li>
+<p>
+Several new topical pages were added:
+</p>
+<ol>
+
+<li><a href="$(ROOT)/uses/databases/">Perl and Databases</a></li>
+
+<li><a href="$(ROOT)/uses/GUI/">GUI Development in Perl</a></li>
+
+<li><a href="$(ROOT)/uses/xml/">Perl for XML Processing</a></li>
+
+<li><a href="$(ROOT)/topics/debugging/">Debugging</a></li>
+
+<li><a href="$(ROOT)/topics/object-oriented/">Object-oriented
+Programming in Perl</a></li>
+
+<li><a href="$(ROOT)/topics/cpan/">Using CPAN</a></li>
+</ol>
+
+</li>
+
+<li>
+<p>
+A <a href="http://sharethis.com/">ShareThis</a> button was added to the
+bottom of every page for easy bookmarking and sharing.
+</p>
+</li>
+
+<li>
+<p>
+Many writing errors (spelling, grammar, syntax, phrasing, etc.) have been
+corrected by <a href="http://alanhaggai.org/">Alan Haggai Alavi</a>. He
+seems to have a good eye for catching such problems, and I am indebted to
+him.
+</p>
+</li>
+
+<li>
+<p>
+Corrected several broken links including those to Ovid's CGI course.
+</p>
+</li>
+
+</ul>
+
+<p>
+We hope you enjoy the new Perl Beginners' Site and please recommend it
+to your friends. All content on Perl-Begin is made available under the Creative
+Commons Attribution Licence which allows almost unlimited re-use.
+</p>
+
+<h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
+
+<p>
+Recently, the <a href="$(ROOT)/">Perl-Begin site</a> has
+seen many updates and corrections. Among them are:
+</p>
+
+<ul>
+
+<li>
+In <a href="$(ROOT)/platforms/windows/">the Perl on Windows
+page</a>, we now recommend the open-source
+and community-headed <a href="http://strawberryperl.com/">Strawberry
+Perl</a> instead of the proprietary and quirky ActivePerl.
+</li>
+
+<li>
+<a href="$(ROOT)/contribute/list/">The contributors list</a>
+is now in the global navigation menu. This makes sure it will be prominently
+featured on all pages of the site, and won't be left out-of-date.
+</li>
+
+<li>
+<a href="$(ROOT)/uses/sys-admin/">The systems administration page</a> now
+contains links to many useful modules.
+</li>
+
+<li>
+Many new links have been added, both internal and external, and some broken
+links have been fixed.
+</li>
+
+<li>
+The licensing blurb at the bottom was clarified to be CC-by 2.0, or at your
+option a later version.
+</li>
+
+</ul>
+
+<p>
+Aside from all that, we'd like to note that our attention has been
+directed to an
+<a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">effort
+on the Perl 5 Wiki to list all Perl-related mailing lists</a>. This effort
+needs help, and there are instructions for that, at the link.
+</p>
+
+<h2 id="news_07_Jul_2006">07-July-2006: The wiki is now part of <a href="http://perl.net.au/">perl.net.au</a></h2>
+
+<p>
+The contents of our wiki were integrated into the
+<a href="http://perl.net.au/">perl.net.au MediaWiki</a> as
+<a href="http://perl.net.au/wiki/New_to_Perl">its "New to Perl?" section</a>.
+This was done to consolidate the Perl wiki'ing efforts, because there's much
+more action on perl.net.au than there was on our wiki, and for ease of
+maintenace. Our wiki will be removed soon.
+</p>
+
+<p>
+Also of note is <a href="$(ROOT)/wikis/">a new section of the site on
+Perl-related wikis</a>.
+</p>
+
+<h2 id="news_04_Nov_2005">04-November-2005: Perlmeme.org</h2>
+
+<p>
+There's <a href="http://perlmeme.org/">a new site for Perl beginners called
+Perlmeme.org</a>. It collects tutorials, howto documents, and frequently
+asked questions (FAQ) lists. I was referred to its developers by a mutual
+friend, and since then became heavily involved in its development. (E.g.: some of the material from
+my <a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl
+for Perl Newbies</a> series, was integrated there. )
+</p>
+
+<p>
+Perlmeme.org tries to be as up-to-date as possible and is certainly worth
+checking out. On a different note, I'd like to mention that I went over the
+material in the
+<a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl
+for Perl Newbies</a> series and heavily updated and corrected it. It should
+be much better now.
+</p>
+
+<p>
+-- <i>Shlomi Fish</i>.
+</p>
+
+<h2 id="news_06_Jun_2005">06-June-2005: Wiki Restored</h2>
+
+<p>
+The <a href="<wiki_link />">Wiki</a> was heavily spammed and so was taken
+off. Now, a new wiki was set up with a better implementation -
+<a href="http://wikipedia.sourceforge.net/">MediaWiki</a>, and now we monitor
+the RSS feed and use other measurements to prevent Spam.
+</p>
+
+<p>
+All the content of the old wiki was restored.
+</p>
+
+<h2 id="news_29_Feb_2004">29-February-2004: New Wiki</h2>
+
+<p>
+We now have <a href="<wiki_link />">a new Wiki with a better
+implementation</a>. The previous wiki was dumped because it was a JavaScript
+hell and was quite lame in its conventions. The newer wiki implementation
+(<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)
+is much better in this and other regards.
+</p>
+
+<p>
+All the content from the old wiki was transferred to the new one. We hope
+you'd like it better.
+</p>

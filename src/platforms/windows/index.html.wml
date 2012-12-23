@@ -1,0 +1,52 @@
+#include '../template.wml'
+#include "win32.wml"
+
+<latemp_subject "Perl on Win32" />
+
+<win32_intro />
+
+<p>
+Perl code can be written to run perfectly on both Windows and UNIXes, out
+of the box. Most Perl code written by people who know what they are doing
+will be such, and this is the case for most CPAN Perl modules as well.
+</p>
+
+<h2 id="resources">Resources</h2>
+
+<h3 id="web-sites">Web Sites</h3>
+
+<ul>
+<li>
+<a href="http://win32.perl.org/">win32.perl.org - The Perl on Win32 Community
+Portal</a>.
+</li>
+</ul>
+
+<h3 id="strawberry-perl">Strawberry Perl and DWIM Perl</h3>
+
+<p>
+<a href="http://strawberryperl.com/">Strawberry Perl</a> is an open-source,
+free-of-charge, and usable, distribution of Perl for Windows (both 32-bit
+and 64-bit), which gives you the full power of CPAN on Windows and is highly
+recommended. As a result, it is now best to avoid ActivePerl, which is
+proprietary and less usable.
+</p>
+
+<p>
+One should also mention <a href="http://dwimperl.com/">DWIM
+Perl for Windows</a> which is based on Strawberry Perl, but contains more
+interesting packages, such as a large part of Task::Kensho, the Padre Perl IDE,
+Moose, database drivers, and lots of other stuff.
+</p>
+
+<h3 id="mailing-lists">Mailing Lists</h3>
+
+<p>
+ActiveState has <a
+href="http://lists.perl.org/showlist.cgi?name=perl-win32-users">a mailing
+list for Win32 users</a>. Generally, Perl for Win32 questions can be
+effectively answered in beginners mailing lists as well. However, this
+mailing list may also prove to be helpful when dealing with Win32-specific Perl
+extensions.
+</p>
+

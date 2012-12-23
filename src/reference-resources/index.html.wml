@@ -1,0 +1,18 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+#include "hyperpolyglot.wml"
+
+<latemp_subject "Reference Resources" />
+
+<hyperpolyglot_php_perl_python_ruby />
+
+<h3 id="perlreref"><pdoc d="perlreref"> - Perl Regular Expressions’ Reference</pdoc></h3>
+
+<h3 id="perlop"><pdoc d="perlop"> - Perl Operators</pdoc></h3>
+
+<h3 id="perlopquick"><a href="https://github.com/cowens/perlopquick">perlopquick - Operators Quick Reference</a></h3>
+
+<p>
+Proposed POD documents for providing quick references for the Perl operators.
+</p>
+

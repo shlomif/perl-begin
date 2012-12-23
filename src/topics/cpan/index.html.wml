@@ -1,0 +1,111 @@
+#include '../template.wml'
+
+<latemp_subject "Using CPAN with Perl" />
+
+<p>
+“CPAN” stands for <a href="http://en.wikipedia.org/wiki/CPAN">the
+Comprehensive Perl Archive Network</a> and is an internationally mirrored
+collection of over 16,000 packages of re-usable Perl code. To program
+in Perl 5 effectively, one needs to make a judicious, but liberal use of
+CPAN code, due to the fact that the perl core distribution is kept relatively
+minimal and its maintainers expect people to use CPAN for any extraneous
+functionality.
+</p>
+
+<p>
+One good advice in using CPAN is to <b>look for native packages for your
+operating system, distribution and Perl distribution</b>. Many such
+distributions allow one to automatically install pre-built CPAN packages
+that can later on be easily and cleanly uninstalled. Look for such packages
+for distributions you need in the relevant repositories of the distribution
+of perl 5 that you are using.
+</p>
+
+<p>
+If you cannot find packages for what you want, you can also try building
+a native package automatically from the equivalent CPAN package.
+We have the details of <a href="wrappers-for-distributions/">wrappers
+of CPAN modules for the various distributions</a> (originally from the
+PerlNet wiki).
+</p>
+
+<h2 id="links">Links</h2>
+
+<h3 id="life-with-cpan">Life with CPAN</h3>
+
+<ul>
+
+<li>
+<a href="life-with-cpan/non-root/">"Using CPAN with a non-root account"</a>
+(restored from the original at Jeremy Mates' web-site).
+</li>
+
+<li>
+<a href="life-with-cpan/">"Life with CPAN"</a>
+(restored from the original at Jeremy Mates' web-site).
+</li>
+
+<li>
+<cpan_self_dist d="local-lib" /> - install CPAN modules under a local user
+directory.
+</li>
+
+<li>
+<a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">"But
+I
+<i>can't</i> use CPAN!"</a> - an essay by Matt S. Trout explaining why
+you can almost always use CPAN, and the various ways you can do it.
+</li>
+</ul>
+
+<p>
+These resources provide a gentle introduction to how to effectively work
+with CPAN in case you want to use it directly. Read them in order.
+</p>
+
+<h3 id="finding-stuff-on-the-cpan">Finding Stuff on the CPAN</h3>
+
+<ul>
+
+<li>
+<a href="http://www.catalyzed.org/2009/07/finding-stuff-on-the-cpan.html">"Finding
+Stuff on the CPAN"</a> - a link to an article explaining how to find good stuff
+on the CPAN.
+</li>
+
+<li>
+<a href="http://metacpan.org/">metacpan.org</a> - an enhanced and open-source
+interface for searching CPAN and finding information about CPAN modules.
+</li>
+
+</ul>
+
+<h3 id="preparing-dists">Preparing Your Own CPAN-like Distributions</h3>
+
+<ul>
+
+<li>
+
+<p>
+<a href="http://www.perlmonks.org/?node_id=879515">“RFC:
+How to Release Modules on CPAN in 2011”</a> - a modern and comprehensive
+guide by <a href="http://www.perlmonks.org/?node_id=720219">Elisheva</a>
+on Perlmonks.org.
+</p>
+
+</li>
+
+<li>
+
+<p>
+<a href="http://www.slideshare.net/thaljef/cpan-for-private-code">CPAN
+for Private Code</a> - why you should prepare CPAN-like distibutions, even
+for code intended for internal use only. SlideShare presentation by
+<a href="http://search.cpan.org/~thaljef/">Jeffrey Thalhammer</a>.
+(<a href="cpan-for-private-code.pdf">Local mirror</a> under the CC-by
+licence)
+</p>
+
+</li>
+
+</ul>
