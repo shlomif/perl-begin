@@ -106,6 +106,7 @@ backticks
 markup
 naïve
 plaintext
+filename
 
 ====dest/web-forums/index.html
 
@@ -1232,3 +1233,21 @@ Waalboer's
 Spolsky's
 PDP-11
 Markup
+
+====dest/topics/scoping/index.html
+
+Dominus's
+Perl's
+pl
+
+
+====dest/topics/regular-expressions/index.html
+
+perlre
+perlrequick
+perlreref
+perlretut
+regexes
+regexps
+re's
+
