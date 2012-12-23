@@ -66,6 +66,7 @@ Plack
 Poe
 toolkit
 middleware
+CSV
 
 ====dest/web-forums/index.html
 
@@ -121,4 +122,42 @@ IE
 HTML-TreeBuilder-LibXML
 TreeBuilder
 Perl-based
+
+====dest/uses/text-parsing/index.html
+
+cg
+pos
+regex
+AST
+Parse-Yapp
+pure-Perl
+Marpa-PP
+Marpa-XS
+Parser-MGC
+perl-5
+Parse-RecDescent
+Regexp-Grammars
+Parse-RecDescent
+Text-CSV_XS
+HTMLs
+AST
+Parse-Yapp
+Marpa-PP
+HTML-TokeParser-Simple
+TreeBuilder
+HTML-TreeBuilder-LibXML
+XML-LibXML's
+libxml
+
+====dest/uses/text-generation/index.html
+
+List-UtilsBy
+List-MoreUtils
+Util
+grep
+Toolkit
+XML-Writer
+perlform
+Perl6-Form
+Toolkit
 
