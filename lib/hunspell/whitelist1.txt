@@ -107,6 +107,7 @@ markup
 naïve
 plaintext
 filename
+Perl's
 
 ====dest/web-forums/index.html
 
@@ -1273,7 +1274,7 @@ Shavin
 Devel-NYTProf
 performant
 
-====dest/topics/object-oriented/index.html
+====dest/topics/object-oriented/index.html,dest/topics/modules-and-packages/index.html
 
 perlobj
 perlootut
@@ -1282,3 +1283,51 @@ Perldoc
 OOP
 11th
 perlmod
+
+====dest/topics/index.html
+
+OOP
+
+====dest/topics/hashes/index.html
+
+OpenDocument
+
+====dest/topics/files-and-directories/index.html
+
+bak
+-lp
+fn
+temp_fn
+tempout
+new_line
+gt
+lt
+tempfile
+filenames
+foreach
+ARGV
+qw
+autodie
+'s
+bFrom
+txt
+usr
+edit_file_lines
+dest_filename
+source_filename
+io-
+IO
+IO-All
+String-ShellQuote
+Basename
+Spec
+perlfunc
+file-system-builtins
+mkdir
+closedir
+readdir
+opendir
+perlopentut
+filesystem
+dirname
+basename
