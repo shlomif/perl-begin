@@ -76,6 +76,15 @@ placeholder
 placeholders
 API
 APIs
+SQL
+SQL-based
+etc
+copyleft
+GPL
+LGPL
+backends
+backend
+Google's
 
 ====dest/web-forums/index.html
 
@@ -231,3 +240,28 @@ demos
 
 API
 
+====dest/uses/databases/index.html
+
+mod_perl
+MongoDB
+CouchDb
+Net-CouchDb
+non-SQL
+pure-Perl
+XBase
+Tie-LevelDB
+LevelDB
+Sleepycat
+LGPL
+BerkeleyDB
+DBIx-Class
+ORM
+DBIx-Simple
+Firebird
+MySQL
+SQLite
+PostgreSQL
+BigTable
+xBase
+FoxBase
+dBase
