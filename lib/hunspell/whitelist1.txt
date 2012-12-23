@@ -109,6 +109,7 @@ plaintext
 filename
 Perl's
 offline
+Alavi
 
 ====dest/web-forums/index.html
 
@@ -1463,3 +1464,25 @@ Solaris
 FreeBSD
 MacPerl
 PowerPC
+
+====dest/news/index.html
+
+MediaWiki
+PmWiki
+howto
+Perlmeme
+wiki'ing
+Perl-Begin
+ActivePerl
+ShareThis
+LWP
+Perl-Begin's
+GFDLed
+screenshots
+Analytics
+AddToAny
+mentionings
+tm604
+bitbucket
+CC-by-nc-sa
+DWIM
