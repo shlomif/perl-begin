@@ -1251,3 +1251,13 @@ regexes
 regexps
 re's
 
+====dest/topics/references/index.html
+
+Randal
+Schwratz
+perlcafe
+perldsc
+perllol
+perlref
+perlreftut
+Perl's
