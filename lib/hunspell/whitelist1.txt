@@ -1421,3 +1421,12 @@ Mailman
 ====dest/resources/index.html
 
 Weblogs
+
+====dest/reference-resources/index.html
+
+perlopquick
+perlop
+perlreref
+Attribution-ShareAlike
+PHP
+Hyperpolyglot
