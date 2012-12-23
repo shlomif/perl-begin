@@ -118,6 +118,14 @@ We have concentrated a selection of Perl-related web forums on
 
 <dl>
 
+<dt id="general_reference_resources"><a href="$(ROOT)/reference-resources/">General
+Reference Resources</a></dt>
+
+<dd>
+Reference resources that did not fit elsewhere, including those from the
+core Perl 5 documentation.
+</dd>
+
 <dt id="wikis"><a href="$(ROOT)/wikis/">Wikis</a></dt>
 
 <dd>
