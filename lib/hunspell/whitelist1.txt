@@ -1564,3 +1564,9 @@ PHP
 awk
 administation
 Slashdot
+
+====dest/learn/Perl-perl-but-not-PERL/index.html
+
+lowercase
+all-lowercase
+uppercase
