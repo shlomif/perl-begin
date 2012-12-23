@@ -103,6 +103,9 @@ Blog
 Blogs
 pure-Perl
 backticks
+markup
+naïve
+plaintext
 
 ====dest/web-forums/index.html
 
@@ -1200,3 +1203,32 @@ three-args
 Bareword
 MyModule
 input_filename
+
+====dest/topics/security/code-markup-injection/index.html
+
+cmd
+perldoc
+mytable
+kinding
+Perl's
+filename
+'s
+fh
+xkcd
+h4x0r3d
+myvar
+quotemeta
+regex
+eval
+metaprogramming
+String-ShellQuote
+dir
+XSS
+EOF
+get_input_from_user_somehow
+perlunitut
+Juerd
+Waalboer's
+Spolsky's
+PDP-11
+Markup
