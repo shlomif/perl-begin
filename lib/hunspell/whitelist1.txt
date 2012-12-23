@@ -39,6 +39,7 @@ Bio-Info
 Blogs
 IRC
 Freenode's
+IDE
 IDEs
 Online
 PERL
@@ -293,3 +294,18 @@ infobots
 ====dest/uses/bio-info/index.html
 
 Bio-Informatics
+
+====dest/uses/GUI/index.html
+
+GTK
+gtk2-perl
+Tcl
+Tk
+skinnable
+Perl-Tk
+wxPerl
+grep
+ack
+GUI
+GUIs
+wxWidgets
