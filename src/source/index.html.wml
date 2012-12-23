@@ -10,7 +10,7 @@ This site is a static HTML site written in
 source code (that requires WML, Latemp,
 <a href="http://www.gnu.org/software/make/">GNU
 make</a>, <a href="http://www.gnu.org/software/bash/bash.html">GNU
-bash</a>, <a href="https://bitbucket.org/shlomif/wml-extended-apis/overview">Shlmi
+bash</a>, <a href="https://bitbucket.org/shlomif/wml-extended-apis/overview">Shlomi
 Fish's extended APIs for WML</a> and a GNU system to be built) can be found in
 its version control repository.
 </p>
