@@ -68,6 +68,14 @@ toolkit
 middleware
 CSV
 templating
+Gabor
+Szabo
+online
+PDF
+placeholder
+placeholders
+API
+APIs
 
 ====dest/web-forums/index.html
 
@@ -196,3 +204,30 @@ Net-SSH2
 Net-OpenSSH
 Net-SSH-Perl
 Net-Telnet
+
+====dest/uses/multitasking/index.html
+
+Perlmonks
+perlthrtut
+Mattijsen
+ptys
+IPC-Run
+POE
+
+====dest/uses/index.html
+
+Bio-Informatics
+
+====dest/uses/games/index.html
+
+toolkits
+SDL
+SDL-Perl
+non-Perl
+DirectMedia
+demos
+
+====dest/uses/email/index.html
+
+API
+
