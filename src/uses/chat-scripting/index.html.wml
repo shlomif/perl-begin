@@ -67,7 +67,7 @@ make it a priority to convert it to a more modern IRC framework.
 <h3 id="POE-Component-IRC"><cpan_self_dist d="POE-Component-IRC" /></h3>
 
 <p>
-POE-Component-IRC (or PoCoIrc for short) has been the first successuful
+POE-Component-IRC (or PoCoIrc for short) has been the first successful
 attempt at providing a decent IRC framework for Perl based on
 <a href="$(ROOT)/uses/multitasking/#poe">the POE networking and
 multi-tasking framework for Perl</a>.
@@ -76,7 +76,7 @@ multi-tasking framework for Perl</a>.
 <p>
 Especially of note is
 <cpan_self_dist d="Bot-BasicBot" /> which is
-a layer above POE-Component-IRC that is more user-friendly and straightfoward
+a layer above POE-Component-IRC that is more user-friendly and straightforward
 for writing a bot.
 </p>
 
@@ -129,7 +129,7 @@ multi-protocol, and cross-platform chat client with support for Perl scripting.
 <li>
 <p>
 <a href="http://xchat.org/">X-Chat</a> - an open-source IRC client. Also see
-the costless <a href="http://www.silverex.org/">Silverex distribution</a>
+the costless <a href="http://www.hexchat.org/">HexChat distribution</a>
 of X-Chat for Windows.
 </p>
 </li>
