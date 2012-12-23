@@ -31,7 +31,7 @@ that compiles and runs Perl programs. The implementation if you may.
 
 <li>
 <p>
-In any case, one should <b>never write "PERL"</b> with all uppercase-letters,
+In any case, one should <b>never write "PERL"</b> with all uppercase letters,
 as Perl is not an acronym. If you encounter such a page, it usually indicates
 that its author does not know enough about Perl, as writing "Perl" or "perl"
 instead of "PERL" is a
