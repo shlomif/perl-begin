@@ -110,6 +110,7 @@ filename
 Perl's
 offline
 Alavi
+bio-informatics
 
 ====dest/web-forums/index.html
 
@@ -1511,3 +1512,28 @@ JAPHs
 Slashdot-style
 O'Reilly's
 Perl-development
+perl101
+
+====dest/learn/why-perl/index.html
+
+Bunce
+PerlNet's
+Etc
+PHP
+FP
+OOP
+libre
+
+====dest/learn/why-perl/index.html
+
+DWIMmeries
+
+====dest/learn/who-is-using/index.html
+
+SpamAssassin
+Léon
+Slashdot
+Brocard
+Laufeyjarson
+Westermann-Clark
+PHP

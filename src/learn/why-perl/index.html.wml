@@ -43,7 +43,8 @@ Perl is dying. (Or even that Perl is dead).
 The Perl implementation has a horrible code.
 </li>
 <li>
-Perl, or some parts of it (like its Object Orientedness) is very weak.
+Perl, or some parts of it (like its Object Oriented Programming support) is
+very weak.
 </li>
 <li>
 Perl is not suitable for writing web applications. (And PHP is).
