@@ -1650,7 +1650,7 @@ a different scope), but it's almost always not needed.
 <p>
 Some people are looking to supply a common configuration to their programs
 as global variables in the included files, and those people should look at
-CPAN configration modules such as <cpan_self_dist d="Config-IniFiles" />
+CPAN configuration modules such as <cpan_self_dist d="Config-IniFiles" />
 or <a href="http://search.cpan.org/search?query=json&amp;mode=all">the
 various JSON modules</a> for the ability to read configuration files
 in a safer and better way.
@@ -1716,11 +1716,11 @@ plain <tt>if/elsif/else</tt> structures.
 <p>
 Some beginners, when thinking they need to multitask their programs start
 thinking they should use perl threads. However, as mentioned in
-<pdoc d="perlthrtut">perlthrtut</pdoc>, perl threads are very much unlike
+<pdoc d="perlthrtut"></pdoc>, perl threads are very much unlike
 the traditional thread modules, share nothing by default and are in fact
 heavyweight processes (instead of the usual lightweight ones). See also
 <a href="http://www.perlmonks.org/index.pl?node_id=288022">Elizabeth
-Mattijsen’s writeup about perl's ithreads on perlmonks</a>.
+Mattijsen’s write-up about perl's ithreads on perlmonks</a>.
 </p>
 
 <p>
@@ -1875,8 +1875,8 @@ and really know what you are doing.
 <p>
 Related to string eval, is using two or more <tt>/e</tt> flags in the
 <tt>s///</tt> substitution. While one /e flag is often useful (for example
-when subtituting counters like in <tt>s/#\./($i++)."."/ge</tt>) the second
-/e flags just evals the generated expression again. This can easily be done
+when substituting counters like in <tt>s/#\./($i++)."."/ge</tt>) the second
+/e flags just evaluates the generated expression again. This can easily be done
 with using string eval inside the right-hand-side, assuming it is needed which
 is normally not the case.
 </p>
@@ -1998,7 +1998,7 @@ However, these reference constructors actually create a single scalar that
 contains a reference and, as a result, in the case of the array, one will have
 a single element array, and in case of the hash, one will have an error
 with a hash that was initialised only with a single key (that was converted
-to a non-sensical string).
+to a nonsensical string).
 </p>
 
 <p>
@@ -2042,7 +2042,7 @@ own code.
 <item id="no_upwards_for_dirs" h="Getting rid of special entries in directory contents">
 
 <p>
-Calling <pdoc_f f="readdir">readdir()</pdoc_f> repetitevely, or calling it
+Calling <pdoc_f f="readdir">readdir()</pdoc_f> repetitively, or calling it
 in list context will normally return the two special entries of <tt>.</tt>
 (the same directory) and <tt>..</tt> (the parent directory) which should not
 be checked, and should normally be ignored. One can often find that people
@@ -2076,7 +2076,7 @@ similar functionality.
 
 </item>
 
-<item id="assigning_list_to_scalar" h="Assigining a List to a Scalar Variable">
+<item id="assigning_list_to_scalar" h="Assigning a List to a Scalar Variable">
 
 <p>
 Normally, assigning from a function or an expression that returns a list
@@ -2185,7 +2185,7 @@ always be synchronised to the same contents.
 </p>
 
 <p>
-As a result, the two code exercpts should be written as such instead:
+As a result, the two code excerpts should be written as such instead:
 </p>
 
 <pre>
@@ -2275,7 +2275,7 @@ Don Knuth’s words that “Premature Optimisation is the root of all evil.”
 <p>
 If you do find that your program runs too slowly, refer to our
 <a href="$(ROOT)/topics/optimising-and-profiling/">page about Optimising and
-Profiling Perl code</a>, but don't opimize prematurely.
+Profiling Perl code</a>, but don't optimise prematurely.
 </p>
 
 </item>
