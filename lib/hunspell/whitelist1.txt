@@ -1589,3 +1589,15 @@ exe
 Win32's
 100s
 
+====dest/exercises/index.html
+
+Martyr2's
+Prolog
+Dominus
+euler
+Randal
+
+====dest/core-doc/index.html
+
+Perldoc
+3rd
