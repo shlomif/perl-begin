@@ -154,7 +154,7 @@ expression.
 <p>
 <b>Path Injection</b> - if you append a shell path to another, using
 something like
-<tt>my $path = "/home/hello/$myar"; open my $fh, '&lt;', $path or die …</tt>
+<tt>my $path = "/home/hello/$myvar"; open my $fh, '&lt;', $path or die …</tt>
 then if someone puts some <tt>..</tt> in <tt>$myvar</tt>’s components, they
 can gain access to any arbitrary file in the system.
 </p>
