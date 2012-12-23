@@ -60,6 +60,12 @@ Firefox
 Stylesheet
 stylesheet
 jQuery
+UNIXes
+PSGI
+Plack
+Poe
+toolkit
+middleware
 
 ====dest/web-forums/index.html
 
@@ -93,3 +99,26 @@ HTML-Selector-XPath
 XML-related
 API
 libxml2
+'ul
+
+====dest/uses/web/index.html
+
+IIS
+Mojolicious
+Lite
+
+====dest/uses/web-automation/index.html
+
+LWP-Curl
+libcurl
+libwww-perl-like
+LWP
+API
+pure-Perl
+HTTPS
+libwww-perl
+IE
+HTML-TreeBuilder-LibXML
+TreeBuilder
+Perl-based
+
