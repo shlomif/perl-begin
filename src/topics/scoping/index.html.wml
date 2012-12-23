@@ -25,7 +25,7 @@ received the advice that you should add "<tt>use strict;</tt>" and
 should add these statements because they catch many common programming
 mistakes, you may notice that after you add them you get something like:
 "<tt>Global symbol "$filename" requires explicit package name at test.pl
-line 6.</tt>". This error (which is admitedlly not phrased very well, and
+line 6.</tt>". This error (which is admittedly not phrased very well, and
 is kept as such due to historical reasons) means that you haven't
 <b>declared</b> the variable. To fix it, you need to declare the variable using
 "<tt>my $filename = [VALUE];</tt>" in order to first use it.
