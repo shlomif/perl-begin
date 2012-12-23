@@ -1,2 +1,3 @@
 #include '../template.wml'
 
+#include "retrieved-html-parts/hyperpolyglot/scripting.html"
