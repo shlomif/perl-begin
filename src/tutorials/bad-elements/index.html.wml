@@ -430,7 +430,7 @@ to use the lower-level API which is not recommended.
 
 <p>
 The first thing to know about handling arguments for subroutines is to avoid
-refering to them directly by index. Imagine you have the following code:
+referring to them directly by index. Imagine you have the following code:
 </p>
 
 <pre>
@@ -1012,7 +1012,7 @@ One can often see people interpolate strings directly into regular expressions:
 <bad_code>
 my $username = shift(@ARGV);
 
-open my $pass_fh, '&lt;', '/etc/passswd'
+open my $pass_fh, '&lt;', '/etc/passwd'
     or die "Cannot open /etc/passwd - $!";
 
 PASSWD:
@@ -1143,7 +1143,8 @@ Mark Jason Dominus has written about
 <tt>$foobar</tt>. While there are ways to achieve similar things in Perl,
 the best way is to use <a href="$(ROOT)/topics/hashes/">hashes</a> (possibly
 pointing to complex records with more information) and lookup them by
-the string you want to use. Read the link by MJD for more information.
+the string you want to use. Read the link by Mark Jason Dominus for more
+information.
 </p>
 
 </item>
