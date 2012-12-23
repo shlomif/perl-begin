@@ -111,6 +111,7 @@ Perl's
 offline
 Alavi
 bio-informatics
+affordably
 
 ====dest/web-forums/index.html
 
@@ -1570,3 +1571,21 @@ Slashdot
 lowercase
 all-lowercase
 uppercase
+
+====dest/irc/index.html
+
+OFTC
+modperl
+FreeNode
+XChat
+Chatzilla
+mIRC
+IRC-jargon
+
+====dest/index.html
+
+cmd
+exe
+Win32's
+100s
+
