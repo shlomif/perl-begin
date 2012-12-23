@@ -98,7 +98,7 @@ in Perl, in order to help working with XPath. For more information, see
 
 <p>
 <a href="http://en.wikipedia.org/wiki/XSLT">XSLT</a> stands for
-Extensible Stylesheet Langauge Transformations and is a language for
+Extensible Stylesheet Language Transformations and is a language for
 transforming XML documents into other XML documents or other formats such
 as HTML or plain text. Perl has good support for version 1.0 of XSLT by
 using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
