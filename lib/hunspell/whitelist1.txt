@@ -108,6 +108,7 @@ naïve
 plaintext
 filename
 Perl's
+offline
 
 ====dest/web-forums/index.html
 
@@ -1397,3 +1398,26 @@ metacpan
 PerlNet
 uninstalled
 Thalhammer
+
+====dest/source/index.html
+
+Init
+hgbook
+Bitbucket
+hg
+WML
+Latemp
+
+
+====dest/site-resources/wiki/index.html
+
+wiki'ing
+MediaWiki
+
+====dest/site-resources/mailing-list/index.html
+
+Mailman
+
+====dest/resources/index.html
+
+Weblogs
