@@ -176,3 +176,13 @@ colors
 sprintf-like
 large_string
 
+====dest/uses/sys-admin/index.html
+
+IO
+String-ShellQuote
+IO-All
+dirname
+basename
+Basename
+Spec
+perlfunc
