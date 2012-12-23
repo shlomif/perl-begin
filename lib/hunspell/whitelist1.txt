@@ -1748,3 +1748,9 @@ PerlNet
 wayback
 CC-by-sa
 IDE's
+
+====dest/FAQs/index.html
+
+Freenode
+perldoc
+
