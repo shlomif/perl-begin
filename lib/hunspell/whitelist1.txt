@@ -1430,3 +1430,13 @@ perlreref
 Attribution-ShareAlike
 PHP
 Hyperpolyglot
+
+====dest/platforms/windows/index.html
+
+ActiveState
+Win32-specific
+Kensho
+DWIM
+ActivePerl
+DWIM
+win32
