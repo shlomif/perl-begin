@@ -67,6 +67,7 @@ Poe
 toolkit
 middleware
 CSV
+templating
 
 ====dest/web-forums/index.html
 
@@ -160,4 +161,18 @@ XML-Writer
 perlform
 Perl6-Form
 Toolkit
+Ayeleth
+args
+fmt
+Sprintf
+Text-Sprintf-Named
+sprintf
+'name
+'day
+'odd
+'even
+usr
+colors
+sprintf-like
+large_string
 
