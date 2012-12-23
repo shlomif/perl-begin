@@ -85,6 +85,8 @@ LGPL
 backends
 backend
 Google's
+codebase
+codebases
 
 ====dest/web-forums/index.html
 
@@ -265,3 +267,29 @@ BigTable
 xBase
 FoxBase
 dBase
+
+====dest/uses/chat-scripting/index.html
+
+POE
+POE-Component-IRC
+Silverex
+Net-XMPP
+HexChat
+GChat
+GTalk
+Facebook
+AnyEvent
+AnyEvent-IRC
+IO
+Async
+Net-Async-IRC
+Bot-BasicBot
+Irssi
+PoCoIrc
+evalbots
+Net-IRC
+infobots
+
+====dest/uses/bio-info/index.html
+
+Bio-Informatics
