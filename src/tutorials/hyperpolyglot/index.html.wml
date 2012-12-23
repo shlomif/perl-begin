@@ -1,0 +1,28 @@
+#include '../template.wml'
+
+<latemp_subject "Interpreted Languages Hyperpolyglot: PHP, Perl, Python, Ruby (Mirror)" />
+
+<p>
+This is our mirror of the
+<a href="http://hyperpolyglot.org/scripting">“Interpreted Languages: PHP, Perl, Python, Ruby” hyperpolyglot</a> from
+<a href="http://hyperpolyglot.org/">hyperpolyglot.org</a>, which contains
+many other useful hyperpolyglots or lingos. It is licenced under
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+Attribution-ShareAlike 3.0 license</a>.
+</p>
+
+<p>
+It was updated on 24 December, 2012.
+</p>
+
+<ol>
+
+<li>
+<a href="sheet1.html">Sheet 1</a>
+</li>
+
+<li>
+<a href="sheet2.html">Sheet 2</a>
+</li>
+
+</ol>
