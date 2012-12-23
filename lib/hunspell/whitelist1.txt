@@ -1261,3 +1261,15 @@ perllol
 perlref
 perlreftut
 Perl's
+
+
+====dest/topics/optimising-and-profiling/index.html
+
+ctypes
+Inline
+XS
+perl-ctypes
+Shavin
+Devel-NYTProf
+performant
+
