@@ -17,8 +17,8 @@ Knowledge</a></li>
 
 <p>
 It is not absolutely necessary to read an organized book, in order to learn
-Perl. However, occassionally many people like it better than reading an ad-hoc
-tutorial on their computer screeens, and then trying to understand the man
+Perl. However, occasionally many people like it better than reading an ad hoc
+tutorial on their computer screens, and then trying to understand the man
 pages. Here is a list of books that can teach you Perl with some remarks on
 each book.
 </p>
@@ -156,7 +156,7 @@ to learn Perl quickly, and is available online for free download.
     />
 
 <p>
-This book teaches Perl for experienced C Programmers. It is comperehensive
+This book teaches Perl for experienced C Programmers. It is comprehensive
 and encompassing and tries to focus on Perl code that resembles C as much as
 possible. If you don't know C either, it will probably be of little help.
 </p>
