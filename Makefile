@@ -65,10 +65,10 @@ upload_beta: all
 upload_local: all
 	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/)
 
-test:
+test: all
 	prove Tests/*.t
 
-runtest:
+runtest: all
 	runprove Tests/*.t
 
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)

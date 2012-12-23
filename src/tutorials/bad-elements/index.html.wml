@@ -1705,7 +1705,7 @@ One should not use Switch.pm to implement a
 <a href="http://en.wikipedia.org/wiki/Switch_statement">switch statement</a>
 because it's a source filter, tends to break a lot of code, and causes
 unexpected problems. Instead one should either use <tt>given/when</tt>, which
-are only available in perl-5.10 and above, or dispatch tables, or alterantively
+are only available in perl-5.10 and above, or dispatch tables, or alternatively
 plain <tt>if/elsif/else</tt> structures.
 </p>
 

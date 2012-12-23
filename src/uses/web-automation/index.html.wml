@@ -25,7 +25,7 @@ may find more convenient interfaces for many tasks.
 <cpan_self_dist d="HTML-TreeBuilder-LibXML" /></h3>
 
 <p>
-These are alterantive HTML parsers that provide more flexibility. For more
+These are alternative HTML parsers that provide more flexibility. For more
 information about HTML parsing see our <a href="$(ROOT)/uses/text-parsing/">text
 parsing page</a>.
 </p>
