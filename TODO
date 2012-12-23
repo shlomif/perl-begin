@@ -2,9 +2,6 @@
 and src/topics/files-and-directories/index.html.wml
     - Add File::Basename
 
-* Add blogs.perl.org to:
-    - http://perl-begin.org/blogs/
-
 * Add a link to perlweekly.com somewhere.
 
 * Bad elements page:
