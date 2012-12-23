@@ -70,8 +70,8 @@ Perl Programmer Should Know.
 
 <ul>
 <li>
-<a href="http://perl.net.au/wiki/Perl_Humour">Perl Humor</a> - a list of links
-to Perl humor.
+<a href="$(ROOT)/humour/">Perl Humour</a> - a list of links
+to Perl humour.
 </li>
 <li>
 <a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Poetry/">Perl Poetry</a> -
@@ -81,7 +81,7 @@ Poems that are valid Perl programs.
 <li>
 <a href="http://perlgolf.sourceforge.net/">Perl Golf</a> - competitions to
 find out the shortest Perl programs to achieve a certain task. Looking at
-the winning entries and analyzing them can actually teach you a lot about
+the winning entries and analysing them can actually teach you a lot about
 built-in Perl features (some of them relatively obscure).
 </li>
 
@@ -107,7 +107,7 @@ Perl hacker" (JAPHs)</a> - ways to print the phrase
 <ul>
 <li>
 <a href="http://www.wall.org/~larry/">Larry Wall</a> - the father of Perl. A
-very colorful, amusing and interesting person, who is also a competent UNIX
+very colourful, amusing and interesting person, who is also a competent UNIX
 hacker (invented patch, rn and other utilities), and a linguist by training.
 </li>
 
