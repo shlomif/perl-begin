@@ -186,3 +186,13 @@ basename
 Basename
 Spec
 perlfunc
+
+====dest/uses/remote-login-and-commands/index.html
+
+Net-Async
+IPC-PerlSSH-Async
+IPC-PerlSSH
+Net-SSH2
+Net-OpenSSH
+Net-SSH-Perl
+Net-Telnet
