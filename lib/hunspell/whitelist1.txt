@@ -1386,3 +1386,14 @@ App-Magpie
 CPAN2pkg
 RPMs
 Gentoo
+
+====dest/topics/cpan/index.html
+
+SlideShare
+CPAN-like
+Perlmonks
+Elisheva
+metacpan
+PerlNet
+uninstalled
+Thalhammer
