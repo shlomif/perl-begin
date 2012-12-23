@@ -134,6 +134,22 @@ my $tree_contents =
                     title => "Book for Quickly Learning Perl (based on previous knowledge)",
                 },
                 {
+                    text => "Hyperpolyglot",
+                    url => "tutorials/hyperpolyglot/",
+                    title => "Our mirror for the lingo of Perl and other languages under CC-by-sa",
+                    subs =>
+                    [
+                        {
+                            text => "Sheet 1",
+                            url => "tutorials/hyperpolyglot/sheet1.html",
+                        },
+                        {
+                            text => "Sheet 2",
+                            url => "tutorials/hyperpolyglot/sheet2.html",
+                        },
+                    ],
+                },
+                {
                     text => "Elements to Avoid",
                     url => "tutorials/bad-elements/",
                     title => "Elements of Perl that should be avoided and what to replace them with",
