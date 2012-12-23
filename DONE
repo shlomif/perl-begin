@@ -298,3 +298,6 @@ reading this page if it is indeed too slow." - missing comma.
         - Best results are achieved with Firefox, because Google Chromium
         and Opera do not handle XML namespaces well.
 
+* Add the hyperpolyglot:
+    - http://hyperpolyglot.org/scripting
+
