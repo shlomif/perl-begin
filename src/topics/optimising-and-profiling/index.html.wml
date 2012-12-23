@@ -9,7 +9,7 @@ Before you try to make your code run faster, you should first make
 sure that it is too slow for your needs. After all, spending time profiling
 and optimising an already performant code will not yield any benefits for
 production. So benchmark your code, see how well it performs, and then continue
-reading this page if it is indeed too slow. As a corrolary, when writing
+reading this page if it is indeed too slow. As a corollary, when writing
 code, always make sure you optimise for clarity and correctness first, not
 for speed.
 </p>
@@ -86,7 +86,7 @@ databases with Perl for more information.
 Writing Code in a Faster Language</h3>
 
 <p>
-If all else fails, then re-impelmenting the slow code in a faster language
+If all else fails, then re-implementing the slow code in a faster language
 such as
 <a href="http://en.wikipedia.org/wiki/C_%28programming_language%29">C</a>
 or <a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> and embedding it
