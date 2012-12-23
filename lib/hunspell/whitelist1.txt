@@ -1343,3 +1343,14 @@ Devel-LineTrace
 perldebtut
 Devel
 print's
+
+====dest/topics/date-and-time/index.html
+
+DateTime
+DateTime-Format-Natural
+DateTime-Format-
+DateTime-Format-Atom
+DateTime-Format-W3CDTF
+perlfunc
+POSIX
+DateTime-Format-Strptime
