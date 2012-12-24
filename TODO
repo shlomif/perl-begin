@@ -76,6 +76,9 @@ and src/topics/files-and-directories/index.html.wml
                 - Does not mention/cover CPAN.
                 - Does not Moose/Mouse/Moo/etc..
 
+* Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
+    - Add src/tutorials/hyperpolyglot/sheet2.html.wml
+
 Long Term:
 ----------
 
