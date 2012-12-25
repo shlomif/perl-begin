@@ -210,3 +210,61 @@ $ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
 </div>
 
 </div>
+
+<h3 id="string_slurp_utf8">Reading an entire UTF-8 file into a big variable</h3>
+
+<div class="tabs">
+
+<ul>
+
+<li><a href="#string_slurp_utf8__io_all">IO-All</a></li>
+
+<li><a href="#string_slurp_utf8__core">Core Perl</a></li>
+
+<li><a href="#string_slurp_utf8__cmd_line">Command Line</a></li>
+
+</ul>
+
+<div id="string_slurp_utf8__io_all">
+
+<perl_code>
+use IO::All;
+
+my $string = io->file($my_filepath)->utf8->slurp;
+</perl_code>
+
+</div>
+
+<div id="string_slurp_utf8__core">
+
+<perl_code>
+use autodie;
+
+sub _utf8_slurp
+{
+    my $filename = shift;
+
+    open my $in, '<:encoding(utf8)', $filename
+        or die "Cannot open '$filename' for slurping - $!";
+
+    local $/;
+    my $contents = <$in>;
+
+    close($in);
+
+    return $contents;
+}
+
+my $file_contents = _utf8_slurp($my_filepath);
+</perl_code>
+
+</div>
+
+<div id="string_slurp_utf8__cmd_line">
+<pre>
+$ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
+</pre>
+</div>
+
+</div>
+
