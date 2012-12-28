@@ -113,6 +113,7 @@ Alavi
 bio-informatics
 affordably
 Hyperpolyglot
+UTF-8
 
 ====dest/web-forums/index.html
 
@@ -1336,7 +1337,14 @@ perlopentut
 filesystem
 dirname
 basename
-
+my_filepath
+_utf8_slurp
+'Something
+my_utf8_filepath
+-ln
+file_contents
+utf8
+utf8-
 ====dest/topics/debugging/index.html
 
 Tk
