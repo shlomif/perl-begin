@@ -23,6 +23,16 @@ in people. So in the spirit of liquidating negatives, this tutorial-in-reverse
 aims to show you what <b>not to do</b>.
 </p>
 
+<p>
+<strong>Note:</strong> Please don't think this advice is meant as gospel.
+There are some instances where one can expect to deviate from it, and a lot
+of it can be considered only my own opinion. I tried to filter the various
+advice I found in the <a href="#sources_of_advice">sources for this advice</a>
+and get rid of things that are a matter of taste or not so critical, or have
+arguments here or there (so-called <a href="http://bikeshed.com/">colour of
+the bike shed arguments</a>).
+</p>
+
 <h2* id="toc">Table of Contents</h2*>
 
 <toc />
