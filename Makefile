@@ -90,11 +90,11 @@ iperl_extra_data: $(IMPATIENT_PERL_FILES)
 $(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: lib/tutorials/impatient-perl/%
 	cp -f $< $@
 
-TODO_DONE = $(patsubst %,$(TARGET)/contribute/%.txt, TODO DONE)
+TODO_DONE = $(patsubst %,$(TARGET)/contribute/%, TODO.txt DONE.txt)
 
 todo_done_data: $(TODO_DONE)
 
-$(TODO_DONE): $(TARGET)/contribute/%.txt: %
+$(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
 	cp -f $< $@
 
 # .PHONY:
