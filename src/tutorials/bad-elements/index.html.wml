@@ -2272,6 +2272,30 @@ should not be a concern to avoid clarity.
 
 </item>
 
+<item id="backslash_n_on_rhs" h="Using \\1 instead of $1 on the Right Hand Side of a Substitution">
+
+<p>
+There is no good reason to use <code>\\1</code>, <code>\\2</code>, etc. in the
+right-hand-side of a substitution instead of <code>$1</code> <code>$2</code>
+etc. While this may work, the backslash-digits variables are aimed at
+back-references, such as matching the exact string of a capture again within
+the left hand side of a regex:
+</p>
+
+<bad_code>
+$s =~ s/(H\w+)\s+(W\w+)/\1 [=] \2/;
+</bad_code>
+
+<p>
+Better code:
+</p>
+
+<pre>
+$s =~ s/(H\w+)\s+(W\w+)/$1 [=] $2/;
+</pre>
+
+</item>
+
 <item id="premature_optimization" h="Premature Optimisation">
 
 <p>
