@@ -31,7 +31,6 @@
     - TODO: Add cookbook:
         - reading files.
         - copying files.
-        - appending to files.
         - appending selected portion from a file to another file.
         - prepending to files.
         - overwriting lines in files.
