@@ -5,7 +5,6 @@ and src/topics/files-and-directories/index.html.wml
 * Add a link to perlweekly.com somewhere.
 
 * Bad elements page:
-    - Using \1 instead of $1 (on the Right Hand Side).
     - Packaging as a CPAN distribution.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
     - Generating Invalid markup (HTML, etc.)

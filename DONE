@@ -304,3 +304,5 @@ reading this page if it is indeed too slow." - missing comma.
 * Add blogs.perl.org to:
     - http://perl-begin.org/blogs/
 
+* Page about Bad Elements:
+    - Using \1 instead of $1 (on the Right Hand Side).
