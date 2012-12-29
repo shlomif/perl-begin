@@ -2279,7 +2279,7 @@ There is no good reason to use <code>\\1</code>, <code>\\2</code>, etc. in the
 right-hand-side of a substitution instead of <code>$1</code> <code>$2</code>
 etc. While this may work, the backslash-digits variables are aimed at
 back-references, such as matching the exact string of a capture again within
-the left hand side of a regex:
+the left hand side of a regular expression:
 </p>
 
 <bad_code>
