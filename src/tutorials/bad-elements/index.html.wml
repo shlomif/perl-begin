@@ -654,7 +654,7 @@ use warnings;
 <item id="indirect-object-notation" h="Avoid Indirect Object Notation">
 
 <p>
-Don't use the so-called "Indirect-object notation" which can be seen in a lot
+Don't use the so-called “Indirect-object notation” which can be seen in a lot
 of old code and tutorials and is more prone to errors:
 </p>
 
@@ -669,6 +669,12 @@ Instead use the <tt>MyClass-&gt;new(…)</tt> notation:
 <pre>
 my $new_object = MyClass-&gt;new(@params);
 </pre>
+
+<p>
+For more information and the motivation for this advice, see chromatic’s article
+<a href="http://modernperlbooks.com/mt/2009/08/the-problems-with-indirect-object-notation.html">“The
+Problems with Indirect Object Notation”</a>.
+</p>
 
 </item>
 
