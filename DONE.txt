@@ -304,5 +304,10 @@ reading this page if it is indeed too slow." - missing comma.
 * Add blogs.perl.org to:
     - http://perl-begin.org/blogs/
 
+* Extract the common modules section out of src/uses/sys-admin/index.html.wml
+and src/topics/files-and-directories/index.html.wml
+    - Add File::Basename
+
 * Page about Bad Elements:
     - Using \1 instead of $1 (on the Right Hand Side).
+

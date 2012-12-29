@@ -1,7 +1,3 @@
-* Extract the common modules section out of src/uses/sys-admin/index.html.wml
-and src/topics/files-and-directories/index.html.wml
-    - Add File::Basename
-
 * Add a link to perlweekly.com somewhere.
 
 * Bad elements page:
