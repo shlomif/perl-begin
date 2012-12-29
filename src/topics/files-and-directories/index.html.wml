@@ -267,3 +267,48 @@ $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
 
 </div>
 
+<set-var idbase="append_to_file" />
+<set-var io_all_id="<get-var idbase />__io_all" />
+<set-var core_id="<get-var idbase />__core" />
+
+<h3 id="<get-var idbase />">Appending to a File</h3>
+
+<div class="tabs">
+
+<ul>
+
+<li><a href="#<get-var io_all_id />">IO-All</a></li>
+
+<li><a href="#<get-var core_id />">Core Perl</a></li>
+
+</ul>
+
+<div id="<get-var io_all_id />">
+
+<perl_code>
+use IO::All;
+
+my $string_to_append = "My new line\n";
+
+$string_to_append >> io->file($my_file_path);
+</perl_code>
+
+</div>
+
+<div id="<get-var core_id />">
+
+<perl_code>
+use autodie;
+
+my $string_to_append = "My new line\n";
+
+{
+    open my $out, '>>', $my_file_path;
+    print {$out} $string_to_append;
+    close($out);
+}
+</perl_code>
+
+</div>
+
+</div>
