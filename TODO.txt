@@ -1,5 +1,3 @@
-* Add a link to perlweekly.com somewhere.
-
 * Bad elements page:
     - Packaging as a CPAN distribution.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
@@ -35,6 +33,8 @@
         - copying files.
         - appending to files.
         - appending selected portion from a file to another file.
+        - prepending to files.
+        - overwriting lines in files.
         - deleting a directory tree.
         - writing to a file.
         - show all with IO::All and without it.

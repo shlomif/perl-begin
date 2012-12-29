@@ -311,3 +311,5 @@ and src/topics/files-and-directories/index.html.wml
 * Page about Bad Elements:
     - Using \1 instead of $1 (on the Right Hand Side).
 
+* Add a link to perlweekly.com somewhere.
+
