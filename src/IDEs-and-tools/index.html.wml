@@ -13,7 +13,7 @@ the Perl IDE</a></h3>
 
 <p>
 Padre is a cross-platform, open-source, free, IDE for Perl, written in Perl,
-which is under active development. It's probably the most recommended for
+and which is under active development. It's probably the most recommended for
 most people who don't have a previous preference.
 </p>
 
@@ -33,7 +33,7 @@ Perl.
 Edit</a> and <a href="http://www.activestate.com/komodo/">Komodo IDE</a></h3>
 
 <p>
-Komodo Edit is a cross-platform, costless, open-source editor for Perl and
+Komodo Edit is a cross-platform, costless, open-source, editor for Per,  and
 other dynamic languages by ActiveState. Komodo IDE is a commercially-enhanced
 version of it which is not open-source and costs money.
 </p>
@@ -44,7 +44,7 @@ and IDE for Eclipse</a></h3>
 <p>
 EPIC is a set of plugins for the <a href="http://www.eclipse.org/">Eclipse
 Java-based IDE</a> that allows one to edit and manage Perl projects. Eclipse
-is cross-platform, free and open-source and so is EPIC.
+is cross-platform, free and open-source, and so is EPIC.
 </p>
 
 <div class="screenshot">
@@ -94,10 +94,10 @@ and <a href="http://e-texteditor.com/blog/2009/releasing-the-source">E Text
 Editor for Linux/UNIX</a></h3>
 
 <p>
-TextMate is a commercial (and not open source) programmers' editor that has
-become popular on Mac OS X, and E Text Editor is a commercial version of it
-for Windows, with source available for compiling on Linux and other
-systems.
+TextMate is a commercial (but now open source under the GPL version 3)
+programmers' text editor that has become popular on Mac OS X, and E Text
+Editor is a commercial version of it for Windows, with source available for
+compiling on Linux and other systems.
 </p>
 
 <h2 id="helper-tools">Helper Tools</h2>
