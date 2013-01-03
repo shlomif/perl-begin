@@ -2145,12 +2145,12 @@ consult <a href="$(ROOT)/topics/references/">our page about references</a>.
 <item id="dot_asterisk" h="Regular Expressions starting or ending with “.*”">
 
 <p>
-It is not necessary to put <tt>.*</tt> or <tt>.*?</tt> into the beginning or
+It is not necessary to put <code>.*</code> or <code>.*?</code> into the beginning or
 end of regular
 expressions to match something anywhere inside the string. So for example
-<tt>if ($hay_stack =~ /.*ab+c.*/)</tt> can be replaced with the simpler:
-<tt>if ($hay_stack =~ /ab+c/)</tt>. If you wish to match and extract the
-prefix, you should say <tt>(.*?)</tt> or <tt>(.*)</tt>.
+<code>if ($hay_stack =~ /.*ab+c.*/)</code> can be replaced with the simpler:
+<code>if ($hay_stack =~ /ab+c/)</code>. If you wish to match and extract the
+prefix, you should say <code>(.*?)</code> or <code>(.*)</code>.
 </p>
 
 </item>
@@ -2258,7 +2258,7 @@ foreach my $elem (@existing_array)
 
 <p>
 It is not a good idea to append a trailing if statement modifier to a
-declaration of a lexical variable using <tt>my</tt>:
+declaration of a lexical variable using <code>my</code>:
 </p>
 
 <bad_code>
