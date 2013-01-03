@@ -83,7 +83,7 @@ controversial.
 </define-tag>
 
 <define-tag bad_code endtag="required">
-<bad_code* syntax="perl"*>
+<bad_code* syntax="perl">
 %body
 </bad_code*>
 </define-tag>
