@@ -15,8 +15,8 @@
             <element name="vrd:body">
                 <ref name="common_attrs" />
                 <zeroOrMore>
-                    <element name="preface">
-                        <ref name="section" />
+                    <element name="vrd:preface">
+                        <ref name="section_contents" />
                     </element>
                 </zeroOrMore>
                 <oneOrMore>
@@ -25,7 +25,7 @@
             </element>
         </element>
     </start>
-    <define name="common_attrs">
+    <define name="global_attrs">
         <optional>
             <attribute name="xml:id">
                 <data type="ID"/>
@@ -36,6 +36,9 @@
                 <data type="NCName" />
             </attribute>
         </optional>
+    </define>
+    <define name="common_attrs">
+        <ref name="global_attrs" />
         <optional>
             <attribute name="xlink:href">
                 <data type="anyURI"/>
@@ -43,7 +46,7 @@
         </optional>
     </define>
     <define name="section_contents">
-        <ref name="common_attrs" />
+        <ref name="global_attrs" />
         <ref name="info" />
         <ref name="several_paras" />
         <zeroOrMore>
@@ -111,6 +114,12 @@
             <text />
             <ref name="b" />
             <ref name="i" />
+            <element name="vrd:strong">
+                <text />
+            </element>
+            <element name="vrd:em">
+                <text />
+            </element>
         </choice>
     </define>
     <define name="span">

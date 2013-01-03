@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<document xmlns="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/">
+<document xmlns="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/" xmlns:xlink="http://www.w3.org/1999/xlink" version="0.2.0">
 <info>
 <title>Perl Elements to Avoid</title>
 </info>
 
+<define-tag a endtag="required" whitespace="delete">
+<preserve href />
+<set-var %attributes />
+
+<a* xlink:href="<get-var href />">%body</a*>
+
+<restore href />
+
+</define-tag>
 <body>
 <preface xml:id="intro">
 
@@ -2398,6 +2407,8 @@ Perl</a>.
 </item>
 
 </main_list>
+
+</section>
 
 </body>
 
