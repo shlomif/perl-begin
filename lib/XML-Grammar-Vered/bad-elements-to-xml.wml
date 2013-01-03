@@ -989,8 +989,8 @@ Instead, use other single-letter variable names such as
 
 <p>
 One can sometimes see flow-control statements such as
-<pdoc_f f="next"><b>next</b></pdoc_f>, <pdoc_f f="last"><b>last</b></pdoc_f> or
-<pdoc_f f="redo"><b>redo</b></pdoc_f> used without an explicit label following
+<pdoc_f f="next">next</pdoc_f>, <pdoc_f f="last">last</pdoc_f> or
+<pdoc_f f="redo">redo</pdoc_f> used without an explicit label following
 them, in which case they default to re-iterating or breaking out of the
 innermost loop. However, this is inadvisable, because later on, one may modify
 the code to insert a loop in between the innermost loop and the flow control
