@@ -133,6 +133,12 @@
             <element name="vrd:em">
                 <text />
             </element>
+            <element name="vrd:code">
+                <text />
+            </element>
+            <element name="vrd:filepath">
+                <text />
+            </element>
         </choice>
     </define>
     <define name="span">
