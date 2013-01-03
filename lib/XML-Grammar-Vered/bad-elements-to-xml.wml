@@ -5,7 +5,11 @@
 </info>
 
 <body>
-<h2 id="intro">Introduction</h2>
+<preface xml:id="intro">
+
+<info>
+<title>Introduction</title>
+</info>
 
 <p>
 Often when people ask for help with Perl code, they show Perl code that
@@ -33,23 +37,15 @@ arguments here or there (so-called <a href="http://bikeshed.com/">colour of
 the bike shed arguments</a>), but some of the advice here may still be
 controversial.
 </p>
+</preface>
 
-<h2* id="toc">Table of Contents</h2*>
-
-<toc />
-
-<h2 id="bad-elements">The List of Bad Elements</h2>
+<section xml:id="bad-elements">
+<info>
+<title>The List of Bad Elements</title>
+</info>
 
 <define-tag main_list endtag="required" whitespace="delete">
 {#MAIN_LIST#:%body:##}
-</define-tag>
-
-<define-tag bad_code endtag="required">
-<pre class="bad_code">
-\# Bad code:
-
-%body
-</pre>
 </define-tag>
 
 {#MAIN_LIST#}
@@ -59,13 +55,14 @@ controversial.
 <preserve id h />
 <set-var %attributes />
 
-<item* xml:id="<get-var id />" title="<get-var h />">
+<item* xml:id="<get-var id />">
+<info>
+<title><get-var h /></title>
+</info>
 
 %body
 
 </item*>
-
-</div>
 
 <restore id h />
 </define-tag>
