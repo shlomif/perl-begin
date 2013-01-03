@@ -217,7 +217,7 @@ my @presidents_names;
 
 <p>
 Some people are tempted to declare their subroutines using
-<tt>sub my_function ($$@)</tt>, with the signature of the accepted parameter
+<code>sub my_function ($$@)</code>, with the signature of the accepted parameter
 types, which is called a prototype. However, this tends to break code more
 often than not, and should be avoided.
 </p>
@@ -251,9 +251,9 @@ are Perl 5’s function prototypes bad?”</a> on Stack Overflow.
 <item id="ampersand-in-subroutine-calls" h="Ampersand in Subroutine Calls">
 
 <p>
-One should not call a subroutine using <tt>&amp;myfunc(@args)</tt> unless
+One should not call a subroutine using <code>&amp;myfunc(@args)</code> unless
 you're sure that is what you want to do (like overriding prototypes). Normally
-saying <tt>myfunc(@args)</tt> is better.
+saying <code>myfunc(@args)</code> is better.
 </p>
 
 <p>
@@ -364,19 +364,19 @@ EOF
 </pre>
 
 <p>
-There are also <tt>&lt;&lt;"EOF"</tt> for strings with interpolation
-and <tt>&lt;&lt;`EOF`</tt> for trapping command output. Make sure you never
-use bareword here documents <tt>&lt;&lt;EOF</tt> which are valid syntax,
-but many people are never sure whether they are <tt>&lt;&lt;"EOF"</tt> or
-<tt>&lt;&lt;'EOF'</tt>.
+There are also <code>&lt;&lt;"EOF"</code> for strings with interpolation
+and <code>&lt;&lt;`EOF`</code> for trapping command output. Make sure you never
+use bareword here documents <code>&lt;&lt;EOF</code> which are valid syntax,
+but many people are never sure whether they are <code>&lt;&lt;"EOF"</code> or
+<code>&lt;&lt;'EOF'</code>.
 </p>
 
 <p>
 If your strings are not too long but contain the special characters that
-correspond with the default delimiters (e.g: <tt>'</tt>, <tt>"</tt>,
-<tt>`</tt>, <tt>/</tt> etc.), then you can use the initial letter followed
-by any arbitrary delimiter notation: <tt>m{\A/home/sophie/perl}</tt>,
-<tt>q/My name is 'Jack' and I called my dog "Diego"./</tt>.
+correspond with the default delimiters (e.g: <code>'</code>, <code>"</code>,
+<code>`</code>, <code>/</code> etc.), then you can use the initial letter followed
+by any arbitrary delimiter notation: <code>m{\A/home/sophie/perl}</code>,
+<code>q/My name is 'Jack' and I called my dog "Diego"./</code>.
 </p>
 
 </item>
@@ -475,8 +475,8 @@ sub my_function
 </pre>
 
 <p>
-Now, what if you want to add <tt>$last_name</tt> between <tt>$first_name</tt>
-and <tt>$street</tt>?
+Now, what if you want to add <code>$last_name</code> between <code>$first_name</code>
+and <code>$street</code>?
 You'll have to promote all the indexes after it! Moreover, this scheme
 is error-prone and you may reuse the same index more than once, or
 miss some indexes.
@@ -514,10 +514,10 @@ sub my_function
 </pre>
 
 <p>
-The same thing holds for unpacking <tt>@ARGV</tt>, the array containing the
+The same thing holds for unpacking <code>@ARGV</code>, the array containing the
 command-line arguments for a Perl program, or any other array. Don't use
-<tt>$ARGV[0]</tt>, <tt>$ARGV[1]</tt> etc. directly, but instead unpack
-<tt>@ARGV</tt> using the methods given above. For processing
+<code>$ARGV[0]</code>, <code>$ARGV[1]</code> etc. directly, but instead unpack
+<code>@ARGV</code> using the methods given above. For processing
 command line arguments, you should also consider using
 <cpan_self_mod m="Getopt::Long" />.
 </p>
@@ -556,9 +556,9 @@ print "(4*x^2 + 2x + 1)(x = 5) = ", calc_polynomial(5, [1, 2, 4]);
 
 <p>
 You shouldn't clobber the subroutine's arguments list with entire arrays
-or hashes (e.g: <tt>my_func(@array1, @array2);</tt> or
-<tt>my_func(%myhash, $scalar)</tt> ), as this will make it difficult to
-extract from <tt>@_</tt>.
+or hashes (e.g: <code>my_func(@array1, @array2);</code> or
+<code>my_func(%myhash, $scalar)</code> ), as this will make it difficult to
+extract from <code>@_</code>.
 </p>
 
 <h4 id="named-parameters">Named Parameters</h4>
@@ -604,7 +604,7 @@ send_email(
 <p>
 Don't use <a href="http://perldoc.perl.org/functions/chop.html">the built-in
 function chop()</a> in order to remove newline characters from the end
-of lines read using the diamond operator (<tt>&lt;&gt;</tt>), because this
+of lines read using the diamond operator (<code>&lt;&gt;</code>), because this
 may cause the last character in a line without a line feed character to be
 removed. Instead, use <a
 href="http://perldoc.perl.org/functions/chomp.html">chomp()</a>.
@@ -613,7 +613,7 @@ href="http://perldoc.perl.org/functions/chomp.html">chomp()</a>.
 <p>
 If you expect to process DOS/Windows-like text files whose lines end with the
 dual Carriage Return-Line Feed character on Unix systems then use the
-following in order to trim them: <tt>$line =~ s/\x0d?\x0a\z//;</tt>.
+following in order to trim them: <code>$line =~ s/\x0d?\x0a\z//;</code>.
 </p>
 
 <p>
@@ -680,7 +680,7 @@ my $new_object = new MyClass @params;
 </bad_code>
 
 <p>
-Instead use the <tt>MyClass-&gt;new(…)</tt> notation:
+Instead use the <code>MyClass-&gt;new(…)</code> notation:
 </p>
 
 <pre>
@@ -698,10 +698,10 @@ Problems with Indirect Object Notation”</a>.
 <item id="dollar-dollar" h="$$myarray_ref[$idx] or $$myhash_ref{$key}">
 
 <p>
-Don't write <tt>$$myarray_ref[$idx]</tt>, which is cluttered and can be easily
-confused with <tt>(${$myarray_ref})-&gt;[$idx]</tt>. Instead, use the
-arrow operator - <tt>$myarray_ref-&gt;[$idx]</tt>. This also applies for
-hash references - <tt>$myhash_ref-&gt;{$key}</tt>.
+Don't write <code>$$myarray_ref[$idx]</code>, which is cluttered and can be easily
+confused with <code>(${$myarray_ref})-&gt;[$idx]</code>. Instead, use the
+arrow operator - <code>$myarray_ref-&gt;[$idx]</code>. This also applies for
+hash references - <code>$myhash_ref-&gt;{$key}</code>.
 </p>
 
 </item>
@@ -760,7 +760,7 @@ while (my ($idx, $elem) = each(@array))
 
 <p>
 An arbitrary C-style for loop can be replaced with a while loop with
-a <tt>continue</tt> block.
+a “continue” block.
 </p>
 
 </item>
@@ -769,10 +769,10 @@ a <tt>continue</tt> block.
 
 <p>
 Some commenting is too intrusive and interrupts the flow of reading the code.
-Examples for that are the <tt>########################</tt> hard-rules that
+Examples for that are the <code>########################</code> hard-rules that
 some people put in their code, the comments using multiple
 <a href="http://en.wikipedia.org/wiki/Number_sign">number signs ("#")</a>,
-like <tt>####</tt>, or excessively long comment block. Please avoid all those.
+like <code>####</code>, or excessively long comment block. Please avoid all those.
 </p>
 
 <p>
@@ -835,9 +835,9 @@ generate accessors for you.
 <p>
 Some people use "^" and "$" in regular expressions to mean
 beginning-of-the-string or end-of-the-string. However, they can mean
-beginning-of-a-line and end-of-a-line respectively using the <tt>/m</tt> flag
-which is confusing. It's a good idea to use <tt>\A</tt> for start-of-string
-and <tt>\z</tt> for end-of-string always, and to specify the <tt>/m</tt> flag
+beginning-of-a-line and end-of-a-line respectively using the <code>/m</code> flag
+which is confusing. It's a good idea to use <code>\A</code> for start-of-string
+and <code>\z</code> for end-of-string always, and to specify the <code>/m</code> flag
 if one needs to use "^" and "$" for start/end of a line.
 </p>
 
@@ -904,8 +904,8 @@ if ("$name" =~ m{\At}i)
 
 <p>
 However, it's not necessary to enclose $name in double quotes (i.e:
-<tt>"$name"</tt>) because it's already a string. Using it by itself as
-<tt>$name</tt> will do just fine:
+<code>"$name"</code>) because it's already a string. Using it by itself as
+<code>$name</code> will do just fine:
 </p>
 
 <pre>
@@ -936,13 +936,13 @@ the exception rather than the rule.
 <item id="at-array-for-subscripting" h="@array[$idx] for array subscripting">
 
 <p>
-Some newcomers to Perl 5 would be tempted to write <tt>@array[$index]</tt>
-to subscript a single element out of the array <tt>@array</tt>. However,
-<tt>@array[$index]</tt> is a single-element array <b>slice</b>. To get
-a single subscript out of <tt>@array</tt> use <tt>$array[$idx]</tt> (with
+Some newcomers to Perl 5 would be tempted to write <code>@array[$index]</code>
+to subscript a single element out of the array <code>@array</code>. However,
+<code>@array[$index]</code> is a single-element array <b>slice</b>. To get
+a single subscript out of <code>@array</code> use <code>$array[$idx]</code> (with
 a dollar sign). Note that if you want to extract several elements, you can
-use an array slice such as <tt>@array[@indexes]</tt> or
-<tt>@array[$x,$y] = @array[$y,$x]</tt>. However, then it's a list which should
+use an array slice such as <code>@array[@indexes]</code> or
+<code>@array[$x,$y] = @array[$y,$x]</code>. However, then it's a list which should
 be used in list context.
 </p>
 
@@ -951,7 +951,7 @@ be used in list context.
 <item id="vars-a-and-b" h="Variables called $a and $b">
 
 <p>
-One should not create lexical variables called <tt>$a</tt> and <tt>$b</tt>
+One should not create lexical variables called <code>$a</code> and <code>$b</code>
 because there are built-in-variables called that used for
 <pdoc_f f="sort">sorting</pdoc_f> and other uses (such as reduce in
 <cpan_self_mod m="List::Util" />), which the lexical variables will interfere
@@ -969,7 +969,7 @@ my @array = sort { length($a) &lt;=&gt; length($b) } @other_array;
 
 <p>
 Instead, use other single-letter variable names such as
-<tt>$x</tt> and <tt>$y</tt>, or better yet give more descriptive names.
+<code>$x</code> and <code>$y</code>, or better yet give more descriptive names.
 </p>
 
 </item>
@@ -1003,7 +1003,7 @@ while (my $line = &lt;&gt;)
 <item id="abuse_of_array_last_index" h="($#array + 1) and Other Abuses of $#.">
 
 <p>
-The <tt>$#array</tt> notation gives the last index in <tt>@array</tt> and
+The <code>$#array</code> notation gives the last index in <code>@array</code> and
 is always equal to the array length minus one. Some people use it to signify
 the length of the array:
 </p>
@@ -1014,7 +1014,7 @@ my @flags = ((0) x ($#names +1))
 
 <p>
 However this is unnecessary because one can better do it by evaluating
-<tt>@names</tt> in scalar context, possibly by saying <tt>scalar(@names)</tt>.
+<code>@names</code> in scalar context, possibly by saying <code>scalar(@names)</code>.
 </p>
 
 <pre>
@@ -1028,11 +1028,11 @@ my @flags = ((0) x @names);
 
 <p>
 One can sometimes see people references the last elements of arrays using
-notation such as <tt>$array[$#array]</tt>, <tt>$array[$#array-1]</tt>
-or even <tt>$array[scalar(@array)-1]</tt>. This duplicates the identifier
+notation such as <code>$array[$#array]</code>, <code>$array[$#array-1]</code>
+or even <code>$array[scalar(@array)-1]</code>. This duplicates the identifier
 and is error prone and there's a better way to do it in Perl using
-negative indexes. <tt>$array[-1]</tt> is the last element of the array,
-<tt>$array[-2]</tt> is the second-to-last, etc.
+negative indexes. <code>$array[-1]</code> is the last element of the array,
+<code>$array[-2]</code> is the second-to-last, etc.
 </p>
 
 </item>
@@ -1064,7 +1064,7 @@ close($pass_fh);
 <p>
 The problem is that when a string is interpolated into a regular expression
 it is interpolated as a mini-regex, and special characters there behave like
-they do in a regular expression. So if I input <tt>'.*'</tt> into the command
+they do in a regular expression. So if I input <code>'.*'</code> into the command
 line in the program above, it will match all lines. This is a special case
 of <a href="http://community.livejournal.com/shlomif_tech/35301.html">code
 or markup injection</a>.
@@ -1074,7 +1074,7 @@ or markup injection</a>.
 The solution to this is to use \Q and \E to signify a
 <pdoc_f f="quotemeta">quotemeta()</pdoc_f> portion that will treat the
 interpolated strings as plaintext with all the special characters escaped.
-So the line becomes: <tt>if ($line =~ m{\A\Q$username\E})</tt>.
+So the line becomes: <code>if ($line =~ m{\A\Q$username\E})</code>.
 </p>
 
 <p>
@@ -1088,17 +1088,17 @@ from user input.
 <item id="overuse_dollar_underscore" h="Overusing $_">
 
 <p>
-It's a good idea not to overuse <tt>$_</tt> because using it, especially in
+It's a good idea not to overuse <code>$_</code> because using it, especially in
 large scopes, is prone to errors, including many subtle ones. Most Perl
 operations support operating on other variables and you should use lexical
 variables with meaningful names instead of $_ whenever possible.
 </p>
 
 <p>
-Some places where you have to use <tt>$_</tt> are <pdoc_f f="map">map</pdoc_f>,
+Some places where you have to use <code>$_</code> are <pdoc_f f="map">map</pdoc_f>,
 <pdoc_f f="grep">grep</pdoc_f> and other functions like that, but even in
 that case it might be desirable to set a lexical variable to the value of
-<tt>$_</tt> right away: <tt>map { my $line = $_; … } @lines</tt>.
+<code>$_</code> right away: <code>map { my $line = $_; … } @lines</code>.
 </p>
 
 </item>
@@ -1119,7 +1119,7 @@ code.
 <item id="qx_for_command_execution" h="`…` or qx// for Executing Commands">
 
 <p>
-Some people are tempted to use backticks (<tt>`…`</tt>) or <tt>qx/…/</tt>
+Some people are tempted to use backticks (<code>`…`</code>) or <code>qx/…/</code>
 for executing commands for their side-effects. E.g:
 </p>
 
@@ -1133,7 +1133,7 @@ my $temp_file = "tempfile.txt";
 </bad_code>
 
 <p>
-However, this is not idiomatic because <tt>`…`</tt> and <tt>qx/…/</tt> are
+However, this is not idiomatic because <code>`…`</code> and <code>qx/…/</code> are
 used to trap a command's output and to return it as a big string or as a list
 of lines. It would be a better idea to use
 <pdoc_f f="system">system()</pdoc_f> or to seek more idiomatic Perl-based
@@ -1142,7 +1142,7 @@ solutions on CPAN or in the Perl core (such as using
 </p>
 
 <p>
-Some people even go and ask how to make the <tt>qx/…/</tt> output go to
+Some people even go and ask how to make the <code>qx/…/</code> output go to
 the screen, which is a clear indication that they want to use system().
 </p>
 
@@ -1152,17 +1152,17 @@ the screen, which is a clear indication that they want to use system().
 
 <p>
 As noted in "Perl Best Practices", all functions must have an explicit
-<tt>return</tt> statement, as otherwise they implicitly return the last
+“return” statement, as otherwise they implicitly return the last
 expression, which would be subject to change upon changing the code. If you
 don't want the subroutine to return anything (i.e: it's a so-called
-"procedure"), then write <tt>return;</tt> to always return a false value,
+"procedure"), then write <code>return;</code> to always return a false value,
 which the caller won't be able to do anything meaningful with.
 </p>
 
 <p>
 Another mistake is to write "return 0;" or "return undef;" to return
 false, because in list context, they will return a one-element list which
-is considered true. So always type <tt>return;</tt> to return false.
+is considered true. So always type <code>return;</code> to return false.
 </p>
 
 </item>
@@ -1173,8 +1173,8 @@ is considered true. So always type <tt>return;</tt> to return false.
 Mark Jason Dominus has written about
 <a href="http://perl.plover.com/varvarname.html">varvarname -
 "Why it's stupid to `use a variable as a variable name'"</a>, namely if
-<tt>$myvar</tt> is <tt>'foobar'</tt> they want to operate on the value of
-<tt>$foobar</tt>. While there are ways to achieve similar things in Perl,
+<code>$myvar</code> is <code>'foobar'</code> they want to operate on the value of
+<code>$foobar</code>. While there are ways to achieve similar things in Perl,
 the best way is to use <a href="$(ROOT)/topics/hashes/">hashes</a> (possibly
 pointing to complex records with more information) and lookup them by
 the string you want to use. Read the link by Mark Jason Dominus for more
@@ -1227,11 +1227,11 @@ sub sum_of_squares
 <item id="print_to_fh" h="print $fh @args">
 
 <p>
-It is preferable to write <tt>print {$write_fh} @args</tt>
-over <tt>print $write_fh @args</tt> because the latter can more easily be
-mistaken for <tt>print $write_fh, @args</tt> (which does something different)
+It is preferable to write <code>print {$write_fh} @args</code>
+over <code>print $write_fh @args</code> because the latter can more easily be
+mistaken for <code>print $write_fh, @args</code> (which does something different)
 and does not provide enough visual hints that you are writing to the
-<tt>$write_fh</tt> filehandle. Therefore, always wrap the file-handle in
+<code>$write_fh</code> filehandle. Therefore, always wrap the file-handle in
 curly braces (so-called "dative block"). (Inspired by "Perl Best Practices").
 </p>
 
@@ -1261,9 +1261,9 @@ while (my $line = &lt;STDIN&gt;)
 </bad_code>
 
 <p>
-However, it is usually better to use <tt>ARGV</tt> instead of <tt>STDIN</tt>
+However, it is usually better to use <code>ARGV</code> instead of <code>STDIN</code>
 because it also allows processing the filenames from the command line. This
-can also be achieved by simply saying <tt>&lt;&gt;</tt>. So the code becomes:
+can also be achieved by simply saying <code>&lt;&gt;</code>. So the code becomes:
 </p>
 
 <pre>
@@ -1291,7 +1291,7 @@ while (my $line = &lt;&gt;)
 
 <p>
 Some people ask about how to add or remove elements to an existing array or
-hash when iterating over them using <tt>foreach</tt> and other loops. The
+hash when iterating over them using “foreach” and other loops. The
 answer to that is that Perl will likely not handle it too well, and it expects
 that during loops the keys of a data structure will remain constant.
 </p>
@@ -1369,7 +1369,7 @@ English identifiers and comments.
 <item id="perlform" h="Using perlform for formatting text.">
 
 <p>
-One should not use <tt>perlform</tt> for formatting text, because it makes
+One should not use “perlform” for formatting text, because it makes
 use of global identifiers, and should use the
 <cpan_self_dist d="Perl6-Form" /> CPAN distribution instead. Also see
 our <a href="$(ROOT)/uses/text-generation/">text generation page</a> for
@@ -1396,7 +1396,7 @@ sub new
 
 <p>
 The problem here is that this allows one to do
-<tt>$my_object_instance-&gt;new</tt> to create a new instance of the object,
+<code>$my_object_instance-&gt;new</code> to create a new instance of the object,
 but many people will expect it to be invalid or to clone the object. So don't
 do that and instead write your constructors as:
 </p>
@@ -1416,7 +1416,7 @@ sub new
 
 <p>
 Which will disable it and will just allow
-<tt>ref($my_object_instance)-&gt;new(…)</tt>. If you need a clone method,
+<code>ref($my_object_instance)-&gt;new(…)</code>. If you need a clone method,
 then code one called "clone()" and don't use "new" for that.
 </p>
 
@@ -1434,7 +1434,7 @@ Schwartz's post "Constructing Objects"</a> for providing the insight to this).
 See the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Wikipedia article
 about "Law of Demeter" for more information</a>. Namely, doing many nested
 method calls like
-<tt>$self-&gt;get_employee('sophie')-&gt;get_address()-&gt;get_street()</tt>
+<code>$self-&gt;get_employee('sophie')-&gt;get_address()-&gt;get_street()</code>
 is not advisable, and should be avoided.
 </p>
 
@@ -1528,9 +1528,9 @@ Which better conveys one's intention and may be a bit more efficient.
 
 <p>
 A similar symptom to the above is people who wish to use the ternary
-inline- conditional operator (<tt>? :</tt>) for choosing to execute between
+inline- conditional operator (<code>? :</code>) for choosing to execute between
 two different statements with side-effects
-instead of using <tt>if</tt> and <tt>else</tt>. For example:
+instead of using <code>if</code> and <code>else</code>. For example:
 </p>
 
 <bad_code>
@@ -1546,7 +1546,7 @@ is not always the case).
 <p>
 However, the ternary operator is meant to be an expression that is a choice
 between two values and should not be used for its side-effects. To do the
-latter, just use <tt>if</tt> and <tt>else</tt>:
+latter, just use <code>if</code> and <code>else</code>:
 </p>
 
 <pre>
@@ -1577,7 +1577,7 @@ it in its entirety).
 
 <p>
 One should not nest an inner top-level subroutine declared using
-<tt>sub inner</tt> inside of an outer one, like so:
+<code>sub inner</code> inside of an outer one, like so:
 </p>
 
 <bad_code>
@@ -1599,10 +1599,10 @@ This code will compile and run, but may break in subtle ways.
 </p>
 
 <p>
-The first problem with this approach is that <tt>inner()</tt> will still be
-visible outside <tt>outer()</tt>, but the more serious problem is that the
+The first problem with this approach is that <code>inner()</code> will still be
+visible outside <code>outer()</code>, but the more serious problem is that the
 inner subroutine will only get one copy of the lexical variables inside
-<tt>outer()</tt>.
+<code>outer()</code>.
 </p>
 
 <p>
@@ -1641,7 +1641,7 @@ Sometimes one can see people using <pdoc_f f="grep">grep</pdoc_f> to find
 the first matching element in an array, or whether such an element exists at
 all. However, grep is intended to extract <b>all</b> matching elements out
 of a list, not just the first one, and as a result will not stop until it
-finds them all. To remedy this look at either <tt>first()</tt> from
+finds them all. To remedy this look at either <code>first()</code> from
 <cpan_self_mod m="List::Util" /> (to find the first match) or
 "any/all/notall/none" from <cpan_self_mod m="List::MoreUtils" /> (to find
 whether a single element exists). These better convey one's intention
@@ -1739,9 +1739,9 @@ should retain their value. This will allow to keep track of them better.
 One should not use Switch.pm to implement a
 <a href="http://en.wikipedia.org/wiki/Switch_statement">switch statement</a>
 because it's a source filter, tends to break a lot of code, and causes
-unexpected problems. Instead one should either use <tt>given/when</tt>, which
+unexpected problems. Instead one should either use <code>given/when</code>, which
 are only available in perl-5.10 and above, or dispatch tables, or alternatively
-plain <tt>if/elsif/else</tt> structures.
+plain <code>if/elsif/else</code> structures.
 </p>
 
 </item>
@@ -1770,7 +1770,7 @@ forking processes or something like POE (see our
 
 <p>
 Some people are tempted to use shell commands for performing
-various tasks using <tt>`…`</tt>, <tt>qx/…/</tt>, <tt>system()</tt>,
+various tasks using <code>`…`</code>, <code>qx/…/</code>, <code>system()</code>,
 piped-open, etc. However, usually Perl has built-in routines or alternatively
 CPAN modules, which are more portable, and often would be faster than
 calling the shell for help, and they should be used instead.
@@ -1788,14 +1788,14 @@ my $filesize = `wc -c $file | cut -c0-8 | sed 's/ //g'`;
 </bad_code>
 
 <p>
-Reportedly, replacing this line with <tt>my $filesize = -s $file</tt> (which
-as noted earlier should have been called <tt>$filename</tt> instead), resulted
+Reportedly, replacing this line with <code>my $filesize = -s $file</code> (which
+as noted earlier should have been called <code>$filename</code> instead), resulted
 in the program being 75 minutes faster on average (!).
 </p>
 
 <p>
 Normally, if you find yourself using UNIX text processing commands such as
-<tt>sed</tt>, <tt>awk</tt>, <tt>grep</tt>, and <tt>cut</tt>, you should
+“sed”, “awk”, “grep”, and “cut”, you should
 implement it in pure-Perl code.
 </p>
 
@@ -1833,8 +1833,8 @@ single-statement blocks like in <pdoc_f f="map">map</pdoc_f>.
 
 <p>
 Recent versions of of perl introduced the list-forms of piping to and from a
-command, such as <tt>open my $fh, '-|', 'fortune', $collection</tt> or
-<tt>open my $printer, '|-', 'lpr', '-Plp1'</tt>. However, not only they are
+command, such as <code>open my $fh, '-|', 'fortune', $collection</code> or
+<code>open my $printer, '|-', 'lpr', '-Plp1'</code>. However, not only they are
 not implemented on Windows and other UNIX-like systems yet, but when one passes
 only one argument to them, they pass it to the shell verbatim.
 </p>
@@ -1849,7 +1849,7 @@ open my $fh, '-|', @foo
 </bad_code>
 
 <p>
-One can pass only a single argument to <tt>@foo</tt>, which would be dangerous.
+One can pass only a single argument to <code>@foo</code>, which would be dangerous.
 To mitigate that, one should use the <cpan_self_dist d="IPC-Run" />
 or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
 </p>
@@ -1867,8 +1867,8 @@ do not cause much harm, but they are not needed and can be distracted.
 
 <p>
 While you should not feel bad about having trailing space, it is a good idea
-to sometimes search for them using a command such as <tt>ack '[ \t]+$'</tt>
-(or <tt>ack -a '[ \t]+$'</tt> for completeness - see
+to sometimes search for them using a command such as <code>ack '[ \t]+$'</code>
+(or <code>ack -a '[ \t]+$'</code> for completeness - see
 <a href="http://betterthangrep.com/">ack</a>, and get rid of them.
 </p>
 
@@ -1903,14 +1903,14 @@ Show White Space</a>.
 String <pdoc_f f="eval">eval</pdoc_f> allows one to compile and execute
 (possibly generated) strings as Perl expressions. While it is a powerful
 feature, there are usually better and safer ways to achieve what you want
-using string <tt>eval ""</tt>. So you should only use it, if you are an expert
+using string <code>eval ""</code>. So you should only use it, if you are an expert
 and really know what you are doing.
 </p>
 
 <p>
-Related to string eval, is using two or more <tt>/e</tt> flags in the
-<tt>s///</tt> substitution. While one /e flag is often useful (for example
-when substituting counters like in <tt>s/#\./($i++)."."/ge</tt>) the second
+Related to string eval, is using two or more <code>/e</code> flags in the
+<code>s///</code> substitution. While one /e flag is often useful (for example
+when substituting counters like in <code>s/#\./($i++)."."/ge</code>) the second
 /e flags just evaluates the generated expression again. This can easily be done
 with using string eval inside the right-hand-side, assuming it is needed which
 is normally not the case.
@@ -1973,8 +1973,8 @@ strings for executing arbitrary commands and exploiting the system.
 
 <p>
 An example of this is outputting HTML using
-<tt>print "&lt;p&gt;" . $paragraph_text . "&lt;/p&gt;\n";</tt> which may allow
-inserting arbitrary, malicious, markup inside <tt>$paragraph_text</tt>,
+<code>print "&lt;p&gt;" . $paragraph_text . "&lt;/p&gt;\n";</code> which may allow
+inserting arbitrary, malicious, markup inside <code>$paragraph_text</code>,
 which may include malicious JavaScript, that can steal passwords or alter
 the page’s contents.
 </p>
@@ -2017,8 +2017,8 @@ injections.
 
 <p>
 Some beginners to Perl are tempted to use the anonymous array reference
-constructor (<tt>[ … ]</tt>) to initialise array variables, or alternatively
-anonymous hash references (<tt>{ … }</tt>) to initialise hash variables, like
+constructor (<code>[ … ]</code>) to initialise array variables, or alternatively
+anonymous hash references (<code>{ … }</code>) to initialise hash variables, like
 so:
 </p>
 
@@ -2063,7 +2063,7 @@ they need to be scrolled to read, and may not fit within the margins of your
 co-developers’ text editors. If the lines are too long, you should break
 them or reformat them (for example, by adding a newline before or after an
 operator), and by breaking long string constants into several lines using
-the string concatenation operator - <tt>.</tt>.
+the string concatenation operator - <code>.</code>.
 </p>
 
 <p>
@@ -2078,8 +2078,8 @@ own code.
 
 <p>
 Calling <pdoc_f f="readdir">readdir()</pdoc_f> repetitively, or calling it
-in list context will normally return the two special entries of <tt>.</tt>
-(the same directory) and <tt>..</tt> (the parent directory) which should not
+in list context will normally return the two special entries of <filepath>.</filepath>
+(the same directory) and <filepath>..</filepath> (the parent directory) which should not
 be checked, and should normally be ignored. One can often find that people
 are trying to skip them in various sub-optimal ways:
 </p>
@@ -2094,7 +2094,7 @@ if ($dir_entry eq "." or $dir_entry eq "..") # May not be portable.
 
 <p>
 The best way to do that is to use <cpan_self_mod m="File::Spec" />’s
-<tt>no_upwards</tt> function:
+<code>no_upwards()</code> function:
 </p>
 
 <pre>
@@ -2105,7 +2105,7 @@ foreach my $entry (File::Spec-&gt;no_upwards(readdir($dir_handle))
 
 <p>
 Note that <cpan_self_dist d="File-Slurp" /> wraps that for you in its
-<tt>read_dir()</tt> function and other file system abstraction modules provide
+<code>read_dir()</code> function and other file system abstraction modules provide
 similar functionality.
 </p>
 
