@@ -59,10 +59,11 @@
         <zeroOrMore>
             <choice>
                 <ref name="blockquote"/>
-                <ref name="para"/>
+                <ref name="p"/>
                 <ref name="ol"/>
                 <ref name="ul"/>
                 <ref name="programlisting"/>
+                <ref name="bad_code"/>
             </choice>
         </zeroOrMore>
     </define>
@@ -90,16 +91,17 @@
     <define name="li">
         <element name="vrd:li">
             <oneOrMore>
-                <ref name="para" />
+                <ref name="p" />
             </oneOrMore>
         </element>
     </define>
-    <define name="para">
+    <define name="p">
         <element name="vrd:p">
             <zeroOrMore>
                 <choice>
                     <ref name="text_with_style" />
                     <ref name="span" />
+                    <ref name="a" />
                 </choice>
             </zeroOrMore>
         </element>
@@ -113,6 +115,14 @@
     </define>
     <define name="span">
         <element name="vrd:span">
+            <ref name="common_attrs" />
+            <oneOrMore>
+                <ref name="text_with_style" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="a">
+        <element name="vrd:a">
             <ref name="common_attrs" />
             <oneOrMore>
                 <ref name="text_with_style" />
@@ -134,9 +144,21 @@
             <text />
         </element>
     </define>
+    <define name="code_contents">
+        <ref name="common_attrs" />
+        <attribute name="format">
+            <text/>
+        </attribute>
+        <text/>
+    </define>
+    <define name="bad_code">
+        <element name="vrd:bad_code">
+            <ref name="code_contents" />
+        </element>
+    </define>
     <define name="programlisting">
         <element name="vrd:programlisting">
-            <text />
+            <ref name="code_contents" />
         </element>
     </define>
     <define name="info">
