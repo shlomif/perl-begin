@@ -158,6 +158,12 @@
                 </attribute>
                 <text />
             </element>
+            <element name="vrd:pdoc_f">
+                <attribute name="f">
+                    <text />
+                </attribute>
+                <text />
+            </element>
             <element name="vrd:strong">
                 <text />
             </element>
