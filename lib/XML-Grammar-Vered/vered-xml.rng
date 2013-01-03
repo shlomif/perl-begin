@@ -55,7 +55,19 @@
     </define>
     <define name="section">
         <element name="vrd:section">
-            <ref name="section_contents" />
+            <ref name="global_attrs" />
+            <ref name="info" />
+            <ref name="several_paras" />
+            <zeroOrMore>
+                <element name="vrd:item">
+                    <ref name="global_attrs" />
+                    <ref name="info" />
+                    <ref name="several_paras" />
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="section" />
+            </zeroOrMore>
         </element>
     </define>
     <define name="several_paras">
@@ -67,6 +79,7 @@
                 <ref name="ul"/>
                 <ref name="programlisting"/>
                 <ref name="bad_code"/>
+                <ref name="code_blk"/>
             </choice>
         </zeroOrMore>
     </define>
@@ -155,13 +168,18 @@
     </define>
     <define name="code_contents">
         <ref name="common_attrs" />
-        <attribute name="format">
+        <attribute name="syntax">
             <text/>
         </attribute>
         <text/>
     </define>
     <define name="bad_code">
         <element name="vrd:bad_code">
+            <ref name="code_contents" />
+        </element>
+    </define>
+    <define name="code_blk">
+        <element name="vrd:code_blk">
             <ref name="code_contents" />
         </element>
     </define>
