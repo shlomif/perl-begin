@@ -235,12 +235,16 @@ For more information, see:
 <ol>
 
 <li>
+<p>
 <a href="https://www.socialtext.net/perl5/prototype">Discussion on the Perl 5 Wiki</a>
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://stackoverflow.com/questions/297034/why-are-perl-5s-function-prototypes-bad">“Why
 are Perl 5’s function prototypes bad?”</a> on Stack Overflow.
+</p>
 </li>
 
 </ol>
@@ -522,8 +526,7 @@ command line arguments, you should also consider using
 <cpan_self_mod m="Getopt::Long" />.
 </p>
 
-<h4 id="clobbering-arrays-or-hashes">Don't clobber arrays or hashes</h4>
-
+<item id="clobbering-arrays-or-hashes" h="Don’t clobber arrays or hashes">
 <p>
 Often people ask how to pass arrays or hashes to subroutines. The answer is
 that the right way to do it is to pass them as a reference as an argument
@@ -561,7 +564,9 @@ or hashes (e.g: <code>my_func(@array1, @array2);</code> or
 extract from <code>@_</code>.
 </p>
 
-<h4 id="named-parameters">Named Parameters</h4>
+</item>
+
+<item id="named-parameters" h="Named Parameters">
 
 <p>
 If the number of parameters that your subroutine accepts gets too long, or
@@ -596,6 +601,8 @@ send_email(
     }
 );
 </pre>
+
+</item>
 
 </item>
 

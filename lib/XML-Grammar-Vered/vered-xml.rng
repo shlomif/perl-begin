@@ -58,16 +58,23 @@
             <ref name="global_attrs" />
             <ref name="info" />
             <ref name="several_paras" />
-            <zeroOrMore>
-                <element name="vrd:item">
-                    <ref name="global_attrs" />
-                    <ref name="info" />
-                    <ref name="several_paras" />
-                </element>
-            </zeroOrMore>
+            <ref name="some_items" />
             <zeroOrMore>
                 <ref name="section" />
             </zeroOrMore>
+        </element>
+    </define>
+    <define name="some_items">
+        <zeroOrMore>
+            <ref name="item" />
+        </zeroOrMore>
+    </define>
+    <define name="item">
+        <element name="vrd:item">
+            <ref name="global_attrs" />
+            <ref name="info" />
+            <ref name="several_paras" />
+            <ref name="some_items" />
         </element>
     </define>
     <define name="several_paras">
@@ -127,6 +134,30 @@
             <text />
             <ref name="b" />
             <ref name="i" />
+            <element name="vrd:cpan_self_dist">
+                <attribute name="d">
+                    <text />
+                </attribute>
+                <empty />
+            </element>
+            <element name="vrd:cpan_self_mod">
+                <attribute name="m">
+                    <text />
+                </attribute>
+                <empty />
+            </element>
+            <element name="vrd:cpan_mod">
+                <attribute name="m">
+                    <text />
+                </attribute>
+                <text />
+            </element>
+            <element name="vrd:pdoc">
+                <attribute name="d">
+                    <text />
+                </attribute>
+                <text />
+            </element>
             <element name="vrd:strong">
                 <text />
             </element>
