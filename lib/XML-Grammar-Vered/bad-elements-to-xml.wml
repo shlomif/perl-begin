@@ -76,6 +76,17 @@ controversial.
 <restore id h />
 </define-tag>
 
+<define-tag pre endtag="required">
+<code_blk* syntax="perl">
+%body
+</code_blk*>
+</define-tag>
+
+<define-tag bad_code endtag="required">
+<bad_code* syntax="perl"*>
+%body
+</bad_code*>
+</define-tag>
 <main_list>
 
 <item id="no-indentation" h="No Indentation">
