@@ -127,6 +127,7 @@ BAD_ELEMENTS_XHTML = lib/tutorials/bad-elements/bad-elements.xhtml
 bad_elements_html: $(BAD_ELEMENTS_XHTML)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
+	jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
 	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	jing rng/docbook.rng $@
 
