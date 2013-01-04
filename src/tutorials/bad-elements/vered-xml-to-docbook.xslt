@@ -168,6 +168,19 @@
     </db:link>
 </xsl:template>
 
+<xsl:template match="vrd:cpan_self_dist">
+    <xsl:variable name="dist">
+        <xsl:value-of select="@d" />
+    </xsl:variable>
+    <db:link>
+        <xsl:attribute name="xlink:href">
+            <xsl:text>http://metacpan.org/release/</xsl:text>
+            <xsl:value-of select="$dist" />
+        </xsl:attribute>
+        <xsl:value-of select="$dist" />
+    </db:link>
+</xsl:template>
+
 <xsl:template match="vrd:filepath">
     <db:filename>
         <xsl:apply-templates/>
