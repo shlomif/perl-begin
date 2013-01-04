@@ -11,9 +11,11 @@
 
 <xsl:template match="/vrd:document">
     <article>
-        <xsl:attribute name="xml:id">
-            <xsl:value-of select="@xml:id" />
-        </xsl:attribute>
+        <xsl:if test="@xml:id">
+            <xsl:attribute name="xml:id">
+                <xsl:value-of select="@xml:id" />
+            </xsl:attribute>
+        </xsl:if>
         <xsl:attribute name="xml:lang">
             <xsl:value-of select="@xml:lang" />
         </xsl:attribute>
@@ -29,9 +31,9 @@
 </xsl:template>
 
 <xsl:template match="vrd:preface">
-    <db:preface>
+    <db:section role="introduction">
         <xsl:call-template name="preface_or_section" />
-    </db:preface>
+    </db:section>
 </xsl:template>
 
 <xsl:template name="preface_or_section">

@@ -127,3 +127,4 @@ bad_elements_html: $(BAD_ELEMENTS_DB5)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
+	jing rng/docbook.rng $@
