@@ -51,12 +51,33 @@
             </xsl:choose>
         </db:title>
     </db:info>
-    <xsl:apply-templates select="vrd:section|vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting" />
+    <xsl:apply-templates select="vrd:section|vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting|vrd:item" />
 </xsl:template>
 
 <xsl:template match="vrd:section">
     <section>
         <xsl:call-template name="preface_or_section" />
+    </section>
+</xsl:template>
+
+<xsl:template match="vrd:item">
+    <section role="item">
+        <xsl:call-template name="common_attributes" />
+        <!-- TODO : extract this db:info thing into a common named
+        xsl:template. -->
+        <db:info>
+            <db:title>
+                <xsl:choose>
+                    <xsl:when test="vrd:info/vrd:title">
+                        <xsl:value-of select="vrd:info/vrd:title" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@xml:id" />
+                    </xsl:otherwise>
+                </xsl:choose>
+            </db:title>
+        </db:info>
+        <xsl:apply-templates select="vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting|vrd:item" />
     </section>
 </xsl:template>
 
