@@ -9,11 +9,7 @@
 <xsl:output method="xml" encoding="UTF-8" indent="yes"
  />
 
-<xsl:template match="/">
-        <xsl:apply-templates select="//vrd:body" />
-</xsl:template>
-
-<xsl:template match="vrd:body">
+<xsl:template match="/vrd:document">
     <article>
         <xsl:attribute name="xml:id">
             <xsl:value-of select="@xml:id" />
@@ -24,10 +20,10 @@
         <xsl:attribute name="version">5.0</xsl:attribute>
         <db:info>
             <db:title>
-                <xsl:value-of select="vrd:title" />
+                <xsl:value-of select="vrd:info/vrd:title" />
             </db:title>
         </db:info>
-        <xsl:apply-templates select="vrd:section" />
+        <xsl:apply-templates select="vrd:body/vrd:section" />
     </article>
 </xsl:template>
 
