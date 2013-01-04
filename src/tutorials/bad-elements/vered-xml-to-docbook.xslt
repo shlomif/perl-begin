@@ -23,8 +23,30 @@
                 <xsl:value-of select="vrd:info/vrd:title" />
             </db:title>
         </db:info>
+        <xsl:apply-templates select="vrd:body/vrd:preface" />
         <xsl:apply-templates select="vrd:body/vrd:section" />
     </article>
+</xsl:template>
+
+<xsl:template match="vrd:preface">
+    <db:preface>
+        <xsl:copy-of select="@xml:id" />
+        <xsl:if test="@xml:lang">
+            <xsl:copy-of select="@xml:lang" />
+        </xsl:if>
+        <db:info>
+            <db:title>
+                <xsl:choose>
+                    <xsl:when test="vrd:info/vrd:title">
+                        <xsl:value-of select="vrd:info/vrd:title" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@xml:id" />
+                    </xsl:otherwise>
+                </xsl:choose>
+            </db:title>
+        </db:info>
+    </db:preface>
 </xsl:template>
 
 <xsl:template match="vrd:section">
