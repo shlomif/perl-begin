@@ -30,45 +30,33 @@
 
 <xsl:template match="vrd:preface">
     <db:preface>
-        <xsl:copy-of select="@xml:id" />
-        <xsl:if test="@xml:lang">
-            <xsl:copy-of select="@xml:lang" />
-        </xsl:if>
-        <db:info>
-            <db:title>
-                <xsl:choose>
-                    <xsl:when test="vrd:info/vrd:title">
-                        <xsl:value-of select="vrd:info/vrd:title" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="@xml:id" />
-                    </xsl:otherwise>
-                </xsl:choose>
-            </db:title>
-        </db:info>
+        <xsl:call-template name="preface_or_section" />
     </db:preface>
+</xsl:template>
+
+<xsl:template name="preface_or_section">
+    <xsl:copy-of select="@xml:id" />
+    <xsl:if test="@xml:lang">
+        <xsl:copy-of select="@xml:lang" />
+    </xsl:if>
+    <db:info>
+        <db:title>
+            <xsl:choose>
+                <xsl:when test="vrd:info/vrd:title">
+                    <xsl:value-of select="vrd:info/vrd:title" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@xml:id" />
+                </xsl:otherwise>
+            </xsl:choose>
+        </db:title>
+    </db:info>
+    <xsl:apply-templates select="vrd:section|vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting" />
 </xsl:template>
 
 <xsl:template match="vrd:section">
     <section>
-        <xsl:copy-of select="@xml:id" />
-        <xsl:if test="@xml:lang">
-            <xsl:copy-of select="@xml:lang" />
-        </xsl:if>
-        <!-- Make the title the title attribute or "ID" if does not exist. -->
-        <db:info>
-            <db:title>
-                <xsl:choose>
-                    <xsl:when test="vrd:title">
-                        <xsl:value-of select="vrd:title" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="@xml:id" />
-                    </xsl:otherwise>
-                </xsl:choose>
-            </db:title>
-        </db:info>
-        <xsl:apply-templates select="vrd:section|vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting" />
+        <xsl:call-template name="preface_or_section" />
     </section>
 </xsl:template>
 
@@ -131,6 +119,13 @@
     <db:listitem>
         <xsl:apply-templates/>
     </db:listitem>
+</xsl:template>
+
+<xsl:template match="vrd:a">
+    <xsl:element name="db:link">
+        <xsl:call-template name="common_attributes" />
+        <xsl:apply-templates/>
+    </xsl:element>
 </xsl:template>
 
 <xsl:template match="vrd:span">
