@@ -122,9 +122,15 @@ $(TARGET)/.htaccess: lib/htaccess.txt
 BAD_ELEMENTS_DB5 = lib/tutorials/bad-elements/bad-elements.docbook5.xml
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
 BAD_ELEMENTS_XSLT = src/tutorials/bad-elements/vered-xml-to-docbook.xslt
+BAD_ELEMENTS_XHTML = lib/tutorials/bad-elements/bad-elements.xhtml
 
-bad_elements_html: $(BAD_ELEMENTS_DB5)
+bad_elements_html: $(BAD_ELEMENTS_XHTML)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	jing rng/docbook.rng $@
+
+# -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
+# --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
+$(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5)
+	docmake -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl -o $@ xhtml-1_1 $<
