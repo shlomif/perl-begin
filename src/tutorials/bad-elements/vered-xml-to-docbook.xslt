@@ -139,6 +139,18 @@
     </db:emphasis>
 </xsl:template>
 
+<xsl:template match="vrd:code">
+    <db:code>
+        <xsl:apply-templates/>
+    </db:code>
+</xsl:template>
+
+<xsl:template match="vrd:filepath">
+    <db:filename>
+        <xsl:apply-templates/>
+    </db:filename>
+</xsl:template>
+
 <xsl:template match="vrd:ol">
     <db:orderedlist>
         <xsl:apply-templates/>
