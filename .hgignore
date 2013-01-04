@@ -3,6 +3,7 @@ compile/
 dest
 include.mak
 lib/tutorials/bad-elements/bad-elements.docbook5.xml
+lib/tutorials/bad-elements/bad-elements.xhtml/index.html
 p4n.mak
 rules.mak
 src/jqui-override.css
