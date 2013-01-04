@@ -119,13 +119,21 @@ htaccess: $(TARGET)/.htaccess
 $(TARGET)/.htaccess: lib/htaccess.txt
 	cp -f $< $@
 
-BAD_ELEMENTS_DB5 = lib/tutorials/bad-elements/bad-elements.docbook5.xml
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
 BAD_ELEMENTS_XSLT = src/tutorials/bad-elements/vered-xml-to-docbook.xslt
 BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements
-BAD_ELEMENTS_XHTML = $(BAD_ELEMENTS_XHTML_DIR)/index.html
 
-bad_elements_html: $(BAD_ELEMENTS_XHTML)
+DOCBOOK5_BASE_DIR = lib/docbook/5
+
+DOCBOOK5_SOURCES_DIR := $(DOCBOOK5_BASE_DIR)/xml
+DOCBOOK5_RENDERED_DIR := $(DOCBOOK5_BASE_DIR)/rendered
+DOCBOOK5_ALL_IN_ONE_XHTML_DIR := $(DOCBOOK5_BASE_DIR)/essays
+
+BAD_ELEMENTS_DB5 := $(DOCBOOK5_SOURCES_DIR)/bad-elements.xml
+BAD_ELEMENTS_XHTML := $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/bad-elements/all-in-one.xhtml
+BAD_ELEMENTS_RENDERED := $(DOCBOOK5_RENDERED_DIR)/bad-elements.xhtml
+
+bad_elements_html: $(BAD_ELEMENTS_XHTML) $(BAD_ELEMENTS_RENDERED)
 
 DOCBOOK5_RELAXNG = rng/docbook.rng
 DOCBOOK5_XSL_STYLESHEETS_PATH := $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
@@ -144,6 +152,9 @@ $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5)
 	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.html
 	rm -f $@.temp.xml.html
 	perl -lpi -e 's/[ \t]+\z//' $@
+
+$(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
+	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
 %.show:
 	@echo "$* = $($*)"
