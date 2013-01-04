@@ -57,4 +57,9 @@
 <xsl:template name="generate.html.title">
 </xsl:template>
 
+<!-- Apply the roles -->
+<xsl:template match="*[@role]" mode="class.value">
+    <xsl:value-of select="@role"/>
+</xsl:template>
+
 </xsl:stylesheet>
