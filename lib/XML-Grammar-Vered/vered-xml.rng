@@ -188,7 +188,10 @@
     </define>
     <define name="a">
         <element name="vrd:a">
-            <ref name="common_attrs" />
+            <ref name="global_attrs" />
+            <attribute name="xlink:href">
+                <data type="anyURI"/>
+            </attribute>
             <oneOrMore>
                 <ref name="text_with_style" />
             </oneOrMore>
