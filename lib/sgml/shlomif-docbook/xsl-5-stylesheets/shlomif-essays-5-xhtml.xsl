@@ -57,9 +57,12 @@
 <xsl:template name="generate.html.title">
 </xsl:template>
 
-<!-- Apply the roles -->
-<xsl:template match="*[@role]" mode="class.value">
-    <xsl:value-of select="@role"/>
-</xsl:template>
+<!--
 
+WARNING: this page is not used by
+lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
+so it should not be modified - instead see:
+lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-common.xsl
+
+-->
 </xsl:stylesheet>
