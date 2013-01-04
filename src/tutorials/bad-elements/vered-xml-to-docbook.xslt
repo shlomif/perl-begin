@@ -160,6 +160,19 @@
     </db:link>
 </xsl:template>
 
+<xsl:template match="vrd:pdoc_f">
+    <xsl:variable name="f">
+        <xsl:value-of select="@f" />
+    </xsl:variable>
+    <db:link>
+        <xsl:attribute name="xlink:href">
+            <xsl:text>http://perldoc.perl.org/functions/</xsl:text>
+            <xsl:value-of select="$f" />
+            <xsl:text>.html</xsl:text>
+        </xsl:attribute>
+        <xsl:apply-templates/>
+    </db:link>
+</xsl:template>
 <xsl:template match="vrd:cpan_mod">
     <db:link>
         <xsl:attribute name="xlink:href">
