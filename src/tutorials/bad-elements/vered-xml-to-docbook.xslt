@@ -66,7 +66,7 @@
     </db:para>
 </xsl:template>
 
-<xsl:template match="vrd:b">
+<xsl:template match="vrd:b|vrd:strong">
     <db:emphasis role="bold">
         <xsl:apply-templates/>
     </db:emphasis>
@@ -91,7 +91,7 @@
     </db:blockquote>
 </xsl:template>
 
-<xsl:template match="vrd:i">
+<xsl:template match="vrd:i|vrd:em">
     <db:emphasis>
         <xsl:apply-templates/>
     </db:emphasis>
