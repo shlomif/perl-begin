@@ -122,17 +122,28 @@ $(TARGET)/.htaccess: lib/htaccess.txt
 BAD_ELEMENTS_DB5 = lib/tutorials/bad-elements/bad-elements.docbook5.xml
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
 BAD_ELEMENTS_XSLT = src/tutorials/bad-elements/vered-xml-to-docbook.xslt
-BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/bad-elements.xhtml
+BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements
 BAD_ELEMENTS_XHTML = $(BAD_ELEMENTS_XHTML_DIR)/index.html
 
 bad_elements_html: $(BAD_ELEMENTS_XHTML)
 
+DOCBOOK5_RELAXNG = rng/docbook.rng
+DOCBOOK5_XSL_STYLESHEETS_PATH := $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
+DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
+
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
 	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
-	jing rng/docbook.rng $@
+	jing $(DOCBOOK5_RELAXNG) $@
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
 # --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
 $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5)
-	docmake --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl -o $(BAD_ELEMENTS_XHTML_DIR) xhtml-1_1 $<
+	jing $(DOCBOOK5_RELAXNG) $<
+	docmake --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml-1_1 $<
+	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.html
+	rm -f $@.temp.xml.html
+	perl -lpi -e 's/[ \t]+\z//' $@
+
+%.show:
+	@echo "$* = $($*)"

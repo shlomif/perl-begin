@@ -6,6 +6,7 @@ syntax:regexp
 ^include\.mak$
 ^lib/tutorials/bad-elements/bad-elements\.docbook5\.xml$
 ^lib/tutorials/bad-elements/bad-elements\.xhtml/index\.html$
+^lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements/index\.html$
 ^p4n\.mak$
 ^rules\.mak$
 ^src/jqui-override\.css$
