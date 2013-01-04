@@ -22,7 +22,7 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 DOCS_COMMON_DEPS = template.wml
 
-all: run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
+all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
 
 include include.mak
@@ -118,3 +118,12 @@ htaccess: $(TARGET)/.htaccess
 
 $(TARGET)/.htaccess: lib/htaccess.txt
 	cp -f $< $@
+
+BAD_ELEMENTS_DB5 = lib/tutorials/bad-elements/bad-elements.docbook5.xml
+BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
+BAD_ELEMENTS_XSLT = src/tutorials/bad-elements/vered-xml-to-docbook.xslt
+
+bad_elements_html: $(BAD_ELEMENTS_DB5)
+
+$(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
+	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
