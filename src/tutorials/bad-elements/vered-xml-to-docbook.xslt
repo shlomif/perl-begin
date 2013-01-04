@@ -145,6 +145,21 @@
     </db:code>
 </xsl:template>
 
+<xsl:template match="vrd:pdoc">
+    <xsl:variable name="d">
+        <xsl:value-of select="@d" />
+    </xsl:variable>
+    <db:link>
+        <xsl:attribute name="xlink:href">
+            <xsl:text>http://perldoc.perl.org/</xsl:text>
+            <xsl:value-of select="$d" />
+            <xsl:text>.html</xsl:text>
+        </xsl:attribute>
+        <xsl:value-of select="$d" />
+        <xsl:apply-templates/>
+    </db:link>
+</xsl:template>
+
 <xsl:template match="vrd:cpan_mod">
     <db:link>
         <xsl:attribute name="xlink:href">
