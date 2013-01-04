@@ -145,6 +145,29 @@
     </db:code>
 </xsl:template>
 
+<xsl:template match="vrd:cpan_mod">
+    <db:link>
+        <xsl:attribute name="xlink:href">
+            <xsl:text>http://metacpan.org/module/</xsl:text>
+            <xsl:value-of select="@m" />
+        </xsl:attribute>
+        <xsl:apply-templates/>
+    </db:link>
+</xsl:template>
+
+<xsl:template match="vrd:cpan_self_mod">
+    <xsl:variable name="module">
+        <xsl:value-of select="@m" />
+    </xsl:variable>
+    <db:link>
+        <xsl:attribute name="xlink:href">
+            <xsl:text>http://metacpan.org/module/</xsl:text>
+            <xsl:value-of select="$module" />
+        </xsl:attribute>
+        <xsl:value-of select="$module" />
+    </db:link>
+</xsl:template>
+
 <xsl:template match="vrd:filepath">
     <db:filename>
         <xsl:apply-templates/>
