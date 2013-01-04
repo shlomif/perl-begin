@@ -79,12 +79,13 @@
                 </xsl:choose>
             </db:title>
         </db:info>
-        <xsl:apply-templates select="vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting|vrd:item|vrd:code_blk" />
+        <xsl:apply-templates select="vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting|vrd:code_blk|vrd:bad_code" />
+        <xsl:apply-templates select="vrd:item" />
     </section>
 </xsl:template>
 
 <xsl:template match="vrd:bad_code">
-    <programlisting xml:space="preserve" role="bad_code">
+    <db:programlisting xml:space="preserve" role="bad_code">
         <xsl:attribute name="language">
             <xsl:value-of select="@syntax" />
         </xsl:attribute>
@@ -92,16 +93,16 @@
 
 </xsl:text>
         <xsl:apply-templates/>
-    </programlisting>
+    </db:programlisting>
 </xsl:template>
 
 <xsl:template match="vrd:code_blk">
-    <programlisting xml:space="preserve">
+    <db:programlisting xml:space="preserve">
         <xsl:attribute name="language">
             <xsl:value-of select="@syntax" />
         </xsl:attribute>
         <xsl:apply-templates/>
-    </programlisting>
+    </db:programlisting>
 </xsl:template>
 
 <xsl:template match="vrd:p">
@@ -151,7 +152,7 @@
     <xsl:variable name="d">
         <xsl:value-of select="@d" />
     </xsl:variable>
-    <db:link>
+    <db:link role="perldoc">
         <xsl:attribute name="xlink:href">
             <xsl:text>http://perldoc.perl.org/</xsl:text>
             <xsl:value-of select="$d" />
@@ -166,7 +167,7 @@
     <xsl:variable name="f">
         <xsl:value-of select="@f" />
     </xsl:variable>
-    <db:link>
+    <db:link role="perldoc_func">
         <xsl:attribute name="xlink:href">
             <xsl:text>http://perldoc.perl.org/functions/</xsl:text>
             <xsl:value-of select="$f" />
@@ -175,8 +176,9 @@
         <xsl:apply-templates/>
     </db:link>
 </xsl:template>
+
 <xsl:template match="vrd:cpan_mod">
-    <db:link>
+    <db:link role="cpan_module">
         <xsl:attribute name="xlink:href">
             <xsl:text>http://metacpan.org/module/</xsl:text>
             <xsl:value-of select="@m" />
@@ -189,7 +191,7 @@
     <xsl:variable name="module">
         <xsl:value-of select="@m" />
     </xsl:variable>
-    <db:link>
+    <db:link role="cpan_module">
         <xsl:attribute name="xlink:href">
             <xsl:text>http://metacpan.org/module/</xsl:text>
             <xsl:value-of select="$module" />
@@ -202,7 +204,7 @@
     <xsl:variable name="dist">
         <xsl:value-of select="@d" />
     </xsl:variable>
-    <db:link>
+    <db:link role="cpan_dist">
         <xsl:attribute name="xlink:href">
             <xsl:text>http://metacpan.org/release/</xsl:text>
             <xsl:value-of select="$dist" />
