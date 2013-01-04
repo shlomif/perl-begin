@@ -10,7 +10,7 @@
  />
 
 <xsl:template match="/vrd:document">
-    <article>
+    <db:article>
         <xsl:if test="@xml:id">
             <xsl:attribute name="xml:id">
                 <xsl:value-of select="@xml:id" />
@@ -27,7 +27,7 @@
         </db:info>
         <xsl:apply-templates select="vrd:body/vrd:preface" />
         <xsl:apply-templates select="vrd:body/vrd:section" />
-    </article>
+    </db:article>
 </xsl:template>
 
 <xsl:template match="vrd:preface">
@@ -57,13 +57,13 @@
 </xsl:template>
 
 <xsl:template match="vrd:section">
-    <section>
+    <db:section>
         <xsl:call-template name="preface_or_section" />
-    </section>
+    </db:section>
 </xsl:template>
 
 <xsl:template match="vrd:item">
-    <section role="item">
+    <db:section role="item">
         <xsl:call-template name="common_attributes" />
         <!-- TODO : extract this db:info thing into a common named
         xsl:template. -->
@@ -81,7 +81,7 @@
         </db:info>
         <xsl:apply-templates select="vrd:blockquote|vrd:p|vrd:ol|vrd:ul|vrd:programlisting|vrd:code_blk|vrd:bad_code" />
         <xsl:apply-templates select="vrd:item" />
-    </section>
+    </db:section>
 </xsl:template>
 
 <xsl:template match="vrd:bad_code">
