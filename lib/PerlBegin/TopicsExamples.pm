@@ -8,6 +8,7 @@ use MooX 'late';
 use CGI ();
 use Text::VimColor;
 
+has 'title' => (isa => 'Str', is => 'ro');
 has 'id_base' => (isa => 'Str', is => 'ro');
 has 'examples' => (isa => 'ArrayRef[HashRef]', is => 'ro');
 
@@ -56,6 +57,17 @@ EOF
             . qq{\n</ul>\n}
             . join("\n", @codes) .
         qq{</div>\n}
+        ;
+}
+
+sub html_with_title
+{
+    my $self = shift;
+
+    return
+        qq[<h3 id="] . CGI::escapeHTML($self->id_base())
+        . qq[">] . CGI::escapeHTML($self->title()) . qq[</h3>\n\n]
+        . $self->render()
         ;
 }
 
