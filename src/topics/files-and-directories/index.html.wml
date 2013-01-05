@@ -111,6 +111,71 @@ EOF
 <:{
     print PerlBegin::TopicsExamples->new(
         {
+            title => "Processing the Lines of a File",
+            id_base => "processing_lines_of_a_file",
+            examples =>
+            [
+                {
+                    id => "file_slurp",
+                    label => "File::Slurp",
+                    code => <<'EOF',
+use File::Slurp;
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
+}
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+use File::Temp ( qw(tempfile) );
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    open my $in, '&lt;', $fn;
+    my ($tempout, $temp_fn) = tempfile();
+
+    while (my $line = &lt;$in&gt;)
+    {
+        chomp($line);
+        \# Perform the operation here.
+        $line =~ s/\bFrom\b/To/g;
+
+        print {$tempout} "$new_line\n";
+    }
+
+    close($in);
+    close($tempout);
+
+    rename($temp_fn, $fn);
+}
+EOF
+                },
+                {
+                    id => "cmd_line",
+                    label => "Command Line",
+                    no_syntax => 1,
+                    code => <<'EOF',
+$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+EOF
+                },
+            ],
+        }
+    )->html_with_title();
+}:>
+
+<:{
+    print PerlBegin::TopicsExamples->new(
+        {
             title => "Overwriting a file with text",
             id_base => "overwrite_a_file",
             examples =>

@@ -30,7 +30,15 @@ sub render
         my $esc_id = CGI::escapeHTML($id);
         my $esc_label = CGI::escapeHTML($label);
 
-        my $code = <<"EOF";
+        my $post_code;
+
+        if ($ex_spec->{no_syntax})
+        {
+            $post_code = "<pre>\n" . CGI::escapeHTML($pre_code) . "</pre>\n";
+        }
+        else
+        {
+            my $code = <<"EOF";
 #!/usr/bin/perl
 
 use strict;
@@ -39,15 +47,20 @@ use warnings;
 $pre_code
 EOF
 
-        my $tvc = Text::VimColor->new(
-            string => \$code,
-            filetype => 'perl',
-        );
+            my $tvc = Text::VimColor->new(
+                string => \$code,
+                filetype => 'perl',
+            );
+
+            $post_code =
+                qq|<pre class="perl">\n|
+                . ($tvc->html() =~ s{(class=")syn}{$1}gr)
+                . qq|\n</pre>\n|
+                ;
+        }
 
         push @lis, qq[<li><a href="#$esc_id">$esc_label</a></li>\n];
-        push @codes, qq|<div id="$esc_id"><pre class="perl">\n|
-            . ($tvc->html() =~ s{(class=")syn}{$1}gr)
-            . qq|\n</pre>\n</div>|;
+        push @codes, qq[<div id="$esc_id">$post_code</div>];
     }
 
     return
