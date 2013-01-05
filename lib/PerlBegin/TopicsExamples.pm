@@ -12,6 +12,42 @@ has 'title' => (isa => 'Str', is => 'ro');
 has 'id_base' => (isa => 'Str', is => 'ro');
 has 'examples' => (isa => 'ArrayRef[HashRef]', is => 'ro');
 
+sub _calc_post_code
+{
+    my $self = shift;
+    my $ex_spec = shift;
+
+    my $pre_code = $ex_spec->{code};
+
+    if ($ex_spec->{no_syntax})
+    {
+        return "<pre>\n" . CGI::escapeHTML($pre_code) . "</pre>\n";
+    }
+    else
+    {
+        my $code = <<"EOF";
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+$pre_code
+EOF
+
+        my $tvc = Text::VimColor->new(
+            string => \$code,
+            filetype => 'perl',
+        );
+
+        return
+            qq|<pre class="perl">\n|
+            . ($tvc->html() =~ s{(class=")syn}{$1}gr)
+            . qq|\n</pre>\n|
+            ;
+
+    }
+}
+
 sub render
 {
     my $self = shift;
@@ -25,39 +61,11 @@ sub render
     {
         my $id = $self->id_base . '__' . $ex_spec->{id};
         my $label = $ex_spec->{label};
-        my $pre_code = $ex_spec->{code};
 
         my $esc_id = CGI::escapeHTML($id);
         my $esc_label = CGI::escapeHTML($label);
 
-        my $post_code;
-
-        if ($ex_spec->{no_syntax})
-        {
-            $post_code = "<pre>\n" . CGI::escapeHTML($pre_code) . "</pre>\n";
-        }
-        else
-        {
-            my $code = <<"EOF";
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-$pre_code
-EOF
-
-            my $tvc = Text::VimColor->new(
-                string => \$code,
-                filetype => 'perl',
-            );
-
-            $post_code =
-                qq|<pre class="perl">\n|
-                . ($tvc->html() =~ s{(class=")syn}{$1}gr)
-                . qq|\n</pre>\n|
-                ;
-        }
+        my $post_code = $self->_calc_post_code($ex_spec);
 
         push @lis, qq[<li><a href="#$esc_id">$esc_label</a></li>\n];
         push @codes, qq[<div id="$esc_id">$post_code</div>];
