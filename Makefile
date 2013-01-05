@@ -156,5 +156,7 @@ $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5)
 $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
 	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
+dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
+
 %.show:
 	@echo "$* = $($*)"
