@@ -108,6 +108,40 @@ EOF
     )->html_with_title();
 }:>
 
+
+<:{
+    print PerlBegin::TopicsExamples->new(
+        {
+            title => "Overwriting a file with text",
+            id_base => "overwrite_a_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+io->file("output.txt")->utf8->print("Hello World!\n");
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+
+open my $out, '>:encoding(utf8)', "output.txt";
+print {$out} "Hello World!\n";
+close($out);
+EOF
+                },
+            ],
+        }
+    )->html_with_title();
+}:>
+
 <:{
     print PerlBegin::TopicsExamples->new(
         {
@@ -176,8 +210,8 @@ EOF
 <:{
     print PerlBegin::TopicsExamples->new(
         {
-            title => "Overwriting a file with text",
-            id_base => "overwrite_a_file",
+            title => "Reading an entire UTF-8 file into a big variable",
+            id_base => "string_slurp_utf8",
             examples =>
             [
                 {
@@ -186,7 +220,7 @@ EOF
                     code => <<'EOF',
 use IO::All;
 
-io->file("output.txt")->utf8->print("Hello World!\n");
+my $string = io->file($my_filepath)->utf8->slurp;
 EOF
 
                 },
@@ -194,112 +228,6 @@ EOF
                     id => "core",
                     label => "Core Perl",
                     code => <<'EOF',
-use autodie;
-
-open my $out, '>:encoding(utf8)', "output.txt";
-print {$out} "Hello World!\n";
-close($out);
-EOF
-                },
-            ],
-        }
-    )->html_with_title();
-}:>
-
-<h3 id="processing_lines_of_a_file">Processing the Lines of a File</h3>
-
-<div class="tabs">
-
-<ul>
-
-<li><a href="#processing_lines_of_a_file__file_slurp">File::Slurp</a></li>
-
-<li><a href="#processing_lines_of_a_file_core">Core Perl</a></li>
-
-<li><a href="#processing_lines_of_a_file_cmd_line">Command Line</a></li>
-
-</ul>
-
-<div id="processing_lines_of_a_file__file_slurp">
-
-<perl_code>
-use File::Slurp;
-
-my @filenames = @ARGV;
-
-foreach my $fn (@filenames)
-{
-    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
-}
-</perl_code>
-
-</div>
-
-<div id="processing_lines_of_a_file_core">
-
-<perl_code>
-use autodie;
-use File::Temp ( qw(tempfile) );
-
-my @filenames = @ARGV;
-
-foreach my $fn (@filenames)
-{
-    open my $in, '&lt;', $fn;
-    my ($tempout, $temp_fn) = tempfile();
-
-    while (my $line = &lt;$in&gt;)
-    {
-        chomp($line);
-        \# Perform the operation here.
-        $line =~ s/\bFrom\b/To/g;
-
-        print {$tempout} "$new_line\n";
-    }
-
-    close($in);
-    close($tempout);
-
-    rename($temp_fn, $fn);
-}
-</perl_code>
-</div>
-
-<div id="processing_lines_of_a_file_cmd_line">
-<pre>
-$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
-</pre>
-</div>
-
-</div>
-
-<h3 id="string_slurp_utf8">Reading an entire UTF-8 file into a big variable</h3>
-
-<div class="tabs">
-
-<ul>
-
-<li><a href="#string_slurp_utf8__io_all">IO-All</a></li>
-
-<li><a href="#string_slurp_utf8__core">Core Perl</a></li>
-
-<li><a href="#string_slurp_utf8__cmd_line">Command Line</a></li>
-
-</ul>
-
-<div id="string_slurp_utf8__io_all">
-
-<perl_code>
-use IO::All;
-
-my $string = io->file($my_filepath)->utf8->slurp;
-</perl_code>
-
-</div>
-
-<div id="string_slurp_utf8__core">
-
-<perl_code>
 use autodie;
 
 sub _utf8_slurp
@@ -317,55 +245,45 @@ sub _utf8_slurp
 }
 
 my $file_contents = _utf8_slurp($my_filepath);
-</perl_code>
-
-</div>
-
-<div id="string_slurp_utf8__cmd_line">
-<pre>
+EOF
+                },
+                {
+                    id => "cmd_line",
+                    label => "Command Line",
+                    no_syntax => 1,
+                    code => <<'EOF',
 $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
-</pre>
-</div>
+EOF
+                },
+            ],
+        }
+    )->html_with_title();
 
-</div>
+}:>
 
-<set-var idbase="append_to_file" />
-
-<define-tag io_all_id whitespace="delete">
-<get-var idbase />__io_all
-</define-tag>
-
-<define-tag core_id whitespace="delete">
-<get-var idbase />__core
-</define-tag>
-
-<h3 id="<get-var idbase />">Appending to a File</h3>
-
-<div class="tabs">
-
-<ul>
-
-<li><a href="#<io_all_id />">IO-All</a></li>
-
-<li><a href="#<core_id />">Core Perl</a></li>
-
-</ul>
-
-<div id="<io_all_id />">
-
-<perl_code>
+<:{
+    print PerlBegin::TopicsExamples->new(
+        {
+            title => "Appending to a File",
+            id_base => "append_to_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
 use IO::All;
 
 my $string_to_append = "My new line\n";
 
 $string_to_append >> io->file($my_file_path);
-</perl_code>
+EOF
 
-</div>
-
-<div id="<core_id />">
-
-<perl_code>
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
 use autodie;
 
 my $string_to_append = "My new line\n";
@@ -375,8 +293,12 @@ my $string_to_append = "My new line\n";
     print {$out} $string_to_append;
     close($out);
 }
-</perl_code>
+EOF
+                },
+            ],
+        }
+    )->html_with_title();
 
-</div>
+}:>
 
 </div>
