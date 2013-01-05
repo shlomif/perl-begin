@@ -300,5 +300,3 @@ EOF
     )->html_with_title();
 
 }:>
-
-</div>
