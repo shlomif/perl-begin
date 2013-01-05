@@ -70,13 +70,12 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
     });
 </script>
 
-<h3 id="copying_a_file">Copying a file</h3>
-
 <:{
     use PerlBegin::TopicsExamples;
 
     print PerlBegin::TopicsExamples->new(
         {
+            title => "Copying a file",
             id_base => "copying_a_file",
             examples =>
             [
@@ -104,7 +103,7 @@ EOF
                 },
             ],
         }
-    )->render();
+    )->html_with_title();
 }:>
 
 <h3 id="overwrite_a_file">Overwriting a file with text.</h3>
