@@ -70,9 +70,11 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
     });
 </script>
 
-<:{
+<:
     use PerlBegin::TopicsExamples;
+:>
 
+<:{
     print PerlBegin::TopicsExamples->new(
         {
             title => "Copying a file",
@@ -106,41 +108,38 @@ EOF
     )->html_with_title();
 }:>
 
-<h3 id="overwrite_a_file">Overwriting a file with text.</h3>
-
-<div class="tabs">
-
-<ul>
-
-<li><a href="#overwrite_a_file_io_all">IO-All</a></li>
-
-<li><a href="#overwrite_a_file_core">Core Perl</a></li>
-
-</ul>
-
-<div id="overwrite_a_file_io_all">
-
-<perl_code>
+<:{
+    print PerlBegin::TopicsExamples->new(
+        {
+            title => "Overwriting a file with text",
+            id_base => "overwrite_a_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
 use IO::All;
 
 io->file("output.txt")->utf8->print("Hello World!\n");
-</perl_code>
+EOF
 
-</div>
-
-<div id="overwrite_a_file_core">
-
-<perl_code>
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
 use autodie;
 
 open my $out, '>:encoding(utf8)', "output.txt";
 print {$out} "Hello World!\n";
 close($out);
-</perl_code>
-
-</div>
-
-</div>
+EOF
+                },
+            ],
+        }
+    )->html_with_title();
+}:>
 
 <h3 id="processing_lines_of_a_file">Processing the Lines of a File</h3>
 
