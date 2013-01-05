@@ -1,0 +1,62 @@
+package PerlBegin::TopicsExamples;
+
+use strict;
+use warnings;
+
+use MooX 'late';
+
+use CGI ();
+use Text::VimColor;
+
+has 'id_base' => (isa => 'Str', is => 'ro');
+has 'examples' => (isa => 'ArrayRef[HashRef]', is => 'ro');
+
+sub render
+{
+    my $self = shift;
+
+    my $ret_string = '';
+
+    my @lis;
+    my @codes;
+
+    foreach my $ex_spec (@{$self->examples})
+    {
+        my $id = $self->id_base . '__' . $ex_spec->{id};
+        my $label = $ex_spec->{label};
+        my $pre_code = $ex_spec->{code};
+
+        my $esc_id = CGI::escapeHTML($id);
+        my $esc_label = CGI::escapeHTML($label);
+
+        my $code = <<"EOF";
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+$pre_code
+EOF
+
+        my $tvc = Text::VimColor->new(
+            string => \$s,
+            filetype => 'perl',
+        );
+
+        push @lis, qq[<li><a href="#$esc_id">$esc_label</a></li>\n];
+        push @codes, qq|<div id="$esc_id"><pre class="perl">\n|
+            . ($tvc->html() =~ s{(class=")syn}{$1}gr)
+            . qq|\n</pre>\n</div>|;
+    }
+
+    return
+        qq{<div class="tabs">\n}
+            . qq{<ul>\n}
+                . join("\n", @lis)
+            . qq{\n</ul>\n}
+            . join("\n", @codes) .
+        qq{</div>\n}
+        ;
+}
+
+1;
