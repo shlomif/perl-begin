@@ -268,8 +268,14 @@ $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
 </div>
 
 <set-var idbase="append_to_file" />
-<set-var io_all_id="<get-var idbase />__io_all" />
-<set-var core_id="<get-var idbase />__core" />
+
+<define-tag io_all_id whitespace="delete">
+<get-var idbase />__io_all
+</define-tag>
+
+<define-tag core_id whitespace="delete">
+<get-var idbase />__core
+</define-tag>
 
 <h3 id="<get-var idbase />">Appending to a File</h3>
 
@@ -277,13 +283,13 @@ $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
 
 <ul>
 
-<li><a href="#<get-var io_all_id />">IO-All</a></li>
+<li><a href="#<io_all_id />">IO-All</a></li>
 
-<li><a href="#<get-var core_id />">Core Perl</a></li>
+<li><a href="#<core_id />">Core Perl</a></li>
 
 </ul>
 
-<div id="<get-var io_all_id />">
+<div id="<io_all_id />">
 
 <perl_code>
 use IO::All;
@@ -295,7 +301,7 @@ $string_to_append >> io->file($my_file_path);
 
 </div>
 
-<div id="<get-var core_id />">
+<div id="<core_id />">
 
 <perl_code>
 use autodie;
