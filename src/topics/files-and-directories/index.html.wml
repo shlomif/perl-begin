@@ -72,41 +72,40 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
 
 <h3 id="copying_a_file">Copying a file</h3>
 
-<div class="tabs">
+<:{
+    use PerlBegin::TopicsExamples;
 
-<ul>
-
-<li><a href="#copying_a_file_io_all">IO-All</a></li>
-
-<li><a href="#copying_a_file_core">Core Perl</a></li>
-
-</ul>
-
-<div id="copying_a_file_io_all">
-
-<perl_code>
+    print PerlBegin::TopicsExamples->new(
+        {
+            id_base => "copying_a_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
 use IO::All;
 
 my ($source_filename, $dest_filename) = @_;
 io->file($source_filename) > io->file($dest_filename);
-</perl_code>
+EOF
 
-</div>
-
-<div id="copying_a_file_core">
-
-<perl_code>
-
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
 use File::Copy qw(copy);
 
 my ($source_filename, $dest_filename) = @_;
 
 copy($source_filename, $dest_filename);
-</perl_code>
-
-</div>
-
-</div>
+EOF
+                },
+            ],
+        }
+    )->render();
+}:>
 
 <h3 id="overwrite_a_file">Overwriting a file with text.</h3>
 
