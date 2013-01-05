@@ -31,5 +31,7 @@
 
     <xsl:template match="xhtml:a/@id"/>
 
+    <xsl:template match="xhtml:a[not(@href)]"/>
+
 </xsl:stylesheet>
 
