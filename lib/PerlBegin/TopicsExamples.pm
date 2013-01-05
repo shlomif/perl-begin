@@ -39,7 +39,7 @@ $pre_code
 EOF
 
         my $tvc = Text::VimColor->new(
-            string => \$s,
+            string => \$code,
             filetype => 'perl',
         );
 
