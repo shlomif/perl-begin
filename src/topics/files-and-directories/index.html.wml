@@ -76,10 +76,13 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
     use strict;
     use warnings;
 
-    print PerlBegin::TopicsExamples->new(
+    # Examples generator:
+    my $ex_gen = PerlBegin::TopicsExamples->new(
         {
         }
-    )->html_with_title(
+    );
+
+    print $ex_gen->html_with_title(
         {
             title => "Copying a file",
             id_base => "copying_a_file",
@@ -111,10 +114,7 @@ EOF
         }
     );
 
-    print PerlBegin::TopicsExamples->new(
-        {
-        }
-    )->html_with_title(
+    print $ex_gen->html_with_title(
         {
             title => "Overwriting a file with text",
             id_base => "overwrite_a_file",
@@ -145,10 +145,7 @@ EOF
         }
     );
 
-    print PerlBegin::TopicsExamples->new(
-        {
-        }
-    )->html_with_title(
+    print $ex_gen->html_with_title(
         {
             title => "Processing the Lines of a File",
             id_base => "processing_lines_of_a_file",
@@ -211,10 +208,7 @@ EOF
         }
     );
 
-    print PerlBegin::TopicsExamples->new(
-        {
-        }
-    )->html_with_title(
+    print $ex_gen->html_with_title(
         {
             title => "Reading an entire UTF-8 file into a big variable",
             id_base => "string_slurp_utf8",
@@ -265,10 +259,7 @@ EOF
         }
     );
 
-    print PerlBegin::TopicsExamples->new(
-        {
-        }
-    )->html_with_title(
+    print $ex_gen->html_with_title(
         {
             title => "Appending to a File",
             id_base => "append_to_file",
