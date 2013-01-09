@@ -8,8 +8,7 @@ use MooX 'late';
 use CGI ();
 use Text::VimColor;
 
-has 'title' => (isa => 'Str', is => 'ro');
-has 'id_base' => (isa => 'Str', is => 'ro');
+use Carp ();
 
 sub _calc_post_code
 {
@@ -52,6 +51,8 @@ sub render
     my ($self, $args) = @_;
 
     my $examples = $args->{'examples'};
+    my $title = $args->{'title'};
+    my $id_base = $args->{'id_base'};
 
     my $ret_string = '';
 
@@ -60,7 +61,7 @@ sub render
 
     foreach my $ex_spec (@$examples)
     {
-        my $id = $self->id_base . '__' . $ex_spec->{id};
+        my $id = $id_base . '__' . $ex_spec->{id};
         my $label = $ex_spec->{label};
 
         my $esc_id = CGI::escapeHTML($id);
@@ -86,9 +87,14 @@ sub html_with_title
 {
     my ($self, $args) = @_;
 
+    my $id_base = $args->{'id_base'}
+        or Carp::confess("id_base not specified.");
+    my $title = $args->{'title'}
+        or Carp::confess("title not specified.");
+
     return
-        qq[<h3 id="] . CGI::escapeHTML($self->id_base())
-        . qq[">] . CGI::escapeHTML($self->title()) . qq[</h3>\n\n]
+        qq[<h3 id="] . CGI::escapeHTML($id_base)
+        . qq[">] . CGI::escapeHTML($title) . qq[</h3>\n\n]
         . $self->render($args)
         ;
 }
