@@ -79,6 +79,9 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
         {
             title => "Copying a file",
             id_base => "copying_a_file",
+        }
+    )->html_with_title({
+        {
             examples =>
             [
                 {
@@ -105,7 +108,7 @@ EOF
                 },
             ],
         }
-    )->html_with_title();
+    });
 }:>
 
 
@@ -114,6 +117,9 @@ EOF
         {
             title => "Overwriting a file with text",
             id_base => "overwrite_a_file",
+        }
+    )->html_with_title(
+        {
             examples =>
             [
                 {
@@ -139,7 +145,7 @@ EOF
                 },
             ],
         }
-    )->html_with_title();
+    );
 }:>
 
 <:{
@@ -147,6 +153,9 @@ EOF
         {
             title => "Processing the Lines of a File",
             id_base => "processing_lines_of_a_file",
+        }
+    )->html_with_title(
+        {
             examples =>
             [
                 {
@@ -204,7 +213,7 @@ EOF
                 },
             ],
         }
-    )->html_with_title();
+    );
 }:>
 
 <:{
@@ -212,6 +221,9 @@ EOF
         {
             title => "Reading an entire UTF-8 file into a big variable",
             id_base => "string_slurp_utf8",
+        }
+    )->html_with_title(
+        {
             examples =>
             [
                 {
@@ -257,8 +269,7 @@ EOF
                 },
             ],
         }
-    )->html_with_title();
-
+    );
 }:>
 
 <:{
@@ -266,6 +277,9 @@ EOF
         {
             title => "Appending to a File",
             id_base => "append_to_file",
+        }
+    )->html_with_title(
+        {
             examples =>
             [
                 {
@@ -296,7 +310,5 @@ my $string_to_append = "My new line\n";
 EOF
                 },
             ],
-        }
-    )->html_with_title();
-
+    });
 }:>

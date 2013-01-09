@@ -10,7 +10,6 @@ use Text::VimColor;
 
 has 'title' => (isa => 'Str', is => 'ro');
 has 'id_base' => (isa => 'Str', is => 'ro');
-has 'examples' => (isa => 'ArrayRef[HashRef]', is => 'ro');
 
 sub _calc_post_code
 {
@@ -50,14 +49,16 @@ EOF
 
 sub render
 {
-    my $self = shift;
+    my ($self, $args) = @_;
+
+    my $examples = $args->{'examples'};
 
     my $ret_string = '';
 
     my @lis;
     my @codes;
 
-    foreach my $ex_spec (@{$self->examples})
+    foreach my $ex_spec (@$examples)
     {
         my $id = $self->id_base . '__' . $ex_spec->{id};
         my $label = $ex_spec->{label};
@@ -83,12 +84,12 @@ sub render
 
 sub html_with_title
 {
-    my $self = shift;
+    my ($self, $args) = @_;
 
     return
         qq[<h3 id="] . CGI::escapeHTML($self->id_base())
         . qq[">] . CGI::escapeHTML($self->title()) . qq[</h3>\n\n]
-        . $self->render()
+        . $self->render($args)
         ;
 }
 
