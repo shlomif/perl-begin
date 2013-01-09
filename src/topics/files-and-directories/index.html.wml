@@ -72,9 +72,10 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
 
 <:
     use PerlBegin::TopicsExamples;
-:>
 
-<:{
+    use strict;
+    use warnings;
+
     print PerlBegin::TopicsExamples->new(
         {
         }
@@ -109,10 +110,7 @@ EOF
             ],
         }
     );
-}:>
 
-
-<:{
     print PerlBegin::TopicsExamples->new(
         {
         }
@@ -146,9 +144,7 @@ EOF
             ],
         }
     );
-}:>
 
-<:{
     print PerlBegin::TopicsExamples->new(
         {
         }
@@ -214,9 +210,7 @@ EOF
             ],
         }
     );
-}:>
 
-<:{
     print PerlBegin::TopicsExamples->new(
         {
         }
@@ -270,9 +264,7 @@ EOF
             ],
         }
     );
-}:>
 
-<:{
     print PerlBegin::TopicsExamples->new(
         {
         }
@@ -310,5 +302,6 @@ my $string_to_append = "My new line\n";
 EOF
                 },
             ],
-    });
-}:>
+        }
+    );
+:>
