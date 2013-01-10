@@ -79,6 +79,7 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
     # Examples generator:
     my $ex_gen = PerlBegin::TopicsExamples->new(
         {
+            default_syntax => 'perl',
         }
     );
 
