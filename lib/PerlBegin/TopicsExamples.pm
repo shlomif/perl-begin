@@ -10,6 +10,13 @@ use Text::VimColor;
 
 use Carp ();
 
+has default_syntax => (is => 'ro', isa => 'Str');
+has main_pre_css_classes => (is => 'ro', isa => 'ArrayRef[Str]',
+    default => sub {
+        return [qw(code)];
+    },
+);
+
 sub _calc_post_code
 {
     my $self = shift;
@@ -23,6 +30,8 @@ sub _calc_post_code
     }
     else
     {
+        my $syntax = ($ex_spec->{syntax} || $self->default_syntax);
+
         my $code = <<"EOF";
 #!/usr/bin/perl
 
@@ -34,11 +43,15 @@ EOF
 
         my $tvc = Text::VimColor->new(
             string => \$code,
-            filetype => 'perl',
+            filetype => $syntax,
         );
 
         return
-            qq|<pre class="perl">\n|
+            qq|<pre class="|
+                . join(' ', map { CGI::escapeHTML($_) }
+                    @{$self->main_pre_css_classes}, $syntax
+                )
+            . qq|">\n|
             . ($tvc->html() =~ s{(class=")syn}{$1}gr)
             . qq|\n</pre>\n|
             ;
