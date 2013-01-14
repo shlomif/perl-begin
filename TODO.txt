@@ -1,4 +1,5 @@
 * Bad elements page:
+    - Restore the navigation menu functionality.
     - Packaging as a CPAN distribution.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
     - Generating Invalid markup (HTML, etc.)
