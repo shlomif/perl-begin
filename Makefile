@@ -146,11 +146,18 @@ $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
 # --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
-$(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5)
+# saxon -s:$< -o:$(DOCBOOK5_XSL_STYLESHEETS_PATH)/$@.temp.xml -xsl:$(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) root.filename=$@.temp.xml
+#
+
+FROM_DB5_TEMP_SUFFIX = temp.xml
+BAD_ELEMENTS_XHTML_TEMP := $(BAD_ELEMENTS_XHTML).$(FROM_DB5_TEMP_SUFFIX)
+
+$(BAD_ELEMENTS_XHTML_TEMP): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
 	jing $(DOCBOOK5_RELAXNG) $<
-	docmake --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml-1_1 $<
-	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.html
-	rm -f $@.temp.xml.html
+	docmake -v --stringparam "root.filename=$@.$(FROM_DB5_TEMP_SUFFIX)" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml-1_1 $<
+
+$(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_XHTML_TEMP)
+	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $<
 	perl -lpi -e 's/[ \t]+\z//' $@
 
 $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
