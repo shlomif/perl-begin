@@ -29,7 +29,6 @@
 <xsl:template name="generate.html.title">
 </xsl:template>
 
-<!--
 <xsl:template match="d:article" priority="1">
     <xsl:call-template name="id.warning"/>
 
@@ -49,6 +48,9 @@
             </xsl:call-template>
         </xsl:variable>
 
+        <!--Move the introduction before the ToC. -->
+        <xsl:apply-templates select="*[@role='introduction']"/>
+
         <xsl:call-template name="make.lots">
             <xsl:with-param name="toc.params" select="$toc.params"/>
             <xsl:with-param name="toc">
@@ -58,11 +60,10 @@
             </xsl:with-param>
         </xsl:call-template>
 
-        <xsl:apply-templates/>
+        <xsl:apply-templates select="*[not(@role = 'introduction')]"/>
         <xsl:call-template name="process.footnotes"/>
     </xsl:element>
 </xsl:template>
--->
 
 </xsl:stylesheet>
 

@@ -48,6 +48,18 @@ xmlns:exsl="http://exslt.org/common" xmlns="http://www.w3.org/1999/xhtml" versio
      customizations that use xsl:apply-imports to wrongly
      apply the chunking version instead of the original
      non-chunking version to format an element.  -->
-<xsl:include href="onechunk.xsl"/>
+<xsl:include href="chunk-code.xsl"/>
+
+<xsl:param name="onechunk" select="1"/>
+<xsl:param name="suppress.navigation">1</xsl:param>
+
+<xsl:template name="href.target.uri">
+  <xsl:param name="object" select="."/>
+  <xsl:text>#</xsl:text>
+  <xsl:call-template name="object.id">
+    <xsl:with-param name="object" select="$object"/>
+  </xsl:call-template>
+</xsl:template>
+
 
 </xsl:stylesheet>
