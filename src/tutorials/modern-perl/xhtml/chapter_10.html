@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+<body>
+<h1 id="heading_id_2">Perl Beyond Syntax</h1>
+<p>Baby Perl will only get you so far. Language fluency allows you to use the natural patterns and idioms of the language. Effective programmers understand how Perl's features interact and combine.</p>
+<p>Prepare for the second learning curve of Perl: Perlish thinking. The result is concise, powerful, and Perlish code.</p>
+<h2 id="heading_id_3">Idioms</h2>
+<div id="idioms"></div>
+<p>Every language--programming or natural--has common patterns of expression, or <em>idioms</em>. The earth revolves, but we speak of the sun rising or setting. We brag about clever hacks and cringe at nasty hacks as we sling code.</p>
+<p>Perl idioms aren't quite language features or design techniques. They're mannerisms and mechanisms that, taken together, give your code a Perlish accent. You don't have to use them, but they play to Perl's strengths.</p>
+<h3 id="heading_id_4">The Object as <code>$self</code></h3>
+<div id="i36self_0"></div>
+<div id="ivariables__i36self_0"></div>
+<div id="iobjects__iinvocant_0"></div>
+<div id="imethods__iinvocant_0"></div>
+<div id="iCPAN__iMooseX5858Method5858Signatures_1"></div>
+<p>Perl 5's object system (<a href="chapter_07.html#moose">Moose</a>(moose)) treats the invocant of a method as a mundane parameter. Regardless of whether you invoke a class or an instance method, the first element of <code>@_</code> is always a method's invocant. By convention, most Perl 5 code uses <code>$class</code> as the name of the class method invocant and <code>$self</code> for the name of the object invocant. This convention is strong enough that useful extensions such as <code>MooseX::Method::Signatures</code> assume you will use <code>$self</code> as the name of object invocants.</p>
+<h3 id="heading_id_5">Named Parameters</h3>
+<div id="iparameters__inamed_0"></div>
+<div id="iarguments__inamed_0"></div>
+<div id="iCPAN__isignatures_1"></div>
+<div id="iCPAN__iMooseX5858MultiMethods_1"></div>
+<p>List processing is a fundamental component of Perl's expression evaluation. The ability for Perl programmers to chain expressions which evaluate to variable-length lists provides countless opportunities to manipulate data effectively.</p>
+<p>While Perl 5's argument passing simplicity (everything flattens into <code>@_</code>) is occasionally too simple, assigning from <code>@_</code> in list context allows you to unpack named parameters as pairs. The fat comma (<a href="chapter_03.html#declaring_hashes">Declaring Hashes</a>(declaring_hashes)) operator turns an ordinary list into an obvious list of pairs of arguments:</p>
+<div class="programlisting">
+<pre>
+<code>    make_ice_cream_sundae(
+        whipped_cream =&gt; 1,
+        sprinkles     =&gt; 1,
+        banana        =&gt; 0,
+        ice_cream     =&gt; 'mint chocolate chip',
+    );</code>
+</pre></div>
+<p>The callee side can unpack these parameters into a hash and treat the hash as if it were a single argument:</p>
+<div class="programlisting">
+<pre>
+<code>    sub make_ice_cream_sundae
+    {
+        <strong>my %args    = @_;</strong>
+        my $dessert = get_ice_cream( $args{ice_cream} );
+
+        ...
+    }</code>
+</pre></div>
+<div class="tip">
+<p><em>Perl Best Practices</em> suggests passing hash references instead. This allows Perl to perform caller-side validation of the hash reference.</p>
+</div>
+<p>This technique works well with <code>import()</code> (<a href="chapter_05.html#importing">Importing</a>(importing)) or other methods; process as many parameters as you like before slurping the remainder into a hash:</p>
+<div class="programlisting">
+<pre>
+<code>    sub import
+    {
+        <strong>my ($class, %args)  = @_;</strong>
+        my $calling_package = caller();
+
+        ...
+    }</code>
+</pre></div>
+<h3 id="heading_id_6">The Schwartzian Transform</h3>
+<div id="schwartzian_transform"></div>
+<div id="iSchwartzian_transform_0"></div>
+<div id="imap__iSchwartzian_transform_0"></div>
+<div id="isort__iSchwartzian_transform_0"></div>
+<div id="ibuiltins__imap_1"></div>
+<div id="ibuiltins__isort_0"></div>
+<p>The <em>Schwartzian transform</em> is an elegant demonstration of Perl's pervasive list handling as an idiom handily borrowed from the Lisp family of languages.</p>
+<p>Suppose you have a Perl hash which associates the names of your co-workers with their phone extensions:</p>
+<div class="programlisting">
+<pre>
+<code>    my %extensions =
+    (
+        '001' =&gt; 'Armon',
+        '002' =&gt; 'Wesley',
+        '003' =&gt; 'Gerald',
+        '005' =&gt; 'Rudy',
+        '007' =&gt; 'Brandon',
+        '008' =&gt; 'Patrick',
+        '011' =&gt; 'Luke',
+        '012' =&gt; 'LaMarcus',
+        '017' =&gt; 'Chris',
+        '020' =&gt; 'Maurice',
+        '023' =&gt; 'Marcus',
+        '024' =&gt; 'Andre',
+        '052' =&gt; 'Greg',
+        '088' =&gt; 'Nic',
+    );</code>
+</pre></div>
+<div class="tip">
+<p>Fat comma hash key quoting only works on things that look like barewords; these keys look like numbers--octal numbers, in specific, with the leading zero. Yes, almost everyone makes this mistake.</p>
+</div>
+<p>To sort this list by name alphabetically, you must sort the hash by its values, not its keys. Getting the values sorted correctly is easy:</p>
+<div class="programlisting">
+<pre>
+<code>    my @sorted_names = sort values %extensions;</code>
+</pre></div>
+<p>... but you need an extra step to preserve the association of names and extensions, hence the Schwartzian transform. First, convert the hash into a list of data structures which is easy to sort--in this case, two-element anonymous arrays:</p>
+<div class="programlisting">
+<pre>
+<code>    my @pairs = map  { [ $_, $extensions{$_} ] }
+                keys %extensions;</code>
+</pre></div>
+<p><code>sort</code> takes the list of anonymous arrays and compares their second elements (the names) as strings:</p>
+<div class="programlisting">
+<pre>
+<code>    my @sorted_pairs = sort { $a-&gt;[1] cmp $b-&gt;[1] }
+                            @pairs;</code>
+</pre></div>
+<div id="i36a_0"></div>
+<div id="i36b_0"></div>
+<div id="ibuiltins__isort_1"></div>
+<p>The block provided to <code>sort</code> takes its arguments in two package-scoped (<a href="chapter_05.html#scope">Scope</a>(scope)) variables <code>$a</code> and <code>$b</code> <span class="footnote">(footnote: See <code>perldoc -f sort</code> for an extensive discussion of the implications of this scoping.)</span>. The <code>sort</code> block takes its arguments two at a time; the first becomes the contents of <code>$a</code> and the second the contents of <code>$b</code>. If <code>$a</code> should come before <code>$b</code> in the results, the block must return -1. If both values are sufficiently equal in the sorting terms, the block must return 0. Finally, if <code>$a</code> should come after <code>$b</code> in the results, the block should return 1. Any other return values are errors.</p>
+<div class="tip">
+<p>Reversing the hash <em>in place</em> would work if no one had the same name. This particular data set presents no such problem, but code defensively.</p>
+</div>
+<div id="ioperators__icmp_1"></div>
+<div id="ioperators__i38lt596138gt59_1"></div>
+<p>The <code>cmp</code> operator performs string comparisons and the <code>&lt;=&gt;</code> performs numeric comparisons.</p>
+<p>Given <code>@sorted_pairs</code>, a second <code>map</code> operation converts the data structure to a more usable form:</p>
+<div class="programlisting">
+<pre>
+<code>    my @formatted_exts = map { "$_-&gt;[1], ext. $_-&gt;[0]" }
+                             @sorted_pairs;</code>
+</pre></div>
+<p>... and now you can print the whole thing:</p>
+<div class="programlisting">
+<pre>
+<code>    say for @formatted_exts;</code>
+</pre></div>
+<p>The Schwartzian transformation itself uses Perl's pervasive list processing to get rid of the temporary variables. The combination is:</p>
+<div class="programlisting">
+<pre>
+<code>    say for
+        map  { " $_-&gt;[1], ext. $_-&gt;[0]"          }
+        sort {   $a-&gt;[1] cmp   $b-&gt;[1]           }
+        map  { [ $_      =&gt;    $extensions{$_} ] }
+            keys %extensions;</code>
+</pre></div>
+<p>Read the expression from right to left, in the order of evaluation. For each key in the extensions hash, make a two-item anonymous array containing the key and the value from the hash. Sort that list of anonymous arrays by their second elements, the values from the hash. Format a string of output from those sorted arrays.</p>
+<p>The Schwartzian transform pipeline of <code>map</code>-<code>sort</code>-<code>map</code> transforms a data structure into another form easier for sorting and then transforms it back into another form.</p>
+<p>While this sorting example is simple, consider the case of calculating a cryptographic hash for a large file. The Schwartzian transform is especially useful because it effectively caches any expensive calculations by performing them once in the rightmost <code>map</code>.</p>
+<h3 id="heading_id_7">Easy File Slurping</h3>
+<div id="easy_file_slurping"></div>
+<div id="ibuiltins__ilocal_1"></div>
+<div id="i3647_2"></div>
+<div id="ifiles__islurping_0"></div>
+<div id="iglobal_variables__i3647_1"></div>
+<p><code>local</code> is essential to managing Perl 5's magic global variables. You must understand scope (<a href="chapter_05.html#scope">Scope</a>(scope)) to use <code>local</code> effectively--but if you do, you can use tight and lightweight scopes in interesting ways. For example, to slurp files into a scalar in a single expression:</p>
+<div class="programlisting">
+<pre>
+<code>    my $file = do { local $/ = &lt;$fh&gt; };
+
+    # or
+    my $file = do { local $/; &lt;$fh&gt; };
+
+    # or
+    my $file; { local $/; $file = &lt;$fh&gt; };</code>
+</pre></div>
+<p><code>$/</code> is the input record separator. <code>local</code>izing it sets its value to <code>undef</code>, pending assignment. That <code>local</code>ization takes place <em>before</em> the assignment. As the value of the separator is undefined, Perl happily reads the entire contents of the filehandle in one swoop and assigns that value to <code>$/</code>. Because a <code>do</code> block evaluates to the value of the last expression evaluated within the block, this evaluates to the value of the assignment: the contents of the file. Even though <code>$/</code> immediately reverts to its previous state at the end of the block, <code>$file</code> now contains the contents of the file.</p>
+<p>The second example contains no assignment and merely returns the single line read from the filehandle.</p>
+<p>The third example avoids a second copy of the string containing the file's contents; it's not as pretty, but it uses the least amount of memory.</p>
+<div class="tip">
+<div id="iCPAN__iFile5858Slurp_0"></div>
+<p>This useful example is admittedly maddening for people who don't understand both <code>local</code> and scoping. The <code>File::Slurp</code> module from the CPAN is a worthy (and often faster) alternative.</p>
+</div>
+<h3 id="heading_id_8">Handling Main</h3>
+<p>Perl requires no special syntax for creating closures (<a href="chapter_05.html#closures">Closures</a>(closures)); you can close over a lexical variable inadvertently. Many programs commonly set up several file-scoped lexical variables before handing off processing to other functions. It's tempting to use these variables directly, rather than passing values to and returning values from functions, especially as programs grow. Unfortunately, these programs may come to rely on subtleties of what happens when during Perl 5's compilation process; a variable you <em>thought</em> would be initialized to a specific value may not get initialized until much later.</p>
+<p>To avoid this, wrap the main code of your program in a simple function, <code>main()</code>. Encapsulate your variables to their proper scopes. Then add a single line to the beginning of your program, after you've used all of the modules and pragmas you need:</p>
+<div class="programlisting">
+<pre>
+<code>    #!/usr/bin/perl
+
+    use Modern::Perl;
+
+    ...
+
+    <strong>exit main( @ARGS );</strong></code>
+</pre></div>
+<p>Calling <code>main()</code> <em>before</em> anything else in the program forces you to be explicit about initialization and order of compilation. Calling <code>exit</code> with <code>main()</code>'s return value prevents any other bare code from running, though be sure to return <code>0</code> from <code>main()</code> on successful execution.</p>
+<h3 id="heading_id_9">Controlled Execution</h3>
+<div id="controlled_execution"></div>
+<p>The effective difference between a program and a module is in its intended use. Users invoke programs directly, while programs load modules after execution has already begun. Yet a module is Perl code, in the same way that a program is. Making a module executable is easy. So is making a program behave as a module (useful for testing parts of an existing program without formally making a module). All you need to do is to discover <em>how</em> Perl began to execute a piece of code.</p>
+<div id="ibuiltins__icaller_1"></div>
+<p><code>caller</code>'s single optional argument is the number of call frames (<a href="chapter_05.html#recursion">Recursion</a>(recursion)) which to report. <code>caller(0)</code> reports information about the current call frame. To allow a module to run correctly as a program <em>or</em> a module, put all executable code in functions, add a <code>main()</code> function, and write a single line at the start of the module:</p>
+<div class="programlisting">
+<pre>
+<code>    main() unless caller(0);</code>
+</pre></div>
+<p>If there's <em>no</em> caller for the module, someone invoked it directly as a program (with <code>perl path/to/Module.pm</code> instead of <code>use Module;</code>).</p>
+<div class="tip">
+<p>The eighth element of the list returned from <code>caller</code> in list context is a true value if the call frame represents <code>use</code> or <code>require</code> and <code>undef</code> otherwise. While that's more accurate, few people use it.</p>
+</div>
+<h3 id="heading_id_10">Postfix Parameter Validation</h3>
+<div id="postfix_parameter_validation"></div>
+<div id="iCPAN__iParams5858Validate_1"></div>
+<div id="iCPAN__iMooseX5858Params5858Validate_0"></div>
+<p>The CPAN has several modules which help verify the parameters of your functions; <code>Params::Validate</code> and <code>MooseX::Params::Validate</code> are two good options. Simple validation is easy even without those modules.</p>
+<p>Suppose your function takes two arguments, no more and no less. You <em>could</em> write:</p>
+<div class="programlisting">
+<pre>
+<code>    use Carp 'croak';
+
+    sub groom_monkeys
+    {
+        if (@_ != 2)
+        {
+            croak 'Grooming requires two monkeys!';
+        }
+        ...
+    }</code>
+</pre></div>
+<p>... but from a linguistic perspective, the consequences are more important than the check and deserve to be at the <em>start</em> of the expression:</p>
+<div class="programlisting">
+<pre>
+<code>    croak 'Grooming requires two monkeys!' if @_ != 2;</code>
+</pre></div>
+<p>... which may read more simply as:</p>
+<div class="programlisting">
+<pre>
+<code>    croak 'Grooming requires two monkeys!'
+        unless @_ == 2;</code>
+</pre></div>
+<p>This early return technique--especially with postfix conditionals--can simplify the rest of the code. Each such assertion is effectively a single row in a truth table.</p>
+<h3 id="heading_id_11">Regex En Passant</h3>
+<div id="regex_en_passant"></div>
+<div id="iregex__imodification_0"></div>
+<div id="iregex__isubstitution_0"></div>
+<p>Many Perl 5 idioms rely on the fact that expressions evaluate to values:</p>
+<div class="programlisting">
+<pre>
+<code>    say my $ext_num = my $extension = 42;</code>
+</pre></div>
+<p>While that code is obviously clunky, it demonstrates how to use the value of one expression in another expression. This isn't a new idea; you've likely used the return value of a function in a list or as an argument to another function before. You may not have realized its implications.</p>
+<div id="iregex__icapture_0"></div>
+<p>Suppose you want to extract a first name from a first name plus surname combination with a precompiled regular expression in <code>$first_name_rx</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    my ($first_name) = $name =~ /($first_name_rx)/;</code>
+</pre></div>
+<p>In list context, a successful regex match returns a list of all captures (<a href="chapter_06.html#regex_captures">Capturing</a>(regex_captures), and Perl assigns the first one to <code>$first_name</code>.</p>
+<p>To modify the name, perhaps removing all non-word characters to create a useful user name for a system account, you could write:</p>
+<div class="programlisting">
+<pre>
+<code>    (my $normalized_name = $name) =~ tr/A-Za-z//dc;</code>
+</pre></div>
+<div class="tip">
+<p>Perl 5.14 added the non-destructive substitution modifier <code>/r</code>, so that you can write <code>my $normalized_name = $name =~ tr/A-Za-z//dc<strong>r</strong>;</code>.</p>
+</div>
+<p>First, assign the value of <code>$name</code> to <code>$normalized_name</code>, as the parentheses affect the precedence so that assignment happens first. The assignment expression evaluates to the <em>variable</em> <code>$normalized_name</code>, so that that variable becomes the first operand to the transliteration operator.</p>
+<p>This technique works on other in-place modification operators:</p>
+<div class="programlisting">
+<pre>
+<code>    my $age = 14;
+    (my $next_age = $age)++;
+
+    say "Next year I will be $next_age";</code>
+</pre></div>
+<h3 id="heading_id_12">Unary Coercions</h3>
+<div id="unary_coercions"></div>
+<div id="icoercion_2"></div>
+<div id="itypes_1"></div>
+<p>Perl 5's type system almost always does the right thing when you choose the correct operators. Use the string concatenation operator, and Perl will treat both operands as strings. Use the addition operator and Perl will treat both operands as numeric.</p>
+<p>Occasionally you have to give Perl a hint about what you mean with a <em>unary coercion</em> to force the evaluation of a value a specific way.</p>
+<div id="iunary_conversions__inumeric_0"></div>
+<p>To ensure that Perl treats a value as numeric, add zero:</p>
+<div class="programlisting">
+<pre>
+<code>    my $numeric_value = 0 + $value;</code>
+</pre></div>
+<div id="iunary_conversions__iboolean_0"></div>
+<p>To ensure that Perl treats a value as boolean, double negate it:</p>
+<div class="programlisting">
+<pre>
+<code>    my $boolean_value = !! $value;</code>
+</pre></div>
+<div id="iunary_conversions__istring_0"></div>
+<p>To ensure that Perl treats a value as a string, concatenate it with the empty string:</p>
+<div class="programlisting">
+<pre>
+<code>    my $string_value = '' . $value;</code>
+</pre></div>
+<p>Though the need for these coercions is vanishingly rare, you should understand these idioms if you encounter them. While it may look like it would be safe to remove a "useless" <code>+ 0</code> from an expression, doing so may well break the code.</p>
+<h2 id="heading_id_13">Global Variables</h2>
+<div id="globals"></div>
+<div id="isuper_globals_0"></div>
+<div id="ivariables__isuper_global_0"></div>
+<p>Perl 5 provides several <em>super global variables</em> that are truly global, not scoped to a package or file. Unfortunately, their global availability means that any direct or indirect modifications may have effects on other parts of the program--and they're terse. Experienced Perl 5 programmers have memorized some of them. Few people have memorized all of them. Only a handful are ever useful. <code>perldoc perlvar</code> contains the exhaustive list of such variables.</p>
+<h3 id="heading_id_14">Managing Super Globals</h3>
+<div id="isuper_globals__imanaging_0"></div>
+<div id="ibuiltins__ilocal_2"></div>
+<p>Perl 5 continues to move more global behavior into lexical behavior, so you can avoid many of these globals. When you can't avoid them, use <code>local</code> in the smallest possible scope to constrain any modifications. You are still susceptible to any changes code you <em>call</em> makes to those globals, but you reduce the likelihood of surprising code <em>outside</em> of your scope. As the easy file slurping idiom (<a href="chapter_10.html#easy_file_slurping">Easy File Slurping</a>(easy_file_slurping)) demonstrates, <code>local</code> is often the right approach:</p>
+<div class="programlisting">
+<pre>
+<code>    my $file; { <strong>local $/</strong>; $file = &lt;$fh&gt; };</code>
+</pre></div>
+<p>The effect of <code>local</code>izing <code>$/</code> lasts only through the end of the block. There is a low chance that any Perl code will run as a result of reading lines from the filehandle <span class="footnote">(footnote: A tied filehandle (<a href="chapter_11.html#tie">Tie</a>(tie)) is one of the few possibilities.)</span> and change the value of <code>$/</code> within the <code>do</code> block.</p>
+<p>Not all cases of using super globals are this easy to guard, but this often works.</p>
+<div id="ieval_0"></div>
+<div id="iexceptions__icatching_1"></div>
+<div id="iexceptions__i3664_1"></div>
+<p>Other times you need to <em>read</em> the value of a super global and hope that no other code has modified it. Catching exceptions with an <code>eval</code> block can be susceptible to race conditions, in that <code>DESTROY()</code> methods invoked on lexicals that have gone out of scope may reset <code>$@</code>:</p>
+<div class="programlisting">
+<pre>
+<code>    local $@;
+
+    eval { ... };
+
+    if (<strong>my $exception = $@</strong>) { ... }</code>
+</pre></div>
+<p>Copy <code>$@</code> <em>immediately</em> after catching an exception to preserve its contents. See also <code>Try::Tiny</code> instead (<a href="chapter_08.html#exception_caveats">Exception Caveats</a>(exception_caveats)).</p>
+<h3 id="heading_id_15">English Names</h3>
+<div id="iEnglish_0"></div>
+<p>The core <code>English</code> module provides verbose names for punctuation-heavy super globals. Import them into a namespace with:</p>
+<div class="programlisting">
+<pre>
+<code>    use English '-no_match_vars';</code>
+</pre></div>
+<p>This allows you to use the verbose names documented in <code>perldoc perlvar</code> within the scope of this pragma.</p>
+<div id="i3638amp59_0"></div>
+<div id="iglobal_variables__i3638amp59_0"></div>
+<div id="i3696_0"></div>
+<div id="iglobal_variables__i3696_0"></div>
+<div id="i3638353959_0"></div>
+<div id="iglobal_variables__i3638353959_0"></div>
+<p>Three regex-related super globals (<code>$&amp;</code>, <code>$`</code>, and <code>$'</code>) impose a global performance penalty for <em>all</em> regular expressions within a program. If you forget the <code>-no_match_vars</code> import, your program will suffer the penalty even if you don't explicitly read from those variables.</p>
+<p>Modern Perl programs should use the <code>@-</code> variable as a replacement for the terrible three.</p>
+<div class="author">
+<p>I don't understand this strategy. What is being replaced? In Modern Perl, we have the /p modifier with gives us the not-so-terrible three, ${^MATCH}, ${^PREMATCH}, and ${^POSTMATCH}.</p>
+</div>
+<h3 id="heading_id_16">Useful Super Globals</h3>
+<div id="isuper_globals__iuseful_0"></div>
+<p>Most modern Perl 5 programs can get by with using only a couple of the super globals. You're most likely to encounter only a few of these variables in real programs.</p>
+<div id="i3647_3"></div>
+<div id="iglobal_variables__i3647_2"></div>
+<div id="i36INPUT_RECORD_SEPARATOR_0"></div>
+<div id="iglobal_variables__i36INPUT_RECORD_SEPARATOR_0"></div>
+<div id="ireadline_0"></div>
+<ul>
+<li><code>$/</code> (or <code>$INPUT_RECORD_SEPARATOR</code> from the <code>English</code> pragma) is a string of zero or more characters which denotes the end of a record when reading input a line at a time. By default, this is your platform-specific newline character sequence. If you undefine this value, Perl will attempt to read the entire file into memory. If you set this value to a <em>reference</em> to an integer, Perl will try to read that many <em>bytes</em> per record (so beware of Unicode concerns). If you set this value to an empty string (<code>''</code>), Perl will read in a paragraph at a time, where a paragraph is a chunk of text followed by an arbitrary number of newlines.</li>
+<li style="list-style: none; display: inline">
+<div id="i3646_1"></div>
+<div id="iglobal_variables__i3646_1"></div>
+<div id="i36INPUT_LINE_NUMBER_0"></div>
+<div id="iglobal_variables__i36INPUT_LINE_NUMBER_0"></div>
+</li>
+<li><code>$.</code> (<code>$INPUT_LINE_NUMBER</code>) contains the number of records read from the most recently-accessed filehandle. You can read from this variable, but writing to it has no effect. Localizing this variable will localize the filehandle to which it refers.</li>
+<li style="list-style: none; display: inline">
+<div id="i36124_2"></div>
+<div id="iglobal_variables__i36124_1"></div>
+<div id="i36OUTPUT_AUTOFLUSH_0"></div>
+<div id="iglobal_variables__i36OUTPUT_AUTOFLUSH_0"></div>
+</li>
+<li><code>$|</code> (<code>$OUTPUT_AUTOFLUSH</code>) governs whether Perl will flush everything written to the currently selected filehandle immediately or only when Perl's buffer is full. Unbuffered output is useful when writing to a pipe or socket or terminal which should not block waiting for input. This variable will coerce any values assigned to it to boolean values.</li>
+<li style="list-style: none; display: inline">
+<div id="i64ARGV_1"></div>
+<div id="iglobal_variables__i64ARGV_0"></div>
+</li>
+<li><code>@ARGV</code> contains the command-line arguments passed to the program.</li>
+<li style="list-style: none; display: inline">
+<div id="i3633_1"></div>
+<div id="iglobal_variables__i3633_0"></div>
+<div id="i36ERRNO_0"></div>
+<div id="iglobal_variables__i36ERRNO_0"></div>
+</li>
+<li><code>$!</code> (<code>$ERRNO</code>) is a dualvar (<a href="chapter_03.html#dualvars">Dualvars</a>(dualvars)) which contains the result of the <em>most recent</em> system call. In numeric context, this corresponds to C's <code>errno</code> value, where anything other than zero indicates an error. In string context, this evaluates to the appropriate system error string. Localize this variable before making a system call (implicitly or explicitly) to avoid overwriting the appropriate value for other code elsewhere. Many places within Perl 5 itself make system calls without your knowledge, so the value of this variable can change out from under you. Copy it <em>immediately</em> after causing a system call for the most accurate results.</li>
+<li style="list-style: none; display: inline">
+<div id="i3638quot59_1"></div>
+<div id="iglobal_variables__i3638quot59_0"></div>
+<div id="i36LIST_SEPARATOR_1"></div>
+<div id="iglobal_variables__i36LIST_SEPARATOR_0"></div>
+</li>
+<li><code>$"</code> (<code>$LIST_SEPARATOR</code>) is a string used to separate array and list elements interpolated into a string.</li>
+<li style="list-style: none; display: inline">
+<div id="i3743_1"></div>
+<div id="iglobal_variables__i3743_1"></div>
+</li>
+<li><code>%+</code> contains named captures from successful regular expression matches (<a href="chapter_06.html#named_captures">Named Captures</a>(named_captures)).</li>
+<li style="list-style: none; display: inline">
+<div id="i3664_2"></div>
+<div id="iglobal_variables__i3664_0"></div>
+<div id="i36EVAL_ERROR_0"></div>
+<div id="iglobal_variables__i36EVAL_ERROR_0"></div>
+</li>
+<li><code>$@</code> (<code>$EVAL_ERROR</code>) contains the value thrown from the most recent exception (<a href="chapter_08.html#catching_exceptions">Catching Exceptions</a>(catching_exceptions)).</li>
+<li style="list-style: none; display: inline">
+<div id="i360_0"></div>
+<div id="iglobal_variables__i360_0"></div>
+<div id="i36PROGRAM_NAME_0"></div>
+<div id="iglobal_variables__i36PROGRAM_NAME_0"></div>
+</li>
+<li><code>$0</code> (<code>$PROGRAM_NAME</code>) contains the name of the program currently executing. You may modify this value on some Unix-like platforms to change the name of the program as it appears to other programs on the system, such as <code>ps</code> or <code>top</code>.</li>
+<li style="list-style: none; display: inline">
+<div id="i3636_0"></div>
+<div id="iglobal_variables__i3636_0"></div>
+<div id="i36PID_0"></div>
+<div id="iglobal_variables__i36PID_0"></div>
+</li>
+<li><code>$$</code> (<code>$PID</code>) contains the process id of the currently running instance of the program, as the operating system understands it. This will vary between <code>fork()</code>ed programs and <em>may</em> vary between threads in the same program.</li>
+<li style="list-style: none; display: inline">
+<div id="i64INC_1"></div>
+<div id="iglobal_variables__i64INC_0"></div>
+</li>
+<li><code>@INC</code> holds a list of filesystem paths in which Perl will look for files to load with <code>use</code> or <code>require</code>. See <code>perldoc -f require</code> for other items this array can contain.</li>
+<li style="list-style: none; display: inline">
+<div id="i37SIG_0"></div>
+<div id="iglobal_variables__i37SIG_0"></div>
+</li>
+<li><code>%SIG</code> maps OS and low-level Perl signals to function references used to handle those signals. Trap the standard Ctrl-C interrupt by catching the <code>INT</code> signal, for example. See <code>perldoc perlipc</code> for more information about signals and especially safe signals.</li>
+</ul>
+<h3 id="heading_id_17">Alternatives to Super Globals</h3>
+<div id="isuper_globals__ialternatives_0"></div>
+<div id="iTry5858Tiny_1"></div>
+<p>The worst culprits for action at a distance relate to IO and exceptional conditions. Using <code>Try::Tiny</code> (<a href="chapter_08.html#exception_caveats">Exception Caveats</a>(exception_caveats)) will help insulate you from the tricky semantics of proper exception handling. <code>local</code>izing and copying the value of <code>$!</code> can help you avoid strange behaviors when Perl makes implicit system calls. Using <code>IO::File</code> and its methods on lexical filehandles (<a href="chapter_09.html#file_handling_variables">Special File Handling Variables</a>(file_handling_variables)) helps prevent unwanted global changes to IO behavior.</p>
+</body>
+</html>

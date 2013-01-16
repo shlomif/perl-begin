@@ -1,0 +1,3022 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" />
+
+
+
+
+<title>
+"Perl for Perl Newbies" - Part 5 - Good Programming Practices
+</title>
+</head>
+<body><div class="page">
+
+
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<b>Up</b></td>
+<td>
+<b>Prev</b></td>
+<td>
+<a href="#page--intro--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a>
+</div>
+<h1 id="page--DIR">
+"Perl for Perl Newbies" - Part 5 - Good Programming Practices
+</h1>
+<h2 id="contents">Contents</h2>
+<ul class="contentsmain">
+<li><a href="#page--intro--PAGE" class="contents">1. Introduction</a>
+</li><li><a href="#page--testing--DIR" class="contents">2. Automated Testing</a>
+<ul class="contents">
+<li><a href="#page--testing--motivation--PAGE" class="contents">2.1. Motivation for Testing</a>
+</li><li><a href="#page--testing--demo--DIR" class="contents">2.2. Demo</a>
+<ul class="contents">
+<li><a href="#page--testing--demo--test-more--PAGE" class="contents">2.2.1. Test::More</a>
+</li><li><a href="#page--testing--demo--Build-test--PAGE" class="contents">2.2.2. ./Build test</a>
+</li></ul>
+</li><li><a href="#page--testing--types--PAGE" class="contents">2.3. Types of Tests: Unit Tests, Integration Tests, System Tests</a>
+</li><li><a href="#page--testing--mocking--PAGE" class="contents">2.4. Mocking</a>
+</li></ul>
+</li><li><a href="#page--version-control--DIR" class="contents">3. Version Control</a>
+<ul class="contents">
+<li><a href="#page--version-control--motivation--PAGE" class="contents">3.1. Motivation for Version Control</a>
+</li><li><a href="#page--version-control--mercurial-demo--PAGE" class="contents">3.2. Demo of Mercurial</a>
+</li></ul>
+</li><li><a href="#page--accessors--DIR" class="contents">4. Class Accessors</a>
+<ul class="contents">
+<li><a href="#page--accessors--example--PAGE" class="contents">4.1. Example</a>
+</li><li><a href="#page--accessors--motivation--PAGE" class="contents">4.2. Motivation</a>
+</li><li><a href="#page--accessors--cpan-modules--PAGE" class="contents">4.3. Accessor modules on the CPAN</a>
+</li></ul>
+</li><li><a href="#page--new-features--DIR" class="contents">5. Useful Features in Recent Perls</a>
+<ul class="contents">
+<li><a href="#page--new-features--use-base--PAGE" class="contents">5.1. use base</a>
+</li><li><a href="#page--new-features--lexical-filehandles--PAGE" class="contents">5.2. Lexical Filehandles</a>
+</li></ul>
+</li><li><a href="#page--local-keyword--DIR" class="contents">6. The local keyword</a>
+<ul class="contents">
+<li><a href="#page--local-keyword--use-and-abuse--PAGE" class="contents">6.1. Use and Abuse</a>
+</li></ul>
+</li><li><a href="#page--pod-documentation--DIR" class="contents">7. Using POD for Documentation</a>
+<ul class="contents">
+<li><a href="#page--pod-documentation--demo--PAGE" class="contents">7.1. POD Demonstration</a>
+</li><li><a href="#page--pod-documentation--pod-testing--PAGE" class="contents">7.2. Testing and Verifying POD</a>
+</li><li><a href="#page--pod-documentation--literate-programming--PAGE" class="contents">7.3. Literate Programming</a>
+</li><li><a href="#page--pod-documentation--extensions--PAGE" class="contents">7.4. POD Extensions</a>
+</li></ul>
+</li><li><a href="#page--module-build-and-starter--DIR" class="contents">8. Module-Build and Module-Starter</a>
+<ul class="contents">
+<li><a href="#page--module-build-and-starter--invocation--PAGE" class="contents">8.1. The Module-Starter Invocation Command</a>
+</li><li><a href="#page--module-build-and-starter--commands--PAGE" class="contents">8.2. Module-Build commands</a>
+</li><li><a href="#page--module-build-and-starter--coding--PAGE" class="contents">8.3. Adding meaningful code</a>
+</li><li><a href="#page--module-build-and-starter--boilerplate--PAGE" class="contents">8.4. Getting rid of the boilerplate</a>
+</li><li><a href="#page--module-build-and-starter--additional-resources--PAGE" class="contents">8.5. Additional Resources</a>
+</li></ul>
+</li><li><a href="#page--conclusion--DIR" class="contents">9. Conclusion</a>
+<ul class="contents">
+<li><a href="#page--conclusion--links--PAGE" class="contents">9.1. Links</a>
+</li><li><a href="#page--conclusion--thanks--PAGE" class="contents">9.2. Thanks</a>
+</li></ul>
+</li></ul>
+<h2 id="licence">Licence</h2>
+<p>
+  <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/" style="text-decoration:none;">
+    <img src="http://i.creativecommons.org/l/zero/1.0/80x15.png" alt="CC0" />
+  </a>
+  <br />
+  To the extent possible under law, <a href="http://www.shlomifish.org/" rel="dct:publisher"><span>Shlomi Fish</span></a>
+  has waived all copyright and related or neighbouring rights to
+  <span>Perl for Perl Newbies</span>.
+This work is published from
+<span>Israel</span>.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--intro--PAGE">Introduction</a>
+</div>
+<h1 id="page--intro--PAGE">
+1. Introduction
+</h1>
+<p>
+We've already introduced some good
+<a href="http://en.wikipedia.org/wiki/Software_engineering">software
+engineering</a> practices in the previous lectures, but this lecture is
+going to contain a concentrated discussion of them. We will
+explain the motivation for their use, and show how to implement them,
+while giving some “hands-on” demonstrations.
+</p>
+<p>
+The mission of the Perl for Perl Newbies talks has been continued in our
+work on <a href="http://perl-begin.org/">The Perl Beginners' site</a>, which
+aims to be the premier web site for finding resources to learn about Perl.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--intro--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--motivation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a>
+</div>
+<h1 id="page--testing--DIR">
+2. Automated Testing
+</h1>
+<p>
+<a href="http://en.wikipedia.org/wiki/Test_automation">Automated testing</a>
+is a software engineering method in which one writes pieces of code, which
+in turn help us ascertain that the production code itself is functioning
+correctly. This section provides an introduction to automated software testing
+in Perl.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--testing--motivation--PAGE" class="contents">2.1. Motivation for Testing</a>
+</li><li><a href="#page--testing--demo--DIR" class="contents">2.2. Demo</a>
+<ul class="contents">
+<li><a href="#page--testing--demo--test-more--PAGE" class="contents">2.2.1. Test::More</a>
+</li><li><a href="#page--testing--demo--Build-test--PAGE" class="contents">2.2.2. ./Build test</a>
+</li></ul>
+</li><li><a href="#page--testing--types--PAGE" class="contents">2.3. Types of Tests: Unit Tests, Integration Tests, System Tests</a>
+</li><li><a href="#page--testing--mocking--PAGE" class="contents">2.4. Mocking</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--demo--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--motivation--PAGE">Motivation for Testing</a>
+</div>
+<h1 id="page--testing--motivation--PAGE">
+2.1. Motivation for Testing
+</h1>
+<p>
+So why do we want to perform automated software testing? The
+first reason is to prevent bugs. By writing tests before we write the
+production code itself (so-called <b>Test-First Development</b>) we ascertain
+that the production code behaves according to the specification given in the
+tests. That way, bugs that could occur, if the code was deployed right away, or
+tested only manually, would be prevented.
+</p>
+<p>
+Another reason is to make sure that bugs and regressions are not
+reintroduced in the code-base. Say we have a bug, and we write a meaningful
+test that fails when the bug is still in the code, and only then fix the bug.
+In that case, we can re-use the test in the future to make sure the bug is not
+present in the current version of the code. If the bug re-surfaces in a certain
+variation, then it will likely be caught by the test.
+</p>
+<p>
+Finally, by writing tests we provide specifications to the code and even
+some form of API documentation, as well as examples of what we want the code
+to achieve. This causes less duplication than writing separate specification
+documents and examples, and, furthermore, is validated to be functional.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--motivation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--demo--test-more--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a>
+</div>
+<h1 id="page--testing--demo--DIR">
+2.2. Demo
+</h1>
+<p>
+Let's suppose we want to test a function that adds two numbers. (This is
+a classic example.) We have the following function in the module Add1.pm:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Add1</span>;
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use vars</span> <span class="Constant">qw(@EXPORT_OK @ISA)</span>;
+
+<span class="Statement">use </span>Exporter;
+
+<span class="Identifier">@ISA</span> = (<span class="Constant">qw(Exporter)</span>);
+
+<span class="Identifier">@EXPORT_OK</span> = (<span class="Constant">qw(add)</span>);
+
+<span class="Statement">sub </span><span class="Identifier">add</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span> <span class="Constant">4</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+One way to write a rudimentary script to test it, would be the following:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Add1 (<span class="Constant">qw(add)</span>);
+
+<span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
+}
+<span class="Statement">exit</span>(<span class="Constant">0</span>);
+</pre></div>
+<p>
+This script will die with an ugly exception if adding 2 and 2 failed and
+quietly exit with a success code if everything is OK. Let's run it:
+</p>
+<div class="code_block"><pre>
+$ perl add1-test.pl
+$
+</pre></div>
+<p>
+Everything is OK. Now let's write another test:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Add1 (<span class="Constant">qw(add)</span>);
+
+<span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
+}
+
+{
+    <span class="Statement">my</span> <span class="Identifier">$result</span> = add(<span class="Constant">1</span>,<span class="Constant">1</span>);
+
+    <span class="Statement">if</span> (<span class="Identifier">$result</span> != <span class="Constant">2</span>)
+    {
+        <span class="Statement">die</span> <span class="Constant">&quot;add(1,1) resulted in '</span><span class="Identifier">$result</span><span class="Constant">' instead of 2.&quot;</span>
+    }
+}
+
+<span class="Statement">exit</span>(<span class="Constant">0</span>);
+</pre></div>
+<p>
+This time the test fails:
+</p>
+<div class="code_block"><pre>
+$ perl add1-test-2.pl
+add(1,1) resulted in '4' instead of 2. at add1-test-2.pl line 18.
+$
+</pre></div>
+<p>
+As a result, we need to fix the production code:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Add2</span>;
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use vars</span> <span class="Constant">qw(@EXPORT_OK @ISA)</span>;
+
+<span class="Statement">use </span>Exporter;
+
+<span class="Identifier">@ISA</span> = (<span class="Constant">qw(Exporter)</span>);
+
+<span class="Identifier">@EXPORT_OK</span> = (<span class="Constant">qw(add)</span>);
+
+<span class="Statement">sub </span><span class="Identifier">add</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+And the equivalent test script is successful:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Add2 (<span class="Constant">qw(add)</span>);
+
+<span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
+}
+
+{
+    <span class="Statement">my</span> <span class="Identifier">$result</span> = add(<span class="Constant">1</span>,<span class="Constant">1</span>);
+
+    <span class="Statement">if</span> (<span class="Identifier">$result</span> != <span class="Constant">2</span>)
+    {
+        <span class="Statement">die</span> <span class="Constant">&quot;add(1,1) resulted in '</span><span class="Identifier">$result</span><span class="Constant">' instead of 2.&quot;</span>
+    }
+}
+
+<span class="Statement">exit</span>(<span class="Constant">0</span>);
+</pre></div>
+<p>
+Now we can continue writing more tests, and see that they passed.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--testing--demo--test-more--PAGE" class="contents">2.2.1. Test::More</a>
+</li><li><a href="#page--testing--demo--Build-test--PAGE" class="contents">2.2.2. ./Build test</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--demo--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--demo--Build-test--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--test-more--PAGE">Test::More</a>
+</div>
+<h1 id="page--testing--demo--test-more--PAGE">
+2.2.1. Test::More
+</h1>
+<p>
+Perl ships with a module called Test::More (which is part of the
+<a href="http://search.cpan.org/dist/Test-Simple/">Test-Simple CPAN
+distribution</a>, which may be more up-to-date there), that allows one
+to write and run tests using convenient functions. Here's an example
+for a test script:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Test::More <span class="Constant">tests</span> =&gt; <span class="Constant">7</span>;
+
+<span class="Statement">use </span>Add2 (<span class="Constant">qw(add)</span>);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">0</span>, <span class="Constant">0</span>),
+    <span class="Constant">0</span>,
+    <span class="Constant">&quot;0+0 == 0&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">2</span>, <span class="Constant">2</span>),
+    <span class="Constant">4</span>,
+    <span class="Constant">&quot;2+2 == 4&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">4</span>, <span class="Constant">20</span>),
+    <span class="Constant">24</span>,
+    <span class="Constant">&quot;4+20 == 24&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">20</span>, <span class="Constant">4</span>),
+    <span class="Constant">24</span>,
+    <span class="Constant">&quot;20+4 == 24&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(-<span class="Constant">2</span>, <span class="Constant">8</span>),
+    <span class="Constant">6</span>,
+    <span class="Constant">&quot;(-2)+8 == 6&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">4</span>, <span class="Constant">3.5</span>),
+    <span class="Constant">7.5</span>,
+    <span class="Constant">&quot;4+3.5 == 7.5&quot;</span>,
+);
+
+<span class="Comment"># TEST</span>
+is (add(<span class="Constant">3.5</span>, <span class="Constant">3.5</span>),
+    <span class="Constant">7</span>,
+    <span class="Constant">&quot;3.5+3.5 == 7&quot;</span>
+);
+</pre></div>
+<p>
+<tt>is()</tt> is a Test-More built-in that compares a received result ("have")
+to an expected result ("want") for exact equivalence. There are also
+<tt>ok()</tt>, which just tests for truth-hood, <tt>is_deeply()</tt> which
+performs a deep comparison of nested data structures, and others.
+</p>
+<p>
+You may also notice the <tt># TEST</tt> comments - these are
+<a href="http://search.cpan.org/dist/Test-Count/">Test::Count</a> annotations
+that allow us to keep track of the number of test assertions that we have
+declared and update it.
+</p>
+<p>
+Now, the output of this would be:
+</p>
+<div class="code_block"><pre>
+1..7
+ok 1 - 0+0 == 0
+ok 2 - 2+2 == 4
+ok 3 - 4+20 == 24
+ok 4 - 20+4 == 24
+ok 5 - (-2)+8 == 6
+ok 6 - 4+3.5 == 7.5
+ok 7 - 3.5+3.5 == 7
+</pre></div>
+<p>
+This is in an output format called <a href="http://testanything.org/">TAP - The
+Test Anything Protocol</a>. There are several TAP parsers, which analyse the
+output and present a human-friendly summary. For example, we can run the test
+script above using the <tt>prove</tt> command-line utility that ships with
+perl 5:
+</p>
+<div class="code_block"><pre>
+$ prove Test-More-1.t
+Test-More-1.t .. ok
+All tests successful.
+Files=1, Tests=7,  0 wallclock secs ( 0.06 usr  0.01 sys +  0.06 cusr  0.01 csys =  0.14 CPU)
+Result: PASS
+</pre></div>
+<p>
+For more information refer to the following sources:
+</p>
+<ol>
+<li>
+<a href="http://search.cpan.org/perldoc?Test%3A%3ATutorial">Test::Tutorial on the
+CPAN</a>
+</li>
+<li>
+<a href="http://szabgab.com/talks/perl_in_testing/">"Testing with Perl" by
+Gabor Szabo</a> - comprehensive material of a talk about Perl and testing.
+</li>
+<li>
+<a href="http://search.cpan.org/dist/Test-Count/">Test::Count</a> - allows
+one to keep track of the number of assertions in the test file.
+</li>
+<li>
+<a href="http://web-cpan.shlomifish.org/modules/Test-Run/">Test-Run</a> - an
+alternative test harness under development (with output in colour and other
+enhancements).
+</li>
+<li>
+<a href="http://qa.perl.org/">The Perl Quality Assurance (QA) Project</a>.
+</li>
+</ol>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--demo--test-more--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--types--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--Build-test--PAGE">./Build test</a>
+</div>
+<h1 id="page--testing--demo--Build-test--PAGE">
+2.2.2. ./Build test
+</h1>
+<p>
+Standard CPAN and CPAN-like Perl packages contain their tests as a group
+of <tt>*.t</tt> under the sub-directory <tt>t/</tt>, and allow running them
+by invoking the <tt>make test</tt> or <tt>./Build test</tt> commands.
+</p>
+<p>
+Using the CPAN package
+<a href="http://search.cpan.org/dist/Module-Starter/">Module-Starter</a>
+one can generate a skeleton for one’s own CPAN-like package, which
+can also afterwards contain tests. Keeping your code organised in such packages,
+allows one to make use of a convenient build-system
+such as <a href="http://search.cpan.org/dist/Module-Build/">Module-Build</a>.
+It also allows one to package it as operating-system-wide packages, which can
+be removed easily using the system's package manager. Finally, these packages
+can later be uploaded to CPAN for sharing with other users and developers.
+</p>
+<p>
+Here’s an example of testing a CPAN distribution from CPAN using
+<tt>./Build test</tt>:
+</p>
+<div class="code_block"><pre>
+shlomi:~/TEMP$ ls
+shlomi:~/TEMP$ mv ~/Test-Count-0.0500.tar.gz .
+shlomi:~/TEMP$ ls
+Test-Count-0.0500.tar.gz
+shlomi:~/TEMP$ ls -l
+total 16
+-rw-r--r-- 1 shlomi shlomi 12933 2009-08-02 20:52 Test-Count-0.0500.tar.gz
+shlomi:~/TEMP$ tar -xvf Test-Count-0.0500.tar.gz
+Test-Count-0.0500
+Test-Count-0.0500/Changes
+Test-Count-0.0500/MANIFEST
+Test-Count-0.0500/META.yml
+Test-Count-0.0500/Build.PL
+Test-Count-0.0500/Makefile.PL
+Test-Count-0.0500/README
+Test-Count-0.0500/t
+Test-Count-0.0500/t/boilerplate.t
+Test-Count-0.0500/t/03-filter.t
+Test-Count-0.0500/t/01-parser.t
+Test-Count-0.0500/t/pod-coverage.t
+Test-Count-0.0500/t/02-main.t
+Test-Count-0.0500/t/00-load.t
+Test-Count-0.0500/t/pod.t
+Test-Count-0.0500/t/sample-data
+Test-Count-0.0500/t/sample-data/test-scripts
+Test-Count-0.0500/t/sample-data/test-scripts/arithmetics.t
+Test-Count-0.0500/t/sample-data/test-scripts/01-parser.t
+Test-Count-0.0500/t/sample-data/test-scripts/basic.arc
+Test-Count-0.0500/examples
+Test-Count-0.0500/examples/perl-test-manage-helper.pl
+Test-Count-0.0500/examples/perl-test-manage.vim
+Test-Count-0.0500/lib
+Test-Count-0.0500/lib/Test
+Test-Count-0.0500/lib/Test/Count.pm
+Test-Count-0.0500/lib/Test/Count
+Test-Count-0.0500/lib/Test/Count/Base.pm
+Test-Count-0.0500/lib/Test/Count/Parser.pm
+Test-Count-0.0500/lib/Test/Count/Filter.pm
+Test-Count-0.0500/lib/Test/Count/Filter
+Test-Count-0.0500/lib/Test/Count/Filter/ByFileType
+Test-Count-0.0500/lib/Test/Count/Filter/ByFileType/App.pm
+Test-Count-0.0500/inc
+Test-Count-0.0500/inc/Test
+Test-Count-0.0500/inc/Test/Run
+Test-Count-0.0500/inc/Test/Run/Builder.pm
+shlomi:~/TEMP$ cd Test
+Test-Count-0.0500/        Test-Count-0.0500.tar.gz
+shlomi:~/TEMP$ cd Test-Count-0.0500
+shlomi:~/TEMP/Test-Count-0.0500$ ls
+Build.PL  examples  lib          MANIFEST  README
+Changes   inc       Makefile.PL  META.yml  t
+shlomi:~/TEMP/Test-Count-0.0500$ perl Build.PL
+Checking whether your kit is complete...
+Looks good
+
+Checking prerequisites...
+Looks good
+
+Creating new 'Build' script for 'Test-Count' version '0.0500'
+shlomi:~/TEMP/Test-Count-0.0500$ ./Build
+Copying lib/Test/Count/Filter/ByFileType/App.pm -&gt; blib/lib/Test/Count/Filter/ByFileType/App.pm
+Copying lib/Test/Count/Base.pm -&gt; blib/lib/Test/Count/Base.pm
+Copying lib/Test/Count/Filter.pm -&gt; blib/lib/Test/Count/Filter.pm
+Copying lib/Test/Count/Parser.pm -&gt; blib/lib/Test/Count/Parser.pm
+Copying lib/Test/Count.pm -&gt; blib/lib/Test/Count.pm
+Manifying blib/lib/Test/Count/Parser.pm -&gt; blib/libdoc/Test::Count::Parser.3pm
+Manifying blib/lib/Test/Count/Base.pm -&gt; blib/libdoc/Test::Count::Base.3pm
+Manifying blib/lib/Test/Count.pm -&gt; blib/libdoc/Test::Count.3pm
+Manifying blib/lib/Test/Count/Filter/ByFileType/App.pm -&gt; blib/libdoc/Test::Count::Filter::ByFileType::App.3pm
+Manifying blib/lib/Test/Count/Filter.pm -&gt; blib/libdoc/Test::Count::Filter.3pm
+shlomi:~/TEMP/Test-Count-0.0500$ ./Build test
+t/00-load.t ....... 1/3 # Testing Test::Count 0.0500, Perl 5.010000, /usr/bin/perl5.10.0
+t/00-load.t ....... ok
+t/01-parser.t ..... ok
+t/02-main.t ....... ok
+t/03-filter.t ..... ok
+t/boilerplate.t ... ok
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+All tests successful.
+Files=7, Tests=30,  4 wallclock secs ( 0.12 usr  0.03 sys +  2.59 cusr  0.19 csys =  2.93 CPU)
+Result: PASS
+shlomi:~/TEMP/Test-Count-0.0500$
+</pre></div>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--demo--Build-test--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--testing--mocking--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--types--PAGE">Types of Tests: Unit Tests, Integration Tests, System Tests</a>
+</div>
+<h1 id="page--testing--types--PAGE">
+2.3. Types of Tests: Unit Tests, Integration Tests, System Tests
+</h1>
+<p>
+Software design methodologists distinguish between several types of
+automated tests. First of all, <b>unit tests</b> (also see
+<a href="http://en.wikipedia.org/wiki/Unit_testing">the Wikipedia article</a>)
+test only a single "unit" of the code (say a module or a class), to
+see if it behaves as expected. They generally make sure that the behaviour
+of the module is sane and desirable, while not trying to see if it works
+as part of the larger scheme.
+</p>
+<p>
+On the other hand, <b>system tests</b> test the entire system. For example,
+if we're writing code to generate a web-site, we could test that the various
+pages of the resultant site contain some of the qualities that we expect.
+System tests tests the system as a whole, to see if there's a bug somewhere.
+</p>
+<p>
+Between unit tests and system tests there could be several intermediate layers
+of tests, normally called <b>integration tests</b> .
+</p>
+<p>
+You can write all these tests using TAP, Test::More and other testing
+modules on the CPAN, but it's important to be aware of the distinction.
+</p>
+<h2 id="smoke_tests">Smoke Tests</h2>
+<p>
+<a href="http://en.wikipedia.org/wiki/Smoke_testing">“Smoke tests”</a> is a
+term referring to a subset of the tests used to see if the software application
+performs its very basic operation well enough to give way for further testing.
+It is akin to plugging in an Electronics device and making sure it doesn't
+raise smoke from mis-operation. As a result, if the entire tests suite is time
+consuming, the smoke testing should take a short time to perform.
+</p>
+<h2 id="testing_other_languages">Using Perl for Testing Code in Other Programming Languages</h2>
+<p>
+You can use Perl to test software written in many other programming languages:
+</p>
+<ul>
+<li>
+<p>
+If you want to perform system tests of foreign applications, you can look at
+the various way for Perl to
+<a href="http://perl-begin.org/uses/multitasking/">invoke
+other command-line programs</a>, and for its sockets and networking
+capabilities.
+</p>
+<p>
+For GUI (= Graphical User-Interface) tests, you can look at
+<a href="http://search.cpan.org/dist/Win32-GuiTest/">Win32-GuiTest</a> and
+<a href="http://search.cpan.org/dist/X11-GUITest/">X11-GUITest</a>.
+</p>
+</li>
+<li>
+<p>
+If you want to write unit-tests for these applications in Perl, you should
+look at the
+<a href="http://search.cpan.org/search?query=inline&amp;mode=all">“Inline”
+family of modules</a> that allow you to write native subroutines in Perl.
+</p>
+<p>
+Also of interest is the <a href="http://gitorious.org/perl-ctypes">Ctypes for
+Perl</a> project (which is currently under development.).
+</p>
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--types--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--version-control--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--mocking--PAGE">Mocking</a>
+</div>
+<h1 id="page--testing--mocking--PAGE">
+2.4. Mocking
+</h1>
+<p>
+When testing certain parts of the application, it is sometimes desirable to
+mimic the functionality of different parts, so the testing will be isolated.
+For example, if we're testing a server-side script (such as a CGI script),
+we may wish to provide a server-emulating object that's completely under
+our control and that inputs the script with our own parameters. This is
+called <b>mocking</b> (see
+<a href="http://en.wikipedia.org/wiki/Mock_object">the Wikipedia article
+about Mock objects</a>), and there are several mechanisms for doing so
+for Perl facilities:
+</p>
+<ul>
+<li>
+<a href="http://search.cpan.org/dist/Test-MockObject/">Test-MockObject</a>
+</li>
+<li>
+<a href="http://search.cpan.org/dist/Test-MockModule/">Test-MockModule</a>
+</li>
+<li>
+<a href="http://search.cpan.org/dist/DBD-Mock/">DBD-Mock</a> - mock
+databases for testing.
+</li>
+</ul>
+<p>
+With regard to mocking modules, one may opt to simulate loading a module using
+the Perl <tt>%INC</tt> variable (see
+<a href="http://perldoc.perl.org/perlvar.html">perlvar</a>) by doing
+something like:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">package</span><span class="Type"> CGI</span>;
+
+<span class="Comment"># .</span>
+<span class="Comment"># .</span>
+<span class="Comment"># .</span>
+
+<span class="PreProc">BEGIN</span>
+{
+    <span class="Identifier">$INC{</span><span class="Constant">'CGI.pm'</span><span class="Identifier">}</span> = <span class="Constant">&quot;/usr/lib/perl5/site_perl/5.10.0/CGI.pm&quot;</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+After doing this, the tested code can do <tt>use CGI;</tt> and still think it
+loaded the original module, while actually it is using our own mocked
+version.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--testing--mocking--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--version-control--motivation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a>
+</div>
+<h1 id="page--version-control--DIR">
+3. Version Control
+</h1>
+<p>
+<a href="http://better-scm.shlomifish.org/">Version control systems</a>
+are also known as “revision control systems”, and “source control systems”.
+Version control is considered part of “software configuration management” (SCM)
+and there are also some more comprehensive SCM systems.
+Version control programs allow one to maintain various historical versions of
+one's data, retrieve earlier versions, and do other operations like
+branching or tagging.
+</p>
+<p>
+This section will give the motivation for why you should start using
+version control for your software development, and will give a short
+demonstration using the Mercurial version control system. Feel free to skip
+this section if you're already drinking the version control kool-aid.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--version-control--motivation--PAGE" class="contents">3.1. Motivation for Version Control</a>
+</li><li><a href="#page--version-control--mercurial-demo--PAGE" class="contents">3.2. Demo of Mercurial</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--version-control--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--version-control--mercurial-demo--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--motivation--PAGE">Motivation for Version Control</a>
+</div>
+<h1 id="page--version-control--motivation--PAGE">
+3.1. Motivation for Version Control
+</h1>
+<p>
+Using version control gives several important advantages over the alternative
+of not using any version control system at all:
+</p>
+<ul>
+<li>
+<p>
+You <b>won't lose</b> your code by accident. Having a version control
+system, preferably with a remote service, will mean you're going to have another
+place where your code is stored. If several developers are working on the
+code simultaneously, then each one of them will have a copy of the entire
+code (or, in some cases, even the entire history).
+</p>
+</li>
+<li>
+<p>
+It allows you to <b>keep historical versions</b> of the code, for easy
+reverting, comparison and investigation.
+</p>
+<p>
+Let's say you introduced a bug. With a version control system you can easily
+revert to a previous version of the code where the bug was not present
+to verify that it did not exist there. Then you can diff the results, or
+even bisect the history to find the exact check-in that introduced this bug.
+</p>
+</li>
+<li>
+<p>
+It allows one to maintain several simultaneous lines of code (normally
+called <b>"branches"</b>) and to easily compare between them and merge them.
+</p>
+</li>
+</ul>
+<p>
+Finally, you'll find using a modern and high-quality version control system
+a more convenient and more robust solution than using archives (such
+as <a href="http://en.wikipedia.org/wiki/ZIP_%28file_format%29">.zip
+files</a>) and patches.
+There are plenty of open-source and gratis version control systems, some
+of which are highly mature and esteemed and you shouldn't have a problem finding
+something that suits you.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--version-control--motivation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--accessors--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--mercurial-demo--PAGE">Demo of Mercurial</a>
+</div>
+<h1 id="page--version-control--mercurial-demo--PAGE">
+3.2. Demo of Mercurial
+</h1>
+<p>
+This section will demonstrate basic version control usage using the
+<a href="http://mercurial.selenic.com/">Mercurial version control system</a>.
+</p>
+<p>
+<b>Please note:</b> by choosing Mercurial I do
+not mean to imply that it is the best VCS out there or that you should
+necessarily use it. By all means, it is likely that there are other VCSes
+which are better in many respects. However, I'm familiar with Mercurial, and I
+think it is suitable for the demonstration here.
+</p>
+<p>
+If you're interested in choosing a version control system, you can refer to
+these resources:
+</p>
+<ul>
+<li>
+<a href="http://better-scm.shlomifish.org/">The Better SCM Site</a>
+</li>
+<li>
+<a href="http://producingoss.com/en/vc-systems.html">The Free Version Control
+Systems appendix</a> of “Producing Open Source Software” by Karl Fogel.
+</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/List_of_revision_control_software">The
+Wikipedia list of version control systems</a>
+</li>
+</ul>
+<h2 id="demo">The Demo</h2>
+<p>
+First of all, install Mercurial using your operating system's package
+manager, or by downloading an installer from the
+<a href="http://mercurial.selenic.com/">Mercurial site</a>.
+</p>
+<p>
+Then create a new empty directory and run <tt>hg init .</tt>:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test$ hg init .
+</pre></div>
+<p>
+Now let's add some files. Start your favourite text editor and put these
+contents in the file <tt>MyModule.pm</tt>:
+</p>
+<div class="code_block"><pre>
+<span class="Comment"># This is MyModule.pm</span>
+<span class="Statement">package</span><span class="Type"> MyModule</span>;
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">add</span>
+{
+    <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
+
+    <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>*<span class="Constant">2</span>;
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<p>
+Now let's put it under version control:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test$ mkdir MyModule
+$p4n/5/merc-test$ cd MyModule/
+$p4n/5/merc-test/MyModule$ gvim MyModule.pm # Edit it.
+$p4n/5/merc-test/MyModule$ ls
+MyModule.pm
+$p4n/5/merc-test/MyModule$ hg status
+? MyModule/MyModule.pm
+</pre></div>
+<p>
+As we can see from the output of <tt>hg status</tt>, the file is not
+tracked. Let's add it:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ hg add MyModule.pm
+$p4n/5/merc-test/MyModule$ hg status
+A MyModule/MyModule.pm
+$p4n/5/merc-test/MyModule$
+</pre></div>
+<p>
+Now the file is scheduled to be committed (note the <tt>A</tt>). Let's
+commit it:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ hg commit -m "Added MyModule.pm"
+$p4n/5/merc-test/MyModule$ hg status
+$p4n/5/merc-test/MyModule$
+</pre></div>
+<p>
+We can see it in the output of the version control command <tt>hg log</tt>,
+which, as it name implies, gives a log of what has been done in the past:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ hg log
+changeset:   0:7dec17ed3e88
+tag:         tip
+user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+date:        Fri Jan 14 18:07:32 2011 +0200
+summary:     Added MyModule.pm
+</pre></div>
+<p>
+Now let's add a test:
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ gvim mytest.t # Test
+$p4n/5/merc-test/MyModule$ cat mytest.t
+
+use strict;
+use warnings;
+
+use Test::More tests =&gt; 1;
+
+use MyModule;
+
+is (MyModule::add(0, 0), 0, "0+0 is 0.");
+shlomif[homepage]:$p4n/5/merc-test/MyModule$ prove mytest.t
+mytest.t .. ok
+All tests successful.
+Files=1, Tests=1,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.02 cusr  0.00 csys =  0.06 CPU)
+Result: PASS
+$p4n/5/merc-test/MyModule$ hg status
+? MyModule/mytest.t
+$p4n/5/merc-test/MyModule$ hg add mytest.t
+$p4n/5/merc-test/MyModule$
+</pre></div>
+<p>
+And let's commit it as well by using <tt>hg commit</tt>.
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ hg commit -m "Added the test."
+</pre></div>
+<p>
+Now let's add another test assertion:
+</p>
+<div class="code_block"><pre>
+shlomif[homepage]:$p4n/5/merc-test/MyModule$ cat mytest.t
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Test::More tests =&gt; 2;
+
+use MyModule;
+
+# TEST
+is (MyModule::add(0, 0), 0, "0+0 is 0.");
+
+# TEST
+is (MyModule::add(2, 0), 2, "2+0 is 2.");
+
+
+$p4n/5/merc-test/MyModule$ prove mytest.t
+mytest.t .. ok
+All tests successful.
+Files=1, Tests=2,  0 wallclock secs ( 0.03 usr  0.00 sys +  0.02 cusr  0.00 csys =  0.05 CPU)
+Result: PASS
+</pre></div>
+<p>
+However, before we commit let's see which changes have been made:
+</p>
+<div class="code_block"><pre>
+shlomif[homepage]:$p4n/5/merc-test/MyModule$ hg diff
+diff -r e2b34f948dcd MyModule/mytest.t
+--- a/MyModule/mytest.t Fri Jan 14 18:14:05 2011 +0200
++++ b/MyModule/mytest.t Fri Jan 14 18:18:57 2011 +0200
+@@ -3,9 +3,13 @@
+ use strict;
+ use warnings;
+
+-use Test::More tests =&gt; 1;
++use Test::More tests =&gt; 2;
+
+ use MyModule;
+
+ # TEST
+ is (MyModule::add(0, 0), 0, "0+0 is 0.");
++
++# TEST
++is (MyModule::add(2, 0), 2, "2+0 is 2.");
++
+</pre></div>
+<p>
+This displays the differences from the working copy to the pristine
+version in the repository.
+</p>
+<div class="code_block"><pre>
+$p4n/5/merc-test/MyModule$ hg status
+M MyModule/mytest.t
+$p4n/5/merc-test/MyModule$ hg commit -m "Add another assertion"
+$p4n/5/merc-test/MyModule$ hg status
+</pre></div>
+<p>
+And it's committed.
+</p>
+<p>
+We can now continue doing commits, adding more tests and fixing bugs
+as we go. For example, let's add another test:
+</p>
+<div class="code_block"><pre>
+$ gvim mytest.t # Edit
+$ hg diff
+@@ -3,7 +3,7 @@
+ use strict;
+ use warnings;
+
+-use Test::More tests =&gt; 2;
++use Test::More tests =&gt; 3;
+
+ use MyModule;
+
+@@ -13,3 +13,6 @@
+ # TEST
+ is (MyModule::add(2, 0), 2, "2+0 is 2.");
+
++# TEST
++is (MyModule::add(1, 1), 2, "1+1 is 2.");
++
+$ prove mytest.t
+mytest.t .. 1/3
+mytest.t .. Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/3 subtests
+
+Test Summary Report
+-------------------
+mytest.t (Wstat: 256 Tests: 3 Failed: 1)
+  Failed test:  3
+  Non-zero exit status: 1
+Files=1, Tests=3,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.03 cusr  0.00 csys =  0.07 CPU)
+Result: FAIL
+
+</pre></div>
+<p>
+Oops! The test has failed, now we need to fix a bug. With every commit, it
+is important that all tests will pass (unless perhaps we are working on a
+branch.). Let's correct it:
+</p>
+<div class="code_block"><pre>
+$ gvim MyModule.pm
+$ hg diff MyModule.pm
+diff -r ebc249691c24 MyModule/MyModule.pm
+--- a/MyModule/MyModule.pm      Fri Jan 14 18:20:29 2011 +0200
++++ b/MyModule/MyModule.pm      Sat Jan 15 10:43:16 2011 +0200
+@@ -8,7 +8,7 @@
+ {
+     my ($x, $y) = @_;
+
+-    return $x+$y*2;
++    return $x+$y;
+ }
+
+ 1;
+</pre></div>
+<p>
+Corrected, and now the test passes. Let's see which files changed:
+</p>
+<div class="code_block"><pre>
+$ hg status .
+M MyModule.pm
+M mytest.t
+</pre></div>
+<p>
+Two files are changed in the working copy. We can now put them in the
+repository using <tt>hg commit</tt>:
+</p>
+<div class="code_block"><pre>
+$ hg commit -m "Fixed a bug - we did x+y*2 instead of x+y"
+</pre></div>
+<p>
+Now let's suppose we broke something and the change is too big to fix, and we
+wish to revert to the pristine version. Our version control system allows us
+to do that:
+</p>
+<div class="code_block"><pre>
+$ hg diff
+diff -r a7599e97a8d8 MyModule/MyModule.pm
+--- a/MyModule/MyModule.pm      Sat Jan 15 10:46:24 2011 +0200
++++ b/MyModule/MyModule.pm      Sat Jan 15 10:48:04 2011 +0200
+@@ -8,7 +8,7 @@
+ {
+     my ($x, $y) = @_;
+
+-    return $x+$y;
++    return $x*100+$y;
+ }
+
+ 1;
+$ prove mytest.t
+mytest.t .. 1/3
+#   Failed test '2+0 is 2.'
+#   at mytest.t line 14.
+#          got: '200'
+#     expected: '2'
+
+#   Failed test '1+1 is 2.'
+#   at mytest.t line 17.
+#          got: '101'
+#     expected: '2'
+# Looks like you failed 2 tests of 3.
+mytest.t .. Dubious, test returned 2 (wstat 512, 0x200)
+Failed 2/3 subtests
+
+Test Summary Report
+-------------------
+mytest.t (Wstat: 512 Tests: 3 Failed: 2)
+  Failed tests:  2-3
+  Non-zero exit status: 2
+Files=1, Tests=3,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.02 cusr  0.00 csys =  0.06 CPU)
+Result: FAIL
+$ hg status .
+M MyModule.pm
+$ hg revert My
+MyModule.pm   MyModule.pm~
+$ hg revert MyModule.pm
+$ hg status .
+? MyModule.pm.orig
+$ prove mytest.t
+mytest.t .. ok
+All tests successful.
+Files=1, Tests=3,  0 wallclock secs ( 0.04 usr  0.00 sys +  0.02 cusr  0.00 csys =  0.06 CPU)
+Result: PASS
+$
+</pre></div>
+<p>
+Now that it's working we can perform more changes, and continue to commit them.
+We can see the log of all our changes:
+</p>
+<div class="code_block"><pre>
+$ hg update
+0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+$ hg log
+changeset:   3:a7599e97a8d8
+tag:         tip
+user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+date:        Sat Jan 15 10:46:24 2011 +0200
+summary:     Fixed a bug - we did x+y*2 instead of x+y
+
+changeset:   2:ebc249691c24
+user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+date:        Fri Jan 14 18:20:29 2011 +0200
+summary:     Add another assertion
+
+changeset:   1:e2b34f948dcd
+user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+date:        Fri Jan 14 18:14:05 2011 +0200
+summary:     Added mytest.t.
+
+changeset:   0:7dec17ed3e88
+user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+date:        Fri Jan 14 18:07:32 2011 +0200
+summary:     Added MyModule.pm
+</pre></div>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--version-control--mercurial-demo--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--accessors--example--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a>
+</div>
+<h1 id="page--accessors--DIR">
+4. Class Accessors
+</h1>
+<p>
+Object accessors are a way to abstract access to an object's member variables
+(also known as “properties”, “attributes”, “fields”, “slots”, etc.) behind
+method
+calls. For example we can use <tt>$person-&gt;age()</tt> to get the age
+of <tt>$person</tt> and <tt>$person-&gt;age(21)</tt> or
+<tt>$person-&gt;set_age(21)</tt> to set their age to 21.
+</p>
+<p>
+Accessors provide several important advantages over accessing the
+properties of objects directly and this section will serve as an introduction
+to them.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--accessors--example--PAGE" class="contents">4.1. Example</a>
+</li><li><a href="#page--accessors--motivation--PAGE" class="contents">4.2. Motivation</a>
+</li><li><a href="#page--accessors--cpan-modules--PAGE" class="contents">4.3. Accessor modules on the CPAN</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--accessors--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--accessors--motivation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--example--PAGE">Example</a>
+</div>
+<h1 id="page--accessors--example--PAGE">
+4.1. Example
+</h1>
+<p>
+Here's an example class with some accessors and a script that uses it:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> Person</span>;
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">new</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$class</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = {};
+    <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
+
+    <span class="Identifier">$self-&gt;_init</span>(<span class="Identifier">@_</span>);
+
+    <span class="Statement">return</span> <span class="Identifier">$self</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">_init</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+    <span class="Statement">my</span> <span class="Identifier">$args</span> = <span class="Statement">shift</span>;
+
+    <span class="Identifier">$self-&gt;_first_name</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'first_name'</span><span class="Identifier">}</span>);
+    <span class="Identifier">$self-&gt;_last_name</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'last_name'</span><span class="Identifier">}</span>);
+
+    <span class="Identifier">$self-&gt;_age</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'age'</span><span class="Identifier">}</span>);
+
+    <span class="Statement">return</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">_first_name</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">if</span> (<span class="Identifier">@_</span>)
+    {
+        <span class="Statement">my</span> <span class="Identifier">$new_first_name</span> = <span class="Statement">shift</span>;
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_first_name'</span><span class="Identifier">}</span> = <span class="Identifier">$new_first_name</span>;
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_first_name'</span><span class="Identifier">}</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">_last_name</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">if</span> (<span class="Identifier">@_</span>)
+    {
+        <span class="Statement">my</span> <span class="Identifier">$new_last_name</span> = <span class="Statement">shift</span>;
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_last_name'</span><span class="Identifier">}</span> = <span class="Identifier">$new_last_name</span>;
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_last_name'</span><span class="Identifier">}</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">_age</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">if</span> (<span class="Identifier">@_</span>)
+    {
+        <span class="Statement">my</span> <span class="Identifier">$new_age</span> = <span class="Statement">shift</span>;
+        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_age'</span><span class="Identifier">}</span> = <span class="Identifier">$new_age</span>;
+    }
+
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_age'</span><span class="Identifier">}</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">greet</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">print</span> <span class="Constant">&quot;Hello &quot;</span>, <span class="Identifier">$self-&gt;_first_name</span>(), <span class="Constant">&quot; &quot;</span>, <span class="Identifier">$self-&gt;_last_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+    <span class="Statement">return</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">increment_age</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Identifier">$self-&gt;_age</span>(<span class="Identifier">$self-&gt;_age</span>()+<span class="Constant">1</span>);
+
+    <span class="Statement">return</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">get_age</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;_age</span>();
+}
+
+<span class="Constant">1</span>;
+</pre></div>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Person;
+
+<span class="Statement">my</span> <span class="Identifier">$shlomif</span> =
+    Person-&gt;new(
+        {
+            <span class="Constant">first_name</span> =&gt; <span class="Constant">&quot;Shlomi&quot;</span>,
+            <span class="Constant">last_name</span> =&gt; <span class="Constant">&quot;Fish&quot;</span>,
+            <span class="Constant">age</span> =&gt; <span class="Constant">32</span>,
+        }
+    );
+
+<span class="Identifier">$shlomif-&gt;greet</span>();
+<span class="Identifier">$shlomif-&gt;increment_age</span>();
+
+<span class="Statement">print</span> <span class="Constant">&quot;Happy Birthday, Shlomi, your age is now &quot;</span>, <span class="Identifier">$shlomif-&gt;get_age</span>(), <span class="Constant">&quot;.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$newton</span> =
+    Person-&gt;new(
+        {
+            <span class="Constant">first_name</span> =&gt; <span class="Constant">&quot;Isaac&quot;</span>,
+            <span class="Constant">last_name</span> =&gt; <span class="Constant">&quot;Newton&quot;</span>,
+            <span class="Constant">age</span> =&gt; <span class="Constant">366</span>,
+        }
+    );
+
+<span class="Identifier">$newton-&gt;greet</span>();
+<span class="Statement">print</span> <span class="Constant">&quot;Newton would have been &quot;</span>, <span class="Identifier">$newton-&gt;get_age</span>(),
+    <span class="Constant">&quot; years old today if he had been alive.</span><span class="Special">\n</span><span class="Constant">&quot;</span>
+    ;
+</pre></div>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--accessors--example--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--accessors--cpan-modules--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--motivation--PAGE">Motivation</a>
+</div>
+<h1 id="page--accessors--motivation--PAGE">
+4.2. Motivation
+</h1>
+<p>
+So why should we use accessors instead of doing a direct
+<tt>$person-&gt;{'age'}</tt> access to the object's property? There
+are several reasons for that:
+</p>
+<ol>
+<li>
+<p>
+Writing the property names directly each time is prone to mis-spellings
+and errors, because they are strings. On the other hand, with method calls,
+the existence of a particular one is validated at run-time, and will
+throw an exception if a method was misspelled into a name that is not present.
+</p>
+</li>
+<li>
+<p>
+If a property needs to be converted from a first-order property to a
+calculated value, then one can still use the existing method-based interface
+to access it, just by changing the implementation of the methods. On the
+other, this is much more difficult to change with a direct-field access.
+</p>
+</li>
+<li>
+<p>
+The external interface provided by methods is cleaner and easier to
+maintain compatibility with, than a direct class access.
+</p>
+</li>
+<li>
+<p>
+There may be other reasons, like better concurrency, persistence, etc.
+</p>
+</li>
+</ol>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--accessors--motivation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--new-features--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--cpan-modules--PAGE">Accessor modules on the CPAN</a>
+</div>
+<h1 id="page--accessors--cpan-modules--PAGE">
+4.3. Accessor modules on the CPAN
+</h1>
+<p>
+As you may have noticed from our example, writing accessors by hand
+involves a lot of duplicate code, and can get tedious. One way to overcome
+it is by using namespace games
+(e.g: <tt>*Person::${field} = sub { .... }</tt>), but there are many modules
+on CPAN that do it all for you. Here's an overview of some of the most
+prominent ones:
+</p>
+<h2 id="Class-Accessor"><a href="http://search.cpan.org/dist/Class-Accessor/">Class-Accessor</a></h2>
+<p>
+<a href="http://search.cpan.org/dist/Class-Accessor/">Class-Accessor</a>
+was one of the earliest accessor providing modules and is still pretty popular.
+It is pure Perl, has no dependencies, and works pretty well. It has many
+<a href="http://search.cpan.org/search?query=class%3A%3Aaccessor&amp;mode=all">enhancements on CPAN</a> that may work better for you.
+</p>
+<h2 id="Class-XSAccessor"><a href="http://search.cpan.org/dist/Class-XSAccessor/">Class-XSAccessor</a></h2>
+<p>
+Class-XSAccessor is an accessor generator partially written using C and Perl/XS
+which is the Perl external subroutine mechanism. As such, it provides an
+unparalleled speed among the other accessor generators, and is even faster than
+writing your own accessor methods by hand, like we did in the example.
+</p>
+<h2 id="Moose"><a href="http://moose.perl.org/">Moose</a></h2>
+<p>
+While Moose provides accessors, they are only the tip of its
+iceberg. Moose is in fact a “post-modern” object system for Perl 5 that
+provides a type system, delegators, meta-classes, wrapping routines, and many
+other advanced features. As <a
+href="http://osdir.com/ml/lang.perl.moose/2008-05/msg00003.html">I once
+said</a>:
+</p>
+<blockquote>
+<p>
+Every sufficiently complex Class::Accessor program contains an ad hoc,
+informally-specified, bug-ridden, slow implementation of half of Moose.
+</p>
+</blockquote>
+<p>
+If you're looking to take your object oriented programming in Perl 5
+to new levels - look no further than that. One should be warned that as of
+this writing (August, 2009), Moose may have a relatively long startup time,
+although the situation has been improved and is expected to improve further.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--accessors--cpan-modules--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--new-features--use-base--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a>
+</div>
+<h1 id="page--new-features--DIR">
+5. Useful Features in Recent Perls
+</h1>
+<p>
+This section will cover some new features in recent versions of Perl 5 that
+may prove useful for robust programming or may be encountered in the wild.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--new-features--use-base--PAGE" class="contents">5.1. use base</a>
+</li><li><a href="#page--new-features--lexical-filehandles--PAGE" class="contents">5.2. Lexical Filehandles</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--new-features--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--new-features--lexical-filehandles--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--use-base--PAGE">use base</a>
+</div>
+<h1 id="page--new-features--use-base--PAGE">
+5.1. use base
+</h1>
+<p>
+The <a href="http://perldoc.perl.org/base.html">use base</a> pragma allows
+one to conveniently set the base packages of an object, while loading their
+corresponding modules at the same time. Using it is preferable to
+fiddling with <tt>@ISA</tt> directly.
+</p>
+<p>
+Note that if you are using Moose, you should use the <tt>extends()</tt>
+function instead of <tt>use base</tt>.
+</p>
+<p>
+<a href="http://search.cpan.org/dist/parent/">The parent pragma</a>
+forked from base.pm to "remove the cruft that accumulated there". It may
+be preferable.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--new-features--use-base--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--local-keyword--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--lexical-filehandles--PAGE">Lexical Filehandles</a>
+</div>
+<h1 id="page--new-features--lexical-filehandles--PAGE">
+5.2. Lexical Filehandles
+</h1>
+<p>
+Traditionally Perl filehandles had been "typeglobs" - global names - normally
+starting with an uppercase letter that were not scope safe. While they could
+have been localised using "local", this was still a far cry from true
+lexical scoping. perl-5.6.x, however,
+<a href="http://perldoc.perl.org/perl56delta.html#File-and-directory-handles-can-be-autovivified">introduced</a>
+lexical filehandles for both file handles and directory handles.
+</p>
+<p>
+Here is an example for a program implementing a directory listing.
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">sub </span><span class="Identifier">get_entries</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">opendir</span> <span class="Statement">my</span> <span class="Identifier">$dir_handle</span>, <span class="Identifier">$dir_path</span>
+        <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Cannot open '</span><span class="Identifier">$dir_path</span><span class="Constant">' as a directory - </span><span class="Identifier">$!</span><span class="Constant">.&quot;</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">@entries</span> = <span class="Statement">readdir</span>(<span class="Identifier">$dir_handle</span>);
+
+    <span class="Statement">closedir</span>(<span class="Identifier">$dir_handle</span>);
+
+    <span class="Statement">return</span> [ <span class="Statement">sort {</span> <span class="Identifier">$a</span> <span class="Statement">cmp</span> <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@entries</span> ];
+}
+
+<span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$arg</span> (<span class="Identifier">@ARGV</span>)
+{
+    <span class="Statement">print</span> <span class="Constant">&quot;== Listing for </span><span class="Identifier">$arg</span><span class="Constant"> ==</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$entry</span> (<span class="Identifier">@{</span>get_entries(<span class="Identifier">$arg</span>)<span class="Identifier">}</span>)
+    {
+        <span class="Statement">print</span> <span class="Identifier">$entry</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    }
+}
+</pre></div>
+<p>
+And here is an example that copies a file:
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Comment"># This is just for demonstration. A better way would be to use File::Copy :</span>
+<span class="Comment">#</span>
+<span class="Comment"># http://perldoc.perl.org/File/Copy.html</span>
+<span class="Comment">#</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">my</span> <span class="Identifier">$source_fn</span> = <span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>);
+<span class="Statement">my</span> <span class="Identifier">$dest_fn</span> = <span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>);
+
+<span class="Statement">if</span> ( (!<span class="Statement">defined</span>(<span class="Identifier">$source_fn</span>)) || (!<span class="Statement">defined</span>(<span class="Identifier">$dest_fn</span>)) )
+{
+    <span class="Statement">die</span> <span class="Constant">&quot;You must specify two arguments - source and destination.&quot;</span>
+}
+
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$source_handle</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$source_fn</span>
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open '</span><span class="Identifier">$source_fn</span><span class="Constant">' - </span><span class="Identifier">$!</span><span class="Constant">.&quot;</span>;
+<span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$dest_handle</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Identifier">$dest_fn</span>
+    <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open '</span><span class="Identifier">$dest_fn</span><span class="Constant">' - </span><span class="Identifier">$!</span><span class="Constant">.&quot;</span>;
+
+<span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;<span class="Identifier">$source_handle</span>&gt;)
+{
+    <span class="Statement">print {</span><span class="Identifier">$dest_handle</span><span class="Statement">}</span> <span class="Identifier">$line</span>;
+}
+
+<span class="Statement">close</span>(<span class="Identifier">$source_handle</span>);
+<span class="Statement">close</span>(<span class="Identifier">$dest_handle</span>);
+</pre></div>
+<h2>IO::Handle and Friends</h2>
+<p>
+Perl provides a set of lexical and object-oriented abstractions for file
+handles called IO::Handle. Starting from recent versions of Perl, one can
+use them with the built-in perlfunc mechanisms. You can find more information
+about them here:
+</p>
+<ul>
+<li>
+<a href="http://perldoc.perl.org/IO/Handle.html">IO::Handle's Documentation</a>
+</li>
+<li>
+<a href="http://perldoc.perl.org/IO/File.html">IO::File's Documentation</a>
+</li>
+<li>
+<a href="http://perldoc.perl.org/IO/Socket.html">IO::Socket's Documentation</a>
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--new-features--lexical-filehandles--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--local-keyword--use-and-abuse--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a>
+</div>
+<h1 id="page--local-keyword--DIR">
+6. The local keyword
+</h1>
+<p>
+Before Perl 5 came out and Perl got lexical scoping and the <tt>my</tt>
+keyword, an older <tt>local</tt> keyword was made available for programmers to
+temporarily "localise" the values of variables (or parts there of) in Perl.
+</p>
+<p>
+As opposed to <tt>my</tt>, which is lexically scoped, <tt>local</tt> is
+<a href="http://en.wikipedia.org/wiki/Scope_%28programming%29#Dynamic_scoping">dynamically scoped</a>. What happens when one writes a
+<tt>local $myvar = NEW_VALUE_EXPR();</tt> (which will work only for package
+variables) is that perl will store the previous value of the variable somewhere
+safe, allow the programmer to temper with it as it pleases, and restore its
+value to its previous, saved state, when the block exits. As opposed to
+my, the new localised value will survive function calls in different functions.
+</p>
+<p>
+So when should local be used?
+</p>
+<ul class="contentsmain">
+<li><a href="#page--local-keyword--use-and-abuse--PAGE" class="contents">6.1. Use and Abuse</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--local-keyword--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--local-keyword--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a> → <a href="#page--local-keyword--use-and-abuse--PAGE">Use and Abuse</a>
+</div>
+<h1 id="page--local-keyword--use-and-abuse--PAGE">
+6.1. Use and Abuse
+</h1>
+<p>
+The rule of the thumb is that for general scoping, <tt>local</tt> should not
+be used instead of <tt>my</tt>, which is safer and better. You may still
+encounter some code using local in the wild, but assuming you need to maintain
+it, this code should be revamped to use <tt>my</tt> instead.
+</p>
+<p>
+For more information refer to:
+</p>
+<ul>
+<li>
+<a href="http://perl.plover.com/FAQs/Namespaces.html">Mark Jason Dominus'
+"Coping With Scoping"</a> - a general and comprehensive discussion.
+</li>
+<li>
+<a href="http://perl.plover.com/local.html">"Seven Useful Uses of
+<tt>local</tt>"</a> - also by Mark Jason Dominus.
+</li>
+<li>
+<a href="http://www.mail-archive.com/linux-il@cs.huji.ac.il/msg33714.html">A
+Linux-IL post explaining the difference between
+<tt>my</tt> and <tt>local</tt></a> - by Shlomi Fish.
+</li>
+</ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--local-keyword--use-and-abuse--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--pod-documentation--demo--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a>
+</div>
+<h1 id="page--pod-documentation--DIR">
+7. Using POD for Documentation
+</h1>
+<p>
+<a href="http://perldoc.perl.org/perlpod.html">POD</a> is short for
+"Plain Old Documentation", and is a lightweight markup language, which is
+the de-facto standard for writing documentation for Perl programs, Perl
+modules and Perl itself.
+</p>
+<p>
+In the context of Perl modules, POD is primarily used to give API
+(Application Programmers' Interface) documentation. In the context of
+Perl programs, POD is primarily used to document the usage of the program
+and the command line flags it accepts. POD is also used to document the
+perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
+</p>
+<ul class="contentsmain">
+<li><a href="#page--pod-documentation--demo--PAGE" class="contents">7.1. POD Demonstration</a>
+</li><li><a href="#page--pod-documentation--pod-testing--PAGE" class="contents">7.2. Testing and Verifying POD</a>
+</li><li><a href="#page--pod-documentation--literate-programming--PAGE" class="contents">7.3. Literate Programming</a>
+</li><li><a href="#page--pod-documentation--extensions--PAGE" class="contents">7.4. POD Extensions</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--pod-documentation--pod-testing--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--demo--PAGE">POD Demonstration</a>
+</div>
+<h1 id="page--pod-documentation--demo--PAGE">
+7.1. POD Demonstration
+</h1>
+<h2 id="pod-demo-how">How to write POD</h2>
+<p>
+POD sections start with a single POD directive on a new line and continue
+up to the next <tt>=cut</tt> directive also on a line of its own. Here are
+some POD directives:
+</p>
+<h3 id="pod-demo-headers">Headers</h3>
+<p>
+<tt>=head1</tt>, <tt>=head2</tt>, <tt>=head3</tt>, etc. - these are headers.
+The lower the header number is, the more significant it is and the bigger
+font will be used for it. Headers are followed by the text of the header.
+For example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">=head1</span><span class="Constant"> All you wanted to know about animals.</span>
+
+<span class="Statement">=head2</span><span class="Constant"> Introduction</span>
+
+This document aims to explain about animals.
+
+<span class="Statement">=head2</span><span class="Constant"> Mammals.</span>
+
+<span class="Statement">=head3</span><span class="Constant"> Cats</span>
+
+Cats are awesome. They are useful for keeping the rats' population at
+bay.
+
+<span class="Statement">=head3</span><span class="Constant"> Dogs</span>
+
+Dogs have been called Man's best friend.
+</pre></div>
+<h3 id="regular-text">Regular Text</h3>
+<p>
+As you can see, a regular paragraph text is a paragraph. Paragraphs are separated by
+blank lines, and newlines are ignored.
+</p>
+<h3 id="pod-demo-code-blocks">Code Blocks</h3>
+<p>
+A <b>code block</b> (or verbatim paragraph) can be added by creating a portion
+of the text that's indented by using whitespace. In code blocks, newlines are
+not ignored. For example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">=head1</span><span class="Constant"> All you wanted to know about animals.</span>
+
+<span class="Statement">=head2</span><span class="Constant"> Introduction</span>
+
+This document aims to explain about animals.
+
+<span class="Statement">=head2</span><span class="Constant"> Mammals.</span>
+
+<span class="Statement">=head3</span><span class="Constant"> Cats</span>
+
+Cats are awesome. They are useful for keeping the rats' population at
+bay.
+
+<span class="Statement">=head3</span><span class="Constant"> Dogs</span>
+
+Dogs have been called Man's best friend.
+
+Here is an example program to name your dog:
+
+<span class="PreProc">    #!/usr/bin/perl</span>
+
+<span class="PreProc">    use strict;</span>
+<span class="PreProc">    use warnings;</span>
+
+<span class="PreProc">    my @dog_names = (qw(Rex George Beethoven Max Rocky Lucky Cody));</span>
+
+<span class="PreProc">    print &quot;Name your dog &quot; . $dog_names[rand(@dog_names)] . &quot;!\n&quot;;</span>
+
+Put it in a file and run it.
+</pre></div>
+<h3 id="pod-demo-formatting-codes">Formatting Codes</h3>
+<p>
+One can use some formatting codes:
+</p>
+<ul>
+<li>
+<tt>I&lt;text&gt;</tt> - for italic text.
+</li>
+<li>
+<tt>B&lt;text&gt;</tt> - for bold text.
+</li>
+<li>
+<tt>C&lt;text&gt;</tt> - for code (monospace) text.
+</li>
+<li>
+<tt>L&lt;text&gt;</tt> - hyperlinks - see
+<a href="http://perldoc.perl.org/perlpod.html">perldoc perlpod</a> for
+more information.
+</li>
+<li>
+<tt>E&lt;lt&gt;</tt> , <tt>E&lt;gt&gt;</tt> , <tt>E&lt;htmlname&gt;</tt>,
+etc. are escapes.
+</li>
+</ul>
+<p>
+One should note that one can combine several styles at once using
+<tt>BI&lt; ... &gt;</tt> notation. Furthermore, one can enclose text with
+special characters (such as <tt>&lt;</tt> and <tt>&gt;</tt>) using
+several <tt>&lt;&lt;&lt;</tt> and trailing <tt>&gt;&gt;&gt;</tt> characters.
+</p>
+<h3 id="pod-demo-lists">Lists</h3>
+<p>
+One can use lists in POD by writing <tt>=over 4</tt> (or some other value
+of indent-level instead of "4"), and then several <tt>=item</tt>'s and
+finally <tt>=back</tt>. An item can be <tt>=item *</tt> for a bullet,
+<tt>=item 1.</tt> to produce numbered lists or <tt>=item title</tt> to
+produce a definition list.
+</p>
+<p>
+For example:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">=head1</span><span class="Constant"> All you wanted to know about animals.</span>
+
+<span class="Statement">=head2</span><span class="Constant"> Introduction</span>
+
+This document aims to explain about animals.
+
+<span class="Statement">=head2</span><span class="Constant"> Mammals.</span>
+
+<span class="Statement">=head3</span><span class="Constant"> Cats</span>
+
+Cats are awesome. They are useful for keeping the rats' population at
+bay.
+
+<span class="Statement">=head3</span><span class="Constant"> Dogs</span>
+
+Dogs have been called Man's best friend.
+
+Here is an example program to name your dog:
+
+<span class="PreProc">    #!/usr/bin/perl</span>
+
+<span class="PreProc">    use strict;</span>
+<span class="PreProc">    use warnings;</span>
+
+<span class="PreProc">    my @dog_names = (qw(Rex George Beethoven Max Rocky Lucky Cody));</span>
+
+<span class="PreProc">    print &quot;Name your dog &quot; . $dog_names[rand(@dog_names)] . &quot;!\n&quot;;</span>
+
+Put it in a file and run it. This program will generate one of the following
+names:
+
+<span class="Statement">=over</span> <span class="Constant">4</span>
+
+<span class="Statement">=item</span><span class="Constant"> * Rex</span>
+
+Rex like the dinosaur.
+
+<span class="Statement">=item</span><span class="Constant"> * George</span>
+
+Like George Washington.
+
+<span class="Statement">=item</span><span class="Constant"> * Beethoven</span>
+
+Last name of the famous composer.
+
+<span class="Statement">=item</span><span class="Constant"> * Max</span>
+
+Short for Maximilian.
+
+<span class="Statement">=item</span><span class="Constant"> * Rocky</span>
+
+Like the film.
+
+<span class="Statement">=item</span><span class="Constant"> * Lucky</span>
+
+A lucky dog.
+
+<span class="Statement">=item</span><span class="Constant"> * Cody</span>
+
+For good coding.
+
+<span class="Statement">=back</span>
+</pre></div>
+<h2 id="pod-demo-for-more-info">For More Information</h2>
+<p>
+POD has some other directives. For more information refer to
+<a href="http://perldoc.perl.org/perlpod.html">perldoc perlpod</a>,
+and to <a href="http://en.wikipedia.org/wiki/Plain_Old_Documentation">the
+Wikipedia page about POD</a>.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--pod-documentation--demo--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--pod-documentation--literate-programming--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--pod-testing--PAGE">Testing and Verifying POD</a>
+</div>
+<h1 id="page--pod-documentation--pod-testing--PAGE">
+7.2. Testing and Verifying POD
+</h1>
+<p>
+The CPAN module
+<a href="http://search.cpan.org/dist/Test-Pod/"><b>Test-Pod</b></a>
+allows one to check for POD errors in files. Its use is recommended to
+avoid writing POD with errors.
+</p>
+<p>
+The CPAN module
+<a href="http://search.cpan.org/dist/Test-Pod-Coverage/"><b>Test-Pod-Coverage</b></a>
+tries to make sure that all the public API functions in one's Perl modules
+have corresponding POD documentation. Its use is also recommended.
+</p>
+<p>
+Generally,
+<a href="http://search.cpan.org/dist/Module-Starter/">Module-Starter</a>
+and similar modules will generate such tests for you automatically as part
+of the skeleton of your CPAN distribution.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--pod-documentation--pod-testing--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--pod-documentation--extensions--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--literate-programming--PAGE">Literate Programming</a>
+</div>
+<h1 id="page--pod-documentation--literate-programming--PAGE">
+7.3. Literate Programming
+</h1>
+<p>
+<a href="http://en.wikipedia.org/wiki/Literate_programming">Literate
+Programming</a> is a method of writing code that allows one to
+intermingle code with documentation, re-order the sections of the code
+in relevance to their intention, and create an entire document typeset
+that is explaining the code, with full cross-references and interlinks.
+As Mark Jason Dominus explains
+<a href="http://www.perl.com/pub/a/tchrist/litprog.html">POD is <b>not</b>
+Literate Programming</a>.
+</p>
+<p>
+Traditionally, Literate Programming systems have generated
+<a href="http://en.wikipedia.org/wiki/LaTeX">TeX/LaTeX</a> output,
+but more recently there have been ones that could output
+<a href="http://en.wikipedia.org/wiki/DocBook">DocBook/XML</a>.
+</p>
+<p>
+I am personally not writing my code in a Literate Programming style, because
+I feel that:
+</p>
+<ol>
+<li>
+<p>
+It will require much more effort to create code that will only be marginally
+easier to understand.
+</p>
+</li>
+<li>
+<p>
+The documentation will need to be maintained along with the code and may
+become out-of-date. Even inline comments suffer from this symptom, and
+external documentation much more so.
+</p>
+</li>
+<li>
+<p>
+The code should be structured to be as self-documenting as possible.
+For example, instead of documenting what a block of code is doing, one
+should extract a subroutine with a name that conveys the intention.
+</p>
+</li>
+</ol>
+<p>
+However, I'm mentioning Literate Programming here for completeness sake,
+should you choose to follow this route.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--pod-documentation--literate-programming--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--extensions--PAGE">POD Extensions</a>
+</div>
+<h1 id="page--pod-documentation--extensions--PAGE">
+7.4. POD Extensions
+</h1>
+<p>
+POD has some extended dialects with more features and options:
+</p>
+<ul>
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Pod-PseudoPod/">PseudoPod</a> -
+</p>
+<blockquote>
+<p>
+PseudoPod is an extended set of Pod tags used for book manuscripts. Standard
+Pod doesn't have all the markup options you need to mark up files for
+publishing production. PseudoPod adds a few extra tags for footnotes, tables,
+sidebars, etc.
+</p>
+</blockquote>
+</li>
+<li>
+<p>
+<a href="http://hop.perl.plover.com/book/#MOD">MJD's POD variant called MOD</a>
+- this was used to write the book "Higher Order Perl", and one can download
+the markup for the book and for source code for the MOD package from the
+<a href="http://hop.perl.plover.com/book/#MOD">book's site</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Perldoc/">Perldoc.pm</a> was an attempt
+to modernise POD by
+<a href="http://search.cpan.org/~ingy/">Ingy döt Net</a>, and incorporating
+some markup from his Kwiki wiki engine.
+</p>
+</li>
+</ul>
+<p>
+Aside from that, Wikipedia has a
+<a href="http://en.wikipedia.org/wiki/Category:Lightweight_markup_languages">list
+of other Lightweight markup languages</a>, and some of them also have
+implementations in Perl.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--pod-documentation--extensions--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--invocation--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a>
+</div>
+<h1 id="page--module-build-and-starter--DIR">
+8. Module-Build and Module-Starter
+</h1>
+<p>
+Now let's tie everything together. When you download a Perl package from
+CPAN, there's a standard way to build and install it -
+<tt>perl Makefile.PL</tt>, <tt>make</tt>, <tt>make test</tt> and
+<tt>make install</tt> (or alternatively a similar process with
+<tt>perl Build.PL</tt> and <tt>./Build</tt> ).
+</p>
+<p>
+When creating packages of Perl code, it is preferable to
+make them capable of being built this way, even if they are intended for
+internal use. That is because packaging them this way gives you many
+advantages, among them the ability to specify CPAN (and in-house)
+dependencies, integrity tests, configurability in building and installation,
+and simplification of the preparation of system packages (such as
+<tt>.rpm</tt>s or <tt>.deb</tt>s).
+</p>
+<p>
+In this section we'll learn how to prepare your own CPAN-like package of
+Perl 5 code using
+<a href="http://search.cpan.org/dist/Module-Starter/">module-starter</a> and
+<a href="http://search.cpan.org/dist/Module-Build/">Module-Build</a>.
+There are some variations on this theme, but it should get you started.
+</p>
+<ul class="contentsmain">
+<li><a href="#page--module-build-and-starter--invocation--PAGE" class="contents">8.1. The Module-Starter Invocation Command</a>
+</li><li><a href="#page--module-build-and-starter--commands--PAGE" class="contents">8.2. Module-Build commands</a>
+</li><li><a href="#page--module-build-and-starter--coding--PAGE" class="contents">8.3. Adding meaningful code</a>
+</li><li><a href="#page--module-build-and-starter--boilerplate--PAGE" class="contents">8.4. Getting rid of the boilerplate</a>
+</li><li><a href="#page--module-build-and-starter--additional-resources--PAGE" class="contents">8.5. Additional Resources</a>
+</li></ul>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--commands--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--invocation--PAGE">The Module-Starter Invocation Command</a>
+</div>
+<h1 id="page--module-build-and-starter--invocation--PAGE">
+8.1. The Module-Starter Invocation Command
+</h1>
+<p>
+After you install Module-Starter, you can type
+<tt>module-starter --help</tt> to get the help for it, and get a result such
+as the following:
+</p>
+<div class="code_block"><pre>
+Usage:
+    module-starter [options]
+
+    Options:
+
+        --module=module  Module name (required, repeatable)
+        --distro=name    Distribution name (optional)
+        --dir=dirname    Directory name to create new module in (optional)
+
+        --builder=module Build with 'ExtUtils::MakeMaker' or 'Module::Build'
+        --eumm           Same as --builder=ExtUtils::MakeMaker
+        --mb             Same as --builder=Module::Build
+        --mi             Same as --builder=Module::Install
+
+        --author=name    Author's name (required)
+        --email=email    Author's email (required)
+        --license=type   License under which the module will be distributed
+                         (default is the same license as perl)
+
+        --verbose        Print progress messages while working
+        --force          Delete pre-existing files if needed
+
+        --help           Show this message
+
+    Available Licenses: perl, bsd, gpl, lgpl, mit
+
+    Example:
+
+        module-starter --module=Foo::Bar,Foo::Bat \
+            --author=&quot;Andy Lester&quot; --email=andy@petdance.com
+</pre></div>
+<p>
+Let's show an example invocation for our own module called
+<tt>MyMath::Ops</tt> which will contain some silly mathematical routines:
+</p>
+<div class="code_block"><pre>
+module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="Statement">\</span>
+    <span class="Special">--dir=MyMath-Ops</span> <span class="Statement">\</span>
+    <span class="Special">--module=MyMath::Ops</span> <span class="Statement">\</span>
+    <span class="Special">--module=MyMath::Ops::Add</span> <span class="Statement">\</span>
+    <span class="Special">--module=MyMath::Ops::Multiply</span> <span class="Statement">\</span>
+    <span class="Special">--module=MyMath::Ops::Subtract</span> <span class="Statement">\</span>
+    <span class="Special">--module=MyMath::Ops::Divide</span> <span class="Statement">\</span>
+    <span class="Special">--mb</span> <span class="Statement">\</span>
+    <span class="Special">--author=</span><span class="Statement">&quot;</span><span class="Constant">Perl Newbie</span><span class="Statement">&quot;</span> <span class="Statement">\</span>
+    <span class="Special">--email=</span><span class="Statement">'</span><span class="Constant">perl-newbie@perl-begin.org</span><span class="Statement">'</span> <span class="Statement">\</span>
+    <span class="Special">--verbose</span>
+</pre></div>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--invocation--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--coding--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--commands--PAGE">Module-Build commands</a>
+</div>
+<h1 id="page--module-build-and-starter--commands--PAGE">
+8.2. Module-Build commands
+</h1>
+<p>
+The first thing we should do is change the directory to the directory that
+Module-Starter created and run <tt>perl Build.PL</tt>. We get some
+output like the following:
+</p>
+<div class="code_block"><pre>
+shlomi[homepage]:$p4n/5/src/module-build-and-starter$ cd MyMath-Ops/
+shlomi[homepage]:$p4n/5/src/module-build-and-starter/MyMath-Ops$ perl Build.PL
+Checking whether your kit is complete...
+Looks good
+
+Checking prerequisites...
+Looks good
+
+Deleting Build
+Removed previous script 'Build'
+
+Creating new 'Build' script for 'MyMath-Ops' version '0.01'
+shlomi[homepage]:$p4n/5/src/module-build-and-starter/MyMath-Ops$
+</pre></div>
+<p>
+What the <tt>perl Build.PL</tt> command does is generate the <tt>Build</tt>
+script in the current directory that can be used to perform such operations
+as building, testing, packaging, and installing of the distribution. Sometimes
+we need to re-run <tt>perl Build.PL</tt> if we modified the configuration.
+</p>
+<p>
+Now let's run <tt>./Build</tt> and <tt>./Build test</tt>.
+</p>
+<div class="code_block"><pre>
+shlomi[homepage]:$p4n/5/src/module-build-and-starter/MyMath-Ops$ ./Build
+Copying lib/MyMath/Ops/Subtract.pm -&gt; blib/lib/MyMath/Ops/Subtract.pm
+Copying lib/MyMath/Ops/Divide.pm -&gt; blib/lib/MyMath/Ops/Divide.pm
+Copying lib/MyMath/Ops/Multiply.pm -&gt; blib/lib/MyMath/Ops/Multiply.pm
+Copying lib/MyMath/Ops.pm -&gt; blib/lib/MyMath/Ops.pm
+Copying lib/MyMath/Ops/Add.pm -&gt; blib/lib/MyMath/Ops/Add.pm
+Manifying blib/lib/MyMath/Ops/Add.pm -&gt; blib/libdoc/MyMath::Ops::Add.3pm
+Manifying blib/lib/MyMath/Ops/Multiply.pm -&gt; blib/libdoc/MyMath::Ops::Multiply.3pm
+Manifying blib/lib/MyMath/Ops/Subtract.pm -&gt; blib/libdoc/MyMath::Ops::Subtract.3pm
+Manifying blib/lib/MyMath/Ops/Divide.pm -&gt; blib/libdoc/MyMath::Ops::Divide.3pm
+Manifying blib/lib/MyMath/Ops.pm -&gt; blib/libdoc/MyMath::Ops.3pm
+shlomi[homepage]:$p4n/5/src/module-build-and-starter/MyMath-Ops$ ./Build test
+t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.010001, /usr/bin/perl5.10.1
+t/00-load.t ....... ok
+t/boilerplate.t ... ok
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+All tests successful.
+Files=4, Tests=22,  1 wallclock secs ( 0.10 usr  0.04 sys +  0.60 cusr  0.12 csys =  0.86 CPU)
+Result: PASS
+shlomi[homepage]:$p4n/5/src/module-build-and-starter/MyMath-Ops$
+</pre></div>
+<p>
+What happens is that <tt>./Build</tt> copies the files under <tt>blib/</tt>
+, builds the documentation, and in case we had
+<a href="http://en.wikipedia.org/wiki/XS_%28Perl%29">XS (= "External Subroutine" - perl routines written in a low-level language)</a> it
+would also build the extensions. This allows us to run tests against the
+built code, either automated or manual by using the
+<a href="http://perldoc.perl.org/blib.html">blib module</a>.
+</p>
+<p>
+After we had ran <tt>./Build</tt>, we ran <tt>./Build test</tt> to run the
+automated tests that Module-Starter generated for us. As you can see
+the line says that all tests successful. If they were not, we should fix
+either the code or the tests, depending on what is wrong.
+</p>
+<p>
+Now let's move on.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--commands--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--boilerplate--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--coding--PAGE">Adding meaningful code</a>
+</div>
+<h1 id="page--module-build-and-starter--coding--PAGE">
+8.3. Adding meaningful code
+</h1>
+<p>
+If we look at the code of the <tt>lib/…*.pm</tt> file, we'll see that there's
+practically nothing there. So now it's time that we add some meaningful
+code to the modules. But first we need to add some tests. Let's add this
+test script under <tt>t/add.t</tt>
+</p>
+<div class="code_block"><pre>
+<span class="PreProc">#!/usr/bin/perl</span>
+
+<span class="Statement">use strict</span>;
+<span class="Statement">use warnings</span>;
+
+<span class="Statement">use </span>Test::More <span class="Constant">tests</span> =&gt; <span class="Constant">2</span>;
+
+<span class="Statement">use </span>MyMath::Ops::Add;
+
+{
+    <span class="Statement">my</span> <span class="Identifier">$adder</span> = MyMath::Ops::Add-&gt;new();
+
+    <span class="Comment"># TEST</span>
+    ok (<span class="Identifier">$adder</span>, <span class="Constant">&quot;Adder was initialised&quot;</span>);
+
+    <span class="Comment"># TEST</span>
+    is (<span class="Identifier">$adder-&gt;add</span>(<span class="Constant">2</span>,<span class="Constant">3</span>), <span class="Constant">5</span>, <span class="Constant">&quot;2+3 == 5&quot;</span>);
+}
+</pre></div>
+<p>
+Now we need to add it to the <tt>MANIFEST</tt>, so it will be included in
+future versions of Perl. After we did it, let's run <tt>./Build test</tt>
+to see the tests fail:
+</p>
+<div class="code_block"><pre>
+$ perl Build.PL
+Creating new 'MYMETA.yml' with configuration results
+Creating new 'Build' script for 'MyMath-Ops' version '0.01'
+$ ./Build test
+t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.012003, /usr/bin/perl5.12.3
+t/00-load.t ....... ok
+t/add.t ........... Can't locate object method "new" via package "MyMath::Ops::Add" at t/add.t line 11.
+# Looks like your test exited with 255 before it could output anything.
+t/add.t ........... Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 2/2 subtests
+t/boilerplate.t ... ok
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+
+Test Summary Report
+-------------------
+t/add.t         (Wstat: 65280 Tests: 0 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 2 tests but ran 0.
+Files=5, Tests=22,  1 wallclock secs ( 0.14 usr  0.04 sys +  0.56 cusr  0.11 csys =  0.85 CPU)
+Result: FAIL
+Failed 1/5 test programs. 0/22 subtests failed.
+</pre></div>
+<p>
+So now we need to fix the tests. Open <tt>lib/MyMath/Ops/Add.pm</tt> and write
+that:
+</p>
+<div class="code_block"><pre>
+<span class="Statement">package</span><span class="Type"> MyMath::Ops::Add</span>;
+
+<span class="Statement">use warnings</span>;
+<span class="Statement">use strict</span>;
+
+<span class="Statement">=head1</span><span class="Constant"> NAME</span>
+
+<span class="Comment">MyMath::Ops::Add - The great new MyMath::Ops::Add!</span>
+
+<span class="Statement">=head1</span><span class="Constant"> VERSION</span>
+
+<span class="Comment">Version 0.01</span>
+
+<span class="Statement">=cut</span>
+
+<span class="Statement">our</span> <span class="Identifier">$VERSION</span> = <span class="Constant">'0.01'</span>;
+
+<span class="Statement">=head1</span><span class="Constant"> SYNOPSIS</span>
+
+<span class="Comment">Quick summary of what the module does.</span>
+
+<span class="Comment">Perhaps a little code snippet.</span>
+
+<span class="PreProc">    use MyMath::Ops::Add;</span>
+
+<span class="PreProc">    my $foo = MyMath::Ops::Add-&gt;new();</span>
+<span class="PreProc">    ...</span>
+
+<span class="Statement">=head1</span><span class="Constant"> EXPORT</span>
+
+<span class="Comment">A list of functions that can be exported.  You can delete this section</span>
+<span class="Comment">if you don't export anything, such as for a purely object-oriented module.</span>
+
+<span class="Statement">=head1</span><span class="Constant"> FUNCTIONS</span>
+
+<span class="Statement">=head2</span><span class="Constant"> new</span>
+
+<span class="Comment">Construct a new object.</span>
+
+<span class="Statement">=cut</span>
+
+<span class="Statement">sub </span><span class="Identifier">new</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$class</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">bless</span> {}, <span class="Identifier">$class</span>;
+
+    <span class="Identifier">$self-&gt;_init</span>(<span class="Identifier">@_</span>);
+
+    <span class="Statement">return</span> <span class="Identifier">$self</span>;
+}
+
+<span class="Statement">sub </span><span class="Identifier">_init</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">return</span>;
+}
+
+<span class="Statement">=head2</span><span class="Constant"> $self-&gt;add($x, $y)</span>
+
+<span class="Comment">Adds two numbers.</span>
+
+<span class="Statement">=cut</span>
+
+<span class="Statement">sub </span><span class="Identifier">add</span>
+{
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
+
+    <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
+    <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>;
+}
+
+<span class="Statement">=head2</span><span class="Constant"> function1</span>
+
+<span class="Statement">=cut</span>
+
+<span class="Statement">sub </span><span class="Identifier">function1 </span>{
+}
+
+<span class="Statement">=head2</span><span class="Constant"> function2</span>
+
+<span class="Statement">=cut</span>
+
+<span class="Statement">sub </span><span class="Identifier">function2 </span>{
+}
+
+<span class="Statement">=head1</span><span class="Constant"> AUTHOR</span>
+
+<span class="Comment">Perl Newbie, </span><span class="Identifier">C&lt;&lt; &lt;perl-newbie at perl-begin.org&gt; &gt;&gt;</span>
+
+<span class="Statement">=head1</span><span class="Constant"> BUGS</span>
+
+<span class="Comment">Please report any bugs or feature requests to </span><span class="Identifier">C&lt;bug-mymath::ops at rt.cpan.org&gt;</span><span class="Comment">, or through</span>
+<span class="Comment">the web interface at </span><span class="Identifier">L&lt;http://rt.cpan.org/NoAuth/ReportBug.html?Queue=MyMath::Ops&gt;</span><span class="Comment">.  I will be notified, and then you'll</span>
+<span class="Comment">automatically be notified of progress on your bug as I make changes.</span>
+
+
+
+
+<span class="Statement">=head1</span><span class="Constant"> SUPPORT</span>
+
+<span class="Comment">You can find documentation for this module with the perldoc command.</span>
+
+<span class="PreProc">    perldoc MyMath::Ops::Add</span>
+
+
+<span class="Comment">You can also look for information at:</span>
+
+<span class="Statement">=over</span><span class="Comment"> </span><span class="Constant">4</span>
+
+<span class="Statement">=item</span><span class="Constant"> * RT: CPAN's request tracker</span>
+
+<span class="Identifier">L&lt;http://rt.cpan.org/NoAuth/Bugs.html?Dist=MyMath::Ops&gt;</span>
+
+<span class="Statement">=item</span><span class="Constant"> * AnnoCPAN: Annotated CPAN documentation</span>
+
+<span class="Identifier">L&lt;http://annocpan.org/dist/MyMath::Ops&gt;</span>
+
+<span class="Statement">=item</span><span class="Constant"> * CPAN Ratings</span>
+
+<span class="Identifier">L&lt;http://cpanratings.perl.org/d/MyMath::Ops&gt;</span>
+
+<span class="Statement">=item</span><span class="Constant"> * Search CPAN</span>
+
+<span class="Identifier">L&lt;http://search.cpan.org/dist/MyMath::Ops/&gt;</span>
+
+<span class="Statement">=back</span>
+
+
+<span class="Statement">=head1</span><span class="Constant"> ACKNOWLEDGEMENTS</span>
+
+
+<span class="Statement">=head1</span><span class="Constant"> COPYRIGHT &amp; LICENSE</span>
+
+<span class="Comment">Copyright 2009 Perl Newbie.</span>
+
+<span class="Comment">This program is free software; you can redistribute it and/or modify it</span>
+<span class="Comment">under the terms of either: the GNU General Public License as published</span>
+<span class="Comment">by the Free Software Foundation; or the Artistic License.</span>
+
+<span class="Comment">See http://dev.perl.org/licenses/ for more information.</span>
+
+
+<span class="Statement">=cut</span>
+
+<span class="Constant">1</span>; <span class="Comment"># End of MyMath::Ops::Add</span>
+</pre></div>
+<p>
+And now let's run "./Build test" again:
+</p>
+<div class="code_block"><pre>
+$ ./Build test
+t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.014002, /usr/bin/perl5.14.2
+t/00-load.t ....... ok
+t/add.t ........... ok
+t/boilerplate.t ... ok
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+All tests successful.
+</pre></div>
+<p>
+Since all tests are successful, we can commit the changes to the repository.
+</p>
+<h3>Moving on</h3>
+<p>
+Now we can continue to add more tests, and then fix the failing ones. If the
+code becomes too convoluted, due to modifications, we can
+<a href="http://en.wikipedia.org/wiki/Code_refactoring">refactor it</a> and
+improve its modularity. Running the existing automated tests after such a
+change will better make sure that we didn't break something.
+</p>
+<p>
+This "write more tests", "get tests to pass", "refactor" is the cycle of
+development and maintenance, and Perl tools such as <tt>Module-Build</tt>
+facilitate it.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--coding--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--module-build-and-starter--additional-resources--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--boilerplate--PAGE">Getting rid of the boilerplate</a>
+</div>
+<h1 id="page--module-build-and-starter--boilerplate--PAGE">
+8.4. Getting rid of the boilerplate
+</h1>
+<p>
+The skeleton of the distribution generated by Module-Starter contains some
+boilerplate, which is pre-included text and code, used as placeholders. That
+should be replaced by more meaningful one by the programmer who is writing
+the distribution.
+</p>
+<p>
+Luckily, it also generates a script on <tt>t/boilerplate.t</tt> that checks
+for that boilerplate and reports it. However, the tests there are marked as
+TODO tests, whose failure status is ignored by default. To turn off their
+TODO status, open <tt>t/boilerplate.t</tt> in your text editor and remove
+or comment-out the following line
+</p>
+<div class="code_block"><pre>
+  local $TODO = "Need to replace the boilerplate text";
+</pre></div>
+<p>
+After we do that, we get some test failures when running <tt>./Build test</tt>:
+</p>
+<div class="code_block"><pre>
+$ ./Build test
+t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.014002, /usr/bin/perl5.14.2
+t/00-load.t ....... ok
+t/add.t ........... ok
+t/boilerplate.t ... 1/7
+#   Failed test 'README contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# The README is used... appears on lines 3
+# 'version information here' appears on lines 11
+
+#   Failed test 'Changes contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# placeholder date/time appears on lines 3
+
+#   Failed test 'lib/MyMath/Ops.pm contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# stub function definition appears on lines 37 41 44 48
+# boilerplate description appears on lines 21
+# the great new $MODULENAME appears on lines 8
+
+#   Failed test 'lib/MyMath/Ops/Add.pm contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# stub function definition appears on lines 74 78 81 85
+# boilerplate description appears on lines 20
+# the great new $MODULENAME appears on lines 8
+
+#   Failed test 'lib/MyMath/Ops/Multiply.pm contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# stub function definition appears on lines 37 41 44 48
+# boilerplate description appears on lines 21
+# the great new $MODULENAME appears on lines 8
+
+#   Failed test 'lib/MyMath/Ops/Subtract.pm contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# stub function definition appears on lines 37 41 44 48
+# boilerplate description appears on lines 21
+# the great new $MODULENAME appears on lines 8
+
+#   Failed test 'lib/MyMath/Ops/Divide.pm contains boilerplate text'
+#   at t/boilerplate.t line 23.
+# stub function definition appears on lines 37 41 44 48
+# boilerplate description appears on lines 21
+# the great new $MODULENAME appears on lines 8
+# Looks like you failed 7 tests of 7.
+t/boilerplate.t ... Dubious, test returned 7 (wstat 1792, 0x700)
+Failed 7/7 subtests
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+
+Test Summary Report
+-------------------
+t/boilerplate.t (Wstat: 1792 Tests: 7 Failed: 7)
+  Failed tests:  1-7
+  Non-zero exit status: 7
+Files=5, Tests=24,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.15 cusr  0.02 csys =  0.21 CPU)
+Result: FAIL
+Failed 1/5 test programs. 7/24 subtests failed.
+</pre></div>
+<p>
+Fixing them is left as an exercise for the reader.
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--boilerplate--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--additional-resources--PAGE">Additional Resources</a>
+</div>
+<h1 id="page--module-build-and-starter--additional-resources--PAGE">
+8.5. Additional Resources
+</h1>
+<p>
+Here are some additional resources regarding managing a CPAN-like distribution.
+</p>
+<ol>
+<li>
+<p>
+<a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/"><b>ExtUtils-MakeMaker</b></a>
+is Perl's older and now largely unloved distribution manager, which relies on
+generating
+<a href="http://en.wikipedia.org/wiki/Make_%28software%29">makefiles</a>. It was
+<a href="http://www.nntp.perl.org/group/perl.perl5.porters/2008/09/msg140206.html">described
+by chromatic</a> as <q>a jumble of Perl which
+writes cross platform shell scripts to install Perl code, and you customize
+that by writing a superclass from which platform-specific modules inherit
+pseudo-methods which use regular expressions to search and replace
+cross-platform cross-shell code, with all of the cross-platform and
+cross-shell quoting issues that entails</q> .
+</p>
+</li>
+<li>
+<p>
+<a href="http://search.cpan.org/dist/Module-Install/"><b>Module-Install</b></a> is
+a more modern and succinct wrapper around ExtUtils-MakeMaker that has gained
+some popularity. It ships its code (and the code of its extensions) under an
+<tt>./inc</tt> directory in the distribution, which has known to cause some
+bootstrapping issues for co-developers who would like to collaborate on the
+code from its version control repository. Nevertheless, it may be worth taking a
+look.
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.apress.com/open-source/programming/9781590590188"><b><i>Writing
+Perl Modules for CPAN</i></b></a> is a book by Sam Tregar, which has a free
+PDF download. It is somewhat out-of-date (only covering ExtUtils-MakeMaker),
+but may still be enlightening.
+</p>
+</li>
+<li>
+<p>
+<a href="http://dzil.org/"><b>Dist::Zilla</b></a> is a high-level distribution
+generator, with many available plugins, that abstracts away a lot of the
+duplication within a module and across modules. It generates fully-functional
+distributions that can be shipped to CPAN and used normally. As with
+Module-Install, it may pose a problem to your contributors, especially if they
+have out-of-date versions of its CPAN modules installed, but it is a useful
+tool.
+</p>
+</li>
+<li>
+<p>
+A Perlmonks.org post titled
+<a href="http://www.perlmonks.org/?node_id=879515"><b>“RFC: How to Release
+Modules on CPAN in 2011”</b></a> goes to more coverage about the issues covered
+in this section.
+</p>
+</li>
+<li>
+<p>
+Jeffrey Thalhammer has prepared a talk titled
+<a href="http://www.slideshare.net/thaljef/cpan-for-private-code">“CPAN for Private Code”</a> which gives the motivation for packaging Perl code in CPAN-like
+distributions, even if it is not intended for CPAN.
+</p>
+</li>
+</ol>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--module-build-and-starter--additional-resources--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conclusion--links--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a>
+</div>
+<h1 id="page--conclusion--DIR">
+9. Conclusion
+</h1>
+<p>
+The aim of this presentation was to make your Perl code (and that of other
+programming languages) less error-prone, easier to understand, and easier to
+modify. I did not provide a complete coverage of code external quality (which
+is what the user feels or notices) or internal quality (which is what
+is also affecting the developers maintaining the code). For a more thorough
+coverage of those, you are referred to:
+</p>
+<ol>
+<li>
+<a href="http://www.shlomifish.org/philosophy/computers/high-quality-software/rev2/">My essay “What Makes Software High-Quality?”</a>.
+</li>
+<li>
+The Wikipedia
+<a href="http://en.wikipedia.org/wiki/Software_quality">“Software quality”</a>
+article, which gives a coverage of the topic with many references.
+</li>
+<li>
+<a href="http://perl-begin.org/tutorials/bad-elements/">The “Perl Elements to
+Avoid” Page on the Perl Beginners Site</a>
+</li>
+</ol>
+<p>
+Happy programming!
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="p">Prev</a></td>
+<td>
+<a href="#page--conclusion--thanks--PAGE" class="nav" accesskey="n">Next</a></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--links--PAGE">Links</a>
+</div>
+<h1 id="page--conclusion--links--PAGE">
+9.1. Links
+</h1>
+<p>
+To be done if we see fit (suggestions are welcome).
+</p>
+<hr />
+
+</div>
+<div class="page">
+<table class="page-nav-bar top" summary=""><tr><td>
+<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
+<td>
+<a href="#page--conclusion--links--PAGE" class="nav" accesskey="p">Prev</a></td>
+<td>
+<b>Next</b></td>
+</tr></table>
+<div class="bread">
+<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--thanks--PAGE">Thanks</a>
+</div>
+<h1 id="page--conclusion--thanks--PAGE">
+9.2. Thanks
+</h1>
+<p>
+Here I’d like to thank some people who contributed to this presentation:
+</p>
+<ul>
+<li>
+<p>
+<a href="http://szabgab.com/">Gabor Szabo</a> - for his constant efforts for
+promoting Perl 5, Perl 6, and other open-source technologies in Israel and
+abroad.
+</p>
+</li>
+<li>
+<p>
+The people who help those who ask questions on
+<a href="irc://irc.freenode.net/#perl">Freenode’s #perl channel</a>.
+</p>
+</li>
+<li>
+<p>
+The people who help those who ask questions on
+<a href="http://learn.perl.org/faq/beginners.html">beginners@perl.org</a>.
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.csse.monash.edu.au/~damian/">Damian Conway</a> for
+writing the excellent book
+<a href="http://shop.oreilly.com/product/9780596001735.do"><i>Perl Best
+Practices</i></a>, which inspired a lot of similar discussion about best
+practices in Perl.
+</p>
+</li>
+<li>
+<p>
+chromatic for his
+<a href="http://www.modernperlbooks.com/">“Modern Perl”</a> blog
+and book (freely available online with sources), which further fuelled interest
+in a more modern approach to Perl programming.
+</p>
+</li>
+<li>
+<p>
+<a href="http://alanhaggai.org/">Alan Haggai Alavi</a> for providing some
+help with the <a href="http://perl-begin.org/">Perl Beginners site</a>.
+</p>
+</li>
+</ul>
+<hr />
+
+</div>
+
+</body></html>

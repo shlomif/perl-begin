@@ -1,0 +1,7 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Elements to Avoid" />
+
+<latemp_more_keywords "elements, antipatterns, anti, patterns, help, ancient, ancient perl, modern, modern perl, avoid, bad perl, old tutorials, what to avoid" />
+
+#include "docbook/5/rendered/bad-elements.xhtml"

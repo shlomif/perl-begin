@@ -1,0 +1,51 @@
+#include '../template.wml'
+
+<latemp_subject "Date and Time in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Many newcomers to Perl ask how to properly handle, process and manipulate
+dates and times in Perl. The proper answer is that while Perl has basic
+facilities for this in <pdoc d="perlfunc"></pdoc> and the POSIX module,
+one should use a good date-and-time module from CPAN. This page aims
+to lead people in the right direction.
+</p>
+
+<h2 id="cpan">CPAN Distributions for Date and Time Manipulation</h2>
+
+<h3 id="DateTime">DateTime</h3>
+
+<p>
+The <cpan_b_self_dist d="DateTime" /> CPAN
+distribution is a highly recommended module for handling dates and times.
+Here are some useful helper packages for it:
+</p>
+
+<ul>
+
+<li>
+<cpan_self_dist d="DateTime-Format-Strptime" />
+- parses dates in arbitrary formats.
+</li>
+
+<li>
+<cpan_self_dist d="DateTime-Format-W3CDTF" />,
+<cpan_self_dist d="DateTime-Format-Atom" />
+and other "DateTime-Format-" modules - useful for parsing
+and formatting dates using various standard date formats.
+</li>
+
+<li>
+<cpan_self_dist d="DateTime-Format-Natural" />
+allows one to convert dates in human-time to a DateTime object.
+</li>
+
+<li>
+<cpan_self_dist d="Time-Duration" /> converts a
+duration (in seconds, which can be calculated from a DateTime object) into a human
+readable expression of it (exact or rounded). Like "10 minutes ago", "1 hour ago", etc.
+</li>
+
+</ul>
+

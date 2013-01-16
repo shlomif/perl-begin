@@ -1,0 +1,57 @@
+<h2 id="sources_of_advice">Sources of This Advice</h2>
+
+<p>
+This is a short list of the sources from which this advice was taken which
+also contains material for further reading:
+</p>
+
+<ol>
+<li>
+<p>
+<a href="$(ROOT)/books/advanced/#pbp">The
+Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
+advice and food for thought, but sometimes should be deviated from.
+Also see the
+<a href="https://www.socialtext.net/perl5/index.cgi?pbp_module_recommendation_commentary">"PBP
+Module Recommendation Commentary"</a> on the Perl 5 Wiki.
+</p>
+</li>
+
+<li>
+<p>
+<a href="https://www.socialtext.net/perl5/index.cgi?ancient_perl">"Ancient
+Perl"</a> on the Perl 5 Wiki.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://modernperlbooks.com/">chromatic's "Modern Perl" Book and
+Blog</a>
+</p>
+</li>
+
+<li>
+<p>
+The book <a href="http://www.refactoring.com/"><i>Refactoring</i> by Martin
+Fowler</a> - not particularly about Perl, but still useful.
+</p>
+</li>
+
+<li>
+<p>
+The book
+<a href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><i>The Pragmatic
+Programmer: From Journeyman to Master</i></a> - also not particularly about
+Perl, and I found it somewhat disappointing, but it is an informative book.
+</p>
+</li>
+<li>
+<p>
+Advice given by people on <a href="$(ROOT)/irc/#freenode">Freenode's #perl
+channel</a>, on the Perl Beginners mailing list, and on other Perl forums.
+</p>
+</li>
+
+</ol>
+

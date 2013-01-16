@@ -1,0 +1,220 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+
+<latemp_subject "Perl for XML Processing" />
+
+<p>
+This page will cover how to properly process XML using Perl and
+various recommended modules from CPAN (= Comprehensive Perl Archive Network).
+</p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="technologies">Technologies of Interest</h2>
+
+<h3 id="XML-LibXML"><cpan_self_dist d="XML-LibXML" /></h3>
+
+<p>
+XML-LibXML is the de-facto standard for XML processing in Perl. It's a
+comprehensive CPAN module based on the
+<a href="http://xmlsoft.org/">libxml2</a> library, that provides DOM (Document
+Object Module), SAX (a stream parser), a pull parser, XPath, and
+<cpan_dist d="XML-LibXSLT">XSLT</cpan_dist>
+support. XML-LibXML has good documentation and is actively maintained.
+</p>
+
+<p>
+One note is that you should be aware of XML namespaces and how they interact
+with the DOM and the XML-LibXML API before using this library.
+</p>
+
+<div class="sub_section">
+
+<h3 id="xpath">XPath</h3>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/XPath">XPath</a> is an
+XML-related technology (but not notated in XML) that allows one
+to locate nodes in XML files using a compact syntax. One can use it using
+<a href="#XML-LibXML">XML::LibXML</a>, and should avoid using the old, slow,
+and largely
+unmaintained <tt>XML::XPath</tt> CPAN distribution.
+</p>
+
+<p>
+Another useful module is <cpan_self_dist d="HTML-Selector-XPath" />
+which allows one to convert <strong>CSS-style selectors</strong> to XPath and
+provide functionality similar to that offered by such JavaScript libraries
+such as jQuery. So you can, for example, write
+<code>selector_to_xpath('ul.myclass a')</code> to find all <tt>a</tt> elements
+inside a <tt>ul</tt> element with a CSS class of <tt>myclass</tt>.
+</p>
+
+<p>
+To learn about XPath, consult the following resources:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XPathTutorial/Output/">Zvon XPath Tutorial</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://zvon.org/comp/r/ref-XPath_1.html">Zvon XPath Reference</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://ponderer.org/download/xpath/">Interactive XPath tester</a>
+</p>
+</li>
+
+</ul>
+
+<div class="sub_section">
+
+<h4 id="custom_xpath_functions">Custom XPath Functions</h4>
+
+<p>
+XML::LibXML allows the programmer to register custom XPath functions, coded
+in Perl, in order to help working with XPath. For more information, see
+<cpan_self_mod m="XML::LibXML::XPathContext" /> .
+</p>
+
+</div>
+
+</div>
+
+<div class="sub_section">
+
+<h3 id="xslt">XSLT</h3>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/XSLT">XSLT</a> stands for
+Extensible Stylesheet Language Transformations and is a language for
+transforming XML documents into other XML documents or other formats such
+as HTML or plain text. Perl has good support for version 1.0 of XSLT by
+using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
+</p>
+
+<p>
+(Please avoid using <cpan_self_dist d="XML-XSLT" /> which is old, and largely
+unmaintained, and use XML-LibXSLT instead.)
+</p>
+
+<p>
+For more about XSLT, see the following links, but note that XSLT makes
+extensive use of <a href="#path">XPath</a>, so you should learn it first.
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XSLTutorial/Output/">The Zvon XSLT Tutorial</a>
+- with many examples.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://zvon.org/xxl/XSLTreference/Output/">The
+Zvon XSLT Reference</a> - provides a useful reference.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.xsltcake.com/">Interactive XSLT tester</a> - it seems
+that the best results are achieved with the Mozilla Firefox browser, because
+Google Chromium/Google Chrome and Opera do not handle XML namespaces with XSLT
+well.
+</p>
+</li>
+
+</ul>
+
+</div>
+
+<h2 id="web-pages">Web Pages about Perl and XML</h2>
+
+<h3 id="perl-xml-project"><a href="http://perl-xml.sourceforge.net/">The Perl XML Project
+Home Page</a></h3>
+
+<h4 id="perl-xml-faq"><a href="http://perl-xml.sourceforge.net/faq/">Their Frequently Asked
+Questions List (FAQ)</a></h4>
+
+<h2 id="what-to-avoid">What to Avoid</h2>
+
+<h3 id="xml-simple">XML-Simple</h3>
+
+<p>
+XML-Simple is not so simple when done properly and takes the wrong approach
+to dealing with XML. Please avoid using it. Look at XML-LibXML for an easy
+and fast alternative.
+</p>
+
+<h3 id="parsing-xml-using-regexes">Parsing XML Using Regular Expressions</h3>
+
+<p>
+You should also avoid parsing XML using regular expressions, because it
+is difficult to handle the non-regular grammar of XML using them. Instead,
+use a parser. For more information see:
+</p>
+
+<ol>
+
+<li>
+<p>
+<a href="http://www.codinghorror.com/blog/2009/11/parsing-html-the-cthulhu-way.html">“Parsing HTML the Cthulhu Way”</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">Comment on Stack Overflow</a> (funny).
+</p>
+</li>
+
+</ol>
+
+
+<h2 id="xml-grammars">Modules for Dealing with Specific Grammars</h2>
+
+<p>
+In addition to generic XML parsers and manipulators, there are many
+specialised modules on the CPAN for dealing with specific XML grammars. Many
+of them reside under XML:: namespace. Some prominent examples include:
+</p>
+
+<ul>
+
+<li>
+<cpan_b_self_dist d="XML-RSS" /> - manipulate
+RSS (Really Simple Syndication) 0.9, 0.91, 1.0 and 2.0.
+</li>
+
+<li>
+<cpan_b_self_dist d="XML-Atom" /> -
+manipulate Atom feeds. (Atom is an alternative syndication format)
+</li>
+
+<li>
+<cpan_b_self_dist d="XML-Feed" /> -
+generate, parse, mix and match web feeds (Atom or RSS).
+</li>
+
+<li>
+<cpan_b_self_dist d="OpenOffice-OODoc" /> -
+manipulate OpenOffice.org-like ODF (OpenDocument format) files.
+</li>
+
+</ul>
+

@@ -1,0 +1,66 @@
+#include '../template.wml'
+#include "tut_blocks.wml"
+
+<latemp_subject "Object Oriented Programming in Perl" />
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented
+programming</a> (or OOP for short) is a software-design paradigm that allows
+for writing more re-usable and more elegant code by declaring <b>classes</b>
+that define the functionality that their various instances, called
+<b>objects</b> have.
+</p>
+
+<p>
+There's a myth going on that Perl is not an object-oriented language. It's
+not true and starting from Perl 5 (which has been the standard Perl version
+since 1994), Perl has had support for a very powerful and flexible object
+system. While it is true that Perl does not force one to program using
+object-oriented programming (because it is often an overkill), it does allow
+OOP when one needs and wants to.
+</p>
+
+<h2 id="moose">Moose</h2>
+
+<p>
+<a href="http://www.iinteractive.com/moose/"><b>Moose</b></a> is a post-modern
+object system for Perl. It supports a meta-object protocol, has a built-in
+type system, support roles, and is considered the modern way to do
+object-oriented programming in Perl.
+<a href="http://www.iinteractive.com/moose/">The Moose homepage</a> contains
+a lot of information about it including introductory talks, articles, and
+links.
+</p>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<modern_perl_entry>
+
+Has an "Objects" chapter.
+
+</modern_perl_entry>
+
+<beginning_perl_entry>
+
+<p>
+The 11th chapter of this book for Perl beginners (including absolute beginners)
+covers Objects. This book was written by one of the foremost Perl experts.
+</p>
+
+</beginning_perl_entry>
+
+<perl_for_newbies_entry>
+
+<p>
+The third talk in the series explains objects in detail, although from a very
+low level and how they work behind the scenes.
+</p>
+
+</perl_for_newbies_entry>
+
+<modules_and_objects_perldocs />
+
+# TODO : Add Modern Perl.
+

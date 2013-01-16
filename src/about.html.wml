@@ -1,0 +1,39 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Beginners' Site - About" />
+
+<h2 id="about">About</h2>
+
+<p>
+Welcome to the Perl Beginners' Site. The mission of perl-begin.org is to
+provide Perl newcomers with the most high-quality and accessible material
+and references for learning the Perl programming language as easily, as
+accurately and as efficiently as possible.
+</p>
+
+<p>
+This site provides links and references to on-line and off-line material
+that can be used to learn Perl. This site is directed both at people who
+learn Perl after knowing one or more languages, or at people who are
+learning Perl as their first language.
+</p>
+
+<h2 id="revamp">Site Revamp</h2>
+
+<p>
+Recently (as of 26-March-2007), this site has seen a huge revamp. Its look
+and feel has been changed to one based on
+<a href="http://www.oswd.org/design/preview/id/2933">an Open Source
+Web-Design design</a>, and later on its contents were made more accessible,
+and more in accordance to
+<a href="http://www.shlomifish.org/Files/files/text/TheHackersGuideToMarketing.pdf">some
+good marketing advice</a>.
+</p>
+
+<p>
+Our agenda now is to finish the content revamp and then start
+publicizing this site better. With the endorsement of the people of
+<a href="http://www.perlfoundation.org/">the Perl Foundation</a>, this site
+may hopefully gain a more official status.
+</p>
+

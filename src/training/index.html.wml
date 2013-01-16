@@ -1,0 +1,18 @@
+#include '../template.wml'
+
+<latemp_subject "Perl Training Providers" />
+
+<h2>Perl Training</h2>
+
+<p>
+If you are not very auto-didactic, you may wish to take some courses at
+a Perl training provider.
+</p>
+
+<h2 id="perltraining.org"><a href="http://perltraining.org/">The Perl
+Training Directory</a></h2>
+
+<p>
+A comprehensive directory of training providers, maintained by
+<a href="http://www.szabgab.com/">Gabor Szabo</a>.
+</p>

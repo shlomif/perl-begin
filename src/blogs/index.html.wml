@@ -1,0 +1,100 @@
+#include '../template.wml'
+
+<latemp_subject "Links to Perl Blogs" />
+
+<h2 id="perl_weekly"><a href="http://perlweekly.com/">Perl Weekly</a></h2>
+
+<p>
+A weekly newsletter by Gabor Szabo, concentrating the most notable articles
+from the Perl blogosphere in the leading week. Available on the web and
+can be delivered by E-mail.
+</p>
+
+<h2 id="planets">Perl “Planets” and Aggregators</h2>
+
+<ul>
+
+<li>
+<a href="http://perlsphere.net/"><b>Perlsphere.net</b></a> - aggregates many
+Perl blogs.
+</li>
+
+<li>
+<a href="http://ironman.enlightenedperl.org/"><b>Planet Perl Iron Man</b></a> -
+an aggregator for the blogs of all participants in the
+<a href="http://www.enlightenedperl.org/ironman.html">Perl Iron Man Blogging
+Challenge</a> that encourages people to blog about Perl regularly.
+</li>
+
+<li>
+<a href="http://planet.perl.org/"><b>Planet Perl</b></a> - another aggregator
+with a more official status, but one that lacks comprehensiveness.
+</li>
+
+<li>
+<a href="http://planetsix.perlfoundation.org/"><b>Planet Perl Six</b></a> -
+an aggregator of select Perl 6 related blogs
+</li>
+
+<li>
+<a href="http://planet.catalystframework.org/"><b>Planet Catalyst</b></a> -
+a Planet related to <a href="http://www.catalystframework.org/">Catalyst</a>,
+the elegant Perl-based web framework.
+</li>
+
+<li>
+<a href="http://blogs.padre.perlide.org/"><b>Planet Padre</b></a> -
+a collection of Padre-related blogs.
+</li>
+
+<li>
+<a href="http://www.reddit.com/r/perl">The perl sub-reddit</a> - a sub-section
+of reddit (a social news site) dedicated to Perl.
+</li>
+
+</ul>
+
+<h2 id="blog-sites">Blogging Sites</h2>
+
+<ul>
+
+<li>
+<a href="http://blogs.perl.org/">blogs.perl.org</a> - “There’s more than
+one way to blog it” - an active blogging site hosting many blogs, and open
+for anyone to host their own weblog there.
+</li>
+</ul>
+
+<h2 id="notable-blogs">Other Notable Blogs</h2>
+
+<ul>
+
+<li>
+<a href="http://perlbuzz.com/"><b>Perl Buzz</b></a> - a news feed about Perl
+with several sections, that aims to cover "the newest and best of the Perl
+world".
+</li>
+
+<li>
+<a href="http://www.catalyzed.org/"><b>Catalyzed.org</b></a> - a Catalyst
+and Perl Blog.
+</li>
+
+
+<li>
+<a href="http://www.modernperlbooks.com/">"Modern Perl Books,
+a Modern Perl Blog"</a> - a blog about modern Perl by chromatic.
+</li>
+
+</ul>
+
+<h2 id="lists-of-blogs">Other Lists of Blogs</h2>
+
+<ul>
+
+<li>
+<a href="http://www.perlfoundation.org/perl5/index.cgi?blogs"><b>Perl Blogs
+on the Perl 5 Wiki</b></a>
+</li>
+
+</ul>

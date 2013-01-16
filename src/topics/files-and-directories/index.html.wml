@@ -1,0 +1,299 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+#include "files_dirs_modules.wml"
+
+<page_extra_head_elements>
+<script type="text/javascript" src="$(ROOT)/js/jquery-ui-1.9.2.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="$(ROOT)/css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="$(ROOT)/jqui-override.css" media="screen, projection" />
+</page_extra_head_elements>
+
+<latemp_subject "Files and Directories Handling in Perl" />
+
+<p>
+Perl has strong support for handling files and directories, which are the
+bread-and-butter of dealing with the disk and the filesystem. Many modules
+on <a href="$(ROOT)/topics/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
+aim to facilitate the task even further.
+</p>
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="basics">The Basics</h2>
+
+<p>
+For the basics, read about the open function (on
+<pdoc d="perlopentut"></pdoc> or
+on <a href="$(ROOT)/resources/">recommended books or tutorials</a>) as well as
+other built-ins such as
+<pdoc_f f="opendir">opendir</pdoc_f>, <pdoc_f f="readdir">readdir</pdoc_f>,
+<pdoc_f f="closedir">closedir</pdoc_f>, <pdoc_f f="mkdir">mkdir</pdoc_f>. There
+are also many UNIX-oriented file-system-builtins listed on <pdoc d="perlfunc"></pdoc> which may prove of utility.
+</p>
+
+<files_and_directories_modules />
+
+<h2 id="examples">Examples</h2>
+
+<p>
+These are a set of examples for manipulating files and directories using Perl.
+Each will be shown in several versions including ones using IO-All, ones using
+core modules, and if relevant ones from the command line.
+</p>
+
+<define-tag perl_code endtag="required">
+<pre class="perl">
+<:{
+    use Text::VimColor;
+
+    my $sh_bang = qq{#!/usr/bin/perl\n\n};
+    my $s = $sh_bang . <<'EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM';
+use strict;
+use warnings;
+%body
+EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
+
+    my $tvc = Text::VimColor->new(
+        string => \$s,
+        filetype => 'perl',
+    );
+    print $tvc->html() =~ s{(class=")syn}{$1}gr;
+}:>
+</pre>
+</define-tag>
+
+<script type="text/javascript">
+    $(function() {
+        $(".tabs").tabs();
+    });
+</script>
+
+<:
+    use PerlBegin::TopicsExamples;
+
+    use strict;
+    use warnings;
+
+    # Examples generator:
+    my $ex_gen = PerlBegin::TopicsExamples->new(
+        {
+            default_syntax => 'perl',
+        }
+    );
+
+    print $ex_gen->html_with_title(
+        {
+            title => "Copying a file",
+            id_base => "copying_a_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+my ($source_filename, $dest_filename) = @_;
+io->file($source_filename) > io->file($dest_filename);
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use File::Copy qw(copy);
+
+my ($source_filename, $dest_filename) = @_;
+
+copy($source_filename, $dest_filename);
+EOF
+                },
+            ],
+        }
+    );
+
+    print $ex_gen->html_with_title(
+        {
+            title => "Overwriting a file with text",
+            id_base => "overwrite_a_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+io->file("output.txt")->utf8->print("Hello World!\n");
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+
+open my $out, '>:encoding(utf8)', "output.txt";
+print {$out} "Hello World!\n";
+close($out);
+EOF
+                },
+            ],
+        }
+    );
+
+    print $ex_gen->html_with_title(
+        {
+            title => "Processing the Lines of a File",
+            id_base => "processing_lines_of_a_file",
+            examples =>
+            [
+                {
+                    id => "file_slurp",
+                    label => "File::Slurp",
+                    code => <<'EOF',
+use File::Slurp;
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
+}
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+use File::Temp ( qw(tempfile) );
+
+my @filenames = @ARGV;
+
+foreach my $fn (@filenames)
+{
+    open my $in, '&lt;', $fn;
+    my ($tempout, $temp_fn) = tempfile();
+
+    while (my $line = &lt;$in&gt;)
+    {
+        chomp($line);
+        \# Perform the operation here.
+        $line =~ s/\bFrom\b/To/g;
+
+        print {$tempout} "$new_line\n";
+    }
+
+    close($in);
+    close($tempout);
+
+    rename($temp_fn, $fn);
+}
+EOF
+                },
+                {
+                    id => "cmd_line",
+                    label => "Command Line",
+                    no_syntax => 1,
+                    code => <<'EOF',
+$ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+EOF
+                },
+            ],
+        }
+    );
+
+    print $ex_gen->html_with_title(
+        {
+            title => "Reading an entire UTF-8 file into a big variable",
+            id_base => "string_slurp_utf8",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+my $string = io->file($my_filepath)->utf8->slurp;
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+
+sub _utf8_slurp
+{
+    my $filename = shift;
+
+    open my $in, '<:encoding(utf8)', $filename;
+
+    local $/;
+    my $contents = <$in>;
+
+    close($in);
+
+    return $contents;
+}
+
+my $file_contents = _utf8_slurp($my_filepath);
+EOF
+                },
+                {
+                    id => "cmd_line",
+                    label => "Command Line",
+                    no_syntax => 1,
+                    code => <<'EOF',
+$ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
+EOF
+                },
+            ],
+        }
+    );
+
+    print $ex_gen->html_with_title(
+        {
+            title => "Appending to a File",
+            id_base => "append_to_file",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+my $string_to_append = "My new line\n";
+
+$string_to_append >> io->file($my_file_path);
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+
+my $string_to_append = "My new line\n";
+
+{
+    open my $out, '>>', $my_file_path;
+    print {$out} $string_to_append;
+    close($out);
+}
+EOF
+                },
+            ],
+        }
+    );
+:>

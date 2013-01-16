@@ -1,0 +1,152 @@
+#include '../template.wml'
+#include "xhtml/1.x/std/toc.wml"
+#include "tut_blocks.wml"
+#include "hyperpolyglot.wml"
+
+<latemp_subject "Online Perl Tutorials" />
+<latemp_more_keywords "tutorial, perl tutorial, tutorials, perl tutorials, start, begin, newbies, online, beginners, learn" />
+
+<h2* id="toc">Table of Contents</h2*>
+
+<toc />
+
+<h2 id="note">Note</h2>
+
+<p>
+These online tutorials can provide an introduction to Perl so you can start
+writing your own scripts. Nevertheless, they don't teach everything there is
+to know about the language and one should still take care to learn all other
+things on his own from other resources.
+</p>
+
+<p>
+If you prefer a tutorial in something else besides English, check the
+<a href="localized/">foreign languages page</a>
+</p>
+
+<h2 id="our_list">Our List of Tutorials</h2>
+
+<h3 id="perl_tut_org"><a href="http://perl-tutorial.org/">Perl Tutorial Hub</a></h3>
+
+<p>
+An authoritative list of recommended tutorials. An <a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials" id="perl5_wiki">older list</a> can be found on the Perl 5 Wiki.
+</p>
+
+<perl_for_newbies_entry>
+
+<p>
+Intended for People with basic knowledge of C or something similar or even no
+knowledge of any programming language at all. Contains verbose slides filled
+with explanation, examples and anecdotes. Covers a basic subset of Perl,
+without too many "other ways to do it". (you are still expected to read the
+POD documents after the second lecture)
+</p>
+
+</perl_for_newbies_entry>
+
+<beginning_perl_entry>
+<p>
+A comprehensive book for beginners by Simon Cozens that is available online.
+Aims to teach Perl even for people with no prior experience in programming
+at all. Probably your best bet, unless you don't want to read too much to get
+started.
+</p>
+</beginning_perl_entry>
+
+<h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc
+Tutorials</a></h3>
+
+<p>
+The tutorials that ship as part of the perl core. Start with
+<pdoc d="perlintro"></pdoc> and
+<a href="http://perldoc.perl.org/index-tutorials.html">then continue with
+other tutorials</a>.
+</p>
+
+<h3 id="perl-com-intro"><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's
+Beginners Introduction to Perl</a></h3>
+
+<p>
+A 6-part tutorial that covers the basics without too many details. Again,
+reading the man pages is expected afterwards, but this tutorial should get
+you started.
+</p>
+
+<h3 id="lpw-perl-beginners"><a
+href="http://www.slideshare.net/davorg/lpw-begin">LPW: Beginners Perl by Dave
+Cross</a></h3>
+
+<p>
+Presentation slides by Dave Cross.
+</p>
+
+<h2 id="advanced">Tutorials for Advanced Users</h2>
+
+<p>
+These are tutorials for advanced users in English, and there are also
+<a href="$(ROOT)/books/#with_prev_knowledge">some books just
+for that</a>, some of which are freely available online.
+</p>
+
+<div class="sub_section">
+
+<hyperpolyglot_php_perl_python_ruby />
+
+<h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
+
+<p>
+A tutorial which is short, to the point, and information, but on the other
+hand does not mention, cover <a href="$(ROOT)/topics/cpan/">CPAN</a>,
+or Moose/Mouse/Moo and other modern ways for doing Perl object-oriented
+programming.
+</p>
+
+</div>
+
+<h2 id="other_lists">Other Lists</h2>
+
+<h3 id="perlmonks"><a
+href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's
+Tutorials</a></h3>
+
+<p>
+Several tutorials as hosted on the popular "Perlmonks.org" site. Cover various
+topics.
+</p>
+
+<h3 id="perlmeme"><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
+
+<p>
+Several tutorials, "Frequently Asked Questions", and "Howto" documents
+on various subjects.
+</p>
+
+
+<h2 id="video">Video Tutorials</h2>
+
+<p>
+These are video tutorials (and so-called screencasts), that are used to
+introduce Perl for beginners.
+</p>
+
+<h3 id="beginner_perl_maven"><a href="http://ude.my/vryTdy">Beginner Perl Maven</a></h3>
+
+<p>
+An online introductory Perl course by Gabor Szabo on Udemy.
+</p>
+
+<h3 id="szabgab_video_and_text"><a href="http://perl5maven.com/perl-tutorial">Perl Tutorial by Gabor Szabo</a></h3>
+
+<p>
+A Perl tutorial consisting of video and text by
+<a href="http://szabgab.com/">Gabor Szabo</a>.
+</p>
+
+<h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's
+"Introduction to Perl" series by Steven Devijver</a></h3>
+
+<p>
+Several basic videos introducing Perl for beginners available on the
+<a href="http://showmedo.com/">ShowMeDo site</a>
+</p>
+
