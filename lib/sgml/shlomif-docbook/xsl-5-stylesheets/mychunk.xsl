@@ -48,6 +48,6 @@ xmlns:exsl="http://exslt.org/common" xmlns="http://www.w3.org/1999/xhtml" versio
      customizations that use xsl:apply-imports to wrongly
      apply the chunking version instead of the original
      non-chunking version to format an element.  -->
-<xsl:include href="chunk-code.xsl"/>
+<xsl:include href="onechunk.xsl"/>
 
 </xsl:stylesheet>
