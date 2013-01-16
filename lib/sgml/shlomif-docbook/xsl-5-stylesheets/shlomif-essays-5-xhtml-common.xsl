@@ -7,6 +7,8 @@
     version='1.0'
     >
 
+    <xsl:import href="docbook.xsl"/>
+
     <!--
          Commented out because it does not work properly.
     <xsl:template name="anchor">
