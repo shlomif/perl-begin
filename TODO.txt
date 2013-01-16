@@ -1,95 +1,96 @@
+# Quicktask v1.2
 
-* Bad elements page:
-    - Fix the list of bad elements based on the DocBook - now it does not
-    get rendered at all.
-    - Restore the navigation menu functionality.
-    - Packaging as a CPAN distribution.
-    - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
-    - Generating Invalid markup (HTML, etc.)
-    - flushing using $| = 1; instead of STDOUT->autoflush(1).
-    - Generally - don't use punctuation variables.
-    - change @list_of_names to @names_of_presidents in the example
-        - Thanks GlitchMr
-    - Conditional/temporary "use".
-        - use is compile-time and will always be done.
-        - use "require" or (less-prefarably) string-eval instead.
-    - Unrelated packages (e.g: OtherModule) inside MyModule.
-        - Preferably every package should be inside one module (except for
-        private ones).
-    - Non-explicit imports.
-        - hard to track where identifiers come from.
-    - Using my $i = 0 ; $array[$i++] = $value_to_append instead of
-    perldoc -f push.
+CURRENT TASKS:
+    - Bad elements page:
+        - Fix the list of bad elements based on the DocBook - now it does not
+        get rendered at all.
+        - Restore the navigation menu functionality.
+        - Packaging as a CPAN distribution.
+        - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
+        - Generating Invalid markup (HTML, etc.)
+        - flushing using $| = 1; instead of STDOUT->autoflush(1).
+        - Generally - don't use punctuation variables.
+        - change @list_of_names to @names_of_presidents in the example
+            - Thanks GlitchMr
+        - Conditional/temporary "use".
+            - use is compile-time and will always be done.
+            - use "require" or (less-prefarably) string-eval instead.
+        - Unrelated packages (e.g: OtherModule) inside MyModule.
+            - Preferably every package should be inside one module (except for
+            private ones).
+        - Non-explicit imports.
+            - hard to track where identifiers come from.
+        - Using my $i = 0 ; $array[$i++] = $value_to_append instead of
+        perldoc -f push.
+    - Add a page about file/directory-handling :
+        - Will share a lot of content with the Sys Admin page.
+        - Refer to perldoc -f open and perldoc perlopentut.
+        - Other CPAN modules.
+            - File::Spec
+            - File::Basename
+            - File::Find
+                - File::Find::Object
+            - IO::All
+            - File::Slurp
+        - To add inotify/etc.
+        - Add cookbook:
+            - line count / word count / file size.
+            - reading files.
+            - copying files.
+            - appending selected portion from a file to another file.
+            - prepending to files.
+            - overwriting lines in files.
+            - deleting a directory tree.
+            - writing to a file.
+            - show all with IO::All and without it.
+    - Link to:
+        - http://blog.sei.cmu.edu/post.cfm/the-cert-perl-secure-coding-standard
+        - https://www.securecoding.cert.org/confluence/display/perl/CERT+Perl+Secure+Coding+Standard
 
-* Add a page about file/directory-handling :
-    - Will share a lot of content with the Sys Admin page.
-    - Refer to perldoc -f open and perldoc perlopentut.
-    - Other CPAN modules.
-        - File::Spec
-        - File::Basename
-        - File::Find
-            - File::Find::Object
-        - IO::All
-        - File::Slurp
-    - TODO: inotify/etc.
-    - TODO: Add cookbook:
-        - line count / word count / file size.
-        - reading files.
-        - copying files.
-        - appending selected portion from a file to another file.
-        - prepending to files.
-        - overwriting lines in files.
-        - deleting a directory tree.
-        - writing to a file.
-        - show all with IO::All and without it.
+    - Add a page about training providers:
+        - http://pti.co.il/ - Perl Training Israel.
+        - http://perltraining.com.au/ - Perl Training Australia.
+        - http://perltraining.org/
 
-* Link to:
-    - http://blog.sei.cmu.edu/post.cfm/the-cert-perl-secure-coding-standard
-    - https://www.securecoding.cert.org/confluence/display/perl/CERT+Perl+Secure+Coding+Standard
+    - Perhaps a page about working with network protocols in general.
 
-* Add a page about training providers:
-    - http://pti.co.il/ - Perl Training Israel.
-    - http://perltraining.com.au/ - Perl Training Australia.
-    - http://perltraining.org/
+    - Add more information about:
+        - URI parsing.
+        - Filenames and paths parsing.
 
-* Perhaps a page about working with network protocols in general.
+    - Books:
+        - http://oreilly.com/catalog/0636920018476/ - Perl Pocket Reference.
+            - All covering perl-5.14.x.
+        - Peteris Krumins' Perl One-Liners Explained Book
+            - TBD: which pages would be the best for it.
 
-* Add more information about:
-    - URI parsing.
-    - Filenames and paths parsing.
+    - Tutorials:
+        - http://qntm.org/files/perl/perl.html
+            - “Learn Perl in about 2 hours 30 minutes”
+                - Upsides:
+                    - Short.
+                    - To the point.
+                    - Informative.
+                - Downsides
+                    - Does not mention/cover CPAN.
+                    - Does not Moose/Mouse/Moo/etc..
 
-* Books:
-    - http://oreilly.com/catalog/0636920018476/ - Perl Pocket Reference.
-        - All covering perl-5.14.x.
-    - Peteris Krumins' Perl One-Liners Explained Book
-        - TBD: which pages would be the best for it.
+    - Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
+        - Add src/tutorials/hyperpolyglot/sheet2.html.wml
 
-* Tutorials:
-    - http://qntm.org/files/perl/perl.html
-        - “Learn Perl in about 2 hours 30 minutes”
-            - Upsides:
-                - Short.
-                - To the point.
-                - Informative.
-            - Downsides
-                - Does not mention/cover CPAN.
-                - Does not Moose/Mouse/Moo/etc..
+LONG TERM:
 
-* Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
-    - Add src/tutorials/hyperpolyglot/sheet2.html.wml
+    - Maybe a page on «What's next "after" perl?».
 
-Long Term:
-----------
+    - Pick up a better gvim colour scheme for the example code in the
+    perl-for-newbies lecture.
 
-* Maybe a page on «What's next "after" perl?».
+    - Syntax-highlight the examples in the other code excerpts in the site
+    (especially the src/tutorials/bad-elements/ ).
 
-* Pick up a better gvim colour scheme for the example code in the
-perl-for-newbies lecture.
+    - Add some screenshots to the /uses/games page.
 
-* Syntax-highlight the examples in the other code excerpts in the site
-(especially the src/tutorials/bad-elements/ ).
+    - XML Page:
+        - mention XML::Twig, XML::Easy .
 
-* Add some screenshots to the /uses/games page.
-
-* XML Page:
-    - mention XML::Twig, XML::Easy .
+# vim:ft=quicktask:sw=4:ts=4:et
