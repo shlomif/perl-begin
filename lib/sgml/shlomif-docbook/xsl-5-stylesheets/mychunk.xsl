@@ -32,7 +32,6 @@ xmlns:exsl="http://exslt.org/common" xmlns="http://www.w3.org/1999/xhtml" versio
      chunking templates in chunk-common.xsl. -->
 <xsl:import href="chunk-common.xsl"/>
 
-<xsl:import href="onechunk.xsl" />
 <!-- The manifest.xsl module is no longer imported because its
      templates were moved into chunk-common and chunk-code -->
 
@@ -50,6 +49,5 @@ xmlns:exsl="http://exslt.org/common" xmlns="http://www.w3.org/1999/xhtml" versio
      apply the chunking version instead of the original
      non-chunking version to format an element.  -->
 <xsl:include href="chunk-code.xsl"/>
-
 
 </xsl:stylesheet>

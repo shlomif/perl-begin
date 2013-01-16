@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<document xmlns="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/" xmlns:xlink="http://www.w3.org/1999/xlink" version="0.2.0" xml:lang="en-GB">
+<document xmlns="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/" xmlns:xlink="http://www.w3.org/1999/xlink" version="0.2.0" xml:lang="en-GB" xml:id="index">
 <info>
 <title>Perl Elements to Avoid</title>
 </info>

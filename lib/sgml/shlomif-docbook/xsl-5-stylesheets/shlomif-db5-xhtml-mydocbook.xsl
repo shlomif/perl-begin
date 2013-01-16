@@ -3,6 +3,23 @@
 
     <xsl:import href="shlomif-essays-5-xhtml-common.xsl" />
 
+
+    <!-- Ok, using the onechunk parameter makes this all work again. -->
+    <!-- It does have the disadvantage that it only works for documents that have -->
+    <!-- a root element that is considered a chunk by the chunk.xsl stylesheet. -->
+    <!-- Ideally, onechunk would let anything be a chunk. But not today. -->
+
+    <xsl:param name="onechunk" select="1"/>
+    <xsl:param name="suppress.navigation">1</xsl:param>
+
+    <xsl:template name="href.target.uri">
+        <xsl:param name="object" select="."/>
+        <xsl:text>#</xsl:text>
+        <xsl:call-template name="object.id">
+            <xsl:with-param name="object" select="$object"/>
+        </xsl:call-template>
+    </xsl:template>
+
     <!-- Avoid Generating a Table-of-Contents-->
     <xsl:param name="generate.toc">
         article toc
@@ -12,6 +29,7 @@
 <xsl:template name="generate.html.title">
 </xsl:template>
 
+<!--
 <xsl:template match="d:article" priority="1">
     <xsl:call-template name="id.warning"/>
 
@@ -44,6 +62,7 @@
         <xsl:call-template name="process.footnotes"/>
     </xsl:element>
 </xsl:template>
+-->
 
 </xsl:stylesheet>
 
