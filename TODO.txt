@@ -1,4 +1,7 @@
+
 * Bad elements page:
+    - Fix the list of bad elements based on the DocBook - now it does not
+    get rendered at all.
     - Restore the navigation menu functionality.
     - Packaging as a CPAN distribution.
     - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
@@ -30,6 +33,7 @@
         - File::Slurp
     - TODO: inotify/etc.
     - TODO: Add cookbook:
+        - line count / word count / file size.
         - reading files.
         - copying files.
         - appending selected portion from a file to another file.
