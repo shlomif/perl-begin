@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:db="http://docbook.org/ns/docbook" xmlns:d="http://docbook.org/ns/docbook" xmlns:vrd="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-    <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/xhtml-1_1/onechunk.xsl" />
     <xsl:import href="shlomif-essays-5-xhtml-common.xsl" />
 
     <!-- Avoid Generating a Table-of-Contents-->
@@ -13,9 +12,7 @@
 <xsl:template name="generate.html.title">
 </xsl:template>
 
-<!--
-    * Temporarily commenting out.
-<xsl:template match="d:article">
+<xsl:template match="d:article" priority="1">
     <xsl:call-template name="id.warning"/>
 
     <xsl:element name="{$div.element}" namespace="http://www.w3.org/1999/xhtml">
@@ -47,7 +44,6 @@
         <xsl:call-template name="process.footnotes"/>
     </xsl:element>
 </xsl:template>
--->
 
 </xsl:stylesheet>
 
