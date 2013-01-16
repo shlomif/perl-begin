@@ -137,7 +137,9 @@ bad_elements_html: $(BAD_ELEMENTS_XHTML) $(BAD_ELEMENTS_RENDERED)
 
 DOCBOOK5_RELAXNG = rng/docbook.rng
 DOCBOOK5_XSL_STYLESHEETS_PATH := /usr/share/sgml/docbook/xsl-ns-stylesheets
-DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
+DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-stylesheets/mychunk.xsl
+DOCBOOK5_XSL_OTHER_CUSTOM_XSLT_STYLESHEETS := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-db5-xhtml-mydocbook.xsl
+DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS = $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) $(DOCBOOK5_XSL_OTHER_CUSTOM_XSLT_STYLESHEETS)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 	jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
@@ -146,7 +148,7 @@ $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
 # --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
-$(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
+$(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS)
 	jing $(DOCBOOK5_RELAXNG) $<
 	docmake --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml-1_1 $<
 	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.html
