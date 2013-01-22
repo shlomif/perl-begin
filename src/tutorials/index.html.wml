@@ -95,8 +95,8 @@ for that</a>, some of which are freely available online.
 <h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
 
 <p>
-A tutorial which is short, to the point, and information, but on the other
-hand does not mention, cover <a href="$(ROOT)/topics/cpan/">CPAN</a>,
+A tutorial which is short, to the point, and informative, but on the other
+hand does not mention and cover <a href="$(ROOT)/topics/cpan/">CPAN</a>,
 or Moose/Mouse/Moo and other modern ways for doing Perl object-oriented
 programming.
 </p>
