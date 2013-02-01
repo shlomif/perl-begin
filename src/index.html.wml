@@ -2,19 +2,26 @@
 
 <latemp_subject "Perl Beginners' Site" />
 
-<h2 id="love-it">Programming the Way You Would Love</h2>
-
 <p>
-<a href="http://www.perl.org/">Perl</a> is a flexible, feature-rich and
-<b>powerful</b>
+The Perl Beginners’ Site aims to be a first web stop (or portal) for useful
+links and resources for learning Perl and extending your Perl knowledge
+for beginners and experts alike. <a href="http://www.perl.org/">Perl</a> is a
+flexible, feature-rich,
 <a href="http://en.wikipedia.org/wiki/Dynamic_programming_language">dynamic
-programming language</a>. Perl code is very
+programming language</a>. Perl code is
 <a href="http://www.paulgraham.com/power.html"><b>succinct</b></a> and can be
-written very quickly, while still performing well in most cases. One can
-often achieve in <b>one line of Perl</b> what
-requires <b>100s of lines in C</b> and other languages.
+written quickly, while still performing well in most cases.
 <a href="$(ROOT)/learn/">Read more…</a>
 </p>
+
+<p>
+In order to learn Perl, <a href="$(ROOT)/resources/">see our
+pages of various online resources</a>, and then
+see our <a href="$(ROOT)/topics/">topics</a> and
+<a href="$(ROOT)/uses/">common uses</a> page.
+</p>
+
+<define-tag useless_evangelism>
 
 <h2 id="right-tool">The Right Tool for the Job</h2>
 
@@ -58,6 +65,8 @@ written in other languages, and certainly network servers.
 </li>
 
 </ol>
+
+</define-tag>
 
 ;;; Due for removal in 2011-05-20
 ;;; or renewal.
