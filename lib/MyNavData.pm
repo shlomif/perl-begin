@@ -49,36 +49,6 @@ my $tree_contents =
             title => "Perl Humour and Links to Perl Humour resources",
         },
         {
-            text => "Learn Perl Now",
-            url => "learn/",
-            role => "header",
-            title => "Why and how to learn Perl?",
-            expand => { re => "", },
-            subs =>
-            [
-                {
-                    url => "learn/get-a-job/",
-                    text => "Get a Job!",
-                },
-                {
-                    url => "learn/why-perl/",
-                    text => "Why Perl is Good",
-                },
-                {
-                    url => "learn/who-is-using/",
-                    text => "Who is Using Perl?"
-                },
-                {
-                    url => "learn/perl6/",
-                    text => "What about Perl 6?"
-                },
-                {
-                    url => "learn/Perl-perl-but-not-PERL/",
-                    text => "&quot;Perl&quot;, and &quot;perl&quot;, but not &quot;PERL&quot;"
-                },
-            ],
-        },
-        {
             url => "resources/",
             text => "Resources",
             title => "Links to Online and Offline Resources for Learning Perl",
@@ -435,6 +405,36 @@ my $tree_contents =
                             title => "Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.",
                         }
                     ],
+                },
+            ],
+        },
+        {
+            text => "Advocacy",
+            url => "learn/",
+            role => "header",
+            title => "Perl Advocacy - why you should learn it, and some issues.",
+            expand => { re => "", },
+            subs =>
+            [
+                {
+                    url => "learn/perl6/",
+                    text => "What about Perl 6?"
+                },
+                {
+                    url => "learn/Perl-perl-but-not-PERL/",
+                    text => "&quot;Perl&quot;, and &quot;perl&quot;, but not &quot;PERL&quot;"
+                },
+                {
+                    url => "learn/get-a-job/",
+                    text => "Get a Job!",
+                },
+                {
+                    url => "learn/why-perl/",
+                    text => "Why Perl is Good",
+                },
+                {
+                    url => "learn/who-is-using/",
+                    text => "Who is Using Perl?"
                 },
             ],
         },
