@@ -412,7 +412,7 @@ my $tree_contents =
             text => "Advocacy",
             url => "learn/",
             role => "header",
-            title => "Perl Advocacy - why you should learn it, and some issues.",
+            title => "Perl advocacy - why you should learn it, and some issues.",
             expand => { re => "", },
             subs =>
             [
