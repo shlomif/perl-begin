@@ -2,9 +2,6 @@
 
 CURRENT TASKS:
     - Bad elements page:
-        - Fix the list of bad elements based on the DocBook - now it does not
-        get rendered at all.
-        - Restore the navigation menu functionality.
         - Packaging as a CPAN distribution.
         - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
         - Generating Invalid markup (HTML, etc.)
