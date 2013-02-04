@@ -2014,6 +2014,35 @@ Better code:
 $s =~ s/(H\w+)\s+(W\w+)/$1 [=] $2/;
 </code_blk>
 </item>
+<item xml:id="appending_using_arr_increment">
+<info>
+<title>Appending using $array[$i++] = $value_to_append;</title>
+</info>
+<p>
+Some people are tempted to append elements into an array using:
+</p>
+<bad_code syntax="perl">
+my $last_idx = 0;
+my @array;
+
+foreach ...
+{
+    $array[$last_idx++] = $new_elem;
+}
+</bad_code>
+<p>
+However, it is better to use the <pdoc_f f="push" /> built-in function,
+and so get rid of the explicit index, and make it less error prone:
+</p>
+<code_blk syntax="perl">
+my @array;
+
+foreach ...
+{
+    push @array, $new_elem;
+}
+</code_blk>
+</item>
 <item xml:id="premature_optimization">
 <info>
 <title>Premature Optimisation</title>
