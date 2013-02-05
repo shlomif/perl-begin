@@ -363,5 +363,33 @@ EOF
         }
     );
 
+    print $ex_gen->html_with_title(
+        {
+            title => "Deleting a directory tree",
+            id_base => "delete_directory_tree",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+io("./path-to-subdir")->rmtree();
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use File::Path qw(rmtree);
+
+rmtree(["./path-to-subdir"], 1, 1);
+EOF
+                },
+            ],
+        }
+    );
 
 :>

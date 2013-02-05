@@ -321,3 +321,5 @@ and src/topics/files-and-directories/index.html.wml
 * Add a page about file/directory-handling :
     - TODO: Add cookbook:
         - appending to files.
+        - copying files.
+        - deleting a directory tree.
