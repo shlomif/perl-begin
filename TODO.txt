@@ -17,8 +17,6 @@ CURRENT TASKS:
             private ones).
         - Non-explicit imports.
             - hard to track where identifiers come from.
-        - Using my $i = 0 ; $array[$i++] = $value_to_append
-            * Instead of perldoc -f push.
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
