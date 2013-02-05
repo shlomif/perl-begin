@@ -313,6 +313,8 @@ and src/topics/files-and-directories/index.html.wml
     get rendered at all.
     - Using \1 instead of $1 (on the Right Hand Side).
     - Restore the navigation menu functionality.
+    - Using my $i = 0 ; $array[$i++] = $value_to_append
+        * Instead of perldoc -f push.
 
 * Add a link to perlweekly.com somewhere.
 
