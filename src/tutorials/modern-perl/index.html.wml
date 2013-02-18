@@ -3,7 +3,7 @@
 <latemp_subject "Modern Perl Online Book" />
 
 <p>
-This is our own mirror of the book
+This page contains some links to the book
 <a href="http://onyxneon.com/books/modern_perl/"><i>Modern Perl</i></a> by
 <a href="http://www.wgz.org/chromatic/">chromatic</a>. It is distributed
 under the
@@ -13,6 +13,19 @@ Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>
 (CC-by-nc-sa).
 </p>
 
+<p>
+Unfortunately, we can no longer mirror it, due to the fact that this
+site has some web advertising.
+</p>
+
+<h2 id="read_online">Read Online</h2>
+
+<p>
+<a href="http://modernperlbooks.com/books/modern_perl/chapter_00.html"><b>Read
+Online</b></a>
+</p>
+
+<define-tag modern_perl_old_read_online>
 <h2 id="chapters">Chapters</h2>
 
 <ul>
@@ -41,9 +54,11 @@ Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>
 }:>
 </ul>
 
+</define-tag>
+
 <h2 id="epub">EPUB</h2>
 
 <p>
-<a href="epub/modern_perl.epub">Modern Perl EPUB</a>
+<a href="http://www.onyxneon.com/books/modern_perl/modern_perl.epub">Modern Perl EPUB</a>
 </p>
 
