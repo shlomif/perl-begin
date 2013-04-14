@@ -2131,6 +2131,25 @@ For more information about how to write automated tests, see
 Perl</a>.
 </p>
 </item>
+<item xml:id="properly_autoflushing">
+<info>
+<title>How to Properly Autoflush</title>
+</info>
+<p>
+One can sometimes see people using <code>$| = 1;</code> to perform
+<a xlink:href="http://stackoverflow.com/questions/4538767/how-flush-file-in-perl">autoflushing
+to their filehandles</a>. However, this way is cryptic and is more errorprone
+then doing something like:
+</p>
+<code_blk syntax="perl">
+use IO::Handle;
+
+STDOUT->autoflush(1);
+</code_blk>
+<p>
+This makes the intent clearer and is clearer.
+</p>
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
