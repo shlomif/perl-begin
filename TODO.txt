@@ -6,9 +6,6 @@ CURRENT TASKS:
         - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
         - Generating Invalid markup (HTML, etc.)
         - Generally - don't use punctuation variables.
-        - Conditional/temporary "use".
-            - use is compile-time and will always be done.
-            - use "require" or (less-prefarably) string-eval instead.
         - Unrelated packages (e.g: OtherModule) inside MyModule.
             - Preferably every package should be inside one module (except for
             private ones).

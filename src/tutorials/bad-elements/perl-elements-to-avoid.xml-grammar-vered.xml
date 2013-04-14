@@ -2150,6 +2150,26 @@ STDOUT->autoflush(1);
 This makes the intent clearer and is clearer.
 </p>
 </item>
+<item xml:id="conditional_use">
+<info>
+<title>Conditional "use" statements</title>
+</info>
+<p>
+Some people are tempted to do something like that:
+</p>
+<bad_code syntax="perl">
+if ($is_interactive)
+{
+    use MyModule;
+}
+</bad_code>
+<p>
+However <pdoc_f f="use">use</pdoc_f> is a compile-time statement and will
+always be performed if detected. As a result one should instead use
+<pdoc_f f="require">require</pdoc_f> or, less-preferably, string-eval
+with the call to use within.
+</p>
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
