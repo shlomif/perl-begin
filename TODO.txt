@@ -5,7 +5,6 @@ CURRENT TASKS:
         - Packaging as a CPAN distribution.
         - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
         - Generating Invalid markup (HTML, etc.)
-        - flushing using $| = 1; instead of STDOUT->autoflush(1).
         - Generally - don't use punctuation variables.
         - change @list_of_names to @names_of_presidents in the example
             - Thanks GlitchMr
