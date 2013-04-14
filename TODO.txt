@@ -6,8 +6,6 @@ CURRENT TASKS:
         - Parsing XML/HTML/JSON/CSV/etc. using regular expressions.
         - Generating Invalid markup (HTML, etc.)
         - Generally - don't use punctuation variables.
-        - change @list_of_names to @names_of_presidents in the example
-            - Thanks GlitchMr
         - Conditional/temporary "use".
             - use is compile-time and will always be done.
             - use "require" or (less-prefarably) string-eval instead.

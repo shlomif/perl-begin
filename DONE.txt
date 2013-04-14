@@ -316,6 +316,8 @@ and src/topics/files-and-directories/index.html.wml
     - Using my $i = 0 ; $array[$i++] = $value_to_append
         * Instead of perldoc -f push.
     - flushing using $| = 1; instead of STDOUT->autoflush(1).
+    - change @list_of_names to @names_of_presidents in the example
+        - Thanks GlitchMr
 
 * Add a link to perlweekly.com somewhere.
 
