@@ -315,6 +315,7 @@ and src/topics/files-and-directories/index.html.wml
     - Restore the navigation menu functionality.
     - Using my $i = 0 ; $array[$i++] = $value_to_append
         * Instead of perldoc -f push.
+    - flushing using $| = 1; instead of STDOUT->autoflush(1).
 
 * Add a link to perlweekly.com somewhere.
 
