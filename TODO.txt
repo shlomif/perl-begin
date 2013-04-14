@@ -28,6 +28,7 @@ CURRENT TASKS:
             - reading files.
             - appending selected portion from a file to another file.
             - prepending to files.
+                @ DONE [Sun 2013-04-14]
             - overwriting lines in files.
             - writing to a file.
             - show all with IO::All and without it.

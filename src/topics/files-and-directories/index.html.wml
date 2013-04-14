@@ -392,4 +392,47 @@ EOF
         }
     );
 
+    print $ex_gen->html_with_title(
+        {
+            title => "Prepending to a File (While Slurping)",
+            id_base => "prepend_to_file_while_slurping",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+my $filename = 'foo.txt';
+my $text_to_prepend = "[Text to Prepend]\n";
+
+my $fh = io->file($filename);
+
+$fh->print( $text_to_prepend . $fh->slurp() );
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+my $filename = 'foo.txt';
+my $text_to_prepend = "[Text to Prepend]\n";
+
+open my $in_fh, '<', $filename
+    or die "Could not open file '$filename' for reading! - $!";
+my $contents = do { local $/; <$in_fh>;};
+close($in_fh);
+
+open my $out_fh, '>', $filename
+    or die "Could not open file '$filename' for writing! - $!";
+print {$out_fh} $text_to_prepend . $contents;
+close($out_fh);
+EOF
+                },
+            ],
+        }
+    );
+
 :>
