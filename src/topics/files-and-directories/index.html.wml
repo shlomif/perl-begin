@@ -178,10 +178,10 @@ my @filenames = @ARGV;
 
 foreach my $fn (@filenames)
 {
-    open my $in, '&lt;', $fn;
+    open my $in, '<', $fn;
     my ($tempout, $temp_fn) = tempfile();
 
-    while (my $line = &lt;$in&gt;)
+    while (my $line = <$in>)
     {
         chomp($line);
         \# Perform the operation here.
