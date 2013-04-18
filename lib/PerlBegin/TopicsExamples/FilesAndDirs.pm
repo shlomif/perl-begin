@@ -117,7 +117,7 @@ foreach my $fn (@filenames)
     while (my $line = <$in>)
     {
         chomp($line);
-        \# Perform the operation here.
+        # Perform the operation here.
         $line =~ s/\bFrom\b/To/g;
 
         print {$tempout} "$new_line\n";
