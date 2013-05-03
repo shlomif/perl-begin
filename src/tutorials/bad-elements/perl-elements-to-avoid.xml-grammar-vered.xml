@@ -2177,7 +2177,17 @@ with the call to use within.
 <p>
 You should not try to parse HTML, XML, JSON, CSV, and other complex grammars
 using regular expressions. Instead, use a CPAN module. For more information
-see <a xlink:href="../../uses/text-parsing">our page about Parsing in Perl</a>.
+see <a xlink:href="../../uses/text-parsing/">our page about Parsing in Perl</a>.
+</p>
+</item>
+<item xml:id="using_punctuation_variables">
+<info>
+<title>Using most of the Perl punctuation variables from perlvar</title>
+</info>
+<p>
+<pdoc d="perlvar" /> mentions many punctuation variables, but they make the
+code hard to read, and most of them should be avoided, and have better
+alternatives.
 </p>
 </item>
 </section>
