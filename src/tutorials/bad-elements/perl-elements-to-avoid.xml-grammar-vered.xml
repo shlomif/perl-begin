@@ -2170,6 +2170,16 @@ always be performed if detected. As a result one should instead use
 with the call to use within.
 </p>
 </item>
+<item xml:id="parsing_using_regex">
+<info>
+<title>Parsing XML/HTML/JSON/CSV/etc. using regular expression</title>
+</info>
+<p>
+You should not try to parse HTML, XML, JSON, CSV, and other complex grammars
+using regular expressions. Instead, use a CPAN module. For more information
+see <a xlink:href="../../uses/text-parsing">our page about Parsing in Perl</a>.
+</p>
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
