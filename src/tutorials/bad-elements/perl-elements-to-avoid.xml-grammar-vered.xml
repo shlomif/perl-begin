@@ -2190,6 +2190,43 @@ code hard to read, and most of them should be avoided, and have better
 alternatives.
 </p>
 </item>
+<item xml:id="generating_non_valid_markup">
+<info>
+<title>Generating non-validing Markup (of HTML/etc.)</title>
+</info>
+<p>
+You should make sure that the HTML markup you generate is
+<a xlink:href="http://en.wikipedia.org/wiki/XHTML#Valid_XHTML_documents">valid
+HTML</a> and that it validates as XHTML 1.0, HTML 4.01, HTML 5.0, or a
+different modern standard. For more information, see
+<a xlink:href="http://www.shlomifish.org/lecture/LAMP/slides/compatibility/">the
+“Designing for Compatibility” section</a> in a previous talk.
+</p>
+<p>
+Some bad code is:
+</p>
+<bad_code syntax="perl">
+print &lt;&lt;'EOF';
+&lt;P&gt;
+&lt;FONT COLOR="red"&gt;Hello.
+&lt;P&gt;
+&lt;FONT COLOR="green"&gt;Mr. Smith
+EOF
+</bad_code>
+<p>
+A better code would be:
+</p>
+<code_blk syntax="perl">
+print &lt;&lt;'EOF';
+&lt;p class="greeting"&gt;
+Hello
+&lt;/p&gt;
+&lt;p class="name"&gt;
+My. Smith
+&lt;/p&gt;
+EOF
+</code_blk>
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>

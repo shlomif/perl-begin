@@ -3,7 +3,6 @@
 CURRENT TASKS:
     - Bad elements page:
         - Packaging as a CPAN distribution.
-        - Generating Invalid markup (HTML, etc.)
         - Unrelated packages (e.g: OtherModule) inside MyModule.
             - Preferably every package should be inside one module (except for
             private ones).
@@ -85,5 +84,7 @@ COMPLETED TASKS:
         @ DONE [Fri 2013-05-03]
     - Bad elems: Generally - don't use punctuation variables.
         @ DONE [Fri 2013-05-03]
+    - Bad elems: Generating Invalid markup (HTML, etc.)
+        @ DONE [Sat 2013-05-04]
 
 # vim:ft=quicktask:sw=4:ts=4:et
