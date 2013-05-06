@@ -8,6 +8,10 @@ CURRENT TASKS:
             private ones).
         - Non-explicit imports.
             - hard to track where identifiers come from.
+        - Regex: capturing groups instead of clustering ones
+          * Captures are ( ... )
+          * Clusters are (?: ... )
+          @ Added [Mon 2013-05-06]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
