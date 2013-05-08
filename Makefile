@@ -31,7 +31,7 @@ include p4n.mak
 
 run_compass: src/style.css src/jqui-override.css
 
-src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass
+src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass lib/sass/self_link.sass
 	compass compile
 
 src/jqui-override.css: lib/sass/jqui-override.sass

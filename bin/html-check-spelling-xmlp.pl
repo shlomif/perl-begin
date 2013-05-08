@@ -59,7 +59,6 @@ sub tag
 {
    my($tag, $num) = @_;
    $inside{$tag} += $num;
-   print " ";  # not for all tags
 }
 
 
