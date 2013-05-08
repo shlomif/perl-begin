@@ -2192,7 +2192,7 @@ alternatives.
 </item>
 <item xml:id="generating_non_valid_markup">
 <info>
-<title>Generating non-validing Markup (of HTML/etc.)</title>
+<title>Generating invalid Markup (of HTML/etc.)</title>
 </info>
 <p>
 You should make sure that the HTML markup you generate is

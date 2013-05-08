@@ -4,4 +4,8 @@
 
 <latemp_more_keywords "elements, antipatterns, anti, patterns, help, ancient, ancient perl, modern, modern perl, avoid, bad perl, old tutorials, what to avoid" />
 
-#include "docbook/5/rendered/bad-elements.xhtml"
+<:{
+    use IO::All;
+
+    (io->file("../lib/docbook/5/rendered/bad-elements.xhtml")->slurp() =~ s{^#}{\\#}gmrs) > io('-');
+}:>
