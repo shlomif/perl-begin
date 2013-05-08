@@ -1211,6 +1211,20 @@ three-args
 Bareword
 MyModule
 input_filename
+COLOR
+perlvar
+string-eval
+is_interactive
+autoflush
+STDOUT-
+errorprone
+filehandles
+Autoflush
+autoflushing
+new_elem
+perldoc
+last_idx
+value_to_append
 
 ====dest/topics/security/code-markup-injection/index.html
 
@@ -1347,6 +1361,21 @@ utf8
 utf8-
 string_to_append
 my_file_path
+Prepend
+in_fh
+out_fh
+text_to_prepend
+'foo
+fh-
+fh
+Prepending
+path-to-subdir
+myfile
+-lnE
+'END
+count_lines
+rmtree
+io
 
 ====dest/topics/debugging/index.html
 
@@ -1562,6 +1591,7 @@ Bunce
 perl-5
 autobox
 versioned
+Maven
 
 ====dest/learn/index.html
 
