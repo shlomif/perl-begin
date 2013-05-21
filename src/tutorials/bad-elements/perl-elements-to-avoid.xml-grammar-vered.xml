@@ -2227,6 +2227,46 @@ My. Smith
 EOF
 </code_blk>
 </item>
+<item xml:id="capturing_instead_of_clustering_in_regexes">
+<info>
+<title>Capturing Instead of Clustering in Regular Expressions</title>
+</info>
+<p>
+If you want to group a certain sub-expression in a
+<a xlink:href="$(ROOT)/topics/regular-expressions/">regular expression</a>,
+without the need to capture it (into the <code>$1</code>, <code>$2</code>,
+<code>$3</code>, etc. variables and related capture variables), then
+you should cluster them using <code>(?: … )</code> instead of capturing
+them using a plain <code>( … )</code>, or alternatively not grouping them
+at all if it's needed. That is because using a cluster is faster and cleaner
+and better conveys your intentions than using a capture.
+</p>
+
+<bad_code syntax="perl">
+if (my (undef, $match) = ($str =~ /\A(BA+)*\[([^\]]+)\]/))
+{
+    print "Found $match\n";
+}
+</bad_code>
+
+<p>
+A better code would be:
+</p>
+
+<code_blk syntax="perl">
+if (my ($match) = ($str =~ /\A(?:BA+)*\[([^\]]+)\]/))
+{
+    print "Found $match\n";
+}
+</code_blk>
+
+<p>
+Note that if you can afford to run your code only on perl 5.10.x and above,
+then you can use <a xlink:href="http://www.perlmonks.org/?node_id=680796">named
+captures</a>.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
