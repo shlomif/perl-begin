@@ -4,8 +4,12 @@
 
 <latemp_more_keywords "elements, antipatterns, anti, patterns, help, ancient, ancient perl, modern, modern perl, avoid, bad perl, old tutorials, what to avoid" />
 
+<set-var myroot="$(ROOT)" />
+
 <:{
     use IO::All;
 
-    (io->file("../lib/docbook/5/rendered/bad-elements.xhtml")->slurp() =~ s{^#}{\\#}gmrs) > io('-');
+    my $root_s = '$' . '(ROOT)';
+
+    (io->file("../lib/docbook/5/rendered/bad-elements.xhtml")->all() =~ s{\Q$root_s\E}{<get-var myroot />}gr =~  s{^#}{\\#}gmrs) > io('-');
 }:>
