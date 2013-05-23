@@ -11,10 +11,21 @@ use Test::More tests => 1;
         or die "Cannot open ack for input - $!";
 
     my $count_lines = 0;
+    ACK_OUTPUT:
     while (my $l = <$ack_fh>)
     {
+        chomp($l);
+
+        if (
+            ($l =~ m{\Alib/tutorials/modern-perl/pdf/[^\.]+\.pdf\z})
+                or
+            ($l =~ m{\A\.sass-cache/})
+        )
+        {
+            next ACK_OUTPUT;
+        }
         $count_lines++;
-        diag($l);
+        diag("$l\n");
     }
 
     # TEST
