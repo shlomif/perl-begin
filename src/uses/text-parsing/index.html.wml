@@ -23,7 +23,7 @@ avoided. Here we give some more options.
 If you're going to parse <b>HTML</b>, don't use regular expressions,
 and instead look at <a href="http://htmlparsing.com/">Perl HTML-parsing
 modules</a> (also see
-<a href="htmlparsing.icenina.ca/">an older link</A>).
+<a href="htmlparsing.icenina.ca/">an older link</a>).
 The canonical modules for that are
 <cpan_self_dist d="HTML-Parser" />, which has
 built-in support for handling many of the irregularities of HTML in the wild,
