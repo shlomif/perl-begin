@@ -21,8 +21,10 @@ avoided. Here we give some more options.
 <li>
 <p>
 If you're going to parse <b>HTML</b>, don't use regular expressions,
-and instead look at <a href="http://htmlparsing.icenine.ca/">Perl HTML-parsing
-modules</a>. The canonical modules for that are
+and instead look at <a href="http://htmlparsing.com/">Perl HTML-parsing
+modules</a> (also see
+<a href="htmlparsing.icenina.ca/">an older link</A>).
+The canonical modules for that are
 <cpan_self_dist d="HTML-Parser" />, which has
 built-in support for handling many of the irregularities of HTML in the wild,
 and <cpan_dist d="XML-LibXML">XML-LibXML's

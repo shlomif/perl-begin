@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 1st October 2003), see www.w3.org">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Generator" content="VIM 6.1.320">
+<meta name="description" content="Information on proper parsing of HTML or arbitrarily nested data">
+<meta name="keywords" content="regex, Regular Expressions, HTML, nested data, parsing, programming">
+<title>How to parse HTML...</title>
+
+<style type="text/css">
+body {
+        background-color: white;
+        color: black;
+        font-family: "Arial", "Verdana", sans-serif, serif;
+}
+
+p.bodyText:first-letter {
+        font-size: x-large;
+        font-weight: bold;
+        color: #2d2db4;
+}
+
+h1, h2, h3, a:visited, a:link {
+        color: #2d2db4;
+}
+
+strong {
+        color: #2d2db4;
+}
+
+em {
+        text-decoration: underline;
+}
+
+a:active {
+        color: #ff0000;
+}
+
+a {
+        text-decoration: none;
+        font-weight: bold;
+}
+
+a:hover {
+        text-decoration: underline;
+}
+
+table, td {
+        font-family: "Arial", sans-serif, serif;
+        vertical-align: top;
+        font-size: x-small;
+}
+td {
+        padding: 1em;
+}
+div.signoff {
+        color: #1a1a66;
+        font-family: "Arial", "Verdana", sans-serif, serif;
+        font-size: xx-small;
+        text-align: center;
+        text-decoration: overline;
+}
+.center {
+        text-align: center;
+}
+img.validate {
+        border: none;
+        width: 88px;
+        height: 31px;
+}
+</style>
+</head>
+<body><div id="wm-ipp" style="display: none; position: relative; padding: 0px 5px; min-height: 70px; min-width: 800px; z-index: 9000;">
+<div id="wm-ipp-inside" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="http://web.archive.org/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="How%20to%20parse%20HTML..._files/wayback-toolbar-logo.png" alt="Wayback Machine" border="0" height="39" width="110"></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input name="url" id="wmtbURL" value="http://htmlparsing.icenine.ca/" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" type="text"><input name="type" value="replay" type="hidden"><input name="date" value="20081101111536" type="hidden"><input value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;" type="submit"><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+
+		                <a href="http://web.archive.org/web/20080912232546/http://htmlparsing.icenine.ca/" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="12 Sep 2008"><strong>SEP</strong></a>
+
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 11:15:36 Nov 1, 2008">NOV</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+
+		                <a href="http://web.archive.org/web/20081220142946/http://htmlparsing.icenine.ca/" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="20 Dec 2008"><strong>DEC</strong></a>
+
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+
+		                <a href="http://web.archive.org/web/20081005030450/http://htmlparsing.icenine.ca/" title="3:04:50 Oct 5, 2008" style="background-color:transparent;border:none;"><img src="How%20to%20parse%20HTML..._files/wm_tb_prv_on.png" alt="Previous capture" border="0" height="16" width="14"></a>
+
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 11:15:36 Nov 1, 2008">1</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+
+		                <a href="http://web.archive.org/web/20081220142946/http://htmlparsing.icenine.ca/" title="14:29:46 Dec 20, 2008" style="background-color:transparent;border:none;"><img src="How%20to%20parse%20HTML..._files/wm_tb_nxt_on.png" alt="Next capture" border="0" height="16" width="14"></a>
+
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+
+		                <a href="http://web.archive.org/web/20070910220921/http://htmlparsing.icenine.ca/" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="10 Sep 2007"><strong>2007</strong></a>
+
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 11:15:36 Nov 1, 2008">2008</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+
+                       2009
+
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="http://web.archive.org/web/20081101111536*/http://htmlparsing.icenine.ca/" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>63 captures</strong></a>
+           <div style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">15 Dec 05 - 6 Feb 09</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;" onmouseover="showTrackers('inline');" onmouseout="showTrackers('none');" onmousemove="trackMouseMove(event,this)" alt="sparklines" src="How%20to%20parse%20HTML..._files/graph.png" border="0" height="27" width="450">
+			<img id="wbMouseTrackYearImg" style="display:none; position:absolute; z-index:9010;" src="How%20to%20parse%20HTML..._files/transp-yellow-pixel.png" border="0" height="27" width="25">
+			<img id="wbMouseTrackMonthImg" style="display:none; position:absolute; z-index:9011; " src="How%20to%20parse%20HTML..._files/transp-red-pixel.png" border="0" height="27" width="2">
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+
+<h1 class="center">How to parse HTML/XML</h1><h2 class="center">(Or Any Arbitrarily Nested Data)</h2>
+<h2>Summary</h2>
+<p class="bodyText">When faced with the task of parsing HTML (or
+XML and some other similar grammars) many people immediately think
+of using the powerful text processing capabilities of regular
+expressions to do the work for them. This is usually the wrong
+approach. HTML is a very 'loose' language to begin with and
+additionally it has over the years become more and more abused by
+lazy programmers and novices who don't follow its specifications or
+grammar rules. This leaves us with tremendous amount of
+non-conforming or outright broken HTML code out there that is being
+used on a regular basis. Over the years, parsers have evolved to
+the point of being able to cope with common problematic HTML and
+will happily parse out even the most horrible pages for you at
+least with some degree of accuracy to the document's original
+intent.</p>
+<p class="bodyText">With that said, regular expressions have not
+(nor would they have any reason to have) evolved over the years to
+deal with the voluminous amount of horrid HTML out there. They are
+for matching specific patterns. They can be applied to things that
+have a known structure or format. They are inherently not good at
+distinguishing between patterns that a human (or a token parser)
+could easily distinguish such as (but not limited to) HTML nested
+in comments, overlapping tags, HTML entities, etc. They are also
+not good at focusing on a particular part of a document based on
+the relative structure. Most importantly, they are very bad at
+adapting to even small changes in the document itself.</p>
+<p class="bodyText">So without further ado, here is how you parse
+HTML documents:</p>
+<h2><em>DON'T</em> use a Regular Expression (Regex, Regexp,
+RE)</h2>
+<ul>
+<li>Regular Expressions often break when parsing nested data.</li>
+<li>Writing regular expressions to parse HTML/XML will not save you
+time, it will waste your time.</li>
+<li>Don't ask for people to help you write a regex to parse
+HTML/XML -- if they are qualified to help you, they already know
+you should be using a parser anyway.</li>
+</ul>
+<h2><em>DO</em> use an HTML/XML Parser (<a href="http://web.archive.org/web/20081101111536/http://htmlparsing.icenine.ca/#parsers">examples</a>)</h2>
+<ul>
+<li>HTML/XML Parsers are (coincidentally) designed to parse
+HTML/XML.</li>
+<li>The people that spent the time writing parsers would simply
+have done it with a regular expression if that was the right way to
+do it.</li>
+</ul>
+<h3 class="center">When you can make some very strict guarantees
+about your data, it <em>MIGHT</em> be okay to parse it with a
+regular expression.</h3>
+<h3>If...</h3>
+<ul>
+<li>This is a one-time script</li>
+<li>AND the data has a known regular structure</li>
+<li>AND the tags do not span lines</li>
+<li>AND there are no multiple nested tags</li>
+<li>AND the parts you need from the data are simple in nature</li>
+</ul>
+<h3 class="center"><strong>If you can not guarantee <em>ALL</em> of
+the above, <em>DON'T DON'T DON'T</em> use a regular
+expression</strong></h3>
+<h2>Links</h2>
+<h3>Further Discussion</h3>
+<table summary="links">
+<tbody><tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://www.perlmonks.org/index.pl?node_id=93996">Parsing HTML With
+Regexes</a></td>
+<td>A perlmonks thread in which #perlhelp's very own woggle
+discusses the topic at hand.</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://www.alpha-geek.com/2004/01/12/bring_me_your_regexs_i_will_create_html_to_break_them">
+Bring Me Your Regexs! I Will Create HTML To Break Them!</a></td>
+<td>An article on how regexes break while parsing HTML.</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://www.alpha-geek.com/2003/12/31/do_not_do_not_parse_html_with_regexs">
+Do Not... DO NOT! Parse HTML with Regex's</a></td>
+<td>Further reiteration for the logic impaired.</td>
+</tr>
+</tbody></table>
+<h3><a name="parsers">Parsers</a></h3>
+<table summary="links">
+<tbody><tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Egaas/HTML-Parser/Parser.pm">HTML::Parser</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Emsisk/HTML-TableExtract/lib/HTML/TableExtract.pm">
+HTML::TableExtract</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Egaas/HTML-Parser/lib/HTML/TokeParser.pm">HTML::TokeParser</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Egaas/HTML-Parser/lib/HTML/LinkExtor.pm">HTML::LinkExtor</a></td>
+<td>Various Perl HTML Parser modules.</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/dist/XML-Parser/Parser.pm">XML::Parser</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Emsergeant/XML-SAX-0.12/SAX.pm">XML::SAX</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://search.cpan.org/%7Egrantm/XML-Simple-2.12/lib/XML/Simple.pm">XML::Simple</a><br></td>
+<td>Various Perl XML Parser modules.</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://sharptoolbox.com/tools/html-agility-pack">HTML
+Agility Pack</a><br></td>
+<td>A .NET Parser that is tolerant of malformed (real-world)
+HTML</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://docs.python.org/lib/module-HTMLParser.html">Python
+HTMLParser class</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://docs.python.org/lib/module-htmllib.html">Python
+htmllib parsing module</a><br>
+<a href="http://web.archive.org/web/20081101111536/http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> and a Ruby port called <a href="http://web.archive.org/web/20081101111536/http://www.crummy.com/software/RubyfulSoup/">Rubyful Soup</a> (Thanks Ezio!)<br>
+</td>
+<td>HTML parsers for Python (Thanks Kenneth!)</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://htmlparser.sourceforge.net/">Java HTMLParser
+Library</a><br></td>
+<td>A parser for 'real world' HTML in Java.</td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org/web/20081101111536/http://wiki.hypexr.org/wikka.php?wakka=RegexFAQ">The
+Regex Programming Wiki</a><br></td>
+<td>Mark from The Regex Programming Wiki sent me a link to his site
+which has some great regex info as well as links to several HTML
+parsers in the FAQ section! Check it out!</td>
+</tr>
+</tbody></table>
+<div class="center"><strong>Please note, I'm very interested in
+hearing of parser implementations that I'm missing or in languages
+not covered here. If you know of any, please send me a note to the
+address at the bottom of this page. If you find this page useful,
+I'd also appreciate hearing from you!</strong><br><br>If you would like a specific credit other than a 'thanks &lt;your name&gt;' also, please let me know!</div>
+<div class="center">
+<p>
+    <a href="http://web.archive.org/web/20081101111536/http://validator.w3.org/check?uri=referer"><img class="validate" src="How%20to%20parse%20HTML..._files/valid-html401.png" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+
+<a href="http://web.archive.org/web/20081101111536/http://jigsaw.w3.org/css-validator/"><img class="validate" src="How%20to%20parse%20HTML..._files/vcss.gif" alt="Valid CSS!"></a></p>
+</div>
+<div class="signoff">
+<p><br>
+&lt;matt at icenine dot ca&gt;</p>
+</div>
+</body></html>
