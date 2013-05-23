@@ -32,7 +32,7 @@ CPANPLUS-Dist based:<br />
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Fedora/">CPANPLUS-Dist-Fedora (Fedora / Red Hat Linux)</a>
+<a href="http://metacpan.org/release/CPANPLUS-Dist-Fedora/">CPANPLUS-Dist-Fedora (Fedora / Red Hat Linux)</a>
 </li>
 
 <li>
@@ -40,11 +40,11 @@ CPANPLUS-Dist based:<br />
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
+<a href="http://metacpan.org/release/CPANPLUS-Dist-Mdv/">CPANPLUS-Dist-Mdv (Mandriva)</a>
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Mageia/">CPANPLUS-Dist-Mageia (Mageia)</a> <br />
+<a href="http://metacpan.org/release/CPANPLUS-Dist-Mageia/">CPANPLUS-Dist-Mageia (Mageia)</a> <br />
 
 <ul>
 
@@ -54,7 +54,7 @@ native Linux packages from CPAN</a>
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/App-Magpie/">App-Magpie - Mageia Perl
+<a href="http://metacpan.org/release/App-Magpie/">App-Magpie - Mageia Perl
 Integration Made Easy</a>
 </li>
 
@@ -67,7 +67,7 @@ See <a href="http://blogs.perl.org/users/shlomi_fish/2012/08/tech-tip-how-to-pac
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
+<a href="http://metacpan.org/release/CPANPLUS-Dist-RPM/">CPANPLUS-Dist-RPM (Fedora/generic)</a>
 </li>
 
 </ul>
@@ -80,16 +80,16 @@ See <a href="http://blogs.perl.org/users/shlomi_fish/2012/08/tech-tip-how-to-pac
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/Ovid/">The "Ovid" distribution on CPAN</a> (Not to be confused with Curtis "Ovid" Poe.)
+<a href="http://metacpan.org/release/Ovid/">The "Ovid" distribution on CPAN</a> (Not to be confused with Curtis "Ovid" Poe.)
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/RPM-Specfile/">cpanflute2</a> (contained
+<a href="http://metacpan.org/release/RPM-Specfile/">cpanflute2</a> (contained
 in the CPAN distribution of RPM-Specfile.)
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/makerpm/">makerpm</a>
+<a href="http://metacpan.org/release/makerpm/">makerpm</a>
 </li>
 
 <li>
@@ -97,7 +97,7 @@ in the CPAN distribution of RPM-Specfile.)
 </li>
 
 <li>
-<a href="http://search.cpan.org/dist/rpm-build-perl/">rpm-build-perl</a>
+<a href="http://metacpan.org/release/rpm-build-perl/">rpm-build-perl</a>
 </li>
 
 <li>
@@ -118,7 +118,7 @@ derivative distributions)<br />
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Deb/">CPANPLUS-Dist-Deb</a>
+<a href="http://metacpan.org/release/CPANPLUS-Dist-Deb/">CPANPLUS-Dist-Deb</a>
 </li>
 
 <li>
@@ -135,7 +135,7 @@ Arch Linux:<br />
 <ul>
 
 <li>
-<a href="http://search.cpan.org/dist/CPANPLUS-Dist-Arch/">CPANPLUS-Dist-Arch</a>
+<a href="http://metacpan.org/release/CPANPLUS-Dist-Arch/">CPANPLUS-Dist-Arch</a>
 </li>
 
 </ul>
