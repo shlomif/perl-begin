@@ -1225,6 +1225,7 @@ new_elem
 perldoc
 last_idx
 value_to_append
+str
 
 ====dest/topics/security/code-markup-injection/index.html
 
@@ -1431,6 +1432,9 @@ App-Magpie
 CPAN2pkg
 RPMs
 Gentoo
+openSUSE
+SUSE
+CPANPLUS-Dist-SUSE
 
 ====dest/topics/cpan/index.html
 
