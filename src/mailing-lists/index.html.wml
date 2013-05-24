@@ -60,17 +60,10 @@ specific Perl technologies.
 
 <h2 id="beginners-mailing-lists">Perl Beginners Mailing Lists</h2>
 
-<h3 id="learn-perl-org"><a href="http://learn.perl.org/">learn.perl.org's Mailing Lists</a></h3>
+<h3 id="learn-perl-org"><a href="http://learn.perl.org/faq/beginners.html">perl.org’s Beginners Mailing List</a></h3>
 
 <p>
-Some mailing lists for beginners. Moderate volume.
-</p>
-
-<h3 id="perl-begin-mailing-list"><a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Our Own Mailing List</a></h3>
-
-<p>
-If everybody else is doing it, why shouldn't we? Perl-begin has its own mailing
-list on the site, which you can subscribe to. The volume is very low.
+A mailing lists for beginners. Moderate volume.
 </p>
 
 <h3 id="yahoogroups-perl-beginner"><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
@@ -96,3 +89,15 @@ Do you have a Perl mailing list for beginners? If not, do you wish to
 start one? Let us know and we'll link to it from here. The more the better.
 </p>
 
+<define-tag defunct>
+<a href="https://lists.berlios.de/mailman/listinfo/perl-begin-help">Our
+Own Mailing List</a>
+</define-tag>
+
+<h3 id="perl-begin-mailing-list">Our Own Mailing List</h3>
+
+<p>
+We used to have our own mailing list for beginners, but it did not prove
+popular and now <a href="#learn-perl-org">the perl.org mailing list</a>
+is preferable.
+</p>
