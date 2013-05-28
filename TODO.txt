@@ -2,7 +2,6 @@
 
 CURRENT TASKS:
     - Bad elements page:
-        - Packaging as a CPAN distribution.
         - Unrelated packages (e.g: OtherModule) inside MyModule.
             - Preferably every package should be inside one module (except for
             private ones).
@@ -96,5 +95,7 @@ COMPLETED TASKS:
       * Slows down the captures.
       * use English without -no_match vars.
       @ Added [Tue 2013-05-21]
+    - Bad elems: Packaging as a CPAN distribution.
+        @ DONE [Tue 2013-05-28]
 
 # vim:ft=quicktask:sw=4:ts=4:et
