@@ -2267,6 +2267,37 @@ captures</a>.
 </p>
 
 </item>
+<item xml:id="non_recommended_regex_vars">
+<info>
+<title>Non-Recommended Regular Expression-related Variables</title>
+</info>
+<p>
+The regular expression variables <code>$&amp;</code> (or
+<code>$MATCH</code> in <code>use English;</code>), <code>$`</code> (
+<code>$PREMATCH</code>), and <code>$'</code> (<code>$POSTMATCH</code>)
+should normally not be used because using them incurs a penalty on
+every regular expression match. As an alternative, one can use:
+</p>
+
+<code_blk syntax="perl">
+$` ⇒ substr($var, 0, $-[0])
+$&amp; ⇒ substr($var, $-[0], $+[0] - $-[0])
+$' ⇒ substr($var, $+[0])
+</code_blk>
+
+<p>
+Or alternatively use <code>${^MATCH}</code>,
+<code>${^PREMATCH}</code>, and <code>${^POSTMATCH}</code> from perl-5.10.0
+and onwards (see <pdoc d="perlvar" /> for more information about those).
+</p>
+
+<p>
+Furthermore a plain <code>use English;</code> statement should be replaced
+with a <code>use English qw( -no_match_vars ) ;</code> statement
+to avoid referencing these variables.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>

@@ -8,10 +8,6 @@ CURRENT TASKS:
             private ones).
         - Non-explicit imports.
             - hard to track where identifiers come from.
-        - Regex: using $&, etc.
-          * Slows down the captures.
-          * use English without -no_match vars.
-          @ Added [Tue 2013-05-21]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
@@ -95,5 +91,10 @@ COMPLETED TASKS:
       * Captures are ( ... )
       * Clusters are (?: ... )
       @ Added [Mon 2013-05-06]
+    - Bad elems: Regex: using $&, etc.
+        @ DONE [Tue 2013-05-28]
+      * Slows down the captures.
+      * use English without -no_match vars.
+      @ Added [Tue 2013-05-21]
 
 # vim:ft=quicktask:sw=4:ts=4:et
