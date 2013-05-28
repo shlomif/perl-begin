@@ -2298,6 +2298,27 @@ to avoid referencing these variables.
 </p>
 
 </item>
+<item xml:id="not_packaging_as_CPAN_like_distros">
+<info>
+<title>Not Packaging as CPAN-like Distributions</title>
+</info>
+
+<p>
+It is a very good idea for Perl code that you develop for in-house use,
+and place inside <code>.pm</code> module files to be packaged as a set of
+CPAN-like distributions using the standard structure of
+<code>lib/</code>, <code>Makefile.PL</code> or <code>Build.PL</code>,
+<code>t/</code> etc. This will facilitate installing it, managing it, and
+testing it. If your code is just lying around the hard disk, it is much
+harder to deploy.
+</p>
+
+<p>
+For more information see our <a xlink:href="$(ROOT)/topics/cpan/">page
+about CPAN</a>.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
