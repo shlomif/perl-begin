@@ -209,28 +209,40 @@
 <h3 id="What_are_the_Rules_of_Conduct.3F"> What are the Rules of Conduct? </h3>
 
 <ol>
-<li> Don&apos;t flood the channel with your paste. Instead use a pastebot - type <tt>perlbot paste</tt>.
+<li>
+Don&apos;t flood the channel with your paste. Instead use a pastebot - type <tt>perlbot paste</tt>.
 </li>
-<li> Be civil and friendly.
+<li>
+Be civil and friendly.
 </li>
-<li> Try to use proper English spelling, grammar, syntax, and phrasing. This will help the channel members understand your questions more easily and thus allow them to provide better answers.
+<li>
+Try to use proper English spelling, grammar, syntax, and phrasing. This will help the channel members understand your questions more easily and thus allow them to provide better answers.
 </li>
-<li> Whenever someone helps you then:
+<li>
+Whenever someone helps you then:
 
 <ol>
-<li> Thank them!
+<li>
+Thank them!
 </li>
-<li> Bump their karma. For example if <tt>johndoe</tt> helps you then say <tt>johndoe++</tt>.
-</li></ol>
+<li>
+Bump their karma. For example if <tt>johndoe</tt> helps you then say <tt>johndoe++</tt>.
 </li>
-<li> When addressing a channel member, start your message with their nickname followed by a colon (&quot;:&quot;). For example <tt>johndoe: I understand it now.</tt> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <tt>@nick</tt> because most clients will not highlight it specially.
+</ol>
 </li>
-<li> Do not private message (PM) a channel member using <tt>/msg</tt>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.
+<li>
+When addressing a channel member, start your message with their nickname followed by a colon (&quot;:&quot;). For example <tt>johndoe: I understand it now.</tt> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <tt>@nick</tt> because most clients will not highlight it specially.
 </li>
-<li> Don&apos;t <b>overuse the evalbot</b> (<tt>eval: 5+6</tt>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <tt>/join #perlbot</tt>.
+<li>
+Do not private message (PM) a channel member using <tt>/msg</tt>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.
 </li>
-<li> If someone needs too much help and handholding, please ask them to chat on one of the symbiont channels such as <tt>#perlcafe</tt> or <tt>#perl-cats</tt>. This will help increase the signal-to-noise ratio of #perl.
-</li></ol>
+<li>
+Don&apos;t <b>overuse the evalbot</b> (<tt>eval: 5+6</tt>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <tt>/join #perlbot</tt>.
+</li>
+<li>
+If someone needs too much help and handholding, please ask them to chat on one of the symbiont channels such as <tt>#perlcafe</tt> or <tt>#perl-cats</tt>. This will help increase the signal-to-noise ratio of #perl.
+</li>
+</ol>
 
 
 <h4 id="Handling_criticism"> Handling criticism </h4>
@@ -270,33 +282,44 @@
 <h3 id="I.27ve_become_an_Operator._What_should_I_do_now.3F"> I&apos;ve become an Operator. What should I do now? </h3>
 <ol>
 
-<li> Don&apos;t remain an operator for too long. Become an operator only to change the topic or to warn someone that he would be kicked if they continue with their abusive beahviour, or to ban an abusive person (see below). Use /msg ChanServ OP #perl $my_nick to become an operator, and de-op yourself using your IRC client to switch back and forth.
+<li>
+Don&apos;t remain an operator for too long. Become an operator only to change the topic or to warn someone that he would be kicked if they continue with their abusive beahviour, or to ban an abusive person (see below). Use /msg ChanServ OP #perl $my_nick to become an operator, and de-op yourself using your IRC client to switch back and forth.
 </li>
 
-<li> You should kick someone only if:
+<li>
+You should kick someone only if:
 
 <ol>
 
-<li> They are flooding the channel.
+<li>
+They are flooding the channel.
 </li>
 
-<li> They have been warned about being annoying or abusive at least twice, while the person who has warned them has been an op, and still continue. Do not randomly kick people without warning them. We don&apos;t want #perl to be turned into another EF-Net.
-</li></ol>
+<li>
+They have been warned about being annoying or abusive at least twice, while the person who has warned them has been an op, and still continue. Do not randomly kick people without warning them. We don&apos;t want #perl to be turned into another EF-Net.
+</li>
+</ol>
 </li>
 
-<li> You should ban someone only if:
+<li>
+You should ban someone only if:
 
 <ol>
 
-<li> They continuously join after being kicked several times.
+<li>
+They continuously join after being kicked several times.
 </li>
 
-<li> They are spammers who spam the channel with ads or other things like that.
-</li></ol>
+<li>
+They are spammers who spam the channel with ads or other things like that.
+</li>
+</ol>
 </li>
 
-<li> The topic should remain in good taste. Don&apos;t put material that is sexist, racist, or otherwise insulting there.
-</li></ol>
+<li>
+The topic should remain in good taste. Don&apos;t put material that is sexist, racist, or otherwise insulting there.
+</li>
+</ol>
 
 <h3 id="What_do_I_need_to_do_to_get_a_good_answer_to_my_question.3F"> What do I need to do to get a good answer to my question? </h3>
 
@@ -491,23 +514,30 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <ol>
 
-<li> Use lexical file handles (<tt>open my $file_handle, ...</tt>) and three args open (<tt>open my $file_handle, &quot;&gt;&quot;, $filename</tt> instead of <tt>open my $file_handle &quot;&gt;$filename&quot;</tt>) and add trailing or&apos;s to your open statements (or alternatively use the &quot;Fatal&quot; or &quot;autodie&quot; modules.)
+<li>
+Use lexical file handles (<tt>open my $file_handle, ...</tt>) and three args open (<tt>open my $file_handle, &quot;&gt;&quot;, $filename</tt> instead of <tt>open my $file_handle &quot;&gt;$filename&quot;</tt>) and add trailing or&apos;s to your open statements (or alternatively use the &quot;Fatal&quot; or &quot;autodie&quot; modules.)
 </li>
 
-<li> When extracting arguments out of @ARGV or @_ , don&apos;t do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <tt>my ($param1, $param2...) = @_;</tt>. The reason for that is that if you insert an argument in the middle, you&apos;ll need to update all indices. <ul>
+<li>
+When extracting arguments out of @ARGV or @_ , don&apos;t do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <tt>my ($param1, $param2...) = @_;</tt>. The reason for that is that if you insert an argument in the middle, you&apos;ll need to update all indices. <ul>
 
-<li> For @ARGV also look at <a class="extiw" href="http://search.cpan.org/dist/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules.
+<li>
+For @ARGV also look at <a class="extiw" href="http://search.cpan.org/dist/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules.
 </li></ul>
 </li>
 
-<li> Don&apos;t abuse the default variable - <tt>$_</tt>. Use explicit variables instead whenever possible, and don&apos;t nest two <tt>$_</tt>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts.
+<li>
+Don&apos;t abuse the default variable - <tt>$_</tt>. Use explicit variables instead whenever possible, and don&apos;t nest two <tt>$_</tt>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts.
 </li>
 
-<li> To subscript an array/hash reference, don&apos;t do something like <tt>${$array_ref}[$index]</tt> (or worse - <tt>$$array_ref[$index]</tt> - instead use <tt>$array_ref-&gt;[$index]</tt> which is clearer and better. Note that if you want to take an array or hash slice, then you do need to use <tt>@{$array_ref}[@indexes]</tt> and that&apos;s ok. <ul>
+<li>
+To subscript an array/hash reference, don&apos;t do something like <tt>${$array_ref}[$index]</tt> (or worse - <tt>$$array_ref[$index]</tt> - instead use <tt>$array_ref-&gt;[$index]</tt> which is clearer and better. Note that if you want to take an array or hash slice, then you do need to use <tt>@{$array_ref}[@indexes]</tt> and that&apos;s ok. <ul>
 
-<li> Also note that the second and subsequent subscripts have optional arrows so: <tt>$array_ref-&gt;[$index1]-&gt;{$key1}</tt> can be written as <tt>$array_ref-&gt;[$index]{$key1}</tt>. The first arrow is not optional so you cannot say <tt>$array_ref[$index1]</tt> which belongs to the array <tt>@array_ref</tt>.
+<li>
+Also note that the second and subsequent subscripts have optional arrows so: <tt>$array_ref-&gt;[$index1]-&gt;{$key1}</tt> can be written as <tt>$array_ref-&gt;[$index]{$key1}</tt>. The first arrow is not optional so you cannot say <tt>$array_ref[$index1]</tt> which belongs to the array <tt>@array_ref</tt>.
 </li></ul>
-</li></ol>
+</li>
+</ol>
 <p>For more information refer to <a href="http://perl.net.au/wiki/Damian_Conway" title="Damian Conway">Damian Conway</a>&apos;s book <a href="http://perl.net.au/wiki/Perl_Best_Practices" title="Perl Best Practices">Perl Best Practices</a>.
 </p>
 
@@ -557,7 +587,8 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <li>
 <a href="http://perlqt.sourceforge.net/">PerlQt</a> - Perl using the Qt widget toolkit, on which KDE is based. Unmaintained.
-</li></ol>
+</li>
+</ol>
 
 <h3 id="How_can_I_break.2Fskip_an_outer_loop.3F"> How can I break/skip an outer loop? </h3>
 
@@ -596,11 +627,14 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <ol>
 
-<li> Convert the included code to be a Perl module (a <tt>.pm</tt> file). Then use or require it.
+<li>
+Convert the included code to be a Perl module (a <tt>.pm</tt> file). Then use or require it.
 </li>
 
-<li> Invoke the perl script as a separate process if it&apos;s appropriate.
-</li></ol>
+<li>
+Invoke the perl script as a separate process if it&apos;s appropriate.
+</li>
+</ol>
 <p>If you want to access the variables of a different file, you need to declare them using <tt>our</tt> or the <tt>use vars</tt> pragma. A more advisable way would be to control access to them using functions.
 </p>
 <p>For more information see:
@@ -618,7 +652,8 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <li>
 <a href="http://www.mail-archive.com/linux-il%40cs.huji.ac.il/msg33714.html">A post to the Linux-IL mailing list</a> explaining the difference between local and my by <a href="http://perl.net.au/wiki/Shlomi_Fish" title="Shlomi Fish">Shlomi Fish</a>.
-</li></ol>
+</li>
+</ol>
 
 <h3 id="How_can_I_format_numbers_with_certain_digits.3F"> How can I format numbers with certain digits? </h3>
 
@@ -734,14 +769,18 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <ol>
 
-<li> You can always Benchmark and see. See the <a class="extiw" href="http://search.cpan.org/dist/Benchmark" title="cpan:Benchmark">cpan:Benchmark</a> module which is part of the core.
+<li>
+You can always Benchmark and see. See the <a class="extiw" href="http://search.cpan.org/dist/Benchmark" title="cpan:Benchmark">cpan:Benchmark</a> module which is part of the core.
 </li>
 
-<li> Usually, the performance gained by doing micro-optimisations in Perl is not going to be worth the trouble.
+<li>
+Usually, the performance gained by doing micro-optimisations in Perl is not going to be worth the trouble.
 </li>
 
-<li> If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl&apos;s XS or <a class="extiw" href="http://search.cpan.org/dist/Inline-C" title="cpan:Inline-C">cpan:Inline-C</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need.
-</li></ol>
+<li>
+If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl&apos;s XS or <a class="extiw" href="http://search.cpan.org/dist/Inline-C" title="cpan:Inline-C">cpan:Inline-C</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need.
+</li>
+</ol>
 <p>The legendary computer scientist <a class="extiw" href="http://www.wikipedia.org/wiki/Donald_Knuth" title="wikipedia:Donald_Knuth">wikipedia:Donald Knuth</a> has quoted C.A.R. Hoare in saying that <a href="http://c2.com/cgi/wiki?PrematureOptimization">&quot;Premature Optimisation is the Root of All Evil&quot;</a>, so it&apos;s worth paying attention to. (More discussion on the link).
 </p>
 
@@ -752,11 +791,14 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 
 <ol>
 
-<li> You have a dodgy mirror. Try a different mirror and see if it clears up.
+<li>
+You have a dodgy mirror. Try a different mirror and see if it clears up.
 </li>
 
-<li> For whatever reason, the file is being downloaded and saved as .tar (but still very much compressed). The file gets recompressed and as such the checksum operation fails to produce a correct checksum.
-</li></ol>
+<li>
+For whatever reason, the file is being downloaded and saved as .tar (but still very much compressed). The file gets recompressed and as such the checksum operation fails to produce a correct checksum.
+</li>
+</ol>
 <p>For the latter, there is a relatively simple solution - move the .tar files to .tar.gz and rerun. Aaron_Mason wrote a script that runs CPAN with the parameters you seek, then check for any stray .tar files with a corresponding .tar.gz and move the .tar over the .tar.gz. This solution is far from foolproof, but got through a CPAN upgrade. The script is as follows:
 </p><pre>#!/usr/local/bin/bash
 
@@ -858,11 +900,14 @@ rm cpan-cycle.$$
 <a href="http://perl.plover.com/qotw/">Perl Quiz of the Week</a> - Used to be active, and people may still peruse the archives for problems and solutions. Note that newer challenges are only in the <a href="http://news.gmane.org/gmane.comp.lang.perl.qotw.discuss">qotw-discuss archives</a>.
 </li>
 
-<li> Some Perl books and tutorials contain exercises. See for example <a href="http://oreilly.com/catalog/9780596520106/">Learning Perl</a>. <ul>
+<li>
+Some Perl books and tutorials contain exercises. See for example <a href="http://oreilly.com/catalog/9780596520106/">Learning Perl</a>. <ul>
 
-<li> The book <a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs (SICP)</a> contains numerous exercises. Its text is available online.
+<li>
+The book <a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs (SICP)</a> contains numerous exercises. Its text is available online.
 </li></ul>
-</li></ol>
+</li>
+</ol>
 
 <h3 id="Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29"> Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop) </h3>
 
@@ -886,7 +931,8 @@ rm cpan-cycle.$$
 </li>
 
 <li><a class="new" href="http://perl.net.au/wiki/?title=YAML&amp;action=edit" title="YAML">YAML</a> is a markup language (see <a class="extiw" href="http://search.cpan.org/dist/YAML-XS" title="cpan:YAML-XS">YAML-XS</a>) for represnting complex data structures. It is more complex than JSON, and more error-prone but also gives some user-friendly enhancements.
-</li></ol>
+</li>
+</ol>
 <p>If you want random lookup, look at the various <a class="new" href="http://perl.net.au/wiki/?title=Wikiepdia:Embedded_database&amp;action=edit" title="Wikiepdia:Embedded database">embedded database</a> solutions, such as:
 </p><ul>
 
@@ -1006,11 +1052,14 @@ rm cpan-cycle.$$
 
 <ol>
 
-<li> The first method is to do <tt>sub { return $self-&gt;my_method(@_); }</tt> within a scope that has the object reference $self valid. This will always call my_method on the physical $self reference.
+<li>
+The first method is to do <tt>sub { return $self-&gt;my_method(@_); }</tt> within a scope that has the object reference $self valid. This will always call my_method on the physical $self reference.
 </li>
 
-<li> You can pass the name of the method as a string and then do <tt>$some_obj-&gt;$some_method(@args)</tt>. This requires applying $some_method on an object explicitly and handles inheritance well.
-</li></ol>
+<li>
+You can pass the name of the method as a string and then do <tt>$some_obj-&gt;$some_method(@args)</tt>. This requires applying $some_method on an object explicitly and handles inheritance well.
+</li>
+</ol>
 
 <h3 id="How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F"> How do I trim leading and/or trailing whitespace from a string? </h3>
 
@@ -1024,17 +1073,22 @@ rm cpan-cycle.$$
 
 <ol>
 
-<li> &apos;use lib&apos; <a href="http://perldoc.perl.org/lib.html">perldoc lib</a>.
+<li>
+&apos;use lib&apos; <a href="http://perldoc.perl.org/lib.html">perldoc lib</a>.
 </li>
 
-<li> use the -I option to perl <a href="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a>.
+<li>
+use the -I option to perl <a href="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a>.
 </li>
 
-<li> Set the PERLLIB or PERL5LIB environment variable <a href="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a>
+<li>
+Set the PERLLIB or PERL5LIB environment variable <a href="http://perldoc.perl.org/perlrun.html">perldoc perlrun</a>
 </li>
 
-<li> Finally you may opt to recompile perl.
-</li></ol>
+<li>
+Finally you may opt to recompile perl.
+</li>
+</ol>
 <p>After that you can add <tt>use MyModule;</tt> to your code and it will work. Please don&apos;t resort to <tt>do &quot;/full/path/to/include.pl&quot;</tt> games.
 </p>
 
@@ -1129,20 +1183,28 @@ For more information, see some
 
 <ol>
 
-<li> Café-speak (&quot;teh hawt&quot;, &quot;I buyed&quot;, &quot;teh ghey&quot;, &quot;n u&quot;) — you get the idea.
+<li>
+Café-speak (&quot;teh hawt&quot;, &quot;I buyed&quot;, &quot;teh ghey&quot;, &quot;n u&quot;) — you get the idea.
 </li>
 
-<li> People discussing their love-lives (or their lack of them), their co-workers, their friends, and their enemies.
+<li>
+People discussing their love-lives (or their lack of them), their co-workers, their friends, and their enemies.
 </li>
 
-<li> Unusual humour and lots of cursing (particularly at each other).
+<li>
+Unusual humour and lots of cursing (particularly at each other).
 </li>
 
-<li> Discussing both obscure and everyday political issues.
+<li>
+Discussing both obscure and everyday political issues.
 </li>
 
-<li> Personal conversation during what would otherwise be a boring work day.
-</li></ol>
+<li>
+Personal conversation during what would otherwise be a boring work day.
+</li>
+
+</ol>
+
 <p>Sometimes the discussion gets more high-quality, but it&apos;s still a channel where chat occurs that some may find questionable. Viewer discretion is advised.
 </p>
 <p>Also see its own page at <a href="http://perl.net.au/wiki/Freenode_Sharp_Perlcafe" title="Freenode Sharp Perlcafe">Freenode Sharp Perlcafe</a>.
@@ -1161,7 +1223,8 @@ For more information, see some
 <ol>
 
 <li>lispcafe has <a href="http://www.cliki.net/lispcafe">its own page</a> on the Common Lisp wiki.
-</li></ol>
+</li>
+</ol>
 
 <h3 id="sharp_perl-cats"><a href="irc://irc.freenode.net/perl-cats" title="irc://irc.freenode.net/perl-cats">#perl-cats</a></h3>
 
@@ -1243,7 +1306,9 @@ For more information, see some
 
 <li>
 <a href="http://search.cpan.org/~shlomif/">Some CPAN Modules</a>
-</li></ol>
+</li>
+</ol>
+
 <p>He prides himself in being the &quot;Black Sheep&quot; of the Perl world, due to writing some controversial essays, and because he is considered a &quot;Persona Non-grata&quot; in some Perl communities.
 </p>
 
