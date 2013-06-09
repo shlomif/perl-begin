@@ -2319,6 +2319,20 @@ about CPAN</a>.
 </p>
 
 </item>
+<item xml:id="unrelated_packages_inside_modules">
+<info>
+<title>Unrelated packages inside modules</title>
+</info>
+
+<p>
+If your module is <code>lib/MyModule.pm</code>, then it should only contain
+namespaces/packages under <code>MyModule::</code>. If it contains
+<code>package OtherModule;</code> then this in turn will be harder
+to find and confusing. Preferably, every package should be inside its own
+module (except for privately used ones).
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
