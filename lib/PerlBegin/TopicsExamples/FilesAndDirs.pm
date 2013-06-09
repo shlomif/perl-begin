@@ -154,7 +154,7 @@ EOF
                     code => <<'EOF',
 use IO::All;
 
-my $string = io->file($my_filepath)->utf8->slurp;
+my $string = io->file($my_filepath)->utf8->all;
 EOF
 
                 },
@@ -342,7 +342,7 @@ my $text_to_prepend = "[Text to Prepend]\n";
 
 my $fh = io->file($filename);
 
-$fh->print( $text_to_prepend . $fh->slurp() );
+$fh->print( $text_to_prepend . $fh->all() );
 EOF
 
                 },
