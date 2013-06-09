@@ -18,6 +18,49 @@ sub _run
 
     print $ex_gen->html_with_title(
         {
+            title => "Reading a file line by line",
+            id_base => "reading_a_file_line_by_line",
+            examples =>
+            [
+                {
+                    id => "io_all",
+                    label => "IO-All",
+                    code => <<'EOF',
+use IO::All;
+
+my $filename_to_read = 'my-file.txt';
+
+my $fh = io->file($filename_to_read);
+while (my $line = $fh->chomp->getline())
+{
+    # Do something with $line.
+}
+EOF
+
+                },
+                {
+                    id => "core",
+                    label => "Core Perl",
+                    code => <<'EOF',
+use autodie;
+
+my $filename_to_read = 'my-file.txt';
+
+open my $fh, '<', $filename_to_read;
+while (my $line = <$fh>)
+{
+    chomp($line);
+
+    # Do something with $line.
+}
+close($fh);
+EOF
+                },
+            ],
+        }
+    );
+    print $ex_gen->html_with_title(
+        {
             title => "Copying a file",
             id_base => "copying_a_file",
             examples =>
