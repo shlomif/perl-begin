@@ -2333,6 +2333,34 @@ module (except for privately used ones).
 </p>
 
 </item>
+<item xml:id="non_explicitly_imported_symbols">
+<info>
+<title>Non-explicitly-imported symbols</title>
+</info>
+
+<p>
+When importing symbols from packages, it is a good idea to specify the symbols
+that are reported explicitly, so one won't have to wonder where variables are
+coming from. So:
+</p>
+
+<bad_code syntax="perl">
+use MyLib;
+
+print my_function(3,5), "\n";
+</bad_code>
+
+<p>
+Should be replaced with:
+</p>
+
+<code_blk syntax="perl">
+use MyLib qw( my_function );
+
+print my_function(3,5), "\n";
+</code_blk>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>

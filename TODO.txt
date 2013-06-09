@@ -2,8 +2,6 @@
 
 CURRENT TASKS:
     - Bad elements page:
-        - Non-explicit imports.
-            - hard to track where identifiers come from.
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
@@ -97,6 +95,9 @@ COMPLETED TASKS:
     - Bad elems: unrelated packages (e.g: OtherModule) inside MyModule.
         - Preferably every package should be inside one module (except for
         private ones).
+        @ DONE [Sun 2013-06-09]
+    - Bad elems: non-explicit imports.
+        - hard to track where identifiers come from.
         @ DONE [Sun 2013-06-09]
 
 # vim:ft=quicktask:sw=4:ts=4:et
