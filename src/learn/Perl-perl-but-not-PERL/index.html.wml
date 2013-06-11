@@ -25,14 +25,14 @@ as lowercase.
 <li>
 <p>
 <b>"perl"</b> (with all-lowercase) is the name of the command line executable
-that compiles and runs Perl programs. The implementation if you may.
+that compiles and runs Perl programs. The implementation, if you may.
 </p>
 </li>
 
 <li>
 <p>
 In any case, one should <b>never write "PERL"</b> with all uppercase letters,
-as Perl is not an acronym. If you encounter such a page, it usually indicates
+as Perl is not an acronym. If you encounter such a use, it usually indicates
 that its author does not know enough about Perl, as writing "Perl" or "perl"
 instead of "PERL" is a
 <a href="http://en.wikipedia.org/wiki/Shibboleth">Shibboleth</a> that indicates
@@ -43,7 +43,9 @@ that the speaker or writer knows what they are saying.
 </ol>
 
 <p>
-A popular idiom, attributed to Tom Christiansen, says that "Only perl can
-parse Perl.". Take some time to think about it.
+A popular idiom, attributed to
+<a href="http://en.wikipedia.org/wiki/Tom_Christiansen">Tom
+Christiansen</a>, says that “Only perl can
+parse Perl.”. Take some time to think about it.
 </p>
 
