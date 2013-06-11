@@ -61,5 +61,6 @@ xmlns:exsl="http://exslt.org/common" xmlns="http://www.w3.org/1999/xhtml" versio
   </xsl:call-template>
 </xsl:template>
 
+<xsl:param name="toc.section.depth" select="9"/>
 
 </xsl:stylesheet>
