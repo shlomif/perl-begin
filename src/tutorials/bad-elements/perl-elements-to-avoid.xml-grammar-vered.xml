@@ -290,6 +290,41 @@ by any arbitrary delimiter notation: <code>m{\A/home/sophie/perl}</code>,
 <code>q/My name is 'Jack' and I called my dog "Diego"./</code>.
 </p>
 </item>
+<item xml:id="non_lexical_loop_iterators">
+<info>
+<title>Non-Lexical Loop Iterators</title>
+</info>
+
+<p>
+When writing <code>foreach</code> loops, one should declare the iterator
+using <code>my</code> instead of pre-declaring it and using something like:
+<code>foreach $number (@numbers)</code> (you did use <code>use strict;</code>,
+right?). Otherwise, the iteration variable will be aliased using dynamic
+scoping, and its value in the loop won't be preserved. So instead of:
+</p>
+
+<bad_code syntax="perl">
+my $number;
+
+foreach $number (@numbers)
+{
+    # do something with $number.
+}
+</bad_code>
+
+<p>
+You should write:
+</p>
+
+<code_blk syntax="perl">
+foreach my $number (@numbers)
+{
+    # do something with $number.
+}
+
+# Now $number is gone.
+</code_blk>
+</item>
 <item xml:id="slurp">
 <info>
 <title>Slurping a file (i.e: Reading it all into memory)</title>
