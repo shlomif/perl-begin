@@ -925,7 +925,7 @@ open my $pass_fh, '&lt;', '/etc/passwd'
 PASSWD:
 while (my $line = &lt;$pass_fh&gt;)
 {
-    if ($line =~ m{\A$username}) \# Bad code here.
+    if ($line =~ m{\A$username}) # Bad code here.
     {
         print "Your username is in /etc/passwd\n";
         last PASSWD;
@@ -1605,7 +1605,7 @@ the containing block. Like so:
 if ( COND() )
 {
      print "Success!\n";
-     call_routine() \# No semicolon here.
+     call_routine() # No semicolon here.
 }
 </bad_code>
 <p>
@@ -1886,7 +1886,7 @@ You normally want one of those:
 <code_blk syntax="perl">
 my @characters = split(//, $string);
 my $chars_aref = [ split(//, $string) ];
-my $num_chars = () = split(//, $string); \# Use length instead in this case.
+my $num_chars = () = split(//, $string); # Use length instead in this case.
 </code_blk>
 <p>
 A lot of the confusion stems from the fact that people expect arrays in Perl
