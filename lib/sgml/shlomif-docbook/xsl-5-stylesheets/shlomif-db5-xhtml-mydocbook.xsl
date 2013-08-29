@@ -32,13 +32,15 @@
 <xsl:template match="d:article" priority="1">
     <xsl:call-template name="id.warning"/>
 
-    <xsl:element name="{$div.element}" namespace="http://www.w3.org/1999/xhtml">
+    <div>
         <xsl:call-template name="common.html.attributes">
             <xsl:with-param name="inherit" select="1"/>
         </xsl:call-template>
-        <xsl:call-template name="id.attribute">
-            <xsl:with-param name="conditional" select="0"/>
-        </xsl:call-template>
+        <xsl:if test="$generate.id.attributes != 0">
+            <xsl:attribute name="id">
+                <xsl:call-template name="object.id"/>
+            </xsl:attribute>
+        </xsl:if>
 
         <xsl:call-template name="article.titlepage"/>
 
@@ -62,8 +64,7 @@
 
         <xsl:apply-templates select="*[not(@role = 'introduction')]"/>
         <xsl:call-template name="process.footnotes"/>
-    </xsl:element>
+    </div>
 </xsl:template>
-
 </xsl:stylesheet>
 

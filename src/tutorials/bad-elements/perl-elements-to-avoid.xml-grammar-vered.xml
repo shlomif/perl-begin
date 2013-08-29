@@ -2302,6 +2302,43 @@ captures</a>.
 </p>
 
 </item>
+<item xml:id="select_filehandle">
+<info>
+<title>Using select($file_handle)</title>
+</info>
+<p>
+One should not use <pdoc_f f="select" />’s <code>select($file_handle)</code>
+syntax to set the “currently selected filehandle” because this will affect
+all subsequent uses by such functions as <pdoc_f f="print" /> and is a
+sure-fire way to confuse the maintenance programmer. Instead, use
+<cpan_self_mod m="IO::Handle" /> and its methods. For example:
+</p>
+
+<bad_code syntax="perl">
+my $old_fh = select(STDERR);
+$| = 1; # Set -&gt;autoflush()
+select($old_fh);
+</bad_code>
+
+<p>
+should be instead written as:
+</p>
+
+<code_blk syntax="perl">
+use IO::Handle;
+STDERR->autoflush(1);
+</code_blk>
+
+<p>
+The second syntax of <code>select()</code> which tries to see which file
+handles or sockets are active is of more valid use, but note that for a
+simple delay, one should use <cpan_self_mod m="Time::HiRes" /> and otherwise,
+there are some more efficient platform-specific methods to do that such as
+<cpan_self_mod m="IO::Epoll" /> for Linux or kqueue for FreeBSD, which are
+abstracted by event-driven programming frameworks on CPAN.
+</p>
+
+</item>
 <item xml:id="non_recommended_regex_vars">
 <info>
 <title>Non-Recommended Regular Expression-related Variables</title>
