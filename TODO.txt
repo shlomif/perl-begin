@@ -1,8 +1,6 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Bad elements: add a note about select(FILEHANDLE).
-      @ Added [Fri 2013-06-28]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
@@ -101,5 +99,8 @@ COMPLETED TASKS:
     - Bad elems: non-explicit imports.
         - hard to track where identifiers come from.
         @ DONE [Sun 2013-06-09]
+    - Bad elements: add a note about select(FILEHANDLE).
+        @ DONE [Thu 2013-08-29]
+      @ Added [Fri 2013-06-28]
 
 # vim:ft=quicktask:sw=4:ts=4:et
