@@ -1226,6 +1226,23 @@ perldoc
 last_idx
 value_to_append
 str
+MyLib
+OtherModule
+PL
+CPAN-like
+POSTMATCH
+PREMATCH
+substr
+Epoll
+kqueue
+FreeBSD
+HiRes
+STDERR-
+STDERR
+-no_match_vars
+old_fh
+file_handle
+filename_to_read
 
 ====dest/topics/security/code-markup-injection/index.html
 
@@ -1377,6 +1394,9 @@ myfile
 count_lines
 rmtree
 io
+filename_to_read
+'my-file
+getline
 
 ====dest/topics/debugging/index.html
 
