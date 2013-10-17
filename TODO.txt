@@ -58,6 +58,9 @@ CURRENT TASKS:
     - Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
         - Add src/tutorials/hyperpolyglot/sheet2.html.wml
 
+    - Bad elems: add several synchronised arrays (e.g: my @names, my
+    @addresses, my @ages, my @phone_numbers).
+
 LONG TERM:
 
     - Maybe a page on «What's next "after" perl?».
