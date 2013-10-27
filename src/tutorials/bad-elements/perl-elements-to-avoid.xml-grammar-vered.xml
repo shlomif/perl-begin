@@ -1044,6 +1044,48 @@ the string you want to use. Read the link by Mark Jason Dominus for more
 information.
 </p>
 </item>
+<item xml:id="several_synchronised_arrays">
+<info>
+<title>Several synchronised arrays.</title>
+</info>
+<p>
+Related to “varvarname” is the desire of some beginners to use several
+different arrays with synchronised content, so the same index at every array
+will contain a different piece of data for the same record:
+</p>
+<bad_code syntax="perl">
+my @names;
+my @addresses;
+my @ages;
+my @phone_numbers;
+
+.
+.
+.
+
+push @names, 'Isaac Newton';
+push @addresses, '10 Downing St.';
+push @ages, 25;
+push @phone_numbers, '123456789';
+</bad_code>
+<p>
+These arrays will become hard to synchronise, and this is error prone. A
+better idea would be to use an array (or a different data structure) of
+hash references or objects:
+</p>
+<code_blk syntax="perl">
+my @people;
+
+push @people, Person->new(
+    {
+        name => 'Isaac Newton',
+        address => '10 Downing St.',
+        age => 25,
+        phone_number => '123456789',
+    },
+);
+</code_blk>
+</item>
 <item xml:id="leading_underscores">
 <info>
 <title>Use Leading Underscores ('_') for Internal Methods and Functions</title>
