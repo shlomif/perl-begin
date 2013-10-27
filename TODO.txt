@@ -48,8 +48,6 @@ CURRENT TASKS:
     - Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
         - Add src/tutorials/hyperpolyglot/sheet2.html.wml
 
-    - Bad elems: add several synchronised arrays (e.g: my @names, my
-    @addresses, my @ages, my @phone_numbers).
 
 LONG TERM:
 
@@ -95,6 +93,9 @@ COMPLETED TASKS:
     - Bad elements: add a note about select(FILEHANDLE).
         @ DONE [Thu 2013-08-29]
       @ Added [Fri 2013-06-28]
+    - Bad elems: add several synchronised arrays (e.g: my @names, my
+        @ DONE [Sun 2013-10-27]
+    @addresses, my @ages, my @phone_numbers).
     - Tutorials:
         - http://qntm.org/files/perl/perl.html
             - “Learn Perl in about 2 hours 30 minutes”
