@@ -44,16 +44,6 @@ CURRENT TASKS:
         - Peteris Krumins' Perl One-Liners Explained Book
             - TBD: which pages would be the best for it.
 
-    - Tutorials:
-        - http://qntm.org/files/perl/perl.html
-            - “Learn Perl in about 2 hours 30 minutes”
-                - Upsides:
-                    - Short.
-                    - To the point.
-                    - Informative.
-                - Downsides
-                    - Does not mention/cover CPAN.
-                    - Does not Moose/Mouse/Moo/etc..
 
     - Fix the look of src/tutorials/hyperpolyglot/sheet1.html.wml
         - Add src/tutorials/hyperpolyglot/sheet2.html.wml
@@ -105,5 +95,15 @@ COMPLETED TASKS:
     - Bad elements: add a note about select(FILEHANDLE).
         @ DONE [Thu 2013-08-29]
       @ Added [Fri 2013-06-28]
+    - Tutorials:
+        - http://qntm.org/files/perl/perl.html
+            - “Learn Perl in about 2 hours 30 minutes”
+                - Upsides:
+                    - Short.
+                    - To the point.
+                    - Informative.
+                - Downsides
+                    - Does not mention/cover CPAN.
+                    - Does not Moose/Mouse/Moo/etc..
 
 # vim:ft=quicktask:sw=4:ts=4:et
