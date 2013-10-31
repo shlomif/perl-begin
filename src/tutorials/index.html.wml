@@ -44,6 +44,7 @@ POD documents after the second lecture)
 
 </perl_for_newbies_entry>
 
+<define-tag __remove_beginning_perl_entry>
 <beginning_perl_entry>
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online.
@@ -52,6 +53,7 @@ at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
 </beginning_perl_entry>
+</define-tag>
 
 <h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc
 Tutorials</a></h3>
