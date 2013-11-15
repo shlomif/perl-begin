@@ -23,7 +23,7 @@ applications.
 <h3 id="ipc-run"><cpan_self_dist d="IPC-Run" /></h3>
 
 <p>
-A module that allows on to run background processes with piping, and ptys.
+A module that allows one to run background processes with piping, and ptys.
 Works on UNIXes as well as Windows.
 </p>
 
