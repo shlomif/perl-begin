@@ -12,13 +12,6 @@ or serve several clients at once.
 
 <h2 id="technologies">Technologies of Interest</h2>
 
-<h3 id="poe"><a href="http://poe.perl.org/">POE: Perl Object
-Environment</a></h3>
-
-<p>
-A Perl framework for reactive systems, cooperative multitasking and network
-applications.
-</p>
 
 <h3 id="ipc-run"><cpan_self_dist d="IPC-Run" /></h3>
 
@@ -33,6 +26,42 @@ Works on UNIXes as well as Windows.
 Allows one to control a terminal application interactively and wait for
 events.
 </p>
+
+<h3 id="event_frameworks">Event Driven Programming Frameworks</h3>
+
+<p>
+There are several frameworks available for event driven programming,
+cooperative multitasking and writing network applications. You can find the
+most important and most recommended ones on
+<a href="$(ROOT)/topics/cpan/">CPAN</a>. Here is a list of some of the
+most recommended ones.
+</p>
+
+<h4 id="poe"><a href="http://poe.perl.org/">POE: Perl Object
+Environment</a></h4>
+
+<p>
+POE was one of the first event-driven programming frameworks for Perl,
+and gained some popularity in part due to lack of alternatives. Its style
+is baroque and as such it may no longer be recommended.
+</p>
+
+<h4 id="AnyEvent"><cpan_self_dist d="AnyEvent" /></h4>
+
+<p>
+AnyEvent is a more modern events’ framework and allows one to make use of
+extensions for other frameworks. It is also fast.
+</p>
+
+<ul>
+<li>
+<p>
+<a href="http://www.slideshare.net/xSawyer/async-programmingftwanyevent">Asynchronous
+Programming For-the-Win!</a> - by Sawyer X. Slides for a talk with some
+examples.
+</p>
+</li>
+</ul>
 
 <h2 id="threads">Threads?</h2>
 
