@@ -5,7 +5,7 @@
 <h2 id="intro">Introduction</h2>
 
 <p>
-In multitasking, the program perform several tasks at once. Multitasking
+In multitasking, the program performs several tasks at once. Multitasking
 is closely related to networking where we have to handle several events
 or serve several clients at once.
 </p>
