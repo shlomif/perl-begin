@@ -34,6 +34,18 @@ a lot of information about it including introductory talks, articles, and
 links.
 </p>
 
+<h3 id="Moo">Moo</h3>
+
+<p>
+<a href="https://metacpan.org/release/Moo"><b>Moo</b></a> is an object system
+for Perl, which provides a large subset of Moose’s functionality, but with
+a considerably reduced initial process loading time (which has been a frequent
+complaint about Moose). Best of all, it is fully compatible with Moose, and
+one can safely mix Moose code and Moo code. If you’re interested in
+Moo also look at <a href="https://metacpan.org/pod/MooX::late">MooX::late</a>
+which is a Moo extension that makes Moo more Moose-like.
+</p>
+
 <h2 id="tutorials">Tutorials</h2>
 
 <modern_perl_entry>
