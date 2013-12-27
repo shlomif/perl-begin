@@ -49,7 +49,7 @@ which is a Moo extension that makes Moo more Moose-like.
 <p>
 Moo provides the class building features of Moose but not the meta-programming
 (and if you do not care about meta-programming - you can probably use Moo
-instead of Moo.)
+instead of Moose.)
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
