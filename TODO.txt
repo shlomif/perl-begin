@@ -1,6 +1,8 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
+    - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
+      @ Added [Thu 2014-01-30]
     - Bad elems:
         - Excessive calls to subroutines in other packages (solution: OOP).
             * e.g: MyModule::foo_bar(...) ; MyModule::other_stuff(...)
