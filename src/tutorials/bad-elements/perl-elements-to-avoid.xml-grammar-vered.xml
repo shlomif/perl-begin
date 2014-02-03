@@ -1695,14 +1695,14 @@ one, so that some lines will contain trailing whitespace, such as
 spaces (ASCII 32 or 0x20) or tabs characters. These trailing spaces normally
 do not cause much harm, but they are not needed, harm the code’s consistency,
 may undermine analysis by patching/diffing and version control tools.
-Furtheremore, they usually can be eliminated easily without harm.
+Furthermore, they usually can be eliminated easily without harm.
 </p>
 <p>
 Here is an example of having trailing whitespace demonstrated using the
 <code>--show-ends</code> flag of the GNU <a xlink:href="https://en.wikipedia.org/wiki/Cat_%28Unix%29">cat command</a>:
 </p>
 <code_blk syntax="text">
-shlomif@telaviv1:~$ cat --show-ends toss-coins.pl
+&gt; cat --show-ends toss-coins.pl
 #!/usr/bin/perl$
 $
 use strict;$
@@ -1722,7 +1722,7 @@ for my $idx (1 .. $num_coins)$
 }$
 $
 print "You flipped $sides[0] heads and $sides[1] tails.\n";$
-$
+&gt;
 </code_blk>
 <p>
 While you should not feel bad about having trailing space, it is a good idea

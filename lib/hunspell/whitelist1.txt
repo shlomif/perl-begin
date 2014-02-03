@@ -251,6 +251,7 @@ Mattijsen
 ptys
 IPC-Run
 POE
+AnyEvent
 
 ====dest/uses/index.html
 
@@ -1243,6 +1244,18 @@ STDERR
 old_fh
 file_handle
 filename_to_read
+phone_numbers
+phone_number
+'Isaac
+'10
+'123456789
+diffing
+usr
+pl
+num_coins
+srand
+EOL
+TrailingSpace
 
 ====dest/topics/security/code-markup-injection/index.html
 
@@ -1321,6 +1334,7 @@ Perldoc
 OOP
 11th
 perlmod
+MooX
 
 ====dest/topics/index.html
 
@@ -1580,6 +1594,9 @@ O'Reilly's
 Perl-development
 perl101
 blogosphere
+Signes
+Dist-Zilla
+pumpking
 
 ====dest/learn/why-perl/index.html
 
