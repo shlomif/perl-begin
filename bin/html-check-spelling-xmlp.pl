@@ -10,6 +10,8 @@ use utf8;
 use HTML::Parser 3.00 ();
 use Text::Hunspell;
 use List::MoreUtils qw(any);
+use JSON qw(encode_json decode_json);
+use IO::All;
 
 my $speller = Text::Hunspell->new(
     '/usr/share/hunspell/en_GB.aff',
@@ -34,12 +36,12 @@ my %per_filename_whitelists;
         {
             # Do nothing.
         }
-        elsif ($l =~ /\A====(.*)/)
+        elsif ($l =~ /\A====\s*(.*)/)
         {
             @current_whitelists_list =
             (
                 map { $per_filename_whitelists{$_} ||= +{} }
-                split /,/, $1
+                split /\s*,\s*/, $1
             );
         }
         else
@@ -57,13 +59,35 @@ my %inside;
 
 sub tag
 {
-   my($tag, $num) = @_;
+   my ($tag, $num) = @_;
    $inside{$tag} += $num;
+
+   return;
 }
 
+my $calc_cache_io = sub {
+    return io->file('./Tests/data/cache/spelling-timestamp.json');
+};
 
+if (! $calc_cache_io->()->exists())
+{
+    $calc_cache_io->()->print(encode_json({}));
+}
+
+my $timestamp_cache = decode_json(scalar($calc_cache_io->()->slurp()));
+
+FILENAMES_LOOP:
 foreach my $filename (@ARGV)
 {
+    if (exists($timestamp_cache->{$filename}) and
+        $timestamp_cache->{$filename} <= (io->file($filename)->mtime())
+    )
+    {
+        next FILENAMES_LOOP;
+    }
+
+    my $file_is_ok = 1;
+
     my $process_text = sub
     {
         return if $inside{script} || $inside{style};
@@ -112,6 +136,7 @@ foreach my $filename (@ARGV)
 
             if ($mispelling_found)
             {
+                $file_is_ok = 0;
                 printf {*STDOUT}
                 (
                     "%s:%d:%s\n",
@@ -134,6 +159,13 @@ foreach my $filename (@ARGV)
     )->parse_file($fh);
 
     close ($fh);
+
+    if ($file_is_ok)
+    {
+        $timestamp_cache->{$filename} = io->file($filename)->mtime();
+    }
 }
+
+$calc_cache_io->()->print(encode_json($timestamp_cache));
 
 print "\n";
