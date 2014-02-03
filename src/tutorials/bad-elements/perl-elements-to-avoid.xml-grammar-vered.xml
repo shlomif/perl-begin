@@ -1693,13 +1693,42 @@ or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
 With many editors, it can be common to write new code or modify existing
 one, so that some lines will contain trailing whitespace, such as
 spaces (ASCII 32 or 0x20) or tabs characters. These trailing spaces normally
-do not cause much harm, but they are not needed and can be distracted.
+do not cause much harm, but they are not needed, harm the code’s consistency,
+may undermine analysis by patching/diffing and version control tools.
+Furtheremore, they usually can be eliminated easily without harm.
 </p>
+<p>
+Here is an example of having trailing whitespace demonstrated using the
+<code>--show-ends</code> flag of the GNU <a xlink:href="https://en.wikipedia.org/wiki/Cat_%28Unix%29">cat command</a>:
+</p>
+<code_blk syntax="text">
+shlomif@telaviv1:~$ cat --show-ends toss-coins.pl
+#!/usr/bin/perl$
+$
+use strict;$
+use warnings;$
+$
+my @sides = (0,0);$
+$
+my ($seed, $num_coins) = @ARGV;$
+$
+srand($seed);  $
+$
+for my $idx (1 .. $num_coins)$
+{$
+    $sides[int(rand(2))]++;$
+    $
+    print "Coin No. $idx\n";$
+}$
+$
+print "You flipped $sides[0] heads and $sides[1] tails.\n";$
+$
+</code_blk>
 <p>
 While you should not feel bad about having trailing space, it is a good idea
 to sometimes search for them using a command such as <code>ack '[ \t]+$'</code>
-(or <code>ack -a '[ \t]+$'</code> for completeness - see
-<a xlink:href="http://betterthangrep.com/">ack</a>, and get rid of them.
+(in version 1.x it should be <code>ack -a '[ \t]+$'</code>, see
+<a xlink:href="http://beyondgrep.com/">ack</a>), and get rid of them.
 </p>
 <p>
 Some editors also allow you to highlight trailing whitespace when present. See
@@ -1716,6 +1745,22 @@ unwanted spaces in Vim</a>. Also see <a xlink:href="http://vim.wikia.com/wiki/Hi
 <p>
 <a xlink:href="http://emacswiki.org/emacs/ShowWhiteSpace">EmacsWiki:
 Show White Space</a>.
+</p>
+</li>
+</ul>
+<p>
+Finally, one can check and report trailing whitespace using the following
+CPAN modules:
+</p>
+<ul>
+<li>
+<p>
+<cpan_self_mod m="Test::EOL" />.
+</p>
+</li>
+<li>
+<p>
+<cpan_self_mod m="Test::TrailingSpace" />.
 </p>
 </li>
 </ul>
