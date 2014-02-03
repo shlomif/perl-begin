@@ -16,3 +16,4 @@ syntax:regexp
 ^src/style\.css$
 ^src/vim_syntax_highlighting\.css$
 ^temp$
+^Tests/data/cache/spelling-timestamp\.json$
