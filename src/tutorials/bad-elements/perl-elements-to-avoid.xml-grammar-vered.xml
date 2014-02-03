@@ -70,6 +70,7 @@ Or:
 </p>
 <code_blk syntax="perl">
 package MyModule;
+
 use strict;
 use warnings;
 </code_blk>
