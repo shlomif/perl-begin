@@ -82,9 +82,11 @@ succinct interface for finding what you want.
 
 <li>
 <p>
-<cpan_self_dist d="Path-Class-Rule" />, provides an object oriented and
-iterative file finder using Path::Class. Also of interest is its
-<a href="https://metacpan.org/module/Path::Class::Rule#SEE-ALSO">“See Also”</a>
+<cpan_self_dist d="Path-Iterator-Rule" /> provides an object oriented and
+iterative file finder, and there's also
+<cpan_self_dist d="Path-Class-Rule" />
+and <cpan_self_dist d="IO-All-Rule" />. Also of interest is its
+<a href="https://metacpan.org/module/Path::Iteartor::Rule#SEE-ALSO">“See Also”</a>
 section, which contains links to other implementations, and a comparison
 of them.
 </p>
