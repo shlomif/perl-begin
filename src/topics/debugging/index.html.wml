@@ -56,5 +56,5 @@ to be removed.
 <p>
 An enhanced debugger for Perl, which while originally derived from
 <tt>perl5db.pl</tt> broke internal and external compatibility with the
-aim of making debugging better.
+aim of making Trepan easier to use.
 </p>
