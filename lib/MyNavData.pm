@@ -400,7 +400,7 @@ my $tree_contents =
                     subs =>
                     [
                         {
-                            text => "CPAN Wrappers for Distributions",
+                            text => "CPAN Wrappers for Creating System Packages",
                             url => "topics/cpan/wrappers-for-distributions/",
                             title => "Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.",
                         }
