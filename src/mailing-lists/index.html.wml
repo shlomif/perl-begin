@@ -18,18 +18,50 @@ wikipedia page</a>.
 </p>
 
 <p>
-Generally, your local Perl Mongers mailing list is considered a good place
-to ask <b>any</b> perl questions including beginners one. Refer to the <a
+Otherwise, you may consider joining one of the mailing lists listed here,
+which have a more international focus.
+</p>
+
+<h2 id="beginners-mailing-lists">Perl Beginners Mailing Lists</h2>
+
+<h3 id="learn-perl-org"><a href="http://learn.perl.org/faq/beginners.html">perl.org’s Beginners Mailing List</a></h3>
+
+<p>
+A mailing lists for beginners. Moderate volume.
+</p>
+
+<h3 id="yahoogroups-perl-beginner"><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
+
+<p>
+An international mailing list for beginners in English.
+</p>
+
+
+<h3 id="spanish-mailing-list"><a href="http://tlali.iztacala.unam.mx/mailman/listinfo/perl">Spanish-Speaking Mailing List</a></h3>
+
+<p>
+This mailing list has many beginners and several gurus that can help them.
+It accepts beginners' questions, but every now and then there are higher level
+talks (which beginners may be able to benefit from). The discussions are held
+in Spanish.
+</p>
+
+<h2 id="perl_mongers">Perl Mongers Mailing Lists</h2>
+
+<p>
+You can try to subscribe to a local Perl Mongers mailing list as
+a good venue to ask
+<b>any</b> perl questions including beginners one. Refer to the <a
 href="http://www.pm.org/">Perl Mongers International homepage</a> for <a
 href="http://www.pm.org/groups/">a list of them</a>. If you can't find one in
-your area, then any PM list you join will be OK, as its members will accept you
-there. Perl Mongers are united world-wide in their love for Perl and their
-burning desire to get more people to know it and use it as well.
+your area, you can subscribe to one nearby or possibly to a particularly active
+one.
 </p>
 
 <p>
-Otherwise, you may consider joining one of the mailing lists listed here,
-which have a more international focus.
+Perl Mongers groups also often host or organise meetups, workshops
+, or conferences, about Perl and other computing topics where you can learn
+even more about Perl.
 </p>
 
 <h2 id="resources">Resources of Interest</h2>
@@ -58,29 +90,6 @@ Many international Perl groups on many topics. Including some on very
 specific Perl technologies.
 </p>
 
-<h2 id="beginners-mailing-lists">Perl Beginners Mailing Lists</h2>
-
-<h3 id="learn-perl-org"><a href="http://learn.perl.org/faq/beginners.html">perl.org’s Beginners Mailing List</a></h3>
-
-<p>
-A mailing lists for beginners. Moderate volume.
-</p>
-
-<h3 id="yahoogroups-perl-beginner"><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
-
-<p>
-An international mailing list for beginners in English.
-</p>
-
-
-<h3 id="spanish-mailing-list"><a href="http://tlali.iztacala.unam.mx/mailman/listinfo/perl">Spanish-Speaking Mailing List</a></h3>
-
-<p>
-This mailing list has many beginners and several gurus that can help them.
-It accepts beginners' questions, but every now and then there are higher level
-talks (which beginners may be able to benefit from). The discussions are held
-in Spanish.
-</p>
 
 <h3 id="insert-your-own">Insert your Mailing List Here</h3>
 
