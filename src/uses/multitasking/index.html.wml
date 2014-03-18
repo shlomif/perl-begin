@@ -63,6 +63,12 @@ examples.
 </li>
 </ul>
 
+<h4 id="IO-Async"><cpan_self_dist d="IO-Async" /></h4>
+
+<p>
+A popular framework for asynchronous events on CPAN.
+</p>
+
 <h2 id="threads">Threads?</h2>
 
 <p>
