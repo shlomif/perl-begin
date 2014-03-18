@@ -36,7 +36,10 @@ proprietary and less usable.
 One should also mention <a href="http://dwimperl.com/">DWIM
 Perl for Windows</a> which is based on Strawberry Perl, but contains more
 interesting packages, such as a large part of Task::Kensho, the Padre Perl IDE,
-Moose, database drivers, and lots of other stuff.
+Moose, database drivers, and lots of other stuff. <strong>Note</strong> that
+as of March 2014, DWIM Perl for Windows was last updated only for
+perl 5.14.2, which is now discontinued by the upstream perl 5 maintainers,
+and so its use is not recommended until it will be updated again.
 </p>
 
 <h3 id="mailing-lists">Mailing Lists</h3>
