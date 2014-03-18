@@ -32,6 +32,7 @@ core Perl language, so you can learn much more about it, and enjoy its many
 jokes.
 </p>
 
+<define-tag writing_for_cpan__no_longer_recommended>
 <h2 id="writing_for_cpan"><a href="http://www.apress.com/book/bookDisplay.html?bID=14">Writing Perl Modules for CPAN</a></h2>
 
 <book_info
@@ -49,7 +50,9 @@ written in a light style, and makes a very good and easy read. The book in
 PDF format is <a href="http://www.apress.com/free/">available online for
 free download and reading.</a>
 </p>
+</define-tag>
 
+<define-tag oo_perl__no_longer_recommended>
 <h2 id="oo_perl"><a href="http://www.manning.com/Conway/">Object-Oriented Perl</a></h2>
 
 <book_info
@@ -69,6 +72,7 @@ multi-methods.
 It is full with examples, and explanations, and is very comprehensive for its
 topic.
 </p>
+</define-tag>
 
 <h2 id="cookbook"><a href="http://www.oreilly.com/catalog/perlckbk2/">The Perl Cookbook</a></h2>
 
@@ -98,8 +102,8 @@ and also know how to accomplish many common tasks in Perl.
 <p>
 This book (whose text is
 <a href="http://hop.perl.plover.com/">available online on its site</a>)
-covers functional programming techniques using Perl and "transforming
-programs with programs". It covers such topics as closures, iterators,
+covers functional programming techniques using Perl and “transforming
+programs with programs”. It covers such topics as closures, iterators,
 tokenising, and parsing.
 </p>
 
@@ -136,6 +140,39 @@ Best Practices Module Recommendation Commentary"</a>
 <li>
 <a href="http://www.perl.com/pub/a/2005/07/14/bestpractices.html">Perl.com
 feature inspired by the book.</a>
+</li>
+
+</ul>
+
+<p>
+Our own take of a comprehensive document for Perl best practices can be
+found at the
+<a href="$(ROOT)/tutorials/bad-elements/">“Perl Elements to Avoid”</a>
+page.
+</p>
+
+<h2 id="alternatives_to_prev_recommended">More Modern Alternatives to Previously Recommended Books</h2>
+
+<ul>
+
+<li>
+<p>
+The book “Writing Perl Modules for CPAN” has been largely
+superseded by the page
+<a href="http://www.perlmonks.org/?node_id=879515">“RFC: How to Release
+Modules on CPAN in 2011”</a> by “ELISHEVA” on Perlmonks. Also see
+our <a href="$(ROOT)/topics/cpan/">dedicated CPAN page</a>.
+</p>
+</li>
+
+<li>
+<p>
+The book “Object Oriented Perl” by Damian Conway
+covers old techniques that are now better done using
+the <a href="http://moose.perl.org/">Moose</a> and Moo ecosystems on
+CPAN. See our <a href="$(ROOT)/topics/object-oriented/">dedicate page</a>
+about Object Oriented Programming in Perl for more information.
+</p>
 </li>
 
 </ul>
