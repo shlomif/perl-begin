@@ -52,16 +52,16 @@ download</a> and viewing and we have
     />
 
 <define-tag beginning_perl_url whitespace="delete">
-http://www.perl.org/books/beginning-perl/
+http://web.archive.org/web/20120709053246/http://ofps.oreilly.com/titles/9781118013847/index.html
 </define-tag>
 
 
 <h3 id="beginning-perl"><a href="<beginning_perl_url />">Beginning Perl</a></h3>
 
 <book_info
-    authors="James Lee"
-    publisher="apress"
-    isbn="159059391X"
+    authors="Curtis “Ovid” Poe"
+    publisher="Wrox"
+    isbn="1118013840"
     perlbooksid="100"
     online_url="<beginning_perl_url />"
     />
@@ -74,10 +74,11 @@ prior experience will be able to learn using it.
 </p>
 
 <p>
-The first edition of the book is
-<a href="<beginning_perl_url />">available online for free download</a>.
+The first edition of the book is available online for free download but
+is outdated and no longer recommended. There is a <a href="<beginning_perl_url />">preview version</a> of the latest edition available in archive.org.
 </p>
 
+<define-tag learning_perl__no_longer_recommended>
 <h3 id="learning-perl"><a
 href="http://shop.oreilly.com/product/0636920018452.do">Learning Perl</a></h3>
 
@@ -106,7 +107,9 @@ programming.
 Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
+</define-tag>
 
+<define-tag elements_of_programming_with_perl__no_longer_recommended>
 <h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
 
 <book_info
@@ -121,6 +124,7 @@ A book that teaches Perl for people who have no programming experience. Takes
 an unusual approach of introducing them to Literate Programming as well,
 and using it for creating documentation and better organizing the examples.
 </p>
+</define-tag>
 
 <h2 id="with_prev_knowledge">Books for Those with Previous Programming
 Knowledge</h2>
@@ -159,5 +163,9 @@ to learn Perl quickly, and is available online for free download.
 This book teaches Perl for experienced C Programmers. It is comprehensive
 and encompassing and tries to focus on Perl code that resembles C as much as
 possible. If you don't know C either, it will probably be of little help.
+</p>
+
+<p>
+<strong>Note:</strong> It may be quite outdated by now.
 </p>
 
