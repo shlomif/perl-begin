@@ -100,6 +100,46 @@ Editor is a commercial version of it for Windows, with source available for
 compiling on Linux and other systems.
 </p>
 
+<h3 id="other_lists">Other Lists</h3>
+
+<p>
+These are other lists of prominent or notable IDEs - not all of them are
+Perl-oriented.
+</p>
+
+<ul>
+
+<li>
+<p>
+<a href="http://www.shlomifish.org/open-source/resources/editors-and-IDEs/">Shlomi
+Fish’s List of Text Editors and IDEs</a>.
+</p>
+</li>
+
+<li>
+<p>
+The English Wikipedia’s
+<a href="https://en.wikipedia.org/wiki/Category:Text_editors">Text Editors</a>
+category and their
+<a href="https://en.wikipedia.org/wiki/Comparison_of_text_editors">Comparison
+of text editor</a>.
+</p>
+</li>
+
+<li>
+<p>
+The <a href="http://texteditors.org/">Text Editors Wiki</a>.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://linuxmafia.com/faq/Devtools/ides.html">Rick
+Moen’s “IDEs for Linux” page</a>
+</p>
+</li>
+</ul>
+
 <h2 id="helper-tools">Helper Tools</h2>
 
 <h3 id="perl-critic"><a href="http://perlcritic.com/">Perl::Critic</a></h3>
