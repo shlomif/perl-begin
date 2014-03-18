@@ -5,9 +5,9 @@
 <h2 id="what-is-irc">What is the IRC?</h2>
 
 <p>
-IRC stands for <b>Internet Relay Chat</b>, and it is a distributed, real-time
-form
-of communication, that was common from relatively early in the history of
+IRC stands for <b>Internet Relay Chat</b>, and is a protocol for chatting
+(where the messages that are written in plaintext, appear to all the recipients
+in real time), that was common from relatively early in the history of
 the Internet, and is still very popular. IRC servers form networks of servers
 - each network is separated from the other networks and the servers of each
 network share the same chat-rooms, user profiles and messages. Each network
@@ -19,14 +19,14 @@ different networks.
 <p>
 Some popular IRC clients include the cross-platform
 <a href="http://www.mozilla.org/projects/rt-messaging/chatzilla/">Chatzilla</a>
-(which is part of <a href="http://www.mozilla.org/">the Mozilla project</a>),
+(which is open source and free-of-charge and
+part of <a href="http://www.mozilla.org/">the Mozilla project</a>),
 the Windows-based <a href="http://www.mirc.com/">mIRC</a> (which is shareware
-and not open-source) and <a href="http://www.xchat.org/">XChat</a>, a
-cross-platform IRC client for all UNIX systems including Linux and Mac OS X,
-and with a free-of-charge
-<a href="http://www.hexchat.org/">port
-for Windows</a>. By
-downloading one, you can log in to an IRC network and start chatting.
+and not open-source),
+and <a href="http://www.hexchat.org/">HexChat</a>, a
+cross-platform, open source and free-of-charge IRC client for all UNIX systems
+including Linux and Mac OS X.
+By downloading one, you can log in to an IRC network and start chatting.
 </p>
 
 <p>
@@ -87,8 +87,8 @@ technical matters in general.
 </p>
 
 <p>
-Check the channels <irc_channel chan="perl" net="freenode" />,
-and <irc_channel chan="modperl" net="freenode" />.
+Check out the <irc_channel chan="perl" net="freenode" /> channel
+(also see <a href="$(ROOT)/FAQs/freenode-perl/">its FAQ</a>).
 </p>
 
 <h2 id="oftc"><a href="http://www.oftc.net/">OFTC</a></h2>
@@ -97,4 +97,21 @@ and <irc_channel chan="modperl" net="freenode" />.
 The channel <irc_channel net="oftc" chan="perl" /> accepts beginner questions.
 </p>
 
+<h2 id="irc.perl.org">What about irc.perl.org?</h2>
+
+<p>
+For completeness sake, we should mention the
+<a href="http://www.irc.perl.org/">irc.perl.org Network</a> which hosts
+dedicated channels for many Perl-related projects and groups. Note however,
+that using it, is not recommended for people who are new to Perl or IRC
+due to its atmosphere (which can become hostile), and because the channel
+<tt>#perl</tt> there (which is what most people would guess first) is not
+intended for beginner questions. Please use Freenode or OFTC instead.
+</p>
+
+<p>
+Once you have become more experienced with Perl, and wish to contribute
+to Perl-related projects, you can gather up the courage to visit
+irc.perl.org and make use of it.
+</p>
 
