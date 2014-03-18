@@ -8,7 +8,7 @@
 <p>
 Perl code can be written to run perfectly on both Windows and UNIXes, out
 of the box. Most Perl code written by people who know what they are doing
-will be such, and this is the case for most CPAN Perl modules as well.
+will be like that, and this is the case for most CPAN Perl modules as well.
 </p>
 
 <h2 id="resources">Resources</h2>
