@@ -18,19 +18,19 @@ people tend to use and some better practices that should be used instead.
 </p>
 <p>
 A book I read said, that as opposed to most previous idea systems, they
-were trying to <b>liquidate negatives</b> instead of instilling positives
+were trying to <b>liquidate negatives</b> instead of to instill positives
 in people. So in the spirit of liquidating negatives, this tutorial-in-reverse
 aims to show you what <b>not to do</b>.
 </p>
 <p>
 <strong>Note:</strong> Please don't think this advice is meant as gospel.
 There are some instances where one can expect to deviate from it, and a lot
-of it can be considered only my own opinion. I tried to filter the various
-advice I found in the <a xlink:href="#sources_of_advice">sources for this advice</a>
-and get rid of things that are a matter of taste or not so critical, or have
-arguments here or there (so-called <a xlink:href="http://bikeshed.com/">colour of
-the bike shed arguments</a>), but some of the advice here may still be
-controversial.
+of it can be considered only the opinion of its originators. I tried to filter
+the various pieces of advice I found in the <a xlink:href="#sources_of_advice">sources</a>
+and get rid of things that are either a matter of taste, or not so critical,
+or that have arguments for and against (so-called
+<a xlink:href="http://bikeshed.com/">colour of the bike shed arguments</a>),
+but some of the advice here may still be controversial.
 </p>
 </preface>
 <section xml:id="bad-elements">
