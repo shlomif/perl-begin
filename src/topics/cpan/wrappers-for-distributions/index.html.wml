@@ -1,13 +1,13 @@
 #include '../template.wml'
 
-<latemp_subject "CPAN Wrappers For Distributions" />
+<latemp_subject "CPAN Wrappers For Creating native system Packages" />
 
 <h2 id="intro">Introduction</h2>
 
 <p>
 This page lists some technologies to automatically generate
-native-system-packages from CPAN distributions. Before you go further, please
-read <a href="../">our page about Using CPAN with Perl</a>, which will
+native system packages from CPAN distributions. Before you go further, please
+read <a href="../">our page about using CPAN with Perl</a>, which will
 provide an introduction to what CPAN is all about and where these wrappers
 fit in.
 </p>
