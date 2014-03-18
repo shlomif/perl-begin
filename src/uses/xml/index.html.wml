@@ -153,6 +153,8 @@ Questions List (FAQ)</a></h4>
 
 <h2 id="what-to-avoid">What to Avoid</h2>
 
+<div class="sub_section">
+
 <h3 id="xml-simple">XML-Simple</h3>
 
 <p>
@@ -185,6 +187,7 @@ use a parser. For more information see:
 
 </ol>
 
+</div>
 
 <h2 id="xml-grammars">Modules for Dealing with Specific Grammars</h2>
 
