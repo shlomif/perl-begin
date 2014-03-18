@@ -128,9 +128,9 @@ multi-protocol, and cross-platform chat client with support for Perl scripting.
 
 <li>
 <p>
-<a href="http://xchat.org/">X-Chat</a> - an open-source IRC client. Also see
-the costless <a href="http://www.hexchat.org/">HexChat distribution</a>
-of X-Chat for Windows.
+<a href="http://hexchat.org/">HexChat</a> - an open-source IRC client.
+Originally based on the older XChat, but is more actively maintained, has
+a free-of-charge version for all systems, and is now more recommended.
 </p>
 </li>
 
