@@ -73,6 +73,13 @@ can be found in the wild.
 </p>
 </li>
 
+<li>
+<p>
+<b>JSON</b> should be parsed using <cpan_self_dist d="JSON-MaybeXS" />
+or possibly an event-based, incremental, JSON parser.
+</p>
+</li>
+
 </ul>
 
 <h2 id="advanced-parsing">Advanced Parsing Techniques</h2>
