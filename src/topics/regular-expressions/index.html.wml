@@ -7,11 +7,21 @@
 
 <p>
 Regular expressions (also known as "regexes", "regexps" and "re's") allow
-the Perl programmer to easily locate simple or complex patterns in text, and
+the Perl programmer to easily locate simple or somewhat more complex patterns
+inside a larger text, and
 process the text accordingly. Many beginners are intimidated by regular
 expressions, but they are well-worth to invest the time to learn and understand
 because processing text character-by-character would be slower, take more
 code and would not be idiomatic.
+</p>
+
+<h3 id="misusing_regexes">Misusing Regexes</h3>
+
+<p>
+Yet another issue is that some programmers tend to misuse regular expressions
+(including only one at a time) in order to do tasks for which they are not
+very suitable for. See <a href="$(ROOT)/uses/text-parsing/">our page
+about parsing text</a> for some better alternatives.
 </p>
 
 <h2 id="tutorials">Tutorials</h2>
