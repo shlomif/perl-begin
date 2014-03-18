@@ -137,7 +137,7 @@ have switched to using non-centralised, non-SQL based databases that use
 a cluster of servers to implement a distributed data storage. This has
 been dubbed "No SQL". You most likely would prefer to use an SQL-based
 solution, which should be easily able to handle the data in your scope, but
-here is a list of distributed databases just for completeness sake.
+here is a list of some bindings for distributed databases just for completeness sake.
 </p>
 
 <ul>
