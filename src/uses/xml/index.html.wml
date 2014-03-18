@@ -106,7 +106,7 @@ using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
 
 <p>
 (Please avoid using <cpan_self_dist d="XML-XSLT" /> which is old, and largely
-unmaintained, and use XML-LibXSLT instead.)
+unmaintained. Use XML-LibXSLT instead.)
 </p>
 
 <p>
