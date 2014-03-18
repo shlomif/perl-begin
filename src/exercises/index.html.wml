@@ -13,6 +13,7 @@ and challenges that can be solved using Perl.
 
 <h2 id="the_list">The List</h2>
 
+<define-tag removed>
 <h3 id="learning-perl"><a href="$(ROOT)/books/#learning-perl">Learning
 Perl</a></h3>
 
@@ -20,6 +21,8 @@ Perl</a></h3>
 The book "Learning Perl" by Randal Schwartz et al contains many exercises
 for beginning Perl programmers.
 </p>
+
+</define-tag>
 
 <h3 id="beginning-perl"><a href="$(ROOT)/books/#beginning-perl">Beginning
 Perl</a></h3>
