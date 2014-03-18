@@ -27,6 +27,14 @@ Allows one to control a terminal application interactively and wait for
 events.
 </p>
 
+<h3 id="Parallel-ForkManager"><cpan_self_dist d="Parallel-ForkManager" /></h3>
+
+<p>
+A simple way to parallelise tasks. Also see
+<cpan_self_dist d="AnyEvent-ForkManager" />
+(see below for <a href="#AnyEvent">AnyEvent</a>).
+</p>
+
 <h3 id="event_frameworks">Event Driven Programming Frameworks</h3>
 
 <p>
