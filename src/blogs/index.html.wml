@@ -82,8 +82,13 @@ and Perl Blog.
 
 
 <li>
-<a href="http://www.modernperlbooks.com/">"Modern Perl Books,
-a Modern Perl Blog"</a> - a blog about modern Perl by chromatic.
+<a href="http://www.modernperlbooks.com/"><i>Modern Perl Books,
+a Modern Perl Blog</i></a> - a blog about modern Perl by chromatic.
+</li>
+
+<li>
+<a href="http://perlhacks.com/"><b>Perl Hacks</b></a> - Dave Cross’ blog
+about Perl.
 </li>
 
 </ul>
