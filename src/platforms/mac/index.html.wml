@@ -12,7 +12,8 @@ aspect of running Perl or otherwise.
 <h2 id="system_perl">Note! Do not use the system perl!</h2>
 
 <p>
-It is important not to use the system perl on Mac OS X. Instead, install
+It is important not to use the system perl on Mac OS X, because messing
+with it can break your system in subtle ways. Instead, install
 a version of perl from sources
 using <a href="http://perlbrew.pl/">perlbrew</a>.
 </p>
