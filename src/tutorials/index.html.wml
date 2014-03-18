@@ -20,8 +20,8 @@ things on his own from other resources.
 </p>
 
 <p>
-If you prefer a tutorial in something else besides English, check the
-<a href="localized/">foreign languages page</a>
+If you prefer a tutorial written in a different human language, please try
+checking the <a href="localized/">foreign languages page</a>
 </p>
 
 <h2 id="our_list">Our List of Tutorials</h2>
@@ -38,8 +38,8 @@ An authoritative list of recommended tutorials. An <a href="http://www.perlfound
 Intended for People with basic knowledge of C or something similar or even no
 knowledge of any programming language at all. Contains verbose slides filled
 with explanation, examples and anecdotes. Covers a basic subset of Perl,
-without too many "other ways to do it". (you are still expected to read the
-POD documents after the second lecture)
+without too many "other ways to do it". (You are still expected to read the
+internal Perl documents after the second lecture)
 </p>
 
 </perl_for_newbies_entry>
@@ -85,7 +85,8 @@ Presentation slides by Dave Cross.
 <h2 id="advanced">Tutorials for Advanced Users</h2>
 
 <p>
-These are tutorials for advanced users in English, and there are also
+These are tutorials for user with prior knowledge of programming. They
+are also written in English. There are also
 <a href="$(ROOT)/books/#with_prev_knowledge">some books just
 for that</a>, some of which are freely available online.
 </p>
@@ -112,14 +113,14 @@ href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's
 Tutorials</a></h3>
 
 <p>
-Several tutorials as hosted on the popular "Perlmonks.org" site. Cover various
-topics.
+Several tutorials as hosted on the popular “Perlmonks.org” site. They
+cover various topics.
 </p>
 
 <h3 id="perlmeme"><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
 
 <p>
-Several tutorials, "Frequently Asked Questions", and "Howto" documents
+Several tutorials, “Frequently Asked Questions”, and “Howto” documents
 on various subjects.
 </p>
 
@@ -145,7 +146,7 @@ A Perl tutorial consisting of video and text by
 </p>
 
 <h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's
-"Introduction to Perl" series by Steven Devijver</a></h3>
+“Introduction to Perl” series by Steven Devijver</a></h3>
 
 <p>
 Several basic videos introducing Perl for beginners available on the
