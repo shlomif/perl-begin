@@ -6,7 +6,10 @@ CURRENT TASKS:
     - Bad elems:
         - Excessive calls to subroutines in other packages (solution: OOP).
             * e.g: MyModule::foo_bar(...) ; MyModule::other_stuff(...)
-      @ Added [Mon 2013-12-02]
+            @ Added [Mon 2013-12-02]
+        - http://perldoc.perl.org/perldata.html#Multi-dimensional-array-emulation
+          * $hash{$key1,$key2}
+          @ Added [Thu 2014-03-27]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
