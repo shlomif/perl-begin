@@ -2175,14 +2175,32 @@ On various online Perl forums, we are often getting asked questions like:
 “What is the speediest way to do task X?” or “Which of these pieces of code
 will run faster?”. The answer is that in this day and age of extremely fast
 computers, you should optimise for clarity and modularity first, and worry
-about speed when and if you find it becomes a problem. Remember Professor
-Don Knuth’s words that “Premature Optimisation is the root of all evil.”
-(attributing it to C.A.R. Hoare).
+about speed when and if you find it becomes a problem. Professor
+Don Knuth had this to say about it:
+</p>
+<blockquote>
+<p>
+The improvement in speed from Example 2 to Example 2a is only about 12%, and many people would pronounce that insignificant. The conventional wisdom shared by many of today's software engineers calls for ignoring efficiency in the small; but I believe this is simply an overreaction to the abuses they see being practiced by penny-wise-and-pound-foolish programmers, who can't debug or maintain their "optimized" programs. In established engineering disciplines a 12% improvement, easily obtained, is never considered marginal; and I believe the same viewpoint should prevail in software engineering. Of course I wouldn't bother making such optimizations on a one-shot job, but when it's a question of preparing quality programs, I don't want to restrict myself to tools that deny me such efficiencies.
+</p>
+
+<p>
+There is no doubt that the grail of efficiency leads to abuse. Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.
+</p>
+</blockquote>
+
+<p>
+(Knuth reportedly attributed the exact quote it to C.A.R. Hoare).
+</p>
+<p>
+While you should be conscious of efficiency, and the performance sanity of
+your code and algorithms when you write programs, excessive and premature
+micro-optimisations are probably not going to yield a major performance
+difference.
 </p>
 <p>
 If you do find that your program runs too slowly, refer to our
 <a xlink:href="../../topics/optimising-and-profiling/">page about Optimising and
-Profiling Perl code</a>, but don't optimise prematurely.
+Profiling Perl code</a>.
 </p>
 </item>
 <item xml:id="version_control">
