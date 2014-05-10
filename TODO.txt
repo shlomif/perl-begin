@@ -12,7 +12,7 @@ CURRENT TASKS:
           @ Added [Thu 2014-03-27]
         - Use of the -w flag.
           @ Added [Sat 2014-05-10]
-        - Use of superflous .* in regexes.
+        - Use of superfluous .* in regexes.
           @ Added [Sat 2014-05-10]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
