@@ -10,6 +10,10 @@ CURRENT TASKS:
         - http://perldoc.perl.org/perldata.html#Multi-dimensional-array-emulation
           * $hash{$key1,$key2}
           @ Added [Thu 2014-03-27]
+        - Use of the -w flag.
+          @ Added [Sat 2014-05-10]
+        - Use of superflous .* in regexes.
+          @ Added [Sat 2014-05-10]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
