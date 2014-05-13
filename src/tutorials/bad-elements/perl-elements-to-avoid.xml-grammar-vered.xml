@@ -2539,6 +2539,19 @@ print my_function(3,5), "\n";
 </code_blk>
 
 </item>
+<item xml:id="excessive_calls_to_subs_in_other_packages">
+<info>
+<title>Excessive calls to subroutines in other packages</title>
+</info>
+
+<p>
+It is not a good idea to put many and excessive calls to subroutines in other
+packages (using the <code>MyModule::my_sub()</code> notation) in your code,
+because it breaks encapsulation. Instead, make the module a class, instantiate
+it as an object and call its methods.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
