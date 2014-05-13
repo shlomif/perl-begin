@@ -2552,6 +2552,29 @@ it as an object and call its methods.
 </p>
 
 </item>
+<item xml:id="scalar-multi-dimensional-hash-emulation">
+<info>
+<title>Using the Scalar Multidimensional Hashes Emulation</title>
+</info>
+
+<p>
+Please do not do the scalar multidimensional hashes emulation of perl:
+</p>
+
+<bad_code syntax="perl">
+$myhash{$key1,$key2} = $my_value;
+
+$value = $myhash{$key1,$key2};
+</bad_code>
+
+<p>
+This is a relic of old versions of Perl and the proper way to do it is using
+nested hashes and references, or with an explicit serialisation of the keys. It
+also can be easily confused with a hash slice -
+<code>@myhash{$key1,$key2}</code>
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
