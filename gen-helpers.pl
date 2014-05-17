@@ -3,8 +3,13 @@
 use strict;
 use warnings;
 
-use HTML::Latemp::GenMakeHelpers;
-use File::Find::Object::Rule;
+if (system("make", "--silent", "-f", "lib/make/build-deps/build-deps.mak"))
+{
+    die "build-deps failed!";
+}
+
+require HTML::Latemp::GenMakeHelpers;
+require File::Find::Object::Rule;
 
 if (-f "rules.mak")
 {
