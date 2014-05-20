@@ -25,12 +25,14 @@ web-site or blog. You can use the "Add-to-any" button at the bottom of the
 pages to post it on various sites.
 </p>
 
+<define-tag old_wiki_link>
 <h2 id="wiki">Contribute to the Wiki</h2>
 
 <p>
 <a href="<wiki_link />">The Wiki</a> is a portion of the site that can
 be edited by anyone at any time. Feel free to add your own material there.
 </p>
+</define-tag>
 
 <h2 id="mailing-list">Join the Mailing List</h2>
 

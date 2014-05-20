@@ -24,12 +24,14 @@ find it helpful but see <a href="$(ROOT)/mailing-lists/">the mailing lists
 section</a> for other alternatives.
 </p>
 
+<define-tag old_wiki_link>
 <h2 id="wiki"><a href="<wiki_link />">Wiki</a></h2>
 
 <p>
 This is a portion of the site in which anyone can edit any page. It aims
 to eventually become a good reference for Perl beginners.
 </p>
+</define-tag>
 
 <h2 id="web-forum"><a href="http://developer.berlios.de/forum/forum.php?forum_id=2341">Web Forum</a></h2>
 
