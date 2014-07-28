@@ -1,0 +1,200 @@
+
+<h2>Subroutines called with the ampersand</h2>
+
+<p>
+Calling subroutines with ampersands is a sign of “Ancient Perl”. This page
+aims to describe why this style was once common, what’s wrong with it, and
+what you can do to fix up your legacy source code.
+</p>
+
+<p>
+By the way, if you don’t know what an <i>ampersand</i> is: the «&amp;»
+character is called an ampersand.
+</p>
+
+<h3>History: A sigil for subroutines</h3>
+
+<p>
+Perl has <a href="sigil">sigils</a> that indicate the data type of a variable.
+The sigils have been the same throughout Perl history and practically set in
+stone.
+</p>
+
+<table border="1" class="formatter_table" style="border-collapse: collapse">
+	<tbody>
+		<tr>
+			<td>
+				Sigil</td>
+			<td>
+				Examples</td>
+			<td>
+				Used for</td>
+		</tr>
+		<tr>
+			<td>
+				$</td>
+			<td>
+				$foo<br />
+				$foo[42]<br />
+                $foo{'bar'}<br />
+            </td>
+			<td>
+				Single elements: scalars (including array and hash elements)</td>
+		</tr>
+		<tr>
+			<td>
+				@</td>
+			<td>
+				@foo<br />
+				@foo[23, 42]<br />
+				@foo{'bar', 'baz'}<br />
+            </td>
+			<td>
+				Multiple elements: arrays and [slice]s of arrays and hashes</td>
+		</tr>
+		<tr>
+			<td>
+				%</td>
+			<td>
+				%foo</td>
+			<td>
+				Hashes</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				*foo<br />
+				*foo{SCALAR}<br />
+				*foo{HASH}<br />
+			</td>
+			<td>
+				<a href="Symbol%20table">Symbol table</a> entries (&#34;[typeglob]s&#34;)</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;</td>
+			<td>
+				&amp;foo<br />
+				&amp;foo($bar, $baz)<br />
+            </td>
+			<td>Subroutines</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+The basic way of creating a subroutine has not changed since Perl 1. The word <b>sub</b>, followed by the sub&#39;s name, and then a block of code (including curly braces).
+</p>
+
+<blockquote>
+	sub foo {<br />
+	<blockquote>
+		# some code here, that receives the<br />
+		# arguments passed to the sub<br />
+		# in the special array @_.</blockquote>
+	}</blockquote>
+<p>
+The way of <i>calling</i> the sub (you could say <i>executing</i> the sub) did change. Twice, even!
+</p>
+<p>
+In the beginning of Perl, subroutines were called with the built-in <b>do</b> keyword. Although <b>do</b> is still in Perl today, and actually still supports this very old syntax, when you <b>do</b> see in modern code, it&#39;ll practically always be <b>do $filename</b> or <b>do BLOCK</b>.
+</p>
+<blockquote>
+	# This is how you would call a sub called &#34;foo&#34; in Perl 1<br />
+	do foo (&#34;argument 1&#34;, &#34;argument 2&#34;);</blockquote>
+<p>
+Later, subroutines got a sigil, a visual marker to indicate its type. This allowed the use of a subroutine without the <b>do</b> keyword, and made code look much more natural. The sigil for subroutines was the ampersand, &amp;. Although the subroutine definition itself didn&#39;t get the sigil, practically all subroutine calls were soon done with <b>&amp;foo(&#34;argument 1&#34;, &#34;argument 2&#34;)</b> instead of <b>do foo (&#34;argument 1&#34;, &#34;argument 2&#34;)</b>.
+</p>
+<p>
+There&#39;s something special about the <b>&amp;foo</b> way of calling subroutines, that has to do with whether or not you use <i>parentheses</i>. Using <b>&amp;foo</b> without parens makes Perl pass along the <i>current @</i> _ as the arguments for the subroutine call. This means that there&#39;s a huge difference between <b>&amp;foo</b> and <b>&amp;foo()</b>.
+</p>
+<h2>Why it&#39;s bad now</h2>
+<p>
+Perl again got a new syntax for calling subroutines in Perl 5. The same as the oldest way, but without the <b>do</b> keyword. Any unrecognised <a href="bareword">bareword</a> followed by parentheses was now seen as a subroutine call and further closed the visual gap between built-in functions (often called &#34;named operators&#34;). Not only did the <b>&amp;</b> become optional, the parens could now be left out completely if the subroutine was <a href="predeclared">predeclared</a>. At the same time, Perl got <a href="prototypes">prototypes</a>, a feature that made it possible to mimic the syntax of built-in function for functions written in Perl. Prototypes are also often used to enforce a certain number of arguments, but this use of prototypes remains controversial to this day.
+</p>
+<p>
+The old style <b>&amp;foo</b> does not support prototypes, but you can still call subroutines that have prototypes with it. The prototype is ignored. That is potentially dangerous, because the sub might count on the prototype doing things for it. Also, it makes the ampersand form disable optimizations like the inlining of constants.
+</p>
+<p>
+Because <b>&amp;foo</b> is getting out of style, many programmers are no longer taught the difference between using parentheses with it, and omitting them. Bugs caused by people who use <b>&amp;foo</b> and thought that would do the same as <b>&amp;foo()</b> can be very hard to trace and debug.
+</p>
+<p>
+But many people will urge you to change your ampersand laden style to the cleaner modern look just because they find the old ampersands an ugly clutter. There <i>is</i> some value in code aesthetics!
+</p>
+<h2>
+	Good uses of &amp;foo</h2>
+<p>
+There are still good uses of &amp;foo. In general, the &amp; sigil is correct when you&#39;re <i>referring to the subroutine, but not calling it.</i> Some examples:
+</p>
+<blockquote>
+	defined &amp;foo<br />
+	undef &amp;foo<br />
+	\&amp;foo</blockquote>
+<p>
+It is practically always bad when you&#39;re calling the subroutine. However, <b>&amp;foo</b> is slightly more efficient than <b>foo(@_)</b>. If you&#39;re using this (micro-)optimization, be sure to add a comment that indicates that you know what you&#39;re doing, something like:
+</p>
+<p>
+<blockquote>
+	&amp;foo; # optimization: pass @_ efficiently</blockquote>
+<h2>
+	Fixing your code</h2>
+<p>
+To improve your code, simply find all occurrences of the ampersand in front of a subroutine&#39;s name, and unless it&#39;s one of the listed good uses, simply remove the ampersand. Note that a bare <b>&amp;foo</b> without arguments and <i>without parentheses</i> translates to <b>foo(@_)</b>, if you wish to change this (still perfectly acceptable) use too.
+</p>
+<p>
+Calling a subroutine by a reference to it instead of its name, is best done with the <a href="arrow%20operator">arrow operator</a>, <b>-&gt;</b>.
+</p>
+<p>
+<table border="1" class="formatter_table" options="" style="border-collapse: collapse">
+	<tbody>
+		<tr>
+			<td>
+				Before</td>
+			<td>
+				After</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;foo()</td>
+			<td>
+				foo()</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;foo($arg1, $arg2)</td>
+			<td>
+				foo($arg1, $arg2)</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;foo</td>
+			<td>
+				foo(@_)<br />
+				(&amp;foo is acceptable if commented)<br />
+				&#160;</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;$subref()</td>
+			<td>
+				$subref-&#62;()</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;$subref($arg1, $arg2)</td>
+			<td>
+				$subref-&#62;($arg1, $arg2)</td>
+		</tr>
+		<tr>
+			<td>
+				&amp;$subref</td>
+			<td>
+				$subref-&#62;(@_)</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+Note that this is &#34;just&#34; a style improvement. It is very unlikely to increase the performance of your program noticeably, if at all.
+</p>
+
