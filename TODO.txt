@@ -1,6 +1,8 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
+    - Add reddit's /r/perl to the web forums list.
+      @ Added [Fri 2014-08-22]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Bad elems:
