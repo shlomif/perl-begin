@@ -101,7 +101,7 @@ src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
 # <affil_collection_berlios />
 <!-- DuckDuckGo Search -->
 <object data="http://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo" type="text/html" style="overflow:hidden;margin:0;padding:0;width:160px;height:40px;"></object>
-<openstudy_button />
+# <openstudy_button />
 
 </latemp_affiliations_buttons>
 
