@@ -1,7 +1,7 @@
 #include '../template.wml'
 
 <latemp_subject "Finding stuff on CPAN (2014)" />
-<latemp_more_keywords "cpan, finding, metcpan" />
+<latemp_more_keywords "cpan, finding, metacpan" />
 
 <h2 id="due_diligence">Due Diligence</h2>
 
@@ -9,5 +9,22 @@
 The first step to finding stuff on CPAN is to try to use the
 <a href="http://metacpan.org/"><b>MetaCPAN</b></a> search engine, which
 has many measures for facilitating finding high quality stuff, including
-upvotes, ratings, comments, links to bug trackers, and many more.
+upvotes, ratings, comments, links to the bug trackers and many
+other resources, and many more.
+</p>
+
+<h2 id="ask_for_recommendation">Ask for Recommendations</h2>
+
+<p>
+If in doubt, you can try asking for recommendations on
+<a href="http://perl-begin.org/resources/#get_help">an internet forum</a>
+such as Freenode’s <code>#perl</code> chat room.
+</p>
+
+<h2 id="roll_a_die">Still can't decide? Roll a die</h2>
+
+<img src="Green-d10-dice.png" alt="Ten-sided die" class="floaty" />
+
+<p>
+Put a list of the best candidates and roll a die.
 </p>
