@@ -1,0 +1,13 @@
+#include '../template.wml'
+
+<latemp_subject "Finding stuff on CPAN (2014)" />
+<latemp_more_keywords "cpan, finding, metcpan" />
+
+<h2 id="due_diligence">Due Diligence</h2>
+
+<p>
+The first step to finding stuff on CPAN is to try to use the
+<a href="http://metacpan.org/"><b>MetaCPAN</b></a> search engine, which
+has many measures for facilitating finding high quality stuff, including
+upvotes, ratings, comments, links to bug trackers, and many more.
+</p>
