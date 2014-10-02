@@ -403,7 +403,11 @@ my $tree_contents =
                             text => "CPAN Wrappers for Creating System Packages",
                             url => "topics/cpan/wrappers-for-distributions/",
                             title => "Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.",
-                        }
+                        },
+                        {
+                            text => "Finding Stuff on CPAN",
+                            url => "topics/cpan/finding-stuff-on-cpan/",
+                        },
                     ],
                 },
             ],
