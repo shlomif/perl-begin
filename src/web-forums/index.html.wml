@@ -86,7 +86,7 @@ A forum in Hebrew hosted on the
 <h3 id="facebook">The Facebook Perl Forums</h3>
 
 <p>
-The Facebook forums’s system is intended for casual talk and correspondence,
+The Facebook’s forums system is intended for casual talk and correspondence,
 and tends to mangle the code losing its indentation, and fixed width font
 display. Use a <a href="$(ROOT)/mailing-lists/">mailing list</a> or a better
 web forum to get help, or alternatively
