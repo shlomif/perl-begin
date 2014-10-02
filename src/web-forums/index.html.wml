@@ -81,3 +81,14 @@ A forum in Hebrew hosted on the
 <a href="http://www.whatsup.org.il/">Whatsup.org.il Israeli Linux Portal</a>.
 </p>
 
+<h2 id="what_to_avoid">What to Avoid</h2>
+
+<h3 id="facebook">The Facebook Perl Forums</h3>
+
+<p>
+The Facebook forums’s system is intended for casual talk and correspondence,
+and tends to mangle the code losing its indentation, and fixed width font
+display. Use a <a href="$(ROOT)/mailing-lists/">mailing list</a> or a better
+web forum to get help, or alternatively
+try asking on <a href="$(ROOT)/irc/">IRC (Chat)</a>
+</p>
