@@ -6,7 +6,7 @@
 <p>
 One can often see the Perl programming language referred to as "perl",
 "Perl" or even "PERL". This page aims to explain what is the difference between
-all of them to the uninitiated.
+all of them, to the uninitiated.
 </p>
 
 <ol>
@@ -14,8 +14,8 @@ all of them to the uninitiated.
 <li>
 <p>
 <b>"Perl"</b> is the name of the programming language itself. It had several
-versions starting from version 1 up to version 5 which is the current popular
-version as well as <a href="../perl6/">Perl 6</a> which is currently under
+versions — starting from version 1 up to version 5 which is the current popular
+version, as well as <a href="../perl6/">Perl 6</a> which is currently under
 development and won't be compatible with Perl 5 and below. So if you want to
 refer to the language say "Perl" with a capital "P" and the other letters
 as lowercase.
