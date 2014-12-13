@@ -744,7 +744,7 @@ Invoke the perl script as a separate process if it&apos;s appropriate.
 <p>If instead of completely overriding values, you want to make some combination of the values, you&apos;ll need to use something like that:
 </p><pre>   while (my ($key, $from_value) = each(%from))
    {
-        $into{$key} = exists($into{$key})?? ACCUM_EXPR($key, $into{$key}, $from_value)?: $from{$key};
+        $into{$key} = exists($into{$key}) ? ACCUM_EXPR($key, $into{$key}, $from_value) : $from{$key};
    }
 </pre>
 
