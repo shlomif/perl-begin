@@ -79,6 +79,9 @@ DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 upload_home: all
 	(cd dest && $(RSYNC) -a * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
 
+upload_home_remote: all
+	(cd dest && $(RSYNC) -a * $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/)
+
 update_p4n:
 	touch src/tutorials/perl-for-newbies/*/*.wml
 
