@@ -55,5 +55,10 @@ A Developer’s Notebook</i></a> - a comprehensive and informative
 book (but somewhat out-of-date) about testing in Perl.
 </li>
 
+<li>
+<a href="$(ROOT)/books/#beginning-perl"><i>Beginning Perl</i></a> - the latest
+edition of this book contains a chapter about QA.
+</li>
+
 </ul>
 
