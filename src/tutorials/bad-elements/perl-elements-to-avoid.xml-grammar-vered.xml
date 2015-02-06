@@ -2575,6 +2575,46 @@ also can be easily confused with a hash slice -
 </p>
 
 </item>
+<item xml:id="the-dash-w-flag">
+<info>
+<title>Using the "-w" flag.</title>
+</info>
+
+<p>
+It is important not to pass the "-w" flag in the sha-bang line of the Perl
+program, because this turns on warnings <b>globally</b> and also interferes
+with the more modern <code>use warnings;</code> statement. Unfortunately, many
+legacy tutorials and codebases still show that.
+</p>
+
+<p>
+So please rewrite this:
+</p>
+
+<bad_code syntax="perl">
+#!/usr/bin/perl -w
+
+use strict;
+</bad_code>
+
+<p>
+Into this:
+</p>
+
+<code_blk syntax="perl">
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+</code_blk>
+
+<p>
+Also see <a xlink:href="#no-strict-and-warnings">our section</a> about
+why the lack of <code>use strict;</code> and <code>use warnings;</code> is
+not recommended for more information.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
