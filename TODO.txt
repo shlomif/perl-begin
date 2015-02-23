@@ -1,8 +1,6 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Add reddit's /r/perl to the web forums list.
-      @ Added [Fri 2014-08-22]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Bad elems:
@@ -126,5 +124,8 @@ COMPLETED TASKS:
         - Use of the -w flag.
             @ DONE [Fri 2015-02-06]
           @ Added [Sat 2014-05-10]
+    - Add reddit's /r/perl to the web forums list.
+        @ DONE [Mon 2015-02-23]
+      @ Added [Fri 2014-08-22]
 
 # vim:ft=quicktask:sw=4:ts=4:et
