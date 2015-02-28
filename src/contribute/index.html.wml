@@ -34,6 +34,7 @@ be edited by anyone at any time. Feel free to add your own material there.
 </p>
 </define-tag>
 
+<define-tag old_forums_links>
 <h2 id="mailing-list">Join the Mailing List</h2>
 
 <p>
@@ -49,6 +50,15 @@ The <a href="<web_forum_link />">Help Web Forum</a> is meant to help people
 with their Perl problems. You can visit it if you have questions or would like
 to help people with their problems.
 </p>
+</define-tag>
+
+<h2 id="join-forums">Join Online, Perl-Related, Forums</h2>
+
+<p>
+We maintain <a href="$(ROOT)/resources/#get_help">lists of recommended online,
+Perl-related, forums</a> and you can join them in order to receive help
+and provide help.
+</p>
 
 <h2 id="core-site">Contribute to the Core Site</h2>
 
@@ -59,3 +69,10 @@ Website Meta Language source</a>, because they can be applied immediately.
 </p>
 
 <todo_done />
+
+<h2 id="donate">Donate Money</h2>
+
+<p>
+You can <a href="http://www.shlomifish.org/meta/donate/">donate money</a>
+to Shlomi Fish (= Perl-Begin’s originator and chief maintainer) using PayPal.
+</p>
