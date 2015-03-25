@@ -40,9 +40,15 @@ IO package with a lot of syntactic sugar. Non-core.
 </li>
 
 <li>
-<cpan_self_dist d="File-Slurp" /> - a module for fast and easy input
+<cpan_self_dist d="File-Slurp-Tiny" /> - a module for fast and easy input
 and output from files and directories. The interface is procedural
-and quite Spartan, but is still useful.
+and quite Spartan, but is still useful. (<b>Note:</b> Using File-Slurp,
+which was found to be broken, is no longer recommended.)
+</li>
+
+<li>
+<cpan_self_dist d="Path-Tiny" /> - a module that provides “a small, fast
+utility for working with file paths”.
 </li>
 
 </ul>
