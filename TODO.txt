@@ -6,6 +6,8 @@ CURRENT TASKS:
     - Bad elems:
         - Use of superfluous .* in regexes.
           @ Added [Sat 2014-05-10]
+        - Performing regex matches without checking that they were successful.
+          @ Added [Wed 2015-03-25]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
