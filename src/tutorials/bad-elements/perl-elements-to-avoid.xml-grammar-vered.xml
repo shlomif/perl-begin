@@ -2313,7 +2313,7 @@ with the call to use within.
 </item>
 <item xml:id="parsing_using_regex">
 <info>
-<title>Parsing XML/HTML/JSON/CSV/etc. using regular expression</title>
+<title>Parsing XML/HTML/JSON/CSV/etc. using regular expressions</title>
 </info>
 <p>
 You should not try to parse HTML, XML, JSON, CSV, and other complex grammars
