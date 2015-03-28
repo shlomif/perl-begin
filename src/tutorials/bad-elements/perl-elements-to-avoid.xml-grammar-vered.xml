@@ -2408,6 +2408,65 @@ captures</a>.
 </p>
 
 </item>
+<item xml:id="regexes_wo_check_for_match_success">
+<info>
+<title>Using Regex Captures Without Checking if the Match was Successful</title>
+</info>
+
+<p>
+It is tempting to perform a regular expression and use the capture variables -
+<code>$1</code>, <code>$2</code>, <code>$3</code>, etc. without checking that
+the regular expression match was successful:
+</p>
+<bad_code syntax="perl">
+$my_string =~ /\A(\w+) (\w+)/;
+
+my $first_name = $1;
+my $last_name = $2;
+
+print "Hello $first_name $last_name!";
+</bad_code>
+
+<p>
+However, if the regular expression match operation is not successful, then
+it is possible that these variables will remain with their values from the
+previous successfulmatch operations, whatever they were.
+</p>
+
+<p>
+A better code would be:
+</p>
+
+<code_blk syntax="perl">
+if ($my_string =~ /\A(\w+) (\w+)/)
+{
+    my $first_name = $1;
+    my $last_name = $2;
+
+    print "Hello $first_name $last_name!";
+}
+else
+{
+    # Handle the error.
+}
+</code_blk>
+
+<p>
+Or better yet grab the matches from the regex return values directly:
+</p>
+
+<code_blk syntax="perl">
+if (my ($first_name, $last_name) = $my_string =~ /\A(\w+) (\w+)/)
+{
+    print "Hello $first_name $last_name!";
+}
+else
+{
+    # Handle the error.
+}
+</code_blk>
+
+</item>
 <item xml:id="select_filehandle">
 <info>
 <title>Using select($file_handle)</title>
