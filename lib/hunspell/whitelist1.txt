@@ -1,121 +1,121 @@
-W3C
-MetaCPAN
-upvotes
-Wikis
-wikibooks
-Wikipedia's
-Hexten
-CSS
-XHTML
-GoFlexiblePro
-shlomif
-shlomifish
-org
-Shlomi
-Webmaster
-Perl
-perl
 22-Jul-2011
-Unported
 9-Jul-2012
-Wiki
-OSDC
-wiki
-QA
-Win32
-Wikibooks
-Wikipedia
-Perl-related
-wikipedia
-MediaWiki-based
-wikis
-CPAN
-CPAN's
-XML
-CGI
-Sys
-Admin
-IRC
-XMPP
-Telnet
-Bio-Info
-Blogs
-IRC
-Freenode's
-IDE
-IDEs
-Online
-PERL
-Moertel
-LiveJournal
-blogs
-com
-ajt
-RSS
-namespace
-namespaces
-Cthulhu
-XML-LibXML
-XSLT
-Google
-Zvon
-XPath
-Firefox
-Stylesheet
-stylesheet
-jQuery
-UNIXes
-PSGI
-Plack
-Poe
-toolkit
-middleware
-CSV
-templating
-Gabor
-Szabo
-online
-PDF
-placeholder
-placeholders
 API
 APIs
-SQL
-SQL-based
-etc
-copyleft
-GPL
-LGPL
-backends
-backend
-Google's
-codebase
-codebases
-blog
-Prev
-RFC
-TODO
-plugins
-plugin
-_
-hyperlink
-hyperlinks
-SCM
+Admin
+Alavi
+Bio-Info
 Blog
 Blogs
-pure-Perl
-backticks
-markup
-naïve
-plaintext
-filename
-Perl's
-offline
-Alavi
-bio-informatics
-affordably
+Blogs
+CGI
+CPAN
+CPAN's
+CSS
+CSV
+Cthulhu
+Firefox
+Freenode's
+GPL
+Gabor
+GoFlexiblePro
+Google
+Google's
+Hexten
 Hyperpolyglot
+IDE
+IDEs
+IRC
+IRC
+LGPL
+LiveJournal
+MediaWiki-based
+MetaCPAN
+Moertel
+OSDC
+Online
+PDF
+PERL
+PSGI
+Perl
+Perl's
+Perl-related
+Plack
+Poe
+Prev
+QA
+RFC
+RSS
+SCM
+SQL
+SQL-based
+Shlomi
+Stylesheet
+Sys
+Szabo
+TODO
+Telnet
+UNIXes
 UTF-8
+Unported
+W3C
+Webmaster
+Wiki
+Wikibooks
+Wikipedia
+Wikipedia's
+Wikis
+Win32
+XHTML
+XML
+XML-LibXML
+XMPP
+XPath
+XSLT
+Zvon
+_
+affordably
+ajt
+backend
+backends
+backticks
+bio-informatics
+blog
+blogs
+codebase
+codebases
+com
+copyleft
+etc
+filename
+hyperlink
+hyperlinks
+jQuery
+markup
+middleware
+namespace
+namespaces
+naïve
+offline
+online
+org
+perl
+placeholder
+placeholders
+plaintext
+plugin
+plugins
+pure-Perl
+shlomif
+shlomifish
+stylesheet
+templating
+toolkit
+upvotes
+wiki
+wikibooks
+wikipedia
+wikis
 
 ==== dest/FAQs/index.html
 
@@ -446,7 +446,6 @@ win32
 ==== dest/reference-resources/index.html
 
 Attribution-ShareAlike
-Hyperpolyglot
 PHP
 perlop
 perlopquick
@@ -641,7 +640,6 @@ perl-ctypes
 
 ==== dest/topics/references/index.html
 
-Perl's
 Randal
 Schwratz
 perlcafe
@@ -663,7 +661,6 @@ regexps
 ==== dest/topics/scoping/index.html
 
 Dominus's
-Perl's
 pl
 
 ==== dest/topics/security/code-markup-injection/index.html
@@ -673,7 +670,6 @@ EOF
 Juerd
 Markup
 PDP-11
-Perl's
 Spolsky's
 String-ShellQuote
 Waalboer's
@@ -682,7 +678,6 @@ cmd
 dir
 eval
 fh
-filename
 get_input_from_user_somehow
 h4x0r3d
 kinding
@@ -726,7 +721,6 @@ Autoflush
 Bareword
 COLOR
 COND
-CPAN
 CPAN-like
 Cond
 Config-IniFiles
@@ -769,7 +763,6 @@ PL
 POE
 POSTMATCH
 PREMATCH
-Perl's
 Perl-Tidy
 Perl-based
 Perl6-Form
@@ -833,7 +826,6 @@ fh
 file_handle
 filehandle
 filehandles
-filename
 filename_to_read
 filenames
 filesize
@@ -863,7 +855,6 @@ last_idx
 last_name
 long_string_without_interpolation
 lowercase
-markup
 mini-regex
 multitask
 my_fh
@@ -910,7 +901,6 @@ perlvar
 phone_number
 phone_numbers
 pl
-plaintext
 pragmas
 presidents_names
 print_foo
@@ -965,7 +955,6 @@ x_power
 Attribution-ShareAlike
 Devijver
 Howto
-Hyperpolyglot
 LPW
 Maven
 PHP
@@ -1081,14 +1070,12 @@ Aa
 Accessor
 Add1
 Add2
-Alavi
 AnnoCPAN
 App
 Autotools
 Bar2
 ByFileType
 C's
-CPAN's
 CPAN-like
 CPANPLUS
 CWD
@@ -1126,7 +1113,6 @@ Foo-
 Fooish
 Fri
 Friedl
-Gabor
 Hoffer
 Hoola
 INC
@@ -1166,7 +1152,6 @@ Namespaces
 NoAuth
 PDL
 PL
-Perl's
 PerlPoint
 Perldoc
 Perlers
@@ -1189,7 +1174,6 @@ ShellQuote
 Shmuel
 Ss
 String-ShellQuote
-Szabo
 TMTOWTDI
 TeX
 Test-MockModule
@@ -1248,7 +1232,6 @@ assign_name
 assign_name_ext
 atime
 awk
-backticks
 bak
 bank_accounts
 belum
@@ -1322,7 +1305,6 @@ extra_elem
 file_path
 filehandle
 filehandles
-filename
 filenames
 first_name
 fl
@@ -1400,7 +1382,6 @@ lon
 lowercase
 ls_output
 lt
-markup
 max
 merc-test
 method_name
@@ -1433,9 +1414,7 @@ mytest
 myvar
 myvar1
 myvar2
-namespace
 namespace-scoped
-namespaces
 ne
 new_accum
 new_age
@@ -1493,8 +1472,6 @@ perltoot
 perlvar
 petdance
 pl
-placeholder
-placeholders
 power_of_2
 pragma
 primes1
@@ -1665,7 +1642,6 @@ DBIx-Class
 DBIx-Simple
 Firebird
 FoxBase
-LGPL
 LevelDB
 MongoDB
 MySQL
@@ -1679,12 +1655,7 @@ XBase
 dBase
 mod_perl
 non-SQL
-pure-Perl
 xBase
-
-==== dest/uses/email/index.html
-
-API
 
 ==== dest/uses/games/index.html
 
@@ -1779,12 +1750,10 @@ cg
 libxml
 perl-5
 pos
-pure-Perl
 regex
 
 ==== dest/uses/web-automation/index.html
 
-API
 HTML-TreeBuilder-LibXML
 HTTPS
 IE
@@ -1795,7 +1764,6 @@ TreeBuilder
 libcurl
 libwww-perl
 libwww-perl-like
-pure-Perl
 
 ==== dest/uses/web/index.html
 
@@ -1806,7 +1774,6 @@ Mojolicious
 ==== dest/uses/xml/index.html
 
 'ul
-API
 CSS-style
 HTML-Selector-XPath
 LibXML
