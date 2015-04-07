@@ -69,12 +69,27 @@ sub rec_sorter
     );
 }
 
+sub _sort_words
+{
+    my $words_aref = shift;
+
+    return [sort { $a cmp $b } @$words_aref];
+}
+
+my %_gen = map { $_ => 1 } @general_whitelist;
+
 io($filename)->encoding('utf8')->print(
     map { "$_\n" }
     (
-        @general_whitelist, '',
+        @{_sort_words(\@general_whitelist)}, '',
         (map
-            { ("==== ".join(' , ', @{$_->{files}})), '', (sort { $a cmp $b } @{$_->{words}}), '' }
+            { ("==== ".join(' , ', @{$_->{files}})), '',
+                (@{ _sort_words(
+                            [grep { !exists($_gen{$_}) } @{$_->{words}}]
+                    )
+                  }
+                ), ''
+            }
             sort { rec_sorter($a->{files}, $b->{files}, 0) }
             @records
         )
