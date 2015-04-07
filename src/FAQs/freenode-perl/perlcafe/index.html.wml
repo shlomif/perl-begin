@@ -1,0 +1,104 @@
+#include '../template.wml'
+
+<latemp_subject "Freendode’s #perlcafe Channel" />
+<latemp_more_keywords "humour, humor, offtopic, irc, freenode, channel, chat, chatroom" />
+
+<p>
+<a href="irc://irc.freenode.net/#perlcafe">Freenode’s #perlcafe</a> is a <a
+href="http://en.wiktionary.org/wiki/symbiont">symbiont</a> channel to <a
+href="http://perl-begin.org/FAQs/freenode-perl/">#perl</a>. It was
+originally intended to host off-topic discussion and discussion about advanced
+topics, so #perl will remain more focused on beginner problems. That did not
+work quite as expected, but nevertheless #perlcafe took off, and now hosts a
+lot of discussion that most people feel would rather not be hosted on #perl.
+(Albeit sometimes the discussion there is more high-quality.)
+</p>
+<h2> Brief history </h2>
+<p><a href="http://www.shlomifish.org/">rindolf</a> registered #perlcafe back
+in 24 September 2004. The name was inspired by the Haskell-Cafe mailing list,
+which is intended to move advanced and off-topic discussions off the main
+mailing list. While having some initial flurry of activity, #perlcafe ended up
+very quiet shortly afterwards.
+</p>
+<p>It all changed, one night when rindolf spent all night talking on #perl,
+ended up getting de-voiced, and ended up /msg’ing some #perl people he
+recognised and asking them to join #perlcafe. Afterwards, #perlcafe really took
+off.
+</p>
+<h2> Note about the #perlcafe Attitude </h2>
+<p>You can often hear a lot of racist statements, cursing, etc. on #perlcafe. But don’t worry - the people there know better than that, and are not really racist. "#perlcafe is not racist. It is offensive to everyone equally.". Especially, what is said on #perlcafe can be:
+</p>
+<ol><li> Anti-Semitic.
+</li><li> Jewish-elitist.
+</li><li> Anti-Israeli.
+</li><li> Anti-Muslim.
+</li><li> Sexist. (Against either or both genders).
+</li><li> Anti-USArian.
+</li><li> Anti-Canadian.
+</li><li> Anti-French.
+</li><li> Self-depracting.
+</li></ol>
+<p>So don’t take what is said there too seriously.
+</p>
+<h2> Café-speak </h2>
+<p>There’s a variant of bad English used by some of the channel regulars to speak there, even though they know much better than that. It is somewhat different from <a href="http://icanhascheezburger.com/">the LOLCats variant</a> and predates it. Here’s a non-exhaustive guide on how to Café-speak:
+</p>
+<h3> "I R going", "he gaved me a present", "I likes cats", etc. </h3>
+<p>Use the incorrect inflection of the verb.
+</p>
+<h3> "n u" </h3>
+<p>Short for "No you."
+</p>
+<h3> "ghey", "hawt", "phag", "teh", "dum" </h3>
+<p>Purposeful mispelling of words.
+</p>
+<h3> "Hell cl0ud" </h3>
+<p>"Hell" is a one-letter shorter version of "Hello", but serves a similar meaning in the café.
+</p>
+<h3> /me cl0ud railbait dabreegster </h3>
+<p>Sometimes people greet each other by using /me followed by a list of links to their friends which they can see. The friends are expected to reciprocate.
+</p>
+<h2> Common Topics </h2>
+<h3> North American Politics </h3>
+<p>It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
+</p>
+<h3> Computer Games </h3>
+<p>One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games, mostly for <a href="http://www.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
+</p>
+<h3> Shania Twain </h3>
+<p>Apparently, rindolf is the only computer geek who likes <a href="/web/20110220124213/http://www.wikipedia.org/wiki/Shania_Twain">Shania Twain</a>’s songs, much to the dismay of the other channel regulars. (Some of whom are still fond of Ms. Twain’s looks.) As such he sometimes say <tt>* rindolf is listening to</tt> with a song of hers. This makes almost everyone else unhappy, and comment to rindolf that he should adopt a better musical taste.
+</p>
+<pre>   &lt;jkauffman&gt;	like if I went to your house and you started playing Shania Twain,
+               I’d have to set fire to your computer
+</pre>
+<p>From #perlcafe
+</p>
+<pre>   &lt;tag&gt; rindolf: sort of like you were about shania twain, you know joking right?
+   &lt;rindolf&gt; tag: but I actually bought a Shania Twain CD.
+   * tag smacks rindolf
+   &lt;tag&gt; wrong answer
+   * rindolf is listening to Shania Twain - Up!
+   &lt;rindolf&gt; I eventually found the B.E.P and Pink Floyd CDs in a different store.
+   &lt;tag&gt; rindolf: dude you are so full of shit
+   &lt;tag&gt; rindolf: you can listen to glitch and then blast mozart, but nobody
+         likes pink floyd AND shania twain
+   &lt;tag&gt; nobody likes *both* of those things.
+</pre>
+<p>From #perl (rindolf apparently belongs to the empty set).
+</p>
+<h2> The /topic </h2>
+<p>The /topic is world-editable. We gave up on keeping up a meaningful /topic, and instead opt for some funny quotes. Feel free to set the topic to whatever you feel like. Here are some past selected topics:
+</p>
+<ol><li> “I have always wished that my computer would be as easy to use as my telephone. My wish has come true. I no longer know how to use my telephone.” - Bjarne Stroustrup
+</li><li> Happy Birthday Rindolf, you crazy bastard | &lt;sili&gt; my moths. let me show you them
+</li><li> infidel planes bombed somalia
+</li><li> Sometimes, loving your neighbor means taking him to an old Soviet interrogation facility and shoving things up his ass. -- Republican Jesus
+</li><li> (define (recommend-movie) "miller's crossing") | &lt;ik&gt; keep coldhak off our streets
+</li><li> GIVE A MAN A FISH AND HE’LL EAT FOR A DAY; GIVE A FISH A MAN AND HE’LL EAT FOR A MONTH
+</li><li> I’m The Scat Man | &lt;sili_&gt; another reason i want a different job | &lt;sili_&gt; i’m tired of "... but php doesn’t ..."
+</li><li> <a href="http://qdb.us/66304">http://qdb.us/66304</a> YEY I’m on bash ^_^
+</li><li> &lt; GumbyBRAIN&gt; We don’t ever have to poop but i did tonight!&nbsp;:: &lt;Chris62vw&gt; <a href="http://www.xkcd.com/c14.html">http://www.xkcd.com/c14.html</a>    for rindolf   &lt;GumbyBRAIN&gt; Hi all, anyone know a bot.
+</li><li>  a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack: sagittarius * is my next vacation spot
+</li><li> #perlcafe - where misfits fit. | Lady_Aleena puts the Perl in #perlcafe | mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy eats children? | railbait has been sentenced to concatenation | Perl and CPAN are OFFTOPIC! | cl0ud has a glorious scalar localtime()
+</li></ol>
+
