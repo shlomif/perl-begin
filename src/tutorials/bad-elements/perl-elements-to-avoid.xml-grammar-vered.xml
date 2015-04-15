@@ -350,7 +350,7 @@ while (my $line = &lt;$fh&gt;)
 <p>
 You should avoid them all. Instead the proper way to read an entire file
 into a long string is to either use CPAN distributions for that such as
-<cpan_self_dist d="File-Slurp" /> or
+<cpan_self_dist d="Path-Tiny" /> or
 <cpan_self_dist d="IO-All" />, or alternatively
 write down the following function and use it:
 </p>
@@ -1950,8 +1950,8 @@ foreach my $entry (File::Spec-&gt;no_upwards(readdir($dir_handle))
 }
 </code_blk>
 <p>
-Note that <cpan_self_dist d="File-Slurp" /> wraps that for you in its
-<code>read_dir()</code> function and other file system abstraction modules provide
+Note that <cpan_self_dist d="Path-Tiny" /> wraps that for you in its
+<code>children()</code> function, and other file system abstraction modules provide
 similar functionality.
 </p>
 </item>
