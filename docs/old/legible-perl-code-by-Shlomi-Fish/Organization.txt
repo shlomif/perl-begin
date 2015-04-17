@@ -1,0 +1,113 @@
+Forward:
+--------
+
+* Perl was designed so that quick and dirty code could be easily written.
+
+* If, however, the code needs to be maintainable, some common perl practices
+should be avoided.
+
+* Perl beutifiers can help in presenting the code well, but they still
+don't usually re-write badly-written code for you.
+
+* Some of those techniques can be applied after an initial version of the
+code has been written. Others should better be thought about from the start.
+
+Making your code look understandable:
+---------------------------
+
+1. Indent - even within the expressions.
+
+Splitting statements is your friend:
+------------------------------------
+
+* Try to split complex statements (especially perl pipeline ones) into
+several statements if possible.
+
+If not possible - encapsulate inside inner closures and/or indent to show 
+the structure of the statement.
+
+* Pass a s///e expression that becomes to complex into a function or a 
+closure.
+
+
+Good (IMHO) Perl Style:
+-----------------------
+
+* Avoid using "$cond && print hello;" or "$cond and print hello" forms. It's
+confusing for people who are used to other languages. Use if or unless
+instead.
+
+* The $_ variable - do not use it unless you have to - like in map or grep.
+In the latter it is sometimes advisable to assign its value to a "my" 
+variable with a more meaningful name.
+
+* use English;
+
+9. Avoid using $var = eval { }, $var = do { }. Prefer the following form
+my ($var);
+{
+    my $local_var1;
+    my @local_array2;
+
+    $var = [ expression or closure ]	
+}
+
+Reason: people scan a code while having to remember that it is eventually
+assigned to a variable.
+
+* Always use return at the end of the function.
+
+Writing Legibile Algorithms:
+----------------------------
+
+* splice - if can be replaced with a different functions (push, pop, a comma)
+- should be. If not - better be put on its own statement.
+
+* Put your ifs and whiles before the conditional block, not after the
+statement.
+
+* Emulating a do-while loop:
+    a. with a closure.
+
+        my $action = sub {
+                [
+                    Loop's body.
+        	]
+            };
+
+        $action->();
+        while($cond)
+        {
+            $action->();
+        }
+        
+        Has the problem of an extra overhead.
+        
+    b. using a $perform_first_iter boolean.
+        my $perform_first_iter = 1;
+        while ($perform_first_iter || ( [ rest of condition ] ) )
+        {
+            $perform_first_iter = 0;
+        }
+        
+    c. A goto-into the loop:
+        goto after_condition;
+        while ( [ condition expression ])
+        {
+        	after_condition:
+        	
+        }
+       Has the problem of a possible namespace collition if more than one 
+       such construct exists inside a function.
+      
+
+
+General Programming Methodologies (not specific to perl)
+--------------------------------------------------------
+
+* Comment your code with numerous and helpful comments.
+
+* Use meaningful names for the variables.
+
+* Write an architecture document if applicable.
+
