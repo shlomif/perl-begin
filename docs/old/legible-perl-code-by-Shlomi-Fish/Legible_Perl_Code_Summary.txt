@@ -1,0 +1,56 @@
+1. Indent - even within the expressions.
+
+2. Try to split complex statements (especially perl pipeline ones) into
+several statements if possible.
+
+If not possible - encapsulate inside inner closures and/or indent to show 
+the structure of the statement.
+
+3. The $_ variable - do not use it unless you have to - like in map or grep.
+In the latter it is sometimes advisable to assign its value to a "my" 
+variable with a more meaningful name.
+
+4. splice - if can be replaced with a different functions (push, pop, a comma)
+- should be. If not - better be put on its own statement.
+
+5. Avoid using "$cond && print hello;" or "$cond and print hello" forms. It's
+confusing for people who are used to other languages. Use if or unless
+instead.
+
+6. Put your ifs and whiles before the conditional block, not after the
+statement.
+
+7. use English;
+
+8. Emulating a do-while loop:
+    a. with a closure.
+
+        my $action = sub {
+            };
+
+        $action->();
+        while($cond)
+        {
+            $action->();
+        }
+        
+    b. using a $perform_first_iter boolean.
+        my $perform_first_iter = 1;
+        while ($perform_first_iter || ( [ rest of condition ] ) )
+        {
+            $perform_first_iter = 0;
+        }
+        
+    c. 
+    
+9. Avoid using $var = eval { }, $var = do { }.
+
+10. Comment your code with numerous and helpful comments.
+
+11. Use meaningful names for the variables.
+
+12. Write an architecture document if applicable.
+
+13. Pass a s///e expression that becomes to complex into a function or a 
+closure.
+
