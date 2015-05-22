@@ -1,0 +1,12 @@
+<p>But the most amazing use of references is in subroutines.  You can
+pass code around as if it were data!</p>
+
+<ul>
+    <li> Dispatch tables
+    <li> Subroutines that work on subroutines -- (e.g., map and grep)
+    <li> Dynamically generated subroutines
+</ul>
+
+<%attr>
+title => 'Subroutine refs'
+</%attr>

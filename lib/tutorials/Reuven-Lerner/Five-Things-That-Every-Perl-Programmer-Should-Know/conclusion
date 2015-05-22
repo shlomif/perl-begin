@@ -1,0 +1,29 @@
+<p>If you're an intermediate or advanced Perl programmer, then nothing
+I said today should surprise you.  But these topics, again and again,
+are the source of untold problems for the Perl programmers I teach.
+Some suggestions:</p>
+
+<ul>
+    <li> Set up coding standards in your organization, such that
+    everyone always has <tt>use strict</tt> and <tt>use warnings</tt>
+    (and perhaps even <tt>use diagnostics</tt>) turned on)
+
+    <li> TMTOWTDI doesn't mean that every method is equally good and
+    useful.  Take advantage of Perl's flexibility, but consider your
+    options.
+
+    <li> Just because it's possible doesn't mean it's desireable
+    (e.g., wantarray)
+
+    <li> Lexicals vs. globals is one of the trickiest issues that you
+    can imagine.  People just don't get it.  If you don't understand
+    why lexicals aren't in packages, then read up on them!
+
+    <li> Every language has its quirks and hurdles.  Perl seems to
+    have a lot of them, <i>but</i> each is relatively easy to figure
+    out.
+</ul>
+
+<%attr>
+title => 'Conclusion'
+</%attr>

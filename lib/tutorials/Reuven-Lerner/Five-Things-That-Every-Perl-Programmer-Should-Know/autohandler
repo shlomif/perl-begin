@@ -1,0 +1,163 @@
+%# -*- mmm-classes: mason -*-
+
+<%doc>
+This is the "slide show" autohandler for HTML::Mason.
+Copyright 2000 by Reuven M. Lerner
+
+Time-stamp: <2003-05-11 03:13:48 reuven>
+
+This is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+
+This package is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this package; see http://www.gnu.org/copyleft/gpl.html.
+</%doc>
+
+<HTML>
+<Head>
+<Title><% $talk_name %>
+       <% $current_slide_index %>/<% $#slides %>:
+       <% $headline %></Title>
+
+<style type="text/css">
+  body { color: black; background: white;
+         margin-left: 10%; margin-right: 10%;
+         margin-top: 1em; }
+  h1 { font-size: 200%; margin-left: -8%;
+       background: #009933;
+       color: #FFFF00}
+  p,blockquote,li { font-size: 150%; margin-top: .5em; margin-top: .5em;}
+  blockquote { margin-left: 5%;}
+  pre { margin-left: 5%}
+  a:hover { background: black; color: pink;}
+  tt { font-size: 80%; font-weight: bold; }
+  table.navbar {margin-left: -8%;}
+</style>
+
+</Head>
+
+<Body>
+
+
+<H1><% $headline %></H1>
+
+<% $m->call_next %>
+
+<Table class="navbar" cellspacing="0" cellpadding="0" width="100%">
+    <TR>
+	<TD align="left">
+            <a href="<% $previous_slide %>">Prev: <% $previous_headline %></a>
+        </TD>
+	<TD align="right">
+            <a href="<% $next_slide %>">Next: <% $next_headline %></a>
+        </TD>
+    </TR>
+</Table>
+
+<Table class="navbar" cellspacing="0" cellpadding="0" width="100%">
+    <TR>
+        <TD align="left">
+            <a href="mailto:<% $talker_email %>"><% $talker_name %></a>
+        </TD>
+        <TD align="center">
+            <a href="<% $slides[0] %>"><% $talk_name %></a>
+            (Slide <% $current_slide_index %> of <% $#slides %>)
+        </TD>
+        <TD align="right">
+            <a href="<% $talker_url %>"><% $talker_url %></a>
+        </TD>
+    </TR>
+</Table>
+</Body>
+</HTML>
+
+<%init>
+# Set the outgoing Content-type to text/html for this whole directory
+# except for "images" directories
+$r->content_type("text/html") unless ($r->filename =~ m|/images|);
+
+# Get the name and contents of the next component
+my $next_comp = $m->fetch_next;
+my $slide_name = $next_comp->name;
+my $contents = $m->scomp($next_comp->name);
+
+# Figure out the index of the current slide
+my $current_slide_index = 0;
+
+foreach my $index (0 .. $#slides)
+{
+    if ($slides[$index] eq $slide_name)
+    {
+        $current_slide_index = $index;
+        last;
+    }
+}
+
+# Grab the headline from the current component, if it exists
+my $headline = $m->fetch_next->attr('title');
+
+# Get the URLs and headlines of the previous and next slides
+my $previous_slide = $slides[$current_slide_index - 1] || $slides[0];
+my $previous_headline = $m->fetch_comp($previous_slide)->attr('title');
+
+my $next_slide = $slides[$current_slide_index + 1] || $slides[0];
+my $next_headline = $m->fetch_comp($next_slide)->attr('title');
+
+</%init>
+
+<%once>
+# Set some variables for appearance
+my $talk_name = "YAPC::Israel::2003 --  Five things";
+my $talker_name = "Reuven M. Lerner";
+my $talker_email = 'reuven@lerner.co.il';
+my $talker_url = "http://www.lerner.co.il";
+
+# Set the list of files
+my @slides = qw(
+    start
+    whoami
+
+    compilation-vs-runtime
+    subroutines
+    BEGIN-executes-during-compilation
+    eval-quotes-compiles-during-runtime
+    compilation-runtime-caveats
+
+    undef-true-false
+    distinguishing-undef-false
+    return-values
+    sql-null
+    undef-true-false-caveats
+
+    lexicals-vs-globals
+    global-variables
+    globals-in-packages
+    local-for-temp-global-values
+    subroutines-lexicals-globals
+    lexicals-globals-caveats
+
+    scalar-vs-list
+    lists-into-scalar-variables
+    scalars-into-lists
+    wantarray
+    scalars-lists-caveats
+
+    references
+    arrays-in-arrays
+    arrays-in-hashes
+    hashes-in-hashes
+    subroutine-refs
+    dereferencing
+    references-caveats
+
+    conclusion
+);
+
+</%once>

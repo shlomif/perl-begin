@@ -1,0 +1,26 @@
+<p>What does the below code print:</p>
+
+<pre>
+#!/usr/bin/perl
+
+my $variable;
+
+print $variable + 0, "\n";
+</pre>
+
+<p>Of course, it prints 0 and a newline.  Does this mean that
+<tt>$variable</tt> is 0?  <b>No way.</b></p>
+
+<ul>
+    <li> Undefined variables are just that, undefined
+    <li> Perl is nice enough to provide a value rather than exit with
+    a runtime error
+    <li> Perl provides either 0 or "" (empty string), depending on
+    context
+    <li> This doesn't change the value of the variable
+</ul>
+
+
+<%attr>
+title => 'Problem 2: Undef vs. true vs. false'
+</%attr>

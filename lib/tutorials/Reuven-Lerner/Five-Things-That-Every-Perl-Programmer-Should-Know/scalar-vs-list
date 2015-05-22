@@ -1,0 +1,11 @@
+<ul>
+    <li> Some variables and functions behave differently in different
+    contexts.
+    <li> "Context" can be described as "looking to the left" and
+    trying to determine what the caller wants.
+    <li> This accounts for all sorts of odd beginner errors
+</ul>
+
+<%attr>
+title => 'Problem 4: Context'
+</%attr>

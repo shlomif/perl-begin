@@ -1,0 +1,26 @@
+<p>You want to put an array in an array?  Use an array reference:</p>
+
+<pre>
+@array1 = qw(a b c);
+@array2 = (1, 2, \@array1, 3, 4);
+</pre>
+
+<p>That backslash does everything we want and need, telling Perl to
+store a reference to <tt>@array1</tt>, not <tt>@array1</tt>
+itself.</p>
+
+<p>You don't need to create an array in order to get a reference:</p>
+
+<pre>
+@array2 = (1, 2, ['a', 'b', 'c'], 3, 4);
+</pre>
+
+<p>Or even:</p>
+
+<pre>
+@array2 = (1, 2, [qw(a b c)], 3, 4);
+</pre>
+
+<%attr>
+title => 'Arrays in arrays'
+</%attr>

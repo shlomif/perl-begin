@@ -1,0 +1,18 @@
+<ul>
+    <li> <tt>use strict</tt> is your friend.
+    <li> Don't use globals outside of a package.
+    <li> Don't try to use packages with lexicals...
+    <li> ... unless you want to do cool things like singletons
+    <li> Don't call "lexical" variables "local" variables
+    <li> Use lexicals everywhere you can...
+    <li> ... and especially in subroutines
+    <li> Don't use <tt>local</tt> until and unless you read MJD's
+    article (and understand it)
+    <li> Namespace pollution? Exporting?  It works great, but can be
+    confusing at first.  Learn <tt>@EXPORT</tt>, <tt>@EXPORT_OK</tt>,
+    and <tt>%EXPORT_TAGS</tt> well before you use them
+</ul>
+
+<%attr>
+title => 'Caveats with lexicals and globals'
+</%attr>

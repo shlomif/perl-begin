@@ -1,0 +1,24 @@
+<ul>
+    <li> Subroutines are defined at compile time
+    <li> (If this weren't true, you couldn't define subroutines as the
+    end of a file, could you?)
+    <li> Name lookup is  done at runtime
+</ul>
+
+<pre>
+print times_10(100), "\n";
+
+sub times_ten {
+    my $arg = shift;
+    return $arg * 10;
+}
+</pre>
+
+<p>The above exits with a run-time error, not a compliation error.  Is
+the compiler dumb?  No -- it just wants to let you use AUTOLOAD, or
+define subroutines in an eval, or load modules dynamically, or other
+fun things.</p>
+
+<%attr>
+title => 'Subroutines'
+</%attr>

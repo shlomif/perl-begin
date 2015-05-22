@@ -1,0 +1,24 @@
+<p>The most fun is from putting hashes in hashes:</p>
+
+<pre>
+my %one_user = (email => 'reuven@lerner.co.il',
+		phone => '08-973-2225',
+		url => 'http://www.lerner.co.il/',
+		firstname => 'Reuven',
+		lastname => 'Lerner');
+
+$users{316709344} = \%one_user;
+</pre>
+
+<p>Now I can grab information:</p>
+
+<pre>
+print $users{316709344}->{email}, "\n";
+</pre>
+
+<p>Hashes in hashes are amazingly useful.  They're a fabulous data
+structure, even if they are less space-efficient than arrays.</p>
+
+<%attr>
+title => 'Hashes in hashes'
+</%attr>

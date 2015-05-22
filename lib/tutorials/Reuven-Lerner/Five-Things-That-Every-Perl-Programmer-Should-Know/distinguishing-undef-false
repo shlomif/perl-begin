@@ -1,0 +1,28 @@
+<ul>
+    <li> Undef is just that, undef -- but when forced to provide a
+    value, Perl will give you 0 or "", which is false.
+    <li> The number 0 is false.  The empty string  ("") is false.  All
+    other scalar values are true.
+</ul>
+
+<p>Beginning Perl programmers think that all variables default to 0 or
+the empty string.  But they don't.  We can tell the difference between
+false and undef with <tt>defined</tt>:</p>
+
+<pre>
+my $var;
+print "(1) var is defined, with a value of '$var'\n" if (defined $var);
+print "(1) var is true\n" if ($var);
+
+$var = 0;
+print "(2) var is defined, with a value of '$var'\n" if (defined $var);
+print "(2) var is true\n" if ($var);
+
+$var = 1;
+print "(3) var is defined, with a value of '$var'\n" if (defined $var);
+print "(3) var is true\n" if ($var);
+</pre>
+
+<%attr>
+title => 'distinguishing-undef-false'
+</%attr>

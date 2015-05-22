@@ -1,0 +1,5 @@
+<P>Sorry, but the page <i><% $r->filename() %></i> does not exist.</P>
+
+<%attr>
+title => "Error"
+</%attr>

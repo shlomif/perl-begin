@@ -1,0 +1,22 @@
+<p>We can solve our <tt>if</tt>-<tt>use</tt> problem by defining a
+subroutine that's not only defined at compile time, but also executes
+at compile time: <tt>BEGIN</tt>.</p>
+
+<pre>
+BEGIN {
+    if ($] >= 5.006)
+    {
+	use warnings;
+    }
+}
+</pre>
+
+<p>Note that we don't have to say <tt>sub BEGIN</tt>.
+
+<p>You can put anything you want in a <tt>BEGIN</tt>.  Heck, you could
+put your whole program in a <tt>BEGIN</tt>!  But don't do that.
+Please.</p>
+
+<%attr>
+title => 'BEGIN-executes-during-compilation'
+</%attr>

@@ -1,0 +1,17 @@
+<ul>
+    <li> There's a reason why <tt>use warnings</tt> yells if you use
+    an uninitialized variable.  Sure, Perl will do what you want --
+    but give variables values before you use them, unless you
+    specifically want them to be undefined.
+
+    <li> Return <tt>undef</tt> from subroutines if you're not
+    returning a value.  I see this as a primitive exception-handling
+    system.
+
+    <li> Don't forget that 0 is different from "0".  Understanding
+    what's false can sometimes be a bit tricky.
+</ul>
+
+<%attr>
+title => 'undef, true, and false caveats'
+</%attr>

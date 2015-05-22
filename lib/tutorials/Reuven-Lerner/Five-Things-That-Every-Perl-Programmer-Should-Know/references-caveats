@@ -1,0 +1,19 @@
+<ul>
+    <li> References are amazingly useful, but (for some reason) also
+    very confusing.  If you're going to use references, be sure to
+    check that you know what you're doing.  If you're new to Perl,
+    it's worth consider
+
+    <li> Objects in Perl are references -- usually hash refs, but
+    sometimes scalar or array refs.  Learn to be fluent with them
+
+    <li> Remember the difference between references to existing
+    variables and anonymous array/hash references
+
+    <li> Copying can bring about some surprises (deep vs. shallow
+    copying)
+</ul>
+
+<%attr>
+title => 'Reference caveats'
+</%attr>
