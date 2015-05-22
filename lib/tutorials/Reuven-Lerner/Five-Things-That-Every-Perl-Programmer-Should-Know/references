@@ -1,0 +1,13 @@
+<p>Because of context, the following will not work:</p>
+
+<pre>
+@array1 = qw(a b c);
+@array2 = (1, 2, @array1, 3, 4);
+</pre>
+
+<p>References are the way in which we create complex datatypes in
+Perl.  They turn data types into scalars, and back.</p>
+
+<%attr>
+title => 'Problem 5: References'
+</%attr>

@@ -1,0 +1,19 @@
+<ul>
+    <li> Perl <b>is</b> a compiled language!
+    <li> Compiled into opcodes, sorta like JVM bytecodes
+    <li> Opcodes are then executed by the Perl runtime engine
+    <li> Knowing the difference can save you lots of headaches
+</ul>
+
+<p>For example, people often think that they can do this:</p>
+
+<pre>
+if ($] >= 5.006)
+{
+    use warnings;
+}
+</pre>
+
+<%attr>
+title => 'Problem 1: Compilation vs. runtime'
+</%attr>

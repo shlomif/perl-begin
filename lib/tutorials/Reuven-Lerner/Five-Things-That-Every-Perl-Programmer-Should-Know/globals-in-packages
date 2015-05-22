@@ -1,0 +1,29 @@
+<p>The way to avoid this with globals is with packages.</p>
+
+<ul>
+    <li> By default, globals are in package <tt>main</tt>, so
+    <tt>$x</tt> is really <tt>$main::x</tt>.
+
+    <li> You can always set and retrieve any global value -- you might
+    just need to specify the full name.
+
+    <li> The <tt>package</tt> statement changes the current default
+    package.
+</ul>
+
+<pre>
+$fruit::banana = 100;
+$main::x = 3.14159;
+
+package main;
+print $x;         # 3.14159
+print $banana;    # undef -> empty string
+
+package fruit;
+print $x;         # undef -> empty string
+print $banana;    # 100
+</pre>
+
+<%attr>
+title => 'Globals and packages'
+</%attr>

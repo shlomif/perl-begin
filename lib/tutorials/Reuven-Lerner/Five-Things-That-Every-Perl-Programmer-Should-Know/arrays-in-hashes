@@ -1,0 +1,16 @@
+<p>You can play the same tricks, storing arrays in hashes:</p>
+
+<pre>
+@array1 = qw(a b c);
+$hash{array} = \@array1;
+</pre>
+
+<p>Let's get the letter <tt>b</tt> out of there:</p>
+
+<pre>
+print $hash{array}->[1], "\n";
+</pre>
+
+<%attr>
+title => 'Arrays in hashes'
+</%attr>

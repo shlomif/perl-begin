@@ -1,0 +1,28 @@
+<ul>
+    <li> Perl is compiled, and has compile-time checks.  These checks
+    just aren't as nasty as in some other languages.
+
+    <li> <tt>use strict</tt> turns on all sorts of compile-time checks
+    that will save you someday.  Always use it.
+
+    <li> <tt>use warnings</tt> also picks up on all sorts of good
+    stuff.  Some are compile-time warnings, and some are run-time
+    warnings.
+
+    <li> Unsure of whether an error message or warning is from the
+    compiler or runtime? <tt>perldoc perldiag</tt>, or <tt>use
+    diagnostics</tt> while you're developing.
+
+    <li> <tt>use</tt> is compile-time. <tt>require</tt> is runtime.
+    So <tt>use</tt> does compile-time checking on modules you import,
+    whereas <tt>require</tt> doesn't.  Don't use <tt>require</tt>.
+
+    <li> mod_perl caches the compiled Perl opcodes, which is why it's
+    so amazingly fast.  The opcodes are still interpreted, but that
+    takes far less time than launching a new process + compiling the
+    code.
+</ul>
+
+<%attr>
+title => 'Things to remember'
+</%attr>

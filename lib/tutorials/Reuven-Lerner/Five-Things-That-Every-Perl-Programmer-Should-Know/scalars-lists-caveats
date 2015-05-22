@@ -1,0 +1,16 @@
+<ul>
+    <li> <tt>wantarray</tt> is very cool.  But magic functions that
+    return different things in different contexts can be confusing.
+
+    <li> If a function (like <tt>print</tt>) expects a list, then be
+    careful if you hand it the output from <tt>localtime</tt>.
+
+    <li> Perl's prototypes force context.  They <i>don't</i> enforce
+    data types.  This is one reason why prototypes are so rarely used,
+    and why people find them so confusing.
+</ul>
+
+
+<%attr>
+title => 'Caveats'
+</%attr>

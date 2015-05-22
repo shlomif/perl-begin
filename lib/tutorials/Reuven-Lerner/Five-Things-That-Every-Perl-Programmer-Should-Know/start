@@ -1,0 +1,17 @@
+<p>You can program in Perl without knowing much... But your Perl will
+be like pidgin English</p>
+
+<p> Today we're going to address five topics that arise again and
+again:</p>
+
+<ul>
+        <li> Compilation vs. runtime
+        <li> True vs. false vs. undef
+        <li> Lexicals vs. globals
+        <li> Scalars vs. lists
+        <li> References
+</ul>
+
+<%attr>
+title => 'Five things that every Perl programmer should know'
+</%attr>

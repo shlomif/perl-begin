@@ -1,0 +1,22 @@
+<p>How do we treat a bunch of scalars as a list?  Put them in
+parentheses!</p>
+
+<pre>
+@array = qw(a b c);
+($first, $second, $third) = @array;
+</pre>
+
+<p>This is one of my favorite features in Perl.  I often forget that
+many other languages lack it.</p>
+
+<p>To force list (array) context when looking left reveals a scalar,
+just use parentheses:</p>:
+
+<pre>
+$x = @array;     # $x gets the length
+($y) = @array;   # $y gets the first element
+</pre>
+
+<%attr>
+title => 'Turning scalars into lists'
+</%attr>

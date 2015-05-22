@@ -1,0 +1,31 @@
+<p>Hey, why use the fancy word "lexical"?  Why not just say
+"local"?<p>
+
+<ul>
+    <li> Because the  <tt>local</tt> function only works with globals
+
+    <li> (And you should almost never use it.)
+
+    <li> <tt>local</tt> gives a global a temp value through the end of
+    the block
+</ul>
+
+<pre>
+$x = 100;
+print "Before, x is '$x'\n";
+
+{
+    local $x = 'tree';
+    print "During, x is '$x'\n";
+}
+
+print "After, x is '$x'\n";
+</pre>
+
+<p>Looks like a lexical, right?  Perhaps -- but something very
+different is happening behind the scenes.  You can use <tt>local</tt>
+with <tt>$/</tt>, but you certainly can't use <tt>my</tt> with it!</p>
+
+<%attr>
+title => 'local and globals'
+</%attr>

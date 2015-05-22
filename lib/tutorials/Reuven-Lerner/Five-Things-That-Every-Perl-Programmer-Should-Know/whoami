@@ -1,0 +1,12 @@
+<ul>
+    <li> Perl user since 1992
+    <li> Consultant since 1995
+    <li> Author of <a href="http://www.coreperl.com/">Core Perl</a>
+    <li> Linux Journal columnist
+    <li> Author of an upcoming book on open-source Web technologies
+    from Apress
+</ul>
+
+<%attr>
+title => 'Who am I?'
+</%attr>

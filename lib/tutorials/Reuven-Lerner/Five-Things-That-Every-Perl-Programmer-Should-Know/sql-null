@@ -1,0 +1,12 @@
+<ul>
+    <li> SQL has a similiar idea, called NULL.
+    <li> NULL is neither true nor false.  It's distinct from both of
+    them.  Indeed, you can't even test for equality to NULL!
+    <li> Since NULL and <tt>undef</tt> are so similar, DBI uses
+    <tt>undef</tt> to represent NULL.
+</ul>
+
+
+<%attr>
+title => 'SQL\'s NULL'
+</%attr>

@@ -1,0 +1,26 @@
+<p>Global variables are what everyone uses when they begin to program
+in Perl.</p>
+
+<ul>
+    <li> Just go ahead and assign to it, without any declaration
+
+    <li> They exist everywhere -- so if two subroutines use a variable
+    $x, one of them will be surprised
+</ul>
+
+<pre>
+sub set_global {
+    $global = shift;
+}
+
+sub get_global {
+    return $global;
+}
+
+set_global(100);
+print "Global value is '", get_global, "'\n";
+</pre>
+
+<%attr>
+title => 'global-variables'
+</%attr>

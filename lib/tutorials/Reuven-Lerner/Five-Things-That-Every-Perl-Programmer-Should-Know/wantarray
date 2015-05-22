@@ -1,0 +1,17 @@
+<p>Your own subroutines can return different values based on the value
+of <tt>wantarray</tt>:</p>
+
+<ul>
+    <li> undef -- no context
+    <li> false -- scalar context
+    <li> true -- list/array context
+</ul>
+
+<p>You probably don't want to write a function like this.  But knowing
+about wantarray probably helps you understand how Perl does such
+things, and makes some issues (e.g., localtime problems) easier to
+debug.</p>
+
+<%attr>
+title => 'wantarray'
+</%attr>

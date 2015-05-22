@@ -1,0 +1,17 @@
+<p>Perl has two kinds of variables that look like: lexicals and
+globals.</p>
+
+<ul>
+    <li> Lexicals are declared with <tt>my</tt>.  Globals don't have
+    to be declared.
+
+    <li> Lexicals exist until the end of the block in which they were
+    declared.  Globals always exist, from the time that they are first
+    used unti the end of program execution.
+
+    <li> Lexicals are not in any package.  Every global, by contrast,
+    is in a package.
+
+<%attr>
+title => 'Problem 3: Lexicals vs. globals'
+</%attr>

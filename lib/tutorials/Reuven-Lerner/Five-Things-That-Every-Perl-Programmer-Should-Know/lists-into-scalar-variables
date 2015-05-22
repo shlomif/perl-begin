@@ -1,0 +1,30 @@
+<p>When you assign a list value to a scalar, you get the length of the
+list.  For example:</p>
+
+<pre>
+@array = qw(a b c d e f);
+$size = @array;
+print "size = '$size'\n";
+</pre>
+
+<p>Because so many new Perl programmers use @ instead of $ for
+retrieving array elements, Perl compensates::</p>
+
+<pre>
+@a = (0, 1, 2, 3, 4, 5);
+$five = @a[5];
+print "five = '$five'\n";    # Warning, but it'll work
+</pre>
+
+<p>The array looks left, sees a scalar, and returns its length.  If
+looking left reveals an array, but you want a scalar, simply insert
+the keyword <tt>scalar</tt>:</p>
+
+<pre>
+print localtime, "\n";           # Prints lots of numbers -- huh?
+print scalar localtime, "\n";    # Prints current date and time
+</pre>
+
+<%attr>
+title => 'Assigning lists to scalars'
+</%attr>

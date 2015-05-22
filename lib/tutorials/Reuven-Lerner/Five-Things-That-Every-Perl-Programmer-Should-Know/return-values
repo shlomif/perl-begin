@@ -1,0 +1,12 @@
+<p>You can use <tt>undef</tt> as a return value from a subroutine:</p>
+
+<ul>
+    <li> It's false, when tested for truth
+    <li> It's distinct from "" and 0
+    <li> More standard than returning a bizarre value to indicate
+    problems
+</ul>
+
+<%attr>
+title => 'Returning undef'
+</%attr>

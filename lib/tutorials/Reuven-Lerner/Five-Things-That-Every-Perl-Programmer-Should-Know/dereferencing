@@ -1,0 +1,29 @@
+<p>You dereference references by prefacing them with the type of data
+you want:</p>
+
+<pre>
+@array = qw(a b c d);
+$arrayref = \@array;
+@copy_of_array = @$arrayref;
+</pre>
+
+<p>While we can turn arrays into hashes, we cannot dereference an
+array ref into a hash:</p>
+
+<pre>
+@array = qw(a b c d);
+$arrayref = \@array;
+ %hash = %$arrayref;    # Boom!
+</pre>
+
+<p>However, you <i>can</i> do this:</p>
+
+<pre>
+@array = qw(a b c d);
+$arrayref = \@array;
+ %hash = @$arrayref;
+</pre>
+
+<%attr>
+title => 'dereferencing'
+</%attr>
