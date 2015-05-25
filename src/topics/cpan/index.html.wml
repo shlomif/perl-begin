@@ -36,26 +36,44 @@ PerlNet wiki).
 <ul>
 
 <li>
+<p>
 <a href="life-with-cpan/non-root/">"Using CPAN with a non-root account"</a>
 (restored from the original at Jeremy Mates' web-site).
+</p>
 </li>
 
 <li>
+<p>
 <a href="life-with-cpan/">"Life with CPAN"</a>
 (restored from the original at Jeremy Mates' web-site).
+</p>
 </li>
 
 <li>
+<p>
 <cpan_self_dist d="local-lib" /> - install CPAN modules under a local user
 directory.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">"But
 I
 <i>can't</i> use CPAN!"</a> - an essay by Matt S. Trout explaining why
 you can almost always use CPAN, and the various ways you can do it.
+</p>
+<ul>
+<li>
+<p>
+<a href="http://shadow.cat/blog/matt-s-trout/mstpan-9/">“mstpan 9 —
+Library Deployment”</a> - a similar document by the same author with some
+updates.
+</p>
 </li>
+</ul>
+</li>
+
 </ul>
 
 <p>
