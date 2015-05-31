@@ -3,11 +3,11 @@
 2. Try to split complex statements (especially perl pipeline ones) into
 several statements if possible.
 
-If not possible - encapsulate inside inner closures and/or indent to show 
+If not possible - encapsulate inside inner closures and/or indent to show
 the structure of the statement.
 
 3. The $_ variable - do not use it unless you have to - like in map or grep.
-In the latter it is sometimes advisable to assign its value to a "my" 
+In the latter it is sometimes advisable to assign its value to a "my"
 variable with a more meaningful name.
 
 4. splice - if can be replaced with a different functions (push, pop, a comma)
@@ -33,16 +33,16 @@ statement.
         {
             $action->();
         }
-        
+
     b. using a $perform_first_iter boolean.
         my $perform_first_iter = 1;
         while ($perform_first_iter || ( [ rest of condition ] ) )
         {
             $perform_first_iter = 0;
         }
-        
-    c. 
-    
+
+    c.
+
 9. Avoid using $var = eval { }, $var = do { }.
 
 10. Comment your code with numerous and helpful comments.
@@ -51,6 +51,6 @@ statement.
 
 12. Write an architecture document if applicable.
 
-13. Pass a s///e expression that becomes to complex into a function or a 
+13. Pass a s///e expression that becomes to complex into a function or a
 closure.
 
