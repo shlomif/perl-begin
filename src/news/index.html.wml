@@ -2,6 +2,71 @@
 
 <latemp_subject "Perl Beginners' Site - News" />
 
+<h2 id="news_31_May_2015">31-May-2015: TODO : FILL_IN</h2>
+
+<p>
+Here is what is new at the Perl Beginners’ since the last update roughly
+three years ago.
+</p>
+
+<ol>
+
+<li>
+<p>
+We have a mirror of an old version of the
+<a href="http://perl-begin.org/tutorials/hyperpolyglot/">Hyperpolyglot</a>
+that provides comparative help for PHP, Perl, Python and Ruby.
+</p>
+</li>
+
+<li>
+<p>
+There’s
+<a href="http://perl-begin.org/topics/cpan/finding-stuff-on-cpan/">a new page
+about “Finding stuff on CPAN”</a>.
+</p>
+</li>
+
+<li>
+<p>
+There’s
+<a href="http://perl-begin.org/IDEs-and-tools/Perl_developer_tools/">a page
+about Perl developer tools</a> originally from the perl.net.au wiki.
+</p>
+</li>
+
+
+<li>
+<p>
+<a href="http://perl-begin.org/reference-resources/">A New Page</a> about
+Reference Resources for Perl was added.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://perl-begin.org/tutorials/perl-for-newbies/part5/">Part 5</a>
+of the “Perl for Newbies” tutorial was added.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://perl-begin.org/FAQs/freenode-perl/perlcafe/">A Page about
+the #perlcafe channel on Freenode</a> was restored from the perl.net.au wiki.
+</p>
+</li>
+
+<li>
+<p>
+There is a lot of other updates to the existing pages on the site, including
+many new items that were added to the
+<a href="http://perl-begin.org/tutorials/bad-elements/">“Perl Elements
+to Avoid”</a> page which I feel is becoming a major highlight of the site.
+</p>
+</li>
+</ol>
+
 <h2 id="news_9_July_2012">9-July-2012: Perl Humour page, #perl FAQ, and other
 new pages</h2>
 
