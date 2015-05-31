@@ -54,7 +54,7 @@ to be removed.
 <h3 id="Devel-Trepan"><cpan_self_dist d="Devel-Trepan" /></h3>
 
 <p>
-An enhanced debugger for Perl, which while originally derived from
-<tt>perl5db.pl</tt> broke internal and external compatibility with the
+An enhanced debugger for Perl, which, while originally derived from
+<tt>perl5db.pl</tt>, broke internal and external compatibility with the
 aim of making Trepan easier to use.
 </p>
