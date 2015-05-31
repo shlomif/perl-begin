@@ -328,11 +328,11 @@ http://perl.net.au/wiki/Beginners<get-var url />
 </define-tag>
 
 <define-tag mailing_list_link whitespace="delete">
-https://lists.berlios.de/mailman/listinfo/perl-begin-help
+https://no-where.tld/
 </define-tag>
 
 <define-tag web_forum_link whitespace="delete">
-http://developer.berlios.de/forum/forum.php?forum_id=2341
+http://no-where.tld/
 </define-tag>
 
 <define-tag pdoc whitespace="delete" endtag="required">
