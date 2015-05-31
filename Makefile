@@ -1,7 +1,7 @@
 
 TARGET = dest
 
-WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=berlios
+WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
 
 LATEMP_WML_FLAGS = $(shell latemp-config --wml-flags)
 COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib
@@ -49,12 +49,9 @@ dest/learn/index.html: lib/why-perl.wml
 upload: upload_beta
 
 # Add a dependency on books.wml
-$(filter dest/books/%.html,$(BERLIOS_DOCS_DEST)) : lib/books.wml
+$(filter dest/books/%.html,$(PERL_BEGIN_DOCS_DEST)) : lib/books.wml
 
 dest/uses/sys-admin/index.html dest/topics/files-and-directories/index.html: lib/files_dirs_modules.wml
-
-upload_berlios: all
-	(cd dest && $(RSYNC) -a * shlomif@shell.berlios.de:/home/groups/perl-begin/htdocs/)
 
 upload_hexten: all
 	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
@@ -101,22 +98,6 @@ todo_done_data: $(TODO_DONE)
 $(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
 	cp -f $< $@
 
-# .PHONY:
-#
-# $(DEST_ARC_PAGE) :: $(TARGET)/% : src/%.wml $(LIBRARY_FILES) .PHONY
-# 	(cd src && wml $(WML_FLAGS) -DARCNAME=$(ARC_NAME) -DFILENAME=$(patsubst src/%.wml,%,$<) $(patsubst src/%,%,$<)) > $@
-#
-# arc: $(DEST_ARC_NAME) $(DEST_ARC_PAGE)
-#
-# $(DEST_ARC_NAME):
-# 	(cd temp && ./make-archive.sh)
-# 	mv temp/$(ARC_NAME) $@
-#
-# upload_arc: arc
-# 	$(RSYNC) $(ARC_NAME) shlomif@shell.berlios.de:
-#
-#
-#
 
 htaccess: $(TARGET)/.htaccess
 
