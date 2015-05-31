@@ -30,7 +30,7 @@ my $generator =
                 'dest_dir' => "\$(TARGET)",
             },
             {
-                'id' => "berlios",
+                'id' => "perl_begin",
                 'source_dir' => "src",
                 'dest_dir' => "\$(TARGET)",
             },
@@ -72,7 +72,7 @@ $generator->process_all();
 
             $target =~ s{/lect(\d+)-all-in-one/}{/part$1/};
 
-            $target = "\$(BERLIOS_DEST)/$target";
+            $target = "\$(PERL_BEGIN_DEST)/$target";
 
             push @targets, $target;
 

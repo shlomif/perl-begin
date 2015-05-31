@@ -7,7 +7,7 @@ use utf8;
 
 my $hosts =
 {
-    berlios =>
+    perl_begin =>
     {
         base_url => "http://perl-begin.org/",
     },
@@ -20,7 +20,7 @@ sub get_hosts
 
 my $tree_contents =
 {
-    host => "berlios",
+    host => "perl_begin",
     text => "Perl Beginners’ Site",
     title => "A useful Portal for People New to Perl",
     subs =>
