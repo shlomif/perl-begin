@@ -80,6 +80,23 @@ or possibly an event-based, incremental, JSON parser.
 </p>
 </li>
 
+<li>
+<p>
+In order to parse
+<a href="https://en.wikipedia.org/wiki/Uniform_resource_locator">URLs/URIs</a>
+(= Uniform Resource Locators), one should use the “<cpan_self_dist d="URI" />”
+collection of CPAN modules.
+</p>
+</li>
+
+<li>
+<p>
+In order to parse and analyze file and directory paths, you should use the
+<a href="$(ROOT)/topics/files-and-directories/#modules">modules
+recommended</a> in our "Files and Directories" page.
+</p>
+</li>
+
 </ul>
 
 <h2 id="advanced-parsing">Advanced Parsing Techniques</h2>

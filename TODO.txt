@@ -39,10 +39,6 @@ CURRENT TASKS:
 
     - Perhaps a page about working with network protocols in general.
 
-    - Add more information about:
-        - URI parsing.
-        - Filenames and paths parsing.
-
     - Books:
         - http://oreilly.com/catalog/0636920018476/ - Perl Pocket Reference.
             - All covering perl-5.14.x.
@@ -144,5 +140,9 @@ COMPLETED TASKS:
     - Fix the missing broken text in
       http://perl-begin.org/humour/#PHP.2C_Perl_and_the_meaning_of_.22my.22
         @ DONE [Thu 2015-06-11]
+    - Add more information about:
+        - URI parsing.
+        - Filenames and paths parsing.
+            @ DONE [Thu 2015-06-11]
 
 # vim:ft=quicktask:sw=4:ts=4:et
