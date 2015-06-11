@@ -67,6 +67,8 @@ LONG TERM:
         - Error.pm
         - Class::DBI
         - File::Slurp
+        - IO::Socket::INET6
+            - IO::Socket::IP
         - JSON.pm
             - JSON::MaybeXS
         - SOAP::Lite
