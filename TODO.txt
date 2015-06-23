@@ -63,14 +63,16 @@ LONG TERM:
     - Perhaps a page about unrecommended CPAN modules:
         - Each, with some more recommended alternatives.
 
+        - Any::Moose
+            - Mouse
         - CGI.pm
         - Error.pm
         - Class::DBI
         - File::Slurp
         - IO::Socket::INET6
             - IO::Socket::IP
-        - JSON.pm
-            - JSON::MaybeXS
+        - JSON.pm & JSON::XS
+            - JSON::MaybeXS & Cpanel::JSON::XS
         - SOAP::Lite
         - Switch.pm.
         - XML::DOM
