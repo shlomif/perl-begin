@@ -33,7 +33,7 @@ Environments.
 bottom of every page for easy bookmarking and sharing.
 
 * Many writing errors (spelling, grammar, syntax, phrasing, etc.) have been
-corrected by Alan Haggai Alavi ( http://alanhaggai.org/ ). He
+corrected by Alan Haggai Alavi ( http://alanhieu.ml/ ). He
 seems to have a good eye for catching such problems, and I am indebted to
 him.
 
