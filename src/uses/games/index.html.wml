@@ -26,16 +26,16 @@ open-source and commercial ones.
 
 <li>
 <p>
-<a href="http://sdlperl.ath.cx/releases/SDL_Manual.pdf">The SDL Perl Manual
+<a href="https://github.com/PerlGameDev/SDL_Manual/blob/master/dist/SDL_Manual.pdf">The SDL Perl Manual
 in PDF</a>, and
-<a href="http://sdlperl.ath.cx/releases/SDL_Manual.html">its HTML version</a>
+<a href="http://github.com/PerlGameDev/SDL_Manual/blob/master/dist/SDL_Manual.html">its HTML version</a>
 (the latter without images).
 </p>
 </li>
 
 <li>
 <p>
-<a href="http://search.cpan.org/dist/SDL/">SDL Perl Reference Documentation
+<a href="http://metacpan.org/release/SDL">SDL Perl Reference Documentation
 on CPAN</a>.
 </p>
 </li>
