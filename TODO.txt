@@ -76,6 +76,8 @@ LONG TERM:
             - IO::Socket::IP
         - JSON.pm & JSON::XS
             - JSON::MaybeXS & Cpanel::JSON::XS
+        - Mouse
+            - Moo
         - SOAP::Lite
         - Switch.pm.
         - XML::DOM
