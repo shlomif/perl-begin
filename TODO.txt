@@ -65,6 +65,9 @@ LONG TERM:
 
         - Any::Moose
             - Mouse
+        - base.pm
+            - parent.pm
+            - Moose / Moo ’s "extends".
         - CGI.pm
         - Error.pm
         - Class::DBI
