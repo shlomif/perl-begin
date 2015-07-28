@@ -4,8 +4,6 @@ CURRENT TASKS:
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Bad elems:
-        - Use of superfluous .* in regexes.
-          @ Added [Sat 2014-05-10]
         - use Getopt::Long qw(2.36 ...); instead of the version outsideTheQw.
           @ Added [Tue 2015-07-28]
     - Add a page about file/directory-handling :
@@ -156,5 +154,8 @@ COMPLETED TASKS:
         - URI parsing.
         - Filenames and paths parsing.
             @ DONE [Thu 2015-06-11]
+    - Bad elems: Use of superfluous .* in regexes.
+        @ DONE [Tue 2015-07-28]
+      @ Added [Sat 2014-05-10]
 
 # vim:ft=quicktask:sw=4:ts=4:et
