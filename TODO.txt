@@ -4,8 +4,6 @@ CURRENT TASKS:
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Bad elems:
-        - use Getopt::Long qw(2.36 ...); instead of the version outsideTheQw.
-          @ Added [Tue 2015-07-28]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
@@ -157,5 +155,9 @@ COMPLETED TASKS:
     - Bad elems: Use of superfluous .* in regexes.
         @ DONE [Tue 2015-07-28]
       @ Added [Sat 2014-05-10]
+    - BadElems: use Getopt::Long qw(2.36 ...); instead of the version
+      outsideTheQw.
+        @ DONE [Tue 2015-07-28]
+      @ Added [Tue 2015-07-28]
 
 # vim:ft=quicktask:sw=4:ts=4:et
