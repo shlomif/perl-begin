@@ -6,6 +6,8 @@ CURRENT TASKS:
     - Bad elems:
         - Use of superfluous .* in regexes.
           @ Added [Sat 2014-05-10]
+        - use Getopt::Long qw(2.36 ...); instead of the version outsideTheQw.
+          @ Added [Tue 2015-07-28]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
