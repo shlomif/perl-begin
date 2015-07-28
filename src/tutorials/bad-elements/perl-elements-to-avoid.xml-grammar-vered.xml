@@ -2674,6 +2674,39 @@ not recommended for more information.
 </p>
 
 </item>
+<item xml:id="use-Module-VERSION">
+<info>
+<title>“use Module qw($VERSION @IMPORTS)”</title>
+</info>
+
+<p>
+Perl will accept the following syntax for loading a particular version
+of a module along with some imports:
+</p>
+
+<bad_code syntax="perl">
+use Getopt::Long qw(2.36 GetOptionsFromArray);
+</bad_code>
+
+<p>
+However, this syntax won't necessarily load the minimal version of the
+module, and tools such as <a xlink:href="http://dzil.org/">Dist::Zilla</a>
+won’t handle it properly. The proper way to do it is with the version number
+given right after the module name, and before the imports list, delimited
+by spaces on both sides:
+</p>
+
+<code_blk syntax="perl">
+#!/usr/bin/perl
+
+use Getopt::Long 2.36 qw(GetOptionsFromArray);
+</code_blk>
+
+<p>
+This will work better.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
