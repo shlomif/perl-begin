@@ -82,7 +82,7 @@ A popular framework for asynchronous events on CPAN.
 <p>
 Many people are tempted to use threads with Perl and Internet forums are
 constantly frequented for help with threads in Perl. However, the use of
-Perl in threads is not recommended:
+threads in Perl is not recommended:
 </p>
 
 <ul>
