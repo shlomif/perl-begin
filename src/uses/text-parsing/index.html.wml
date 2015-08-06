@@ -75,8 +75,8 @@ can be found in the wild.
 
 <li>
 <p>
-<b>JSON</b> should be parsed using <cpan_self_dist d="JSON-MaybeXS" />
-or possibly an event-based, incremental, JSON parser.
+<b>JSON</b> should be parsed using <cpan_self_dist d="JSON-MaybeXS" />,
+or possibly using an event-based, incremental, JSON parser.
 </p>
 </li>
 
