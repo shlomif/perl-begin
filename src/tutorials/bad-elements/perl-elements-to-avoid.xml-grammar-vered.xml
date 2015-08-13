@@ -2556,6 +2556,51 @@ about CPAN</a>.
 </p>
 
 </item>
+<item xml:id="not_using_a_bug_tracker">
+<info>
+<title>Not Using a Bug Tracker/Issue Tracker</title>
+</info>
+
+<p>
+It is important to use a <a
+xlink:href="http://en.wikipedia.org/wiki/Bug_tracking_system">bug tracking</a>
+system to maintain a list of bugs and issues that need to be fixed in your
+code, and of features that you'd like to work on. Sometimes, a simple file kept
+inside the version control system would be enough, but at other times, you
+should opt for a web-based bug tracker.
+</p>
+
+<p>
+For more information, see:
+</p>
+
+<ul>
+
+<li>
+<p>
+<a xlink:href="http://www.joelonsoftware.com/articles/fog0000000029.html">Joel
+on Software article about “Painless Bug Tracking”</a>
+</p>
+</li>
+
+<li>
+<p>
+<a xlink:href="http://www.shlomifish.org/open-source/resources/software-tools/#bug_tracking">“Bug
+Trackers” list</a> on Shlomi Fish’s “Software Construction and Management
+Tools” page.
+</p>
+</li>
+
+<li>
+<p>
+<a xlink:href="http://www.thegeekstuff.com/2010/08/bug-tracking-system/">“Top
+10 Open Source Bug Tracking Systems”</a>
+</p>
+</li>
+
+</ul>
+
+</item>
 <item xml:id="unrelated_packages_inside_modules">
 <info>
 <title>Unrelated packages inside modules</title>

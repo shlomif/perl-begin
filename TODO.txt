@@ -3,9 +3,6 @@
 CURRENT TASKS:
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
-    - Bad elems:
-    - Bad elems: not having a bug/issue tracker.
-      @ Added [Wed 2015-08-12]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
@@ -161,5 +158,8 @@ COMPLETED TASKS:
       outsideTheQw.
         @ DONE [Tue 2015-07-28]
       @ Added [Tue 2015-07-28]
+    - Bad elems: not having a bug/issue tracker.
+        @ DONE [Thu 2015-08-13]
+      @ Added [Wed 2015-08-12]
 
 # vim:ft=quicktask:sw=4:ts=4:et
