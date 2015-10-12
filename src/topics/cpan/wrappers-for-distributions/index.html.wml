@@ -107,6 +107,11 @@ href="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py">dar-perl.py</a>
 CPAN information.
 </li>
 
+<li>
+<a href="http://github.com/jordansissel/fpm/wiki/Perl-Packaging-With-FPM">FPM</a>
+- a Ruby tool for creating native packages.
+</li>
+
 </ul>
 
 </li>
@@ -123,6 +128,11 @@ derivative distributions)<br />
 
 <li>
 <a href="http://packages.debian.org/search?keywords=dh-make-perl">dh-make-perl</a>
+</li>
+
+<li>
+<a href="http://github.com/jordansissel/fpm/wiki/Perl-Packaging-With-FPM">FPM</a>
+- a Ruby tool for creating native packages.
 </li>
 
 </ul>
