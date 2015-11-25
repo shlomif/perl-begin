@@ -8,7 +8,7 @@
 
 <p>
 <b>Hashes</b> (also known as "associative arrays", or in other languages
-"maps" or "dictionaries") allow the programmer to map arbitrary strings to
+as "maps" or "dictionaries") allow the programmer to map arbitrary strings to
 arbitrary values. Perl has a convenient syntax to support hashes as first
 order data structures.
 </p>
