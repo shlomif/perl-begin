@@ -2752,6 +2752,43 @@ This will work better.
 </p>
 
 </item>
+<item xml:id="mutating-vars-by-inc-again-in-rval">
+<info>
+<title>Mutating Variables by referring to them again (e.g: “$x = $x + 1”)</title>
+</info>
+
+<p>
+Sometimes one can see code like that:
+</p>
+
+<bad_code syntax="perl">
+$x = $x + 1;
+
+$my_hash{$my_key}{'field'} = $my_hash{$my_key}{'field'} . " more";
+</bad_code>
+
+<p>
+The problem with code like that is that the <a xlink:href="https://en.wikipedia.org/wiki/L-value">lvalue</a> (the storage location value on the left) is
+repeated in the right side which makes it more prone to errors.
+</p>
+
+<p>
+To overcome this Perl provides operators such as <code>+=</code>,
+<code>.=</code> or <code>++</code> and <code>--</code> which avoid the
+repetition:
+</p>
+
+<code_blk syntax="perl">
+$x++;
+
+$my_hash{$my_key}{'field'} .= " more";
+</code_blk>
+
+<p>
+It is recommended to use them instead.
+</p>
+
+</item>
 </section>
 <section xml:id="sources_of_advice">
 <info>
