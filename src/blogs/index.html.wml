@@ -31,10 +31,15 @@ Challenge</a> that encourages people to blog about Perl regularly.
 with a more official status, but one that lacks comprehensiveness.
 </li>
 
+;;; Broken link and the alternative is lacking.
+<define-tag __remove_planet_perl_six>
+
 <li>
 <a href="http://planetsix.perlfoundation.org/"><b>Planet Perl Six</b></a> -
 an aggregator of select Perl 6 related blogs
 </li>
+
+</define-tag>
 
 <li>
 <a href="http://planet.catalystframework.org/"><b>Planet Catalyst</b></a> -
