@@ -1,8 +1,13 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
+    - Bad elems: using ** for integral power/expontiation.
+        * it always uses floating-points.
+      @ Added [Thu 2016-02-11]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
+    - Add Path::Tiny where appropriate.
+      @ Added [Thu 2016-02-11]
     - Add a page about file/directory-handling :
         - Will share a lot of content with the Sys Admin page.
         - Refer to perldoc -f open and perldoc perlopentut.
