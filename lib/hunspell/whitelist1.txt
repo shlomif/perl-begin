@@ -7,7 +7,6 @@ Alavi
 Bio-Info
 Blog
 Blogs
-Blogs
 CGI
 CPAN
 CPAN's
@@ -25,7 +24,6 @@ Hexten
 Hyperpolyglot
 IDE
 IDEs
-IRC
 IRC
 LGPL
 LiveJournal
@@ -129,6 +127,7 @@ Activestate
 Affrus
 BBEdit
 CC-by-sa
+Camelcade
 DDD
 Devel
 Devel-ptkdb
@@ -140,6 +139,8 @@ Geany
 IDE's
 IDE-like
 IndigoSTAR
+IntelliJ
+JetBrains
 Kephra
 Komodo
 MacVim
@@ -149,11 +150,13 @@ PFE
 PHP
 Pashua
 Perl-compatible
+Perl-oriented
 PerlEdit
 PerlNet
 PerlPad
 PerlWiz
 Perltidy
+Plugin
 RDBMS
 REPL
 RHTML
@@ -187,7 +190,6 @@ perlDoc
 perldbgui
 perldoc
 perltidy
-pl
 pl
 rc
 repl
@@ -230,10 +232,12 @@ weblog
 Apress
 Damian
 Dominus
+ELISHEVA
 Kaufmann
 O'Reilly's
 Orwant
 Oualline
+Perlmonks
 Powells
 Randal
 Torkington
@@ -253,12 +257,17 @@ webmaster
 
 ==== dest/contribute/index.html
 
+PayPal
+Perl-Begin's
+Perl-Related
 upvoting
 
 ==== dest/contribute/list/index.html
 
+Chankey
 Goehrig
 Matty
+Pathak
 Perl-Begin
 Seppo
 Shog9
@@ -293,10 +302,12 @@ exe
 ==== dest/irc/index.html
 
 Chatzilla
-FreeNode
+Freenode
+HexChat
 IRC-jargon
 OFTC
 XChat
+irc
 mIRC
 modperl
 
@@ -386,6 +397,7 @@ szabgab
 
 Perl-Beginner
 Perl-begin
+meetups
 org's
 
 ==== dest/news/index.html
@@ -395,9 +407,11 @@ AddToAny
 Analytics
 CC-by-nc-sa
 DWIM
+Freenode
 GFDLed
 LWP
 MediaWiki
+PHP
 Perl-Begin
 Perl-Begin's
 Perlmeme
@@ -406,6 +420,7 @@ ShareThis
 bitbucket
 howto
 mentionings
+perlcafe
 screenshots
 tm604
 wiki'ing
@@ -420,6 +435,7 @@ Solaris
 ==== dest/platforms/mac/index.html
 
 MacPerl
+perlbrew
 
 ==== dest/platforms/unix/index.html
 
@@ -430,14 +446,12 @@ Tk-based
 non-Perl
 perl-doc
 perldoc
-perldoc
 tkpod
 
 ==== dest/platforms/windows/index.html
 
 ActivePerl
 ActiveState
-DWIM
 DWIM
 Kensho
 Win32-specific
@@ -481,7 +495,9 @@ PerlNet
 Perlmonks
 SlideShare
 Thalhammer
+catalyzed
 metacpan
+mstpan
 uninstalled
 
 ==== dest/topics/cpan/wrappers-for-distributions/index.html
@@ -496,7 +512,9 @@ CPANPLUS-Dist-Mageia
 CPANPLUS-Dist-Mdv
 CPANPLUS-Dist-RPM
 CPANPLUS-Dist-SUSE
+CPANPLUS-Dist-Slackware
 Debian
+FPM
 Gentoo
 Mageia
 Mandriva
@@ -506,6 +524,7 @@ RPMforge
 RPMs
 SPEC
 SUSE
+Slackware
 Tech
 cpan2rpm
 cpanflute2
@@ -535,10 +554,14 @@ DDD
 Devel
 Devel-LineTrace
 Devel-Trace
+Devel-Trepan
 Devel-ptkdb
 Tk
+Trepan
+perl5db
 perldbgui
 perldebtut
+pl
 print's
 
 ==== dest/topics/files-and-directories/index.html
@@ -555,6 +578,7 @@ ARGV
 Basename
 IO
 IO-All
+IO-All-Rule
 Prepend
 Prepending
 Spec
@@ -620,11 +644,11 @@ OOP
 ==== dest/topics/modules-and-packages/index.html , dest/topics/object-oriented/index.html
 
 11th
+App-Fatpacker
 MooX
 OOP
 Perldoc
 perlmod
-perlobj
 perlobj
 perlootut
 
@@ -650,6 +674,7 @@ perlreftut
 
 ==== dest/topics/regular-expressions/index.html
 
+Regexes
 perlre
 perlrequick
 perlreref
@@ -701,6 +726,7 @@ xkcd
 'Perl-Begin
 '_
 'age
+'field
 'foobar
 'fortune
 'if_false
@@ -714,6 +740,7 @@ xkcd
 -c0-8
 -no_match_vars
 0x20
+2a
 2x
 5's
 ARGV
@@ -726,6 +753,7 @@ Cond
 Config-IniFiles
 Damian
 Devel-Declare
+Dist
 Dominus
 EOF
 EOL
@@ -735,6 +763,7 @@ Eval
 FileHandle
 Foo
 FreeBSD
+GetOptionsFromArray
 Getopt
 HiRes
 Hoare
@@ -769,11 +798,11 @@ Perl6-Form
 Randal
 Readonly
 Refactoring
+Regex
 STDERR
 STDERR-
 STDIN
 STDOUT-
-Spec
 Spec
 Spec-
 SumOfSquares
@@ -785,6 +814,7 @@ Utils
 Varvarname
 WTF
 Whitespace
+Zilla
 _age
 _name
 _slurp
@@ -850,19 +880,27 @@ input_filename
 int
 is_interactive
 ithreads
+key1
+key2
 kqueue
 last_idx
 last_name
 long_string_without_interpolation
 lowercase
+lvalue
 mini-regex
 multitask
 my_fh
 my_file_handle
 my_func
 my_function
+my_hash
+my_key
 my_object_instance
 my_object_instance-
+my_string
+my_sub
+my_value
 myarray_ref
 myarray_ref-
 myfunc
@@ -901,6 +939,7 @@ perlvar
 phone_number
 phone_numbers
 pl
+practiced
 pragmas
 presidents_names
 print_foo
@@ -912,11 +951,11 @@ qx
 read_dir
 readdir
 refactoring
+regex
 rm
 sed
-sed
 send_email
-send_email
+sha-bang
 sophie
 srand
 str
@@ -936,7 +975,6 @@ uk_info
 undef
 uppercase
 username
-username
 usr
 value_to_append
 var
@@ -944,7 +982,6 @@ var1
 varvarname
 wc
 whitespace
-write_fh
 write_fh
 x0a
 x0d
@@ -1630,6 +1667,7 @@ POE
 POE-Component-IRC
 PoCoIrc
 Silverex
+XChat
 evalbots
 infobots
 
@@ -1673,10 +1711,14 @@ Bio-Informatics
 ==== dest/uses/multitasking/index.html
 
 AnyEvent
+AnyEvent-ForkManager
+IO-Async
 IPC-Run
 Mattijsen
 POE
+Parallel-ForkManager
 Perlmonks
+parallelise
 perlthrtut
 ptys
 
@@ -1695,6 +1737,7 @@ Net-Telnet
 Basename
 IO
 IO-All
+IO-All-Rule
 Spec
 String-ShellQuote
 basename
@@ -1714,7 +1757,6 @@ Perl6-Form
 Sprintf
 Text-Sprintf-Named
 Toolkit
-Toolkit
 Util
 XML-Writer
 args
@@ -1730,21 +1772,21 @@ usr
 ==== dest/uses/text-parsing/index.html
 
 AST
-AST
 HTML-TokeParser-Simple
 HTML-TreeBuilder-LibXML
 HTMLs
-Marpa-PP
+JSON
+JSON-MaybeXS
 Marpa-PP
 Marpa-XS
 Parse-RecDescent
-Parse-RecDescent
-Parse-Yapp
 Parse-Yapp
 Parser-MGC
 Regexp-Grammars
 Text-CSV_XS
 TreeBuilder
+URIs
+URLs
 XML-LibXML's
 cg
 libxml
@@ -1796,11 +1838,17 @@ ul
 
 ==== dest/web-forums/index.html
 
+Facebook
+Facebook's
 OpenStudy
 Perl-based
+Reddit
+Reddit's
 SitePoint's
 Slashdot
 Whatsup
 Whatsup's
 il
+reddit
+subreddit
 

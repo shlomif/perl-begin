@@ -18,7 +18,7 @@ people tend to use and some better practices that should be used instead.
 </p>
 <p>
 A book I read said, that as opposed to most previous idea systems, they
-were trying to <b>liquidate negatives</b> instead of to instill positives
+were trying to <b>liquidate negatives</b> instead of to instil positives
 in people. So in the spirit of liquidating negatives, this tutorial-in-reverse
 aims to show you what <b>not to do</b>.
 </p>
@@ -2184,7 +2184,7 @@ The improvement in speed from Example 2 to Example 2a is only about 12%, and man
 </p>
 
 <p>
-There is no doubt that the grail of efficiency leads to abuse. Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.
+There is no doubt that the grail of efficiency leads to abuse. Programmers waste enormous amounts of time thinking about, or worrying about, the speed of non-critical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.
 </p>
 </blockquote>
 
@@ -2430,7 +2430,7 @@ print "Hello $first_name $last_name!";
 <p>
 However, if the regular expression match operation is not successful, then
 it is possible that these variables will remain with their values from the
-previous successfulmatch operations, whatever they were.
+previous successful match operations, whatever they were.
 </p>
 
 <p>

@@ -91,7 +91,7 @@ collection of CPAN modules.
 
 <li>
 <p>
-In order to parse and analyze file and directory paths, you should use the
+In order to parse and analyse file and directory paths, you should use the
 <a href="$(ROOT)/topics/files-and-directories/#modules">modules
 recommended</a> in our "Files and Directories" page.
 </p>
