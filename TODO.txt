@@ -166,5 +166,8 @@ COMPLETED TASKS:
     - Bad elems: not having a bug/issue tracker.
         @ DONE [Thu 2015-08-13]
       @ Added [Wed 2015-08-12]
+    - Link to the new repository at GitHub.
+        @ DONE [Tue 2016-02-16]
+      @ Added [Tue 2016-02-16]
 
 # vim:ft=quicktask:sw=4:ts=4:et

@@ -19,12 +19,15 @@ its version control repository.
 
 <p>
 The most up-to-date source code for this site is now hosted in
-<a href="https://bitbucket.org/shlomif/perl-begin">a Mercurial (hg)
+<a href="https://github.com/shlomif/perl-begin">a GitHub (git)
 repository</a>
-on <a href="http://bitbucket.org/">Bitbucket.org</a>. In order to learn how
-to use Mercurial, see either one of:
+on <a href="http://github.com/">GitHub</a>. In order to learn how
+to use git, see <a href="http://www.git-scm.com/">its homepage</a>
+or its <a href="http://en.wikipedia.org/wiki/Git_%28software%29">Wikipedia
+page</a>.
 </p>
 
+<define-tag removed>
 <ol>
 
 <li>
@@ -48,9 +51,10 @@ Mercurial"</a> - on the Mercurial wiki.
 </li>
 
 </ol>
+</define-tag>
 
 <p>
-After that, you can clone the repository on Bitbucket, and send us pull
+After that, you can clone the repository on GitHub, and send us pull
 requests.
 </p>
 
