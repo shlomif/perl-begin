@@ -84,9 +84,7 @@ GetOptions(
 {
     my @not_found;
 
-    foreach my $path (
-        "$ENV{HOME}/.shlomifish-amazon-sak.json",
-    )
+    foreach my $path ()
     {
         if (! -e $path)
         {
