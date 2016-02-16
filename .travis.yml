@@ -2,8 +2,9 @@ os: linux
 dist: trusty
 before_install:
     - sudo apt-get update -qq
-    - sudo apt-get install -y ack-grep cpanminus perl libperl-dev valgrind
+    - sudo apt-get install -y ack-grep cpanminus perl libperl-dev valgrind wml xsltproc
     - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    - sudo cpanm Alien::Tidyp YAML::XS
+    - sudo cpanm Alien::Tidyp App::XML::DocBook::Builder Template::Preprocessor::TTML YAML::XS
     - "sudo cpanm $(perl -MYAML::XS=LoadFile -e 'print join q( ), sort {$a cmp $b} keys(%{LoadFile(q(bin/required-modules.yml))->{required}->{modules}})')"
+    - sudo gem install sass compass compass-blueprint
 script: "true"
