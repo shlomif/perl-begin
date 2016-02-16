@@ -84,7 +84,9 @@ GetOptions(
 {
     my @not_found;
 
-    foreach my $path ()
+    my @EMPTY_LIST;
+
+    foreach my $path (@EMPTY_LIST)
     {
         if (! -e $path)
         {
