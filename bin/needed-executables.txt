@@ -2,7 +2,6 @@ compass
 docmake
 latemp-config
 sass
-tidyp
 ttml
 wml
 xsltproc
