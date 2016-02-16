@@ -1,0 +1,9 @@
+os: linux
+dist: trusty
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -y ack-grep cpanminus perl libperl-dev valgrind
+    - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+    - sudo cpanm YAML::XS
+    - "sudo cpanm $(perl -MYAML::XS=LoadFile -e 'print join q( ), sort {$a <=> $b} keys(%{LoadFile(q(bin/required-modules.yml))->{required}->{modules}})'"
+script: "true"
