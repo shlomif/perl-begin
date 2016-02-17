@@ -131,7 +131,7 @@ foreach my $filename (@ARGV)
             $l =~ s/
             # Not sure this regex to match a word is fully
             # idiot-proof, but we can amend it later.
-            ([\w'’-]+)
+            ([\w'’\-]+)
             /$mark_word->($1)/egx;
 
             if ($mispelling_found)
