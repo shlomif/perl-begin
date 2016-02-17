@@ -35,6 +35,7 @@ required:
         POSIX: 0
         String::ShellQuote: 0
         Template: 0
+        Test::HTML::Tidy::Recursive: 0
         Test::More: 0
         Text::Hunspell: 0
         Text::VimColor: 0
