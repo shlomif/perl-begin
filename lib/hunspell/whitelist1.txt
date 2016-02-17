@@ -117,6 +117,7 @@ wikis
 
 ==== dest/FAQs/index.html
 
+-q
 Freenode
 perldoc
 
@@ -257,6 +258,7 @@ webmaster
 
 ==== dest/contribute/index.html
 
+-like
 PayPal
 Perl-Begin's
 Perl-Related
@@ -439,6 +441,7 @@ perlbrew
 
 ==== dest/platforms/unix/index.html
 
+-v
 DocPerl
 Perldoc
 Solaris
@@ -481,6 +484,7 @@ wiki'ing
 ==== dest/source/index.html
 
 Bitbucket
+GitHub
 Init
 Latemp
 WML
@@ -550,6 +554,7 @@ perlfunc
 
 ==== dest/topics/debugging/index.html
 
+-d
 DDD
 Devel
 Devel-LineTrace
@@ -571,6 +576,10 @@ print's
 'foo
 'my-file
 's
+-0777
+-C
+-e
+-i
 -ln
 -lnE
 -lp
@@ -588,6 +597,7 @@ autodie
 bFrom
 bak
 basename
+chomp-
 closedir
 count_lines
 dest_filename
@@ -691,6 +701,7 @@ pl
 ==== dest/topics/security/code-markup-injection/index.html
 
 's
+-f
 EOF
 Juerd
 Markup
@@ -706,6 +717,7 @@ fh
 get_input_from_user_somehow
 h4x0r3d
 kinding
+m
 metaprogramming
 mytable
 myvar
@@ -737,12 +749,24 @@ xkcd
 'shlomif
 'sophie
 't
+--show-ends
+-1
+-2
+-a
+-c
 -c0-8
+-city
+-f
+-name
 -no_match_vars
+-occupation
+-s
+-w
 0x20
 2a
 2x
 5's
+52-
 ARGV
 Autoflush
 Bareword
@@ -795,6 +819,7 @@ PREMATCH
 Perl-Tidy
 Perl-based
 Perl6-Form
+Person-
 Randal
 Readonly
 Refactoring
@@ -812,9 +837,11 @@ TrailingSpace
 Util
 Utils
 Varvarname
+W
 WTF
 Whitespace
 Zilla
+[-n-ame
 _age
 _name
 _slurp
@@ -872,6 +899,7 @@ get_employee
 get_street
 grep
 hay_stack
+i
 idx
 inline
 inline-
@@ -880,6 +908,7 @@ input_filename
 int
 is_interactive
 ithreads
+j
 key1
 key2
 kqueue
@@ -888,6 +917,7 @@ last_name
 long_string_without_interpolation
 lowercase
 lvalue
+m
 mini-regex
 multitask
 my_fh
@@ -954,6 +984,7 @@ refactoring
 regex
 rm
 sed
+self-
 send_email
 sha-bang
 sophie
@@ -980,6 +1011,7 @@ value_to_append
 var
 var1
 varvarname
+w
 wc
 whitespace
 write_fh
@@ -1071,15 +1103,43 @@ Shmuel
 'version
 'x
 'y
+--author
+--builder
 --dir
 --distro
+--email
 --eumm
+--force
+--help
+--license
 --mb
+--mi
+--module
+--verbose
+-1
 -10s
+-13
+-2
+-3
+-5
 -6s
+-8
 -MCPAN
+-X
+-d
+-e
 -ed
+-f
+-fr
+-l
+-like
+-m
+-r
 -rw-r--r--
+-sign
+-use
+-w
+-x
 -xvf
 06s
 0b
@@ -1105,6 +1165,7 @@ ABC
 ARGV
 Aa
 Accessor
+Add-
 Add1
 Add2
 AnnoCPAN
@@ -1132,6 +1193,7 @@ Damian
 Dist
 DocBook
 Dominus
+Dumper-
 Dunkelman
 EXPORT_OK
 EXPR
@@ -1165,6 +1227,7 @@ Lex
 Linux-IL
 Lite
 Longstring
+M
 MAIN_LOOP
 MJD's
 MODULENAME
@@ -1194,6 +1257,7 @@ Perldoc
 Perlers
 Perlmonks
 Perls
+Person-
 Pres
 PseudoPod
 README
@@ -1224,6 +1288,7 @@ Tregar
 Ungreedy
 VCS
 VCSes
+W
 Win32-GuiTest
 WinZip
 Wstat
@@ -1237,6 +1302,7 @@ _age
 _first_name
 _init
 _last_name
+a-
 a-zA-Z
 a-zA-Z0-9_
 a7599e97a8d8
@@ -1249,6 +1315,7 @@ accum
 add1-test
 add1-test-2
 add_cr
+adder-
 addr
 addrs
 all_as
@@ -1269,6 +1336,7 @@ assign_name
 assign_name_ext
 atime
 awk
+b-
 bak
 bank_accounts
 belum
@@ -1291,6 +1359,7 @@ condition0
 condition1
 condition2
 configurability
+cont-
 counter_func
 cp
 cpan
@@ -1324,6 +1393,7 @@ do_print
 dog_names
 ds1
 ds1-
+dumper-
 dunkelman
 döt
 e2b34f948dcd
@@ -1383,6 +1453,7 @@ hoc
 how_many
 how_much
 htmlname
+i
 idx
 ifconfig
 iglu
@@ -1419,6 +1490,7 @@ lon
 lowercase
 ls_output
 lt
+m
 max
 merc-test
 method_name
@@ -1460,6 +1532,7 @@ new_elem
 new_first_name
 new_last_name
 new_name
+newton-
 nlink
 non-whitespace
 num_disks
@@ -1467,6 +1540,7 @@ num_elems
 num_primes
 num_times
 number_to_check
+o
 object_ref
 object_ref-
 ok
@@ -1507,6 +1581,7 @@ perlretut
 perlsyn
 perltoot
 perlvar
+person-
 petdance
 pl
 power_of_2
@@ -1533,6 +1608,7 @@ read_from_process
 read_text
 readdir
 realloc
+record-
 ref_to_sum
 refactor
 regex
@@ -1548,6 +1624,7 @@ scalar1
 scalar2
 secs
 sed
+self-
 sendmail
 seq1
 seq2
@@ -1602,6 +1679,7 @@ vars
 vector_sum
 verne
 vs
+w
 wallclock
 washington
 wc
@@ -1613,6 +1691,7 @@ whitespace-delimited
 write_text
 wstat
 www
+x--
 x-euc-jp-unicode
 x-sjis-cp932
 xDD
@@ -1631,6 +1710,7 @@ yml
 
 ==== dest/uses/GUI/index.html
 
+-based
 GTK
 GUI
 GUIs
@@ -1753,6 +1833,7 @@ perlfunc
 Ayeleth
 List-MoreUtils
 List-UtilsBy
+Named-
 Perl6-Form
 Sprintf
 Text-Sprintf-Named
@@ -1762,6 +1843,7 @@ XML-Writer
 args
 colors
 fmt
+formatter-
 grep
 large_string
 perlform
@@ -1790,6 +1872,7 @@ URLs
 XML-LibXML's
 cg
 libxml
+m
 perl-5
 pos
 regex
