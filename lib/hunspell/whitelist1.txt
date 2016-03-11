@@ -1,3 +1,5 @@
+==== GLOBAL:
+
 22-Jul-2011
 9-Jul-2012
 API
@@ -115,13 +117,13 @@ wikibooks
 wikipedia
 wikis
 
-==== dest/FAQs/index.html
+==== In: dest/FAQs/index.html
 
 -q
 Freenode
 perldoc
 
-==== dest/IDEs-and-tools/Perl_developer_tools/index.html , dest/IDEs-and-tools/index.html
+==== In: dest/IDEs-and-tools/Perl_developer_tools/index.html , dest/IDEs-and-tools/index.html
 
 ActiveState
 Activestate
@@ -200,11 +202,11 @@ v5
 vi
 wayback
 
-==== dest/about.html
+==== In: dest/about.html
 
 perl-begin
 
-==== dest/articles/index.html
+==== In: dest/articles/index.html
 
 Dominus
 HOWTOs
@@ -213,7 +215,7 @@ perl101
 perlmeme
 www
 
-==== dest/blogs/index.html
+==== In: dest/blogs/index.html
 
 Aggregators
 Blogging
@@ -228,7 +230,7 @@ reddit
 sub-reddit
 weblog
 
-==== dest/books/advanced/index.html , dest/books/index.html
+==== In: dest/books/advanced/index.html , dest/books/index.html
 
 Apress
 Damian
@@ -247,16 +249,16 @@ brian
 foy
 hoc
 
-==== dest/books/topics/index.html
+==== In: dest/books/topics/index.html
 
 LWP
 libwww-perl
 
-==== dest/contact/index.html
+==== In: dest/contact/index.html
 
 webmaster
 
-==== dest/contribute/index.html
+==== In: dest/contribute/index.html
 
 -like
 PayPal
@@ -264,7 +266,7 @@ Perl-Begin's
 Perl-Related
 upvoting
 
-==== dest/contribute/list/index.html
+==== In: dest/contribute/list/index.html
 
 Chankey
 Goehrig
@@ -281,12 +283,12 @@ slakmagik
 szabgab
 tm604
 
-==== dest/core-doc/index.html
+==== In: dest/core-doc/index.html
 
 3rd
 Perldoc
 
-==== dest/exercises/index.html
+==== In: dest/exercises/index.html
 
 Dominus
 Martyr2's
@@ -294,14 +296,14 @@ Prolog
 Randal
 euler
 
-==== dest/index.html
+==== In: dest/index.html
 
 100s
 Win32's
 cmd
 exe
 
-==== dest/irc/index.html
+==== In: dest/irc/index.html
 
 Chatzilla
 Freenode
@@ -313,13 +315,13 @@ irc
 mIRC
 modperl
 
-==== dest/learn/Perl-perl-but-not-PERL/index.html
+==== In: dest/learn/Perl-perl-but-not-PERL/index.html
 
 all-lowercase
 lowercase
 uppercase
 
-==== dest/learn/get-a-job/index.html
+==== In: dest/learn/get-a-job/index.html
 
 Bio-informatics
 PHP
@@ -327,7 +329,7 @@ Slashdot
 administation
 awk
 
-==== dest/learn/index.html
+==== In: dest/learn/index.html
 
 DWIMmeries
 FP
@@ -335,7 +337,7 @@ OOP
 PHP
 libre
 
-==== dest/learn/perl6/index.html
+==== In: dest/learn/perl6/index.html
 
 Bunce
 Maven
@@ -347,7 +349,7 @@ mst
 perl-5
 versioned
 
-==== dest/learn/who-is-using/index.html
+==== In: dest/learn/who-is-using/index.html
 
 Brocard
 Laufeyjarson
@@ -357,7 +359,7 @@ Slashdot
 SpamAssassin
 Westermann-Clark
 
-==== dest/learn/why-perl/index.html
+==== In: dest/learn/why-perl/index.html
 
 Bunce
 Etc
@@ -367,11 +369,11 @@ PHP
 PerlNet's
 libre
 
-==== dest/learn/why-perl/index.html
+==== In: dest/learn/why-perl/index.html
 
 DWIMmeries
 
-==== dest/links/index.html
+==== In: dest/links/index.html
 
 DMoz
 DMoz's
@@ -395,14 +397,14 @@ pumpking
 rn
 szabgab
 
-==== dest/mailing-lists/index.html
+==== In: dest/mailing-lists/index.html
 
 Perl-Beginner
 Perl-begin
 meetups
 org's
 
-==== dest/news/index.html
+==== In: dest/news/index.html
 
 ActivePerl
 AddToAny
@@ -427,19 +429,19 @@ screenshots
 tm604
 wiki'ing
 
-==== dest/platforms/index.html
+==== In: dest/platforms/index.html
 
 FreeBSD
 MacPerl
 PowerPC
 Solaris
 
-==== dest/platforms/mac/index.html
+==== In: dest/platforms/mac/index.html
 
 MacPerl
 perlbrew
 
-==== dest/platforms/unix/index.html
+==== In: dest/platforms/unix/index.html
 
 -v
 DocPerl
@@ -451,7 +453,7 @@ perl-doc
 perldoc
 tkpod
 
-==== dest/platforms/windows/index.html
+==== In: dest/platforms/windows/index.html
 
 ActivePerl
 ActiveState
@@ -460,7 +462,7 @@ Kensho
 Win32-specific
 win32
 
-==== dest/reference-resources/index.html
+==== In: dest/reference-resources/index.html
 
 Attribution-ShareAlike
 PHP
@@ -468,20 +470,20 @@ perlop
 perlopquick
 perlreref
 
-==== dest/resources/index.html
+==== In: dest/resources/index.html
 
 Weblogs
 
-==== dest/site-resources/mailing-list/index.html
+==== In: dest/site-resources/mailing-list/index.html
 
 Mailman
 
-==== dest/site-resources/wiki/index.html
+==== In: dest/site-resources/wiki/index.html
 
 MediaWiki
 wiki'ing
 
-==== dest/source/index.html
+==== In: dest/source/index.html
 
 Bitbucket
 GitHub
@@ -491,7 +493,7 @@ WML
 hg
 hgbook
 
-==== dest/topics/cpan/index.html
+==== In: dest/topics/cpan/index.html
 
 CPAN-like
 Elisheva
@@ -504,7 +506,7 @@ metacpan
 mstpan
 uninstalled
 
-==== dest/topics/cpan/wrappers-for-distributions/index.html
+==== In: dest/topics/cpan/wrappers-for-distributions/index.html
 
 App-Magpie
 CPAN2pkg
@@ -541,7 +543,7 @@ py
 rpm
 rpm-build-perl
 
-==== dest/topics/date-and-time/index.html
+==== In: dest/topics/date-and-time/index.html
 
 DateTime
 DateTime-Format-
@@ -552,7 +554,7 @@ DateTime-Format-W3CDTF
 POSIX
 perlfunc
 
-==== dest/topics/debugging/index.html
+==== In: dest/topics/debugging/index.html
 
 -d
 DDD
@@ -569,7 +571,7 @@ perldebtut
 pl
 print's
 
-==== dest/topics/files-and-directories/index.html
+==== In: dest/topics/files-and-directories/index.html
 
 'END
 'Something
@@ -643,15 +645,15 @@ usr
 utf8
 utf8-
 
-==== dest/topics/hashes/index.html
+==== In: dest/topics/hashes/index.html
 
 OpenDocument
 
-==== dest/topics/index.html
+==== In: dest/topics/index.html
 
 OOP
 
-==== dest/topics/modules-and-packages/index.html , dest/topics/object-oriented/index.html
+==== In: dest/topics/modules-and-packages/index.html , dest/topics/object-oriented/index.html
 
 11th
 App-Fatpacker
@@ -662,7 +664,7 @@ perlmod
 perlobj
 perlootut
 
-==== dest/topics/optimising-and-profiling/index.html
+==== In: dest/topics/optimising-and-profiling/index.html
 
 Devel-NYTProf
 Inline
@@ -672,7 +674,7 @@ ctypes
 performant
 perl-ctypes
 
-==== dest/topics/references/index.html
+==== In: dest/topics/references/index.html
 
 Randal
 Schwratz
@@ -682,7 +684,7 @@ perllol
 perlref
 perlreftut
 
-==== dest/topics/regular-expressions/index.html
+==== In: dest/topics/regular-expressions/index.html
 
 Regexes
 perlre
@@ -693,12 +695,12 @@ re's
 regexes
 regexps
 
-==== dest/topics/scoping/index.html
+==== In: dest/topics/scoping/index.html
 
 Dominus's
 pl
 
-==== dest/topics/security/code-markup-injection/index.html
+==== In: dest/topics/security/code-markup-injection/index.html
 
 's
 -f
@@ -727,7 +729,7 @@ quotemeta
 regex
 xkcd
 
-==== dest/tutorials/bad-elements/index.html
+==== In: dest/tutorials/bad-elements/index.html
 
 '-Plp1
 '10
@@ -1019,7 +1021,7 @@ x0a
 x0d
 x_power
 
-==== dest/tutorials/index.html
+==== In: dest/tutorials/index.html
 
 Attribution-ShareAlike
 Devijver
@@ -1038,12 +1040,12 @@ org's
 perlintro
 screencasts
 
-==== dest/tutorials/localized/index.html
+==== In: dest/tutorials/localized/index.html
 
 Fomberg
 Shmuel
 
-==== dest/tutorials/perl-for-newbies/part1/index.html , dest/tutorials/perl-for-newbies/part2/index.html , dest/tutorials/perl-for-newbies/part3/index.html , dest/tutorials/perl-for-newbies/part4/index.html , dest/tutorials/perl-for-newbies/part5/index.html
+==== In: dest/tutorials/perl-for-newbies/part1/index.html , dest/tutorials/perl-for-newbies/part2/index.html , dest/tutorials/perl-for-newbies/part3/index.html , dest/tutorials/perl-for-newbies/part4/index.html , dest/tutorials/perl-for-newbies/part5/index.html
 
 '0
 '1
@@ -1708,7 +1710,7 @@ yml
 ל-Module-Build
 ש-Module-Starter
 
-==== dest/uses/GUI/index.html
+==== In: dest/uses/GUI/index.html
 
 -based
 GTK
@@ -1724,11 +1726,11 @@ skinnable
 wxPerl
 wxWidgets
 
-==== dest/uses/bio-info/index.html
+==== In: dest/uses/bio-info/index.html
 
 Bio-Informatics
 
-==== dest/uses/chat-scripting/index.html
+==== In: dest/uses/chat-scripting/index.html
 
 AnyEvent
 AnyEvent-IRC
@@ -1751,7 +1753,7 @@ XChat
 evalbots
 infobots
 
-==== dest/uses/databases/index.html
+==== In: dest/uses/databases/index.html
 
 BerkeleyDB
 BigTable
@@ -1775,7 +1777,7 @@ mod_perl
 non-SQL
 xBase
 
-==== dest/uses/games/index.html
+==== In: dest/uses/games/index.html
 
 DirectMedia
 SDL
@@ -1784,11 +1786,11 @@ demos
 non-Perl
 toolkits
 
-==== dest/uses/index.html
+==== In: dest/uses/index.html
 
 Bio-Informatics
 
-==== dest/uses/multitasking/index.html
+==== In: dest/uses/multitasking/index.html
 
 AnyEvent
 AnyEvent-ForkManager
@@ -1802,7 +1804,7 @@ parallelise
 perlthrtut
 ptys
 
-==== dest/uses/remote-login-and-commands/index.html
+==== In: dest/uses/remote-login-and-commands/index.html
 
 IPC-PerlSSH
 IPC-PerlSSH-Async
@@ -1812,7 +1814,7 @@ Net-SSH-Perl
 Net-SSH2
 Net-Telnet
 
-==== dest/uses/sys-admin/index.html
+==== In: dest/uses/sys-admin/index.html
 
 Basename
 IO
@@ -1824,7 +1826,7 @@ basename
 dirname
 perlfunc
 
-==== dest/uses/text-generation/index.html
+==== In: dest/uses/text-generation/index.html
 
 'day
 'even
@@ -1851,7 +1853,7 @@ sprintf
 sprintf-like
 usr
 
-==== dest/uses/text-parsing/index.html
+==== In: dest/uses/text-parsing/index.html
 
 AST
 HTML-TokeParser-Simple
@@ -1877,7 +1879,7 @@ perl-5
 pos
 regex
 
-==== dest/uses/web-automation/index.html
+==== In: dest/uses/web-automation/index.html
 
 HTML-TreeBuilder-LibXML
 HTTPS
@@ -1890,13 +1892,13 @@ libcurl
 libwww-perl
 libwww-perl-like
 
-==== dest/uses/web/index.html
+==== In: dest/uses/web/index.html
 
 IIS
 Lite
 Mojolicious
 
-==== dest/uses/xml/index.html
+==== In: dest/uses/xml/index.html
 
 'ul
 CSS-style
@@ -1919,7 +1921,7 @@ org-like
 selector_to_xpath
 ul
 
-==== dest/web-forums/index.html
+==== In: dest/web-forums/index.html
 
 Facebook
 Facebook's
