@@ -88,5 +88,12 @@ $generator->process_all();
 
     close($out_fh);
 }
+
+{
+    open my $out_fh, ">", "Makefile" or die "Cannot open Makefile $!";
+    print {$out_fh} "include lib/make/_Main.mak\n";
+    close ($out_fh);
+}
+
 1;
 
