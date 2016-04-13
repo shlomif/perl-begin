@@ -22,7 +22,9 @@ comprehensive CPAN module based on the
 <a href="http://xmlsoft.org/">libxml2</a> library, that provides DOM (Document
 Object Module), SAX (a stream parser), a pull parser, XPath, and
 <cpan_dist d="XML-LibXSLT">XSLT</cpan_dist>
-support. XML-LibXML has good documentation and is actively maintained.
+support. XML-LibXML has good reference documentation and is actively maintained.
+The <a href="http://grantm.github.io/perl-libxml-by-example/">Perl
+XML::LibXML by Example</a> site provides a tutorial suitable for beginners.
 </p>
 
 <p>
