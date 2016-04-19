@@ -2832,6 +2832,30 @@ sub exp_mod
 </code_blk>
 </item>
 
+<item xml:id="test-suites-that-fail-when-run-in-parallel">
+<info>
+<title>TAP test suites that fail when run in parallel</title>
+</info>
+
+<p>
+As mentioned before, it is a good idea for your production code to have
+automated tests and Perl provides a facility for that using
+<cpan_self_dist d="Test-Harness" /> and various TAP emitting systems that can
+be written in almost any programming language. That put aside, Test-Harness
+supports a “-j9” flag (also available in the “HARNESS_OPTIONS” environment
+variable as “j9”) where “9” is the number of parallel processes, which allows
+to run the test scripts in parallel, in order to try to make the test
+suit run faster. As a result, one should make sure one's TAP-based test suite
+runs fine in parallel, and that the individual scripts do not step on each
+other’s toes.
+</p>
+
+<p>
+One can make a wise use of <cpan_self_dist d="File-Temp" /> for that.
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>

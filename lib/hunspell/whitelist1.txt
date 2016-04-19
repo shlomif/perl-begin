@@ -759,6 +759,7 @@ xkcd
 -c0-8
 -city
 -f
+-j9
 -name
 -no_match_vars
 -occupation
@@ -792,6 +793,7 @@ Foo
 FreeBSD
 GetOptionsFromArray
 Getopt
+HARNESS_OPTIONS
 HiRes
 Hoare
 IO
@@ -913,6 +915,7 @@ int
 is_interactive
 ithreads
 j
+j9
 key1
 key2
 kqueue
