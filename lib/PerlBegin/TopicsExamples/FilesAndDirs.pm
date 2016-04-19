@@ -129,16 +129,16 @@ EOF
             examples =>
             [
                 {
-                    id => "file_slurp",
-                    label => "File::Slurp",
+                    id => "path_tiny",
+                    label => "Path::Tiny",
                     code => <<'EOF',
-use File::Slurp;
+use Path::Tiny qw/ path /;
 
 my @filenames = @ARGV;
 
 foreach my $fn (@filenames)
 {
-    edit_file_lines sub { s/\bFrom\b/To/g }, $fn;
+    path($fn)->edit_lines_utf8(sub { s/\bFrom\b/To/g; });
 }
 EOF
 
