@@ -1,7 +1,7 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Bad elems: using ** for integral power/expontiation.
+    - Bad elems: using ** for integral power/exponentiation.
         * it always uses floating-points.
       @ Added [Thu 2016-02-11]
     - Bad elems: test suites that fail with -j/parallelisation
