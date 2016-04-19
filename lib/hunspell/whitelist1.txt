@@ -764,6 +764,7 @@ xkcd
 -occupation
 -s
 -w
+0x1
 0x20
 2a
 2x
@@ -881,6 +882,7 @@ eq
 errorprone
 eval
 existing_array
+exp_mod
 fh
 file_handle
 filehandle
@@ -982,8 +984,10 @@ qw
 qx
 read_dir
 readdir
+rec_p
 refactoring
 regex
+ret
 rm
 sed
 self-

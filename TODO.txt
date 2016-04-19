@@ -1,9 +1,6 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Bad elems: using ** for integral power/exponentiation.
-        * it always uses floating-points.
-      @ Added [Thu 2016-02-11]
     - Bad elems: test suites that fail with -j/parallelisation
       @ Added [Tue 2016-04-19]
     - Bad elems: consider having a continuous integration (CI) system.
@@ -173,5 +170,9 @@ COMPLETED TASKS:
     - Link to the new repository at GitHub.
         @ DONE [Tue 2016-02-16]
       @ Added [Tue 2016-02-16]
+    - Bad elems: using ** for integral power/exponentiation.
+        * it always uses floating-points.
+        @ DONE [Tue 2016-04-19]
+      @ Added [Thu 2016-02-11]
 
 # vim:ft=quicktask:sw=4:ts=4:et

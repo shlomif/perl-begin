@@ -2789,6 +2789,49 @@ It is recommended to use them instead.
 </p>
 
 </item>
+
+<item xml:id="using-star-star-for-integer-power">
+<info>
+<title>Using the "**" operator for integer power/exponentiation</title>
+</info>
+
+<p>
+The <a xlink:href="http://perldoc.perl.org/perlop.html#Exponentiation">Perl 5
+"**" exponentiation operator</a> returns a floating-point result, even when
+<a xlink:href="http://perldoc.perl.org/integer.html">“use integer;”</a> is
+in effect. As a result, it should not be used for integer exponentiation/
+raise-to-a-power.
+</p>
+
+<p>
+Instead, one can use the exponentiation or “exp_mod” routines of various Perl 5
+big integer modules, or implement them using routines such as:
+</p>
+
+<code_blk syntax="perl">
+sub exp_mod
+{
+    my ($MOD, $b, $e) = @_;
+
+    if ($e == 0)
+    {
+        return 1;
+    }
+
+    my $rec_p = exp_mod($MOD, $b, ($e >> 1));
+
+    my $ret = $rec_p * $rec_p;
+
+    if ($e &amp; 0x1)
+    {
+        ($ret %= $MOD) *= $b;
+    }
+
+    return ($ret % $MOD);
+}
+</code_blk>
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
