@@ -1,8 +1,6 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Bad elems: consider having a continuous integration (CI) system.
-      @ Added [Tue 2016-04-19]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Add Path::Tiny where appropriate.
@@ -173,6 +171,9 @@ COMPLETED TASKS:
         @ DONE [Tue 2016-04-19]
       @ Added [Thu 2016-02-11]
     - Bad elems: test suites that fail with -j/parallelisation
+        @ DONE [Tue 2016-04-19]
+      @ Added [Tue 2016-04-19]
+    - Bad elems: consider having a continuous integration (CI) system.
         @ DONE [Tue 2016-04-19]
       @ Added [Tue 2016-04-19]
 

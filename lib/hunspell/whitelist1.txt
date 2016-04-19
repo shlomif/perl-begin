@@ -773,8 +773,10 @@ xkcd
 5's
 52-
 ARGV
+Appveyor
 Autoflush
 Bareword
+CI
 COLOR
 COND
 CPAN-like
@@ -794,6 +796,7 @@ Foo
 FreeBSD
 GetOptionsFromArray
 Getopt
+GitHub
 HARNESS_OPTIONS
 HiRes
 Hoare

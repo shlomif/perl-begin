@@ -2272,6 +2272,25 @@ For more information about how to write automated tests, see
 Perl</a>.
 </p>
 </item>
+<item xml:id="continuous_integration">
+<info>
+<title>Using a Continuous Integration System</title>
+</info>
+<p>
+A <a xlink:href="http://en.wikipedia.org/wiki/Continuous_integration">continuous
+integration</a> system builds every commit from the main version control
+repository’s branches and runs the associated automated tests, inside a mostly
+pristine environment which explicitly requires installing all the dependencies.
+It is a good idea to use such a system.
+</p>
+<p>
+Services such as <a xlink:href="http://en.wikipedia.org/wiki/Travis_CI">Travis
+CI</a> and <a xlink:href="http://www.appveyor.com/">Appveyor</a> allow one
+to test GitHub projects with relatively minimal hassle, and one can also
+set up their own continuous integration server using tools such as
+<a xlink:href="http://en.wikipedia.org/wiki/Jenkins_%28software%29">Jenkins</a>.
+</p>
+</item>
 <item xml:id="properly_autoflushing">
 <info>
 <title>How to Properly Autoflush</title>
