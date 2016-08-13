@@ -1,6 +1,8 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
+    - Bad elems: fiddling with @ISA directly instead of 'use parent'/Moose.
+      @ Added [Sat 2016-08-13]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
       @ Added [Thu 2014-01-30]
     - Add Path::Tiny where appropriate.
