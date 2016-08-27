@@ -19,6 +19,7 @@ Firefox
 Freenode's
 GPL
 Gabor
+GitHub
 GoFlexiblePro
 Google
 Google's
@@ -486,7 +487,6 @@ wiki'ing
 ==== In: dest/source/index.html
 
 Bitbucket
-GitHub
 Init
 Latemp
 WML
@@ -796,7 +796,6 @@ Foo
 FreeBSD
 GetOptionsFromArray
 Getopt
-GitHub
 HARNESS_OPTIONS
 HiRes
 Hoare
