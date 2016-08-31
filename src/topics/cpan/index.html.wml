@@ -5,7 +5,7 @@
 <p>
 “CPAN” stands for <a href="http://en.wikipedia.org/wiki/CPAN">the
 Comprehensive Perl Archive Network</a> and is an internationally mirrored
-collection of over 16,000 packages of re-usable Perl code. To program
+collection of over 30,000 packages of re-usable Perl code. To program
 in Perl 5 effectively, one needs to make a judicious, but liberal use of
 CPAN code, due to the fact that the perl core distribution is kept relatively
 minimal and its maintainers expect people to use CPAN for any extraneous
