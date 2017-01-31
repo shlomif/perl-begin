@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 
+use IO::All qw/ io /;
+
 if (system("make", "--silent", "-f", "lib/make/build-deps/build-deps.mak"))
 {
     die "build-deps failed!";
@@ -38,6 +40,17 @@ my $generator =
     );
 
 $generator->process_all();
+
+my $text = io("rules.mak")->slurp();
+$text =~ s#^(\$\(PERL_BEGIN_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_INCLUDE_WML_RENDER)#ms or die "Cannot subt";
+$text =~ s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_COMMON_INCLUDE_WML_RENDER)#ms or die "Cannot subt";
+
+{
+    my $needle = 'cp -f $< $@';
+    $text =~ s#^\t\Q$needle\E$#\t\$(call COPY)#gms;
+}
+
+io("rules.mak")->print($text);
 
 {
     open my $out_fh, ">", "p4n.mak";
