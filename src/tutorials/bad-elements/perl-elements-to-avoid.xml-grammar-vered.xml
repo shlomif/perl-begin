@@ -186,8 +186,8 @@ saying <code>myfunc(@args)</code> is better.
 </p>
 <p>
 For more information see
-<a xlink:href="https://www.socialtext.net/perl5/subroutines_called_with_the_ampersand">the
-relevant page</a> on the Perl 5 Wiki.
+<a xlink:href="https://perlhacks.com/2015/04/subroutines-and-ampersands/">the
+relevant post and discussion</a> on Dave Cross’s Perl Hacks site.
 </p>
 </item>
 <item xml:id="assigning-from-dollar-underscore">

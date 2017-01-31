@@ -105,7 +105,6 @@ $(TARGET)/.htaccess: lib/htaccess.txt
 	cp -f $< $@
 
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
-BAD_ELEMENTS_XSLT = src/tutorials/bad-elements/vered-xml-to-docbook.xslt
 BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements
 
 DOCBOOK5_BASE_DIR = lib/docbook/5
@@ -126,9 +125,9 @@ DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-styleshe
 DOCBOOK5_XSL_OTHER_CUSTOM_XSLT_STYLESHEETS := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-db5-xhtml-mydocbook.xsl
 DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS = $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) $(DOCBOOK5_XSL_OTHER_CUSTOM_XSLT_STYLESHEETS)
 
-$(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
+$(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 	# jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
-	xsltproc -o $@ $(BAD_ELEMENTS_XSLT) $(BAD_ELEMENTS_SOURCE_XML)
+	./bin/translate-Vered-XML --output $@ $(BAD_ELEMENTS_SOURCE_XML)
 	# jing $(DOCBOOK5_RELAXNG) $@
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
