@@ -41,4 +41,14 @@ $text =~ s#\s+xml:space="[^"]*"##g;
 # Remove document trailing space.
 $text =~ s#\s+\z##ms;
 
+my $XMLNS_NEEDLE = <<'EOF';
+ xmlns:db="http://docbook.org/ns/docbook" xmlns:d="http://docbook.org/ns/docbook" xmlns:vrd="http://www.shlomifish.org/open-source/projects/XML-Grammar/Vered/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+EOF
+
+my @needles = $XMLNS_NEEDLE =~ m#\b(xmlns:[a-zA-Z_]+="[^"]+")#g;
+
+my $ALTERNATIVES_TEXT = join'|', map { '(?:' . (quotemeta $_) . ')' } @needles;
+
+$text =~ s#(<div)(?:\s+(?:$ALTERNATIVES_TEXT))+#$1 #gms;
+
 _f()->print($text);
