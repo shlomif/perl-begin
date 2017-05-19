@@ -1690,11 +1690,11 @@ or the <cpan_self_dist d="IPC-System-Simple" /> CPAN distributions.
 <title>Trailing Whitespace</title>
 </info>
 <p>
-With many editors, it can be common to write new code or modify existing
+Using many text editors, it may be common to write new code or modify existing
 one, so that some lines will contain trailing whitespace, such as
 spaces (ASCII 32 or 0x20) or tabs characters. These trailing spaces normally
 do not cause much harm, but they are not needed, harm the code’s consistency,
-may undermine analysis by patching/diffing and version control tools.
+and may undermine analysis by patching/diffing and version control tools.
 Furthermore, they usually can be eliminated easily without harm.
 </p>
 <p>
@@ -1725,9 +1725,10 @@ print "You flipped $sides[0] heads and $sides[1] tails.\n";$
 &gt;
 </code_blk>
 <p>
-While you should not feel bad about having trailing space, it is a good idea
-to sometimes search for them using a command such as <code>ack '[ \t]+$'</code>
-(in version 1.x it should be <code>ack -a '[ \t]+$'</code>, see
+While you should not feel bad about having trailing whitespace, it is a good
+idea to sometimes search for them using a command such as
+<code>ack '[ \t]+$'</code> (in version 1.x it should be
+<code>ack -a '[ \t]+$'</code>, see
 <a xlink:href="http://beyondgrep.com/">ack</a>), and get rid of them.
 </p>
 <p>
@@ -1749,8 +1750,8 @@ Show White Space</a>.
 </li>
 </ul>
 <p>
-Finally, one can check and report trailing whitespace using the following
-CPAN modules:
+Finally, one can check for trailing whitespace and report it, using the
+following CPAN modules:
 </p>
 <ul>
 <li>
