@@ -29,7 +29,7 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-DOCS_COMMON_DEPS = template.wml
+DOCS_COMMON_DEPS = lib/template.wml
 
 all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
