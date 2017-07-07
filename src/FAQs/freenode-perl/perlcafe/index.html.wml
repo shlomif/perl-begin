@@ -1,4 +1,4 @@
-#include '../template.wml'
+#include "template.wml"
 
 <latemp_subject "Freendode’s #perlcafe Channel" />
 <latemp_more_keywords "humour, humor, offtopic, irc, freenode, channel, chat, chatroom" />

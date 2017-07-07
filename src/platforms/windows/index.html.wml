@@ -1,4 +1,4 @@
-#include '../template.wml'
+#include "template.wml"
 #include "win32.wml"
 
 <latemp_subject "Perl on Win32" />

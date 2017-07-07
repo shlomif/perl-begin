@@ -1,4 +1,4 @@
-#include '../template.wml'
+#include "template.wml"
 #include "rosetta_code.wml"
 
 <latemp_subject "Links to Perl Exercises and Challenges" />
