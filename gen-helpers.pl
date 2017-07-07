@@ -5,14 +5,13 @@ use warnings;
 use autodie;
 
 use IO::All qw/ io /;
+use HTML::Latemp::GenMakeHelpers ();
+use File::Find::Object::Rule ();
 
 if (system("make", "--silent", "-f", "lib/make/build-deps/build-deps.mak"))
 {
     die "build-deps failed!";
 }
-
-require HTML::Latemp::GenMakeHelpers;
-require File::Find::Object::Rule;
 
 if (-f "rules.mak")
 {
@@ -60,7 +59,7 @@ io("rules.mak")->print($text);
     foreach my $part_idx (1 .. 5)
     {
          # find all the .pm files in @INC
-         my @files =
+         my @filenames =
             File::Find::Object::Rule
                 ->any(
                     (File::Find::Object::Rule
@@ -77,33 +76,23 @@ io("rules.mak")->print($text);
                 )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/")
                 ;
 
-        foreach my $f (@files)
+        foreach my $fn (@filenames)
         {
-            my $target = $f;
-
-            # print $f, "\n";
+            my $target = $fn;
             $target =~ s{\Alib/}{};
-
             $target =~ s{/lect(\d+)-all-in-one/}{/part$1/};
-
             $target = "\$(PERL_BEGIN_DEST)/$target";
 
             push @targets, $target;
-
-            print {$out_fh} "$target: $f\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
+            print {$out_fh} "$target: $fn\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
         }
     }
 
     my $makefile_var_name = "DEST_TUTORIALS_PERL_FOR_NEWBIES_TARGETS";
-
     print {$out_fh} "$makefile_var_name = " . join(" ", @targets) . "\n\n";
-
     print {$out_fh} "perl_for_newbies_extra_data: \$($makefile_var_name)\n\n";
 
     close($out_fh);
 }
 
 io->file('Makefile')->print("include lib/make/_Main.mak\n");
-
-1;
-
