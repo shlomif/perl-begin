@@ -20,7 +20,6 @@ WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 	-I../lib/ --passoption=7,"-S imgsize" \
 	-I $${HOME}/apps/wml
 
-TTML_FLAGS += $(COMMON_PREPROC_FLAGS) -I lib
 WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 
 RSYNC = rsync --progress --verbose --rsh=ssh
