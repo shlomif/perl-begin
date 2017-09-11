@@ -44,7 +44,7 @@ WML_LATEMP_PATH="$$(perl -MFile::Spec -e 'print File::Spec->rel2abs(shift)' '$@'
 endef
 
 define GENERIC_GENERIC_WML_RENDER
-$(call DEF_WML_PATH) ( cd $2 && wml -o "$${WML_LATEMP_PATH}" $(WML_FLAGS) -DLATEMP_SERVER=$1 -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$@'
+$(call DEF_WML_PATH) ( cd $2 && wml -o "$${WML_LATEMP_PATH}" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$@'
 endef
 
 define GENERIC_WML_RENDER

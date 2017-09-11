@@ -417,7 +417,6 @@ my $tree_contents =
             url => "learn/",
             role => "header",
             title => "Perl advocacy - why you should learn it, and some issues.",
-            expand => { re => "", },
             subs =>
             [
                 {
