@@ -2,19 +2,19 @@
     <li> So now we know how to run something at compile time.
 
     <li> Can we do the opposite, compiling at runtime?  Of course!
-    <tt>eval</tt> is your friend.
+    <code>eval</code> is your friend.
 
     <li> Remember that we're using the quoted version of eval here,
     not the block version of eval.
 
-    <li> <tt>eval "$x + $y"</tt> compiles the code in the string and
+    <li> <code>eval "$x + $y"</code> compiles the code in the string and
     then executes it, just like Perl does to your main program.
 
     <li> Stuff in quotes is checked for validity during its compile
     time, not at your program's compile time.  Any errors are put in
-    <tt>$@</tt>, trapped by <tt>eval</tt>.
+    <code>$@</code>, trapped by <code>eval</code>.
 
-    <li> <tt>eval</tt> is amazingly useful ... but is also overused.
+    <li> <code>eval</code> is amazingly useful ... but is also overused.
     It's inefficient, and potentially dangerous.
 </ul>
 

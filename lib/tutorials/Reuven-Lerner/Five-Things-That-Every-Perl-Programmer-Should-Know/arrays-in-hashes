@@ -5,7 +5,7 @@
 $hash{array} = \@array1;
 </pre>
 
-<p>Let's get the letter <tt>b</tt> out of there:</p>
+<p>Let's get the letter <code>b</code> out of there:</p>
 
 <pre>
 print $hash{array}->[1], "\n";

@@ -2,7 +2,7 @@
 globals.</p>
 
 <ul>
-    <li> Lexicals are declared with <tt>my</tt>.  Globals don't have
+    <li> Lexicals are declared with <code>my</code>.  Globals don't have
     to be declared.
 
     <li> Lexicals exist until the end of the block in which they were

@@ -36,9 +36,9 @@ my $total = "Hello $adjective World!";
 </pre>
 
 <p>
-So if we put <tt>"beautiful"</tt> in <tt>$adjective</tt>, we’ll get
-<tt>"Hello beautiful World!"</tt> in <tt>$total</tt> and if we put
-<tt>"cruel"</tt> there we’ll get <tt>"Hello cruel World!"</tt> there.
+So if we put <code>"beautiful"</code> in <code>$adjective</code>, we’ll get
+<code>"Hello beautiful World!"</code> in <code>$total</code> and if we put
+<code>"cruel"</code> there we’ll get <code>"Hello cruel World!"</code> there.
 </p>
 
 <p>
@@ -85,10 +85,10 @@ Here are some other forms of code or markup injection:
 <b>Shell Command Injection</b> - I’ve discussed it briefly
 <a href="http://community.livejournal.com/shlomif_tech/14671.html">in
 a different post about "shell variable injection" in Bash</a>, but it also
-exists in Perl. Imagine doing <tt>system("ls $dir");</tt> or
-as some newcomers are tempted to do <tt>`ls $dir`</tt>, which the latter
+exists in Perl. Imagine doing <code>system("ls $dir");</code> or
+as some newcomers are tempted to do <code>`ls $dir`</code>, which the latter
 still has some legitimate uses. Now I as a malicious user can put in the
-<tt>$dir</tt> variable some malicious shell code which will wreck havoc on
+<code>$dir</code> variable some malicious shell code which will wreck havoc on
 the system of the user that is running the script.
 </p>
 
@@ -107,7 +107,7 @@ possible.
 allows a user to inject malevolent SQL code that can do untold damages
 in the database. It is very common in web applications and many
 other applications that use SQL code. If you do something like
-<tt>"SELECT id FROM users WHERE name='$name'"</tt> then by putting
+<code>"SELECT id FROM users WHERE name='$name'"</code> then by putting
 single-quotes in the name, and using SQL syntax one can insert arbitrary SQL
 there and do a lot of damage. There was also
 <a href="http://xkcd.com/327/">a very nice xkcd comic</a> about it.
@@ -116,7 +116,7 @@ there and do a lot of damage. There was also
 <li>
 <p>
 <b>Perl Code injection</b> - let’s suppose we want to construct an optimised
-anonymous function ( <tt>sub { ... }</tt> ) on the fly. We can build
+anonymous function ( <code>sub { ... }</code> ) on the fly. We can build
 its code and then use
 <a href="http://perldoc.perl.org/functions/eval.html">the
 string eval - eval ""</a>. A lot of Perl programmers think it should be
@@ -127,7 +127,7 @@ like when we construct a Perl program (or a program of any other language
 on the fly and execute it).
 </p>
 <p>
-In any case, if we insert a variable into the <tt>eval ""</tt> which was input
+In any case, if we insert a variable into the <code>eval ""</code> which was input
 from the user without being escaped or validated, we can have an arbitrary
 code execution.
 </p>
@@ -138,12 +138,12 @@ code execution.
 <b>Regular expressions’ code injection</b> - imagine you want to see if a
 string is contained in a list of strings. One naïve way would be to concatenate
 the strings using a separator that is unlikely to be contained in them
-(such as <tt>\0</tt>) and then match this gigantic string using
-<tt>$haystack =~ m{$needle}</tt>. However, if $needle contains special regex characters,
+(such as <code>\0</code>) and then match this gigantic string using
+<code>$haystack =~ m{$needle}</code>. However, if $needle contains special regex characters,
 then the operation can take a lot of time to match or worse - yield an
 incorrect result. One way to avoid that is to use
 <a href="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f quotemeta</a> or its \Q and \E regular expression escapes -
-<tt>$haystack =~ m{\Q$needle\E}g</tt>. In this particular case, it is also
+<code>$haystack =~ m{\Q$needle\E}g</code>. In this particular case, it is also
 probably better to use a hash, but naturally this was just one example
 where we’d like to embed some arbitrary (but plain) text inside a regular
 expression.
@@ -154,8 +154,8 @@ expression.
 <p>
 <b>Path Injection</b> - if you append a shell path to another, using
 something like
-<tt>my $path = "/home/hello/$myvar"; open my $fh, '&lt;', $path or die …</tt>
-then if someone puts some <tt>..</tt> in <tt>$myvar</tt>’s components, they
+<code>my $path = "/home/hello/$myvar"; open my $fh, '&lt;', $path or die …</code>
+then if someone puts some <code>..</code> in <code>$myvar</code>’s components, they
 can gain access to any arbitrary file in the system.
 </p>
 </li>
@@ -163,8 +163,8 @@ can gain access to any arbitrary file in the system.
 <li>
 <p>
 <b>Perl open argument injection</b> - if you do
-<tt>open(my $fh, "/some/directory/$filename");</tt>, then one may put
-<tt>my $filename = "|echo h4x0r3d|";</tt> and execute arbitrary code. To avoid
+<code>open(my $fh, "/some/directory/$filename");</code>, then one may put
+<code>my $filename = "|echo h4x0r3d|";</code> and execute arbitrary code. To avoid
 such things one should use Perl’s three-argument open.
 (thanks to Brian Phillips)
 </p>
@@ -208,9 +208,9 @@ is a better ideal.
 </li>
 <li>
 Use auto-escaping features of your environment such as SQL place-holders
-(e.g: <tt>"SELECT * FROM mytable WHERE id = ?"</tt>), and the list argument of
+(e.g: <code>"SELECT * FROM mytable WHERE id = ?"</code>), and the list argument of
 <a href="http://perldoc.perl.org/functions/system.html">"perldoc
--f system"</a> (e.g: <tt>system { $cmd[0] } @cmd</tt>).
+-f system"</a> (e.g: <code>system { $cmd[0] } @cmd</code>).
 </li>
 <li>
 Perform frequent code reviews, black box tests, and encourage hackers to

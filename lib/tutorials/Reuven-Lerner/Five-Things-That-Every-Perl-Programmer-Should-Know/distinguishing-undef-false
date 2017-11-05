@@ -7,7 +7,7 @@
 
 <p>Beginning Perl programmers think that all variables default to 0 or
 the empty string.  But they don't.  We can tell the difference between
-false and undef with <tt>defined</tt>:</p>
+false and undef with <code>defined</code>:</p>
 
 <pre>
 my $var;

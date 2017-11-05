@@ -1,5 +1,5 @@
 <p>Your own subroutines can return different values based on the value
-of <tt>wantarray</tt>:</p>
+of <code>wantarray</code>:</p>
 
 <ul>
     <li> undef -- no context

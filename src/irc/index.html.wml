@@ -75,7 +75,7 @@ List/Comparison of IRC Clients</a>
     {
         die "Unknown network!";
     }
-    print "<a href=\"irc://" . $servers{$net} . "/%23$chan\"><tt>#$chan</tt></a>";
+    print "<a href=\"irc://" . $servers{$net} . "/%23$chan\"><code>#$chan</code></a>";
 }:>
 <restore net chan />
 </define-tag>
@@ -110,7 +110,7 @@ For completeness sake, we should mention the
 dedicated channels for many Perl-related projects and groups. Note however,
 that using it, is not recommended for people who are new to Perl or IRC
 due to its atmosphere (which can become hostile), and because the channel
-<tt>#perl</tt> there (which is what most people would guess first) is not
+<code>#perl</code> there (which is what most people would guess first) is not
 intended for beginner questions. Please use Freenode or OFTC instead.
 </p>
 

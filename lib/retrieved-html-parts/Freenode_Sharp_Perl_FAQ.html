@@ -210,7 +210,7 @@
 
 <ol>
 <li>
-Don&apos;t flood the channel with your paste. Instead use a pastebot - type <tt>perlbot paste</tt>.
+Don&apos;t flood the channel with your paste. Instead use a pastebot - type <code>perlbot paste</code>.
 </li>
 <li>
 Be civil and friendly.
@@ -226,21 +226,21 @@ Whenever someone helps you then:
 Thank them!
 </li>
 <li>
-Bump their karma. For example if <tt>johndoe</tt> helps you then say <tt>johndoe++</tt>.
+Bump their karma. For example if <code>johndoe</code> helps you then say <code>johndoe++</code>.
 </li>
 </ol>
 </li>
 <li>
-When addressing a channel member, start your message with their nickname followed by a colon (&quot;:&quot;). For example <tt>johndoe: I understand it now.</tt> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <tt>@nick</tt> because most clients will not highlight it specially.
+When addressing a channel member, start your message with their nickname followed by a colon (&quot;:&quot;). For example <code>johndoe: I understand it now.</code> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <code>@nick</code> because most clients will not highlight it specially.
 </li>
 <li>
-Do not private message (PM) a channel member using <tt>/msg</tt>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.
+Do not private message (PM) a channel member using <code>/msg</code>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.
 </li>
 <li>
-Don&apos;t <b>overuse the evalbot</b> (<tt>eval: 5+6</tt>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <tt>/join #perlbot</tt>.
+Don&apos;t <b>overuse the evalbot</b> (<code>eval: 5+6</code>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <code>/join #perlbot</code>.
 </li>
 <li>
-If someone needs too much help and handholding, please ask them to chat on one of the symbiont channels such as <tt>#perlcafe</tt> or <tt>#perl-cats</tt>. This will help increase the signal-to-noise ratio of #perl.
+If someone needs too much help and handholding, please ask them to chat on one of the symbiont channels such as <code>#perlcafe</code> or <code>#perl-cats</code>. This will help increase the signal-to-noise ratio of #perl.
 </li>
 </ol>
 
@@ -249,7 +249,7 @@ If someone needs too much help and handholding, please ask them to chat on one o
 
 <p>As usual the rule is <b>Don&apos;t be right - be smart.</b>. When someone criticises you (and may be an op), you should: 1. Ask them what they mean. 2. Agree and empathise with them, 3. Try to negotiate a common ground. Don&apos;t try to be defensive-aggressive and try to prove the other side&apos;s wrong because that will only make them more angry at you.
 </p>
-<p>Naturally, this applies primarily to personal criticisms or those that influence one&apos;s behaviour in the channel. If you&apos;re having a &quot;colour of the bikeshed&quot; argument (i.e &quot;Subversion vs. git vs. bzr vs. hg vs....&quot;) or a discussion about whether <tt>$self-&gt;method(%args)</tt> is better than <tt>$self-&gt;method({%args})</tt>, a silly off-topic discussion about whether <a href="http://www.shlomifish.org/humour/bits/facts/Chuck-Norris/">Chuck Norris</a> can beat Superman or Batman or not, or something like that, then probably much less is at stake there.
+<p>Naturally, this applies primarily to personal criticisms or those that influence one&apos;s behaviour in the channel. If you&apos;re having a &quot;colour of the bikeshed&quot; argument (i.e &quot;Subversion vs. git vs. bzr vs. hg vs....&quot;) or a discussion about whether <code>$self-&gt;method(%args)</code> is better than <code>$self-&gt;method({%args})</code>, a silly off-topic discussion about whether <a href="http://www.shlomifish.org/humour/bits/facts/Chuck-Norris/">Chuck Norris</a> can beat Superman or Batman or not, or something like that, then probably much less is at stake there.
 </p>
 <p>For more information see:
 </p>
@@ -476,13 +476,13 @@ you can later refer to them.
 <li><p>Are you sure you got the she-bang right?</p>
 
 <p>
-This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On Windows you can just write <tt>#!perl</tt> but it is recommended to write <tt>#!/usr/bin/perl</tt> (Windows will ignore the path). If you&apos;re writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the <a href="http://en.wikipedia.org/wiki/Carriage_return">carriage return</a>. This won&apos;t be a problem if you&apos;re using any switches on this line.
+This should look like <code>#!/usr/bin/perl</code> or <code>#!/path/to/perl</code>. On Windows you can just write <code>#!perl</code> but it is recommended to write <code>#!/usr/bin/perl</code> (Windows will ignore the path). If you&apos;re writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the <a href="http://en.wikipedia.org/wiki/Carriage_return">carriage return</a>. This won&apos;t be a problem if you&apos;re using any switches on this line.
 </p>
 </li>
 
-<li>If you&apos;re using Unix or a Unix-like operating system, check that your program is set to be executable (<tt>chmod a+x &lt;file&gt;</tt>).
+<li>If you&apos;re using Unix or a Unix-like operating system, check that your program is set to be executable (<code>chmod a+x &lt;file&gt;</code>).
 </li>
-<li>Are you sure your script compiles and runs? Test it locally (<tt>perl -c &lt;file&gt;</tt>), test it remotely. If it&apos;s a CGI script, check the error log.
+<li>Are you sure your script compiles and runs? Test it locally (<code>perl -c &lt;file&gt;</code>), test it remotely. If it&apos;s a CGI script, check the error log.
 </li>
 
 </ol>
@@ -494,11 +494,11 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 </p>
 
 <ol>
-<li>Turn on warnings. Add a -w to your she-bang line <tt>#!/usr/bin/perl -w</tt> and fix your code so no warnings are emitted.
+<li>Turn on warnings. Add a -w to your she-bang line <code>#!/usr/bin/perl -w</code> and fix your code so no warnings are emitted.
 </li>
-<li>Turn on strict. Add the line <tt>use strict;</tt> under the she-bang line and fix the errors that creates.
+<li>Turn on strict. Add the line <code>use strict;</code> under the she-bang line and fix the errors that creates.
 </li>
-<li>Use the perl debugger - <tt>perl -d</tt>, etc. to see where exactly it fails.
+<li>Use the perl debugger - <code>perl -d</code>, etc. to see where exactly it fails.
 </li>
 </ol>
 
@@ -515,11 +515,11 @@ This should look like <tt>#!/usr/bin/perl</tt> or <tt>#!/path/to/perl</tt>. On W
 <ol>
 
 <li>
-Use lexical file handles (<tt>open my $file_handle, ...</tt>) and three args open (<tt>open my $file_handle, &quot;&gt;&quot;, $filename</tt> instead of <tt>open my $file_handle &quot;&gt;$filename&quot;</tt>) and add trailing or&apos;s to your open statements (or alternatively use the &quot;Fatal&quot; or &quot;autodie&quot; modules.)
+Use lexical file handles (<code>open my $file_handle, ...</code>) and three args open (<code>open my $file_handle, &quot;&gt;&quot;, $filename</code> instead of <code>open my $file_handle &quot;&gt;$filename&quot;</code>) and add trailing or&apos;s to your open statements (or alternatively use the &quot;Fatal&quot; or &quot;autodie&quot; modules.)
 </li>
 
 <li>
-When extracting arguments out of @ARGV or @_ , don&apos;t do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <tt>my ($param1, $param2...) = @_;</tt>. The reason for that is that if you insert an argument in the middle, you&apos;ll need to update all indices. <ul>
+When extracting arguments out of @ARGV or @_ , don&apos;t do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <code>my ($param1, $param2...) = @_;</code>. The reason for that is that if you insert an argument in the middle, you&apos;ll need to update all indices. <ul>
 
 <li>
 For @ARGV also look at <a class="extiw" href="http://metacpan.org/release/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules.
@@ -527,14 +527,14 @@ For @ARGV also look at <a class="extiw" href="http://metacpan.org/release/Getopt
 </li>
 
 <li>
-Don&apos;t abuse the default variable - <tt>$_</tt>. Use explicit variables instead whenever possible, and don&apos;t nest two <tt>$_</tt>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts.
+Don&apos;t abuse the default variable - <code>$_</code>. Use explicit variables instead whenever possible, and don&apos;t nest two <code>$_</code>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts.
 </li>
 
 <li>
-To subscript an array/hash reference, don&apos;t do something like <tt>${$array_ref}[$index]</tt> (or worse - <tt>$$array_ref[$index]</tt> - instead use <tt>$array_ref-&gt;[$index]</tt> which is clearer and better. Note that if you want to take an array or hash slice, then you do need to use <tt>@{$array_ref}[@indexes]</tt> and that&apos;s ok. <ul>
+To subscript an array/hash reference, don&apos;t do something like <code>${$array_ref}[$index]</code> (or worse - <code>$$array_ref[$index]</code> - instead use <code>$array_ref-&gt;[$index]</code> which is clearer and better. Note that if you want to take an array or hash slice, then you do need to use <code>@{$array_ref}[@indexes]</code> and that&apos;s ok. <ul>
 
 <li>
-Also note that the second and subsequent subscripts have optional arrows so: <tt>$array_ref-&gt;[$index1]-&gt;{$key1}</tt> can be written as <tt>$array_ref-&gt;[$index]{$key1}</tt>. The first arrow is not optional so you cannot say <tt>$array_ref[$index1]</tt> which belongs to the array <tt>@array_ref</tt>.
+Also note that the second and subsequent subscripts have optional arrows so: <code>$array_ref-&gt;[$index1]-&gt;{$key1}</code> can be written as <code>$array_ref-&gt;[$index]{$key1}</code>. The first arrow is not optional so you cannot say <code>$array_ref[$index1]</code> which belongs to the array <code>@array_ref</code>.
 </li></ul>
 </li>
 </ol>
@@ -621,7 +621,7 @@ to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735
 
 <h3 id="How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F"> How can I include a script into a different script and still see the lexical (&quot;my&quot;) variables declared there? </h3>
 
-<p>The short answer is that when a file is being <tt>do</tt>&apos;ed, <tt>eval slurp($file)</tt>&apos;ed, <tt>require</tt>&apos;ed or <tt>use</tt>&apos;ed it happens in a nested scope to the invoked one. As a result lexical variables (those declared with <tt>my</tt>) are inaccessible from the calling scope. The Perl 5 designers considered merely including the code of another file in another program directly a bad idea.
+<p>The short answer is that when a file is being <code>do</code>&apos;ed, <code>eval slurp($file)</code>&apos;ed, <code>require</code>&apos;ed or <code>use</code>&apos;ed it happens in a nested scope to the invoked one. As a result lexical variables (those declared with <code>my</code>) are inaccessible from the calling scope. The Perl 5 designers considered merely including the code of another file in another program directly a bad idea.
 </p>
 <p>What you should do instead is either:
 </p>
@@ -629,14 +629,14 @@ to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735
 <ol>
 
 <li>
-Convert the included code to be a Perl module (a <tt>.pm</tt> file). Then use or require it.
+Convert the included code to be a Perl module (a <code>.pm</code> file). Then use or require it.
 </li>
 
 <li>
 Invoke the perl script as a separate process if it&apos;s appropriate.
 </li>
 </ol>
-<p>If you want to access the variables of a different file, you need to declare them using <tt>our</tt> or the <tt>use vars</tt> pragma. A more advisable way would be to control access to them using functions.
+<p>If you want to access the variables of a different file, you need to declare them using <code>our</code> or the <code>use vars</code> pragma. A more advisable way would be to control access to them using functions.
 </p>
 <p>For more information see:
 </p>
@@ -713,7 +713,7 @@ Invoke the perl script as a separate process if it&apos;s appropriate.
 
 <h3 id="I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F"> I want to run a shell command from Perl, and possibly trap its output. How? </h3>
 
-<p>1. To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly to the executable, without prior processing by the shell. The <tt>system(&quot;$str&quot;)</tt> notation, which is explained below has different semantics.
+<p>1. To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly to the executable, without prior processing by the shell. The <code>system(&quot;$str&quot;)</code> notation, which is explained below has different semantics.
 </p>
 <p>2. To do the same while capturing the output, the best way is to use <a href="http://perldoc.perl.org/perlopentut.html">the open function</a> like this:
 </p><pre>   open my $cmd, &apos;-|&apos;, $program_name, @args
@@ -727,19 +727,19 @@ Invoke the perl script as a separate process if it&apos;s appropriate.
 </pre>
 <p>Note that this will not work in some older versions of perl5.
 </p>
-<p>3. If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html">system(&quot;$string&quot;)</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <tt>open &quot;cmd|&quot;</tt> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not properly escaped, they can be used to execute arbitrary shell code. Look at <a href="http://metacpan.org/release/String-ShellQuote/">the String-ShellQuote module</a> on the CPAN for a portable way to quote strings for passage as parameters to shell commands in such execution strings.
+<p>3. If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html">system(&quot;$string&quot;)</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <code>open &quot;cmd|&quot;</code> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not properly escaped, they can be used to execute arbitrary shell code. Look at <a href="http://metacpan.org/release/String-ShellQuote/">the String-ShellQuote module</a> on the CPAN for a portable way to quote strings for passage as parameters to shell commands in such execution strings.
 </p>
 <p>4. exec() is similar to system() and probably does not do what you want as it overwrites the current execution process of your Perl script with the new process.
 </p>
 
 <h3 id="How_can_I_Merge_Two_Hashes.3F"> How can I Merge Two Hashes? </h3>
 
-<p>If you simply do <tt>my %total = (%first_hash, %second_hash);</tt>, then <tt>%total</tt> will contain all the keys and values of <tt>%second_hash</tt>, along with all the keys in <tt>%first_hash</tt> that whose values were not run over by identical keys of <tt>%second_hash</tt>.
+<p>If you simply do <code>my %total = (%first_hash, %second_hash);</code>, then <code>%total</code> will contain all the keys and values of <code>%second_hash</code>, along with all the keys in <code>%first_hash</code> that whose values were not run over by identical keys of <code>%second_hash</code>.
 </p>
 <p>Another option (which is probably slower) is to use:
 </p><pre>   @into{keys(%from)} = values(%from);
 </pre>
-<p>This will merge <tt>%into</tt> in place.
+<p>This will merge <code>%into</code> in place.
 </p>
 <p>If instead of completely overriding values, you want to make some combination of the values, you&apos;ll need to use something like that:
 </p><pre>   while (my ($key, $from_value) = each(%from))
@@ -979,7 +979,7 @@ The book <a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of
 </pre>
 <p>See for example <a href="http://metacpan.org/release/UNIVERSAL-isa/">UNIVERSAL-isa on CPAN</a>.
 </p>
-<p>That put aside, since Perl 5 (and Perl 6) is a symbolic language, one can call a method by name on every object that supports it regardless of its actually inheritance geneology. So using <tt>-&gt;isa</tt> may be a red flag in Perl, and you should rethink your strategy.
+<p>That put aside, since Perl 5 (and Perl 6) is a symbolic language, one can call a method by name on every object that supports it regardless of its actually inheritance geneology. So using <code>-&gt;isa</code> may be a red flag in Perl, and you should rethink your strategy.
 </p>
 
 <h3 id="How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F"> How can I parse a CSV (Comma separated value / comma delimited value) file? </h3>
@@ -1055,17 +1055,17 @@ The book <a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of
 <ol>
 
 <li>
-The first method is to do <tt>sub { return $self-&gt;my_method(@_); }</tt> within a scope that has the object reference $self valid. This will always call my_method on the physical $self reference.
+The first method is to do <code>sub { return $self-&gt;my_method(@_); }</code> within a scope that has the object reference $self valid. This will always call my_method on the physical $self reference.
 </li>
 
 <li>
-You can pass the name of the method as a string and then do <tt>$some_obj-&gt;$some_method(@args)</tt>. This requires applying $some_method on an object explicitly and handles inheritance well.
+You can pass the name of the method as a string and then do <code>$some_obj-&gt;$some_method(@args)</code>. This requires applying $some_method on an object explicitly and handles inheritance well.
 </li>
 </ol>
 
 <h3 id="How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F"> How do I trim leading and/or trailing whitespace from a string? </h3>
 
-<p>Some languages provide a built-in function to remove leading and/or trailing whitespace from a string (such as <a href="http://php.net/manual/en/function.trim.php">PHP&apos;s trim</a>. Perl does not have it because it is fairly trivial to do using the <tt>s///</tt> built-in (see <a href="http://perl-begin.org/topics/regular-expressions/">our resources about regular expressions</a> and there&apos;s also <a class="extiw" href="http://metacpan.org/release/String-Trim" title="cpan:String-Trim">String-Trim on CPAN</a>.
+<p>Some languages provide a built-in function to remove leading and/or trailing whitespace from a string (such as <a href="http://php.net/manual/en/function.trim.php">PHP&apos;s trim</a>. Perl does not have it because it is fairly trivial to do using the <code>s///</code> built-in (see <a href="http://perl-begin.org/topics/regular-expressions/">our resources about regular expressions</a> and there&apos;s also <a class="extiw" href="http://metacpan.org/release/String-Trim" title="cpan:String-Trim">String-Trim on CPAN</a>.
 </p>
 
 <h3 id="How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29"> How do I add directories to the list of paths where Perl searches for modules? (@INC) </h3>
@@ -1091,7 +1091,7 @@ Set the PERLLIB or PERL5LIB environment variable <a href="http://perldoc.perl.or
 Finally you may opt to recompile perl.
 </li>
 </ol>
-<p>After that you can add <tt>use MyModule;</tt> to your code and it will work. Please don&apos;t resort to <tt>do &quot;/full/path/to/include.pl&quot;</tt> games.
+<p>After that you can add <code>use MyModule;</code> to your code and it will work. Please don&apos;t resort to <code>do &quot;/full/path/to/include.pl&quot;</code> games.
 </p>
 
 <h3 id="How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F"> How can I get perl to print each line as it is executed (similar to the shell&apos;s -x flag)? </h3>
@@ -1151,10 +1151,10 @@ syntax. Arrays and scalars are accessed differently:
 
 <li>
     <p>
-    One uses <tt>$my_array[$idx]</tt> to access an element of an array,
-    and <tt>$my_array_ref-&gt;[$idx]</tt> to access an element of an array
+    One uses <code>$my_array[$idx]</code> to access an element of an array,
+    and <code>$my_array_ref-&gt;[$idx]</code> to access an element of an array
     reference (or alternatively the more cluttered
-    <tt>$$my_array_ref[$idx]</tt> or <tt>${$my_array_ref}[$idx]</tt>
+    <code>$$my_array_ref[$idx]</code> or <code>${$my_array_ref}[$idx]</code>
     </p>
 
 </li>
@@ -1162,8 +1162,8 @@ syntax. Arrays and scalars are accessed differently:
 
 <li>
     <p>
-    One uses <tt>@my_array</tt> to access the array as a whole and
-    <tt>@$my_array_ref</tt> to access the array referred to by the array
+    One uses <code>@my_array</code> to access the array as a whole and
+    <code>@$my_array_ref</code> to access the array referred to by the array
     reference as a whole.
     </p>
 

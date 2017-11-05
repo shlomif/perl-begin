@@ -1,6 +1,6 @@
-<p>We can solve our <tt>if</tt>-<tt>use</tt> problem by defining a
+<p>We can solve our <code>if</code>-<code>use</code> problem by defining a
 subroutine that's not only defined at compile time, but also executes
-at compile time: <tt>BEGIN</tt>.</p>
+at compile time: <code>BEGIN</code>.</p>
 
 <pre>
 BEGIN {
@@ -11,10 +11,10 @@ BEGIN {
 }
 </pre>
 
-<p>Note that we don't have to say <tt>sub BEGIN</tt>.
+<p>Note that we don't have to say <code>sub BEGIN</code>.
 
-<p>You can put anything you want in a <tt>BEGIN</tt>.  Heck, you could
-put your whole program in a <tt>BEGIN</tt>!  But don't do that.
+<p>You can put anything you want in a <code>BEGIN</code>.  Heck, you could
+put your whole program in a <code>BEGIN</code>!  But don't do that.
 Please.</p>
 
 <%attr>

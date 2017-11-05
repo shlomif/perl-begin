@@ -16,8 +16,8 @@ and <a href="$(ROOT)/topics/cpan/">CPAN</a> for generating text.
 <h3 id="concatenation">String Concatenation</h3>
 
 <p>
-Perl allows you to easily concatenate two strings using the <tt>.</tt>
-and <tt>.=</tt> operators. While you can quickly outgrow it, it is often
+Perl allows you to easily concatenate two strings using the <code>.</code>
+and <code>.=</code> operators. While you can quickly outgrow it, it is often
 enough. You can also <b>interpolate</b> string values inside some types
 of string constants. Therefore, you can say:
 </p>
@@ -48,7 +48,7 @@ print "Japan has a flag with a $colors[0] circle, and a its capital is $capitals
 <p>
 Furthermore, one can interpolate more complex expressions using
 <a href="http://www.catonmat.net/blog/secret-perl-operators/#turtle">the
-turtle operator</a> - <tt>@{[]}</tt>, although if you're resorting to doing
+turtle operator</a> - <code>@{[]}</code>, although if you're resorting to doing
 it, you should probably use the more advanced techniques below:
 </p>
 

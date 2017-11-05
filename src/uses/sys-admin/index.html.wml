@@ -12,7 +12,7 @@ is still OK, because Perl can be a good alternative for them.
 
 <p>
 Besides the core language, those who wish to use Perl for System Administration
-should focus on the <tt>perlfunc</tt> document (which covers the various
+should focus on the <code>perlfunc</code> document (which covers the various
 functions available inside Perl), and on its regular expressions capabilities
 (which are handier than what shell scripts offer).
 </p>

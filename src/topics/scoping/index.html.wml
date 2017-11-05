@@ -23,13 +23,13 @@ on his site. We recommend that you read it for general understanding.
 
 <p>
 If you've talked about Perl code you've written in various forums you've likely
-received the advice that you should add “<tt>use strict;</tt>” and
-“<tt>use warnings;</tt>” at the top of your code. While you indeed
+received the advice that you should add “<code>use strict;</code>” and
+“<code>use warnings;</code>” at the top of your code. While you indeed
 should add these statements because they catch many common programming
 mistakes, you may notice that after you add them you get something like:
-“<tt>Global symbol "$filename" requires explicit package name at test.pl
-line 6.</tt>”. This error (which is admittedly not phrased very well, and
+“<code>Global symbol "$filename" requires explicit package name at test.pl
+line 6.</code>”. This error (which is admittedly not phrased very well, and
 is kept like that due to historical reasons) means that you haven’t
 <b>declared</b> the variable. To fix it, you need to declare the variable using
-"<tt>my $filename = [VALUE];</tt>" in order to first use it.
+"<code>my $filename = [VALUE];</code>" in order to first use it.
 </p>

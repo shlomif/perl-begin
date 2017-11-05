@@ -2,8 +2,8 @@
     <li> SQL has a similar idea, called NULL.
     <li> NULL is neither true nor false.  It's distinct from both of
     them.  Indeed, you can't even test for equality to NULL!
-    <li> Since NULL and <tt>undef</tt> are so similar, DBI uses
-    <tt>undef</tt> to represent NULL.
+    <li> Since NULL and <code>undef</code> are so similar, DBI uses
+    <code>undef</code> to represent NULL.
 </ul>
 
 

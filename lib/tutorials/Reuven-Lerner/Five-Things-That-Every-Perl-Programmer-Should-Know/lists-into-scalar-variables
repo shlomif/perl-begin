@@ -18,7 +18,7 @@ print "five = '$five'\n";    # Warning, but it'll work
 
 <p>The array looks left, sees a scalar, and returns its length.  If
 looking left reveals an array, but you want a scalar, simply insert
-the keyword <tt>scalar</tt>:</p>
+the keyword <code>scalar</code>:</p>
 
 <pre>
 print localtime, "\n";           # Prints lots of numbers -- huh?

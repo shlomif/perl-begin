@@ -228,7 +228,7 @@ the Israeli Perl Mongers site.
 
 <li>
 <p>
-Many anchors were added to the pages using <tt>id=</tt> attributes.
+Many anchors were added to the pages using <code>id=</code> attributes.
 </p>
 </li>
 

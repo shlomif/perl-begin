@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html
-         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-         "DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -299,7 +297,7 @@ to do. We will learn how to debug Perl programs, later on in this series.
 2. Basic Output (The "Hello World" program)
 </h1>
 <p>
-In Perl we use the <tt>print</tt> command to echo strings and expressions
+In Perl we use the <code>print</code> command to echo strings and expressions
 to the screen.
 </p>
 <p>
@@ -311,15 +309,15 @@ The neophyte "Hello World!" program can be written in perl as follows:
 <p>Now here's some explanation (in case you need any):</p>
 <ol>
 <li>
-The string is enclosed in double-quotes(<tt>" ... "</tt>) because that's how
+The string is enclosed in double-quotes(<code>" ... "</code>) because that's how
 string constants are represented in perl.
 </li>
 <li>
-<tt>\n</tt> is a special character that is called "newline". When you print a
+<code>\n</code> is a special character that is called "newline". When you print a
 newline you will see that your output started on a new line.
 </li>
 <li>
-The semi-colon (<tt>;</tt>) at the end indicates that this is the end of
+The semi-colon (<code>;</code>) at the end indicates that this is the end of
 a perl command. Every perl command should be terminated with a semicolon.
 </li>
 </ol>
@@ -389,8 +387,8 @@ one on more than one line.
 3. Expressions
 </h1>
 <p>
-Perl supports such mathematical operators as <tt>+</tt>, <tt>-</tt>,
-<tt>*</tt> (multiplication), and parenthesis (<tt>( ... )</tt>). An example
+Perl supports such mathematical operators as <code>+</code>, <code>-</code>,
+<code>*</code> (multiplication), and parenthesis (<code>( ... )</code>). An example
 is worth a thousand words:
 </p>
 <div class="code_block"><pre>
@@ -422,7 +420,7 @@ before all others do.
 <td>
 <h3>Note:</h3>
 You can use commas to print more than one expression at once. It beats
-writing a separate <tt>print</tt> command for every expression you wish to
+writing a separate <code>print</code> command for every expression you wish to
 output. However, for better readability, it is recommended that you will
 separate your expressions among several prints.
 </td>
@@ -461,7 +459,7 @@ Raises "a" to the power of "b". Works on floating point numbers too.
 </p>
 <h2>a . b</h2>
 <p>
-Concatenates two strings. The comma (<tt>,</tt>) as used by print does not
+Concatenates two strings. The comma (<code>,</code>) as used by print does not
 really concatenates two strings, but rather prints them one after the other.
 (There's a subtle difference in functionality of the print command too, but we
 won't get into that, now).
@@ -477,7 +475,7 @@ integers they are rounded to an integral value.
 </p>
 <h2>( sub-expr )</h2>
 <p>
-Makes sure that <tt>sub-expr</tt> is evaluated as a separate sub-expression
+Makes sure that <code>sub-expr</code> is evaluated as a separate sub-expression
 , an operation that could override the default operator precedence.
 </p>
 <hr />
@@ -513,14 +511,14 @@ How many characters are in the perl motto? Perl can tell that right away:
 <span class="Statement">print</span> <span class="Statement">length</span>(<span class="Constant">&quot;There's more than one way to do it&quot;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-<tt>length()</tt> is a built-in function that tells how many characters are in
+<code>length()</code> is a built-in function that tells how many characters are in
 a string. A function is a named sub-routine that accepts several arguments
 and returns a value that can be further evaluated as part of a greater
 expression, or used directly.
 </p>
 <p>
 To help us understand functions further, let's inspect the perl function
-<tt>substr</tt> (short for "substring"). <tt>substr</tt> retrieves sub-strings
+<code>substr</code> (short for "substring"). <code>substr</code> retrieves sub-strings
 of a given string. The first argument to it is a string, the second is the
 offset from which to take the substring, and the third is the length of the
 substring to be taken. The third one is optional and if unspecified, returns
@@ -554,8 +552,8 @@ though. The above program could have been re-written as:
 <span class="Statement">print</span> ((<span class="Statement">substr</span> <span class="Constant">&quot;A long string&quot;</span>, <span class="Constant">0</span>, <span class="Constant">6</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
 </pre></div>
 <p>
-We need an extra set of parenthesis so <tt>print</tt> (which is also a function)
-would not be confused and consider only the result of the <tt>substr</tt>
+We need an extra set of parenthesis so <code>print</code> (which is also a function)
+would not be confused and consider only the result of the <code>substr</code>
 operation as its argument. If it makes no sense, then it shouldn't; however,
 remember that a set of parenthesis, that wraps up the argument list
 of a function, can do you no harm.
@@ -622,34 +620,34 @@ The output of this program is:
 3.3.1. Escape Sequences
 </h1>
 <p>
-We have already encountered the <tt>\n</tt> "escape sequence" which can come
+We have already encountered the <code>\n</code> "escape sequence" which can come
 inside strings and designates a newline character. There are many others in
 perl. Here is a list of the most important ones:
 </p>
 <ul>
 <li>
-<tt>\\</tt> - designates an actual backslash (<tt>\</tt>)
+<code>\\</code> - designates an actual backslash (<code>\</code>)
 </li>
 <li>
-<tt>\"</tt> - designates an actual double-quote character (<tt>"</tt>)
+<code>\"</code> - designates an actual double-quote character (<code>"</code>)
 </li>
 <li>
-<tt>\$</tt> - an actual dollar sign (a real <tt>$</tt> does something else)
+<code>\$</code> - an actual dollar sign (a real <code>$</code> does something else)
 </li>
 <li>
-<tt>\@</tt> - an actual at-sign (a non-escaped <tt>@</tt> does something else)
+<code>\@</code> - an actual at-sign (a non-escaped <code>@</code> does something else)
 </li>
 <li>
-<tt>\n</tt> - a newline character
+<code>\n</code> - a newline character
 </li>
 <li>
-<tt>\r</tt> - a carriage return sign
+<code>\r</code> - a carriage return sign
 </li>
 <li>
-<tt>\t</tt> - a tab character
+<code>\t</code> - a tab character
 </li>
 <li>
-<tt>\xDD</tt> - where "DD" are two hexadecimal digits - gives the character
+<code>\xDD</code> - where "DD" are two hexadecimal digits - gives the character
 whose ASCII code is "DD".
 </li>
 </ul>
@@ -696,13 +694,13 @@ Variables are named cells stored in the computer memory that can hold any
 single Perl value. One can change the value that a variable holds, and one can
 later retrieve the last value assigned as many times as wanted.
 </p>
-<p>Variables in Perl start with a dollar sign (<tt>$</tt>) and proceed with any
-number of letters, digits and underscores (<tt>_</tt>) as long as the first
+<p>Variables in Perl start with a dollar sign (<code>$</code>) and proceed with any
+number of letters, digits and underscores (<code>_</code>) as long as the first
 letter after the dollar is a letter or underscore.</p>
 <p>To retrieve the value of a variable one simply places the variable name
 (again including the dollar sign) inside an expression.</p>
 <p>To assign value to a variable, one places the full variable name (including
-the dollar sign) in front of an equal sign (<tt>=</tt>) and places the value
+the dollar sign) in front of an equal sign (<code>=</code>) and places the value
 to the right of the equal sign. This form is considered a statement and should
 be followed by a semicolon. The value assigned may be an expression that may
 contain other variables (including the assigned variable itself!).</p>
@@ -732,11 +730,11 @@ Several things can be noticed:
 </p>
 <ol>
 <li>
-The value of <tt>$x</tt> changes throughout the program. It's perfectly fine,
+The value of <code>$x</code> changes throughout the program. It's perfectly fine,
 and usually even necessary to modify the value of a variable.
 </li>
 <li>
-By using <tt>$myvar</tt> we can ensure, that assuming we wish to change its
+By using <code>$myvar</code> we can ensure, that assuming we wish to change its
 value, we will only have to change it in one place, not in every place
 it appears.
 </li>
@@ -780,9 +778,9 @@ Perl provides a shortcut for writing "$myvar = $myvar + $value", or
 <span class="Statement">print</span> <span class="Constant">&quot;2^&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;=&quot;</span>, <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Since the operations <tt>$x += 1</tt> and <tt>$x -= 1</tt> are so commonly used,
-they were also assigned a separate operator. One can use <tt>$x++</tt> and
-<tt>$x--</tt> to perform them. For example, the above program could have
+Since the operations <code>$x += 1</code> and <code>$x -= 1</code> are so commonly used,
+they were also assigned a separate operator. One can use <code>$x++</code> and
+<code>$x--</code> to perform them. For example, the above program could have
 been written as:
 </p>
 <div class="code_block"><pre>
@@ -820,7 +818,7 @@ been written as:
 5. Input
 </h1>
 <p>
-In order to receive a value from the user, perl supplies the <tt>&lt;&gt;</tt>
+In order to receive a value from the user, perl supplies the <code>&lt;&gt;</code>
 operator. When entered, this operator reads a line from the command line, and
 returns it (along with the newline character).
 </p>
@@ -832,7 +830,7 @@ returns it (along with the newline character).
 <span class="Statement">print</span> <span class="Constant">&quot;Hello, &quot;</span>, <span class="Identifier">$name</span>, <span class="Constant">&quot;!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Notice the <tt>chomp</tt> function which strips off the trailing
+Notice the <code>chomp</code> function which strips off the trailing
 newline character from the variable. You would usually want to use it,
 when getting input from the user.
 </p>
@@ -882,14 +880,14 @@ Some explanations about the syntax:
 </p>
 <ol>
 <li>
-<tt>$i</tt> is the iteration variable. It receives the value 1, then the
+<code>$i</code> is the iteration variable. It receives the value 1, then the
 value 2, then 3 and so forth until it is equal to 100, afterwards the
 loop terminates.
 </li>
 <li>
-The curly brackets (<tt>{ ... }</tt>) encapsulate the loop block. The loop
-block is executed once for each value <tt>$i</tt> accepts. Within that
-block, called the loop body, you can use <tt>$i</tt> and you'll get its
+The curly brackets (<code>{ ... }</code>) encapsulate the loop block. The loop
+block is executed once for each value <code>$i</code> accepts. Within that
+block, called the loop body, you can use <code>$i</code> and you'll get its
 current value.
 </li>
 </ol>
@@ -917,7 +915,7 @@ multiplication board:
 </pre></div>
 <p>
 You may have noticed the program's comments. In perl comments start with the
-sharp sign (<tt>#</tt>) and extend to the end of the line. Writing the
+sharp sign (<code>#</code>) and extend to the end of the line. Writing the
 multiplication boards with the labels that indicate which numbers are being
 multiplied is left as an exercise to the reader.
 </p>
@@ -958,12 +956,12 @@ user whether or not his name starts with the letter "A":
 }
 </pre></div>
 <p>
-The code <tt>substr($name,0,1) eq "A"</tt> is a condition expression which uses
-the perl <tt>eq</tt> operator, which returns true if and only if the strings
+The code <code>substr($name,0,1) eq "A"</code> is a condition expression which uses
+the perl <code>eq</code> operator, which returns true if and only if the strings
 are the same. There are more such operators and they will be explained shortly.
 </p>
 <p>
-Inside the curly brackets following the <tt>if</tt> there is the code to
+Inside the curly brackets following the <code>if</code> there is the code to
 be executed by the conditional. That code can be as long as you like. The else
 part is executed assuming the conditional was found to be false, and is
 optional.
@@ -994,50 +992,50 @@ for the comparison of two numbers. They are:
 <table border="1" summary="">
 <tr>
 <td>
-<tt>$x == $y</tt>
+<code>$x == $y</code>
 </td>
 <td>
-<tt>$x</tt> and <tt>$y</tt> are equal.
-</td>
-</tr>
-<tr>
-<td>
-<tt>$x &gt; $y</tt>
-</td>
-<td>
-<tt>$x</tt> is greater than <tt>$y</tt>
+<code>$x</code> and <code>$y</code> are equal.
 </td>
 </tr>
 <tr>
 <td>
-<tt>$x &lt; $y</tt>
+<code>$x &gt; $y</code>
 </td>
 <td>
-<tt>$x</tt> is lesser than <tt>$y</tt>
-</td>
-</tr>
-<tr>
-<td>
-<tt>$x &gt;= $y</tt>
-</td>
-<td>
-<tt>$x</tt> is greater or equal to <tt>$y</tt>
+<code>$x</code> is greater than <code>$y</code>
 </td>
 </tr>
 <tr>
 <td>
-<tt>$x &lt;= $y</tt>
+<code>$x &lt; $y</code>
 </td>
 <td>
-<tt>$x</tt> is lesser or equal to <tt>$y</tt>
+<code>$x</code> is lesser than <code>$y</code>
 </td>
 </tr>
 <tr>
 <td>
-<tt>$x != $y</tt>
+<code>$x &gt;= $y</code>
 </td>
 <td>
-<tt>$x</tt> is not equal to <tt>$y</tt>
+<code>$x</code> is greater or equal to <code>$y</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>$x &lt;= $y</code>
+</td>
+<td>
+<code>$x</code> is lesser or equal to <code>$y</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>$x != $y</code>
+</td>
+<td>
+<code>$x</code> is not equal to <code>$y</code>
 </td>
 </tr>
 </table>
@@ -1091,50 +1089,50 @@ too:
 </tr>
 <tr>
 <td>
-<tt>eq</tt>
+<code>eq</code>
 </td>
 <td>
-<tt>==</tt>
-</td>
-</tr>
-<tr>
-<td>
-<tt>ne</tt>
-</td>
-<td>
-<tt>!=</tt>
+<code>==</code>
 </td>
 </tr>
 <tr>
 <td>
-<tt>gt</tt>
+<code>ne</code>
 </td>
 <td>
-<tt>&gt;</tt>
-</td>
-</tr>
-<tr>
-<td>
-<tt>lt</tt>
-</td>
-<td>
-<tt>&lt;</tt>
+<code>!=</code>
 </td>
 </tr>
 <tr>
 <td>
-<tt>ge</tt>
+<code>gt</code>
 </td>
 <td>
-<tt>&gt;=</tt>
+<code>&gt;</code>
 </td>
 </tr>
 <tr>
 <td>
-<tt>le</tt>
+<code>lt</code>
 </td>
 <td>
-<tt>&lt;=</tt>
+<code>&lt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>ge</code>
+</td>
+<td>
+<code>&gt;=</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>le</code>
+</td>
+<td>
+<code>&lt;=</code>
 </td>
 </tr>
 </table>
@@ -1142,7 +1140,7 @@ too:
 Notice that the string operators are built from the initials of their
 abbreviated names. (E.g: eq = equal, gt = greater than). Perl's string
 comparison is case-sensitive. If you want a case insensitive
-string comparison, use the <tt>lc</tt> function to convert the strings to
+string comparison, use the <code>lc</code> function to convert the strings to
 lowercase beforehand.
 </p>
 <p>Example:</p>
@@ -1187,8 +1185,8 @@ For doing this, Perl supplies boolean operators.
 <td>
 <h2>&amp;&amp;</h2>
 <p>
-<tt>$x &amp;&amp; $y</tt> evaluates to true if both <tt>$x</tt> and <tt>$y</tt> are true.
-It is called the “logical and” of the two operands <tt>$x</tt> and <tt>$y</tt>.
+<code>$x &amp;&amp; $y</code> evaluates to true if both <code>$x</code> and <code>$y</code> are true.
+It is called the “logical and” of the two operands <code>$x</code> and <code>$y</code>.
 </p>
 </td>
 </tr>
@@ -1196,7 +1194,7 @@ It is called the “logical and” of the two operands <tt>$x</tt> and <tt>$y</t
 <td>
 <h2>||</h2>
 <p>
-<tt>$x || $y</tt> (called the “logical or” of <tt>$x</tt> and <tt>$y</tt>) is
+<code>$x || $y</code> (called the “logical or” of <code>$x</code> and <code>$y</code>) is
 evaluated to true if one or both of its operands are true.
 </p>
 </td>
@@ -1205,16 +1203,16 @@ evaluated to true if one or both of its operands are true.
 <td>
 <h2>!</h2>
 <p>
-<tt>! $x</tt> (pronounced “not <tt>$x</tt>”) evaluates to true
-if <tt>$x</tt> is false.
+<code>! $x</code> (pronounced “not <code>$x</code>”) evaluates to true
+if <code>$x</code> is false.
 </p>
 </td>
 </tr>
 </table>
 <p>
 Note that if the first operand is evaluated to false in an
-<tt>&amp;&amp;</tt> operation, the second operand will not be evaluated at
-all. Similarly, if the first operand of <tt>||</tt> was found to be true,
+<code>&amp;&amp;</code> operation, the second operand will not be evaluated at
+all. Similarly, if the first operand of <code>||</code> was found to be true,
 the second one will not be evaluated either.
 </p>
 <p>
@@ -1266,7 +1264,7 @@ them to variables first.
 }
 </pre></div>
 <p>
-Note: The function <tt>lc()</tt> converts a string to lowercase.
+Note: The function <code>lc()</code> converts a string to lowercase.
 </p>
 <hr />
 
@@ -1293,19 +1291,19 @@ cases:
 </p>
 <ol>
 <li>
-The number <tt>0</tt>.
+The number <code>0</code>.
 </li>
 <li>
-The empty string (<tt>""</tt>).
+The empty string (<code>""</code>).
 </li>
 <li>
-A special value called <tt>undef</tt>. This is the default value of every
+A special value called <code>undef</code>. This is the default value of every
 variable that was not initialized before it was accessed.
 </li>
 </ol>
 <p>
 One of the most convenient ways of cancelling code is to wrap it in an
-<tt>if (0) { ... }</tt> block. It usually is faster than adding comments to
+<code>if (0) { ... }</code> block. It usually is faster than adding comments to
 the beginning of each line. Of course, you should not distribute code that
 way, but it is useful for testing conjectures.
 </p>
@@ -1349,11 +1347,11 @@ The full syntax of the if statement is as follows:
 }
 </pre></div>
 <p>
-The N-th <tt>elsif</tt> block will be executed only if all the conditions
+The N-th <code>elsif</code> block will be executed only if all the conditions
 in the previous blocks were not met <b>and</b> its own condition was met.
 </p>
 <p>
-You can do the same with nesting <tt>if</tt> statements inside <tt>else</tt>
+You can do the same with nesting <code>if</code> statements inside <code>else</code>
 statements, but isn't it nice of perl to save you all those extra brackets
 and indentations?
 </p>
@@ -1377,7 +1375,7 @@ and indentations?
 8. The While Loop
 </h1>
 <p>
-The <tt>while</tt> loop enables you to repeat a sequence of statements
+The <code>while</code> loop enables you to repeat a sequence of statements
 an arbitrary number of times for as long a condition is met. The syntax
 is very similar to the if statement and will be introduced in the following
 example:
@@ -1395,7 +1393,7 @@ example:
     <span class="Constant">&quot;greater than this number is &quot;</span> , <span class="Identifier">$power_of_2</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
 </pre></div>
 <p>
-It is possible that a <tt>while</tt> loop will not be executed at all, if the
+It is possible that a <code>while</code> loop will not be executed at all, if the
 condition is not met right on the start.
 </p>
 <hr />
@@ -1457,20 +1455,20 @@ characters:
 8.1. last and next
 </h1>
 <p>
-Within the <tt>while</tt> and <tt>for</tt> loops one can use two special
-commands, called <tt>last</tt> and <tt>next</tt>. <tt>last</tt> terminates a
-loop prematurely while <tt>next</tt> skips the rest of the remaining loop
+Within the <code>while</code> and <code>for</code> loops one can use two special
+commands, called <code>last</code> and <code>next</code>. <code>last</code> terminates a
+loop prematurely while <code>next</code> skips the rest of the remaining loop
 body, skips to the loop condition and if it is met, executes the loop again.
 </p>
 <p>
-By default, <tt>last</tt> and <tt>next</tt> operate on the most innermost loop.
+By default, <code>last</code> and <code>next</code> operate on the most innermost loop.
 However, the loop to which they relate can be controlled by labelling
-the requested loop and specifying this label as a parameter to <tt>last</tt>
-or <tt>next</tt>.
+the requested loop and specifying this label as a parameter to <code>last</code>
+or <code>next</code>.
 </p>
 <p>
 The following example is a rewrite of the "All A's" program using
-<tt>last</tt>:
+<code>last</code>:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">print</span> <span class="Constant">&quot;Please enter a string:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
@@ -1527,8 +1525,8 @@ The following example is a rewrite of the "All A's" program using
 </pre></div>
 <p>
 "ROW_LOOP" is the label for the outer loop, and it can be seen that
-<tt>next</tt> uses it as a parameter. All in all, <tt>next</tt> and
-<tt>last</tt> are sometimes very convenient (but don't tell it to
+<code>next</code> uses it as a parameter. All in all, <code>next</code> and
+<code>last</code> are sometimes very convenient (but don't tell it to
 <a href="http://en.wikipedia.org/wiki/Edsger_Dijkstra">Edsger W.
 Dijkstra</a>'s face!), so you will see them being used often.
 </p>
@@ -1557,8 +1555,8 @@ assigned to by using their indices. An index passed to an array may well be,
 and usually is, another variable.
 </p>
 <p>
-To refer to the <tt>$i</tt>'th element of the array <tt>@myarray</tt>, one uses
-the syntax <tt>$myarray[$i]</tt>. This element can be assigned to or its
+To refer to the <code>$i</code>'th element of the array <code>@myarray</code>, one uses
+the syntax <code>$myarray[$i]</code>. This element can be assigned to or its
 value can be retrieved, with the same notation.
 </p>
 <p>
@@ -1601,10 +1599,10 @@ The following program prints the primes up to 200:
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-The notation <tt>scalar(@myarray)</tt> can be used to refer to the number
+The notation <code>scalar(@myarray)</code> can be used to refer to the number
 of elements in an array. This number is equal to the maximal index which
 was assigned in the array plus one. You will also see the notation
-<tt>$#myarray</tt> which is equal to the maximal index itself (or -1 if the
+<code>$#myarray</code> which is equal to the maximal index itself (or -1 if the
 array is empty).
 </p>
 <p>
@@ -1657,7 +1655,7 @@ Thus, for example, the above program could have been written as follows:
 9.1. The ',' operator
 </h1>
 <p>
-In perl the comma (<tt>,</tt>) is an operator, which we encountered before
+In perl the comma (<code>,</code>) is an operator, which we encountered before
 in function calls. The comma concatenates two arrays. We can use it to
 initialise an array in one call:
 </p>
@@ -1680,7 +1678,7 @@ We can also use it to concatenate two existing arrays:
 
 <span class="Statement">for</span> <span class="Identifier">$idx</span> (<span class="Constant">0</span> .. <span class="Identifier">$#primes</span>)
 {
-	<span class="Statement">print</span> <span class="Identifier">$primes[$idx]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Identifier">$primes[$idx]</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 }
 </pre></div>
 <p>
@@ -1708,11 +1706,11 @@ useful for calling functions which accept more than one argument.
 9.2. Negative Indexes
 </h1>
 <p>
-The expression <tt>$myarray[-$n]</tt> is equivalent to
-<tt>$myarray[scalar(@myarray)-$n]</tt>. I.e: subscripts with negative indexes
-return the <tt>$n</tt>'th element from the end of the array. So to get the
-value of the last element you can write <tt>$myarray[-1]</tt> and for the
-second last <tt>$myarray[-2]</tt>,
+The expression <code>$myarray[-$n]</code> is equivalent to
+<code>$myarray[scalar(@myarray)-$n]</code>. I.e: subscripts with negative indexes
+return the <code>$n</code>'th element from the end of the array. So to get the
+value of the last element you can write <code>$myarray[-1]</code> and for the
+second last <code>$myarray[-2]</code>,
 etc.
 </p>
 <p>
@@ -1740,35 +1738,35 @@ elements from the end of the array.
 9.3. The foreach loop
 </h1>
 <p>
-By using the <tt>foreach</tt> loop we can iterate over all the elements of
+By using the <code>foreach</code> loop we can iterate over all the elements of
 an array, and perform the same set of operations on each one of them. Here's
 an example:
 </p>
 <div class="code_block"><pre>
 <span class="Identifier">@numbers</span> = (<span class="Constant">15</span>,<span class="Constant">5</span>,<span class="Constant">7</span>,<span class="Constant">3</span>,<span class="Constant">9</span>,<span class="Constant">1</span>,<span class="Constant">20</span>,<span class="Constant">13</span>,<span class="Constant">9</span>,<span class="Constant">8</span>,
-	<span class="Constant">15</span>,<span class="Constant">16</span>,<span class="Constant">2</span>,<span class="Constant">6</span>,<span class="Constant">12</span>,<span class="Constant">90</span>);
+    <span class="Constant">15</span>,<span class="Constant">16</span>,<span class="Constant">2</span>,<span class="Constant">6</span>,<span class="Constant">12</span>,<span class="Constant">90</span>);
 
 <span class="Identifier">$max</span> = <span class="Identifier">$numbers[</span><span class="Constant">0</span><span class="Identifier">]</span>;
 <span class="Identifier">$min</span> = <span class="Identifier">$numbers[</span><span class="Constant">0</span><span class="Identifier">]</span>;
 
 <span class="Statement">foreach</span> <span class="Identifier">$i</span> (<span class="Identifier">@numbers[</span><span class="Constant">1.</span>.<span class="Identifier">$#numbers]</span>)
 {
-	<span class="Statement">if</span> (<span class="Identifier">$i</span> &gt; <span class="Identifier">$max</span>)
-	{
-		<span class="Identifier">$max</span> = <span class="Identifier">$i</span>;
-	}
-	<span class="Statement">elsif</span> (<span class="Identifier">$i</span> &lt; <span class="Identifier">$min</span>)
-	{
-		<span class="Identifier">$min</span> = <span class="Identifier">$i</span>;
-	}
+    <span class="Statement">if</span> (<span class="Identifier">$i</span> &gt; <span class="Identifier">$max</span>)
+    {
+        <span class="Identifier">$max</span> = <span class="Identifier">$i</span>;
+    }
+    <span class="Statement">elsif</span> (<span class="Identifier">$i</span> &lt; <span class="Identifier">$min</span>)
+    {
+        <span class="Identifier">$min</span> = <span class="Identifier">$i</span>;
+    }
 }
 
 <span class="Statement">print</span> <span class="Constant">&quot;The maximum is &quot;</span> . <span class="Identifier">$max</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 <span class="Statement">print</span> <span class="Constant">&quot;The minimum is &quot;</span> . <span class="Identifier">$min</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-The <tt>foreach</tt> loop in the example assigns each of the elements of the
-array which was passed to it to <tt>$i</tt> in turn, and executes the same
+The <code>foreach</code> loop in the example assigns each of the elements of the
+array which was passed to it to <code>$i</code> in turn, and executes the same
 set of commands for each value.
 </p>
 <hr />
@@ -1791,13 +1789,13 @@ set of commands for each value.
 9.3.1. The for keyword and the .. operator
 </h1>
 <p>
-The <tt>for</tt> keyword in Perl means exactly the same as <tt>foreach</tt> and
+The <code>for</code> keyword in Perl means exactly the same as <code>foreach</code> and
 you can use either one interchangeably.
 </p>
 <p>
-<tt>$x .. $y</tt> is a special operator that returns an array containing the
-sequence of consecutive integers from <tt>$x</tt> up to and including
-<tt>$y</tt>. Now one can fully understand the <tt>for $i (1 .. 10)</tt>
+<code>$x .. $y</code> is a special operator that returns an array containing the
+sequence of consecutive integers from <code>$x</code> up to and including
+<code>$y</code>. Now one can fully understand the <code>for $i (1 .. 10)</code>
 construct that we used in the beginning of this lecture.
 </p>
 <hr />
@@ -1821,8 +1819,8 @@ construct that we used in the beginning of this lecture.
 </h1>
 <h2>push</h2>
 <p>
-The <tt>push</tt> function appends an element or an entire array to the
-end of an array variable. The syntax is <tt>push @array_to_append_to, @array_to_append</tt> or <tt>push @array, $elem1</tt>. For example, the primes program from earlier could be written as:
+The <code>push</code> function appends an element or an entire array to the
+end of an array variable. The syntax is <code>push @array_to_append_to, @array_to_append</code> or <code>push @array, $elem1</code>. For example, the primes program from earlier could be written as:
 </p>
 <div class="code_block"><pre>
 <span class="Comment"># Put 2 as the first prime so we won't have an empty array,</span>
@@ -1852,13 +1850,13 @@ end of an array variable. The syntax is <tt>push @array_to_append_to, @array_to_
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Notice that <tt>push</tt> is equivalent to typing
-<tt>@array = (@array, $extra_elem)</tt>, but it is recommended
+Notice that <code>push</code> is equivalent to typing
+<code>@array = (@array, $extra_elem)</code>, but it is recommended
 to use it, because it minimises error and it executes faster.
 </p>
 <h2>pop</h2>
 <p>
-<tt>pop</tt> extracts the last element from an array and returns it. Here's a
+<code>pop</code> extracts the last element from an array and returns it. Here's a
 short example to demonstrate it:
 </p>
 <div class="code_block"><pre>
@@ -1872,12 +1870,12 @@ short example to demonstrate it:
 </pre></div>
 <h2>shift</h2>
 <p>
-<tt>shift</tt> extracts the <b>first</b> element of an array and returns it. The
+<code>shift</code> extracts the <b>first</b> element of an array and returns it. The
 array will be changed to contain only the elements that were present there
-previously, with the 1 to <tt>scalar(@array)-1</tt> indexes.
+previously, with the 1 to <code>scalar(@array)-1</code> indexes.
 </p>
 <p>
-Here's the above example, while using <tt>shift</tt> instead of <tt>pop</tt>:
+Here's the above example, while using <code>shift</code> instead of <code>pop</code>:
 </p>
 <div class="code_block"><pre>
 <span class="Comment"># This program prints the numbers 1 to 10.</span>
@@ -1890,8 +1888,8 @@ Here's the above example, while using <tt>shift</tt> instead of <tt>pop</tt>:
 </pre></div>
 <h2>join</h2>
 <p>
-The syntax is <tt>join($separator, @array)</tt> and what it does is
-concatenates the elements of <tt>@array</tt> while putting <tt>$separator</tt> in
+The syntax is <code>join($separator, @array)</code> and what it does is
+concatenates the elements of <code>@array</code> while putting <code>$separator</code> in
 between. Here's an example:
 </p>
 <div class="code_block"><pre>
@@ -1901,7 +1899,7 @@ between. Here's an example:
 </pre></div>
 <h2>reverse</h2>
 <p>
-The <tt>reverse</tt> function returns the array which contains the elements
+The <code>reverse</code> function returns the array which contains the elements
 of the array passed to it as argument in reverse. Here's an example:
 </p>
 <div class="code_block"><pre>
@@ -1919,9 +1917,9 @@ of the array passed to it as argument in reverse. Here's an example:
 <span class="Statement">print</span> <span class="Constant">&quot;Your lines in reverse are:</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Statement">reverse</span>(<span class="Identifier">@mylines</span>)), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
-Note that by typing <tt>scalar(reverse($scalar))</tt> you get the string that
-contains the characters of <tt>$scalar</tt> in reverse.
-<tt>scalar(reverse(@array))</tt> concatenates the array into one string and then
+Note that by typing <code>scalar(reverse($scalar))</code> you get the string that
+contains the characters of <code>$scalar</code> in reverse.
+<code>scalar(reverse(@array))</code> concatenates the array into one string and then
 reverses its characters.
 </p>
 <hr />
@@ -1944,10 +1942,10 @@ reverses its characters.
 9.5. The x operator
 </h1>
 <p>
-The expression <tt>(@array) x $num_times</tt> returns an array that is composed
-of <tt>$num_times</tt> copies of <tt>@array</tt> one after the other. The
-expression <tt>$scalar x $num_times</tt>, on the other hand, returns
-a string containing <tt>$num_times</tt> copies of <tt>$scalar</tt>
+The expression <code>(@array) x $num_times</code> returns an array that is composed
+of <code>$num_times</code> copies of <code>@array</code> one after the other. The
+expression <code>$scalar x $num_times</code>, on the other hand, returns
+a string containing <code>$num_times</code> copies of <code>$scalar</code>
 concatenated together string-wise.
 </p>
 <p>

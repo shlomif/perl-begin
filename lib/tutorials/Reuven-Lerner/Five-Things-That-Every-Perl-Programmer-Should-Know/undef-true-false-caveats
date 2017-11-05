@@ -1,10 +1,10 @@
 <ul>
-    <li> There's a reason why <tt>use warnings</tt> yells if you use
+    <li> There's a reason why <code>use warnings</code> yells if you use
     an uninitialized variable.  Sure, Perl will do what you want --
     but give variables values before you use them, unless you
     specifically want them to be undefined.
 
-    <li> Return <tt>undef</tt> from subroutines if you're not
+    <li> Return <code>undef</code> from subroutines if you're not
     returning a value.  I see this as a primitive exception-handling
     system.
 

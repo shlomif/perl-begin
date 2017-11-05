@@ -1,13 +1,13 @@
 <p>The way to avoid this with globals is with packages.</p>
 
 <ul>
-    <li> By default, globals are in package <tt>main</tt>, so
-    <tt>$x</tt> is really <tt>$main::x</tt>.
+    <li> By default, globals are in package <code>main</code>, so
+    <code>$x</code> is really <code>$main::x</code>.
 
     <li> You can always set and retrieve any global value -- you might
     just need to specify the full name.
 
-    <li> The <tt>package</tt> statement changes the current default
+    <li> The <code>package</code> statement changes the current default
     package.
 </ul>
 

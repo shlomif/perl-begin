@@ -6,7 +6,7 @@
 </pre>
 
 <p>That backslash does everything we want and need, telling Perl to
-store a reference to <tt>@array1</tt>, not <tt>@array1</tt>
+store a reference to <code>@array1</code>, not <code>@array1</code>
 itself.</p>
 
 <p>You don't need to create an array in order to get a reference:</p>

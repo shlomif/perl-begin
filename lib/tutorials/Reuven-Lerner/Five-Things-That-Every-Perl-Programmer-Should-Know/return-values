@@ -1,4 +1,4 @@
-<p>You can use <tt>undef</tt> as a return value from a subroutine:</p>
+<p>You can use <code>undef</code> as a return value from a subroutine:</p>
 
 <ul>
     <li> It's false, when tested for truth

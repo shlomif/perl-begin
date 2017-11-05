@@ -2812,16 +2812,16 @@ thr.start()</td>
 <p>Code which examples in the sheet assume to have already been executed.</p>
 <p><strong>perl:</strong></p>
 <p>We adopt the convention that if an example uses a variable without
-declaring it, it should be taken to have been previously declared with <tt>my</tt>.</p>
+declaring it, it should be taken to have been previously declared with <code>my</code>.</p>
 <p><strong>python:</strong></p>
-<p>To keep the examples short we assume that <tt>os</tt>, <tt>re</tt>, and <tt>sys</tt> are always imported.</p>
+<p>To keep the examples short we assume that <code>os</code>, <code>re</code>, and <code>sys</code> are always imported.</p>
 <p id="version-note"></p>
 <h2 id="toc3"><span><a href="#version">show version</a></span> <span class="selfl">[<a href="#toc3">link</a>]</span></h2>
 <p>How to get the version.</p>
 <p><strong>php:</strong></p>
-<p>The function <tt>phpversion()</tt> will return the version number as a string.</p>
+<p>The function <code>phpversion()</code> will return the version number as a string.</p>
 <p><strong>perl:</strong></p>
-<p>Also available in the predefined variable <tt>$]</tt>, or in a different format in <tt>$^V</tt> and <tt>$PERL_VERSION</tt>.</p>
+<p>Also available in the predefined variable <code>$]</code>, or in a different format in <code>$^V</code> and <code>$PERL_VERSION</code>.</p>
 <p><strong>python:</strong></p>
 <p>The following function will return the version number as a string:</p>
 <div class="code">
@@ -2829,14 +2829,14 @@ declaring it, it should be taken to have been previously declared with <tt>my</t
 platform.python_version()</code>
 </pre></div>
 <p><strong>ruby:</strong></p>
-<p>Also available in the global constant <tt>VERSION</tt> (Ruby 1.8) or <tt>RUBY_VERSION</tt> (Ruby 1.9).</p>
+<p>Also available in the global constant <code>VERSION</code> (Ruby 1.8) or <code>RUBY_VERSION</code> (Ruby 1.9).</p>
 <p id="grammar-invocation-note"></p>
 <h1 id="toc4"><span><a href="#grammar-invocation">Grammar and Invocation</a></span> <span class="selfl">[<a href="#toc4">link</a>]</span></h1>
 <p id="interpreter-note"></p>
 <h2 id="toc5"><span><a href="#interpreter">interpreter</a></span> <span class="selfl">[<a href="#toc5">link</a>]</span></h2>
 <p>The customary name of the interpreter and how to invoke it.</p>
 <p><strong>php:</strong></p>
-<p><tt>php -f</tt> will only execute portions of the source file within a &lt;?php <span style="color: gray"><em>php code</em></span>
+<p><code>php -f</code> will only execute portions of the source file within a &lt;?php <span style="color: gray"><em>php code</em></span>
  ?&gt; tag as php code. Portions of the source file outside of such tags
  is not treated as executable code and is echoed to standard out.</p>
 <p>If short tags are enabled, then php code can also be placed inside &lt;? <span style="color: gray"><em>php code</em></span> ?&gt; and &lt;?= <span style="color: gray"><em>php code</em></span> ?&gt; tags.</p>
@@ -2845,11 +2845,11 @@ platform.python_version()</code>
 <h2 id="toc6"><span><a href="#repl">repl</a></span> <span class="selfl">[<a href="#toc6">link</a>]</span></h2>
 <p>The customary name of the repl.</p>
 <p><strong>php:</strong></p>
-<p>The <tt>php</tt> REPL does not save or display the result of an expression.</p>
-<p><tt>php -a</tt> offers a different style of interactive mode. It collects input until EOF is encountered and then it executes it. Text inside <tt>&lt;?</tt> <span style="color: gray"><em>code</em></span> <tt>?&gt;</tt> and <tt>&lt;?=</tt> <span style="color: gray"><em>code</em></span> <tt>?&gt;</tt> is executed as PHP code. Text outside of PHP markup tags is echoed.</p>
+<p>The <code>php</code> REPL does not save or display the result of an expression.</p>
+<p><code>php -a</code> offers a different style of interactive mode. It collects input until EOF is encountered and then it executes it. Text inside <code>&lt;?</code> <span style="color: gray"><em>code</em></span> <code>?&gt;</code> and <code>&lt;?=</code> <span style="color: gray"><em>code</em></span> <code>?&gt;</code> is executed as PHP code. Text outside of PHP markup tags is echoed.</p>
 <p><strong>perl:</strong></p>
-<p>The Perl REPL <tt>perl -de 0</tt> does not save or display the result of an expression. <tt>perl -d</tt> is the Perl debugger and <tt>perl -e</tt> runs code provided on the command line.</p>
-<p><tt>perl -de 0</tt> does not by default have readline, but it can be added:</p>
+<p>The Perl REPL <code>perl -de 0</code> does not save or display the result of an expression. <code>perl -d</code> is the Perl debugger and <code>perl -e</code> runs code provided on the command line.</p>
+<p><code>perl -de 0</code> does not by default have readline, but it can be added:</p>
 <div class="code">
 <pre><code>$ cpan -i Term::Readline::Perl
 
@@ -2865,7 +2865,7 @@ $ perl -de 0
 <p><strong>python:</strong></p>
 <p>The python repl saves the result of the last statement in <span style="white-space: pre-wrap;">_</span>.</p>
 <p><strong>ruby:</strong></p>
-<p><tt>irb</tt> saves the result of the last statement in <span style="white-space: pre-wrap;">_</span>.</p>
+<p><code>irb</code> saves the result of the last statement in <span style="white-space: pre-wrap;">_</span>.</p>
 <p id="cmd-line-program-note"></p>
 <h2 id="toc7"><span><a href="#cmd-line-program">command line program</a></span> <span class="selfl">[<a href="#toc7">link</a>]</span></h2>
 <p>How to pass the code to be executed to the interpreter as a command line argument.</p>
@@ -2887,11 +2887,11 @@ are not in a nested block are not all indented the same. Using tabs in
 Python source code is unrecommended and many editors replace them
 automatically with spaces. If the Python interpreter encounters a tab,
 it is treated as 8 spaces.</p>
-<p>The python repl switches from a <tt><span style="white-space: pre-wrap;">&gt;&gt;&gt;</span></tt> prompt to a … prompt inside a block. A blank line terminates the block.</p>
+<p>The python repl switches from a <code><span style="white-space: pre-wrap;">&gt;&gt;&gt;</span></code> prompt to a … prompt inside a block. A blank line terminates the block.</p>
 <p>Colons are also used to separate keys from values in dictionaries and in sequence slice notation.</p>
 <p><strong>ruby:</strong></p>
-<p>Curly brackets {} delimit blocks. A matched curly bracket pair can be replaced by the <tt>do</tt> and <tt>end</tt> keywords. By convention curly brackets are used for one line blocks.</p>
-<p>The <tt>end</tt> keyword also terminates blocks started by <tt>def</tt>, <tt>class</tt>, or <tt>module</tt>.</p>
+<p>Curly brackets {} delimit blocks. A matched curly bracket pair can be replaced by the <code>do</code> and <code>end</code> keywords. By convention curly brackets are used for one line blocks.</p>
+<p>The <code>end</code> keyword also terminates blocks started by <code>def</code>, <code>class</code>, or <code>module</code>.</p>
 <p>Curly brackets are also used for hash literals, and the #{ } notation is used to interpolate expressions into strings.</p>
 <p id="statement-separator-note"></p>
 <h2 id="toc9"><span><a href="#statement-separator">statement separator</a></span> <span class="selfl">[<a href="#toc9">link</a>]</span></h2>
@@ -2901,13 +2901,13 @@ it is treated as 8 spaces.</p>
 <div class="code">
 <pre><code>&lt;? if (true) { echo "true" } ?&gt;</code>
 </pre></div>
-<p>The last statement inside <tt>&lt;?= ?&gt;</tt> or <tt>&lt;? ?&gt;</tt> tags does not need to be semicolon terminated, however. The following code is legal:</p>
+<p>The last statement inside <code>&lt;?= ?&gt;</code> or <code>&lt;? ?&gt;</code> tags does not need to be semicolon terminated, however. The following code is legal:</p>
 <div class="code">
 <pre><code>&lt;?= $a = 1 ?&gt;
 &lt;? echo $a ?&gt;</code>
 </pre></div>
 <p><strong>perl:</strong></p>
-<p>In a script statements are separated by semicolons and never by newlines. However, when using <tt>perl -de 0</tt> a newline terminates the statement.</p>
+<p>In a script statements are separated by semicolons and never by newlines. However, when using <code>perl -de 0</code> a newline terminates the statement.</p>
 <p><strong>python:</strong></p>
 <p>Newline does not terminate a statement when:</p>
 <ul>
@@ -3134,11 +3134,11 @@ of l-values, provided the nesting matches. This assignment will set a to
 <div class="code">
 <pre><code>(a,[b,c]) = [1,(2,3)]</code>
 </pre></div>
-<p>This assignment will raise a <tt>TypeError</tt>:</p>
+<p>This assignment will raise a <code>TypeError</code>:</p>
 <div class="code">
 <pre><code>(a,(b,c)) = ((1,2),3)</code>
 </pre></div>
-<p>In Python 3 the splat operator <tt>*</tt> can be used to collect the remaining right side elements in a list:</p>
+<p>In Python 3 the splat operator <code>*</code> can be used to collect the remaining right side elements in a list:</p>
 <div class="code">
 <pre><code>x, y, *z = 1, 2        # assigns [] to z
 x, y, *z = 1, 2, 3     # assigns [3] to z
@@ -3158,7 +3158,7 @@ a,b,c = nums</code>
 <p>Compound assignment operators mutate a variable, setting it to the
 value of an operation which takes the previous value of the variable as
 an argument.</p>
-<p>If <tt>&lt;OP&gt;</tt> is any binary operator and the language has the compound assignment operator <tt>&lt;OP&gt;=</tt>, then the following are equivalent:</p>
+<p>If <code>&lt;OP&gt;</code> is any binary operator and the language has the compound assignment operator <code>&lt;OP&gt;=</code>, then the following are equivalent:</p>
 <div class="code">
 <pre><code>x &lt;OP&gt;= y
 x = x &lt;OP&gt; y</code>
@@ -3252,7 +3252,7 @@ if ($v == undef) { print "sadly true"; }</code>
 <p><strong>php:</strong></p>
 <p>PHP does not provide the programmer with a mechanism to distinguish
 an undefined variable from a variable which has been set to NULL.</p>
-<p><a href="https://gist.github.com/1157508">A test</a> showing that <tt>isset</tt> is the logical negation of <tt>is_null</tt>.</p>
+<p><a href="https://gist.github.com/1157508">A test</a> showing that <code>isset</code> is the logical negation of <code>is_null</code>.</p>
 <p><strong>perl:</strong></p>
 <p>Perl does not distinguish between unset variables and variables that
 have been set to undef. In Perl, calling defined($a) does not result in a
@@ -3278,7 +3278,7 @@ except NameError:
 <p><strong>python:</strong></p>
 <p>The Python conditional expression comes from Algol.</p>
 <p><strong>ruby:</strong></p>
-<p>The Ruby <tt>if</tt> statement is also an expression:</p>
+<p>The Ruby <code>if</code> statement is also an expression:</p>
 <div class="code">
 <pre><code>x = if x &gt; 0
   x
@@ -3295,11 +3295,11 @@ end</code>
 <p><strong>php:</strong></p>
 <p>Any identifier which matches TRUE case-insensitive can be used for the TRUE boolean. Similarly for FALSE.</p>
 <p>In general, PHP variable names are case-sensitive, but function names are case-insensitive.</p>
-<p>When converted to a string for display purposes, TRUE renders as "1" and FALSE as "". The equality tests <tt>TRUE == 1</tt> and <tt>FALSE == ""</tt> evaluate as TRUE but the equality tests <tt>TRUE === 1</tt> and <tt>FALSE === ""</tt> evaluate as FALSE.</p>
+<p>When converted to a string for display purposes, TRUE renders as "1" and FALSE as "". The equality tests <code>TRUE == 1</code> and <code>FALSE == ""</code> evaluate as TRUE but the equality tests <code>TRUE === 1</code> and <code>FALSE === ""</code> evaluate as FALSE.</p>
 <p id="falsehoods-note"></p>
 <h2 id="toc28"><span><a href="#falsehoods">falsehoods</a></span> <span class="selfl">[<a href="#toc28">link</a>]</span></h2>
 <p>Values which behave like the false boolean in a conditional context.</p>
-<p>Examples of conditional contexts are the conditional clause of an <tt>if</tt> statement and the test of a <tt>while</tt> loop.</p>
+<p>Examples of conditional contexts are the conditional clause of an <code>if</code> statement and the test of a <code>while</code> loop.</p>
 <p><strong>python:</strong></p>
 <p>Whether a object evaluates to True or False in a boolean context can be customized by implementing a <span style="white-space: pre-wrap;">__nonzero__</span> (Python 2) or <span style="white-space: pre-wrap;">__bool__</span> (Python 3) instance method for the class.</p>
 <p id="logical-op-note"></p>
@@ -3326,12 +3326,12 @@ numeric context and are equal according to the == operator. To perform a
 1 == 1 != 2</code>
 </pre></div>
 <p>In general if <em>A<sub>i</sub></em> are expressions and <em>op<sub>i</sub></em> are relational operators, then</p>
-<p><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><tt>A<sub>1</sub> op<sub>1</sub> A<sub>2</sub> op<sub>2</sub> A<sub>3</sub> … A<sub>n</sub> op<sub>n</sub> A<sub>n+1</sub></tt></p>
+<p><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><code>A<sub>1</sub> op<sub>1</sub> A<sub>2</sub> op<sub>2</sub> A<sub>3</sub> … A<sub>n</sub> op<sub>n</sub> A<sub>n+1</sub></code></p>
 <p>is true if and only if each of the following is true</p>
-<p><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><tt>A<sub>1</sub> op<sub>1</sub> A<sub>2</sub></tt><br />
-<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><tt>A<sub>2</sub> op<sub>2</sub> A<sub>3</sub></tt><br />
+<p><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><code>A<sub>1</sub> op<sub>1</sub> A<sub>2</sub></code><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><code>A<sub>2</sub> op<sub>2</sub> A<sub>3</sub></code><br />
 <span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>…<br />
-<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><tt>A<sub>n</sub> op<sub>n</sub> A<sub>n+1</sub></tt></p>
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><code>A<sub>n</sub> op<sub>n</sub> A<sub>n+1</sub></code></p>
 <p id="min-max-note"></p>
 <h2 id="toc31"><span><a href="#min-max">min and max</a></span> <span class="selfl">[<a href="#toc31">link</a>]</span></h2>
 <p>How to get the min and max.</p>
@@ -3340,7 +3340,7 @@ numeric context and are equal according to the == operator. To perform a
 <p>Binary comparison operators which return -1, 0, or 1 depending upon
 whether the left argument is less than, equal to, or greater than the
 right argument.</p>
-<p>The <tt>&lt;=&gt;</tt> symbol is called the spaceship operator.</p>
+<p>The <code>&lt;=&gt;</code> symbol is called the spaceship operator.</p>
 <p id="arith-op-note"></p>
 <h2 id="toc33"><span><a href="#arith-op">arithmetic operators</a></span> <span class="selfl">[<a href="#toc33">link</a>]</span></h2>
 <p>The operators for addition, subtraction, multiplication, float division, integer division, modulus, and exponentiation.</p>
@@ -3348,7 +3348,7 @@ right argument.</p>
 <h2 id="toc34"><span><a href="#int-div">integer division</a></span> <span class="selfl">[<a href="#toc34">link</a>]</span></h2>
 <p>How to get the integer quotient of two integers. How to get the integer quotient and remainder.</p>
 <p><strong>perl:</strong></p>
-<p>The <tt>integer</tt> pragma makes all arithmetic operations integer
+<p>The <code>integer</code> pragma makes all arithmetic operations integer
 operations. Floating point numbers are truncated before they are used.
 Hence integer division could be performed with:</p>
 <div class="code">
@@ -3401,7 +3401,7 @@ round a float to the nearest integer; how to find the nearest integer
 above a float; how to find the nearest integer below a float; how to
 take the absolute value.</p>
 <p><strong>perl:</strong></p>
-<p>The CPAN module <tt>Number::Format</tt> provides a <tt>round</tt> function. The 2nd argument specifies the number of digits to keep to the right of the radix. The default is 2.</p>
+<p>The CPAN module <code>Number::Format</code> provides a <code>round</code> function. The 2nd argument specifies the number of digits to keep to the right of the radix. The default is 2.</p>
 <div class="code">
 <pre><code>use Number::Format 'round';
 
@@ -3453,7 +3453,7 @@ cover code using random numbers doesn't intermittently fail.</p>
 <h2 id="toc54"><span><a href="#base-conversion">base conversion</a></span> <span class="selfl">[<a href="#toc54">link</a>]</span></h2>
 <p>How to convert integers to strings of digits of a given base. How to convert such strings into integers.</p>
 <p><strong>perl</strong></p>
-<p>Perl has the functions <tt>oct</tt> and <tt>hex</tt> which convert strings encoded in octal and hex and return the corresponding integer. The <tt>oct</tt> function will handle binary or hex encoded strings if they have "0b" or "0x" prefixes.</p>
+<p>Perl has the functions <code>oct</code> and <code>hex</code> which convert strings encoded in octal and hex and return the corresponding integer. The <code>oct</code> function will handle binary or hex encoded strings if they have "0b" or "0x" prefixes.</p>
 <div class="code">
 <pre><code>oct("60")
 oct("060")
@@ -3464,7 +3464,7 @@ hex("2a")
 hex("0x2a")</code>
 </pre></div>
 <p><strong>python</strong></p>
-<p>Python has the functions <tt>bin</tt>, <tt>oct</tt>, and <tt>hex</tt> which take an integer and return a string encoding the integer in base 2, 8, and 16.</p>
+<p>Python has the functions <code>bin</code>, <code>oct</code>, and <code>hex</code> which take an integer and return a string encoding the integer in base 2, 8, and 16.</p>
 <div class="code">
 <pre><code>bin(42)
 oct(42)
@@ -3476,11 +3476,11 @@ hex(42)</code>
 <h2 id="toc56"><span><a href="#str-literal">string literal</a></span> <span class="selfl">[<a href="#toc56">link</a>]</span></h2>
 <p>The syntax for string literals.</p>
 <p><strong>perl:</strong></p>
-<p>When <tt>use strict</tt> is not in effect bareword strings are permitted.</p>
+<p>When <code>use strict</code> is not in effect bareword strings are permitted.</p>
 <p>Barewords are strings without quote delimiters. They are a feature of
  shells. Barewords cannot contain whitespace or any other character used
  by the tokenizer to distinguish words.</p>
-<p>Before Perl 5 subroutines were invoked with an ampersand prefix &amp; or the older <tt>do</tt>
+<p>Before Perl 5 subroutines were invoked with an ampersand prefix &amp; or the older <code>do</code>
  keyword. With Perl 5 neither is required, but this made it impossible
 to distinguish a bareword string from a subroutine without knowing all
 the subroutines which are in scope.</p>
@@ -3571,7 +3571,7 @@ two lines"""</code>
 <td>end \U, \L, or \Q section</td>
 </tr>
 </tbody></table>
-<p>When <tt>use charnames</tt> is in effect the \N escape sequence is available:</p>
+<p>When <code>use charnames</code> is in effect the \N escape sequence is available:</p>
 <div class="code">
 <pre><code>binmode(STDOUT, ':utf8');
 
@@ -3588,11 +3588,11 @@ use charnames qw(greek);
 print "lambda: \N{lamda}\n";</code>
 </pre></div>
 <p><strong>python:</strong></p>
-<p>When string literals have an <tt>r</tt> or <tt>R</tt> prefix there
+<p>When string literals have an <code>r</code> or <code>R</code> prefix there
 are no backslash escape sequences and any backslashes thus appear in the
  created string. The delimiter can be inserted into a string if it is
 preceded by a backslash, but the backslash is also inserted. It is thus
-not possible to create a string with an <tt>r</tt> or <tt>R</tt> prefix that ends in a backslash. The <tt>r</tt> and <tt>R</tt> prefixes can be used with single or double quotes:</p>
+not possible to create a string with an <code>r</code> or <code>R</code> prefix that ends in a backslash. The <code>r</code> and <code>R</code> prefixes can be used with single or double quotes:</p>
 <div class="code">
 <pre><code>r'C:\Documents and Settings\Admin'
 r"C:\Windows\System32"</code>
@@ -3605,7 +3605,7 @@ r"C:\Windows\System32"</code>
 <h2 id="toc59"><span><a href="#var-interpolation">variable interpolation</a></span> <span class="selfl">[<a href="#toc59">link</a>]</span></h2>
 <p>How to interpolate variables into strings.</p>
 <p><strong>python:</strong></p>
-<p><tt>str.format</tt> will take named or positional parameters. When used with named parameters <tt>str.format</tt> can mimic the variable interpolation feature of the other languages.</p>
+<p><code>str.format</code> will take named or positional parameters. When used with named parameters <code>str.format</code> can mimic the variable interpolation feature of the other languages.</p>
 <p>A selection of variables in scope can be passed explicitly:</p>
 <div class="code">
 <pre><code>count = 3
@@ -3614,7 +3614,7 @@ print('{count} {item}s'.format(
   count=count,
   item=item))</code>
 </pre></div>
-<p>Python 3 has <tt>format_map</tt> which accepts a <tt>dict</tt> as an argument:</p>
+<p>Python 3 has <code>format_map</code> which accepts a <code>dict</code> as an argument:</p>
 <div class="code">
 <pre><code>count = 3
 item = 'ball'
@@ -3631,7 +3631,7 @@ respectively.</p>
 <p>How to create a string using a printf style format.</p>
 <p><strong>python:</strong></p>
 <p>The % operator will interpolate arguments into printf-style format strings.</p>
-<p>The <tt>str.format</tt> with positional parameters provides an alternative format using curly braces {0}, {1}, … for replacement fields.</p>
+<p>The <code>str.format</code> with positional parameters provides an alternative format using curly braces {0}, {1}, … for replacement fields.</p>
 <p>The curly braces are escaped by doubling:</p>
 <div class="code">
 <pre><code>'to insert parameter {0} into a format, use {{{0}}}'.format(3)</code>
@@ -3684,7 +3684,7 @@ substrings; how to split a string in two; how to split a string with the
 an array of single character strings.</p>
 <p>See also <a href="#scan">scan</a>.</p>
 <p><strong>python:</strong></p>
-<p><tt>str.split()</tt> takes simple strings as delimiters; use <tt>re.split()</tt> to split on a regular expression:</p>
+<p><code>str.split()</code> takes simple strings as delimiters; use <code>re.split()</code> to split on a regular expression:</p>
 <div class="code">
 <pre><code>re.split('\s+', 'do re mi fa')
 re.split('\s+', 'do re mi fa', 1)</code>
@@ -3704,7 +3704,7 @@ re.split('\s+', 'do re mi fa', 1)</code>
 <pre><code>$s = " lorem ";
 $s =~ s/^\s*(.*)\s*$/\1/;</code>
 </pre></div>
-<p>The return value of the <tt>=~</tt> operator is boolean, indicating whether a match occurred. Also the left hand side of the <tt>=~</tt> operator must be a scalar variable that can be modified. Using the <tt>=~</tt> operator is necessarily imperative, unlike the <tt>Text::Trim</tt> functions which can be used in expressions.</p>
+<p>The return value of the <code>=~</code> operator is boolean, indicating whether a match occurred. Also the left hand side of the <code>=~</code> operator must be a scalar variable that can be modified. Using the <code>=~</code> operator is necessarily imperative, unlike the <code>Text::Trim</code> functions which can be used in expressions.</p>
 <p id="pad-note"></p>
 <h2 id="toc69"><span><a href="#pad">pad on right, on left</a></span> <span class="selfl">[<a href="#toc69">link</a>]</span></h2>
 <p>How to pad the edge of a string with spaces so that it is a prescribed length.</p>
@@ -3769,7 +3769,7 @@ extended regexes and the more archaic basic regexes. Perl regexes are
 extended regexes augmented by new character class abbreviations and a
 few other features introduced by the Perl interpreter in the 1990s. All
 the languages in this sheet use Perl regexes.</p>
-<p>Any string that doesn't contain regex metacharacters is a regex which matches itself. The regex metacharacters are: <tt>[ ] . | ( ) * + ? { } ^ $ \</tt></p>
+<p>Any string that doesn't contain regex metacharacters is a regex which matches itself. The regex metacharacters are: <code>[ ] . | ( ) * + ? { } ^ $ \</code></p>
 <p><strong>character classes: [ ] .</strong></p>
 <p>A character class is a set of characters in brackets: [ ]. When used in a regex it matches any character it contains.</p>
 <p>Character classes have their own set of metacharacters: ^ - \ ]</p>
@@ -3784,7 +3784,7 @@ terminal character class delimiter: ]. It can be used in character class
  abbreviations or string backslash escapes.</p>
 <p>The period . is a character class abbreviation which matches any
 character except for newline. In all languages the period can be made to
- match all characters. In PHP and Perl use the <tt>m</tt> modifer. In Python use the <tt>re.M</tt> flag. In Ruby use the <tt>s</tt> modifer.</p>
+ match all characters. In PHP and Perl use the <code>m</code> modifer. In Python use the <code>re.M</code> flag. In Ruby use the <code>s</code> modifer.</p>
 <p id="regex-char-class-abbrev"><br />
 <strong>character class abbreviations:</strong></p>
 <table class="wiki-content-table">
@@ -3856,11 +3856,11 @@ described below. They are also used for capturing groups, which are the
 substrings which matched parenthesized parts of the regular expression.
 Each language numbers the groups and provides a mechanism for extracting
  them when a match is made. A parenthesized subexpression can be removed
- from the groups with this syntax: <tt>(?:<span style="color: gray"><em>expr</em></span>)</tt></p>
+ from the groups with this syntax: <code>(?:<span style="color: gray"><em>expr</em></span>)</code></p>
 <p><strong>quantifiers: * + ? { }</strong></p>
 <p>As an argument quantifiers take the preceding regular character,
 character class, or group. The argument can itself be quantified, so
-that <tt>^a{4}*$</tt> matches strings with the letter a in multiples of 4.</p>
+that <code>^a{4}*$</code> matches strings with the letter a in multiples of 4.</p>
 <table class="wiki-content-table">
 <tbody><tr>
 <th>quantifier</th>
@@ -3957,7 +3957,7 @@ the minimum possible number.</p>
 <p><strong>escaping: \</strong></p>
 <p>To match a metacharacter, put a backslash in front of it. To match a backslash use two backslashes.</p>
 <p><strong>php:</strong></p>
-<p>PHP 5.3 still supports the EREG engine, though the functions which use it are deprecated. These include the <tt>split</tt> function and functions which start with <tt>ereg</tt>. The preferred functions are <tt>preg_split</tt> and the other functions with a <tt>preg</tt> prefix.</p>
+<p>PHP 5.3 still supports the EREG engine, though the functions which use it are deprecated. These include the <code>split</code> function and functions which start with <code>ereg</code>. The preferred functions are <code>preg_split</code> and the other functions with a <code>preg</code> prefix.</p>
 <p id="regex-literal-note"></p>
 <h2 id="toc78"><span><a href="#regex-literal">literal, custom delimited literal</a></span> <span class="selfl">[<a href="#toc78">link</a>]</span></h2>
 <p>The literal for a regular expression; the literal for a regular expression with a custom delimiter.</p>
@@ -3976,7 +3976,7 @@ mixed preg_replace ( mixed $pattern , mixed $replacement , mixed $subject [, int
 int preg_match_all ( string $pattern , string $subject [, array &amp;$matches [, int $flags = PREG_PATTERN_ORDER [, int $offset = 0 ]]] )</code>
 </pre></div>
 <p><strong>python:</strong></p>
-<p>Python does not have a regex literal, but the <tt>re.compile</tt> function can be used to create regex objects.</p>
+<p>Python does not have a regex literal, but the <code>re.compile</code> function can be used to create regex objects.</p>
 <p>Compiling regexes can always be avoided:</p>
 <div class="code">
 <pre><code>re.compile('\d{4}').search('1999')
@@ -3991,14 +3991,14 @@ re.findall('\w+', 'do re me')</code>
 <p id="char-class-abbrev-anchors-note"></p>
 <h2 id="toc79"><span><a href="#char-class-abbrev-anchors">character class abbreviations and anchors</a></span> <span class="selfl">[<a href="#toc79">link</a>]</span></h2>
 <p>The supported <a href="#regex-char-class-abbrev">character class abbreviations</a> and <a href="#regex-anchors">anchors</a>.</p>
-<p>Note that <tt>\h</tt> refers to horizontal whitespace (i.e. a space or tab) in PHP and Perl and a hex digit in Ruby. Similarly <tt>\H</tt> refers to something that isn't horizontal whitespace in PHP and Perl and isn't a hex digit in Ruby.</p>
+<p>Note that <code>\h</code> refers to horizontal whitespace (i.e. a space or tab) in PHP and Perl and a hex digit in Ruby. Similarly <code>\H</code> refers to something that isn't horizontal whitespace in PHP and Perl and isn't a hex digit in Ruby.</p>
 <p id="regex-test-note"></p>
 <h2 id="toc80"><span><a href="#regex-test">match test</a></span> <span class="selfl">[<a href="#toc80">link</a>]</span></h2>
 <p>How to test whether a string matches a regular expression.</p>
 <p><strong>python:</strong></p>
-<p>The <tt>re.match</tt> function returns true only if the regular expression matches the beginning of the string. <tt>re.search</tt> returns true if the regular expression matches any substring of the of string.</p>
+<p>The <code>re.match</code> function returns true only if the regular expression matches the beginning of the string. <code>re.search</code> returns true if the regular expression matches any substring of the of string.</p>
 <p><strong>ruby:</strong></p>
-<p><tt>match</tt> is a method of both <tt>Regexp</tt> and <tt>String</tt> so can match with both</p>
+<p><code>match</code> is a method of both <code>Regexp</code> and <code>String</code> so can match with both</p>
 <div class="code">
 <pre><code>/1999/.match("1999")</code>
 </pre></div>
@@ -4006,7 +4006,7 @@ re.findall('\w+', 'do re me')</code>
 <div class="code">
 <pre><code>"1999".match(/1999/)</code>
 </pre></div>
-<p>When variables are involved it is safer to invoke the <tt>Regexp</tt> method because string variables are more likely to contain <tt>nil</tt>.</p>
+<p>When variables are involved it is safer to invoke the <code>Regexp</code> method because string variables are more likely to contain <code>nil</code>.</p>
 <p id="case-insensitive-regex-note"></p>
 <h2 id="toc81"><span><a href="#case-insensitive-regex">case insensitive match test</a></span> <span class="selfl">[<a href="#toc81">link</a>]</span></h2>
 <p>How to perform a case insensitive match test.</p>
@@ -4057,17 +4057,17 @@ replacement.</td>
 <h2 id="toc83"><span><a href="#subst">substitution</a></span> <span class="selfl">[<a href="#toc83">link</a>]</span></h2>
 <p>How to replace all occurrences of a matching pattern in a string with the provided substitution string.</p>
 <p><strong>php:</strong></p>
-<p>The number of occurrences replaced can be controlled with a 4th argument to <tt>preg_replace</tt>:</p>
+<p>The number of occurrences replaced can be controlled with a 4th argument to <code>preg_replace</code>:</p>
 <div class="code">
 <pre><code>$s = "foo bar bar";
 preg_replace('/bar/', "baz", $s, 1);</code>
 </pre></div>
 <p>If no 4th argument is provided, all occurrences are replaced.</p>
 <p><strong>perl:</strong></p>
-<p>The <tt>=~</tt> operator performs the substitution in place on the string and returns the number of substitutions performed.</p>
-<p>The <tt>g</tt> modifiers specifies that all occurrences should be replaced. If omitted, only the first occurrence is replaced.</p>
+<p>The <code>=~</code> operator performs the substitution in place on the string and returns the number of substitutions performed.</p>
+<p>The <code>g</code> modifiers specifies that all occurrences should be replaced. If omitted, only the first occurrence is replaced.</p>
 <p><strong>python:</strong></p>
-<p>The 3rd argument to <tt>sub</tt> controls the number of occurrences which are replaced.</p>
+<p>The 3rd argument to <code>sub</code> controls the number of occurrences which are replaced.</p>
 <div class="code">
 <pre><code>s = 'foo bar bar'
 re.compile('bar').sub('baz', s, 1)</code>
@@ -4081,9 +4081,9 @@ re.compile('bar').sub('baz', s, 1)</code>
 <p>How to get the substring that matched the regular expression, as well
  as the part of the string before and after the matching substring.</p>
 <p><strong>perl:</strong></p>
-<p>The special variables <tt>$&amp;</tt>, <tt>$<span style="white-space: pre-wrap;">`</span></tt>, and <tt>$'</tt> also contain the match, prematch, and postmatch.</p>
+<p>The special variables <code>$&amp;</code>, <code>$<span style="white-space: pre-wrap;">`</span></code>, and <code>$'</code> also contain the match, prematch, and postmatch.</p>
 <p><strong>ruby:</strong></p>
-<p>The special variables <tt>$&amp;</tt>, <tt>$<span style="white-space: pre-wrap;">`</span></tt>, and <tt>$'</tt> also contain the match, prematch, and postmatch.</p>
+<p>The special variables <code>$&amp;</code>, <code>$<span style="white-space: pre-wrap;">`</span></code>, and <code>$'</code> also contain the match, prematch, and postmatch.</p>
 <p id="group-capture-note"></p>
 <h2 id="toc85"><span><a href="#group-capture">group capture</a></span> <span class="selfl">[<a href="#toc85">link</a>]</span></h2>
 <p>How to get the substrings which matched the parenthesized parts of a regular expression.</p>
@@ -4119,7 +4119,7 @@ leftmost element) and they used fixed-length fields for each term in the
 The first is the UNIX epoch, which is the seconds since January 1, 1970
 in UTC. If such a time were stored in a 32-bit signed integer, the
 rollover would happen on January 18, 2038.</p>
-<p>The other method of representing dates is the <tt>tm</tt> struct, a definition of which can be found on Unix systems in <tt>/usr/include/time.h</tt>:</p>
+<p>The other method of representing dates is the <code>tm</code> struct, a definition of which can be found on Unix systems in <code>/usr/include/time.h</code>:</p>
 <div class="code">
 <pre><code>struct tm {
         int     tm_sec;         /* seconds after the minute [0-60] */
@@ -4135,25 +4135,25 @@ rollover would happen on January 18, 2038.</p>
         char    *tm_zone;       /* timezone abbreviation */
 };</code>
 </pre></div>
-<p>Perl and Python both use and expose the <tt>tm</tt> struct of the standard library. In the case of Perl, the first nine values of the struct (up to the member <tt>tm_isdst</tt>) are put into an array. Python, meanwhile, has a module called <tt>time</tt> which is a thin wrapper to the standard library functions which operate on this struct. Here is how get a <tt>tm</tt> struct in Python:</p>
+<p>Perl and Python both use and expose the <code>tm</code> struct of the standard library. In the case of Perl, the first nine values of the struct (up to the member <code>tm_isdst</code>) are put into an array. Python, meanwhile, has a module called <code>time</code> which is a thin wrapper to the standard library functions which operate on this struct. Here is how get a <code>tm</code> struct in Python:</p>
 <div class="code">
 <pre><code>import time
 
 utc = time.gmtime(time.time())
 t = time.localtime(time.time())</code>
 </pre></div>
-<p>The <tt>tm</tt> struct is a low level entity, and interacting with it
+<p>The <code>tm</code> struct is a low level entity, and interacting with it
  directly should be avoided. In the case of Python it is usually
-sufficient to use the <tt>datetime</tt> module instead. For Perl, one can use the <tt>Time::Piece</tt> module to wrap the <tt>tm</tt> struct in an object.</p>
+sufficient to use the <code>datetime</code> module instead. For Perl, one can use the <code>Time::Piece</code> module to wrap the <code>tm</code> struct in an object.</p>
 <p id="date-time-type-note"></p>
 <h2 id="toc90"><span><a href="#date-time-type">date/time type</a></span> <span class="selfl">[<a href="#toc90">link</a>]</span></h2>
 <p>The data type used to hold a combined date and time.</p>
 <p><strong>perl</strong></p>
 <p>Built in Perl functions work with either (1) scalars containing the
 Unix epoch as an integer or (2) arrays containing the first nine values
-of the standard C library tm struct. When <tt>use Time::Piece</tt> is in effect functions which work with tm arrays are replaced with variant that work with the <tt>Time::Piece</tt> wrapper.</p>
-<p>The modules <tt>Time::Local</tt> and <tt>Date::Parse</tt> can create scalars containing the Unix epoch.</p>
-<p>CPAN provides the <tt>DateTime</tt> module which provides objects with functionality comparable to the DateTime objects of PHP and Python.</p>
+of the standard C library tm struct. When <code>use Time::Piece</code> is in effect functions which work with tm arrays are replaced with variant that work with the <code>Time::Piece</code> wrapper.</p>
+<p>The modules <code>Time::Local</code> and <code>Date::Parse</code> can create scalars containing the Unix epoch.</p>
+<p>CPAN provides the <code>DateTime</code> module which provides objects with functionality comparable to the DateTime objects of PHP and Python.</p>
 <p id="current-date-time-note"></p>
 <h2 id="toc91"><span><a href="#current-date-time">current date/time</a></span> <span class="selfl">[<a href="#toc91">link</a>]</span></h2>
 <p>How to get the combined date and time for the present moment in both local time and UTC.</p>
@@ -4162,7 +4162,7 @@ of the standard C library tm struct. When <tt>use Time::Piece</tt> is in effect 
 <p>How to convert the native date/time type to the Unix epoch which is
 the number of seconds since the start of January 1, 1970 UTC.</p>
 <p><strong>python:</strong></p>
-<p>The Python datetime object created by <tt>now()</tt> and <tt>utcnow()</tt> has no timezone information associated with it. The <tt>strftime()</tt> method assumes a receiver with no timezone information represents a local time. Thus it is an error to call <tt>strftime()</tt> on the return value of <tt>utcnow()</tt>.</p>
+<p>The Python datetime object created by <code>now()</code> and <code>utcnow()</code> has no timezone information associated with it. The <code>strftime()</code> method assumes a receiver with no timezone information represents a local time. Thus it is an error to call <code>strftime()</code> on the return value of <code>utcnow()</code>.</p>
 <p>Here are two different ways to get the current Unix epoch. The second way is faster:</p>
 <div class="code">
 <pre><code>import calendar
@@ -4171,7 +4171,7 @@ import datetime
 int(datetime.datetime.now().strftime('%s'))
 calendar.timegm(datetime.datetime.utcnow().utctimetuple())</code>
 </pre></div>
-<p>Replacing <tt>now()</tt> with <tt>utcnow()</tt> in the first way, or <tt>utcnow()</tt> with <tt>now()</tt> in the second way produces an incorrect value.</p>
+<p>Replacing <code>now()</code> with <code>utcnow()</code> in the first way, or <code>utcnow()</code> with <code>now()</code> in the second way produces an incorrect value.</p>
 <p id="current-unix-epoch-note"></p>
 <h2 id="toc93"><span><a href="#current-unix-epoch">current unix epoch</a></span> <span class="selfl">[<a href="#toc93">link</a>]</span></h2>
 <p>How to get the current time as a Unix epoch timestamp.</p>
@@ -4179,7 +4179,7 @@ calendar.timegm(datetime.datetime.utcnow().utctimetuple())</code>
 <h2 id="toc94"><span><a href="#strftime">strftime</a></span> <span class="selfl">[<a href="#toc94">link</a>]</span></h2>
 <p>How to format a date/time as a string using the format notation of the <em>strftime</em> function from the standard C library. This same format notation is used by the Unix <em>date</em> command.</p>
 <p><strong>php:</strong></p>
-<p>PHP supports strftime but it also has its own time formatting system used by <tt>date</tt>, <tt>DateTime::format</tt>, and <tt>DateTime::createFromFormat</tt>. The letters used in the PHP time formatting system are <a href="http://www.php.net/manual/en/datetime.createfromformat.php">described here</a>.</p>
+<p>PHP supports strftime but it also has its own time formatting system used by <code>date</code>, <code>DateTime::format</code>, and <code>DateTime::createFromFormat</code>. The letters used in the PHP time formatting system are <a href="http://www.php.net/manual/en/datetime.createfromformat.php">described here</a>.</p>
 <p id="date-time-str-note"></p>
 <h2 id="toc95"><span><a href="#date-time-str">default format example</a></span> <span class="selfl">[<a href="#toc95">link</a>]</span></h2>
 <p>Examples of how a date/time object appears when treated as a string such as when it is printed to standard out.</p>
@@ -4190,7 +4190,7 @@ of the USA.</p>
 <p>It is a fatal error to treat a DateTime object as a string.</p>
 <p id="strptime-note"></p>
 <h2 id="toc96"><span><a href="#strptime">strptime</a></span> <span class="selfl">[<a href="#toc96">link</a>]</span></h2>
-<p>How to parse a date/time using the format notation of the <tt>strptime</tt> function from the standard C library.</p>
+<p>How to parse a date/time using the format notation of the <code>strptime</code> function from the standard C library.</p>
 <p id="parse-date-note"></p>
 <h2 id="toc97"><span><a href="#parse-date">parse date w/o format</a></span> <span class="selfl">[<a href="#toc97">link</a>]</span></h2>
 <p>How to parse a date without providing a format string.</p>
@@ -4217,9 +4217,9 @@ is used for both months and minutes.</p>
 value for the local time is created, how the local timezone is
 determined.</p>
 <p>A date/time value can represent a local time but not have any timezone information associated with it.</p>
-<p>On Unix systems processes determine the local timezone by inspecting the file <tt>/etc/localtime</tt>.</p>
+<p>On Unix systems processes determine the local timezone by inspecting the file <code>/etc/localtime</code>.</p>
 <p><strong>php:</strong></p>
-<p>The default timezone can also be set in the <tt>php.ini</tt> file.</p>
+<p>The default timezone can also be set in the <code>php.ini</code> file.</p>
 <div class="code">
 <pre><code>date.timezone = "America/Los_Angeles"</code>
 </pre></div>
@@ -4248,14 +4248,14 @@ $t = localtime(time);
 $offset_hrs = $t-&gt;tzoffset / 3600;</code>
 </pre></div>
 <p><strong>ruby:</strong></p>
-<p>The <tt>Time</tt> class has a <tt>zone</tt> method which returns the time zone abbreviation for the object. There is a <tt>tzinfo</tt>
+<p>The <code>Time</code> class has a <code>zone</code> method which returns the time zone abbreviation for the object. There is a <code>tzinfo</code>
  gem which can be used to create timezone objects using the Olson
 database name. This can in turn be used to convert between UTC times and
  local times which are daylight saving aware.</p>
 <p id="microseconds-note"></p>
 <h2 id="toc103"><span><a href="#microseconds">microseconds</a></span> <span class="selfl">[<a href="#toc103">link</a>]</span></h2>
 <p>How to get the microseconds component of a combined date and time
-value. The SI abbreviations for milliseconds and microseconds are <tt>ms</tt> and <tt><span style="white-space: pre-wrap;">μ</span>s</tt>, respectively. The C standard library uses the letter <tt>u</tt> as an abbreviation for <tt>micro</tt>. Here is a struct defined in <tt>/usr/include/sys/time.h</tt>:</p>
+value. The SI abbreviations for milliseconds and microseconds are <code>ms</code> and <code><span style="white-space: pre-wrap;">μ</span>s</code>, respectively. The C standard library uses the letter <code>u</code> as an abbreviation for <code>micro</code>. Here is a struct defined in <code>/usr/include/sys/time.h</code>:</p>
 <div class="code">
 <pre><code>struct timeval {
   time_t       tv_sec;   /* seconds since Jan. 1, 1970 */
@@ -4264,14 +4264,14 @@ value. The SI abbreviations for milliseconds and microseconds are <tt>ms</tt> an
 </pre></div>
 <p id="sleep-note"></p>
 <h2 id="toc104"><span><a href="#sleep">sleep</a></span> <span class="selfl">[<a href="#toc104">link</a>]</span></h2>
-<p>How to put the process to sleep for a specified number of seconds. In Python and Ruby the default version of <tt>sleep</tt> supports a fractional number of seconds.</p>
+<p>How to put the process to sleep for a specified number of seconds. In Python and Ruby the default version of <code>sleep</code> supports a fractional number of seconds.</p>
 <p><strong>php:</strong></p>
-<p>PHP provides <tt>usleep</tt> which takes an argument in microseconds:</p>
+<p>PHP provides <code>usleep</code> which takes an argument in microseconds:</p>
 <div class="code">
 <pre><code>usleep(500000);</code>
 </pre></div>
 <p><strong>perl:</strong></p>
-<p>The Perl standard library includes a version of <tt>sleep</tt> which supports fractional seconds:</p>
+<p>The Perl standard library includes a version of <code>sleep</code> which supports fractional seconds:</p>
 <div class="code">
 <pre><code>use Time::HiRes qw(sleep);
 
@@ -4433,12 +4433,12 @@ use typeglobs:</p>
 <div class="code">
 <pre><code>a2 = a[:]</code>
 </pre></div>
-<p><tt>list(v)</tt> always returns a list, but <tt>v[:]</tt> returns a value of the same as <tt>v</tt>.
+<p><code>list(v)</code> always returns a list, but <code>v[:]</code> returns a value of the same as <code>v</code>.
  The slice operator can be used in this manner on strings and tuples but
  there is little incentive to do so since both are immutable.</p>
-<p><tt>copy.copy</tt> can be used to make a shallow copy on types that
+<p><code>copy.copy</code> can be used to make a shallow copy on types that
 don't support the slice operator such as a dictionary. Like the slice
-operator <tt>copy.copy</tt> returns a value with the same type as the argument.</p>
+operator <code>copy.copy</code> returns a value with the same type as the argument.</p>
 <p id="array-arguments-note"></p>
 <h2 id="toc122"><span><a href="#array-arguments">arrays as function arguments</a></span> <span class="selfl">[<a href="#toc122">link</a>]</span></h2>
 <p>How arrays are passed as arguments.</p>
@@ -4446,7 +4446,7 @@ operator <tt>copy.copy</tt> returns a value with the same type as the argument.<
 <h2 id="toc123"><span><a href="#array-iteration">iteration</a></span> <span class="selfl">[<a href="#toc123">link</a>]</span></h2>
 <p>How to iterate through the elements of an array.</p>
 <p><strong>perl:</strong></p>
-<p><tt>for</tt> and <tt>foreach</tt> are synonyms. Some use <tt>for</tt> exclusively for C-style for loops and <tt>foreach</tt> for array iteration.</p>
+<p><code>for</code> and <code>foreach</code> are synonyms. Some use <code>for</code> exclusively for C-style for loops and <code>foreach</code> for array iteration.</p>
 <p id="indexed-array-iteration-note"></p>
 <h2 id="toc124"><span><a href="#indexed-array-iteration">indexed iteration</a></span> <span class="selfl">[<a href="#toc124">link</a>]</span></h2>
 <p>How to iterate through the elements of an array while keeping track of the index of each element.</p>
@@ -4454,27 +4454,27 @@ operator <tt>copy.copy</tt> returns a value with the same type as the argument.<
 <h2 id="toc125"><span><a href="#range-iteration">iterate over range</a></span> <span class="selfl">[<a href="#toc125">link</a>]</span></h2>
 <p>Iterate over a range without instantiating it as a list.</p>
 <p><strong>perl:</strong></p>
-<p>With Perl 5.005 the <tt>for</tt> and <tt>foreach</tt> operators were optimized to not instantiate a range argument as a list.</p>
+<p>With Perl 5.005 the <code>for</code> and <code>foreach</code> operators were optimized to not instantiate a range argument as a list.</p>
 <p id="range-array-note"></p>
 <h2 id="toc126"><span><a href="#range-array">instantiate range as array</a></span> <span class="selfl">[<a href="#toc126">link</a>]</span></h2>
 <p>How to convert a range to an array.</p>
 <p>Python 3 ranges and Ruby ranges implement some of the functionality of arrays without allocating space to hold all the elements.</p>
 <p><strong>python:</strong></p>
-<p>In Python 2 <tt>range()</tt> returns a list.</p>
-<p>In Python 3 <tt>range()</tt> returns an object which implements the immutable sequence API.</p>
+<p>In Python 2 <code>range()</code> returns a list.</p>
+<p>In Python 3 <code>range()</code> returns an object which implements the immutable sequence API.</p>
 <p><strong>ruby:</strong></p>
 <p>The Range class includes the Enumerable module.</p>
 <p id="array-reverse-note"></p>
 <h2 id="toc127"><span><a href="#array-reverse">reverse</a></span> <span class="selfl">[<a href="#toc127">link</a>]</span></h2>
 <p>How to create a reversed copy of an array, and how to reverse an array in place.</p>
 <p><strong>python:</strong></p>
-<p><tt>reversed</tt> returns an iterator which can be used in a <tt>for/in</tt> construct:</p>
+<p><code>reversed</code> returns an iterator which can be used in a <code>for/in</code> construct:</p>
 <div class="code">
 <pre><code>print("counting down:")
 for i in reversed([1,2,3]):
   print(i)</code>
 </pre></div>
-<p><tt>reversed</tt> can be used to create a reversed list:</p>
+<p><code>reversed</code> can be used to create a reversed list:</p>
 <div class="code">
 <pre><code>a = list(reversed([1,2,3]))</code>
 </pre></div>
@@ -4483,7 +4483,7 @@ for i in reversed([1,2,3]):
 <p>How to create a sorted copy of an array, and how to sort an array in
 place. Also, how to set the comparison function when sorting.</p>
 <p><strong>php:</strong></p>
-<p><tt>usort</tt> sorts an array in place and accepts a comparison function as a 2nd argument:</p>
+<p><code>usort</code> sorts an array in place and accepts a comparison function as a 2nd argument:</p>
 <div class="code">
 <pre><code>function cmp($x, $y) {
   $lx = strtolower($x);
@@ -4501,7 +4501,7 @@ usort($a, "cmp");</code>
 <h2 id="toc129"><span><a href="#array-dedupe">dedupe</a></span> <span class="selfl">[<a href="#toc129">link</a>]</span></h2>
 <p>How to remove extra occurrences of elements from an array.</p>
 <p><strong>python:</strong></p>
-<p>Python sets support the <tt>len</tt>, <tt>in</tt>, and <tt>for</tt>
+<p>Python sets support the <code>len</code>, <code>in</code>, and <code>for</code>
 operators. It may be more efficient to work with the result of the set
 constructor directly rather than convert it back to a list.</p>
 <p id="membership-note"></p>
@@ -4515,17 +4515,17 @@ constructor directly rather than convert it back to a list.</p>
 <div class="code">
 <pre><code>{1,2,3}</code>
 </pre></div>
-<p>Use <tt>set</tt> and <tt>list</tt> to convert lists to sets and vice versa:</p>
+<p>Use <code>set</code> and <code>list</code> to convert lists to sets and vice versa:</p>
 <div class="code">
 <pre><code>a = list({1,2,3})
 ensemble = set([1,2,3])</code>
 </pre></div>
 <p><strong>ruby:</strong></p>
-<p>The intersect operator <tt>&amp;</tt> always produces an array with no duplicates.</p>
+<p>The intersect operator <code>&amp;</code> always produces an array with no duplicates.</p>
 <p id="union-note"></p>
 <h2 id="toc132"><span><a href="#union">union</a></span> <span class="selfl">[<a href="#toc132">link</a>]</span></h2>
 <p><strong>ruby:</strong></p>
-<p>The union operator <tt>|</tt> always produces an array with no duplicates.</p>
+<p>The union operator <code>|</code> always produces an array with no duplicates.</p>
 <p id="set-diff-note"></p>
 <h2 id="toc133"><span><a href="#set-diff">relative complement, symmetric difference</a></span> <span class="selfl">[<a href="#toc133">link</a>]</span></h2>
 <p>How to compute the relative complement of two arrays or sets; how to compute the symmetric difference.</p>
@@ -4537,19 +4537,19 @@ times.</p>
 <h2 id="toc134"><span><a href="#map">map</a></span> <span class="selfl">[<a href="#toc134">link</a>]</span></h2>
 <p>Create an array by applying a function to each element of a source array.</p>
 <p><strong>ruby:</strong></p>
-<p>The <tt>map!</tt> method applies the function to the elements of the array in place.</p>
-<p><tt>collect</tt> and <tt>collect!</tt> are synonyms for <tt>map</tt> and <tt>map!</tt>.</p>
+<p>The <code>map!</code> method applies the function to the elements of the array in place.</p>
+<p><code>collect</code> and <code>collect!</code> are synonyms for <code>map</code> and <code>map!</code>.</p>
 <p id="filter-note"></p>
 <h2 id="toc135"><span><a href="#filter">filter</a></span> <span class="selfl">[<a href="#toc135">link</a>]</span></h2>
 <p>Create an array containing the elements of a source array which match a predicate.</p>
 <p><strong>ruby:</strong></p>
-<p>The in place version is <tt>select!</tt>.</p>
-<p><tt>reject</tt> returns the complement of <tt>select</tt>. <tt>reject!</tt> is the in place version.</p>
+<p>The in place version is <code>select!</code>.</p>
+<p><code>reject</code> returns the complement of <code>select</code>. <code>reject!</code> is the in place version.</p>
 <p id="reduce-note"></p>
 <h2 id="toc136"><span><a href="#reduce">reduce</a></span> <span class="selfl">[<a href="#toc136">link</a>]</span></h2>
 <p>Return the result of applying a binary operator to all the elements of the array.</p>
 <p><strong>python:</strong></p>
-<p><tt>reduce</tt> is not needed to sum a list of numbers:</p>
+<p><code>reduce</code> is not needed to sum a list of numbers:</p>
 <div class="code">
 <pre><code>sum([1,2,3])</code>
 </pre></div>
@@ -4578,7 +4578,7 @@ predicate and test whether the result is empty.</p>
 <h2 id="toc138"><span><a href="#shuffle-sample">shuffle and sample</a></span> <span class="selfl">[<a href="#toc138">link</a>]</span></h2>
 <p>How to shuffle an array. How to extract a random sample from an array.</p>
 <p><strong>php:</strong></p>
-<p>The <tt>array_rand</tt> function returns a random sample of the
+<p>The <code>array_rand</code> function returns a random sample of the
 indices of an array. The result can easily be converted to a random
 sample of array values:</p>
 <div class="code">
@@ -4590,7 +4590,7 @@ foreach (array_rand($a, 2) as $i) { array_push($sample, $a[$i]); }</code>
 <h2 id="toc139"><span><a href="#zip">zip</a></span> <span class="selfl">[<a href="#toc139">link</a>]</span></h2>
 <p>How to interleave arrays. In the case of two arrays the result is an array of pairs or an associative list.</p>
 <p><strong>perl:</strong></p>
-<p><tt>zip</tt> expects arrays as arguments, which makes it difficult to
+<p><code>zip</code> expects arrays as arguments, which makes it difficult to
  define the arrays to be zipped on the same line as the invocation. It
 can be done like this:</p>
 <div class="code">
@@ -4612,7 +4612,7 @@ can be done like this:</p>
 <h2 id="toc143"><span><a href="#dict-lookup">lookup</a></span> <span class="selfl">[<a href="#toc143">link</a>]</span></h2>
 <p>How to lookup a dictionary value using a dictionary key.</p>
 <p><strong>perl:</strong></p>
-<p>Use the ampersand prefix <tt>@</tt> to slice a Perl hash. The index is a list of keys.</p>
+<p>Use the ampersand prefix <code>@</code> to slice a Perl hash. The index is a list of keys.</p>
 <div class="code">
 <pre><code>%nums = ('b'=&gt;1, 't'=&gt;2, 'a'=&gt;3);
 @nums{('b','t')}</code>
@@ -4621,7 +4621,7 @@ can be done like this:</p>
 <h2 id="toc144"><span><a href="#dict-out-of-bounds">out-of-bounds behavior</a></span> <span class="selfl">[<a href="#toc144">link</a>]</span></h2>
 <p>What happens when a lookup is performed on a key that is not in a dictionary.</p>
 <p><strong>python:</strong></p>
-<p>Use <tt>dict.get()</tt> to avoid handling <tt>KeyError</tt> exceptions:</p>
+<p>Use <code>dict.get()</code> to avoid handling <code>KeyError</code> exceptions:</p>
 <div class="code">
 <pre><code>d = {}
 d.get('lorem')      # returns None
@@ -4641,7 +4641,7 @@ present but mapped to null or a value which evaluates to false.</p>
 <p id="dict-merge-note"></p>
 <h2 id="toc148"><span><a href="#dict-merge">merge</a></span> <span class="selfl">[<a href="#toc148">link</a>]</span></h2>
 <p>How to merge the values of two dictionaries.</p>
-<p>In the examples, if the dictionaries <tt>d1</tt> and <tt>d2</tt> share keys then the values from <tt>d2</tt> will be used in the merged dictionary.</p>
+<p>In the examples, if the dictionaries <code>d1</code> and <code>d2</code> share keys then the values from <code>d2</code> will be used in the merged dictionary.</p>
 <p id="dict-invert-note"></p>
 <h2 id="toc149"><span><a href="#dict-invert">invert</a></span> <span class="selfl">[<a href="#toc149">link</a>]</span></h2>
 <p>How to turn a dictionary into its inverse. If a key 'foo' is mapped
@@ -4653,13 +4653,13 @@ discarded in the inverse.</p>
 <h2 id="toc150"><span><a href="#dict-iter">iteration</a></span> <span class="selfl">[<a href="#toc150">link</a>]</span></h2>
 <p>How to iterate through the key/value pairs in a dictionary.</p>
 <p><strong>python:</strong></p>
-<p>In Python 2.7 <tt>dict.items()</tt> returns a list of pairs and <tt>dict.iteritems()</tt> returns an iterator on the list of pairs.</p>
-<p>In Python 3 <tt>dict.items()</tt> returns an iterator and <tt>dict.iteritems()</tt> has been removed.</p>
+<p>In Python 2.7 <code>dict.items()</code> returns a list of pairs and <code>dict.iteritems()</code> returns an iterator on the list of pairs.</p>
+<p>In Python 3 <code>dict.items()</code> returns an iterator and <code>dict.iteritems()</code> has been removed.</p>
 <p id="dict-key-val-note"></p>
 <h2 id="toc151"><span><a href="#dict-key-val">keys and values as arrays</a></span> <span class="selfl">[<a href="#toc151">link</a>]</span></h2>
 <p>How to convert the keys of a dictionary to an array; how to convert the values of a dictionary to an array.</p>
 <p><strong>python:</strong></p>
-<p>In Python 3 <tt>dict.keys()</tt> and <tt>dict.values()</tt> return read-only views into the dict. The following code illustrates the change in behavior:</p>
+<p>In Python 3 <code>dict.keys()</code> and <code>dict.values()</code> return read-only views into the dict. The following code illustrates the change in behavior:</p>
 <div class="code">
 <pre><code>d = {}
 keys = d.keys()
@@ -4677,7 +4677,7 @@ else:
 <h2 id="toc153"><span><a href="#dict-default-val">default value, computed value</a></span> <span class="selfl">[<a href="#toc153">link</a>]</span></h2>
 <p>How to create a dictionary with a default value for missing keys; how to compute and store the value on lookup.</p>
 <p><strong>php:</strong></p>
-<p>Extend <tt>ArrayObject</tt> to compute values on lookup:</p>
+<p>Extend <code>ArrayObject</code> to compute values on lookup:</p>
 <div class="code">
 <pre><code>class Factorial extends ArrayObject {
 
@@ -4713,7 +4713,7 @@ method syntax.</p>
 <h2 id="toc155"><span><a href="#func-decl">function declaration</a></span> <span class="selfl">[<a href="#toc155">link</a>]</span></h2>
 <p>How to define a function.</p>
 <p><strong>perl:</strong></p>
-<p>One can also use <tt>shift</tt> to put the arguments into local variables:</p>
+<p>One can also use <code>shift</code> to put the arguments into local variables:</p>
 <div class="code">
 <pre><code>sub add {
   my $a = shift;
@@ -4756,13 +4756,13 @@ this can be done with <a href="http://perldoc.perl.org/perlsub.html#Prototypes">
 <h2 id="toc159"><span><a href="#variable-num-arg">variable number of arguments</a></span> <span class="selfl">[<a href="#toc159">link</a>]</span></h2>
 <p>How to write a function which accepts a variable number of argument.</p>
 <p><strong>python:</strong></p>
-<p>This function accepts one or more arguments. Invoking it without any arguments raises a <tt>TypeError</tt>:</p>
+<p>This function accepts one or more arguments. Invoking it without any arguments raises a <code>TypeError</code>:</p>
 <div class="code">
 <pre><code>def poker(dealer, *players):
   ...</code>
 </pre></div>
 <p><strong>ruby:</strong></p>
-<p>This function accepts one or more arguments. Invoking it without any arguments raises an <tt>ArgumentError</tt>:</p>
+<p>This function accepts one or more arguments. Invoking it without any arguments raises an <code>ArgumentError</code>:</p>
 <div class="code">
 <pre><code>def poker(dealer, *players)
   ...
@@ -4869,7 +4869,7 @@ sqr = Proc.new {|x| x * x }</code>
 </pre></div>
 <p>With respect to control words, Proc objects behave like blocks and
 lambdas like functions. In particular, when the body of a Proc object
-contains a <tt>return</tt> or <tt>break</tt> statement, it acts like a <tt>return</tt> or <tt>break</tt> in the code which invoked the Proc object. A <tt>return</tt> in a lambda merely causes the lambda to exit, and a <tt>break</tt> inside a lambda must be inside an appropriate control structure contained with the lambda body.</p>
+contains a <code>return</code> or <code>break</code> statement, it acts like a <code>return</code> or <code>break</code> in the code which invoked the Proc object. A <code>return</code> in a lambda merely causes the lambda to exit, and a <code>break</code> inside a lambda must be inside an appropriate control structure contained with the lambda body.</p>
 <p>Ruby 1.9 introduces new syntax for defining lambdas and invoking them:</p>
 <div class="code">
 <pre><code>sqr = -&gt;(x) {x*x}
@@ -4908,12 +4908,12 @@ print(counter())</code>
 <p>Python 2 has limited closures: access to local variables in the
 containing scope is read only and the bodies of anonymous functions must
  consist of a single expression.</p>
-<p>Python 3 permits write access to local variables outside the immediate scope when declared with <tt>nonlocal</tt>.</p>
+<p>Python 3 permits write access to local variables outside the immediate scope when declared with <code>nonlocal</code>.</p>
 <p id="generator-note"></p>
 <h2 id="toc169"><span><a href="#generator">generator</a></span> <span class="selfl">[<a href="#toc169">link</a>]</span></h2>
 <p>How to create a function which can yield a value back to its caller and suspend execution.</p>
 <p><strong>perl:</strong></p>
-<p>CPAN provides a module called <tt>Coro</tt> which implements coroutines. Some <a href="http://en.wikipedia.org/wiki/Coroutine#Coroutines_and_generators">notes on the distinction between coroutines and generators</a>.</p>
+<p>CPAN provides a module called <code>Coro</code> which implements coroutines. Some <a href="http://en.wikipedia.org/wiki/Coroutine#Coroutines_and_generators">notes on the distinction between coroutines and generators</a>.</p>
 <p><strong>python:</strong></p>
 <p>Python generators can be used in <em>for/in</em> statements and list comprehensions.</p>
 <p><strong>ruby:</strong></p>
@@ -4932,7 +4932,7 @@ call.</p>
 <p>How to call an operator using the function invocation syntax.</p>
 <p>This can be useful when dealing with an API which accepts a function as an argument.</p>
 <p><strong>python:</strong></p>
-<p>The <tt>operator</tt> module provides functions which perform the
+<p>The <code>operator</code> module provides functions which perform the
 same operations as the various operators. Using these functions is more
 efficient than wrapping the operators in lambdas.</p>
 <p><strong>ruby:</strong></p>
@@ -4942,9 +4942,9 @@ binary operator invocation syntax can be regarded as syntactic sugar.</p>
 <h1 id="toc172"><span><a href="#execution-control">Execution Control</a></span> <span class="selfl">[<a href="#toc172">link</a>]</span></h1>
 <p id="if-note"></p>
 <h2 id="toc173"><span><a href="#if">if</a></span> <span class="selfl">[<a href="#toc173">link</a>]</span></h2>
-<p>The <tt>if</tt> statement.</p>
+<p>The <code>if</code> statement.</p>
 <p><strong>php:</strong></p>
-<p>PHP has the following alternate syntax for <tt>if</tt> statements:</p>
+<p>PHP has the following alternate syntax for <code>if</code> statements:</p>
 <div class="code">
 <pre><code>if ($n == 0):
   echo "no hits\n";
@@ -4955,10 +4955,10 @@ else:
 endif;</code>
 </pre></div>
 <p><strong>perl:</strong></p>
-<p>When an <tt>if</tt> block is the last statement executed in a subroutine, the return value is the value of the branch that executed.</p>
+<p>When an <code>if</code> block is the last statement executed in a subroutine, the return value is the value of the branch that executed.</p>
 <p><strong>ruby:</strong></p>
-<p>If an <tt>if</tt> statement is the last statement executed in a function, the return value is the value of the branch that executed.</p>
-<p>Ruby <tt>if</tt> statements are expressions. They can be used on the right hand side of assignments:</p>
+<p>If an <code>if</code> statement is the last statement executed in a function, the return value is the value of the branch that executed.</p>
+<p>Ruby <code>if</code> statements are expressions. They can be used on the right hand side of assignments:</p>
 <div class="code">
 <pre><code>m = if n
   1
@@ -4968,11 +4968,11 @@ end</code>
 </pre></div>
 <p id="switch-note"></p>
 <h2 id="toc174"><span><a href="#switch">switch</a></span> <span class="selfl">[<a href="#toc174">link</a>]</span></h2>
-<p>The <tt>switch</tt> statement.</p>
+<p>The <code>switch</code> statement.</p>
 <p id="while-note"></p>
 <h2 id="toc175"><span><a href="#while">while</a></span> <span class="selfl">[<a href="#toc175">link</a>]</span></h2>
 <p><strong>php:</strong></p>
-<p>PHP provides a <tt>do-while</tt> loop. The body of such a loop is guaranteed to execute at least once.</p>
+<p>PHP provides a <code>do-while</code> loop. The body of such a loop is guaranteed to execute at least once.</p>
 <div class="code">
 <pre><code>$i = 0;
 do {
@@ -4980,8 +4980,8 @@ do {
 } while ($i &gt; 0);</code>
 </pre></div>
 <p><strong>perl:</strong></p>
-<p>Perl provides <tt>until</tt>, <tt>do-while</tt>, and <tt>do-until</tt> loops.</p>
-<p>An <tt>until</tt> or a <tt>do-until</tt> loop can be replaced by a <tt>while</tt> or a <tt>do-while</tt> loop by negating the condition.</p>
+<p>Perl provides <code>until</code>, <code>do-while</code>, and <code>do-until</code> loops.</p>
+<p>An <code>until</code> or a <code>do-until</code> loop can be replaced by a <code>while</code> or a <code>do-while</code> loop by negating the condition.</p>
 <p><strong>ruby:</strong></p>
 <p>Ruby provides a loop with no exit condition:</p>
 <div class="code">
@@ -4991,8 +4991,8 @@ do {
   end
 end</code>
 </pre></div>
-<p>Ruby also provides the <tt>until</tt> loop.</p>
-<p>Ruby loops can be used in expression contexts but they always evaluate to <tt>nil</tt>.</p>
+<p>Ruby also provides the <code>until</code> loop.</p>
+<p>Ruby loops can be used in expression contexts but they always evaluate to <code>nil</code>.</p>
 <p id="for-note"></p>
 <h2 id="toc176"><span><a href="#for">c-style for</a></span> <span class="selfl">[<a href="#toc176">link</a>]</span></h2>
 <p>How to write a C-style for loop.</p>
@@ -5007,9 +5007,9 @@ end</code>
 functions.</p>
 <p id="do-note"></p>
 <h2 id="toc179"><span><a href="#do">what do does</a></span> <span class="selfl">[<a href="#toc179">link</a>]</span></h2>
-<p>How the <tt>do</tt> keyword is used.</p>
+<p>How the <code>do</code> keyword is used.</p>
 <p><strong>perl:</strong></p>
-<p>The <tt>do</tt> keyword can convert an <tt>if</tt> statement to a conditional expression:</p>
+<p>The <code>do</code> keyword can convert an <code>if</code> statement to a conditional expression:</p>
 <div class="code">
 <pre><code>my $m = do {
   if ($n) { 1 }
@@ -5021,7 +5021,7 @@ functions.</p>
 <p>Clauses added to the end of a statement to control execution.</p>
 <p>Perl and Ruby have conditional statement modifers. Ruby also has looping statement modifers.</p>
 <p><strong>ruby:</strong></p>
-<p>Ruby has the looping statement modifiers <tt>while</tt> and <tt>until</tt>:</p>
+<p>Ruby has the looping statement modifiers <code>while</code> and <code>until</code>:</p>
 <div class="code">
 <pre><code>i = 0
 i += 1 while i &lt; 10
@@ -5038,9 +5038,9 @@ j -= 1 until j &lt; 0</code>
 <h2 id="toc182"><span><a href="#re-raise-exc">re-raise exception</a></span> <span class="selfl">[<a href="#toc182">link</a>]</span></h2>
 <p>How to re-raise an exception preserving the original stack trace.</p>
 <p><strong>python:</strong></p>
-<p>If the exception is assigned to a variable in the <tt>except</tt> clause and the variable is used as the argument to <tt>raise</tt>, then a new stack trace is created.</p>
+<p>If the exception is assigned to a variable in the <code>except</code> clause and the variable is used as the argument to <code>raise</code>, then a new stack trace is created.</p>
 <p><strong>ruby:</strong></p>
-<p>If the exception is assigned to a variable in the <tt>rescue</tt> clause and the variable is used as the argument to <tt>raise</tt>, then the original stack trace is preserved.</p>
+<p>If the exception is assigned to a variable in the <code>rescue</code> clause and the variable is used as the argument to <code>raise</code>, then the original stack trace is preserved.</p>
 <p id="catch-exc-note"></p>
 <h2 id="toc183"><span><a href="#catch-exc">catch exception</a></span> <span class="selfl">[<a href="#toc183">link</a>]</span></h2>
 <p>How to catch exceptions.</p>
@@ -5106,38 +5106,38 @@ differences between PHP CGI and PHP SAPI. The programmer should be aware
 <li>PHP CLI sets the constants STDIN, STDOUT, and STDERR. PHP CGI/SAPI do not.</li>
 <li>PHP CLI has no timeout. PHP CGI/SAPI will typically timeout a script after 30 seconds.</li>
 <li>PHP CGI/SAPI add HTML markup to error messages. PHP CLI does not.</li>
-<li>PHP CLI does not buffer output, so calling <tt>flush</tt> is never necessary. PHP CGI/SAPI buffer output.</li>
+<li>PHP CLI does not buffer output, so calling <code>flush</code> is never necessary. PHP CGI/SAPI buffer output.</li>
 </ul>
 <p id="perl"></p>
 <h1 id="toc191"><span><a href="#top">Perl</a></span> <span class="selfl">[<a href="#toc191">link</a>]</span></h1>
 <p><a href="http://perldoc.perl.org/index-language.html">perldoc</a><br />
 <a href="http://perldoc.perl.org/index-modules-A.html">core modules</a><br />
 <a href="http://www.manpagez.com/man/1/perlstyle/">man perlstyle</a></p>
-<p>The first character of a Perl variable <tt>$ @ %</tt> determines the type of value that can be stored in the variable: scalar, array, hash. Using an array variable <tt>@foo</tt>
+<p>The first character of a Perl variable <code>$ @ %</code> determines the type of value that can be stored in the variable: scalar, array, hash. Using an array variable <code>@foo</code>
  in a scalar context yields the size of the array, and assigning a
-scalar to an array will modify the array to contain a single element. <tt>$foo[0]</tt> accesses the first element of the array <tt>@foo</tt>, and <tt>$bar{'hello'}</tt> accesses the value stored under <tt>'hello'</tt> in the hash <tt>%bar</tt>. <tt>$#foo</tt> is the index of the last element in the array <tt>@foo</tt>.</p>
+scalar to an array will modify the array to contain a single element. <code>$foo[0]</code> accesses the first element of the array <code>@foo</code>, and <code>$bar{'hello'}</code> accesses the value stored under <code>'hello'</code> in the hash <code>%bar</code>. <code>$#foo</code> is the index of the last element in the array <code>@foo</code>.</p>
 <p>Scalars can store a string, integer, or float. If an operator is
 invoked on a scalar which contains an incorrect data type, perl will
 perform an implicit conversion to the correct data type: non-numeric
 strings evaluate to zero.</p>
-<p>Scalars can also contain a reference to a variable, which can be created with a backslash: <tt>$baz = \@foo;</tt> The original value can be dereferenced with the correct prefix: <tt>@$baz</tt>. References are how perl creates complex data structures, such as arrays of hashes and arrays of arrays. If <tt>$baz</tt> contains a reference to an array, then <tt>$baz-&gt;[0]</tt> is the first element of the array. if <tt>$baz</tt> contains a reference to a hash, <tt>$baz-&gt;{'hello'}</tt> is the value indexed by <tt>'hello'</tt>.</p>
+<p>Scalars can also contain a reference to a variable, which can be created with a backslash: <code>$baz = \@foo;</code> The original value can be dereferenced with the correct prefix: <code>@$baz</code>. References are how perl creates complex data structures, such as arrays of hashes and arrays of arrays. If <code>$baz</code> contains a reference to an array, then <code>$baz-&gt;[0]</code> is the first element of the array. if <code>$baz</code> contains a reference to a hash, <code>$baz-&gt;{'hello'}</code> is the value indexed by <code>'hello'</code>.</p>
 <p>The literals for arrays and hashes are parens with comma separated
 elements. Hash literals must contain an even number of elements, and the
- <tt>=&gt;</tt> operator can be used in placed of a comma between a key and its value. Square brackets, e.g. <tt>[1, 2, 3]</tt>, create an array and return a reference to it, and curly brackets, e.g. <tt>{'hello' =&gt; 5, 'bye' =&gt; 3}</tt> , create a hash and return a reference to it.</p>
-<p>By default Perl variables are global. They can be made local to the containing block with the <tt>my</tt> keyword or the <tt>local</tt> keyword. <tt>my</tt> gives lexical scope, and <tt>local</tt>
+ <code>=&gt;</code> operator can be used in placed of a comma between a key and its value. Square brackets, e.g. <code>[1, 2, 3]</code>, create an array and return a reference to it, and curly brackets, e.g. <code>{'hello' =&gt; 5, 'bye' =&gt; 3}</code> , create a hash and return a reference to it.</p>
+<p>By default Perl variables are global. They can be made local to the containing block with the <code>my</code> keyword or the <code>local</code> keyword. <code>my</code> gives lexical scope, and <code>local</code>
  gives dynamic scope. Also by default, the perl interpreter creates a
-variable whenever it encounters a new variable name in the code. The <tt>use strict;</tt> pragma requires that all variables be declared with <tt>my</tt>, <tt>local</tt>, or <tt>our</tt>. The last is used to declare global variables.</p>
-<p>Perl functions do not declare their arguments. Any arguments passed to the function are available in the <tt>@_</tt>
+variable whenever it encounters a new variable name in the code. The <code>use strict;</code> pragma requires that all variables be declared with <code>my</code>, <code>local</code>, or <code>our</code>. The last is used to declare global variables.</p>
+<p>Perl functions do not declare their arguments. Any arguments passed to the function are available in the <code>@_</code>
  array, and the shift command will operate on this array if no argument
 is specified. An array passed as an argument is expanded: if the array
-contains 10 elements, the callee will have 10 arguments in its <tt>@_</tt> array. A reference (passing <tt>\@foo</tt> instead of <tt>@foo</tt>) can be used to prevent this.</p>
+contains 10 elements, the callee will have 10 arguments in its <code>@_</code> array. A reference (passing <code>\@foo</code> instead of <code>@foo</code>) can be used to prevent this.</p>
 <p>Some of Perl’s special variables:</p>
 <ul>
-<li><tt>$$</tt>: pid of the perl process</li>
-<li><tt>$0</tt>: name of the file containing the perl script (may be a full pathname)</li>
-<li><tt>$@</tt>: error message from last eval or require command</li>
-<li><tt>$&amp; $` $’</tt>: what last regex matched, part of the string before and after the match</li>
-<li><tt>$1</tt> … <tt>$9</tt>: what subpatterns in last regex matched</li>
+<li><code>$$</code>: pid of the perl process</li>
+<li><code>$0</code>: name of the file containing the perl script (may be a full pathname)</li>
+<li><code>$@</code>: error message from last eval or require command</li>
+<li><code>$&amp; $` $’</code>: what last regex matched, part of the string before and after the match</li>
+<li><code>$1</code> … <code>$9</code>: what subpatterns in last regex matched</li>
 </ul>
 <p id="python"></p>
 <h1 id="toc192"><span><a href="#top">Python</a></span> <span class="selfl">[<a href="#toc192">link</a>]</span></h1>
@@ -5183,44 +5183,44 @@ available available at runtime via <span style="white-space: pre-wrap;">__doc__<
 <p><a href="http://ruby-doc.org/core-1.8.7/index.html">1.8.7 core</a>, <a href="http://www.ruby-doc.org/stdlib-1.8.7/">stdlib</a><br />
 <a href="http://www.ruby-doc.org/core-1.9.3/">1.9.3 core</a>, <a href="http://ruby-doc.org/stdlib/">stdlib</a><br />
 <a href="https://github.com/bbatsov/ruby-style-guide">ruby-style-guide</a> bbatsov</p>
-<p>Ruby has a special type of value called a symbol. The literal syntax for a symbol is :<span style="color: gray"><em>identifier</em></span> or :"<span style="color: gray"><em>arbitrary string</em></span>". The methods <tt>to_s</tt> and <tt>to_sym</tt>
+<p>Ruby has a special type of value called a symbol. The literal syntax for a symbol is :<span style="color: gray"><em>identifier</em></span> or :"<span style="color: gray"><em>arbitrary string</em></span>". The methods <code>to_s</code> and <code>to_sym</code>
  can be used to convert symbols to strings and strings to symbols.
 Symbols can be used to pass functions or methods as arguments by name.
 They can be used as keys in Hash objects in place of strings, but the
-client must remember the type of the keys since <tt>:foo != "foo"</tt>.
+client must remember the type of the keys since <code>:foo != "foo"</code>.
 Also note that converting a Hash object with symbols as keys to JSON and
  then back will yield a Hash object with strings as keys.</p>
 <p>In Ruby all values that can be stored in a variable and passed to
 functions as arguments are objects in the sense that they have methods
 which can be invoked using the method syntax. Moreover classes are
 objects. The system provided classes are open and as a result the user
-can add methods to classes such as <tt>String</tt>, <tt>Array</tt>, or <tt>Fixnum</tt>. Ruby only permits single inheritance, but Ruby modules are mix-ins and can be used to add methods to a class via the <tt>include</tt> statement.</p>
+can add methods to classes such as <code>String</code>, <code>Array</code>, or <code>Fixnum</code>. Ruby only permits single inheritance, but Ruby modules are mix-ins and can be used to add methods to a class via the <code>include</code> statement.</p>
 <p>Ruby methods can be declared private and this is enforced by the
 interpreter. Object attributes are private by default and attribute
-names have an ampersand @ prefix. The methods <tt>attr_reader</tt>, <tt>attr_writer</tt>, and <tt>attr_accessor</tt> can be used in a class block to define a getter, setter, or both for an attribute.</p>
+names have an ampersand @ prefix. The methods <code>attr_reader</code>, <code>attr_writer</code>, and <code>attr_accessor</code> can be used in a class block to define a getter, setter, or both for an attribute.</p>
 <p>When invoking a method the parens are optional. If there are two or
 more arguments they must still be separated by commas. If one of the
 arguments is an expression containing a method invocation with
 arguments, then the Ruby interpreter will assign as many arguments as
 possible to the innermost method invocation.</p>
-<p>Inside a Ruby method, the <tt>self</tt> keyword refers to the
+<p>Inside a Ruby method, the <code>self</code> keyword refers to the
 receiver. It is not declared when defining the method. Ruby functions
-are implemented as methods on an object called <em>main</em> which has the special property that any methods defined on it become instance methods in the <tt>Object</tt>
+are implemented as methods on an object called <em>main</em> which has the special property that any methods defined on it become instance methods in the <code>Object</code>
  class which is a base class of most Ruby objects. This makes the method
  available everywhere. Methods defined at the top level are also added
-to the <em>main</em> object and the <tt>Object</tt> class. Functions which Ruby provides by default are instance methods defined the <tt>Object</tt> class or the <tt>Kernel</tt> module.</p>
+to the <em>main</em> object and the <code>Object</code> class. Functions which Ruby provides by default are instance methods defined the <code>Object</code> class or the <code>Kernel</code> module.</p>
 <p>Ruby methods are not objects and cannot directly be stored in
 variables. It is worth emphasizing that the Python interpreter when
 encountering a method identifier with no parens returns the method as an
  object value, but the Ruby interpreter invokes the method. As mentioned
  earlier, methods can be passed by name using symbols. If a method
 receives a symbol representing a method as an argument, it can invoke
-the method with the syntax :<span style="color: gray"><em>symbol</em></span>.to_proc.call(<span style="color: gray"><em>args…</em></span>). Note that <tt>to_proc</tt> resolves the symbol to the method that is in scope where it is invoked.</p>
+the method with the syntax :<span style="color: gray"><em>symbol</em></span>.to_proc.call(<span style="color: gray"><em>args…</em></span>). Note that <code>to_proc</code> resolves the symbol to the method that is in scope where it is invoked.</p>
 <p>Although passing a method or a function is a bit awkward, Ruby provides a convenient mechanism called <em>blocks</em>
  for simultaneously defining an anonymous function at the invocation of a
  method and providing it to the method as an argument. The block appears
  immediately after the closing paren of the method invocation and uses
-either the { |<span style="color: gray"><em>args…</em></span>| <span style="color: gray"><em>body</em></span> } or <tt>do</tt> |<span style="color: gray"><em>args…</em></span>| <span style="color: gray"><em>body</em></span> <tt>end</tt> syntax. The invoked method can in turn invoke the block with the <tt>yield</tt> keyword.</p>
+either the { |<span style="color: gray"><em>args…</em></span>| <span style="color: gray"><em>body</em></span> } or <code>do</code> |<span style="color: gray"><em>args…</em></span>| <span style="color: gray"><em>body</em></span> <code>end</code> syntax. The invoked method can in turn invoke the block with the <code>yield</code> keyword.</p>
 <p>Ruby blocks are closures like lambda functions and can see local
 variables in the enclosing scope in which they were defined. In Ruby 1.8
  the arguments of the block are local to the block unless the variables
@@ -5229,7 +5229,7 @@ were already in use in the enclosing scope. In Ruby 1.9 this was changed
  1.9 add semicolon syntax so that identifiers listed after the arguments
  could be made local to the block even if already defined in the
 containing scope.</p>
-<p>The <tt>lambda</tt> keyword or the <tt>Proc.new</tt> constructor can be used to store an anonymous function in a variable. The function can be invoked with <span style="color: gray"><em>variable</em></span>.call().
+<p>The <code>lambda</code> keyword or the <code>Proc.new</code> constructor can be used to store an anonymous function in a variable. The function can be invoked with <span style="color: gray"><em>variable</em></span>.call().
  If such a function is passed to a method argument as the last argument
 and preceded with an ampersand, the function will be used as the block
 for the method. Conversely, if the last argument in a method definition

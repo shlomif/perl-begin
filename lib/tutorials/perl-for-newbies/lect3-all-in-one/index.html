@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html
-         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-         "DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -351,7 +349,7 @@ function directly.
 </h1>
 <p>
 To take the reference of an existing function use the notation
-<tt>\&amp;function_name</tt> where "function_name" is the name of the function.
+<code>\&amp;function_name</code> where "function_name" is the name of the function.
 This is an r-value that can be assigned to a variable.
 </p>
 <hr />
@@ -374,19 +372,19 @@ This is an r-value that can be assigned to a variable.
 2.2. Calling a Function by its Reference
 </h1>
 <p>
-Assuming the reference of a function is stored in the variable <tt>$myref</tt>,
+Assuming the reference of a function is stored in the variable <code>$myref</code>,
 there are two methods to call the function from it:
 </p>
 <ol>
 <li>
-<tt>&amp;{$myref}(@args)</tt>
+<code>&amp;{$myref}(@args)</code>
 </li>
 <li>
-<tt>$myref-&gt;(@args)</tt>
+<code>$myref-&gt;(@args)</code>
 </li>
 </ol>
 <p>
-<tt>$myref</tt> can be as complex an expression as you would like,
+<code>$myref</code> can be as complex an expression as you would like,
 but you'll usually need parenthesis in the second notation.
 </p>
 <p>
@@ -780,7 +778,7 @@ functions can be invoked from the same code.
 </h1>
 <p>
 In order to designate that a code belongs to a different namespace
-you should use the <tt>package</tt> directive. For instance, if you want
+you should use the <code>package</code> directive. For instance, if you want
 your module name to be "MyModule" your file should look something like
 this:
 </p>
@@ -806,7 +804,7 @@ explains the use of "1;".
 </p>
 <p>
 A namespace may contain sub-namespaces. To separate namespace components,
-use the <tt>::</tt> separator. For example:
+use the <code>::</code> separator. For example:
 </p>
 <div class="code_block"><pre>
 <span class="Comment"># This is the file Hoola/Hoop.pm</span>
@@ -849,12 +847,12 @@ use the <tt>::</tt> separator. For example:
 A module is a separate file that may contain one or more different
 namespaces. That file is found in a place that corresponds to the module's
 name. To find the filename of the module relative to the script's directory,
-replace every <tt>::</tt> with a slash and add ".pm" to the name of the
+replace every <code>::</code> with a slash and add ".pm" to the name of the
 last component.
 </p>
 <p>
-For instance: the <tt>MyModule</tt> module will be found in the file
-"MyModule.pm"; the <tt>Hello::World</tt> module will be found in the
+For instance: the <code>MyModule</code> module will be found in the file
+"MyModule.pm"; the <code>Hello::World</code> module will be found in the
 file "World.pm" under the Hello sub-directory; etc.
 </p>
 <hr />
@@ -878,7 +876,7 @@ file "World.pm" under the Hello sub-directory; etc.
 </h1>
 <p>
 In order to have access to a module from within your script (or from
-within another module) you can use the <tt>use</tt> directive followed
+within another module) you can use the <code>use</code> directive followed
 by the name of the module as it is deduced from its path. Here's
 an example: assume that the file "MyModule.pm" is this:
 </p>
@@ -936,15 +934,15 @@ That way, the program will print "Hello, World!" on the screen.
 </h1>
 <p>
 As could be seen from the last example, once the module has been
-<tt>use</tt>'d, its functions can be invoked by typing the
-full path of the package followed by <tt>::</tt> and followed by
+<code>use</code>'d, its functions can be invoked by typing the
+full path of the package followed by <code>::</code> and followed by
 the function name.
 </p>
 <p>
-Note that if you are in package <tt>Foo</tt> and you are trying to access
-functions from package <tt>Foo::Bar</tt>, then typing <tt>Bar::my_func()</tt>
+Note that if you are in package <code>Foo</code> and you are trying to access
+functions from package <code>Foo::Bar</code>, then typing <code>Bar::my_func()</code>
 will not do. You have to type the full path of the module.
-(<tt>Foo::Bar::my_func()</tt> in our case)
+(<code>Foo::Bar::my_func()</code> in our case)
 </p>
 <hr />
 
@@ -980,9 +978,9 @@ type the following code fragment near the beginning of the module:
 <span class="Identifier">@EXPORT</span>=(<span class="Constant">&quot;function1&quot;</span>, <span class="Constant">&quot;function2&quot;</span>, <span class="Constant">&quot;function3&quot;</span>);
 </pre></div>
 <p>
-What this fragment does is make the module inherit the <tt>Exporter</tt>
+What this fragment does is make the module inherit the <code>Exporter</code>
 module which is a special Perl module that can export symbols. Then
-it declares the special variable <tt>@EXPORT</tt> which should be filled
+it declares the special variable <code>@EXPORT</code> which should be filled
 with all the functions that one wishes to export.
 </p>
 <p>
@@ -1040,7 +1038,7 @@ Here is an example which has a module called "Calc" and a script that uses it:
 </pre></div>
 <p>
 As you can see, the script invokes the "gcd" function of the "Calc" module
-without having to invoke it with <tt>Calc::gcd()</tt>. Exporting functions
+without having to invoke it with <code>Calc::gcd()</code>. Exporting functions
 like that should be used with care, as the function names may conflict with
 those of the importing namespace.
 </p>
@@ -1066,7 +1064,7 @@ those of the importing namespace.
 <p>
 It is also possible to use the global variables of different
 packages. However, such variables need to be declared using the
-<tt>use vars qw($myvar1 @myvar2)</tt> construct.
+<code>use vars qw($myvar1 @myvar2)</code> construct.
 </p>
 <p>
 Here's an example for a module that defines a variable and another one that
@@ -1126,8 +1124,8 @@ MyVar::print_myvar();
 3.3. BEGIN and END
 </h1>
 <p>
-There are two special code blocks for perl modules - <tt>BEGIN</tt> and
-<tt>END</tt>. These blocks are executed when a module is first loaded,
+There are two special code blocks for perl modules - <code>BEGIN</code> and
+<code>END</code>. These blocks are executed when a module is first loaded,
 and when the perl interpreter is about to unload it, respectively.
 </p>
 <p>
@@ -1187,13 +1185,13 @@ Here's an example for a logging module that makes use of this facility:
 </h1>
 <p>
 One can access the main namespace (i.e, the namespace of the script),
-from any other namespace by designating <tt>main</tt> as the
-namespace path. For instance, <tt>main::hello()</tt> will invoke
+from any other namespace by designating <code>main</code> as the
+namespace path. For instance, <code>main::hello()</code> will invoke
 the function named "hello" in the script file.
 </p>
 <p>
 Usually, the "main" part can be omitted and the symbols be accessed
-with the notation of <tt>::hello()</tt> alone.
+with the notation of <code>::hello()</code> alone.
 </p>
 <hr />
 
@@ -1217,7 +1215,7 @@ with the notation of <tt>::hello()</tt> alone.
 <ul>
 <li>
 A <b>namespace</b> or <b>package</b> is a container for
-<tt>MyPackage::MySubPack::my_func()</tt> symbols.
+<code>MyPackage::MySubPack::my_func()</code> symbols.
 </li>
 <li>
 A <b>module</b>, on the other hand, is a file that can contain
@@ -1225,14 +1223,14 @@ any number of namespaces, or simply drop everything into the
 current namespace (although it shouldn't).
 </li>
 <li>
-It is possible to switch to other packages using the <tt>package</tt>
-statement. However, you then have to remember not to <tt>use</tt> them,
+It is possible to switch to other packages using the <code>package</code>
+statement. However, you then have to remember not to <code>use</code> them,
 because Perl will look for a file corresponding to that name.
 </li>
 <li>
-A <tt>module</tt> can put itself in a completely different namespace than
-its designated module name. (e.g: a module loaded with <tt>use TheModule;</tt>
-can declare all of its identifiers in the <tt>CompletelyDifferentPackage</tt>
+A <code>module</code> can put itself in a completely different namespace than
+its designated module name. (e.g: a module loaded with <code>use TheModule;</code>
+can declare all of its identifiers in the <code>CompletelyDifferentPackage</code>
 namespace.)
 </li>
 <li>
@@ -1304,7 +1302,7 @@ class.
 </p>
 <p>
 Method calls in perl are done using the
-<tt>$object_ref-&gt;method_name(@args)</tt> notation. Note that in Perl,
+<code>$object_ref-&gt;method_name(@args)</code> notation. Note that in Perl,
 passing the object reference is done explicitly and it is the first argument
 passed to the function.
 </p>
@@ -1329,7 +1327,7 @@ passed to the function.
 </h1>
 <p>
 Let's demonstrate the object use cycle on a very useful Perl class
-called <tt>Data::Dumper</tt>. This class accepts a set of perl
+called <code>Data::Dumper</code>. This class accepts a set of perl
 data structures, and renders them into a string which is an easy-to-read
 Perl representation of them.
 </p>
@@ -1384,10 +1382,10 @@ screen:
 </h1>
 <p>
 To call the methods of an object, one should use the
-<tt>$object_ref-&gt;method_name(@args)</tt> notation.
+<code>$object_ref-&gt;method_name(@args)</code> notation.
 </p>
 <p>
-Note that internally the method receives <tt>$object_ref</tt>
+Note that internally the method receives <code>$object_ref</code>
 as its first argument.
 </p>
 <hr />
@@ -1434,7 +1432,7 @@ it will be easy to construct an instance of that class.
 4.3.1. The Constructor
 </h1>
 <p>
-Here is an example, constructor for the class <tt>Foo</tt>:
+Here is an example, constructor for the class <code>Foo</code>:
 </p>
 <div class="code_block"><pre>
 <span class="Comment">#</span>
@@ -1515,7 +1513,7 @@ You define a method for this class by defining a function in that namespace
 that accepts the object's instance as its first argument.
 </p>
 <p>
-Here are two example methods in the class <tt>Foo</tt>, that retrieve and set
+Here are two example methods in the class <code>Foo</code>, that retrieve and set
 its name:
 </p>
 <div class="code_block"><pre>
@@ -1579,15 +1577,15 @@ output would be?
 4.3.3. Object Inheritance
 </h1>
 <p>
-Now, let's suppose we would like to create a class similar to <tt>Foo</tt>,
+Now, let's suppose we would like to create a class similar to <code>Foo</code>,
 that's also keeps track of the number of times its name was assigned. While
 we can write a completely different object, we can <b>inherit</b> from Foo
 and use what we already have in place.
 </p>
 <p>
-Here's a class derived from <tt>Foo</tt> that has a method
-<tt>assign_name_ext</tt> that keeps track of the number of times it was
-called, and a method <tt>get_num_times_assigned</tt> that retrieves this
+Here's a class derived from <code>Foo</code> that has a method
+<code>assign_name_ext</code> that keeps track of the number of times it was
+called, and a method <code>get_num_times_assigned</code> that retrieves this
 number:
 </p>
 <div class="code_block"><pre>
@@ -1659,11 +1657,11 @@ number:
 <p>
 It is possible to explicitly call the method of a base class even if it
 was overridden by another method in the derived class. To do that use
-the <tt>SUPER::</tt> prefix before the method name.
+the <code>SUPER::</code> prefix before the method name.
 </p>
 <p>
-Here is a rewrite of the <tt>Bar</tt> class, this time with
-<tt>assign_name</tt> retaining its name.
+Here is a rewrite of the <code>Bar</code> class, this time with
+<code>assign_name</code> retaining its name.
 </p>
 <div class="code_block"><pre>
 <span class="Statement">package</span><span class="Type"> Bar2</span>;
@@ -1728,10 +1726,10 @@ Here is a rewrite of the <tt>Bar</tt> class, this time with
 <p>
 A destructor is a special method that is called whenever the instance
 of the class goes out of scope. To define a destructor in Perl just define
-a method by the name of <tt>DESTROY</tt>.
+a method by the name of <code>DESTROY</code>.
 </p>
 <p>
-To demonstrate it, I present a class derived from <tt>Bar2</tt> that
+To demonstrate it, I present a class derived from <code>Bar2</code> that
 prints the number of times it's name was assigned to the screen before it is destroyed:
 </p>
 <div class="code_block"><pre>
@@ -1775,12 +1773,12 @@ prints the number of times it's name was assigned to the screen before it is des
 4.4. Object Utility Functions - isa() and can()
 </h1>
 <p>
-<tt>isa()</tt> is a special method that can be used on every object. When
+<code>isa()</code> is a special method that can be used on every object. When
 invoked with the name of a package as an argument, it returns whether
 or not this object inherits from this package (directly or indirectly).
 </p>
 <p>
-<tt>can()</tt> is a method that determines if an object can execute the method
+<code>can()</code> is a method that determines if an object can execute the method
 by the name given to it as argument.
 </p>
 <hr />

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html
-         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-         "DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -186,14 +184,14 @@ cp Parser/Encodings/Japanese_Encodings.msg blib/lib/XM
 .
 </pre></div>
 <p>
-After the wait, the module will be compiled. It is preferable to test it first, by invoking <tt>make test</tt>:
+After the wait, the module will be compiled. It is preferable to test it first, by invoking <code>make test</code>:
 </p>
 <div class="code_block"><pre>
 $ make test
 </pre></div>
 <p>
 Now you can install it, by becoming
-a super-user and typing <tt>make install</tt> at the command line.
+a super-user and typing <code>make install</code> at the command line.
 </p>
 <div class="code_block"><pre>
 $ su
@@ -203,8 +201,8 @@ Password:
 <h2 id="module-build">Module-Build</h2>
 <p>
 Note that some distributions are now using
-<a href="http://search.cpan.org/dist/Module-Build/">Module-Build</a>. If
-your distribution contains a <tt>Build.PL</tt> file, you should run
+<a href="http://metacpan.org/release/Module-Build/">Module-Build</a>. If
+your distribution contains a <code>Build.PL</code> file, you should run
 the following commands instead:
 </p>
 <div class="code_block"><pre>
@@ -215,7 +213,7 @@ perl Build.PL
 </pre></div>
 <p>
 More information can be found in
-<a href="http://search.cpan.org/perldoc?Module::Build">the main Module-Build
+<a href="http://metacpan.org/pod/Module::Build">the main Module-Build
 document</a>
 </p>
 <hr />
@@ -239,9 +237,9 @@ document</a>
 </h1>
 <p>
 Perl has a module called CPAN with which one can install CPAN modules along
-with all of the modules they depend on. To invoke it type <tt>perl -MCPAN -e
-shell</tt> at the command line while being a super-user, and follow the
-instructions it gives you. The <tt>install</tt> command can be used to
+with all of the modules they depend on. To invoke it type <code>perl -MCPAN -e
+shell</code> at the command line while being a super-user, and follow the
+instructions it gives you. The <code>install</code> command can be used to
 automatically install modules. For example: to install the XML::XSLT module,
 the following can be done from the CPAN prompt:
 </p>
@@ -285,12 +283,12 @@ distribution's help channels for more information.
 2. The sprintf function
 </h1>
 <p>
-The <tt>sprintf</tt> built-in function can be used to translate a format
+The <code>sprintf</code> built-in function can be used to translate a format
 string with some conversions embedded inside, and some parameters into a
 formatted string. Each conversion is specified by the starting character of the
-percent sign (<tt>%</tt>), and can have a type and several parameters that will
+percent sign (<code>%</code>), and can have a type and several parameters that will
 dictate how it will be formatted in the output string. The output string is
-returned by <tt>sprintf</tt>.
+returned by <code>sprintf</code>.
 </p>
 <p>
 Here's an example that illustrates its use:
@@ -344,7 +342,7 @@ Here are some of the supported conversions:
 <table summary="">
 <tr>
 <td>
-<tt>%%</tt>
+<code>%%</code>
 </td>
 <td>
 An actual percent sign
@@ -352,7 +350,7 @@ An actual percent sign
 </tr>
 <tr>
 <td>
-<tt>%c</tt>
+<code>%c</code>
 </td>
 <td>
 A character with the given ASCII number
@@ -360,7 +358,7 @@ A character with the given ASCII number
 </tr>
 <tr>
 <td>
-<tt>%s</tt>
+<code>%s</code>
 </td>
 <td>
 A string
@@ -368,15 +366,15 @@ A string
 </tr>
 <tr>
 <td>
-<tt>%d</tt>
+<code>%d</code>
 </td>
 <td>
-A signed integer, in decimal (also <tt>%i</tt>)
+A signed integer, in decimal (also <code>%i</code>)
 </td>
 </tr>
 <tr>
 <td>
-<tt>%o</tt>
+<code>%o</code>
 </td>
 <td>
 An integer in octal
@@ -384,16 +382,16 @@ An integer in octal
 </tr>
 <tr>
 <td>
-<tt>%x</tt>
+<code>%x</code>
 </td>
 <td>
-An integer in hexadecimal. (use <tt>%X</tt> for
+An integer in hexadecimal. (use <code>%X</code> for
 uppercase hex)
 </td>
 </tr>
 <tr>
 <td>
-<tt>%e</tt>
+<code>%e</code>
 </td>
 <td>
 A floating point number, in scientific notation.
@@ -401,7 +399,7 @@ A floating point number, in scientific notation.
 </tr>
 <tr>
 <td>
-<tt>%f</tt>
+<code>%f</code>
 </td>
 <td>
 A float in fixed decimal notation.
@@ -409,7 +407,7 @@ A float in fixed decimal notation.
 </tr>
 <tr>
 <td>
-<tt>%b</tt>
+<code>%b</code>
 </td>
 <td>
 An integer in binary
@@ -467,7 +465,7 @@ conversion character, which alter the output. Here is a list of them:
 <table class="bordered" summary="">
 <tr>
 <td>
-<tt>space</tt>
+<code>space</code>
 </td>
 <td>
 Prefix positive number with a space
@@ -475,7 +473,7 @@ Prefix positive number with a space
 </tr>
 <tr>
 <td>
-<tt>+</tt>
+<code>+</code>
 </td>
 <td>
 Prefix positive number with a + sign
@@ -483,7 +481,7 @@ Prefix positive number with a + sign
 </tr>
 <tr>
 <td>
-<tt>-</tt>
+<code>-</code>
 </td>
 <td>
 Left justify the output within the specified field
@@ -491,7 +489,7 @@ Left justify the output within the specified field
 </tr>
 <tr>
 <td>
-<tt>0</tt>
+<code>0</code>
 </td>
 <td>
 Use zeros, not spaces to right justify.
@@ -499,7 +497,7 @@ Use zeros, not spaces to right justify.
 </tr>
 <tr>
 <td>
-<tt>#</tt>
+<code>#</code>
 </td>
 <td>
 Prefix non-zero octal with 0, non-zero hex with "0x", and non-zero
@@ -508,7 +506,7 @@ binary with "0b"
 </tr>
 </table>
 <p>
-For example (taken from <tt>perldoc -f sprintf</tt>):
+For example (taken from <code>perldoc -f sprintf</code>):
 </p>
 <div class="code_block"><pre>
 <span class="Statement">printf</span> <span class="Constant">'&lt;% d&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt; 12&gt;&quot;</span>
@@ -519,8 +517,8 @@ For example (taken from <tt>perldoc -f sprintf</tt>):
 <span class="Statement">printf</span> <span class="Constant">'&lt;%#x&gt;'</span>, <span class="Constant">12</span>;   <span class="Comment"># prints &quot;&lt;0xc&gt;&quot;</span>
 </pre></div>
 <p>
-Note that <tt>printf</tt> formats its arguments using <tt>sprintf</tt> and
-then prints them using <tt>print</tt>.
+Note that <code>printf</code> formats its arguments using <code>sprintf</code> and
+then prints them using <code>print</code>.
 </p>
 <hr />
 
@@ -735,7 +733,7 @@ No
 </tr>
 </table>
 <p>
-What it means, is that you can write an interpolated string as <tt>qq</tt>
+What it means, is that you can write an interpolated string as <code>qq</code>
 followed by a matching wrapping character, inside which the string can
 be placed. And likewise for the other strings. Here are some examples:
 </p>
@@ -772,7 +770,7 @@ Hi There Hello There Hello There Router
 </pre></div>
 <p>
 As one can see, the wrapping characters should match assuming they are a
-left/right pair (<tt>{</tt> to <tt>}</tt> etc.).
+left/right pair (<code>{</code> to <code>}</code> etc.).
 </p>
 <hr />
 
@@ -799,7 +797,7 @@ on a separate line, and between it, one can place any string he wishes.
 This is useful if your string contains a lot of irregular characters.
 </p>
 <p>
-The syntax for a here document is a <tt>&lt;&lt;</tt> followed by
+The syntax for a here document is a <code>&lt;&lt;</code> followed by
 the string ending sequence, followed by the end of the statement. In
 the lines afterwards, one places the string itself followed by its
 ending sequence.
@@ -840,9 +838,9 @@ Hoola
 
 </pre></div>
 <p>
-Note that if the delimeters on the terminator after the <tt>&lt;&lt;</tt>
-are double-quotes (<tt>"..."</tt>), then the here-document will interpolate,
-and if they are single-quotes (<tt>'...'</tt>), it will not.
+Note that if the delimeters on the terminator after the <code>&lt;&lt;</code>
+are double-quotes (<code>"..."</code>), then the here-document will interpolate,
+and if they are single-quotes (<code>'...'</code>), it will not.
 </p>
 <p>
 An unquoted ending string causes the here-doc to interpolate, in case
@@ -899,7 +897,7 @@ and they would be covered here.
 4.1. The system() Command
 </h1>
 <p>
-The <tt>system()</tt> function executes a shell command, while maintaining
+The <code>system()</code> function executes a shell command, while maintaining
 the same standard input, standard output and environment of the invoking
 script. If called with one argument, it passes this argument as is to the
 shell, which in turn will process it for special characters. If passed an
@@ -908,13 +906,13 @@ array as command line arguments.
 </p>
 <p>
 If you receive an arbitrary array and you fear it may contain only
-one argument, you can use the <tt>system { $cmd_line[0] } @cmd_line</tt>
-notation (similar to <tt>print()</tt>'s ).
+one argument, you can use the <code>system { $cmd_line[0] } @cmd_line</code>
+notation (similar to <code>print()</code>'s ).
 </p>
 <p>
 On success, system() returns 0 (not a true value) and one should make
 sure to throw an exception upon failure while referencing the built-in
-error variable <tt>$?</tt>.
+error variable <code>$?</code>.
 </p>
 <p>
 Here are some examples, that will only work on UNIX systems.
@@ -955,7 +953,7 @@ Here are some examples, that will only work on UNIX systems.
 4.2. Trapping Command Output with `...`
 </h1>
 <p>
-The backticks (or more generally <tt>qx{ ... }</tt>), can be used to trap
+The backticks (or more generally <code>qx{ ... }</code>), can be used to trap
 the output of a shell command. It executes the command and returns
 all of its output. Interpolation is used.
 </p>
@@ -1017,8 +1015,8 @@ a directory that is given as an argument:
 4.3. open() for Command Execution
 </h1>
 <p>
-The <tt>open</tt> command can be used for command execution. By prefixing
-the filename with a pipe (<tt>|</tt>), the rest of it is interpreted
+The <code>open</code> command can be used for command execution. By prefixing
+the filename with a pipe (<code>|</code>), the rest of it is interpreted
 as a command invocation, which accepts standard input by printing to the
 filehandle, and is executed after the filehandle is closed. If the last
 character is a pipe, then the command is executed and its standard output
@@ -1089,11 +1087,11 @@ while (my $line = &lt;$read_from_process&gt;)
 </pre></div>
 <p>
 Doing something like
-<tt>open my $print_to_process, "|-", "sendmail", $to_address;</tt>
+<code>open my $print_to_process, "|-", "sendmail", $to_address;</code>
 is safer than doing:
-<tt>open my $print_to_process, "|-", "sendmail $to_address";</tt>
+<code>open my $print_to_process, "|-", "sendmail $to_address";</code>
 Because a malicious person may put some offending shell characters in
-<tt>$to_address</tt> and end up with something like:
+<code>$to_address</code> and end up with something like:
 </p>
 <div class="code_block"><pre>
 sendmail ; rm -fr $HOME
@@ -1127,12 +1125,12 @@ for example we have the following qx call:
 my $ls_output = qx/ls '$dir'/;
 </pre></div>
 <p>
-Then <tt>$dir</tt> may be set to "<tt>' ; rm -fr ~ ; '</tt>",
+Then <code>$dir</code> may be set to "<code>' ; rm -fr ~ ; '</code>",
 which will make the shell delete our entire home directory.
 </p>
 <p>
 To overcome such problems, one should make use of
-<a href="http://search.cpan.org/dist/String-ShellQuote/">the
+<a href="http://metacpan.org/release/String-ShellQuote/">the
 String-ShellQuote module</a> which provides functions for safely
 preventing shell-code injection.
 </p>
@@ -1156,8 +1154,8 @@ preventing shell-code injection.
 5. More about || and &amp;&amp;
 </h1>
 <p>
-<tt>||</tt> and <tt>&amp;&amp;</tt> return the last argument that was
-evaluated. Thus, <tt>||</tt> is useful for assigning default values,
+<code>||</code> and <code>&amp;&amp;</code> return the last argument that was
+evaluated. Thus, <code>||</code> is useful for assigning default values,
 like this:
 </p>
 <div class="code_block"><pre>
@@ -1200,8 +1198,8 @@ like this:
 5.1. For sort()
 </h1>
 <p>
-The <tt>||</tt> operator can be used in <tt>sort</tt>, in conjunction
-with operators such as <tt>cmp</tt> or <tt>&lt;=&gt;</tt> to sort
+The <code>||</code> operator can be used in <code>sort</code>, in conjunction
+with operators such as <code>cmp</code> or <code>&lt;=&gt;</code> to sort
 according to several criteria. For example, if you wish to sort
 according to the last name and if this is equal according to the first
 name as well, you can write the following:
@@ -1274,10 +1272,10 @@ Torry, Peter
 5.2. The "and" and "or" Operators
 </h1>
 <p>
-Perl supplies two operators <tt>and</tt> and <tt>or</tt> which are equivalent
-to <tt>&amp;&amp;</tt> and <tt>||</tt> except that they have a very low
-precedence. (lower than any other operator in fact). There's also <tt>not</tt>
-which is the ultra-low precedence equivalent of <tt>!</tt>.
+Perl supplies two operators <code>and</code> and <code>or</code> which are equivalent
+to <code>&amp;&amp;</code> and <code>||</code> except that they have a very low
+precedence. (lower than any other operator in fact). There's also <code>not</code>
+which is the ultra-low precedence equivalent of <code>!</code>.
 </p>
 <p>
 You can use them after a statement to write error handlers.
@@ -1348,9 +1346,9 @@ it. The exception may escape out of function calls as well.
 6.1. die and eval
 </h1>
 <p>
-The statement <tt>die</tt> throws an exception which can be any Perl
-scalar. The statement <tt>eval { ... }</tt> catches an excpetion that was
-given inside it, and after it sets the special variable <tt>$@</tt>
+The statement <code>die</code> throws an exception which can be any Perl
+scalar. The statement <code>eval { ... }</code> catches an excpetion that was
+given inside it, and after it sets the special variable <code>$@</code>
 to be the value of the exception or undef if none was caught.
 </p>
 <p>
@@ -1424,9 +1422,9 @@ perform_transaction();
 6.2. The Carp module
 </h1>
 <p>
-The <tt>Carp</tt> module warns or throws errors with a more useful information
+The <code>Carp</code> module warns or throws errors with a more useful information
 that the normal Perl behaviour. It supplies several such methods. For more
-information run <tt>perldoc Carp</tt>.
+information run <code>perldoc Carp</code>.
 </p>
 <hr />
 
@@ -1448,7 +1446,7 @@ information run <tt>perldoc Carp</tt>.
 6.3. The Error.pm module
 </h1>
 <p>
-The <a href="http://search.cpan.org/dist/Error/">Error.pm</a>
+The <a href="http://metacpan.org/release/Error/">Error.pm</a>
 module, which is available from CPAN, supplies object oriented
 exception handling. Namely, one can catch exceptions of a certain class
 explicitly, and differentiate between several types of exceptions.
@@ -1459,7 +1457,7 @@ As such, its use is not too recommended.
 </p>
 <p>
 On the other side, there's the
-<a href="http://search.cpan.org/dist/Exception-Class/">Exception-Class
+<a href="http://metacpan.org/release/Exception-Class/">Exception-Class
 module</a> which provides object-oriented exceptions with no special
 syntactic sugar, and which works very well. Its use is highly recommended.
 </p>
@@ -1517,13 +1515,13 @@ tasks. This section will cover some of them for your own reference.
 7.1. Directory Input Routines
 </h1>
 <p>
-The <tt>opendir DIRHANDLE, EXPR</tt> function can be used to open the
-directory <tt>EXPR</tt> for reading its file and sub-directory entries.
-Afterwards <tt>readdir(DIRHANDLE)</tt> can be used to read one entry
+The <code>opendir DIRHANDLE, EXPR</code> function can be used to open the
+directory <code>EXPR</code> for reading its file and sub-directory entries.
+Afterwards <code>readdir(DIRHANDLE)</code> can be used to read one entry
 from there, or all the entries if used in list context.
 </p>
 <p>
-Use <tt>closedir()</tt> to close an opened directory.
+Use <code>closedir()</code> to close an opened directory.
 </p>
 <p>
 Here's an example that counts the number of mp3s in a directory:
@@ -1580,19 +1578,19 @@ Perl provides mechanisms for moving to certain positions in files, and
 reading blocks of a certain size.
 </p>
 <p>
-<tt>seek FILEHANDLE, POSITION, WHENCE</tt> sets the filehandle position
-within the file in bytes. If you specify <tt>use Fcntl;</tt> at
-the beginning of your program, then WHENCE can be <tt>SEEK_SET</tt> for
-start of file, <tt>SEEK_CUR</tt> for the current position and
-<tt>SEEK_END</tt> for the end of file.
+<code>seek FILEHANDLE, POSITION, WHENCE</code> sets the filehandle position
+within the file in bytes. If you specify <code>use Fcntl;</code> at
+the beginning of your program, then WHENCE can be <code>SEEK_SET</code> for
+start of file, <code>SEEK_CUR</code> for the current position and
+<code>SEEK_END</code> for the end of file.
 </p>
 <p>
-<tt>tell FILEHANDLE</tt> returns the position of the current file cursor
+<code>tell FILEHANDLE</code> returns the position of the current file cursor
 in bytes from the beginning of the file.
 </p>
 <p>
-<tt>read FILEHANDLE, SCALAR, LENGTH</tt> reads <tt>LENGTH</tt> characters
-from <tt>FILEHANDLE</tt> into the <tt>SCALAR</tt> variable.
+<code>read FILEHANDLE, SCALAR, LENGTH</code> reads <code>LENGTH</code> characters
+from <code>FILEHANDLE</code> into the <code>SCALAR</code> variable.
 </p>
 <p>
 Here's an example that replaces bytes 64-127 in a file with their rot13
@@ -1644,14 +1642,14 @@ equivalent:
 </h1>
 <p>
 Perl provides several file tests that can be used to test a filehandle
-or filename for various conditions. <tt>-e filename</tt> determines if
-<tt>filename</tt> exists. <tt>-r</tt> determines if the file is readable,
-<tt>-w</tt> if it's writeable, <tt>-x</tt> if it is executable and so on.
+or filename for various conditions. <code>-e filename</code> determines if
+<code>filename</code> exists. <code>-r</code> determines if the file is readable,
+<code>-w</code> if it's writeable, <code>-x</code> if it is executable and so on.
 </p>
 <p>
-<tt>-d</tt> determines if the file is a directory, and <tt>-f</tt> if it's
+<code>-d</code> determines if the file is a directory, and <code>-f</code> if it's
 a plain file. For a list of other file tests and their use consult
-<tt>perldoc -f -X</tt>.
+<code>perldoc -f -X</code>.
 </p>
 <hr />
 
@@ -1673,18 +1671,18 @@ a plain file. For a list of other file tests and their use consult
 7.4. chdir(), getcwd() and mkdir().
 </h1>
 <p>
-The built-in function <tt>chdir EXPR</tt> can be used to change the working
-directory of the program to a new value. If <tt>EXPR</tt> is omitted
+The built-in function <code>chdir EXPR</code> can be used to change the working
+directory of the program to a new value. If <code>EXPR</code> is omitted
 it changes to the home directory.
 </p>
 <p>
-By <tt>use</tt>'ing the Cwd module, one can invoke the <tt>getcwd()</tt>
+By <code>use</code>'ing the Cwd module, one can invoke the <code>getcwd()</code>
 function that will retrieve the current working directory. This is similar
-to the <tt>pwd</tt> command on UNIX shells.
+to the <code>pwd</code> command on UNIX shells.
 </p>
 <p>
-Finally, <tt>mkdir FILENAME, MASK</tt> can be used to create a new directory
-with the permissions mask of <tt>MASK</tt>
+Finally, <code>mkdir FILENAME, MASK</code> can be used to create a new directory
+with the permissions mask of <code>MASK</code>
 </p>
 <hr />
 
@@ -1706,7 +1704,7 @@ with the permissions mask of <tt>MASK</tt>
 7.5. The stat() Function
 </h1>
 <p>
-The <tt>stat</tt> function can be used to retrieve a 13-element array
+The <code>stat</code> function can be used to retrieve a 13-element array
 that gives status information for a given file or filehandle.
 </p>
 <p>
@@ -1718,13 +1716,13 @@ The syntax is:
         = stat($filename);
 </pre></div>
 <p>
-Here, <tt>$mode</tt> is the file mode, <tt>$size</tt> is the size of the
-file, <tt>$atime</tt> is the last access time (in seconds since the epoch),
-<tt>$mtime</tt> is the last modification time.
+Here, <code>$mode</code> is the file mode, <code>$size</code> is the size of the
+file, <code>$atime</code> is the last access time (in seconds since the epoch),
+<code>$mtime</code> is the last modification time.
 </p>
 <p>
-For more information about <tt>stat</tt> consult <tt>perldoc -f stat</tt>
-or its entry in <tt>perlfunc</tt>.
+For more information about <code>stat</code> consult <code>perldoc -f stat</code>
+or its entry in <code>perlfunc</code>.
 </p>
 <hr />
 

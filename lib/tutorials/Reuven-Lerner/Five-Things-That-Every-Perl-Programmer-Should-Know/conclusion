@@ -5,8 +5,8 @@ Some suggestions:</p>
 
 <ul>
     <li> Set up coding standards in your organization, such that
-    everyone always has <tt>use strict</tt> and <tt>use warnings</tt>
-    (and perhaps even <tt>use diagnostics</tt>) turned on)
+    everyone always has <code>use strict</code> and <code>use warnings</code>
+    (and perhaps even <code>use diagnostics</code>) turned on)
 
     <li> TMTOWTDI doesn't mean that every method is equally good and
     useful.  Take advantage of Perl's flexibility, but consider your

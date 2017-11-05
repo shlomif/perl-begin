@@ -42,7 +42,7 @@ XML-related technology (but not notated in XML) that allows one
 to locate nodes in XML files using a compact syntax. One can use it using
 <a href="#XML-LibXML">XML::LibXML</a>, and should avoid using the old, slow,
 and largely
-unmaintained <tt>XML::XPath</tt> CPAN distribution.
+unmaintained <code>XML::XPath</code> CPAN distribution.
 </p>
 
 <p>
@@ -50,8 +50,8 @@ Another useful module is <cpan_self_dist d="HTML-Selector-XPath" />
 which allows one to convert <strong>CSS-style selectors</strong> to XPath and
 provide functionality similar to that offered by such JavaScript libraries
 such as jQuery. So you can, for example, write
-<code>selector_to_xpath('ul.myclass a')</code> to find all <tt>a</tt> elements
-inside a <tt>ul</tt> element with a CSS class of <tt>myclass</tt>.
+<code>selector_to_xpath('ul.myclass a')</code> to find all <code>a</code> elements
+inside a <code>ul</code> element with a CSS class of <code>myclass</code>.
 </p>
 
 <p>

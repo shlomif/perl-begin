@@ -167,8 +167,8 @@ would be very hard and you'd like to parse a string incrementally - step by
 step. For that, Perl offers the
 <a href="http://perldoc.perl.org/functions/pos.html">the pos()</a>
 function/operator that allows one to set the last matched position within
-a string. One can make a good use of it using the <tt>\G</tt> regular
-expression escape and the <tt>/g</tt> and <tt>/c</tt> regex modifiers.
+a string. One can make a good use of it using the <code>\G</code> regular
+expression escape and the <code>/g</code> and <code>/c</code> regex modifiers.
 </p>
 
 <p>

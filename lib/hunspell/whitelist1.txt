@@ -93,6 +93,7 @@ hyperlink
 hyperlinks
 jQuery
 markup
+metacpan
 middleware
 namespace
 namespaces
@@ -502,7 +503,6 @@ Perlmonks
 SlideShare
 Thalhammer
 catalyzed
-metacpan
 mstpan
 uninstalled
 
