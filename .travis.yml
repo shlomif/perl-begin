@@ -4,7 +4,7 @@ before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -y ack-grep cmake cpanminus docbook-defguide docbook-xsl docbook-xsl-ns hunspell mercurial myspell-en-gb libhunspell-dev libperl-dev perl valgrind wml xsltproc
     - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    - sudo cpanm Alien::Tidyp App::XML::DocBook::Builder YAML::XS
+    - sudo cpanm Alien::Tidyp App::XML::DocBook::Builder Pod::Xhtml YAML::XS
     - sudo cpanm --notest HTML::Tidy
     - "sudo cpanm $(perl -MYAML::XS=LoadFile -e 'print join q( ), sort {$a cmp $b} keys(%{LoadFile(q(bin/required-modules.yml))->{required}->{modules}})')"
     - gem install sass compass compass-blueprint
