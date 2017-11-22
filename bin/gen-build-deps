@@ -3,46 +3,45 @@
 use strict;
 use warnings;
 
-use Getopt::Long (qw( GetOptions ));
-
-use IO::All;
-use File::Which ( qw( which ) );
-use YAML::XS ( qw( LoadFile ) );
+use Getopt::Long qw/ GetOptions /;
+use File::Which qw/ which /;
+use YAML::XS qw/ LoadFile /;
+use Path::Tiny qw/ path /;
 
 my $out_fn;
 my $exes_fn;
 my $modules_fn;
 
 GetOptions(
-    'o|output=s' => \$out_fn,
-    'exes-conf=s' => \$exes_fn,
+    'o|output=s'     => \$out_fn,
+    'exes-conf=s'    => \$exes_fn,
     'modules-conf=s' => \$modules_fn,
-)
-    or die "Failed - $!";
+) or die "Failed - $!";
 
 {
     my @not_found;
 
-    foreach my $cmd (
-        io->file($exes_fn)->chomp->getlines()
-    )
+    foreach my $line ( path($exes_fn)->lines_utf8 )
     {
-        if (not
-            (
-                ($cmd =~ m{\A/})
-                ? (-e $cmd)
-                : (defined(scalar(which($cmd))))
+        chomp $line;
+        my ($cmd) = ( $line =~ m{\A(\S+)} )
+            or die "Wrong line - <$line>!";
+        if (
+            not(
+                  ( $cmd =~ m{\A/} )
+                ? ( -e $cmd )
+                : ( defined( scalar( which($cmd) ) ) )
             )
-        )
+            )
         {
-            push @not_found, $cmd;
+            push @not_found, $line;
         }
     }
 
     if (@not_found)
     {
         print "The following commands could not be found:\n\n";
-        foreach my $cmd (sort { $a cmp $b } @not_found)
+        foreach my $cmd ( sort { $a cmp $b } @not_found )
         {
             print "$cmd\n";
         }
@@ -57,11 +56,11 @@ GetOptions(
 
     my @not_found;
 
-    foreach my $m (sort { $a cmp $b } keys(%$required_modules))
+    foreach my $m ( sort { $a cmp $b } keys(%$required_modules) )
     {
         my $v = $required_modules->{$m};
-        local $SIG{__WARN__} = sub {};
-        my $verdict = eval( "use $m " . ($v ||'') . ';' );
+        local $SIG{__WARN__} = sub { };
+        my $verdict = eval( "use $m " . ( $v || '' ) . ' ();' );
         my $Err = $@;
 
         if ($Err)
@@ -84,11 +83,32 @@ GetOptions(
 {
     my @not_found;
 
-    my @EMPTY_LIST;
-
-    foreach my $path (@EMPTY_LIST)
+    foreach my $module (qw//)
     {
-        if (! -e $path)
+        if ( system( 'python3', '-c', "import $module" ) != 0 )
+        {
+            push @not_found, $module;
+        }
+    }
+    if (@not_found)
+    {
+        print "The following python3 modules could not be found:\n\n";
+        foreach my $module (@not_found)
+        {
+            print "$module\n";
+        }
+        exit(-1);
+    }
+}
+
+{
+    my @not_found;
+
+    my %required_files = ();
+
+    foreach my $path ( sort { $a cmp $b } keys %required_files )
+    {
+        if ( !-e $path )
         {
             push @not_found, $path;
         }
@@ -100,14 +120,15 @@ GetOptions(
         print "Please set them up:\n";
         print "\n";
 
-        foreach my $path (sort { $a cmp $b } @not_found)
+        foreach my $path (@not_found)
         {
             print "$path\n";
+            print $required_files{$path}, "\n";
         }
         exit(-1);
     }
 }
 
-io->file($out_fn)->print("Success!");
+path($out_fn)->spew_utf8("Success!");
 
 exit(0);
