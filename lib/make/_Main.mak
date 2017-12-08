@@ -149,7 +149,7 @@ BAD_ELEMENTS_RENDERED := $(DOCBOOK5_RENDERED_DIR)/bad-elements.xhtml
 
 bad_elements_html: $(BAD_ELEMENTS_XHTML) $(BAD_ELEMENTS_RENDERED)
 
-DOCBOOK5_RELAXNG = rng/docbook.rng
+DOCBOOK5_RELAXNG = lib/sgml/relax-ng/docbook.rng
 DOCBOOK5_XSL_STYLESHEETS_PATH := /usr/share/sgml/docbook/xsl-ns-stylesheets
 DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-stylesheets/mychunk.xsl
 DOCBOOK5_XSL_OTHER_CUSTOM_XSLT_STYLESHEETS := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-db5-xhtml-mydocbook.xsl
