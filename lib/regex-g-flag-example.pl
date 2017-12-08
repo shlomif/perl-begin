@@ -19,10 +19,12 @@ EOF
 
 pos($s) = 0;
 my @results;
-while ($s =~ /\GName:(?<name>[^\n]+)\nAddress:(?<address>[^\n]+)\nPets:(?<pets>[^\n]+)\n/gms)
+while ( $s =~
+/\GName:(?<name>[^\n]+)\nAddress:(?<address>[^\n]+)\nPets:(?<pets>[^\n]+)\n/gms
+    )
 {
-    push @results, +{ (map { $_ => $+{$_} } qw(name address pets)) };
+    push @results, +{ ( map { $_ => $+{$_} } qw(name address pets) ) };
 }
 
 use Data::Dumper;
-print Dumper(\@results);
+print Dumper( \@results );

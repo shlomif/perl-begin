@@ -6,44 +6,46 @@ use autodie;
 
 use IO::All qw/ io /;
 use HTML::Latemp::GenMakeHelpers ();
-use File::Find::Object::Rule ();
+use File::Find::Object::Rule     ();
 
-if (system("make", "--silent", "-f", "lib/make/build-deps/build-deps.mak"))
+if ( system( "make", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
 {
     die "build-deps failed!";
 }
 
-if (-f "rules.mak")
+if ( -f "rules.mak" )
 {
-    system("make", "-s", "src/style.css");
+    system( "make", "-s", "src/style.css" );
 }
 else
 {
-    system("compass", "compile");
+    system( "compass", "compile" );
 }
 
-my $generator =
-    HTML::Latemp::GenMakeHelpers->new(
-        'hosts' =>
-        [
-            {
-                'id' => "common",
-                'source_dir' => "common",
-                'dest_dir' => "\$(TARGET)",
-            },
-            {
-                'id' => "perl_begin",
-                'source_dir' => "src",
-                'dest_dir' => "\$(TARGET)",
-            },
-        ],
-    );
+my $generator = HTML::Latemp::GenMakeHelpers->new(
+    'hosts' => [
+        {
+            'id'         => "common",
+            'source_dir' => "common",
+            'dest_dir'   => "\$(TARGET)",
+        },
+        {
+            'id'         => "perl_begin",
+            'source_dir' => "src",
+            'dest_dir'   => "\$(TARGET)",
+        },
+    ],
+);
 
 $generator->process_all();
 
 my $text = io("rules.mak")->slurp();
-$text =~ s#^(\$\(PERL_BEGIN_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_INCLUDE_WML_RENDER)#ms or die "Cannot subt";
-$text =~ s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_COMMON_INCLUDE_WML_RENDER)#ms or die "Cannot subt";
+$text =~
+s#^(\$\(PERL_BEGIN_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_INCLUDE_WML_RENDER)#ms
+    or die "Cannot subt";
+$text =~
+s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_COMMON_INCLUDE_WML_RENDER)#ms
+    or die "Cannot subt";
 
 {
     my $needle = 'cp -f $< $@';
@@ -56,25 +58,19 @@ io("rules.mak")->print($text);
     open my $out_fh, ">", "p4n.mak";
 
     my @targets;
-    foreach my $part_idx (1 .. 5)
+    foreach my $part_idx ( 1 .. 5 )
     {
-         # find all the .pm files in @INC
-         my @filenames =
-            File::Find::Object::Rule
-                ->any(
-                    (File::Find::Object::Rule
-                        ->name(qr/\.svn/)
-                        ->prune()
-                        ->discard()
-                    ),
-                    (File::Find::Object::Rule
-                        ->file()
-                        ->exec(sub {
-                                $_[0] ne "index\.html"
-                        })
-                    ),
-                )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/")
-                ;
+        # find all the .pm files in @INC
+        my @filenames = File::Find::Object::Rule->any(
+            ( File::Find::Object::Rule->name(qr/\.svn/)->prune()->discard() ),
+            (
+                File::Find::Object::Rule->file()->exec(
+                    sub {
+                        $_[0] ne "index\.html";
+                    }
+                )
+            ),
+        )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/");
 
         foreach my $fn (@filenames)
         {
@@ -84,12 +80,13 @@ io("rules.mak")->print($text);
             $target = "\$(PERL_BEGIN_DEST)/$target";
 
             push @targets, $target;
-            print {$out_fh} "$target: $fn\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
+            print {$out_fh}
+                "$target: $fn\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
         }
     }
 
     my $makefile_var_name = "DEST_TUTORIALS_PERL_FOR_NEWBIES_TARGETS";
-    print {$out_fh} "$makefile_var_name = " . join(" ", @targets) . "\n\n";
+    print {$out_fh} "$makefile_var_name = " . join( " ", @targets ) . "\n\n";
     print {$out_fh} "perl_for_newbies_extra_data: \$($makefile_var_name)\n\n";
 
     close($out_fh);

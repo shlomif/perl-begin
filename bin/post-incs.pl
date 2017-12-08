@@ -18,14 +18,15 @@ my $text = _f()->all;
 _f()->unlink();
 
 $text =~ s#^\({5}include "([^"]+)"\){5}\n#io->file("lib/$1")->utf8->all#egms;
-$text =~ s#\({5}chomp_inc='([^']+)'\){5}#io->file("lib/$1")->chomp->utf8->getline("\n")#egms;
+$text =~
+s#\({5}chomp_inc='([^']+)'\){5}#io->file("lib/$1")->chomp->utf8->getline("\n")#egms;
 
-if ($ENV{F})
+if ( $ENV{F} )
 {
     foreach my $class (qw(info irc-conversation))
     {
         my $table_from = qq{<table class="$class">};
-        my $table_to = qq{<table class="$class" summary="">};
+        my $table_to   = qq{<table class="$class" summary="">};
 
         $text =~ s#\Q$table_from\E#$table_to#g;
     }
@@ -47,7 +48,8 @@ EOF
 
 my @needles = $XMLNS_NEEDLE =~ m#\b(xmlns:[a-zA-Z_]+="[^"]+")#g;
 
-my $ALTERNATIVES_TEXT = join'|', map { '(?:' . (quotemeta $_) . ')' } @needles;
+my $ALTERNATIVES_TEXT = join '|',
+    map { '(?:' . ( quotemeta $_ ) . ')' } @needles;
 
 $text =~ s#(<div)(?:\s+(?:$ALTERNATIVES_TEXT))+#$1 #gms;
 

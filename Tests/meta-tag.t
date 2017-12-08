@@ -9,8 +9,7 @@ use IO::All;
 
 {
     # TEST
-    like(
-        io->file("./dest/index.html")->utf8->all,
-        qr#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#
+    like( io->file("./dest/index.html")->utf8->all,
+qr#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#
     );
 }

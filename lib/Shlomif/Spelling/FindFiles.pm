@@ -8,8 +8,7 @@ use List::MoreUtils qw/any/;
 
 use HTML::Spelling::Site::Finder;
 
-my @prunes =
-(
+my @prunes = (
     qr#\Adest/tutorials/modern-perl/#,
     qr#\Adest/tutorials/hyperpolyglot/#,
     qr#\Adest/tutorials/impatient-perl/iperl\.html#,

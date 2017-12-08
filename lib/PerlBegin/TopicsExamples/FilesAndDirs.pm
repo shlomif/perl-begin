@@ -18,14 +18,13 @@ sub _run
 
     print $ex_gen->html_with_title(
         {
-            title => "Reading a file line by line",
-            id_base => "reading_a_file_line_by_line",
-            examples =>
-            [
+            title    => "Reading a file line by line",
+            id_base  => "reading_a_file_line_by_line",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 my $filename_to_read = 'my-file.txt';
@@ -39,9 +38,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 
 my $filename_to_read = 'my-file.txt';
@@ -61,14 +60,13 @@ EOF
     );
     print $ex_gen->html_with_title(
         {
-            title => "Copying a file",
-            id_base => "copying_a_file",
-            examples =>
-            [
+            title    => "Copying a file",
+            id_base  => "copying_a_file",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 my ($source_filename, $dest_filename) = @_;
@@ -77,9 +75,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use File::Copy qw(copy);
 
 my ($source_filename, $dest_filename) = @_;
@@ -93,14 +91,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Overwriting a file with text",
-            id_base => "overwrite_a_file",
-            examples =>
-            [
+            title    => "Overwriting a file with text",
+            id_base  => "overwrite_a_file",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 io->file("output.txt")->utf8->print("Hello World!\n");
@@ -108,9 +105,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 
 open my $out, '>:encoding(utf8)', "output.txt";
@@ -124,14 +121,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Processing the Lines of a File",
-            id_base => "processing_lines_of_a_file",
-            examples =>
-            [
+            title    => "Processing the Lines of a File",
+            id_base  => "processing_lines_of_a_file",
+            examples => [
                 {
-                    id => "path_tiny",
+                    id    => "path_tiny",
                     label => "Path::Tiny",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use Path::Tiny qw/ path /;
 
 my @filenames = @ARGV;
@@ -144,9 +140,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 use File::Temp ( qw(tempfile) );
 
@@ -174,10 +170,10 @@ foreach my $fn (@filenames)
 EOF
                 },
                 {
-                    id => "cmd_line",
-                    label => "Command Line",
+                    id        => "cmd_line",
+                    label     => "Command Line",
                     no_syntax => 1,
-                    code => <<'EOF',
+                    code      => <<'EOF',
 $ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
 EOF
                 },
@@ -187,14 +183,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Reading an entire UTF-8 file into a big variable",
-            id_base => "string_slurp_utf8",
-            examples =>
-            [
+            title    => "Reading an entire UTF-8 file into a big variable",
+            id_base  => "string_slurp_utf8",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 my $string = io->file($my_filepath)->utf8->all;
@@ -202,9 +197,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 
 sub _utf8_slurp
@@ -225,10 +220,10 @@ my $file_contents = _utf8_slurp($my_filepath);
 EOF
                 },
                 {
-                    id => "cmd_line",
-                    label => "Command Line",
+                    id        => "cmd_line",
+                    label     => "Command Line",
                     no_syntax => 1,
-                    code => <<'EOF',
+                    code      => <<'EOF',
 $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
 EOF
                 },
@@ -238,14 +233,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Appending to a File",
-            id_base => "append_to_file",
-            examples =>
-            [
+            title    => "Appending to a File",
+            id_base  => "append_to_file",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 my $string_to_append = "My new line\n";
@@ -255,9 +249,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 
 my $string_to_append = "My new line\n";
@@ -275,14 +269,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Line count",
-            id_base => "line_count",
-            examples =>
-            [
+            title    => "Line count",
+            id_base  => "line_count",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 sub count_lines
@@ -304,9 +297,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use autodie;
 
 sub count_lines
@@ -328,10 +321,10 @@ sub count_lines
 EOF
                 },
                 {
-                    id => "cmd_line",
-                    label => "Command Line",
+                    id        => "cmd_line",
+                    label     => "Command Line",
                     no_syntax => 1,
-                    code => <<'EOF',
+                    code      => <<'EOF',
 $ perl -lnE 'END{say "$ARGV has $. lines";}' /path/to/myfile.txt
 EOF
                 },
@@ -341,14 +334,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Deleting a directory tree",
-            id_base => "delete_directory_tree",
-            examples =>
-            [
+            title    => "Deleting a directory tree",
+            id_base  => "delete_directory_tree",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 io("./path-to-subdir")->rmtree();
@@ -356,9 +348,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use File::Path qw(rmtree);
 
 rmtree(["./path-to-subdir"], 1, 1);
@@ -370,14 +362,13 @@ EOF
 
     print $ex_gen->html_with_title(
         {
-            title => "Prepending to a File (While Slurping)",
-            id_base => "prepend_to_file_while_slurping",
-            examples =>
-            [
+            title    => "Prepending to a File (While Slurping)",
+            id_base  => "prepend_to_file_while_slurping",
+            examples => [
                 {
-                    id => "io_all",
+                    id    => "io_all",
                     label => "IO-All",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 use IO::All;
 
 my $filename = 'foo.txt';
@@ -390,9 +381,9 @@ EOF
 
                 },
                 {
-                    id => "core",
+                    id    => "core",
                     label => "Core Perl",
-                    code => <<'EOF',
+                    code  => <<'EOF',
 my $filename = 'foo.txt';
 my $text_to_prepend = "[Text to Prepend]\n";
 

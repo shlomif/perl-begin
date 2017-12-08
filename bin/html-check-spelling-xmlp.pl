@@ -28,20 +28,20 @@ my %per_filename_whitelists;
 {
     my @current_whitelists_list = \%general_whitelist;
     open my $fh, '<:encoding(utf8)', 'lib/hunspell/whitelist1.txt';
-    while (my $l = <$fh>)
+    while ( my $l = <$fh> )
     {
         chomp($l);
+
         # Whitespace or comment - skip.
-        if ($l !~ /\S/ or ($l =~ /\A\s*#/))
+        if ( $l !~ /\S/ or ( $l =~ /\A\s*#/ ) )
         {
             # Do nothing.
         }
-        elsif ($l =~ /\A====\s*(.*)/)
+        elsif ( $l =~ /\A====\s*(.*)/ )
         {
-            @current_whitelists_list =
-            (
+            @current_whitelists_list = (
                 map { $per_filename_whitelists{$_} ||= +{} }
-                split /\s*,\s*/, $1
+                    split /\s*,\s*/, $1
             );
         }
         else
@@ -52,44 +52,42 @@ my %per_filename_whitelists;
             }
         }
     }
-    close ($fh);
+    close($fh);
 }
 
 my %inside;
 
 sub tag
 {
-   my ($tag, $num) = @_;
-   $inside{$tag} += $num;
+    my ( $tag, $num ) = @_;
+    $inside{$tag} += $num;
 
-   return;
+    return;
 }
 
 my $calc_cache_io = sub {
     return io->file('./Tests/data/cache/spelling-timestamp.json');
 };
 
-if (! $calc_cache_io->()->exists())
+if ( !$calc_cache_io->()->exists() )
 {
-    $calc_cache_io->()->print(encode_json({}));
+    $calc_cache_io->()->print( encode_json( {} ) );
 }
 
-my $timestamp_cache = decode_json(scalar($calc_cache_io->()->slurp()));
+my $timestamp_cache = decode_json( scalar( $calc_cache_io->()->slurp() ) );
 
 FILENAMES_LOOP:
 foreach my $filename (@ARGV)
 {
-    if (exists($timestamp_cache->{$filename}) and
-        $timestamp_cache->{$filename} <= (io->file($filename)->mtime())
-    )
+    if ( exists( $timestamp_cache->{$filename} )
+        and $timestamp_cache->{$filename} <= ( io->file($filename)->mtime() ) )
     {
         next FILENAMES_LOOP;
     }
 
     my $file_is_ok = 1;
 
-    my $process_text = sub
-    {
+    my $process_text = sub {
         return if $inside{script} || $inside{style};
 
         my $text = shift;
@@ -106,21 +104,19 @@ foreach my $filename (@ARGV)
 
                 $word =~ s{’(ve|s|m|d|t|ll|re)\z}{'$1};
                 $word =~ s{[’']\z}{};
-                if ($word =~ /[A-Za-z]/)
+                if ( $word =~ /[A-Za-z]/ )
                 {
-                    $word =~ s{\A(?:(?:ֹו?(?:ש|ל|מ|ב|כש|לכש|מה|שה|לכשה|ב-))|ו)-?}{};
+                    $word =~
+s{\A(?:(?:ֹו?(?:ש|ל|מ|ב|כש|לכש|מה|שה|לכשה|ב-))|ו)-?}{};
                     $word =~ s{'?ים\z}{};
                 }
 
-                my $verdict =
-                (
-                    (!exists($general_whitelist{$word}))
-                        &&
-                    (!exists($per_filename_whitelists{$filename}{$word}))
-                        &&
-                    ($word !~ m#\A[\p{Hebrew}\-'’]+\z#)
-                        &&
-                    (!($speller->check($word)))
+                my $verdict = (
+                    ( !exists( $general_whitelist{$word} ) )
+                        && (
+                        !exists( $per_filename_whitelists{$filename}{$word} ) )
+                        && ( $word !~ m#\A[\p{Hebrew}\-'’]+\z# )
+                        && ( !( $speller->check($word) ) )
                 );
 
                 $mispelling_found ||= $verdict;
@@ -137,28 +133,24 @@ foreach my $filename (@ARGV)
             if ($mispelling_found)
             {
                 $file_is_ok = 0;
-                printf {*STDOUT}
-                (
-                    "%s:%d:%s\n",
-                    $filename,
-                    1,
-                    $l
-                );
+                printf {*STDOUT} ( "%s:%d:%s\n", $filename, 1, $l );
             }
         }
     };
 
-    open(my $fh, "<:utf8", $filename);
+    open( my $fh, "<:encoding(UTF-8)", $filename );
 
-    HTML::Parser->new(api_version => 3,
-        handlers    => [start => [\&tag, "tagname, '+1'"],
-            end   => [\&tag, "tagname, '-1'"],
-            text  => [$process_text, "dtext"],
+    HTML::Parser->new(
+        api_version => 3,
+        handlers    => [
+            start => [ \&tag,         "tagname, '+1'" ],
+            end   => [ \&tag,         "tagname, '-1'" ],
+            text  => [ $process_text, "dtext" ],
         ],
         marked_sections => 1,
     )->parse_file($fh);
 
-    close ($fh);
+    close($fh);
 
     if ($file_is_ok)
     {
@@ -166,6 +158,6 @@ foreach my $filename (@ARGV)
     }
 }
 
-$calc_cache_io->()->print(encode_json($timestamp_cache));
+$calc_cache_io->()->print( encode_json($timestamp_cache) );
 
 print "\n";

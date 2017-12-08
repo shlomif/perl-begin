@@ -37,10 +37,12 @@ required:
         POSIX: 0
         String::ShellQuote: 0
         Template: 0
+        Test::Code::TidyAll: 0
         Test::HTML::Recursive::DeprecatedTags: 0
         Test::HTML::Tidy::Recursive: 0
         Test::HTML::Tidy::Recursive::Strict: 0
         Test::More: 0
+        Test::Perl::Critic: 0
         Text::Hunspell: 0
         Text::VimColor: 0
         Text::WrapAsUtf8: 0
