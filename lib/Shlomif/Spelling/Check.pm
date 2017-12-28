@@ -36,11 +36,11 @@ sub spell_check
                 return $speller->check($word);
             },
         }
-        )->spell_check(
+    )->spell_check(
         {
             files => $args->{files}
         }
-        );
+    );
 }
 
 1;
