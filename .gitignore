@@ -1,7 +1,12 @@
+.perltidyrc
 .sass-cache
 .tidyall.d
 Makefile
+Tests/case-insense-file-collision.t
 Tests/data/cache/spelling-timestamp.json
+Tests/spell-check-is-sorted.t
+Tests/tidyall.t
+bin/gen-build-deps
 compile/
 dest
 include.mak

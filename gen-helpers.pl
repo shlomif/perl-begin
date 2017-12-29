@@ -8,6 +8,26 @@ use IO::All qw/ io /;
 use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
 
+sub _exec
+{
+    my ( $cmd, $err ) = @_;
+
+    if ( system(@$cmd) )
+    {
+        die $err;
+    }
+    return;
+}
+
+_exec(
+    [
+        'cookiecutter', '-f', '--no-input',
+        'gh:shlomif/cookiecutter--shlomif-latemp-sites',
+        'project_slug=.',
+    ],
+    'cookiecutter failed.'
+);
+
 if ( system( "make", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
 {
     die "build-deps failed!";

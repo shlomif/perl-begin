@@ -1,4 +1,5 @@
 compass
+cookiecutter
 docmake
 latemp-config
 sass
