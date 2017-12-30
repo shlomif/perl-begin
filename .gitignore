@@ -8,6 +8,7 @@ Tests/spell-check-is-sorted.t
 Tests/tidyall.t
 bin/clean-up-docbook-xhtml-1.1.xslt
 bin/gen-build-deps
+bin/sort-check-spelling-file
 bin/translate-Vered-XML
 compile/
 dest
