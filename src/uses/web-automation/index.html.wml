@@ -58,5 +58,3 @@ provide lower-level access to HTTP, HTTPS and related protocols. libwww-perl
 <a href="http://curl.haxx.se/libcurl/">libcurl</a> which is written in C and
 is fast, and LWP-Curl provides a libwww-perl-like interface above WWW-Curl.
 </p>
-
-

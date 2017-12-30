@@ -1722,7 +1722,7 @@ And here is an example that copies a file:
 
 <span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;<span class="Identifier">$source_handle</span>&gt;)
 {
-    <span class="Statement">print {</span><span class="Identifier">$dest_handle</span><span class="Statement">}</span> <span class="Identifier">$line</span>;
+    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$dest_handle</span><span class="Statement">}</span> <span class="Identifier">$line</span>;
 }
 
 <span class="Statement">close</span>(<span class="Identifier">$source_handle</span>);

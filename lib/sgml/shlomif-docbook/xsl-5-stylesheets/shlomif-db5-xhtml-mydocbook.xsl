@@ -3,7 +3,6 @@
 
     <xsl:import href="shlomif-essays-5-xhtml-common.xsl" />
 
-
     <!-- Ok, using the onechunk parameter makes this all work again. -->
     <!-- It does have the disadvantage that it only works for documents that have -->
     <!-- a root element that is considered a chunk by the chunk.xsl stylesheet. -->
@@ -67,4 +66,3 @@
     </div>
 </xsl:template>
 </xsl:stylesheet>
-

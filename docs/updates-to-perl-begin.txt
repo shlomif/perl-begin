@@ -1,7 +1,6 @@
 After the last news item, a lot of work was invested on
 http://perl-begin.org/ , the Perl Beginners' Site. making
 it even better than it used to be. Here's a summary of the changes:
-</p>
 
 * A testimonials page ( http://perl-begin.org/learn/who-is-using/ )
 was added, with some honest-to-God testimonial quotes which are now featured in
@@ -43,4 +42,3 @@ him.
 
 We hope you enjoy the new Perl Beginners' Site and please recommend it
 to your friends.
-

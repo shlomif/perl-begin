@@ -4,4 +4,3 @@ if [ ! -e last_date ] ; then
     echo -n 0 > rev
 fi
 echo "Perl-Beginners-Site-$(cat last_date)-rev$(cat rev).tar.gz"
-

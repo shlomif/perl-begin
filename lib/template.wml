@@ -1,4 +1,3 @@
-
 <set-var latemp_navmenu_object_class="HTML::Widgets::NavMenu::HeaderRole" />
 <set-var latemp_with_xml_declaration="1" />
 <set-var latemp_html_standard="xhtml1.1" />
@@ -23,7 +22,6 @@
 }:>
 </define-tag>
 
-
 <define-tag latemp_get_html_head_nav_links>
 <:{
 my @keys = (sort { $a cmp $b } keys(%$nav_links_obj));
@@ -36,7 +34,6 @@ foreach my $key (@keys)
 }
 }:>
 </define-tag>
-
 
 <define-tag latemp_get_html_body_nav_links_helper>
 <preserve with_accesskey />
@@ -56,7 +53,6 @@ foreach my $key (@keys)
 # #include "shlomif/affiliations.wml"
 #include "news.wml"
 #include "share-this.wml"
-
 
 <set-var openstudy_group_url="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" />
 
@@ -365,5 +361,3 @@ http://no-where.tld/
 
 #   per default we are in body
 {#LATEMP_BODY#:
-
-

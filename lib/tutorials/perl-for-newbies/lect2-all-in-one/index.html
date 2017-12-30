@@ -1103,7 +1103,7 @@ backup of the file specified as its argument:
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Identifier">$filename</span>.<span class="Constant">&quot;.bak&quot;</span>;
-<span class="Statement">print {</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;<span class="Identifier">$in</span>&gt;);
+<span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;<span class="Identifier">$in</span>&gt;);
 <span class="Statement">close</span>(<span class="Identifier">$in</span>);
 <span class="Statement">close</span>(<span class="Identifier">$out</span>);
 </pre></div>
@@ -2216,7 +2216,7 @@ length is lesser than 80 characters:
 <span class="Comment"># Filter the comments</span>
 <span class="Statement">my</span> <span class="Identifier">@comments</span> = <span class="Statement">grep</span>(<span class="Statement">/</span><span class="Constant">^#</span><span class="Statement">/</span>, <span class="Identifier">@lines</span>);
 <span class="Comment"># Filter out the long comments</span>
-<span class="Statement">my</span> <span class="Identifier">@short_comments</span> = (<span class="Statement">grep {</span> <span class="Statement">length</span>(<span class="Identifier">$_</span>) &lt;= <span class="Constant">80</span> ; <span class="Statement">}</span> <span class="Identifier">@comments</span>);
+<span class="Statement">my</span> <span class="Identifier">@short_comments</span> = (<span class="Statement">grep</span> <span class="Statement">{</span> <span class="Statement">length</span>(<span class="Identifier">$_</span>) &lt;= <span class="Constant">80</span> ; <span class="Statement">}</span> <span class="Identifier">@comments</span>);
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@short_comments</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>

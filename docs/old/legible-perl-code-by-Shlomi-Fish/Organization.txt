@@ -110,4 +110,3 @@ General Programming Methodologies (not specific to perl)
 * Use meaningful names for the variables.
 
 * Write an architecture document if applicable.
-

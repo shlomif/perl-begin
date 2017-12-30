@@ -54,4 +54,3 @@ sub get_syntax_highlighted_html_from_file
 }
 
 1;
-

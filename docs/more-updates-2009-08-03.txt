@@ -34,4 +34,3 @@ your friends - if you don't - let us know and we'll see what we can do. Unless
 mentioned otherwise, all the material on http://perl-begin.org/ is made
 available under the Creative Commons Attribution Licence (CC-by) for almost
 unlimited distribution and re-use.
-

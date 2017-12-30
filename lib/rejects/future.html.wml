@@ -16,14 +16,12 @@ verifying it for cryptographic validity (if necessary), compiling it
 and installing it.
 </p>
 
-
 <p>
 That's not all. If CLAN detects that the current kernel does not
 support this module it will accept the admin explicit or implicit
 permission to recompile the kernel with this option added, and
 install the new kernel as well.
 </p>
-
 
 <p>
 CLAN will require no bootstrapping. It would be able to prepare
@@ -35,7 +33,6 @@ CLAN installed.
 And like I said earlier, installing a module will install all
 of its dependencies as well.
 </p>
-
 
 <p>
 CLAN will support multiple sources for modules (controlled by editing a
@@ -66,4 +63,3 @@ All the kernel modules and subsystems will be available as CLAN packages and
 can be upgraded, configured and installed at home from a convenient CPAN or
 Apt like interface.
 </p>
-

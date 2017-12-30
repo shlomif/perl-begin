@@ -1550,7 +1550,7 @@ Here's an example that counts the number of mp3s in a directory:
 <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span> || <span class="Constant">&quot;.&quot;</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$entries</span> = get_dir_files(<span class="Identifier">$dir_path</span>);
-<span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep {</span> <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> <span class="Statement">}</span> <span class="Identifier">@$entries</span>);
+<span class="Statement">my</span> <span class="Identifier">@mp3s</span> = (<span class="Statement">grep</span> <span class="Statement">{</span> <span class="Statement">/</span><span class="Special">\.</span><span class="Constant">mp3$</span><span class="Statement">/</span> <span class="Statement">}</span> <span class="Identifier">@$entries</span>);
 
 <span class="Statement">print</span> <span class="Constant">&quot;You have &quot;</span> . <span class="Statement">scalar</span>(<span class="Identifier">@mp3s</span>) . <span class="Constant">&quot; mp3s in </span><span class="Identifier">$dir_path</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>

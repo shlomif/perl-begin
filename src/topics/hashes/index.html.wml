@@ -1,5 +1,4 @@
 #include "template.wml"
-
 #include "tut_blocks.wml"
 
 <latemp_subject "Perl Hashes (a.k.a Associative Arrays or Maps)" />
@@ -49,4 +48,3 @@ The second talk in the series discusses hashes.
 </p>
 
 </perl_for_newbies_entry>
-
