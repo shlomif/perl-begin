@@ -1,7 +1,5 @@
 ==== GLOBAL:
 
-22-Jul-2011
-9-Jul-2012
 API
 APIs
 Admin
