@@ -6,9 +6,11 @@ Tests/case-insense-file-collision.t
 Tests/data/cache/spelling-timestamp.json
 Tests/spell-check-is-sorted.t
 Tests/tidyall.t
+bin/Run-YUI-Compressor
 bin/clean-up-docbook-xhtml-1.1.xslt
 bin/gen-build-deps
 bin/sort-check-spelling-file
+bin/spell-checker-iface
 bin/translate-Vered-XML
 compile/
 dest
@@ -30,3 +32,4 @@ src/self_link.css
 src/style.css
 src/vim_syntax_highlighting.css
 temp
+tslint.json
