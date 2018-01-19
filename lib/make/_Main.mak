@@ -7,7 +7,6 @@ define COPY
 	cp -f $< $@ || true
 endef
 
-
 TARGET = dest
 
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
@@ -127,7 +126,6 @@ todo_done_data: $(TODO_DONE)
 
 $(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
 	cp -f $< $@
-
 
 htaccess: $(TARGET)/.htaccess
 
