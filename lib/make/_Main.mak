@@ -1,12 +1,3 @@
-# cp may sometimes fail in parallel builds due to:
-# http://unix.stackexchange.com/questions/116280/cannot-create-regular-file-filename-file-exists
-#
-# cp: cannot create regular file 'dest/vipe/images/get-firefox.png': File exists
-#
-define COPY
-	cp -f $< $@ || true
-endef
-
 TARGET = dest
 
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
@@ -21,8 +12,6 @@ WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 
 WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 
-RSYNC = rsync --progress --verbose --rsh=ssh
-
 ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
@@ -32,6 +21,7 @@ DOCS_COMMON_DEPS = lib/template.wml
 all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
 
+include lib/make/shlomif_common.mak
 include include.mak
 include rules.mak
 include p4n.mak
@@ -93,12 +83,6 @@ upload_beta: all
 
 upload_local: all
 	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/)
-
-test: all
-	prove Tests/*.t
-
-runtest: all
-	runprove Tests/*.t
 
 DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
@@ -172,6 +156,3 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
-
-%.show:
-	@echo "$* = $($*)"
