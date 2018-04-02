@@ -15,6 +15,7 @@ bin/translate-Vered-XML
 compile/
 dest
 include.mak
+lib/Inc/cpan_dists.wml
 lib/Shlomif/Spelling/Check.pm
 lib/Shlomif/Spelling/Iface.pm
 lib/Shlomif/Spelling/Whitelist.pm
