@@ -1,11 +1,4 @@
-<set-var latemp_navmenu_object_class="HTML::Widgets::NavMenu::HeaderRole" />
-<set-var latemp_with_xml_declaration="1" />
-<set-var latemp_html_standard="xhtml1.1" />
-<set-var latemp_with_head_meta_tags="1" />
-<set-var latemp_with_favicon="1" />
-<set-var latemp_with_breadcrumbs_trail="1" />
-
-#include "latemp/latemp-prelude.wml"
+#include "prelude.wml"
 
 <:
     use Text::WrapAsUtf8 qw/ print_utf8 /;
@@ -29,7 +22,7 @@ foreach my $key (@keys)
 {
     my $val = $nav_links_obj->{$key};
     my $url = CGI::escapeHTML($val->direct_url());
-    my $title = $val->title();
+    my $title = $val->title() // '';
     print_utf8("<link rel=\"$key\" href=\"$url\" title=\"$title\" />\n");
 }
 }:>
@@ -50,9 +43,7 @@ foreach my $key (@keys)
 <restore with_accesskey />
 </define-tag>
 
-# #include "shlomif/affiliations.wml"
 #include "news.wml"
-#include "share-this.wml"
 
 <set-var openstudy_group_url="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" />
 
@@ -203,7 +194,7 @@ version).<br />
 <script type="text/javascript" src="$(ROOT)/js/selfl.js"></script>
 </latemp_webmaster>
 
-<body{#LATEMP_BODY_ATTRIBUTES#}>
+<body>
 
   <div id="page-container">
 

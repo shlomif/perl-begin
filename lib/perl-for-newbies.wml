@@ -12,7 +12,7 @@
 <perl_begin_sidebar>
 <!-- Nothing -->
 </perl_begin_sidebar>
-{#LATEMP_BODY_ATTRIBUTES#: class="no-news":##}
+{#BODY_PARAMS#: class="no-news":##}
 
 <button id="toggle_nav_control"
 onclick="javascript:toggle_nav_control()"
