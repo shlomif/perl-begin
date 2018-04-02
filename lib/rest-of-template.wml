@@ -1,0 +1,352 @@
+<:
+    use Text::WrapAsUtf8 qw/ print_utf8 /;
+:>
+
+<define-tag latemp_get_breadcrumbs_trail_unconditionally>
+<:{
+    print_utf8( $leading_path_string );
+}:>
+</define-tag>
+<define-tag latemp_get_nav_menu_html>
+<:{
+        print_utf8( join("\n", @$nav_html));
+}:>
+</define-tag>
+
+<define-tag latemp_get_html_head_nav_links>
+<:{
+my @keys = (sort { $a cmp $b } keys(%$nav_links_obj));
+foreach my $key (@keys)
+{
+    my $val = $nav_links_obj->{$key};
+    my $url = CGI::escapeHTML($val->direct_url());
+    my $title = $val->title() // '';
+    print_utf8("<link rel=\"$key\" href=\"$url\" title=\"$title\" />\n");
+}
+}:>
+</define-tag>
+
+<define-tag latemp_get_html_body_nav_links_helper>
+<preserve with_accesskey />
+<set-var %attributes />
+<:{
+    my $with_accesskey = "<get-var with_accesskey />";
+    my @params;
+    if ($with_accesskey ne "")
+    {
+        push @params, ('with_accesskey' => $with_accesskey);
+    }
+    print_utf8( $nav_links_renderer->get_total_html(@params));
+}:>
+<restore with_accesskey />
+</define-tag>
+
+#include "news.wml"
+
+<set-var openstudy_group_url="http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" />
+
+<define-tag openstudy_button>
+
+<p class="study_group">
+<a href="<get-var openstudy_group_url />"
+title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img
+src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
+</p>
+
+</define-tag>
+
+<latemp_affiliations_buttons>
+# <affil_collection_ />
+<!-- DuckDuckGo Search -->
+<object data="http://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo" type="text/html" style="overflow:hidden;margin:0;padding:0;width:160px;height:40px;"></object>
+# <openstudy_button />
+
+</latemp_affiliations_buttons>
+
+<latemp_common_keywords "Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers" />
+
+<latemp_lang "en-US" />
+<latemp_encoding "utf-8" />
+<latemp_init_h_w_navmenu />
+
+<latemp_html_header />
+<latemp_html_head_tag />
+
+<define-tag perl_begin_news endtag="required" whitespace="delete">
+{#PERL_BEGIN_NEWS#:%body:##}
+</define-tag>
+
+<define-tag perl_begin_sidebar endtag="required" whitespace="delete">
+{#!PERL_BEGIN_SIDEBAR!#:%body:##}
+</define-tag>
+
+<define-tag latemp_before_body endtag="required" whitespace="delete">
+{#LATEMP_BEFORE_BODY#:%body:##}
+</define-tag>
+
+<latemp_before_body>
+<div class="full_width_notice">
+<b><a href="$(ROOT)/learn/">Learn Perl Now!</a></b><br />
+And <a href="$(ROOT)/learn/get-a-job/">get a job</a> doing
+Perl.
+</div>
+</latemp_before_body>
+
+<perl_begin_sidebar>
+    <!-- SIDEBAR -->
+    <h3 class="hide">Sidebar</h3>
+    <div id="right-sidebar">
+
+      {#PERL_BEGIN_NEWS#}
+
+    </div>
+    <!-- END WRAP CONTENT AND SIDEBAR -->
+</perl_begin_sidebar>
+
+<define-tag latemp_theme_breadcrumbs_trail_html>
+<latemp_get_breadcrumbs_trail_unconditionally />
+</define-tag>
+
+<define-tag perl_begin__project_wonderful_sidebar_ad_box_code>
+<!-- Project Wonderful Ad Box Code -->
+<div id="pw_adbox_67890_3_0"></div>
+<!-- End Project Wonderful Ad Box Code -->
+</define-tag>
+
+<latemp_extra_head_elements>
+<script type="text/javascript" src="$(ROOT)/js/jq.js"></script>
+<script type="text/javascript" src="$(ROOT)/js/position_divs.js"></script>
+<!-- Project Wonderful Ad Box Loader -->
+<script type="text/javascript">
+   (function(){function pw_load(){
+      if(arguments.callee.z)return;else arguments.callee.z=true;
+      var d=document;var s=d.createElement('script');
+      var x=d.getElementsByTagName('script')[0];
+      s.type='text/javascript';s.async=true;
+      s.src='//www.projectwonderful.com/pwa.js';
+      x.parentNode.insertBefore(s,x);}
+   if (window.attachEvent){
+    window.attachEvent('DOMContentLoaded',pw_load);
+    window.attachEvent('onload',pw_load);}
+   else{
+    window.addEventListener('DOMContentLoaded',pw_load,false);
+    window.addEventListener('load',pw_load,false);}})();
+</script>
+<!-- End Project Wonderful Ad Box Loader -->
+{#PAGE_EXTRA_HEAD_ELEMENTS#}
+</latemp_extra_head_elements>
+
+<define-tag page_extra_head_elements endtag="required" whitespace="delete">
+{#PAGE_EXTRA_HEAD_ELEMENTS#:%body:##}
+</define-tag>
+
+<latemp_license>
+<!-- Creative Commons License -->
+This work is <b>licensed</b> under the <a rel="license"
+href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+Attribution 3.0 Unported License</a> (or at your option any later
+version).<br />
+<!-- /Creative Commons License -->
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:title>Better SCM Site Contents</dc:title>
+   <dc:date>2004</dc:date>
+   <dc:description>A Version Control Systems Information and Advocacy carrying site</dc:description>
+   <dc:creator><Agent>
+      <dc:title>Shlomi Fish</dc:title>
+   </Agent></dc:creator>
+   <dc:rights><Agent>
+      <dc:title>Shlomi Fish</dc:title>
+   </Agent></dc:rights>
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+</latemp_license>
+
+<latemp_webmaster>
+<b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href=
+"mailto:shlomif@shlomifish.org">Email - shlomif@shlomifish.org</a>)<br />
+<b>Original Design:</b> <a href="http://www.oswd.org/design/preview/id/2933">GoFlexiblePro</a>
+| Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a>
+|  <a href="http://validator.w3.org/check?uri=referer" title="Validate code as W3C XHTML 1.1 Strict Compliant">W3C XHTML 1.1</a>
+| <a href="http://jigsaw.w3.org/css-validator/" title="Validate Style Sheet as W3C CSS 2.0 Compliant">W3C CSS 2.0</a>
+<br />
+<b>Hosted by:</b> <a href="http://hexten.net/">Hexten.net</a>.
+<script type="text/javascript" src="$(ROOT)/js/selfl.js"></script>
+</latemp_webmaster>
+
+<body>
+
+  <div id="page-container">
+
+    <!-- HEADER -->
+    <!-- Global Navigation -->
+    <div id='header'>
+
+<!-- Sitename and Banner -->
+      <div class="site-name" id="js-site-name">
+        <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
+      </div>
+      <div class="site-slogan" id="js-site-slogan">
+          Perl - because programming should be fun.
+      </div>
+
+#     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
+
+    </div>
+
+    <!-- Main navigation -->
+    <div class="nav-main">
+      <h3 class="hide">Breadcrumbs Trail</h3>
+      <p class="breadcrumbs">
+      <latemp_get_breadcrumbs_trail />
+      </p>
+      <h3 class="hide">Global Navigation</h3>
+      <ul class="about-links">
+        <li><a href="$(ROOT)/about.html">About Us</a></li>
+        <li><a href="$(ROOT)/contact/">Contact</a></li>
+      </ul>
+
+    </div>
+
+    <h3 class="hide">Main Navigation</h3>
+    <div id="left-sidebar">
+      <latemp_get_nav_menu_html />
+      <latemp_affiliations_buttons_text />
+      <perl_begin__project_wonderful_sidebar_ad_box_code />
+    </div>
+
+    <!--   CONTENT -->
+    <h3 class="hide">Content</h3>
+    <div id="content">
+        <!-- Page title -->
+        <latemp_default_h1_tag />
+
+        {#LATEMP_BEFORE_BODY#}
+        {#LATEMP_BODY#}
+        <share_this_button />
+    </div>
+
+    {#PERL_BEGIN_SIDEBAR#}
+
+  </div>
+    <!-- FOOTER -->
+    <h3 class="hide">Footer</h3>
+    <div id="footer">
+        <latemp_license_text />
+        <latemp_webmaster_text />
+    </div>
+</body>
+</html>
+
+<define-tag email_link>
+<a href="mailto:%0">%0</a>
+</define-tag>
+
+<define-tag rellink whitespace="delete">
+<preserve url />
+<set-var %attributes />
+$(ROOT)/<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag site_link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+http://perl-begin.org/<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag wiki_link whitespace="delete">
+<preserve url />
+<set-var %attributes />
+<ifeq "<get-var url />" ""
+    "<set-var url="" />"
+    "<set-var url="/<get-var url />" />"
+    />
+http://perl.net.au/wiki/Beginners<get-var url />
+<restore url />
+</define-tag>
+
+<define-tag mailing_list_link whitespace="delete">
+https://no-where.tld/
+</define-tag>
+
+<define-tag web_forum_link whitespace="delete">
+http://no-where.tld/
+</define-tag>
+
+<define-tag pdoc whitespace="delete" endtag="required">
+<preserve d />
+<set-var %attributes />
+<a href="http://perldoc.perl.org/<get-var d />.html"><get-var d/>%body</a>
+<restore d />
+</define-tag>
+
+<define-tag pdoc_f whitespace="delete" endtag="required">
+<preserve f />
+<set-var %attributes />
+<a href="http://perldoc.perl.org/functions/<get-var f />.html">%body</a>
+<restore f />
+</define-tag>
+
+<define-tag nothing></define-tag>
+
+<perl_begin_news>
+<perl_begin_news_boxes />
+</perl_begin_news>
+
+<define-tag cpan_mod whitespace="delete" endtag="required">
+<preserve m />
+<set-var %attributes />
+<a href="http://metacpan.org/module/<get-var m />">%body</a>
+<restore m />
+</define-tag>
+
+<define-tag cpan_self_mod whitespace="delete">
+<preserve m />
+<set-var %attributes />
+<cpan_mod m="<get-var m />"><get-var m /></cpan_mod>
+<restore m />
+</define-tag>
+
+<define-tag cpan_dist whitespace="delete" endtag="required">
+<preserve d />
+<set-var %attributes />
+<a href="http://metacpan.org/release/<get-var d />">%body</a>
+<restore d />
+</define-tag>
+
+<define-tag cpan_self_dist whitespace="delete">
+<preserve d />
+<set-var %attributes />
+<cpan_dist d="<get-var d />"><get-var d /></cpan_dist>
+<restore d />
+</define-tag>
+
+<define-tag cpan_b_self_dist whitespace="delete">
+<preserve d />
+<set-var %attributes />
+<cpan_dist d="<get-var d />"><b><get-var d /></b></cpan_dist>
+<restore d />
+</define-tag>
+
+#   per default we are in body
+{#LATEMP_BODY#:
