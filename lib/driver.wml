@@ -3,6 +3,6 @@
 # as part of the site common look and feel.
 #
 
-#include "shlomif/affiliations.wml"
+;;; include "shlomif/affiliations.wml"
 
 #include "rest-of-template.wml"
