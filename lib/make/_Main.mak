@@ -1,9 +1,16 @@
 TARGET = dest
 
-WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
+all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
+	todo_done_data htaccess
 
-LATEMP_WML_FLAGS := $(shell latemp-config --wml-flags)
-COMMON_PREPROC_FLAGS = -I $$HOME/conf/wml/Latemp/lib
+DOCS_COMMON_DEPS = lib/template.wml
+
+include lib/make/shlomif_common.mak
+include include.mak
+include rules.mak
+include p4n.mak
+
+WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
 
 WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 	--passoption=3,-w $(LATEMP_WML_FLAGS) -I../ -DROOT~. \
@@ -15,16 +22,6 @@ WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
-
-DOCS_COMMON_DEPS = lib/template.wml
-
-all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
-	todo_done_data htaccess
-
-include lib/make/shlomif_common.mak
-include include.mak
-include rules.mak
-include p4n.mak
 
 PROCESS_ALL_INCLUDES = perl bin/post-incs.pl
 
