@@ -25,10 +25,6 @@ DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 PROCESS_ALL_INCLUDES = perl bin/post-incs.pl
 
-define DEF_WML_PATH
-fn="$$PWD/$@" ;
-endef
-
 define GENERIC_GENERIC_WML_RENDER
 $(call DEF_WML_PATH) ( cd $2 && wml -o "$$fn" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$@'
 endef
