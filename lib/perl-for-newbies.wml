@@ -36,7 +36,7 @@ class="toggle_nav_control off">Show Navigation Controls</button>
         ;
 
     $contents =~ s{.*<body[^>]*>}{}ms;
-    $contents =~ s{</body>.*}{}ms;
+    $contents =~ s{< / body >.*}{}msx;
 
     print decode("UTF-8", $contents);
 }
