@@ -1,7 +1,0 @@
-compass
-cookiecutter
-docmake
-latemp-config
-sass
-wml
-xsltproc

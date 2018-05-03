@@ -1,5 +1,20 @@
 ---
 required:
+    executables:
+        - exe: "compass"
+          url: "ht"
+        - exe: "cookiecutter"
+          url: "ht"
+        - exe: "docmake"
+          url: "ht"
+        - exe: "latemp-config"
+          url: "ht"
+        - exe: "sass"
+          url: "ht"
+        - exe: "wml"
+          url: "ht"
+        - exe: "xsltproc"
+          url: "ht"
     files: []
     perl5_modules:
         CGI: 0
