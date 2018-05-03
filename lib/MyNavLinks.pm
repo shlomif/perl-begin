@@ -5,9 +5,7 @@ use warnings;
 
 use vars qw($nav_buttons_html);
 
-use base 'Class::Accessor';
-
-__PACKAGE__->mk_accessors(qw(root nav_links));
+use Class::XSAccessor { accessors => [qw(root nav_links)], };
 
 use Template;
 

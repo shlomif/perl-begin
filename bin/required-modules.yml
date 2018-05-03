@@ -71,7 +71,6 @@ required:
         XML::Parser: 0
         XML::Writer: 0
         autodie: 0
-        base: 0
         constant: 0
         lib: 0
         parent: 0
