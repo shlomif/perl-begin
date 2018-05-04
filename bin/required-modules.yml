@@ -2,19 +2,19 @@
 required:
     executables:
         - exe: "compass"
-          url: "ht"
+          url: "http://compass-style.org/install/"
         - exe: "cookiecutter"
-          url: "ht"
+          url: "https://github.com/audreyr/cookiecutter"
         - exe: "docmake"
-          url: "ht"
+          url: "http://www.shlomifish.org/open-source/projects/docmake/"
         - exe: "latemp-config"
-          url: "ht"
+          url: "http://web-cpan.shlomifish.org/latemp/"
         - exe: "sass"
-          url: "ht"
+          url: "http://sass-lang.com/"
         - exe: "wml"
-          url: "ht"
+          url: "http://www.shlomifish.org/open-source/projects/website-meta-language/"
         - exe: "xsltproc"
-          url: "ht"
+          url: "http://xmlsoft.org/XSLT/"
     files: []
     perl5_modules:
         CGI: 0
