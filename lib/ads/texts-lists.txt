@@ -1,0 +1,2 @@
+perl_begin__project_wonderful__loader
+perl_begin__project_wonderful_sidebar_ad_box_code
