@@ -24,6 +24,8 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 PROCESS_ALL_INCLUDES = perl bin/post-incs.pl
+# Temporarily disable to avoid stripping the ads
+PROCESS_ALL_INCLUDES = true
 
 define GENERIC_GENERIC_WML_RENDER
 $(call DEF_WML_PATH) ( cd $2 && wml -o "$$fn" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$@'
