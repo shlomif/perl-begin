@@ -130,6 +130,12 @@ Attribution 3.0 Unported License</a> (or at your option any later
 version).<br />
 <!-- /Creative Commons License -->
 
+</latemp_license>
+
+<define-tag remove__rdf_license>
+;;; Removing this because it bloated the page and was not up-to-date, but note
+;;; that the licensing
+;;; of the content remains under CC-by as specified in "LICENSE".
 <!--
 
 <rdf:RDF xmlns="http://web.resource.org/cc/"
@@ -160,7 +166,7 @@ version).<br />
 </rdf:RDF>
 
 -->
-</latemp_license>
+</define-tag>
 
 <latemp_webmaster>
 <b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi Fish</a> (<a href=
