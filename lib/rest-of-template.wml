@@ -57,7 +57,7 @@ src="$(ROOT)/images/study-group.png" alt="Join the Study Group" /></a>
 
 <latemp_affiliations_buttons>
 # <affil_collection_ />
-<!-- DuckDuckGo Search -->
+;;; DuckDuckGo Search
 <object data="http://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo" type="text/html" style="overflow:hidden;margin:0;padding:0;width:160px;height:40px;"></object>
 # <openstudy_button />
 
@@ -93,14 +93,12 @@ Perl.
 </latemp_before_body>
 
 <perl_begin_sidebar>
-    <!-- SIDEBAR -->
     <h3 class="hide">Sidebar</h3>
     <div id="right-sidebar">
 
       {#PERL_BEGIN_NEWS#}
 
     </div>
-    <!-- END WRAP CONTENT AND SIDEBAR -->
 </perl_begin_sidebar>
 
 <define-tag latemp_theme_breadcrumbs_trail_html>
@@ -123,12 +121,12 @@ Perl.
 </define-tag>
 
 <latemp_license>
-<!-- Creative Commons License -->
+;;; Creative Commons License
 This work is <b>licensed</b> under the <a rel="license"
 href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
 Attribution 3.0 Unported License</a> (or at your option any later
 version).<br />
-<!-- /Creative Commons License -->
+;;; /Creative Commons License
 
 </latemp_license>
 
@@ -184,11 +182,8 @@ version).<br />
 
   <div id="page-container">
 
-    <!-- HEADER -->
-    <!-- Global Navigation -->
     <div id='header'>
 
-<!-- Sitename and Banner -->
       <div class="site-name" id="js-site-name">
         <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
       </div>
@@ -200,7 +195,6 @@ version).<br />
 
     </div>
 
-    <!-- Main navigation -->
     <div class="nav-main">
       <h3 class="hide">Breadcrumbs Trail</h3>
       <p class="breadcrumbs">
@@ -221,10 +215,8 @@ version).<br />
       <perl_begin__project_wonderful_sidebar_ad_box_code />
     </div>
 
-    <!--   CONTENT -->
     <h3 class="hide">Content</h3>
     <div id="content">
-        <!-- Page title -->
         <latemp_default_h1_tag />
 
         {#LATEMP_BEFORE_BODY#}
@@ -235,7 +227,6 @@ version).<br />
     {#PERL_BEGIN_SIDEBAR#}
 
   </div>
-    <!-- FOOTER -->
     <h3 class="hide">Footer</h3>
     <div id="footer">
         <latemp_license_text />
