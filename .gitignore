@@ -31,6 +31,8 @@
 /lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements/index.html
 /lib/tutorials/bad-elements/bad-elements.docbook5.xml
 /lib/tutorials/bad-elements/bad-elements.xhtml/index.html
+/node_modules
+/package-lock.json
 /p4n.mak
 /rules.mak
 /src/jqui-override.css
