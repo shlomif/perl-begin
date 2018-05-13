@@ -8,6 +8,4 @@ function add_self_links()
     }
 }
 
-$(function() {
-    add_self_links();
-});
+$(add_self_links);
