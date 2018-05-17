@@ -8,6 +8,7 @@ use IO::All qw/ io /;
 use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
 
+my $DIR = 'lib/make';
 sub _exec
 {
     my ( $cmd, $err ) = @_;
@@ -75,7 +76,7 @@ s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_CO
 io("rules.mak")->print($text);
 
 {
-    open my $out_fh, ">", "p4n.mak";
+    open my $out_fh, ">", "$DIR/p4n.mak";
 
     my @targets;
     foreach my $part_idx ( 1 .. 5 )
@@ -112,4 +113,4 @@ io("rules.mak")->print($text);
     close($out_fh);
 }
 
-io->file('Makefile')->print("include lib/make/_Main.mak\n");
+io->file('Makefile')->print("include $DIR/_Main.mak\n");

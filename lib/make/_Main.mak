@@ -8,7 +8,7 @@ DOCS_COMMON_DEPS = lib/template.wml
 include lib/make/shlomif_common.mak
 include include.mak
 include rules.mak
-include p4n.mak
+include lib/make/p4n.mak
 
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
 
