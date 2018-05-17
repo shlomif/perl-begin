@@ -9,7 +9,7 @@ dependencies to be built (so they may not be for the uninitiated).
 
 The dependencies are listed in the file `src/source/index.html.wml` .
 
-Before running make for the first time, one has to run `./gen-helpers.pl`.
+Before running make for the first time, one has to run `./gen-helpers`.
 This script generates the list of directories and pages inside `include.mak`
 and `rules.mak`.
 
