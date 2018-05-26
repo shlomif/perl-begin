@@ -9,6 +9,7 @@ use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
 
 my $DIR = 'lib/make';
+
 sub _exec
 {
     my ( $cmd, $err ) = @_;
@@ -56,11 +57,13 @@ my $generator = HTML::Latemp::GenMakeHelpers->new(
             'dest_dir'   => "\$(TARGET)",
         },
     ],
+    out_dir => $DIR,
 );
 
 $generator->process_all();
 
-my $text = io("rules.mak")->slurp();
+my $r_fh = io("$DIR/rules.mak");
+my $text = $r_fh->slurp();
 $text =~
 s#^(\$\(PERL_BEGIN_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_INCLUDE_WML_RENDER)#ms
     or die "Cannot subt";
@@ -68,12 +71,10 @@ $text =~
 s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_COMMON_INCLUDE_WML_RENDER)#ms
     or die "Cannot subt";
 
-{
-    my $needle = 'cp -f $< $@';
-    $text =~ s#^\t\Q$needle\E$#\t\$(call COPY)#gms;
-}
+my $CP_NEEDLE = 'cp -f $< $@';
+$text =~ s#^\t\Q$CP_NEEDLE\E$#\t\$(call COPY)#gms;
 
-io("rules.mak")->print($text);
+$r_fh->print($text);
 
 {
     open my $out_fh, ">", "$DIR/p4n.mak";
