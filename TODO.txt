@@ -1,6 +1,11 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
+    - Bad elems: not checking for regex match success.
+      @ Added [Sat 2018-06-02]
+    - Bad elems: assigning from $1, $2, etc instead of the ret captures of
+        * the regex.
+      @ Added [Sat 2018-06-02]
     - Bad elems: fiddling with @ISA directly instead of 'use parent'/Moose.
       @ Added [Sat 2016-08-13]
     - Add to the test parsing page the example of lib/regex-g-flag-example.pl .
