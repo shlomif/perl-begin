@@ -37,6 +37,7 @@
 /node_modules
 /package-lock.json
 /src/jqui-override.css
+/src/print.css
 /src/self_link.css
 /src/style.css
 /src/vim_syntax_highlighting.css
