@@ -108,11 +108,15 @@ Perl.
 <define-tag perl_begin__project_wonderful_sidebar_ad_box_code>
 <div id="perl_begin__project_wonderful_sidebar_ad_box_code">Placeholder</div>
 </define-tag>
+<define-tag perl_begin__project_wonderful_sidebar_ad_box_code>
+</define-tag>
+<define-tag __removed>
+<div id="perl_begin__project_wonderful__loader">Placeholder</div>
+</define-tag>
 
 <latemp_extra_head_elements>
 <script type="text/javascript" src="$(ROOT)/js/jq.js"></script>
 <script type="text/javascript" src="$(ROOT)/js/position_divs.js"></script>
-<div id="perl_begin__project_wonderful__loader">Placeholder</div>
 {#PAGE_EXTRA_HEAD_ELEMENTS#}
 </latemp_extra_head_elements>
 
