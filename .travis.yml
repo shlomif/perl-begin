@@ -1,12 +1,16 @@
+cache:
+    - $HOME/perl5
 os: linux
 dist: trusty
 before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -y ack-grep cmake cpanminus docbook-defguide docbook-xsl docbook-xsl-ns hunspell mercurial myspell-en-gb libhunspell-dev libperl-dev perl python3 python3-setuptools python3-pip valgrind wml xsltproc
     - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    - sudo cpanm Alien::Tidyp App::XML::DocBook::Builder Pod::Xhtml YAML::XS
-    - sudo cpanm --notest HTML::Tidy
-    - "sudo cpanm $(perl -MYAML::XS=LoadFile -e 'print join q( ), sort {$a cmp $b} keys(%{LoadFile(q(bin/required-modules.yml))->{required}->{perl5_modules}})')"
+    - cpanm local::lib
+    - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
+    - cpanm Alien::Tidyp App::XML::DocBook::Builder Pod::Xhtml YAML::XS
+    - cpanm --notest HTML::Tidy
+    - "cpanm $(perl -MYAML::XS=LoadFile -e 'print join q( ), sort {$a cmp $b} keys(%{LoadFile(q(bin/required-modules.yml))->{required}->{perl5_modules}})')"
     - gem install sass compass compass-blueprint
     - sudo -H `which python3` -m pip install cookiecutter
     - a='latemp' ; v='0.8.0' ; b="$a-$v" ; arc="$b.tar.xz"; ( wget http://web-cpan.shlomifish.org/latemp/download/"$arc" && tar -xvf "$arc" && (cd "$b" && mkdir b && cd b && cmake .. && make && sudo make install) && rm -fr "$b" )
