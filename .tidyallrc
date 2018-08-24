@@ -5,4 +5,4 @@ ignore = dest/**/* lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lern
 
 [PerlCritic]
 select = **/*.{pl,pm,t}
-ignore = dest/**/* lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/*
+ignore = dest/**/* lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/* lib/App/Deps/Verify.pm

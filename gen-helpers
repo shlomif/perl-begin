@@ -114,4 +114,4 @@ $r_fh->print($text);
     close($out_fh);
 }
 
-io->file('Makefile')->print("include $DIR/_Main.mak\n");
+io->file('Makefile')->print("include $DIR/main.mak\n");
