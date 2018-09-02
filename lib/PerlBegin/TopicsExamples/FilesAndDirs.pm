@@ -197,6 +197,16 @@ EOF
 
                 },
                 {
+                    id    => "path_tiny",
+                    label => "Path-Tiny",
+                    code  => <<'EOF',
+use Path::Tiny qw/ path /;
+
+my $string = path($my_filepath)->slurp_utf8;
+EOF
+
+                },
+                {
                     id    => "core",
                     label => "Core Perl",
                     code  => <<'EOF',

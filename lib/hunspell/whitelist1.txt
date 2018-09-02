@@ -634,6 +634,7 @@ perlopentut
 qw
 readdir
 rmtree
+slurp_utf8
 source_filename
 string_to_append
 temp_fn
