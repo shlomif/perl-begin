@@ -5,6 +5,8 @@ which require [Website Meta Language](http://bitbucket.org/shlomif/website-meta-
 [Latemp](http://bitbucket.org/shlomif/latemp) and other
 dependencies to be built (so they may not be for the uninitiated).
 
+[![Travis-CI Build Status](https://travis-ci.org/shlomif/perl-begin.svg?branch=master)](https://travis-ci.org/shlomif/perl-begin)
+
 ## Finding the Dependencies
 
 The dependencies are listed in the file `src/source/index.html.wml` .
