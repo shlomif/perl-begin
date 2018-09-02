@@ -16,7 +16,7 @@ sub _run
         }
     );
 
-    print $ex_gen->html_with_title(
+    my $data = [
         {
             title    => "Reading a file line by line",
             id_base  => "reading_a_file_line_by_line",
@@ -56,9 +56,7 @@ close($fh);
 EOF
                 },
             ],
-        }
-    );
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Copying a file",
             id_base  => "copying_a_file",
@@ -86,10 +84,7 @@ copy($source_filename, $dest_filename);
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Overwriting a file with text",
             id_base  => "overwrite_a_file",
@@ -116,10 +111,7 @@ close($out);
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Processing the Lines of a File",
             id_base  => "processing_lines_of_a_file",
@@ -178,10 +170,7 @@ $ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Reading an entire UTF-8 file into a big variable",
             id_base  => "string_slurp_utf8",
@@ -238,10 +227,7 @@ $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Appending to a File",
             id_base  => "append_to_file",
@@ -274,10 +260,7 @@ my $string_to_append = "My new line\n";
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Line count",
             id_base  => "line_count",
@@ -339,10 +322,7 @@ $ perl -lnE 'END{say "$ARGV has $. lines";}' /path/to/myfile.txt
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Deleting a directory tree",
             id_base  => "delete_directory_tree",
@@ -367,10 +347,7 @@ rmtree(["./path-to-subdir"], 1, 1);
 EOF
                 },
             ],
-        }
-    );
-
-    print $ex_gen->html_with_title(
+        },
         {
             title    => "Prepending to a File (While Slurping)",
             id_base  => "prepend_to_file_while_slurping",
@@ -422,8 +399,13 @@ close($out_fh);
 EOF
                 },
             ],
-        }
-    );
+        },
+    ];
+
+    foreach my $d (@$data)
+    {
+        print $ex_gen->html_with_title( $d, );
+    }
 }
 
 1;
