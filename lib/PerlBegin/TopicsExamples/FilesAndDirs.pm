@@ -381,6 +381,19 @@ EOF
 
                 },
                 {
+                    id    => "path_tiny",
+                    label => "Path-Tiny",
+                    code  => <<'EOF',
+use Path::Tiny qw/ path /;
+
+my $filename = 'foo.txt';
+my $text_to_prepend = "[Text to Prepend]\n";
+
+path($filename)->edit_utf8(sub { s/\A/$text_to_prepend/; return; });
+EOF
+
+                },
+                {
                     id    => "core",
                     label => "Core Perl",
                     code  => <<'EOF',

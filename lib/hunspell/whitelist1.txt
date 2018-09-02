@@ -604,6 +604,7 @@ dest_filename
 dirname
 edit_file_lines
 edit_lines_utf8
+edit_utf8
 fh
 fh-
 file-system-builtins
