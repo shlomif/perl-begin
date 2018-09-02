@@ -1,0 +1,277 @@
+---
+- examples:
+  - code: |
+      use IO::All;
+
+      my $filename_to_read = 'my-file.txt';
+
+      my $fh = io->file($filename_to_read);
+      while (my $line = $fh->chomp->getline())
+      {
+          # Do something with $line.
+      }
+    id: io_all
+    label: IO-All
+  - code: |
+      use autodie;
+
+      my $filename_to_read = 'my-file.txt';
+
+      open my $fh, '<', $filename_to_read;
+      while (my $line = <$fh>)
+      {
+          chomp($line);
+
+          # Do something with $line.
+      }
+      close($fh);
+    id: core
+    label: Core Perl
+  id_base: reading_a_file_line_by_line
+  title: Reading a file line by line
+- examples:
+  - code: |
+      use IO::All;
+
+      my ($source_filename, $dest_filename) = @_;
+      io->file($source_filename) > io->file($dest_filename);
+    id: io_all
+    label: IO-All
+  - code: |
+      use File::Copy qw(copy);
+
+      my ($source_filename, $dest_filename) = @_;
+
+      copy($source_filename, $dest_filename);
+    id: core
+    label: Core Perl
+  id_base: copying_a_file
+  title: Copying a file
+- examples:
+  - code: |
+      use IO::All;
+
+      io->file("output.txt")->utf8->print("Hello World!\n");
+    id: io_all
+    label: IO-All
+  - code: |
+      use autodie;
+
+      open my $out, '>:encoding(utf8)', "output.txt";
+      print {$out} "Hello World!\n";
+      close($out);
+    id: core
+    label: Core Perl
+  id_base: overwrite_a_file
+  title: Overwriting a file with text
+- examples:
+  - code: |
+      use Path::Tiny qw/ path /;
+
+      my @filenames = @ARGV;
+
+      foreach my $fn (@filenames)
+      {
+          path($fn)->edit_lines_utf8(sub { s/\bFrom\b/To/g; });
+      }
+    id: path_tiny
+    label: Path::Tiny
+  - code: |
+      use autodie;
+      use File::Temp ( qw(tempfile) );
+
+      my @filenames = @ARGV;
+
+      foreach my $fn (@filenames)
+      {
+          open my $in, '<', $fn;
+          my ($tempout, $temp_fn) = tempfile();
+
+          while (my $line = <$in>)
+          {
+              chomp($line);
+              # Perform the operation here.
+              $line =~ s/\bFrom\b/To/g;
+
+              print {$tempout} "$new_line\n";
+          }
+
+          close($in);
+          close($tempout);
+
+          rename($temp_fn, $fn);
+      }
+    id: core
+    label: Core Perl
+  - code: |
+      $ perl -i.bak -lp -e 's/\bFrom\b/To/g' *.txt
+    id: cmd_line
+    label: Command Line
+    no_syntax: 1
+  id_base: processing_lines_of_a_file
+  title: Processing the Lines of a File
+- examples:
+  - code: |
+      use IO::All;
+
+      my $string = io->file($my_filepath)->utf8->all;
+    id: io_all
+    label: IO-All
+  - code: |
+      use Path::Tiny qw/ path /;
+
+      my $string = path($my_filepath)->slurp_utf8;
+    id: path_tiny
+    label: Path-Tiny
+  - code: |
+      use autodie;
+
+      sub _utf8_slurp
+      {
+          my $filename = shift;
+
+          open my $in, '<:encoding(utf8)', $filename;
+
+          local $/;
+          my $contents = <$in>;
+
+          close($in);
+
+          return $contents;
+      }
+
+      my $file_contents = _utf8_slurp($my_filepath);
+    id: core
+    label: Core Perl
+  - code: |
+      $ perl -i.bak -ln -0777 -C -ln -e 'Something with $_ here' "$my_utf8_filepath"
+    id: cmd_line
+    label: Command Line
+    no_syntax: 1
+  id_base: string_slurp_utf8
+  title: Reading an entire UTF-8 file into a big variable
+- examples:
+  - code: |
+      use IO::All;
+
+      my $string_to_append = "My new line\n";
+
+      $string_to_append >> io->file($my_file_path);
+    id: io_all
+    label: IO-All
+  - code: |
+      use autodie;
+
+      my $string_to_append = "My new line\n";
+
+      {
+          open my $out, '>>', $my_file_path;
+          print {$out} $string_to_append;
+          close($out);
+      }
+    id: core
+    label: Core Perl
+  id_base: append_to_file
+  title: Appending to a File
+- examples:
+  - code: |
+      use IO::All;
+
+      sub count_lines
+      {
+          my ($filename) = @_;
+
+          my $fh = io->file($filename);
+
+          my $count = 0;
+
+          while (my $l = <$fh>)
+          {
+              $count++;
+          }
+
+          return $count;
+      }
+    id: io_all
+    label: IO-All
+  - code: |
+      use autodie;
+
+      sub count_lines
+      {
+          my ($filename) = @_;
+
+          open my $fh, '<', $filename;
+
+          my $count = 0;
+          while (my $l = <$fh>)
+          {
+              $count++;
+          }
+
+          close($fh);
+
+          return $count;
+      }
+    id: core
+    label: Core Perl
+  - code: |
+      $ perl -lnE 'END{say "$ARGV has $. lines";}' /path/to/myfile.txt
+    id: cmd_line
+    label: Command Line
+    no_syntax: 1
+  id_base: line_count
+  title: Line count
+- examples:
+  - code: |
+      use IO::All;
+
+      io("./path-to-subdir")->rmtree();
+    id: io_all
+    label: IO-All
+  - code: |
+      use File::Path qw(rmtree);
+
+      rmtree(["./path-to-subdir"], 1, 1);
+    id: core
+    label: Core Perl
+  id_base: delete_directory_tree
+  title: Deleting a directory tree
+- examples:
+  - code: |
+      use IO::All;
+
+      my $filename = 'foo.txt';
+      my $text_to_prepend = "[Text to Prepend]\n";
+
+      my $fh = io->file($filename);
+
+      $fh->print( $text_to_prepend . $fh->all() );
+    id: io_all
+    label: IO-All
+  - code: |
+      use Path::Tiny qw/ path /;
+
+      my $filename = 'foo.txt';
+      my $text_to_prepend = "[Text to Prepend]\n";
+
+      path($filename)->edit_utf8(sub { s/\A/$text_to_prepend/; return; });
+    id: path_tiny
+    label: Path-Tiny
+  - code: |
+      my $filename = 'foo.txt';
+      my $text_to_prepend = "[Text to Prepend]\n";
+
+      open my $in_fh, '<', $filename
+          or die "Could not open file '$filename' for reading! - $!";
+      my $contents = do { local $/; <$in_fh>;};
+      close($in_fh);
+
+      open my $out_fh, '>', $filename
+          or die "Could not open file '$filename' for writing! - $!";
+      print {$out_fh} $text_to_prepend . $contents;
+      close($out_fh);
+    id: core
+    label: Core Perl
+  id_base: prepend_to_file_while_slurping
+  title: Prepending to a File (While Slurping)

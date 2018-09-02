@@ -73,6 +73,7 @@ required:
         XML::LibXSLT: 0
         XML::Parser: 0
         XML::Writer: 0
+        YAML::XS: 0
         autodie: 0
         constant: 0
         lib: 0
