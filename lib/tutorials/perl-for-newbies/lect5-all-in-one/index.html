@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <link rel="stylesheet" href="./style.css" type="text/css" />
-
-
-
 
 <title>
 "Perl for Perl Newbies" - Part 5 - Good Programming Practices
@@ -14,7 +11,7 @@
 </head>
 <body><div class="page">
 
-
+<nav>
 <table class="page-nav-bar top" summary=""><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
@@ -27,6 +24,8 @@
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a>
 </div>
+</nav>
+<main>
 <h1 id="page--DIR">
 "Perl for Perl Newbies" - Part 5 - Good Programming Practices
 </h1>
@@ -86,18 +85,26 @@
 </li></ul>
 </li></ul>
 <h2 id="licence">Licence</h2>
-<p>
-  <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/" style="text-decoration:none;">
-    <img src="http://i.creativecommons.org/l/zero/1.0/80x15.png" alt="CC0" />
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+  <a rel="license"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
   </a>
   <br />
-  To the extent possible under law, <a href="http://www.shlomifish.org/" rel="dct:publisher"><span>Shlomi Fish</span></a>
+  To the extent possible under law,
+  <a rel="dct:publisher"
+     href="http://www.shlomifish.org/">
+    <span property="dct:title">Shlomi Fish</span></a>
   has waived all copyright and related or neighbouring rights to
-  <span>Perl for Perl Newbies</span>.
-This work is published from
-<span>Israel</span>.
+  <span property="dct:title">Perl for Perl Newbies</span>.
+This work is published from:
+<span property="vcard:Country" datatype="dct:ISO3166"
+      content="IL" about="http://www.shlomifish.org/">
+  Israel</span>.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -113,6 +120,8 @@ This work is published from
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--intro--PAGE">Introduction</a>
 </div>
+</nav>
+<main>
 <h1 id="page--intro--PAGE">
 1. Introduction
 </h1>
@@ -130,6 +139,8 @@ work on <a href="http://perl-begin.org/">The Perl Beginners' site</a>, which
 aims to be the premier web site for finding resources to learn about Perl.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -145,6 +156,8 @@ aims to be the premier web site for finding resources to learn about Perl.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--DIR">
 2. Automated Testing
 </h1>
@@ -166,6 +179,8 @@ in Perl.
 </li><li><a href="#page--testing--mocking--PAGE" class="contents">2.4. Mocking</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -181,6 +196,8 @@ in Perl.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--motivation--PAGE">Motivation for Testing</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--motivation--PAGE">
 2.1. Motivation for Testing
 </h1>
@@ -207,6 +224,8 @@ to achieve. This causes less duplication than writing separate specification
 documents and examples, and, furthermore, is validated to be functional.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -222,6 +241,8 @@ documents and examples, and, furthermore, is validated to be functional.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--demo--DIR">
 2.2. Demo
 </h1>
@@ -375,6 +396,8 @@ Now we can continue writing more tests, and see that they passed.
 </li><li><a href="#page--testing--demo--Build-test--PAGE" class="contents">2.2.2. ./Build test</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -390,6 +413,8 @@ Now we can continue writing more tests, and see that they passed.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--test-more--PAGE">Test::More</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--demo--test-more--PAGE">
 2.2.1. Test::More
 </h1>
@@ -517,6 +542,8 @@ enhancements).
 </li>
 </ol>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -532,6 +559,8 @@ enhancements).
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--Build-test--PAGE">./Build test</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--demo--Build-test--PAGE">
 2.2.2. ./Build test
 </h1>
@@ -641,6 +670,8 @@ Result: PASS
 shlomi:~/TEMP/Test-Count-0.0500$
 </pre></div>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -656,6 +687,8 @@ shlomi:~/TEMP/Test-Count-0.0500$
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--types--PAGE">Types of Tests: Unit Tests, Integration Tests, System Tests</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--types--PAGE">
 2.3. Types of Tests: Unit Tests, Integration Tests, System Tests
 </h1>
@@ -724,6 +757,8 @@ Perl</a> project (which is currently under development.).
 </li>
 </ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -739,6 +774,8 @@ Perl</a> project (which is currently under development.).
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--mocking--PAGE">Mocking</a>
 </div>
+</nav>
+<main>
 <h1 id="page--testing--mocking--PAGE">
 2.4. Mocking
 </h1>
@@ -794,6 +831,8 @@ loaded the original module, while actually it is using our own mocked
 version.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -809,6 +848,8 @@ version.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a>
 </div>
+</nav>
+<main>
 <h1 id="page--version-control--DIR">
 3. Version Control
 </h1>
@@ -832,6 +873,8 @@ this section if you're already drinking the version control kool-aid.
 </li><li><a href="#page--version-control--mercurial-demo--PAGE" class="contents">3.2. Demo of Mercurial</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -847,6 +890,8 @@ this section if you're already drinking the version control kool-aid.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--motivation--PAGE">Motivation for Version Control</a>
 </div>
+</nav>
+<main>
 <h1 id="page--version-control--motivation--PAGE">
 3.1. Motivation for Version Control
 </h1>
@@ -893,6 +938,8 @@ of which are highly mature and esteemed and you shouldn't have a problem finding
 something that suits you.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -908,6 +955,8 @@ something that suits you.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--mercurial-demo--PAGE">Demo of Mercurial</a>
 </div>
+</nav>
+<main>
 <h1 id="page--version-control--mercurial-demo--PAGE">
 3.2. Demo of Mercurial
 </h1>
@@ -1267,6 +1316,8 @@ date:        Fri Jan 14 18:07:32 2011 +0200
 summary:     Added MyModule.pm
 </pre></div>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1282,6 +1333,8 @@ summary:     Added MyModule.pm
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a>
 </div>
+</nav>
+<main>
 <h1 id="page--accessors--DIR">
 4. Class Accessors
 </h1>
@@ -1304,6 +1357,8 @@ to them.
 </li><li><a href="#page--accessors--cpan-modules--PAGE" class="contents">4.3. Accessor modules on the CPAN</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1319,6 +1374,8 @@ to them.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--example--PAGE">Example</a>
 </div>
+</nav>
+<main>
 <h1 id="page--accessors--example--PAGE">
 4.1. Example
 </h1>
@@ -1459,6 +1516,8 @@ Here's an example class with some accessors and a script that uses it:
     ;
 </pre></div>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1474,6 +1533,8 @@ Here's an example class with some accessors and a script that uses it:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--motivation--PAGE">Motivation</a>
 </div>
+</nav>
+<main>
 <h1 id="page--accessors--motivation--PAGE">
 4.2. Motivation
 </h1>
@@ -1512,6 +1573,8 @@ There may be other reasons, like better concurrency, persistence, etc.
 </li>
 </ol>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1527,6 +1590,8 @@ There may be other reasons, like better concurrency, persistence, etc.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--cpan-modules--PAGE">Accessor modules on the CPAN</a>
 </div>
+</nav>
+<main>
 <h1 id="page--accessors--cpan-modules--PAGE">
 4.3. Accessor modules on the CPAN
 </h1>
@@ -1574,6 +1639,8 @@ this writing (August, 2009), Moose may have a relatively long startup time,
 although the situation has been improved and is expected to improve further.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1589,6 +1656,8 @@ although the situation has been improved and is expected to improve further.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a>
 </div>
+</nav>
+<main>
 <h1 id="page--new-features--DIR">
 5. Useful Features in Recent Perls
 </h1>
@@ -1601,6 +1670,8 @@ may prove useful for robust programming or may be encountered in the wild.
 </li><li><a href="#page--new-features--lexical-filehandles--PAGE" class="contents">5.2. Lexical Filehandles</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1616,6 +1687,8 @@ may prove useful for robust programming or may be encountered in the wild.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--use-base--PAGE">use base</a>
 </div>
+</nav>
+<main>
 <h1 id="page--new-features--use-base--PAGE">
 5.1. use base
 </h1>
@@ -1635,6 +1708,8 @@ forked from base.pm to "remove the cruft that accumulated there". It may
 be preferable.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1650,6 +1725,8 @@ be preferable.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--lexical-filehandles--PAGE">Lexical Filehandles</a>
 </div>
+</nav>
+<main>
 <h1 id="page--new-features--lexical-filehandles--PAGE">
 5.2. Lexical Filehandles
 </h1>
@@ -1681,7 +1758,7 @@ Here is an example for a program implementing a directory listing.
 
     <span class="Statement">closedir</span>(<span class="Identifier">$dir_handle</span>);
 
-    <span class="Statement">return</span> [ <span class="Statement">sort {</span> <span class="Identifier">$a</span> <span class="Statement">cmp</span> <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@entries</span> ];
+    <span class="Statement">return</span> [ <span class="Statement">sort</span> <span class="Statement">{</span> <span class="Identifier">$a</span> <span class="Statement">cmp</span> <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@entries</span> ];
 }
 
 <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$arg</span> (<span class="Identifier">@ARGV</span>)
@@ -1747,6 +1824,8 @@ about them here:
 </li>
 </ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1762,6 +1841,8 @@ about them here:
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a>
 </div>
+</nav>
+<main>
 <h1 id="page--local-keyword--DIR">
 6. The local keyword
 </h1>
@@ -1786,6 +1867,8 @@ So when should local be used?
 <li><a href="#page--local-keyword--use-and-abuse--PAGE" class="contents">6.1. Use and Abuse</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1801,6 +1884,8 @@ So when should local be used?
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a> → <a href="#page--local-keyword--use-and-abuse--PAGE">Use and Abuse</a>
 </div>
+</nav>
+<main>
 <h1 id="page--local-keyword--use-and-abuse--PAGE">
 6.1. Use and Abuse
 </h1>
@@ -1829,6 +1914,8 @@ Linux-IL post explaining the difference between
 </li>
 </ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1844,6 +1931,8 @@ Linux-IL post explaining the difference between
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a>
 </div>
+</nav>
+<main>
 <h1 id="page--pod-documentation--DIR">
 7. Using POD for Documentation
 </h1>
@@ -1867,6 +1956,8 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 </li><li><a href="#page--pod-documentation--extensions--PAGE" class="contents">7.4. POD Extensions</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -1882,6 +1973,8 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--demo--PAGE">POD Demonstration</a>
 </div>
+</nav>
+<main>
 <h1 id="page--pod-documentation--demo--PAGE">
 7.1. POD Demonstration
 </h1>
@@ -2071,6 +2164,8 @@ and to <a href="http://en.wikipedia.org/wiki/Plain_Old_Documentation">the
 Wikipedia page about POD</a>.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2086,6 +2181,8 @@ Wikipedia page about POD</a>.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--pod-testing--PAGE">Testing and Verifying POD</a>
 </div>
+</nav>
+<main>
 <h1 id="page--pod-documentation--pod-testing--PAGE">
 7.2. Testing and Verifying POD
 </h1>
@@ -2108,6 +2205,8 @@ and similar modules will generate such tests for you automatically as part
 of the skeleton of your CPAN distribution.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2123,6 +2222,8 @@ of the skeleton of your CPAN distribution.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--literate-programming--PAGE">Literate Programming</a>
 </div>
+</nav>
+<main>
 <h1 id="page--pod-documentation--literate-programming--PAGE">
 7.3. Literate Programming
 </h1>
@@ -2173,6 +2274,8 @@ However, I'm mentioning Literate Programming here for completeness sake,
 should you choose to follow this route.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2188,6 +2291,8 @@ should you choose to follow this route.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--extensions--PAGE">POD Extensions</a>
 </div>
+</nav>
+<main>
 <h1 id="page--pod-documentation--extensions--PAGE">
 7.4. POD Extensions
 </h1>
@@ -2232,6 +2337,8 @@ of other Lightweight markup languages</a>, and some of them also have
 implementations in Perl.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2247,6 +2354,8 @@ implementations in Perl.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--DIR">
 8. Module-Build and Module-Starter
 </h1>
@@ -2281,6 +2390,8 @@ There are some variations on this theme, but it should get you started.
 </li><li><a href="#page--module-build-and-starter--additional-resources--PAGE" class="contents">8.5. Additional Resources</a>
 </li></ul>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2296,6 +2407,8 @@ There are some variations on this theme, but it should get you started.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--invocation--PAGE">The Module-Starter Invocation Command</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--invocation--PAGE">
 8.1. The Module-Starter Invocation Command
 </h1>
@@ -2354,6 +2467,8 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
     <span class="Special">--verbose</span>
 </pre></div>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2369,6 +2484,8 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--commands--PAGE">Module-Build commands</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--commands--PAGE">
 8.2. Module-Build commands
 </h1>
@@ -2442,6 +2559,8 @@ either the code or the tests, depending on what is wrong.
 Now let's move on.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2457,6 +2576,8 @@ Now let's move on.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--coding--PAGE">Adding meaningful code</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--coding--PAGE">
 8.3. Adding meaningful code
 </h1>
@@ -2527,11 +2648,11 @@ that:
 
 <span class="Statement">=head1</span><span class="Constant"> NAME</span>
 
-<span class="Comment">MyMath::Ops::Add - The great new MyMath::Ops::Add!</span>
+MyMath::Ops::Add - The great new MyMath::Ops::Add!
 
 <span class="Statement">=head1</span><span class="Constant"> VERSION</span>
 
-<span class="Comment">Version 0.01</span>
+Version 0.01
 
 <span class="Statement">=cut</span>
 
@@ -2539,9 +2660,9 @@ that:
 
 <span class="Statement">=head1</span><span class="Constant"> SYNOPSIS</span>
 
-<span class="Comment">Quick summary of what the module does.</span>
+Quick summary of what the module does.
 
-<span class="Comment">Perhaps a little code snippet.</span>
+Perhaps a little code snippet.
 
 <span class="PreProc">    use MyMath::Ops::Add;</span>
 
@@ -2550,14 +2671,14 @@ that:
 
 <span class="Statement">=head1</span><span class="Constant"> EXPORT</span>
 
-<span class="Comment">A list of functions that can be exported.  You can delete this section</span>
-<span class="Comment">if you don't export anything, such as for a purely object-oriented module.</span>
+A list of functions that can be exported.  You can delete this section
+if you don't export anything, such as for a purely object-oriented module.
 
 <span class="Statement">=head1</span><span class="Constant"> FUNCTIONS</span>
 
 <span class="Statement">=head2</span><span class="Constant"> new</span>
 
-<span class="Comment">Construct a new object.</span>
+Construct a new object.
 
 <span class="Statement">=cut</span>
 
@@ -2581,7 +2702,7 @@ that:
 
 <span class="Statement">=head2</span><span class="Constant"> $self-&gt;add($x, $y)</span>
 
-<span class="Comment">Adds two numbers.</span>
+Adds two numbers.
 
 <span class="Statement">=cut</span>
 
@@ -2609,27 +2730,27 @@ that:
 
 <span class="Statement">=head1</span><span class="Constant"> AUTHOR</span>
 
-<span class="Comment">Perl Newbie, </span><span class="Identifier">C&lt;&lt; &lt;perl-newbie at perl-begin.org&gt; &gt;&gt;</span>
+Perl Newbie, <span class="Identifier">C&lt;&lt; &lt;perl-newbie at perl-begin.org&gt; &gt;&gt;</span>
 
 <span class="Statement">=head1</span><span class="Constant"> BUGS</span>
 
-<span class="Comment">Please report any bugs or feature requests to </span><span class="Identifier">C&lt;bug-mymath::ops at rt.cpan.org&gt;</span><span class="Comment">, or through</span>
-<span class="Comment">the web interface at </span><span class="Identifier">L&lt;http://rt.cpan.org/NoAuth/ReportBug.html?Queue=MyMath::Ops&gt;</span><span class="Comment">.  I will be notified, and then you'll</span>
-<span class="Comment">automatically be notified of progress on your bug as I make changes.</span>
+Please report any bugs or feature requests to <span class="Identifier">C&lt;bug-mymath::ops at rt.cpan.org&gt;</span>, or through
+the web interface at <span class="Identifier">L&lt;http://rt.cpan.org/NoAuth/ReportBug.html?Queue=MyMath::Ops&gt;</span>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
 
 
 
 
 <span class="Statement">=head1</span><span class="Constant"> SUPPORT</span>
 
-<span class="Comment">You can find documentation for this module with the perldoc command.</span>
+You can find documentation for this module with the perldoc command.
 
 <span class="PreProc">    perldoc MyMath::Ops::Add</span>
 
 
-<span class="Comment">You can also look for information at:</span>
+You can also look for information at:
 
-<span class="Statement">=over</span><span class="Comment"> </span><span class="Constant">4</span>
+<span class="Statement">=over</span> <span class="Constant">4</span>
 
 <span class="Statement">=item</span><span class="Constant"> * RT: CPAN's request tracker</span>
 
@@ -2655,13 +2776,13 @@ that:
 
 <span class="Statement">=head1</span><span class="Constant"> COPYRIGHT &amp; LICENSE</span>
 
-<span class="Comment">Copyright 2009 Perl Newbie.</span>
+Copyright 2009 Perl Newbie.
 
-<span class="Comment">This program is free software; you can redistribute it and/or modify it</span>
-<span class="Comment">under the terms of either: the GNU General Public License as published</span>
-<span class="Comment">by the Free Software Foundation; or the Artistic License.</span>
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
 
-<span class="Comment">See http://dev.perl.org/licenses/ for more information.</span>
+See http://dev.perl.org/licenses/ for more information.
 
 
 <span class="Statement">=cut</span>
@@ -2698,6 +2819,8 @@ development and maintenance, and Perl tools such as <code>Module-Build</code>
 facilitate it.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2713,6 +2836,8 @@ facilitate it.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--boilerplate--PAGE">Getting rid of the boilerplate</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--boilerplate--PAGE">
 8.4. Getting rid of the boilerplate
 </h1>
@@ -2798,6 +2923,8 @@ Failed 1/5 test programs. 7/24 subtests failed.
 Fixing them is left as an exercise for the reader.
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2813,6 +2940,8 @@ Fixing them is left as an exercise for the reader.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--additional-resources--PAGE">Additional Resources</a>
 </div>
+</nav>
+<main>
 <h1 id="page--module-build-and-starter--additional-resources--PAGE">
 8.5. Additional Resources
 </h1>
@@ -2882,6 +3011,8 @@ distributions, even if it is not intended for CPAN.
 </li>
 </ol>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2897,6 +3028,8 @@ distributions, even if it is not intended for CPAN.
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a>
 </div>
+</nav>
+<main>
 <h1 id="page--conclusion--DIR">
 9. Conclusion
 </h1>
@@ -2926,6 +3059,8 @@ Avoid” Page on the Perl Beginners Site</a>
 Happy programming!
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2941,6 +3076,8 @@ Happy programming!
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--links--PAGE">Links</a>
 </div>
+</nav>
+<main>
 <h1 id="page--conclusion--links--PAGE">
 9.1. Links
 </h1>
@@ -2948,6 +3085,8 @@ Happy programming!
 To be done if we see fit (suggestions are welcome).
 </p>
 <hr />
+</main>
+<nav>
 
 </div>
 <div class="page">
@@ -2963,6 +3102,8 @@ To be done if we see fit (suggestions are welcome).
 <div class="bread">
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--thanks--PAGE">Thanks</a>
 </div>
+</nav>
+<main>
 <h1 id="page--conclusion--thanks--PAGE">
 9.2. Thanks
 </h1>
@@ -3014,6 +3155,8 @@ help with the <a href="http://perl-begin.org/">Perl Beginners site</a>.
 </li>
 </ul>
 <hr />
+</main>
+<nav>
 
 </div>
 
