@@ -170,7 +170,7 @@ our <a href="$(ROOT)/topics/cpan/">dedicated CPAN page</a>.
 The book “Object Oriented Perl” by Damian Conway
 covers old techniques that are now better done using
 the <a href="http://moose.perl.org/">Moose</a> and Moo ecosystems on
-CPAN. See our <a href="$(ROOT)/topics/object-oriented/">dedicate page</a>
+CPAN. See our <a href="$(ROOT)/topics/object-oriented/">dedicated page</a>
 about Object Oriented Programming in Perl for more information.
 </p>
 </li>
