@@ -9,10 +9,16 @@
 "Perl for Perl Newbies" - Part 5 - Good Programming Practices
 </title>
 </head>
-<body><div class="page">
+<body><section class="page">
 
+
+<header>
+<h2 id="page--DIR">
+"Perl for Perl Newbies" - Part 5 - Good Programming Practices
+</h2>
+</header>
 <nav>
-<table class="page-nav-bar top" summary=""><tr><td>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <b>Up</b></td>
@@ -25,10 +31,6 @@
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a>
 </div>
 </nav>
-<main>
-<h1 id="page--DIR">
-"Perl for Perl Newbies" - Part 5 - Good Programming Practices
-</h1>
 <h2 id="contents">Contents</h2>
 <ul class="contentsmain">
 <li><a href="#page--intro--PAGE" class="contents">1. Introduction</a>
@@ -88,7 +90,7 @@
 <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
   <a rel="license"
      href="http://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+    <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
   </a>
   <br />
   To the extent possible under law,
@@ -103,12 +105,12 @@ This work is published from:
   Israel</span>.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -121,10 +123,6 @@ This work is published from:
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--intro--PAGE">Introduction</a>
 </div>
 </nav>
-<main>
-<h1 id="page--intro--PAGE">
-1. Introduction
-</h1>
 <p>
 We've already introduced some good
 <a href="http://en.wikipedia.org/wiki/Software_engineering">software
@@ -139,12 +137,12 @@ work on <a href="http://perl-begin.org/">The Perl Beginners' site</a>, which
 aims to be the premier web site for finding resources to learn about Perl.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -157,10 +155,6 @@ aims to be the premier web site for finding resources to learn about Perl.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--DIR">
-2. Automated Testing
-</h1>
 <p>
 <a href="http://en.wikipedia.org/wiki/Test_automation">Automated testing</a>
 is a software engineering method in which one writes pieces of code, which
@@ -179,12 +173,12 @@ in Perl.
 </li><li><a href="#page--testing--mocking--PAGE" class="contents">2.4. Mocking</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
@@ -197,10 +191,6 @@ in Perl.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--motivation--PAGE">Motivation for Testing</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--motivation--PAGE">
-2.1. Motivation for Testing
-</h1>
 <p>
 So why do we want to perform automated software testing? The
 first reason is to prevent bugs. By writing tests before we write the
@@ -224,12 +214,12 @@ to achieve. This causes less duplication than writing separate specification
 documents and examples, and, furthermore, is validated to be functional.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
@@ -242,10 +232,6 @@ documents and examples, and, furthermore, is validated to be functional.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--demo--DIR">
-2.2. Demo
-</h1>
 <p>
 Let's suppose we want to test a function that adds two numbers. (This is
 a classic example.) We have the following function in the module Add1.pm:
@@ -396,12 +382,12 @@ Now we can continue writing more tests, and see that they passed.
 </li><li><a href="#page--testing--demo--Build-test--PAGE" class="contents">2.2.2. ./Build test</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
@@ -414,10 +400,6 @@ Now we can continue writing more tests, and see that they passed.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--test-more--PAGE">Test::More</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--demo--test-more--PAGE">
-2.2.1. Test::More
-</h1>
 <p>
 Perl ships with a module called Test::More (which is part of the
 <a href="http://metacpan.org/release/Test-Simple/">Test-Simple CPAN
@@ -542,12 +524,12 @@ enhancements).
 </li>
 </ol>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
@@ -560,10 +542,6 @@ enhancements).
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--Build-test--PAGE">./Build test</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--demo--Build-test--PAGE">
-2.2.2. ./Build test
-</h1>
 <p>
 Standard CPAN and CPAN-like Perl packages contain their tests as a group
 of <code>*.t</code> under the sub-directory <code>t/</code>, and allow running them
@@ -670,12 +648,12 @@ Result: PASS
 shlomi:~/TEMP/Test-Count-0.0500$
 </pre></div>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
@@ -688,10 +666,6 @@ shlomi:~/TEMP/Test-Count-0.0500$
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--types--PAGE">Types of Tests: Unit Tests, Integration Tests, System Tests</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--types--PAGE">
-2.3. Types of Tests: Unit Tests, Integration Tests, System Tests
-</h1>
 <p>
 Software design methodologists distinguish between several types of
 automated tests. First of all, <b>unit tests</b> (also see
@@ -757,12 +731,12 @@ Perl</a> project (which is currently under development.).
 </li>
 </ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
@@ -775,10 +749,6 @@ Perl</a> project (which is currently under development.).
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--mocking--PAGE">Mocking</a>
 </div>
 </nav>
-<main>
-<h1 id="page--testing--mocking--PAGE">
-2.4. Mocking
-</h1>
 <p>
 When testing certain parts of the application, it is sometimes desirable to
 mimic the functionality of different parts, so the testing will be isolated.
@@ -831,12 +801,12 @@ loaded the original module, while actually it is using our own mocked
 version.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -849,10 +819,6 @@ version.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a>
 </div>
 </nav>
-<main>
-<h1 id="page--version-control--DIR">
-3. Version Control
-</h1>
 <p>
 <a href="http://better-scm.shlomifish.org/">Version control systems</a>
 are also known as “revision control systems”, and “source control systems”.
@@ -873,12 +839,12 @@ this section if you're already drinking the version control kool-aid.
 </li><li><a href="#page--version-control--mercurial-demo--PAGE" class="contents">3.2. Demo of Mercurial</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
@@ -891,10 +857,6 @@ this section if you're already drinking the version control kool-aid.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--motivation--PAGE">Motivation for Version Control</a>
 </div>
 </nav>
-<main>
-<h1 id="page--version-control--motivation--PAGE">
-3.1. Motivation for Version Control
-</h1>
 <p>
 Using version control gives several important advantages over the alternative
 of not using any version control system at all:
@@ -938,12 +900,12 @@ of which are highly mature and esteemed and you shouldn't have a problem finding
 something that suits you.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
@@ -956,10 +918,6 @@ something that suits you.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--mercurial-demo--PAGE">Demo of Mercurial</a>
 </div>
 </nav>
-<main>
-<h1 id="page--version-control--mercurial-demo--PAGE">
-3.2. Demo of Mercurial
-</h1>
 <p>
 This section will demonstrate basic version control usage using the
 <a href="http://mercurial.selenic.com/">Mercurial version control system</a>.
@@ -1316,12 +1274,12 @@ date:        Fri Jan 14 18:07:32 2011 +0200
 summary:     Added MyModule.pm
 </pre></div>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1334,10 +1292,6 @@ summary:     Added MyModule.pm
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a>
 </div>
 </nav>
-<main>
-<h1 id="page--accessors--DIR">
-4. Class Accessors
-</h1>
 <p>
 Object accessors are a way to abstract access to an object's member variables
 (also known as “properties”, “attributes”, “fields”, “slots”, etc.) behind
@@ -1357,12 +1311,12 @@ to them.
 </li><li><a href="#page--accessors--cpan-modules--PAGE" class="contents">4.3. Accessor modules on the CPAN</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1375,10 +1329,6 @@ to them.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--example--PAGE">Example</a>
 </div>
 </nav>
-<main>
-<h1 id="page--accessors--example--PAGE">
-4.1. Example
-</h1>
 <p>
 Here's an example class with some accessors and a script that uses it:
 </p>
@@ -1516,12 +1466,12 @@ Here's an example class with some accessors and a script that uses it:
     ;
 </pre></div>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1534,10 +1484,6 @@ Here's an example class with some accessors and a script that uses it:
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--motivation--PAGE">Motivation</a>
 </div>
 </nav>
-<main>
-<h1 id="page--accessors--motivation--PAGE">
-4.2. Motivation
-</h1>
 <p>
 So why should we use accessors instead of doing a direct
 <code>$person-&gt;{'age'}</code> access to the object's property? There
@@ -1573,12 +1519,12 @@ There may be other reasons, like better concurrency, persistence, etc.
 </li>
 </ol>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1591,10 +1537,6 @@ There may be other reasons, like better concurrency, persistence, etc.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--cpan-modules--PAGE">Accessor modules on the CPAN</a>
 </div>
 </nav>
-<main>
-<h1 id="page--accessors--cpan-modules--PAGE">
-4.3. Accessor modules on the CPAN
-</h1>
 <p>
 As you may have noticed from our example, writing accessors by hand
 involves a lot of duplicate code, and can get tedious. One way to overcome
@@ -1639,12 +1581,12 @@ this writing (August, 2009), Moose may have a relatively long startup time,
 although the situation has been improved and is expected to improve further.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1657,10 +1599,6 @@ although the situation has been improved and is expected to improve further.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a>
 </div>
 </nav>
-<main>
-<h1 id="page--new-features--DIR">
-5. Useful Features in Recent Perls
-</h1>
 <p>
 This section will cover some new features in recent versions of Perl 5 that
 may prove useful for robust programming or may be encountered in the wild.
@@ -1670,12 +1608,12 @@ may prove useful for robust programming or may be encountered in the wild.
 </li><li><a href="#page--new-features--lexical-filehandles--PAGE" class="contents">5.2. Lexical Filehandles</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1688,10 +1626,6 @@ may prove useful for robust programming or may be encountered in the wild.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--use-base--PAGE">use base</a>
 </div>
 </nav>
-<main>
-<h1 id="page--new-features--use-base--PAGE">
-5.1. use base
-</h1>
 <p>
 The <a href="http://perldoc.perl.org/base.html">use base</a> pragma allows
 one to conveniently set the base packages of an object, while loading their
@@ -1708,12 +1642,12 @@ forked from base.pm to "remove the cruft that accumulated there". It may
 be preferable.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1726,10 +1660,6 @@ be preferable.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--lexical-filehandles--PAGE">Lexical Filehandles</a>
 </div>
 </nav>
-<main>
-<h1 id="page--new-features--lexical-filehandles--PAGE">
-5.2. Lexical Filehandles
-</h1>
 <p>
 Traditionally Perl filehandles had been "typeglobs" - global names - normally
 starting with an uppercase letter that were not scope safe. While they could
@@ -1824,12 +1754,12 @@ about them here:
 </li>
 </ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1842,10 +1772,6 @@ about them here:
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a>
 </div>
 </nav>
-<main>
-<h1 id="page--local-keyword--DIR">
-6. The local keyword
-</h1>
 <p>
 Before Perl 5 came out and Perl got lexical scoping and the <code>my</code>
 keyword, an older <code>local</code> keyword was made available for programmers to
@@ -1867,12 +1793,12 @@ So when should local be used?
 <li><a href="#page--local-keyword--use-and-abuse--PAGE" class="contents">6.1. Use and Abuse</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--local-keyword--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1885,10 +1811,6 @@ So when should local be used?
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a> → <a href="#page--local-keyword--use-and-abuse--PAGE">Use and Abuse</a>
 </div>
 </nav>
-<main>
-<h1 id="page--local-keyword--use-and-abuse--PAGE">
-6.1. Use and Abuse
-</h1>
 <p>
 The rule of the thumb is that for general scoping, <code>local</code> should not
 be used instead of <code>my</code>, which is safer and better. You may still
@@ -1914,12 +1836,12 @@ Linux-IL post explaining the difference between
 </li>
 </ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1932,10 +1854,6 @@ Linux-IL post explaining the difference between
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a>
 </div>
 </nav>
-<main>
-<h1 id="page--pod-documentation--DIR">
-7. Using POD for Documentation
-</h1>
 <p>
 <a href="http://perldoc.perl.org/perlpod.html">POD</a> is short for
 "Plain Old Documentation", and is a lightweight markup language, which is
@@ -1956,12 +1874,12 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 </li><li><a href="#page--pod-documentation--extensions--PAGE" class="contents">7.4. POD Extensions</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
@@ -1974,10 +1892,6 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--demo--PAGE">POD Demonstration</a>
 </div>
 </nav>
-<main>
-<h1 id="page--pod-documentation--demo--PAGE">
-7.1. POD Demonstration
-</h1>
 <h2 id="pod-demo-how">How to write POD</h2>
 <p>
 POD sections start with a single POD directive on a new line and continue
@@ -2164,12 +2078,12 @@ and to <a href="http://en.wikipedia.org/wiki/Plain_Old_Documentation">the
 Wikipedia page about POD</a>.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2182,10 +2096,6 @@ Wikipedia page about POD</a>.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--pod-testing--PAGE">Testing and Verifying POD</a>
 </div>
 </nav>
-<main>
-<h1 id="page--pod-documentation--pod-testing--PAGE">
-7.2. Testing and Verifying POD
-</h1>
 <p>
 The CPAN module
 <a href="http://metacpan.org/release/Test-Pod/"><b>Test-Pod</b></a>
@@ -2205,12 +2115,12 @@ and similar modules will generate such tests for you automatically as part
 of the skeleton of your CPAN distribution.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2223,10 +2133,6 @@ of the skeleton of your CPAN distribution.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--literate-programming--PAGE">Literate Programming</a>
 </div>
 </nav>
-<main>
-<h1 id="page--pod-documentation--literate-programming--PAGE">
-7.3. Literate Programming
-</h1>
 <p>
 <a href="http://en.wikipedia.org/wiki/Literate_programming">Literate
 Programming</a> is a method of writing code that allows one to
@@ -2274,12 +2180,12 @@ However, I'm mentioning Literate Programming here for completeness sake,
 should you choose to follow this route.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2292,10 +2198,6 @@ should you choose to follow this route.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--extensions--PAGE">POD Extensions</a>
 </div>
 </nav>
-<main>
-<h1 id="page--pod-documentation--extensions--PAGE">
-7.4. POD Extensions
-</h1>
 <p>
 POD has some extended dialects with more features and options:
 </p>
@@ -2337,12 +2239,12 @@ of other Lightweight markup languages</a>, and some of them also have
 implementations in Perl.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2355,10 +2257,6 @@ implementations in Perl.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--DIR">
-8. Module-Build and Module-Starter
-</h1>
 <p>
 Now let's tie everything together. When you download a Perl package from
 CPAN, there's a standard way to build and install it -
@@ -2390,12 +2288,12 @@ There are some variations on this theme, but it should get you started.
 </li><li><a href="#page--module-build-and-starter--additional-resources--PAGE" class="contents">8.5. Additional Resources</a>
 </li></ul>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2408,10 +2306,6 @@ There are some variations on this theme, but it should get you started.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--invocation--PAGE">The Module-Starter Invocation Command</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--invocation--PAGE">
-8.1. The Module-Starter Invocation Command
-</h1>
 <p>
 After you install Module-Starter, you can type
 <code>module-starter --help</code> to get the help for it, and get a result such
@@ -2467,12 +2361,12 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
     <span class="Special">--verbose</span>
 </pre></div>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2485,10 +2379,6 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--commands--PAGE">Module-Build commands</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--commands--PAGE">
-8.2. Module-Build commands
-</h1>
 <p>
 The first thing we should do is change the directory to the directory that
 Module-Starter created and run <code>perl Build.PL</code>. We get some
@@ -2559,12 +2449,12 @@ either the code or the tests, depending on what is wrong.
 Now let's move on.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2577,10 +2467,6 @@ Now let's move on.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--coding--PAGE">Adding meaningful code</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--coding--PAGE">
-8.3. Adding meaningful code
-</h1>
 <p>
 If we look at the code of the <code>lib/…*.pm</code> file, we'll see that there's
 practically nothing there. So now it's time that we add some meaningful
@@ -2819,12 +2705,12 @@ development and maintenance, and Perl tools such as <code>Module-Build</code>
 facilitate it.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2837,10 +2723,6 @@ facilitate it.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--boilerplate--PAGE">Getting rid of the boilerplate</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--boilerplate--PAGE">
-8.4. Getting rid of the boilerplate
-</h1>
 <p>
 The skeleton of the distribution generated by Module-Starter contains some
 boilerplate, which is pre-included text and code, used as placeholders. That
@@ -2923,12 +2805,12 @@ Failed 1/5 test programs. 7/24 subtests failed.
 Fixing them is left as an exercise for the reader.
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
@@ -2941,10 +2823,6 @@ Fixing them is left as an exercise for the reader.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--additional-resources--PAGE">Additional Resources</a>
 </div>
 </nav>
-<main>
-<h1 id="page--module-build-and-starter--additional-resources--PAGE">
-8.5. Additional Resources
-</h1>
 <p>
 Here are some additional resources regarding managing a CPAN-like distribution.
 </p>
@@ -3011,12 +2889,12 @@ distributions, even if it is not intended for CPAN.
 </li>
 </ol>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--DIR" class="nav" accesskey="u">Up</a></td>
@@ -3029,10 +2907,6 @@ distributions, even if it is not intended for CPAN.
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a>
 </div>
 </nav>
-<main>
-<h1 id="page--conclusion--DIR">
-9. Conclusion
-</h1>
 <p>
 The aim of this presentation was to make your Perl code (and that of other
 programming languages) less error-prone, easier to understand, and easier to
@@ -3059,12 +2933,12 @@ Avoid” Page on the Perl Beginners Site</a>
 Happy programming!
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
@@ -3077,20 +2951,16 @@ Happy programming!
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--links--PAGE">Links</a>
 </div>
 </nav>
-<main>
-<h1 id="page--conclusion--links--PAGE">
-9.1. Links
-</h1>
 <p>
 To be done if we see fit (suggestions are welcome).
 </p>
 <hr />
-</main>
-<nav>
 
-</div>
-<div class="page">
-<table class="page-nav-bar top" summary=""><tr><td>
+
+</section>
+<section class="page">
+<nav>
+<table class="page-nav-bar top"><tr><td>
 <a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
@@ -3103,10 +2973,6 @@ To be done if we see fit (suggestions are welcome).
 <a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--thanks--PAGE">Thanks</a>
 </div>
 </nav>
-<main>
-<h1 id="page--conclusion--thanks--PAGE">
-9.2. Thanks
-</h1>
 <p>
 Here I’d like to thank some people who contributed to this presentation:
 </p>
@@ -3155,9 +3021,8 @@ help with the <a href="http://perl-begin.org/">Perl Beginners site</a>.
 </li>
 </ul>
 <hr />
-</main>
-<nav>
 
-</div>
+
+</section>
 
 </body></html>
