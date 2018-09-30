@@ -63,14 +63,6 @@ Using Plack and PSGI is more recommended than using the old CGI.pm interface.
 
 <h2 id="frameworks">Web Frameworks</h2>
 
-<h3 id="catalyst"><a href="http://www.catalystframework.org/">Catalyst</a></h3>
-
-<p>
-A flexible web framework for Perl, with many useful modules for it on
-CPAN, that provide interfaces to many other modules. After learning it,
-one can build web applications with ease.
-</p>
-
 <h3 id="dancer"><a href="http://perldancer.org/">Dancer</a></h3>
 
 <p>
@@ -92,6 +84,14 @@ a micro-web-development framework, similar to <a href="#dancer">Dancer</a>.
 Being self-contained ("The Web in a box"), Mojolicious re-invents many
 <a href="$(ROOT)/topics/cpan/">CPAN</a> wheels (possibly better, but still
 different), which may be a good or a bad thing.
+</p>
+
+<h3 id="catalyst"><a href="http://www.catalystframework.org/">Catalyst</a></h3>
+
+<p>
+A flexible web framework for Perl, with many useful modules for it on
+CPAN, that provide interfaces to many other modules. After learning it,
+one can build web applications with ease.
 </p>
 
 <h3 id="cgi-app"><a href="http://cgiapp.erlbaum.net/">CGI::Application</a></h3>
