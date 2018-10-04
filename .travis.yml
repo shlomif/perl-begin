@@ -10,7 +10,7 @@ cache:
 os: linux
 dist: trusty
 before_install:
-    - bash .travis.bash --cmd before_install
+    - . .travis.bash --cmd before_install
     - go get -u github.com/tdewolff/minify/cmd/minify
     - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
     - cpanm Alien::Tidyp App::Deps::Verify App::XML::DocBook::Builder Pod::Xhtml
