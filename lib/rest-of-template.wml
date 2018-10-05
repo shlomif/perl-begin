@@ -13,19 +13,6 @@
 }:>
 </define-tag>
 
-<define-tag latemp_get_html_head_nav_links>
-<:{
-my @keys = (sort { $a cmp $b } keys(%$nav_links_obj));
-foreach my $key (@keys)
-{
-    my $val = $nav_links_obj->{$key};
-    my $url = CGI::escapeHTML($val->direct_url());
-    my $title = $val->title() // '';
-    print_utf8("<link rel=\"$key\" href=\"$url\" title=\"$title\" />\n");
-}
-}:>
-</define-tag>
-
 <define-tag latemp_get_html_body_nav_links_helper>
 <preserve with_accesskey />
 <set-var %attributes />

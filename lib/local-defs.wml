@@ -80,13 +80,18 @@ $nav_links_renderer = MyNavLinks->new(
 <define-tag latemp_get_html_head_nav_links>
 <:{
 my @keys = (sort { $a cmp $b } keys(%$nav_links_obj));
+LINKS:
 foreach my $key (@keys)
 {
+    if (($key eq 'top') or ($key eq 'up'))
+    {
+        next LINKS;
+    }
     my $val = $nav_links_obj->{$key};
     my $url = CGI::escapeHTML($val->direct_url());
     my $title = $val->title();
     my $title_attr = defined($title) ? " title=\"$title\"" : "";
-    print "<link rel=\"$key\" href=\"$url\"$title_attr />\n"
+    print_utf8( "<link rel=\"$key\" href=\"$url\"$title_attr />\n");
 }
 }:>
 </define-tag>
