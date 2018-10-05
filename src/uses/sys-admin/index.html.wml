@@ -1,4 +1,4 @@
-#include "template.wml"
+#include "template5.wml"
 #include "files_dirs_modules.wml"
 
 <latemp_subject "Perl for System Administration" />

@@ -150,3 +150,4 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
+TEST_TARGETS = Tests/*.{py,t}

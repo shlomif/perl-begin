@@ -1,4 +1,4 @@
-#include "template.wml"
+#include "template5.wml"
 
 <latemp_subject "SSH, Telnet and Other Remote Login and Commands Execution Protocols in Perl" />
 

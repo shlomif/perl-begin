@@ -115,8 +115,8 @@ Perl.
 </define-tag>
 
 <latemp_extra_head_elements>
-<script type="text/javascript" src="$(ROOT)/js/jq.js"></script>
-<script type="text/javascript" src="$(ROOT)/js/position_divs.js"></script>
+<js_script src="$(ROOT)/js/jq.js"></js_script>
+<js_script src="$(ROOT)/js/position_divs.js"></js_script>
 {#PAGE_EXTRA_HEAD_ELEMENTS#}
 </latemp_extra_head_elements>
 
@@ -179,7 +179,7 @@ version).<br />
 | <a href="http://jigsaw.w3.org/css-validator/" title="Validate Style Sheet as W3C CSS 2.0 Compliant">W3C CSS 2.0</a>
 <br />
 <b>Hosted by:</b> <a href="http://hexten.net/">Hexten.net</a>.
-<script type="text/javascript" src="$(ROOT)/js/selfl.js"></script>
+<js_script src="$(ROOT)/js/selfl.js"></js_script>
 </latemp_webmaster>
 
 <body>

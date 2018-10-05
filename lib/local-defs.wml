@@ -7,3 +7,125 @@
 <set-var latemp_gen_plain_page="$(PRINTABLE)" />
 <set-var latemp_with_head_meta_tags="<latemp_mynot "$(PRINTABLE)" />" />
 <set-var latemp_with_html_head_stylesheets="<latemp_mynot "$(PRINTABLE)" />" />
+<define-tag latemp_init_h_w_navmenu>
+<preserve object_class />
+<set-var object_class="<latemp_default_val "<get-var latemp_navmenu_object_class />" "HTML::Widgets::NavMenu" />" />
+<:{
+use MyNavData;
+use <get-var object_class />;
+use CGI qw();
+use MyNavLinks;
+
+my $filename = "<latemp_default_val "<get-var latemp_filename />" "$(LATEMP_FILENAME)" />";
+$filename =~ s!index\.html$!!;
+$filename = "/$filename";
+
+use vars qw($nav_bar);
+
+$nav_bar = <get-var object_class />->new(
+    'path_info' => $filename,
+    'current_host' => "<latemp_default_val "<get-var latemp_server />" "$(LATEMP_SERVER)" />",
+    MyNavData::get_params(),
+    'ul_classes' => [ "navbarmain", ("navbarnested") x 10 ],
+    'no_leading_dot' => 1,
+    );
+
+my $rendered_results = $nav_bar->render();
+
+use vars qw($nav_links);
+
+$nav_links = $rendered_results->{nav_links};
+
+use vars qw($nav_links_obj);
+
+$nav_links_obj = $rendered_results->{nav_links_obj};
+
+use vars qw($nav_html);
+
+$nav_html = $rendered_results->{html};
+
+use vars qw($leading_path);
+$leading_path = $rendered_results->{leading_path};
+
+my $render_leading_path_component = sub {
+    my $component = shift;
+    my $title = $component->title();
+    my $title_attr = defined($title) ? " title=\"$title\"" : "";
+    return "<a href=\"" . CGI::escapeHTML($component->direct_url()) .
+        "\"$title_attr>" .
+        $component->label() . "</a>";
+};
+
+use vars qw($leading_path_string);
+use utf8;
+
+$leading_path_string =
+    join(" → ",
+        (map
+        { $render_leading_path_component->($_) }
+        @$leading_path
+        ));
+
+use vars qw($nav_links_renderer);
+
+$nav_links_renderer = MyNavLinks->new(
+        'nav_links' => $nav_links,
+        'nav_links_obj' => $nav_links_obj,
+        'root' => "$(ROOT)",
+        );
+}:>
+<restore object_class />
+</define-tag>
+
+<define-tag latemp_get_html_head_nav_links>
+<:{
+my @keys = (sort { $a cmp $b } keys(%$nav_links_obj));
+foreach my $key (@keys)
+{
+    my $val = $nav_links_obj->{$key};
+    my $url = CGI::escapeHTML($val->direct_url());
+    my $title = $val->title();
+    my $title_attr = defined($title) ? " title=\"$title\"" : "";
+    print "<link rel=\"$key\" href=\"$url\"$title_attr />\n"
+}
+}:>
+</define-tag>
+
+<define-tag latemp_get_nav_menu_html>
+<:{ print join("\n", @$nav_html); }:>
+</define-tag>
+
+<define-tag latemp_get_html_body_nav_links_helper>
+<preserve with_accesskey />
+<set-var %attributes />
+<:{
+    my $with_accesskey = "<get-var with_accesskey />";
+    my @params;
+    if ($with_accesskey ne "")
+    {
+        push @params, ('with_accesskey' => $with_accesskey);
+    }
+    print $nav_links_renderer->get_total_html(@params);
+}:>
+<restore with_accesskey />
+</define-tag>
+
+<define-tag latemp_get_html_body_nav_links>
+<preserve with_accesskey place />
+<set-var %attributes />
+<if "<match
+    "<get-var latemp_nav_links_allowed_places />"
+    "<get-var place />"
+    action="report"
+    />"
+    "<latemp_get_html_body_nav_links_helper with_accesskey="<get-var with_accesskey />" />"
+    />
+<restore with_accesskey place />
+</define-tag>
+
+<define-tag latemp_get_breadcrumbs_trail>
+<if "<get-var latemp_with_breadcrumbs_trail />"
+    "<latemp_theme_breadcrumbs_trail_html />"
+    />
+</define-tag>
+

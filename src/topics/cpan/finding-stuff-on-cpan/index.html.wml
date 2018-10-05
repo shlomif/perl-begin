@@ -1,4 +1,4 @@
-#include "template.wml"
+#include "template5.wml"
 
 <latemp_subject "Finding stuff on CPAN (2014)" />
 <latemp_more_keywords "cpan, finding, metacpan" />

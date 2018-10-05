@@ -6,7 +6,7 @@
 <page_extra_head_elements>
 <link rel="stylesheet" href="style.css" type="text/css" />
 <link rel="stylesheet" href="$(ROOT)/p4n.css" type="text/css" />
-<script type="text/javascript" src="$(ROOT)/js/toggle-nav-controls.js"></script>
+<js_script src="$(ROOT)/js/toggle-nav-controls.js"></js_script>
 </page_extra_head_elements>
 
 <perl_begin_sidebar>
