@@ -84,7 +84,7 @@ class MyTests(unittest.TestCase):
                 def _cb(path):
                     return re.search(_re, path)
                 return _cb
-            _skip_cb = _create_cb('tutorials/perl-for-new')
+            _skip_cb = _create_cb('tutorials/perl-for-newbies')
             _non_xhtml_cb = _create_cb('jquery-ui')
             self.assertTrue(
                 VnuValidate(dir_, os.environ[key], _non_xhtml_cb,
