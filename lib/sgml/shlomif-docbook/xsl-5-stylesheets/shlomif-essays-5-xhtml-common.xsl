@@ -7,8 +7,7 @@
     version='1.0'
     >
 
-    <xsl:import href="docbook.xsl"/>
-
+    <xsl:param name="generate.id.attributes" select="0"></xsl:param>
     <!--
          Commented out because it does not work properly.
     <xsl:template name="anchor">
@@ -26,20 +25,4 @@
 
     </xsl:template>
     -->
-
-<!-- Apply the roles into classes -->
-<xsl:template match="*[@role]" mode="class.value">
-    <xsl:param name="class" select="meaningless"/>
-    <xsl:value-of select="@role"/>
-</xsl:template>
-
-<!--
-For debugging:
-
-<xsl:template match="*" mode="class.value">
-    <xsl:param name="class" select="local-name(.)"/>
-    <xsl:text>I am now crazy, I just think I ARE</xsl:text>
-</xsl:template>
-For debugg
--->
 </xsl:stylesheet>
