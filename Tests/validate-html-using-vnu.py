@@ -42,10 +42,11 @@ import unittest
 
 class VnuValidate:
     """docstring for VnuValidate"""
-    def __init__(self, path, jar, non_xhtml_re):
+    def __init__(self, path, jar, non_xhtml_re, skip_re):
         self.path = path
         self.jar = jar
         self.non_xhtml_re = non_xhtml_re
+        self.skip_re = skip_re
 
     def run(self):
         """docstring for run"""
@@ -55,6 +56,8 @@ class VnuValidate:
             os.makedirs(dn)
             for fn in fns:
                 path = join(dirpath, fn)
+                if re.search(self.skip_re, path):
+                    continue
                 html = re.match(r'.*\.html?$', fn)
                 if re.match('.*\\.xhtml$', fn) or (
                         html and not re.search(self.non_xhtml_re, path)):
@@ -75,7 +78,8 @@ class MyTests(unittest.TestCase):
         key = 'HTML_VALID_VNU_JAR'
         if key in os.environ:
             self.assertTrue(
-                VnuValidate(dir_, os.environ[key], r'jquery-ui').run())
+                VnuValidate(dir_, os.environ[key], r'jquery-ui',
+                            r'tutorials/perl-for-new').run())
         else:
             self.assertTrue(True, key + ' not set')
 
