@@ -3,9 +3,9 @@
 #include "files_dirs_modules.wml"
 
 <page_extra_head_elements>
-<script type="text/javascript" src="$(ROOT)/js/jquery-ui-1.9.2.custom.min.js"></script>
-<link rel="stylesheet" type="text/css" href="$(ROOT)/css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen, projection" />
-<link rel="stylesheet" type="text/css" href="$(ROOT)/jqui-override.css" media="screen, projection" />
+<js_script src="$(ROOT)/js/jquery-ui-1.9.2.custom.min.js"></js_script>
+<link rel="stylesheet" type="text/css" href="$(ROOT)/css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="$(ROOT)/jqui-override.css" media="screen" />
 </page_extra_head_elements>
 
 <latemp_subject "Files and Directories Handling in Perl" />
@@ -64,11 +64,11 @@ EOF_BLAH_BLAH_YES_THIS_IS_PERL_CODE_TO_PASS_TO_VIM
 </pre>
 </define-tag>
 
-<script type="text/javascript">
+<js_script>
     $(function() {
         $(".tabs").tabs();
     });
-</script>
+</js_script>
 
 <:{
     use PerlBegin::TopicsExamples::FilesAndDirs;
