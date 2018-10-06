@@ -30,14 +30,14 @@ _exec(
     'cookiecutter failed.'
 );
 
-if ( system( "make", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
+if ( system( "gmake", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
 {
     die "build-deps failed!";
 }
 
 if ( -f "rules.mak" )
 {
-    system( "make", "-s", "src/style.css" );
+    system( "gmake", "-s", "src/style.css" );
 }
 else
 {
