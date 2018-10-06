@@ -1,7 +1,7 @@
 <p>What does the below code print:</p>
 
 <pre>
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 my $variable;
 

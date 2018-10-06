@@ -35,7 +35,7 @@ sub _calc_post_code
         my $syntax = ( $ex_spec->{syntax} || $self->default_syntax );
 
         my $code = <<"EOF";
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;

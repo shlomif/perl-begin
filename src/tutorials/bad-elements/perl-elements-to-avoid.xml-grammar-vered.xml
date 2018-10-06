@@ -1703,7 +1703,7 @@ Here is an example of having trailing whitespace demonstrated using the
 </p>
 <code_blk syntax="text">
 &gt; cat --show-ends toss-coins.pl
-#!/usr/bin/perl$
+#!/usr/bin/env perl$
 $
 use strict;$
 use warnings;$
@@ -2716,7 +2716,7 @@ So please rewrite this:
 </p>
 
 <bad_code syntax="perl">
-#!/usr/bin/perl -w
+#!/usr/bin/env perl -w
 
 use strict;
 </bad_code>
@@ -2726,7 +2726,7 @@ Into this:
 </p>
 
 <code_blk syntax="perl">
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -2762,7 +2762,7 @@ by spaces on both sides:
 </p>
 
 <code_blk syntax="perl">
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use Getopt::Long 2.36 qw(GetOptionsFromArray);
 </code_blk>
