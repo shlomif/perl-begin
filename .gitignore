@@ -20,6 +20,7 @@
 /bin/translate-Vered-XML
 /compile/
 /dest
+/lib/HTML/Latemp/GenWmlHSects.pm
 /lib/Inc/cpan_dists.wml
 /lib/Inc/html5-shims.wml
 /lib/Shlomif/Spelling/Check.pm
