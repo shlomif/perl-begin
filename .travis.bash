@@ -47,7 +47,7 @@ then
     bash -x bin/install-npm-deps.sh
     bash -x bin/install-tidyp-systemwide.bash
     bash bin/install-git-cmakey-program-system-wide.bash 'git' 'installer' 'https://github.com/shlomif/quad-pres'
-    - echo '{"amazon_sak":"invalid"}' > "$HOME"/.shlomifish-amazon-sak.json
+    echo '{"amazon_sak":"invalid"}' > "$HOME"/.shlomifish-amazon-sak.json
     ( cd "$HOME" && git clone https://github.com/w3c/markup-validator.git )
     pwd
     echo "HOME=$HOME"
