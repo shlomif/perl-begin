@@ -20,6 +20,7 @@
 /bin/translate-Vered-XML
 /compile/
 /dest
+/lib/HTML/Latemp/GenDeps.pm
 /lib/HTML/Latemp/GenWmlHSects.pm
 /lib/Inc/cpan_dists.wml
 /lib/Inc/html5-shims.wml
@@ -31,6 +32,7 @@
 /lib/docbook/5/xml/bad-elements.xml
 /lib/make/build-deps/build-deps.mak
 /lib/make/build-deps/build-deps.stamp
+/lib/make/deps.mak
 /lib/make/include.mak
 /lib/make/p4n.mak
 /lib/make/rules.mak

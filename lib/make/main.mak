@@ -9,6 +9,7 @@ include lib/make/shlomif_common.mak
 include lib/make/include.mak
 include lib/make/rules.mak
 include lib/make/p4n.mak
+include lib/make/deps.mak
 
 WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
 

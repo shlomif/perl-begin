@@ -113,5 +113,13 @@ $r_fh->print($text);
 
     close($out_fh);
 }
+use lib './lib';
+require HTML::Latemp::GenDeps;
+HTML::Latemp::GenDeps->new(
+    {
+        src_dir => 'src',
+        src_var => '$(PERL_BEGIN_DEST)',
+    }
+)->run;
 
 io->file('Makefile')->print("include $DIR/main.mak\n");
