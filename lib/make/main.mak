@@ -140,7 +140,7 @@ $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 # --basepath $(HOME)/Download/unpack/file/docbook/docbook-xsl-ns-snapshot
 $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS)
 	# jing $(DOCBOOK5_RELAXNG) $<
-	docmake	--stringparam "docbook.css.source=" --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml5 $<
+	docmake --stringparam "generate.toc=article toc,title" --stringparam "docbook.css.source=" --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml5 $<
 	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
 	rm -f $@.temp.xml.xhtml
 	perl -lpi -e 's/[ \t]+\z//' $@
