@@ -170,7 +170,7 @@ version).<br />
 
 <body>
 
-    <div id='header'>
+    <header id='header'>
 
       <div class="site-name" id="js-site-name">
         <h1><a href="$(ROOT)/">Perl Beginners' Site</a></h1>
@@ -181,7 +181,7 @@ version).<br />
 
 #     <div><img class="img-header" src="$(ROOT)/images/header.jpg" alt=""/></div>
 
-    </div>
+    </header>
 
     <div class="nav-main">
       <h3 class="hide">Breadcrumbs Trail</h3>
@@ -206,22 +206,22 @@ version).<br />
     </div>
 
     <h3 class="hide">Content</h3>
-    <div id="content">
+    <main id="content">
         <latemp_default_h1_tag />
 
         {#LATEMP_BEFORE_BODY#}
         {#LATEMP_BODY#}
         <share_this_button />
-    </div>
+    </main>
 
     {#PERL_BEGIN_SIDEBAR#}
 
   </div>
     <h3 class="hide">Footer</h3>
-    <div id="footer">
+    <footer id="footer">
         <latemp_license_text />
         <latemp_webmaster_text />
-    </div>
+    </footer>
 </body>
 </html>
 
