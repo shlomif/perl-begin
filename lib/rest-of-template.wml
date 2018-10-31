@@ -171,8 +171,6 @@ version).<br />
 
 <body>
 
-  <div id="page-container">
-
     <div id='header'>
 
       <div class="site-name" id="js-site-name">
@@ -198,6 +196,8 @@ version).<br />
       </ul>
 
     </div>
+  <div id="page-container">
+
 
     <h3 class="hide">Main Navigation</h3>
     <div id="left-sidebar">
