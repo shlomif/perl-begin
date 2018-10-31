@@ -438,3 +438,7 @@ table.wiki-content-table th *, table.wiki-content-table td:first-child *, table.
         white-space: pre-wrap !important;
     }
 }
+
+*:focus {
+    outline: red solid 2px;
+}
