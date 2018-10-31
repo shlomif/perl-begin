@@ -191,7 +191,7 @@ h1, h2, h3 {
         font-size: 1.3em;
     }
     margin-top: 20px;
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 3;
 
     .full_width_notice {
         @include side-box;
@@ -242,6 +242,7 @@ h1, h2, h3 {
 }
 
 #right-sidebar {
+    grid-column: 5 / span 1;
     font-size: 1.3em;
     padding-top: 20px;
     padding-left: 5px;
