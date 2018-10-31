@@ -103,7 +103,6 @@ Perl.
 
 <latemp_extra_head_elements>
 <js_script src="$(ROOT)/js/jq.js"></js_script>
-<js_script src="$(ROOT)/js/position_divs.js"></js_script>
 {#PAGE_EXTRA_HEAD_ELEMENTS#}
 </latemp_extra_head_elements>
 
