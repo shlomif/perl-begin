@@ -45,10 +45,10 @@ endef
 
 run_compass: src/style.css src/jqui-override.css
 
-src/style.css: config.rb lib/sass/style.sass lib/sass/print.sass lib/sass/vim_syntax_highlighting.sass lib/sass/self_link.sass
+src/style.css: config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss
 	compass compile || rm -f $@
 
-src/jqui-override.css: lib/sass/jqui-override.sass
+src/jqui-override.css: lib/sass/jqui-override.scss
 	compass compile
 
 dest/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
