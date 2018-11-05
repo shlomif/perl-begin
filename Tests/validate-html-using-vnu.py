@@ -48,7 +48,8 @@ class MyTests(vnu_validator.VnuTest):
             return _cb
 
         _skip_cb = _create_cb('tutorials/perl-for-newbies')
-        return self.vnu_test_dir('./dest', _create_cb('jquery-ui'), _skip_cb)
+        return self.vnu_test_dir('./dest', _create_cb('jquery-ui'), _skip_cb,
+                                 'Tests/data/cache/vnu-html-validator.json')
 
 
 if __name__ == '__main__':
