@@ -10,6 +10,7 @@
 /bin/Run-YUI-Compressor
 /bin/batch-inplace-html-minifier
 /bin/clean-up-docbook-xhtml-1.1.xslt
+/bin/common-required-deps.yml
 /bin/extract-spelling-errors.pl
 /bin/gen-build-deps
 /bin/gen-rpm-for-build-deps
@@ -37,6 +38,7 @@
 /lib/make/build-deps/build-deps.mak
 /lib/make/build-deps/build-deps.stamp
 /lib/make/deps.mak
+/lib/make/docbook/sf-docbook-common.mak
 /lib/make/docbook/sf-homepage-docbook-gen.tt
 /lib/make/include.mak
 /lib/make/p4n.mak

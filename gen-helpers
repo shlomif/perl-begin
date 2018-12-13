@@ -21,14 +21,7 @@ sub _exec
     return;
 }
 
-_exec(
-    [
-        'cookiecutter', '-f', '--no-input',
-        'gh:shlomif/cookiecutter--shlomif-latemp-sites',
-        'project_slug=.',
-    ],
-    'cookiecutter failed.'
-);
+_exec( [ $^X, 'bin/my-cookiecutter.pl' ], 'cookiecutter failed.' );
 
 if ( system( "gmake", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
 {
