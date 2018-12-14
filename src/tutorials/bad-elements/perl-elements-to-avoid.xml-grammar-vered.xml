@@ -2327,6 +2327,7 @@ if ($is_interactive)
 <p>
 However <pdoc_f f="use">use</pdoc_f> is a compile-time statement and will
 always be performed if detected. As a result one should instead use
+the <cpan_self_mod m="if" /> module from CPAN,
 <pdoc_f f="require">require</pdoc_f> or, less-preferably, string-eval
 with the call to use within.
 </p>
