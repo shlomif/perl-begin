@@ -1,7 +1,9 @@
 TARGET = dest
 
-all: bad_elements_html run_compass latemp_targets perl_for_newbies_extra_data iperl_extra_data \
+all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
+
+all_deps: bulk-make-dirs bad_elements_html run_compass
 
 DOCS_COMMON_DEPS = lib/template.wml
 
@@ -11,7 +13,7 @@ include lib/make/rules.mak
 include lib/make/p4n.mak
 include lib/make/deps.mak
 
-WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
+LATEMP_WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
 
 WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 	--passoption=3,-w $(LATEMP_WML_FLAGS) -I../ -DROOT~. \
@@ -24,6 +26,7 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
+WML_RENDER = LATEMP_WML_FLAGS="$(LATEMP_WML_FLAGS)" $1 bin/render
 PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 perl bin/post-incs-v2.pl --mode=minify \
                --minifier-conf=bin/html-min-cli-config-file.conf \
                --texts-dir=lib/ads \
@@ -158,3 +161,12 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 TEST_TARGETS = Tests/*.{py,t}
+
+PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.wml,$(PERL_BEGIN_DOCS_DEST))
+
+fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
+	@echo $(MAKE) fastrender
+	$(call WML_RENDER,) $(PERL_BEGIN_DOCS)
+
+bulk-make-dirs:
+	@mkdir -p $(PERL_BEGIN_DIRS_DEST)

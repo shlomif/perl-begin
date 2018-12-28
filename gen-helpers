@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use autodie;
 
+use Path::Tiny qw/ path /;
 use IO::All qw/ io /;
 use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
@@ -115,4 +116,11 @@ HTML::Latemp::GenDeps->new(
     }
 )->run;
 
+my $render = path('bin/render');
+$render->spew_utf8(
+    path('bin/render-source.pl')->slurp_utf8() =~ s#^(?:use lib[^\n]+\n)+#
+    "use lib \"" . (`wml-params-conf --show-privlib` =~ s%[\n\r]+\z%%r) . "\";\n";
+    #emrs
+);
+$render->chmod(0755);
 io->file('Makefile')->print("include $DIR/main.mak\n");
