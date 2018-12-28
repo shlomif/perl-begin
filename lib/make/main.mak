@@ -24,11 +24,17 @@ ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-PROCESS_ALL_INCLUDES = APPLY_ADS=1 perl bin/post-incs.pl
+PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 perl bin/post-incs-v2.pl --mode=minify \
+               --minifier-conf=bin/html-min-cli-config-file.conf \
+               --texts-dir=lib/ads \
+               --source-dir=$(TARGET) \
+               --dest-dir=$(TARGET) \
+               --
+
 # PROCESS_ALL_INCLUDES = true
 
 define GENERIC_GENERIC_WML_RENDER
-$(call DEF_WML_PATH) ( cd $2 && wml -o "$$fn" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$@'
+$(call DEF_WML_PATH) ( cd $2 && wml -o "$$fn" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$(patsubst $(TARGET)/%,%,$@)'
 endef
 
 define GENERIC_WML_RENDER
