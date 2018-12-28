@@ -6,8 +6,5 @@
 # Distributed under terms of the MIT license.
 #
 npm install \
-    camel-case \
     html-minifier \
-    param-case \
     sass \
-    uglify-es \
