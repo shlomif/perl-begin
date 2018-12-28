@@ -11,6 +11,7 @@ m()
 {
     make DOCBOOK5_XSL_STYLESHEETS_PATH=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns "$@"
 }
+export PATH="$PATH:$PWD/node_modules/.bin/"
 export SKIP_SPELL_CHECK=1
 ./gen-helpers
 m
