@@ -14,5 +14,6 @@ m()
 export PATH="$PATH:$PWD/node_modules/.bin/"
 export SKIP_SPELL_CHECK=1
 ./gen-helpers
+m fastrender
 m
 m test
