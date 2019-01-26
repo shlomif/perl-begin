@@ -51,7 +51,7 @@ LONG TERM:
     - Maybe a page on «What's next "after" perl?».
 
     - Pick up a better gvim colour scheme for the example code in the
-    perl-for-newbies lecture.
+    perl-for-newbies lectures.
 
     - Syntax-highlight the examples in the other code excerpts in the site
     (especially the src/tutorials/bad-elements/ ).

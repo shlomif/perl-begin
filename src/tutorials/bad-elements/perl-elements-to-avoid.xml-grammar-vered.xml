@@ -2877,6 +2877,62 @@ One can make a wise use of <cpan_self_dist d="File-Temp" /> for that.
 
 </item>
 
+<item xml:id="using-character-classes-with-unicode-text">
+<info>
+<title>Using character classes (e.g "\d") with Unicode text</title>
+</info>
+
+<p>
+As mentioned in <pdoc d="perlrecharclass"></pdoc> the regular expression
+character class "\d" and similar character classes match more than the
+<a xlink:href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> digits
+of 0 through 9. E.g:
+</p>
+
+<bad_code syntax="perl">
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use utf8;
+
+my $string = "۲۳۴";
+
+if ( $string =~ /\A \d + \z/x )
+{
+    print "The string '$string' consists entirely of digits!\n";
+}
+else
+{
+    print "The string '$string' is not all digits!\n";
+}
+</bad_code>
+
+<p>
+The match in this code succeeds! (As these are <a xlink:href="https://en.wikipedia.org/wiki/Eastern_Arabic_numerals">Eastern Arabic numerals</a>.) To remedy
+this use <code>[0-9]</code> inside regular expressions and similar sets of characters
+for other character classes.
+</p>
+<code_blk syntax="perl">
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use utf8;
+
+my $string = "۲۳۴";
+
+if ( $string =~ /\A [0-9] + \z/x )
+{
+    print "The string '$string' consists entirely of digits!\n";
+}
+else
+{
+    print "The string '$string' is not all digits!\n";
+}
+</code_blk>
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>

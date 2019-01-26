@@ -975,6 +975,7 @@ perlform
 perlipc
 perlmonks
 perlpod
+perlrecharclass
 perlthrtut
 perlvar
 phone_number
@@ -1020,6 +1021,7 @@ undef
 uppercase
 username
 usr
+utf8
 value_to_append
 var
 var1
@@ -1031,6 +1033,7 @@ write_fh
 x0a
 x0d
 x_power
+۲۳۴
 
 ==== In: dest/tutorials/index.html
 
