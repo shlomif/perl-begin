@@ -1,6 +1,7 @@
-#include "template5.wml"
+[%- SET title = "Perl for Quality Assurance and Testing" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Perl for Quality Assurance and Testing" />
 
 <p>
 Perl is commonly used for testing software, hardware and networks and for
@@ -40,12 +41,12 @@ introduces writing tests with the Perl test modules.
 </li>
 
 <li id="modern_perl">
-<a href="$(ROOT)/tutorials/modern-perl/"><i>Modern Perl</i></a> -
+<a href="[% base_path %]tutorials/modern-perl/"><i>Modern Perl</i></a> -
 the book by chromatic has chapter 9 dedicated to Testing.
 </li>
 
 <li id="perl_for_newbies">
-<a href="$(ROOT)/tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
+<a href="[% base_path %]tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
 the fifth part of this tutorial covers testing among other good practises.
 </li>
 
@@ -56,8 +57,10 @@ book (but somewhat out-of-date) about testing in Perl.
 </li>
 
 <li>
-<a href="$(ROOT)/books/#beginning-perl"><i>Beginning Perl</i></a> - the latest
+<a href="[% base_path %]books/#beginning-perl"><i>Beginning Perl</i></a> - the latest
 edition of this book contains a chapter about QA.
 </li>
 
 </ul>
+
+[% END %]
