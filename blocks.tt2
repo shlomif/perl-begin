@@ -11,18 +11,23 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 [%- BLOCK start_html -%]
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
 <head>
 <title>[% title %]</title>
 <meta charset="utf-8"/>
-<meta content="" name="author"/>
-<meta content="[% desc || "" %]" name="description"/>
-<meta content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers" name="keywords"/>
-<link href="[% base_path %]style.css" rel="stylesheet" title="Normal" media="screen" type="text/css" />
-<link href="[% base_path %]print.css" rel="stylesheet" type="text/css" media="print" />
-<link href="[% base_path %]favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="[% base_path %]irc/" rel="next" title="Chat online about Perl using the Internet Relay Chat (IRC)" />
-<link href="[% base_path %]mailing-lists/" rel="prev" title="Ask questions and receive answers about Perl by E-mail" />
+<meta name="author" content=""/>
+<meta name="description" content="[% desc || "" %]"/>
+<meta name="keywords" content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers"/>
+<link rel="stylesheet" href="[% base_path %]style.css" type="text/css" media=
+"screen" title="Normal" />
+<link rel="stylesheet" href="[% base_path %]print.css" type="text/css" media=
+"print" />
+<link rel="shortcut icon" href="[% base_path %]favicon.ico" type=
+"image/x-icon" />
+<link rel="next" href="[% base_path %]irc/" title=
+"Chat online about Perl using the Internet Relay Chat (IRC)" />
+<link rel="prev" href="[% base_path %]mailing-lists/" title=
+"Ask questions and receive answers about Perl by E-mail" />
 <script src="[% base_path %]js/jq.js"></script>
 </head>
 
