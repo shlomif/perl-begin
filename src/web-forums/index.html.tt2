@@ -88,9 +88,9 @@ A forum in Hebrew hosted on the
 <p>
 The Facebook’s forums system is intended for casual talk and correspondence,
 and tends to mangle the code losing its indentation, and fixed width font
-display. Use a <a href="[% base_path %]/mailing-lists/">mailing list</a> or a better
+display. Use a <a href="[% base_path %]mailing-lists/">mailing list</a> or a better
 web forum to get help, or alternatively
-try asking on <a href="[% base_path %]/irc/">IRC (Chat)</a>
+try asking on <a href="[% base_path %]irc/">IRC (Chat)</a>
 </p>
 
 [% END %]
