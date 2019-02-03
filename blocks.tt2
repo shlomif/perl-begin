@@ -10,13 +10,9 @@
 <link rel="stylesheet" type="text/css" href="[% base_path %]layout_style.css" />
 <link rel="stylesheet" type="text/css" href="[% base_path %]main_style.css" />
 <link rel="icon" href="[% base_path %]favicon.ico" type="image/x-icon" />
-<!--[if lt IE 8]>
-<link rel="stylesheet" href="[% base_path %]layout_style_ie.css">
-<![endif]-->
-<script src="[% base_path %]layout.js"></script>
 </head>
 
-<body dir="rtl">
+<body>
 
 <!-- Defines a right-hand "sidebar" block -->
 
