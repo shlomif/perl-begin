@@ -8,33 +8,22 @@
 <meta content="" name="author"/>
 <meta name="description" content="[% desc || "" %]" />
 <meta content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers" name="keywords"/>
-<link href="[% base_path %]style.css" rel="stylesheet" title="Normal" media=
-"screen" type="text/css" />
-<link href="[% base_path %]print.css" rel="stylesheet" type="text/css" media=
-"print" />
-<link href="[% base_path %]favicon.ico" rel="shortcut icon" type=
-"image/x-icon" />
-<link href="[% base_path %]irc/" rel="next" title=
-"Chat online about Perl using the Internet Relay Chat (IRC)" />
-<link href="[% base_path %]mailing-lists/" rel="prev" title=
-"Ask questions and receive answers about Perl by E-mail" />
+<link href="[% base_path %]style.css" rel="stylesheet" title="Normal" media="screen" type="text/css" />
+<link href="[% base_path %]print.css" rel="stylesheet" type="text/css" media="print" />
+<link href="[% base_path %]favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="[% base_path %]irc/" rel="next" title="Chat online about Perl using the Internet Relay Chat (IRC)" />
+<link href="[% base_path %]mailing-lists/" rel="prev" title="Ask questions and receive answers about Perl by E-mail" />
 <script src="[% base_path %]js/jq.js"></script>
 </head>
 
 <body>
 
-<!-- Defines a right-hand "sidebar" block -->
-
-<div id="sidebar">
-
-<!-- side menu -->
-
-<div id="menu">
+<header id="header">
+<div class="site-name" id="js-site-name">
+<h1><a href="[% base_path %]">Perl Beginners' Site</a></h1>
 </div>
-
-</div>
-
-<!-- Defines a content block, spanning the remaining rest of the document -->
+<div class="site-slogan" id="js-site-slogan">Perl - because programming should be fun.</div>
+</header>
 
 <div id="content">
 [%- END -%]
