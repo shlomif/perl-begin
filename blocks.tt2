@@ -6,7 +6,7 @@
 <title>[% title %]</title>
 <meta charset="utf-8"/>
 <meta content="" name="author"/>
-<meta name="description" content="[% desc || "" %]" />
+<meta content="[% desc || "" %]" name="description"/>
 <meta content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers" name="keywords"/>
 <link href="[% base_path %]style.css" rel="stylesheet" title="Normal" media="screen" type="text/css" />
 <link href="[% base_path %]print.css" rel="stylesheet" type="text/css" media="print" />
@@ -25,10 +25,225 @@
 <div class="site-slogan" id="js-site-slogan">Perl - because programming should be fun.</div>
 </header>
 
-<div id="content">
+<div class="nav-main">
+<h3 class="hide">Breadcrumbs Trail</h3>
+<p class="breadcrumbs"><a href="../">Home</a> → <a href="./" title=
+"Ask questions and receive answers by using a web-browser">Web
+Forums</a></p>
+<h3 class="hide">Global Navigation</h3>
+<ul class="about-links">
+<li><a href="../about.html">About Us</a></li>
+<li><a href="../contact/">Contact</a></li>
+</ul>
+</div>
+<div id="page-container">
+<h3 class="hide">Main Navigation</h3>
+<div id="left-sidebar">
+<ul class="navbarmain">
+<li><a href="../">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../news/" title="Previous News Item">News</a></li>
+<li><a href="../links/" title=
+"External Links to Other Resources">Links</a></li>
+<li><a href="../humour/" title=
+"Perl Humour and Links to Perl Humour resources">Perl
+Humour</a></li>
+</ul>
+<h2><a href="../resources/" title=
+"Links to Online and Offline Resources for Learning Perl">Resources</a></h2>
+<ul class="navbarnested">
+<li><a href="../tutorials/">Online Tutorials</a><br />
+<ul class="navbarnested">
+<li><a href="../tutorials/modern-perl/" title=
+"The book “Modern Perl” by chromatic.">Modern Perl by
+chromatic</a></li>
+<li><a href="../tutorials/perl-for-newbies/" title=
+"Perl Tutorial for Beginners">The "Perl for Newbies"
+Tutorial</a><br />
+<ul class="navbarnested">
+<li><a href="../tutorials/perl-for-newbies/part1/" title=
+"Perl Basics">Part 1</a></li>
+<li><a href="../tutorials/perl-for-newbies/part2/" title=
+"Real Programming with Perl">Part 2</a></li>
+<li><a href="../tutorials/perl-for-newbies/part3/" title=
+"Modules and Objects">Part 3</a></li>
+<li><a href="../tutorials/perl-for-newbies/part4/" title=
+"Useful Perl Paradigms">Part 4</a></li>
+<li><a href="../tutorials/perl-for-newbies/part5/" title=
+"Good Programming Practices">Part 5</a></li>
+</ul>
+</li>
+<li><a href="../tutorials/impatient-perl/" title=
+"Book for Quickly Learning Perl (based on previous knowledge)">Impatient
+Perl</a></li>
+<li><a href="../tutorials/hyperpolyglot/" title=
+"Our mirror for the lingo of Perl and other languages under CC-by-sa">
+Hyperpolyglot</a><br />
+<ul class="navbarnested">
+<li><a href="../tutorials/hyperpolyglot/sheet1.html">Sheet
+1</a></li>
+<li><a href="../tutorials/hyperpolyglot/sheet2.html">Sheet
+2</a></li>
+</ul>
+</li>
+<li><a href="../tutorials/bad-elements/" title=
+"Elements of Perl that should be avoided and what to replace them with">
+Elements to Avoid</a></li>
+<li><a href="../tutorials/localized/" title=
+"Tutorials in languages other than English">In Other
+Languages</a></li>
+</ul>
+</li>
+<li><a href="../books/">Books</a></li>
+<li><a href="../IDEs-and-tools/" title=
+"Integrated Development Environments (IDEs), Programmer Editors, and other Development Tools for Perl">
+IDEs and Development Tools</a></li>
+<li><a href="../core-doc/">Core Docs</a></li>
+<li><a href="../articles/">Article Collections</a></li>
+<li><a href="../training/" title=
+"Take paid courses for learning Perl">Training</a></li>
+<li><a href="../FAQs/" title=
+"Lists of Frequently Asked Questions with Answers">FAQs</a><br />
+<ul class="navbarnested">
+<li><a href="../FAQs/freenode-perl/" title=
+"The Frequently Asked Questions List for the Freenode Perl Channel">
+Freenode’s #perl FAQ</a></li>
+</ul>
+</li>
+<li><a href="../exercises/" title=
+"Links to Exercises and Challenges for Practice">Exercises and
+Challenges</a></li>
+</ul>
+<ul class="navbarmain">
+<li><a href="../mailing-lists/" title=
+"Ask questions and receive answers about Perl by E-mail">Mailing
+Lists</a></li>
+<li><b>Web Forums</b></li>
+<li><a href="../irc/" title=
+"Chat online about Perl using the Internet Relay Chat (IRC)">IRC
+Channels</a></li>
+</ul>
+<ul class="navbarmain">
+<li><a href="../reference-resources/" title=
+"Resources for reference about Perl and looking up information.">Reference
+Resources</a></li>
+<li><a href="../wikis/" title=
+"Publicly editable sites with Lots of Useful Information">Wikis</a></li>
+<li><a href="../blogs/" title=
+"Links to Perl-related Blogs (a.k.a &quot;Weblogs&quot; or online journals)">
+Blogs</a></li>
+</ul>
+<h2><a href="../platforms/">Platforms</a></h2>
+<ul class="navbarmain">
+<li><a href="../platforms/mac/" title=
+"Macintosh and PowerPC/PowerMac Platforms">Mac OS</a></li>
+<li><a href="../platforms/unix/">UNIX/Linux</a></li>
+<li><a href="../platforms/windows/">Windows</a></li>
+</ul>
+<h2><a href="../uses/" title="Common Uses for Perl">Common
+Uses</a></h2>
+<ul class="navbarmain">
+<li><a href="../uses/bio-info/" title=
+"Using Perl for Bio-Informatics">Bio-Info</a></li>
+<li><a href="../uses/chat-scripting/" title=
+"Writing chat (IRC, Jabber and other IM) bots in Perl and general chat scripting">
+Chat Bots and Scripting (IRC, XMPP)</a></li>
+<li><a href="../uses/databases/" title=
+"Working with Databases (SQL, etc.) Using Perl">Databases</a></li>
+<li><a href="../uses/email/" title=
+"Working with E-mail using Perl">Email</a></li>
+<li><a href="../uses/games/" title=
+"Developing Games and Multimedia Applications in Perl">Games and
+Multimedia</a></li>
+<li><a href="../uses/GUI/" title=
+"Development of Graphical User Interface (GUIs) in Perl">GUI
+Development</a></li>
+<li><a href="../uses/multitasking/" title=
+"Perl for Multitasking and Networking">Multitasking</a></li>
+<li><a href="../uses/qa/">QA and Testing</a></li>
+<li><a href="../uses/remote-login-and-commands/" title=
+"Remote login and execution of commands (SSH, Telnet, etc.)">SSH/Telnet</a></li>
+<li><a href="../uses/sys-admin/" title=
+"Using Perl for System Administration">Sys Admin</a></li>
+<li><a href="../uses/text-generation/" title=
+"How to generate text using Perl">Text Generation</a></li>
+<li><a href="../uses/text-parsing/" title=
+"How to parse various forms of text using Perl">Text
+Parsing</a></li>
+<li><a href="../uses/web-automation/" title=
+"Perform operations on web-site programatically and automatically">Web
+Automation</a></li>
+<li><a href="../uses/web/">Web/CGI</a></li>
+<li><a href="../uses/xml/">XML</a></li>
+</ul>
+<h2><a href="../topics/" title="Perl-related Topics">Perl
+Topics</a></h2>
+<ul class="navbarmain">
+<li><a href="../topics/date-and-time/" title=
+"Dates and Time Handling, Parsing and Processing">Date and
+Time</a></li>
+<li><a href="../topics/debugging/" title=
+"Debugging Perl Programs">Debugging</a></li>
+<li><a href="../topics/files-and-directories/" title=
+"Handling Files and Directories in Perl">Files and
+Directories</a></li>
+<li><a href="../topics/hashes/" title=
+"Hashes / Associative Arrays for Mapping Keys to Values">Hashes</a></li>
+<li><a href="../topics/modules-and-packages/" title=
+"Encapsulate code in reusable units and use namespaces effectively.">
+Modules and Packages</a></li>
+<li><a href="../topics/references/" title=
+"Perl References">References</a></li>
+<li><a href="../topics/regular-expressions/" title=
+"Regular Expressions in Perl">Regular Expressions</a></li>
+<li><a href="../topics/object-oriented/" title=
+"Object Oriented Programming and Design in Perl">Object Oriented
+Perl</a></li>
+<li><a href="../topics/optimising-and-profiling/" title=
+"How (and When) to make your Perl programs faster">Optimising and
+Profiling</a></li>
+<li><a href="../topics/scoping/" title=
+"Local variables, lexical scoping, package variables">Scoping and
+Variables</a></li>
+<li><a href="../topics/cpan/" title=
+"Effectively using CPAN - the Comprehensive Perl Archive Network">Using
+CPAN</a><br />
+<ul class="navbarnested">
+<li><a href="../topics/cpan/wrappers-for-distributions/" title=
+"Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.">
+CPAN Wrappers for Creating System Packages</a></li>
+<li><a href="../topics/cpan/finding-stuff-on-cpan/">Finding Stuff
+on CPAN</a></li>
+</ul>
+</li>
+</ul>
+<h2><a href="../learn/" title=
+"Perl advocacy - why you should learn it, and some issues.">Advocacy</a></h2>
+<ul class="navbarmain">
+<li><a href="../learn/perl6/">What about Perl 6?</a></li>
+<li><a href="../learn/Perl-perl-but-not-PERL/">"Perl", and "perl",
+but not "PERL"</a></li>
+<li><a href="../learn/get-a-job/">Get a Job!</a></li>
+<li><a href="../learn/why-perl/">Why Perl is Good</a></li>
+<li><a href="../learn/who-is-using/">Who is Using Perl?</a></li>
+</ul>
+<h2><a href="../site-resources/">Site Resources</a></h2>
+<h2><a href="../contribute/" title=
+"Contribute new content or corrections to this site">Contribute</a></h2>
+<ul class="navbarmain">
+<li><a href="../contribute/list/">Contributors List</a></li>
+<li><a href="../source/">Site’s Source Code</a></li>
+</ul>
+<object data=
+"https://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo"
+style="overflow:hidden;margin:0;padding:0;width:160px;height:40px"
+type="text/html"></object></div>
+<h3 class="hide">Content</h3>
+<main id="content">
 [%- END -%]
 
 [%- BLOCK end_html -%]
+</main>
 		</div>
 
 		<!-- Credit notices -->
