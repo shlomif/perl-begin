@@ -3,7 +3,7 @@
 
 <p class="study_group">
 <a href="[% openstudy_group_url %]"
-title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img alt="Join the Study Group" src="[% base_path %]images/study-group.png"/></a>
+title="Study group for Perl Beginners: ask questions, get answers and share studypads"><img src="[% base_path %]images/study-group.png" alt="Join the Study Group"/></a>
 </p>
 
 [%- END -%]
