@@ -38,7 +38,7 @@ reddit.com and its sub forums are useful for general discussion and news.
 
 <h2 id="openstudy"><a href="[% openstudy_group_url %]">Perl for Beginners Study Group on OpenStudy</a></h2>
 
-[% openstudy_button %]
+[% PROCESS openstudy_button %]
 
 <p>
 A study group for Perl beginners over at OpenStudy.com ("Make the world
