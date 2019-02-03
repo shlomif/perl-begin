@@ -250,8 +250,9 @@ on CPAN</a></li>
 </ul>
 <object data=
 "https://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo"
+type="text/html"
 style="overflow:hidden;margin:0;padding:0;width:160px;height:40px"
-type="text/html"></object></div>
+></object></div>
 <h3 class="hide">Content</h3>
 <main id="content">
 <h1>[% title %]</h1>
