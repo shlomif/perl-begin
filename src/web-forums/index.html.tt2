@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Web Forums" />
+[%- SET title = "Web Forums" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="stackoverflow"><a href="http://stackoverflow.com/">Stack Overflow</a></h2>
 
@@ -36,16 +36,16 @@ While most beginner questions can and should be posted to Stack Overflow,
 reddit.com and its sub forums are useful for general discussion and news.
 </p>
 
-<h2 id="openstudy"><a href="<get-var openstudy_group_url />">Perl for Beginners Study Group on OpenStudy</a></h2>
+<h2 id="openstudy"><a href="[% openstudy_group_url %]">Perl for Beginners Study Group on OpenStudy</a></h2>
 
-<openstudy_button />
+[% openstudy_button %]
 
 <p>
 A study group for Perl beginners over at OpenStudy.com ("Make the world
 your study group.").
 </p>
 
-<define-tag removed>
+[%IF 0%]
 
 <h2 id="use_perl"><a href="http://use.perl.org/">use Perl; (use.perl.org)</a></h2>
 
@@ -70,7 +70,7 @@ A low-volume forum, but one that attracted many experts,
 and can offer a lot of good advice.
 </p>
 
-</define-tag>
+[% END %]
 
 <h2 id="localised">Localised Forums</h2>
 
@@ -88,7 +88,9 @@ A forum in Hebrew hosted on the
 <p>
 The Facebook’s forums system is intended for casual talk and correspondence,
 and tends to mangle the code losing its indentation, and fixed width font
-display. Use a <a href="$(ROOT)/mailing-lists/">mailing list</a> or a better
+display. Use a <a href="[% base_path %]/mailing-lists/">mailing list</a> or a better
 web forum to get help, or alternatively
-try asking on <a href="$(ROOT)/irc/">IRC (Chat)</a>
+try asking on <a href="[% base_path %]/irc/">IRC (Chat)</a>
 </p>
+
+[% END %]

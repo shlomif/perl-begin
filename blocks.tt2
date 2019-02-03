@@ -1,0 +1,54 @@
+[%- BLOCK start_html -%]
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>[% title %]</title>
+<meta charset="utf-8"/>
+<meta content="" name="author"/>
+<meta name="description" content="[% title %]" />
+<link rel="stylesheet" type="text/css" href="[% base_path %]layout_style.css" />
+<link rel="stylesheet" type="text/css" href="[% base_path %]main_style.css" />
+<link rel="icon" href="[% base_path %]favicon.ico" type="image/x-icon" />
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="[% base_path %]layout_style_ie.css">
+<![endif]-->
+<script src="[% base_path %]layout.js"></script>
+</head>
+
+<body dir="rtl">
+
+<!-- Defines a right-hand "sidebar" block -->
+
+<div id="sidebar">
+
+<!-- side menu -->
+
+<div id="menu">
+</div>
+
+</div>
+
+<!-- Defines a content block, spanning the remaining rest of the document -->
+
+<div id="content">
+[%- END -%]
+
+[%- BLOCK end_html -%]
+		</div>
+
+		<!-- Credit notices -->
+		<div id="footnotes">
+		</div>
+	</body>
+</html>
+[%- END -%]
+
+[%- BLOCK wrap_html -%]
+[%- PROCESS start_html -%]
+[% content %]
+[%- PROCESS end_html -%]
+[%- END -%]
+
+[%-# vim:ft=tt2html:
+-%]
