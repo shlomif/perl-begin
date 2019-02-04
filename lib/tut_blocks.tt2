@@ -1,0 +1,50 @@
+[% BLOCK modern_perl_entry %]
+
+<h3 id="modern_perl"><a href="[% base_path %]books/#modern-perl">Modern Perl
+(the Book)</a></h3>
+
+[% content %]
+
+[% END %]
+
+[% BLOCK beginning_perl_entry %]
+
+<h3 id="beginning_perl"><a href="http://learn.perl.org/library/beginning_perl/">Beginning Perl</a></h3>
+
+[% content %]
+
+[% END %]
+
+[% BLOCK perl_for_newbies_entry %]
+
+<h3 id="perl_for_newbies"><a href="[% base_path %]tutorials/perl-for-newbies/">Perl for Perl
+Newbies Series</a></h3>
+
+[% content %]
+[% END %]
+
+[% BLOCK modules_and_objects_perldocs %]
+
+<h3 id="perldoc">Perldoc Tutorials</h3>
+
+<p>
+These are the Perldoc OOP tutorials that ship with Perl:
+</p>
+
+<ul>
+
+<li>
+[%- WRAPPER pdoc d = "perlmod" -%][%- END -%] - The Perl Modules Introduction
+</li>
+
+<li>
+[%- WRAPPER pdoc d = "perlootut" -%][%- END -%] - Object-Oriented Programming in Perl Tutorial
+</li>
+
+<li>
+[%- WRAPPER pdoc d = "perlobj" -%][%- END -%] - The Perl Objects Man-Page
+</li>
+
+</ul>
+
+[% END %]

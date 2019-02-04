@@ -1,7 +1,7 @@
-#include "template5.wml"
-#include "tut_blocks.wml"
-
-<latemp_subject "References in Perl" />
+[%- SET title = "References in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "tut_blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -13,7 +13,7 @@ nested data structures, and also serve as the basis of Perl's object system.
 
 <h2 id="tutorials">Tutorials</h2>
 
-<h3 id="perlreftut"><pdoc d="perlreftut"></pdoc></h3>
+<h3 id="perlreftut">[%- WRAPPER pdoc d = "perlreftut" -%][%- END -%]</h3>
 
 <p>
 The built-in references tutorial in the Perl 5 distribution. Also see the following documents:
@@ -22,15 +22,15 @@ The built-in references tutorial in the Perl 5 distribution. Also see the follow
 <ul>
 
 <li>
-<pdoc d="perlref"> - Perl References and Nested Data Structures</pdoc>
+[%- WRAPPER pdoc d = "perlref" -%] - Perl References and Nested Data Structures[%- END -%]
 </li>
 
 <li>
-<pdoc d="perldsc"> - Perl Data Structures</pdoc>
+[%- WRAPPER pdoc d = "perldsc" -%] - Perl Data Structures[%- END -%]
 </li>
 
 <li>
-<pdoc d="perllol"> - Perl Lists of Lists</pdoc>
+[%- WRAPPER pdoc d = "perllol" -%] - Perl Lists of Lists[%- END -%]
 </li>
 
 </ul>
@@ -46,28 +46,28 @@ programmer who had problems understanding their concept. It may prove useful
 for some insights.
 </p>
 
-<beginning_perl_entry>
+[%- WRAPPER beginning_perl_entry -%]
 
 <p>
 Chapter 7 of "Beginning Perl" discusses references.
 </p>
 
-</beginning_perl_entry>
+[%- END -%]
 
-<modern_perl_entry>
+[%- WRAPPER modern_perl_entry -%]
 
 <p>
 The Modern Perl book covers references.
 </p>
-</modern_perl_entry>
+[%- END -%]
 
-<perl_for_newbies_entry>
+[%- WRAPPER perl_for_newbies_entry -%]
 
 <p>
 The second presentation in the series discusses references.
 </p>
 
-</perl_for_newbies_entry>
+[%- END -%]
 
 <h3 id="merlyn_show_me_your_refs"><a href="http://www.stonehenge.com/merlyn/UnixReview/col68.html">Randal Schwartz's “Show Me Your References”</a></h3>
 
@@ -75,3 +75,5 @@ The second presentation in the series discusses references.
 A brief article by Randal Schwratz that covers references in Perl and the
 syntaxes for using them.
 </p>
+
+[% END %]
