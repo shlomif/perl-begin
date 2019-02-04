@@ -167,7 +167,7 @@ PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.wm
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
 	@$(call WML_RENDER,) $(PERL_BEGIN_DOCS)
-	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) $$(find src -name '*.tt2' | perl -lpE 's{\A(?:\./)?src/}{}; s/\.tt2\z//;' | sort)
+	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) $$(cat lib/make/tt2.txt)
 
 bulk-make-dirs:
 	@mkdir -p $(PERL_BEGIN_DIRS_DEST)

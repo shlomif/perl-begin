@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use 5.014;
 use autodie;
 
 use Path::Tiny qw/ path /;
@@ -37,6 +38,7 @@ else
 {
     system( "compass", "compile" );
 }
+my @tt;
 
 my $generator = HTML::Latemp::GenMakeHelpers->new(
     'hosts' => [
@@ -55,12 +57,19 @@ my $generator = HTML::Latemp::GenMakeHelpers->new(
     filename_lists_post_filter => sub {
         my ($args) = @_;
         my $filenames = $args->{filenames};
-        return [ grep { $_ !~ m#\.tt2\z# } @$filenames ];
+        return [
+            grep {
+                s#\.tt2\z##
+                    ? do { push @tt, $_; '' }
+                    : 1
+            } @$filenames
+        ];
     },
 );
 
 $generator->process_all();
 
+path("$DIR/tt2.txt")->spew( join "\n", @tt, "" );
 my $r_fh = io("$DIR/rules.mak");
 my $text = $r_fh->slurp();
 $text =~

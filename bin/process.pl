@@ -11,6 +11,7 @@ use URI::Escape qw( uri_escape );
 use Template           ();
 use File::Find::Object ();
 
+use File::Basename qw( basename );
 use File::Path qw( mkpath );
 use File::Spec ();
 use File::Copy qw( copy );
@@ -89,35 +90,33 @@ my $vars = +{
     },
 };
 
-while ( my $result = $tree->next_obj() )
+my @tt = path("lib/make/tt2.txt")->lines_raw;
+chomp @tt;
+foreach my $result (@tt)
 {
-    if ( not $result->is_dir() )
+    my $basename = basename($result);
+    my @fn       = split m#/#, $result;
+    my @fn_nav   = @fn;
+    if ( $fn_nav[-1] =~ m#\Aindex\.x?html\z# )
     {
-        my $basename = $result->basename;
-        if ( $basename =~ s/\.html\.tt2\z/.html/ )
-        {
-            my @fn     = ( @{ $result->dir_components() }, $basename );
-            my @fn_nav = @fn;
-            if ( $fn_nav[-1] =~ m#\Aindex\.x?html\z# )
-            {
-                $fn_nav[-1] = '';
-            }
-            my $base_path =
-                ( '../' x scalar( @{ $result->dir_components() } ) );
-            my $fn2     = join( '/', @fn_nav ) || '/';
-            my $nav_bar = $object_class->new(
-                'path_info'    => $fn2,
-                'current_host' => $LATEMP_SERVER,
-                MyNavData::get_params(),
-                'ul_classes'     => [ "navbarmain", ("navbarnested") x 10 ],
-                'no_leading_dot' => 1,
-            );
+        $fn_nav[-1] = '';
+    }
+    my $base_path =
+        ( '../' x ( scalar(@fn) - 1 ) );
+    my $fn2     = join( '/', @fn_nav ) || '/';
+    my $nav_bar = $object_class->new(
+        'path_info'    => $fn2,
+        'current_host' => $LATEMP_SERVER,
+        MyNavData::get_params(),
+        'ul_classes'     => [ "navbarmain", ("navbarnested") x 10 ],
+        'no_leading_dot' => 1,
+    );
 
-            my $rendered_results = $nav_bar->render();
+    my $rendered_results = $nav_bar->render();
 
-            my $nav_links_obj = $rendered_results->{nav_links_obj};
+    my $nav_links_obj = $rendered_results->{nav_links_obj};
 
-            my $nav_html = $rendered_results->{html};
+    my $nav_html = $rendered_results->{html};
 
 =begin removed
             my $nav_links = $rendered_results->{nav_links};
@@ -135,65 +134,62 @@ while ( my $result = $tree->next_obj() )
             my $text = $nav_links_renderer->get_total_html(@params);
 =cut
 
-            my $t2 = '';
+    my $t2 = '';
 
+    {
+        my @keys = ( sort { $a cmp $b } keys(%$nav_links_obj) );
+    LINKS:
+        foreach my $key (@keys)
+        {
+            if ( ( $key eq 'top' ) or ( $key eq 'up' ) )
             {
-                my @keys = ( sort { $a cmp $b } keys(%$nav_links_obj) );
-            LINKS:
-                foreach my $key (@keys)
-                {
-                    if ( ( $key eq 'top' ) or ( $key eq 'up' ) )
-                    {
-                        next LINKS;
-                    }
-                    my $val        = $nav_links_obj->{$key};
-                    my $url        = escape_html( $val->direct_url() );
-                    my $title      = $val->title();
-                    my $title_attr = defined($title) ? " title=\"$title\"" : "";
-                    $t2 .= "<link rel=\"$key\" href=\"$url\"$title_attr />\n";
-                }
+                next LINKS;
             }
-
-            my $leading_path = $rendered_results->{leading_path};
-
-            my $render_leading_path_component = sub {
-                my $component  = shift;
-                my $title      = $component->title();
-                my $title_attr = defined($title) ? " title=\"$title\"" : "";
-                return
-                      "<a href=\""
-                    . escape_html( $component->direct_url() )
-                    . "\"$title_attr>"
-                    . $component->label() . "</a>";
-            };
-
-            my $leading_path_string = join( " → ",
-                ( map { $render_leading_path_component->($_) } @$leading_path )
-            );
-            my $share_link = escape_html(
-                uri_escape(
-                    MyNavData::get_hosts()->{ $nav_bar->current_host() }
-                        ->{'base_url'} . $nav_bar->path_info()
-                )
-            );
-
-            mkpath(
-                File::Spec->catdir( @DEST, @{ $result->dir_components() } ) );
-            $vars->{base_path}           = $base_path;
-            $vars->{leading_path_string} = $leading_path_string;
-            $vars->{nav_links}           = $t2;
-            $vars->{nav_menu_html}       = join( '', @$nav_html );
-            $vars->{share_link}          = $share_link;
-            $vars->{slurp_bad_elems}     = sub {
-                return path("lib/docbook/5/rendered/bad-elements.xhtml")
-                    ->slurp_utf8() =~ s{\$\(ROOT\)}{$base_path}gr;
-            };
-            $template->process(
-                $result->path(), $vars,
-                File::Spec->catfile( @DEST, @fn, ),
-                binmode => ':utf8',
-            ) or die $template->error();
+            my $val        = $nav_links_obj->{$key};
+            my $url        = escape_html( $val->direct_url() );
+            my $title      = $val->title();
+            my $title_attr = defined($title) ? " title=\"$title\"" : "";
+            $t2 .= "<link rel=\"$key\" href=\"$url\"$title_attr />\n";
         }
+    }
+
+    my $leading_path = $rendered_results->{leading_path};
+
+    my $render_leading_path_component = sub {
+        my $component  = shift;
+        my $title      = $component->title();
+        my $title_attr = defined($title) ? " title=\"$title\"" : "";
+        return
+              "<a href=\""
+            . escape_html( $component->direct_url() )
+            . "\"$title_attr>"
+            . $component->label() . "</a>";
+    };
+
+    my $leading_path_string = join( " → ",
+        ( map { $render_leading_path_component->($_) } @$leading_path ) );
+    my $share_link = escape_html(
+        uri_escape(
+            MyNavData::get_hosts()->{ $nav_bar->current_host() }->{'base_url'}
+                . $nav_bar->path_info()
+        )
+    );
+
+    mkpath( File::Spec->catdir( @DEST, @fn[ 0 .. $#fn - 1 ] ) );
+    $vars->{base_path}           = $base_path;
+    $vars->{leading_path_string} = $leading_path_string;
+    $vars->{nav_links}           = $t2;
+    $vars->{nav_menu_html}       = join( '', @$nav_html );
+    $vars->{share_link}          = $share_link;
+    $vars->{slurp_bad_elems}     = sub {
+        return path("lib/docbook/5/rendered/bad-elements.xhtml")->slurp_utf8()
+            =~ s{\$\(ROOT\)}{$base_path}gr;
+    };
+    $template->process(
+        "src/$result.tt2", $vars,
+        File::Spec->catfile( @DEST, @fn, ),
+        binmode => ':utf8',
+    ) or die $template->error();
 
 =begin removed
 
@@ -212,5 +208,4 @@ while ( my $result = $tree->next_obj() )
 
 =cut
 
-    }
 }
