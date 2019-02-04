@@ -13,6 +13,7 @@ use File::Find::Object ();
 use File::Path qw( mkpath );
 use File::Spec ();
 use File::Copy qw( copy );
+use Path::Tiny qw/ path /;
 
 my $object_class  = "HTML::Widgets::NavMenu::HeaderRole";
 my $LATEMP_SERVER = "perl_begin";
@@ -161,6 +162,9 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                 cpan_self_dist => sub {
                     my %args = %{ shift() };
                     return cpan_dist( %args, body => $args{d} );
+                },
+                slurp => sub {
+                    return path(shift)->slurp_utf8;
                 },
             };
 

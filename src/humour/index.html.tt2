@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Humour" />
+[%- SET title = "Perl Humour" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This page was retrieved from the Perl_humour page at the currently offline
@@ -11,4 +11,6 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-#include "retrieved-html-parts/Perl_Humour.html"
+[% slurp( "lib/retrieved-html-parts/Perl_Humour.html" ) %]
+
+[% END %]
