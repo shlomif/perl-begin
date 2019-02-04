@@ -6,7 +6,6 @@ use warnings;
 use utf8;
 
 use lib './lib';
-use CGI ();
 use URI::Escape qw( uri_escape );
 use Template           ();
 use File::Find::Object ();
@@ -18,8 +17,9 @@ use File::Copy qw( copy );
 my $object_class  = "HTML::Widgets::NavMenu::HeaderRole";
 my $LATEMP_SERVER = "perl_begin";
 use HTML::Widgets::NavMenu::HeaderRole ();
-use MyNavData                          ();
-use MyNavLinks                         ();
+use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
+use MyNavData  ();
+use MyNavLinks ();
 my $template = Template->new(
     {
         INCLUDE_PATH => ".",
@@ -115,7 +115,7 @@ while ( my $result = $tree->next_obj() )
                         next LINKS;
                     }
                     my $val        = $nav_links_obj->{$key};
-                    my $url        = CGI::escapeHTML( $val->direct_url() );
+                    my $url        = escape_html( $val->direct_url() );
                     my $title      = $val->title();
                     my $title_attr = defined($title) ? " title=\"$title\"" : "";
                     $t2 .= "<link rel=\"$key\" href=\"$url\"$title_attr />\n";
@@ -130,7 +130,7 @@ while ( my $result = $tree->next_obj() )
                 my $title_attr = defined($title) ? " title=\"$title\"" : "";
                 return
                       "<a href=\""
-                    . CGI::escapeHTML( $component->direct_url() )
+                    . escape_html( $component->direct_url() )
                     . "\"$title_attr>"
                     . $component->label() . "</a>";
             };
@@ -138,7 +138,7 @@ while ( my $result = $tree->next_obj() )
             my $leading_path_string = join( " → ",
                 ( map { $render_leading_path_component->($_) } @$leading_path )
             );
-            my $share_link = CGI::escapeHTML(
+            my $share_link = escape_html(
                 uri_escape(
                     MyNavData::get_hosts()->{ $nav_bar->current_host() }
                         ->{'base_url'} . $nav_bar->path_info()
