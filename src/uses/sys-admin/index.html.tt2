@@ -1,7 +1,6 @@
-#include "template5.wml"
-#include "files_dirs_modules.wml"
-
-<latemp_subject "Perl for System Administration" />
+[%- SET title = "Perl for System Administration" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl can be used to perform or automate system administration tasks
@@ -17,4 +16,6 @@ functions available inside Perl), and on its regular expressions capabilities
 (which are handier than what shell scripts offer).
 </p>
 
-<files_and_directories_modules />
+[% INCLUDE files_and_directories_modules %]
+
+[% END %]
