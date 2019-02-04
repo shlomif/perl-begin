@@ -102,7 +102,7 @@ in the CPAN distribution of RPM-Specfile.)
 
 <li>
 <a
-href="http://svn.rpmforge.net/svn/trunk/tools/dar/dar-perl.py">dar-perl.py</a>
+href="https://github.com/dagwieers/dar">dar-perl.py</a>
 - a Python script that automatically generates an RPMforge SPEC file based on
 CPAN information.
 </li>
