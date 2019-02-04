@@ -32,8 +32,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 =cut
 """
 
+import os
 import re
 import unittest
+
 import vnu_validator
 
 
@@ -48,8 +50,9 @@ class MyTests(vnu_validator.VnuTest):
             return _cb
 
         _skip_cb = _create_cb('tutorials/perl-for-newbies')
-        return self.vnu_test_dir('./dest', _create_cb('jquery-ui'), _skip_cb,
-                                 'Tests/data/cache/vnu-html-validator.json')
+        return self.vnu_test_dir(
+            './dest', _create_cb('jquery-ui'), _skip_cb,
+            os.getenv('VNU_CACHE', 'Tests/data/cache/vnu-html-validator.json'))
 
 
 if __name__ == '__main__':
