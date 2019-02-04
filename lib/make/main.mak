@@ -22,8 +22,6 @@ WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
 
 WML_FLAGS += $(COMMON_PREPROC_FLAGS)
 
-ARC_NAME := $(shell cd temp && ./get-arc-name.sh)
-
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 WML_RENDER = LATEMP_WML_FLAGS="$(LATEMP_WML_FLAGS)" $1 bin/render
@@ -88,8 +86,6 @@ upload_beta: all
 
 upload_local: all
 	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/)
-
-DEST_ARC_NAME = $(TARGET)/source/arcs/$(ARC_NAME)
 
 upload_home: all
 	(cd dest && $(RSYNC) -a * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
