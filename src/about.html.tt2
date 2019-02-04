@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Beginners' Site - About" />
+[%- SET title = "Perl Beginners' Site - About" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="about">About</h2>
 
@@ -19,7 +19,7 @@ languages, as well as people who are learning Perl as their first,
 introductory, programming language.
 </p>
 
-<define-tag __removed>
+[% IF 0 %]
 
 <h2 id="revamp">Site Revamp</h2>
 
@@ -40,4 +40,6 @@ publicizing this site better. With the endorsement of the people of
 may hopefully gain a more official status.
 </p>
 
-</define-tag>
+[% END %]
+
+[% END %]
