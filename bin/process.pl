@@ -132,7 +132,8 @@ while ( my $result = $tree->next_obj() )
 qq#<img src="${base_path}icon_lang_en.png" alt="סמל אנגלית" class="symbol" /> #,
                 icon_he =>
 qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol" /> #,
-                nav_links => $t2,
+                nav_links     => $t2,
+                nav_menu_html => join( '', @$nav_html ),
             };
 
             $template->process(
