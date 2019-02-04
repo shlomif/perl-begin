@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Impatient Perl Online Tutorial/Book" />
+[%- SET title = "Impatient Perl Online Tutorial/Book" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This is our own mirror of the book
@@ -16,3 +16,5 @@ who are already familiar with similar languages.
 </p>
 
 <h2><a href="iperl.html">Access the Online Text</a></h2>
+
+[% END %]

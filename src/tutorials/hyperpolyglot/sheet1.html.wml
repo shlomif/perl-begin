@@ -1,5 +1,0 @@
-#include "template5.wml"
-
-<latemp_subject "Hyperpolyglot - Sheet 1" />
-
-#include "retrieved-html-parts/hyperpolyglot/scripting.html"

@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Interpreted Languages Hyperpolyglot: PHP, Perl, Python, Ruby (Mirror)" />
+[%- SET title = "Interpreted Languages Hyperpolyglot: PHP, Perl, Python, Ruby (Mirror)" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This is our mirror of the
@@ -26,3 +26,5 @@ This copy was updated on 24 December, 2012.
 </li>
 
 </ol>
+
+[% END %]

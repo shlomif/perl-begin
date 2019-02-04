@@ -1,0 +1,7 @@
+[%- SET title = "Hyperpolyglot - Sheet 1" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+[%- slurp( "lib/retrieved-html-parts/hyperpolyglot/scripting.html") -%]
+
+[% END %]
