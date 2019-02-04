@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Training Providers" />
+[%- SET title = "Perl Training Providers" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2>Perl Training</h2>
 
@@ -16,3 +16,5 @@ Training Directory</a></h2>
 A comprehensive directory of training providers, maintained by
 <a href="http://www.szabgab.com/">Gabor Szabo</a>.
 </p>
+
+[% END %]

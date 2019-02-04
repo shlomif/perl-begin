@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Scoping and Variables in Perl" />
+[%- SET title = "Scoping and Variables in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -33,3 +33,5 @@ is kept like that due to historical reasons) means that you haven’t
 <b>declared</b> the variable. To fix it, you need to declare the variable using
 "<code>my $filename = [VALUE];</code>" in order to first use it.
 </p>
+
+[% END %]

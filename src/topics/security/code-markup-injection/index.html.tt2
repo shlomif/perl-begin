@@ -1,7 +1,8 @@
-#include "template5.wml"
+[%- SET title = "Code/Markup Injection and Its Prevention" -%]
+[%- SET more_keywords = ", exploiting, sql, code, crack, prevention, regex, hacking, exploits, shell, eval, perl, coding, injection, hack, cracking, html" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Code/Markup Injection and Its Prevention" />
-<latemp_more_keywords "exploiting, sql, code, crack, prevention, regex, hacking, exploits, shell, eval, perl, coding, injection, hack, cracking, html" />
 
 <p>
 Starting from the early UNIXes and before, operating systems represented code
@@ -228,3 +229,5 @@ user that lacks certain database privileges.
 In any case, be careful when writing code that may cause code or markup
 injection because the consequences may be dire.
 </p>
+
+[% END %]

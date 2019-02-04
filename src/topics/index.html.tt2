@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Development Topics" />
+[%- SET title = "Perl Development Topics" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This section aims to cover various topics that one is likely to encounter
@@ -84,3 +84,5 @@ CPAN is the Comprehensive Perl Archive Network, which contains a wealth
 of open-source and reusable source code, that can be used in your applications.
 Follow the link to learn how to effectively use CPAN.
 </p>
+
+[% END %]

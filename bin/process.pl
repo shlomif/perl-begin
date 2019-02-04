@@ -167,6 +167,10 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                     my %args = %{ shift() };
                     return cpan_mod( %args, body => $args{m} );
                 },
+                cpan_b_self_dist => sub {
+                    my %args = %{ shift() };
+                    return cpan_dist( %args, body => "<b>$args{d}</b>", );
+                },
                 cpan_self_dist => sub {
                     my %args = %{ shift() };
                     return cpan_dist( %args, body => $args{d} );
