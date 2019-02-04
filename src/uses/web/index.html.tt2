@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl for CGI and Web Programming" />
+[%- SET title = "Perl for CGI and Web Programming" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl 5 was <b>one of the first available technologies</b> for automating a
@@ -10,15 +10,13 @@ HTML and HTTP concepts, programming a simple CGI callback or form handler is
 very easy and straightforward.
 </p>
 
-<define-tag cgi_course_url whitespace="delete">
-http://ovid-cgi-course.perl-begin.org/cgi-course/
-</define-tag>
+[% SET cgi_course_url ="http://ovid-cgi-course.perl-begin.org/cgi-course/" %]
 
 <p>
 Users are <b>recommended to start</b> by first reading
 <a href="http://htmldog.com/">the HTML Dog tutorials</a> for learning XHTML
 and CSS (without coverage of Perl) and then
-<a href="<cgi_course_url />"><b>Ovid's
+<a href="[% cgi_course_url %]"><b>Ovid's
 CGI Course</b></a>. The other links here may also prove useful.
 </p>
 
@@ -31,7 +29,7 @@ Recommended best practice tutorials for getting up-to-speed with XHTML and
 CSS, teaching valid code and good practices.
 </p>
 
-<h3 id="ovid-cgi-course"><a href="<cgi_course_url />">Ovid's CGI
+<h3 id="ovid-cgi-course"><a href="[% cgi_course_url %]">Ovid's CGI
 Course</a></h3>
 
 <p>
@@ -39,7 +37,7 @@ A free CGI Course by Curtis Poe (Ovid) for people who already know a little Perl
 a little HTML.
 </p>
 
-<h3 id="our-cgi-get-started"><a href="<wiki_link url="CGI_Getting_Started" />">Our own CGI Getting Started</a></h3>
+<h3 id="our-cgi-get-started"><a href="[% wiki_link( "url" => "CGI_Getting_Started", ) %]">Our own CGI Getting Started</a></h3>
 
 <p>
 In the Wiki.
@@ -82,7 +80,7 @@ a micro-web-development framework, similar to <a href="#dancer">Dancer</a>.
 
 <p>
 Being self-contained ("The Web in a box"), Mojolicious re-invents many
-<a href="$(ROOT)/topics/cpan/">CPAN</a> wheels (possibly better, but still
+<a href="[% base_path %]topics/cpan/">CPAN</a> wheels (possibly better, but still
 different), which may be a good or a bad thing.
 </p>
 
@@ -119,3 +117,5 @@ An implementation of the Active Server Pages for Perl on UNIXes. Compatible
 with the Perl ASP on Microsoft's IIS server, and so provides a cross-platform
 solution.
 </p>
+
+[% END %]

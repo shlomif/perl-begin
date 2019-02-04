@@ -1,3 +1,7 @@
+[%- BLOCK cpan_dist -%]
+<a href="http://metacpan.org/release/[% d %]">[% content %]</a>
+[%- END -%]
+
 [%- BLOCK pdoc -%]
 <a href="http://perldoc.perl.org/[% d %].html">[% d %][% content %]</a>
 [%- END -%]

@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Common Uses for Perl" />
+[%- SET title = "Common Uses for Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl can be used and was utilized for a variety of uses. This section will
@@ -36,3 +36,5 @@ execution)</a></h2>
 <h2 id="web"><a href="web/">Web and CGI Programming</a></h2>
 
 <h2 id="xml"><a href="xml/">XML Manipulation</a></h2>
+
+[% END %]

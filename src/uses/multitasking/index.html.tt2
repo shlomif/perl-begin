@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl for Multitasking and Networking" />
+[%- SET title = "Perl for Multitasking and Networking" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -12,26 +12,26 @@ or serve several clients at once.
 
 <h2 id="technologies">Technologies of Interest</h2>
 
-<h3 id="ipc-run"><cpan_self_dist d="IPC-Run" /></h3>
+<h3 id="ipc-run">[% cpan_self_dist( "d" => "IPC-Run", ) %]</h3>
 
 <p>
 A module that allows one to run background processes with piping, and ptys.
 Works on UNIXes as well as Windows.
 </p>
 
-<h3 id="expect"><cpan_self_dist d="Expect" /></h3>
+<h3 id="expect">[% cpan_self_dist( "d" => "Expect", ) %]</h3>
 
 <p>
 Allows one to control a terminal application interactively and wait for
 events.
 </p>
 
-<h3 id="Parallel-ForkManager"><cpan_self_dist d="Parallel-ForkManager" /></h3>
+<h3 id="Parallel-ForkManager">[% cpan_self_dist( "d" => "Parallel-ForkManager", ) %]</h3>
 
 <p>
 A simple way to parallelise tasks. Also see
-<cpan_self_dist d="AnyEvent-ForkManager" />
-(see below for <a href="#AnyEvent">AnyEvent</a>).
+[% cpan_self_dist( "d" => "AnyEvent-ForkManager", ) %]
+ (see below for <a href="#AnyEvent">AnyEvent</a>).
 </p>
 
 <h3 id="event_frameworks">Event Driven Programming Frameworks</h3>
@@ -40,7 +40,7 @@ A simple way to parallelise tasks. Also see
 There are several frameworks available for event driven programming,
 cooperative multitasking and writing network applications. You can find the
 most important and most recommended ones on
-<a href="$(ROOT)/topics/cpan/">CPAN</a>. Here is a list of some of the
+<a href="[% base_path %]topics/cpan/">CPAN</a>. Here is a list of some of the
 most recommended ones.
 </p>
 
@@ -53,7 +53,7 @@ and gained some popularity in part due to lack of alternatives. Its style
 is baroque and as such it may no longer be recommended.
 </p>
 
-<h4 id="AnyEvent"><cpan_self_dist d="AnyEvent" /></h4>
+<h4 id="AnyEvent">[% cpan_self_dist( "d" => "AnyEvent", ) %]</h4>
 
 <p>
 AnyEvent is a more modern events’ framework and allows one to make use of
@@ -70,7 +70,7 @@ examples.
 </li>
 </ul>
 
-<h4 id="IO-Async"><cpan_self_dist d="IO-Async" /></h4>
+<h4 id="IO-Async">[% cpan_self_dist( "d" => "IO-Async", ) %]</h4>
 
 <p>
 A popular framework for asynchronous events on CPAN.
@@ -98,3 +98,5 @@ more information.
 </li>
 
 </ul>
+
+[% END %]

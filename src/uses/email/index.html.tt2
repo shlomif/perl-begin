@@ -1,11 +1,11 @@
-#include "template5.wml"
-
-<latemp_subject "E-mail Handling with Perl" />
+[%- SET title = "E-mail Handling with Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl provides many facilities for handling E-mail (e.g: sending, receiving,
 filtering, processing) available from the
-<a href="$(ROOT)/topics/cpan/">CPAN (Comprehensive Perl Archive Network)</a>.
+<a href="[% base_path %]topics/cpan/">CPAN (Comprehensive Perl Archive Network)</a>.
 This is a summary of the recommended ones.
 </p>
 
@@ -20,9 +20,11 @@ search for "Email"</a>. The Perl Email Project modules tend to be simple
 and easy to use.
 </p>
 
-<h2 id="mail_box"><cpan_self_dist d="Mail-Box" /></h2>
+<h2 id="mail_box">[% cpan_self_dist( "d" => "Mail-Box", ) %]</h2>
 
 <p>
 An E-mail handling distribution for Perl 5 with a comprehensive API. Very large
 and not very fast, and can be intimidating.
 </p>
+
+[% END %]

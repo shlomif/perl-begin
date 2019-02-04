@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Graphical User Interface (GUI) Development in Perl" />
+[%- SET title = "Graphical User Interface (GUI) Development in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Graphical User Interfaces (or "GUIs") are rich, graphical programs and
@@ -25,7 +25,7 @@ written using wxPerl, and one can search its source code (using
 to find useful examples of wxPerl code in action.
 </p>
 
-<h2 id="perl-tk"><cpan_dist d="Tk">Perl-Tk</cpan_dist></h2>
+<h2 id="perl-tk">[%- WRAPPER cpan_dist d = "Tk" -%]Perl-Tk[%- END -%]</h2>
 
 <p>
 Perl-Tk is a port of
@@ -57,3 +57,5 @@ those of the GNOME project). Provides an attractive look and feel on
 UNIX systems (including Linux) which looks quite foreign on
 Microsoft Windows. A very capable and powerful GUI library.
 </p>
+
+[% END %]

@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Text Parsing in Perl" />
+[%- SET title = "Text Parsing in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -8,7 +8,7 @@
 Perl has a rightful reputation as a good language for parsing text and even
 its name originally stands for "Practical Extraction and Report Language".
 However, many beginners, are tempted to use
-<a href="$(ROOT)/topics/regular-expressions/">regular expressions</a>
+<a href="[% base_path %]topics/regular-expressions/">regular expressions</a>
 exclusively even for parsing the most complex texts (a la "If all you have is
 a hammer, everything starts to look like a nail."), and it should be
 avoided. Here we give some more options.
@@ -25,10 +25,9 @@ and instead look at <a href="http://htmlparsing.com/">Perl HTML-parsing
 modules</a> (also see
 <a href="htmlparsing.icenina.ca/">an older link</a>).
 The canonical modules for that are
-<cpan_self_dist d="HTML-Parser" />, which has
+[% cpan_self_dist( "d" => "HTML-Parser", ) %], which has
 built-in support for handling many of the irregularities of HTML in the wild,
-and <cpan_dist d="XML-LibXML">XML-LibXML's
-HTML support</cpan_dist>. Those should generally not be used directly. Instead look at
+and [% cpan_dist( d="XML-LibXML", body =>"XML-LibXML's HTML support", )%]. Those should generally not be used directly. Instead look at
 one of their abstractions:
 </p>
 
@@ -36,19 +35,19 @@ one of their abstractions:
 
 <li>
 <p>
-<cpan_self_dist d="HTML-TreeBuilder-LibXML" /> - HTML::TreeBuilder and XPath compatible interface using libxml.
+[% cpan_self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %] - HTML::TreeBuilder and XPath compatible interface using libxml.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_mod m="HTML::TreeBuilder" /> (and other modules in HTML::Tree).
+[% cpan_self_mod( "m" => "HTML::TreeBuilder", ) %] (and other modules in HTML::Tree).
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="HTML-TokeParser-Simple" /> -
+[% cpan_self_dist( "d" => "HTML-TokeParser-Simple", ) %] -
 an event-based pull parser that is useful for very large HTMLs.
 </p>
 </li>
@@ -58,7 +57,7 @@ an event-based pull parser that is useful for very large HTMLs.
 
 <li>
 <p>
-In order to parse <b>XML</b>, look at <a href="$(ROOT)/uses/xml/">our dedicated
+In order to parse <b>XML</b>, look at <a href="[% base_path %]uses/xml/">our dedicated
 page about XML processing</a>.
 </p>
 </li>
@@ -66,7 +65,7 @@ page about XML processing</a>.
 <li>
 <p>
 <b>Comma-separated values (CSV) files</b> should be parsed using
-<cpan_self_dist d="Text-CSV_XS" />, which is
+[% cpan_self_dist( "d" => "Text-CSV_XS", ) %], which is
 a fast, tried and tested module for parsing CSV that can handle most
 edge-cases and irregularities that are present in CSV files that
 can be found in the wild.
@@ -75,7 +74,7 @@ can be found in the wild.
 
 <li>
 <p>
-<b>JSON</b> should be parsed using <cpan_self_dist d="JSON-MaybeXS" />,
+<b>JSON</b> should be parsed using [% cpan_self_dist( "d" => "JSON-MaybeXS", ) %],
 or possibly using an event-based, incremental, JSON parser.
 </p>
 </li>
@@ -84,7 +83,7 @@ or possibly using an event-based, incremental, JSON parser.
 <p>
 In order to parse
 <a href="https://en.wikipedia.org/wiki/Uniform_resource_locator">URLs/URIs</a>
-(= Uniform Resource Locators), one should use the “<cpan_self_dist d="URI" />”
+(= Uniform Resource Locators), one should use the “[% cpan_self_dist( "d" => "URI", ) %]”
 collection of CPAN modules.
 </p>
 </li>
@@ -92,7 +91,7 @@ collection of CPAN modules.
 <li>
 <p>
 In order to parse and analyse file and directory paths, you should use the
-<a href="$(ROOT)/topics/files-and-directories/#modules">modules
+<a href="[% base_path %]topics/files-and-directories/#modules">modules
 recommended</a> in our "Files and Directories" page.
 </p>
 </li>
@@ -116,13 +115,13 @@ generator</a>. Some notable parser generators in Perl include:
 
 <li>
 <p>
-<cpan_self_dist d="Parse-RecDescent" />
+[% cpan_self_dist( "d" => "Parse-RecDescent", ) %]
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="Regexp-Grammars" /> -
+[% cpan_self_dist( "d" => "Regexp-Grammars", ) %] -
 a more modern version of Parse-RecDescent by the same author that only
 works on perl-5.10.x and above.
 </p>
@@ -130,22 +129,22 @@ works on perl-5.10.x and above.
 
 <li>
 <p>
-<cpan_self_dist d="Parser-MGC" /> - allows one to build simple
+[% cpan_self_dist( "d" => "Parser-MGC", ) %] - allows one to build simple
 recursive-descent parsers by using methods and closures.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="Marpa-XS" /> - a parser generator that aims to fully
-parse all context-free grammars. See also <cpan_self_dist d="Marpa-PP"> for
+[% cpan_self_dist( "d" => "Marpa-XS", ) %] - a parser generator that aims to fully
+parse all context-free grammars. See also [% cpan_self_dist( "d" => "Marpa-PP", ) %] for
 its pure-Perl and slower version.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="Parse-Yapp" /> - old
+[% cpan_self_dist( "d" => "Parse-Yapp", ) %] - old
 and has been unmaintained, but may still be good enough.
 </p>
 </li>
@@ -179,7 +178,7 @@ Here's an example:
 use strict;
 use warnings;
 
-\# String with names inside square brackets
+# String with names inside square brackets
 my $string = "Hello [Peter] , [Sophie] and [Jack] are here.";
 
 pos($string) = 0;
@@ -193,3 +192,5 @@ while ($string =~ m{\G.*?\[([^\]]+)\]}cg)
 <p>
 This example is a bit contrived, but should be illustrative enough.
 </p>
+
+[% END %]

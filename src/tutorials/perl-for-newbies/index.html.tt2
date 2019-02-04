@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "&quot;Perl for Perl Newbies&quot; Online Tutorial" />
+[%- SET title = "&quot;Perl for Perl Newbies&quot; Online Tutorial" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This is a public domain tutorial for Perl written by Shlomi Fish, who
@@ -29,3 +29,5 @@ also created the Perl Beginners' Site.
 </li>
 
 </ul>
+
+[% END %]

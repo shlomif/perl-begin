@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Developing Games and Multimedia with Perl" />
+[%- SET title = "Developing Games and Multimedia with Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 What's the use of using a computer if you're not having fun? Many beginning
@@ -59,12 +59,14 @@ bubbles at the board in order to drop all bubbles.
 
 <p>
 One can also prepare desktop games using standard GUI (Graphical User
-Interface) toolkits. For this, see our <a href="$(ROOT)/uses/GUI/">GUI
+Interface) toolkits. For this, see our <a href="[% base_path %]uses/GUI/">GUI
 development using Perl</a> page.
 </p>
 
 <p>
 Browser-based games are also an option (with some help from JavaScript
-and possibly AJAX) and you can see our <a href="$(ROOT)/uses/web/">Perl
+and possibly AJAX) and you can see our <a href="[% base_path %]uses/web/">Perl
 web development page</a> for more information.
 </p>
+
+[% END %]

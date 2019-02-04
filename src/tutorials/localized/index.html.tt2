@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Tutorials in Foreign Languages" />
+[%- SET title = "Tutorials in Foreign Languages" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="french-intro"><a href="http://www.lea-linux.org/documentations/index.php/Dev-perl">French Intro to Perl</a></h2>
 
@@ -21,3 +21,5 @@ Hub</a></h2>
 Contains links to recommended tutorials, some of which are available in some
 non-English human languages.
 </p>
+
+[% END %]

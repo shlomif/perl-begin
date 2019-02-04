@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Modern Perl Online Book" />
+[%- SET title = "Modern Perl Online Book" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This page contains some links to the book
@@ -25,7 +25,7 @@ site has some web advertising.
 Online</b></a>
 </p>
 
-<define-tag modern_perl_old_read_online>
+[% BLOCK modern_perl_old_read_online %]
 <h2 id="chapters">Chapters</h2>
 
 <ul>
@@ -54,10 +54,12 @@ Online</b></a>
 }:>
 </ul>
 
-</define-tag>
+[% END %]
 
 <h2 id="epub">EPUB</h2>
 
 <p>
 <a href="http://www.onyxneon.com/books/modern_perl/modern_perl.epub">Modern Perl EPUB</a>
 </p>
+
+[% END %]

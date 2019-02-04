@@ -41,9 +41,10 @@ sub cpan_mod
 
 sub cpan_dist
 {
-    my %args = @_;
+    my %args = %{ shift() };
     return qq#<a href="http://metacpan.org/release/$args{d}">$args{body}</a>#;
 }
+
 while ( my $result = $tree->next_obj() )
 {
     if ( $result->is_dir() )
@@ -169,13 +170,14 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                 },
                 cpan_b_self_dist => sub {
                     my %args = %{ shift() };
-                    return cpan_dist( %args, body => "<b>$args{d}</b>", );
+                    return cpan_dist( { %args, body => "<b>$args{d}</b>", } );
                 },
                 cpan_self_dist => sub {
                     my %args = %{ shift() };
-                    return cpan_dist( %args, body => $args{d} );
+                    return cpan_dist( { %args, body => $args{d} } );
                 },
-                slurp => sub {
+                cpan_dist => \&cpan_dist,
+                slurp     => sub {
                     return path(shift)->slurp_utf8;
                 },
             };

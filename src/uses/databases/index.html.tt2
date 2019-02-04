@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Working with Databases in Perl" />
+[%- SET title = "Working with Databases in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -35,13 +35,13 @@ If you want a distributed database (similar to Google's BigTable), see our
 The de-facto standard for working with SQL databases in Perl is
 <a href="http://dbi.perl.org/">DBI</a> (short for Database Interface). It
 provides a unified way to perform SQL queries across many database
-backends: <cpan_dist d="DBD-Pg">PostgreSQL</cpan_dist>,
-<cpan_dist d="DBD-SQLite">SQLite</cpan_dist>,
-<cpan_dist d="DBD-mysql">MySQL</cpan_dist> (but see
+backends: [%- WRAPPER cpan_dist d = "DBD-Pg" -%]PostgreSQL[%- END -%],
+ [% WRAPPER cpan_dist d = "DBD-SQLite" -%]SQLite[%- END -%],
+ [% WRAPPER cpan_dist d = "DBD-mysql" -%]MySQL[%- END -%] (but see
 <a href="http://www.shlomifish.org/open-source/anti/mysql/">this page</a>
 for some reasons why you may prefer a different system),
-<cpan_dist d="DBD-Oracle">Oracle</cpan_dist>,
-<cpan_dist d="DBD-InterBase">Firebird</cpan_dist>,
+ [% WRAPPER cpan_dist d = "DBD-Oracle" -%]Oracle[%- END -%],
+ [% WRAPPER cpan_dist d = "DBD-InterBase" -%]Firebird[%- END -%],
 and others.
 </p>
 
@@ -53,24 +53,24 @@ Above DBI, people wrote some useful abstractions:
 
 <li>
 <p>
-<cpan_self_dist d="DBIx-Simple" /> - an easy
+[% cpan_self_dist( "d" => "DBIx-Simple", ) %] - an easy
 to use Object-Oriented Interface to DBI.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="DBIx-Class" /> - a
+[% cpan_self_dist( "d" => "DBIx-Class", ) %] - a
 powerful and convenient object-relational mapper. Use of the older and less
 philosophically sound
-<cpan_self_dist d="Class-DBI" /> is
+[% cpan_self_dist( "d" => "Class-DBI", ) %] is
 heavily discouraged.
 </p>
 </li>
 
 <li>
 <p>
-<cpan_self_dist d="Rose-DB-Object" /> -
+[% cpan_self_dist( "d" => "Rose-DB-Object", ) %] -
 another ORM - seems to be much less popular than DBIx-Class, but still actively
 maintained.
 </p>
@@ -89,7 +89,7 @@ vulnerabilities</a>.
 <ul>
 
 <li>
-<cpan_dist d="BerkeleyDB">The BerkeleyDB CPAN module</cpan_dist> is the
+[%- WRAPPER cpan_dist d = "BerkeleyDB" -%]The BerkeleyDB CPAN module[%- END -%] is the
 standard module for working with
 <a href="http://www.oracle.com/technology/products/berkeley-db/index.html">Oracle
 Berkeley DB</a> (formerly Sleepy Cat Berkeley DB) and maps the ANSI C
@@ -112,11 +112,11 @@ not permit use in non-open-source projects).
 <a href="http://code.google.com/p/leveldb/">LevelDB</a> from Google, a
 fast key-value storage library, open-source under the new BSD license (which
 allows use for non-open-source programs. Has Perl bindings on CPAN called
-<cpan_self_dist d="Tie-LevelDB" />.
+[% cpan_self_dist( "d" => "Tie-LevelDB", ) %].
 </li>
 
 <li>
-<cpan_self_dist d="DBM-Deep" /> - a multi-level
+[% cpan_self_dist( "d" => "DBM-Deep", ) %] - a multi-level
 hash/array DBM that supports transactions. Reported to be slow, however.
 </li>
 
@@ -125,8 +125,8 @@ hash/array DBM that supports transactions. Reported to be slow, however.
 <h2 id="xbase">XBase Databases</h2>
 
 <p>
-There seems to be <cpan_dist d="DBD-XBase">an
-XBase module on CPAN</cpan_dist> . It seems to be pure-Perl, so it may be slow.
+There seems to be [%- WRAPPER cpan_dist d = "DBD-XBase" -%]an
+XBase module on CPAN[%- END -%] . It seems to be pure-Perl, so it may be slow.
 </p>
 
 <h2 id="distributed">Distributed Databases ("No SQL", etc.)</h2>
@@ -143,12 +143,12 @@ here is a list of some bindings for distributed databases just for completeness 
 <ul>
 
 <li>
-<cpan_self_dist d="Net-CouchDb" /> - an
+[% cpan_self_dist( "d" => "Net-CouchDb", ) %] - an
 interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
 </li>
 
 <li>
-<cpan_self_dist d="MongoDB" /> - an
+[% cpan_self_dist( "d" => "MongoDB", ) %] - an
 interface to <a href="http://www.mongodb.org/">MongoDB</a>.
 </li>
 
@@ -160,3 +160,5 @@ interface to <a href="http://www.mongodb.org/">MongoDB</a>.
 <li><a href="http://modperlbook.org/html/part3.html"><b>"Databases and mod_perl"
 part from Practical mod_perl</b></a> - provides many useful insights.</li>
 </ul>
+
+[% END %]
