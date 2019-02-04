@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "IRC Channels for Perl Q&amp;A" />
+[%- SET title = "IRC Channels for Perl Q&amp;A" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="what-is-irc">What is the IRC?</h2>
 
@@ -57,29 +57,6 @@ List/Comparison of IRC Clients</a>
 
 </ul>
 
-<define-tag irc_channel whitespace="delete">
-<preserve net chan />
-<set-var %attributes />
-<:{
-    my $net = "<get-var net />";
-    my $chan = "<get-var chan />";
-    my %servers =
-    (
-        'freenode' => "irc.freenode.net",
-        'efnet' => "irc.Prison.NET",
-        'oftc' => "irc.oftc.net",
-        'undernet' => "us.undernet.org",
-        'ircnet' => "ircnet.demon.co.uk",
-    );
-    if (!exists($servers{$net}))
-    {
-        die "Unknown network!";
-    }
-    print "<a href=\"irc://" . $servers{$net} . "/%23$chan\"><code>#$chan</code></a>";
-}:>
-<restore net chan />
-</define-tag>
-
 <h2 id="freenode"><a href="http://freenode.net/">Freenode</a></h2>
 
 <p>
@@ -88,8 +65,8 @@ technical matters in general.
 </p>
 
 <p>
-Check out the <irc_channel chan="perl" net="freenode" /> channel
-(also see <a href="$(ROOT)/FAQs/freenode-perl/">its FAQ</a>).
+Check out the [% irc_channel( chan=>"perl", net=>"freenode" )%] channel
+(also see <a href="[% base_path %]FAQs/freenode-perl/">its FAQ</a>).
 </p>
 
 <p>
@@ -99,7 +76,7 @@ Freenode has a <a href="https://webchat.freenode.net/">web-based interface</a>.
 <h2 id="oftc"><a href="http://www.oftc.net/">OFTC</a></h2>
 
 <p>
-The channel <irc_channel net="oftc" chan="perl" /> accepts beginner questions.
+The channel [% irc_channel( chan=>"perl", net=>"oftc" )%] accepts beginner questions.
 </p>
 
 <h2 id="irc.perl.org">What about irc.perl.org?</h2>
@@ -119,3 +96,5 @@ Once you have become more experienced with Perl, and wish to contribute
 to Perl-related projects, you can gather up the courage to visit
 irc.perl.org and make use of it.
 </p>
+
+[% END %]

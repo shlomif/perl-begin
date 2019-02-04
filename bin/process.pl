@@ -172,6 +172,26 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                     my %args = %{ shift() };
                     return cpan_dist( { %args, body => "<b>$args{d}</b>", } );
                 },
+                irc_channel => sub {
+                    my %args    = %{ shift() };
+                    my $net     = $args{net};
+                    my $chan    = $args{chan};
+                    my %servers = (
+                        'freenode' => "irc.freenode.net",
+                        'efnet'    => "irc.Prison.NET",
+                        'oftc'     => "irc.oftc.net",
+                        'undernet' => "us.undernet.org",
+                        'ircnet'   => "ircnet.demon.co.uk",
+                    );
+                    if ( !exists( $servers{$net} ) )
+                    {
+                        die "Unknown network!";
+                    }
+                    return
+                          "<a href=\"irc://"
+                        . $servers{$net}
+                        . "/%23$chan\"><code>#$chan</code></a>";
+                },
                 cpan_self_dist => sub {
                     my %args = %{ shift() };
                     return cpan_dist( { %args, body => $args{d} } );
