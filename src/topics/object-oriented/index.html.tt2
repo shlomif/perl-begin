@@ -1,7 +1,7 @@
-#include "template5.wml"
-#include "tut_blocks.wml"
-
-<latemp_subject "Object Oriented Programming in Perl" />
+[%- SET title = "Object Oriented Programming in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "tut_blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -41,7 +41,7 @@ links.
 for Perl, which provides a large subset of Moose’s functionality, but with
 a considerably reduced initial process loading time (which has been a frequent
 complaint about Moose), and is dependent only on pure-Perl modules (making
-it capable of being handled by <cpan_self_dist d="App-Fatpacker" />).
+it capable of being handled by [% cpan_self_dist( "d" => "App-Fatpacker", ) %]).
 </p>
 
 <p>
@@ -59,30 +59,33 @@ instead of Moose.)
 
 <h2 id="tutorials">Tutorials</h2>
 
-<modern_perl_entry>
+[%- WRAPPER modern_perl_entry -%]
 
 Has an "Objects" chapter.
 
-</modern_perl_entry>
+[%- END -%]
 
-<beginning_perl_entry>
+[%- WRAPPER beginning_perl_entry -%]
 
 <p>
 The 11th chapter of this book for Perl beginners (including absolute beginners)
 covers Objects. This book was written by one of the foremost Perl experts.
 </p>
 
-</beginning_perl_entry>
+[%- END -%]
 
-<perl_for_newbies_entry>
+[%- WRAPPER perl_for_newbies_entry -%]
 
 <p>
 The third talk in the series explains objects in detail, although from a very
 low level and how they work behind the scenes.
 </p>
 
-</perl_for_newbies_entry>
+[%- END -%]
 
-<modules_and_objects_perldocs />
+[%- WRAPPER modules_and_objects_perldocs -%]
+[%- END -%]
 
-# TODO : Add Modern Perl.
+[% # TODO : Add Modern Perl.
+%]
+[% END %]
