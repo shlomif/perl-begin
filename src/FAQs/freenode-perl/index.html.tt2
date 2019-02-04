@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Freenode’s #perl FAQ" />
+[%- SET title = "Freenode’s #perl FAQ" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This page was retrieved from the corresponding page at the currently offline
@@ -11,4 +11,6 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-#include "retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html"
+[% INCLUDE "retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html" %]
+
+[% END %]
