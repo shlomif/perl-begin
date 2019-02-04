@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Developer Tools" />
+[%- SET title = "Perl Developer Tools" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="note">Note</h2>
 
@@ -13,4 +13,6 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-#include "retrieved-html-parts/Perl_developer_tools.html"
+[% INCLUDE "retrieved-html-parts/Perl_developer_tools.html" %]
+
+[% END %]

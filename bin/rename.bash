@@ -5,4 +5,7 @@
 #
 # Distributed under terms of the MIT license.
 #
-git mv "$1" "${1%%.wml}.tt2"
+orig="$1"
+wfn="${orig%%.wml}.tt2"
+git mv "$orig" "$wfn"
+perl -i -0777 -p bin/wml2tt.pl "$wfn"
