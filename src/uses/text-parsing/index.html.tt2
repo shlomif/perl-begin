@@ -27,7 +27,7 @@ modules</a> (also see
 The canonical modules for that are
 [% cpan_self_dist( "d" => "HTML-Parser", ) %], which has
 built-in support for handling many of the irregularities of HTML in the wild,
-and [% cpan_dist( d="XML-LibXML", body =>"XML-LibXML's HTML support", )%]. Those should generally not be used directly. Instead look at
+and [% WRAPPER cpan_dist d="XML-LibXML" %]XML-LibXML's HTML support[% END %]. Those should generally not be used directly. Instead look at
 one of their abstractions:
 </p>
 

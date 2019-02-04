@@ -176,8 +176,7 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                     my %args = %{ shift() };
                     return cpan_dist( { %args, body => $args{d} } );
                 },
-                cpan_dist => \&cpan_dist,
-                slurp     => sub {
+                slurp => sub {
                     return path(shift)->slurp_utf8;
                 },
             };
