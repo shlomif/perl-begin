@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "FAQs - Frequently Asked Questions Lists" />
+[%- SET title = "FAQs - Frequently Asked Questions Lists" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -22,3 +22,5 @@ the command-line.
 <p>
 The FAQ for the Freenode #perl channel.
 </p>
+
+[% END %]
