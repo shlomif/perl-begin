@@ -1,0 +1,7 @@
+[%- SET title =  "Perl for Bio-Informatics"-%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<h2 id="fill_in">To be filled in.</h2>
+
+[% END %]
