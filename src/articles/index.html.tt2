@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Collection of Articles" />
+[%- SET title = "Collection of Articles" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 These are external collections of articles.
@@ -65,3 +65,5 @@ Linux magazine.
 </p>
 </li>
 </ul>
+
+[% END %]
