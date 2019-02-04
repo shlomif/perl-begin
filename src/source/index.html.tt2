@@ -1,7 +1,6 @@
-#include "template5.wml"
-#include "todo_done.wml"
-
-<latemp_subject "Site's Source Code" />
+[%- SET title = "Site's Source Code" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This site is a static HTML site written in
@@ -27,7 +26,7 @@ or its <a href="http://en.wikipedia.org/wiki/Git_%28software%29">Wikipedia
 page</a>.
 </p>
 
-<define-tag removed>
+[% BLOCK removed %]
 <ol>
 
 <li>
@@ -51,11 +50,13 @@ Mercurial"</a> - on the Mercurial wiki.
 </li>
 
 </ol>
-</define-tag>
+[% END %]
 
 <p>
 After that, you can clone the repository on GitHub, and send us pull
 requests.
 </p>
 
-<todo_done />
+[% INCLUDE todo_done %]
+
+[% END %]

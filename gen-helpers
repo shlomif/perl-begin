@@ -130,4 +130,5 @@ $render->spew_utf8(
 $render->chmod(0755);
 io->file('Makefile')->print("include $DIR/main.mak\n");
 
+_exec( [ 'gmake', 'lib/docbook/5/rendered/bad-elements.xhtml' ], 'TT2 failed' );
 _exec( [ $^X, 'bin/process.pl' ], 'TT2 failed' );

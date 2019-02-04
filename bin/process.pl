@@ -179,6 +179,10 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                 slurp => sub {
                     return path(shift)->slurp_utf8;
                 },
+                slurp_bad_elems => sub {
+                    return path("lib/docbook/5/rendered/bad-elements.xhtml")
+                        ->slurp_utf8() =~ s{\$\(ROOT\)}{$base_path}gr;
+                },
             };
 
             $template->process(

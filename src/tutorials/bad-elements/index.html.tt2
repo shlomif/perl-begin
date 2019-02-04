@@ -1,0 +1,8 @@
+[%- SET title = "Perl Elements to Avoid" -%]
+[%- SET more_keywords = ", elements, antipatterns, anti, patterns, help, ancient, ancient perl, modern, modern perl, avoid, bad perl, old tutorials, what to avoid" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+[% slurp_bad_elems() %]
+
+[% END %]
