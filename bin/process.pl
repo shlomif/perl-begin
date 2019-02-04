@@ -72,12 +72,12 @@ while ( my $result = $tree->next_obj() )
 
             my $rendered_results = $nav_bar->render();
 
-            my $nav_links = $rendered_results->{nav_links};
-
             my $nav_links_obj = $rendered_results->{nav_links_obj};
 
             my $nav_html = $rendered_results->{html};
 
+=begin removed
+            my $nav_links = $rendered_results->{nav_links};
             my $nav_links_renderer = MyNavLinks->new(
                 'nav_links'     => $nav_links,
                 'nav_links_obj' => $nav_links_obj,
@@ -90,6 +90,7 @@ while ( my $result = $tree->next_obj() )
                 push @params, ( 'with_accesskey' => $with_accesskey );
             }
             my $text = $nav_links_renderer->get_total_html(@params);
+=cut
 
             my $t2 = '';
 
