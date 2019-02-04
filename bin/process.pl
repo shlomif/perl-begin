@@ -6,7 +6,8 @@ use warnings;
 use utf8;
 
 use lib './lib';
-use CGI                ();
+use CGI ();
+use URI::Escape qw( uri_escape );
 use Template           ();
 use File::Find::Object ();
 
@@ -125,8 +126,6 @@ while ( my $result = $tree->next_obj() )
             my $leading_path_string = join( " → ",
                 ( map { $render_leading_path_component->($_) } @$leading_path )
             );
-            use CGI;
-            use URI::Escape;
             my $share_link = CGI::escapeHTML(
                 uri_escape(
                     MyNavData::get_hosts()->{ $nav_bar->current_host() }
