@@ -263,7 +263,9 @@ And <a href="[% base_path %]learn/get-a-job/">get a job</a> doing Perl.</div>
 
 [%- BLOCK end_html -%]
 <p><a href=
-"http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fperl-begin.org%2Fweb-forums%2F&amp;linkname="><img alt="Share/Bookmark" src="[% base_path %]images/share_save_171_16.png" class="bless" height="16" width="171" /></a></p>
+"http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fperl-begin.org%2Fweb-forums%2F&amp;linkname=">
+<img src="[% base_path %]images/share_save_171_16.png" width="171" height="16"
+class="bless" alt="Share/Bookmark" /></a></p>
 </main>
 <h3 class="hide">Sidebar</h3>
 <div id="right-sidebar">
@@ -292,9 +294,7 @@ pages</a></li>
 </div>
 </div>
 <h3 class="hide">Footer</h3>
-<footer id="footer">This work is <b>licensed</b> under the <a href=
-"http://creativecommons.org/licenses/by/3.0/" rel=
-"license">Creative Commons Attribution 3.0 Unported License</a> (or
+<footer id="footer">This work is <b>licensed</b> under the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> (or
 at your option any later version).<br />
 <b>Webmaster:</b> <a href="http://www.shlomifish.org/">Shlomi
 Fish</a> (<a href="mailto:shlomif@shlomifish.org">Email -
