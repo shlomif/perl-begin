@@ -102,8 +102,9 @@ $r_fh->print($text);
             my $target = $fn;
             $target =~ s{\Alib/}{};
             $target =~ s{/lect(\d+)-all-in-one/}{/part$1/};
-            $target = "\$(PERL_BEGIN_DEST)/$target";
 
+            path("dest/$target")->touchpath->spew_raw( path($fn)->slurp_raw );
+            $target = "\$(PERL_BEGIN_DEST)/$target";
             push @targets, $target;
             print {$out_fh}
                 "$target: $fn\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
