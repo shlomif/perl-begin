@@ -31,6 +31,12 @@ my $template = Template->new(
 
 my $tree = File::Find::Object->new( {}, './src' );
 
+sub cpan_mod
+{
+    my %args = @_;
+    return qq#<a href="http://metacpan.org/module/$args{m}">$args{body}</a>#;
+}
+
 sub cpan_dist
 {
     my %args = @_;
@@ -145,9 +151,13 @@ while ( my $result = $tree->next_obj() )
 qq#<img src="${base_path}icon_lang_en.png" alt="סמל אנגלית" class="symbol" /> #,
                 icon_he =>
 qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol" /> #,
-                nav_links      => $t2,
-                nav_menu_html  => join( '', @$nav_html ),
-                share_link     => $share_link,
+                nav_links     => $t2,
+                nav_menu_html => join( '', @$nav_html ),
+                share_link    => $share_link,
+                cpan_self_mod => sub {
+                    my %args = %{ shift() };
+                    return cpan_mod( %args, body => $args{m} );
+                },
                 cpan_self_dist => sub {
                     my %args = %{ shift() };
                     return cpan_dist( %args, body => $args{d} );

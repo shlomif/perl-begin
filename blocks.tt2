@@ -1,3 +1,7 @@
+[%- BLOCK pdoc_f -%]
+<a href="http://perldoc.perl.org/functions/[% f %].html">[% content %]</a>
+[%- END -%]
+
 [%- SET openstudy_group_url = "http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" -%]
 [% BLOCK openstudy_button %]
 

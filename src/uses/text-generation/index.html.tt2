@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Text Generation in Perl" />
+[%- SET title = "Text Generation in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -8,7 +8,7 @@
 Perl is a good language for generating text, and
 even its name originally stood for "Practical Extraction and <b>Report</b>
 Language". This page aims to list some of the facilities provided by Perl
-and <a href="$(ROOT)/topics/cpan/">CPAN</a> for generating text.
+and <a href="[% base_path %]topics/cpan/">CPAN</a> for generating text.
 </p>
 
 <h2 id="facilities">Text Generation Facilities</h2>
@@ -26,7 +26,7 @@ of string constants. Therefore, you can say:
 my $name = "Sophie";
 my $city = "London";
 my $large_string = "Hello $name, welcome to $city!";
-\# $large_string is now "Hello Sophie, welcome to London!"
+# $large_string is now "Hello Sophie, welcome to London!"
 </pre>
 
 <p>
@@ -53,7 +53,7 @@ it, you should probably use the more advanced techniques below:
 </p>
 
 <pre>
-\#!/usr/bin/perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -87,7 +87,7 @@ to the sprintf function provided by C and other programming languages. Make
 sure you familiarize yourself with it.
 </p>
 
-<h4 id="named-sprintf"><cpan_self_dist d="Text-Sprintf-Named" /></h4>
+<h4 id="named-sprintf">[% cpan_self_dist( "d" => "Text-Sprintf-Named", ) %]</h4>
 
 <p>
 Text-Sprintf-Named allows one to pass an associative array to a sprintf-like
@@ -115,14 +115,14 @@ presentation that Shlomi Fish gave</a> about Template Toolkit, that explains
 why one should use a template system and especially Template Toolkit.
 </p>
 
-<h3 id="Data-Report"><cpan_self_dist d="Data-Report" /></h3>
+<h3 id="Data-Report">[% cpan_self_dist( "d" => "Data-Report", ) %]</h3>
 
 <p>
 A Perl module for preparing reports as text and some other higher-level
 formats.
 </p>
 
-<h3 id="perl6-form"><cpan_self_dist d="Perl6-Form" /></h3>
+<h3 id="perl6-form">[% cpan_self_dist( "d" => "Perl6-Form", ) %]</h3>
 
 <p>
 A module for formatting fixed-width text. You should use it <b>instead</b> of
@@ -130,13 +130,13 @@ the built-in <a href="http://perldoc.perl.org/perlform.html">perlform</a>
 facility assuming you want something like that.
 </p>
 
-<h3 id="text-table"><cpan_self_dist d="Text-Table" /></h3>
+<h3 id="text-table">[% cpan_self_dist( "d" => "Text-Table", ) %]</h3>
 
 <p>
 A CPAN module for outputting text tables.
 </p>
 
-<h3 id="xml-writer"><cpan_self_dist d="XML-Writer" /></h3>
+<h3 id="xml-writer">[% cpan_self_dist( "d" => "XML-Writer", ) %]</h3>
 
 <p>
 A convenient CPAN module for outputting XML.
@@ -151,28 +151,21 @@ done using <a href="#template-toolkit">Template Toolkit</a>). Here are some
 pointers to get you started:
 </p>
 
-<define-tag pdoc_f whitespace="delete" endtag="required">
-<preserve f />
-<set-var %attributes />
-<a href="http://perldoc.perl.org/functions/<get-var f />.html">%body</a>
-<restore f />
-</define-tag>
-
 <ul>
 <li>
 <p>
-<pdoc_f f="join">The built-in join()
-function</pdoc_f>
+[%- WRAPPER pdoc_f f = "join" -%]The built-in join()
+function[%- END -%]
 </p>
 </li>
 <li>
 <p>
-Built-in list processing functions such as <pdoc_f f="map">map</pdoc_f>,
-<pdoc_f f="sort">sort</pdoc_f>, and <pdoc_f f="grep">grep</pdoc_f>.
+Built-in list processing functions such as [%- WRAPPER pdoc_f f = "map" -%]map[%- END -%],
+[% WRAPPER pdoc_f f = "sort" -%]sort[%- END -%], and [% WRAPPER pdoc_f f = "grep" -%]grep[%- END -%].
 </p>
 <p>
 Functions like that are covered in
-<a href="$(ROOT)/tutorials/perl-for-newbies/part2/">Part 2 of
+<a href="[% base_path %]tutorials/perl-for-newbies/part2/">Part 2 of
 the Perl for Newbies presentation</a>.
 </p>
 </li>
@@ -180,10 +173,12 @@ the Perl for Newbies presentation</a>.
 <li>
 <p>
 List processing CPAN modules such as
-<cpan_self_mod m="List::Util" />,
-<cpan_self_dist d="List-MoreUtils" />
-and <cpan_self_dist d="List-UtilsBy" />.
+[% cpan_self_mod( "m" => "List::Util", ) %],
+[% cpan_self_dist( "d" => "List-MoreUtils", ) %]
+ and [% cpan_self_dist( "d" => "List-UtilsBy", ) %].
 </p>
 </li>
 
 </ul>
+
+[% END %]
