@@ -45,6 +45,7 @@ sub cpan_dist
     return qq#<a href="http://metacpan.org/release/$args{d}">$args{body}</a>#;
 }
 
+my @DEST = ( File::Spec->curdir(), "dest", );
 while ( my $result = $tree->next_obj() )
 {
     if ( not $result->is_dir() )
@@ -189,14 +190,10 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
             };
 
             mkpath(
-                File::Spec->catdir(
-                    File::Spec->curdir(), "dest",
-                    @{ $result->dir_components() }
-                )
-            );
+                File::Spec->catdir( @DEST, @{ $result->dir_components() } ) );
             $template->process(
                 $result->path(), $vars,
-                File::Spec->catfile( File::Spec->curdir(), "dest", @fn, ),
+                File::Spec->catfile( @DEST, @fn, ),
                 binmode => ':utf8',
             ) or die $template->error();
         }
@@ -210,7 +207,7 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
         )
         {
             copy($result->path,
-                File::Spec->catfile(File::Spec->curdir(), "dest",
+                File::Spec->catfile(@DEST,
                     @{$result->dir_components()}, $basename),
             );
         }
