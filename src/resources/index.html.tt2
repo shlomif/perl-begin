@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Resources for Learning Perl" />
+[%- SET title = "Resources for Learning Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 One should note that in order to get help with Perl code, you should first
@@ -16,7 +16,7 @@ only help those who help themselves.
 <dl>
 
 <dt id="tutorials">
-<a href="$(ROOT)/tutorials/">Tutorials</a>
+<a href="[% base_path %]tutorials/">Tutorials</a>
 </dt>
 <dd>
 A list of recommended online tutorials for learning Perl and getting up to
@@ -27,7 +27,7 @@ Perl programmers, or those that use a different style from you.
 </dd>
 
 <dt id="books">
-<a href="$(ROOT)/books/">Books</a>
+<a href="[% base_path %]books/">Books</a>
 </dt>
 <dd>
 A list of online and offline (or otherwise books that require pay to
@@ -35,7 +35,7 @@ view online or download), for learning Perl.
 </dd>
 
 <dt id="ides">
-<a href="$(ROOT)/IDEs-and-tools/">IDEs and Development Tools</a>
+<a href="[% base_path %]IDEs-and-tools/">IDEs and Development Tools</a>
 </dt>
 
 <dd>
@@ -44,7 +44,7 @@ for Perl.
 </dd>
 
 <dt id="core_doc">
-<a href="$(ROOT)/core-doc/">Core Documentation</a>
+<a href="[% base_path %]core-doc/">Core Documentation</a>
 </dt>
 <dd>
 The core documentation of Perl, which has been improving. Contains several
@@ -52,21 +52,21 @@ tutorials for getting up to speed with many subjects.
 </dd>
 
 <dt id="article_collections">
-<a href="$(ROOT)/articles/">Article Collections</a>
+<a href="[% base_path %]articles/">Article Collections</a>
 </dt>
 <dd>
 Collections of short, in-depth articles.
 </dd>
 
 <dt id="training">
-<a href="$(ROOT)/training/">Training</a>
+<a href="[% base_path %]training/">Training</a>
 </dt>
 <dd>
 Take courses for learning Perl.
 </dd>
 
 <dt id="exercises">
-<a href="$(ROOT)/exercises">Exercises and Challenges</a>
+<a href="[% base_path %]exercises">Exercises and Challenges</a>
 </dt>
 <dd>
 Collections of exercises and challenges to be solved by writing programs.
@@ -84,16 +84,16 @@ should you do?
 
 <dl>
 
-<dt id="irc"><a href="$(ROOT)/irc/">IRC (Internet Relay Chat)</a></dt>
+<dt id="irc"><a href="[% base_path %]irc/">IRC (Internet Relay Chat)</a></dt>
 
 <dd>
 Internet Relay Chat is probably the fastest way to receive answers to most
-common beginner questions. Please visit <a href="$(ROOT)/irc/">the link</a> to
+common beginner questions. Please visit <a href="[% base_path %]irc/">the link</a> to
 learn more about it, and see where it is best to ask, what to avoid doing, and
 what to expect.
 </dd>
 
-<dt id="mailing-lists"><a href="$(ROOT)/mailing-lists/">Mailing Lists</a></dt>
+<dt id="mailing-lists"><a href="[% base_path %]mailing-lists/">Mailing Lists</a></dt>
 
 <dd>
 Mailing lists allow you to ask questions by E-mail and also learn from
@@ -102,14 +102,14 @@ or if you're not short on time and want less interactive, but more in-depth
 discussions.
 </dd>
 
-<dt id="web-forums"><a href="$(ROOT)/web-forums/">Web Forums</a></dt>
+<dt id="web-forums"><a href="[% base_path %]web-forums/">Web Forums</a></dt>
 
 <dd>
 Web forums are similar to mailing lists, but all interaction is done through
 a web-browser, and one can use
 <a href="http://en.wikipedia.org/wiki/Web_feed">web feeds</a> to monitor them.
 We have concentrated a selection of Perl-related web forums on
-<a href="$(ROOT)/web-forums/">the Web Forums page</a>.
+<a href="[% base_path %]web-forums/">the Web Forums page</a>.
 </dd>
 
 </dl>
@@ -118,7 +118,7 @@ We have concentrated a selection of Perl-related web forums on
 
 <dl>
 
-<dt id="general_reference_resources"><a href="$(ROOT)/reference-resources/">General
+<dt id="general_reference_resources"><a href="[% base_path %]reference-resources/">General
 Reference Resources</a></dt>
 
 <dd>
@@ -126,7 +126,7 @@ Reference resources that did not fit elsewhere, including those from the
 core Perl 5 documentation.
 </dd>
 
-<dt id="wikis"><a href="$(ROOT)/wikis/">Wikis</a></dt>
+<dt id="wikis"><a href="[% base_path %]wikis/">Wikis</a></dt>
 
 <dd>
 Wikis are dynamically editable web-sites that allow for collaborative editing
@@ -134,9 +134,11 @@ of useful information. Perl has many wikis with active contributors, that
 help write useful knowledge.
 </dd>
 
-<dt id="blogs"><a href="$(ROOT)/blogs/">Blogs</a></dt>
+<dt id="blogs"><a href="[% base_path %]blogs/">Blogs</a></dt>
 
 <dd>
 Blogs, Weblogs or Online Journals where people write about Perl.
 </dd>
 </dl>
+
+[% END %]
