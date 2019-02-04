@@ -91,15 +91,10 @@ $r_fh->print($text);
     foreach my $part_idx ( 1 .. 5 )
     {
         # find all the .pm files in @INC
-        my @filenames = File::Find::Object::Rule->any(
-            ( File::Find::Object::Rule->name(qr/\.svn/)->prune()->discard() ),
-            (
-                File::Find::Object::Rule->file()->exec(
-                    sub {
-                        $_[0] ne "index\.html";
-                    }
-                )
-            ),
+        my @filenames = File::Find::Object::Rule->file()->exec(
+            sub {
+                $_[0] ne "index\.html";
+            }
         )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/");
 
         foreach my $fn (@filenames)
