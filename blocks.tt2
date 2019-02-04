@@ -1,3 +1,14 @@
+[% BLOCK todo_done %]
+
+<p>
+We have put
+<a href="[% base_path %]contribute/TODO.txt">the TODO file</a> (that contains the
+tasks to be done) and <a href="[% base_path %]contribute/DONE.txt">the DONE file</a>
+(that contains the tasks which were already done) online, for your perusal and
+contribution.
+</p>
+
+[% END %]
 [%- BLOCK cpan_dist -%]
 <a href="http://metacpan.org/release/[% d %]">[% content %]</a>
 [%- END -%]

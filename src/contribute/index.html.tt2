@@ -1,7 +1,6 @@
-#include "template5.wml"
-#include "todo_done.wml"
-
-<latemp_subject "Contribute to the Perl Beginners' Site" />
+[%- SET title = "Contribute to the Perl Beginners' Site" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 We feel that the Perl Beginners' Site should be a community site
@@ -25,16 +24,16 @@ web-site or blog. You can use the "Add-to-any" button at the bottom of the
 pages to post it on various sites.
 </p>
 
-<define-tag old_wiki_link>
+[% BLOCK old_wiki_link %]
 <h2 id="wiki">Contribute to the Wiki</h2>
 
 <p>
-<a href="<wiki_link />">The Wiki</a> is a portion of the site that can
+<a href="[% wiki_link( ) %]">The Wiki</a> is a portion of the site that can
 be edited by anyone at any time. Feel free to add your own material there.
 </p>
-</define-tag>
+[% END %]
 
-<define-tag old_forums_links>
+[% BLOCK old_forums_links %]
 <h2 id="mailing-list">Join the Mailing List</h2>
 
 <p>
@@ -50,12 +49,12 @@ The <a href="<web_forum_link />">Help Web Forum</a> is meant to help people
 with their Perl problems. You can visit it if you have questions or would like
 to help people with their problems.
 </p>
-</define-tag>
+[% END %]
 
 <h2 id="join-forums">Join Online, Perl-Related, Forums</h2>
 
 <p>
-We maintain <a href="$(ROOT)/resources/#get_help">lists of recommended online,
+We maintain <a href="[% base_path %]resources/#get_help">lists of recommended online,
 Perl-related, forums</a> and you can join them in order to receive help
 and provide help.
 </p>
@@ -64,11 +63,11 @@ and provide help.
 
 <p>
 You can send patches or corrections to the HTML pages of the site. It is
-preferable to send corrections to the <a href="$(ROOT)/source/">site's
+preferable to send corrections to the <a href="[% base_path %]source/">site's
 Website Meta Language source</a>, because they can be applied immediately.
 </p>
 
-<todo_done />
+[% INCLUDE todo_done %]
 
 <h2 id="donate">Donate Money</h2>
 
@@ -76,3 +75,5 @@ Website Meta Language source</a>, because they can be applied immediately.
 You can <a href="http://www.shlomifish.org/meta/donate/">donate money</a>
 to Shlomi Fish (= Perl-Begin’s originator and chief maintainer) using PayPal.
 </p>
+
+[% END %]

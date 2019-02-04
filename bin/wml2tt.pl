@@ -14,7 +14,7 @@ s#<pdoc d="(\w+)">#[%- WRAPPER pdoc d = "$1" -%]#g;
 s#</(?:cpan_dist|pdoc|pdoc_f)>#[%- END -%]#g;
 s/\$\(ROOT\)\//[% base_path %]/g;
 
-s{\A#include "template5.wml"\n+<latemp_subject ("[^"]*") />\n+}{[%- SET title = $1 -%]
+s{\A#include "template5.wml"(?:#include[^\n]*\n|\n)*<latemp_subject ("[^"]*") />\n+}{[%- SET title = $1 -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]\n\n};
 
