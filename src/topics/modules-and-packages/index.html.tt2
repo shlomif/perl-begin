@@ -1,7 +1,7 @@
-#include "template5.wml"
-#include "tut_blocks.wml"
-
-<latemp_subject "Perl Modules and Packages" />
+[%- SET title = "Perl Modules and Packages" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "tut_blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -9,7 +9,7 @@
 Perl Modules and Perl Packages are two closely related - but independent -
 subjects that enable writing more reusable and more modular code. Furthermore,
 packages are the basis of Perl's
-<a href="$(ROOT)/topics/object-oriented/">Object Oriented Programming</a>.
+<a href="[% base_path %]topics/object-oriented/">Object Oriented Programming</a>.
 </p>
 
 <h3 id="modules">Modules</h3>
@@ -31,7 +31,7 @@ the package and module names will correspond to avoid confusion.
 
 <h2 id="tutorials">Tutorials</h2>
 
-<beginning_perl_entry>
+[%- WRAPPER beginning_perl_entry -%]
 
 <p>
 Chapter 10 of this of this book for Perl beginners (including absolute
@@ -39,26 +39,27 @@ beginners) covers modules. This book was written by one of the foremost
 Perl experts.
 </p>
 
-</beginning_perl_entry>
+[%- END -%]
 
-<perl_for_newbies_entry>
+[%- WRAPPER perl_for_newbies_entry -%]
 
 <p>
 The third talk in the series explains modules and packages in detail, although
 from a very low level and how they work behind the scenes.
 </p>
 
-</perl_for_newbies_entry>
+[%- END -%]
 
-<modern_perl_entry>
+[%- WRAPPER modern_perl_entry -%]
 
 Covers modules.
 
-</modern_perl_entry>
+[%- END -%]
 
-<modules_and_objects_perldocs />
+[%- WRAPPER modules_and_objects_perldocs -%]
+[%- END -%]
 
-<h2 id="cpan"><a href="$(ROOT)/topics/cpan/">CPAN</a></h2>
+<h2 id="cpan"><a href="[% base_path %]topics/cpan/">CPAN</a></h2>
 
 <p>
 CPAN stands for the <b>Comprehensive Perl Archive Network</b> and is a
@@ -68,9 +69,11 @@ Perl code. See the link for more information.
 
 <h2 id="useful_tech">Useful Technologies</h2>
 
-<h3 id="sub_exporter"><cpan_self_dist d="Sub-Exporter" /></h3>
+<h3 id="sub_exporter">[% cpan_self_dist( "d" => "Sub-Exporter", ) %]</h3>
 
 <p>
 A more powerful and easier to use alternative to the built-in
 Exporter.pm module.
 </p>
+
+[% END %]
