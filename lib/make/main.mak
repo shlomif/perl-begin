@@ -167,7 +167,7 @@ PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.wm
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
 	@$(call WML_RENDER,) $(PERL_BEGIN_DOCS)
-	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) uses/qa/index.html web-forums/index.html
+	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) uses/remote-login-and-commands/index.html uses/qa/index.html web-forums/index.html
 
 bulk-make-dirs:
 	@mkdir -p $(PERL_BEGIN_DIRS_DEST)

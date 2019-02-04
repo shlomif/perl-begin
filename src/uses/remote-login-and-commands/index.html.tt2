@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "SSH, Telnet and Other Remote Login and Commands Execution Protocols in Perl" />
+[%- SET title = "SSH, Telnet and Other Remote Login and Commands Execution Protocols in Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -15,7 +15,7 @@ We are getting asked about these things a lot.
 
 <h2 id="telnet">Telnet</h2>
 
-<h3 id="Net-Telnet"><cpan_self_dist d="Net-Telnet" /></h3>
+<h3 id="Net-Telnet">[% cpan_self_dist( "d" => "Net-Telnet", ) %]</h3>
 
 <p>
 Net-Telnet allows one to run a Telnet session from within Perl and to interact
@@ -32,21 +32,21 @@ of the commonly mentioned ones are:
 <ul>
 
 <li>
-<cpan_self_dist d="Net-SSH-Perl" />
+[% cpan_self_dist( "d" => "Net-SSH-Perl", ) %]
 </li>
 
 <li>
-<cpan_self_dist d="Net-OpenSSH" />
+[% cpan_self_dist( "d" => "Net-OpenSSH", ) %]
 </li>
 
 <li>
-<cpan_self_dist d="Net-SSH2" />
+[% cpan_self_dist( "d" => "Net-SSH2", ) %]
 </li>
 
 <li>
-<cpan_self_dist d="IPC-PerlSSH" /> and
-<cpan_self_dist d="IPC-PerlSSH-Async" /> which is similar, but works with
-<cpan_self_dist d="Net-Async" />.
+[% cpan_self_dist( "d" => "IPC-PerlSSH", ) %] and
+[% cpan_self_dist( "d" => "IPC-PerlSSH-Async", ) %] which is similar, but works with
+[% cpan_self_dist( "d" => "Net-Async", ) %].
 </li>
 
 </ul>
@@ -55,3 +55,5 @@ of the commonly mentioned ones are:
 You should try some of them (or all of them) and see which one works the best
 for you.
 </p>
+
+[% END %]
