@@ -47,16 +47,7 @@ sub cpan_dist
 
 while ( my $result = $tree->next_obj() )
 {
-    if ( $result->is_dir() )
-    {
-        mkpath(
-            File::Spec->catdir(
-                File::Spec->curdir(), "dest",
-                @{ $result->full_components() }
-            )
-        );
-    }
-    else
+    if ( not $result->is_dir() )
     {
         my $basename = $result->basename;
         if ( $basename =~ s/\.html\.tt2\z/.html/ )
@@ -197,6 +188,12 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                 },
             };
 
+            mkpath(
+                File::Spec->catdir(
+                    File::Spec->curdir(), "dest",
+                    @{ $result->dir_components() }
+                )
+            );
             $template->process(
                 $result->path(), $vars,
                 File::Spec->catfile( File::Spec->curdir(), "dest", @fn, ),
