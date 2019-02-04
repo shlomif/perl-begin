@@ -1,7 +1,8 @@
-#include "template5.wml"
+[%- SET title = "Freendode’s #perlcafe Channel" -%]
+[%- SET more_keywords = ", humour, humor, offtopic, irc, freenode, channel, chat, chatroom" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Freendode’s #perlcafe Channel" />
-<latemp_more_keywords "humour, humor, offtopic, irc, freenode, channel, chat, chatroom" />
 
 <p>
 <a href="irc://irc.freenode.net/#perlcafe">Freenode’s #perlcafe</a> is a <a
@@ -101,3 +102,5 @@ off.
 </li><li>  a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack: sagittarius * is my next vacation spot
 </li><li> #perlcafe - where misfits fit. | Lady_Aleena puts the Perl in #perlcafe | mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy eats children? | railbait has been sentenced to concatenation | Perl and CPAN are OFFTOPIC! | cl0ud has a glorious scalar localtime()
 </li></ol>
+
+[% END %]
