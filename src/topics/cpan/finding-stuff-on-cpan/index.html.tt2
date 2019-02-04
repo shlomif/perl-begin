@@ -1,7 +1,8 @@
-#include "template5.wml"
+[%- SET title = "Finding stuff on CPAN (2014)" -%]
+[%- SET more_keywords = ", cpan, finding, metacpan" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Finding stuff on CPAN (2014)" />
-<latemp_more_keywords "cpan, finding, metacpan" />
 
 <h2 id="due_diligence">Due Diligence</h2>
 
@@ -28,3 +29,5 @@ such as Freenode’s <code>#perl</code> chat room.
 <p>
 Put a list of the best candidates and roll a die.
 </p>
+
+[% END %]

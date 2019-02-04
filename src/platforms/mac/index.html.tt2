@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl on Mac OS" />
+[%- SET title = "Perl on Mac OS" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as
@@ -17,3 +17,5 @@ with it can break your system in subtle ways. Instead, install
 a version of perl from sources
 using <a href="http://perlbrew.pl/">perlbrew</a>.
 </p>
+
+[% END %]

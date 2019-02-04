@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Using CPAN with Perl" />
+[%- SET title = "Using CPAN with Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 “CPAN” stands for <a href="http://en.wikipedia.org/wiki/CPAN">the
@@ -51,7 +51,7 @@ PerlNet wiki).
 
 <li>
 <p>
-<cpan_self_dist d="local-lib" /> - install CPAN modules under a local user
+[% cpan_self_dist( "d" => "local-lib", ) %] - install CPAN modules under a local user
 directory.
 </p>
 </li>
@@ -127,3 +127,5 @@ licence)
 </li>
 
 </ul>
+
+[% END %]

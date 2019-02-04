@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Testimonials and Companies and People Using Perl" />
+[%- SET title = "Testimonials and Companies and People Using Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="testimonials">Testimonials</h2>
 
@@ -93,3 +93,5 @@ achievement)… Perl contributed significantly to the project.</q>
 <a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
 </li>
 </ul>
+
+[% END %]

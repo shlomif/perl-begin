@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Our Wiki" />
+[%- SET title = "Our Wiki" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 A Wiki is a site that can be freely edited by anybody using a web-browser.
@@ -11,3 +11,5 @@ This was done to consolidate the Perl wiki'ing efforts, because there's much
 more action on perl.net.au than there was on our wiki, and for ease of
 maintenance. The original wiki on this domain has been disabled.
 </p>
+
+[% END %]

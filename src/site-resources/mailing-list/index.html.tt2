@@ -1,0 +1,14 @@
+[%- SET title = "Our Mailing List" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<p>
+We used to have a mailing list, but it has become defunct.
+</p>
+<p>
+If you are
+interested in other mailing lists refer to
+<a href="[% base_path %]mailing-lists/">our mailing lists page</a>.
+</p>
+
+[% END %]

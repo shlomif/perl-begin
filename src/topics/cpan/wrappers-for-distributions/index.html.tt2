@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "CPAN Wrappers For Creating native system Packages" />
+[%- SET title = "CPAN Wrappers For Creating native system Packages" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -187,3 +187,5 @@ RPMs of CPAN Modules</a> - by Dave Cross.
 </li>
 
 </ul>
+
+[% END %]

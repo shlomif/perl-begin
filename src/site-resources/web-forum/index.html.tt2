@@ -1,0 +1,10 @@
+[%- SET title = "Our Web-Forum" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<p>
+We used to have a web forum, but now you should use
+<a href="[% base_path %]web-forums/">something else (and better)</a> instead.
+</p>
+
+[% END %]

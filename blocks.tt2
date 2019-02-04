@@ -1,3 +1,7 @@
+[%- BLOCK pdoc -%]
+<a href="http://perldoc.perl.org/[% d %].html">[% d %][% content %]</a>
+[%- END -%]
+
 [%- BLOCK pdoc_f -%]
 <a href="http://perldoc.perl.org/functions/[% f %].html">[% content %]</a>
 [%- END -%]

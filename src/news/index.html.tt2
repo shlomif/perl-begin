@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Beginners' Site - News" />
+[%- SET title = "Perl Beginners' Site - News" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="news_31_May_2015">31-May-2015: New pages, restored pages, and updated content</h2>
 
@@ -161,8 +161,8 @@ challenges, and some new topical pages.</h2>
 
 <li>
 <p>
-The book <a href="$(ROOT)/books/#modern-perl">Modern Perl</a> is now
-recommended, and <a href="$(ROOT)/tutorials/modern-perl/">a local copy</a> of
+The book <a href="[% base_path %]books/#modern-perl">Modern Perl</a> is now
+recommended, and <a href="[% base_path %]tutorials/modern-perl/">a local copy</a> of
 it, under the CC-by-nc-sa licence is available on Perl-Begin, thanks to
 <a href="http://www.modernperlbooks.com/">chromatic</a>.
 </p>
@@ -170,56 +170,56 @@ it, under the CC-by-nc-sa licence is available on Perl-Begin, thanks to
 
 <li>
 <p>
-We added <a href="$(ROOT)/exercises/">a Page</a> with links to <b>exercises
+We added <a href="[% base_path %]exercises/">a Page</a> with links to <b>exercises
 and challenges</b>.
 </p>
 </li>
 
 <li>
 <p>
-There's a new topical page about <a href="$(ROOT)/topics/modules-and-packages/">Modules and Packages</a>.
+There's a new topical page about <a href="[% base_path %]topics/modules-and-packages/">Modules and Packages</a>.
 </p>
 </li>
 
 <li>
 <p>
-<a href="$(ROOT)/uses/chat-scripting/">A page about using Perl for writing
+<a href="[% base_path %]uses/chat-scripting/">A page about using Perl for writing
 Chat robots and scripts</a> (IRC, Jabber, etc.) has been added. We also
-added <a href="$(ROOT)/uses/games/">a page about developing games with Perl</a>.
+added <a href="[% base_path %]uses/games/">a page about developing games with Perl</a>.
 </p>
 </li>
 
 <li>
 <p>
 More non-recommended Perl elements have been added to
-<a href="$(ROOT)/tutorials/bad-elements/">“Perl Elements to Avoid” page</a>.
+<a href="[% base_path %]tutorials/bad-elements/">“Perl Elements to Avoid” page</a>.
 </p>
 </li>
 
 <li>
 <p>
-<a href="$(ROOT)/uses/web/">The web-development with Perl page</a>
+<a href="[% base_path %]uses/web/">The web-development with Perl page</a>
 was enhanced with new frameworks and information.
 </p>
 </li>
 
 <li>
 <p>
-Added <a href="$(ROOT)/IDEs-and-tools/#gui-debugger">a list of GUI
+Added <a href="[% base_path %]IDEs-and-tools/#gui-debugger">a list of GUI
 debuggers</a> to the IDEs and tools page.
 </p>
 </li>
 
 <li>
 <p>
-We're now mirroring the now offline <a href="$(ROOT)/topics/cpan/#life-with-cpan">“Life with CPAN” by Jeremy Mates</a>.
+We're now mirroring the now offline <a href="[% base_path %]topics/cpan/#life-with-cpan">“Life with CPAN” by Jeremy Mates</a>.
 </p>
 </li>
 
 <li>
 <p>
 A page about the
-<a href="$(ROOT)/learn/Perl-perl-but-not-PERL/">differences between “Perl”,
+<a href="[% base_path %]learn/Perl-perl-but-not-PERL/">differences between “Perl”,
 “perl” and “PERL”</a> was added. It was inspired by
 <a href="http://perl.org.il/misc.html#pl_vs_pl">a similar page</a> on
 the Israeli Perl Mongers site.
@@ -249,7 +249,7 @@ New Page about Bad Perl Elements and other new pages.</h2>
 <li>
 <p>
 We've added a comprehensive and growing
-<a href="$(ROOT)/tutorials/bad-elements/">"Perl Elements
+<a href="[% base_path %]tutorials/bad-elements/">"Perl Elements
 to Avoid"</a> page with many Perl paradigms that you should know better than to
 incorporate into your code.
 </p>
@@ -257,7 +257,7 @@ incorporate into your code.
 
 <li>
 <p>
-<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+<a href="[% base_path %]tutorials/impatient-perl/">"Impatient
 Perl"</a> was updated to the latest version.
 </p>
 </li>
@@ -265,27 +265,27 @@ Perl"</a> was updated to the latest version.
 <li>
 <p>
 There's a new topical page about
-<a href="$(ROOT)/uses/remote-login-and-commands/">SSH and Telnet</a>.
+<a href="[% base_path %]uses/remote-login-and-commands/">SSH and Telnet</a>.
 </p>
 </li>
 
 <li>
 <p>
 There's a new topical page
-about <a href="$(ROOT)/topics/optimising-and-profiling/">optimising
+about <a href="[% base_path %]topics/optimising-and-profiling/">optimising
 and profiling Perl code</a>, in order to make it run faster.
 </p>
 </li>
 
 <li>
 <p>
-There's a new page <a href="$(ROOT)/learn/perl6/">"What about Perl 6?"</a>.
+There's a new page <a href="[% base_path %]learn/perl6/">"What about Perl 6?"</a>.
 </p>
 </li>
 
 <li>
 <p>
-The <a href="$(ROOT)/uses/text-generation/">page about text generation</a> was
+The <a href="[% base_path %]uses/text-generation/">page about text generation</a> was
 greatly enhanced.
 </p>
 </li>
@@ -293,7 +293,7 @@ greatly enhanced.
 
 <li>
 <p>
-<a href="$(ROOT)/contribute/">The how-to contribute to the site section</a> now
+<a href="[% base_path %]contribute/">The how-to contribute to the site section</a> now
 includes the TODO and DONE files, which previously only existed in the
 Subversion repository.
 </p>
@@ -321,19 +321,19 @@ and ones that were done to its internals.
 <ul>
 
 <li>
-<a href="$(ROOT)/FAQs/">A page containing a list of frequently
+<a href="[% base_path %]FAQs/">A page containing a list of frequently
 asked questions (FAQs)</a> was added.
 </li>
 
 <li>
-<a href="$(ROOT)/uses/text-parsing/">A page about text parsing</a> and
-<a href="$(ROOT)/uses/text-generation/">a page about text generation</a>,
+<a href="[% base_path %]uses/text-parsing/">A page about text parsing</a> and
+<a href="[% base_path %]uses/text-generation/">a page about text generation</a>,
 both with best practices and recommended technologies were added.
 </li>
 
 <li>
 Added
-<a href="$(ROOT)/topics/scoping/">a page about scoping and variables</a>.
+<a href="[% base_path %]topics/scoping/">a page about scoping and variables</a>.
 </li>
 
 </ul>
@@ -347,33 +347,33 @@ JavaScript, loads faster and does not load Google Analytics.
 <h2 id="news_16_March_2010">16-March-2010: Topical and Uses Pages</h2>
 
 <p>
-We added a <a href="$(ROOT)/uses/email/">a page about using Perl for E-mail
-processing</a>, <a href="$(ROOT)/uses/multitasking/">a page about Perl for
+We added a <a href="[% base_path %]uses/email/">a page about using Perl for E-mail
+processing</a>, <a href="[% base_path %]uses/multitasking/">a page about Perl for
 multitasking and networking</a>, a some topical pages:
 </p>
 
 <ul>
 
 <li>
-<a href="$(ROOT)/topics/date-and-time/">Date and Time</a>.
+<a href="[% base_path %]topics/date-and-time/">Date and Time</a>.
 </li>
 
 <li>
-<a href="$(ROOT)/topics/references/">References in Perl</a>.
+<a href="[% base_path %]topics/references/">References in Perl</a>.
 </li>
 
 <li>
-<a href="$(ROOT)/topics/regular-expressions/">Regular Expressions</a>.
+<a href="[% base_path %]topics/regular-expressions/">Regular Expressions</a>.
 </li>
 
 <li>
-<a href="$(ROOT)/topics/hashes/">Hashes</a>.
+<a href="[% base_path %]topics/hashes/">Hashes</a>.
 </li>
 
 </ul>
 
 <p>
-<a href="$(ROOT)/IDEs-and-tools/">The IDEs and Tools page</a> now contains
+<a href="[% base_path %]IDEs-and-tools/">The IDEs and Tools page</a> now contains
 screenshots.
 </p>
 
@@ -384,7 +384,7 @@ Many new links have been added and many typos have been corrected. Enjoy!
 <h2 id="news_03_August_2009">03-August-2009: More updates to Perl-Begin.org</h2>
 
 <p>
-I thought <a href="$(ROOT)/">the Perl Beginners' Site</a>
+I thought <a href="[% base_path %]">the Perl Beginners' Site</a>
 was perfect after
 <a href="http://community.livejournal.com/shlomif_tech/30178.html">the
 last update</a>, but boy I was wrong. A quick review and critique of the site
@@ -394,9 +394,9 @@ had more stuff that I found lacking. So here's what has changed.
 
 <p>
 We're now mirroring
-<a href="$(ROOT)/tutorials/perl-for-newbies/">the
+<a href="[% base_path %]tutorials/perl-for-newbies/">the
 public domain "Perl for Newbies" tutorial</a> as well as the GFDLed book
-<a href="$(ROOT)/tutorials/impatient-perl/">"Impatient
+<a href="[% base_path %]tutorials/impatient-perl/">"Impatient
 Perl"</a> by <a href="http://www.greglondon.com/">Greg London</a>. Their
 presence on the site was done in order to preserve Perl-Begin's common look
 and feel, and to make sure people would be able to access them without
@@ -420,18 +420,18 @@ There are also several corrections to text and links.
 
 <p>
 <a href="http://stackoverflow.com/">Stack Overflow</a> was added to
-<a href="$(ROOT)/web-forums/">the web-forums page</a>.
+<a href="[% base_path %]web-forums/">the web-forums page</a>.
 </p>
 
 <p>
 There are now mentionings of
-<a href="$(ROOT)/books/topics/">two new topical books</a> -
+<a href="[% base_path %]books/topics/">two new topical books</a> -
 "Perl &amp; LWP" and "Programming the Perl DBI".
 </p>
 
 <p>
 Finally, the
-<a href="$(ROOT)/about.html">"About this site" page</a>
+<a href="[% base_path %]about.html">"About this site" page</a>
 was updated and made more modern.
 </p>
 
@@ -445,7 +445,7 @@ your friends - if you don't - let us know and we'll see what we can do.
 <h2 id="news_27_July_2009">27-July-2009: Updates to Perl-Begin.org</h2>
 
 <p>
-After the last news item, a lot of work was invested into <a href="$(ROOT)">Perl-Begin.org, the Perl Beginners' Site</a>, making
+After the last news item, a lot of work was invested into <a href="[% base_path %]">Perl-Begin.org, the Perl Beginners' Site</a>, making
 it even better than it used to be. Here's a summary of the changes:
 </p>
 
@@ -453,7 +453,7 @@ it even better than it used to be. Here's a summary of the changes:
 
 <li>
 <p>
-<a href="$(ROOT)/learn/who-is-using/">A testimonials page</a>
+<a href="[% base_path %]learn/who-is-using/">A testimonials page</a>
 was added, with some honest-to-God testimonial quotes which are now featured in
 the Testimonials side-bar.
 </p>
@@ -461,14 +461,14 @@ the Testimonials side-bar.
 
 <li>
 <p>
-There's a new <a href="$(ROOT)/IDEs-and-tools/">IDEs and
+There's a new <a href="[% base_path %]IDEs-and-tools/">IDEs and
 tools page</a>, featuring some Integrated Development Environments.
 </p>
 </li>
 
 <li>
 <p>
-There's a new <a href="$(ROOT)/blogs/">page sporting links
+There's a new <a href="[% base_path %]blogs/">page sporting links
 to collections of blogs</a>.
 </p>
 </li>
@@ -479,18 +479,18 @@ Several new topical pages were added:
 </p>
 <ol>
 
-<li><a href="$(ROOT)/uses/databases/">Perl and Databases</a></li>
+<li><a href="[% base_path %]uses/databases/">Perl and Databases</a></li>
 
-<li><a href="$(ROOT)/uses/GUI/">GUI Development in Perl</a></li>
+<li><a href="[% base_path %]uses/GUI/">GUI Development in Perl</a></li>
 
-<li><a href="$(ROOT)/uses/xml/">Perl for XML Processing</a></li>
+<li><a href="[% base_path %]uses/xml/">Perl for XML Processing</a></li>
 
-<li><a href="$(ROOT)/topics/debugging/">Debugging</a></li>
+<li><a href="[% base_path %]topics/debugging/">Debugging</a></li>
 
-<li><a href="$(ROOT)/topics/object-oriented/">Object-oriented
+<li><a href="[% base_path %]topics/object-oriented/">Object-oriented
 Programming in Perl</a></li>
 
-<li><a href="$(ROOT)/topics/cpan/">Using CPAN</a></li>
+<li><a href="[% base_path %]topics/cpan/">Using CPAN</a></li>
 </ol>
 
 </li>
@@ -528,27 +528,27 @@ Commons Attribution Licence which allows almost unlimited re-use.
 <h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
 
 <p>
-Recently, the <a href="$(ROOT)/">Perl-Begin site</a> has
+Recently, the <a href="[% base_path %]">Perl-Begin site</a> has
 seen many updates and corrections. Among them are:
 </p>
 
 <ul>
 
 <li>
-In <a href="$(ROOT)/platforms/windows/">the Perl on Windows
+In <a href="[% base_path %]platforms/windows/">the Perl on Windows
 page</a>, we now recommend the open-source
 and community-headed <a href="http://strawberryperl.com/">Strawberry
 Perl</a> instead of the proprietary and quirky ActivePerl.
 </li>
 
 <li>
-<a href="$(ROOT)/contribute/list/">The contributors list</a>
+<a href="[% base_path %]contribute/list/">The contributors list</a>
 is now in the global navigation menu. This makes sure it will be prominently
 featured on all pages of the site, and won't be left out-of-date.
 </li>
 
 <li>
-<a href="$(ROOT)/uses/sys-admin/">The systems administration page</a> now
+<a href="[% base_path %]uses/sys-admin/">The systems administration page</a> now
 contains links to many useful modules.
 </li>
 
@@ -584,7 +584,7 @@ maintenance. Our wiki will be removed soon.
 </p>
 
 <p>
-Also of note is <a href="$(ROOT)/wikis/">a new section of the site on
+Also of note is <a href="[% base_path %]wikis/">a new section of the site on
 Perl-related wikis</a>.
 </p>
 
@@ -615,7 +615,7 @@ be much better now.
 <h2 id="news_06_Jun_2005">06-June-2005: Wiki Restored</h2>
 
 <p>
-The <a href="<wiki_link />">Wiki</a> was heavily spammed and so was taken
+The <a href="[% wiki_link( ) %]">Wiki</a> was heavily spammed and so was taken
 off. Now, a new wiki was set up with a better implementation -
 <a href="http://wikipedia.sourceforge.net/">MediaWiki</a>, and now we monitor
 the RSS feed and use other measurements to prevent Spam.
@@ -628,7 +628,7 @@ All the content of the old wiki was restored.
 <h2 id="news_29_Feb_2004">29-February-2004: New Wiki</h2>
 
 <p>
-We now have <a href="<wiki_link />">a new Wiki with a better
+We now have <a href="[% wiki_link( ) %]">a new Wiki with a better
 implementation</a>. The previous wiki was dumped because it was a JavaScript
 hell and was quite lame in its conventions. The newer wiki implementation
 (<a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki">PmWiki</a> to be exact)
@@ -639,3 +639,5 @@ is much better in this and other regards.
 All the content from the old wiki was transferred to the new one. We hope
 you'd like it better.
 </p>
+
+[% END %]

@@ -158,6 +158,11 @@ qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol
                 nav_links     => $t2,
                 nav_menu_html => join( '', @$nav_html ),
                 share_link    => $share_link,
+                wiki_link     => sub {
+                    my %args = %{ shift() // {} };
+                    return qq#http://perl.net.au/wiki/Beginners#
+                        . ( $args{url} ? '/' . $args{url} : '' );
+                },
                 cpan_self_mod => sub {
                     my %args = %{ shift() };
                     return cpan_mod( %args, body => $args{m} );

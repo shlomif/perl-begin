@@ -1,8 +1,0 @@
-#include "template5.wml"
-
-<latemp_subject "Our Web-Forum" />
-
-<p>
-We used to have a web forum, but now you should use
-<a href="$(ROOT)/web-forums/">something else (and better)</a> instead.
-</p>

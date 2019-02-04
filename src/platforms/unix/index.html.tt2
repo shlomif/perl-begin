@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl on UNIX and Linux Systems" />
+[%- SET title = "Perl on UNIX and Linux Systems" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 If you are using a <a href="http://en.wikipedia.org/wiki/Unix">UNIX-compatible
@@ -28,8 +28,8 @@ the <code>INSTALL</code> file.
 <h3 id="perldoc">Setting up a local Perldoc</h3>
 
 <p>
-The <pdoc d="perldoc"></pdoc>
-documentation program is not always present in the default installation, as many
+The [%- WRAPPER pdoc d = "perldoc" -%][%- END -%]
+ documentation program is not always present in the default installation, as many
 non-programmers or non-Perl programmers are not going to use it. It can
 be installed by:
 </p>
@@ -44,10 +44,12 @@ Installing <a href="http://docperl.sourceforge.net/">DocPerl</a>
 which is a web-interface to the local Perl documentation.
 </li>
 <li>
-Installing <cpan_self_mod m="tkpod" /> which is a Perl/Tk-based interface.
+Installing [% cpan_self_mod( "m" => "tkpod", ) %] which is a Perl/Tk-based interface.
 </li>
 <li>
 Alternatively one can access the <a href="http://perldoc.perl.org/">online
 perl documentation</a>, which may deviate from what you have.
 </li>
 </ol>
+
+[% END %]
