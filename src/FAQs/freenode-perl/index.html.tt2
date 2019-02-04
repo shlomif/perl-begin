@@ -11,6 +11,6 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-[% INCLUDE "retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html" %]
+[% slurp("lib/retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html") %]
 
 [% END %]
