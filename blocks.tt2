@@ -65,7 +65,7 @@ And <a href="[% base_path %]learn/get-a-job/">get a job</a> doing Perl.</div>
 
 [%- BLOCK end_html -%]
 <p><a href=
-"http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fperl-begin.org%2Fweb-forums%2F&amp;linkname=">
+"http://www.addtoany.com/share_save?linkurl=[% share_link %]&amp;linkname=">
 <img src="[% base_path %]images/share_save_171_16.png" width="171" height="16"
 class="bless" alt="Share/Bookmark" /></a></p>
 </main>

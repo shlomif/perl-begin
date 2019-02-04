@@ -125,6 +125,14 @@ while ( my $result = $tree->next_obj() )
             my $leading_path_string = join( " → ",
                 ( map { $render_leading_path_component->($_) } @$leading_path )
             );
+            use CGI;
+            use URI::Escape;
+            my $share_link = CGI::escapeHTML(
+                uri_escape(
+                    MyNavData::get_hosts()->{ $nav_bar->current_host() }
+                        ->{'base_url'} . $nav_bar->path_info()
+                )
+            );
             my $vars = +{
                 base_path           => $base_path,
                 leading_path_string => $leading_path_string,
@@ -134,6 +142,7 @@ qq#<img src="${base_path}icon_lang_en.png" alt="סמל אנגלית" class="symb
 qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol" /> #,
                 nav_links     => $t2,
                 nav_menu_html => join( '', @$nav_html ),
+                share_link    => $share_link,
             };
 
             $template->process(
