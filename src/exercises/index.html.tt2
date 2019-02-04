@@ -1,7 +1,6 @@
-#include "template5.wml"
-#include "rosetta_code.wml"
-
-<latemp_subject "Links to Perl Exercises and Challenges" />
+[%- SET title = "Links to Perl Exercises and Challenges" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -13,8 +12,8 @@ and challenges that can be solved using Perl.
 
 <h2 id="the_list">The List</h2>
 
-<define-tag removed>
-<h3 id="learning-perl"><a href="$(ROOT)/books/#learning-perl">Learning
+[% BLOCK removed %]
+<h3 id="learning-perl"><a href="[% base_path %]books/#learning-perl">Learning
 Perl</a></h3>
 
 <p>
@@ -22,9 +21,9 @@ The book "Learning Perl" by Randal Schwartz et al contains many exercises
 for beginning Perl programmers.
 </p>
 
-</define-tag>
+[% END %]
 
-<h3 id="beginning-perl"><a href="$(ROOT)/books/#beginning-perl">Beginning
+<h3 id="beginning-perl"><a href="[% base_path %]books/#beginning-perl">Beginning
 Perl</a></h3>
 
 <p>
@@ -100,7 +99,7 @@ A concentrated list of Project Ideas - on the <i>Dream in Code</i> forums.
 Contains some challenges.
 </p>
 
-<rosetta_code />
+[% INCLUDE rosetta_code %]
 
 <h3 id="github_"><a href="https://github.com/vhf/free-programming-books/blob/master/problem-sets-competitive-programming.md">Problem Sets and Competitive Programming Sites’ List on GitHub</a></h3>
 
@@ -108,3 +107,5 @@ Contains some challenges.
 A comprehensive list of sites with problem sets and/or for competitive
 programming - many of which can be solved in Perl.
 </p>
+
+[% END %]

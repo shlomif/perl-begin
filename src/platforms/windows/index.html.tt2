@@ -1,9 +1,8 @@
-#include "template5.wml"
-#include "win32.wml"
+[%- SET title = "Perl on Win32" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Perl on Win32" />
-
-<win32_intro />
+[% INCLUDE win32_intro %]
 
 <p>
 Perl code can be written to run perfectly on both Windows and UNIXes, out
@@ -32,7 +31,7 @@ recommended. As a result, it is now best to avoid ActivePerl, which is
 proprietary and less usable.
 </p>
 
-<define-tag removed>
+[% BLOCK removed %]
 <p>
 One should also mention <a href="http://dwimperl.szabgab.com/">DWIM
 Perl for Windows</a> which is based on Strawberry Perl, but contains more
@@ -42,7 +41,7 @@ as of March 2014, DWIM Perl for Windows was last updated only for
 perl 5.14.2, which is now discontinued by the upstream perl 5 maintainers,
 and so its use is not recommended until it will be updated again.
 </p>
-</define-tag>
+[% END %]
 
 <h3 id="mailing-lists">Mailing Lists</h3>
 
@@ -54,3 +53,5 @@ effectively answered in beginners mailing lists as well. However, this
 mailing list may also prove to be helpful when dealing with Win32-specific Perl
 extensions.
 </p>
+
+[% END %]
