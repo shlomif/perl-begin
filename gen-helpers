@@ -69,7 +69,7 @@ my $generator = HTML::Latemp::GenMakeHelpers->new(
 
 $generator->process_all();
 
-path("$DIR/tt2.txt")->spew( join "\n", @tt, "" );
+path("$DIR/tt2.txt")->spew_raw( join "\n", @tt, "" );
 my $r_fh = io("$DIR/rules.mak");
 my $text = $r_fh->slurp();
 $text =~
