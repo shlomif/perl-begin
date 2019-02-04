@@ -3,27 +3,37 @@
 use strict;
 use warnings;
 use 5.014;
-
 use utf8;
 
 use lib './lib';
 use URI::Escape qw( uri_escape );
-use Template           ();
-use File::Find::Object ();
+use Template ();
 
 use File::Basename qw( basename );
 use File::Path qw( mkpath );
 use File::Spec ();
-use File::Copy qw( copy );
 use Path::Tiny qw/ path /;
 
-my $object_class  = "HTML::Widgets::NavMenu::HeaderRole";
-my $LATEMP_SERVER = "perl_begin";
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
-use MyNavData  ();
-use MyNavLinks ();
-my $template = Template->new(
+use MyNavData ();
+
+sub _render_leading_path_component
+{
+    my $component  = shift;
+    my $title      = $component->title();
+    my $title_attr = defined($title) ? " title=\"$title\"" : "";
+    return
+          "<a href=\""
+        . escape_html( $component->direct_url() )
+        . "\"$title_attr>"
+        . $component->label() . "</a>";
+}
+
+# use MyNavLinks ();
+
+my $LATEMP_SERVER = "perl_begin";
+my $template      = Template->new(
     {
         INCLUDE_PATH => [ ".", "./lib", ],
         POST_CHOMP   => 1,
@@ -31,8 +41,6 @@ my $template = Template->new(
         ENCODING     => 'utf8',
     }
 );
-
-my $tree = File::Find::Object->new( {}, './src' );
 
 sub cpan_mod
 {
@@ -104,7 +112,7 @@ foreach my $result (@tt)
     my $base_path =
         ( '../' x ( scalar(@fn) - 1 ) );
     my $fn2     = join( '/', @fn_nav ) || '/';
-    my $nav_bar = $object_class->new(
+    my $nav_bar = HTML::Widgets::NavMenu::HeaderRole->new(
         'path_info'    => $fn2,
         'current_host' => $LATEMP_SERVER,
         MyNavData::get_params(),
@@ -155,19 +163,8 @@ foreach my $result (@tt)
 
     my $leading_path = $rendered_results->{leading_path};
 
-    my $render_leading_path_component = sub {
-        my $component  = shift;
-        my $title      = $component->title();
-        my $title_attr = defined($title) ? " title=\"$title\"" : "";
-        return
-              "<a href=\""
-            . escape_html( $component->direct_url() )
-            . "\"$title_attr>"
-            . $component->label() . "</a>";
-    };
-
     my $leading_path_string = join( " → ",
-        ( map { $render_leading_path_component->($_) } @$leading_path ) );
+        ( map { _render_leading_path_component($_) } @$leading_path ) );
     my $share_link = escape_html(
         uri_escape(
             MyNavData::get_hosts()->{ $nav_bar->current_host() }->{'base_url'}
