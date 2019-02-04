@@ -46,6 +46,49 @@ sub cpan_dist
 }
 
 my @DEST = ( File::Spec->curdir(), "dest", );
+my $vars = +{
+    wiki_link => sub {
+        my %args = %{ shift() // {} };
+        return qq#http://perl.net.au/wiki/Beginners#
+            . ( $args{url} ? '/' . $args{url} : '' );
+    },
+    cpan_self_mod => sub {
+        my %args = %{ shift() };
+        return cpan_mod( %args, body => $args{m} );
+    },
+    cpan_b_self_dist => sub {
+        my %args = %{ shift() };
+        return cpan_dist( { %args, body => "<b>$args{d}</b>", } );
+    },
+    irc_channel => sub {
+        my %args    = %{ shift() };
+        my $net     = $args{net};
+        my $chan    = $args{chan};
+        my %servers = (
+            'freenode' => "irc.freenode.net",
+            'efnet'    => "irc.Prison.NET",
+            'oftc'     => "irc.oftc.net",
+            'undernet' => "us.undernet.org",
+            'ircnet'   => "ircnet.demon.co.uk",
+        );
+        if ( !exists( $servers{$net} ) )
+        {
+            die "Unknown network!";
+        }
+        return
+              "<a href=\"irc://"
+            . $servers{$net}
+            . "/%23$chan\"><code>#$chan</code></a>";
+    },
+    cpan_self_dist => sub {
+        my %args = %{ shift() };
+        return cpan_dist( { %args, body => $args{d} } );
+    },
+    slurp => sub {
+        return path(shift)->slurp_utf8;
+    },
+};
+
 while ( my $result = $tree->next_obj() )
 {
     if ( not $result->is_dir() )
@@ -133,64 +176,18 @@ while ( my $result = $tree->next_obj() )
                         ->{'base_url'} . $nav_bar->path_info()
                 )
             );
-            my $vars = +{
-                base_path           => $base_path,
-                leading_path_string => $leading_path_string,
-                icon_en =>
-qq#<img src="${base_path}icon_lang_en.png" alt="סמל אנגלית" class="symbol" /> #,
-                icon_he =>
-qq#<img src="${base_path}icon_lang_he.png" alt="סמל עברית" class="symbol" /> #,
-                nav_links     => $t2,
-                nav_menu_html => join( '', @$nav_html ),
-                share_link    => $share_link,
-                wiki_link     => sub {
-                    my %args = %{ shift() // {} };
-                    return qq#http://perl.net.au/wiki/Beginners#
-                        . ( $args{url} ? '/' . $args{url} : '' );
-                },
-                cpan_self_mod => sub {
-                    my %args = %{ shift() };
-                    return cpan_mod( %args, body => $args{m} );
-                },
-                cpan_b_self_dist => sub {
-                    my %args = %{ shift() };
-                    return cpan_dist( { %args, body => "<b>$args{d}</b>", } );
-                },
-                irc_channel => sub {
-                    my %args    = %{ shift() };
-                    my $net     = $args{net};
-                    my $chan    = $args{chan};
-                    my %servers = (
-                        'freenode' => "irc.freenode.net",
-                        'efnet'    => "irc.Prison.NET",
-                        'oftc'     => "irc.oftc.net",
-                        'undernet' => "us.undernet.org",
-                        'ircnet'   => "ircnet.demon.co.uk",
-                    );
-                    if ( !exists( $servers{$net} ) )
-                    {
-                        die "Unknown network!";
-                    }
-                    return
-                          "<a href=\"irc://"
-                        . $servers{$net}
-                        . "/%23$chan\"><code>#$chan</code></a>";
-                },
-                cpan_self_dist => sub {
-                    my %args = %{ shift() };
-                    return cpan_dist( { %args, body => $args{d} } );
-                },
-                slurp => sub {
-                    return path(shift)->slurp_utf8;
-                },
-                slurp_bad_elems => sub {
-                    return path("lib/docbook/5/rendered/bad-elements.xhtml")
-                        ->slurp_utf8() =~ s{\$\(ROOT\)}{$base_path}gr;
-                },
-            };
 
             mkpath(
                 File::Spec->catdir( @DEST, @{ $result->dir_components() } ) );
+            $vars->{base_path}           = $base_path;
+            $vars->{leading_path_string} = $leading_path_string;
+            $vars->{nav_links}           = $t2;
+            $vars->{nav_menu_html}       = join( '', @$nav_html );
+            $vars->{share_link}          = $share_link;
+            $vars->{slurp_bad_elems}     = sub {
+                return path("lib/docbook/5/rendered/bad-elements.xhtml")
+                    ->slurp_utf8() =~ s{\$\(ROOT\)}{$base_path}gr;
+            };
             $template->process(
                 $result->path(), $vars,
                 File::Spec->catfile( @DEST, @fn, ),
