@@ -49,19 +49,12 @@ while ( my $result = $tree->next_obj() )
 {
     if ( $result->is_dir() )
     {
-        if ( $result->path() eq './dest' )
-        {
-            $tree->prune();
-        }
-        else
-        {
-            mkpath(
-                File::Spec->catdir(
-                    File::Spec->curdir(), "dest",
-                    @{ $result->full_components() }
-                )
-            );
-        }
+        mkpath(
+            File::Spec->catdir(
+                File::Spec->curdir(), "dest",
+                @{ $result->full_components() }
+            )
+        );
     }
     else
     {
