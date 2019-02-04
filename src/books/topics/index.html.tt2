@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Books that cover Specific Topics" />
+[%- SET title = "Perl Books that cover Specific Topics" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl has many third-party APIs available on CPAN, many of which interface it
@@ -46,7 +46,9 @@ is also available</a>.
 <li>
 <a href="http://books.perl.org/book/154">Programming the Perl DBI</a> -
 a book about Perl's DBI - the Database Interface. Also see our
-<a href="$(ROOT)/uses/databases/">resources about working with databases</a>.
+<a href="[% base_path %]uses/databases/">resources about working with databases</a>.
 </li>
 
 </ul>
+
+[% END %]

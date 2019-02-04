@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Core Documentation" />
+[%- SET title = "Perl Core Documentation" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="online-docs">Online Documentation</h2>
 
@@ -41,3 +41,5 @@ after the language is learned to a working extent.
 A book that contains a long list of code snippets for achieving certain tasks
 in Perl, with some discussion on how they work and how to customize them.
 </p>
+
+[% END %]

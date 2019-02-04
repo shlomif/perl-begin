@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Contact Us" />
+[%- SET title = "Contact Us" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 The chief webmaster of this site is
@@ -10,6 +10,8 @@ can be found on his home site</a>.
 </p>
 
 <p>
-Furthermore, the site has <a href="$(ROOT)/site-resources/">some other
+Furthermore, the site has <a href="[% base_path %]site-resources/">some other
 resources</a> that may prove useful.
 </p>
+
+[% END %]

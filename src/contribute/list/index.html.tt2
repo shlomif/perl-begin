@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Contributors List" />
+[%- SET title = "Contributors List" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <ul>
 
@@ -58,7 +58,7 @@ the top of the pages look nicer.
 
 <li>
 <b>slakmagik</b> - reported a code typo in
-<a href="$(ROOT)/tutorials/bad-elements/">bad Perl elements page</a>.
+<a href="[% base_path %]tutorials/bad-elements/">bad Perl elements page</a>.
 </li>
 
 <li>
@@ -76,3 +76,5 @@ Perl-Begin since 2009.
 </li>
 
 </ul>
+
+[% END %]
