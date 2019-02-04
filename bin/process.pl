@@ -76,8 +76,7 @@ while ( my $result = $tree->next_obj() )
             }
             my $base_path =
                 ( '../' x scalar( @{ $result->dir_components() } ) );
-            my $fn2 = join( '/', @fn_nav ) || '/';
-            say $fn2;
+            my $fn2     = join( '/', @fn_nav ) || '/';
             my $nav_bar = $object_class->new(
                 'path_info'    => $fn2,
                 'current_host' => $LATEMP_SERVER,
