@@ -1,6 +1,6 @@
-#include "template5.wml"
-
-<latemp_subject "Perl Beginners' Site" />
+[%- SET title = "Perl Beginners' Site" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 The Perl Beginners’ Site aims to be a first-stop web site (or portal)
@@ -12,17 +12,17 @@ flexible, feature-rich,
 programming language</a>. Perl code is
 <a href="http://www.paulgraham.com/power.html"><b>succinct</b></a> and can be
 written quickly, while still performing well in most cases.
-<a href="$(ROOT)/learn/">Read more…</a>
+<a href="[% base_path %]learn/">Read more…</a>
 </p>
 
 <p>
-In order to learn Perl, <a href="$(ROOT)/resources/">see our
+In order to learn Perl, <a href="[% base_path %]resources/">see our
 pages of various online resources</a>, and then
-see our <a href="$(ROOT)/topics/">topics</a> and
-<a href="$(ROOT)/uses/">common uses</a> page.
+see our <a href="[% base_path %]topics/">topics</a> and
+<a href="[% base_path %]uses/">common uses</a> page.
 </p>
 
-<define-tag useless_evangelism>
+[% BLOCK useless_evangelism %]
 
 <h2 id="right-tool">The Right Tool for the Job</h2>
 
@@ -39,7 +39,7 @@ more robust and more portable for many tasks than writing
 <a href="http://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> scripts,
 to say nothing of Win32's
 <a href="http://en.wikipedia.org/wiki/Cmd.exe">cmd.exe</a>.
-<a href="$(ROOT)/uses/sys-admin/">Read more…</a>
+<a href="[% base_path %]uses/sys-admin/">Read more…</a>
 </li>
 
 <li>
@@ -54,7 +54,7 @@ writing CGI scripts and even large scale web applications, and is still very
 popular. It is extensively used by such large, highly scalable sites such as
 <a href="http://amazon.com/">Amazon.com</a> or
 <a href="http://www.livejournal.com/">Live Journal</a>, and by countless of
-smaller sites. <a href="$(ROOT)/uses/web/">Read more…</a>.
+smaller sites. <a href="[% base_path %]uses/web/">Read more…</a>.
 </li>
 
 <li>
@@ -62,16 +62,16 @@ smaller sites. <a href="$(ROOT)/uses/web/">Read more…</a>.
 of <a href="http://perl-qa.yi.org/">tools for automated or semi-automated
 software testing</a>. These tools can often be used to test applications
 written in other languages, and certainly network servers.
-<a href="$(ROOT)/uses/qa/">Read more…</a>
+<a href="[% base_path %]uses/qa/">Read more…</a>
 </li>
 
 </ol>
 
-</define-tag>
+[% END %]
 
+[% BLOCK whs_note %]
 ;;; Due for removal in 2011-05-20
 ;;; or renewal.
-<define-tag whs_note>
 <h2 id="whs-note">Appreciation Note:</h2>
 
 <p>
@@ -81,11 +81,11 @@ it to serve you better. For those of you who need a specific
 <a href="http://www.webhostingsearch.com/">web host</a> (for example
 one that supports Perl and PHP) then we recommend you to pay them a visit.
 </p>
-</define-tag whs_note>
+[% END %]
 
+[% BLOCK web_hosting_break_note %]
 ;;; Placed on 2011-05-31
 ;;; Pending for renewal every 3 months.
-<define-tag web_hosting_break_note>
 
 <hr />
 
@@ -97,9 +97,9 @@ Starting your website is daunting, but you can make it easy with the
 needs. Compare and save.
 </p>
 
-</define-tag>
+[% END %]
 
-<define-tag we_dont_need_no_hype>
+[% BLOCK we_dont_need_no_hype %]
 <h2 id="hype">Hype? We don't need no stinkin' hype!</h2>
 
 <p>
@@ -116,4 +116,6 @@ But we <b>don't want any hype</b>, and we don't mind the FUD. Perl is great, we
 like it, and it's often the right tool for the job. So if you want to learn
 Perl, welcome aboard!
 </p>
-</define-tag>
+[% END %]
+
+[% END %]

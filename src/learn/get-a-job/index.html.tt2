@@ -1,8 +1,8 @@
-#include "template5.wml"
+[%- SET title = "Get a Job Doing Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Get a Job Doing Perl" />
-
-<define-tag jwz_misquote_removed>
+[% BLOCK jwz_misquote_removed %]
 <div class="quotation">
 <p class="q">
 "When some people are confronted with a programming problem, they say to
@@ -16,7 +16,7 @@ Now they have two problems."
 Zawinski</a>)
 </p>
 </div>
-</define-tag>
+[% END %]
 
 <p>
 <b>Perl penetrates bottom-up</b>.
@@ -79,12 +79,12 @@ make it <b>excellent for beginning programmers</b>.
 </p>
 
 <p>
-<b>To learn Perl</b> see <a href="$(ROOT)/tutorials/">our list of online
-tutorials</a>, read <a href="$(ROOT)/books/#with_prev_knowledge">a
+<b>To learn Perl</b> see <a href="[% base_path %]tutorials/">our list of online
+tutorials</a>, read <a href="[% base_path %]books/#with_prev_knowledge">a
 book for people with previous knowledge of programming</a> online (some
 are available online free-of-charge)
-or buy <a href="$(ROOT)/books/">a different book</a>. Then browse
-<a href="$(ROOT)">the rest of the site</a>.
+or buy <a href="[% base_path %]books/">a different book</a>. Then browse
+<a href="[% base_path %]">the rest of the site</a>.
 </p>
 
 <h2 id="what_can_be_done">What can I do with Perl?</h2>
@@ -114,6 +114,8 @@ popular choice for that.
 
 <p>
 Many other uses were later found for Perl: writing network servers, GUI
-programs, <a href="$(ROOT)/uses/bio-info/">Bio-informatics</a>, <a
-href="$(ROOT)/uses/qa/">Quality Assurance and Testing</a>, and web automation.
+programs, <a href="[% base_path %]uses/bio-info/">Bio-informatics</a>, <a
+href="[% base_path %]uses/qa/">Quality Assurance and Testing</a>, and web automation.
 </p>
+
+[% END %]

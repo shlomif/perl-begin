@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use 5.014;
 
 use utf8;
 
@@ -74,8 +75,10 @@ while ( my $result = $tree->next_obj() )
             }
             my $base_path =
                 ( '../' x scalar( @{ $result->dir_components() } ) );
+            my $fn2 = join( '/', @fn_nav ) || '/';
+            say $fn2;
             my $nav_bar = $object_class->new(
-                'path_info'    => join( '/', @fn_nav ),
+                'path_info'    => $fn2,
                 'current_host' => $LATEMP_SERVER,
                 MyNavData::get_params(),
                 'ul_classes'     => [ "navbarmain", ("navbarnested") x 10 ],
