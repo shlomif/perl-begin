@@ -24,10 +24,7 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 "print" />
 <link rel="shortcut icon" href="[% base_path %]favicon.ico" type=
 "image/x-icon" />
-<link rel="next" href="[% base_path %]irc/" title=
-"Chat online about Perl using the Internet Relay Chat (IRC)" />
-<link rel="prev" href="[% base_path %]mailing-lists/" title=
-"Ask questions and receive answers about Perl by E-mail" />
+[%- nav_links -%]
 <script src="[% base_path %]js/jq.js"></script>
 </head>
 
@@ -42,9 +39,7 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 
 <div class="nav-main">
 <h3 class="hide">Breadcrumbs Trail</h3>
-<p class="breadcrumbs"><a href="[% base_path %]">Home</a> → <a href="./" title=
-"Ask questions and receive answers by using a web-browser">Web
-Forums</a></p>
+<p class="breadcrumbs">[% leading_path_string %]</p>
 <h3 class="hide">Global Navigation</h3>
 <ul class="about-links">
 <li><a href="[% base_path %]about.html">About Us</a></li>
