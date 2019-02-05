@@ -1,0 +1,17 @@
+[%- SET title = "&quot;Perl for Newbies&quot; - Part " _ idx _ " - The Perl Beginners' Site" -%]
+[% BLOCK page_extra_head_elements %]
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="[% base_path %]p4n.css" type="text/css" />
+<script src="[% base_path %]js/toggle-nav-controls.js"></script>
+[% END %]
+
+[%- SET perl_begin_sidebar = "<!-- Nothing -->" -%]
+[%- SET body_params = " class=\"no-news\"" -%]
+
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+<button id="toggle_nav_control"
+onclick="javascript:toggle_nav_control()"
+class="toggle_nav_control off">Show Navigation Controls</button>
+[% p4n_slurp(idx) %]
+[% END %]

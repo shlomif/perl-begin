@@ -176,9 +176,13 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 "image/x-icon" />
 [%- nav_links -%]
 <script src="[% base_path %]js/jq.js"></script>
+[% TRY %]
+[% INCLUDE page_extra_head_elements %]
+[% CATCH file %]
+[% END %]
 </head>
 
-<body>
+<body[% body_params %]>
 
 <header id="header">
 <div class="site-name" id="js-site-name">
@@ -219,6 +223,9 @@ And <a href="[% base_path %]learn/get-a-job/">get a job</a> doing Perl.</div>
 <img src="[% base_path %]images/share_save_171_16.png" width="171" height="16"
 class="bless" alt="Share/Bookmark" /></a></p>
 </main>
+[% IF perl_begin_sidebar %]
+[% perl_begin_sidebar %]
+[% ELSE %]
 <h3 class="hide">Sidebar</h3>
 <div id="right-sidebar">
 <div class="testimonials">
@@ -244,6 +251,7 @@ pages</a></li>
 </ul>
 </div>
 </div>
+[% END %]
 </div>
 <h3 class="hide">Footer</h3>
 <footer id="footer">This work is <b>licensed</b> under the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> (or

@@ -1,4 +1,0 @@
-#include "template5.wml"
-#include "perl-for-newbies.wml"
-
-<perl_for_newbies_tutorial_page idx="2" />

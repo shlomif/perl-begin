@@ -96,6 +96,12 @@ my $vars = +{
     slurp => sub {
         return path(shift)->slurp_utf8;
     },
+    p4n_slurp => sub {
+        my $idx = shift;
+        return path(
+            "lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
+            ->slurp_utf8() =~ s{.*<body[^>]*>}{}mrs =~ s{< / body >.*}{}mrsx;
+    },
 };
 
 my @tt = path("lib/make/tt2.txt")->lines_raw;
