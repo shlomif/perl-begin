@@ -54,6 +54,16 @@ sub cpan_dist
     return qq#<a href="http://metacpan.org/release/$args{d}">$args{body}</a>#;
 }
 
+sub retrieved_slurp
+{
+    return slurp( "lib/retrieved-html-parts/" . shift );
+}
+
+sub slurp
+{
+    return path(shift)->slurp_utf8;
+}
+
 my @DEST = ( File::Spec->curdir(), "dest", );
 my $vars = +{
     wiki_link => sub {
@@ -93,10 +103,9 @@ my $vars = +{
         my %args = %{ shift() };
         return cpan_dist( { %args, body => $args{d} } );
     },
-    slurp => sub {
-        return path(shift)->slurp_utf8;
-    },
-    p4n_slurp => sub {
+    slurp           => \&slurp,
+    retrieved_slurp => \&retrieved_slurp,
+    p4n_slurp       => sub {
         my $idx = shift;
         return path(
             "lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")

@@ -13,6 +13,6 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-[% slurp("lib/retrieved-html-parts/Perl_developer_tools.html") %]
+[% retrieved_slurp("Perl_developer_tools.html") %]
 
 [% END %]
