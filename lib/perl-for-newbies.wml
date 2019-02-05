@@ -22,23 +22,19 @@ class="toggle_nav_control off">Show Navigation Controls</button>
 {
     use strict;
     use warnings;
-    use IO::All;
-
-    use Encode (qw(decode));
+    use Path::Tiny qw/ path /;
 
     my $idx = "<get-var idx />";
 
-    binmode STDOUT, ":utf8";
-
-    my $contents = io()
-        ->file("../lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
-        ->slurp()
+    my $contents =
+        path("../lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
+        ->slurp_utf8()
         ;
 
     $contents =~ s{.*<body[^>]*>}{}ms;
     $contents =~ s{< / body >.*}{}msx;
 
-    print decode("UTF-8", $contents);
+    print_utf8($contents);
 }
 }:>
 <restore idx />
