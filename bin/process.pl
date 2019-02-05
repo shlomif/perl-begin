@@ -103,7 +103,6 @@ my $vars = +{
         my %args = %{ shift() };
         return cpan_dist( { %args, body => $args{d} } );
     },
-    slurp           => \&slurp,
     retrieved_slurp => \&retrieved_slurp,
     p4n_slurp       => sub {
         my $idx = shift;
