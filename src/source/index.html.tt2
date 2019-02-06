@@ -26,32 +26,6 @@ or its <a href="http://en.wikipedia.org/wiki/Git_%28software%29">Wikipedia
 page</a>.
 </p>
 
-[% BLOCK removed %]
-<ol>
-
-<li>
-<p>
-<a href="http://hgbook.red-bean.com/">"Mercurial: The Definitive Guide"
-(The hgbook)</a>
-</p>
-</li>
-
-<li>
-<p>
-<a href="http://hginit.com/">Hg Init</a>: a Mercurial tutorial.
-</p>
-</li>
-
-<li>
-<p>
-<a href="http://mercurial.selenic.com/wiki/Tutorial">"A Tutorial on Using
-Mercurial"</a> - on the Mercurial wiki.
-</p>
-</li>
-
-</ol>
-[% END %]
-
 <p>
 After that, you can clone the repository on GitHub, and send us pull
 requests.

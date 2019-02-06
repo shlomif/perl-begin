@@ -11,7 +11,7 @@ dependencies to be built (so they may not be for the uninitiated).
 
 ## Finding the Dependencies
 
-The dependencies are listed in the file `src/source/index.html.wml` .
+The dependencies are listed in the file `src/source/index.html.tt2` .
 
 Before running make for the first time, one has to run `./gen-helpers`.
 This script generates the list of directories and pages inside `include.mak`
