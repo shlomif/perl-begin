@@ -1,30 +1,3 @@
-<define-tag book_store_amazon>
-<preserve isbn title />
-<set-var %attributes />
-<a href="http://www.amazon.com/exec/obidos/ASIN/<get-var isbn />/ref=nosim/shlomifishhom-20/"><get-var title /></a>
-<restore isbn title />
-</define-tag>
-
-<define-tag book_store>
-<preserve isbn />
-<preserve store />
-<preserve title />
-<set-var %attributes />
-<ifeq "<get-var store />" "ukamazon"
-    "<set-var ucstore="Amazon UK" />"
-    "<set-var ucstore="<:{print ucfirst("<get-var store />")}:>" />"
-    />
-<ifeq "<get-var store />" "amazon"
-      "<book_store_amazon %attributes />"
-      <group
-            <a href="http://learn.perl.org/redirect?url=book;bookstore=<get-var store />;bookisbn=<get-var isbn />"><get-var title /></a>
-      />
-      />
-<restore title />
-<restore store />
-<restore isbn />
-</define-tag>
-
 <:
 use PerlBegin::Books;
 :>
@@ -45,9 +18,18 @@ use PerlBegin::Books;
 <if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
 
 <b>Buy From:</b>
-<book_store isbn="<get-var isbn />" store="amazon" title="Amazon" /> -
-<book_store isbn="<get-var isbn />" store="powells" title="Powells" /> -
-<book_store isbn="<get-var isbn />" store="amazonuk" title="Amazon UK" />
+<:
+{
+my $isbn = "<get-var isbn />";
+my $r = sub {
+my ($s, $t) = @_;
+return PerlBegin::Books->book_store({isbn => $isbn, store =>$s, title =>$t});
+};
+
+print $r->("amazon","Amazon"), " - ",
+      $r->("powells","Powells")," - ",
+      $r->("amazonuk","Amazon UK");
+  }     :>
 <br />
 </div>
 

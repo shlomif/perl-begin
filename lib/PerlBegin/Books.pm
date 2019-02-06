@@ -21,6 +21,27 @@ qq{<a href="http://en.wikipedia.org/wiki/Morgan_Kaufmann_Publishers">Morgan Kauf
     }->{$p} // do { die "Foo <$p>"; };
 }
 
+sub book_store_amazon
+{
+    my ( $self, $args ) = @_;
+
+    return
+qq%<a href="http://www.amazon.com/exec/obidos/ASIN/$args->{isbn}/ref=nosim/shlomifishhom-20/">$args->{title}</a>%;
+}
+
+sub book_store
+{
+    my ( $self, $args ) = @_;
+
+    my $ucstore =
+          "$args->{store}" eq "ukamazon"
+        ? "Amazon UK"
+        : ucfirst("$args->{store}");
+    return "$args->{store}" eq "amazon"
+        ? $self->book_store_amazon($args)
+        : qq#<a href="http://learn.perl.org/redirect?url=book;bookstore=$args->{store};bookisbn=$args->{isbn}">$args->{title}</a>#;
+}
+
 sub book_info
 {
     my ( $self, $args ) = @_;
