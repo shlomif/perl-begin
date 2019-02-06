@@ -1,13 +1,3 @@
-<define-tag get_ext_publisher whitespace="delete">
-<ifeq "%0" "oreilly" "<a href="http://www.oreilly.com/">O'Reilly and Associates</a>" />
-<ifeq "%0" "manning" "<a href="http://www.manning.com/">Manning Publications Co.</a>" />
-<ifeq "%0" "new-riders" "<a href="http://www.newrider.com/">New Riders</a>" />
-<ifeq "%0" "wrox" "<a href="http://www.wrox.com/">Wrox Press Inc.</a>" />
-<ifeq "%0" "apress" "<a href="http://www.apress.com/">Apress</a>" />
-<ifeq "%0" "morgan_kaufmann" "<a href="http://en.wikipedia.org/wiki/Morgan_Kaufmann_Publishers">Morgan Kaufmann Publishers</a>" />
-<ifeq "%0" "onyx" "<a href="http://www.onyxneon.com/">Onyx Neon Press</a>" />
-</define-tag>
-
 <define-tag book_store_amazon>
 <preserve isbn title />
 <set-var %attributes />
@@ -35,19 +25,21 @@
 <restore isbn />
 </define-tag>
 
+<:
+use PerlBegin::Books;
+:>
 <define-tag book_info>
 
 <preserve authors publisher isbn perlbooksid perlbookslink online_url />
 
 <set-var %attributes />
 
-<set-var ext_publisher=<get_ext_publisher <get-var publisher /> /> />
 <set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />">Book Page at books.perl.org</a><br />" />
 <div class="bookinfo">
 <h3>Book Information</h3>
 
 <b>Authors:</b> <get-var authors /><br />
-<b>Publisher:</b> <get-var ext_publisher /><br />
+<b>Publisher:</b> <:print PerlBegin::Books->get_ext_publisher("<get-var publisher />"):><br />
 
 <if "<get-var online_url />" "<a href="<get-var online_url />"><b>Download/View Online</b></a><br />" "" />
 <if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />

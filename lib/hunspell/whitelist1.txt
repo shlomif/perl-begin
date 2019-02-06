@@ -26,6 +26,7 @@ Hyperpolyglot
 IDE
 IDEs
 IRC
+Inc
 LGPL
 LiveJournal
 MediaWiki-based
@@ -65,6 +66,7 @@ Wikipedia
 Wikipedia's
 Wikis
 Win32
+Wrox
 XHTML
 XML
 XML-LibXML
