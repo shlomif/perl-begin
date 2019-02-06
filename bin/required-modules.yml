@@ -10,10 +10,7 @@ required:
         App::Gezer: 0
         Fcntl: 0
         File::Path: 0
-        HTML::Parser: '3.00'
-        HTML::Tidy: 0
         Parallel::ForkManager::Segmented: 0
         String::ShellQuote: 0
         XML::Grammar::Vered: 0
-        XML::Parser: 0
         YAML::XS: 0
