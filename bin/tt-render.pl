@@ -14,6 +14,7 @@ use File::Path qw( mkpath );
 use File::Spec ();
 use Path::Tiny qw/ path /;
 
+use Parallel::ForkManager::Segmented   ();
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
 use MyNavData ();
@@ -112,10 +113,8 @@ my $vars = +{
     },
 };
 
-my @tt = path("lib/make/tt2.txt")->lines_raw;
-chomp @tt;
-foreach my $result (@tt)
-{
+my $proc = sub {
+    my $result   = shift;
     my $basename = basename($result);
     my @fn       = split m#/#, $result;
     my @fn_nav   = @fn;
@@ -219,4 +218,14 @@ foreach my $result (@tt)
 
 =cut
 
-}
+};
+my @tt = path("lib/make/tt2.txt")->lines_raw;
+chomp @tt;
+Parallel::ForkManager::Segmented->new->run(
+    {
+        items        => \@tt,
+        nproc        => 4,
+        batch_size   => 8,
+        process_item => $proc,
+    }
+);
