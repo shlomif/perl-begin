@@ -110,6 +110,10 @@ my $vars = +{
             "lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
             ->slurp_utf8() =~ s{.*<body[^>]*>}{}mrs =~ s{< / body >.*}{}mrsx;
     },
+    book_info => sub {
+        require PerlBegin::Books;
+        return PerlBegin::Books->book_info(shift);
+    },
 };
 
 my @tt = path("lib/make/tt2.txt")->lines_raw;

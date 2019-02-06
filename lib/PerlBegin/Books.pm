@@ -46,8 +46,7 @@ sub book_info
 {
     my ( $self, $args ) = @_;
 
-    my $perlbookslink =
-qq%<a href="http://books.perl.org/book/$args->{perlbooksid}">Book Page at books.perl.org</a><br />%;
+    # die $args;
 
     my $ret = <<"EOF";
 <div class="bookinfo">
@@ -63,7 +62,13 @@ EOF
         $ret .=
 qq%<a href="$args->{online_url}"><b>Download/View Online</b></a><br />%;
     }
-    if ( $args->{perlbooksid} ) { $ret .= $perlbookslink; }
+    if ( $args->{perlbooksid} )
+    {
+        my $perlbookslink =
+qq%<a href="http://books.perl.org/book/$args->{perlbooksid}">Book Page at books.perl.org</a><br />%;
+
+        $ret .= $perlbookslink;
+    }
     $ret .= "<b>Buy From:</b>\n";
     {
         my $isbn = "$args->{isbn}";
