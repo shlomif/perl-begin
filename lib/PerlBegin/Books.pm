@@ -46,7 +46,43 @@ sub book_info
 {
     my ( $self, $args ) = @_;
 
-    return;
+    my $perlbookslink =
+qq%<a href="http://books.perl.org/book/$args->{perlbooksid}">Book Page at books.perl.org</a><br />%;
+
+    my $ret = <<"EOF";
+<div class="bookinfo">
+<h3>Book Information</h3>
+
+<b>Authors:</b> $args->{authors}<br />
+<b>Publisher:</b> @{[PerlBegin::Books->get_ext_publisher($args->{publisher})]}<br />
+
+EOF
+
+    if ( $args->{online_url} )
+    {
+        $ret .=
+qq%<a href="$args->{online_url}"><b>Download/View Online</b></a><br />%;
+    }
+    if ( $args->{perlbooksid} ) { $ret .= $perlbookslink; }
+    $ret .= "<b>Buy From:</b>\n";
+    {
+        my $isbn = "$args->{isbn}";
+        my $r    = sub {
+            my ( $s, $t ) = @_;
+            return PerlBegin::Books->book_store(
+                { isbn => $isbn, store => $s, title => $t } );
+        };
+
+        $ret .= $_
+            foreach $r->( "amazon", "Amazon" ), " - ",
+            $r->( "powells", "Powells" ), " - ",
+            $r->( "amazonuk", "Amazon UK" );
+    }
+    $ret .= <<"EOF";
+<br />
+</div>
+EOF
+    return $ret;
 }
 
 1;

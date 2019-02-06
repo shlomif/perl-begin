@@ -3,36 +3,20 @@ use PerlBegin::Books;
 :>
 <define-tag book_info>
 
-<preserve authors publisher isbn perlbooksid perlbookslink online_url />
+<preserve authors publisher isbn perlbooksid online_url />
 
 <set-var %attributes />
 
-<set-var perlbookslink="<a href="http://books.perl.org/book/<get-var perlbooksid />">Book Page at books.perl.org</a><br />" />
-<div class="bookinfo">
-<h3>Book Information</h3>
+<: print PerlBegin::Books->book_info(
+    {
+    authors => "<get-var authors />",
+    publisher => "<get-var publisher />",
+    isbn => "<get-var isbn />",
+    perlbooksid => "<get-var perlbooksid />",
+    online_url => "<get-var online_url />",
+}
+):>
 
-<b>Authors:</b> <get-var authors /><br />
-<b>Publisher:</b> <:print PerlBegin::Books->get_ext_publisher("<get-var publisher />"):><br />
-
-<if "<get-var online_url />" "<a href="<get-var online_url />"><b>Download/View Online</b></a><br />" "" />
-<if "<get-var perlbooksid />" "<get-var perlbookslink />" "" />
-
-<b>Buy From:</b>
-<:
-{
-my $isbn = "<get-var isbn />";
-my $r = sub {
-my ($s, $t) = @_;
-return PerlBegin::Books->book_store({isbn => $isbn, store =>$s, title =>$t});
-};
-
-print $r->("amazon","Amazon"), " - ",
-      $r->("powells","Powells")," - ",
-      $r->("amazonuk","Amazon UK");
-  }     :>
-<br />
-</div>
-
-<restore authors publisher isbn perlbooksid perlbookslink online />
+<restore authors publisher isbn perlbooksid online_url />
 
 </define-tag>
