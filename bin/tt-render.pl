@@ -117,6 +117,11 @@ my $vars = +{
         require PerlBegin::Books;
         return PerlBegin::Books->book_info(shift);
     },
+    files_and_dirs => sub {
+        require PerlBegin::TopicsExamples::FilesAndDirs;
+
+        return PerlBegin::TopicsExamples::FilesAndDirs->_run();
+    }
 };
 
 my @tt = path("lib/make/tt2.txt")->lines_raw;

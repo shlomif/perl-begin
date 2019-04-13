@@ -1,0 +1,18 @@
+[%- SET title = "Reference Resources" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "hyperpolyglot.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+[% INCLUDE hyperpolyglot_php_perl_python_ruby %]
+
+<h3 id="perlreref">[%- WRAPPER pdoc d = "perlreref" %] - Perl Regular Expressions’ Reference[%- END -%]</h3>
+
+<h3 id="perlop">[%- WRAPPER pdoc d = "perlop" %] - Perl Operators[%- END -%]</h3>
+
+<h3 id="perlopquick"><a href="https://github.com/cowens/perlopquick">perlopquick - Operators Quick Reference</a></h3>
+
+<p>
+Proposed POD documents for providing quick references for the Perl operators.
+</p>
+
+[% END %]

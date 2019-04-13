@@ -17,13 +17,14 @@ sub _run
         }
     );
 
-    my ($data) =
-        LoadFile('../lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml');
+    my ($data) = LoadFile('lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml');
 
+    my $text = '';
     foreach my $d (@$data)
     {
-        print $ex_gen->html_with_title( $d, );
+        $text .= $ex_gen->html_with_title( $d, );
     }
+    return $text;
 }
 
 1;

@@ -1,0 +1,50 @@
+[%- SET title = "Files and Directories Handling in Perl" -%]
+[% BLOCK page_extra_head_elements %]
+<script src="[% base_path %]js/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="[% base_path %]css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="[% base_path %]jqui-override.css" media="screen" />
+[% END %]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<p>
+Perl has strong support for handling files and directories, which are the
+bread-and-butter of dealing with the disk and the filesystem. Many modules
+on <a href="[% base_path %]topics/cpan/">CPAN (= the Comprehensive Perl Archive Network)</a>
+aim to facilitate the task even further.
+</p>
+
+<toc />
+
+
+<h2 id="basics">The Basics</h2>
+
+<p>
+For the basics, read about the open function (on
+ [% WRAPPER pdoc d = "perlopentut" -%][%- END -%] or
+on <a href="[% base_path %]resources/">recommended books or tutorials</a>) as well as
+other built-ins such as
+ [% WRAPPER pdoc_f f = "opendir" -%]opendir[%- END -%], [% WRAPPER pdoc_f f = "readdir" -%]readdir[%- END -%],
+ [% WRAPPER pdoc_f f = "closedir" -%]closedir[%- END -%], [% WRAPPER pdoc_f f = "mkdir" -%]mkdir[%- END -%]. There
+are also many UNIX-oriented file-system-builtins listed on [% WRAPPER pdoc d = "perlfunc" -%][%- END -%] which may prove of utility.
+</p>
+
+[% INCLUDE files_and_directories_modules %]
+
+<h2 id="examples">Examples</h2>
+
+<p>
+These are a set of examples for manipulating files and directories using Perl.
+Each will be shown in several versions including ones using IO-All, ones using
+core modules, and if relevant ones from the command line.
+</p>
+
+<script>
+    $(function() {
+        $(".tabs").tabs();
+    });
+</script>
+
+[% files_and_dirs() %]
+
+[% END %]
