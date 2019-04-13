@@ -1,12 +1,10 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
-#include "tut_blocks.wml"
-#include "hyperpolyglot.wml"
+[%- SET title = "Online Perl Tutorials" -%]
+[%- SET more_keywords = ", tutorial, perl tutorial, tutorials, perl tutorials, start, begin, newbies, online, beginners, learn" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "tut_blocks.tt2" -%]
+[%- PROCESS "hyperpolyglot.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Online Perl Tutorials" />
-<latemp_more_keywords "tutorial, perl tutorial, tutorials, perl tutorials, start, begin, newbies, online, beginners, learn" />
-
-<h2* id="toc">Table of Contents</h2*>
 
 <toc />
 
@@ -32,7 +30,7 @@ checking the <a href="localized/">foreign languages page</a>
 An authoritative list of recommended tutorials. An <a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials" id="perl5_wiki">older list</a> can be found on the Perl 5 Wiki.
 </p>
 
-<perl_for_newbies_entry>
+[%- WRAPPER perl_for_newbies_entry -%]
 
 <p>
 Intended for People with basic knowledge of C or something similar or even no
@@ -42,25 +40,25 @@ without too many "other ways to do it". (You are still expected to read the
 internal Perl documents after the second lecture)
 </p>
 
-</perl_for_newbies_entry>
+[%- END -%]
 
-<define-tag __remove_beginning_perl_entry>
-<beginning_perl_entry>
+[% BLOCK __remove_beginning_perl_entry %]
+[%- WRAPPER beginning_perl_entry -%]
 <p>
 A comprehensive book for beginners by Simon Cozens that is available online.
 Aims to teach Perl even for people with no prior experience in programming
 at all. Probably your best bet, unless you don't want to read too much to get
 started.
 </p>
-</beginning_perl_entry>
-</define-tag>
+[%- END -%]
+[%- END -%]
 
 <h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc
 Tutorials</a></h3>
 
 <p>
 The tutorials that ship as part of the perl core. Start with
-<pdoc d="perlintro"></pdoc> and
+ [% WRAPPER pdoc d = "perlintro" -%][%- END -%] and
 <a href="http://perldoc.perl.org/index-tutorials.html">then continue with
 other tutorials</a>.
 </p>
@@ -87,19 +85,19 @@ Presentation slides by Dave Cross.
 <p>
 These are tutorials for user with prior knowledge of programming. They
 are also written in English. There are also
-<a href="$(ROOT)/books/#with_prev_knowledge">some books just
+<a href="[% base_path %]books/#with_prev_knowledge">some books just
 for that</a>, some of which are freely available online.
 </p>
 
 <div class="sub_section">
 
-<hyperpolyglot_php_perl_python_ruby />
+[% INCLUDE hyperpolyglot_php_perl_python_ruby %]
 
 <h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
 
 <p>
 A tutorial which is short, to the point, and informative, but on the other
-hand does not mention and cover <a href="$(ROOT)/topics/cpan/">CPAN</a>,
+hand does not mention and cover <a href="[% base_path %]topics/cpan/">CPAN</a>,
 or Moose/Mouse/Moo and other modern ways for doing Perl object-oriented
 programming.
 </p>
@@ -151,3 +149,5 @@ A Perl tutorial consisting of video and text by
 Several basic videos introducing Perl for beginners available on the
 <a href="http://showmedo.com/">ShowMeDo site</a>
 </p>
+
+[% END %]

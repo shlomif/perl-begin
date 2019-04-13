@@ -1,0 +1,12 @@
+[% BLOCK hyperpolyglot_php_perl_python_ruby %]
+
+<h3 id="hyperpolyglot"><a href="http://hyperpolyglot.org/scripting">Hyperpolyglot for PHP, Perl, Python and Ruby</a></h3>
+
+<p>
+A “side-by-side reference sheet” (or lingo) for Perl, as well as PHP, Python
+and Ruby, with many commonly used idioms. Useful for looking up idioms from
+a language you are better familiar with in Perl. (Creative Commons
+Attribution-ShareAlike 3.0 License).
+</p>
+
+[% END %]
