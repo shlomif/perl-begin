@@ -1,9 +1,7 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
+[%- SET title = "Mailing Lists" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "Mailing Lists" />
-
-<h2* id="toc">Table of Contents</h2*>
 <toc />
 
 <h2 id="overview">Overview</h2>
@@ -90,18 +88,12 @@ Many international Perl groups on many topics. Including some on very
 specific Perl technologies.
 </p>
 
-
 <h3 id="insert-your-own">Insert your Mailing List Here</h3>
 
 <p>
 Do you have a Perl mailing list for beginners? If not, do you wish to
 start one? Let us know and we'll link to it from here. The more the better.
 </p>
-
-<define-tag defunct>
-<a href="http://no-where.tld/">Our
-Own Mailing List</a>
-</define-tag>
 
 <h3 id="perl-begin-mailing-list">Our Own Mailing List</h3>
 
@@ -110,3 +102,5 @@ We used to have our own mailing list for beginners, but it did not prove
 popular and now <a href="#learn-perl-org">the perl.org mailing list</a>
 is preferable.
 </p>
+
+[% END %]
