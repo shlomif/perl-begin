@@ -1,0 +1,39 @@
+[%- SET title = "Learn Perl Now" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "why-perl.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<toc />
+
+<h2 id="how-to-learn"><strong>How</strong> to Learn Perl?</h2>
+
+<p>
+<a href="[% base_path %]resources/"><b>See our resources for Perl Beginners</b></a>
+and browse the site on its navigation menu. Among them are:
+</p>
+
+<ul>
+
+<li>
+<a href="[% base_path %]tutorials/">Online Tutorials</a> - online tutorials for
+learning Perl. Also see our
+<a href="[% base_path %]tutorials/perl-for-newbies/">local tutorial</a>.
+</li>
+
+<li>
+<a href="[% base_path %]books/">Books</a> - some of them are legally available
+online.
+</li>
+
+<li>
+<a href="[% base_path %]core-doc/">The Perl Core Documentation</a> - what ships
+with Perl. Contains topical tutorials and references.
+</li>
+
+</ul>
+
+<h2 id="why-learn"><strong>Why</strong> should I learn Perl?</h2>
+
+[% INCLUDE why_should_i_learn_perl %]
+
+[% END %]
