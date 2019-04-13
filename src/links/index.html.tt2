@@ -1,10 +1,8 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
+[%- SET title = "Links" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<h2* id="toc">Table of Contents</h2*>
 <toc />
-
-<latemp_subject "Links" />
 
 <h2 id="main_resources">Main Perl Resources</h2>
 
@@ -37,7 +35,7 @@ Archive Network</a> - Contains a lot of modules for doing practically
 anything with Perl. Why re-invent the wheel when so many different types
 of them are available for free? Note that Perl distributions on various
 systems contain an easy to use interface to install modules from it,
-including dependencies. See <a href="$(ROOT)/topics/cpan/">our page about
+including dependencies. See <a href="[% base_path %]topics/cpan/">our page about
 it for how to start with it</a>.
 </li>
 
@@ -76,7 +74,7 @@ blogosphere in the leading week.
 
 <ul>
 <li>
-<a href="$(ROOT)/humour/">Perl Humour</a> - a list of links
+<a href="[% base_path %]humour/">Perl Humour</a> - a list of links
 to Perl humour.
 </li>
 <li>
@@ -158,7 +156,7 @@ the core Perl distribution and external modules, and an all-around nice guy.
 <li>
 <a href="http://ali.as/">Adam Kennedy</a> - a prolific Australian Perl
 developer and blogger who has written or adopted many CPAN distributions,
-and contributed a lot to the <a href="$(ROOT)/IDEs-and-tools/#padre">Padre
+and contributed a lot to the <a href="[% base_path %]IDEs-and-tools/#padre">Padre
 IDE for Perl and in Perl</a>.
 </li>
 
@@ -208,3 +206,4 @@ useful resource before DMoz and its mirrors (like the Google Directory) came
 along. Now it's relatively unmaintained, but may still contain some useful
 links.
 </p>
+[% END %]
