@@ -1,28 +1,26 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
-
-<latemp_subject "Perl for XML Processing" />
+[%- SET title = "Perl for XML Processing" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 This page will cover how to properly process XML using Perl and
 various recommended modules from CPAN (= Comprehensive Perl Archive Network).
 </p>
 
-<h2* id="toc">Table of Contents</h2*>
-
 <toc />
 
 <h2 id="technologies">Technologies of Interest</h2>
 
-<h3 id="XML-LibXML"><cpan_self_dist d="XML-LibXML" /></h3>
+<h3 id="XML-LibXML">[% cpan_self_dist( "d" => "XML-LibXML", ) %]</h3>
 
 <p>
 XML-LibXML is the de-facto standard for XML processing in Perl. It's a
 comprehensive CPAN module based on the
 <a href="http://xmlsoft.org/">libxml2</a> library, that provides DOM (Document
 Object Module), SAX (a stream parser), a pull parser, XPath, and
-<cpan_dist d="XML-LibXSLT">XSLT</cpan_dist>
-support. XML-LibXML has good reference documentation and is actively maintained.
+ [% WRAPPER cpan_dist d = "XML-LibXSLT" -%]XSLT[%- END %]
+ support. XML-LibXML has good reference documentation and is actively
+ maintained.
 The <a href="http://grantm.github.io/perl-libxml-by-example/">Perl
 XML::LibXML by Example</a> site provides a tutorial suitable for beginners.
 </p>
@@ -46,8 +44,8 @@ unmaintained <code>XML::XPath</code> CPAN distribution.
 </p>
 
 <p>
-Another useful module is <cpan_self_dist d="HTML-Selector-XPath" />
-which allows one to convert <strong>CSS-style selectors</strong> to XPath and
+Another useful module is [% cpan_self_dist( "d" => "HTML-Selector-XPath", ) %]
+ which allows one to convert <strong>CSS-style selectors</strong> to XPath and
 provide functionality similar to that offered by such JavaScript libraries
 such as jQuery. So you can, for example, write
 <code>selector_to_xpath('ul.myclass a')</code> to find all <code>a</code> elements
@@ -87,7 +85,7 @@ To learn about XPath, consult the following resources:
 <p>
 XML::LibXML allows the programmer to register custom XPath functions, coded
 in Perl, in order to help working with XPath. For more information, see
-<cpan_self_mod m="XML::LibXML::XPathContext" /> .
+[% cpan_self_mod( "m" => "XML::LibXML::XPathContext", ) %] .
 </p>
 
 </div>
@@ -103,11 +101,11 @@ in Perl, in order to help working with XPath. For more information, see
 Extensible Stylesheet Language Transformations and is a language for
 transforming XML documents into other XML documents or other formats such
 as HTML or plain text. Perl has good support for version 1.0 of XSLT by
-using the <cpan_self_dist d="XML-LibXSLT" /> distribution.
+using the [% cpan_self_dist( "d" => "XML-LibXSLT", ) %] distribution.
 </p>
 
 <p>
-(Please avoid using <cpan_self_dist d="XML-XSLT" /> which is old, and largely
+(Please avoid using [% cpan_self_dist( "d" => "XML-XSLT", ) %] which is old, and largely
 unmaintained. Use XML-LibXSLT instead.)
 </p>
 
@@ -202,23 +200,25 @@ of them reside under XML:: namespace. Some prominent examples include:
 <ul>
 
 <li>
-<cpan_b_self_dist d="XML-RSS" /> - manipulate
+[% cpan_b_self_dist( "d" => "XML-RSS", ) %] - manipulate
 RSS (Really Simple Syndication) 0.9, 0.91, 1.0 and 2.0.
 </li>
 
 <li>
-<cpan_b_self_dist d="XML-Atom" /> -
+[% cpan_b_self_dist( "d" => "XML-Atom", ) %] -
 manipulate Atom feeds. (Atom is an alternative syndication format)
 </li>
 
 <li>
-<cpan_b_self_dist d="XML-Feed" /> -
+[% cpan_b_self_dist( "d" => "XML-Feed", ) %] -
 generate, parse, mix and match web feeds (Atom or RSS).
 </li>
 
 <li>
-<cpan_b_self_dist d="OpenOffice-OODoc" /> -
+[% cpan_b_self_dist( "d" => "OpenOffice-OODoc", ) %] -
 manipulate OpenOffice.org-like ODF (OpenDocument format) files.
 </li>
 
 </ul>
+
+[% END %]

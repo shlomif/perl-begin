@@ -1,8 +1,6 @@
-#include "template5.wml"
-#include "rosetta_code.wml"
-#include "xhtml/1.x/std/toc.wml"
-
-<latemp_subject "Wikis for Perl and Perl Beginners" />
+[%- SET title = "Wikis for Perl and Perl Beginners" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <h2 id="note">Note</h2>
 
@@ -14,7 +12,6 @@ and correction. Perl wikis can provide useful resources of information for
 Perl beginners and other people interested in Perl.
 </p>
 
-<h2*>Table of Contents</h2*>
 <toc />
 
 <h2 id="central">Central Perl Wikis</h2>
@@ -56,7 +53,7 @@ the wikibooks</a> - a Book about Perl programming in the Wikibooks project.
 
 </ul>
 
-<rosetta_code />
+[% INCLUDE rosetta_code %]
 
 <h2 id="specialised">Wikis on Specialised Topics</h2>
 
@@ -92,3 +89,5 @@ conference</a>.
 of all Known Perl Wikis</a>
 </li>
 </ul>
+
+[% END %]
