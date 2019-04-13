@@ -7,10 +7,6 @@ required:
       url: "http://www.shlomifish.org/open-source/projects/docmake/"
     files: []
     perl5_modules:
-        App::Gezer: 0
-        Code::TidyAll::Plugin::TestCount: 0
-        Fcntl: 0
-        File::Path: 0
         HTML::Toc: 0
         Parallel::ForkManager::Segmented: 0
         String::ShellQuote: 0
