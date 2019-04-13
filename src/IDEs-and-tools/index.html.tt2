@@ -1,9 +1,7 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
+[%- SET title = "IDEs (Integrated Development Environments) and Other Tools for Perl" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
-<latemp_subject "IDEs (Integrated Development Environments) and Other Tools for Perl" />
-
-<h2*>Table of Contents</h2*>
 <toc />
 
 <h2 id="IDEs">IDEs</h2>
@@ -156,14 +154,16 @@ Perl::Critic is a Perl module (and a free web-service) that analyses one's
 Perl code and warns about possible bad practices that should be fixed.
 </p>
 
-<h3 id="perl-tidy"><cpan_dist d="Perl-Tidy">perltidy</cpan_dist></h3>
+<h3 id="perl-tidy">[%- WRAPPER cpan_dist d = "Perl-Tidy" -%]perltidy[%- END -%]</h3>
 
 <p>
 perltidy is an auto-formatter for Perl code, that can keep its style
 consistent. It supports many different styles and style parameters. Perltidy
-has a <cpan_dist d="tidyview">frontend
-called tidyview</cpan_dist> that allows one to visually customise the style and
+has a [%- WRAPPER cpan_dist d = "tidyview" -%]frontend
+called tidyview[%- END -%] that allows one to visually customise the style and
 view the results.
 </p>
 
-#include "gui_db.wml"
+[% INCLUDE "gui_db.tt2" %]
+
+[% END %]
