@@ -237,7 +237,6 @@ foreach my $result (@tt)
                 ],
             }
         );
-        say @fn;
         my $tocgen = HTML::TocGenerator->new();
         $tocgen->generate( $toc, $html, {} );
         my $text = $toc->format();
