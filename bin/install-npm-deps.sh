@@ -7,4 +7,5 @@
 #
 npm install \
     html-minifier \
+    prettier \
     sass \
