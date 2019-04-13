@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -142,7 +142,7 @@ foreach my $result (@tt)
         'path_info'    => $fn2,
         'current_host' => $LATEMP_SERVER,
         MyNavData::get_params(),
-        'ul_classes'     => [ "navbarmain", ("navbarnested") x 10 ],
+        'ul_classes'     => [],
         'no_leading_dot' => 1,
     );
 
