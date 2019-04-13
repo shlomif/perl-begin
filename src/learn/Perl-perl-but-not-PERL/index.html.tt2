@@ -1,7 +1,6 @@
-#include "template5.wml"
-#include "xhtml/1.x/std/toc.wml"
-
-<latemp_subject "&quot;Perl&quot; and &quot;perl&quot; but not &quot;PERL&quot;" />
+[%- SET title = "&quot;Perl&quot; and &quot;perl&quot; but not &quot;PERL&quot;" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <p>
 One can often see the Perl programming language referred to as "perl",
@@ -48,3 +47,5 @@ A popular idiom, attributed to
 Christiansen</a>, says that “Only perl can
 parse Perl.”. Take some time to think about it.
 </p>
+
+[% END %]

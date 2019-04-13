@@ -1,17 +1,14 @@
-#include "template5.wml"
-#include "why-perl.wml"
-#include "xhtml/1.x/std/toc.wml"
-
-<latemp_subject "Why Perl?" />
-<latemp_more_keywords "myths, myth, unreadable, unmaintainable, perl is dead, perl is alive, perl sucks, sucks, perl is good, perl is bad, bad, good, criticism, dispelling, dispel, ugly, ugly code, large codebase, scalability" />
-
-<h2* id="toc">Table of Contents</h2*>
+[%- SET title = "Why Perl?" -%]
+[%- SET more_keywords = ", myths, myth, unreadable, unmaintainable, perl is dead, perl is alive, perl sucks, sucks, perl is good, perl is bad, bad, good, criticism, dispelling, dispel, ugly, ugly code, large codebase, scalability" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "why-perl.tt2" -%]
+[%- WRAPPER wrap_html -%]
 
 <toc />
 
 <h2 id="why-learn"><strong>Why</strong> should I learn Perl?</h2>
 
-<why_should_i_learn_perl />
+[% INCLUDE why_should_i_learn_perl %]
 
 <h2 id="myth-dispelling">Myth Dispelling</h2>
 
@@ -105,3 +102,5 @@ programming ability - not only in Perl, but in other languages as well. Are
 you ready to take on the challenge? Great! Then
 <a href="http://perl-begin.org/resources/">dive right in</a>.
 </p>
+
+[% END %]
