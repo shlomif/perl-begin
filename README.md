@@ -1,9 +1,8 @@
 # About this repository
 
 These are the sources of [The Perl Beginners’ Site](http://perl-begin.org/) ,
-which require [Website Meta Language](http://bitbucket.org/shlomif/website-meta-language),
-[Latemp](http://bitbucket.org/shlomif/latemp) and other
-dependencies to be built (so they may not be for the uninitiated).
+which require [Template Toolkit](http://template-toolkit.org/)
+and other dependencies to be built.
 
 [![Travis-CI Build Status](https://travis-ci.org/shlomif/perl-begin.svg?branch=master)](https://travis-ci.org/shlomif/perl-begin)
 
