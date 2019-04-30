@@ -5,26 +5,14 @@ all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 
 all_deps: bulk-make-dirs bad_elements_html run_compass
 
-DOCS_COMMON_DEPS = lib/template.wml
-
 include lib/make/shlomif_common.mak
 include lib/make/include.mak
 include lib/make/rules.mak
 include lib/make/p4n.mak
 include lib/make/deps.mak
 
-LATEMP_WML_FLAGS += -DLATEMP_THEME=better-scm -DLATEMP_SERVER=perl_begin
-
-WML_FLAGS += --passoption=2,-X3074 --passoption=3,-I../lib/ \
-	--passoption=3,-w $(LATEMP_WML_FLAGS) -I../ -DROOT~. \
-	-I../lib/ --passoption=7,"-S imgsize,summary" \
-	-I $${HOME}/apps/wml
-
-WML_FLAGS += $(COMMON_PREPROC_FLAGS)
-
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-WML_RENDER = LATEMP_WML_FLAGS="$(LATEMP_WML_FLAGS)" $1 bin/render
 PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 perl bin/post-incs-v2.pl --mode=minify \
                --minifier-conf=bin/html-min-cli-config-file.conf \
                --texts-dir=lib/ads \
@@ -33,22 +21,6 @@ PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 perl bin/post-incs-v2.pl --mode=minify \
                --
 
 # PROCESS_ALL_INCLUDES = true
-
-define GENERIC_GENERIC_WML_RENDER
-$(call DEF_WML_PATH) ( cd $2 && wml -o "$$fn" $(WML_FLAGS) -DLATEMP_FILENAME=$(patsubst $3/%,%,$(patsubst %.wml,%,$@)) $(patsubst $2/%,%,$<) ) && $4 '$(patsubst $(TARGET)/%,%,$@)'
-endef
-
-define GENERIC_WML_RENDER
-$(call GENERIC_GENERIC_WML_RENDER,$1,$2,$3,$(PROCESS_ALL_INCLUDES))
-endef
-
-define PERL_BEGIN_INCLUDE_WML_RENDER
-$(call GENERIC_WML_RENDER,src,$(PERL_BEGIN_SRC_DIR),$(PERL_BEGIN_DEST))
-endef
-
-define PERL_BEGIN_COMMON_INCLUDE_WML_RENDER
-$(call GENERIC_WML_RENDER,src,$(COMMON_SRC_DIR),$(PERL_BEGIN_DEST))
-endef
 
 run_compass: src/style.css src/jqui-override.css
 
@@ -64,15 +36,10 @@ dest/IDEs-and-tools/Perl_developer_tools/index.html: lib/retrieved-html-parts/Pe
 dest/tutorials/hyperpolyglot/sheet1.html: lib/retrieved-html-parts/hyperpolyglot/scripting.html
 dest/topics/files-and-directories/index.html: lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
 
-dest/learn/index.html: lib/why-perl.wml
+dest/learn/index.html: lib/why-perl.tt2
 
 # upload: upload_hexten
 upload: upload_beta
-
-# Add a dependency on books.wml
-$(filter dest/books/%.html,$(PERL_BEGIN_DOCS_DEST)) : lib/books.wml
-
-dest/uses/sys-admin/index.html dest/topics/files-and-directories/index.html: lib/files_dirs_modules.wml
 
 upload_hexten: all
 	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
@@ -94,7 +61,7 @@ upload_home_remote: all
 	(cd dest && $(RSYNC) -a * $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/)
 
 update_p4n:
-	touch src/tutorials/perl-for-newbies/*/*.wml
+	touch src/tutorials/perl-for-newbies/*/index.tt2
 
 rebuild_p4n: update_p4n all
 
@@ -158,7 +125,7 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 TEST_TARGETS = Tests/*.{py,t}
 
-PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.wml,$(PERL_BEGIN_DOCS_DEST))
+PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
 
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
