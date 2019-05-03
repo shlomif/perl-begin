@@ -134,3 +134,6 @@ fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 
 bulk-make-dirs:
 	@mkdir -p $(PERL_BEGIN_DIRS_DEST)
+
+src/js/jq.js: node_modules/jquery/dist/jquery.min.js
+	$(call COPY)
