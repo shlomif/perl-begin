@@ -53,6 +53,7 @@
 /node_modules
 /package-lock.json
 /src/jqui-override.css
+/src/js/jq.js
 /src/print.css
 /src/self_link.css
 /src/style.css
