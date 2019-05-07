@@ -16,10 +16,8 @@ use Path::Tiny qw/ path /;
 
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
-use HTML::Toc          ();
-use HTML::TocGenerator ();
-
-use MyNavData ();
+use HTML::Latemp::AddToc ();
+use MyNavData            ();
 
 sub _render_leading_path_component
 {
@@ -126,6 +124,7 @@ my $vars = +{
 
 my @tt = path("lib/make/tt2.txt")->lines_raw;
 chomp @tt;
+my $toc = HTML::Latemp::AddToc->new;
 foreach my $result (@tt)
 {
     my $basename = basename($result);
@@ -212,41 +211,7 @@ foreach my $result (@tt)
     $template->process( "src/$result.tt2", $vars, \$html, binmode => ':utf8', )
         or die $template->error();
 
-    my $TOC = qr#<toc */ *>#;
-    if ( $html =~ $TOC )
-    {
-        my $toc = HTML::Toc->new();
-        $toc->setOptions(
-            {
-                0
-                ? (
-                    templateAnchorName => sub {
-                        return $_[-1] =~ /id="([^"]+)/
-                            ? $1
-                            : ( die "no id found" );
-                    }
-                    )
-                : ( doLinkToId => 1 ),
-                tokenToToc => [
-                    map {
-                        +{
-                            tokenBegin => "<h" . ( $_ + 1 ) . " id=\\S+>",
-                            level      => $_,
-                        }
-                    } ( 1 .. 5 )
-                ],
-            }
-        );
-        my $tocgen = HTML::TocGenerator->new();
-        $tocgen->generate( $toc, $html, {} );
-        my $text = $toc->format();
-        $text =~ s%\A\s*<!-.*?->\s*%<h2 id="toc">Table of Contents</h2>%ms
-            or die "foo";
-        $text =~ s%(</a>)\s*(<ul>)%$1<br/>$2%gms;
-        $text =~ s%<!-.*?->\s*%%gms;
-        $html =~ s#$TOC#$text#g;
-    }
-
+    $toc->add_toc( \$html );
     path( File::Spec->catfile( @DEST, @fn, ) )->spew_utf8($html);
 
 =begin removed
