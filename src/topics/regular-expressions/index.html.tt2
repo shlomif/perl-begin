@@ -73,4 +73,12 @@ The second presentation in the series introduces regular expressions.
 
 [%- END -%]
 
+<h2 id="resources">Resources</h2>
+
+<h3 id="resources"><a href="https://github.com/aloisdg/awesome-regex">Awesome Regular Expressions</a></h3>
+
+<p>
+A public domain list of links and resources on GitHub.
+</p>
+
 [% END %]
