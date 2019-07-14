@@ -65,4 +65,5 @@ before_install:
 script:
     - export XML_CATALOG_FILES="/etc/xml/catalog $HOME/markup-validator/htdocs/sgml-lib/catalog.xml"
     - TIDYALL_DATA_DIR="$HOME/tidyall_d" bash -x bin/run-ci-build.bash
-    - tar -cavf perl-begin-dest.tar.xz dest/
+    - tar -caf perl-begin-dest.tar.xz dest/
+    - set +x
