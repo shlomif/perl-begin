@@ -11,7 +11,7 @@
     "html-minifier": "^4.0.0",
     "jquery": "^3.4.1",
     "prettier": "^1.18.2",
-    "sass": "^1.22.4"
+    "sass": "^1.22.9"
   },
   "devDependencies": {},
   "scripts": {
