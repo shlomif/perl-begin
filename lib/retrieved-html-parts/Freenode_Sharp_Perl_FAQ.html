@@ -180,7 +180,7 @@ non-native English speaker may use them this way. (See for example what <a href=
 <h3 id="What_do_I_need_to_do_to_get_a_good_answer_to_my_question.3F">What do I need to do to get a good answer to my question?</h3>
 <p>If you ask a bad question, you'll often get a bad answer, or no answer at all. As the questioner you probably won't realise that you are stating your question badly. When asking a question try to focus on the underlying task or goal, not the method you are currently trying.</p>
 <p>Try to step away from the problem you're working with and see if you can trim your data set to about 5 lines and your code to less than 10 and still demonstrate the problem. We don't want to understand how your whole application works just in order to understand your question.</p>
-<p>Please paste the code that reproduces the problem to one of the channel's pastebots, such as <a class="external free" href="http://erxz.com/pb/">http://erxz.com/pb/</a> . Paste the entire program, not selected parts of it and make sure you make your intentions clear. If the program is too long or is confidential, try to reduce it into a smaller testcase that still reproduces your problem.</p>
+<p>Please paste the code that reproduces the problem to one of the channel's pastebots, such as <a href="https://f.perl.bot/">perl.bot</a> . Paste the entire program, not selected parts of it and make sure you make your intentions clear. If the program is too long or is confidential, try to reduce it into a smaller testcase that still reproduces your problem.</p>
 <p>Show us that you've put some effort into finding the answer yourself, or at least writing the question down well. This is much more likely to be rewarded by us giving you some of our time to help you fix whatever your problem is. Read the following resources for hints on how to ask questions that encourage answers. These techniques work on IRC channels, mailing lists and online forums.</p>
 <ul>
 <li><a href="http://perlmonks.org/?node_id=50427">On asking for help</a></li>
@@ -263,7 +263,7 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 <li>Use lexical file handles (<code>open my $file_handle, ...</code>) and three args open (<code>open my $file_handle, "&gt;", $filename</code> instead of <code>open my $file_handle "&gt;$filename"</code>) and add trailing or's to your open statements (or alternatively use the "Fatal" or "autodie" modules.)</li>
 <li>When extracting arguments out of @ARGV or @_ , don't do subscripting of $ARGV[1] or $_[2] directly - instead use <a href="http://perldoc.perl.org/functions/shift.html">perldoc -f shift</a> or <code>my ($param1, $param2...) = @_;</code>. The reason for that is that if you insert an argument in the middle, you'll need to update all indices.
 <ul>
-<li>For @ARGV also look at <a class="extiw" href="http://metacpan.org/release/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules.</li>
+<li>For @ARGV also look at <a href="http://metacpan.org/release/Getopt-Long" title="cpan:Getopt-Long">Getopt-Long</a> and related modules.</li>
 </ul>
 </li>
 <li>Don't abuse the default variable - <code>$_</code>. Use explicit variables instead whenever possible, and don't nest two <code>$_</code>-loops. While it should still be used in <a href="http://perldoc.perl.org/functions/map.html">map()</a>, <a href="http://perldoc.perl.org/functions/grep.html">grep()</a>, etc. it should generally be avoided except for very small scripts.</li>
@@ -403,7 +403,7 @@ operator to check if it doesn't match a regular expression.</p>
 <h3 id="Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F">Which method to do $TASK_X is faster? How can I optimise my Perl programs?</h3>
 <p>Questions such as this come out very often on #perl. The answers to them are that:</p>
 <ol>
-<li>You can always Benchmark and see. See the <a class="extiw" href="http://metacpan.org/release/Benchmark" title="cpan:Benchmark">cpan:Benchmark</a> module which is part of the core.</li>
+<li>You can always Benchmark and see. See the <a href="http://metacpan.org/release/Benchmark" title="cpan:Benchmark">cpan:Benchmark</a> module which is part of the core.</li>
 <li>Usually, the performance gained by doing micro-optimisations in Perl is not going to be worth the trouble.</li>
 <li>If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl's XS or <a href="http://metacpan.org/release/Inline-C">cpan:Inline-C</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need.</li>
 </ol>
@@ -440,7 +440,7 @@ done
 rm cpan-cycle.$$
 </pre>
 <h3 id="How_can_I_search_for_a_value_inside_an_array.3F">How can I search for a value inside an array?</h3>
-<p>See <a href="http://perldoc.perl.org/perlfaq4.html#How-can-I-tell-whether-a-certain-element-is-contained-in-a-list-or-array%3f">the perlfaq question "How can I tell whether a certain element is contained in a list or array?"</a> for an exhaustive discussion of this topic. One final correction to it is that "any" from <a class="extiw" href="http://metacpan.org/release/List::MoreUtils" title=
+<p>See <a href="http://perldoc.perl.org/perlfaq4.html#How-can-I-tell-whether-a-certain-element-is-contained-in-a-list-or-array%3f">the perlfaq question "How can I tell whether a certain element is contained in a list or array?"</a> for an exhaustive discussion of this topic. One final correction to it is that "any" from <a href="http://metacpan.org/release/List::MoreUtils" title=
 "cpan:List::MoreUtils">cpan:List::MoreUtils</a> would sometimes be more preferable to "first", either to better convey the meaning that one is not interested in the value itself, but for its existence, and in the case that one is specifically looking for an undef() value.</p>
 <p>Also see <a href="http://szabgab.com/blog/2009/03/1237284490.html">this discussion on Gábor Szabó's "Perl 6 Tricks and Treats" newsletter</a> (and the link to the Israeli Perl Mongers discussion) for further discussion.</p>
 <h3 id="How_can_I_prepare_a_self-contained_Perl_executable.3F">How can I prepare a self-contained Perl executable?</h3>
@@ -476,20 +476,20 @@ quotemeta</a>, which allows quoting it and to the \Q and \E escapes inside regex
 <h3 id="Where_can_I_find_lists_of_Programming_Challenges.3F">Where can I find lists of Programming Challenges?</h3>
 <p>See <a href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs">the list</a>.</p>
 <h3 id="Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29">Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop)</h3>
-<p>The best REPL is probably <a class="extiw" href="http://metacpan.org/release/Devel-REPL" title="cpan:Devel-REPL">Devel-REPL</a> (a.k.a "re.pl") which is actively maintained, feature rich and very polished. The perl -d flag can also serve as a rudimentary REPL.</p>
+<p>The best REPL is probably <a href="http://metacpan.org/release/Devel-REPL" title="cpan:Devel-REPL">Devel-REPL</a> (a.k.a "re.pl") which is actively maintained, feature rich and very polished. The perl -d flag can also serve as a rudimentary REPL.</p>
 <h3 id="How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F">How can I store Perl Data Structures on the Hard Disk?</h3>
 <p>Sometimes we'd like to store arbitrary Perl 5 Data Structures on the hard disk for various reasons including persistence and communication. This is called <b>serialisation</b> (or <b>serialization</b> in American spelling), and can be performed in several ways.</p>
 <ol>
-<li><a class="extiw" href="http://metacpan.org/release/Data-Dumper" title="cpan:Data-Dumper">Data-Dumper</a> allows one to serialise arbitrary data structures into a human readable Perl code (which is also capable of evaluation). Note that performing string eval for arbitrary Perl code like that is not recommended for security reasons, so make sure you can trust that data.</li>
-<li><a class="extiw" href="http://metacpan.org/release/Storable" title="cpan:Storable">Storable</a> (another core module) serialises data structures to a binary format (make sure you use its portable format), and allows for serialising, deserialising, cloning a complex data structure, etc. This module is Perl 5-specific, though.</li>
-<li><a class="new" href="https://en.wikipedia.org/wiki/JSON">JSON</a> is short for "<a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> Object Notation" and can be used to serialise data structures using JS notation. The <a class="extiw" href="https://metacpan.org/pod/JSON::MaybeXS">JSON-MaybeXS</a> CPAN module is recommended for that. Note that JavaScript does not support several
+<li><a href="http://metacpan.org/release/Data-Dumper" title="cpan:Data-Dumper">Data-Dumper</a> allows one to serialise arbitrary data structures into a human readable Perl code (which is also capable of evaluation). Note that performing string eval for arbitrary Perl code like that is not recommended for security reasons, so make sure you can trust that data.</li>
+<li><a href="http://metacpan.org/release/Storable" title="cpan:Storable">Storable</a> (another core module) serialises data structures to a binary format (make sure you use its portable format), and allows for serialising, deserialising, cloning a complex data structure, etc. This module is Perl 5-specific, though.</li>
+<li><a class="new" href="https://en.wikipedia.org/wiki/JSON">JSON</a> is short for "<a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> Object Notation" and can be used to serialise data structures using JS notation. The <a href="https://metacpan.org/pod/JSON::MaybeXS">JSON-MaybeXS</a> CPAN module is recommended for that. Note that JavaScript does not support several
 Perl 5-specific features such as having a reference to a scalar.</li>
-<li><a class="new" href="http://perl.net.au/wiki/?title=YAML&amp;action=edit" title="YAML">YAML</a> is a markup language (see <a class="extiw" href="http://metacpan.org/release/YAML-XS" title="cpan:YAML-XS">YAML-XS</a>) for represnting complex data structures. It is more complex than JSON, and more error-prone but also gives some user-friendly enhancements.</li>
+<li><a class="new" href="http://perl.net.au/wiki/?title=YAML&amp;action=edit" title="YAML">YAML</a> is a markup language (see <a href="http://metacpan.org/release/YAML-XS" title="cpan:YAML-XS">YAML-XS</a>) for represnting complex data structures. It is more complex than JSON, and more error-prone but also gives some user-friendly enhancements.</li>
 </ol>
 <p>If you want random lookup, look at the various embedded database solutions, such as:</p>
 <ul>
-<li><a class="extiw" href="http://www.wikipedia.org/wiki/Berkeley_DB" title="wikipedia:Berkeley_DB">Berkeley DB</a> - very comprehensive and under a strong copyleft licence.</li>
-<li><a href="http://1978th.net/tokyocabinet/">Tokyo Cabinet</a> - a modern DBM implementation with high performance and a <a class="extiw" href="http://www.wikipedia.org/wiki/LGPL" title="wikipedia:LGPL">LGPL</a> licence.</li>
+<li><a href="http://www.wikipedia.org/wiki/Berkeley_DB" title="wikipedia:Berkeley_DB">Berkeley DB</a> - very comprehensive and under a strong copyleft licence.</li>
+<li><a href="http://1978th.net/tokyocabinet/">Tokyo Cabinet</a> - a modern DBM implementation with high performance and a <a href="http://www.wikipedia.org/wiki/LGPL" title="wikipedia:LGPL">LGPL</a> licence.</li>
 <li><a href="http://www.sqlite.org/">SQLite</a> - an embedded, high-performance <a href="https://en.wikipedia.org/wiki/SQL">SQL</a> database.</li>
 </ul>
 <p><b>TODO</b>: add DBM, etc.</p>
@@ -514,9 +514,9 @@ Perl 5-specific features such as having a reference to a scalar.</li>
 <p>See for example <a href="http://metacpan.org/release/UNIVERSAL-isa/">UNIVERSAL-isa on CPAN</a>.</p>
 <p>That put aside, since Perl 5 (and Perl 6) is a symbolic language, one can call a method by name on every object that supports it regardless of its actually inheritance geneology. So using <code>-&gt;isa</code> may be a red flag in Perl, and you should rethink your strategy.</p>
 <h3 id="How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F">How can I parse a CSV (Comma separated value / comma delimited value) file?</h3>
-<p>CSV parsing is very hard to get right using plain regexes, so please use <a class="extiw" href="http://metacpan.org/release/Text-CSV_XS" title="cpan:Text-CSV_XS">Text-CSV_XS</a> or <a class="extiw" href="http://metacpan.org/release/Text-CSV" title="cpan:Text-CSV">Text-CSV</a>.</p>
+<p>CSV parsing is very hard to get right using plain regexes, so please use <a href="http://metacpan.org/release/Text-CSV_XS" title="cpan:Text-CSV_XS">Text-CSV_XS</a> or <a href="http://metacpan.org/release/Text-CSV" title="cpan:Text-CSV">Text-CSV</a>.</p>
 <h3 id="How_can_I_access_the_global_variables_in_my_script_from_a_different_module_and.2For_namespace">How can I access the global variables in my script from a different module and/or namespace</h3>
-<p>There is a way to do it, but you really shouldn't do it this way because it's most likely indicative of a bad design. Instead, pass the data to the module (preferably by defining a class (see <a class="extiw" href="http://metacpan.org/release/Moose" title="cpan:Moose">Moose</a> and other resources), instantiating an object and let it run. You can also implement an entire command line
+<p>There is a way to do it, but you really shouldn't do it this way because it's most likely indicative of a bad design. Instead, pass the data to the module (preferably by defining a class (see <a href="http://metacpan.org/release/Moose" title="cpan:Moose">Moose</a> and other resources), instantiating an object and let it run. You can also implement an entire command line
 application as a module and a short, bootstrapping, script that invokes it.</p>
 <h3 id="How_can_I_set_up_a_timeout_for_a_blocking_operation.3F">How can I set up a timeout for a blocking operation?</h3>
 <p>See <a href="http://perldoc.perl.org/functions/alarm.html">the "alarm()" perl built-in</a> or <a href="http://poe.perl.org/">POE</a> for more advanced uses.</p>
@@ -574,7 +574,7 @@ the file or to insert it into the middle of the file while only using a single f
 </ol>
 <h3 id="How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F">How do I trim leading and/or trailing whitespace from a string?</h3>
 <p>Some languages provide a built-in function to remove leading and/or trailing whitespace from a string (such as <a href="http://php.net/manual/en/function.trim.php">PHP's trim</a>. Perl does not have it because it is fairly trivial to do using the <code>s///</code> built-in (see <a href="http://perl-begin.org/topics/regular-expressions/">our resources about regular expressions</a> and there's
-also <a class="extiw" href="http://metacpan.org/release/String-Trim" title="cpan:String-Trim">String-Trim on CPAN</a>.</p>
+also <a href="http://metacpan.org/release/String-Trim" title="cpan:String-Trim">String-Trim on CPAN</a>.</p>
 <h3 id="How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29">How do I add directories to the list of paths where Perl searches for modules? (@INC)</h3>
 <p>There are several ways to do it:</p>
 <ol>
@@ -585,7 +585,7 @@ also <a class="extiw" href="http://metacpan.org/release/String-Trim" title="cpan
 </ol>
 <p>After that you can add <code>use MyModule;</code> to your code and it will work. Please don't resort to <code>do "/full/path/to/include.pl"</code> games.</p>
 <h3 id="How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F">How can I get perl to print each line as it is executed (similar to the shell's -x flag)?</h3>
-<p>To do that use <a class="extiw" href="http://metacpan.org/release/Devel-Trace" title="cpan:Devel-Trace">Devel-Trace</a> from CPAN , and add the -d:Trace flag.</p>
+<p>To do that use <a href="http://metacpan.org/release/Devel-Trace" title="cpan:Devel-Trace">Devel-Trace</a> from CPAN , and add the -d:Trace flag.</p>
 <p>You get an output like:</p>
 <pre>   shlomif[cfg-ini]:$module$ perl -d:Trace tag-release.pl 2&gt;&amp;1 | head -10
    &gt;&gt; tag-release.pl:9:     (map { m{\$VERSION *= *'([^']+)'}?? ($1)?: () }
@@ -607,12 +607,12 @@ programming Perl ithreads"</a>.</p>
 <h3 id="Should_I_be_using_mod_perl.3F">Should I be using mod_perl?</h3>
 <p>The short answer is: "Most probably not.".</p>
 <p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX systems, however, it made a conscious choice of providing a lot of extra functionality, which proved to cost with complexity and sometimes quirkiness. Since then, FastCGI and similar technologies have matured (possibly legally) and there is now a new crop of popular web-servers, which aim to be very speedy (as well as
-less customisable and less suitable for hosting providers) such as <a class="extiw" href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29" title="wikipedia:Cherokee_(webserver)">Cherokee</a>, <a class="extiw" href="http://www.wikipedia.org/wiki/lighttpd" title="wikipedia:lighttpd">lighttpd</a> or <a class="extiw" href="http://www.wikipedia.org/wiki/nginx" title="wikipedia:nginx">nginx</a>
+less customisable and less suitable for hosting providers) such as <a href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29" title="wikipedia:Cherokee_(webserver)">Cherokee</a>, <a href="http://www.wikipedia.org/wiki/lighttpd" title="wikipedia:lighttpd">lighttpd</a> or <a href="http://www.wikipedia.org/wiki/nginx" title="wikipedia:nginx">nginx</a>
 that can utilise FastCGI as well, and you may opt to use instead of Apache, assuming your hosting allows that.</p>
 <p>So even if you're using Apache (and you should definitely use Apache 2 - not Apache 1), there are better alternatives for speeding up your applications than mod_perl, and you should only use mod_perl if you need more sophisticated control and functionality of Apache 2, in which case you may wish to also be asking that on <a href="http://perl.apache.org/maillist/modperl.html">the mod_perl
 mailing list</a>, or on a similar forum, and you are expected to be an advanced user.</p>
 <h3 id="How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F">How can I find which modules a Perl program or module depends on?</h3>
-<p>If you wish to use it on an program you have on the disk at run-time, then use <a class="extiw" href="http://metacpan.org/release/Devel-TraceUse" title="cpan:Devel-TraceUse">Devel-TraceUse</a>, which will report the used modules recursively.</p>
+<p>If you wish to use it on an program you have on the disk at run-time, then use <a href="http://metacpan.org/release/Devel-TraceUse" title="cpan:Devel-TraceUse">Devel-TraceUse</a>, which will report the used modules recursively.</p>
 <p>One can also use the <a href="http://deps.cpantesters.org/">CPAN dependencies</a> tool to determine the dependencies of a CPAN distribution or module.</p>
 <h3 id="array-vs-array-ref">What is the difference between an array and an array reference? What about a hash vs. a hash reference?</h3>
 <p>There are several differences between arrays and array references. Array references are scalars and can be stores inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
@@ -658,7 +658,7 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 <p>He's just some guy, you know? apeiron is a USian with dreams of moving to Europe. As with most people and bots depicted here, Perl is his favorite language. Of the <a href="http://typelogic.com/intj.html">INTJ</a> personality type, he tends to focus more on solving problems than being the center of attention. Insatiably curious, he enjoys playing with new frameworks and applications. His
 interests are in free culture, free software, science, history, anthropology, music, philosophy, Shakespeare, and many other things. To be brief: a geek and a hippie.</p>
 <h4 id="beth">beth</h4>
-<p>beth lives in <a class="extiw" href="http://www.wikipedia.org/wiki/Ithaca%2C_New_York" title="wikipedia:Ithaca,_New_York">Ithaca, New York</a>. She works with Perl at Cornell university as a <a class="extiw" href="http://www.wikipedia.org/wiki/Bioinformatics" title="wikipedia:Bioinformatics">bioinformatics</a> analyst and is one of #perl's resident gurus.</p>
+<p>beth lives in <a href="http://www.wikipedia.org/wiki/Ithaca%2C_New_York" title="wikipedia:Ithaca,_New_York">Ithaca, New York</a>. She works with Perl at Cornell university as a <a href="http://www.wikipedia.org/wiki/Bioinformatics" title="wikipedia:Bioinformatics">bioinformatics</a> analyst and is one of #perl's resident gurus.</p>
 <h4 id="Chris62vw">Chris62vw</h4>
 <p>Chris is an American living in Las Vegas. He's the author and maintainer of <a href="http://chrisangell.com/incoming/chrisbot/v3">ChrisBot</a>, which is the codebase behind "perlbot", our resident infobot. He is rather hands-off when it comes to policing the channel and believes in minimal usage of operator privileges. In his spare time he enjoys spending time at the shooting range, eating
 sushi, and drinking beer with his friends.</p>
