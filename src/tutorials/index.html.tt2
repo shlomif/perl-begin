@@ -80,6 +80,18 @@ Cross</a></h3>
 Presentation slides by Dave Cross.
 </p>
 
+<h3 id="one-liners-explained"><a
+href="https://catonmat.net/perl-one-liners-explained-part-one">Perl One-Liners
+Explained by Peteris Krumins</a></h3>
+
+<p>
+A series of posts about useful perl "one-liners" that may serve as a teach-by-example.
+Note that writing perl for production use requires <a href="[% base_path %]tutorials/bad-elements/">a different mindset</a>.
+</p>
+
+<p>
+Note that Krumins also published <a href="https://nostarch.com/perloneliners">a book</a> based on the series available in print or as an ebook.
+</p>
 <h2 id="advanced">Tutorials for Advanced Users</h2>
 
 <p>
