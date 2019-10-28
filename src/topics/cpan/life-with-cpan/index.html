@@ -28,13 +28,13 @@
                 Perl Archive Network (CPAN)</a> hosts <a
                 href="http://www.perl.org/">Perl</a>
             modules and scripts. The <a
-                href="http://search.cpan.org/perldoc/CPAN"
+                href="https://metacpan.org/pod/CPAN"
                 title="Documentation on the CPAN Perl module"><code
                     class="perl-module">CPAN</code></a> module provides an
             interface to query and install modules hosted on <abbr
                 title="Comprehensive Perl Archive Network">CPAN</abbr>.
             These pages document the setup and usage of <a
-                href="http://search.cpan.org/perldoc/CPAN"
+                href="https://metacpan.org/pod/CPAN"
                 title="Documentation on the CPAN Perl module"><code
                     class="perl-module">CPAN</code></a>, with attention to common
             tasks and pitfalls along the way.</p><p class="info">Perl
@@ -44,7 +44,7 @@
  reproducible module installs over time, as <abbr title="Comprehensive Perl
      Archive Network">CPAN</abbr> modules may change or be removed without
  warning.</p><p class="info">Use <a
-     href="http://search.cpan.org/perldoc/CPAN::Reporter"
+     href="https://metacpan.org/pod/CPAN::Reporter"
      title="Documentation on the CPAN::Reporter Perl module"><code
          class="perl-module">CPAN::Reporter</code></a> to <a
      href="http://use.perl.org/article.pl?sid=06/11/08/1256207">submit
@@ -55,7 +55,7 @@
  installing <code class="cmd">perl</code> modules from <abbr
      title="Comprehensive Perl Archive Network">CPAN</abbr> include the
  following, which are not discussed in detail here.</p><ul class="list"><li><a
-         href="http://search.cpan.org/perldoc/CPANPLUS"
+         href="https://metacpan.org/pod/CPANPLUS"
          title="Documentation on the CPANPLUS Perl module"><code
              class="perl-module">CPANPLUS</code></a>. “<code
          class="code">CPAN++</code> (also referred to and pronounced as <code
@@ -63,7 +63,7 @@
          class="cmd">perl</code> module management and installation using the
      <abbr title="Comprehensive Perl Archive Network">CPAN</abbr>. It
      aims to be a rewrite, and in time a replacement to the current <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> module. In  addition to fixing
      some long-standing problems, <code class="code">CPAN++</code> includes new
@@ -88,30 +88,28 @@
          class="code">p5-libwww</code> is the FreeBSD port
 of the module distribution <code class="code">libwww-perl</code> on <abbr
     title="Comprehensive Perl Archive Network">CPAN</abbr>, and <a
-    href="http://search.cpan.org/perldoc/LWP::UserAgent"
+    href="https://metacpan.org/pod/LWP::UserAgent"
     title="Documentation on the LWP::UserAgent Perl module"><code
         class="perl-module">LWP::UserAgent</code></a> a module found in that
 distribution. The following commands are equivalent means to install <code
     class="code">libwww-perl</code> via the FreeBSD ports system, <code
     class="cmd">yum</code> on RedHat systems, or the <code class="cmd">cpan</code>
 command included with modern versions of <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a>.</p><p class="data-shell">#
 <kbd>portinstall p5-libwww</kbd><br /># <kbd>yum -y install
     perl-libwww-perl</kbd><br /># <kbd>cpan -i LWP::UserAgent</kbd></p><p
 class="info">To lookup the documentation for a module, use <code
-    class="code">http://search.cpan.org/perldoc/<kbd
+    class="code">https://metacpan.org/pod/<kbd
         class="input">Module::Name</kbd></code>. The documentation should also
 show the distribution a module belongs to, for example <a
-    href="http://search.cpan.org/perldoc/Data::Dumper"
+    href="https://metacpan.org/pod/Data::Dumper"
     title="Documentation on the Data::Dumper Perl module"><code
         class="perl-module">Data::Dumper</code></a>. Other search interfaces
 include the <a
-    href="http://search.cpan.org/"><abbr
-        title="Comprehensive Perl Archive Network">CPAN</abbr> Search
-    Site</a> or the <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org">MetaCPAN</a> or the <a
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> shell search
 features.</p></li><li>Conversion scripts. <a
@@ -125,27 +123,27 @@ features.</p></li><li>Conversion scripts. <a
     class="cmd">dh-make-perl --install --cpan
     Module::Name</code>.</li></ul><h2 id="s2"><code class="cmd">perl</code>
     Upgrade Bug</h2><p class="info">The first time <a
-href="http://search.cpan.org/perldoc/CPAN"
+href="https://metacpan.org/pod/CPAN"
 title="Documentation on the CPAN Perl module"><code
     class="perl-module">CPAN</code></a> is invoked, it will run through a set of
     questions, such as which <abbr title="Comprehensive Perl Archive
         Network">CPAN</abbr> mirror site to use. Following the questions, <a
-        href="http://search.cpan.org/perldoc/CPAN"
+        href="https://metacpan.org/pod/CPAN"
         title="Documentation on the CPAN Perl module"><code
             class="perl-module">CPAN</code></a> may recommend that you install <a
-        href="http://search.cpan.org/perldoc/Bundle::CPAN"
+        href="https://metacpan.org/pod/Bundle::CPAN"
         title="Documentation on the Bundle::CPAN Perl module"><code
             class="perl-module">Bundle::CPAN</code></a> or <a
-        href="http://search.cpan.org/perldoc/Bundle::libnet"
+        href="https://metacpan.org/pod/Bundle::libnet"
         title="Documentation on the Bundle::libnet Perl module"><code
             class="perl-module">Bundle::libnet</code></a>.  Avoid installing
     these bundles!</p><p class="info">Older versions of <a
-        href="http://search.cpan.org/perldoc/CPAN"
+        href="https://metacpan.org/pod/CPAN"
         title="Documentation on the CPAN Perl module"><code
             class="perl-module">CPAN</code></a> have a bug whereby a new version
     of <code class="cmd">perl</code> itself may be installed. To avoid this bug,
     install the latest version of <a
-        href="http://search.cpan.org/perldoc/CPAN"
+        href="https://metacpan.org/pod/CPAN"
         title="Documentation on the CPAN Perl module"><code
             class="perl-module">CPAN</code></a> first. Setting the <code
         class="code">FTP_PASSIVE=1</code> environment variable avoids another
@@ -153,33 +151,33 @@ title="Documentation on the CPAN Perl module"><code
     blocked by a local firewall.</p><p class="data-shell"># <kbd>perl -MCPAN -e
         '$ENV{FTP_PASSIVE} = 1; install CPAN'</kbd></p><p class="info">If
     already in the <a
-        href="http://search.cpan.org/perldoc/CPAN"
+        href="https://metacpan.org/pod/CPAN"
         title="Documentation on the CPAN Perl module"><code
             class="perl-module">CPAN</code></a> shell following the preferences
     questions, use:</p><p class="data-shell">cpan&gt; <kbd>install
      CPAN</kbd></p><p class="info">For reference, the bug is that <a
-     href="http://search.cpan.org/perldoc/Bundle::CPAN"
+     href="https://metacpan.org/pod/Bundle::CPAN"
      title="Documentation on the Bundle::CPAN Perl module"><code
          class="perl-module">Bundle::CPAN</code></a> or <a
-     href="http://search.cpan.org/perldoc/Bundle::libnet"
+     href="https://metacpan.org/pod/Bundle::libnet"
      title="Documentation on the Bundle::libnet Perl module"><code
          class="perl-module">Bundle::libnet</code></a> may  list <a
-     href="http://search.cpan.org/perldoc/Data::Dumper"
+     href="https://metacpan.org/pod/Data::Dumper"
      title="Documentation on the Data::Dumper Perl module"><code
          class="perl-module">Data::Dumper</code></a> as a dependency. <a
-     href="http://search.cpan.org/perldoc/Data::Dumper"
+     href="https://metacpan.org/pod/Data::Dumper"
      title="Documentation on the Data::Dumper Perl module"><code
          class="perl-module">Data::Dumper</code></a> is a built-in <code
      class="cmd">perl</code> module, so when old versions of <a
-     href="http://search.cpan.org/perldoc/CPAN"
+     href="https://metacpan.org/pod/CPAN"
      title="Documentation on the CPAN Perl module"><code
          class="perl-module">CPAN</code></a> lookup <a
-     href="http://search.cpan.org/perldoc/Data::Dumper"
+     href="https://metacpan.org/pod/Data::Dumper"
      title="Documentation on the Data::Dumper Perl module"><code
          class="perl-module">Data::Dumper</code></a>, they find a new version of
  <code class="cmd">perl</code> to install. This bug has been fixed in current
  versions of <a
-     href="http://search.cpan.org/perldoc/CPAN"
+     href="https://metacpan.org/pod/CPAN"
      title="Documentation on the CPAN Perl module"><code
          class="perl-module">CPAN</code></a>.</p><h2 id="s3">Active FTP
          versus Firewalls</h2><p class="info">Network problems may prevent
@@ -192,11 +190,11 @@ title="Documentation on the CPAN Perl module"><code
  recommend enabling passive <abbr title="File Transfer
      Protocol">FTP</abbr> by default, though this setting will need to be
  done for a variety of utilities <a
-     href="http://search.cpan.org/perldoc/CPAN"
+     href="https://metacpan.org/pod/CPAN"
      title="Documentation on the CPAN Perl module"><code
          class="perl-module">CPAN</code></a> might run, such as <code
      class="cmd">wget</code> or <a
-     href="http://search.cpan.org/perldoc/Net::FTP"
+     href="https://metacpan.org/pod/Net::FTP"
      title="Documentation on the Net::FTP Perl module"><code
          class="perl-module">Net::FTP</code></a>. Alternatives include disabling
  the client firewall to allow active <abbr title="File Transfer
@@ -212,7 +210,7 @@ title="Documentation on the CPAN Perl module"><code
  configuration (y|n) ? [no] <kbd class="input">y</kbd><br />…<br />Should all FTP
  connections be passive (y|n) ? [no] <kbd class="input">y</kbd></p><p
  class="info">If <a
-     href="http://search.cpan.org/perldoc/Net::FTP"
+     href="https://metacpan.org/pod/Net::FTP"
      title="Documentation on the Net::FTP Perl module"><code
          class="perl-module">Net::FTP</code></a> is already installed, edit the
  <code class="file">libnet.cfg</code> configuration file to use passive <abbr
@@ -221,15 +219,15 @@ title="Documentation on the CPAN Perl module"><code
      Net/libnet.cfg</kbd><br />/usr/local/lib/perl5/5.8.1/Net/libnet.cfg<br />$
  <kbd>grep passive /usr/local/lib/perl5/5.8.1/Net/libnet.cfg</kbd><br />
  'ftp_int_passive' =&gt; 1,</p><p class="info">If <a
-     href="http://search.cpan.org/perldoc/Net::FTP"
+     href="https://metacpan.org/pod/Net::FTP"
      title="Documentation on the Net::FTP Perl module"><code
          class="perl-module">Net::FTP</code></a> does not work, or certain
  utilities take too long to time out, consider the following options.</p><ul
      class="list"><li><p>Disable <a
-         href="http://search.cpan.org/perldoc/Net::FTP"
+         href="https://metacpan.org/pod/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><code
              class="perl-module">Net::FTP</code></a>.</p><p class="info">If <a
-         href="http://search.cpan.org/perldoc/Net::FTP"
+         href="https://metacpan.org/pod/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><code
              class="perl-module">Net::FTP</code></a> does not work, try adding
      the following line to the <code class="file">CPAN/Config.pm</code> preferences
@@ -238,23 +236,23 @@ title="Documentation on the CPAN Perl module"><code
          on <code class="code">dontload_hash</code> posted to the <code
              class="code">perl.perl5.porters</code> newsgroup</a>.  Also consider
      installing <a
-         href="http://search.cpan.org/perldoc/LWP::UserAgent"
+         href="https://metacpan.org/pod/LWP::UserAgent"
          title="Documentation on the LWP::UserAgent Perl module"><code
              class="perl-module">LWP::UserAgent</code></a>, which is more capable
      than <a
-         href="http://search.cpan.org/perldoc/Net::FTP"
+         href="https://metacpan.org/pod/Net::FTP"
          title="Documentation on the Net::FTP Perl module"><code
              class="perl-module">Net::FTP</code></a>.</p><p
      class="data">'dontload_hash' =&gt; { 'Net::FTP' =&gt; 1 },</p></li><li><p>Disable
      utilities that do not work</p><p class="info">To reconfigure <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> to not call certain utilities,
      replace the path to the utility with a single space.</p><p
      class="data-shell">$ <kbd>grep ncftp ~/.cpan/CPAN/MyConfig.pm</kbd><br />
      'ncftp' =&gt; q[ ],<br />  'ncftpget' =&gt; q[ ],</p></li></ul><h2 id="s4">
          Preferences Questions</h2><p class="info"><a
-     href="http://search.cpan.org/perldoc/CPAN"
+     href="https://metacpan.org/pod/CPAN"
      title="Documentation on the CPAN Perl module"><code
          class="perl-module">CPAN</code></a> will ask for preferences settings
  any time the <code class="file">Config.pm</code> preferences file does not exist
@@ -266,33 +264,33 @@ title="Documentation on the CPAN Perl module"><code
      me.</p></li><li><p>Policy on building prerequisites (follow, ask or ignore)?
      [ask]</p><p class="info">Leave this setting set to <kbd
          class="input">ask</kbd> when upgrading <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> the first time, to prevent
      dependency lookups automatically installing the latest stable <code
          class="cmd">perl</code>. With <kbd class="input">ask</kbd> set, one can
      say no to queries that ask to install <a
-         href="http://search.cpan.org/perldoc/Bundle::CPAN"
+         href="https://metacpan.org/pod/Bundle::CPAN"
          title="Documentation on the Bundle::CPAN Perl module"><code
              class="perl-module">Bundle::CPAN</code></a>, <a
-         href="http://search.cpan.org/perldoc/Bundle::libnet"
+         href="https://metacpan.org/pod/Bundle::libnet"
          title="Documentation on the Bundle::libnet Perl module"><code
              class="perl-module">Bundle::libnet</code></a>, or <a
-         href="http://search.cpan.org/perldoc/Data::Dumper"
+         href="https://metacpan.org/pod/Data::Dumper"
          title="Documentation on the Data::Dumper Perl module"><code
              class="perl-module">Data::Dumper</code></a> until the latest version
      of <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> is installed.</p></li><li><p>Where is
      your <code class="file-glob">*</code> program? [<code
          class="file-glob">*</code>]</p><p class="info">This series of questions
      lets one configure (or disable) paths to various utilities <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> may use to download or unpack
      modules. It is safe to leave entries blank, as long as <a
-         href="http://search.cpan.org/perldoc/CPAN"
+         href="https://metacpan.org/pod/CPAN"
          title="Documentation on the CPAN Perl module"><code
              class="perl-module">CPAN</code></a> is left with at least one
      working program that can download modules and another to expand
@@ -314,12 +312,12 @@ title="Documentation on the CPAN Perl module"><code
 updated periodically, if a previous mirror site stops hosting <abbr
     title="Comprehensive Perl Archive Network">CPAN</abbr>. Symptoms of this
 will be slow downloads as <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> fails though the mirror
 list.</p></li></ul><h2 id="s5">Reconfiguring CPAN</h2><p class="info">To
 alter the <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> preferences, either edit the <code
     class="file">Config.pm</code> configuration file manually, or use the
@@ -366,40 +364,40 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
             | <a
                 href="#s6.8">Upgrading</a></div><p
         class="info">Once the latest version of <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> has been installed, it is
         safe to install <a
-            href="http://search.cpan.org/perldoc/Bundle::CPAN"
+            href="https://metacpan.org/pod/Bundle::CPAN"
             title="Documentation on the Bundle::CPAN Perl module"><code
                 class="perl-module">Bundle::CPAN</code></a> (as older versions of
         <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> would attempt to upgrade <code
             class="cmd">perl</code> itself). If already in the <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> shell, run <code
             class="cmd">reload cpan</code> first.</p><p
         class="data-shell">cpan&gt; <kbd>reload cpan</kbd><br />…<br />cpan&gt;
         <kbd>install Bundle::CPAN</kbd></p><p class="info">The following
         sections outline various uses and caveats with <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a>.</p>
                 <h3 id="s6.1">Invocation</h3><p class="info">The latest
         version of <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> should install a <code
             class="cmd">cpan</code> command somewhere on the system, which is
         easier to use than the traditional means of calling <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a>.  With an up to date version
         of <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a>, the following sets of
         commands are equivalent.  Hereafter, the shorter <code
@@ -413,13 +411,13 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
         the <code class="cmd">hash -r</code> or <code class="cmd">rehash</code> command
         to make the new <code class="cmd">cpan</code> command appear in the search
         path after the latest <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> is installed.  Consult your
         shell’s documentation for more information on whether this is
         required.</p><h3 id="s6.2"><code
                     class="code">autobundle</code></h3><p class="info">The <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> <code
             class="cmd">autobundle</code> can be used to ease <code
@@ -438,26 +436,26 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
             class="code">ask</code> should help. Multiple install runs may be
         needed to install everything properly. Module build failures will lead
         to much recursion on the part of <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a>.</p><h3 id="s6.3">Old
                 Modules</h3><p class="info">Some modules found by <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a> are out of date, and will not
         compile. An updated module may be available on <abbr
             title="Comprehensive Perl Archive Network">CPAN</abbr>, just not
         linked to as “current” by <a
-            href="http://search.cpan.org/perldoc/CPAN"
+            href="https://metacpan.org/pod/CPAN"
             title="Documentation on the CPAN Perl module"><code
                 class="perl-module">CPAN</code></a>. Modules known to have this
         problem include the following. The links below should point to the
         current version of the modules.</p><ul class="list"><li> <a
-                href="http://search.cpan.org/perldoc/Mail::Cclient"
+                href="https://metacpan.org/pod/Mail::Cclient"
                 title="Documentation on the Mail::Cclient Perl module"><code
                     class="perl-module">Mail::Cclient</code></a>
             <br /> </li><li> <a
-                href="http://search.cpan.org/perldoc/OpenGL"
+                href="https://metacpan.org/pod/OpenGL"
                 title="Documentation on the OpenGL Perl module"><code
                     class="perl-module">OpenGL</code></a> </li></ul>
                     <h3 id="s6.4">Mac OS X</h3><p class="info"><a
@@ -468,7 +466,7 @@ ftp://ftp-mirror.internap.com/pub/CPAN/
       may need to manually build or test a module, or consult the module
       directory to read the documentation on any special needs the module may
       have.  This can be done with the <a
-          href="http://search.cpan.org/perldoc/CPAN"
+          href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> shell <code class="cmd">look</code>
 command.</p><p class="data-shell">cpan&gt; <kbd>look
@@ -476,7 +474,7 @@ command.</p><p class="data-shell">cpan&gt; <kbd>look
 /var/spool/cpan/build/Net_SSLeay.pm-1.25<br /># <kbd>exit</kbd><br />cpan&gt;
 </p><h3 id="s6.6"><code class="cmd">sudo</code></h3><p
 class="info">If <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> is installed in your home directory,
 the system-wide <code class="cmd">cpan</code> may cause problems when run via <a
@@ -484,7 +482,7 @@ the system-wide <code class="cmd">cpan</code> may cause problems when run via <a
     title="FreeBSD man page search for sudo, section 8 on OpenBSD"><code
         class="man">sudo(8)</code></a>, as by default <code class="cmd">sudo</code>
 will invoke <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> using the <code
     class="file">~/.cpan/CPAN/MyConfig.pm</code> configuration, but as <code
@@ -492,39 +490,39 @@ will invoke <a
 problem, reset the <code class="code">HOME</code> environment variable with the <code
     class="cmd-arg">-H</code> option to <code class="cmd">sudo</code> when invoking
 <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a>.</p><p class="data-shell">$ <kbd>sudo
     -H cpan</kbd></p><h3 id="s6.7">Uninstalling</h3><p class="info"><a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> itself offers no uninstall method.
 Several of the alternatives to <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> do, such as <a
-    href="http://search.cpan.org/perldoc/CPANPLUS"
+    href="https://metacpan.org/pod/CPANPLUS"
     title="Documentation on the CPANPLUS Perl module"><code
         class="perl-module">CPANPLUS</code></a> or vendor package/port systems.
 If the module has been fully installed along with a <code
     class="file">.packlist</code> file for the module, the <a
-    href="http://search.cpan.org/perldoc/ExtUtils::Packlist"
+    href="https://metacpan.org/pod/ExtUtils::Packlist"
     title="Documentation on the ExtUtils::Packlist Perl module"><code
         class="perl-module">ExtUtils::Packlist</code></a> perl module
 documentation includes code for a <code class="cmd">modrm</code> command to cleanly
 remove an installed module.</p><p class="note">Modules built with other tools,
 such as <a
-    href="http://search.cpan.org/perldoc/Module::Build"
+    href="https://metacpan.org/pod/Module::Build"
     title="Documentation on the Module::Build Perl module"><code
         class="perl-module">Module::Build</code></a>, may not write out a <code
     class="file">.packlist</code> file for use by <a
-    href="http://search.cpan.org/perldoc/ExtUtils::Packlist"
+    href="https://metacpan.org/pod/ExtUtils::Packlist"
     title="Documentation on the ExtUtils::Packlist Perl module"><code
         class="perl-module">ExtUtils::Packlist</code></a>.</p><h3 id="s6.9">
     Upgrading</h3><p class="info">How to upgrade all the
 modules on the system like <code class="cmd">apt-get</code> is actually documented
 in the <a
-    href="http://search.cpan.org/perldoc/CPAN"
+    href="https://metacpan.org/pod/CPAN"
     title="Documentation on the CPAN Perl module"><code
         class="perl-module">CPAN</code></a> manual; however, the question comes
 up often enough that I answer it here as well.</p><p class="data-shell"><span
@@ -546,7 +544,7 @@ sort of mass module
      on using CPAN with a non-root account</a>, or installing Perl modules to
  directories besides the default system areas, such as a software depot or
  under <code class="code">$HOME</code>. Consider also <a
-     href="http://search.cpan.org/perldoc/local::lib"
+     href="https://metacpan.org/pod/local::lib"
      title="Documentation on the local::lib Perl module"><code
          class="perl-module">local::lib</code></a> to bootsrap custom Perl module
  installation directories.</p><div class="footer">
