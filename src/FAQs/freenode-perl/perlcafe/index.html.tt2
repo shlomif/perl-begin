@@ -63,10 +63,10 @@ off.
 <h3> North American Politics </h3>
 <p>It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
 </p>
-<h3> Computer Games </h3>
+<h3 id="computer_games"> Computer Games </h3>
 <p>One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games, mostly for <a href="http://www.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
 </p>
-<h3> Shania Twain </h3>
+<h3 id="shania_twain"> Shania Twain </h3>
 <p>Apparently, rindolf is the only computer geek who likes <a href="/web/20110220124213/http://www.wikipedia.org/wiki/Shania_Twain">Shania Twain</a>’s songs, much to the dismay of the other channel regulars. (Some of whom are still fond of Ms. Twain’s looks.) As such he sometimes say <code>* rindolf is listening to</code> with a song of hers. This makes almost everyone else unhappy, and comment to rindolf that he should adopt a better musical taste.
 </p>
 <pre>   &lt;jkauffman&gt;	like if I went to your house and you started playing Shania Twain,
