@@ -1,4 +1,4 @@
-[%- SET title = "Freendode’s #perlcafe Channel" -%]
+[%- SET title = "Freenode’s #perlcafe Channel" -%]
 [%- SET more_keywords = ", humour, humor, offtopic, irc, freenode, channel, chat, chatroom" -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
