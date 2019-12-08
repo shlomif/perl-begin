@@ -23,6 +23,7 @@
 /bin/translate-Vered-XML
 /compile/
 /dest
+/eslint-ts.json
 /lib/HTML/Latemp/DocBook/DocsList.pm
 /lib/HTML/Latemp/DocBook/EndFormats.pm
 /lib/HTML/Latemp/DocBook/GenMake.pm
