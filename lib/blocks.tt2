@@ -1,3 +1,4 @@
+[% SET html_lang = "en-US" %]
 [% BLOCK files_and_directories_modules %]
 <h2 id="modules">Modules</h2>
 
@@ -154,10 +155,15 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 [%- BLOCK start_html -%]
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[% html_lang %]">
 <head>
 <title>[% title %]</title>
+[% IF xhtml1 %]
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+[% ELSE %]
 <meta charset="utf-8"/>
+[% END %]
 <meta name="author" content="Shlomi Fish"/>
 <meta name="description" content="[% desc || title %]"/>
 <meta name="keywords" content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers[% more_keywords %]"/>
@@ -166,10 +172,12 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 <link rel="shortcut icon" href="[% base_path %]favicon.ico" type="image/x-icon" />
 [%- nav_links -%]
 <script src="[% base_path %]js/jq.js"></script>
+
 [% TRY %]
 [% INCLUDE page_extra_head_elements %]
 [% CATCH file %]
 [% END %]
+
 </head>
 
 <body[% body_params %]>
