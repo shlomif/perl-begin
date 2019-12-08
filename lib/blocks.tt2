@@ -158,15 +158,12 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 <head>
 <title>[% title %]</title>
 <meta charset="utf-8"/>
-<meta name="author" content=""/>
-<meta name="description" content="[% desc || "" %]"/>
+<meta name="author" content="Shlomi Fish"/>
+<meta name="description" content="[% desc || title %]"/>
 <meta name="keywords" content="Perl, Perl 5, perl, begin, beginners, tutorials, tutorial, introductory, books, beginner, start, learn, learning, introduction, newbie, newbies, newcomer, newcomers[% more_keywords %]"/>
-<link rel="stylesheet" href="[% base_path %]style.css" type="text/css" media=
-"screen" title="Normal" />
-<link rel="stylesheet" href="[% base_path %]print.css" type="text/css" media=
-"print" />
-<link rel="shortcut icon" href="[% base_path %]favicon.ico" type=
-"image/x-icon" />
+<link rel="stylesheet" href="[% base_path %]style.css" media="screen" title="Normal" />
+<link rel="stylesheet" href="[% base_path %]print.css" media="print" />
+<link rel="shortcut icon" href="[% base_path %]favicon.ico" type="image/x-icon" />
 [%- nav_links -%]
 <script src="[% base_path %]js/jq.js"></script>
 [% TRY %]
