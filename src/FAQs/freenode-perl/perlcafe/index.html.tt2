@@ -38,15 +38,33 @@ off.
 
 <p>You can often hear a lot of racist statements, cursing, etc. on #perlcafe. But don’t worry - the people there know better than that, and are not really racist. "#perlcafe is not racist. It is offensive to everyone equally.". Especially, what is said on #perlcafe can be:
 </p>
-<ol><li> Anti-Semitic.
-</li><li> Jewish-elitist.
-</li><li> Anti-Israeli.
-</li><li> Anti-Muslim.
-</li><li> Sexist. (Against either or both genders).
-</li><li> Anti-USArian.
-</li><li> Anti-Canadian.
-</li><li> Anti-French.
-</li><li> Self-deprecating.
+<ol>
+
+<li> Anti-Semitic.
+</li>
+
+<li> Jewish-elitist.
+</li>
+
+<li> Anti-Israeli.
+</li>
+
+<li> Anti-Muslim.
+</li>
+
+<li> Sexist. (Against either or both genders).
+</li>
+
+<li> Anti-USArian.
+</li>
+
+<li> Anti-Canadian.
+</li>
+
+<li> Anti-French.
+</li>
+
+<li> Self-deprecating.
 </li></ol>
 <p>So don’t take what is said there too seriously.
 </p>
@@ -112,21 +130,57 @@ off.
 
 [% WRAPPER h2_section id = "the_channel_topic"  title = "The /topic"  %]
 
-<p>The /topic is world-editable. We gave up on keeping up a meaningful /topic, and instead opt for some funny quotes. Feel free to set the topic to whatever you feel like. Here are some past selected topics:
+<p>
+The /topic is world-editable. We gave up on keeping up a meaningful /topic, and instead opt for some funny quotes. Feel free to set the topic to whatever you feel like. Here are some past selected topics:
 </p>
-<ol><li> “I have always wished that my computer would be as easy to use as my telephone. My wish has come true. I no longer know how to use my telephone.” - Bjarne Stroustrup
-</li><li> Happy Birthday Rindolf, you crazy bastard | &lt;sili&gt; my moths. let me show you them
-</li><li> infidel planes bombed somalia
-</li><li> Sometimes, loving your neighbor means taking him to an old Soviet interrogation facility and shoving things up his ass. -- Republican Jesus
-</li><li> (define (recommend-movie) "miller's crossing") | &lt;ik&gt; keep coldhak off our streets
-</li><li> GIVE A MAN A FISH AND HE’LL EAT FOR A DAY; GIVE A FISH A MAN AND HE’LL EAT FOR A MONTH
-</li><li> I’m The Scat Man | &lt;sili_&gt; another reason i want a different job | &lt;sili_&gt; i’m tired of "... but php doesn’t ..."
-</li><li> <a href="http://qdb.us/66304">http://qdb.us/66304</a> YEY I’m on bash ^_^
-</li><li> &lt; GumbyBRAIN&gt; We don’t ever have to poop but i did tonight! :: &lt;Chris62vw&gt; <a href="http://www.xkcd.com/c14.html">http://www.xkcd.com/c14.html</a>    for rindolf   &lt;GumbyBRAIN&gt; Hi all, anyone know a bot.
-</li><li>  a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack: sagittarius * is my next vacation spot
-</li><li> #perlcafe - where misfits fit. | Lady_Aleena puts the Perl in #perlcafe | mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy eats children? | railbait has been sentenced to concatenation | Perl and CPAN are OFFTOPIC! | cl0ud has a glorious scalar localtime()
+
+<ol>
+
+<li>
+“I have always wished that my computer would be as easy to use as my telephone. My wish has come true. I no longer know how to use my telephone.” - Bjarne Stroustrup
 </li>
+
+<li>
+Happy Birthday Rindolf, you crazy bastard | &lt;sili&gt; my moths. let me show you them
+</li>
+
+<li>
+infidel planes bombed somalia
+</li>
+
+<li>
+Sometimes, loving your neighbor means taking him to an old Soviet interrogation facility and shoving things up his ass. -- Republican Jesus
+</li>
+
+<li>
+(define (recommend-movie) "miller's crossing") | &lt;ik&gt; keep coldhak off our streets
+</li>
+
+<li>
+GIVE A MAN A FISH AND HE’LL EAT FOR A DAY; GIVE A FISH A MAN AND HE’LL EAT FOR A MONTH
+</li>
+
+<li>
+I’m The Scat Man | &lt;sili_&gt; another reason i want a different job | &lt;sili_&gt; i’m tired of "... but php doesn’t ..."
+</li>
+
+<li>
+<a href="http://qdb.us/66304">http://qdb.us/66304</a> YEY I’m on bash ^_^
+</li>
+
+<li>
+&lt; GumbyBRAIN&gt; We don’t ever have to poop but i did tonight! :: &lt;Chris62vw&gt; <a href="http://www.xkcd.com/c14.html">http://www.xkcd.com/c14.html</a>    for rindolf   &lt;GumbyBRAIN&gt; Hi all, anyone know a bot.
+</li>
+
+<li>
+a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack: sagittarius * is my next vacation spot
+</li>
+
+<li> #perlcafe - where misfits fit. | Lady_Aleena puts the Perl in #perlcafe | mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy eats children? | railbait has been sentenced to concatenation | Perl and CPAN are OFFTOPIC! | cl0ud has a glorious scalar localtime()
+</li>
+
 <li>When there is a PyPy booboo then PyPy goes bye bye | &lt;Trashlord&gt; only 2 hours? That's fast for Windows Update | Hail Fluttershy, princess-of-princesses, head of the secret cabal of the mossad, the already top-secret Zionist conspiracy intelligence agency!</li>
+
 </ol>
 
 [% END %]
