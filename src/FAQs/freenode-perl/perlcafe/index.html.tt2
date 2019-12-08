@@ -3,6 +3,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+[% WRAPPER h2_section id = "intro"  title = "Introduction"  %]
 
 <p>
 <a href="irc://irc.freenode.net/#perlcafe">Freenode’s #perlcafe</a> is a <a
@@ -14,7 +15,10 @@ work quite as expected, but nevertheless #perlcafe took off, and now hosts a
 lot of discussion that most people feel would rather not be hosted on #perl.
 (Albeit sometimes the discussion there is more high-quality.)
 </p>
-<h2> Brief history </h2>
+
+[% END %]
+
+[% WRAPPER h2_section id = "brief-history"  title = "Brief history"  %]
 <p><a href="http://www.shlomifish.org/">rindolf</a> registered #perlcafe back
 in 24 September 2004. The name was inspired by the Haskell-Cafe mailing list,
 which is intended to move advanced and off-topic discussions off the main
@@ -26,7 +30,10 @@ ended up getting de-voiced, and ended up /msg’ing some #perl people he
 recognised and asking them to join #perlcafe. Afterwards, #perlcafe really took
 off.
 </p>
-<h2> Note about the #perlcafe Attitude </h2>
+
+[% END %]
+
+[% WRAPPER h2_section id = "attitude"  title = "Note about the #perlcafe Attitude"  %]
 <p>You can often hear a lot of racist statements, cursing, etc. on #perlcafe. But don’t worry - the people there know better than that, and are not really racist. "#perlcafe is not racist. It is offensive to everyone equally.". Especially, what is said on #perlcafe can be:
 </p>
 <ol><li> Anti-Semitic.
@@ -41,6 +48,9 @@ off.
 </li></ol>
 <p>So don’t take what is said there too seriously.
 </p>
+
+[% END %]
+
 <h2> Café-speak </h2>
 <p>There’s a variant of bad English used by some of the channel regulars to speak there, even though they know much better than that. It is somewhat different from <a href="http://icanhascheezburger.com/">the LOLCats variant</a> and predates it. Here’s a non-exhaustive guide on how to Café-speak:
 </p>
