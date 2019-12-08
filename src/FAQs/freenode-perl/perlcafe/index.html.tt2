@@ -3,12 +3,14 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+<toc />
+
 [% WRAPPER h2_section id = "intro"  title = "Introduction"  %]
 
 <p>
 <a href="irc://irc.freenode.net/#perlcafe">Freenode’s #perlcafe</a> is a <a
-href="http://en.wiktionary.org/wiki/symbiont">symbiont</a> channel to <a
-href="http://perl-begin.org/FAQs/freenode-perl/">#perl</a>. It was
+href="https://en.wiktionary.org/wiki/symbiont">symbiont</a> channel to <a
+href="https://perl-begin.org/FAQs/freenode-perl/">#perl</a>. It was
 originally intended to host off-topic discussion and discussion about advanced
 topics, so #perl will remain more focused on beginner problems. That did not
 work quite as expected, but nevertheless #perlcafe took off, and now hosts a
@@ -20,7 +22,7 @@ lot of discussion that most people feel would rather not be hosted on #perl.
 
 [% WRAPPER h2_section id = "brief-history"  title = "Brief history"  %]
 
-<p><a href="http://www.shlomifish.org/">rindolf</a> registered #perlcafe back
+<p><a href="https://www.shlomifish.org/">rindolf</a> registered #perlcafe back
 in 24 September 2004. The name was inspired by the Haskell-Cafe mailing list,
 which is intended to move advanced and off-topic discussions off the main
 mailing list. While having some initial flurry of activity, #perlcafe ended up
@@ -100,16 +102,25 @@ off.
 <p>It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
 </p>
 <h3 id="computer_games"> Computer Games </h3>
-<p>One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games, mostly for <a href="http://www.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
+<p>One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games, mostly for <a href="https://en.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
 </p>
 <h3 id="shania_twain"> Shania Twain </h3>
-<p>Apparently, rindolf is the only computer geek who likes <a href="/web/20110220124213/http://www.wikipedia.org/wiki/Shania_Twain">Shania Twain</a>’s songs, much to the dismay of the other channel regulars. (Some of whom are still fond of Ms. Twain’s looks.) As such he sometimes say <code>* rindolf is listening to</code> with a song of hers. This makes almost everyone else unhappy, and comment to rindolf that he should adopt a better musical taste.
+<p>Apparently, rindolf is the only computer geek who likes <a
+href="https://en.wikipedia.org/wiki/Shania_Twain">Shania Twain</a>’s songs,
+much to the dismay of the other channel regulars. (Some of whom are still fond
+of Ms. Twain’s looks.) As such he sometimes say <code>* rindolf is listening
+to</code> with a song of hers. This makes almost everyone else unhappy, and
+comment to rindolf that he should adopt a better musical taste.
 </p>
+
 <pre>   &lt;jkauffman&gt;	like if I went to your house and you started playing Shania Twain,
                I’d have to set fire to your computer
 </pre>
-<p>From #perlcafe
+
+<p>
+From #perlcafe
 </p>
+
 <pre>   &lt;tag&gt; rindolf: sort of like you were about shania twain, you know joking right?
    &lt;rindolf&gt; tag: but I actually bought a Shania Twain CD.
    * tag smacks rindolf
