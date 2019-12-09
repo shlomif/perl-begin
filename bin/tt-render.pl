@@ -167,23 +167,20 @@ foreach my $result (@tt)
             my $text = $nav_links_renderer->get_total_html(@params);
 =cut
 
-    my $t2 = '';
+    my $nav_links_html = '';
 
+LINKS:
+    foreach my $key ( sort { $a cmp $b } keys(%$nav_links_obj) )
     {
-        my @keys = ( sort { $a cmp $b } keys(%$nav_links_obj) );
-    LINKS:
-        foreach my $key (@keys)
+        if ( ( $key eq 'top' ) or ( $key eq 'up' ) )
         {
-            if ( ( $key eq 'top' ) or ( $key eq 'up' ) )
-            {
-                next LINKS;
-            }
-            my $val        = $nav_links_obj->{$key};
-            my $url        = escape_html( $val->direct_url() );
-            my $title      = $val->title();
-            my $title_attr = defined($title) ? " title=\"$title\"" : "";
-            $t2 .= "<link rel=\"$key\" href=\"$url\"$title_attr />\n";
+            next LINKS;
         }
+        my $val        = $nav_links_obj->{$key};
+        my $url        = escape_html( $val->direct_url() );
+        my $title      = $val->title();
+        my $title_attr = defined($title) ? " title=\"$title\"" : "";
+        $nav_links_html .= "<link rel=\"$key\" href=\"$url\"$title_attr />\n";
     }
 
     my $leading_path = $rendered_results->{leading_path};
@@ -200,7 +197,7 @@ foreach my $result (@tt)
     mkpath( File::Spec->catdir( @DEST, @fn[ 0 .. $#fn - 1 ] ) );
     $vars->{base_path}           = $base_path;
     $vars->{leading_path_string} = $leading_path_string;
-    $vars->{nav_links}           = $t2;
+    $vars->{nav_links}           = $nav_links_html;
     $vars->{nav_menu_html}       = join( '', @$nav_html );
     $vars->{share_link}          = $share_link;
     $vars->{slurp_bad_elems}     = sub {
