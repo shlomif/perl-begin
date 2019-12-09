@@ -42,14 +42,16 @@ my $template      = Template->new(
 
 sub cpan_mod
 {
-    my %args = @_;
-    return qq#<a href="http://metacpan.org/module/$args{m}">$args{body}</a>#;
+    my $args = shift;
+    return
+        qq#<a href="http://metacpan.org/module/$args->{m}">$args->{body}</a>#;
 }
 
 sub cpan_dist
 {
-    my %args = %{ shift() };
-    return qq#<a href="http://metacpan.org/release/$args{d}">$args{body}</a>#;
+    my $args = shift();
+    return
+        qq#<a href="http://metacpan.org/release/$args->{d}">$args->{body}</a>#;
 }
 
 sub retrieved_slurp
@@ -65,22 +67,22 @@ sub slurp
 my @DEST = ( ".", "dest", );
 my $vars = +{
     wiki_link => sub {
-        my %args = %{ shift() // {} };
+        my $args = shift;
         return qq#http://perl.net.au/wiki/Beginners#
-            . ( $args{url} ? '/' . $args{url} : '' );
+            . ( $args->{url} ? '/' . $args->{url} : '' );
     },
     cpan_self_mod => sub {
-        my %args = %{ shift() };
-        return cpan_mod( %args, body => $args{m} );
+        my $args = shift;
+        return cpan_mod( { %$args, body => $args->{'m'} } );
     },
     cpan_b_self_dist => sub {
-        my %args = %{ shift() };
-        return cpan_dist( { %args, body => "<b>$args{d}</b>", } );
+        my $args = shift;
+        return cpan_dist( { %$args, body => "<b>$args->{d}</b>", } );
     },
     irc_channel => sub {
-        my %args    = %{ shift() };
-        my $net     = $args{net};
-        my $chan    = $args{chan};
+        my $args    = shift;
+        my $net     = $args->{net};
+        my $chan    = $args->{chan};
         my %servers = (
             'freenode' => "irc.freenode.net",
             'efnet'    => "irc.Prison.NET",
@@ -98,8 +100,8 @@ my $vars = +{
             . "/%23$chan\"><code>#$chan</code></a>";
     },
     cpan_self_dist => sub {
-        my %args = %{ shift() };
-        return cpan_dist( { %args, body => $args{d} } );
+        my $args = shift;
+        return cpan_dist( { %$args, body => $args->{d} } );
     },
     retrieved_slurp => \&retrieved_slurp,
     p4n_slurp       => sub {
