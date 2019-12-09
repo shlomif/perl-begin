@@ -19,11 +19,11 @@ use MyNavData            ();
 sub _render_leading_path_component
 {
     my $component  = shift;
-    my $title      = $component->title();
-    my $title_attr = defined($title) ? " title=\"$title\"" : "";
+    my $title      = $component->title;
+    my $title_attr = defined($title) ? qq# title="$title"# : "";
     return
           "<a href=\""
-        . escape_html( $component->direct_url() )
+        . escape_html( $component->direct_url )
         . "\"$title_attr>"
         . $component->label() . "</a>";
 }
@@ -95,9 +95,7 @@ my $vars = +{
             die "Unknown network!";
         }
         return
-              "<a href=\"irc://"
-            . $servers{$net}
-            . "/%23$chan\"><code>#$chan</code></a>";
+            qq|<a href="irc://$servers{$net}/%23$chan"><code>#$chan</code></a>|;
     },
     cpan_self_dist => sub {
         my $args = shift;
