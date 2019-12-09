@@ -11,7 +11,6 @@ use Template ();
 
 use File::Basename qw( basename );
 use File::Path qw( mkpath );
-use File::Spec ();
 use Path::Tiny qw/ path /;
 
 use HTML::Widgets::NavMenu::HeaderRole ();
@@ -65,7 +64,7 @@ sub slurp
     return path(shift)->slurp_utf8;
 }
 
-my @DEST = ( File::Spec->curdir(), "dest", );
+my @DEST = ( ".", "dest", );
 my $vars = +{
     wiki_link => sub {
         my %args = %{ shift() // {} };
@@ -194,7 +193,7 @@ LINKS:
         )
     );
 
-    mkpath( File::Spec->catdir( @DEST, @fn[ 0 .. $#fn - 1 ] ) );
+    path( @DEST, @fn[ 0 .. $#fn - 1 ] )->mkpath;
     $vars->{base_path}           = $base_path;
     $vars->{leading_path_string} = $leading_path_string;
     $vars->{nav_links}           = $nav_links_html;
@@ -209,23 +208,5 @@ LINKS:
         or die $template->error();
 
     $toc->add_toc( \$html );
-    path( File::Spec->catfile( @DEST, @fn, ) )->spew_utf8($html);
-
-=begin removed
-
-        elsif (
-            $basename !~ /~\z/
-            && ( !($basename =~ /\A\./ && $basename =~ /\.swp\z/) )
-            && ($basename ne 'process.pl')
-        )
-        {
-            copy($result->path,
-                File::Spec->catfile(@DEST,
-                    @{$result->dir_components()}, $basename),
-            );
-        }
-=end removed
-
-=cut
-
+    path( @DEST, @fn, )->spew_utf8($html);
 }
