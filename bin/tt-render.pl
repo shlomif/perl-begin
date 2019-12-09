@@ -28,8 +28,6 @@ sub _render_leading_path_component
         . $component->label() . "</a>";
 }
 
-# use MyNavLinks ();
-
 my $LATEMP_SERVER = "perl_begin";
 my $template      = Template->new(
     {
@@ -54,14 +52,14 @@ sub cpan_dist
         qq#<a href="http://metacpan.org/release/$args->{d}">$args->{body}</a>#;
 }
 
-sub retrieved_slurp
-{
-    return slurp( "lib/retrieved-html-parts/" . shift );
-}
-
 sub slurp
 {
     return path(shift)->slurp_utf8;
+}
+
+sub retrieved_slurp
+{
+    return slurp( "lib/retrieved-html-parts/" . shift );
 }
 
 my @DEST = ( ".", "dest", );
@@ -122,9 +120,9 @@ my $vars = +{
 my @tt = path("lib/make/tt2.txt")->lines_raw;
 chomp @tt;
 my $toc = HTML::Latemp::AddToc->new;
-foreach my $result (@tt)
+foreach my $input_tt2_page_path (@tt)
 {
-    my @fn     = split m#/#, $result;
+    my @fn     = split m#/#, $input_tt2_page_path;
     my @fn_nav = @fn;
     if ( $fn_nav[-1] =~ m#\Aindex\.x?html\z# )
     {
@@ -132,9 +130,8 @@ foreach my $result (@tt)
     }
     my $base_path =
         ( '../' x ( scalar(@fn) - 1 ) );
-    my $fn2     = join( '/', @fn_nav ) || '/';
     my $nav_bar = HTML::Widgets::NavMenu::HeaderRole->new(
-        'path_info'    => $fn2,
+        'path_info'    => ( join( '/', @fn_nav ) || '/' ),
         'current_host' => $LATEMP_SERVER,
         MyNavData::get_params(),
         'ul_classes'     => [],
@@ -183,24 +180,24 @@ LINKS:
 
     my $leading_path_string = join( " → ",
         ( map { _render_leading_path_component($_) } @$leading_path ) );
-    my $share_link = escape_html(
-        uri_escape(
-            MyNavData::get_hosts()->{ $nav_bar->current_host() }->{'base_url'}
-                . $nav_bar->path_info()
-        )
-    );
 
     $vars->{base_path}           = $base_path;
     $vars->{leading_path_string} = $leading_path_string;
     $vars->{nav_links}           = $nav_links_html;
     $vars->{nav_menu_html}       = join( '', @$nav_html );
-    $vars->{share_link}          = $share_link;
-    $vars->{slurp_bad_elems}     = sub {
+    $vars->{share_link}          = escape_html(
+        uri_escape(
+            MyNavData::get_hosts()->{ $nav_bar->current_host() }->{'base_url'}
+                . $nav_bar->path_info()
+        )
+    );
+    $vars->{slurp_bad_elems} = sub {
         return path("lib/docbook/5/rendered/bad-elements.xhtml")->slurp_utf8()
             =~ s{\$\(ROOT\)}{$base_path}gr;
     };
     my $html = '';
-    $template->process( "src/$result.tt2", $vars, \$html, binmode => ':utf8', )
+    $template->process( "src/$input_tt2_page_path.tt2",
+        $vars, \$html, binmode => ':utf8', )
         or die $template->error();
 
     $toc->add_toc( \$html );
