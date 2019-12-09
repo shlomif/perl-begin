@@ -190,7 +190,6 @@ LINKS:
         )
     );
 
-    path( @DEST, @fn[ 0 .. $#fn - 1 ] )->mkpath;
     $vars->{base_path}           = $base_path;
     $vars->{leading_path_string} = $leading_path_string;
     $vars->{nav_links}           = $nav_links_html;
