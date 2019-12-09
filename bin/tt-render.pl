@@ -9,8 +9,6 @@ use lib './lib';
 use URI::Escape qw( uri_escape );
 use Template ();
 
-use File::Basename qw( basename );
-use File::Path qw( mkpath );
 use Path::Tiny qw/ path /;
 
 use HTML::Widgets::NavMenu::HeaderRole ();
@@ -126,9 +124,8 @@ chomp @tt;
 my $toc = HTML::Latemp::AddToc->new;
 foreach my $result (@tt)
 {
-    my $basename = basename($result);
-    my @fn       = split m#/#, $result;
-    my @fn_nav   = @fn;
+    my @fn     = split m#/#, $result;
+    my @fn_nav = @fn;
     if ( $fn_nav[-1] =~ m#\Aindex\.x?html\z# )
     {
         $fn_nav[-1] = '';
