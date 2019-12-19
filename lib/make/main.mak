@@ -6,9 +6,6 @@ all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 all_deps: bulk-make-dirs bad_elements_html run_compass
 
 include lib/make/shlomif_common.mak
-
-LATEMP_COPY = $(COPY)
-
 include lib/make/include.mak
 include lib/make/rules.mak
 include lib/make/p4n.mak
