@@ -29,6 +29,10 @@ Consumers</a> that can read TAP, process it and do something with the results.
 
 <ul>
 
+<li>
+<a href="https://github.com/shlomif/what-you-should-know-about-automated-testing">"What you should know about automated software testing"</a> - a short, programming language-agnostic introduction on GitHub (under CC0/Public Domain).
+</li>
+
 <li id="szabgab_course">
 <a href="http://www.szabgab.com/talks/perl_in_testing/">Testing with Perl</a> -
 complete online slides for the course by
@@ -36,7 +40,7 @@ complete online slides for the course by
 </li>
 
 <li id="test_tutorial">
-<a href="http://metacpan.org/module/Test::Tutorial">Test::Tutorial</a> -
+<a href="https://metacpan.org/module/Test::Tutorial">Test::Tutorial</a> -
 introduces writing tests with the Perl test modules.
 </li>
 

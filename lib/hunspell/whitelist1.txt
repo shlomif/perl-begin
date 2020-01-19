@@ -1824,6 +1824,10 @@ parallelise
 perlthrtut
 ptys
 
+==== In: dest/uses/qa/index.html
+
+CC0
+
 ==== In: dest/uses/remote-login-and-commands/index.html
 
 IPC-PerlSSH
