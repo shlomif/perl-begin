@@ -2122,7 +2122,7 @@ should not be a concern to avoid clarity.
 <title>Using \1 instead of $1 on the Right Hand Side of a Substitution</title>
 </info>
 <p>
-There is no good reason to use <code>\\1</code>, <code>\\2</code>, etc. in the
+There is no good reason to use <code>\1</code>, <code>\2</code>, etc. in the
 right-hand-side of a substitution instead of <code>$1</code> <code>$2</code>
 etc. While this may work, the backslash-digits variables are aimed at
 back-references, such as matching the exact string of a capture again within
