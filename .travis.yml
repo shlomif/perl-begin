@@ -56,7 +56,7 @@ deploy:
         tags: true
     skip_cleanup: true
 go:
-    - '1.11.x'
+    - '1.13.x'
 os: linux
 dist: xenial
 before_install:
