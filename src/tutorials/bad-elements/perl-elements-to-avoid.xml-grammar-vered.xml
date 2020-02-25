@@ -2933,6 +2933,30 @@ else
 </code_blk>
 </item>
 
+<item xml:id="empty-regex-patterns">
+<info>
+<title>Using empty regular expressions patterns</title>
+</info>
+
+<p>
+If you write code like <code>if ($string =~ /$pattern/) { … }</code>
+and <code>$pattern</code> happens to be the empty string, then it will
+apply the last successful match on <code>$string</code> rather than
+always return true (due to using the empty pattern).
+</p>
+
+<p>
+One can fix the problematic behaviour by writing <code>(length($pattern) ? ($string =~ /$pattern) : 1)</code>
+or <code>($string =~ /(?:)$pattern/)</code>.
+</p>
+
+<p>
+For more information, see the discussion at
+<a xlink:href="https://github.com/Perl/perl5/issues/17577">perl 5 issue #17577</a>.
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
