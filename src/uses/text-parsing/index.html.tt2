@@ -193,4 +193,6 @@ while ($string =~ m{\G.*?\[([^\]]+)\]}cg)
 This example is a bit contrived, but should be illustrative enough.
 </p>
 
+[% INCLUDE text_processing_links %]
+
 [% END %]

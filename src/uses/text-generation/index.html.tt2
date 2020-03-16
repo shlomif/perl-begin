@@ -181,4 +181,6 @@ List processing CPAN modules such as
 
 </ul>
 
+[% INCLUDE text_processing_links %]
+
 [% END %]

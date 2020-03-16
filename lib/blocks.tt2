@@ -275,6 +275,36 @@ Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a> | <a href=
 
 [% PROCESS "h_sections.tt2" %]
 
+[% BLOCK text_processing_links %]
+
+[% WRAPPER h2_section id = "text-processing-links"  title = "Links to more text processing resources"  %]
+
+<ul>
+
+<li>
+<p>
+<a href="[% base_path %]uses/text-generation/">Text Generation in Perl</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="[% base_path %]uses/text-parsing/">Text Parsing in Perl</a>
+</p>
+</li>
+
+
+<li>
+<p>
+<a href="https://www.shlomifish.org/open-source/resources/text-processing-tools/">List of Text Processing Tools and Libraries</a>
+</p>
+</li>
+</ul>
+
+[% END %]
+
+[% END %]
+
 [%- BLOCK wrap_html -%]
 [%- PROCESS start_html -%]
 [% content %]
