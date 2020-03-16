@@ -68,6 +68,7 @@ Wikis
 Win32
 Wrox
 XHTML
+XHTML5
 XML
 XML-LibXML
 XMPP
