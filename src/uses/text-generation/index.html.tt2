@@ -146,7 +146,7 @@ A convenient CPAN module for outputting XML.
 
 <p>
 An alternative option to generating text is to create arrays or more complex
-operations and serialise them into one large string (although this may be best
+data structures and serialise them into one large string (although this may be best
 done using <a href="#template-toolkit">Template Toolkit</a>). Here are some
 pointers to get you started:
 </p>
