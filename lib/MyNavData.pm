@@ -392,6 +392,19 @@ my $tree_contents = {
                     title => "How (and When) to make your Perl programs faster",
                 },
                 {
+                    text  => "Security",
+                    url   => "topics/security/",
+                    title => "Guidelines for Writing Secure Perl code",
+                    subs  => [
+                        {
+                            text => "Code/Markup Injection",
+                            url  => "topics/security/code-markup-injection/",
+                            title =>
+"Code/Markup Injection and its Prevention : SQL Injection, XSS, etc.",
+                        },
+                    ],
+                },
+                {
                     text => "Scoping and Variables",
                     url  => "topics/scoping/",
                     title =>

@@ -29,6 +29,7 @@ IRC
 Inc
 LGPL
 LiveJournal
+Markup
 MediaWiki-based
 MetaCPAN
 Moertel
@@ -712,7 +713,6 @@ pl
 -f
 EOF
 Juerd
-Markup
 PDP-11
 Spolsky's
 String-ShellQuote
@@ -734,6 +734,10 @@ perlunitut
 quotemeta
 regex
 xkcd
+
+==== In: dest/topics/security/index.html
+
+perlsec
 
 ==== In: dest/tutorials/bad-elements/index.html
 
@@ -810,7 +814,6 @@ IPC-Run
 IPC-System-Simple
 JSON
 Lowercase
-Markup
 Math
 Mattijsen's
 MoreUtils

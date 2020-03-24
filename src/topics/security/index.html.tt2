@@ -1,0 +1,28 @@
+[%- SET title = "Debugging Perl Programs" -%]
+[%- PROCESS "blocks.tt2" -%]
+[%- PROCESS "tut_blocks.tt2" -%]
+[%- WRAPPER wrap_html -%]
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+Some resources for writing more secure Perl code.
+</p>
+
+<ol>
+
+<li>
+<p>
+[%- WRAPPER pdoc d = "perlsec" -%] - security in perl[%- END -%]
+</p>
+</li>
+
+<li>
+<p>
+<a href="[% base_path %]topics/security/code-markup-injection/">Code/Markup Injection</a>
+</p>
+</li>
+
+</ol>
+
+[% END %]
