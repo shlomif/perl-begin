@@ -1773,6 +1773,7 @@ POE
 POE-Component-IRC
 PoCoIrc
 Silverex
+WeeChat
 XChat
 evalbots
 infobots

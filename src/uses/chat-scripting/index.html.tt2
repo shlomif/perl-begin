@@ -142,6 +142,13 @@ with POE, and POE-Component-IRC.
 </p>
 </li>
 
+<li>
+<p>
+<a href="https://weechat.org/">WeeChat</a> - an open source console
+client with support for scripting in Perl and other languages.
+</p>
+</li>
+
 </ol>
 
 <h2 id="voip">Voice-over-IP (Asterisk/etc.) Support for Perl</h2>
