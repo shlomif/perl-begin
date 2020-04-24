@@ -2977,6 +2977,78 @@ for them.
 
 </item>
 
+<item xml:id="plan-skip_all">
+<info>
+<title>"plan skip_all" with "use Test::More tests =&gt; [count];"</title>
+</info>
+
+<p>
+If you write Test::More code like:
+</p>
+
+<bad_code syntax="perl">
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Test::More tests =&gt; 1;
+
+eval "use Uninstalled::Module;";
+
+if ($@)
+{
+    plan 'skip_all' =&gt; "Failed to load Uninstalled::Module . Skipping.";
+}
+
+# TEST
+pass("passing");
+</bad_code>
+
+<p>
+Then running it will give:
+</p>
+
+<code_blk syntax="txt">
+$ prove t/uninstalled.t
+You tried to plan twice at t/uninstalled.t line 9.
+# Looks like your test exited with 2 before it could output anything.
+t/uninstalled.t .. Dubious, test returned 2 (wstat 512, 0x200)
+Failed 1/1 subtests
+
+Test Summary Report
+-------------------
+t/uninstalled.t (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: Bad plan.  You planned 1 tests but ran 0.
+Files=1, Tests=0,  0 wallclock secs ( 0.03 usr  0.00 sys +  0.05 cusr  0.00 csys =  0.08 CPU)
+Result: FAIL
+</code_blk>
+
+<p>
+One should use <code>plan tests =&gt; instead</code>
+</p>
+
+<code_blk syntax="perl">
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Test::More;
+
+eval "use Test::Trap;";
+
+if ($@)
+{
+    plan 'skip_all' =&gt; "Failed to load Test::Trap . Skipping.";
+}
+else
+{
+    plan tests =&gt; 1;
+}
+</code_blk>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>

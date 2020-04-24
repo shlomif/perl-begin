@@ -759,6 +759,7 @@ perlsec
 'name
 's
 'shlomif
+'skip_all
 'sophie
 't
 --show-ends
@@ -777,6 +778,7 @@ perlsec
 -w
 0x1
 0x20
+0x200
 2a
 2x
 5's
@@ -853,12 +855,14 @@ SumOfSquares
 Tk
 Torvalds
 TrailingSpace
+Uninstalled
 Util
 Utils
 Varvarname
 W
 WTF
 Whitespace
+Wstat
 Zilla
 [-n-ame
 _age
@@ -886,6 +890,8 @@ chromatic's
 closedir
 coeff
 cond_var
+csys
+cusr
 deck_size
 deck_size-
 deck_size-1
@@ -1008,10 +1014,12 @@ refactoring
 regex
 ret
 rm
+secs
 sed
 self-
 send_email
 sha-bang
+skip_all
 sophie
 srand
 str
@@ -1019,7 +1027,9 @@ string-eval
 stringification
 sub-regex
 substr
+subtests
 sum_of_squares
+sys
 temp_file
 tempfile
 three-args
@@ -1029,6 +1039,7 @@ two-args
 txt
 uk_info
 undef
+uninstalled
 uppercase
 username
 usr
@@ -1038,9 +1049,11 @@ var
 var1
 varvarname
 w
+wallclock
 wc
 whitespace
 write_fh
+wstat
 x0a
 x0d
 x_power
