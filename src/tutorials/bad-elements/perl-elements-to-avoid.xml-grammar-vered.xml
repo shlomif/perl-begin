@@ -2978,6 +2978,7 @@ for them.
 </item>
 
 <item xml:id="plan-skip_all">
+
 <info>
 <title>"plan skip_all" with "use Test::More tests =&gt; [count];"</title>
 </info>
@@ -3025,7 +3026,9 @@ Result: FAIL
 </code_blk>
 
 <p>
-One should use <code>plan tests =&gt; instead</code>
+Instead, one should load Test::More using <code>use Test::More;</code> and use
+<code>plan tests =&gt;</code> in a separate conditional's branch than the <code>skip_all</code>
+one.
 </p>
 
 <code_blk syntax="perl">
