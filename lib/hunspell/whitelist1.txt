@@ -800,7 +800,9 @@ EOL
 EmacsWiki
 Epoll
 Eval
+File-Find-CaseCollide
 FileHandle
+Filenames
 Foo
 FreeBSD
 GetOptionsFromArray
@@ -837,6 +839,7 @@ Perl-based
 Perl6-Form
 Person-
 Randal
+ReadMe
 Readonly
 Refactoring
 Regex
@@ -999,6 +1002,7 @@ qw
 qx
 read_dir
 readdir
+readme
 rec_p
 refactoring
 regex

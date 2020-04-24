@@ -2957,6 +2957,26 @@ For more information, see the discussion at
 
 </item>
 
+<item xml:id="filenames-with-case-collisions">
+<info>
+<title>Filenames with case collisions</title>
+</info>
+
+<p>
+One should not use filenames for two or more files (or directories) which
+are the same except for <a xlink:href="https://en.wikipedia.org/wiki/Letter_case">letter case / capitalization</a>
+such as <code>readme.txt</code> and <code>ReadMe.txt</code>, because some
+<a xlink:href="https://en.wikipedia.org/wiki/File_system">file systems</a>
+are case insensitive.
+</p>
+
+<p>
+One can use <cpan_self_dist d="File-Find-CaseCollide" /> or similar to test
+for them.
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
