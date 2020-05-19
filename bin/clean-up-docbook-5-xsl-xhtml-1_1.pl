@@ -1,20 +1,22 @@
 #!/usr/bin/env perl
 
+use 5.014;
 use strict;
 use warnings;
 use autodie;
 
 use Path::Tiny qw/ path /;
+use Getopt::Long qw/ GetOptions /;
+use HTML::Entities qw/ decode_entities /;
+use Text::VimColor ();
 
 # use XML::LibXML;
 # use XML::LibXML::XPathContext;
-use Getopt::Long qw/ GetOptions /;
-use HTML::Entities qw/ decode_entities /;
-use Text::VimColor;
 
 my $out_fn;
 
-GetOptions( "output|o=s" => \$out_fn, );
+GetOptions( "output|o=s" => \$out_fn, )
+    or die $!;
 
 # Input the filename
 my $filename = shift(@ARGV)
