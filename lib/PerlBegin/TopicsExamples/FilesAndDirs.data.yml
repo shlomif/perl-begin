@@ -275,3 +275,36 @@
     label: Core Perl
   id_base: prepend_to_file_while_slurping
   title: Prepending to a File (While Slurping)
+- examples:
+  - code: |
+      use Path::Tiny qw/ path /;
+
+      my $filename = 'foo.txt';
+      my @lines = path($filename)->lines_utf8(
+          {
+              chomp => 1,
+          })
+    id: path_tiny
+    label: Path-Tiny
+  - code: |
+      use autodie;
+
+      sub _lines_utf8
+      {
+          my $filename =shift;
+          open my $fh, '<:encoding(utf-8)', $filename;
+          my @ret;
+          while(my $l=<$fh>)
+          {
+              chomp$l;
+              push@ret, $l;
+          }
+          close $fh;
+          return \@ret;
+      }
+
+      my $aref = _lines_utf8('/etc/resolv.conf');
+    id: core
+    label: Core Perl
+  id_base: lines_without_trailing_newlines
+  title: Get an array of lines in a file with trailing newlines removed
