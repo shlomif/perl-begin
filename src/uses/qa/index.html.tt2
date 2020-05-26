@@ -51,7 +51,7 @@ the book by chromatic has chapter 9 dedicated to Testing.
 
 <li id="perl_for_newbies">
 <a href="[% base_path %]tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
-the fifth part of this tutorial covers testing among other good practises.
+the fifth part of this tutorial covers testing among other good practices.
 </li>
 
 <li>
