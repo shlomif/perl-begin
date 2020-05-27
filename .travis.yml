@@ -21,6 +21,8 @@ addons:
             - inkscape
             - libdb5.3-dev
             - libgd-dev
+            - libgdbm-dev
+            - libgdbm-compat-dev
             - libhunspell-dev
             - libncurses-dev
             - libpcre3-dev
