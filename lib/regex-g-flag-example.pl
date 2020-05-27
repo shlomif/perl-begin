@@ -26,5 +26,5 @@ while ( $s =~
     push @results, +{ ( map { $_ => $+{$_} } qw(name address pets) ) };
 }
 
-use Data::Dumper;
+use Data::Dumper qw/ Dumper /;
 print Dumper( \@results );

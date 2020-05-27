@@ -3,7 +3,7 @@ package VimIface;
 use strict;
 use warnings;
 
-use Text::VimColor;
+use Text::VimColor ();
 
 sub is_newer
 {

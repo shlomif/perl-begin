@@ -1,10 +1,10 @@
 package PerlBegin::TopicsExamples::FilesAndDirs;
 
-use PerlBegin::TopicsExamples;
+use PerlBegin::TopicsExamples ();
 
 use strict;
 use warnings;
-use YAML::XS qw/ DumpFile LoadFile /;
+use YAML::XS qw/ LoadFile /;
 
 sub _run
 {

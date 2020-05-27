@@ -5,12 +5,13 @@ use warnings;
 
 use Test::More tests => 1;
 
-use IO::All;
+use Path::Tiny qw/ path /;
 
 {
     # TEST
     like(
-        io->file("./dest/index.html")->utf8->all,
-        qr#<meta(?: charset="utf-8")\s*/>#
+        path("./dest/index.html")->slurp_utf8(),
+        qr#<meta(?: charset="utf-8")\s*/>#,
+        "Has meta tag",
     );
 }

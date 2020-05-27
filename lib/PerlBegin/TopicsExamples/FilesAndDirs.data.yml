@@ -1,7 +1,7 @@
 ---
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       my $filename_to_read = 'my-file.txt';
 
@@ -31,7 +31,7 @@
   title: Reading a file line by line
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       my ($source_filename, $dest_filename) = @_;
       io->file($source_filename) > io->file($dest_filename);
@@ -49,7 +49,7 @@
   title: Copying a file
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       io->file("output.txt")->utf8->print("Hello World!\n");
     id: io_all
@@ -112,7 +112,7 @@
   title: Processing the Lines of a File
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       my $string = io->file($my_filepath)->utf8->all;
     id: io_all
@@ -152,7 +152,7 @@
   title: Reading an entire UTF-8 file into a big variable
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       my $string_to_append = "My new line\n";
 
@@ -175,7 +175,7 @@
   title: Appending to a File
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       sub count_lines
       {
@@ -224,7 +224,7 @@
   title: Line count
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       io("./path-to-subdir")->rmtree();
     id: io_all
@@ -239,7 +239,7 @@
   title: Deleting a directory tree
 - examples:
   - code: |
-      use IO::All;
+      use IO::All qw/ io /;
 
       my $filename = 'foo.txt';
       my $text_to_prepend = "[Text to Prepend]\n";

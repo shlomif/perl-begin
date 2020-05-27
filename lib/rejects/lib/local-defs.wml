@@ -11,10 +11,10 @@
 <preserve object_class />
 <set-var object_class="<latemp_default_val "<get-var latemp_navmenu_object_class />" "HTML::Widgets::NavMenu" />" />
 <:{
-use MyNavData;
+use MyNavData ();
 use <get-var object_class />;
-use CGI qw();
-use MyNavLinks;
+use CGI ();
+use MyNavLinks ();
 
 my $filename = "<latemp_default_val "<get-var latemp_filename />" "$(LATEMP_FILENAME)" />";
 $filename =~ s!index\.html$!!;

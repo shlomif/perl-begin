@@ -1,5 +1,5 @@
 <:
-use PerlBegin::Books;
+use PerlBegin::Books ();
 :>
 <define-tag book_info>
 

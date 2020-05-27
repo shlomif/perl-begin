@@ -1106,7 +1106,7 @@ Here's an example:
 package Math::SumOfSquares;
 use strict;
 use warnings;
-use List::Utils qw(sum);
+use List::Util qw(sum);
 sub _square
 {
     my $n = shift;

@@ -5,8 +5,8 @@ use warnings;
 
 use MooX 'late';
 
-use CGI ();
-use Text::VimColor;
+use CGI            ();
+use Text::VimColor ();
 
 use Carp ();
 

@@ -1,5 +1,8 @@
-#!/usr/bin/env perl -w
+#!/usr/bin/env perl
 
+use 5.014;
+use autodie;
+use warnings;
 use strict;
 use diagnostics;
 
@@ -50,16 +53,16 @@ my @slides = qw(
 
 foreach my $slide (@slides)
 {
-    open SLIDE, ">$slide" or die "Cannot open '$slide' for writing: $!";
+    open my $fh, ">", $slide;
 
-    print SLIDE "
+    $fh->print( "
 
 <p>$slide</p>
 
 <%attr>
 title => '$slide'
 </%attr>
-";
+" );
 
-    close SLIDE;
+    close $fh;
 }
