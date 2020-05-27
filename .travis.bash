@@ -31,10 +31,10 @@ then
             sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
         fi
     fi
-    cpanm local::lib
+    cpanm --local-lib=~/perl_modules local::lib
     eval "$(GIMME_GO_VERSION=1.13 gimme)"
     go get -u github.com/tdewolff/minify/cmd/minify
-    eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
+    eval "$(perl -I ~/perl_modules/lib/perl5 -Mlocal::lib=$HOME/perl_modules)"
     cpanm App::Deps::Verify App::XML::DocBook::Builder Pod::Xhtml
     cpanm HTML::T5
     # For wml
