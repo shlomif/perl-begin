@@ -17,8 +17,8 @@ addons:
             - fortune-mod
             - graphicsmagick
             - hunspell
+            - hunspell-en-gb
             - inkscape
-            - myspell-en-gb
             - libdb5.3-dev
             - libgd-dev
             - libhunspell-dev
@@ -27,7 +27,6 @@ addons:
             - libperl-dev
             - libxml2-dev
             - mercurial
-            - myspell-en-gb
             - lynx
             - optipng
             - perl
