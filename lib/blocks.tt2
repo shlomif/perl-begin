@@ -10,6 +10,19 @@ Useful modules for files and directories handling are:
 <ul>
 
 <li>
+[% cpan_self_dist( "d" => "Path-Tiny", ) %] - a module that provides a “fast
+utility for working with file paths” and which despite its name, provides a
+comprehensive and rich API.
+</li>
+
+<li>
+[% cpan_self_dist( "d" => "File-Slurper", ) %] - a module for fast and easy input
+and output from files and directories. The interface is procedural
+and quite Spartan, but is still useful. (<b>Note:</b> Using File-Slurp,
+and File-Slurp-Tiny which were found to be broken, is no longer recommended.)
+</li>
+
+<li>
 <a href="http://perldoc.perl.org/File/Spec.html">File::Spec</a> - a core module
 to handle file and directory paths portably.
 </li>
@@ -36,20 +49,9 @@ trees (portably).
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "IO-All", ) %] - an all-in-one
-IO package with a lot of syntactic sugar. Non-core.
-</li>
-
-<li>
-[% cpan_self_dist( "d" => "File-Slurp-Tiny", ) %] - a module for fast and easy input
-and output from files and directories. The interface is procedural
-and quite Spartan, but is still useful. (<b>Note:</b> Using File-Slurp,
-which was found to be broken, is no longer recommended.)
-</li>
-
-<li>
-[% cpan_self_dist( "d" => "Path-Tiny", ) %] - a module that provides “a small, fast
-utility for working with file paths”.
+[% cpan_self_dist( "d" => "IO-All", ) %] - a no longer recommended
+all-in-one IO package with a lot of syntactic sugar, but quite a
+few quirks and bugs. Non-core.
 </li>
 
 </ul>
