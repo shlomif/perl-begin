@@ -53,8 +53,8 @@
       use Path::Tiny qw/ path /;
 
       path("output.txt")->spew_utf8("Hello World!\n");
-    id: io_all
-    label: IO-All
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
