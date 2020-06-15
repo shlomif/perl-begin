@@ -1,17 +1,18 @@
 ---
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
       my $filename_to_read = 'my-file.txt';
 
-      my $fh = io->file($filename_to_read);
-      while (my $line = $fh->chomp->getline())
+      my $fh = path($filename)->openr_utf8;
+      while (my $line = <$fh>)
       {
+          chomp($line);
           # Do something with $line.
       }
-    id: io_all
-    label: IO-All
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
@@ -31,12 +32,12 @@
   title: Reading a file line by line
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
       my ($source_filename, $dest_filename) = @_;
-      io->file($source_filename) > io->file($dest_filename);
-    id: io_all
-    label: IO-All
+      path($source_filename)->copy($dest_filename);
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use File::Copy qw(copy);
 
@@ -49,9 +50,9 @@
   title: Copying a file
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
-      io->file("output.txt")->utf8->print("Hello World!\n");
+      path("output.txt")->spew_utf8("Hello World!\n");
     id: io_all
     label: IO-All
   - code: |
@@ -112,17 +113,11 @@
   title: Processing the Lines of a File
 - examples:
   - code: |
-      use IO::All qw/ io /;
-
-      my $string = io->file($my_filepath)->utf8->all;
-    id: io_all
-    label: IO-All
-  - code: |
       use Path::Tiny qw/ path /;
 
       my $string = path($my_filepath)->slurp_utf8;
     id: path_tiny
-    label: Path-Tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
@@ -148,17 +143,23 @@
     id: cmd_line
     label: Command Line
     no_syntax: 1
+  - code: |
+      use IO::All qw/ io /;
+
+      my $string = io->file($my_filepath)->utf8->all;
+    id: io_all
+    label: IO-All (Not recommended)
   id_base: string_slurp_utf8
   title: Reading an entire UTF-8 file into a big variable
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
       my $string_to_append = "My new line\n";
 
-      $string_to_append >> io->file($my_file_path);
-    id: io_all
-    label: IO-All
+      path($my_file_path)->append_utf8($string_to_append);
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
@@ -175,25 +176,25 @@
   title: Appending to a File
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
       sub count_lines
       {
           my ($filename) = @_;
 
-          my $fh = io->file($filename);
+          my $fh = path($filename)->openr_utf8;
 
           my $count = 0;
 
           while (my $l = <$fh>)
           {
-              $count++;
+              ++$count;
           }
 
           return $count;
       }
-    id: io_all
-    label: IO-All
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
@@ -206,7 +207,7 @@
           my $count = 0;
           while (my $l = <$fh>)
           {
-              $count++;
+              ++$count;
           }
 
           close($fh);
@@ -224,11 +225,11 @@
   title: Line count
 - examples:
   - code: |
-      use IO::All qw/ io /;
+      use Path::Tiny qw/ path /;
 
-      io("./path-to-subdir")->rmtree();
-    id: io_all
-    label: IO-All
+      path("./path-to-subdir")->remove_tree();
+    id: path_tiny
+    label: Path::Tiny
   - code: |
       use File::Path qw(rmtree);
 
@@ -239,17 +240,6 @@
   title: Deleting a directory tree
 - examples:
   - code: |
-      use IO::All qw/ io /;
-
-      my $filename = 'foo.txt';
-      my $text_to_prepend = "[Text to Prepend]\n";
-
-      my $fh = io->file($filename);
-
-      $fh->print( $text_to_prepend . $fh->all() );
-    id: io_all
-    label: IO-All
-  - code: |
       use Path::Tiny qw/ path /;
 
       my $filename = 'foo.txt';
@@ -257,7 +247,7 @@
 
       path($filename)->edit_utf8(sub { s/\A/$text_to_prepend/; return; });
     id: path_tiny
-    label: Path-Tiny
+    label: Path::Tiny
   - code: |
       my $filename = 'foo.txt';
       my $text_to_prepend = "[Text to Prepend]\n";
@@ -273,6 +263,17 @@
       close($out_fh);
     id: core
     label: Core Perl
+  - code: |
+      use IO::All qw/ io /;
+
+      my $filename = 'foo.txt';
+      my $text_to_prepend = "[Text to Prepend]\n";
+
+      my $fh = io->file($filename);
+
+      $fh->print( $text_to_prepend . $fh->all() );
+    id: io_all
+    label: IO-All (Not recommended)
   id_base: prepend_to_file_while_slurping
   title: Prepending to a File (While Slurping)
 - examples:
@@ -285,7 +286,7 @@
               chomp => 1,
           })
     id: path_tiny
-    label: Path-Tiny
+    label: Path::Tiny
   - code: |
       use autodie;
 
