@@ -119,18 +119,17 @@ my $vars = +{
 
 my @tt = path("lib/make/tt2.txt")->lines_raw;
 chomp @tt;
-my $toc = HTML::Latemp::AddToc->new;
+my $toc   = HTML::Latemp::AddToc->new;
+my %INDEX = ( map { $_ => 1 } 'index.html', 'index.xhtml' );
+
 foreach my $input_tt2_page_path (@tt)
 {
     my @fn     = split m#/#, $input_tt2_page_path;
     my @fn_nav = @fn;
-    if ( $fn_nav[-1] =~ m#\Aindex\.x?html\z# )
-    {
-        $fn_nav[-1] = '';
-    }
-    my $base_path =
-        ( '../' x ( scalar(@fn) - 1 ) );
-    my $nav_bar = HTML::Widgets::NavMenu::HeaderRole->new(
+    my $tail   = \( $fn_nav[-1] );
+    $$tail = '' if exists $INDEX{$$tail};
+    my $base_path = ( '../' x $#fn );
+    my $nav_bar   = HTML::Widgets::NavMenu::HeaderRole->new(
         'path_info'    => ( join( '/', @fn_nav ) || '/' ),
         'current_host' => $LATEMP_SERVER,
         MyNavData::get_params(),
