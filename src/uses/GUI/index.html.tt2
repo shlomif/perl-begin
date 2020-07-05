@@ -51,11 +51,17 @@ in-house use is OK.
 <h2 id="gtk"><a href="http://gtk2-perl.sourceforge.net/">gtk2-perl</a></h2>
 
 <p>
-A set of Perl bindings for GTK+ and various related libraries (including
-those of the GNOME project). Provides an attractive look and feel on
+A set of Perl bindings for <a href="https://en.wikipedia.org/wiki/GTK">GTK</a> and various related libraries
+(including those of the <a href="https://en.wikipedia.org/wiki/The_GNOME_Project">GNOME</a> project).
+Provides an attractive look and feel on
 <a href="http://en.wikipedia.org/wiki/X_Window_System">X-Window</a>-based
 UNIX systems (including Linux) which looks quite foreign on
 Microsoft Windows. A very capable and powerful GUI library.
+</p>
+
+<p>
+Note that there are <a href="https://metacpan.org/pod/Gtk3">perl bindings to GTK 3</a>
+made available by the same project.
 </p>
 
 [% END %]
