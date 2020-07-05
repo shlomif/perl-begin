@@ -89,6 +89,7 @@ vulnerabilities</a>.
 <ul>
 
 <li>
+<p>
 [%- WRAPPER cpan_dist d = "BerkeleyDB" -%]The BerkeleyDB CPAN module[%- END -%] is the
 standard module for working with
 <a href="http://www.oracle.com/technology/products/berkeley-db/index.html">Oracle
@@ -97,27 +98,38 @@ library's API closely. Note that Berkeley DB is licensed under
 <a href="http://en.wikipedia.org/wiki/Sleepycat_License">the Sleepycat
 License</a> which is strong copyleft, and does not allow use for non-open-source
 programs.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://fallabs.com/tokyocabinet/">Tokyo Cabinet</a> - a modern,
 fast and powerful DBM implementation available under the LGPL license (which
 permits use in non-open-source projects). There’s also
 <a href="http://fallabs.com/kyotocabinet/">Kyoto Cabinet</a>, which is claimed
 to be better, but is under the GPL license (which is strong copyleft and does
 not permit use in non-open-source projects).
+</p>
 </li>
 
 <li>
-<a href="http://code.google.com/p/leveldb/">LevelDB</a> from Google, a
+<p>
+<a href="https://github.com/google/leveldb">LevelDB</a> from Google, a
 fast key-value storage library, open-source under the new BSD license (which
-allows use for non-open-source programs. Has Perl bindings on CPAN called
+allows use for non-open-source programs). Has Perl bindings on CPAN called
 [% cpan_self_dist( "d" => "Tie-LevelDB", ) %].
+</p>
+<p>
+Note that <a href="https://en.wikipedia.org/wiki/LevelDB">its Wikipedia page</a>
+cites some (possibly already fixed) past reliability problems.
+</p>
 </li>
 
 <li>
+<p>
 [% cpan_self_dist( "d" => "DBM-Deep", ) %] - a multi-level
 hash/array DBM that supports transactions. Reported to be slow, however.
+</p>
 </li>
 
 </ul>
@@ -157,8 +169,25 @@ interface to <a href="http://www.mongodb.org/">MongoDB</a>.
 <h2 id="links">Links</h2>
 
 <ul>
-<li><a href="http://modperlbook.org/html/part3.html"><b>"Databases and mod_perl"
-part from Practical mod_perl</b></a> - provides many useful insights.</li>
+<li>
+<p>
+<a href="http://modperlbook.org/html/part3.html"><b>"Databases and mod_perl"
+part from Practical mod_perl</b></a> - provides many useful insights.
+</p>
+</li>
+
+<li>
+<p>
+<a href="https://www.shlomifish.org/open-source/resources/databases-list/">List of Database Implementations</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="https://hostingdata.co.uk/nosql-database/">NoSQL Databases List</a>
+</p>
+</li>
+
 </ul>
 
 [% END %]

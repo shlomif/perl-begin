@@ -1824,6 +1824,7 @@ LevelDB
 MongoDB
 MySQL
 Net-CouchDb
+NoSQL
 ORM
 PostgreSQL
 SQLite
