@@ -478,20 +478,28 @@ quotemeta</a>, which allows quoting it and to the \Q and \E escapes inside regex
 <p>The best REPL is probably <a href="http://metacpan.org/release/Devel-REPL">Devel-REPL</a> (a.k.a "re.pl") which is actively maintained, feature rich and very polished. The perl -d flag can also serve as a rudimentary REPL.</p>
 <h3 id="How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F">How can I store Perl Data Structures on the Hard Disk?</h3>
 <p>Sometimes we'd like to store arbitrary Perl 5 Data Structures on the hard disk for various reasons including persistence and communication. This is called <b>serialisation</b> (or <b>serialization</b> in American spelling), and can be performed in several ways.</p>
+<p>
+If you only wish to explicitly store and load all the data from memory to disk (or vice versa), you have the following options:
+</p>
 <ol>
 <li><a href="http://metacpan.org/release/Data-Dumper">Data-Dumper</a> allows one to serialise arbitrary data structures into a human readable Perl code (which is also capable of evaluation). Note that performing string eval for arbitrary Perl code like that is not recommended for security reasons, so make sure you can trust that data.</li>
 <li><a href="http://metacpan.org/release/Storable">Storable</a> (another core module) serialises data structures to a binary format (make sure you use its portable format), and allows for serialising, deserialising, cloning a complex data structure, etc. This module is Perl 5-specific, though.</li>
+<li>
+<a href="https://metacpan.org/release/Sereal-Decoder">Sereal</a> - a more modern binary serialisation system.
+</li>
 <li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> is short for "<a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> Object Notation" and can be used to serialise data structures using JS notation. The <a href="https://metacpan.org/pod/JSON::MaybeXS">JSON-MaybeXS</a> CPAN module is recommended for that. Note that JavaScript does not support several
 Perl 5-specific features such as having a reference to a scalar.</li>
 <li><a href="https://en.wikipedia.org/wiki/YAML">YAML</a> is a data encoding language (see <a href="http://metacpan.org/release/YAML-XS">YAML-XS</a>) for represnting complex data structures. It is more complex than JSON, and more error-prone but also gives some user-friendly enhancements.</li>
 </ol>
-<p>If you want random lookup, look at the various embedded database solutions, such as:</p>
+<p>If you want random lookup, and possibly arbitrary on disk alteration, look at the various embedded database solutions, such as:</p>
 <ul>
 <li><a href="http://www.wikipedia.org/wiki/Berkeley_DB">Berkeley DB</a> - very comprehensive and under a strong copyleft licence.</li>
 <li><a href="http://1978th.net/tokyocabinet/">Tokyo Cabinet</a> - a modern DBM implementation with high performance and a <a href="http://www.wikipedia.org/wiki/LGPL">LGPL</a> licence.</li>
 <li><a href="http://www.sqlite.org/">SQLite</a> - an embedded, high-performance <a href="https://en.wikipedia.org/wiki/SQL">SQL</a> database.</li>
+<li>
+<a href="https://perl-begin.org/uses/databases/">A page about using other databases in perl</a>
+</li>
 </ul>
-<p><b>TODO</b>: add DBM, etc.</p>
 <h3 id="How_can_I_do_a_switch_statement_in_Perl.3F">How can I do a switch statement in Perl?</h3>
 <p>perl-5.10.x and later have a <a href="http://www.perlmonks.org/?node_id=709120">given/when statement</a>. It is not available for perl-5.8.x and below.</p>
 <p>There's also <a href="http://perldoc.perl.org/Switch.html">Switch.pm</a> for earlier versions, but its use is not recommended because it's a source filter and tends to break a lot.</p>
