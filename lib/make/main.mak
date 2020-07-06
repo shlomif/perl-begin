@@ -46,8 +46,10 @@ HOMEPAGE_PERL_BEGIN_REMOTE := $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/
 upload_hexten: all
 	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
 
-upload_beta: all
+upload_hexten_beta: all
 	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/ )
+
+upload_beta: all
 	(cd dest && $(RSYNC) -a --inplace * "$(HOMEPAGE_PERL_BEGIN_REMOTE)"/__Beta-Quop/ )
 
 upload_local: all
