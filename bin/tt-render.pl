@@ -62,9 +62,24 @@ sub retrieved_slurp
     return slurp( "lib/retrieved-html-parts/" . shift );
 }
 
+my $NAME = qr/Perl[\- ]Begin/;
+my $H    = "The Perl Beginners’ Site";
+
+sub _process_title
+{
+    my $args  = shift;
+    my $title = $args->{title};
+    return (
+        ( $title =~ $NAME )
+        ? $title
+        : ("$title - $H")
+    );
+}
+
 my @DEST = ( ".", "dest", );
 my $vars = +{
-    wiki_link => sub {
+    process_title => \&_process_title,
+    wiki_link     => sub {
         my $args = shift;
         return qq#http://perl.net.au/wiki/Beginners#
             . ( $args->{url} ? '/' . $args->{url} : '' );
