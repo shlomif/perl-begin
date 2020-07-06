@@ -41,24 +41,20 @@ dest/learn/index.html: lib/why-perl.tt2
 # upload: upload_hexten
 upload: upload_beta
 
+HOMEPAGE_PERL_BEGIN_REMOTE := $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/
+
 upload_hexten: all
 	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
 
-upload_iglu: all
-	(cd dest && $(RSYNC) -a * shlomif@iglu.org.il:/iglu/html/shlomif/Perl-Begin/)
-
 upload_beta: all
-	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/)
-	(cd dest && $(RSYNC) -a --inplace * $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/__Beta-Quop/)
+	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/ )
+	(cd dest && $(RSYNC) -a --inplace * "$(HOMEPAGE_PERL_BEGIN_REMOTE)"/__Beta-Quop/ )
 
 upload_local: all
-	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/)
-
-upload_home: all
-	(cd dest && $(RSYNC) -a * $${HOMEPAGE_SSH_PATH}/Perl-Begin/)
+	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/ )
 
 upload_home_remote: all
-	(cd dest && $(RSYNC) -a * $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/)
+	(cd dest && $(RSYNC) -a * "$(HOMEPAGE_PERL_BEGIN_REMOTE)" )
 
 update_p4n:
 	touch src/tutorials/perl-for-newbies/*/index.tt2
@@ -70,19 +66,19 @@ IMPATIENT_PERL_FILES = $(patsubst %,dest/tutorials/impatient-perl/%,iperl.html $
 iperl_extra_data: $(IMPATIENT_PERL_FILES)
 
 $(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: lib/tutorials/impatient-perl/%
-	cp -f $< $@
+	$(call COPY)
 
 TODO_DONE = $(patsubst %,$(TARGET)/contribute/%, TODO.txt DONE.txt)
 
 todo_done_data: $(TODO_DONE)
 
 $(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
-	cp -f $< $@
+	$(call COPY)
 
 htaccess: $(TARGET)/.htaccess
 
 $(TARGET)/.htaccess: lib/htaccess.txt
-	cp -f $< $@
+	$(call COPY)
 
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
 BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements
@@ -97,12 +93,12 @@ BAD_ELEMENTS_DB5 := $(DOCBOOK5_SOURCES_DIR)/bad-elements.xml
 BAD_ELEMENTS_XHTML := $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/bad-elements/all-in-one.xhtml
 BAD_ELEMENTS_RENDERED := $(DOCBOOK5_RENDERED_DIR)/bad-elements.xhtml
 
-bad_elements_html: $(BAD_ELEMENTS_XHTML) $(BAD_ELEMENTS_RENDERED)
+bad_elements_html: $(BAD_ELEMENTS_RENDERED)
 
-DOCBOOK5_RELAXNG = lib/sgml/relax-ng/docbook.rng
+# DOCBOOK5_RELAXNG = lib/sgml/relax-ng/docbook.rng
 DOCBOOK5_XSL_STYLESHEETS_PATH := /usr/share/sgml/docbook/xsl-ns-stylesheets
 DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET := lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
-DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS = $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
+DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS := $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 	# jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
@@ -124,9 +120,10 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
+
 TEST_TARGETS = Tests/*.{py,t}
 
-PERL_BEGIN_DOCS_SRC = $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
+PERL_BEGIN_DOCS_SRC := $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
 
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
