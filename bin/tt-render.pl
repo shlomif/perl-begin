@@ -13,8 +13,11 @@ use Path::Tiny qw/ path /;
 
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
-use HTML::Latemp::AddToc ();
-use MyNavData            ();
+use HTML::Latemp::AddToc   ();
+use Module::Format::AsHTML ();
+use MyNavData              ();
+
+my $cpan = Module::Format::AsHTML->new;
 
 sub _render_leading_path_component
 {
@@ -84,14 +87,11 @@ my $vars = +{
         return qq#http://perl.net.au/wiki/Beginners#
             . ( $args->{url} ? '/' . $args->{url} : '' );
     },
+    cpan          => $cpan,
     cpan_mod      => \&cpan_mod,
     cpan_self_mod => sub {
         my $args = shift;
         return cpan_mod( { %$args, body => $args->{'m'} } );
-    },
-    cpan_b_self_dist => sub {
-        my $args = shift;
-        return cpan_dist( { %$args, body => "<b>$args->{d}</b>", } );
     },
     irc_channel => sub {
         my $args    = shift;

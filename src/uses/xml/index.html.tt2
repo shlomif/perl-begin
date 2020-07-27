@@ -200,22 +200,22 @@ of them reside under XML:: namespace. Some prominent examples include:
 <ul>
 
 <li>
-[% cpan_b_self_dist( "d" => "XML-RSS", ) %] - manipulate
+[% cpan.b_self_dist( "d" => "XML-RSS", ) %] - manipulate
 RSS (Really Simple Syndication) 0.9, 0.91, 1.0 and 2.0.
 </li>
 
 <li>
-[% cpan_b_self_dist( "d" => "XML-Atom", ) %] -
+[% cpan.b_self_dist( "d" => "XML-Atom", ) %] -
 manipulate Atom feeds. (Atom is an alternative syndication format)
 </li>
 
 <li>
-[% cpan_b_self_dist( "d" => "XML-Feed", ) %] -
+[% cpan.b_self_dist( "d" => "XML-Feed", ) %] -
 generate, parse, mix and match web feeds (Atom or RSS).
 </li>
 
 <li>
-[% cpan_b_self_dist( "d" => "OpenOffice-OODoc", ) %] -
+[% cpan.b_self_dist( "d" => "OpenOffice-OODoc", ) %] -
 manipulate OpenOffice.org-like ODF (OpenDocument format) files.
 </li>
 

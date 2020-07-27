@@ -17,7 +17,7 @@ to lead people in the right direction.
 <h3 id="DateTime">DateTime</h3>
 
 <p>
-The [% cpan_b_self_dist( "d" => "DateTime", ) %] CPAN
+The [% cpan.b_self_dist( "d" => "DateTime", ) %] CPAN
 distribution is a highly recommended module for handling dates and times.
 Here are some useful helper packages for it:
 </p>

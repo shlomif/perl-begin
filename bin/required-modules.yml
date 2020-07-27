@@ -8,6 +8,7 @@ required:
     files: []
     perl5_modules:
         HTML::Toc: 0
+        Module::Format::AsHTML: 0
         Parallel::ForkManager::Segmented: 0
         Perl::Tidy: 20200110
         String::ShellQuote: 0
