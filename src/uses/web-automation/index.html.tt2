@@ -14,7 +14,7 @@ Perl resources for web-automation.
 
 <h2 id="modules">Modules for Web Automation</h2>
 
-<h3 id="WWW-Mechanize">[% cpan_self_dist( "d" => "WWW-Mechanize", ) %]</h3>
+<h3 id="WWW-Mechanize">[% cpan.self_dist( "d" => "WWW-Mechanize", ) %]</h3>
 
 <p>
 WWW::Mechanize is the de-facto standard for web-automation for Perl, but you
@@ -22,7 +22,7 @@ may find more convenient interfaces for many tasks.
 </p>
 
 <h3 id="parsers">[% cpan.self_mod( "m" => "HTML::TreeBuilder", ) %] and
-[% cpan_self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %]</h3>
+[% cpan.self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %]</h3>
 
 <p>
 These are alternative HTML parsers that provide more flexibility. For more
@@ -51,8 +51,8 @@ integrates some other modules.
 <h2 id="low-level">Lower Level Web Modules</h2>
 
 <p>
-[% cpan_self_dist( "d" => "libwww-perl", ) %],
-[% cpan_self_dist( "d" => "WWW-Curl", ) %] and [% cpan_self_dist( "d" => "LWP-Curl", ) %]
+[% cpan.self_dist( "d" => "libwww-perl", ) %],
+[% cpan.self_dist( "d" => "WWW-Curl", ) %] and [% cpan.self_dist( "d" => "LWP-Curl", ) %]
  provide lower-level access to HTTP, HTTPS and related protocols. libwww-perl
 (LWP) is the most popular API and is pure-Perl ; WWW-Curl is a wrapper to
 <a href="http://curl.haxx.se/libcurl/">libcurl</a> which is written in C and

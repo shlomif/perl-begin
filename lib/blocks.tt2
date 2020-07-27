@@ -10,13 +10,13 @@ Useful modules for files and directories handling are:
 <ul>
 
 <li>
-[% cpan_self_dist( "d" => "Path-Tiny", ) %] - a module that provides a “fast
+[% cpan.self_dist( "d" => "Path-Tiny", ) %] - a module that provides a “fast
 utility for working with file paths” and which despite its name, provides a
 comprehensive and rich API.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "File-Slurper", ) %] - a module for fast and easy input
+[% cpan.self_dist( "d" => "File-Slurper", ) %] - a module for fast and easy input
 and output from files and directories. The interface is procedural
 and quite Spartan, but is still useful. (<b>Note:</b> Using File-Slurp,
 and File-Slurp-Tiny which were found to be broken, is no longer recommended.)
@@ -34,7 +34,7 @@ other file paths parsing.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "String-ShellQuote", ) %]
+[% cpan.self_dist( "d" => "String-ShellQuote", ) %]
  - quote strings for passing through the shell. Also see the list forms of
 system.
 </li>
@@ -49,7 +49,7 @@ trees (portably).
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "IO-All", ) %] - a no longer recommended
+[% cpan.self_dist( "d" => "IO-All", ) %] - a no longer recommended
 all-in-one IO package with a lot of syntactic sugar, but quite a
 few quirks and bugs. Non-core.
 </li>
@@ -76,25 +76,25 @@ the middle and 4) can return result objects instead of path names.
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "File-Next", ) %] - an alternative with an iterative interface,
+[% cpan.self_dist( "d" => "File-Next", ) %] - an alternative with an iterative interface,
 but incapable of being instantiated.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "File-Find-Rule", ) %], which is still based on File::Find, and
-[% cpan_self_dist( "d" => "File-Find-Object-Rule", ) %] provide a more convenient and
+[% cpan.self_dist( "d" => "File-Find-Rule", ) %], which is still based on File::Find, and
+[% cpan.self_dist( "d" => "File-Find-Object-Rule", ) %] provide a more convenient and
 succinct interface for finding what you want.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Path-Iterator-Rule", ) %] provides an object oriented and
+[% cpan.self_dist( "d" => "Path-Iterator-Rule", ) %] provides an object oriented and
 iterative file finder, and there's also
-[% cpan_self_dist( "d" => "Path-Class-Rule", ) %]
- and [% cpan_self_dist( "d" => "IO-All-Rule", ) %]. Also of interest is its
+[% cpan.self_dist( "d" => "Path-Class-Rule", ) %]
+ and [% cpan.self_dist( "d" => "IO-All-Rule", ) %]. Also of interest is its
 <a href="https://metacpan.org/module/Path::Iteartor::Rule#SEE-ALSO">“See Also”</a>
 section, which contains links to other implementations, and a comparison
 of them.

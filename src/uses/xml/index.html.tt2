@@ -11,7 +11,7 @@ various recommended modules from CPAN (= Comprehensive Perl Archive Network).
 
 <h2 id="technologies">Technologies of Interest</h2>
 
-<h3 id="XML-LibXML">[% cpan_self_dist( "d" => "XML-LibXML", ) %]</h3>
+<h3 id="XML-LibXML">[% cpan.self_dist( "d" => "XML-LibXML", ) %]</h3>
 
 <p>
 XML-LibXML is the de-facto standard for XML processing in Perl. It's a
@@ -44,7 +44,7 @@ unmaintained <code>XML::XPath</code> CPAN distribution.
 </p>
 
 <p>
-Another useful module is [% cpan_self_dist( "d" => "HTML-Selector-XPath", ) %]
+Another useful module is [% cpan.self_dist( "d" => "HTML-Selector-XPath", ) %]
  which allows one to convert <strong>CSS-style selectors</strong> to XPath and
 provide functionality similar to that offered by such JavaScript libraries
 such as jQuery. So you can, for example, write
@@ -101,11 +101,11 @@ in Perl, in order to help working with XPath. For more information, see
 Extensible Stylesheet Language Transformations and is a language for
 transforming XML documents into other XML documents or other formats such
 as HTML or plain text. Perl has good support for version 1.0 of XSLT by
-using the [% cpan_self_dist( "d" => "XML-LibXSLT", ) %] distribution.
+using the [% cpan.self_dist( "d" => "XML-LibXSLT", ) %] distribution.
 </p>
 
 <p>
-(Please avoid using [% cpan_self_dist( "d" => "XML-XSLT", ) %] which is old, and largely
+(Please avoid using [% cpan.self_dist( "d" => "XML-XSLT", ) %] which is old, and largely
 unmaintained. Use XML-LibXSLT instead.)
 </p>
 

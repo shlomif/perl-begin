@@ -53,24 +53,24 @@ Above DBI, people wrote some useful abstractions:
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "DBIx-Simple", ) %] - an easy
+[% cpan.self_dist( "d" => "DBIx-Simple", ) %] - an easy
 to use Object-Oriented Interface to DBI.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "DBIx-Class", ) %] - a
+[% cpan.self_dist( "d" => "DBIx-Class", ) %] - a
 powerful and convenient object-relational mapper. Use of the older and less
 philosophically sound
-[% cpan_self_dist( "d" => "Class-DBI", ) %] is
+[% cpan.self_dist( "d" => "Class-DBI", ) %] is
 heavily discouraged.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Rose-DB-Object", ) %] -
+[% cpan.self_dist( "d" => "Rose-DB-Object", ) %] -
 another ORM - seems to be much less popular than DBIx-Class, but still actively
 maintained.
 </p>
@@ -117,7 +117,7 @@ not permit use in non-open-source projects).
 <a href="https://github.com/google/leveldb">LevelDB</a> from Google, a
 fast key-value storage library, open-source under the new BSD license (which
 allows use for non-open-source programs). Has Perl bindings on CPAN called
-[% cpan_self_dist( "d" => "Tie-LevelDB", ) %].
+[% cpan.self_dist( "d" => "Tie-LevelDB", ) %].
 </p>
 <p>
 Note that <a href="https://en.wikipedia.org/wiki/LevelDB">its Wikipedia page</a>
@@ -127,7 +127,7 @@ cites some (possibly already fixed) past reliability problems.
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "DBM-Deep", ) %] - a multi-level
+[% cpan.self_dist( "d" => "DBM-Deep", ) %] - a multi-level
 hash/array DBM that supports transactions. Reported to be slow, however.
 </p>
 </li>
@@ -155,12 +155,12 @@ here is a list of some bindings for distributed databases just for completeness 
 <ul>
 
 <li>
-[% cpan_self_dist( "d" => "Net-CouchDb", ) %] - an
+[% cpan.self_dist( "d" => "Net-CouchDb", ) %] - an
 interface to <a href="http://couchdb.apache.org/">Apache's CouchDb</a>.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "MongoDB", ) %] - an
+[% cpan.self_dist( "d" => "MongoDB", ) %] - an
 interface to <a href="http://www.mongodb.org/">MongoDB</a>.
 </li>
 

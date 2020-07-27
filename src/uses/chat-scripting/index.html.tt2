@@ -64,7 +64,7 @@ to contribute to an existing codebase that uses these legacy methods, please
 make it a priority to convert it to a more modern IRC framework.
 </p>
 
-<h3 id="POE-Component-IRC">[% cpan_self_dist( "d" => "POE-Component-IRC", ) %]</h3>
+<h3 id="POE-Component-IRC">[% cpan.self_dist( "d" => "POE-Component-IRC", ) %]</h3>
 
 <p>
 POE-Component-IRC (or PoCoIrc for short) has been the first successful
@@ -75,21 +75,21 @@ multi-tasking framework for Perl</a>.
 
 <p>
 Especially of note is
-[% cpan_self_dist( "d" => "Bot-BasicBot", ) %] which is
+[% cpan.self_dist( "d" => "Bot-BasicBot", ) %] which is
 a layer above POE-Component-IRC that is more user-friendly and straightforward
 for writing a bot.
 </p>
 
-<h3 id="Net-Async-IRC">[% cpan_self_dist( "d" => "Net-Async-IRC", ) %]</h3>
+<h3 id="Net-Async-IRC">[% cpan.self_dist( "d" => "Net-Async-IRC", ) %]</h3>
 
 <p>
 An IRC component for IO::Async.
 </p>
 
-<h3 id="AnyEvent-IRC">[% cpan_self_dist( "d" => "AnyEvent-IRC", ) %]</h3>
+<h3 id="AnyEvent-IRC">[% cpan.self_dist( "d" => "AnyEvent-IRC", ) %]</h3>
 
 <p>
-An IRC component for [% cpan_self_dist( "d" => "AnyEvent", ) %], which is an event system
+An IRC component for [% cpan.self_dist( "d" => "AnyEvent", ) %], which is an event system
 independent IRC protocol module.
 </p>
 
@@ -104,7 +104,7 @@ GChat/GTalk, and Facebook.
 <ul>
 
 <li>
-<b>[% cpan_self_dist( "d" => "Net-XMPP", ) %]</b> - a generic module for talking
+<b>[% cpan.self_dist( "d" => "Net-XMPP", ) %]</b> - a generic module for talking
 using XMPP and Jabber.
 </li>
 

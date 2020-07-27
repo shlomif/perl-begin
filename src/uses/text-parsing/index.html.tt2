@@ -25,7 +25,7 @@ and instead look at <a href="http://htmlparsing.com/">Perl HTML-parsing
 modules</a> (also see
 <a href="htmlparsing.icenina.ca/">an older link</a>).
 The canonical modules for that are
-[% cpan_self_dist( "d" => "HTML-Parser", ) %], which has
+[% cpan.self_dist( "d" => "HTML-Parser", ) %], which has
 built-in support for handling many of the irregularities of HTML in the wild,
 and [% WRAPPER cpan_dist d="XML-LibXML" %]XML-LibXML's HTML support[% END %]. Those should generally not be used directly. Instead look at
 one of their abstractions:
@@ -35,7 +35,7 @@ one of their abstractions:
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %] - HTML::TreeBuilder and XPath compatible interface using libxml.
+[% cpan.self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %] - HTML::TreeBuilder and XPath compatible interface using libxml.
 </p>
 </li>
 
@@ -47,7 +47,7 @@ one of their abstractions:
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "HTML-TokeParser-Simple", ) %] -
+[% cpan.self_dist( "d" => "HTML-TokeParser-Simple", ) %] -
 an event-based pull parser that is useful for very large HTMLs.
 </p>
 </li>
@@ -65,7 +65,7 @@ page about XML processing</a>.
 <li>
 <p>
 <b>Comma-separated values (CSV) files</b> should be parsed using
-[% cpan_self_dist( "d" => "Text-CSV_XS", ) %], which is
+[% cpan.self_dist( "d" => "Text-CSV_XS", ) %], which is
 a fast, tried and tested module for parsing CSV that can handle most
 edge-cases and irregularities that are present in CSV files that
 can be found in the wild.
@@ -74,7 +74,7 @@ can be found in the wild.
 
 <li>
 <p>
-<b>JSON</b> should be parsed using [% cpan_self_dist( "d" => "JSON-MaybeXS", ) %],
+<b>JSON</b> should be parsed using [% cpan.self_dist( "d" => "JSON-MaybeXS", ) %],
 or possibly using an event-based, incremental, JSON parser.
 </p>
 </li>
@@ -83,7 +83,7 @@ or possibly using an event-based, incremental, JSON parser.
 <p>
 In order to parse
 <a href="https://en.wikipedia.org/wiki/Uniform_resource_locator">URLs/URIs</a>
-(= Uniform Resource Locators), one should use the “[% cpan_self_dist( "d" => "URI", ) %]”
+(= Uniform Resource Locators), one should use the “[% cpan.self_dist( "d" => "URI", ) %]”
 collection of CPAN modules.
 </p>
 </li>
@@ -115,13 +115,13 @@ generator</a>. Some notable parser generators in Perl include:
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Parse-RecDescent", ) %]
+[% cpan.self_dist( "d" => "Parse-RecDescent", ) %]
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Regexp-Grammars", ) %] -
+[% cpan.self_dist( "d" => "Regexp-Grammars", ) %] -
 a more modern version of Parse-RecDescent by the same author that only
 works on perl-5.10.x and above.
 </p>
@@ -129,22 +129,22 @@ works on perl-5.10.x and above.
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Parser-MGC", ) %] - allows one to build simple
+[% cpan.self_dist( "d" => "Parser-MGC", ) %] - allows one to build simple
 recursive-descent parsers by using methods and closures.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Marpa-XS", ) %] - a parser generator that aims to fully
-parse all context-free grammars. See also [% cpan_self_dist( "d" => "Marpa-PP", ) %] for
+[% cpan.self_dist( "d" => "Marpa-XS", ) %] - a parser generator that aims to fully
+parse all context-free grammars. See also [% cpan.self_dist( "d" => "Marpa-PP", ) %] for
 its pure-Perl and slower version.
 </p>
 </li>
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Parse-Yapp", ) %] - old
+[% cpan.self_dist( "d" => "Parse-Yapp", ) %] - old
 and has been unmaintained, but may still be good enough.
 </p>
 </li>

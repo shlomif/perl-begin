@@ -15,7 +15,7 @@ We are getting asked about these things a lot.
 
 <h2 id="telnet">Telnet</h2>
 
-<h3 id="Net-Telnet">[% cpan_self_dist( "d" => "Net-Telnet", ) %]</h3>
+<h3 id="Net-Telnet">[% cpan.self_dist( "d" => "Net-Telnet", ) %]</h3>
 
 <p>
 Net-Telnet allows one to run a Telnet session from within Perl and to interact
@@ -32,21 +32,21 @@ of the commonly mentioned ones are:
 <ul>
 
 <li>
-[% cpan_self_dist( "d" => "Net-SSH-Perl", ) %]
+[% cpan.self_dist( "d" => "Net-SSH-Perl", ) %]
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "Net-OpenSSH", ) %]
+[% cpan.self_dist( "d" => "Net-OpenSSH", ) %]
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "Net-SSH2", ) %]
+[% cpan.self_dist( "d" => "Net-SSH2", ) %]
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "IPC-PerlSSH", ) %] and
-[% cpan_self_dist( "d" => "IPC-PerlSSH-Async", ) %] which is similar, but works with
-[% cpan_self_dist( "d" => "Net-Async", ) %].
+[% cpan.self_dist( "d" => "IPC-PerlSSH", ) %] and
+[% cpan.self_dist( "d" => "IPC-PerlSSH-Async", ) %] which is similar, but works with
+[% cpan.self_dist( "d" => "Net-Async", ) %].
 </li>
 
 </ul>

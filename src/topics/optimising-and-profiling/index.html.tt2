@@ -31,7 +31,7 @@ can be used for benchmarking different codes for performance.
 
 <h2 id="profiling">Profiling</h2>
 
-<h3 id="nytprof">[% cpan_self_dist( "d" => "Devel-NYTProf", ) %]</h3>
+<h3 id="nytprof">[% cpan.self_dist( "d" => "Devel-NYTProf", ) %]</h3>
 
 <p>
 <b>Devel-NYTProf</b> is a very powerful profiling framework for Perl that

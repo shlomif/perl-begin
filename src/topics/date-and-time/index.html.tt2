@@ -25,24 +25,24 @@ Here are some useful helper packages for it:
 <ul>
 
 <li>
-[% cpan_self_dist( "d" => "DateTime-Format-Strptime", ) %]
+[% cpan.self_dist( "d" => "DateTime-Format-Strptime", ) %]
  - parses dates in arbitrary formats.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "DateTime-Format-W3CDTF", ) %],
- [% cpan_self_dist( "d" => "DateTime-Format-Atom", ) %]
+[% cpan.self_dist( "d" => "DateTime-Format-W3CDTF", ) %],
+ [% cpan.self_dist( "d" => "DateTime-Format-Atom", ) %]
  and other "DateTime-Format-" modules - useful for parsing
 and formatting dates using various standard date formats.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "DateTime-Format-Natural", ) %]
+[% cpan.self_dist( "d" => "DateTime-Format-Natural", ) %]
  allows one to convert dates in human-time to a DateTime object.
 </li>
 
 <li>
-[% cpan_self_dist( "d" => "Time-Duration", ) %] converts a
+[% cpan.self_dist( "d" => "Time-Duration", ) %] converts a
 duration (in seconds, which can be calculated from a DateTime object) into a human
 readable expression of it (exact or rounded). Like "10 minutes ago", "1 hour ago", etc.
 </li>

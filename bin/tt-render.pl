@@ -107,10 +107,6 @@ my $vars = +{
         return
             qq|<a href="irc://$servers{$net}/%23$chan"><code>#$chan</code></a>|;
     },
-    cpan_self_dist => sub {
-        my $args = shift;
-        return cpan_dist( { %$args, body => $args->{d} } );
-    },
     retrieved_slurp => \&retrieved_slurp,
     p4n_slurp       => sub {
         my $idx = shift;

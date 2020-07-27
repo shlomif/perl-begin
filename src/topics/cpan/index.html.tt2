@@ -51,7 +51,7 @@ PerlNet wiki).
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "local-lib", ) %] - install CPAN modules under a local user
+[% cpan.self_dist( "d" => "local-lib", ) %] - install CPAN modules under a local user
 directory.
 </p>
 </li>

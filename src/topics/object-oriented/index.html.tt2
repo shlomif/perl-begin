@@ -41,7 +41,7 @@ links.
 for Perl, which provides a large subset of Moose’s functionality, but with
 a considerably reduced initial process loading time (which has been a frequent
 complaint about Moose), and is dependent only on pure-Perl modules (making
-it capable of being handled by [% cpan_self_dist( "d" => "App-Fatpacker", ) %]).
+it capable of being handled by [% cpan.self_dist( "d" => "App-Fatpacker", ) %]).
 </p>
 
 <p>

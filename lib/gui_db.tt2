@@ -9,7 +9,7 @@ front-ends.
 
 <li>
 <p>
-[% cpan_self_dist( "d" => "Devel-ptkdb", ) %] - a Perl/Tk based graphical debugger. Was
+[% cpan.self_dist( "d" => "Devel-ptkdb", ) %] - a Perl/Tk based graphical debugger. Was
 not maintained since 2004, but may still get the job done.
 </p>
 </li>
