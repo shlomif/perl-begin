@@ -63,7 +63,7 @@ A popular framework for asynchronous events on CPAN.
 <h5 id="AnyEvent">[% cpan.self_dist( "d" => "AnyEvent", ) %]</h5>
 
 <p>
-<b>Note:</b> Using AnyEvent [% cpan_mod(m=>"Perl::Critic::Policy::Freenode::DiscouragedModules",body=>"is discouraged") %].
+<b>Note:</b> Using AnyEvent [% cpan.module(m=>"Perl::Critic::Policy::Freenode::DiscouragedModules",body=>"is discouraged") %].
 </p>
 
 <p>

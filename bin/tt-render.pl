@@ -41,20 +41,6 @@ my $template      = Template->new(
     }
 );
 
-sub cpan_mod
-{
-    my $args = shift;
-    return
-        qq#<a href="http://metacpan.org/module/$args->{m}">$args->{body}</a>#;
-}
-
-sub cpan_dist
-{
-    my $args = shift();
-    return
-        qq#<a href="http://metacpan.org/release/$args->{d}">$args->{body}</a>#;
-}
-
 sub slurp
 {
     return path(shift)->slurp_utf8;
@@ -88,7 +74,6 @@ my $vars = +{
             . ( $args->{url} ? '/' . $args->{url} : '' );
     },
     cpan        => $cpan,
-    cpan_mod    => \&cpan_mod,
     irc_channel => sub {
         my $args    = shift;
         my $net     = $args->{net};
