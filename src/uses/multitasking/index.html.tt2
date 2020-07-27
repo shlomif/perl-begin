@@ -30,8 +30,7 @@ events.
 
 <p>
 A simple way to parallelise tasks. Also see
-[% cpan_self_dist( "d" => "AnyEvent-ForkManager", ) %]
- (see below for <a href="#AnyEvent">AnyEvent</a>).
+[% cpan_self_dist( "d" => "Parallel-ForkManager-Segmented", ) %].
 </p>
 
 <h3 id="event_frameworks">Event Driven Programming Frameworks</h3>
@@ -53,7 +52,19 @@ and gained some popularity in part due to lack of alternatives. Its style
 is baroque and as such it may no longer be recommended.
 </p>
 
-<h4 id="AnyEvent">[% cpan_self_dist( "d" => "AnyEvent", ) %]</h4>
+<h4 id="IO-Async">[% cpan_self_dist( "d" => "IO-Async", ) %]</h4>
+
+<p>
+A popular framework for asynchronous events on CPAN.
+</p>
+
+<h4 id="discouraged_event_frameworks">Discouraged Event Frameworks</h4>
+
+<h5 id="AnyEvent">[% cpan_self_dist( "d" => "AnyEvent", ) %]</h5>
+
+<p>
+<b>Note:</b> Using AnyEvent [% cpan_mod(m=>"Perl::Critic::Policy::Freenode::DiscouragedModules",body=>"is discouraged") %].
+</p>
 
 <p>
 AnyEvent is a more modern events’ framework and allows one to make use of
@@ -69,12 +80,6 @@ examples.
 </p>
 </li>
 </ul>
-
-<h4 id="IO-Async">[% cpan_self_dist( "d" => "IO-Async", ) %]</h4>
-
-<p>
-A popular framework for asynchronous events on CPAN.
-</p>
 
 <h2 id="threads">Threads?</h2>
 

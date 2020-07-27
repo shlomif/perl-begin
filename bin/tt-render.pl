@@ -84,6 +84,7 @@ my $vars = +{
         return qq#http://perl.net.au/wiki/Beginners#
             . ( $args->{url} ? '/' . $args->{url} : '' );
     },
+    cpan_mod      => \&cpan_mod,
     cpan_self_mod => sub {
         my $args = shift;
         return cpan_mod( { %$args, body => $args->{'m'} } );
