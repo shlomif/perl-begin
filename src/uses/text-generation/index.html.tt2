@@ -173,7 +173,7 @@ the Perl for Newbies presentation</a>.
 <li>
 <p>
 List processing CPAN modules such as
-[% cpan_self_mod( "m" => "List::Util", ) %],
+[% cpan.self_mod( "m" => "List::Util", ) %],
 [% cpan_self_dist( "d" => "List-MoreUtils", ) %]
  and [% cpan_self_dist( "d" => "List-UtilsBy", ) %].
 </p>

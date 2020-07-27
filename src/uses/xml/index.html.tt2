@@ -85,7 +85,7 @@ To learn about XPath, consult the following resources:
 <p>
 XML::LibXML allows the programmer to register custom XPath functions, coded
 in Perl, in order to help working with XPath. For more information, see
-[% cpan_self_mod( "m" => "XML::LibXML::XPathContext", ) %] .
+[% cpan.self_mod( "m" => "XML::LibXML::XPathContext", ) %] .
 </p>
 
 </div>

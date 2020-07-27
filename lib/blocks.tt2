@@ -40,12 +40,12 @@ system.
 </li>
 
 <li>
-[% cpan_self_mod( "m" => "File::Path", ) %] - a core module to create or remove directory
+[% cpan.self_mod( "m" => "File::Path", ) %] - a core module to create or remove directory
 trees (portably).
 </li>
 
 <li>
-[% cpan_self_mod( "m" => "File::Copy", ) %] - a core module to copy files.
+[% cpan.self_mod( "m" => "File::Copy", ) %] - a core module to copy files.
 </li>
 
 <li>
@@ -60,7 +60,7 @@ few quirks and bugs. Non-core.
 
 <p>
 The built-in module for traversing a directory tree in Perl is
-[% cpan_self_mod( "m" => "File::Find", ) %], but it has some severe limitations in interface
+[% cpan.self_mod( "m" => "File::Find", ) %], but it has some severe limitations in interface
 and use. Some better alternatives are:
 </p>
 

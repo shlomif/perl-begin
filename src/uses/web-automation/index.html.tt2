@@ -21,7 +21,7 @@ WWW::Mechanize is the de-facto standard for web-automation for Perl, but you
 may find more convenient interfaces for many tasks.
 </p>
 
-<h3 id="parsers">[% cpan_self_mod( "m" => "HTML::TreeBuilder", ) %] and
+<h3 id="parsers">[% cpan.self_mod( "m" => "HTML::TreeBuilder", ) %] and
 [% cpan_self_dist( "d" => "HTML-TreeBuilder-LibXML", ) %]</h3>
 
 <p>
@@ -33,8 +33,8 @@ parsing page</a>.
 <h2 id="browser-wrappers">Browser Wrappers</h2>
 
 <p>
-[% cpan_self_mod( "m" => "WWW::Selenium", ) %], [% cpan_self_mod( "m" => "Mozilla::Mechanize", ) %]
- and [% cpan_self_mod( "m" => "IE::Mechanize", ) %] allow one to perform web automation
+[% cpan.self_mod( "m" => "WWW::Selenium", ) %], [% cpan.self_mod( "m" => "Mozilla::Mechanize", ) %]
+ and [% cpan.self_mod( "m" => "IE::Mechanize", ) %] allow one to perform web automation
 by interfacing with existing, full-fledged, JavaScript-enabled browsers, seeing
 everything from the browser's point-of-view.
 </p>
