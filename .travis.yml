@@ -6,7 +6,6 @@ addons:
     apt:
         packages:
             - ack-grep
-            - asciidoc
             - build-essential
             - cmake
             - cpanminus
@@ -16,6 +15,7 @@ addons:
             - docbook-xsl-ns
             - fortune-mod
             - graphicsmagick
+            - hspell
             - hunspell
             - hunspell-en-gb
             - inkscape
@@ -29,6 +29,7 @@ addons:
             - libperl-dev
             - libxml2-dev
             - mercurial
+            - myspell-he
             - lynx
             - optipng
             - perl
@@ -61,10 +62,12 @@ go:
     - '1.13.x'
 os: linux
 dist: bionic
+rvm:
+    - 2.7.0
 before_install:
     - . .travis.bash --cmd before_install
 install:
-    - git clone https://github.com/vim/vim && ( cd vim && git checkout v8.1.1692 && ./configure --with-features=huge && make && sudo make install ) && rm -fr vim
+    - git clone https://github.com/vim/vim && ( cd vim && git checkout v8.2.1320 && ./configure --with-features=huge && make && sudo make install ) && rm -fr vim
 script:
     - export XML_CATALOG_FILES="/etc/xml/catalog $HOME/markup-validator/htdocs/sgml-lib/catalog.xml"
     - TIDYALL_DATA_DIR="$HOME/tidyall_d" bash -x bin/run-ci-build.bash
