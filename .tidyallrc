@@ -1,11 +1,11 @@
 [PerlTidy]
 select = **/*.{pl,pm,t}
 argv = -ci=4 -bl -cti=0 --character-encoding=none
-ignore = dest/**/* lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/*
+ignore = dest/**/* lib/tutorials/learnxinyminutes/learnperl.pl lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/*
 
 [PerlCritic]
 select = **/*.{pl,pm,t}
-ignore = dest/**/* lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/* lib/App/Deps/Verify.pm
+ignore = dest/**/* lib/tutorials/learnxinyminutes/learnperl.pl lib/tutorials/perl-for-newbies/**/* lib/tutorials/Reuven-Lerner/**/* lib/App/Deps/Verify.pm
 
 [TestCount]
 select = Tests/*.t

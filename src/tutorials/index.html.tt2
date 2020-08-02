@@ -92,6 +92,7 @@ Note that writing perl for production use requires <a href="[% base_path %]tutor
 <p>
 Note that Krumins also published <a href="https://nostarch.com/perloneliners">a book</a> based on the series available in print or as an ebook.
 </p>
+
 <h2 id="advanced">Tutorials for Advanced Users</h2>
 
 <p>
@@ -104,6 +105,12 @@ for that</a>, some of which are freely available online.
 <div class="sub_section">
 
 [% INCLUDE hyperpolyglot_php_perl_python_ruby %]
+
+<h3 id="learnxinyminutes"><a href="https://learnxinyminutes.com/docs/perl/">Learn perl in Y minutes</a></h3>
+
+<p>
+A short tutorial from the "Learn X in Y minutes" website.
+</p>
 
 <h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
 
