@@ -46,6 +46,11 @@ sub slurp
     return path(shift)->slurp_utf8;
 }
 
+sub slurp_maintained_html_part
+{
+    return slurp( "lib/maintained-html-parts/" . shift );
+}
+
 sub retrieved_slurp
 {
     return slurp( "lib/retrieved-html-parts/" . shift );
@@ -92,8 +97,9 @@ my $vars = +{
         return
             qq|<a href="irc://$servers{$net}/%23$chan"><code>#$chan</code></a>|;
     },
-    retrieved_slurp => \&retrieved_slurp,
-    p4n_slurp       => sub {
+    retrieved_slurp            => \&retrieved_slurp,
+    slurp_maintained_html_part => \&slurp_maintained_html_part,
+    p4n_slurp                  => sub {
         my $idx = shift;
         return path(
             "lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")

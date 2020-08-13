@@ -31,7 +31,7 @@ src/jqui-override.css: lib/sass/jqui-override.scss
 	compass compile
 
 dest/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
-dest/FAQs/freenode-perl/index.html: lib/retrieved-html-parts/Freenode_Sharp_Perl_FAQ.html
+dest/FAQs/freenode-perl/index.html: lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
 dest/IDEs-and-tools/Perl_developer_tools/index.html: lib/retrieved-html-parts/Perl_developer_tools.html
 dest/tutorials/hyperpolyglot/sheet1.html: lib/retrieved-html-parts/hyperpolyglot/scripting.html
 dest/topics/files-and-directories/index.html: lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
