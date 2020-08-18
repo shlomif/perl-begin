@@ -12,9 +12,10 @@ and other dependencies to be built.
 
 The dependencies are listed in the file `src/source/index.html.tt2` .
 
-Before running make for the first time, one has to run `./gen-helpers`.
-This script generates the list of directories and pages inside `include.mak`
-and `rules.mak`.
+Before running GNU make for the first time, one has to run
+`bash -x bin/install-npm-deps.sh` and `./gen-helpers`.
+This script generates the list of directories and pages inside `lib/make/include.mak`
+and `lib/make/rules.mak`.
 
 This script also has to be invoked whenever new pages are added, or existing
 ones are removed or renamed.
