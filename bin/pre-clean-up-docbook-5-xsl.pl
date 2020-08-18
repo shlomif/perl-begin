@@ -8,6 +8,6 @@ use strict;
 use warnings;
 use 5.014;
 use autodie;
-s/[ \t]+\z//;
+s/[ \t]+$//gms;
 s{\Q xmlns="http://docbook.org/ns/docbook"\E}{}g;
 s{(</?h)([0-9]+)}{$1.($2-1)}eg;

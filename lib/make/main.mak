@@ -114,7 +114,7 @@ $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS
 	docmake --stringparam "generate.toc=article toc,title" --stringparam "docbook.css.source=" --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml5 $<
 	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
 	rm -f $@.temp.xml.xhtml
-	perl -lpi bin/pre-clean-up-docbook-5-xsl.pl $@
+	perl -lp -0777 -i bin/pre-clean-up-docbook-5-xsl.pl $@
 
 $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
 	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
