@@ -70,6 +70,7 @@
 <li><a href="#randomise-array">How can I randomise an array? E.g: pick a random element or shuffle it?</a></li>
 <li><a href="#array-vs-array-ref">What is the difference between an array and an array reference? What about a hash vs. a hash reference?</a></li>
 <li><a href="#dash-lowercase-e-and-dash-uppercase-E">What is the difference between the perl's command line "-e" (lowercase "e") and "-E" (uppercase "E") flags?</a></li>
+<li><a href="#string-vs-numeric-comparison">Why does «perl -E 'if ("foo" == "bar") { say "true"; }'» prints "true"? (String vs numerical comparison)</a></li>
 </ul>
 </li>
 <li><a href="#Some_Related_IRC_Channels_on_Freenode">Some Related IRC Channels on Freenode</a>
@@ -639,6 +640,16 @@ mailing list</a>, or on a similar forum, and you are expected to be an advanced 
 <p>
 See <a href="https://perldoc.pl/perlrun.html#-e-commandline">"perldoc perlrun"’s description</a> of both flags, as well as the <a href="https://perldoc.pl/feature">feature</a>
 pragma.
+</p>
+
+<h3 id="string-vs-numeric-comparison">Why does «perl -E 'if ("foo" == "bar") { say "true"; }'» prints "true"? (String vs numerical comparison)</h3>
+
+<p>
+Perl has separate sets of operators for <a href="https://perlmaven.com/comparing-scalars-in-perl">numerical vs string</a>
+comparisons. As a result, <code>"foo" == bar"</code> is the same as <code>0 == 0</code>
+while <code>("foo" eq "bar")</code> returns false as expected. This is in part due to
+the Perl design philosophy which dislikes having <a href="https://en.wikipedia.org/wiki/Operator_overloading">polymorphic
+operators</a> for built-in types.
 </p>
 
 <h2 id="Some_Related_IRC_Channels_on_Freenode">Some Related IRC Channels on Freenode</h2>
