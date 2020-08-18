@@ -1,4 +1,4 @@
-#! /usr/bin/env perl
+#! /usr/bin/env perl -lpi
 #
 # Copyright (C) 2020 Shlomi Fish < https://www.shlomifish.org/ >
 #
