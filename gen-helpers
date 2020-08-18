@@ -86,6 +86,7 @@ $r_fh->print($text);
 
 {
     open my $out_fh, ">", "$DIR/p4n.mak";
+    print {$out_fh} qq#p4n_copy = mkdir -p `dirname \$\@` && cp -f \$< \$\@\n\n#;
 
     my @targets;
     foreach my $part_idx ( 1 .. 5 )
@@ -106,8 +107,7 @@ $r_fh->print($text);
             path("dest/$target")->touchpath->spew_raw( path($fn)->slurp_raw );
             $target = "\$(PERL_BEGIN_DEST)/$target";
             push @targets, $target;
-            print {$out_fh}
-                "$target: $fn\n\tmkdir -p `dirname \$\@`\n\tcp -f \$< \$\@\n\n";
+            print {$out_fh} "$target: $fn\n\t\$(call p4n_copy)\n\n";
         }
     }
 
