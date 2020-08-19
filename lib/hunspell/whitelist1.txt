@@ -916,6 +916,7 @@ dir_entry
 dir_handle
 elem
 elsif
+empty_var
 eq
 errorprone
 eval

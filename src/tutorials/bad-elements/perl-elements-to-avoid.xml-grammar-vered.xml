@@ -904,7 +904,7 @@ my @flags = ((0) x @names);
 <title>$array[$#array], $array[$#array-1], etc.</title>
 </info>
 <p>
-One can sometimes see people references the last elements of arrays using
+One can sometimes see people reference the last elements of arrays using
 notation such as <code>$array[$#array]</code>, <code>$array[$#array-1]</code>
 or even <code>$array[scalar(@array)-1]</code>. This duplicates the identifier
 and is error prone and there's a better way to do it in Perl using
@@ -2080,6 +2080,25 @@ foreach my $elem (@existing_array)
     push @array_of_rows, [generate_row($elem)];
 }
 </code_blk>
+<item xml:id="populating_array_with_same_reference__scalar_ref">
+<info>
+<title>Scalar reference to a constant (e.g: "(\undef)")</title>
+</info>
+<p>
+This code - that uses map - will also generate a list of identical
+elements:
+</p>
+<bad_code syntax="perl">
+my @array = (map { (\ undef ) } (0 .. 9));
+</bad_code>
+
+<p>
+A solution is to use "do {}":
+</p>
+<code_blk syntax="perl">
+my @array = (map { do { my $empty_var; \ $empty_var; } } (0 .. 9));
+</code_blk>
+</item>
 </item>
 <item xml:id="conditional_my_decls">
 <info>
