@@ -1,4 +1,4 @@
-[% SET html_lang = "en-US" %]
+[% SET html_lang = "en" %]
 
 [% BLOCK files_and_directories_modules %]
 <h2 id="modules">Modules</h2>
