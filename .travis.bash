@@ -37,7 +37,7 @@ then
     eval "$(perl -I ~/perl_modules/lib/perl5 -Mlocal::lib=$HOME/perl_modules)"
     cpanm App::Deps::Verify App::XML::DocBook::Builder Pod::Xhtml
     export CPATH="${CPATH}:/usr/include/tidy"
-    cpanm -vvvvvvvvvv --no-interactive HTML::T5
+    cpanm HTML::T5
     # For wml
     cpanm --notest Bit::Vector Carp::Always Class::XSAccessor GD Getopt::Long IO::All Image::Size List::MoreUtils Path::Tiny Term::ReadKey
     # For quadp
