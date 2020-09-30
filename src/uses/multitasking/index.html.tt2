@@ -26,10 +26,11 @@ Allows one to control a terminal application interactively and wait for
 events.
 </p>
 
-<h3 id="Parallel-ForkManager">[% cpan.self_dist( "d" => "Parallel-ForkManager", ) %]</h3>
+<h3 id="Parallel-ForkManager">[% cpan.self_dist( "d" => "Parallel-Map", ) %] and [% cpan.self_dist( "d" => "Parallel-ForkManager", ) %]</h3>
 
 <p>
-A simple way to parallelise tasks. Also see
+Provide simple ways to parallelise tasks. Also see
+[% cpan.self_dist( "d" => "Parallel-Map-Segmented", ) %] and
 [% cpan.self_dist( "d" => "Parallel-ForkManager-Segmented", ) %].
 </p>
 
