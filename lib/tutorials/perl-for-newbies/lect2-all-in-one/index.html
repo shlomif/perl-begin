@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="./style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 <title>
 "Perl for Perl Newbies" - Part 2
@@ -169,15 +169,15 @@ The following simple example prints the multiplication board:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">for</span>(<span class="Identifier">$row</span> = <span class="Constant">1</span> ; <span class="Identifier">$row</span> &lt;= <span class="Constant">10</span> ; <span class="Identifier">$row</span>++)
-{
+&#x7B;
     <span class="Statement">for</span>(<span class="Identifier">$column</span> = <span class="Constant">1</span> ; <span class="Identifier">$column</span> &lt;= <span class="Constant">10</span> ; <span class="Identifier">$column</span>++)
-    {
+    &#x7B;
         <span class="Identifier">$result</span> = <span class="Identifier">$row</span>*<span class="Identifier">$column</span>;
         <span class="Identifier">$pad</span> = ( <span class="Constant">&quot; &quot;</span>  x  (<span class="Constant">4</span>-<span class="Statement">length</span>(<span class="Identifier">$result</span>)) );
         <span class="Statement">print</span> <span class="Identifier">$pad</span>, <span class="Identifier">$result</span>;
-    }
+    &#x7D;
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <hr />
 
@@ -191,7 +191,7 @@ The following simple example prints the multiplication board:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--for--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--for--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -200,7 +200,7 @@ The following simple example prints the multiplication board:
 <a href="#page--for--whence_for--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--next--PAGE">Behaviour of next in the for Loop</a>
+<a href="#page--for--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--next--PAGE">Behaviour of next in the for Loop</a>
 </div>
 </nav>
 <p>
@@ -218,17 +218,17 @@ For example, the following program prints the first 200 primes:
     <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span> ;
     <span class="Identifier">$i</span>++
     )
-{
+&#x7B;
     <span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
-    {
+    &#x7B;
         <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
-        {
+        &#x7B;
             <span class="Statement">next</span> MAIN_LOOP;
-        }
-    }
+        &#x7D;
+    &#x7D;
 
     <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
-}
+&#x7D;
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -240,18 +240,18 @@ Now, the equivalent program using a while loop:
 <span class="Identifier">$i</span> = <span class="Constant">3</span>;
 <span class="Statement">MAIN_LOOP:</span>
 <span class="Statement">while</span> (<span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span>)
-{
+&#x7B;
     <span class="Statement">foreach</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
-    {
+    &#x7B;
         <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
-        {
+        &#x7B;
             <span class="Statement">next</span> MAIN_LOOP;
-        }
-    }
+        &#x7D;
+    &#x7D;
 
     <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
     <span class="Identifier">$i</span>++;
-}
+&#x7D;
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -270,7 +270,7 @@ gets stuck. (<b>why?</b>)
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--for--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--for--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -279,7 +279,7 @@ gets stuck. (<b>why?</b>)
 <a href="#page--hashes--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--whence_for--PAGE">Whence for?</a>
+<a href="#page--for--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--for--DIR">The for Loop</a> → <a href="#page--for--whence_for--PAGE">Whence for?</a>
 </div>
 </nav>
 <p>
@@ -343,68 +343,68 @@ bank, that will illustrate this functionality:
 </p>
 <div class="code_block"><pre>
 <span class="Comment"># Initialize the valid operations collection</span>
-<span class="Identifier">$ops{</span><span class="Constant">'create'</span><span class="Identifier">}</span> = <span class="Constant">1</span>;
-<span class="Identifier">$ops{</span><span class="Constant">'deposit'</span><span class="Identifier">}</span> = <span class="Constant">1</span>;
-<span class="Identifier">$ops{</span><span class="Constant">'status'</span><span class="Identifier">}</span> = <span class="Constant">1</span>;
-<span class="Identifier">$ops{</span><span class="Constant">'exit'</span><span class="Identifier">}</span> = <span class="Constant">2</span>;
+<span class="Identifier">$ops&#x7B;</span><span class="Constant">'create'</span><span class="Identifier">&#x7D;</span> = <span class="Constant">1</span>;
+<span class="Identifier">$ops&#x7B;</span><span class="Constant">'deposit'</span><span class="Identifier">&#x7D;</span> = <span class="Constant">1</span>;
+<span class="Identifier">$ops&#x7B;</span><span class="Constant">'status'</span><span class="Identifier">&#x7D;</span> = <span class="Constant">1</span>;
+<span class="Identifier">$ops&#x7B;</span><span class="Constant">'exit'</span><span class="Identifier">&#x7D;</span> = <span class="Constant">2</span>;
 
 <span class="Statement">while</span> (<span class="Constant">1</span>)
-{
+&#x7B;
     <span class="Comment"># Get a valid input from the user.</span>
     <span class="Statement">while</span> (<span class="Constant">1</span>)
-    {
+    &#x7B;
         <span class="Statement">print</span> <span class="Constant">&quot;Please enter what you want to do:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
         <span class="Statement">print</span> <span class="Constant">&quot;(&quot;</span> . <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Statement">keys</span>(<span class="Identifier">%ops</span>)) . <span class="Constant">&quot;)</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
         <span class="Identifier">$function</span> = &lt;&gt;;
         <span class="Statement">chomp</span>(<span class="Identifier">$function</span>);
 
-        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$ops{$function}</span>))
-        {
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$ops&#x7B;$function&#x7D;</span>))
+        &#x7B;
             <span class="Statement">last</span>;
-        }
+        &#x7D;
         <span class="Statement">print</span> <span class="Constant">&quot;Unknown function!</span><span class="Special">\n</span><span class="Constant"> Please try again.</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>
-    }
+    &#x7D;
 
     <span class="Statement">if</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;exit&quot;</span>)
-    {
+    &#x7B;
         <span class="Statement">last</span>;
-    }
+    &#x7D;
 
     <span class="Statement">print</span> <span class="Constant">&quot;Enter the name of the account:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
     <span class="Identifier">$account</span> = &lt;&gt;;
     <span class="Statement">chomp</span>(<span class="Identifier">$account</span>);
     <span class="Statement">if</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;create&quot;</span>)
-    {
-        <span class="Statement">if</span> (! <span class="Statement">exists</span>(<span class="Identifier">$bank_accounts{$account}</span>))
-        {
-            <span class="Identifier">$bank_accounts{$account}</span> = <span class="Constant">0</span>;
-        }
-    }
+    &#x7B;
+        <span class="Statement">if</span> (! <span class="Statement">exists</span>(<span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span>))
+        &#x7B;
+            <span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span> = <span class="Constant">0</span>;
+        &#x7D;
+    &#x7D;
     <span class="Statement">elsif</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;status&quot;</span>)
-    {
-        <span class="Statement">if</span> (! <span class="Statement">exists</span> (<span class="Identifier">$bank_accounts{$account}</span>) )
-        {
+    &#x7B;
+        <span class="Statement">if</span> (! <span class="Statement">exists</span> (<span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span>) )
+        &#x7B;
             <span class="Statement">print</span> <span class="Constant">&quot;Error! The account does not exist.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-        }
+        &#x7D;
         <span class="Statement">else</span>
-        {
-            <span class="Statement">print</span> <span class="Constant">&quot;There are &quot;</span> . <span class="Identifier">$bank_accounts{$account}</span> .
+        &#x7B;
+            <span class="Statement">print</span> <span class="Constant">&quot;There are &quot;</span> . <span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span> .
                 <span class="Constant">&quot; NIS in the account.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-        }
-    }
+        &#x7D;
+    &#x7D;
     <span class="Statement">elsif</span> (<span class="Identifier">$function</span> <span class="Statement">eq</span> <span class="Constant">&quot;deposit&quot;</span>)
-    {
-        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$bank_accounts{$account}</span>) )
-        {
+    &#x7B;
+        <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span>) )
+        &#x7B;
             <span class="Statement">print</span> <span class="Constant">&quot;How much do you wish to deposit?</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
             <span class="Identifier">$how_much</span> = &lt;&gt;;
             <span class="Statement">chomp</span>(<span class="Identifier">$how_much</span>);
-            <span class="Identifier">$bank_accounts{$account}</span> += <span class="Identifier">$how_much</span>;
-        }
-    }
+            <span class="Identifier">$bank_accounts&#x7B;$account&#x7D;</span> += <span class="Identifier">$how_much</span>;
+        &#x7D;
+    &#x7D;
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <p>
 The following example, which is considerably shorter, uses a hash to
@@ -412,18 +412,18 @@ find out if a list of strings contains only unique strings:
 </p>
 <div class="code_block"><pre>
 <span class="Statement">while</span>(<span class="Identifier">$string</span> = &lt;&gt;)
-{
+&#x7B;
     <span class="Statement">chomp</span>(<span class="Identifier">$string</span>);
-    <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash{$string}</span>))
-    {
+    <span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash&#x7B;$string&#x7D;</span>))
+    &#x7B;
         <span class="Statement">print</span> <span class="Constant">&quot;The string </span><span class="Special">\&quot;</span><span class="Constant">&quot;</span> . <span class="Identifier">$string</span> . <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant"> was already encountered!&quot;</span>;
         <span class="Statement">last</span>;
-    }
+    &#x7D;
     <span class="Statement">else</span>
-    {
-        <span class="Identifier">$myhash{$string}</span> = <span class="Constant">1</span>;
-    }
-}
+    &#x7B;
+        <span class="Identifier">$myhash&#x7B;$string&#x7D;</span> = <span class="Constant">1</span>;
+    &#x7D;
+&#x7D;
 </pre></div>
 <hr />
 
@@ -437,7 +437,7 @@ find out if a list of strings contains only unique strings:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--hashes--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--hashes--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -446,7 +446,7 @@ find out if a list of strings contains only unique strings:
 <a href="#page--my--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--hashes--DIR">Hashes</a> → <a href="#page--hashes--functions--PAGE">Hash-Related Functions</a>
+<a href="#page--hashes--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--hashes--DIR">Hashes</a> → <a href="#page--hashes--functions--PAGE">Hash-Related Functions</a>
 </div>
 </nav>
 <h2>delete</h2>
@@ -455,29 +455,29 @@ delete can be used to remove a key or a set of keys out of a hash.
 For example:
 </p>
 <div class="code_block"><pre>
-<span class="Identifier">$myhash{</span><span class="Constant">&quot;hello&quot;</span><span class="Identifier">}</span> = <span class="Constant">&quot;world&quot;</span>;
-<span class="Identifier">$myhash{</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">}</span> = <span class="Constant">&quot;TMTOWTDI&quot;</span>;
-<span class="Identifier">$myhash{</span><span class="Constant">&quot;shlomi&quot;</span><span class="Identifier">}</span> = <span class="Constant">&quot;fish&quot;</span>;
+<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;hello&quot;</span><span class="Identifier">&#x7D;</span> = <span class="Constant">&quot;world&quot;</span>;
+<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">&#x7D;</span> = <span class="Constant">&quot;TMTOWTDI&quot;</span>;
+<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;shlomi&quot;</span><span class="Identifier">&#x7D;</span> = <span class="Constant">&quot;fish&quot;</span>;
 
-<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash{</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">}</span>))
-{
+<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">&#x7D;</span>))
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The key perl exists!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The key perl does not exist!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 
-<span class="Statement">delete</span>(<span class="Identifier">$myhash{</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">}</span>);
+<span class="Statement">delete</span>(<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">&#x7D;</span>);
 
-<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash{</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">}</span>))
-{
+<span class="Statement">if</span> (<span class="Statement">exists</span>(<span class="Identifier">$myhash&#x7B;</span><span class="Constant">&quot;perl&quot;</span><span class="Identifier">&#x7D;</span>))
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The key perl exists!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The key perl does not exist!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <h2>The Comma Regarding Hashes</h2>
 <p>
@@ -504,9 +504,9 @@ Here's an example:
 <span class="Identifier">%combined</span> = (<span class="Identifier">%hash1</span>, <span class="Identifier">%hash2</span>);
 
 <span class="Statement">foreach</span> <span class="Identifier">$key</span> (<span class="Statement">keys</span>(<span class="Identifier">%combined</span>))
-{
-    <span class="Statement">print</span> <span class="Identifier">$key</span>, <span class="Constant">&quot; = &quot;</span>, <span class="Identifier">$combined{$key}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7B;
+    <span class="Statement">print</span> <span class="Identifier">$key</span>, <span class="Constant">&quot; = &quot;</span>, <span class="Identifier">$combined&#x7B;$key&#x7D;</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+&#x7D;
 </pre></div>
 <p>
 If the two combined hashes contain several identical keys, then the values
@@ -547,13 +547,13 @@ Here's an example:
 <div class="code_block"><pre>
 <span class="Identifier">$x</span> = <span class="Constant">5</span>;
 <span class="Identifier">$y</span> = <span class="Constant">1000</span>;
-{
+&#x7B;
     <span class="Statement">my</span> (<span class="Identifier">$y</span>);
     <span class="Statement">for</span>(<span class="Identifier">$y</span>=<span class="Constant">0</span>;<span class="Identifier">$y</span>&lt;<span class="Constant">10</span>;<span class="Identifier">$y</span>++)
-    {
+    &#x7B;
         <span class="Statement">print</span> <span class="Identifier">$x</span>, <span class="Constant">&quot;*&quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot; = &quot;</span>, (<span class="Identifier">$x</span>*<span class="Identifier">$y</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    }
-}
+    &#x7D;
+&#x7D;
 
 <span class="Statement">print</span> <span class="Constant">&quot;Now, </span><span class="Special">\$</span><span class="Constant">y is &quot;</span>, <span class="Identifier">$y</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -575,7 +575,7 @@ one variable, then they are optional.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--my--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--my--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -584,7 +584,7 @@ one variable, then they are optional.
 <a href="#page--my--use_warnings--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_strict--PAGE">"use strict", Luke!</a>
+<a href="#page--my--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_strict--PAGE">"use strict", Luke!</a>
 </div>
 </nav>
 <p>
@@ -612,17 +612,17 @@ As an example, here is the primes program, <code>use strict</code>-ed:
     <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">200</span> ;
     <span class="Identifier">$i</span>++
     )
-{
+&#x7B;
     <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$p</span> (<span class="Identifier">@primes</span>)
-    {
+    &#x7B;
         <span class="Statement">if</span> (<span class="Identifier">$i</span> % <span class="Identifier">$p</span> == <span class="Constant">0</span>)
-        {
+        &#x7B;
             <span class="Statement">next</span> MAIN_LOOP;
-        }
-    }
+        &#x7D;
+    &#x7D;
 
     <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$i</span>;
-}
+&#x7D;
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span> , <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -642,7 +642,7 @@ Such just-in-time declarations, inspired by C++, are possible in perl.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--my--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--my--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -651,7 +651,7 @@ Such just-in-time declarations, inspired by C++, are possible in perl.
 <a href="#page--functions--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_warnings--PAGE">"use warnings", Luke!</a>
+<a href="#page--my--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--my--DIR">Declaring Local Variables with "my"</a> → <a href="#page--my--use_warnings--PAGE">"use warnings", Luke!</a>
 </div>
 </nav>
 <p>
@@ -712,7 +712,7 @@ minimum of an array of numbers.
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">min_and_max</span>
-{
+&#x7B;
     <span class="Statement">my</span> (<span class="Identifier">@numbers</span>);
 
     <span class="Identifier">@numbers</span> = <span class="Identifier">@_</span>;
@@ -723,19 +723,19 @@ minimum of an array of numbers.
     <span class="Identifier">$max</span> = <span class="Identifier">$numbers[</span><span class="Constant">0</span><span class="Identifier">]</span>;
 
     <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$i</span> (<span class="Identifier">@numbers</span>)
-    {
+    &#x7B;
         <span class="Statement">if</span> (<span class="Identifier">$i</span> &gt; <span class="Identifier">$max</span>)
-        {
+        &#x7B;
             <span class="Identifier">$max</span> = <span class="Identifier">$i</span>;
-        }
+        &#x7D;
         <span class="Statement">elsif</span> (<span class="Identifier">$i</span> &lt; <span class="Identifier">$min</span>)
-        {
+        &#x7B;
             <span class="Identifier">$min</span> = <span class="Identifier">$i</span>;
-        }
-    }
+        &#x7D;
+    &#x7D;
 
     <span class="Statement">return</span> (<span class="Identifier">$min</span>, <span class="Identifier">$max</span>);
-}
+&#x7D;
 
 <span class="Statement">my</span> (<span class="Identifier">@test_array</span>, <span class="Identifier">@ret</span>);
 <span class="Identifier">@test_array</span> = (<span class="Constant">123</span>, <span class="Constant">23</span> , -<span class="Constant">6</span>, <span class="Constant">7</span> , <span class="Constant">80</span>, <span class="Constant">300</span>, <span class="Constant">45</span>, <span class="Constant">2</span>, <span class="Constant">9</span>, <span class="Constant">1000</span>, -<span class="Constant">90</span>, <span class="Constant">3</span>);
@@ -754,13 +754,13 @@ right triangle according to its other sides:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">pythagoras</span>
-{
+&#x7B;
     <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>);
 
     (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
 
     <span class="Statement">return</span> <span class="Statement">sqrt</span>(<span class="Identifier">$x</span>**<span class="Constant">2</span>+<span class="Identifier">$y</span>**<span class="Constant">2</span>);
-}
+&#x7D;
 
 <span class="Statement">print</span> <span class="Constant">&quot;The hypotenuse of a right triangle with sides 3 and 4 is &quot;</span>,
     pythagoras(<span class="Constant">3</span>,<span class="Constant">4</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
@@ -777,7 +777,7 @@ right triangle according to its other sides:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--functions--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--functions--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -786,7 +786,7 @@ right triangle according to its other sides:
 <a href="#page--functions--shift--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--recursion--PAGE">Function Recursion</a>
+<a href="#page--functions--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--recursion--PAGE">Function Recursion</a>
 </div>
 </nav>
 <p>
@@ -804,23 +804,23 @@ splitting 10 among three numbers:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">mysplit</span>
-{
+&#x7B;
     <span class="Statement">my</span> (<span class="Identifier">$total</span>, <span class="Identifier">$num_elems</span>, <span class="Identifier">@accum</span>) = <span class="Identifier">@_</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">$num_elems</span> == <span class="Constant">1</span>)
-    {
+    &#x7B;
         <span class="Statement">push</span> <span class="Identifier">@accum</span>, <span class="Identifier">$total</span>;
         <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;,&quot;</span>, <span class="Identifier">@accum</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
         <span class="Statement">return</span>;
-    }
+    &#x7D;
 
     <span class="Statement">for</span> (<span class="Statement">my</span> <span class="Identifier">$item</span>=<span class="Constant">0</span> ; <span class="Identifier">$item</span> &lt;= <span class="Identifier">$total</span> ; <span class="Identifier">$item</span>++)
-    {
+    &#x7B;
         <span class="Statement">my</span> <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$item</span>);
         mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$item</span>, <span class="Identifier">$num_elems</span>-<span class="Constant">1</span>, <span class="Identifier">@new_accum</span>);
-    }
-}
+    &#x7D;
+&#x7D;
 
 mysplit(<span class="Constant">10</span>,<span class="Constant">3</span>);
 </pre></div>
@@ -854,7 +854,7 @@ implemented as an array) instead. It's a good programming practice.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--functions--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--functions--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -863,7 +863,7 @@ implemented as an array) instead. It's a good programming practice.
 <a href="#page--files--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--shift--PAGE">Use of "shift" in Functions</a>
+<a href="#page--functions--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--functions--DIR">Functions</a> → <a href="#page--functions--shift--PAGE">Use of "shift" in Functions</a>
 </div>
 </nav>
 <p>
@@ -880,25 +880,25 @@ re-written using <code>shift</code>:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">mysplit</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$total</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$num_elems</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">@accum</span> = <span class="Identifier">@_</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">$num_elems</span> == <span class="Constant">1</span>)
-    {
+    &#x7B;
         <span class="Statement">push</span> <span class="Identifier">@accum</span>, <span class="Identifier">$total</span>;
         <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;,&quot;</span>, <span class="Identifier">@accum</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
         <span class="Statement">return</span>;
-    }
+    &#x7D;
 
     <span class="Statement">for</span> (<span class="Statement">my</span> <span class="Identifier">$item</span> = <span class="Constant">0</span> ; <span class="Identifier">$item</span> &lt;= <span class="Identifier">$total</span> ; <span class="Identifier">$item</span>++)
-    {
+    &#x7B;
         <span class="Statement">my</span> <span class="Identifier">@new_accum</span> = (<span class="Identifier">@accum</span>, <span class="Identifier">$item</span>);
         mysplit(<span class="Identifier">$total</span>-<span class="Identifier">$item</span>, <span class="Identifier">$num_elems</span>-<span class="Constant">1</span>, <span class="Identifier">@new_accum</span>);
-    }
-}
+    &#x7D;
+&#x7D;
 
 mysplit(<span class="Constant">10</span>,<span class="Constant">3</span>);
 </pre></div>
@@ -999,7 +999,7 @@ found a directory above the current directory for reading.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--files--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--files--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1008,7 +1008,7 @@ found a directory above the current directory for reading.
 <a href="#page--files--readline--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--print--PAGE">Using "print" with Files</a>
+<a href="#page--files--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--print--PAGE">Using "print" with Files</a>
 </div>
 </nav>
 <p>
@@ -1022,7 +1022,7 @@ The syntax of printing to a file is
 prepares a file with a pyramid in it:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -1031,10 +1031,10 @@ prepares a file with a pyramid in it:
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;pyramid.txt&quot;</span>;
 <span class="Statement">for</span> (<span class="Identifier">$l</span>=<span class="Constant">1</span> ; <span class="Identifier">$l</span> &lt;= <span class="Identifier">$pyramid_side</span> ; <span class="Identifier">$l</span>++)
-{
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Constant">&quot;X&quot;</span> x <span class="Identifier">$l</span>;
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7B;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$out</span><span class="Statement">&#x7D;</span> <span class="Constant">&quot;X&quot;</span> x <span class="Identifier">$l</span>;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$out</span><span class="Statement">&#x7D;</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+&#x7D;
 <span class="Statement">close</span>(<span class="Identifier">$out</span>);
 </pre></div>
 <p>
@@ -1051,14 +1051,14 @@ sequence 0, 0.1, 1, 1.1, 2, 2.1, 3, 3.1…, and to the other the sequence
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$seq2</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;seq2.txt&quot;</span>;
 
 <span class="Statement">for</span> (<span class="Statement">my</span> <span class="Identifier">$x</span>=<span class="Constant">0</span> ; <span class="Identifier">$x</span> &lt; <span class="Constant">100</span> ; <span class="Identifier">$x</span>++)
-{
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq1</span><span class="Statement">}</span> <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq2</span><span class="Statement">}</span> <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq1</span><span class="Statement">}</span> (<span class="Identifier">$x</span>+<span class="Constant">0.1</span>);
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq2</span><span class="Statement">}</span> (<span class="Identifier">$x</span>+<span class="Constant">0.5</span>);
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq1</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$seq2</span><span class="Statement">}</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7B;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq1</span><span class="Statement">&#x7D;</span> <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq2</span><span class="Statement">&#x7D;</span> <span class="Identifier">$x</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq1</span><span class="Statement">&#x7D;</span> (<span class="Identifier">$x</span>+<span class="Constant">0.1</span>);
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq2</span><span class="Statement">&#x7D;</span> (<span class="Identifier">$x</span>+<span class="Constant">0.5</span>);
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq1</span><span class="Statement">&#x7D;</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$seq2</span><span class="Statement">&#x7D;</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+&#x7D;
 
 <span class="Statement">close</span>(<span class="Identifier">$seq1</span>);
 <span class="Statement">close</span>(<span class="Identifier">$seq2</span>);
@@ -1075,7 +1075,7 @@ sequence 0, 0.1, 1, 1.1, 2, 2.1, 3, 3.1…, and to the other the sequence
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--files--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--files--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1084,7 +1084,7 @@ sequence 0, 0.1, 1, 1.1, 2, 2.1, 3, 3.1…, and to the other the sequence
 <a href="#page--argv--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--readline--PAGE">The &lt;FILEHANDLE&gt; Operator</a>
+<a href="#page--files--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--files--DIR">File Input/Output</a> → <a href="#page--files--readline--PAGE">The &lt;FILEHANDLE&gt; Operator</a>
 </div>
 </nav>
 <p>
@@ -1107,11 +1107,11 @@ Here's an example, let's append the line numbers to a given file:
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Constant">&quot;output.txt&quot;</span>;
 
 <span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
-{
+&#x7B;
     <span class="Comment"># We aren't chomping it so we won't lose the newline.</span>
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Identifier">$line_num</span>, <span class="Constant">&quot;: &quot;</span>, <span class="Identifier">$line</span>;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$out</span><span class="Statement">&#x7D;</span> <span class="Identifier">$line_num</span>, <span class="Constant">&quot;: &quot;</span>, <span class="Identifier">$line</span>;
     <span class="Identifier">$line_num</span>++;
-}
+&#x7D;
 
 <span class="Statement">close</span> (<span class="Identifier">$in</span>);
 <span class="Statement">close</span> (<span class="Identifier">$out</span>);
@@ -1130,13 +1130,13 @@ the letter "A" (case-insensitive).
 <span class="Identifier">$filename</span> = <span class="Constant">&quot;input.txt&quot;</span>;
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>,  <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
 <span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
-{
+&#x7B;
     <span class="Identifier">$c</span> = <span class="Statement">substr</span>(<span class="Identifier">$line</span>, <span class="Constant">0</span>, <span class="Constant">1</span>);
     <span class="Statement">if</span> (<span class="Statement">lc</span>(<span class="Identifier">$c</span>) <span class="Statement">eq</span> <span class="Constant">&quot;a&quot;</span>)
-    {
+    &#x7B;
         <span class="Identifier">$lines_num</span>++;
-    }
-}
+    &#x7D;
+&#x7D;
 <span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Statement">print</span> <span class="Constant">&quot;In &quot;</span> , <span class="Identifier">$filename</span>, <span class="Constant">&quot; there are &quot;</span>,
@@ -1185,7 +1185,7 @@ backup of the file specified as its argument:
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$out</span>, <span class="Constant">&quot;&gt;&quot;</span>, <span class="Identifier">$filename</span>.<span class="Constant">&quot;.bak&quot;</span>;
-<span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$out</span><span class="Statement">}</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;<span class="Identifier">$in</span>&gt;);
+<span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$out</span><span class="Statement">&#x7D;</span> <span class="Statement">join</span>(<span class="Constant">&quot;&quot;</span>,&lt;<span class="Identifier">$in</span>&gt;);
 <span class="Statement">close</span>(<span class="Identifier">$in</span>);
 <span class="Statement">close</span>(<span class="Identifier">$out</span>);
 </pre></div>
@@ -1268,7 +1268,7 @@ covered later) can utilise regular expressions to do other tasks.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1277,7 +1277,7 @@ covered later) can utilise regular expressions to do other tasks.
 <a href="#page--regexps--multi_char--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--syntax--PAGE">Syntax</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--syntax--PAGE">Syntax</a>
 </div>
 </nav>
 <p>
@@ -1292,13 +1292,13 @@ a given string contains the word hello (in all lowercase):
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>);
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Constant">hello</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string contains the word </span><span class="Special">\&quot;</span><span class="Constant">hello</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string does not contain the word </span><span class="Special">\&quot;</span><span class="Constant">hello</span><span class="Special">\&quot;</span><span class="Constant">.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <p>
 Note that alphanumeric characters in regular expressions stand for themselves,
@@ -1318,7 +1318,7 @@ placed inside a regular expression.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1327,7 +1327,7 @@ placed inside a regular expression.
 <a href="#page--regexps--asterisk--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--multi_char--PAGE">".", "[ ... ]"</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--multi_char--PAGE">".", "[ ... ]"</a>
 </div>
 </nav>
 <p>
@@ -1348,13 +1348,13 @@ the following snippet matches 5 letter words that start with 'l' and end with
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Constant">l</span><span class="Special">...</span><span class="Constant">x</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <h2>The [ ... ] specifies more than one option for a character</h2>
 <p>
@@ -1377,13 +1377,13 @@ present in the string:
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Special">\$[A-Za-z_]</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <hr />
 
@@ -1397,7 +1397,7 @@ present in the string:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1406,7 +1406,7 @@ present in the string:
 <a href="#page--regexps--grouping--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--asterisk--PAGE">The "*" and Friends</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--asterisk--PAGE">The "*" and Friends</a>
 </div>
 </nav>
 <p>
@@ -1436,7 +1436,7 @@ word "world". (with some whitespace in between).
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1445,7 +1445,7 @@ word "world". (with some whitespace in between).
 <a href="#page--regexps--alternation--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--grouping--PAGE">Grouping</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--grouping--PAGE">Grouping</a>
 </div>
 </nav>
 <p>
@@ -1471,13 +1471,13 @@ checks if it is an entire sentence that starts with "the" and ends with
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Constant">the</span><span class="Special">(?:</span><span class="Constant"> </span><span class="Special">+[a-z]+)*</span><span class="Constant"> </span><span class="Special">+</span><span class="Constant">there</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <p>
 It is possible to nest groupings, so for example the following matches a
@@ -1490,14 +1490,14 @@ comma-separated lists of numbers:
 
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">lc</span>(<span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>));
 
-<span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Special">\[\{[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+\}(?:</span><span class="Constant">;</span><span class="Special">\{(?:[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+)\})+\]</span><span class="Statement">/</span>)
-{
+<span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Special">\[\&#x7B;[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+\&#x7D;(?:</span><span class="Constant">;</span><span class="Special">\&#x7B;(?:[0-9]+(?:</span><span class="Constant">,</span><span class="Special">[0-9]+)+)\&#x7D;)+\]</span><span class="Statement">/</span>)
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;True</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;False</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <p>
 So it matches strings like <code>[{54,129};{236,78}]</code> and
@@ -1515,7 +1515,7 @@ So it matches strings like <code>[{54,129};{236,78}]</code> and
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1524,7 +1524,7 @@ So it matches strings like <code>[{54,129};{236,78}]</code> and
 <a href="#page--regexps--binding--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--alternation--PAGE">Alternation with "|"</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--alternation--PAGE">Alternation with "|"</a>
 </div>
 </nav>
 <p>
@@ -1558,7 +1558,7 @@ positive integer):
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1567,7 +1567,7 @@ positive integer):
 <a href="#page--regexps--substitute--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--binding--PAGE">Binding to the Beginning or the End of a String</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--binding--PAGE">Binding to the Beginning or the End of a String</a>
 </div>
 </nav>
 <p>
@@ -1586,13 +1586,13 @@ the letter A:
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Constant">^</span><span class="Special">[Aa]*</span><span class="Constant">$</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string you entered is all A's!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string you entered is not all A's.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <p>
 It's much shorter than with using a loop and also much faster.
@@ -1607,13 +1607,13 @@ Here's another example. Let's check if a string ends with three periods:
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
 
 <span class="Statement">if</span> (<span class="Identifier">$string</span> =~ <span class="Statement">/</span><span class="Special">\.\.\.</span><span class="Constant"> </span><span class="Special">*</span><span class="Constant">$</span><span class="Statement">/</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string you entered ends with an ellipsis.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 <span class="Statement">else</span>
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;The string you entered does not end with an ellipsis.</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <hr />
 
@@ -1703,7 +1703,7 @@ your perl code.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--substitute--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1712,7 +1712,7 @@ your perl code.
 <a href="#page--regexps--substitute--ungreedy--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--e_switch--PAGE">The "e" Switch</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--substitute--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--e_switch--PAGE">The "e" Switch</a>
 </div>
 </nav>
 <p>
@@ -1759,7 +1759,7 @@ And the following example, converts the first word that starts with the letter
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--substitute--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1768,7 +1768,7 @@ And the following example, converts the first word that starts with the letter
 <a href="#page--regexps--flags--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--ungreedy--PAGE">Ungreedy Matching with *? and Friends</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--substitute--DIR">Regular Expressions</a> → <a href="#page--regexps--substitute--DIR">Substituting using Regular Expressions</a> → <a href="#page--regexps--substitute--ungreedy--PAGE">Ungreedy Matching with *? and Friends</a>
 </div>
 </nav>
 <p>
@@ -1808,7 +1808,7 @@ If you wish them to match as little as possible, append a question mark
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1817,7 +1817,7 @@ If you wish them to match as little as possible, append a question mark
 <a href="#page--regexps--esc_seqs--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--flags--PAGE">Useful Flags</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--flags--PAGE">Useful Flags</a>
 </div>
 </nav>
 <p>
@@ -1847,10 +1847,10 @@ their occurrence:
 
 <span class="Statement">my</span> <span class="Identifier">$index</span> = <span class="Constant">0</span>;
 <span class="Statement">sub </span><span class="Identifier">put_index</span>
-{
+&#x7B;
     <span class="Identifier">$index</span>++;
     <span class="Statement">return</span> <span class="Identifier">$index</span>;
-}
+&#x7D;
 
 <span class="Statement">my</span> <span class="Identifier">$string</span> = <span class="Statement">shift</span>;
 
@@ -1870,7 +1870,7 @@ their occurrence:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1879,7 +1879,7 @@ their occurrence:
 <a href="#page--regexps--next_step--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--esc_seqs--PAGE">Useful Escape Sequences</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--esc_seqs--PAGE">Useful Escape Sequences</a>
 </div>
 </nav>
 <p>
@@ -1917,7 +1917,7 @@ a word boundary.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--regexps--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--regexps--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1926,7 +1926,7 @@ a word boundary.
 <a href="#page--interpolation--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--next_step--PAGE">The Next Step</a>
+<a href="#page--regexps--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--regexps--DIR">Regular Expressions</a> → <a href="#page--regexps--next_step--PAGE">The Next Step</a>
 </div>
 </nav>
 <p>
@@ -2065,7 +2065,7 @@ it resembles the pipeline used by the UNIX shells.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2074,7 +2074,7 @@ it resembles the pipeline used by the UNIX shells.
 <a href="#page--useful_funcs--map--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--split--PAGE">split</a>
+<a href="#page--useful_funcs--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--split--PAGE">split</a>
 </div>
 </nav>
 <p>
@@ -2098,14 +2098,14 @@ username:
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Constant">&quot;/etc/passwd&quot;</span>;
 <span class="Statement">while</span> (<span class="Identifier">$line</span> = &lt;<span class="Identifier">$in</span>&gt;)
-{
+&#x7B;
     <span class="Identifier">@parts</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">:</span><span class="Statement">/</span>, <span class="Identifier">$line</span>);
     <span class="Statement">if</span> (<span class="Identifier">$parts[</span><span class="Constant">0</span><span class="Identifier">]</span> <span class="Statement">eq</span> <span class="Identifier">$user_name</span>)
-    {
+    &#x7B;
         <span class="Statement">print</span> <span class="Identifier">$user_name</span> . <span class="Constant">&quot;'s user ID is &quot;</span> . <span class="Identifier">$parts[</span><span class="Constant">2</span><span class="Identifier">]</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
         <span class="Statement">exit</span>(<span class="Constant">0</span>);
-    }
-}
+    &#x7D;
+&#x7D;
 <span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Statement">print</span> <span class="Identifier">$user_name</span> . <span class="Constant">&quot;'s user ID was not found!</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
@@ -2124,9 +2124,9 @@ The following code splits a sentence into words and prints them:
 
 <span class="Statement">my</span> <span class="Identifier">$i</span>;
 <span class="Statement">for</span>(<span class="Identifier">$i</span>=<span class="Constant">0</span>;<span class="Identifier">$i</span>&lt;<span class="Statement">scalar</span>(<span class="Identifier">@words</span>);<span class="Identifier">$i</span>++)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Identifier">$i</span><span class="Constant">: &quot;</span> . <span class="Identifier">$words[$i]</span> . <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 </pre></div>
 <hr />
 
@@ -2140,7 +2140,7 @@ The following code splits a sentence into words and prints them:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2149,7 +2149,7 @@ The following code splits a sentence into words and prints them:
 <a href="#page--useful_funcs--sort--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--map--PAGE">map</a>
+<a href="#page--useful_funcs--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--map--PAGE">map</a>
 </div>
 </nav>
 <p>
@@ -2173,7 +2173,7 @@ The following example multiplies each element of an array by two:
 
 <span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">20</span>, <span class="Constant">3</span>, <span class="Constant">1</span>, <span class="Constant">9</span>, <span class="Constant">100</span>, <span class="Constant">88</span>, <span class="Constant">75</span>);
 
-<span class="Statement">my</span> <span class="Identifier">@new_array</span> = (<span class="Statement">map</span> <span class="Statement">{</span> <span class="Identifier">$_</span>*<span class="Constant">2</span>; <span class="Statement">}</span> <span class="Identifier">@array</span>);
+<span class="Statement">my</span> <span class="Identifier">@new_array</span> = (<span class="Statement">map</span> <span class="Statement">&#x7B;</span> <span class="Identifier">$_</span>*<span class="Constant">2</span>; <span class="Statement">&#x7D;</span> <span class="Identifier">@array</span>);
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;,&quot;</span>, <span class="Identifier">@new_array</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -2197,10 +2197,10 @@ element of the array is a number followed by its number of times:
 <span class="Comment"># RLE stands for Run-Length Encoding</span>
 <span class="Statement">my</span> <span class="Identifier">@rle_components</span> = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">,</span><span class="Statement">/</span>, <span class="Identifier">$input_string</span>);
 <span class="Statement">my</span> <span class="Identifier">@expanded_sequence</span> = (<span class="Statement">map</span>
-    {
+    &#x7B;
         <span class="Statement">my</span> (<span class="Identifier">$what</span>, <span class="Identifier">$times</span>) = <span class="Statement">split</span>(<span class="Statement">/</span><span class="Constant">-</span><span class="Statement">/</span>, <span class="Identifier">$_</span>);
         ((<span class="Identifier">$what</span>) x <span class="Identifier">$times</span>);
-    }
+    &#x7D;
     <span class="Identifier">@rle_components</span>
     );
 
@@ -2258,20 +2258,20 @@ The following example sorts an array of integers numerically:
 
 <span class="Statement">my</span> <span class="Identifier">@sorted_array</span> =
     (<span class="Statement">sort</span>
-        {
+        &#x7B;
             <span class="Statement">if</span> (<span class="Identifier">$a</span> &lt; <span class="Identifier">$b</span>)
-            {
+            &#x7B;
                 <span class="Statement">return</span> -<span class="Constant">1</span>;
-            }
+            &#x7D;
             <span class="Statement">elsif</span> (<span class="Identifier">$a</span> &gt; <span class="Identifier">$b</span>)
-            {
+            &#x7B;
                 <span class="Statement">return</span> <span class="Constant">1</span>;
-            }
+            &#x7D;
             <span class="Statement">else</span>
-            {
+            &#x7B;
                 <span class="Statement">return</span> <span class="Constant">0</span>;
-            }
-        }
+            &#x7D;
+        &#x7D;
         <span class="Identifier">@array</span>
     );
 
@@ -2289,7 +2289,7 @@ The following example sorts an array of integers numerically:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--useful_funcs--sort--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2298,7 +2298,7 @@ The following example sorts an array of integers numerically:
 <a href="#page--useful_funcs--grep--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--sort--DIR">sort</a> → <a href="#page--useful_funcs--sort--cmp--PAGE">&lt;=&gt; and cmp</a>
+<a href="#page--useful_funcs--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--sort--DIR">Useful Functions</a> → <a href="#page--useful_funcs--sort--DIR">sort</a> → <a href="#page--useful_funcs--sort--cmp--PAGE">&lt;=&gt; and cmp</a>
 </div>
 </nav>
 <p>
@@ -2317,7 +2317,7 @@ example could be re-written as:
 
 <span class="Statement">my</span> <span class="Identifier">@array</span> = (<span class="Constant">100</span>,<span class="Constant">5</span>,<span class="Constant">8</span>,<span class="Constant">92</span>,-<span class="Constant">7</span>,<span class="Constant">34</span>,<span class="Constant">29</span>,<span class="Constant">58</span>,<span class="Constant">8</span>,<span class="Constant">10</span>,<span class="Constant">24</span>);
 
-<span class="Statement">my</span> <span class="Identifier">@sorted_array</span> = (<span class="Statement">sort</span> <span class="Statement">{</span> <span class="Identifier">$a</span> &lt;=&gt; <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@array</span>);
+<span class="Statement">my</span> <span class="Identifier">@sorted_array</span> = (<span class="Statement">sort</span> <span class="Statement">&#x7B;</span> <span class="Identifier">$a</span> &lt;=&gt; <span class="Identifier">$b</span> <span class="Statement">&#x7D;</span> <span class="Identifier">@array</span>);
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;,&quot;</span>, <span class="Identifier">@sorted_array</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -2341,7 +2341,7 @@ in reverse:
 );
 
 <span class="Comment"># Do a case-insensitive sort</span>
-<span class="Statement">my</span> <span class="Identifier">@sorted</span> = (<span class="Statement">sort</span> <span class="Statement">{</span> <span class="Statement">lc</span>(<span class="Identifier">$b</span>) <span class="Statement">cmp</span> <span class="Statement">lc</span>(<span class="Identifier">$a</span>); <span class="Statement">}</span> <span class="Identifier">@input</span>);
+<span class="Statement">my</span> <span class="Identifier">@sorted</span> = (<span class="Statement">sort</span> <span class="Statement">&#x7B;</span> <span class="Statement">lc</span>(<span class="Identifier">$b</span>) <span class="Statement">cmp</span> <span class="Statement">lc</span>(<span class="Identifier">$a</span>); <span class="Statement">&#x7D;</span> <span class="Identifier">@input</span>);
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@sorted</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -2357,7 +2357,7 @@ in reverse:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--useful_funcs--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--useful_funcs--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2366,7 +2366,7 @@ in reverse:
 <a href="#page--references--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--grep--PAGE">grep</a>
+<a href="#page--useful_funcs--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--useful_funcs--DIR">Useful Functions</a> → <a href="#page--useful_funcs--grep--PAGE">grep</a>
 </div>
 </nav>
 <p>
@@ -2389,16 +2389,16 @@ length is lesser than 80 characters:
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$in</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$filename</span>;
 <span class="Statement">while</span> (<span class="Identifier">$l</span> = &lt;<span class="Identifier">$in</span>&gt;)
-{
+&#x7B;
     <span class="Statement">chomp</span>(<span class="Identifier">$l</span>);
     <span class="Statement">push</span> <span class="Identifier">@lines</span>, <span class="Identifier">$l</span>;
-}
+&#x7D;
 <span class="Statement">close</span>(<span class="Identifier">$in</span>);
 
 <span class="Comment"># Filter the comments</span>
 <span class="Statement">my</span> <span class="Identifier">@comments</span> = <span class="Statement">grep</span>(<span class="Statement">/</span><span class="Constant">^#</span><span class="Statement">/</span>, <span class="Identifier">@lines</span>);
 <span class="Comment"># Filter out the long comments</span>
-<span class="Statement">my</span> <span class="Identifier">@short_comments</span> = (<span class="Statement">grep</span> <span class="Statement">{</span> <span class="Statement">length</span>(<span class="Identifier">$_</span>) &lt;= <span class="Constant">80</span> ; <span class="Statement">}</span> <span class="Identifier">@comments</span>);
+<span class="Statement">my</span> <span class="Identifier">@short_comments</span> = (<span class="Statement">grep</span> <span class="Statement">&#x7B;</span> <span class="Statement">length</span>(<span class="Identifier">$_</span>) &lt;= <span class="Constant">80</span> ; <span class="Statement">&#x7D;</span> <span class="Identifier">@comments</span>);
 
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>, <span class="Identifier">@short_comments</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
@@ -2411,12 +2411,12 @@ And here's how <code>grep</code> can help us find the first 100 primes:
 
 <span class="Statement">my</span> <span class="Identifier">@primes</span> = (<span class="Constant">2</span>);
 <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$n</span>=<span class="Constant">3</span> ; <span class="Statement">scalar</span>(<span class="Identifier">@primes</span>) &lt; <span class="Constant">100</span> ; <span class="Identifier">$n</span>++)
-{
-    <span class="Statement">if</span> (<span class="Statement">scalar</span>(<span class="Statement">grep</span> <span class="Statement">{</span> <span class="Identifier">$n</span> % <span class="Identifier">$_</span> == <span class="Constant">0</span> ; <span class="Statement">}</span> <span class="Identifier">@primes</span>) == <span class="Constant">0</span>)
-    {
+&#x7B;
+    <span class="Statement">if</span> (<span class="Statement">scalar</span>(<span class="Statement">grep</span> <span class="Statement">&#x7B;</span> <span class="Identifier">$n</span> % <span class="Identifier">$_</span> == <span class="Constant">0</span> ; <span class="Statement">&#x7D;</span> <span class="Identifier">@primes</span>) == <span class="Constant">0</span>)
+    &#x7B;
         <span class="Statement">push</span> <span class="Identifier">@primes</span>, <span class="Identifier">$n</span>;
-    }
-}
+    &#x7D;
+&#x7D;
 <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@primes</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <hr />
@@ -2486,7 +2486,7 @@ or modify its value.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2495,7 +2495,7 @@ or modify its value.
 <a href="#page--references--backslash--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--hanoi--PAGE">Example: The Towers of Hanoi</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--hanoi--PAGE">Example: The Towers of Hanoi</a>
 </div>
 </nav>
 <p>
@@ -2526,36 +2526,36 @@ Here goes:
     );
 
 <span class="Statement">sub </span><span class="Identifier">print_towers</span>
-{
+&#x7B;
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$i</span>=<span class="Constant">0</span> ; <span class="Identifier">$i</span> &lt; <span class="Constant">3</span> ; <span class="Identifier">$i</span>++)
-    {
+    &#x7B;
         <span class="Statement">print</span> <span class="Constant">&quot;: &quot;</span>;
-        <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot; &quot;</span>, <span class="Identifier">@{$towers[$i]}</span>); <span class="Comment"># We de-reference the tower</span>
+        <span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot; &quot;</span>, <span class="Identifier">@&#x7B;$towers[$i]&#x7D;</span>); <span class="Comment"># We de-reference the tower</span>
         <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    }
+    &#x7D;
     <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">move_column</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$source</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$dest</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$how_many</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">$how_many</span> == <span class="Constant">0</span>)
-    {
+    &#x7B;
         <span class="Statement">return</span>;
-    }
+    &#x7D;
     <span class="Comment"># Find the third column</span>
     <span class="Statement">my</span> <span class="Identifier">$intermediate</span> = <span class="Constant">0</span>+<span class="Constant">1</span>+<span class="Constant">2</span>-<span class="Identifier">$source</span>-<span class="Identifier">$dest</span>;
     move_column(<span class="Identifier">$source</span>, <span class="Identifier">$intermediate</span>, <span class="Identifier">$how_many</span>-<span class="Constant">1</span>);
     <span class="Comment"># Print the current state</span>
     print_towers();
     <span class="Comment"># Move one disk. Notice the dereferencing of the arrays</span>
-    <span class="Comment"># using @{$ref}.</span>
-    <span class="Statement">push</span> <span class="Identifier">@{$towers[$dest]}</span>, <span class="Statement">pop</span>(<span class="Identifier">@{$towers[$source]}</span>);
+    <span class="Comment"># using @&#x7B;$ref&#x7D;.</span>
+    <span class="Statement">push</span> <span class="Identifier">@&#x7B;$towers[$dest]&#x7D;</span>, <span class="Statement">pop</span>(<span class="Identifier">@&#x7B;$towers[$source]&#x7D;</span>);
     move_column(<span class="Identifier">$intermediate</span>, <span class="Identifier">$dest</span>, <span class="Identifier">$how_many</span>-<span class="Constant">1</span>);
-}
+&#x7D;
 
 <span class="Comment"># Move the entire column</span>
 move_column(<span class="Constant">0</span>,<span class="Constant">1</span>,<span class="Identifier">$num_disks</span>);
@@ -2573,7 +2573,7 @@ print_towers();
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2582,7 +2582,7 @@ print_towers();
 <a href="#page--references--square_brackets--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--backslash--PAGE">\ - Taking a Reference to an Existing Variable</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--backslash--PAGE">\ - Taking a Reference to an Existing Variable</a>
 </div>
 </nav>
 <p>
@@ -2600,14 +2600,14 @@ Here is an example that uses a reference to update a sum:
 <span class="Statement">my</span> <span class="Identifier">$sum</span> = <span class="Constant">0</span>;
 
 <span class="Statement">sub </span><span class="Identifier">update_sum</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$ref_to_sum</span> = <span class="Statement">shift</span>;
     <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$item</span> (<span class="Identifier">@_</span>)
-    {
-        <span class="Comment"># The ${ ... } dereferences the variable</span>
-        <span class="Identifier">${$ref_to_sum}</span> += <span class="Identifier">$item</span>;
-    }
-}
+    &#x7B;
+        <span class="Comment"># The $&#x7B; ... &#x7D; dereferences the variable</span>
+        <span class="Identifier">$&#x7B;$ref_to_sum&#x7D;</span> += <span class="Identifier">$item</span>;
+    &#x7D;
+&#x7D;
 
 update_sum(\<span class="Identifier">$sum</span>, <span class="Constant">5</span>, <span class="Constant">4</span>, <span class="Constant">9</span>, <span class="Constant">10</span>, <span class="Constant">11</span>);
 update_sum(\<span class="Identifier">$sum</span>, <span class="Constant">100</span>, <span class="Constant">80</span>, <span class="Constant">7</span>, <span class="Constant">24</span>);
@@ -2630,7 +2630,7 @@ changes throughout the program.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2639,7 +2639,7 @@ changes throughout the program.
 <a href="#page--references--curly_brackets--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--square_brackets--PAGE">[ @array ] - a Dynamic Reference to an Array</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--square_brackets--PAGE">[ @array ] - a Dynamic Reference to an Array</a>
 </div>
 </nav>
 <p>
@@ -2662,33 +2662,33 @@ is the element-wise sum of both of them:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">vector_sum</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$v1_ref</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$v2_ref</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> <span class="Identifier">@ret</span>;
 
-    <span class="Statement">my</span> <span class="Identifier">@v1</span> = <span class="Identifier">@{$v1_ref}</span>;
-    <span class="Statement">my</span> <span class="Identifier">@v2</span> = <span class="Identifier">@{$v2_ref}</span>;
+    <span class="Statement">my</span> <span class="Identifier">@v1</span> = <span class="Identifier">@&#x7B;$v1_ref&#x7D;</span>;
+    <span class="Statement">my</span> <span class="Identifier">@v2</span> = <span class="Identifier">@&#x7B;$v2_ref&#x7D;</span>;
 
     <span class="Statement">if</span> (<span class="Statement">scalar</span>(<span class="Identifier">@v1</span>) != <span class="Statement">scalar</span>(<span class="Identifier">@v2</span>))
-    {
+    &#x7B;
         <span class="Statement">return</span> <span class="Statement">undef</span>;
-    }
+    &#x7D;
     <span class="Statement">for</span>(<span class="Statement">my</span> <span class="Identifier">$i</span>=<span class="Constant">0</span>;<span class="Identifier">$i</span>&lt;<span class="Statement">scalar</span>(<span class="Identifier">@v1</span>);<span class="Identifier">$i</span>++)
-    {
+    &#x7B;
         <span class="Statement">push</span> <span class="Identifier">@ret</span>, (<span class="Identifier">$v1[$i]</span> + <span class="Identifier">$v2[$i]</span>);
-    }
+    &#x7D;
 
     <span class="Statement">return</span> [ <span class="Identifier">@ret</span> ];
-}
+&#x7D;
 
 <span class="Statement">my</span> <span class="Identifier">$ret</span> = vector_sum(
     [ <span class="Constant">5</span>, <span class="Constant">9</span>, <span class="Constant">24</span>, <span class="Constant">30</span> ],
     [ <span class="Constant">8</span>, <span class="Constant">2</span>, <span class="Constant">10</span>, <span class="Constant">20</span> ]
 );
 
-<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@{$ret}</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@&#x7B;$ret&#x7D;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <table class="note">
 <tr class="note">
@@ -2722,7 +2722,7 @@ too, even in the second form.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2731,7 +2731,7 @@ too, even in the second form.
 <a href="#page--references--arrow--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--curly_brackets--PAGE">{ %hash } - a Dynamic Reference to a Hash</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--curly_brackets--PAGE">{ %hash } - a Dynamic Reference to a Hash</a>
 </div>
 </nav>
 <p>
@@ -2751,65 +2751,65 @@ capabilities of perl:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$contents</span> =
-{
+&#x7B;
     <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Contents&quot;</span>,
     <span class="Constant">'subs'</span> =&gt;
     [
-        {
+        &#x7B;
             <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;for&quot;</span>,
             <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;The for loop&quot;</span>,
             <span class="Constant">'subs'</span> =&gt;
             [
-                {
+                &#x7B;
                     <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;next.html&quot;</span>,
                     <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Behaviour of next in the for loop&quot;</span>,
-                },
-                {
+                &#x7D;,
+                &#x7B;
                     <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;whence_for.html&quot;</span>,
                     <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Whence for?&quot;</span>,
-                },
+                &#x7D;,
             ],
-        },
-        {
+        &#x7D;,
+        &#x7B;
             <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;hashes&quot;</span>,
             <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Hashes&quot;</span>,
             <span class="Constant">'subs'</span> =&gt;
             [
-                {
+                &#x7B;
                     <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;functions.html&quot;</span>,
                     <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Hash Functions&quot;</span>,
-                },
+                &#x7D;,
             ],
-        },
-        {
+        &#x7D;,
+        &#x7B;
             <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;my&quot;</span>,
             <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;Declaring Local Variables with </span><span class="Special">\&quot;</span><span class="Constant">my</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span>,
             <span class="Constant">'subs'</span> =&gt;
             [
-                {
+                &#x7B;
                     <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;use_strict.html&quot;</span>,
                     <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">use strict</span><span class="Special">\&quot;</span><span class="Constant">, Luke!&quot;</span>,
-                },
+                &#x7D;,
             ],
-        },
-        {
+        &#x7D;,
+        &#x7B;
             <span class="Constant">'url'</span> =&gt; <span class="Constant">&quot;argv.html&quot;</span>,
             <span class="Constant">'title'</span> =&gt; <span class="Constant">&quot;The </span><span class="Special">\@</span><span class="Constant">ARGV array&quot;</span>,
-        },
+        &#x7D;,
     ],
     <span class="Constant">'images'</span> =&gt;
     [
-        {
+        &#x7B;
             <span class="Constant">'url'</span> =&gt; <span class="Constant">'style.css'</span>,
             <span class="Constant">'type'</span> =&gt; <span class="Constant">'text/css'</span>,
-        }
+        &#x7D;
     ],
-};
+&#x7D;;
 
 <span class="Statement">sub </span><span class="Identifier">get_contents</span>
-{
+&#x7B;
     <span class="Statement">return</span> <span class="Identifier">$contents</span>;
-}
+&#x7D;
 </pre></div>
 <hr />
 
@@ -2823,7 +2823,7 @@ capabilities of perl:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2832,7 +2832,7 @@ capabilities of perl:
 <a href="#page--references--dereferencing--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--arrow--PAGE">The Arrow Operators</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--arrow--PAGE">The Arrow Operators</a>
 </div>
 </nav>
 <p>
@@ -2853,9 +2853,9 @@ that was presented in the previous slide:
 
 <span class="Statement">my</span> <span class="Identifier">$cont</span> = get_contents();
 
-<span class="Statement">print</span> <span class="Identifier">$cont-&gt;{</span><span class="Constant">'title'</span><span class="Identifier">}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">$cont-&gt;{</span><span class="Constant">'subs'</span><span class="Identifier">}-&gt;[</span><span class="Constant">0</span><span class="Identifier">]-&gt;{</span><span class="Constant">'url'</span><span class="Identifier">}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-<span class="Statement">print</span> <span class="Identifier">$cont-&gt;{</span><span class="Constant">'subs'</span><span class="Identifier">}-&gt;[</span><span class="Constant">0</span><span class="Identifier">]-&gt;{</span><span class="Constant">'subs'</span><span class="Identifier">}-&gt;[</span><span class="Constant">1</span><span class="Identifier">]-&gt;{</span><span class="Constant">'title'</span><span class="Identifier">}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$cont-&gt;&#x7B;</span><span class="Constant">'title'</span><span class="Identifier">&#x7D;</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$cont-&gt;&#x7B;</span><span class="Constant">'subs'</span><span class="Identifier">&#x7D;-&gt;[</span><span class="Constant">0</span><span class="Identifier">]-&gt;&#x7B;</span><span class="Constant">'url'</span><span class="Identifier">&#x7D;</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$cont-&gt;&#x7B;</span><span class="Constant">'subs'</span><span class="Identifier">&#x7D;-&gt;[</span><span class="Constant">0</span><span class="Identifier">]-&gt;&#x7B;</span><span class="Constant">'subs'</span><span class="Identifier">&#x7D;-&gt;[</span><span class="Constant">1</span><span class="Identifier">]-&gt;&#x7B;</span><span class="Constant">'title'</span><span class="Identifier">&#x7D;</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
 Note that the arrows following the first arrow are optional as perl sees
@@ -2875,7 +2875,7 @@ for the hash <code>%array_ref</code>.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--references--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--references--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2884,7 +2884,7 @@ for the hash <code>%array_ref</code>.
 <a href="#page--debugger--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--dereferencing--PAGE">Dereferencing</a>
+<a href="#page--references--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--references--DIR">References</a> → <a href="#page--references--dereferencing--PAGE">Dereferencing</a>
 </div>
 </nav>
 <p>
@@ -2901,11 +2901,11 @@ Here are some simple examples:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">my</span> <span class="Identifier">$ds1</span> =
-{
+&#x7B;
     <span class="Constant">'h'</span> =&gt; [<span class="Constant">5</span>,<span class="Constant">6</span>,<span class="Constant">7</span>],
-    <span class="Constant">'y'</span> =&gt; { <span class="Constant">'t'</span> =&gt; <span class="Constant">'u'</span>, <span class="Constant">'o'</span> =&gt; <span class="Constant">'p'</span> },
+    <span class="Constant">'y'</span> =&gt; &#x7B; <span class="Constant">'t'</span> =&gt; <span class="Constant">'u'</span>, <span class="Constant">'o'</span> =&gt; <span class="Constant">'p'</span> &#x7D;,
     <span class="Constant">'hello'</span> =&gt; <span class="Constant">'up'</span>,
-};
+&#x7D;;
 
 <span class="Statement">my</span> <span class="Identifier">$array_ref</span> = [<span class="Constant">5</span>, <span class="Constant">6</span>, <span class="Constant">7</span>, <span class="Constant">10</span>, <span class="Constant">24</span>, <span class="Constant">90</span>, <span class="Constant">14</span>];
 <span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Constant">&quot;Hello World!&quot;</span>;
@@ -2913,26 +2913,26 @@ Here are some simple examples:
 
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\$</span><span class="Constant">array_ref:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@{$array_ref}</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@&#x7B;$array_ref&#x7D;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
 
-<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\$</span><span class="Constant">ds1-&gt;{'h'}:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\$</span><span class="Constant">ds1-&gt;&#x7B;'h'&#x7D;:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@{$ds1-&gt;{</span><span class="Constant">'h'</span><span class="Identifier">}}</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Statement">join</span>(<span class="Constant">&quot;, &quot;</span>, <span class="Identifier">@&#x7B;$ds1-&gt;&#x7B;</span><span class="Constant">'h'</span><span class="Identifier">&#x7D;&#x7D;</span>), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">my</span> <span class="Identifier">%hash</span> = <span class="Identifier">%{$ds1-&gt;{</span><span class="Constant">'y'</span><span class="Identifier">}}</span>;
+<span class="Statement">my</span> <span class="Identifier">%hash</span> = <span class="Identifier">%&#x7B;$ds1-&gt;&#x7B;</span><span class="Constant">'y'</span><span class="Identifier">&#x7D;&#x7D;</span>;
 
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\%</span><span class="Constant">hash:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
 <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$k</span> (<span class="Statement">keys</span>(<span class="Identifier">%hash</span>))
-{
-    <span class="Statement">print</span> <span class="Identifier">$k</span>,  <span class="Constant">&quot; =&gt; &quot;</span>, <span class="Identifier">$hash{$k}</span>;
-}
+&#x7B;
+    <span class="Statement">print</span> <span class="Identifier">$k</span>,  <span class="Constant">&quot; =&gt; &quot;</span>, <span class="Identifier">$hash&#x7B;$k&#x7D;</span>;
+&#x7D;
 
 
 <span class="Statement">print</span> <span class="Constant">&quot;</span><span class="Special">\n\n\$\$</span><span class="Constant">y:</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
-<span class="Statement">print</span> <span class="Identifier">${$y}</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Statement">print</span> <span class="Identifier">$&#x7B;$y&#x7D;</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 </pre></div>
 <p>
 If the expression that yields the reference is a simple one than the curly
@@ -2993,7 +2993,7 @@ will give you pointers on where to find more information.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--debugger--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3002,7 +3002,7 @@ will give you pointers on where to find more information.
 <a href="#page--debugger--breakpoints--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--stepping--PAGE">Stepping over and Stepping in</a>
+<a href="#page--debugger--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--stepping--PAGE">Stepping over and Stepping in</a>
 </div>
 </nav>
 <p>
@@ -3077,7 +3077,7 @@ offer a solution to this problem.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--debugger--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3086,7 +3086,7 @@ offer a solution to this problem.
 <a href="#page--debugger--perl_cmds--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--breakpoints--PAGE">Setting Breakpoints and Continuing</a>
+<a href="#page--debugger--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--breakpoints--PAGE">Setting Breakpoints and Continuing</a>
 </div>
 </nav>
 <p>
@@ -3144,7 +3144,7 @@ it will no longer affect the execution of your program.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--debugger--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3153,7 +3153,7 @@ it will no longer affect the execution of your program.
 <a href="#page--debugger--more_info--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--perl_cmds--PAGE">Executing Perl Commands inside the Debugger</a>
+<a href="#page--debugger--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--perl_cmds--PAGE">Executing Perl Commands inside the Debugger</a>
 </div>
 </nav>
 <p>
@@ -3181,7 +3181,7 @@ within your perl programs.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--debugger--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--debugger--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3190,7 +3190,7 @@ within your perl programs.
 <a href="#page--finale--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--more_info--PAGE">Getting More Information</a>
+<a href="#page--debugger--DIR">"Perl for Perl Newbies" - Part 2</a> → <a href="#page--debugger--DIR">Using the perl Debugger</a> → <a href="#page--debugger--more_info--PAGE">Getting More Information</a>
 </div>
 </nav>
 <p>

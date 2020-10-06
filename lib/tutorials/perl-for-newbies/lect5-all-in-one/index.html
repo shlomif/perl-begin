@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="./style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 <title>
 "Perl for Perl Newbies" - Part 5 - Good Programming Practices
@@ -194,7 +194,7 @@ in Perl.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--testing--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -203,7 +203,7 @@ in Perl.
 <a href="#page--testing--demo--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--motivation--PAGE">Motivation for Testing</a>
+<a href="#page--testing--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--motivation--PAGE">Motivation for Testing</a>
 </div>
 </nav>
 <p>
@@ -271,12 +271,12 @@ a classic example.) We have the following function in the module Add1.pm:
 <span class="Identifier">@EXPORT_OK</span> = (<span class="Constant">qw(add)</span>);
 
 <span class="Statement">sub </span><span class="Identifier">add</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span> <span class="Constant">4</span>;
-}
+&#x7D;
 
 <span class="Constant">1</span>;
 </pre></div>
@@ -284,7 +284,7 @@ a classic example.) We have the following function in the module Add1.pm:
 One way to write a rudimentary script to test it, would be the following:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -292,9 +292,9 @@ One way to write a rudimentary script to test it, would be the following:
 <span class="Statement">use </span>Add1 (<span class="Constant">qw(add)</span>);
 
 <span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
-{
+&#x7B;
     <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
-}
+&#x7D;
 <span class="Statement">exit</span>(<span class="Constant">0</span>);
 </pre></div>
 <p>
@@ -309,7 +309,7 @@ $
 Everything is OK. Now let's write another test:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -317,18 +317,18 @@ Everything is OK. Now let's write another test:
 <span class="Statement">use </span>Add1 (<span class="Constant">qw(add)</span>);
 
 <span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
-{
+&#x7B;
     <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
-}
+&#x7D;
 
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$result</span> = add(<span class="Constant">1</span>,<span class="Constant">1</span>);
 
     <span class="Statement">if</span> (<span class="Identifier">$result</span> != <span class="Constant">2</span>)
-    {
+    &#x7B;
         <span class="Statement">die</span> <span class="Constant">&quot;add(1,1) resulted in '</span><span class="Identifier">$result</span><span class="Constant">' instead of 2.&quot;</span>
-    }
-}
+    &#x7D;
+&#x7D;
 
 <span class="Statement">exit</span>(<span class="Constant">0</span>);
 </pre></div>
@@ -358,12 +358,12 @@ As a result, we need to fix the production code:
 <span class="Identifier">@EXPORT_OK</span> = (<span class="Constant">qw(add)</span>);
 
 <span class="Statement">sub </span><span class="Identifier">add</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$x</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$y</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>;
-}
+&#x7D;
 
 <span class="Constant">1</span>;
 </pre></div>
@@ -371,7 +371,7 @@ As a result, we need to fix the production code:
 And the equivalent test script is successful:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -379,18 +379,18 @@ And the equivalent test script is successful:
 <span class="Statement">use </span>Add2 (<span class="Constant">qw(add)</span>);
 
 <span class="Statement">if</span> (!(add(<span class="Constant">2</span>,<span class="Constant">2</span>) == <span class="Constant">4</span>))
-{
+&#x7B;
     <span class="Statement">die</span> <span class="Constant">&quot;add(2,2) failed&quot;</span>;
-}
+&#x7D;
 
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$result</span> = add(<span class="Constant">1</span>,<span class="Constant">1</span>);
 
     <span class="Statement">if</span> (<span class="Identifier">$result</span> != <span class="Constant">2</span>)
-    {
+    &#x7B;
         <span class="Statement">die</span> <span class="Constant">&quot;add(1,1) resulted in '</span><span class="Identifier">$result</span><span class="Constant">' instead of 2.&quot;</span>
-    }
-}
+    &#x7D;
+&#x7D;
 
 <span class="Statement">exit</span>(<span class="Constant">0</span>);
 </pre></div>
@@ -413,7 +413,7 @@ Now we can continue writing more tests, and see that they passed.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--testing--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -422,7 +422,7 @@ Now we can continue writing more tests, and see that they passed.
 <a href="#page--testing--demo--Build-test--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--test-more--PAGE">Test::More</a>
+<a href="#page--testing--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--demo--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--test-more--PAGE">Test::More</a>
 </div>
 </nav>
 <p>
@@ -433,7 +433,7 @@ to write and run tests using convenient functions. Here's an example
 for a test script:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -560,7 +560,7 @@ enhancements).
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--testing--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--demo--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -569,7 +569,7 @@ enhancements).
 <a href="#page--testing--types--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--Build-test--PAGE">./Build test</a>
+<a href="#page--testing--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--demo--DIR">Automated Testing</a> → <a href="#page--testing--demo--DIR">Demo</a> → <a href="#page--testing--demo--Build-test--PAGE">./Build test</a>
 </div>
 </nav>
 <p>
@@ -689,7 +689,7 @@ shlomi:~/TEMP/Test-Count-0.0500$
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--testing--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -698,7 +698,7 @@ shlomi:~/TEMP/Test-Count-0.0500$
 <a href="#page--testing--mocking--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--types--PAGE">Types of Tests: Unit Tests, Integration Tests, System Tests</a>
+<a href="#page--testing--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--types--PAGE">Types of Tests: Unit Tests, Integration Tests, System Tests</a>
 </div>
 </nav>
 <p>
@@ -777,7 +777,7 @@ Perl</a> project (which is currently under development.).
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--testing--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--testing--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -786,7 +786,7 @@ Perl</a> project (which is currently under development.).
 <a href="#page--version-control--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--mocking--PAGE">Mocking</a>
+<a href="#page--testing--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--testing--DIR">Automated Testing</a> → <a href="#page--testing--mocking--PAGE">Mocking</a>
 </div>
 </nav>
 <p>
@@ -829,9 +829,9 @@ something like:
 <span class="Comment"># .</span>
 
 <span class="PreProc">BEGIN</span>
-{
-    <span class="Identifier">$INC{</span><span class="Constant">'CGI.pm'</span><span class="Identifier">}</span> = <span class="Constant">&quot;/usr/lib/perl5/site_perl/5.10.0/CGI.pm&quot;</span>;
-}
+&#x7B;
+    <span class="Identifier">$INC&#x7B;</span><span class="Constant">'CGI.pm'</span><span class="Identifier">&#x7D;</span> = <span class="Constant">&quot;/usr/lib/perl5/site_perl/5.10.0/CGI.pm&quot;</span>;
+&#x7D;
 
 <span class="Constant">1</span>;
 </pre></div>
@@ -895,7 +895,7 @@ this section if you're already drinking the version control kool-aid.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--version-control--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -904,7 +904,7 @@ this section if you're already drinking the version control kool-aid.
 <a href="#page--version-control--mercurial-demo--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--motivation--PAGE">Motivation for Version Control</a>
+<a href="#page--version-control--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--motivation--PAGE">Motivation for Version Control</a>
 </div>
 </nav>
 <p>
@@ -961,7 +961,7 @@ something that suits you.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--version-control--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--version-control--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -970,7 +970,7 @@ something that suits you.
 <a href="#page--accessors--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--mercurial-demo--PAGE">Demo of Mercurial</a>
+<a href="#page--version-control--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--version-control--DIR">Version Control</a> → <a href="#page--version-control--mercurial-demo--PAGE">Demo of Mercurial</a>
 </div>
 </nav>
 <p>
@@ -1025,11 +1025,11 @@ contents in the file <code>MyModule.pm</code>:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">add</span>
-{
+&#x7B;
     <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
 
     <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>*<span class="Constant">2</span>;
-}
+&#x7D;
 
 <span class="Constant">1</span>;
 </pre></div>
@@ -1072,7 +1072,7 @@ which, as it name implies, gives a log of what has been done in the past:
 $p4n/5/merc-test/MyModule$ hg log
 changeset:   0:7dec17ed3e88
 tag:         tip
-user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+user:        Shlomi Fish &lt;shlomif@ELIDED&gt;
 date:        Fri Jan 14 18:07:32 2011 +0200
 summary:     Added MyModule.pm
 </pre></div>
@@ -1112,7 +1112,7 @@ Now let's add another test assertion:
 </p>
 <div class="code_block"><pre>
 shlomif[homepage]:$p4n/5/merc-test/MyModule$ cat mytest.t
-#!/usr/bin/env perl
+\#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -1121,10 +1121,10 @@ use Test::More tests =&gt; 2;
 
 use MyModule;
 
-# TEST
+\# TEST
 is (MyModule::add(0, 0), 0, "0+0 is 0.");
 
-# TEST
+\# TEST
 is (MyModule::add(2, 0), 2, "2+0 is 2.");
 
 
@@ -1151,7 +1151,7 @@ diff -r e2b34f948dcd MyModule/mytest.t
 
  use MyModule;
 
- # TEST
+ \# TEST
  is (MyModule::add(0, 0), 0, "0+0 is 0.");
 +
 +# TEST
@@ -1188,7 +1188,7 @@ $ hg diff
  use MyModule;
 
 @@ -13,3 +13,6 @@
- # TEST
+ \# TEST
  is (MyModule::add(2, 0), 2, "2+0 is 2.");
 
 +# TEST
@@ -1265,16 +1265,16 @@ diff -r a7599e97a8d8 MyModule/MyModule.pm
  1;
 $ prove mytest.t
 mytest.t .. 1/3
-#   Failed test '2+0 is 2.'
-#   at mytest.t line 14.
-#          got: '200'
-#     expected: '2'
+\#   Failed test '2+0 is 2.'
+\#   at mytest.t line 14.
+\#          got: '200'
+\#     expected: '2'
 
-#   Failed test '1+1 is 2.'
-#   at mytest.t line 17.
-#          got: '101'
-#     expected: '2'
-# Looks like you failed 2 tests of 3.
+\#   Failed test '1+1 is 2.'
+\#   at mytest.t line 17.
+\#          got: '101'
+\#     expected: '2'
+\# Looks like you failed 2 tests of 3.
 mytest.t .. Dubious, test returned 2 (wstat 512, 0x200)
 Failed 2/3 subtests
 
@@ -1309,22 +1309,22 @@ $ hg update
 $ hg log
 changeset:   3:a7599e97a8d8
 tag:         tip
-user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+user:        Shlomi Fish &lt;shlomif@ELIDED&gt;
 date:        Sat Jan 15 10:46:24 2011 +0200
 summary:     Fixed a bug - we did x+y*2 instead of x+y
 
 changeset:   2:ebc249691c24
-user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+user:        Shlomi Fish &lt;shlomif@ELIDED&gt;
 date:        Fri Jan 14 18:20:29 2011 +0200
 summary:     Add another assertion
 
 changeset:   1:e2b34f948dcd
-user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+user:        Shlomi Fish &lt;shlomif@ELIDED&gt;
 date:        Fri Jan 14 18:14:05 2011 +0200
 summary:     Added mytest.t.
 
 changeset:   0:7dec17ed3e88
-user:        Shlomi Fish &lt;shlomif@iglu.org.il&gt;
+user:        Shlomi Fish &lt;shlomif@ELIDED&gt;
 date:        Fri Jan 14 18:07:32 2011 +0200
 summary:     Added MyModule.pm
 </pre></div>
@@ -1382,7 +1382,7 @@ to them.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--accessors--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1391,7 +1391,7 @@ to them.
 <a href="#page--accessors--motivation--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--example--PAGE">Example</a>
+<a href="#page--accessors--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--example--PAGE">Example</a>
 </div>
 </nav>
 <p>
@@ -1404,98 +1404,98 @@ Here's an example class with some accessors and a script that uses it:
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">new</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$class</span> = <span class="Statement">shift</span>;
 
-    <span class="Statement">my</span> <span class="Identifier">$self</span> = {};
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = &#x7B;&#x7D;;
     <span class="Statement">bless</span> <span class="Identifier">$self</span>, <span class="Identifier">$class</span>;
 
     <span class="Identifier">$self-&gt;_init</span>(<span class="Identifier">@_</span>);
 
     <span class="Statement">return</span> <span class="Identifier">$self</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">_init</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
     <span class="Statement">my</span> <span class="Identifier">$args</span> = <span class="Statement">shift</span>;
 
-    <span class="Identifier">$self-&gt;_first_name</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'first_name'</span><span class="Identifier">}</span>);
-    <span class="Identifier">$self-&gt;_last_name</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'last_name'</span><span class="Identifier">}</span>);
+    <span class="Identifier">$self-&gt;_first_name</span>(<span class="Identifier">$args-&gt;&#x7B;</span><span class="Constant">'first_name'</span><span class="Identifier">&#x7D;</span>);
+    <span class="Identifier">$self-&gt;_last_name</span>(<span class="Identifier">$args-&gt;&#x7B;</span><span class="Constant">'last_name'</span><span class="Identifier">&#x7D;</span>);
 
-    <span class="Identifier">$self-&gt;_age</span>(<span class="Identifier">$args-&gt;{</span><span class="Constant">'age'</span><span class="Identifier">}</span>);
+    <span class="Identifier">$self-&gt;_age</span>(<span class="Identifier">$args-&gt;&#x7B;</span><span class="Constant">'age'</span><span class="Identifier">&#x7D;</span>);
 
     <span class="Statement">return</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">_first_name</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">@_</span>)
-    {
+    &#x7B;
         <span class="Statement">my</span> <span class="Identifier">$new_first_name</span> = <span class="Statement">shift</span>;
-        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_first_name'</span><span class="Identifier">}</span> = <span class="Identifier">$new_first_name</span>;
-    }
+        <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_first_name'</span><span class="Identifier">&#x7D;</span> = <span class="Identifier">$new_first_name</span>;
+    &#x7D;
 
-    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_first_name'</span><span class="Identifier">}</span>;
-}
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_first_name'</span><span class="Identifier">&#x7D;</span>;
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">_last_name</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">@_</span>)
-    {
+    &#x7B;
         <span class="Statement">my</span> <span class="Identifier">$new_last_name</span> = <span class="Statement">shift</span>;
-        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_last_name'</span><span class="Identifier">}</span> = <span class="Identifier">$new_last_name</span>;
-    }
+        <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_last_name'</span><span class="Identifier">&#x7D;</span> = <span class="Identifier">$new_last_name</span>;
+    &#x7D;
 
-    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_last_name'</span><span class="Identifier">}</span>;
-}
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_last_name'</span><span class="Identifier">&#x7D;</span>;
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">_age</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">if</span> (<span class="Identifier">@_</span>)
-    {
+    &#x7B;
         <span class="Statement">my</span> <span class="Identifier">$new_age</span> = <span class="Statement">shift</span>;
-        <span class="Identifier">$self-&gt;{</span><span class="Constant">'_age'</span><span class="Identifier">}</span> = <span class="Identifier">$new_age</span>;
-    }
+        <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_age'</span><span class="Identifier">&#x7D;</span> = <span class="Identifier">$new_age</span>;
+    &#x7D;
 
-    <span class="Statement">return</span> <span class="Identifier">$self-&gt;{</span><span class="Constant">'_age'</span><span class="Identifier">}</span>;
-}
+    <span class="Statement">return</span> <span class="Identifier">$self-&gt;&#x7B;</span><span class="Constant">'_age'</span><span class="Identifier">&#x7D;</span>;
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">greet</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">print</span> <span class="Constant">&quot;Hello &quot;</span>, <span class="Identifier">$self-&gt;_first_name</span>(), <span class="Constant">&quot; &quot;</span>, <span class="Identifier">$self-&gt;_last_name</span>(), <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
 
     <span class="Statement">return</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">increment_age</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Identifier">$self-&gt;_age</span>(<span class="Identifier">$self-&gt;_age</span>()+<span class="Constant">1</span>);
 
     <span class="Statement">return</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">get_age</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span> <span class="Identifier">$self-&gt;_age</span>();
-}
+&#x7D;
 
 <span class="Constant">1</span>;
 </pre></div>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -1504,11 +1504,11 @@ Here's an example class with some accessors and a script that uses it:
 
 <span class="Statement">my</span> <span class="Identifier">$shlomif</span> =
     Person-&gt;new(
-        {
+        &#x7B;
             <span class="Constant">first_name</span> =&gt; <span class="Constant">&quot;Shlomi&quot;</span>,
             <span class="Constant">last_name</span> =&gt; <span class="Constant">&quot;Fish&quot;</span>,
             <span class="Constant">age</span> =&gt; <span class="Constant">32</span>,
-        }
+        &#x7D;
     );
 
 <span class="Identifier">$shlomif-&gt;greet</span>();
@@ -1518,11 +1518,11 @@ Here's an example class with some accessors and a script that uses it:
 
 <span class="Statement">my</span> <span class="Identifier">$newton</span> =
     Person-&gt;new(
-        {
+        &#x7B;
             <span class="Constant">first_name</span> =&gt; <span class="Constant">&quot;Isaac&quot;</span>,
             <span class="Constant">last_name</span> =&gt; <span class="Constant">&quot;Newton&quot;</span>,
             <span class="Constant">age</span> =&gt; <span class="Constant">366</span>,
-        }
+        &#x7D;
     );
 
 <span class="Identifier">$newton-&gt;greet</span>();
@@ -1542,7 +1542,7 @@ Here's an example class with some accessors and a script that uses it:
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--accessors--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1551,7 +1551,7 @@ Here's an example class with some accessors and a script that uses it:
 <a href="#page--accessors--cpan-modules--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--motivation--PAGE">Motivation</a>
+<a href="#page--accessors--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--motivation--PAGE">Motivation</a>
 </div>
 </nav>
 <p>
@@ -1600,7 +1600,7 @@ There may be other reasons, like better concurrency, persistence, etc.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--accessors--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--accessors--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1609,7 +1609,7 @@ There may be other reasons, like better concurrency, persistence, etc.
 <a href="#page--new-features--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--cpan-modules--PAGE">Accessor modules on the CPAN</a>
+<a href="#page--accessors--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--accessors--DIR">Class Accessors</a> → <a href="#page--accessors--cpan-modules--PAGE">Accessor modules on the CPAN</a>
 </div>
 </nav>
 <p>
@@ -1699,7 +1699,7 @@ may prove useful for robust programming or may be encountered in the wild.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--new-features--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1708,7 +1708,7 @@ may prove useful for robust programming or may be encountered in the wild.
 <a href="#page--new-features--lexical-filehandles--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--use-base--PAGE">use base</a>
+<a href="#page--new-features--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--use-base--PAGE">use base</a>
 </div>
 </nav>
 <p>
@@ -1738,7 +1738,7 @@ be preferable.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--new-features--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--new-features--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1747,7 +1747,7 @@ be preferable.
 <a href="#page--local-keyword--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--lexical-filehandles--PAGE">Lexical Filehandles</a>
+<a href="#page--new-features--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--new-features--DIR">Useful Features in Recent Perls</a> → <a href="#page--new-features--lexical-filehandles--PAGE">Lexical Filehandles</a>
 </div>
 </nav>
 <p>
@@ -1762,13 +1762,13 @@ lexical filehandles for both file handles and directory handles.
 Here is an example for a program implementing a directory listing.
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
 
 <span class="Statement">sub </span><span class="Identifier">get_entries</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$dir_path</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">opendir</span> <span class="Statement">my</span> <span class="Identifier">$dir_handle</span>, <span class="Identifier">$dir_path</span>
@@ -1778,23 +1778,23 @@ Here is an example for a program implementing a directory listing.
 
     <span class="Statement">closedir</span>(<span class="Identifier">$dir_handle</span>);
 
-    <span class="Statement">return</span> [ <span class="Statement">sort</span> <span class="Statement">{</span> <span class="Identifier">$a</span> <span class="Statement">cmp</span> <span class="Identifier">$b</span> <span class="Statement">}</span> <span class="Identifier">@entries</span> ];
-}
+    <span class="Statement">return</span> [ <span class="Statement">sort</span> <span class="Statement">&#x7B;</span> <span class="Identifier">$a</span> <span class="Statement">cmp</span> <span class="Identifier">$b</span> <span class="Statement">&#x7D;</span> <span class="Identifier">@entries</span> ];
+&#x7D;
 
 <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$arg</span> (<span class="Identifier">@ARGV</span>)
-{
+&#x7B;
     <span class="Statement">print</span> <span class="Constant">&quot;== Listing for </span><span class="Identifier">$arg</span><span class="Constant"> ==</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$entry</span> (<span class="Identifier">@{</span>get_entries(<span class="Identifier">$arg</span>)<span class="Identifier">}</span>)
-    {
+    <span class="Statement">foreach</span> <span class="Statement">my</span> <span class="Identifier">$entry</span> (<span class="Identifier">@&#x7B;</span>get_entries(<span class="Identifier">$arg</span>)<span class="Identifier">&#x7D;</span>)
+    &#x7B;
         <span class="Statement">print</span> <span class="Identifier">$entry</span>, <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
-    }
-}
+    &#x7D;
+&#x7D;
 </pre></div>
 <p>
 And here is an example that copies a file:
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Comment"># This is just for demonstration. A better way would be to use File::Copy :</span>
 <span class="Comment">#</span>
@@ -1808,9 +1808,9 @@ And here is an example that copies a file:
 <span class="Statement">my</span> <span class="Identifier">$dest_fn</span> = <span class="Statement">shift</span>(<span class="Identifier">@ARGV</span>);
 
 <span class="Statement">if</span> ( (!<span class="Statement">defined</span>(<span class="Identifier">$source_fn</span>)) || (!<span class="Statement">defined</span>(<span class="Identifier">$dest_fn</span>)) )
-{
+&#x7B;
     <span class="Statement">die</span> <span class="Constant">&quot;You must specify two arguments - source and destination.&quot;</span>
-}
+&#x7D;
 
 <span class="Statement">open</span> <span class="Statement">my</span> <span class="Identifier">$source_handle</span>, <span class="Constant">&quot;&lt;&quot;</span>, <span class="Identifier">$source_fn</span>
     <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open '</span><span class="Identifier">$source_fn</span><span class="Constant">' - </span><span class="Identifier">$!</span><span class="Constant">.&quot;</span>;
@@ -1818,9 +1818,9 @@ And here is an example that copies a file:
     <span class="Statement">or</span> <span class="Statement">die</span> <span class="Constant">&quot;Could not open '</span><span class="Identifier">$dest_fn</span><span class="Constant">' - </span><span class="Identifier">$!</span><span class="Constant">.&quot;</span>;
 
 <span class="Statement">while</span> (<span class="Statement">my</span> <span class="Identifier">$line</span> = &lt;<span class="Identifier">$source_handle</span>&gt;)
-{
-    <span class="Statement">print</span> <span class="Statement">{</span><span class="Identifier">$dest_handle</span><span class="Statement">}</span> <span class="Identifier">$line</span>;
-}
+&#x7B;
+    <span class="Statement">print</span> <span class="Statement">&#x7B;</span><span class="Identifier">$dest_handle</span><span class="Statement">&#x7D;</span> <span class="Identifier">$line</span>;
+&#x7D;
 
 <span class="Statement">close</span>(<span class="Identifier">$source_handle</span>);
 <span class="Statement">close</span>(<span class="Identifier">$dest_handle</span>);
@@ -1899,7 +1899,7 @@ So when should local be used?
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--local-keyword--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--local-keyword--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1908,7 +1908,7 @@ So when should local be used?
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a> → <a href="#page--local-keyword--use-and-abuse--PAGE">Use and Abuse</a>
+<a href="#page--local-keyword--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--local-keyword--DIR">The local keyword</a> → <a href="#page--local-keyword--use-and-abuse--PAGE">Use and Abuse</a>
 </div>
 </nav>
 <p>
@@ -1990,7 +1990,7 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -1999,7 +1999,7 @@ perl core (so-called <a href="http://perldoc.perl.org/">perldocs</a>).
 <a href="#page--pod-documentation--pod-testing--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--demo--PAGE">POD Demonstration</a>
+<a href="#page--pod-documentation--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--demo--PAGE">POD Demonstration</a>
 </div>
 </nav>
 <h2 id="pod-demo-how">How to write POD</h2>
@@ -2199,7 +2199,7 @@ Wikipedia page about POD</a>.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2208,7 +2208,7 @@ Wikipedia page about POD</a>.
 <a href="#page--pod-documentation--literate-programming--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--pod-testing--PAGE">Testing and Verifying POD</a>
+<a href="#page--pod-documentation--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--pod-testing--PAGE">Testing and Verifying POD</a>
 </div>
 </nav>
 <p>
@@ -2241,7 +2241,7 @@ of the skeleton of your CPAN distribution.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2250,7 +2250,7 @@ of the skeleton of your CPAN distribution.
 <a href="#page--pod-documentation--extensions--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--literate-programming--PAGE">Literate Programming</a>
+<a href="#page--pod-documentation--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--literate-programming--PAGE">Literate Programming</a>
 </div>
 </nav>
 <p>
@@ -2311,7 +2311,7 @@ should you choose to follow this route.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--pod-documentation--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--pod-documentation--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2320,7 +2320,7 @@ should you choose to follow this route.
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--extensions--PAGE">POD Extensions</a>
+<a href="#page--pod-documentation--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--pod-documentation--DIR">Using POD for Documentation</a> → <a href="#page--pod-documentation--extensions--PAGE">POD Extensions</a>
 </div>
 </nav>
 <p>
@@ -2429,7 +2429,7 @@ There are some variations on this theme, but it should get you started.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2438,7 +2438,7 @@ There are some variations on this theme, but it should get you started.
 <a href="#page--module-build-and-starter--commands--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--invocation--PAGE">The Module-Starter Invocation Command</a>
+<a href="#page--module-build-and-starter--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--invocation--PAGE">The Module-Starter Invocation Command</a>
 </div>
 </nav>
 <p>
@@ -2483,16 +2483,16 @@ Let's show an example invocation for our own module called
 <code>MyMath::Ops</code> which will contain some silly mathematical routines:
 </p>
 <div class="code_block"><pre>
-module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="Statement">\</span>
-    <span class="Special">--dir=MyMath-Ops</span> <span class="Statement">\</span>
-    <span class="Special">--module=MyMath::Ops</span> <span class="Statement">\</span>
-    <span class="Special">--module=MyMath::Ops::Add</span> <span class="Statement">\</span>
-    <span class="Special">--module=MyMath::Ops::Multiply</span> <span class="Statement">\</span>
-    <span class="Special">--module=MyMath::Ops::Subtract</span> <span class="Statement">\</span>
-    <span class="Special">--module=MyMath::Ops::Divide</span> <span class="Statement">\</span>
+module-starter <span class="Special">--distro</span><span class="Statement">=</span>MyMath::Ops <span class="Statement">\</span>
+    <span class="Special">--dir</span><span class="Statement">=</span>MyMath-Ops <span class="Statement">\</span>
+    <span class="Special">--module</span><span class="Statement">=</span>MyMath::Ops <span class="Statement">\</span>
+    <span class="Special">--module</span><span class="Statement">=</span>MyMath::Ops::Add <span class="Statement">\</span>
+    <span class="Special">--module</span><span class="Statement">=</span>MyMath::Ops::Multiply <span class="Statement">\</span>
+    <span class="Special">--module</span><span class="Statement">=</span>MyMath::Ops::Subtract <span class="Statement">\</span>
+    <span class="Special">--module</span><span class="Statement">=</span>MyMath::Ops::Divide <span class="Statement">\</span>
     <span class="Special">--mb</span> <span class="Statement">\</span>
-    <span class="Special">--author=</span><span class="Statement">&quot;</span><span class="Constant">Perl Newbie</span><span class="Statement">&quot;</span> <span class="Statement">\</span>
-    <span class="Special">--email=</span><span class="Statement">'</span><span class="Constant">perl-newbie@perl-begin.org</span><span class="Statement">'</span> <span class="Statement">\</span>
+    <span class="Special">--author</span><span class="Statement">=&quot;</span><span class="Constant">Perl Newbie</span><span class="Statement">&quot;</span> <span class="Statement">\</span>
+    <span class="Special">--email</span><span class="Statement">='</span><span class="Constant">perl-newbie@perl-begin.org</span><span class="Statement">'</span> <span class="Statement">\</span>
     <span class="Special">--verbose</span>
 </pre></div>
 <hr />
@@ -2507,7 +2507,7 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2516,7 +2516,7 @@ module-starter <span class="Special">--distro=MyMath::Ops</span> <span class="St
 <a href="#page--module-build-and-starter--coding--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--commands--PAGE">Module-Build commands</a>
+<a href="#page--module-build-and-starter--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--commands--PAGE">Module-Build commands</a>
 </div>
 </nav>
 <p>
@@ -2600,7 +2600,7 @@ Now let's move on.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2609,7 +2609,7 @@ Now let's move on.
 <a href="#page--module-build-and-starter--boilerplate--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--coding--PAGE">Adding meaningful code</a>
+<a href="#page--module-build-and-starter--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--coding--PAGE">Adding meaningful code</a>
 </div>
 </nav>
 <p>
@@ -2619,7 +2619,7 @@ code to the modules. But first we need to add some tests. Let's add this
 test script under <code>t/add.t</code>
 </p>
 <div class="code_block"><pre>
-<span class="PreProc">#!/usr/bin/perl</span>
+<span class="PreProc">#!/usr/bin/env perl</span>
 
 <span class="Statement">use strict</span>;
 <span class="Statement">use warnings</span>;
@@ -2628,7 +2628,7 @@ test script under <code>t/add.t</code>
 
 <span class="Statement">use </span>MyMath::Ops::Add;
 
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$adder</span> = MyMath::Ops::Add-&gt;new();
 
     <span class="Comment"># TEST</span>
@@ -2636,7 +2636,7 @@ test script under <code>t/add.t</code>
 
     <span class="Comment"># TEST</span>
     is (<span class="Identifier">$adder-&gt;add</span>(<span class="Constant">2</span>,<span class="Constant">3</span>), <span class="Constant">5</span>, <span class="Constant">&quot;2+3 == 5&quot;</span>);
-}
+&#x7D;
 </pre></div>
 <p>
 Now we need to add it to the <code>MANIFEST</code>, so it will be included in
@@ -2651,7 +2651,7 @@ $ ./Build test
 t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.012003, /usr/bin/perl5.12.3
 t/00-load.t ....... ok
 t/add.t ........... Can't locate object method "new" via package "MyMath::Ops::Add" at t/add.t line 11.
-# Looks like your test exited with 255 before it could output anything.
+\# Looks like your test exited with 255 before it could output anything.
 t/add.t ........... Dubious, test returned 255 (wstat 65280, 0xff00)
 Failed 2/2 subtests
 t/boilerplate.t ... ok
@@ -2714,22 +2714,22 @@ Construct a new object.
 <span class="Statement">=cut</span>
 
 <span class="Statement">sub </span><span class="Identifier">new</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$class</span> = <span class="Statement">shift</span>;
 
-    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">bless</span> {}, <span class="Identifier">$class</span>;
+    <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">bless</span> &#x7B;&#x7D;, <span class="Identifier">$class</span>;
 
     <span class="Identifier">$self-&gt;_init</span>(<span class="Identifier">@_</span>);
 
     <span class="Statement">return</span> <span class="Identifier">$self</span>;
-}
+&#x7D;
 
 <span class="Statement">sub </span><span class="Identifier">_init</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">return</span>;
-}
+&#x7D;
 
 <span class="Statement">=head2</span><span class="Constant"> $self-&gt;add($x, $y)</span>
 
@@ -2738,26 +2738,26 @@ Adds two numbers.
 <span class="Statement">=cut</span>
 
 <span class="Statement">sub </span><span class="Identifier">add</span>
-{
+&#x7B;
     <span class="Statement">my</span> <span class="Identifier">$self</span> = <span class="Statement">shift</span>;
 
     <span class="Statement">my</span> (<span class="Identifier">$x</span>, <span class="Identifier">$y</span>) = <span class="Identifier">@_</span>;
     <span class="Statement">return</span> <span class="Identifier">$x</span>+<span class="Identifier">$y</span>;
-}
+&#x7D;
 
 <span class="Statement">=head2</span><span class="Constant"> function1</span>
 
 <span class="Statement">=cut</span>
 
-<span class="Statement">sub </span><span class="Identifier">function1 </span>{
-}
+<span class="Statement">sub </span><span class="Identifier">function1 </span>&#x7B;
+&#x7D;
 
 <span class="Statement">=head2</span><span class="Constant"> function2</span>
 
 <span class="Statement">=cut</span>
 
-<span class="Statement">sub </span><span class="Identifier">function2 </span>{
-}
+<span class="Statement">sub </span><span class="Identifier">function2 </span>&#x7B;
+&#x7D;
 
 <span class="Statement">=head1</span><span class="Constant"> AUTHOR</span>
 
@@ -2786,10 +2786,6 @@ You can also look for information at:
 <span class="Statement">=item</span><span class="Constant"> * RT: CPAN's request tracker</span>
 
 <span class="Identifier">L&lt;http://rt.cpan.org/NoAuth/Bugs.html?Dist=MyMath::Ops&gt;</span>
-
-<span class="Statement">=item</span><span class="Constant"> * AnnoCPAN: Annotated CPAN documentation</span>
-
-<span class="Identifier">L&lt;http://annocpan.org/dist/MyMath::Ops&gt;</span>
 
 <span class="Statement">=item</span><span class="Constant"> * CPAN Ratings</span>
 
@@ -2861,7 +2857,7 @@ facilitate it.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2870,7 +2866,7 @@ facilitate it.
 <a href="#page--module-build-and-starter--additional-resources--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--boilerplate--PAGE">Getting rid of the boilerplate</a>
+<a href="#page--module-build-and-starter--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--boilerplate--PAGE">Getting rid of the boilerplate</a>
 </div>
 </nav>
 <p>
@@ -2898,45 +2894,45 @@ t/00-load.t ....... 1/5 # Testing MyMath::Ops 0.01, Perl 5.014002, /usr/bin/perl
 t/00-load.t ....... ok
 t/add.t ........... ok
 t/boilerplate.t ... 1/7
-#   Failed test 'README contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# The README is used... appears on lines 3
-# 'version information here' appears on lines 11
+\#   Failed test 'README contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# The README is used... appears on lines 3
+\# 'version information here' appears on lines 11
 
-#   Failed test 'Changes contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# placeholder date/time appears on lines 3
+\#   Failed test 'Changes contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# placeholder date/time appears on lines 3
 
-#   Failed test 'lib/MyMath/Ops.pm contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# stub function definition appears on lines 37 41 44 48
-# boilerplate description appears on lines 21
-# the great new $MODULENAME appears on lines 8
+\#   Failed test 'lib/MyMath/Ops.pm contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# stub function definition appears on lines 37 41 44 48
+\# boilerplate description appears on lines 21
+\# the great new $MODULENAME appears on lines 8
 
-#   Failed test 'lib/MyMath/Ops/Add.pm contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# stub function definition appears on lines 74 78 81 85
-# boilerplate description appears on lines 20
-# the great new $MODULENAME appears on lines 8
+\#   Failed test 'lib/MyMath/Ops/Add.pm contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# stub function definition appears on lines 74 78 81 85
+\# boilerplate description appears on lines 20
+\# the great new $MODULENAME appears on lines 8
 
-#   Failed test 'lib/MyMath/Ops/Multiply.pm contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# stub function definition appears on lines 37 41 44 48
-# boilerplate description appears on lines 21
-# the great new $MODULENAME appears on lines 8
+\#   Failed test 'lib/MyMath/Ops/Multiply.pm contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# stub function definition appears on lines 37 41 44 48
+\# boilerplate description appears on lines 21
+\# the great new $MODULENAME appears on lines 8
 
-#   Failed test 'lib/MyMath/Ops/Subtract.pm contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# stub function definition appears on lines 37 41 44 48
-# boilerplate description appears on lines 21
-# the great new $MODULENAME appears on lines 8
+\#   Failed test 'lib/MyMath/Ops/Subtract.pm contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# stub function definition appears on lines 37 41 44 48
+\# boilerplate description appears on lines 21
+\# the great new $MODULENAME appears on lines 8
 
-#   Failed test 'lib/MyMath/Ops/Divide.pm contains boilerplate text'
-#   at t/boilerplate.t line 23.
-# stub function definition appears on lines 37 41 44 48
-# boilerplate description appears on lines 21
-# the great new $MODULENAME appears on lines 8
-# Looks like you failed 7 tests of 7.
+\#   Failed test 'lib/MyMath/Ops/Divide.pm contains boilerplate text'
+\#   at t/boilerplate.t line 23.
+\# stub function definition appears on lines 37 41 44 48
+\# boilerplate description appears on lines 21
+\# the great new $MODULENAME appears on lines 8
+\# Looks like you failed 7 tests of 7.
 t/boilerplate.t ... Dubious, test returned 7 (wstat 1792, 0x700)
 Failed 7/7 subtests
 t/pod-coverage.t .. ok
@@ -2966,7 +2962,7 @@ Fixing them is left as an exercise for the reader.
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--module-build-and-starter--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--module-build-and-starter--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -2975,7 +2971,7 @@ Fixing them is left as an exercise for the reader.
 <a href="#page--conclusion--DIR" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--additional-resources--PAGE">Additional Resources</a>
+<a href="#page--module-build-and-starter--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--module-build-and-starter--DIR">Module-Build and Module-Starter</a> → <a href="#page--module-build-and-starter--additional-resources--PAGE">Additional Resources</a>
 </div>
 </nav>
 <p>
@@ -3104,7 +3100,7 @@ Happy programming!
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3113,7 +3109,7 @@ Happy programming!
 <a href="#page--conclusion--thanks--PAGE" class="nav" accesskey="n">Next</a></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--links--PAGE">Links</a>
+<a href="#page--conclusion--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--links--PAGE">Links</a>
 </div>
 </nav>
 <p>
@@ -3131,7 +3127,7 @@ To be done if we see fit (suggestions are welcome).
 </header>
 <nav>
 <table class="page-nav-bar top"><tr><td>
-<a href="#page--DIR" class="nav" accesskey="c">Contents</a></td>
+<a href="#page--conclusion--DIR" class="nav" accesskey="c">Contents</a></td>
 <td>
 <a href="#page--conclusion--DIR" class="nav" accesskey="u">Up</a></td>
 <td>
@@ -3140,7 +3136,7 @@ To be done if we see fit (suggestions are welcome).
 <b>Next</b></td>
 </tr></table>
 <div class="bread">
-<a href="#page--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--thanks--PAGE">Thanks</a>
+<a href="#page--conclusion--DIR">"Perl for Perl Newbies" - Part 5 - Good Programming Practices</a> → <a href="#page--conclusion--DIR">Conclusion</a> → <a href="#page--conclusion--thanks--PAGE">Thanks</a>
 </div>
 </nav>
 <p>

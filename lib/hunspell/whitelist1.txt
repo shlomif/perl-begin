@@ -1228,7 +1228,6 @@ Accessor
 Add-
 Add1
 Add2
-AnnoCPAN
 App
 Autotools
 Bar2
@@ -1380,7 +1379,6 @@ addr
 addrs
 all_as
 andy
-annocpan
 arg
 args
 args-
