@@ -3,7 +3,7 @@ TARGET = dest
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
 
-all_deps: bulk-make-dirs bad_elements_html run_compass
+all_deps: make-dirs bad_elements_html run_compass
 
 include lib/make/shlomif_common.mak
 include lib/make/include.mak
@@ -133,7 +133,11 @@ fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 bulk-make-dirs:
 	@mkdir -p $(PERL_BEGIN_DIRS_DEST)
 
+make-dirs: $(PERL_BEGIN_DIRS_DEST)
+
 dest/js/jq.js: node_modules/jquery/dist/jquery.min.js
 	$(call COPY)
 
 all_deps: dest/js/jq.js
+
+.PHONY: bulk-make-dirs make-dirs
