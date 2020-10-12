@@ -474,9 +474,11 @@ table.wiki-content-table td:first-child {
 }
 
 .bad_elems_wrapper {
-    h4.title,
-    h5.title,
-    h6.title {
-        font-size: 130%;
+    h4,
+    h5,
+    h6 {
+        &.title {
+            font-size: 130%;
+        }
     }
 }
