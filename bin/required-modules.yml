@@ -12,5 +12,6 @@ required:
         Parallel::ForkManager::Segmented: 0
         Perl::Tidy: 20200110
         String::ShellQuote: 0
+        Test::File::IsSorted: 0
         XML::Grammar::Vered: 0
         YAML::XS: 0
