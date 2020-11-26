@@ -93,14 +93,14 @@ my $tree_contents = {
                     ],
                 },
                 {
-                    text => "Impatient Perl",
-                    url  => "tutorials/impatient-perl/",
+                    text  => "Impatient Perl",
+                    url   => "tutorials/impatient-perl/",
                     title =>
 "Book for Quickly Learning Perl (based on previous knowledge)",
                 },
                 {
-                    text => "Hyperpolyglot",
-                    url  => "tutorials/hyperpolyglot/",
+                    text  => "Hyperpolyglot",
+                    url   => "tutorials/hyperpolyglot/",
                     title =>
 "Our mirror for the lingo of Perl and other languages under CC-by-sa",
                     subs => [
@@ -115,8 +115,8 @@ my $tree_contents = {
                     ],
                 },
                 {
-                    text => "Elements to Avoid",
-                    url  => "tutorials/bad-elements/",
+                    text  => "Elements to Avoid",
+                    url   => "tutorials/bad-elements/",
                     title =>
 "Elements of Perl that should be avoided and what to replace them with",
                 },
@@ -132,8 +132,8 @@ my $tree_contents = {
             url  => "books/",
             subs => [
                 {
-                    url  => "books/advanced/",
-                    text => "Advanced Books",
+                    url   => "books/advanced/",
+                    text  => "Advanced Books",
                     title =>
 "Books that contain more information about Perl than the basics",
                 },
@@ -145,8 +145,8 @@ my $tree_contents = {
             ],
         },
         {
-            url  => "IDEs-and-tools/",
-            text => "IDEs and Development Tools",
+            url   => "IDEs-and-tools/",
+            text  => "IDEs and Development Tools",
             title =>
 "Integrated Development Environments (IDEs), Programmer Editors, and other Development Tools for Perl",
             subs => [
@@ -177,8 +177,8 @@ my $tree_contents = {
             show_always => 1,
             subs        => [
                 {
-                    url  => "FAQs/freenode-perl/",
-                    text => "Freenode’s #perl FAQ",
+                    url   => "FAQs/freenode-perl/",
+                    text  => "Freenode’s #perl FAQ",
                     title =>
 "The Frequently Asked Questions List for the Freenode Perl Channel",
                 },
@@ -204,8 +204,8 @@ my $tree_contents = {
             title => "Ask questions and receive answers by using a web-browser",
         },
         {
-            text => "IRC Channels",
-            url  => "irc/",
+            text  => "IRC Channels",
+            url   => "irc/",
             title =>
                 "Chat online about Perl using the Internet Relay Chat (IRC)",
         },
@@ -214,8 +214,8 @@ my $tree_contents = {
             skip      => 1,
         },
         {
-            text => "Reference Resources",
-            url  => "reference-resources/",
+            text  => "Reference Resources",
+            url   => "reference-resources/",
             title =>
 "Resources for reference about Perl and looking up information.",
         },
@@ -225,8 +225,8 @@ my $tree_contents = {
             title => "Publicly editable sites with Lots of Useful Information",
         },
         {
-            text => "Blogs",
-            url  => "blogs/",
+            text  => "Blogs",
+            url   => "blogs/",
             title =>
 "Links to Perl-related Blogs (a.k.a &quot;Weblogs&quot; or online journals)",
         },
@@ -264,8 +264,8 @@ my $tree_contents = {
                     title => "Using Perl for Bio-Informatics",
                 },
                 {
-                    text => "Chat Bots and Scripting (IRC, XMPP)",
-                    url  => "uses/chat-scripting/",
+                    text  => "Chat Bots and Scripting (IRC, XMPP)",
+                    url   => "uses/chat-scripting/",
                     title =>
 "Writing chat (IRC, Jabber and other IM) bots in Perl and general chat scripting",
                 },
@@ -280,20 +280,20 @@ my $tree_contents = {
                     title => "Working with E-mail using Perl",
                 },
                 {
-                    text => "Games and Multimedia",
-                    url  => "uses/games/",
+                    text  => "Games and Multimedia",
+                    url   => "uses/games/",
                     title =>
                         "Developing Games and Multimedia Applications in Perl",
                 },
                 {
-                    text => "GUI Development",
-                    url  => "uses/GUI/",
+                    text  => "GUI Development",
+                    url   => "uses/GUI/",
                     title =>
 "Development of Graphical User Interface (GUIs) in Perl",
                 },
                 {
-                    text => "Multitasking and Networking",
-                    url  => "uses/multitasking/",
+                    text  => "Multitasking and Networking",
+                    url   => "uses/multitasking/",
                     title =>
 "Perl for Multitasking and Networking (Events/Asynchronous frameworks/etc.)",
                 },
@@ -302,8 +302,8 @@ my $tree_contents = {
                     url  => "uses/qa/",
                 },
                 {
-                    text => "SSH/Telnet",
-                    url  => "uses/remote-login-and-commands/",
+                    text  => "SSH/Telnet",
+                    url   => "uses/remote-login-and-commands/",
                     title =>
 "Remote login and execution of commands (SSH, Telnet, etc.)",
                 },
@@ -323,7 +323,7 @@ my $tree_contents = {
                     url   => "uses/text-parsing/",
                 },
                 {
-                    text => "Web Automation",
+                    text  => "Web Automation",
                     title =>
 "Perform operations on web-site programatically and automatically",
                     url => "uses/web-automation/",
@@ -361,14 +361,14 @@ my $tree_contents = {
                     title => "Handling Files and Directories in Perl",
                 },
                 {
-                    text => "Hashes",
-                    url  => "topics/hashes/",
+                    text  => "Hashes",
+                    url   => "topics/hashes/",
                     title =>
 "Hashes / Associative Arrays for Mapping Keys to Values",
                 },
                 {
-                    text => "Modules and Packages",
-                    url  => "topics/modules-and-packages/",
+                    text  => "Modules and Packages",
+                    url   => "topics/modules-and-packages/",
                     title =>
 "Encapsulate code in reusable units and use namespaces effectively.",
                 },
@@ -398,29 +398,29 @@ my $tree_contents = {
                     title => "Guidelines for Writing Secure Perl code",
                     subs  => [
                         {
-                            text => "Code/Markup Injection",
-                            url  => "topics/security/code-markup-injection/",
+                            text  => "Code/Markup Injection",
+                            url   => "topics/security/code-markup-injection/",
                             title =>
 "Code/Markup Injection and its Prevention : SQL Injection, XSS, etc.",
                         },
                     ],
                 },
                 {
-                    text => "Scoping and Variables",
-                    url  => "topics/scoping/",
+                    text  => "Scoping and Variables",
+                    url   => "topics/scoping/",
                     title =>
                         "Local variables, lexical scoping, package variables",
                 },
                 {
-                    text => "Using CPAN",
-                    url  => "topics/cpan/",
+                    text  => "Using CPAN",
+                    url   => "topics/cpan/",
                     title =>
 "Effectively using CPAN - the Comprehensive Perl Archive Network",
                     subs => [
                         {
                             text =>
                                 "CPAN Wrappers for Creating System Packages",
-                            url => "topics/cpan/wrappers-for-distributions/",
+                            url   => "topics/cpan/wrappers-for-distributions/",
                             title =>
 "Wrap CPAN packages in native packages of your Linux/BSD/etc. distributions.",
                         },
@@ -437,7 +437,7 @@ my $tree_contents = {
             url         => "learn/",
             role        => "header",
             show_always => 1,
-            title =>
+            title       =>
                 "Perl advocacy - why you should learn it, and some issues.",
             subs => [
                 {
@@ -445,7 +445,7 @@ my $tree_contents = {
                     text => "What about Perl 6?"
                 },
                 {
-                    url => "learn/Perl-perl-but-not-PERL/",
+                    url  => "learn/Perl-perl-but-not-PERL/",
                     text =>
 "&quot;Perl&quot;, and &quot;perl&quot;, but not &quot;PERL&quot;"
                 },
