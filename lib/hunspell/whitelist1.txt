@@ -105,6 +105,7 @@ offline
 online
 org
 perl
+perlcafe
 placeholder
 placeholders
 plaintext
@@ -429,7 +430,6 @@ ShareThis
 bitbucket
 howto
 mentionings
-perlcafe
 screenshots
 tm604
 wiki'ing
@@ -700,7 +700,6 @@ perl-ctypes
 
 Randal
 Schwratz
-perlcafe
 perldsc
 perllol
 perlref

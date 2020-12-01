@@ -17,10 +17,11 @@ sub get_hosts
 }
 
 my $tree_contents = {
-    host  => "perl_begin",
-    text  => "Perl Beginners’ Site",
-    title => "A useful Portal for People New to Perl",
-    subs  => [
+    host        => "perl_begin",
+    text        => "Perl Beginners’ Site",
+    title       => "A useful Portal for People New to Perl",
+    show_always => 1,
+    subs        => [
         {
             text => "Home",
             url  => "",
@@ -181,6 +182,14 @@ my $tree_contents = {
                     text  => "Freenode’s #perl FAQ",
                     title =>
 "The Frequently Asked Questions List for the Freenode Perl Channel",
+                    subs => [
+                        {
+                            url   => "FAQs/freenode-perl/perlcafe/",
+                            text  => "Freenode’s #perlcafe",
+                            title =>
+"An intro for #perlcafe, a symbiont channel of #perl",
+                        }
+                    ],
                 },
             ],
         },
