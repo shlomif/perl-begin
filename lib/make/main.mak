@@ -1,4 +1,6 @@
 TARGET = dest
+LATEMP_ROOT_SOURCE_DIR := .
+LATEMP_ABS_ROOT_SOURCE_DIR := $(shell cd $(LATEMP_ROOT_SOURCE_DIR)/ && pwd)
 
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
@@ -13,7 +15,7 @@ include lib/make/deps.mak
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
-PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 perl bin/post-incs-v2.pl --mode=minify \
+PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 $(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/post-incs-v2.pl --mode=minify \
                --minifier-conf=bin/html-min-cli-config-file.conf \
                --texts-dir=lib/ads \
                --source-dir=$(TARGET) \
@@ -59,7 +61,7 @@ upload_home_remote: all
 	(cd dest && $(RSYNC) -a * "$(HOMEPAGE_PERL_BEGIN_REMOTE)" )
 
 update_p4n:
-	touch src/tutorials/perl-for-newbies/*/index.tt2
+	touch $(LATEMP_ROOT_SOURCE_DIR)/src/tutorials/perl-for-newbies/*/index.tt2
 
 rebuild_p4n: update_p4n all
 
@@ -67,7 +69,7 @@ IMPATIENT_PERL_FILES = $(patsubst %,dest/tutorials/impatient-perl/%,iperl.html $
 
 iperl_extra_data: $(IMPATIENT_PERL_FILES)
 
-$(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: lib/tutorials/impatient-perl/%
+$(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: $(LATEMP_ROOT_SOURCE_DIR)/lib/tutorials/impatient-perl/%
 	$(call COPY)
 
 TODO_DONE = $(patsubst %,$(TARGET)/contribute/%, TODO.txt DONE.txt)
@@ -79,7 +81,7 @@ $(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
 
 htaccess: $(TARGET)/.htaccess
 
-$(TARGET)/.htaccess: lib/htaccess.txt
+$(TARGET)/.htaccess: $(LATEMP_ROOT_SOURCE_DIR)/lib/htaccess.txt
 	$(call COPY)
 
 BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
@@ -104,7 +106,7 @@ DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS := $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 	# jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
-	./bin/translate-Vered-XML --output $@ $(BAD_ELEMENTS_SOURCE_XML)
+	$(LATEMP_ROOT_SOURCE_DIR)/bin/translate-Vered-XML --output $@ $(BAD_ELEMENTS_SOURCE_XML)
 	# jing $(DOCBOOK5_RELAXNG) $@
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
@@ -112,12 +114,12 @@ $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS)
 	# jing $(DOCBOOK5_RELAXNG) $<
 	docmake --stringparam "generate.toc=article toc,title" --stringparam "docbook.css.source=" --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml5 $<
-	xsltproc --output $@ ./bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
+	xsltproc --output $@ $(LATEMP_ROOT_SOURCE_DIR)/bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
 	rm -f $@.temp.xml.xhtml
-	perl -lp -0777 -i bin/pre-clean-up-docbook-5-xsl.pl $@
+	$(PERL) -lp -0777 -i $(LATEMP_ROOT_SOURCE_DIR)/bin/pre-clean-up-docbook-5-xsl.pl $@
 
 $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
-	./bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
+	$(LATEMP_ROOT_SOURCE_DIR)/bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
 dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 
@@ -127,7 +129,7 @@ PERL_BEGIN_DOCS_SRC := $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.t
 
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
-	perl bin/tt-render.pl
+	$(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/tt-render.pl
 	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) $$(cat lib/make/tt2.txt)
 
 bulk-make-dirs:
