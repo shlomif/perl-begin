@@ -32,13 +32,12 @@ src/style.css: config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_sy
 src/jqui-override.css: lib/sass/jqui-override.scss
 	compass compile
 
-dest/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
-dest/FAQs/freenode-perl/index.html: lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
-dest/IDEs-and-tools/Perl_developer_tools/index.html: lib/retrieved-html-parts/Perl_developer_tools.html
-dest/tutorials/hyperpolyglot/sheet1.html: lib/retrieved-html-parts/hyperpolyglot/scripting.html
-dest/topics/files-and-directories/index.html: lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
-
-dest/learn/index.html: lib/why-perl.tt2
+$(TARGET)/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
+$(TARGET)/FAQs/freenode-perl/index.html: lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
+$(TARGET)/IDEs-and-tools/Perl_developer_tools/index.html: lib/retrieved-html-parts/Perl_developer_tools.html
+$(TARGET)/tutorials/hyperpolyglot/sheet1.html: lib/retrieved-html-parts/hyperpolyglot/scripting.html
+$(TARGET)/topics/files-and-directories/index.html: lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
+$(TARGET)/learn/index.html: lib/why-perl.tt2
 
 # upload: upload_hexten
 upload: upload_beta
@@ -46,30 +45,30 @@ upload: upload_beta
 HOMEPAGE_PERL_BEGIN_REMOTE := $${__HOMEPAGE_REMOTE_PATH}/Perl-Begin/
 
 upload_hexten: all
-	(cd dest && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
+	(cd $(TARGET) && $(RSYNC) -a * perl-begin@hexten.net:htdocs/)
 
 upload_hexten_beta: all
-	(cd dest && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/ )
+	(cd $(TARGET) && $(RSYNC) -a --inplace * perl-begin@hexten.net:htdocs/__Beta-Quop/ )
 
 upload_beta: all
-	(cd dest && $(RSYNC) -a --inplace * "$(HOMEPAGE_PERL_BEGIN_REMOTE)"/__Beta-Quop/ )
+	(cd $(TARGET) && $(RSYNC) -a --inplace * "$(HOMEPAGE_PERL_BEGIN_REMOTE)"/__Beta-Quop/ )
 
 upload_local: all
-	(cd dest && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/ )
+	(cd $(TARGET) && $(RSYNC) -a --inplace * /var/www/html/shlomif/perl-begin/ )
 
 upload_home_remote: all
-	(cd dest && $(RSYNC) -a * "$(HOMEPAGE_PERL_BEGIN_REMOTE)" )
+	(cd $(TARGET) && $(RSYNC) -a * "$(HOMEPAGE_PERL_BEGIN_REMOTE)" )
 
 update_p4n:
 	touch $(LATEMP_ROOT_SOURCE_DIR)/src/tutorials/perl-for-newbies/*/index.tt2
 
 rebuild_p4n: update_p4n all
 
-IMPATIENT_PERL_FILES = $(patsubst %,dest/tutorials/impatient-perl/%,iperl.html $(patsubst %,iperl_files/%,iperl_html_m2efc85d6.jpg iperl_html_m5238e28d.jpg))
+IMPATIENT_PERL_FILES = $(patsubst %,$(TARGET)/tutorials/impatient-perl/%,iperl.html $(patsubst %,iperl_files/%,iperl_html_m2efc85d6.jpg iperl_html_m5238e28d.jpg))
 
 iperl_extra_data: $(IMPATIENT_PERL_FILES)
 
-$(IMPATIENT_PERL_FILES): dest/tutorials/impatient-perl/%: $(LATEMP_ROOT_SOURCE_DIR)/lib/tutorials/impatient-perl/%
+$(IMPATIENT_PERL_FILES): $(TARGET)/tutorials/impatient-perl/%: $(LATEMP_ROOT_SOURCE_DIR)/lib/tutorials/impatient-perl/%
 	$(call COPY)
 
 TODO_DONE = $(patsubst %,$(TARGET)/contribute/%, TODO.txt DONE.txt)
@@ -121,7 +120,7 @@ $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS
 $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.xhtml
 	$(LATEMP_ROOT_SOURCE_DIR)/bin/clean-up-docbook-5-xsl-xhtml-1_1.pl -o $@ $<
 
-dest/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
+$(TARGET)/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 
 TEST_TARGETS = Tests/*.{py,t}
 
@@ -137,9 +136,11 @@ bulk-make-dirs:
 
 make-dirs: $(PERL_BEGIN_DIRS_DEST)
 
-dest/js/jq.js: node_modules/jquery/dist/jquery.min.js
+JQUERY_JS := $(TARGET)/js/jq.js
+
+$(JQUERY_JS): node_modules/jquery/dist/jquery.min.js
 	$(call COPY)
 
-all_deps: dest/js/jq.js
+all_deps: $(JQUERY_JS)
 
 .PHONY: bulk-make-dirs make-dirs
