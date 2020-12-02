@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Test::More tests => 1;
 use Path::Tiny qw/ path /;
-use lib './lib';
+use lib ( path($0)->parent->absolute->child(qw# lib #) . "" );
 
 my $SRC_POST_DEST = "dest";
 

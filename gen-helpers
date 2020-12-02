@@ -66,7 +66,7 @@ my $generator = HTML::Latemp::GenMakeHelpers->new(
         },
         {
             'id'         => "perl_begin",
-            'source_dir' => "src",
+            'source_dir' => "$LATEMP_ROOT_SOURCE_DIR/src",
             'dest_dir'   => "\$(TARGET)",
         },
     ],
@@ -135,7 +135,7 @@ $r_fh->print($text);
 
     close($out_fh);
 }
-use lib './lib';
+use lib ( path($0)->parent->absolute->child(qw# lib #) . "" );
 require HTML::Latemp::GenDepsTT2;
 HTML::Latemp::GenDepsTT2->new(
     {

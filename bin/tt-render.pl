@@ -5,11 +5,10 @@ use warnings;
 use 5.014;
 use utf8;
 
-use lib './lib';
+use Path::Tiny qw/ path /;
+use lib ( path($0)->parent(2)->absolute->child(qw# lib #) . "" );
 use URI::Escape qw( uri_escape );
 use Template ();
-
-use Path::Tiny qw/ path /;
 
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
