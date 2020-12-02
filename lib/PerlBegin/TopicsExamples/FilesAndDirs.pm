@@ -2,6 +2,8 @@ package PerlBegin::TopicsExamples::FilesAndDirs;
 
 use PerlBegin::TopicsExamples ();
 
+use Path::Tiny qw/ path tempdir tempfile cwd /;
+
 use strict;
 use warnings;
 use YAML::XS qw/ LoadFile /;
@@ -17,7 +19,8 @@ sub _run
         }
     );
 
-    my ($data) = LoadFile('lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml');
+    my ($data) =
+        LoadFile( path(__FILE__)->parent(1)->child('FilesAndDirs.data.yml') );
 
     my $text = '';
     foreach my $d (@$data)

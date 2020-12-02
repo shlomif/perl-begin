@@ -6,7 +6,13 @@ use 5.014;
 use utf8;
 
 use Path::Tiny qw/ path /;
-use lib ( path($0)->parent(2)->absolute->child(qw# lib #) . "" );
+use vars qw/ $LATEMP_ROOT_SOURCE_DIR /;
+
+BEGIN
+{
+    $LATEMP_ROOT_SOURCE_DIR = path($0)->parent(2)->absolute;
+}
+use lib ( $LATEMP_ROOT_SOURCE_DIR->child(qw# lib #) . "" );
 use URI::Escape qw( uri_escape );
 use Template ();
 
@@ -16,7 +22,9 @@ use HTML::Latemp::AddToc   ();
 use Module::Format::AsHTML ();
 use MyNavData              ();
 
-my $cpan = Module::Format::AsHTML->new;
+my $cpan    = Module::Format::AsHTML->new;
+my $src_dir = $LATEMP_ROOT_SOURCE_DIR->child(qw# src #);
+my $lib_dir = $LATEMP_ROOT_SOURCE_DIR->child(qw# lib #);
 
 sub _render_leading_path_component
 {
@@ -33,7 +41,8 @@ sub _render_leading_path_component
 my $LATEMP_SERVER = "perl_begin";
 my $template      = Template->new(
     {
-        INCLUDE_PATH => [ ".", "./lib", ],
+        ABSOLUTE     => 1,
+        INCLUDE_PATH => [ ".", $lib_dir, ],
         POST_CHOMP   => 1,
         RELATIVE     => 1,
         ENCODING     => 'utf8',
@@ -42,7 +51,7 @@ my $template      = Template->new(
 
 sub slurp
 {
-    return path(shift)->slurp_utf8;
+    return $LATEMP_ROOT_SOURCE_DIR->child(shift)->slurp_utf8;
 }
 
 sub slurp_maintained_html_part
@@ -193,7 +202,7 @@ LINKS:
             =~ s{\$\(ROOT\)}{$base_path}gr;
     };
     my $html = '';
-    $template->process( "src/$input_tt2_page_path.tt2",
+    $template->process( "$src_dir/$input_tt2_page_path.tt2",
         $vars, \$html, binmode => ':utf8', )
         or die $template->error();
 

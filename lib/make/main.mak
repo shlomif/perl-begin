@@ -23,20 +23,20 @@ PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 $(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/post-
 
 # PROCESS_ALL_INCLUDES = true
 
-run_compass: src/style.css src/jqui-override.css
+run_compass: $(LATEMP_ROOT_SOURCE_DIR)/src/style.css $(LATEMP_ROOT_SOURCE_DIR)/src/jqui-override.css
 
-src/style.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss)
+$(LATEMP_ROOT_SOURCE_DIR)/src/style.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss)
 	compass compile || rm -f $@
 
-src/jqui-override.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,lib/sass/jqui-override.scss)
+$(LATEMP_ROOT_SOURCE_DIR)/src/jqui-override.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,lib/sass/jqui-override.scss)
 	compass compile
 
-$(TARGET)/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
-$(TARGET)/FAQs/freenode-perl/index.html: lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
-$(TARGET)/IDEs-and-tools/Perl_developer_tools/index.html: lib/retrieved-html-parts/Perl_developer_tools.html
-$(TARGET)/tutorials/hyperpolyglot/sheet1.html: lib/retrieved-html-parts/hyperpolyglot/scripting.html
-$(TARGET)/topics/files-and-directories/index.html: lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
-$(TARGET)/learn/index.html: lib/why-perl.tt2
+$(TARGET)/humour/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/Perl_Humour.html
+$(TARGET)/FAQs/freenode-perl/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
+$(TARGET)/IDEs-and-tools/Perl_developer_tools/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/Perl_developer_tools.html
+$(TARGET)/tutorials/hyperpolyglot/sheet1.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/hyperpolyglot/scripting.html
+$(TARGET)/topics/files-and-directories/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml $(LATEMP_ROOT_SOURCE_DIR)/lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
+$(TARGET)/learn/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/why-perl.tt2
 
 # upload: upload_hexten
 upload: upload_beta
@@ -123,7 +123,7 @@ $(TARGET)/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 
 TEST_TARGETS = Tests/*.{py,t}
 
-PERL_BEGIN_DOCS_SRC := $(patsubst $(PERL_BEGIN_DEST)/%,$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
+PERL_BEGIN_DOCS_SRC := $(patsubst $(PERL_BEGIN_DEST)/%,$(LATEMP_ROOT_SOURCE_DIR)/$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
 
 fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@echo $(MAKE) fastrender
