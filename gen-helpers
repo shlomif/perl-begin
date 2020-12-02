@@ -10,6 +10,8 @@ use IO::All qw/ io /;
 use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
 
+my $LATEMP_ROOT_SOURCE_DIR = path($0)->parent->absolute;
+
 my $DIR = 'lib/make';
 
 sub _exec
@@ -23,20 +25,32 @@ sub _exec
     return;
 }
 
-_exec( [ $^X, 'bin/my-cookiecutter.pl' ], 'cookiecutter failed.' );
+_exec( [ $^X, "$LATEMP_ROOT_SOURCE_DIR/bin/my-cookiecutter.pl" ],
+    'cookiecutter failed.' );
 
-if ( system( "gmake", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ) )
-{
-    die "build-deps failed!";
-}
+_exec(
+    [
+        "gmake", "--silent", "-f",
+        "$LATEMP_ROOT_SOURCE_DIR/lib/make/build-deps/build-deps.mak",
+        "LATEMP_ROOT_SOURCE_DIR=$LATEMP_ROOT_SOURCE_DIR",
+    ],
+    "build-deps failed!",
+);
 
 if ( -f "rules.mak" )
 {
-    system( "gmake", "-s", "src/style.css" );
+    _exec( [ "gmake", "-s", "src/style.css" ], "style.css" );
 }
 else
 {
-    system( "compass", "compile" );
+    _exec(
+        [
+            "compass",    "compile",
+            "--config",   "$LATEMP_ROOT_SOURCE_DIR/config.rb",
+            "--sass-dir", "$LATEMP_ROOT_SOURCE_DIR/lib/sass",
+        ],
+        "compass",
+    );
 }
 my @tt;
 
@@ -86,7 +100,8 @@ $r_fh->print($text);
 
 {
     open my $out_fh, ">", "$DIR/p4n.mak";
-    print {$out_fh} qq#p4n_copy = mkdir -p `dirname \$\@` && cp -f \$< \$\@\n\n#;
+    print {$out_fh}
+        qq#p4n_copy = mkdir -p `dirname \$\@` && cp -f \$< \$\@\n\n#;
 
     my @targets;
     foreach my $part_idx ( 1 .. 5 )
@@ -126,4 +141,7 @@ HTML::Latemp::GenDepsTT2->new(
     }
 )->run;
 
-io->file('Makefile')->print("include $DIR/main.mak\n");
+io->file('Makefile')
+    ->print(
+"LATEMP_ROOT_SOURCE_DIR = $LATEMP_ROOT_SOURCE_DIR\n\ninclude \$(LATEMP_ROOT_SOURCE_DIR)/$DIR/main.mak\n"
+    );

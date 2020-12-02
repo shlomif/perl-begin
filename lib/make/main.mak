@@ -1,5 +1,4 @@
 TARGET = dest
-LATEMP_ROOT_SOURCE_DIR := .
 LATEMP_ABS_ROOT_SOURCE_DIR := $(shell cd $(LATEMP_ROOT_SOURCE_DIR)/ && pwd)
 
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
@@ -83,7 +82,7 @@ htaccess: $(TARGET)/.htaccess
 $(TARGET)/.htaccess: $(LATEMP_ROOT_SOURCE_DIR)/lib/htaccess.txt
 	$(call COPY)
 
-BAD_ELEMENTS_SOURCE_XML = src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
+BAD_ELEMENTS_SOURCE_XML = $(LATEMP_ROOT_SOURCE_DIR)/src/tutorials/bad-elements/perl-elements-to-avoid.xml-grammar-vered.xml
 BAD_ELEMENTS_XHTML_DIR = lib/tutorials/bad-elements/all-in-one-xhtml/bad-elements
 
 DOCBOOK5_BASE_DIR = lib/docbook/5
