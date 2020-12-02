@@ -25,10 +25,10 @@ PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 $(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/post-
 
 run_compass: src/style.css src/jqui-override.css
 
-src/style.css: config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss
+src/style.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss)
 	compass compile || rm -f $@
 
-src/jqui-override.css: lib/sass/jqui-override.scss
+src/jqui-override.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,lib/sass/jqui-override.scss)
 	compass compile
 
 $(TARGET)/humour/index.html: lib/retrieved-html-parts/Perl_Humour.html
@@ -137,7 +137,7 @@ make-dirs: $(PERL_BEGIN_DIRS_DEST)
 
 JQUERY_JS := $(TARGET)/js/jq.js
 
-$(JQUERY_JS): node_modules/jquery/dist/jquery.min.js
+$(JQUERY_JS): $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,node_modules/jquery/dist/jquery.min.js)
 	$(call COPY)
 
 all_deps: $(JQUERY_JS)
