@@ -109,8 +109,8 @@ my $vars = +{
     slurp_maintained_html_part => \&slurp_maintained_html_part,
     p4n_slurp                  => sub {
         my $idx = shift;
-        return path(
-            "lib/tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
+        return $lib_dir->child(
+            "tutorials/perl-for-newbies/lect$idx-all-in-one/index.html")
             ->slurp_utf8() =~ s{.*<body[^>]*>}{}mrs =~ s{< / body >.*}{}mrsx;
     },
     book_info => sub {

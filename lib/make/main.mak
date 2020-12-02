@@ -15,8 +15,8 @@ include lib/make/deps.mak
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
 PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 $(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/post-incs-v2.pl --mode=minify \
-               --minifier-conf=bin/html-min-cli-config-file.conf \
-               --texts-dir=lib/ads \
+               --minifier-conf=$(LATEMP_ROOT_SOURCE_DIR)/bin/html-min-cli-config-file.conf \
+               --texts-dir=$(LATEMP_ROOT_SOURCE_DIR)/lib/ads \
                --source-dir=$(TARGET) \
                --dest-dir=$(TARGET) \
                --
@@ -74,7 +74,7 @@ TODO_DONE = $(patsubst %,$(TARGET)/contribute/%, TODO.txt DONE.txt)
 
 todo_done_data: $(TODO_DONE)
 
-$(TODO_DONE): $(TARGET)/contribute/%.txt: %.txt
+$(TODO_DONE): $(TARGET)/contribute/%.txt: $(LATEMP_ROOT_SOURCE_DIR)/%.txt
 	$(call COPY)
 
 htaccess: $(TARGET)/.htaccess
@@ -121,7 +121,7 @@ $(DOCBOOK5_RENDERED_DIR)/%.xhtml: $(DOCBOOK5_ALL_IN_ONE_XHTML_DIR)/%/all-in-one.
 
 $(TARGET)/tutorials/bad-elements/index.html: $(BAD_ELEMENTS_RENDERED)
 
-TEST_TARGETS = Tests/*.{py,t}
+TEST_TARGETS = $(LATEMP_ROOT_SOURCE_DIR)/Tests/*.{py,t}
 
 PERL_BEGIN_DOCS_SRC := $(patsubst $(PERL_BEGIN_DEST)/%,$(LATEMP_ROOT_SOURCE_DIR)/$(PERL_BEGIN_SRC_DIR)/%.tt2,$(PERL_BEGIN_DOCS_DEST))
 

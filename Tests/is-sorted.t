@@ -6,10 +6,17 @@ use Test::More tests => 1;
 
 use Test::File::IsSorted ();
 
+use Path::Tiny qw/ path /;
+use vars qw/ $LATEMP_ROOT_SOURCE_DIR /;
+
+BEGIN
+{
+    $LATEMP_ROOT_SOURCE_DIR = path($0)->parent(2)->absolute;
+}
 {
     # TEST
     Test::File::IsSorted::are_sorted(
-        [ ".gitignore", ],
+        [ "$LATEMP_ROOT_SOURCE_DIR/.gitignore", ],
         "input files are sorted.",
     );
 }
