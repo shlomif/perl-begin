@@ -142,4 +142,6 @@ $(JQUERY_JS): $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,node_modules/jquery/dist/jq
 
 all_deps: $(JQUERY_JS)
 
+TEST_ENV += LATEMP_ROOT_SOURCE_DIR="$(LATEMP_ABS_ROOT_SOURCE_DIR)"
+
 .PHONY: bulk-make-dirs make-dirs
