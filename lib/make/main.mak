@@ -1,5 +1,6 @@
 TARGET = dest
 LATEMP_ABS_ROOT_SOURCE_DIR := $(shell cd $(LATEMP_ROOT_SOURCE_DIR)/ && pwd)
+LATEMP_ROOT_BUILD_DIR := .
 
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
@@ -104,7 +105,7 @@ DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS := $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET)
 
 $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 	# jing lib/XML-Grammar-Vered/vered-xml.rng $(BAD_ELEMENTS_SOURCE_XML)
-	$(LATEMP_ROOT_SOURCE_DIR)/bin/translate-Vered-XML --output $@ $(BAD_ELEMENTS_SOURCE_XML)
+	./bin/translate-Vered-XML --output $@ $(BAD_ELEMENTS_SOURCE_XML)
 	# jing $(DOCBOOK5_RELAXNG) $@
 
 # -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
@@ -112,7 +113,7 @@ $(BAD_ELEMENTS_DB5): $(BAD_ELEMENTS_SOURCE_XML)
 $(BAD_ELEMENTS_XHTML): $(BAD_ELEMENTS_DB5) $(DOCBOOK5_XSL_ALL_CUSTOM_STYLESHEETS)
 	# jing $(DOCBOOK5_RELAXNG) $<
 	docmake --stringparam "generate.toc=article toc,title" --stringparam "docbook.css.source=" --stringparam "root.filename=$@.temp.xml" --basepath $(DOCBOOK5_XSL_STYLESHEETS_PATH) -x $(DOCBOOK5_XSL_ONECHUNK_XSLT_STYLESHEET) xhtml5 $<
-	xsltproc --output $@ $(LATEMP_ROOT_SOURCE_DIR)/bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
+	xsltproc --output $@ $(LATEMP_ROOT_BUILD_DIR)/bin/clean-up-docbook-xhtml-1.1.xslt $@.temp.xml.xhtml
 	rm -f $@.temp.xml.xhtml
 	$(PERL) -lp -0777 -i $(LATEMP_ROOT_SOURCE_DIR)/bin/pre-clean-up-docbook-5-xsl.pl $@
 

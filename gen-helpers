@@ -136,6 +136,7 @@ $r_fh->print($text);
     close($out_fh);
 }
 use lib ( path($0)->parent->absolute->child(qw# lib #) . "" );
+use lib "./lib";
 require HTML::Latemp::GenDepsTT2;
 HTML::Latemp::GenDepsTT2->new(
     {
