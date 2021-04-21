@@ -42,7 +42,7 @@ my $LATEMP_SERVER = "perl_begin";
 my $template      = Template->new(
     {
         ABSOLUTE     => 1,
-        INCLUDE_PATH => [ ".", $lib_dir, ],
+        INCLUDE_PATH => [ ".", "./lib", $lib_dir, ],
         POST_CHOMP   => 1,
         RELATIVE     => 1,
         ENCODING     => 'utf8',
