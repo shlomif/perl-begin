@@ -45,7 +45,7 @@ difficulty, then you can find solutions to some of these problems here:
 
 <li>
 <p>
-<a href="https://github.com/shlomif/project-euler">Shlomi Fish's
+<a href="https://github.com/shlomif/project-euler-first-100-problems">Shlomi Fish's
 Solutions to Project Euler</a> - mostly in Perl.
 </p>
 </li>
@@ -101,7 +101,7 @@ Contains some challenges.
 
 [% INCLUDE rosetta_code %]
 
-<h3 id="github_"><a href="https://github.com/vhf/free-programming-books/blob/master/problem-sets-competitive-programming.md">Problem Sets and Competitive Programming Sites’ List on GitHub</a></h3>
+<h3 id="github_"><a href="https://github.com/EbookFoundation/free-programming-books/blob/master/more/problem-sets-competitive-programming.md">Problem Sets and Competitive Programming Sites’ List on GitHub</a></h3>
 
 <p>
 A comprehensive list of sites with problem sets and/or for competitive
