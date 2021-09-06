@@ -767,6 +767,7 @@ perlsec
 'field
 'foobar
 'fortune
+'hello
 'if_false
 'if_true
 'lpr
@@ -776,6 +777,8 @@ perlsec
 'skip_all
 'sophie
 't
+'there
+'why
 --show-ends
 -1
 -2
@@ -872,6 +875,7 @@ TrailingSpace
 Uninstalled
 Util
 Utils
+VAR1
 Varvarname
 W
 WTF
@@ -892,6 +896,7 @@ array1
 array2
 array_of_arrays
 array_of_rows
+autodie
 autoflush
 autoflushing
 awk

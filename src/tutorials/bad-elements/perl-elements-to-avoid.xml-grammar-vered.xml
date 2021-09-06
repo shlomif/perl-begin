@@ -3071,6 +3071,66 @@ else
 
 </item>
 
+<item xml:id="split-limit-argument">
+
+<info>
+<title>split()'s third "limit" argument</title>
+</info>
+
+<p>
+When <pdoc_f f="split" />'s third argument is omitted, it trims empty
+end string results:
+</p>
+
+<code_blk syntax="perl">
+#! /usr/bin/env perl
+#
+# Short description for split-demo.pl
+#
+
+use strict;
+use warnings;
+use 5.014;
+use autodie;
+
+use Data::Dumper qw / Dumper /;
+
+my $string = &#39;/why/hello/there///&#39;;
+
+say Dumper( [ split m#/#, $string ] );
+say Dumper( [ split m#/#, $string, -1 ] );
+</code_blk>
+
+<p>
+This prints:
+</p>
+
+<code_blk syntax="txt">
+shlomif[perl-begin]:$trunk$ perl bin/split-demo.pl
+$VAR1 = [
+          '',
+          'why',
+          'hello',
+          'there'
+        ];
+
+$VAR1 = [
+          '',
+          'why',
+          'hello',
+          'there',
+          '',
+          '',
+          ''
+        ];
+</code_blk>
+
+<p>
+So using "-1" as the third argument may or may not be what you want.
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
