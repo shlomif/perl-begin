@@ -1,3 +1,5 @@
+@import "lib/perlbegin_code_from_compass";
+
 body {
     background-color: white;
 }
@@ -153,7 +155,7 @@ h3 {
     }
 
     .about-links {
-        // @include horizontal-list;
+        @include horizontal-list;
         @include _common;
         grid-column: 2 / span 1;
         // float: right;

@@ -40,13 +40,13 @@ _exec(
     "build-deps failed!",
 );
 
-if ( -f "rules.mak" )
+if ( 0 and -f "rules.mak" )
 {
     _exec( [ "gmake", "-s", "src/style.css" ], "style.css" );
 }
 else
 {
-    mkdir("dest");
+    path("./dest")->mkpath();
     _exec(
         [
             "pysassc",
