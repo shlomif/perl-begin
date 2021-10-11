@@ -24,6 +24,9 @@ PROCESS_ALL_INCLUDES = APPLY_TEXTS=1 $(PERL) $(LATEMP_ROOT_SOURCE_DIR)/bin/post-
 
 # PROCESS_ALL_INCLUDES = true
 
+run_compass:
+
+ifeq (0, 1)
 run_compass: $(LATEMP_ROOT_SOURCE_DIR)/src/style.css $(LATEMP_ROOT_SOURCE_DIR)/src/jqui-override.css
 
 $(LATEMP_ROOT_SOURCE_DIR)/src/style.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,config.rb lib/sass/style.scss lib/sass/print.scss lib/sass/vim_syntax_highlighting.scss lib/sass/self_link.scss)
@@ -31,6 +34,7 @@ $(LATEMP_ROOT_SOURCE_DIR)/src/style.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,
 
 $(LATEMP_ROOT_SOURCE_DIR)/src/jqui-override.css: $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,lib/sass/jqui-override.scss)
 	compass compile
+endif
 
 $(TARGET)/humour/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/Perl_Humour.html
 $(TARGET)/FAQs/freenode-perl/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html

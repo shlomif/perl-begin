@@ -23,35 +23,45 @@ then
 elif test "$cmd" = "before_install"
 then
 
-    . /etc/lsb-release
-    sudo add-apt-repository -y ppa:inkscape.dev/stable
-    sudo apt -q update
-    sudo apt -y install inkscape
+    if test -e /etc/lsb-release
+    then
+        . /etc/lsb-release
+        sudo add-apt-repository -y ppa:inkscape.dev/stable
+        sudo apt -q update
+        sudo apt -y install inkscape
+    fi
+    cpanm --local-lib=~/perl_modules local::lib
     if test "$DISTRIB_ID" = 'Ubuntu'
     then
         if test "$DISTRIB_RELEASE" = '14.04'
         then
             sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
         fi
+        eval "$(GIMME_GO_VERSION=1.16 gimme)"
+    elif test -e /etc/fedora-release
+    then
+        sudo dnf --color=never install -y hspell-devel perl-devel ruby-devel
     fi
-    cpanm --local-lib=~/perl_modules local::lib
-    eval "$(GIMME_GO_VERSION=1.13 gimme)"
+    eval "$(GIMME_GO_VERSION=1.16 gimme)"
     go get -u github.com/tdewolff/minify/cmd/minify
     eval "$(perl -I ~/perl_modules/lib/perl5 -Mlocal::lib=$HOME/perl_modules)"
-    cpanm App::Deps::Verify App::XML::DocBook::Builder Pod::Xhtml
+    PERL_CPANM_OPT+=" --quiet "
+    export PERL_CPANM_OPT
+    cpanm -v --notest IO::Async
+    cpanm --notest App::Deps::Verify App::XML::DocBook::Builder Pod::Xhtml
     export CPATH="${CPATH}:/usr/include/tidy"
     cpanm HTML::T5
     # For wml
-    cpanm --notest Bit::Vector Carp::Always Class::XSAccessor GD Getopt::Long IO::All Image::Size List::MoreUtils Path::Tiny Term::ReadKey
+    cpanm --notest Bit::Vector Carp::Always Class::XSAccessor GD Getopt::Long Image::Size List::MoreUtils Path::Tiny Term::ReadKey
     # For quadp
     cpanm --notest Class::XSAccessor Config::IniFiles HTML::Links::Localize
     bash bin/install-git-cmakey-program-system-wide.bash 'git' 'src' 'https://github.com/thewml/website-meta-language.git'
     bash bin/install-git-cmakey-program-system-wide.bash 'git' 'installer' 'https://github.com/thewml/latemp.git'
-    sudo -H `which python3` -m pip install beautifulsoup4 bs4 click cookiecutter lxml pycotap rebookmaker vnu_validator zenfilter Pillow WebTest
+    sudo -H `which python3` -m pip install beautifulsoup4 bs4 click cookiecutter lxml pycotap rebookmaker vnu_validator weasyprint zenfilter Pillow WebTest
     perl bin/my-cookiecutter.pl
     # For various sites
     cpanm --notest HTML::Toc XML::Feed
-    deps-app plinst -i bin/common-required-deps.yml -i bin/required-modules.yml
+    deps-app plinst --notest -i bin/common-required-deps.yml -i bin/required-modules.yml
     gem install asciidoctor compass compass-blueprint
     PATH="$HOME/bin:$PATH"
     ( cd .. && git clone https://github.com/thewml/wml-extended-apis.git && cd wml-extended-apis/xhtml/1.x && bash Install.bash )
@@ -64,7 +74,10 @@ then
     pwd
     echo "HOME=$HOME"
     bash -x bin/install-npm-deps.sh
-    sudo ln -s /usr/bin/make /usr/bin/gmake
+    if ! test -e /usr/bin/gmake
+    then
+        sudo ln -s /usr/bin/make /usr/bin/gmake
+    fi
 
 
 

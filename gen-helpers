@@ -46,11 +46,16 @@ if ( -f "rules.mak" )
 }
 else
 {
+    mkdir("dest");
     _exec(
         [
-            "compass",    "compile",
-            "--config",   "$LATEMP_ROOT_SOURCE_DIR/config.rb",
-            "--sass-dir", "$LATEMP_ROOT_SOURCE_DIR/lib/sass",
+            "pysassc",
+            "--style",
+            "compressed",
+            "-I",
+            "$LATEMP_ROOT_SOURCE_DIR/lib/sass",
+            "$LATEMP_ROOT_SOURCE_DIR/lib/sass/style.scss",
+            "dest/style.css",
         ],
         "compass",
     );
