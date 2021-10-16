@@ -73,9 +73,11 @@ def generate(output_path, is_act):
                 ),
         }
     )
+    pkgs = sorted(data['addons']['apt']['packages'] + ["golang"])
+    # print(pkgs)
     steps.append({
         "run": ("sudo eatmydata apt-get --no-install-recommends install -y " +
-                " ".join(data['addons']['apt']['packages'])
+                " ".join(pkgs)
                 ),
         }
     )
