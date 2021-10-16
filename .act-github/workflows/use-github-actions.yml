@@ -16,7 +16,7 @@ jobs:
                 silversearcher-ag strip-nondeterminism tidy valgrind vim wml xsltproc
                 xvfb xz-utils zip
         -   run: local_lib_shim() { eval "$(perl -Mlocal::lib=$HOME/perl_modules)";
-                } ; local_lib_shim ; . .travis.bash --cmd before_install
+                } ; local_lib_shim ; . .ci-github-actions.bash --cmd before_install
         -   run: local_lib_shim() { eval "$(perl -Mlocal::lib=$HOME/perl_modules)";
                 } ; local_lib_shim ; git clone https://github.com/vim/vim && ( cd
                 vim && git checkout v8.2.2918 && ./configure --with-features=huge

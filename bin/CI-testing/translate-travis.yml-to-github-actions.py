@@ -20,6 +20,7 @@ for your use cases.
 """
 
 import re
+import subprocess
 
 import yaml
 
@@ -95,6 +96,11 @@ def generate(output_path, is_act):
             if command == 'systemctl --user start dbus' or \
                     command.startswith('export DBUS_'):
                 continue
+            command = re.sub(
+                "\\.travis\\.bash",
+                ".ci-github-actions.bash",
+                command
+            )
             steps.append({"run": local_lib_shim + command})
     job = 'test-fc-solve'
     o = {'jobs': {job: {'runs-on': 'ubuntu-latest',
@@ -265,6 +271,12 @@ def main():
         output_path=".act-github/workflows/use-github-actions.yml",
         is_act=True,
     )
+    subprocess.check_call(
+            [
+                "bash", "-ce",
+                "perl -lpE 's/^( *)gem/$1sudo gem/' < .travis.bash > " +
+                ".ci-github-actions.bash"
+            ])
     if False:
         generate_windows_yaml(
             plat='x86',
