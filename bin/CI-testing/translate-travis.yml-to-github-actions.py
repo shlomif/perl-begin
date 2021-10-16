@@ -75,7 +75,10 @@ def generate(output_path, is_act):
     )
     pkgs = sorted(
         data['addons']['apt']['packages'] +
-        ["golang", "nodejs", "npm", "rsync", "ruby", "ruby-dev", "vim", ]
+        [
+            "golang", "libxslt1-dev", "nodejs", "npm",
+            "rsync", "ruby", "ruby-dev", "vim",
+        ]
     )
     # print(pkgs)
     steps.append({
