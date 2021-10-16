@@ -88,7 +88,11 @@ def generate(output_path, is_act):
         '-Mlocal::lib=$HOME/' + \
         'perl_modules)"; } ; local_lib_shim ; '
     for arr in ['before_install', 'install', 'script']:
-        steps += [{"run": local_lib_shim + x} for x in data[arr]]
+        for command in data[arr]:
+            if command == 'systemctl --user start dbus' or \
+                    command.startswith('export DBUS_'):
+                continue
+            steps.append({"run": local_lib_shim + command})
     job = 'test-fc-solve'
     o = {'jobs': {job: {'runs-on': 'ubuntu-latest',
          'steps': steps, }},
