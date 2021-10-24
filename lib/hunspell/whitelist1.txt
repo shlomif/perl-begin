@@ -910,6 +910,7 @@ closedir
 coeff
 cond_var
 conditional's
+cpan
 csys
 cusr
 deck_size
