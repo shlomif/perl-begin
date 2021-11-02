@@ -36,11 +36,11 @@ Test::HTML::Tidy::Recursive::XML->new(
     {
         filename_filter => sub {
             my $fn = shift;
-            return not(
-                exists $whitelist{$fn}
+            return
+                not( exists $whitelist{$fn}
                 or $fn =~
 m#\A \Q$POST_DEST\E / (?: tutorials/impatient-perl/iperl\.html | MathVentures | js/jquery-ui/ ) #x,
-            );
+                );
         },
         targets => [$POST_DEST],
     }

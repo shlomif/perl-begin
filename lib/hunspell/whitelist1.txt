@@ -368,16 +368,13 @@ Westermann-Clark
 ==== In: dest/learn/why-perl/index.html
 
 Bunce
+DWIMmeries
 Etc
 FP
 OOP
 PHP
 PerlNet's
 libre
-
-==== In: dest/learn/why-perl/index.html
-
-DWIMmeries
 
 ==== In: dest/links/index.html
 

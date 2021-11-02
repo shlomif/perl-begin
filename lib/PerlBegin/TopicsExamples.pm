@@ -10,7 +10,7 @@ use Text::VimColor ();
 
 use Carp ();
 
-has default_syntax       => ( is => 'ro', isa => 'Str' );
+has default_syntax => ( is => 'ro', isa => 'Str' );
 has main_pre_css_classes => (
     is      => 'ro',
     isa     => 'ArrayRef[Str]',
