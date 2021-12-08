@@ -92,7 +92,9 @@ my $vars = +{
         my $net     = $args->{net};
         my $chan    = $args->{chan};
         my %servers = (
-            'freenode' => "irc.freenode.net",
+
+            # 'freenode' => "irc.freenode.net",
+            'freenode' => { url => "ircs://irc.libera.chat:6697/" },
             'efnet'    => "irc.Prison.NET",
             'oftc'     => "irc.oftc.net",
             'undernet' => "us.undernet.org",
@@ -102,8 +104,9 @@ my $vars = +{
         {
             die "Unknown network!";
         }
-        return
-            qq|<a href="irc://$servers{$net}/%23$chan"><code>#$chan</code></a>|;
+        my $s   = $servers{$net};
+        my $url = ( ( ref($s) eq "" ) ? "irc://$servers{$net}/" : $s->{url} );
+        return qq|<a href="${url}%23$chan"><code>#$chan</code></a>|;
     },
     retrieved_slurp            => \&retrieved_slurp,
     slurp_maintained_html_part => \&slurp_maintained_html_part,

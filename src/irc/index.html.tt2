@@ -57,7 +57,10 @@ List/Comparison of IRC Clients</a>
 
 </ul>
 
-<h2 id="freenode"><a href="http://freenode.net/">Freenode</a></h2>
+[% SET freenode_url = "http://freenode.net/", freenode_name = "Freenode" , webchat = "https://webchat.freenode.net/" %]
+[% SET freenode_url = "https://libera.chat/", freenode_name = "Libera Chat" , webchat = "https://web.libera.chat/" %]
+
+<h2 id="freenode"><a href="[% freenode_url %]">[% freenode_name %]</a></h2>
 
 <p>
 This is most probably the best network for getting help in Perl and
@@ -70,7 +73,7 @@ Check out the [% irc_channel( chan=>"perl", net=>"freenode" )%] channel
 </p>
 
 <p>
-Freenode has a <a href="https://webchat.freenode.net/">web-based interface</a>.
+Freenode has a <a href="[% webchat %]">web-based interface</a>.
 </p>
 
 <h2 id="oftc"><a href="http://www.oftc.net/">OFTC</a></h2>
