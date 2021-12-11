@@ -1,8 +1,11 @@
 [%- SET title = "Text Generation in Perl" -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
+[%- PROCESS "h_sections.tt2" -%]
 
-<h2 id="intro">Introduction</h2>
+[%- SET sect_class = "ss" -%]
+
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 Perl is a good language for generating text, and
@@ -11,9 +14,11 @@ Language". This page aims to list some of the facilities provided by Perl
 and <a href="[% base_path %]topics/cpan/">CPAN</a> for generating text.
 </p>
 
-<h2 id="facilities">Text Generation Facilities</h2>
+[% END %]
 
-<h3 id="concatenation">String Concatenation</h3>
+[% WRAPPER h2_section id = "facilities" title = "Text Generation Facilities" %]
+
+[% WRAPPER h3_section id = "concatenation" title = "String Concatenation" %]
 
 <p>
 Perl allows you to easily concatenate two strings using the <code>.</code>
@@ -79,7 +84,9 @@ Nevertheless, please <b>read on</b> to see what other and often better
 options exist.
 </p>
 
-<h3 id="sprintf"><a href="http://perldoc.perl.org/functions/sprintf.html">sprintf()</a></h3>
+[% END %]
+
+[% WRAPPER h3_section id="sprintf" href="http://perldoc.perl.org/functions/sprintf.html" title="sprintf()" %]
 
 <p>
 sprintf() is a built-in Perl function for formatting its arguments, similar
@@ -87,7 +94,7 @@ to the sprintf function provided by C and other programming languages. Make
 sure you familiarize yourself with it.
 </p>
 
-<h4 id="named-sprintf">[% cpan.self_dist( "d" => "Text-Sprintf-Named", ) %]</h4>
+[% WRAPPER h4_section id = "named-sprintf" title = cpan.self_dist( "d" => "Text-Sprintf-Named", ) %]
 
 <p>
 Text-Sprintf-Named allows one to pass an associative array to a sprintf-like
@@ -104,8 +111,11 @@ my $formatter =
 $formatter-&gt;format({args =&gt; {&#39;name&#39; =&gt; &quot;Ayeleth&quot;, &#39;day&#39; =&gt; &quot;Sunday&quot;}});
 </pre>
 
-<h3 id="template-toolkit"><a href="http://template-toolkit.org/">Template
-Toolkit</a></h3>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h3_section id="template-toolkit" href="http://template-toolkit.org/" title="Template Toolkit" %]
 
 <p>
 Template Toolkit is a sophisticated and powerful templating system for Perl,
@@ -115,14 +125,18 @@ presentation that Shlomi Fish gave</a> about Template Toolkit, that explains
 why one should use a template system and especially Template Toolkit.
 </p>
 
-<h3 id="Data-Report">[% cpan.self_dist( "d" => "Data-Report", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "Data-Report" title = cpan.self_dist( "d" => "Data-Report", ) %]
 
 <p>
 A Perl module for preparing reports as text and some other higher-level
 formats.
 </p>
 
-<h3 id="perl6-form">[% cpan.self_dist( "d" => "Perl6-Form", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "perl6-form" title = cpan.self_dist( "d" => "Perl6-Form", ) %]
 
 <p>
 A module for formatting fixed-width text. You should use it <b>instead</b> of
@@ -130,19 +144,27 @@ the built-in <a href="http://perldoc.perl.org/perlform.html">perlform</a>
 facility assuming you want something like that.
 </p>
 
-<h3 id="text-table">[% cpan.self_dist( "d" => "Text-Table", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "text-table" title = cpan.self_dist( "d" => "Text-Table", ) %]
 
 <p>
 A CPAN module for outputting text tables.
 </p>
 
-<h3 id="xml-writer">[% cpan.self_dist( "d" => "XML-Writer", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "xml-writer" title = cpan.self_dist( "d" => "XML-Writer", ) %]
 
 <p>
 A convenient CPAN module for outputting XML.
 </p>
 
-<h2 id="generating-using-lists">Generating Text Using Lists</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "generating-using-lists" title = "Generating Text Using Lists" %]
 
 <p>
 An alternative option to generating text is to create arrays or more complex
@@ -180,6 +202,8 @@ List processing CPAN modules such as
 </li>
 
 </ul>
+
+[% END %]
 
 [% INCLUDE text_processing_links %]
 
