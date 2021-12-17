@@ -2861,20 +2861,20 @@ big integer modules, or implement them using routines such as:
 <code_blk syntax="perl">
 sub exp_mod
 {
-    my ($MOD, $b, $e) = @_;
+    my ($MOD, $base, $e) = @_;
 
     if ($e == 0)
     {
         return 1;
     }
 
-    my $rec_p = exp_mod($MOD, $b, ($e >> 1));
+    my $rec_p = exp_mod($MOD, $base, ($e >> 1));
 
     my $ret = $rec_p * $rec_p;
 
     if ($e &amp; 0x1)
     {
-        ($ret %= $MOD) *= $b;
+        ($ret %= $MOD) *= $base;
     }
 
     return ($ret % $MOD);
