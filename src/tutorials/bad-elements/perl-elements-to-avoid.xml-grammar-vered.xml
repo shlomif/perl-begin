@@ -1560,12 +1560,12 @@ about object oriented programming in Perl</a>.
 </item>
 <item xml:id="declaring_all_vars_at_top">
 <info>
-<title>Declaring all variables at the top</title>
+<title>Declaring all variables at the top ("predeclarations")</title>
 </info>
 <p>
 Some inexperienced Perl programmers, possibly by influence from languages
 such as C, like to declare all variables used by the program at the top of
-the program or the relevant subroutines. Like so:
+the program or the relevant subroutines. This has been called "predeclarations":
 </p>
 <bad_code syntax="perl">
 my $first_name;
