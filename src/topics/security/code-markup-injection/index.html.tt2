@@ -25,7 +25,7 @@ variable containing a string. In Perl we can do:
 </p>
 
 <pre>
-my $total = "Hello " . $adjective " World!";
+my $total = "Hello " . $adjective . " World!";
 </pre>
 
 <p>
@@ -111,7 +111,7 @@ other applications that use SQL code. If you do something like
 <code>"SELECT id FROM users WHERE name='$name'"</code> then by putting
 single-quotes in the name, and using SQL syntax one can insert arbitrary SQL
 there and do a lot of damage. There was also
-<a href="http://xkcd.com/327/">a very nice xkcd comic</a> about it.
+<a href="https://explainxkcd.com/wiki/index.php/327:_Exploits_of_a_Mom">a very nice xkcd comic</a> about it.
 </p>
 </li>
 <li>
