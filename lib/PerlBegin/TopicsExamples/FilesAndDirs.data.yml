@@ -5,7 +5,7 @@
 
       my $filename_to_read = 'my-file.txt';
 
-      my $fh = path($filename)->openr_utf8;
+      my $fh = path($filename_to_read)->openr_utf8;
       while (my $line = <$fh>)
       {
           chomp($line);
@@ -34,14 +34,14 @@
   - code: |
       use Path::Tiny qw/ path /;
 
-      my ($source_filename, $dest_filename) = @_;
+      my ($source_filename, $dest_filename) = @ARGV;
       path($source_filename)->copy($dest_filename);
     id: path_tiny
     label: Path::Tiny
   - code: |
       use File::Copy qw(copy);
 
-      my ($source_filename, $dest_filename) = @_;
+      my ($source_filename, $dest_filename) = @ARGV;
 
       copy($source_filename, $dest_filename);
     id: core
