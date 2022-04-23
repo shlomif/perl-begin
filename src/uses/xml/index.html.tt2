@@ -1,6 +1,7 @@
 [%- SET title = "Perl for XML Processing" -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
+[%- PROCESS "Inc/html-selector-xpath.tt2" -%]
 
 <p>
 This page will cover how to properly process XML using Perl and
@@ -43,14 +44,7 @@ and largely
 unmaintained <code>XML::XPath</code> CPAN distribution.
 </p>
 
-<p>
-Another useful module is [% cpan.self_dist( "d" => "HTML-Selector-XPath", ) %]
- which allows one to convert <strong>CSS-style selectors</strong> to XPath and
-provide functionality similar to that offered by such JavaScript libraries
-such as jQuery. So you can, for example, write
-<code>selector_to_xpath('ul.myclass a')</code> to find all <code>a</code> elements
-inside a <code>ul</code> element with a CSS class of <code>myclass</code>.
-</p>
+[% INCLUDE html_sel_xpath %]
 
 <p>
 To learn about XPath, consult the following resources:

@@ -1,6 +1,7 @@
 [%- SET title = "Text Parsing in Perl" -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
+[%- PROCESS "Inc/html-selector-xpath.tt2" -%]
 
 <h2 id="intro">Introduction</h2>
 
@@ -50,6 +51,10 @@ one of their abstractions:
 [% cpan.self_dist( "d" => "HTML-TokeParser-Simple", ) %] -
 an event-based pull parser that is useful for very large HTMLs.
 </p>
+</li>
+
+<li>
+[% INCLUDE html_sel_xpath %]
 </li>
 
 </ol>

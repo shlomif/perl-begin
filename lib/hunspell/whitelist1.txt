@@ -1946,26 +1946,7 @@ perl-5
 pos
 regex
 
-==== In: dest/uses/web-automation/index.html
-
-HTML-TreeBuilder-LibXML
-HTTPS
-IE
-LWP
-LWP-Curl
-Perl-based
-TreeBuilder
-libcurl
-libwww-perl
-libwww-perl-like
-
-==== In: dest/uses/web/index.html
-
-IIS
-Lite
-Mojolicious
-
-==== In: dest/uses/xml/index.html
+==== In: dest/uses/text-parsing/index.html , dest/uses/xml/index.html
 
 'ul
 CSS-style
@@ -1987,6 +1968,25 @@ myclass
 org-like
 selector_to_xpath
 ul
+
+==== In: dest/uses/web-automation/index.html
+
+HTML-TreeBuilder-LibXML
+HTTPS
+IE
+LWP
+LWP-Curl
+Perl-based
+TreeBuilder
+libcurl
+libwww-perl
+libwww-perl-like
+
+==== In: dest/uses/web/index.html
+
+IIS
+Lite
+Mojolicious
 
 ==== In: dest/web-forums/index.html
 
