@@ -129,8 +129,8 @@ on the fly and execute it).
 </p>
 <p>
 In any case, if we insert a variable into the <code>eval ""</code> which was input
-from the user without being escaped or validated, we can have an arbitrary
-code execution.
+from the user without being escaped or validated, we might have an arbitrary
+code execution vulnerability.
 </p>
 </li>
 
@@ -141,7 +141,7 @@ string is contained in a list of strings. One naïve way would be to concatenate
 the strings using a separator that is unlikely to be contained in them
 (such as <code>\0</code>) and then match this gigantic string using
 <code>$haystack =~ m{$needle}</code>. However, if $needle contains special regex characters,
-then the operation can take a lot of time to match or worse - yield an
+then the operation might take a lot of time to match or worse - yield an
 incorrect result. One way to avoid that is to use
 <a href="http://perldoc.perl.org/functions/quotemeta.html">perldoc -f quotemeta</a> or its \Q and \E regular expression escapes -
 <code>$haystack =~ m{\Q$needle\E}g</code>. In this particular case, it is also
