@@ -7,7 +7,7 @@ use Test::More tests => 1;
 use Test::File::IsSorted ();
 
 use Path::Tiny qw/ path /;
-use vars qw/ $LATEMP_ROOT_SOURCE_DIR /;
+use vars       qw/ $LATEMP_ROOT_SOURCE_DIR /;
 
 BEGIN
 {

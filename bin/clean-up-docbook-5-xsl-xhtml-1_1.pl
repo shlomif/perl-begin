@@ -5,8 +5,8 @@ use strict;
 use warnings;
 use autodie;
 
-use Path::Tiny qw/ path /;
-use Getopt::Long qw/ GetOptions /;
+use Path::Tiny     qw/ path /;
+use Getopt::Long   qw/ GetOptions /;
 use HTML::Entities qw/ decode_entities /;
 use Text::VimColor ();
 

@@ -6,7 +6,7 @@ use 5.014;
 use utf8;
 
 use Path::Tiny qw/ path /;
-use vars qw/ $LATEMP_ROOT_SOURCE_DIR /;
+use vars       qw/ $LATEMP_ROOT_SOURCE_DIR /;
 
 BEGIN
 {
@@ -14,13 +14,13 @@ BEGIN
 }
 use lib ( $LATEMP_ROOT_SOURCE_DIR->child(qw# lib #) . "" );
 use URI::Escape qw( uri_escape );
-use Template ();
+use Template    ();
 
 use HTML::Widgets::NavMenu::HeaderRole ();
 use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
-use HTML::Latemp::AddToc   ();
-use Module::Format::AsHTML ();
-use MyNavData              ();
+use HTML::Latemp::AddToc               ();
+use Module::Format::AsHTML             ();
+use MyNavData                          ();
 
 my $cpan    = Module::Format::AsHTML->new;
 my $src_dir = $LATEMP_ROOT_SOURCE_DIR->child(qw# src #);
