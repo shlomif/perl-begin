@@ -275,6 +275,16 @@ Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a> | <a href=
 [%- END -%]
 
 [% PROCESS "h_sections.tt2" %]
+[%- BLOCK h5_section -%]
+[%- WRAPPER h_section h_tag="h5" h_class="h5" id=id title=title href=href -%]
+[% content %]
+[%- END -%]
+[%- END -%]
+[%- BLOCK h6_section -%]
+[%- WRAPPER h_section h_tag="h6" h_class="h6" id=id title=title href=href -%]
+[% content %]
+[%- END -%]
+[%- END -%]
 
 [% BLOCK text_processing_links %]
 

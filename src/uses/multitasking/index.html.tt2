@@ -2,7 +2,9 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[%- SET sect_class = "ss" -%]
+
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 In multitasking, the program performs several tasks at once. Multitasking
@@ -10,23 +12,29 @@ is closely related to networking where we have to handle several events
 or serve several clients at once.
 </p>
 
-<h2 id="technologies">Technologies of Interest</h2>
+[% END %]
 
-<h3 id="ipc-run">[% cpan.self_dist( "d" => "IPC-Run", ) %]</h3>
+[% WRAPPER h2_section id = "technologies" title = "Technologies of Interest" %]
+
+[% WRAPPER h3_section id = "ipc-run" title = ( cpan.self_dist( "d" => "IPC-Run", ) ) %]
 
 <p>
 A module that allows one to run background processes with piping, and ptys.
 Works on UNIXes as well as Windows.
 </p>
 
-<h3 id="expect">[% cpan.self_dist( "d" => "Expect", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "expect" title = ( cpan.self_dist( "d" => "Expect", ) ) %]
 
 <p>
 Allows one to control a terminal application interactively and wait for
 events.
 </p>
 
-<h3 id="Parallel-ForkManager">[% cpan.self_dist( "d" => "Parallel-Map", ) %] and [% cpan.self_dist( "d" => "Parallel-ForkManager", ) %]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "Parallel-ForkManager" title = ( ( cpan.self_dist( "d" => "Parallel-Map", ) ) _ " and " _ ( cpan.self_dist( "d" => "Parallel-ForkManager", ) ) ) %]
 
 <p>
 Provide simple ways to parallelise tasks. Also see
@@ -34,7 +42,9 @@ Provide simple ways to parallelise tasks. Also see
 [% cpan.self_dist( "d" => "Parallel-ForkManager-Segmented", ) %].
 </p>
 
-<h3 id="event_frameworks">Event Driven Programming Frameworks</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "event_frameworks" title = "Event Driven Programming Frameworks" %]
 
 <p>
 There are several frameworks available for event driven programming,
@@ -44,8 +54,7 @@ most important and most recommended ones on
 most recommended ones.
 </p>
 
-<h4 id="poe"><a href="http://poe.perl.org/">POE: Perl Object
-Environment</a></h4>
+[% WRAPPER h4_section id = "poe" title = "POE: Perl Object Environment" href = "http://poe.perl.org/" %]
 
 <p>
 POE was one of the first event-driven programming frameworks for Perl,
@@ -53,15 +62,19 @@ and gained some popularity in part due to lack of alternatives. Its style
 is baroque and as such it may no longer be recommended.
 </p>
 
-<h4 id="IO-Async">[% cpan.self_dist( "d" => "IO-Async", ) %]</h4>
+[% END %]
+
+[% WRAPPER h4_section id = "IO-Async" title = ( cpan.self_dist( "d" => "IO-Async", ) ) %]
 
 <p>
 A popular framework for asynchronous events on CPAN.
 </p>
 
-<h4 id="discouraged_event_frameworks">Discouraged Event Frameworks</h4>
+[% END %]
 
-<h5 id="AnyEvent">[% cpan.self_dist( "d" => "AnyEvent", ) %]</h5>
+[% WRAPPER h4_section id = "discouraged_event_frameworks" title = "Discouraged Event Frameworks" %]
+
+[% WRAPPER h5_section id = "AnyEvent" title = ( cpan.self_dist( "d" => "AnyEvent", ) ) %]
 
 <p>
 <b>Note:</b> Using AnyEvent [% cpan.module(m=>"Perl::Critic::Policy::Freenode::DiscouragedModules",body=>"is discouraged") %].
@@ -82,7 +95,15 @@ examples.
 </li>
 </ul>
 
-<h2 id="threads">Threads?</h2>
+[% END %]
+
+[% END %]
+
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "threads" title = "Threads?" %]
 
 <p>
 Many people are tempted to use threads with Perl and Internet forums are
@@ -104,5 +125,7 @@ more information.
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]
