@@ -379,7 +379,10 @@ section.ss,
     // margin-bottom: $ss_margin
     padding-left: 1.5em;
     border-left: black solid 3pt;
-    padding-top: 0.3em;
+
+    $ss_padding: 0.3em;
+    padding-bottom: $ss_padding;
+    padding-top: $ss_padding;
 
     // padding-bottom: 0.3em
     // border-radius: 5pt
