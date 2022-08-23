@@ -387,7 +387,8 @@ section.ss,
     // padding-bottom: 0.3em
     // border-radius: 5pt
     &:hover {
-        border-left-color: #555555;
+        // border-left-color: #555555;
+        border-left-color: darkgreen;
     }
 
     > p:last-child,
