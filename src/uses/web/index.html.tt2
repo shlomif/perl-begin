@@ -40,11 +40,13 @@ a little HTML.
 
 [% END %]
 
-<h3 id="our-cgi-get-started"><a href="[% wiki_link( "url" => "CGI_Getting_Started", ) %]">Our own CGI Getting Started</a></h3>
+[% WRAPPER h3_section href = wiki_link( "url" => "CGI_Getting_Started", ) id = "our-cgi-get-started" title = "Our own CGI Getting Started" %]
 
 <p>
 In the Wiki.
 </p>
+
+[% END %]
 
 [% END %]
 
