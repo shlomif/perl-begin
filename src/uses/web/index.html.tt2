@@ -50,7 +50,7 @@ In the Wiki.
 
 [% END %]
 
-[% WRAPPER h2_section id="interfaces" title="Interfaces"%]
+[% WRAPPER h2_section id="interfaces" title="Interfaces" %]
 
 [% WRAPPER h3_section href = "http://plackperl.org/" id = "plack" title = "Plack/PSGI" %]
 
@@ -70,18 +70,7 @@ Using Plack and PSGI is more recommended than using the old CGI.pm interface.
 
 [% END %]
 
-[% WRAPPER h2_section id="frameworks" title="Web Frameworks"%]
-
-[% WRAPPER h3_section href = "http://perldancer.org/" id = "dancer" title = "Dancer" %]
-
-<p>
-A micro web development framework for Perl that is succinct and flexible
-and allows writing small or quick-and-dirty web applications with ease.
-It started as a Perl port of the Ruby micro-framework
-<a href="http://www.sinatrarb.com/">Sinatra</a>.
-</p>
-
-[% END %]
+[% WRAPPER h2_section id="frameworks" title="Web Frameworks" %]
 
 [% WRAPPER h3_section href = "http://www.mojolicious.org/" id = "mojo" title = "Mojolicious and Mojolicious::Lite" %]
 
@@ -95,6 +84,22 @@ a micro-web-development framework, similar to <a href="#dancer">Dancer</a>.
 Being self-contained ("The Web in a box"), Mojolicious re-invents many
 <a href="[% base_path %]topics/cpan/">CPAN</a> wheels (possibly better, but still
 different), which may be a good or a bad thing.
+</p>
+
+<p>
+Mojolicious established itself as the most popular Perl web-development
+framework.
+</p>
+
+[% END %]
+
+[% WRAPPER h3_section href = "http://perldancer.org/" id = "dancer" title = "Dancer" %]
+
+<p>
+A micro web development framework for Perl that is succinct and flexible
+and allows writing small or quick-and-dirty web applications with ease.
+It started as a Perl port of the Ruby micro-framework
+<a href="http://www.sinatrarb.com/">Sinatra</a>.
 </p>
 
 [% END %]
