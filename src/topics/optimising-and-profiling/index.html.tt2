@@ -117,11 +117,19 @@ many other languages from a common source.
 </p>
 </li>
 
+[% IF 0 %]
 <li>
 <p>
 <a href="http://gitorious.org/perl-ctypes">perl-ctypes</a> - this is a port
 of Python's ctypes package, that will eventually allow invoking the subroutines
 of dynamically-loaded libraries from Perl at run-time.
+</p>
+</li>
+[% END %]
+
+<li>
+<p>
+[% cpan.self_mod( "m" => "FFI::Platypus", ) %].
 </p>
 </li>
 

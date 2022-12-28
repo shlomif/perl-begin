@@ -687,6 +687,7 @@ perlootut
 ==== In: dest/topics/optimising-and-profiling/index.html
 
 Devel-NYTProf
+FFI
 Inline
 Shavin
 XS
