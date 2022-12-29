@@ -44,7 +44,7 @@ then
     fi
     eval "$(GIMME_GO_VERSION=1.16 gimme)"
     # go get -u github.com/tdewolff/minify/cmd/minify
-    go install github.com/tdewolff/minify/cmd/minify
+    go install github.com/tdewolff/minify/cmd/minify@latest
     eval "$(perl -I ~/perl_modules/lib/perl5 -Mlocal::lib=$HOME/perl_modules)"
     PERL_CPANM_OPT+=" --quiet "
     export PERL_CPANM_OPT
