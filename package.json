@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "html-minifier": "^4.0.0",
-    "jquery": "^3.6.0",
-    "prettier": "^1.19.1",
-    "sass": "^1.32.11"
+    "jquery": "^3.6.3",
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1"
   },
   "devDependencies": {},
   "scripts": {
