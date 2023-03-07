@@ -2,6 +2,8 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+<div class="faq">
+
 <p>
 This page was retrieved from the corresponding page at the currently offline
 perl.net.au wiki. There it was maintained by several people, including
@@ -12,5 +14,7 @@ from the wayback machine.
 </p>
 
 [% slurp_maintained_html_part("Freenode_Sharp_Perl_FAQ.html") %]
+
+</div>
 
 [% END %]
