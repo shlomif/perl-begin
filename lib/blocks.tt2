@@ -1,7 +1,8 @@
 [% SET html_lang = "en" %]
 
 [% BLOCK files_and_directories_modules %]
-<h2 id="modules">Modules</h2>
+
+[% WRAPPER h2_section id = "modules" title = "Modules" %]
 
 <p>
 Useful modules for files and directories handling are:
@@ -56,7 +57,7 @@ few quirks and bugs. Non-core.
 
 </ul>
 
-<h3 id="directory_traversal">Directory Traversal</h3>
+[% WRAPPER h3_section id = "directory_traversal" title = "Directory Traversal" %]
 
 <p>
 The built-in module for traversing a directory tree in Perl is
@@ -102,6 +103,11 @@ of them.
 </li>
 
 </ul>
+
+[% END %]
+
+[% END %]
+
 [% END %]
 
 [% BLOCK win32_intro %]
