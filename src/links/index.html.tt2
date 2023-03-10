@@ -4,7 +4,7 @@
 
 <toc />
 
-<h2 id="main_resources">Main Perl Resources</h2>
+[% WRAPPER h2_section id = "main_resources" title = "Main Perl Resources" %]
 
 <ul>
 
@@ -91,7 +91,9 @@ blogosphere in the leading week.
 
 </ul>
 
-<h2 id="perl_culture">Perl Culture</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "perl_culture" title = "Perl Culture" %]
 
 <ul>
 
@@ -142,7 +144,9 @@ Perl hacker" (JAPHs)</a> - print the phrase
 
 </ul>
 
-<h2 id="prominent_people">Prominent Perl People</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "prominent_people" title = "Prominent Perl People" %]
 
 <ul>
 
@@ -242,22 +246,28 @@ and/or originator of over 200 CPAN modules.
 </li>
 </ul>
 
-<h2 id="more_links">More Links</h2>
+[% END %]
 
-<h3 id="google_dir"><a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/">The Google Directory Perl Category</a></h3>
+[% WRAPPER h2_section id = "more_links" title = "More Links" %]
+
+[% WRAPPER h3_section href = "http://directory.google.com/Top/Computers/Programming/Languages/Perl/" id = "google_dir" title = "The Google Directory Perl Category" %]
 
 <p>
 A comprehensive hierarchy of links.
 </p>
 
-<h3 id="dmoz_perl_category"><a href="http://dmoz.org/Computers/Programming/Languages/Perl/">DMoz's Perl Category</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://dmoz.org/Computers/Programming/Languages/Perl/" id = "dmoz_perl_category" title = "DMoz's Perl Category" %]
 
 <p>
 The source of the above, which is more up-to-date, but is slower and does not
 include Googlisms.
 </p>
 
-<h3 id="yahoo_perl_category"><a href="http://dir.yahoo.com/Computers_and_Internet/Programming_and_Development/Languages/Perl/">Yahoo's Perl Category</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://dir.yahoo.com/Computers_and_Internet/Programming_and_Development/Languages/Perl/" id = "yahoo_perl_category" title = "Yahoo's Perl Category" %]
 
 <p>
 <a href="http://www.yahoo.com/">The Yahoo Directory</a> used to be quite a
@@ -265,4 +275,9 @@ useful resource before DMoz and its mirrors (like the Google Directory) came
 along. Now it's relatively unmaintained, but may still contain some useful
 links.
 </p>
+
+[% END %]
+
+[% END %]
+
 [% END %]
