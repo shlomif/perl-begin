@@ -1,5 +1,17 @@
 [% SET html_lang = "en" %]
 
+[% PROCESS "h_sections.tt2" %]
+[%- BLOCK h5_section -%]
+[%- WRAPPER h_section h_tag="h5" h_class="h5" id=id title=title href=href -%]
+[% content %]
+[%- END -%]
+[%- END -%]
+[%- BLOCK h6_section -%]
+[%- WRAPPER h_section h_tag="h6" h_class="h6" id=id title=title href=href -%]
+[% content %]
+[%- END -%]
+[%- END -%]
+
 [% BLOCK files_and_directories_modules %]
 
 [% WRAPPER h2_section id = "modules" title = "Modules" %]
@@ -120,13 +132,17 @@ Perl</a> and experimenting with it.
 [% END %]
 
 [% BLOCK rosetta_code %]
-<h3 id="rosetta-code"><a href="http://rosettacode.org/">Rosetta Code</a></h3>
+
+[% WRAPPER h3_section href = "http://rosettacode.org/" id = "rosetta-code" title = "Rosetta Code" %]
 
 <p>
 Contains a series of tasks, with solutions presented in as many programming
 languages as possible. <b>Note:</b> the Perl solutions presented there can vary
 in quality. (As can the solutions in other languages.)
 </p>
+
+[% END %]
+
 [% END %]
 
 [% BLOCK todo_done %]
@@ -153,6 +169,7 @@ contribution.
 [%- END -%]
 
 [%- SET openstudy_group_url = "http://openstudy.com/study-groups/Perl+For+Beginners+-+Perl-begin.org" -%]
+
 [% BLOCK openstudy_button %]
 
 <p class="study_group">
@@ -163,6 +180,7 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 [%- END -%]
 
 [%- BLOCK start_html -%]
+
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[% html_lang %]">
@@ -228,6 +246,7 @@ And <a href="[% base_path %]learn/get-a-job/">get a job</a> doing Perl.</div>
 [%- END -%]
 
 [%- BLOCK end_html -%]
+
 <p><a href=
 "http://www.addtoany.com/share_save?linkurl=[% share_link %]&amp;linkname=">
 <img src="[% base_path %]images/share_save_171_16.png" width="171" height="16"
@@ -290,18 +309,7 @@ Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a> | <a href=
 <script src="[% base_path %]js/selfl.js"></script></footer>
 	</body>
 </html>
-[%- END -%]
 
-[% PROCESS "h_sections.tt2" %]
-[%- BLOCK h5_section -%]
-[%- WRAPPER h_section h_tag="h5" h_class="h5" id=id title=title href=href -%]
-[% content %]
-[%- END -%]
-[%- END -%]
-[%- BLOCK h6_section -%]
-[%- WRAPPER h_section h_tag="h6" h_class="h6" id=id title=title href=href -%]
-[% content %]
-[%- END -%]
 [%- END -%]
 
 [% BLOCK text_processing_links %]
