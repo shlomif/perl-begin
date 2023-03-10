@@ -314,7 +314,7 @@ Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a> | <a href=
 
 [% BLOCK text_processing_links %]
 
-[% WRAPPER h2_section id = "text-processing-links"  title = "Links to more text processing resources"  %]
+[% WRAPPER h2_section id = "text-processing-links" title = "Links to more text processing resources" %]
 
 <ul>
 
@@ -330,12 +330,12 @@ Author: <a href="mailto:gw@actamail.com">G. Wolfgang</a> | <a href=
 </p>
 </li>
 
-
 <li>
 <p>
 <a href="https://www.shlomifish.org/open-source/resources/text-processing-tools/">List of Text Processing Tools and Libraries</a>
 </p>
 </li>
+
 </ul>
 
 [% END %]
