@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 <b>Frequently Asked Questions</b> Lists (or "FAQs" for short) are a useful
@@ -10,17 +10,23 @@ resource to find answers for commonly asked questions. This page contains
 a list of FAQs for Perl.
 </p>
 
-<h2 id="perl-faq"><a href="http://faq.perl.org/">The Perl FAQ</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://faq.perl.org/" id = "perl-faq" title = "The Perl FAQ" %]
 
 <p>
 The standard Perl FAQ. Also available as "perldoc -q &lt;phrase&gt;" from
 the command-line.
 </p>
 
-<h2 id="freenode-perl-faq"><a href="freenode-perl/">The Freenode #perl Channel FAQ</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "freenode-perl/" id = "freenode-perl-faq" title = "The Freenode #perl Channel FAQ" %]
 
 <p>
 The FAQ for the Freenode #perl channel.
 </p>
+
+[% END %]
 
 [% END %]

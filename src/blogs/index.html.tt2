@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="perl_weekly"><a href="http://perlweekly.com/">Perl Weekly</a></h2>
+[% WRAPPER h2_section href = "http://perlweekly.com/" id = "perl_weekly" title = "Perl Weekly" %]
 
 <p>
 A weekly newsletter by Gabor Szabo, concentrating the most notable articles
@@ -10,7 +10,9 @@ from the Perl blogosphere in the leading week. Available on the web and
 can be delivered by E-mail.
 </p>
 
-<h2 id="planets">Perl “Planets” and Aggregators</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "planets" title = "Perl “Planets” and Aggregators" %]
 
 <ul>
 
@@ -49,7 +51,9 @@ of reddit (a social news site) dedicated to Perl.
 
 </ul>
 
-<h2 id="blog-sites">Blogging Sites</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "blog-sites" title = "Blogging Sites" %]
 
 <ul>
 
@@ -58,9 +62,12 @@ of reddit (a social news site) dedicated to Perl.
 one way to blog it” - an active blogging site hosting many blogs, and open
 for anyone to host their own weblog there.
 </li>
+
 </ul>
 
-<h2 id="notable-blogs">Other Notable Blogs</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "notable-blogs" title = "Other Notable Blogs" %]
 
 <ul>
 
@@ -88,7 +95,9 @@ about Perl.
 
 </ul>
 
-<h2 id="lists-of-blogs">Other Lists of Blogs</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "lists-of-blogs" title = "Other Lists of Blogs" %]
 
 <ul>
 
@@ -98,5 +107,7 @@ on the Perl 5 Wiki</b></a>
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]

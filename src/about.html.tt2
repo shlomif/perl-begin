@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="about">About</h2>
+[% WRAPPER h2_section id = "about" title = "About" %]
 
 <p>
 Welcome to the Perl Beginners' Site. The mission of perl-begin.org is to
@@ -19,9 +19,11 @@ languages, as well as people who are learning Perl as their first,
 introductory, programming language.
 </p>
 
+[% END %]
+
 [% IF 0 %]
 
-<h2 id="revamp">Site Revamp</h2>
+[% WRAPPER h2_section id = "revamp" title = "Site Revamp" %]
 
 <p>
 Recently (as of 26-March-2007), this site has seen a huge revamp. Its look
@@ -39,6 +41,8 @@ publicizing this site better. With the endorsement of the people of
 <a href="http://www.perlfoundation.org/">the Perl Foundation</a>, this site
 may hopefully gain a more official status.
 </p>
+
+[% END %]
 
 [% END %]
 
