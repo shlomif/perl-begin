@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="online-docs">Online Documentation</h2>
+[% WRAPPER h2_section id = "online-docs" title = "Online Documentation" %]
 
 <ul>
 
@@ -18,10 +18,11 @@ Manual</a> - a bit out-of-date, but still very pertinent for beginners.
 
 </ul>
 
-<h2 id="books">Books</h2>
+[% END %]
 
-<h3 id="camel-book"><a href="http://www.oreilly.com/catalog/pperl3/">Programming Perl, 3rd
-Edition</a></h3>
+[% WRAPPER h2_section id = "books" title = "Books" %]
+
+[% WRAPPER h3_section href = "http://www.oreilly.com/catalog/pperl3/" id = "camel-book" title = "Programming Perl, 3rd Edition" %]
 
 <p>
 The Bible of Perl. Makes an easier and more organized read than the online
@@ -35,11 +36,17 @@ Not recommended as an introductory Perl book, but still makes a very good read
 after the language is learned to a working extent.
 </p>
 
-<h3 id="cookbook"><a href="http://www.oreilly.com/catalog/cookbook/">The Perl Cookbook</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.oreilly.com/catalog/cookbook/" id = "cookbook" title = "The Perl Cookbook" %]
 
 <p>
 A book that contains a long list of code snippets for achieving certain tasks
 in Perl, with some discussion on how they work and how to customize them.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% END %]

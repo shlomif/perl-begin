@@ -14,7 +14,7 @@ your name appears there as soon as possible.
 Here are some ways in which you can contribute to the site:
 </p>
 
-<h2 id="publicise">Publicise the Site</h2>
+[% WRAPPER h2_section id = "publicise" title = "Publicise the Site" %]
 
 <p>
 You can publicise the Perl Beginners Site or individual pages thereof by
@@ -24,17 +24,24 @@ web-site or blog. You can use the "Add-to-any" button at the bottom of the
 pages to post it on various sites.
 </p>
 
+[% END %]
+
 [% BLOCK old_wiki_link %]
-<h2 id="wiki">Contribute to the Wiki</h2>
+
+[% WRAPPER h2_section id = "wiki" title = "Contribute to the Wiki" %]
 
 <p>
 <a href="[% wiki_link( ) %]">The Wiki</a> is a portion of the site that can
 be edited by anyone at any time. Feel free to add your own material there.
 </p>
+
+[% END %]
+
 [% END %]
 
 [% BLOCK old_forums_links %]
-<h2 id="mailing-list">Join the Mailing List</h2>
+
+[% WRAPPER h2_section id = "mailing-list" title = "Join the Mailing List" %]
 
 <p>
 By joining <a href="<mailing_list_link />">the mailing list</a>, you will
@@ -42,16 +49,21 @@ receive questions by E-mail, which you can answer. (or alternatively be able
 to ask your own)
 </p>
 
-<h2 id="web-forum">Visit the Help Web Forum</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "web-forum" title = "Visit the Help Web Forum" %]
 
 <p>
 The <a href="<web_forum_link />">Help Web Forum</a> is meant to help people
 with their Perl problems. You can visit it if you have questions or would like
 to help people with their problems.
 </p>
+
 [% END %]
 
-<h2 id="join-forums">Join Online, Perl-Related, Forums</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "join-forums" title = "Join Online, Perl-Related, Forums" %]
 
 <p>
 We maintain <a href="[% base_path %]resources/#get_help">lists of recommended online,
@@ -59,21 +71,27 @@ Perl-related, forums</a> and you can join them in order to receive help
 and provide help.
 </p>
 
-<h2 id="core-site">Contribute to the Core Site</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "core-site" title = "Contribute to the Core Site" %]
 
 <p>
 You can send patches or corrections to the HTML pages of the site. It is
 preferable to send corrections to the <a href="[% base_path %]source/">site's
-Website Meta Language source</a>, because they can be applied immediately.
+sources</a>, because they can be applied immediately.
 </p>
+
+[% END %]
 
 [% INCLUDE todo_done %]
 
-<h2 id="donate">Donate Money</h2>
+[% WRAPPER h2_section id = "donate" title = "Donate Money" %]
 
 <p>
 You can <a href="http://www.shlomifish.org/meta/donate/">donate money</a>
 to Shlomi Fish (= Perl-Begin’s originator and chief maintainer) using PayPal.
 </p>
+
+[% END %]
 
 [% END %]
