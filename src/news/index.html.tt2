@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="news_31_May_2015">31-May-2015: New pages, restored pages, and updated content</h2>
+[% WRAPPER h2_section id = "news_31_May_2015" title = "31-May-2015: New pages, restored pages, and updated content" %]
 
 <p>
 Here is what is new at the Perl Beginners’ since the last update roughly
@@ -34,7 +34,6 @@ There’s
 about Perl developer tools</a> originally from the perl.net.au wiki.
 </p>
 </li>
-
 
 <li>
 <p>
@@ -124,7 +123,6 @@ was enhanced with new links to Strawberry Perl and DWIM Perl.
 </p>
 </li>
 
-
 <li>
 <p>
 We have a new page about
@@ -154,8 +152,9 @@ edition.
 We hope you find these additions useful or enlightening.
 </p>
 
-<h2 id="news_22_July_2011">22-July-2011: The book Modern Perl, exercises and
-challenges, and some new topical pages.</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_22_July_2011" title = "22-July-2011: The book Modern Perl, exercises and challenges, and some new topical pages." %]
 
 <ol>
 
@@ -241,8 +240,9 @@ and there are instructions for contributing in the link.
 </li>
 </ol>
 
-<h2 id="news_11_November_2010">11-November-2010:
-New Page about Bad Perl Elements and other new pages.</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_11_November_2010" title = "11-November-2010: New Page about Bad Perl Elements and other new pages." %]
 
 <ul>
 
@@ -290,7 +290,6 @@ greatly enhanced.
 </p>
 </li>
 
-
 <li>
 <p>
 <a href="[% base_path %]contribute/">The how-to contribute to the site section</a> now
@@ -315,8 +314,9 @@ and ones that were done to its internals.
 
 </ul>
 
+[% END %]
 
-<h2 id="news_26_June_2010">26-June-2010: New Pages</h2>
+[% WRAPPER h2_section id = "news_26_June_2010" title = "26-June-2010: New Pages" %]
 
 <ul>
 
@@ -344,7 +344,9 @@ Aside from that, the ShareThis button was replaced by the
 JavaScript, loads faster and does not load Google Analytics.
 </p>
 
-<h2 id="news_16_March_2010">16-March-2010: Topical and Uses Pages</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_16_March_2010" title = "16-March-2010: Topical and Uses Pages" %]
 
 <p>
 We added a <a href="[% base_path %]uses/email/">a page about using Perl for E-mail
@@ -381,7 +383,9 @@ screenshots.
 Many new links have been added and many typos have been corrected. Enjoy!
 </p>
 
-<h2 id="news_03_August_2009">03-August-2009: More updates to Perl-Begin.org</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_03_August_2009" title = "03-August-2009: More updates to Perl-Begin.org" %]
 
 <p>
 I thought <a href="[% base_path %]">the Perl Beginners' Site</a>
@@ -440,9 +444,9 @@ We hope you enjoy the new site. If you like it, please recommend it to
 your friends - if you don't - let us know and we'll see what we can do.
 </p>
 
+[% END %]
 
-
-<h2 id="news_27_July_2009">27-July-2009: Updates to Perl-Begin.org</h2>
+[% WRAPPER h2_section id = "news_27_July_2009" title = "27-July-2009: Updates to Perl-Begin.org" %]
 
 <p>
 After the last news item, a lot of work was invested into <a href="[% base_path %]">Perl-Begin.org, the Perl Beginners' Site</a>, making
@@ -525,7 +529,9 @@ to your friends. All content on Perl-Begin is made available under the Creative
 Commons Attribution Licence which allows almost unlimited re-use.
 </p>
 
-<h2 id="news_14_May_2009">14-May-2009: Many Updates and Corrections</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_14_May_2009" title = "14-May-2009: Many Updates and Corrections" %]
 
 <p>
 Recently, the <a href="[% base_path %]">Perl-Begin site</a> has
@@ -572,7 +578,9 @@ on the Perl 5 Wiki to list all Perl-related mailing lists</a>. This effort
 needs help, and there are instructions for that, at the link.
 </p>
 
-<h2 id="news_07_Jul_2006">07-July-2006: The wiki is now part of <a href="http://perl.net.au/">perl.net.au</a></h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_07_Jul_2006" title = "07-July-2006: The wiki is now part of <a href=\"http://perl.net.au/\">perl.net.au</a>" %]
 
 <p>
 The contents of our wiki were integrated into the
@@ -588,7 +596,9 @@ Also of note is <a href="[% base_path %]wikis/">a new section of the site on
 Perl-related wikis</a>.
 </p>
 
-<h2 id="news_04_Nov_2005">04-November-2005: Perlmeme.org</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_04_Nov_2005" title = "04-November-2005: Perlmeme.org" %]
 
 <p>
 There's <a href="http://perlmeme.org/">a new site for Perl beginners called
@@ -612,7 +622,9 @@ be much better now.
 -- <i>Shlomi Fish</i>.
 </p>
 
-<h2 id="news_06_Jun_2005">06-June-2005: Wiki Restored</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_06_Jun_2005" title = "06-June-2005: Wiki Restored" %]
 
 <p>
 The <a href="[% wiki_link( ) %]">Wiki</a> was heavily spammed and so was taken
@@ -625,7 +637,9 @@ the RSS feed and use other measurements to prevent Spam.
 All the content of the old wiki was restored.
 </p>
 
-<h2 id="news_29_Feb_2004">29-February-2004: New Wiki</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "news_29_Feb_2004" title = "29-February-2004: New Wiki" %]
 
 <p>
 We now have <a href="[% wiki_link( ) %]">a new Wiki with a better
@@ -639,5 +653,7 @@ is much better in this and other regards.
 All the content from the old wiki was transferred to the new one. We hope
 you'd like it better.
 </p>
+
+[% END %]
 
 [% END %]
