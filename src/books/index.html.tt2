@@ -11,7 +11,7 @@ Knowledge</a></li>
 <li><a href="topics/">Books for Learning about Specialized Technologies</a></li>
 </ul>
 
-<h2 id="note">Note</h2>
+[% WRAPPER h2_section id = "note" title = "Note" %]
 
 <p>
 It is not absolutely necessary to read an organized book, in order to learn
@@ -21,11 +21,13 @@ pages. Here is a list of books that can teach you Perl with some remarks on
 each book.
 </p>
 
-<h2 id="beginners">Books for Beginners</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "beginners" title = "Books for Beginners" %]
 
 [% SET modern_perl_book_url = "http://www.onyxneon.com/books/modern_perl/" %]
 
-<h3 id="modern-perl"><a href="[% modern_perl_book_url %]">Modern Perl</a></h3>
+[% WRAPPER h3_section href = modern_perl_book_ur id = "modern-perl" title = "Modern Perl" %]
 
 <p>
 A book by chromatic, a well-known Perl programmer, writer, and author, about
@@ -45,9 +47,11 @@ download</a> and viewing and we have
     "isbn" => "0977920151",
     "online_url"=> modern_perl_book_url ) %]
 
+[% END %]
+
 [% SET beginning_perl_url = "http://web.archive.org/web/20120709053246/http://ofps.oreilly.com/titles/9781118013847/index.html" %]
 
-<h3 id="beginning-perl"><a href="[% beginning_perl_url %]">Beginning Perl</a></h3>
+[% WRAPPER h3_section href = beginning_perl_url id = "beginning-perl" title = "Beginning Perl" %]
 
 [% book_info(     "authors" => "Curtis “Ovid” Poe",
     "publisher" => "wrox",
@@ -67,9 +71,10 @@ The first edition of the book is available online for free download but
 is outdated and no longer recommended. There is a <a href="[% beginning_perl_url %]">preview version</a> of the latest edition available in archive.org.
 </p>
 
+[% END %]
+
 [%BLOCK learning_perl__no_longer_recommended%]
-<h3 id="learning-perl"><a
-href="http://shop.oreilly.com/product/0636920018452.do">Learning Perl</a></h3>
+[% WRAPPER h3_section href = "http://shop.oreilly.com/product/0636920018452.do" id = "learning-perl" title = "Learning Perl" %]
 
 [% book_info(     "authors" => "Randal L. Schwartz, Tom Phoenix and brian d foy",
     "publisher" => "oreilly",
@@ -95,10 +100,14 @@ programming.
 Available online electronically for a registration as part of
 <a href="http://safari.oreilly.com/">O'Reilly's Safari</a>.
 </p>
+
+[% END %]
+
 [% END %]
 
 [%BLOCK elements_of_programming_with_perl__no_longer_recommended%]
-<h3 id="elements"><a href="http://www.manning.com/johnson/">Elements of Programming with Perl</a></h3>
+
+[% WRAPPER h3_section href = "http://www.manning.com/johnson/" id = "elements" title = "Elements of Programming with Perl" %]
 
 [% book_info(     "authors" => "Andrew L. Johnson",
     "publisher" => "manning",
@@ -113,8 +122,11 @@ and using it for creating documentation and better organizing the examples.
 </p>
 [% END %]
 
-<h2 id="with_prev_knowledge">Books for Those with Previous Programming
-Knowledge</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "with_prev_knowledge" title = "Books for Those with Previous Programming Knowledge" %]
 
 <p>
 These books are intended for people with a solid knowledge of programming in
@@ -122,7 +134,7 @@ at least one other programming language besides Perl, who would like to learn
 Perl.
 </p>
 
-<h3 id="impatient-perl"><a href="http://www.greglondon.com/iperl/">Impatient Perl</a></h3>
+[% WRAPPER h3_section href = "http://www.greglondon.com/iperl/" id = "impatient-perl" title = "Impatient Perl" %]
 
 <p>
 A book for people who need to learn Perl as soon as possible. Its full
@@ -130,15 +142,18 @@ text is also available online for free download. We have a
 <a href="[% base_path %]tutorials/impatient-perl/">local mirror</a>.
 </p>
 
-<h3 id="hard-way"><a href="http://greenteapress.com/perl/">Learning Perl the Hard
-Way</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://greenteapress.com/perl/" id = "hard-way" title = "Learning Perl the Hard Way" %]
 
 <p>
 Also intended for people who are already familiar with programming, and want
 to learn Perl quickly, and is available online for free download.
 </p>
 
-<h3 id="perl-for-c"><a href="http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846">Perl for C Programmers</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.amazon.com/exec/obidos/tg/detail/-/073571228X/qid=1042963777/sr=8-2/ref=sr_8_2/104-8970354-3083156?v=glance&amp;s=books&amp;n=507846" id = "perl-for-c" title = "Perl for C Programmers" %]
 
 [% book_info(     "authors" => "Steve Oualline",
     "publisher" => "new-riders",
@@ -154,5 +169,9 @@ possible. If you don't know C either, it will probably be of little help.
 <p>
 <strong>Note:</strong> It may be quite outdated by now.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% END %]
