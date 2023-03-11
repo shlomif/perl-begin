@@ -4,10 +4,9 @@
 
 <toc />
 
-<h2 id="IDEs">IDEs</h2>
+[% WRAPPER h2_section id = "IDEs" title = "IDEs" %]
 
-<h3 id="padre"><a href="http://padre.perlide.org/">Padre -
-the Perl IDE</a></h3>
+[% WRAPPER h3_section href = "http://padre.perlide.org/" id = "padre" title = "Padre - the Perl IDE" %]
 
 <p>
 Padre is a cross-platform, open-source, free, IDE for Perl, written in Perl,
@@ -27,8 +26,9 @@ Perl.
 </p>
 </div>
 
-<h3 id="komodo"><a href="http://www.activestate.com/komodo_edit/">Komodo
-Edit</a> and <a href="http://www.activestate.com/komodo/">Komodo IDE</a></h3>
+[% END %]
+
+[% WRAPPER h3_section id = "komodo" title = "<a href=\"http://www.activestate.com/komodo_edit/\">Komodo Edit</a> and <a href=\"http://www.activestate.com/komodo/\">Komodo IDE</a>" %]
 
 <p>
 Komodo Edit is a cross-platform, costless, open-source, editor for Perl, and
@@ -36,8 +36,9 @@ other dynamic languages by ActiveState. Komodo IDE is a commercially-enhanced
 version of it which is not open-source and costs money.
 </p>
 
-<h3 id="eclipse-epic"><a href="http://www.epic-ide.org/">EPIC - Perl Editor
-and IDE for Eclipse</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.epic-ide.org/" id = "eclipse-epic" title = "EPIC - Perl Editor and IDE for Eclipse" %]
 
 <p>
 EPIC is a set of plugins for the <a href="http://www.eclipse.org/">Eclipse
@@ -57,14 +58,18 @@ Eclipse.
 </p>
 </div>
 
-<h3 id="intellij-idea-camelcade"><a href="https://plugins.jetbrains.com/plugin/7796">Perl 5 Support Plugin (Camelcade) for IntelliJ IDEA</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "https://plugins.jetbrains.com/plugin/7796" id = "intellij-idea-camelcade" title = "Perl 5 Support Plugin (Camelcade) for IntelliJ IDEA" %]
 
 <p>
 A plugin that adds Perl 5 support for IntelliJ IDEA and other JetBrains
 products.
 </p>
 
-<h3 id="vim"><a href="http://www.vim.org/">Vim</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.vim.org/" id = "vim" title = "Vim" %]
 
 <p>
 Vim is a popular open-source, cross-platform, and free editor, with good
@@ -93,10 +98,9 @@ text-editor.
 </p>
 </div>
 
-<h3 id="TextMate"><a href="http://macromates.com/">TextMate</a>,
-<a href="http://www.e-texteditor.com/">E Text Editor</a>
-and <a href="http://e-texteditor.com/blog/2009/releasing-the-source">E Text
-Editor for Linux/UNIX</a></h3>
+[% END %]
+
+[% WRAPPER h3_section id = "TextMate" title = "<a href=\"http://macromates.com/\">TextMate</a>, <a href=\"http://www.e-texteditor.com/\">E Text Editor</a> and <a href=\"http://e-texteditor.com/blog/2009/releasing-the-source\">E Text Editor for Linux/UNIX</a>" %]
 
 <p>
 TextMate is a commercial (but now open source under the GPL version 3)
@@ -105,7 +109,9 @@ Editor is a commercial version of it for Windows, with source available for
 compiling on Linux and other systems.
 </p>
 
-<h3 id="other_lists">Other Lists</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "other_lists" title = "Other Lists" %]
 
 <p>
 These are other lists of prominent or notable IDEs - not all of them are
@@ -145,16 +151,26 @@ Moen’s “IDEs for Linux” page</a>
 </li>
 </ul>
 
-<h2 id="helper-tools">Helper Tools</h2>
+[% END %]
 
-<h3 id="perl-critic"><a href="http://perlcritic.com/">Perl::Critic</a></h3>
+[% END %]
+
+[% WRAPPER h2_section id = "helper-tools" title = "Helper Tools" %]
+
+[% WRAPPER h3_section href = "http://perlcritic.com/" id = "perl-critic" title = "Perl::Critic" %]
 
 <p>
 Perl::Critic is a Perl module (and a free web-service) that analyses one's
 Perl code and warns about possible bad practices that should be fixed.
 </p>
 
-<h3 id="perl-tidy">[%- WRAPPER cpan_dist d = "Perl-Tidy" -%]perltidy[%- END -%]</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "perl-tidy" title = "perltidy" %]
+
+<p>
+[%- WRAPPER cpan_dist d = "Perl-Tidy" -%]perltidy[%- END -%]
+</p>
 
 <p>
 perltidy is an auto-formatter for Perl code, that can keep its style
@@ -163,6 +179,10 @@ has a [%- WRAPPER cpan_dist d = "tidyview" -%]frontend
 called tidyview[%- END -%] that allows one to visually customise the style and
 view the results.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% INCLUDE "gui_db.tt2" %]
 

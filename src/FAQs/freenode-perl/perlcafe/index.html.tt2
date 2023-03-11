@@ -132,13 +132,16 @@ Purposeful misspelling of words.
 <p>
 It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
 </p>
-<h3 id="computer_games"> Computer Games </h3>
+
+[% WRAPPER h3_section id = "computer_games" title = "Computer Games" %]
 
 <p>
 One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games (<a href="https://en.wikipedia.org/wiki/AAA_%28video_game_industry%29">AAA</a>), mostly for <a href="https://en.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
 </p>
 
-<h3 id="shania_twain">Shania Twain</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "shania_twain" title = "Shania Twain" %]
 
 <p>
 Apparently, rindolf is the only computer geek who likes <a
@@ -175,6 +178,8 @@ From #perlcafe
 <p>
 From #perl (rindolf apparently belongs to the empty set).
 </p>
+
+[% END %]
 
 [% END %]
 
