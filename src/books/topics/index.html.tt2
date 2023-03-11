@@ -20,7 +20,7 @@ links to the book pages on <a href="http://books.perl.org/">the Perl books
 registry</a>, where you can find more information, and reviews
 </p>
 
-<h2 id="books-list">The Books List</h2>
+[% WRAPPER h2_section id = "books-list" title = "The Books List" %]
 
 <ul>
 
@@ -50,5 +50,7 @@ a book about Perl's DBI - the Database Interface. Also see our
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]

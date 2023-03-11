@@ -9,7 +9,7 @@ portable and can run on almost any platform imaginable. (here's
 reflects the UNIX culture to a large extent.
 </p>
 
-<h2 id="mac-os"><a href="mac/">Mac OS (PowerPC, Intel, etc.)</a></h2>
+[% WRAPPER h2_section href = "mac/" id = "mac-os" title = "Mac OS (PowerPC, Intel, etc.)" %]
 
 <p>
 Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as
@@ -18,7 +18,9 @@ which I never worked with. Mac OS X is still much more preferable
 from the aspect of running Perl or otherwise.
 </p>
 
-<h2 id="windows"><a href="windows/">Microsoft Windows</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "windows/" id = "windows" title = "Microsoft Windows" %]
 
 [% INCLUDE win32_intro %]
 
@@ -27,8 +29,9 @@ perl for Windows, is mostly compatible with Perl for UNIX, so scripts
 and modules written on one platform will run on the other.
 </p>
 
-<h2 id="unix"><a href="unix/">UNIX Flavours
-(Linux, Solaris, FreeBSD, etc.)</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "unix/" id = "unix" title = "UNIX Flavours (Linux, Solaris, FreeBSD, etc.)" %]
 
 <p>
 Perl originated from UNIX, runs on most UNIX flavours and UNIX-clones (both
@@ -36,5 +39,7 @@ open-source and non-open-source ones). A port or package of the Perl 5
 implementation is normally available from the distributor of the operating
 system or the distribution.
 </p>
+
+[% END %]
 
 [% END %]
