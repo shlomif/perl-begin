@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 In order to learn Perl well (or any other language), one eventually needs
@@ -10,7 +10,9 @@ to write actual code with it. This page contains links to programming exercises
 and challenges that can be solved using Perl.
 </p>
 
-<h2 id="the_list">The List</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "the_list" title = "The List" %]
 
 [% BLOCK removed %]
 <h3 id="learning-perl"><a href="[% base_path %]books/#learning-perl">Learning
@@ -120,6 +122,8 @@ programming - many of which can be solved in Perl.
 [% END %]
 
 [% WRAPPER h3_section href = "https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs" id = "sharp-prog-faq" title = "“I feel like programming something, but I don't know what. Can you suggest some good ideas for programs?”" %]
+
+[% END %]
 
 [% END %]
 
