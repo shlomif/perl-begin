@@ -31,7 +31,7 @@ The book "Beginning Perl" by Simon Cozens and later on James Lee also contains
 some exercises. The first edition of the book is available online.
 </p>
 
-<h3 id="project-euler"><a href="http://projecteuler.net/">Project Euler</a></h3>
+[% WRAPPER h3_section href = "http://projecteuler.net/" id = "project-euler" title = "Project Euler" %]
 
 <p>
 From the page:
@@ -71,8 +71,9 @@ some insights.
 But remember to always try to solve the challenges on your own first.
 </p>
 
-<h3 id="qotw"><a href="http://perl.plover.com/qotw/">Perl
-Quiz of the Week</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://perl.plover.com/qotw/" id = "qotw" title = "Perl Quiz of the Week" %]
 
 <p>
 A now inactive series of challenges for solving using Perl that was started
@@ -80,34 +81,46 @@ by Mark Jason Dominus. One can go over the archives of the mailing lists
 for some interesting problems to solve and their solutions.
 </p>
 
-<h3 id="P_99_problems"><a href="https://sites.google.com/site/prologsite/prolog-problems">P-99: Ninety Nine Prolog Problems</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "https://sites.google.com/site/prologsite/prolog-problems" id = "P_99_problems" title = "P-99: Ninety Nine Prolog Problems" %]
 
 <p>
 A list of 99 challenges with a focus on the Prolog programming language,
 but which can be solved using Perl.
 </p>
 
-<h3 id="martyr2_mega_list"><a href="http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/">Martyr2’s Mega Project Ideas List</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/" id = "martyr2_mega_list" title = "Martyr2’s Mega Project Ideas List" %]
 
 <p>
 A concentrated list of Project Ideas - on the <i>Dream in Code</i> forums.
 </p>
 
-<h3 id="ioi"><a href="http://www.ioinformatics.org/contest/prev.shtml">International Olympiad in Informatics’ Previous Contest Tasks</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.ioinformatics.org/contest/prev.shtml" id = "ioi" title = "International Olympiad in Informatics’ Previous Contest Tasks" %]
 
 <p>
 Contains some challenges.
 </p>
 
+[% END %]
+
 [% INCLUDE rosetta_code %]
 
-<h3 id="github_"><a href="https://github.com/EbookFoundation/free-programming-books/blob/master/more/problem-sets-competitive-programming.md">Problem Sets and Competitive Programming Sites’ List on GitHub</a></h3>
+[% WRAPPER h3_section href = "https://github.com/EbookFoundation/free-programming-books/blob/master/more/problem-sets-competitive-programming.md" id = "github_" title = "Problem Sets and Competitive Programming Sites’ List on GitHub" %]
 
 <p>
 A comprehensive list of sites with problem sets and/or for competitive
 programming - many of which can be solved in Perl.
 </p>
 
-<h3 id="sharp-prog-faq"><a href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs">“I feel like programming something, but I don't know what. Can you suggest some good ideas for programs?”</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs" id = "sharp-prog-faq" title = "“I feel like programming something, but I don't know what. Can you suggest some good ideas for programs?”" %]
+
+[% END %]
 
 [% END %]
