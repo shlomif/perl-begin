@@ -2,6 +2,8 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+<div class="fancy_sects">
+
 <p>
 One should note that in order to get help with Perl code, you should first
 make a <b>minimal effort</b> to learn it. Perl is a relatively easy language to
@@ -11,7 +13,7 @@ productive with it. If you don't want to learn it, then there are many Perl
 only help those who help themselves.
 </p>
 
-<h2 id="what_to_learn_from">From what to Learn?</h2>
+[% WRAPPER h2_section id = "what_to_learn_from" title = "From what to Learn?" %]
 
 <dl>
 
@@ -75,7 +77,9 @@ Learn how to program by programming.
 
 </dl>
 
-<h2 id="get_help">How to Get Help?</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "get_help" title = "How to Get Help?" %]
 
 <p>
 Suppose you've read one of these resources and encountered a problem. Now what
@@ -114,7 +118,9 @@ We have concentrated a selection of Perl-related web forums on
 
 </dl>
 
-<h2 id="reading_resources">Resources for Reference and Enlightenment</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "reading_resources" title = "Resources for Reference and Enlightenment" %]
 
 <dl>
 
@@ -140,5 +146,9 @@ help write useful knowledge.
 Blogs, Weblogs or Online Journals where people write about Perl.
 </dd>
 </dl>
+
+[% END %]
+
+</div>
 
 [% END %]

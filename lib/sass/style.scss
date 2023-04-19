@@ -380,6 +380,8 @@ ol {
 $ss_margin: 2em;
 
 section.ss,
+.fancy_sects article,
+.fancy_sects section,
 .sub_section {
     margin-top: $ss_margin;
 
