@@ -39,7 +39,6 @@ view online or download), for learning Perl.
 <dt id="ides">
 <a href="[% base_path %]IDEs-and-tools/">IDEs and Development Tools</a>
 </dt>
-
 <dd>
 Integrated Development Environments (IDEs) and other Development tools
 for Perl.
@@ -88,8 +87,9 @@ should you do?
 
 <dl>
 
-<dt id="irc"><a href="[% base_path %]irc/">IRC (Internet Relay Chat)</a></dt>
-
+<dt id="irc">
+<a href="[% base_path %]irc/">IRC (Internet Relay Chat)</a>
+</dt>
 <dd>
 Internet Relay Chat is probably the fastest way to receive answers to most
 common beginner questions. Please visit <a href="[% base_path %]irc/">the link</a> to
@@ -97,8 +97,9 @@ learn more about it, and see where it is best to ask, what to avoid doing, and
 what to expect.
 </dd>
 
-<dt id="mailing-lists"><a href="[% base_path %]mailing-lists/">Mailing Lists</a></dt>
-
+<dt id="mailing-lists">
+<a href="[% base_path %]mailing-lists/">Mailing Lists</a>
+</dt>
 <dd>
 Mailing lists allow you to ask questions by E-mail and also learn from
 similar discussions. They are the best solution for more obscure questions,
@@ -106,8 +107,9 @@ or if you're not short on time and want less interactive, but more in-depth
 discussions.
 </dd>
 
-<dt id="web-forums"><a href="[% base_path %]web-forums/">Web Forums</a></dt>
-
+<dt id="web-forums">
+<a href="[% base_path %]web-forums/">Web Forums</a>
+</dt>
 <dd>
 Web forums are similar to mailing lists, but all interaction is done through
 a web-browser, and one can use
@@ -124,27 +126,30 @@ We have concentrated a selection of Perl-related web forums on
 
 <dl>
 
-<dt id="general_reference_resources"><a href="[% base_path %]reference-resources/">General
-Reference Resources</a></dt>
-
+<dt id="general_reference_resources">
+<a href="[% base_path %]reference-resources/">General Reference Resources</a>
+</dt>
 <dd>
 Reference resources that did not fit elsewhere, including those from the
 core Perl 5 documentation.
 </dd>
 
-<dt id="wikis"><a href="[% base_path %]wikis/">Wikis</a></dt>
-
+<dt id="wikis">
+<a href="[% base_path %]wikis/">Wikis</a>
+</dt>
 <dd>
 Wikis are dynamically editable web-sites that allow for collaborative editing
 of useful information. Perl has many wikis with active contributors, that
 help write useful knowledge.
 </dd>
 
-<dt id="blogs"><a href="[% base_path %]blogs/">Blogs</a></dt>
-
+<dt id="blogs">
+<a href="[% base_path %]blogs/">Blogs</a>
+</dt>
 <dd>
 Blogs, Weblogs or Online Journals where people write about Perl.
 </dd>
+
 </dl>
 
 [% END %]
