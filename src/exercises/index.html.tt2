@@ -15,8 +15,8 @@ and challenges that can be solved using Perl.
 [% WRAPPER h2_section id = "the_list" title = "The List" %]
 
 [% BLOCK removed %]
-<h3 id="learning-perl"><a href="[% base_path %]books/#learning-perl">Learning
-Perl</a></h3>
+
+[% WRAPPER h3_section href = "${base_path}books/#learning-perl" id = "learning-perl" title = "Learning Perl" %]
 
 <p>
 The book "Learning Perl" by Randal Schwartz et al contains many exercises
@@ -25,13 +25,16 @@ for beginning Perl programmers.
 
 [% END %]
 
-<h3 id="beginning-perl"><a href="[% base_path %]books/#beginning-perl">Beginning
-Perl</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}books/#beginning-perl" id = "beginning-perl" title = "Beginning Perl" %]
 
 <p>
 The book "Beginning Perl" by Simon Cozens and later on James Lee also contains
 some exercises. The first edition of the book is available online.
 </p>
+
+[% END %]
 
 [% WRAPPER h3_section href = "http://projecteuler.net/" id = "project-euler" title = "Project Euler" %]
 
