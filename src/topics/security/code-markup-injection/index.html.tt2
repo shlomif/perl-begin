@@ -187,16 +187,21 @@ sometimes providing alternatives and sometimes complementing each other:
 
 <ol>
 <li>
+<p>
 Make sure you have enough <b>discipline</b> to escape the input before it
 is passed to the output venue. Write automated tests for that.
+</p>
 </li>
 <li>
+<p>
 If you still want to allow some user input, then make sure that you
 <b>analyse</b> it to make sure it does not contain any malicious code
 that can abuse the system. For example, you may wish to restrict input
 only to certain HTML tags and attributes.
+</p>
 </li>
 <li>
+<p>
 Taint your data using <b>unsafe typing</b> or "kinding" and make sure that
 it can only be output after either being escaped or being untainted. Joel
 on Software recommends
@@ -206,22 +211,29 @@ probably less preferable than the wrong code to <b>behave</b> wrong
 and abort with a huge "You suck!" error or something. This may not be
 very possible given certain limitations of the programming language, but it
 is a better ideal.
+</p>
 </li>
 <li>
+<p>
 Use auto-escaping features of your environment such as SQL place-holders
 (e.g: <code>"SELECT * FROM mytable WHERE id = ?"</code>), and the list argument of
 <a href="http://perldoc.perl.org/functions/system.html">"perldoc
 -f system"</a> (e.g: <code>system { $cmd[0] } @cmd</code>).
+</p>
 </li>
 <li>
+<p>
 Perform frequent code reviews, black box tests, and encourage hackers to
 find problems in your code.
+</p>
 </li>
 <li>
+<p>
 Use complementary security measures that make sure that even if a problem
 occurs, its damage is mitigated. As examples, you can try running the
 script under an underprivileged operating system user, or as a database
 user that lacks certain database privileges.
+</p>
 </li>
 </ol>
 
