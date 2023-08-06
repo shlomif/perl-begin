@@ -1778,8 +1778,10 @@ GTK
 GUI
 GUIs
 Perl-Tk
+Prima
 Tcl
 Tk
+VB
 ack
 grep
 gtk2-perl
