@@ -36,6 +36,18 @@ skinnable. However, it provides a high-level API with many convenient niceties,
 and is commonly available.
 </p>
 
+<h2 id="perl-prima">[%- WRAPPER cpan_dist d = "Prima" -%]Prima[%- END -%]</h2>
+
+<p>
+Prima is a modern-looking graphical toolkit for Perl. It is cross-platform and
+open-source, and comes with
+<a href="https://metacpan.org/dist/Prima/view/Prima/VB/VB.pl">Visual Builder</a>
+(or VB for short), a graphical program to design your GUI.  Prima also provides
+many
+<a href="https://metacpan.org/release/KARASIK/Prima-1.69/source/examples">Examples</a>
+to get you started.
+</p>
+
 <h3 id="qt"><a href="http://techbase.kde.org/Development/Languages/Perl">Perl/Qt and Perl/KDE</a></h3>
 
 <p>
