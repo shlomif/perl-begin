@@ -10,8 +10,8 @@
   "dependencies": {
     "html-minifier": "^4.0.0",
     "jquery": "^3.7.0",
-    "prettier": "^2.8.8",
-    "sass": "^1.62.1"
+    "prettier": "^3.0.1",
+    "sass": "^1.64.2"
   },
   "devDependencies": {},
   "scripts": {
