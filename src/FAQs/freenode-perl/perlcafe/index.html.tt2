@@ -147,10 +147,13 @@ Purposeful misspelling of words.
 
 [% WRAPPER h2_section id = "common-topics" title = "Common Topics" %]
 
-<h3> North American Politics </h3>
+[% WRAPPER h3_section id = "north-american-politics" title = "North American Politics" %]
+
 <p>
 It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
 </p>
+
+[% END %]
 
 [% WRAPPER h3_section id = "computer_games" title = "Computer Games" %]
 
