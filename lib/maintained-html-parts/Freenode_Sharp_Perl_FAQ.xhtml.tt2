@@ -929,14 +929,16 @@ mailing list</a>, or on a similar forum, and you are expected to be an advanced 
 
 [% END %]
 
-<h3 id="dash-lowercase-e-and-dash-uppercase-E">What is the difference between the perl's command line "-e" (lowercase "e") and "-E" (uppercase "E") flags?</h3>
+[% WRAPPER h3_section id = "dash-lowercase-e-and-dash-uppercase-E" title = "What is the difference between the perl's command line \"-e\" (lowercase \"e\") and \"-E\" (uppercase \"E\") flags?" %]
 
 <p>
 See <a href="https://perldoc.pl/perlrun.html#-e-commandline">"perldoc perlrun"’s description</a> of both flags, as well as the <a href="https://perldoc.pl/feature">feature</a>
 pragma.
 </p>
 
-<h3 id="string-vs-numeric-comparison">Why does «perl -E 'if ("foo" == "bar") { say "true"; }'» prints "true"? (String vs numerical comparison)</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "string-vs-numeric-comparison" title = "Why does «perl -E 'if (\"foo\" == \"bar\") { say \"true\"; }'» prints \"true\"? (String vs numerical comparison)" %]
 
 <p>
 Perl has separate sets of operators for <a href="https://perlmaven.com/comparing-scalars-in-perl">numerical vs string</a>
@@ -946,7 +948,9 @@ the Perl design philosophy which dislikes having <a href="https://en.wikipedia.o
 operators</a> for built-in types.
 </p>
 
-<h2 id="Some_Related_IRC_Channels_on_Freenode">Some Related IRC Channels on Freenode</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "Some_Related_IRC_Channels_on_Freenode" title = "Some Related IRC Channels on Freenode" %]
 <h3 id="sharp_perlcafe"><a href="irc://irc.freenode.net/perlcafe">#perlcafe</a></h3>
 <p>The <a href="perlcafe/">Perl Café</a> exists to move off-topic discussions out of #perl. The channel is very lax, but often heavy on the irony. Examples of conversation include:</p>
 <ol>
@@ -980,6 +984,9 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 </ol>
 <h3 id="sharp_perl-cats"><a href="irc://irc.freenode.net/perl-cats">#perl-cats</a></h3>
 <p>Since many #perl'ers either like cats or even sometimes emulate ones, a channel was started for all things cats and Perl. It is pretty small, and we discuss many things besides cats. Some people there are just friends of regular #perl'ers (who also happen to like Perl). #perl-cats tends to be more civil than #perlcafe , but expect a lot of cat overload.</p>
+
+[% END %]
+
 <h2 id="People">People</h2>
 <p><b>Note:</b> by matter a policy, a person may only add and edit their own entries, unless it is a cosmetic change.</p>
 <h3 id="Channel_Owner">Channel Owner</h3>
