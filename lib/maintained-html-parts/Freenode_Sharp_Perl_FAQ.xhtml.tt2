@@ -127,7 +127,7 @@
 <li><a href="#Our_Milestone_Pictures">Our Milestone Pictures</a></li>
 </ul>
 </section>
-<h2 id="Commonly_Asked_Questions">Commonly Asked Questions</h2>
+[% WRAPPER h2_section id = "Commonly_Asked_Questions" title = "Commonly Asked Questions" %]
 
 [% WRAPPER h3_section id = "What_are_the_Rules_of_Conduct.3F" title = "What are the Guidelines of Conduct?" %]
 
@@ -950,8 +950,10 @@ operators</a> for built-in types.
 
 [% END %]
 
+[% END %]
+
 [% WRAPPER h2_section id = "Some_Related_IRC_Channels_on_Freenode" title = "Some Related IRC Channels on Freenode" %]
-<h3 id="sharp_perlcafe"><a href="irc://irc.freenode.net/perlcafe">#perlcafe</a></h3>
+[% WRAPPER h3_section href = "irc://irc.freenode.net/perlcafe" id = "sharp_perlcafe" title = "#perlcafe" %]
 <p>The <a href="perlcafe/">Perl Café</a> exists to move off-topic discussions out of #perl. The channel is very lax, but often heavy on the irony. Examples of conversation include:</p>
 <ol>
 <li>
@@ -972,9 +974,13 @@ operators</a> for built-in types.
 </ol>
 <p>Sometimes the discussion gets more high-quality, but it's still a channel where chat occurs that some may find questionable. Viewer discretion is advised.</p>
 <p>Also see <a href="perlcafe/">its own page</a>.</p>
-<h3 id="sharp_perl6"><a href="irc://irc.freenode.net/raku">#raku (previously "#perl6")</a></h3>
+
+[% END %]
+[% WRAPPER h3_section href = "irc://irc.freenode.net/raku" id = "sharp_perl6" title = "#raku (previously \"#perl6\")" %]
 <p>Discussion for the development of <a href="https://raku.org/">the Raku programming language</a> (which used to be called "Perl 6"), and <a href="https://rakudo.org/">Rakudo</a>, and as usual on Freenode, a lot of off-topic discussion. Don't ask Perl 5 technical questions there - ask them on #perl.</p>
-<h3 id="sharp_lispcafe"><a href="irc://irc.freenode.net/lispcafe">#lispcafe</a></h3>
+
+[% END %]
+[% WRAPPER h3_section href = "irc://irc.freenode.net/lispcafe" id = "sharp_lispcafe" title = "#lispcafe" %]
 <p><a href="irc://irc.freenode.net/lispcafe">#lispcafe</a> is an off-shoot of #lisp and #perlcafe. The primary lisp channel #lisp is restricted to "on-topic" discussion of Common Lisp. Thus #lispcafe was founded to accept off-topic discussions. Unlike #perlcafe, #lispcafe attempts to be more civil. Discussions of Perl and other dynamic languages is
 acceptable on #lispcafe, so you might wish to visit it, introduce yourself and join the fun.</p>
 <ol>
@@ -982,8 +988,12 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 <p>lispcafe has <a href="http://www.cliki.net/lispcafe">its own page</a> on the Common Lisp wiki.</p>
 </li>
 </ol>
-<h3 id="sharp_perl-cats"><a href="irc://irc.freenode.net/perl-cats">#perl-cats</a></h3>
+
+[% END %]
+[% WRAPPER h3_section href = "irc://irc.freenode.net/perl-cats" id = "sharp_perl-cats" title = "#perl-cats" %]
 <p>Since many #perl'ers either like cats or even sometimes emulate ones, a channel was started for all things cats and Perl. It is pretty small, and we discuss many things besides cats. Some people there are just friends of regular #perl'ers (who also happen to like Perl). #perl-cats tends to be more civil than #perlcafe , but expect a lot of cat overload.</p>
+
+[% END %]
 
 [% END %]
 
