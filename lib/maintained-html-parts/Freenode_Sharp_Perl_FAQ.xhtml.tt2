@@ -675,11 +675,13 @@ project still gave important deliverables such as a comprehensive test suite. No
 <p>We have some jokes about the Perl 6 development process in <a href="$(ROOT)/humour/">Perl Humour</a>.</p>
 
 [% END %]
-<h3 id="Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F">Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5?</h3>
+[% WRAPPER h3_section id = "Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F" title = "Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5?" %]
 <p><b>Yes.</b> Perl 6 is not going to make Perl 5 obsolete. It is a different language in the same lineage as Perl 5. The Perl 5 language and the perl5 implementation (soon to be at version perl-5.16), are actively used, and actively enhanced and developed. As Perl 6 is a different language, perl 5 will continue to see active use and development, even while Perl 6 matures and becomes usable. Perl
 5 is not going away.</p>
 <p>At the moment, the Perl 6 implementations are not ready for use in production (due to incompleteness, poor performance and other factors), and if you wish to use any of these two (quite different) languages called "Perl" in production, then Perl 5 is still the sanest choice.</p>
-<h3 id="How_can_I_match_a_string_variable_inside_a_regex.3F">How can I match a string variable inside a regex?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_match_a_string_variable_inside_a_regex.3F" title = "How can I match a string variable inside a regex?" %]
 <p>First of all one should note that regular expressions interpolate, so you can just say:</p>
 <pre>   my $needle = "Perl";
    my $string = "We love programming in Perl, and we program in it a lot."
@@ -694,11 +696,17 @@ quotemeta</a>, which allows quoting it and to the \Q and \E escapes inside regex
 <pre>   if ($string =~ /\Q$needle\E/)
 </pre>
 <p>Note that if you're interested in searching for a simple substring, then there are <a href="https://perldoc.pl/functions/index">perldoc -f index</a> and <a href="https://perldoc.pl/functions/rindex">perldoc -f rindex</a> for that which are faster than a regular expression match and potentially safer.</p>
-<h3 id="Where_can_I_find_lists_of_Programming_Challenges.3F">Where can I find lists of Programming Challenges?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Where_can_I_find_lists_of_Programming_Challenges.3F" title = "Where can I find lists of Programming Challenges?" %]
 <p>See <a href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs">the list</a>.</p>
-<h3 id="Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29">Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop)</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Where_can_I_find_an_interactive_version_of_Perl.3F_.28a.k.a_a_REPL_-_Read-Eval-Print-Loop.29" title = "Where can I find an interactive version of Perl? (a.k.a a REPL - Read-Eval-Print-Loop)" %]
 <p>The best REPL is probably <a href="http://metacpan.org/release/Devel-REPL">Devel-REPL</a> (a.k.a "re.pl") which is actively maintained, feature rich and very polished. The perl -d flag can also serve as a rudimentary REPL.</p>
-<h3 id="How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F">How can I store Perl Data Structures on the Hard Disk?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_store_Perl_Data_Structures_on_the_Hard_Disk.3F" title = "How can I store Perl Data Structures on the Hard Disk?" %]
 <p>Sometimes we'd like to store arbitrary Perl 5 Data Structures on the hard disk for various reasons including persistence and communication. This is called <b>serialisation</b> (or <b>serialization</b> in American spelling), and can be performed in several ways.</p>
 <p>
 If you only wish to explicitly store and load all the data from memory to disk (or vice versa), you have the following options:
@@ -740,11 +748,15 @@ Perl 5-specific features such as having a reference to a scalar.</p>
 </p>
 </li>
 </ul>
-<h3 id="How_can_I_do_a_switch_statement_in_Perl.3F">How can I do a switch statement in Perl?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_do_a_switch_statement_in_Perl.3F" title = "How can I do a switch statement in Perl?" %]
 <p>perl-5.10.x and later have a <a href="http://www.perlmonks.org/?node_id=709120">given/when statement</a>. It is not available for perl-5.8.x and below.</p>
 <p>There's also <a href="http://perldoc.perl.org/Switch.html">Switch.pm</a> for earlier versions, but its use is not recommended because it's a source filter and tends to break a lot.</p>
 <p>Please consider using dispatch tables or if/elsif chains if you cannot use perl-5.10.x.</p>
-<h3 id="How_can_I_determine_the_type_of_a_reference_.28array.2C_hash.2C_scalar.2C_etc..29.3F">How can I determine the type of a reference (array, hash, scalar, etc.)?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_determine_the_type_of_a_reference_.28array.2C_hash.2C_scalar.2C_etc..29.3F" title = "How can I determine the type of a reference (array, hash, scalar, etc.)?" %]
 <p>As is often the case, the answer is not as straightforward as one can expect. Part of the problem is that references can be blessed:</p>
 <pre>   my $ref = {};
    bless $ref, "MyPackage";
@@ -760,14 +772,22 @@ Perl 5-specific features such as having a reference to a scalar.</p>
 </pre>
 <p>See for example <a href="http://metacpan.org/release/UNIVERSAL-isa/">UNIVERSAL-isa on CPAN</a>.</p>
 <p>That put aside, since Perl 5 (and Perl 6) is a symbolic language, one can call a method by name on every object that supports it regardless of its actually inheritance geneology. So using <code>-&gt;isa</code> may be a red flag in Perl, and you should rethink your strategy.</p>
-<h3 id="How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F">How can I parse a CSV (Comma separated value / comma delimited value) file?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_parse_a_CSV_.28Comma_separated_value_.2F_comma_delimited_value.29_file.3F" title = "How can I parse a CSV (Comma separated value / comma delimited value) file?" %]
 <p>CSV parsing is very hard to get right using plain regexes, so please use <a href="http://metacpan.org/release/Text-CSV_XS">Text-CSV_XS</a> or <a href="http://metacpan.org/release/Text-CSV">Text-CSV</a>.</p>
-<h3 id="How_can_I_access_the_global_variables_in_my_script_from_a_different_module_and.2For_namespace">How can I access the global variables in my script from a different module and/or namespace</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_access_the_global_variables_in_my_script_from_a_different_module_and.2For_namespace" title = "How can I access the global variables in my script from a different module and/or namespace" %]
 <p>There is a way to do it, but you really shouldn't do it this way because it's most likely indicative of a bad design. Instead, pass the data to the module (preferably by defining a class (see <a href="http://metacpan.org/release/Moose">Moose</a> and other resources), instantiating an object and let it run. You can also implement an entire command line
 application as a module and a short, bootstrapping, script that invokes it.</p>
-<h3 id="How_can_I_set_up_a_timeout_for_a_blocking_operation.3F">How can I set up a timeout for a blocking operation?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_set_up_a_timeout_for_a_blocking_operation.3F" title = "How can I set up a timeout for a blocking operation?" %]
 <p>See <a href="http://perldoc.perl.org/functions/alarm.html">the "alarm()" perl built-in</a> or <a href="http://poe.perl.org/">POE</a> for more advanced uses.</p>
-<h3 id="How_can_I_match_.28and_possibly_replace.29_the_Nth_expression_out_of_a_string.3F">How can I match (and possibly replace) the Nth expression out of a string?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_match_.28and_possibly_replace.29_the_Nth_expression_out_of_a_string.3F" title = "How can I match (and possibly replace) the Nth expression out of a string?" %]
 <p>Perl 5 does not provide a utilitarian built-in for doing that, but it is easy to do in several ways. The best way is probably to count the matches and replace them:</p>
 <pre>   my $string = "Hello Hi Howdy Hoorah Hallelujah";
 </pre>
@@ -780,7 +800,9 @@ application as a module and a short, bootstrapping, script that invokes it.</p>
 <pre>  my $pat = qr/H/;
   $string =~ s{((?:$pat.*?){2})$pat}{${1}G};
 </pre>
-<h3 id="How_do_I_prepend_data_to_a_file.2C_take_out.2Fdelete_data_from_the_middle_of_the_file_or_insert_data_into_the_middle_of_the_file.3F">How do I prepend data to a file, take out/delete data from the middle of the file or insert data into the middle of the file?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_prepend_data_to_a_file.2C_take_out.2Fdelete_data_from_the_middle_of_the_file_or_insert_data_into_the_middle_of_the_file.3F" title = "How do I prepend data to a file, take out/delete data from the middle of the file or insert data into the middle of the file?" %]
 <p>Files in UNIX can be thought of as big sequences of octets, and as such it is possible to overwrite existing bytes with new ones, to append to the end of the file, or to truncate a file from a position to the end (to create a file which is shorter than the existing one.). However, it's not easily possible to prepend data to the beginning of the file, to take out/delete data from the middle of
 the file or to insert it into the middle of the file while only using a single file handle to the file.</p>
 <p>The best way to achieve what you want with such operations is to write a new file with the modified content, then close both files and move the new file on top of the existing files using <a href="http://perldoc.perl.org/functions/rename.html">rename</a>. Here is an example for how to do a prepend:</p>
@@ -813,7 +835,9 @@ the file or to insert it into the middle of the file while only using a single f
    rename($new_fn, $filename);
 </pre>
 <p>You can also look at higher-level abstractions such as <a href="http://perldoc.perl.org/Tie/File.html">Tie::File</a> or <a href="http://metacpan.org/release/IO-All/">IO-All</a> for more idiomatic ways to achieve the same thing.</p>
-<h3 id="How_do_I_pass_a_reference_to_an_object.27s_method.3F_.28Also_known_as_class_subroutine_or_member_function.29">How do I pass a reference to an object's method? (Also known as class subroutine or member function)</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_pass_a_reference_to_an_object.27s_method.3F_.28Also_known_as_class_subroutine_or_member_function.29" title = "How do I pass a reference to an object's method? (Also known as class subroutine or member function)" %]
 <p>You have several options to pass a reference to a method, which differ in their syntax and semantics. Here is the list:</p>
 <ol>
 <li>
@@ -823,10 +847,14 @@ the file or to insert it into the middle of the file while only using a single f
 <p>You can pass the name of the method as a string and then do <code>$some_obj-&gt;$some_method(@args)</code>. This requires applying $some_method on an object explicitly and handles inheritance well.</p>
 </li>
 </ol>
-<h3 id="How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F">How do I trim leading and/or trailing whitespace from a string?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_trim_leading_and.2For_trailing_whitespace_from_a_string.3F" title = "How do I trim leading and/or trailing whitespace from a string?" %]
 <p>Some languages provide a built-in function to remove leading and/or trailing whitespace from a string (such as <a href="http://php.net/manual/en/function.trim.php">PHP's trim</a>. Perl does not have it because it is fairly trivial to do using the <code>s///</code> built-in (see <a href="http://perl-begin.org/topics/regular-expressions/">our resources about regular expressions</a> and there's
 also <a href="http://metacpan.org/release/String-Trim">String-Trim on CPAN</a>.</p>
-<h3 id="How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29">How do I add directories to the list of paths where Perl searches for modules? (@INC)</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_add_directories_to_the_list_of_paths_where_Perl_searches_for_modules.3F_.28.40INC.29" title = "How do I add directories to the list of paths where Perl searches for modules? (@INC)" %]
 <p>There are several ways to do it:</p>
 <ol>
 <li>
@@ -843,7 +871,9 @@ also <a href="http://metacpan.org/release/String-Trim">String-Trim on CPAN</a>.<
 </li>
 </ol>
 <p>After that you can add <code>use MyModule;</code> to your code and it will work. Please don't resort to <code>do "/full/path/to/include.pl"</code> games.</p>
-<h3 id="How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F">How can I get perl to print each line as it is executed (similar to the shell's -x flag)?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F" title = "How can I get perl to print each line as it is executed (similar to the shell's -x flag)?" %]
 <p>To do that use <a href="http://metacpan.org/release/Devel-Trace">Devel-Trace</a> from CPAN , and add the -d:Trace flag.</p>
 <p>You get an output like:</p>
 <pre>   shlomif[cfg-ini]:$module$ perl -d:Trace tag-release.pl 2&gt;&amp;1 | head -10
@@ -858,22 +888,30 @@ also <a href="http://metacpan.org/release/String-Trim">String-Trim on CPAN</a>.<
    &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:103:     delete $$genpkg{$name};
    &gt;&gt; /usr/lib/perl5/5.12.3/Symbol.pm:104:     $ref;
 </pre>
-<h3 id="I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F">I'm trying to use threads to speed up my program. What should I know?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F" title = "I'm trying to use threads to speed up my program. What should I know?" %]
 <p>Before you start implementing code using Perl's threads, please remember that Perl's threads are not like other threads. Please see <a href="http://perldoc.perl.org/perlthrtut.html">perlthrtut</a> to learn more, specifically its "What kind of threads are perl threads?" section. Also see the document <a href="http://www.perlmonks.org/index.pl?node_id=288022">"Things you need to know before
 programming Perl ithreads"</a>.</p>
 <p>Note that threads don't work too well in most C-hosted languages similar to Perl, such as Python or Ruby, and we recommend looking into a different language for that. Some people believe that threads should be avoided in any programming language (see for example Eric Raymond's <a href="http://www.catb.org/~esr/writings/taoup/html/ch07s03.html#id2923889">opinion about it</a> in the book
 <a href="http://www.catb.org/~esr/writings/taoup/"><i>The Art of Unix Programming</i></a>), but many people believe threads have many legitimate uses, when done properly. See also <a href="http://www.nntp.perl.org/group/perl.beginners/2011/02/msg115714.html">this discussion on the Perl beginners mailing list</a>.</p>
-<h3 id="Should_I_be_using_mod_perl.3F">Should I be using mod_perl?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Should_I_be_using_mod_perl.3F" title = "Should I be using mod_perl?" %]
 <p>The short answer is: "Most probably not.".</p>
 <p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX systems, however, it made a conscious choice of providing a lot of extra functionality, which proved to cost with complexity and sometimes quirkiness. Since then, FastCGI and similar technologies have matured (possibly legally) and there is now a new crop of popular web-servers, which aim to be very speedy (as well as
 less customisable and less suitable for hosting providers) such as <a href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29">Cherokee</a>, <a href="http://www.wikipedia.org/wiki/lighttpd">lighttpd</a> or <a href="http://www.wikipedia.org/wiki/nginx">nginx</a>
 that can utilise FastCGI as well, and you may opt to use instead of Apache, assuming your hosting allows that.</p>
 <p>So even if you're using Apache (and you should definitely use Apache 2 - not Apache 1), there are better alternatives for speeding up your applications than mod_perl, and you should only use mod_perl if you need more sophisticated control and functionality of Apache 2, in which case you may wish to also be asking that on <a href="http://perl.apache.org/maillist/modperl.html">the mod_perl
 mailing list</a>, or on a similar forum, and you are expected to be an advanced user.</p>
-<h3 id="How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F">How can I find which modules a Perl program or module depends on?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F" title = "How can I find which modules a Perl program or module depends on?" %]
 <p>If you wish to use it on an program you have on the disk at run-time, then use <a href="http://metacpan.org/release/Devel-TraceUse">Devel-TraceUse</a>, which will report the used modules recursively.</p>
 <p>One can also use the <a href="http://deps.cpantesters.org/">CPAN dependencies</a> tool to determine the dependencies of a CPAN distribution or module.</p>
-<h3 id="array-vs-array-ref">What is the difference between an array and an array reference? What about a hash vs. a hash reference?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "array-vs-array-ref" title = "What is the difference between an array and an array reference? What about a hash vs. a hash reference?" %]
 <p>There are several differences between arrays and array references. Array references are scalars and can be stores inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
 <ol>
 <li>
@@ -888,6 +926,8 @@ mailing list</a>, or on a similar forum, and you are expected to be an advanced 
 </li>
 </ol>
 <p>For more information, see some <a href="http://perl-begin.org/topics/references/">resources about references in Perl</a>.</p>
+
+[% END %]
 
 <h3 id="dash-lowercase-e-and-dash-uppercase-E">What is the difference between the perl's command line "-e" (lowercase "e") and "-E" (uppercase "E") flags?</h3>
 
