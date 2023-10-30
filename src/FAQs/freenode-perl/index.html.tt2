@@ -13,7 +13,7 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
-[% slurp_maintained_html_part("Freenode_Sharp_Perl_FAQ.html") %]
+[% INCLUDE "lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.xhtml.tt2" %]
 
 </div>
 
