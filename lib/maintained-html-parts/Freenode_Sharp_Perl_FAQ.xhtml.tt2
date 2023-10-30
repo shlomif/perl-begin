@@ -428,7 +428,7 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ul>
 
 [% END %]
-<h3 id="Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F">Can I write Graphical User-Interfaces (GUIs) in Perl? And How?</h3>
+[% WRAPPER h3_section id = "Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F" title = "Can I write Graphical User-Interfaces (GUIs) in Perl? And How?" %]
 <p>Yes, you can. Here's how:</p>
 <ol>
 <li>
@@ -447,7 +447,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 <p><a href="http://perlqt.sourceforge.net/">PerlQt</a> - Perl using the Qt widget toolkit, on which KDE is based. Unmaintained.</p>
 </li>
 </ol>
-<h3 id="How_can_I_break.2Fskip_an_outer_loop.3F">How can I break/skip an outer loop?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_break.2Fskip_an_outer_loop.3F" title = "How can I break/skip an outer loop?" %]
 <p>If you have two nested loops:</p>
 <pre>   for my $person ($jack, $sophie, $alice, $bob, $eve)
    {
@@ -472,7 +474,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
    }
 </pre>
 <p>Read <a href="http://perldoc.perl.org/perlsyn.html">perlsyn</a> for more information.</p>
-<h3 id="How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F">How can I include a script into a different script and still see the lexical ("my") variables declared there?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F" title = "How can I include a script into a different script and still see the lexical ("my") variables declared there?" %]
 <p>The short answer is that when a file is being <code>do</code>'ed, <code>eval slurp($file)</code>'ed, <code>require</code>'ed or <code>use</code>'ed it happens in a nested scope to the invoked one. As a result lexical variables (those declared with <code>my</code>) are inaccessible from the calling scope. The Perl 5 designers considered merely including the code of another file in another
 program directly a bad idea.</p>
 <p>What you should do instead is either:</p>
@@ -497,9 +501,16 @@ program directly a bad idea.</p>
 <p><a href="http://www.mail-archive.com/linux-il%40cs.huji.ac.il/msg33714.html">A post to the Linux-IL mailing list</a> explaining the difference between "local" and "my" by <a href="https://www.shlomifish.org/">Shlomi Fish</a>.</p>
 </li>
 </ol>
-<h3 id="How_can_I_format_numbers_with_certain_digits.3F">How can I format numbers with certain digits?</h3>
+
+[% END %]
+
+[% WRAPPER h3_section id = "How_can_I_format_numbers_with_certain_digits.3F" title = "How can I format numbers with certain digits?" %]
+
 <p>Use <a href="http://perldoc.perl.org/functions/sprintf.html">sprintf</a></p>
-<h3 id="How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F">How can I have printf return a value instead of outputting to a filehandle?</h3>
+
+[% END %]
+
+[% WRAPPER h3_section id = "How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F" title = "How can I have printf return a value instead of outputting to a filehandle?" %]
 <p>See <a href="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>. sprintf is like printf, only it returns the output as a string. Its use is preferable over printf most of the time. Note that its semantics are different than C's sprintf. In C you do:</p>
 <pre>  char buffer[1024];
   sprintf(buffer, "%d Days until %s's birthday.", days, name);
@@ -507,7 +518,9 @@ program directly a bad idea.</p>
 <p>And in Perl you do:</p>
 <pre>  my $string = sprintf("%d Days until %s's birthday.", $days, $name);
 </pre>
-<h3 id="Where_else_can_I_go_for_help.3F">Where else can I go for help?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Where_else_can_I_go_for_help.3F" title = "Where else can I go for help?" %]
 <p>You may find these other resources useful as well:</p>
 <ul>
 <li>
@@ -517,7 +530,9 @@ program directly a bad idea.</p>
 <p><a href="http://perlmonks.org/">Perl Monks forum</a></p>
 </li>
 </ul>
-<h3 id="How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F">How do I know the index of the element in a foreach loop?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F" title = "How do I know the index of the element in a foreach loop?" %]
 <p>The short answer is that you don't. The obvious workaround is to write something like this:</p>
 <pre>   foreach my $idx (0 .. $#array)
    {
@@ -527,13 +542,19 @@ program directly a bad idea.</p>
    }
 </pre>
 <p>The longer answer is that there are often better ways to do it.</p>
-<h3 id="Is_there_anyway_to_compile_Perl_code_to_an_executable.3F">Is there anyway to compile Perl code to an executable?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Is_there_anyway_to_compile_Perl_code_to_an_executable.3F" title = "Is there anyway to compile Perl code to an executable?" %]
 <p>One option is <a href="http://par.perl.org/">PAR - The Perl Archiver</a>, which prepares an .exe that contains all your code, ready to run. This way is is easier to deploy on platforms that don't have perl5, some of the Perl modules or extensions, or certain C libraries.</p>
 <p>Alternatively, if you want to compile Perl code into machine code, then a partial solution was done by perlcc and the C:: namespace on CPAN. Note that it still includes the entire Perl run time (to handle string eval etc.), so it creates bloated executables.</p>
-<h3 id="How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F">How do I perform operations on entire directories (delete them, copy them, etc.)?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F" title = "How do I perform operations on entire directories (delete them, copy them, etc.)?" %]
 <p>First of all see <a href="http://perldoc.perl.org/File/Path.html">the File::Path module</a> and see if it has what you want. It can delete an entire directory tree as well as do the equivalent of "mkdir -p". To traverse an entire directory tree, see <a href="http://perladvent.pm.org/2006/2/">File::Find and its equivalents.</a>.</p>
 <p>To do the equivalent of "cp -R" (i.e: copy an entire directory tree recursively) in portable Perl, you'll either need to write something yourself or <a href="http://metacpan.org/">find a good CPAN module for that</a>.</p>
-<h3 id="I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F">I want to run a shell command from Perl, and possibly trap its output. How?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F" title = "I want to run a shell command from Perl, and possibly trap its output. How?" %]
 <p>1. To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly
 to the executable, without prior processing by the shell. The <code>system("$str")</code> notation, which is explained below has different semantics.</p>
 <p>2. To do the same while capturing the output, the best way is to use <a href="http://perldoc.perl.org/perlopentut.html">the open function</a> like this:</p>
@@ -550,7 +571,9 @@ to the executable, without prior processing by the shell. The <code>system("$str
 <p>3. If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html">system("$string")</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <code>open "cmd|"</code> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not
 properly escaped, they can be used to execute arbitrary shell code. Look at <a href="http://metacpan.org/release/String-ShellQuote/">the String-ShellQuote module</a> on the CPAN for a portable way to quote strings for passage as parameters to shell commands in such execution strings.</p>
 <p>4. exec() is similar to system() and probably does not do what you want as it overwrites the current execution process of your Perl script with the new process.</p>
-<h3 id="How_can_I_Merge_Two_Hashes.3F">How can I Merge Two Hashes?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_Merge_Two_Hashes.3F" title = "How can I Merge Two Hashes?" %]
 <p>If you simply do <code>my %total = (%first_hash, %second_hash);</code>, then <code>%total</code> will contain all the keys and values of <code>%second_hash</code>, along with all the keys in <code>%first_hash</code> that whose values were not run over by identical keys of <code>%second_hash</code>.</p>
 <p>Another option (which is probably slower) is to use:</p>
 <pre>   @into{keys(%from)} = values(%from);
@@ -562,14 +585,22 @@ properly escaped, they can be used to execute arbitrary shell code. Look at <a h
         $into{$key} = exists($into{$key}) ? ACCUM_EXPR($key, $into{$key}, $from_value) : $from{$key};
    }
 </pre>
-<h3 id="How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F">How can I match anything-except-a-regex inside a Perl regular expression?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F" title = "How can I match anything-except-a-regex inside a Perl regular expression?" %]
 <p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string "bar" as an example then the negated regex will look something like "[^b]|b[^a]|ba[^r]", and so it isn't supported. One option to workaround this problem is to make a smart use of the =~ operator, by matching a string and then using this
 operator to check if it doesn't match a regular expression.</p>
-<h3 id="Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F">Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F" title = "Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever?" %]
 <p>See <a href="$(ROOT)/learn/">our “Learn Page Now” section</a>.</p>
-<h3 id="Is_Perl_better_than_PHP.2C_Python.2C_Ruby.2C_etc..3F">Is Perl better than PHP, Python, Ruby, etc.?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Is_Perl_better_than_PHP.2C_Python.2C_Ruby.2C_etc..3F" title = "Is Perl better than PHP, Python, Ruby, etc.?" %]
 <p>See the above question.</p>
-<h3 id="Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F">Which method to do $TASK_X is faster? How can I optimise my Perl programs?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F" title = "Which method to do $TASK_X is faster? How can I optimise my Perl programs?" %]
 <p>Questions such as this come out very often on #perl. The answers to them are that:</p>
 <ol>
 <li>
@@ -583,7 +614,9 @@ operator to check if it doesn't match a regular expression.</p>
 </li>
 </ol>
 <p>The legendary computer scientist <a href="http://www.wikipedia.org/wiki/Donald_Knuth">wikipedia:Donald Knuth</a> has quoted C.A.R. Hoare in saying that <a href="http://c2.com/cgi/wiki?PrematureOptimization">"Premature Optimisation is the Root of All Evil"</a>, so it's worth paying attention to. (More discussion on the link).</p>
-<h3 id="Oh_no.21_CPAN_won.27t_use_the_packages_it_has_downloaded.21__It_says_the_checksums_are_invalid.21">Oh no! CPAN won't use the packages it has downloaded! It says the checksums are invalid!</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "Oh_no.21_CPAN_won.27t_use_the_packages_it_has_downloaded.21__It_says_the_checksums_are_invalid.21" title = "Oh no! CPAN won't use the packages it has downloaded! It says the checksums are invalid!" %]
 <p>There are two reasons for this happening:</p>
 <ol>
 <li>
@@ -618,20 +651,30 @@ done
 
 rm cpan-cycle.$$
 </pre>
-<h3 id="How_can_I_search_for_a_value_inside_an_array.3F">How can I search for a value inside an array?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_search_for_a_value_inside_an_array.3F" title = "How can I search for a value inside an array?" %]
 <p>See <a href="http://perldoc.perl.org/perlfaq4.html#How-can-I-tell-whether-a-certain-element-is-contained-in-a-list-or-array%3f">the perlfaq question "How can I tell whether a certain element is contained in a list or array?"</a> for an exhaustive discussion of this topic. One final correction to it is that "any" from <a href="http://metacpan.org/release/List::MoreUtils">cpan:List::MoreUtils</a> would sometimes be more preferable to "first", either to better convey the meaning that one is not interested in the value itself, but for its existence, and in the case that one is specifically looking for an undef() value.</p>
 <p>Also see <a href="http://szabgab.com/blog/2009/03/1237284490.html">this discussion on Gábor Szabó's "Perl 6 Tricks and Treats" newsletter</a> (and the link to the Israeli Perl Mongers discussion) for further discussion.</p>
-<h3 id="How_can_I_prepare_a_self-contained_Perl_executable.3F">How can I prepare a self-contained Perl executable?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_prepare_a_self-contained_Perl_executable.3F" title = "How can I prepare a self-contained Perl executable?" %]
 <p>Look at <a href="https://metacpan.org/pod/PAR">PAR</a> (the Perl archiver) or commercial alternatives such as perl2exe. They package the perl interpreter, the necessary perl modules, shared libraries, etc. into a self-contained .exe or .zip.</p>
-<h3 id="How_can_I_compile_my_code_to_obscure_.2F_obfuscate_the_source.3F">How can I compile my code to obscure / obfuscate the source?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "How_can_I_compile_my_code_to_obscure_.2F_obfuscate_the_source.3F" title = "How can I compile my code to obscure / obfuscate the source?" %]
 <p>The perl interpreter must know the source code of the program in order to execute it. As a result, there's no sure-fire way to obfuscate your source code. There also is a Perl-to-C compiler that could compile the C code to binaries, but it's no longer actively maintained.</p>
 <p>See PAR::Filter::Obfuscate, PAR::Filter::Crypto, Filter::Crypto::CryptFile, Module::Crypt, B::C on CPAN.</p>
-<h3 id="When_is_Perl_6_going_to_be_ready.3F">When is Perl 6 going to be ready?</h3>
+
+[% END %]
+[% WRAPPER h3_section id = "When_is_Perl_6_going_to_be_ready.3F" title = "When is Perl 6 going to be ready?" %]
 <p>The common answer to this question is "Perl 6 will be ready by Christmas. But we don't know which one.". Seriously now. Most of the active development on a Perl 6 compiler started with Pugs (the "Perl 6 Users Golfing System") which was based on <a href="https://en.wikipedia.org/wiki/Haskell_%28programming_language%29">Haskell</a> and GHC, and proved to be an evolutionary dead end. The Pugs
 project still gave important deliverables such as a comprehensive test suite. Nowadays most work on the Perl 6 compilers concentrates on <a href="https://rakudo.org/">Rakudo</a>.</p>
 <p>Rakudo is progressing nicely, but still has many lacking features, some bugs and also performs very poorly in comparison to perl 5. As a result, it is not recommended to use it for production, and you should instead use perl 5 (or a different mature language if that's your cup of tea).</p>
 <p>All that put aside, Rakudo can already be used to experiment with Perl 6 and to play with it.</p>
 <p>We have some jokes about the Perl 6 development process in <a href="$(ROOT)/humour/">Perl Humour</a>.</p>
+
+[% END %]
 <h3 id="Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F">Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5?</h3>
 <p><b>Yes.</b> Perl 6 is not going to make Perl 5 obsolete. It is a different language in the same lineage as Perl 5. The Perl 5 language and the perl5 implementation (soon to be at version perl-5.16), are actively used, and actively enhanced and developed. As Perl 6 is a different language, perl 5 will continue to see active use and development, even while Perl 6 matures and becomes usable. Perl
 5 is not going away.</p>
