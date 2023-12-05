@@ -2985,7 +2985,7 @@ always return true (due to using the empty pattern).
 </p>
 
 <p>
-One can fix the problematic behaviour by writing <code>(length($pattern) ? ($string =~ /$pattern) : 1)</code>
+One can fix the problematic behaviour by writing <code>(length($pattern) ? ($string =~ /$pattern/) : 1)</code>
 or <code>($string =~ /(?:)$pattern/)</code>.
 </p>
 
