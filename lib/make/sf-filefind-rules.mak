@@ -1,6 +1,6 @@
 COMMON_SRC_DIR = common
 
-PERL_BEGIN_SRC_DIR := /home/shlomif/Docs/programming/Perl/web-sites/perl-begin/trunk/src
+PERL_BEGIN_SRC_DIR := $(LATEMP_ROOT_SOURCE_DIR)/src
 
 PERL_BEGIN_DEST := $(TARGET)
 
