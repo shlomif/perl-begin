@@ -5,7 +5,7 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Path::Tiny qw/ path /;
+use Path::Tiny                   qw/ path /;
 use HTML::Latemp::GenMakeHelpers ();
 use File::Find::Object::Rule     ();
 
@@ -39,7 +39,7 @@ _exec(
     "build-deps failed!",
 );
 
-if ( 0 and -f "rules.mak" )
+if (0)
 {
     _exec( [ "gmake", "-s", "src/style.css" ], "style.css" );
 }
@@ -91,19 +91,6 @@ my $generator = HTML::Latemp::GenMakeHelpers->new(
 $generator->process_all();
 
 path("$DIR/tt2.txt")->spew_raw( join "\n", @tt, "" );
-my $r_fh = path("$DIR/rules.mak");
-my $text = $r_fh->slurp_raw();
-$text =~
-s#^(\$\(PERL_BEGIN_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_INCLUDE_WML_RENDER)#ms
-    or die "Cannot subt";
-$text =~
-s#^(\$\(PERL_BEGIN_COMMON_DOCS_DEST\)[^\n]+\n\t)[^\n]+#${1}\$(call PERL_BEGIN_COMMON_INCLUDE_WML_RENDER)#ms
-    or die "Cannot subt";
-
-my $CP_NEEDLE = 'cp -f $< $@';
-$text =~ s#^\t\Q$CP_NEEDLE\E$#\t\$(call COPY)#gms;
-
-$r_fh->spew_raw($text);
 
 {
     open my $out_fh, ">", "$DIR/p4n.mak";

@@ -9,7 +9,7 @@ all_deps: make-dirs bad_elements_html run_compass
 
 include lib/make/shlomif_common.mak
 include lib/make/include.mak
-include lib/make/rules.mak
+include lib/make/sf-filefind-rules.mak
 include lib/make/p4n.mak
 include lib/make/deps.mak
 
