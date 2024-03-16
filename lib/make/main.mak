@@ -1,6 +1,7 @@
 TARGET = dest
 LATEMP_ABS_ROOT_SOURCE_DIR := $(shell cd $(LATEMP_ROOT_SOURCE_DIR)/ && pwd)
 LATEMP_ROOT_BUILD_DIR := .
+MKDIR := mkdir -p
 
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
@@ -136,7 +137,7 @@ fastrender: $(PERL_BEGIN_DOCS_SRC) all_deps
 	@$(PROCESS_ALL_INCLUDES) $(PERL_BEGIN_DOCS) $$(cat lib/make/tt2.txt)
 
 bulk-make-dirs:
-	@mkdir -p $(PERL_BEGIN_DIRS_DEST)
+	@$(MKDIR) $(PERL_BEGIN_DIRS_DEST)
 
 make-dirs: $(PERL_BEGIN_DIRS_DEST)
 
