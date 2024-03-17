@@ -86,22 +86,15 @@ while ( my $r = $tree->next_obj() )
         }
     }
 }
-my $buckets = +{
-    dirs   => \@dirs_paths,
-    images => \@images_paths,
-};
 path("$DIR/tt2.txt")->spew_raw( join "\n", ( sort { $a cmp $b } @tt ), "" );
 path("$DIR/include.mak")->spew_utf8(
     map {
-        my $host = $_;
-        map {
-            my $key = $_;
-            join( " ",
-                uc( "PERL_BEGIN" . "_" . $key ),
-                ":=", ( sort { $a cmp $b } @{ $buckets->{$key} } ) )
-                . "\n"
-        } qw( dirs images )
-    } qw( src )
+        my $key = $_;
+        join( " ",
+            uc( "PERL_BEGIN" . "_" . $key ),
+            ":=", ( sort ( $key eq "dirs" ? @dirs_paths : @images_paths ) ) )
+            . "\n"
+    } qw( dirs images )
 );
 
 {
