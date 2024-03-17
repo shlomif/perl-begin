@@ -5,9 +5,8 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Path::Tiny                   qw/ path /;
-use HTML::Latemp::GenMakeHelpers ();
-use File::Find::Object::Rule     ();
+use Path::Tiny         qw/ path /;
+use File::Find::Object ();
 
 my $LATEMP_ROOT_SOURCE_DIR = path($0)->parent->absolute;
 
@@ -59,38 +58,51 @@ else
         "compass",
     );
 }
+
 my @tt;
+my @dirs_paths;
+my @images_paths;
+my $tree = File::Find::Object->new( {}, "src" );
 
-my $generator = HTML::Latemp::GenMakeHelpers->new(
-    'hosts' => [
+while ( my $r = $tree->next_obj() )
+{
+    my $path = join "/", @{ $r->full_components() };
+    if ( $r->is_file() )
+    {
+        if ( $path =~ s#\.x?html\K\.tt2\z##ms )
         {
-            'id'         => "common",
-            'source_dir' => "common",
-            'dest_dir'   => "\$(TARGET)",
-        },
+            push @tt, $path;
+        }
+        else
         {
-            'id'         => "perl_begin",
-            'source_dir' => "$LATEMP_ROOT_SOURCE_DIR/src",
-            'dest_dir'   => "\$(TARGET)",
-        },
-    ],
-    out_dir                    => $DIR,
-    filename_lists_post_filter => sub {
-        my ($args) = @_;
-        my $filenames = $args->{filenames};
-        return [
-            grep {
-                s#\.tt2\z##
-                    ? do { push @tt, $_; '' }
-                    : 1
-            } @$filenames
-        ];
-    },
+            push @images_paths, $path;
+        }
+    }
+    elsif ( $r->is_dir() )
+    {
+        if ( length($path) )
+        {
+            push @dirs_paths, $path;
+        }
+    }
+}
+my $buckets = +{
+    dirs   => \@dirs_paths,
+    images => \@images_paths,
+};
+path("$DIR/tt2.txt")->spew_raw( join "\n", ( sort { $a cmp $b } @tt ), "" );
+path("$DIR/include.mak")->spew_utf8(
+    map {
+        my $host = $_;
+        map {
+            my $key = $_;
+            join( " ",
+                uc( "PERL_BEGIN" . "_" . $key ),
+                ":=", ( sort { $a cmp $b } @{ $buckets->{$key} } ) )
+                . "\n"
+        } qw( dirs images )
+    } qw( src )
 );
-
-$generator->process_all();
-
-path("$DIR/tt2.txt")->spew_raw( join "\n", @tt, "" );
 
 {
     open my $out_fh, ">", "$DIR/p4n.mak";
@@ -101,13 +113,17 @@ path("$DIR/tt2.txt")->spew_raw( join "\n", @tt, "" );
     foreach my $part_idx ( 1 .. 5 )
     {
         # find all the .pm files in @INC
-        my @filenames = File::Find::Object::Rule->file()->exec(
-            sub {
-                $_[0] ne "index\.html";
+        my @filenames;
+        my $tree = File::Find::Object->new( {},
+            "lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/" );
+        while ( my $r = $tree->next_obj() )
+        {
+            if ( $r->is_file() and $r->basename() ne "index\.html" )
+            {
+                push @filenames, $r->path();
             }
-        )->in("lib/tutorials/perl-for-newbies/lect${part_idx}-all-in-one/");
-
-        foreach my $fn (@filenames)
+        }
+        foreach my $fn ( sort { $a cmp $b } @filenames )
         {
             my $target = $fn;
             $target =~ s{\Alib/}{};
