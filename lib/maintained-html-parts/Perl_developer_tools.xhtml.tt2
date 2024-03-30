@@ -173,7 +173,10 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 <li>
  <a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical application for Windows which can be used to interactively experiment with (Perl-compatible) regular expressions.
 </li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=9">edit</a>]</div><h2 id="Helper_tools_for_OS_X"> Helper tools for OS X </h2>
+
+
+[% WRAPPER h2_section id = "Helper_tools_for_OS_X" title = "Helper tools for OS X" %]
+
 <ul>
 <li>
  <a href="http://camelbones.sourceforge.net/">Camel Bones</a>: an Objective-C/Perl bridge lets you integrate perl code with your Cocoa / Xcode development projects (e.g. use the Apple developer tools to build user interfaces, and write the application code in perl!).  Also includes an example app, ShuX, which is a perldoc browser.
@@ -189,9 +192,23 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 </li>
 <li>
  <a href="http://bluedot.net/projects/perlDoc.app/">perlDoc</a>: a perl documentation viewer.
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=10">edit</a>]</div><h2 id="Helper_tools_for_Linux"> Helper tools for Linux </h2>
+</li>
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Helper_tools_for_Linux" title = "Helper tools for Linux" %]
+
 <ul>
 <li>
- <a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical application for Windows which can be used to interactively experiment with (Perl-compatible) regular expressions. There are reliable reports of it running successfully under Linux using <a href="http://www.winehq.org/">Wine</a> and older, native, releases are also available for Linux and BSD as well. <a href="http://perl.net.au/wiki/RegexCoachInstallHints_Installation_Hints">RegexCoachInstallHints Installation Hints</a>
-</li></ul></div>
+<a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical
+application for Windows which can be used to interactively experiment with
+(Perl-compatible) regular expressions. There are reliable reports of it running
+successfully under Linux using <a href="http://www.winehq.org/">Wine</a> and
+older, native, releases are also available for Linux and BSD as well. <a
+href="http://perl.net.au/wiki/RegexCoachInstallHints_Installation_Hints">RegexCoachInstallHints
+Installation Hints</a>
+</li>
+</ul>
+
+[% END %]
