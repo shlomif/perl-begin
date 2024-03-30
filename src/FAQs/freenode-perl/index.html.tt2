@@ -4,7 +4,7 @@
 
 [%- WRAPPER wrap_html -%]
 
-<div class="faq">
+<div class="fancy_sects faq">
 
 <p>
 This page was retrieved from the corresponding page at the currently offline
