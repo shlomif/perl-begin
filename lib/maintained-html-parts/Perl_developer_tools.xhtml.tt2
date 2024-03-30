@@ -1,32 +1,56 @@
 <h1>Perl developer tools</h1>
-		<div id="bodyContent">
-			<h3 id="siteSub">From PerlNet</h3>
-			<div id="contentSub"></div>
-									<div id="jump-to-nav">Jump to: <a href="http://perl.net.au/wiki/Perl_developer_tools#column-one">navigation</a>, <a href="http://perl.net.au/wiki/Perl_developer_tools#searchInput">search</a></div>			<!-- start content -->
-			<p>Perl programs are written using plain text files, so at a minimum all you need a basic text editor (e.g. Notepad on Windows or TextEdit on OS X). If you are new to Perl then the best combination are a text editor and a command window to run the Perl interpreter as IDE's can make life a little complicated when you first start.
-</p><p>Some more powerful development tools are listed below, roughly grouped as:
-</p>
-<ul>
-<li>
- Integrated Development Environment (IDE) - features perl syntax highlighting, integrated debugging support, and other advanced features
-</li>
-<li>
- Text Editor - at a minimum features perl syntax highlighting.  Other IDE-like features may be possible through additional plugins/extensions.
-</li>
-<li>
- Helper Tools - applications such as GUI builders and reference documentation that may be used in conjunction with IDEs and editors.
-</li></ul>
-<p>Predominantly commercial programs are noted with <span style="color:green;">$</span>, although in some cases there may be exceptions for personal, educational, or government use.
-</p><p><b>Note:</b> A listing here does not imply any endorsement or that a review has taken place. (Independent reviews welcome!)
-</p>
-<ul>
-    <li>
-        <p>
-See also <a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Tools/">Google &gt; Computers &gt; Programming &gt; Languages &gt; Perl &gt; Tools</a>
-        </p>
-    </li>
 
+<h3 id="siteSub">From PerlNet</h3>
+
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
+
+<p>
+Perl programs are written using plain text files, so at a minimum all you need
+a basic text editor (e.g. Notepad on Windows or TextEdit on OS X). If you are
+new to Perl then the best combination are a text editor and a command window to
+run the Perl interpreter as IDE's can make life a little complicated when you
+first start.
+</p>
+
+<p>Some more powerful development tools are listed below, roughly grouped as:</p>
+
+<ul>
+<li>
+<p>
+Integrated Development Environment (IDE) - features perl syntax highlighting, integrated debugging support, and other advanced features
+</p>
+</li>
+<li>
+<p>
+Text Editor - at a minimum features perl syntax highlighting. Other IDE-like features may be possible through additional plugins/extensions.
+</p>
+</li>
+<li>
+<p>
+Helper Tools - applications such as GUI builders and reference documentation that may be used in conjunction with IDEs and editors.
+</p>
+</li>
 </ul>
+
+<p>
+Predominantly commercial programs are noted with <span
+style="color:green;">$</span>, although in some cases there may be exceptions
+for personal, educational, or government use.
+</p>
+
+<p>
+<b>Note:</b> A listing here does not imply any endorsement or that a review has taken place. (Independent reviews welcome!)
+</p>
+
+<ul>
+<li>
+<p>
+See also <a href="http://directory.google.com/Top/Computers/Programming/Languages/Perl/Tools/">Google &gt; Computers &gt; Programming &gt; Languages &gt; Perl &gt; Tools</a>
+</p>
+</li>
+</ul>
+
+[% END %]
 
 [% WRAPPER h2_section id = "Cross_Platform_IDEs" title = "Cross Platform IDEs" %]
 
@@ -107,7 +131,7 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 <a href="http://kephra.sourceforge.net/site/en/home_news.shtml">Kephra</a> is written in Perl
 </li>
 <li>
-<a href="http://www.vim.org/">VIM</a>, <a href="http://www.vim.org/download.php#pc">Vim for Windows</a>, <a href="http://macvim.org/OSX/">VIM for OS X</a> (Carbon) and <a href="http://code.google.com/p/macvim/">MacVim</a> (Cocoa).  VIM includes perl syntax highlighting, but there are also <a href="http://vim.sourceforge.net/scripts/script_search_results.php?keywords=Perl">numerous extensions</a> that enable more IDE-like features such as <a href="http://vim.sourceforge.net/scripts/script.php?script_id=663">debugging</a>, <a href="http://vim.sourceforge.net/scripts/script.php?script_id=273">tags</a>, and <a href="http://vim.sourceforge.net/scripts/script.php?script_id=896">sanity checks</a>
+<a href="http://www.vim.org/">VIM</a>, <a href="http://www.vim.org/download.php#pc">Vim for Windows</a>, <a href="http://macvim.org/OSX/">VIM for OS X</a> (Carbon) and <a href="http://code.google.com/p/macvim/">MacVim</a> (Cocoa). VIM includes perl syntax highlighting, but there are also <a href="http://vim.sourceforge.net/scripts/script_search_results.php?keywords=Perl">numerous extensions</a> that enable more IDE-like features such as <a href="http://vim.sourceforge.net/scripts/script.php?script_id=663">debugging</a>, <a href="http://vim.sourceforge.net/scripts/script.php?script_id=273">tags</a>, and <a href="http://vim.sourceforge.net/scripts/script.php?script_id=896">sanity checks</a>
 </li>
 <li>
  ActiveState Komodo <a href="http://activestate.com/Products/komodo_ide/komodo_edit.mhtml">Edit</a> is an Open Source editor that supports Perl, PHP, Python, Ruby, and Tcl, plus JavaScript, CSS, HTML, and XML, and template languages like RHTML, Template-Toolkit, HTML-Smarty and Django
@@ -224,7 +248,7 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 
 <ul>
 <li>
-<a href="http://camelbones.sourceforge.net/">Camel Bones</a>: an Objective-C/Perl bridge lets you integrate perl code with your Cocoa / Xcode development projects (e.g. use the Apple developer tools to build user interfaces, and write the application code in perl!).  Also includes an example app, ShuX, which is a perldoc browser.
+<a href="http://camelbones.sourceforge.net/">Camel Bones</a>: an Objective-C/Perl bridge lets you integrate perl code with your Cocoa / Xcode development projects (e.g. use the Apple developer tools to build user interfaces, and write the application code in perl!). Also includes an example app, ShuX, which is a perldoc browser.
 </li>
 <li>
 <a href="http://perl-pad.sourceforge.net/">PerlPad</a>: allows you to run perl code from the Services menu available in most OS X applications&#xA0;; can also convert perl snippets into keyboard shortcuts
@@ -233,7 +257,7 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 <a href="http://www.macupdate.com/info.php/id/12046">Platypus</a>: a tool for creating application wrappers around scripts (e.g. create Mac OS X applications that execute a bundled perl script).
 </li>
 <li>
-<a href="http://www.bluem.net/downloads/pashua_en/">Pashua</a>: a tool for generating native Aqua dialog windows from within perl (and other supported scripting languages).  Data from the dialog can be passed on to the calling script; works well in conjunction with Platypus to create a simple application bundle.
+<a href="http://www.bluem.net/downloads/pashua_en/">Pashua</a>: a tool for generating native Aqua dialog windows from within perl (and other supported scripting languages). Data from the dialog can be passed on to the calling script; works well in conjunction with Platypus to create a simple application bundle.
 </li>
 <li>
 <a href="http://bluedot.net/projects/perlDoc.app/">perlDoc</a>: a perl documentation viewer.
