@@ -38,8 +38,8 @@ $(LATEMP_ROOT_SOURCE_DIR)/src/jqui-override.css: $(addprefix $(LATEMP_ROOT_SOURC
 endif
 
 $(TARGET)/humour/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/Perl_Humour.html
-$(TARGET)/FAQs/freenode-perl/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.html
-$(TARGET)/IDEs-and-tools/Perl_developer_tools/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/Perl_developer_tools.html
+$(TARGET)/FAQs/freenode-perl/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/maintained-html-parts/Freenode_Sharp_Perl_FAQ.xhtml.tt2
+$(TARGET)/IDEs-and-tools/Perl_developer_tools/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/maintained-html-parts/Perl_developer_tools.xhtml.tt2
 $(TARGET)/tutorials/hyperpolyglot/sheet1.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/retrieved-html-parts/hyperpolyglot/scripting.html
 $(TARGET)/topics/files-and-directories/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/PerlBegin/TopicsExamples/FilesAndDirs.data.yml $(LATEMP_ROOT_SOURCE_DIR)/lib/PerlBegin/TopicsExamples/FilesAndDirs.pm
 $(TARGET)/learn/index.html: $(LATEMP_ROOT_SOURCE_DIR)/lib/why-perl.tt2
