@@ -1,5 +1,7 @@
 [%- SET title = "Freenode’s #perl FAQ" -%]
+
 [%- PROCESS "blocks.tt2" -%]
+
 [%- WRAPPER wrap_html -%]
 
 <div class="faq">

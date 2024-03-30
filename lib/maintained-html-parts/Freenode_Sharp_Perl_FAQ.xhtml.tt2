@@ -1,9 +1,16 @@
-<div id="bodyContent">
-<h3 id="siteSub">From PerlNet</h3>
+<section id="bodyContent">
+
+<header>
+<h2>Freenode’s #perl channel’s FAQ From PerlNet</h2>
+</header>
+
 <p>This is the FAQ for <a href="irc://irc.freenode.org/perl">Freenode's #perl channel</a>.</p>
+
 <section id="toc">
 
+<header>
 <h2>Contents</h2>
+</header>
 
 <ul>
 <li><a href="#Commonly_Asked_Questions">Commonly Asked Questions</a>
@@ -128,6 +135,7 @@
 </li>
 <li><a href="#Our_Milestone_Pictures">Our Milestone Pictures</a></li>
 </ul>
+
 </section>
 
 [% WRAPPER h2_section id = "Commonly_Asked_Questions" title = "Commonly Asked Questions" %]
@@ -1501,4 +1509,4 @@ GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's 
 
 [% END %]
 
-</div>
+</section>
