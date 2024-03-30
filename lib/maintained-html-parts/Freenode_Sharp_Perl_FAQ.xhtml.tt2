@@ -740,14 +740,14 @@ properly escaped, they can be used to execute arbitrary shell code. Look at <a h
 
 [% WRAPPER h3_section id = "How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F" title = "How can I match anything-except-a-regex inside a Perl regular expression?" %]
 
-<p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string "bar" as an example then the negated regex will look something like "[^b]|b[^a]|ba[^r]", and so it isn't supported. One option to workaround this problem is to make a smart use of the =~ operator, by matching a string and then using this
+<p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string "bar" as an example then the negated regex will look something like "[^b]|b[^a]|ba[^r]", and so it isn't supported. One option to workaround this problem is to make a clever use of the =~ operator, by matching a string and then using this
 operator to check if it doesn't match a regular expression.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F" title = "Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever?" %]
 
-<p>See <a href="$(ROOT)/learn/">our “Learn Page Now” section</a>.</p>
+<p>See <a href="[% base_path %]learn/">our “Learn Page Now” section</a>.</p>
 
 [% END %]
 
@@ -832,22 +832,33 @@ rm cpan-cycle.$$
 <p>See PAR::Filter::Obfuscate, PAR::Filter::Crypto, Filter::Crypto::CryptFile, Module::Crypt, B::C on CPAN.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "When_is_Perl_6_going_to_be_ready.3F" title = "When is Perl 6 going to be ready?" %]
+
 <p>The common answer to this question is "Perl 6 will be ready by Christmas. But we don't know which one.". Seriously now. Most of the active development on a Perl 6 compiler started with Pugs (the "Perl 6 Users Golfing System") which was based on <a href="https://en.wikipedia.org/wiki/Haskell_%28programming_language%29">Haskell</a> and GHC, and proved to be an evolutionary dead end. The Pugs
 project still gave important deliverables such as a comprehensive test suite. Nowadays most work on the Perl 6 compilers concentrates on <a href="https://rakudo.org/">Rakudo</a>.</p>
+
 <p>Rakudo is progressing nicely, but still has many lacking features, some bugs and also performs very poorly in comparison to perl 5. As a result, it is not recommended to use it for production, and you should instead use perl 5 (or a different mature language if that's your cup of tea).</p>
+
 <p>All that put aside, Rakudo can already be used to experiment with Perl 6 and to play with it.</p>
-<p>We have some jokes about the Perl 6 development process in <a href="$(ROOT)/humour/">Perl Humour</a>.</p>
+
+<p>We have some jokes about the Perl 6 development process in <a href="[% base_path %]humour/">Perl Humour</a>.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Perl_6_is_going_to_be_so_different_from_Perl_5._Should_I_still_learn_Perl_5.3F" title = "Perl 6 is going to be so different from Perl 5. Should I still learn Perl 5?" %]
+
 <p><b>Yes.</b> Perl 6 is not going to make Perl 5 obsolete. It is a different language in the same lineage as Perl 5. The Perl 5 language and the perl5 implementation (soon to be at version perl-5.16), are actively used, and actively enhanced and developed. As Perl 6 is a different language, perl 5 will continue to see active use and development, even while Perl 6 matures and becomes usable. Perl
 5 is not going away.</p>
+
 <p>At the moment, the Perl 6 implementations are not ready for use in production (due to incompleteness, poor performance and other factors), and if you wish to use any of these two (quite different) languages called "Perl" in production, then Perl 5 is still the sanest choice.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_can_I_match_a_string_variable_inside_a_regex.3F" title = "How can I match a string variable inside a regex?" %]
+
 <p>First of all one should note that regular expressions interpolate, so you can just say:</p>
+
 <pre>   my $needle = "Perl";
    my $string = "We love programming in Perl, and we program in it a lot."
 
