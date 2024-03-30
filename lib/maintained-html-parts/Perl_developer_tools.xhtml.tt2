@@ -28,7 +28,8 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 
 </ul>
 
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=1">edit</a>]</div><h2 id="Cross_Platform_IDEs"> Cross Platform IDEs </h2>
+[% WRAPPER h2_section id = "Cross_Platform_IDEs" title = "Cross Platform IDEs" %]
+
 <ul>
 <li>
  <a href="http://www.eclipse.org/">Eclipse</a> IDE with the <a href="http://e-p-i-c.sourceforge.net/">EPIC</a> plugin. Some <a href="http://www.perlmonks.org/?node=Eclipse%203%20%2B%20EPIC%200.3.9">hints</a> at Perl Monks
@@ -44,8 +45,13 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 </li>
 <li>
  <span style="color:green;">$</span> IndigoSTAR <a href="http://www.indigostar.com/perledit.html">PerlEdit</a> .. Windows and Linux
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=2">edit</a>]</div><h2 id="IDEs_for_Windows"> IDEs for Windows </h2>
+</li>
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "IDEs_for_Windows" title = "IDEs for Windows" %]
+
 <ul>
 <li>
  <a href="http://open-perl-ide.sourceforge.net/">Open Perl IDE</a>.
@@ -67,17 +73,30 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 </li>
 <li>
  <span style="color:green;">$</span> Solution Soft <a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a>.
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=3">edit</a>]</div><h2 id="IDEs_for_OS_X"> IDEs for OS X </h2>
+</li>
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "IDEs_for_OS_X" title = "IDEs for OS X" %]
+
 <ul>
+
 <li>
- <span style="color:green;">$</span> Late Night Software <a href="http://www.latenightsw.com/affrus/">Affrus</a>
+<span style="color:green;">$</span> Late Night Software <a href="http://www.latenightsw.com/affrus/">Affrus</a>
 </li>
 <li>
- <span style="color:green;">$</span> EPIC <a href="http://www.epic-ide.org/">EPIC</a>
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=4">edit</a>]</div><h2 id="Cross_Platform_Text_Editors"> Cross Platform Text Editors </h2>
+<span style="color:green;">$</span> EPIC <a href="http://www.epic-ide.org/">EPIC</a>
+</li>
+
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Cross_Platform_Text_Editors" title = "Cross Platform Text Editors" %]
+
 <ul>
+
 <li>
  <a href="http://www.gnu.org/software/emacs/">Emacs</a>, <a href="http://www.gnu.org/software/emacs/windows/ntemacs.html">GNU Emacs for MS Windows</a>, <a href="http://emacs-app.sourceforge.net/">Emacs for OS X</a> .. for perl-specific support read up on <a href="http://www.emacswiki.org/cgi-bin/wiki/CPerlMode">cperl-mode</a> (or for Emacs prior to 21.2 <a href="http://www.emacswiki.org/cgi-bin/wiki/PerlMode">perl-mode</a>)
 </li>
@@ -95,11 +114,18 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 </li>
 <li>
  <span style="color:green;">$</span> <a href="http://www.editrocket.com/features/perl_editor.html">Rocket</a> editor has Perl support
-</li></ul>
+</li>
+
+</ul>
+
 <p>
 See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">Google &gt; Computers &gt; Software &gt; Editors</a>
 </p>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=5">edit</a>]</div><h2 id="Text_Editors_for_Windows"> Text Editors for Windows </h2>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Text_Editors_for_Windows" title = "Text Editors for Windows" %]
+
 <ul>
 <li>
  <a href="http://www.perlvision.com/pce/">Perl Code Editor</a>
@@ -124,8 +150,14 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 </li>
 <li>
  <span style="color:green;">$</span> <a href="http://www.ultraedit.com/">UltraEdit</a>
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=6">edit</a>]</div><h2 id="Text_Editors_for_OS_X"> Text Editors for OS X </h2>
+</li>
+
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Text_Editors_for_OS_X" title = "Text Editors for OS X" %]
+
 <ul>
 <li>
  <a href="http://smultron.sourceforge.net/">Smultron</a>
@@ -142,8 +174,13 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 <li>
  <span style="color:green;">$</span> Macromates <a href="http://macromates.com/">TextMate</a>
 </li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=7">edit</a>]</div><h2 id="Cross_Platform_Helper_Tools"> Cross Platform Helper Tools </h2>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Cross_Platform_Helper_Tools" title = "Cross Platform Helper Tools" %]
+
 <ul>
+
 <li>
  <a href="http://www.swig.org/">SWIG</a> is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of languages including common scripting languages such as Perl
 </li>
@@ -161,8 +198,14 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 </li>
 <li>
  <a href="http://search.cpan.org/dist/Module-Starter-PBP/lib/Module/Starter/PBP.pm">Module::Starter::PBP</a> Create a module as recommended in "Perl Best Practices"
-</li></ul>
-<div style="float:right;margin-left:5px;">[<a href="http://perl.net.au/wiki/?title=Perl_developer_tools&amp;action=edit&amp;section=8">edit</a>]</div><h2 id="Helper_tools_for_Windows"> Helper tools for Windows </h2>
+</li>
+
+</ul>
+
+[% END %]
+
+[% WRAPPER h2_section id = "Text_Editors_for_OS_X" title = "Helper tools for Windows" %]
+
 <ul>
 <li>
  <a href="http://user.bahnhof.se/~johanl/perl/Loft/">The GUI Loft</a>: a WYSIWYG design tool (written in Perl) for designing Perl Win32::GUI windows.
@@ -172,8 +215,10 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 </li>
 <li>
  <a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical application for Windows which can be used to interactively experiment with (Perl-compatible) regular expressions.
-</li></ul>
+</li>
+</ul>
 
+[% END %]
 
 [% WRAPPER h2_section id = "Helper_tools_for_OS_X" title = "Helper tools for OS X" %]
 
