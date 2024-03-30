@@ -1,16 +1,7 @@
-<h1>Perl developer tools</h1>
-
-<h3 id="siteSub">From PerlNet</h3>
-
 [% BLOCK commercial_app %]
 
 <strong class="commercial" style="color:green;">$</strong>
 
-[% END %]
-
-[% IF 0 %]
-[% INCLUDE commercial_app %]
-[% PROCESS commercial_app %]
 [% END %]
 
 [% WRAPPER h2_section id = "intro" title = "Introduction" %]
