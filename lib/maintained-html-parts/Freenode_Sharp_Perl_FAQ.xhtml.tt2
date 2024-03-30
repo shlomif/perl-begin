@@ -32,7 +32,7 @@
 <li><a href="#I_need_to_parse_HTML_with_Perl_.28and_my_Regular_Expression_does_not_work.29">I need to parse HTML with Perl (and my Regular Expression does not work)</a></li>
 <li><a href="#Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F">Can I write Graphical User-Interfaces (GUIs) in Perl? And How?</a></li>
 <li><a href="#How_can_I_break.2Fskip_an_outer_loop.3F">How can I break/skip an outer loop?</a></li>
-<li><a href="#How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F">How can I include a script into a different script and still see the lexical ("my") variables declared there?</a></li>
+<li><a href="#How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F">How can I include a script into a different script and still see the lexical (“my”) variables declared there?</a></li>
 <li><a href="#How_can_I_format_numbers_with_certain_digits.3F">How can I format numbers with certain digits?</a></li>
 <li><a href="#How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F">How can I have printf return a value instead of outputting to a filehandle?</a></li>
 <li><a href="#Where_else_can_I_go_for_help.3F">Where else can I go for help?</a></li>
@@ -259,25 +259,35 @@ non-native English speaker may use them this way. (See for example what <a href=
 [% WRAPPER h3_section id = "What_do_I_need_to_do_to_get_a_good_answer_to_my_question.3F" title = "What do I need to do to get a good answer to my question?" %]
 
 <p>If you ask a bad question, you'll often get a bad answer, or no answer at all. As the questioner you probably won't realise that you are stating your question badly. When asking a question try to focus on the underlying task or goal, not the method you are currently trying.</p>
+
 <p>Try to step away from the problem you're working with and see if you can trim your data set to about 5 lines and your code to less than 10 and still demonstrate the problem. We don't want to understand how your whole application works just in order to understand your question.</p>
+
 <p>Please paste the code that reproduces the problem to one of the channel's pastebots, such as <a href="https://f.perl.bot/">perl.bot</a> . Paste the entire program, not selected parts of it and make sure you make your intentions clear. If the program is too long or is confidential, try to reduce it into a smaller testcase that still reproduces your problem.</p>
+
 <p>Show us that you've put some effort into finding the answer yourself, or at least writing the question down well. This is much more likely to be rewarded by us giving you some of our time to help you fix whatever your problem is. Read the following resources for hints on how to ask questions that encourage answers. These techniques work on IRC channels, mailing lists and online forums.</p>
+
 <ul>
+
 <li>
 <p><a href="http://perlmonks.org/?node_id=50427">On asking for help</a></p>
 </li>
+
 <li>
 <p><a href="http://perl.plover.com/Questions.html">Why questions go unanswered</a></p>
 </li>
+
 <li>
 <p><a href="https://github.com/shlomif/writing-the-perfect-question">Writing the Perfect Question</a></p>
 </li>
+
 <li>
 <p><a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a></p>
 </li>
+
 <li>
 <p><a href="http://perlmonks.org/?node_id=172086">How (Not) To Ask A Question</a></p>
 </li>
+
 </ul>
 
 [% END %]
@@ -285,6 +295,7 @@ non-native English speaker may use them this way. (See for example what <a href=
 [% WRAPPER h3_section id = "What_is_Considered_On-Topic.3F" title = "What is Considered On-Topic?" %]
 
 <p>Almost everything, but not all. Things which are frowned upon are:</p>
+
 <ol>
 <li>
 <p>Overly graphical depictions of pornography or violence.</p>
@@ -302,8 +313,11 @@ non-native English speaker may use them this way. (See for example what <a href=
 <p>Obscure or annoying political discussion. This is what #politics or #perlcafe are for. Note that some interesting polito-philosophical discussion may be tolerated.</p>
 </li>
 </ol>
+
 <p>Another negative trend was that sometimes two or three people kept discussing their own pet projects or the Pike language or whatever, and it was of little interest to the rest of the channel, and they were instructed to discuss it elsewhere.</p>
+
 <p>Otherwise we tolerate and like discussions about:</p>
+
 <ol>
 <li>
 <p>Perl. (Naturally).</p>
@@ -335,7 +349,9 @@ non-native English speaker may use them this way. (See for example what <a href=
 <p>Etc.</p>
 </li>
 </ol>
+
 <p>It is considered polite to keep off-topic - that is, non-Perl-related - discussion to a minimum when people in the channel are genuinely trying to get Perl help, since it seems unfair that a topical discussion get swamped by a lot of off-topic messages. Please consider that people who are asking for help are more likely to have less experience with following separate discussions in IRC.</p>
+
 <p>The channel <a href="perlcafe/">#perlcafe</a> was an attempt to move off-topic and advanced discussion out of #perl. However, it didn't work, but, on the other hand, #perlcafe now hosts a lot of discussion that we feel should better be kept out of #perl.</p>
 
 [% END %]
@@ -343,9 +359,11 @@ non-native English speaker may use them this way. (See for example what <a href=
 [% WRAPPER h3_section id = "Perl_Includes_CPAN" title = "Perl Includes CPAN" %]
 
 <p>One thing to note that is as opposed to some programming language channels on Freenode that limit themselves to the core language (which is sometimes fully specified in a standard), we not only have a problem in discussing non-core code, but even encourage you to use many high-quality, recommended, yet non-core, modules from <a href="https://perl-begin.org/topics/cpan/">CPAN</a> - the
-Comprehensive Perl Archive Network. To quote what Audrey Tang had said "UNIX is my IDE, perl 5 is my VM, CPAN is my language.".</p>
-<p>Please read what <a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">Matt Trout (mst) wrote about "But I can't use CPAN"</a>, and the <a href="http://podcats.in/development/share-and-share-alike.html">continuation post by Altreus titled "Share and Share-Alike" for our motivation</a>. You may also get some help with some non-CPAN Perl code as long as you show some
-willingness to learn Perl, and <a href="http://community.livejournal.com/shlomif_tech/37969.html">to modernise and/or refactor it if necessary</a>.</p>
+Comprehensive Perl Archive Network. To quote what Audrey Tang had said: <q>UNIX is my IDE, perl 5 is my VM, CPAN is my language.</q>.</p>
+
+<p>Please read what <a href="http://www.shadowcat.co.uk/blog/matt-s-trout/but-i-cant-use-cpan/">Matt Trout (mst) wrote about <q>But I can't use CPAN</q></a>, and the <a href="http://podcats.in/development/share-and-share-alike.html">continuation post by Altreus titled "Share and Share-Alike" for our motivation</a>. You may also get some help with some non-CPAN Perl code as long as you show some
+willingness to learn Perl, and <a href="https://www.shlomifish.org/philosophy/psychology/changing-the-seldon-plan/">to modernise and/or refactor it if necessary</a>.</p>
+
 <p>If this is homework, and your professor gives some constraints on what you can use (*sigh*) or your pointy-haired-boss (PHB) is constraining you in various ways (double *sigh*), please mention it when asking your question and we may still help you if the non-CPAN-enabled solution is, while not ideal, is still doable elegantly.</p>
 
 [% END %]
@@ -353,50 +371,73 @@ willingness to learn Perl, and <a href="http://community.livejournal.com/shlomif
 [% WRAPPER h3_section id = "Is_the_Channel_Logged" title = "Is the Channel Logged? Where can I find Logs?" %]
 
 <p>The channel policies probably forbid people from setting up public logs of the channel, so there are no public logs that we are aware of online. However, various people keep logs of everything that happens on <code>#perl</code> when they are present on the channel and keep these logs to themselves for their own reference and perusal, and they can supply you with excerpts of these logs.</p>
+
 <p>It is a good idea to configure your IRC client to log your conversations so you can later refer to them.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "I_need_help_with_tweaking_a_Perl_script_that_I_found.2C_and_I_don.27t_want_to_learn_Perl._Can_you_guys_help_me.3F" title = "I need help with tweaking a Perl script that I found, and I don't want to learn Perl. Can you guys help me?" %]
+
 <p>The best way to get assistance with a Perl problem is to demonstrate that you've taken some steps to try to find the answer yourself. This involves learning Perl enough to be able to fix the problem yourself. Learning Perl is not too hard and will prove useful into the future.</p>
-<p>Alternatively, you can pay someone to help you. Just ask on the channel if someone wishes to be paid. If you're trying to modify a Perl script without <a href="https://perl-begin.org/resources/">learning Perl</a> (or paying someone who knows Perl) then we're not going to help. As the old Greek idiom goes: "The gods help them that help themselves.".</p>
+
+<p>Alternatively, you can pay someone to help you. Just ask on the channel if someone wishes to be paid. If you're trying to modify a Perl script without <a href="https://perl-begin.org/resources/">learning Perl</a> (or paying someone who knows Perl) then we're not going to help. As the old Greek idiom goes: <q>The gods help them that help themselves.</q>.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "I.27d_like_to_run_a_script_.28which_I_wrote_or_downloaded.29_on_a_cheap_.28or_free.29_web-hosting_that_only_gives_me_FTP._Can_you_help.3F" title = "I'd like to run a script (which I wrote or downloaded) on a cheap (or free) web-hosting that only gives me FTP. Can you help?" %]
 
-<p>Perl due to its architecture usually requires a bit more than an el-cheapo or "free" web-hosting. You need at least an ssh account, and often also a virtual server. There ain't no such thing as a free lunch. While many web-services are free, one has to understand that maintaining a server costs money, and the bandwidth costs money, and there's a lot of other costs. If you want something good,
-you have to pay for it, even in the modern Internet world. If you can't pay for it, you can try to find someone who'll host you free-of-charge, but note that it's also not trivial.</p>
+<p>Perl due to its architecture usually requires a bit more than an el-cheapo
+or "free" web-hosting. You need at least an ssh account, and often also a
+virtual server. There ain't no such thing as a free lunch. While many
+web-services are free, one has to understand that maintaining a server costs
+money, and the bandwidth costs money, and there's a lot of other costs. If you
+want something good, you have to pay for it, even in the modern Internet world.
+If you can't pay for it, you can try to find someone who'll host you
+free-of-charge, but note that it's also not trivial.</p>
+
 <p>So please pay for hosting, have an ssh access, be able to install more CPAN modules, and let us know what the logs show. If you don't have money, just learn more Perl and become a Perl programmer. There's a huge demand for them, at the moment, and we could always <a href="http://perl-begin.org/learn/get-a-job/">use your help</a>.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "I_need_help_with_a_non-Perl_Regular_Expression_.28PHP.2C_grep.2C_PCRE.2C_etc..29" title = "I need help with a non-Perl Regular Expression (PHP, grep, PCRE, etc.)" %]
+
 <p>If you're looking for assistance with a non-Perl problem, you've probably come to the wrong channel. You can try asking, but don't be surprised if you don't get an answer (or someone suggests you ask elsewhere) as Perl regular expressions are different from the regular expressions used by other programs and languages.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "Can_you_recommend_a_good_Perl_Editor.2FIDE.3F" title = "Can you recommend a good Perl Editor/IDE?" %]
+
 <p>See: <a href="https://perl-begin.org/IDEs-and-tools/">Perl developer tools</a></p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "Why_doesn.27t_my_script_run.3F" title = "Why doesn't my script run?" %]
+
 <p>There can be several reasons:</p>
+
 <ol>
+
 <li>
-<p>
+
 <p>Are you sure you got the she-bang right?</p>
+
 <p>This should look like <code>#!/usr/bin/perl</code> or <code>#!/path/to/perl</code>. On Windows you can just write <code>#!perl</code> but it is recommended to write <code>#!/usr/bin/perl</code> (Windows will ignore the path). If you're writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the
 <a href="http://en.wikipedia.org/wiki/Carriage_return">carriage return</a>. This won't be a problem if you're using any switches on this line.</p>
-</p>
+
 </li>
+
 <li>
+
 <p>If you're using Unix or a Unix-like operating system, check that your program is set to be executable (<code>chmod a+x &lt;file&gt;</code>).</p>
+
 </li>
+
 <li>
+
 <p>Are you sure your script compiles and runs? Test it locally (<code>perl -c &lt;file&gt;</code>), test it remotely. If it's a CGI script, check the error log.</p>
+
 </li>
+
 </ol>
 
 [% END %]
@@ -404,12 +445,13 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 [% WRAPPER h3_section id = "Why_doesn.27t_my_script_work.3F" title = "Why doesn't my script work?" %]
 
 <p>First of all it would be useful for you to tell us exactly how it doesn't work. Does it produce the wrong output? Does it not do what you want to do?</p>
+
 <ol>
 <li>
-<p>Turn on warnings. Add a -w to your she-bang line <code>#!/usr/bin/perl -w</code> and fix your code so no warnings are emitted.</p>
+<p>Turn on strict. Add the line <code>use strict;</code> under the she-bang line and fix the errors that creates.</p>
 </li>
 <li>
-<p>Turn on strict. Add the line <code>use strict;</code> under the she-bang line and fix the errors that creates.</p>
+<p>Turn on warnings. Add the line <code>use warnings;</code> and fix your code so no warnings are emitted.</p>
 </li>
 <li>
 <p>Use the perl debugger - <code>perl -d</code>, etc. to see where exactly it fails.</p>
@@ -421,9 +463,12 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 [% WRAPPER h3_section id = "How_should_I_write_my_code.3F" title = "How should I write my code?" %]
 
 <p>Well, to quote the omniscient perlbot:</p>
+
 <pre>  &lt;perlbot&gt; no strict no warnings no help. That's the #perl motto!
 </pre>
+
 <p>Make sure you add "use strict;" and "use warnings;" to your code. This is not the only thing you should do, though. Other good practices are:</p>
+
 <ol>
 <li>
 <p>Use lexical file handles (<code>open my $file_handle, ...</code>) and three args open (<code>open my $file_handle, "&gt;", $filename</code> instead of <code>open my $file_handle "&gt;$filename"</code>) and add trailing or's to your open statements (or alternatively use the "Fatal" or "autodie" modules.)</p>
@@ -448,6 +493,7 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ul>
 </li>
 </ol>
+
 <p>For more information refer to the <a href="http://perl-begin.org/tutorials/bad-elements/">“Perl Elements to avoid page”</a> and to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735.do"><i>Perl Best Practices</i></a></p>
 
 [% END %]
@@ -455,6 +501,7 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 [% WRAPPER h3_section id = "I_need_to_parse_HTML_with_Perl_.28and_my_Regular_Expression_does_not_work.29" title = "I need to parse HTML with Perl (and my Regular Expression does not work)" %]
 
 <p>If you want to parse HTML with Perl, then <a href="http://htmlparsing.icenine.ca/">regular expressions are probably not the answer</a>. Instead look at:</p>
+
 <ul>
 <li>
 <p><a href="https://perl-begin.org/uses/text-parsing/">Page about parsing</a></p>
@@ -476,7 +523,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 [% END %]
 
 [% WRAPPER h3_section id = "Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F" title = "Can I write Graphical User-Interfaces (GUIs) in Perl? And How?" %]
+
 <p>Yes, you can. Here's how:</p>
+
 <ol>
 <li>
 <p><a href="http://metacpan.org/release/Tkx/">Tkx</a> - a cross-platform wrapper for Tcl/Tk, providing native look on every OS. Excellent tutorial at <a href="http://www.tkdocs.com/tutorial/">TkDocs</a>.</p>
@@ -496,8 +545,11 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ol>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_can_I_break.2Fskip_an_outer_loop.3F" title = "How can I break/skip an outer loop?" %]
+
 <p>If you have two nested loops:</p>
+
 <pre>   for my $person ($jack, $sophie, $alice, $bob, $eve)
    {
        for my $community ($hackers, $perlers, $australians)
@@ -506,7 +558,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
        }
    }
 </pre>
+
 <p>And you want to break or skip an iteration out of the people loop in this case, then you can do a "last LABEL" or "next LABEL" feature, by labelling the method first:</p>
+
 <pre>   PERSONS:
    for my $person ($jack, $sophie, $alice, $bob, $eve)
    {
@@ -520,13 +574,18 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
        }
    }
 </pre>
+
 <p>Read <a href="http://perldoc.perl.org/perlsyn.html">perlsyn</a> for more information.</p>
 
 [% END %]
-[% WRAPPER h3_section id = "How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F" title = "How can I include a script into a different script and still see the lexical ("my") variables declared there?" %]
+
+[% WRAPPER h3_section id = "How_can_I_include_a_script_into_a_different_script_and_still_see_the_lexical_.28.22my.22.29_variables_declared_there.3F" title = "How can I include a script into a different script and still see the lexical (“my”) variables declared there?" %]
+
 <p>The short answer is that when a file is being <code>do</code>'ed, <code>eval slurp($file)</code>'ed, <code>require</code>'ed or <code>use</code>'ed it happens in a nested scope to the invoked one. As a result lexical variables (those declared with <code>my</code>) are inaccessible from the calling scope. The Perl 5 designers considered merely including the code of another file in another
 program directly a bad idea.</p>
+
 <p>What you should do instead is either:</p>
+
 <ol>
 <li>
 <p>Convert the included code to be a Perl module (a <code>.pm</code> file). Then use or require it.</p>
@@ -535,8 +594,11 @@ program directly a bad idea.</p>
 <p>Invoke the perl script as a separate process if it's appropriate.</p>
 </li>
 </ol>
+
 <p>If you want to access the variables of a different file, you need to declare them using <code>our</code> or the <code>use vars</code> pragma. A more advisable way would be to control access to them using functions.</p>
+
 <p>For more information see:</p>
+
 <ol>
 <li>
 <p><a href="http://perl.plover.com/FAQs/Namespaces.html">Mark Jason Dominus' "Coping with Scoping"</a></p>
@@ -558,17 +620,24 @@ program directly a bad idea.</p>
 [% END %]
 
 [% WRAPPER h3_section id = "How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F" title = "How can I have printf return a value instead of outputting to a filehandle?" %]
+
 <p>See <a href="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>. sprintf is like printf, only it returns the output as a string. Its use is preferable over printf most of the time. Note that its semantics are different than C's sprintf. In C you do:</p>
+
 <pre>  char buffer[1024];
   sprintf(buffer, "%d Days until %s's birthday.", days, name);
 </pre>
+
 <p>And in Perl you do:</p>
+
 <pre>  my $string = sprintf("%d Days until %s's birthday.", $days, $name);
 </pre>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Where_else_can_I_go_for_help.3F" title = "Where else can I go for help?" %]
+
 <p>You may find these other resources useful as well:</p>
+
 <ul>
 <li>
 <p><a href="http://www.pm.org/">Your local Perl Monger group</a></p>
@@ -579,8 +648,11 @@ program directly a bad idea.</p>
 </ul>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F" title = "How do I know the index of the element in a foreach loop?" %]
+
 <p>The short answer is that you don't. The obvious workaround is to write something like this:</p>
+
 <pre>   foreach my $idx (0 .. $#array)
    {
         my $elem = $array[$idx];
@@ -591,20 +663,34 @@ program directly a bad idea.</p>
 <p>The longer answer is that there are often better ways to do it.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Is_there_anyway_to_compile_Perl_code_to_an_executable.3F" title = "Is there anyway to compile Perl code to an executable?" %]
+
 <p>One option is <a href="http://par.perl.org/">PAR - The Perl Archiver</a>, which prepares an .exe that contains all your code, ready to run. This way is is easier to deploy on platforms that don't have perl5, some of the Perl modules or extensions, or certain C libraries.</p>
+
 <p>Alternatively, if you want to compile Perl code into machine code, then a partial solution was done by perlcc and the C:: namespace on CPAN. Note that it still includes the entire Perl run time (to handle string eval etc.), so it creates bloated executables.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F" title = "How do I perform operations on entire directories (delete them, copy them, etc.)?" %]
+
 <p>First of all see <a href="http://perldoc.perl.org/File/Path.html">the File::Path module</a> and see if it has what you want. It can delete an entire directory tree as well as do the equivalent of "mkdir -p". To traverse an entire directory tree, see <a href="http://perladvent.pm.org/2006/2/">File::Find and its equivalents.</a>.</p>
+
 <p>To do the equivalent of "cp -R" (i.e: copy an entire directory tree recursively) in portable Perl, you'll either need to write something yourself or <a href="http://metacpan.org/">find a good CPAN module for that</a>.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F" title = "I want to run a shell command from Perl, and possibly trap its output. How?" %]
-<p>1. To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly
+
+<ol>
+
+<li>
+<p>To run a single command with arguments without making use of shell behaviour, and without capturing the output, the best way is to use <a href="http://perldoc.perl.org/functions/system.html">system(@args)</a>. You pass the system() function an array of parameters that encapsulate the executable name and its arguments. This makes sure special characters in the arguments are passed directly
 to the executable, without prior processing by the shell. The <code>system("$str")</code> notation, which is explained below has different semantics.</p>
-<p>2. To do the same while capturing the output, the best way is to use <a href="http://perldoc.perl.org/perlopentut.html">the open function</a> like this:</p>
+</li>
+
+<li>
+<p>To do the same while capturing the output, the best way is to use <a href="http://perldoc.perl.org/perlopentut.html">the open function</a> like this:</p>
 <pre>   open my $cmd, '-|', $program_name, @args
         or die "Error in executing cmd. $!";
    # Read from $cmd with &lt;$cmd&gt; or whatever.
@@ -614,19 +700,36 @@ to the executable, without prior processing by the shell. The <code>system("$str
    .
    close($cmd);
 </pre>
+
 <p>Note that this will not work in some older versions of perl5.</p>
-<p>3. If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html">system("$string")</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <code>open "cmd|"</code> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not
+</li>
+
+<li>
+<p>If you do need to use special shell syntax (like pipelines, etc.) look at <a href="http://perldoc.perl.org/functions/system.html">system("$string")</a> or <a href="http://perldoc.perl.org/perlop.html#Quote-Like-Operators">the qx{...}/`...` operators</a> or the <code>open "cmd|"</code> syntax. However, be careful when interpolating arbitrary strings as arguments there, as if they are not
 properly escaped, they can be used to execute arbitrary shell code. Look at <a href="http://metacpan.org/release/String-ShellQuote/">the String-ShellQuote module</a> on the CPAN for a portable way to quote strings for passage as parameters to shell commands in such execution strings.</p>
-<p>4. exec() is similar to system() and probably does not do what you want as it overwrites the current execution process of your Perl script with the new process.</p>
+</li>
+
+<li>
+<p>exec() is similar to system() and probably does not do what you want as it overwrites the current execution process of your Perl script with the new process.</p>
+</li>
+
+</ol>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_can_I_Merge_Two_Hashes.3F" title = "How can I Merge Two Hashes?" %]
+
 <p>If you simply do <code>my %total = (%first_hash, %second_hash);</code>, then <code>%total</code> will contain all the keys and values of <code>%second_hash</code>, along with all the keys in <code>%first_hash</code> that whose values were not run over by identical keys of <code>%second_hash</code>.</p>
+
 <p>Another option (which is probably slower) is to use:</p>
+
 <pre>   @into{keys(%from)} = values(%from);
 </pre>
+
 <p>This will merge <code>%into</code> in place.</p>
+
 <p>If instead of completely overriding values, you want to make some combination of the values, you'll need to use something like that:</p>
+
 <pre>   while (my ($key, $from_value) = each(%from))
    {
         $into{$key} = exists($into{$key}) ? ACCUM_EXPR($key, $into{$key}, $from_value) : $from{$key};
@@ -634,37 +737,50 @@ properly escaped, they can be used to execute arbitrary shell code. Look at <a h
 </pre>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_can_I_match_anything-except-a-regex_inside_a_Perl_regular_expression.3F" title = "How can I match anything-except-a-regex inside a Perl regular expression?" %]
+
 <p>The short answer is that negated regular expressions are not directly supported in Perl, and adding them would be a hard problem. If we take the string "bar" as an example then the negated regex will look something like "[^b]|b[^a]|ba[^r]", and so it isn't supported. One option to workaround this problem is to make a smart use of the =~ operator, by matching a string and then using this
 operator to check if it doesn't match a regular expression.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Should_I_learn_Perl.3F_Should_I_learn_it_as_well_as_Python.2FRuby.2FPHP.2Fwhatever.3F" title = "Should I learn Perl? Should I learn it as well as Python/Ruby/PHP/whatever?" %]
+
 <p>See <a href="$(ROOT)/learn/">our “Learn Page Now” section</a>.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Is_Perl_better_than_PHP.2C_Python.2C_Ruby.2C_etc..3F" title = "Is Perl better than PHP, Python, Ruby, etc.?" %]
+
 <p>See the above question.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F" title = "Which method to do $TASK_X is faster? How can I optimise my Perl programs?" %]
+
 <p>Questions such as this come out very often on #perl. The answers to them are that:</p>
+
 <ol>
 <li>
-<p>You can always Benchmark and see. See the <a href="http://metacpan.org/release/Benchmark">cpan:Benchmark</a> module which is part of the core.</p>
+<p>You can always Benchmark and see. See the <a href="http://metacpan.org/release/Benchmark">Benchmark module</a> which is part of the core.</p>
 </li>
 <li>
 <p>Usually, the performance gained by doing micro-optimisations in Perl is not going to be worth the trouble.</p>
 </li>
 <li>
-<p>If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl's XS or <a href="http://metacpan.org/release/Inline-C">cpan:Inline-C</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need.</p>
+<p>If you really need performance for certain tasks that take too long, then you should probably look at a highly optimised solution written in a compiled-to-machine-code language. See Perl's XS or <a href="http://metacpan.org/release/Inline-C">the Inline-C module</a> for more information. However, going to this extreme is usually not what most people who ask us about performance want or need.</p>
 </li>
 </ol>
-<p>The legendary computer scientist <a href="http://www.wikipedia.org/wiki/Donald_Knuth">wikipedia:Donald Knuth</a> has quoted C.A.R. Hoare in saying that <a href="http://c2.com/cgi/wiki?PrematureOptimization">"Premature Optimisation is the Root of All Evil"</a>, so it's worth paying attention to. (More discussion on the link).</p>
+
+<p>The legendary computer scientist <a href="http://www.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> has quoted C.A.R. Hoare in saying that <a href="http://c2.com/cgi/wiki?PrematureOptimization">"Premature Optimisation is the Root of All Evil"</a>, so it's worth paying attention to. (More discussion on the link).</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Oh_no.21_CPAN_won.27t_use_the_packages_it_has_downloaded.21__It_says_the_checksums_are_invalid.21" title = "Oh no! CPAN won't use the packages it has downloaded! It says the checksums are invalid!" %]
+
 <p>There are two reasons for this happening:</p>
+
 <ol>
 <li>
 <p>You have a dodgy mirror. Try a different mirror and see if it clears up.</p>
@@ -673,7 +789,9 @@ operator to check if it doesn't match a regular expression.</p>
 <p>For whatever reason, the file is being downloaded and saved as .tar (but still very much compressed). The file gets recompressed and as such the checksum operation fails to produce a correct checksum.</p>
 </li>
 </ol>
+
 <p>For the latter, there is a relatively simple solution - move the .tar files to .tar.gz and rerun. Aaron_Mason wrote a script that runs CPAN with the parameters you seek, then check for any stray .tar files with a corresponding .tar.gz and move the .tar over the .tar.gz. This solution is far from foolproof, but got through a CPAN upgrade. The script is as follows:</p>
+
 <pre>#!/usr/local/bin/bash
 
 &gt;cpan-cycle.$$
