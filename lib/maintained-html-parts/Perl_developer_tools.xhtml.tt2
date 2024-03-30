@@ -32,19 +32,19 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 
 <ul>
 <li>
- <a href="http://www.eclipse.org/">Eclipse</a> IDE with the <a href="http://e-p-i-c.sourceforge.net/">EPIC</a> plugin. Some <a href="http://www.perlmonks.org/?node=Eclipse%203%20%2B%20EPIC%200.3.9">hints</a> at Perl Monks
+<a href="http://www.eclipse.org/">Eclipse</a> IDE with the <a href="http://e-p-i-c.sourceforge.net/">EPIC</a> plugin. Some <a href="http://www.perlmonks.org/?node=Eclipse%203%20%2B%20EPIC%200.3.9">hints</a> at Perl Monks
 </li>
 <li>
- <a href="http://www.geany.org/Main/HomePage">Geany</a> has Perl support
+<a href="http://www.geany.org/Main/HomePage">Geany</a> has Perl support
 </li>
 <li>
- <a href="http://padre.perlide.org/">Padre</a> - under heavy development.
+<a href="http://padre.perlide.org/">Padre</a> - under heavy development.
 </li>
 <li>
- <span style="color:green;">$</span> Activestate <a href="http://www.activestate.com/Products/Komodo/">Komodo</a>
+<span style="color:green;">$</span> Activestate <a href="http://www.activestate.com/Products/Komodo/">Komodo</a>
 </li>
 <li>
- <span style="color:green;">$</span> IndigoSTAR <a href="http://www.indigostar.com/perledit.html">PerlEdit</a> .. Windows and Linux
+<span style="color:green;">$</span> IndigoSTAR <a href="http://www.indigostar.com/perledit.html">PerlEdit</a> .. Windows and Linux
 </li>
 </ul>
 
@@ -54,25 +54,25 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 
 <ul>
 <li>
- <a href="http://open-perl-ide.sourceforge.net/">Open Perl IDE</a>.
+<a href="http://open-perl-ide.sourceforge.net/">Open Perl IDE</a>.
 </li>
 <li>
- <a href="http://www.perl-express.com/">Perl Express</a>.
+<a href="http://www.perl-express.com/">Perl Express</a>.
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.dzsoft.com/perl-editor.html">DzSoft Perl Editor</a>
+<span style="color:green;">$</span> <a href="http://www.dzsoft.com/perl-editor.html">DzSoft Perl Editor</a>
 </li>
 <li>
- <span style="color:green;">$</span> EngInSite <a href="http://www.enginsite.com/Perl.htm">Perl Editor</a>.
+<span style="color:green;">$</span> EngInSite <a href="http://www.enginsite.com/Perl.htm">Perl Editor</a>.
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.perlscriptingtool.com/">Perl Scripting Tool</a>
+<span style="color:green;">$</span> <a href="http://www.perlscriptingtool.com/">Perl Scripting Tool</a>
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.perlwiz.biz/">PerlWiz</a>.
+<span style="color:green;">$</span> <a href="http://www.perlwiz.biz/">PerlWiz</a>.
 </li>
 <li>
- <span style="color:green;">$</span> Solution Soft <a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a>.
+<span style="color:green;">$</span> Solution Soft <a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a>.
 </li>
 </ul>
 
@@ -98,22 +98,22 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 <ul>
 
 <li>
- <a href="http://www.gnu.org/software/emacs/">Emacs</a>, <a href="http://www.gnu.org/software/emacs/windows/ntemacs.html">GNU Emacs for MS Windows</a>, <a href="http://emacs-app.sourceforge.net/">Emacs for OS X</a> .. for perl-specific support read up on <a href="http://www.emacswiki.org/cgi-bin/wiki/CPerlMode">cperl-mode</a> (or for Emacs prior to 21.2 <a href="http://www.emacswiki.org/cgi-bin/wiki/PerlMode">perl-mode</a>)
+<a href="http://www.gnu.org/software/emacs/">Emacs</a>, <a href="http://www.gnu.org/software/emacs/windows/ntemacs.html">GNU Emacs for MS Windows</a>, <a href="http://emacs-app.sourceforge.net/">Emacs for OS X</a> .. for perl-specific support read up on <a href="http://www.emacswiki.org/cgi-bin/wiki/CPerlMode">cperl-mode</a> (or for Emacs prior to 21.2 <a href="http://www.emacswiki.org/cgi-bin/wiki/PerlMode">perl-mode</a>)
 </li>
 <li>
- <a href="http://www.jedit.org/">jEdit</a>
+<a href="http://www.jedit.org/">jEdit</a>
 </li>
 <li>
- <a href="http://kephra.sourceforge.net/site/en/home_news.shtml">Kephra</a> is written in Perl
+<a href="http://kephra.sourceforge.net/site/en/home_news.shtml">Kephra</a> is written in Perl
 </li>
 <li>
- <a href="http://www.vim.org/">VIM</a>, <a href="http://www.vim.org/download.php#pc">Vim for Windows</a>, <a href="http://macvim.org/OSX/">VIM for OS X</a> (Carbon) and <a href="http://code.google.com/p/macvim/">MacVim</a> (Cocoa).  VIM includes perl syntax highlighting, but there are also <a href="http://vim.sourceforge.net/scripts/script_search_results.php?keywords=Perl">numerous extensions</a> that enable more IDE-like features such as <a href="http://vim.sourceforge.net/scripts/script.php?script_id=663">debugging</a>, <a href="http://vim.sourceforge.net/scripts/script.php?script_id=273">tags</a>, and <a href="http://vim.sourceforge.net/scripts/script.php?script_id=896">sanity checks</a>
+<a href="http://www.vim.org/">VIM</a>, <a href="http://www.vim.org/download.php#pc">Vim for Windows</a>, <a href="http://macvim.org/OSX/">VIM for OS X</a> (Carbon) and <a href="http://code.google.com/p/macvim/">MacVim</a> (Cocoa).  VIM includes perl syntax highlighting, but there are also <a href="http://vim.sourceforge.net/scripts/script_search_results.php?keywords=Perl">numerous extensions</a> that enable more IDE-like features such as <a href="http://vim.sourceforge.net/scripts/script.php?script_id=663">debugging</a>, <a href="http://vim.sourceforge.net/scripts/script.php?script_id=273">tags</a>, and <a href="http://vim.sourceforge.net/scripts/script.php?script_id=896">sanity checks</a>
 </li>
 <li>
  ActiveState Komodo <a href="http://activestate.com/Products/komodo_ide/komodo_edit.mhtml">Edit</a> is an Open Source editor that supports Perl, PHP, Python, Ruby, and Tcl, plus JavaScript, CSS, HTML, and XML, and template languages like RHTML, Template-Toolkit, HTML-Smarty and Django
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.editrocket.com/features/perl_editor.html">Rocket</a> editor has Perl support
+<span style="color:green;">$</span> <a href="http://www.editrocket.com/features/perl_editor.html">Rocket</a> editor has Perl support
 </li>
 
 </ul>
@@ -128,28 +128,28 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 
 <ul>
 <li>
- <a href="http://www.perlvision.com/pce/">Perl Code Editor</a>
+<a href="http://www.perlvision.com/pce/">Perl Code Editor</a>
 </li>
 <li>
- <a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a> with Perl mode
+<a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a> with Perl mode
 </li>
 <li>
- <a href="http://www.scintilla.org/SciTE.html">SciTE</a> - A free source code editor for Win32 and X
+<a href="http://www.scintilla.org/SciTE.html">SciTE</a> - A free source code editor for Win32 and X
 </li>
 <li>
- <a href="http://www.crimsoneditor.com/">Crimson</a> editor, includes syntax support for Perl
+<a href="http://www.crimsoneditor.com/">Crimson</a> editor, includes syntax support for Perl
 </li>
 <li>
- <a href="http://www.geany.org/">Geany</a> free editor, includes syntax support for Perl and others
+<a href="http://www.geany.org/">Geany</a> free editor, includes syntax support for Perl and others
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.editplus.com/">EditPlus</a>
+<span style="color:green;">$</span> <a href="http://www.editplus.com/">EditPlus</a>
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.textpad.com/">TextPad</a>
+<span style="color:green;">$</span> <a href="http://www.textpad.com/">TextPad</a>
 </li>
 <li>
- <span style="color:green;">$</span> <a href="http://www.ultraedit.com/">UltraEdit</a>
+<span style="color:green;">$</span> <a href="http://www.ultraedit.com/">UltraEdit</a>
 </li>
 
 </ul>
@@ -160,19 +160,19 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 
 <ul>
 <li>
- <a href="http://smultron.sourceforge.net/">Smultron</a>
+<a href="http://smultron.sourceforge.net/">Smultron</a>
 </li>
 <li>
  Bare Bones Software <a href="http://www.barebones.com/products/textwrangler/index.shtml">TextWrangler</a>
 </li>
 <li>
- <span style="color:green;">$</span> Bare Bones Software <span style="color:green;">$</span> <a href="http://www.barebones.com/products/bbedit/">BBEdit</a>
+<span style="color:green;">$</span> Bare Bones Software <span style="color:green;">$</span> <a href="http://www.barebones.com/products/bbedit/">BBEdit</a>
 </li>
 <li>
- <span style="color:green;">$</span> TheCodingMonkeys <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>
+<span style="color:green;">$</span> TheCodingMonkeys <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>
 </li>
 <li>
- <span style="color:green;">$</span> Macromates <a href="http://macromates.com/">TextMate</a>
+<span style="color:green;">$</span> Macromates <a href="http://macromates.com/">TextMate</a>
 </li></ul>
 
 [% END %]
@@ -182,22 +182,22 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 <ul>
 
 <li>
- <a href="http://www.swig.org/">SWIG</a> is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of languages including common scripting languages such as Perl
+<a href="http://www.swig.org/">SWIG</a> is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of languages including common scripting languages such as Perl
 </li>
 <li>
- <a href="http://perlcritic.com/">Perl::Critic</a> critiques Perl source code for best-practices. There is a gentle <a href="http://perltraining.com.au/tips/2009-02-05.html">introduction</a>
+<a href="http://perlcritic.com/">Perl::Critic</a> critiques Perl source code for best-practices. There is a gentle <a href="http://perltraining.com.au/tips/2009-02-05.html">introduction</a>
 </li>
 <li>
- <a href="http://search.cpan.org/perldoc?perltidy">Perltidy</a> code formatter. The recommendations from <a href="http://damian.conway.org/About_us/Bio_formal.html">Conway's</a> <a href="http://oreilly.com/catalog/9780596001735/index.html">Perl Best Practices</a> may be <a href="http://examples.oreilly.com/perlbp/PBP_code.tar.gz">downloaded</a> and there is a front end <a href="http://search.cpan.org/perldoc?tidyview">tool</a> to help configure your own preferences. There is also an <a href="http://perltraining.com.au/tips/2005-04-26.html">introduction</a>
+<a href="http://search.cpan.org/perldoc?perltidy">Perltidy</a> code formatter. The recommendations from <a href="http://damian.conway.org/About_us/Bio_formal.html">Conway's</a> <a href="http://oreilly.com/catalog/9780596001735/index.html">Perl Best Practices</a> may be <a href="http://examples.oreilly.com/perlbp/PBP_code.tar.gz">downloaded</a> and there is a front end <a href="http://search.cpan.org/perldoc?tidyview">tool</a> to help configure your own preferences. There is also an <a href="http://perltraining.com.au/tips/2005-04-26.html">introduction</a>
 </li>
 <li>
- <a href="http://search.cpan.org/~doy/Devel-REPL-1.003012/lib/Devel/REPL.pm">Devel::REPL</a> Interactive Perl shell. Read Execute Print Loop shell (run <code>re.pl</code> from terminal prompt), as pioneered by Lisp. Handy tip, add "<code>use v5.10.1</code>" to the <code>~/re.pl/repl.rc</code> file and use <code>say $x</code> instead of <code>print "$x\n"</code>
+<a href="http://search.cpan.org/~doy/Devel-REPL-1.003012/lib/Devel/REPL.pm">Devel::REPL</a> Interactive Perl shell. Read Execute Print Loop shell (run <code>re.pl</code> from terminal prompt), as pioneered by Lisp. Handy tip, add "<code>use v5.10.1</code>" to the <code>~/re.pl/repl.rc</code> file and use <code>say $x</code> instead of <code>print "$x\n"</code>
 </li>
 <li>
- <a href="http://search.cpan.org/~tlowery/DBI-Shell/lib/DBI/Shell.pm">DBI::shell</a> Interactive shell for DBI RDBMS layer
+<a href="http://search.cpan.org/~tlowery/DBI-Shell/lib/DBI/Shell.pm">DBI::shell</a> Interactive shell for DBI RDBMS layer
 </li>
 <li>
- <a href="http://search.cpan.org/dist/Module-Starter-PBP/lib/Module/Starter/PBP.pm">Module::Starter::PBP</a> Create a module as recommended in "Perl Best Practices"
+<a href="http://search.cpan.org/dist/Module-Starter-PBP/lib/Module/Starter/PBP.pm">Module::Starter::PBP</a> Create a module as recommended in "Perl Best Practices"
 </li>
 
 </ul>
@@ -208,13 +208,13 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 
 <ul>
 <li>
- <a href="http://user.bahnhof.se/~johanl/perl/Loft/">The GUI Loft</a>: a WYSIWYG design tool (written in Perl) for designing Perl Win32::GUI windows.
+<a href="http://user.bahnhof.se/~johanl/perl/Loft/">The GUI Loft</a>: a WYSIWYG design tool (written in Perl) for designing Perl Win32::GUI windows.
 </li>
 <li>
- <a href="http://www.bahnhof.se/~johanl/perl/Oasis/">Perl Oasis</a>: a POD/source/class browser tightly integrated with (currently) UltraEdit, gVim, EditPlus, and PFE (Programmer's File Editor).
+<a href="http://www.bahnhof.se/~johanl/perl/Oasis/">Perl Oasis</a>: a POD/source/class browser tightly integrated with (currently) UltraEdit, gVim, EditPlus, and PFE (Programmer's File Editor).
 </li>
 <li>
- <a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical application for Windows which can be used to interactively experiment with (Perl-compatible) regular expressions.
+<a href="http://www.weitz.de/regex-coach/">Regex Coach</a> is a graphical application for Windows which can be used to interactively experiment with (Perl-compatible) regular expressions.
 </li>
 </ul>
 
@@ -224,19 +224,19 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 
 <ul>
 <li>
- <a href="http://camelbones.sourceforge.net/">Camel Bones</a>: an Objective-C/Perl bridge lets you integrate perl code with your Cocoa / Xcode development projects (e.g. use the Apple developer tools to build user interfaces, and write the application code in perl!).  Also includes an example app, ShuX, which is a perldoc browser.
+<a href="http://camelbones.sourceforge.net/">Camel Bones</a>: an Objective-C/Perl bridge lets you integrate perl code with your Cocoa / Xcode development projects (e.g. use the Apple developer tools to build user interfaces, and write the application code in perl!).  Also includes an example app, ShuX, which is a perldoc browser.
 </li>
 <li>
- <a href="http://perl-pad.sourceforge.net/">PerlPad</a>: allows you to run perl code from the Services menu available in most OS X applications&#xA0;; can also convert perl snippets into keyboard shortcuts
+<a href="http://perl-pad.sourceforge.net/">PerlPad</a>: allows you to run perl code from the Services menu available in most OS X applications&#xA0;; can also convert perl snippets into keyboard shortcuts
 </li>
 <li>
- <a href="http://www.macupdate.com/info.php/id/12046">Platypus</a>: a tool for creating application wrappers around scripts (e.g. create Mac OS X applications that execute a bundled perl script).
+<a href="http://www.macupdate.com/info.php/id/12046">Platypus</a>: a tool for creating application wrappers around scripts (e.g. create Mac OS X applications that execute a bundled perl script).
 </li>
 <li>
- <a href="http://www.bluem.net/downloads/pashua_en/">Pashua</a>: a tool for generating native Aqua dialog windows from within perl (and other supported scripting languages).  Data from the dialog can be passed on to the calling script; works well in conjunction with Platypus to create a simple application bundle.
+<a href="http://www.bluem.net/downloads/pashua_en/">Pashua</a>: a tool for generating native Aqua dialog windows from within perl (and other supported scripting languages).  Data from the dialog can be passed on to the calling script; works well in conjunction with Platypus to create a simple application bundle.
 </li>
 <li>
- <a href="http://bluedot.net/projects/perlDoc.app/">perlDoc</a>: a perl documentation viewer.
+<a href="http://bluedot.net/projects/perlDoc.app/">perlDoc</a>: a perl documentation viewer.
 </li>
 </ul>
 
