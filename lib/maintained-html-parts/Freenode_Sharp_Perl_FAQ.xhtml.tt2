@@ -1119,13 +1119,17 @@ also <a href="http://metacpan.org/release/String-Trim">String-Trim on CPAN</a>.<
 </li>
 </ol>
 
-<p>After that you can add <code>use MyModule;</code> to your code and it will work. Please don't resort to <code>do "/full/path/to/include.pl"</code> games.</p>
+<p>After that, you can add <code>use MyModule;</code> to your code, and it will work. Please don't resort to <code>do "/full/path/to/include.pl"</code> games.</p>
 
 [% END %]
 
 [% WRAPPER h3_section id = "How_can_I_get_perl_to_print_each_line_as_it_is_executed_.28similar_to_the_shell.27s_-x_flag.29.3F" title = "How can I get perl to print each line as it is executed (similar to the shell's -x flag)?" %]
 
-<p>To do that use <a href="http://metacpan.org/release/Devel-Trace">Devel-Trace</a> from CPAN , and add the -d:Trace flag.</p>
+<p>
+To do that, use <a
+href="http://metacpan.org/release/Devel-Trace">Devel-Trace</a> from CPAN , and
+add the -d:Trace flag.
+</p>
 
 <p>You get an output like:</p>
 
@@ -1146,11 +1150,24 @@ also <a href="http://metacpan.org/release/String-Trim">String-Trim on CPAN</a>.<
 
 [% WRAPPER h3_section id = "I.27m_trying_to_use_threads_to_speed_up_my_program._What_should_I_know.3F" title = "I'm trying to use threads to speed up my program. What should I know?" %]
 
-<p>Before you start implementing code using Perl's threads, please remember that Perl's threads are not like other threads. Please see <a href="http://perldoc.perl.org/perlthrtut.html">perlthrtut</a> to learn more, specifically its "What kind of threads are perl threads?" section. Also see the document <a href="http://www.perlmonks.org/index.pl?node_id=288022">"Things you need to know before
-programming Perl ithreads"</a>.</p>
+<p>Before you start implementing code using Perl's threads, please remember
+that Perl's threads are not like other threads. Please see <a
+href="http://perldoc.perl.org/perlthrtut.html">perlthrtut</a> to learn more,
+specifically its "What kind of threads are perl threads?" section. Also see the
+document <a href="http://www.perlmonks.org/index.pl?node_id=288022">"Things you
+need to know before programming Perl ithreads"</a>.</p>
 
-<p>Note that threads don't work too well in most C-hosted languages similar to Perl, such as Python or Ruby, and we recommend looking into a different language for that. Some people believe that threads should be avoided in any programming language (see for example Eric Raymond's <a href="http://www.catb.org/~esr/writings/taoup/html/ch07s03.html#id2923889">opinion about it</a> in the book
-<a href="http://www.catb.org/~esr/writings/taoup/"><i>The Art of Unix Programming</i></a>), but many people believe threads have many legitimate uses, when done properly. See also <a href="http://www.nntp.perl.org/group/perl.beginners/2011/02/msg115714.html">this discussion on the Perl beginners mailing list</a>.</p>
+<p>Note that threads don't work too well in most C-hosted languages similar to
+Perl, such as Python or Ruby, and we recommend looking into a different
+language for that. Some people believe that threads should be avoided in any
+programming language (see for example Eric Raymond's <a
+href="http://www.catb.org/~esr/writings/taoup/html/ch07s03.html#id2923889">opinion
+about it</a> in the book <a
+href="http://www.catb.org/~esr/writings/taoup/"><i>The Art of Unix
+Programming</i></a>), but many people believe threads have many legitimate
+uses, when done properly. See also <a
+href="http://www.nntp.perl.org/group/perl.beginners/2011/02/msg115714.html">this
+discussion on the Perl beginners mailing list</a>.</p>
 
 [% END %]
 
@@ -1158,12 +1175,25 @@ programming Perl ithreads"</a>.</p>
 
 <p>The short answer is: "Most probably not.".</p>
 
-<p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX systems, however, it made a conscious choice of providing a lot of extra functionality, which proved to cost with complexity and sometimes quirkiness. Since then, FastCGI and similar technologies have matured (possibly legally) and there is now a new crop of popular web-servers, which aim to be very speedy (as well as
-less customisable and less suitable for hosting providers) such as <a href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29">Cherokee</a>, <a href="http://www.wikipedia.org/wiki/lighttpd">lighttpd</a> or <a href="http://www.wikipedia.org/wiki/nginx">nginx</a>
-that can utilise FastCGI as well, and you may opt to use instead of Apache, assuming your hosting allows that.</p>
+<p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX
+systems, however, it made a conscious choice of providing a lot of extra
+functionality, which proved to cost with complexity and sometimes quirkiness.
+Since then, FastCGI and similar technologies have matured (possibly legally)
+and there is now a new crop of popular web-servers, which aim to be very speedy
+(as well as less customisable and less suitable for hosting providers) such as
+<a href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29">Cherokee</a>,
+<a href="http://www.wikipedia.org/wiki/lighttpd">lighttpd</a> or <a
+href="http://www.wikipedia.org/wiki/nginx">nginx</a> that can utilise FastCGI
+as well, and you may opt to use instead of Apache, assuming your hosting allows
+that.</p>
 
-<p>So even if you're using Apache (and you should definitely use Apache 2 - not Apache 1), there are better alternatives for speeding up your applications than mod_perl, and you should only use mod_perl if you need more sophisticated control and functionality of Apache 2, in which case you may wish to also be asking that on <a href="http://perl.apache.org/maillist/modperl.html">the mod_perl
-mailing list</a>, or on a similar forum, and you are expected to be an advanced user.</p>
+<p>So even if you're using Apache (and you should definitely use Apache 2 - not
+Apache 1), there are better alternatives for speeding up your applications than
+mod_perl, and you should only use mod_perl if you need more sophisticated
+control and functionality of Apache 2, in which case you may wish to also be
+asking that on <a href="http://perl.apache.org/maillist/modperl.html">the
+mod_perl mailing list</a>, or on a similar forum, and you are expected to be an
+advanced user.</p>
 
 [% END %]
 
@@ -1180,12 +1210,15 @@ mailing list</a>, or on a similar forum, and you are expected to be an advanced 
 <p>There are several differences between arrays and array references. Array references are scalars and can be stores inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
 
 <ol>
+
 <li>
 <p>One uses <code>$my_array[$idx]</code> to access an element of an array, and <code>$my_array_ref-&gt;[$idx]</code> to access an element of an array reference (or alternatively the more cluttered <code>$$my_array_ref[$idx]</code> or <code>${$my_array_ref}[$idx]</code>)</p>
 </li>
+
 <li>
 <p>One uses <code>@my_array</code> to access the array as a whole and <code>@$my_array_ref</code> to access the array referred to by the array reference as a whole.</p>
 </li>
+
 </ol>
 
 <p>For more information, see some <a href="http://perl-begin.org/topics/references/">resources about references in Perl</a>.</p>
@@ -1274,7 +1307,11 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 
 [% WRAPPER h2_section id = "People" title = "People" %]
 
-<p><b>Note:</b> by matter a policy, a person may only add and edit their own entries, unless it is a cosmetic change.</p>
+<p>
+<b>Note:</b> by matter of a policy, a person may only add and edit their own
+entries, unless it is a cosmetic change. This was instated to avoid spreading
+mis-information and to prevent defamation.
+</p>
 
 [% WRAPPER h3_section id = "Channel_Owner" title = "Channel Owner" %]
 
@@ -1400,23 +1437,27 @@ psychology, mathematics and puzzles, linguistics, history of the Old World,
 etc. He has a Bachelor of Science from <a href=
 "http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/">the
 Technion in Electrical Engineering</a>, but thinks it would be a stretch to
-call him an Electrical Engineer.</p>
+call him an electrical engineer.</p>
 
 <p>Perl is his favourite language. Among his contributions to the Perl world are:</p>
 
 <ol>
+
 <li>
 <p><a href="http://perl-begin.org/">The Perl Beginners' Site</a></p>
 </li>
+
 <li>
 <p><a href="http://www.shlomifish.org/lecture/Perl/Newbies/">Perl for Newbies</a> - a series of presentations with free onlne slides, introducing the core Perl language to beginners.</p>
 </li>
+
 <li>
 <p><a href="http://metacpan.org/author/SHLOMIF">Some CPAN Modules</a></p>
 </li>
+
 </ol>
 
-<p>He prides himself in being the "Black Sheep" of the Perl world, due to writing some controversial essays, and because he is considered a "Persona Non-grata" in some Perl communities.</p>
+<p>He prides himself in being the “Black Sheep” of the Perl world, due to writing some controversial essays, and because he is considered a “Persona Non-grata” in some Perl communities.</p>
 
 [% END %]
 
@@ -1425,7 +1466,10 @@ call him an Electrical Engineer.</p>
 [% WRAPPER h3_section id = "Bots" title = "Bots" %]
 
 [% WRAPPER h4_section id = "perlbot" title = "perlbot" %]
-<p>perlbot is the channel's infobot and utility bot. It only answers if addressed. Type "perlbot: perl" to learn about "perl", "perlbot: re" to learn about "re", etc. Originally Chris62vw's bot with the codebase in Chrisbot, it is not managed by simcop2387 and based on the superior buubot source (type "perlbot: source").</p>
+
+<p>
+perlbot is the channel's infobot and utility bot. It only answers if addressed. Type "perlbot: perl" to learn about "perl", "perlbot: re" to learn about "re", etc. Originally Chris62vw's bot with the codebase in Chrisbot, it is now managed by simcop2387 and based on the superior buubot source (type "perlbot: source").
+</p>
 
 [% END %]
 
@@ -1474,7 +1518,7 @@ GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's 
 
 [% WRAPPER h4_section id = "f00bot" title = "f00bot" %]
 
-<p>f00li5h's useless instance of buubot, it's safe to ignore him</p>
+<p>f00li5h's useless instance of buubot. It's safe to ignore him.</p>
 
 [% END %]
 
@@ -1493,18 +1537,23 @@ GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's 
 <p>Here are our milestone pictures:</p>
 
 <ul>
+
 <li>
 <p><a href="http://www.shlomifish.org/Files/files/images/FreeNode-perl-400-participants.png">400 Participants</a></p>
 </li>
+
 <li>
 <p><a href="http://www.shlomifish.org/Files/files/images/Freenode-perl-500-participants.png">500 Participants</a></p>
 </li>
+
 <li>
 <p><a href="http://www.shlomifish.org/Files/files/images/Freenode-perl-600-participants.png">600 Participants</a></p>
 </li>
+
 <li>
 <p><a href="http://www.shlomifish.org/Files/files/images/Freenode-perl-700-participants.png">700 Participants</a></p>
 </li>
+
 </ul>
 
 [% END %]
