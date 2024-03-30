@@ -1,6 +1,8 @@
 [%- SET title = "Freenode’s #perlcafe Channel" -%]
 [%- SET more_keywords = ", humour, humor, offtopic, irc, freenode, channel, chat, chatroom" -%]
+
 [%- PROCESS "blocks.tt2" -%]
+
 [%- WRAPPER wrap_html -%]
 
 <toc />
@@ -19,7 +21,7 @@ lot of discussion that most people feel would rather not be hosted on #perl.
 </p>
 
 <p>
-One thing to note is that it was decided that if someone on <code>#perl</code>
+One fact to note is that it was decided that if someone on <code>#perl</code>
 requires too much handholding, thus risking decreasing the signal-to-noise ratio
 there, then they can be delegated to either <code>#perlcafe</code> or
 <a href="irc://irc.freenode.net/#perl-cats">Freenode’s #perl-cats</a>.
@@ -120,7 +122,10 @@ So don’t take what is said there too seriously.
 [% WRAPPER h2_section id = "cafe-speak" title = "Café-speak" %]
 
 <p>
-There’s a variant of bad English used by some of the channel regulars to speak there, even though they know much better than that. It is somewhat different from <a href="http://icanhascheezburger.com/">the LOLCats variant</a> and predates it. Here’s a non-exhaustive guide on how to Café-speak:
+There’s a variant of bad English used by some of the channel regulars to speak
+there, even though they know much better than that. It is somewhat different
+from <a href="http://icanhascheezburger.com/">the LOLCats variant</a>. Here’s a
+non-exhaustive guide on how to Café-speak:
 </p>
 
 <ul>
@@ -160,7 +165,9 @@ Purposeful misspelling of words.
 <li>
 <p><strong>/me cl0ud railbait dabreegster</strong></p>
 
-<p>Sometimes people greet each other by using /me followed by a list of links to their friends which they can see. The friends are expected to reciprocate.
+<p>
+Sometimes people greet each other by using /me followed by a list of links
+to their friends which they can see. The friends are expected to reciprocate.
 </p>
 </li>
 
@@ -173,7 +180,10 @@ Purposeful misspelling of words.
 [% WRAPPER h3_section id = "north-american-politics" title = "North American Politics" %]
 
 <p>
-It’s not uncommon to see the #perlcafe-ers paste some quotes from North American newspapers or web-sites regarding relatively obscure North American politics. We allow such things on #perlcafe, because we’d rather not see them on #perl.
+It’s not uncommon to see the #perlcafe-ers paste some quotes from North
+American newspapers or web-sites regarding relatively obscure North American
+politics. We allow such things on #perlcafe, because we’d rather not see them
+on #perl.
 </p>
 
 [% END %]
@@ -181,7 +191,12 @@ It’s not uncommon to see the #perlcafe-ers paste some quotes from North Americ
 [% WRAPPER h3_section id = "computer_games" title = "Computer Games" %]
 
 <p>
-One common topic in #perlcafe is computer games. Normally cutting-edge "gamer" games (<a href="https://en.wikipedia.org/wiki/AAA_%28video_game_industry%29">AAA</a>), mostly for <a href="https://en.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of playing such games, and like to discuss them.
+One common topic in #perlcafe is computer games. Normally cutting-edge "gamer"
+games (<a
+href="https://en.wikipedia.org/wiki/AAA_%28video_game_industry%29">AAA</a>),
+mostly for <a href="https://en.wikipedia.org/wiki/Micrsoft_Windows">Microsoft’s
+Game Launcher</a> or for consoles. Some of the channel’s regulars are fond of
+playing such games, and like to discuss them.
 </p>
 
 [% END %]
@@ -213,14 +228,14 @@ From #perlcafe
    &lt;tag&gt; wrong answer
    * rindolf is listening to Shania Twain - Up!
    &lt;rindolf&gt; I eventually found the B.E.P and Pink Floyd CDs in a different store.
-   &lt;tag&gt; rindolf: dude you are so full of shit
+   &lt;tag&gt; rindolf: dude, you are so full of shit
    &lt;tag&gt; rindolf: you can listen to glitch and then blast mozart, but nobody
          likes pink floyd AND shania twain
    &lt;tag&gt; nobody likes *both* of those things.
 </pre>
 
 <p>
-From #perl (rindolf apparently belongs to the empty set).
+(From #perl ; rindolf apparently belongs to the empty set).
 </p>
 
 [% END %]
@@ -240,7 +255,9 @@ of past quotes.
 
 <li>
 <p>
-“I have always wished that my computer would be as easy to use as my telephone. My wish has come true. I no longer know how to use my telephone.” - Bjarne Stroustrup
+“I have always wished that my computer would be as easy to use as my telephone.
+My wish has come true. I no longer know how to use my telephone.” - Bjarne
+Stroustrup
 </p>
 </li>
 
@@ -258,7 +275,8 @@ infidel planes bombed somalia
 
 <li>
 <p>
-Sometimes, loving your neighbor means taking him to an old Soviet interrogation facility and shoving things up his ass. -- Republican Jesus
+Sometimes, loving your neighbor means taking him to an old Soviet interrogation
+facility and shoving things up his ass. -- Republican Jesus
 </p>
 </li>
 
@@ -276,7 +294,8 @@ GIVE A MAN A FISH AND HE’LL EAT FOR A DAY; GIVE A FISH A MAN AND HE’LL EAT F
 
 <li>
 <p>
-I’m The Scat Man | &lt;sili_&gt; another reason i want a different job | &lt;sili_&gt; i’m tired of "... but php doesn’t ..."
+I’m The Scat Man | &lt;sili_&gt; another reason i want a different job |
+&lt;sili_&gt; i’m tired of "... but php doesn’t ..."
 </p>
 </li>
 
@@ -288,25 +307,36 @@ I’m The Scat Man | &lt;sili_&gt; another reason i want a different job | &lt;s
 
 <li>
 <p>
-&lt; GumbyBRAIN&gt; We don’t ever have to poop but i did tonight! :: &lt;Chris62vw&gt; <a href="http://www.xkcd.com/c14.html">http://www.xkcd.com/c14.html</a>    for rindolf   &lt;GumbyBRAIN&gt; Hi all, anyone know a bot.
+&lt; GumbyBRAIN&gt; We don’t ever have to poop but i did tonight! ::
+&lt;Chris62vw&gt; <a
+href="http://www.xkcd.com/c14.html">http://www.xkcd.com/c14.html</a>    for
+rindolf   &lt;GumbyBRAIN&gt; Hi all, anyone know a bot.
 </p>
 </li>
 
 <li>
 <p>
-a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack: sagittarius * is my next vacation spot
+a glorious day | &lt;SubStack&gt; cl0ud: do you know of any other planets and
+plantedoids worth visiting in this quadrant? | &lt;cl0ud&gt; SubStack:
+sagittarius * is my next vacation spot
 </p>
 </li>
 
 <li>
 <p>
-#perlcafe - where misfits fit in. | Lady_Aleena puts the Perl in #perlcafe | mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy eats children? | railbait has been sentenced to concatenation | Perl and CPAN are OFFTOPIC! | cl0ud has a glorious scalar localtime()
+#perlcafe - where misfits fit in. | Lady_Aleena puts the Perl in #perlcafe |
+mst is the Bastard Flamer from #perl. | rindolf is passive aggressive. | ispy
+eats children? | railbait has been sentenced to concatenation | Perl and CPAN
+are OFFTOPIC! | cl0ud has a glorious scalar localtime()
 </p>
 </li>
 
 <li>
 <p>
-When there is a PyPy booboo then PyPy goes bye bye | &lt;Trashlord&gt; only 2 hours? That's fast for Windows Update | Hail Fluttershy, princess-of-princesses, head of the secret cabal of the mossad, the already top-secret Zionist conspiracy intelligence agency!
+When there is a PyPy booboo then PyPy goes bye bye | &lt;Trashlord&gt; only 2
+hours? That's fast for Windows Update | Hail Fluttershy,
+princess-of-princesses, head of the secret cabal of the Mossad, the already
+top-secret Zionist conspiracy intelligence agency!
 </p>
 </li>
 
