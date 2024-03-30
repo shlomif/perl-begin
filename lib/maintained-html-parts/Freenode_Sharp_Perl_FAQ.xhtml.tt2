@@ -1147,33 +1147,39 @@ programming Perl ithreads"</a>.</p>
 [% END %]
 
 [% WRAPPER h3_section id = "Should_I_be_using_mod_perl.3F" title = "Should I be using mod_perl?" %]
+
 <p>The short answer is: "Most probably not.".</p>
+
 <p>mod_perl 1 was once the only sane way to run Perl scripts quickly on UNIX systems, however, it made a conscious choice of providing a lot of extra functionality, which proved to cost with complexity and sometimes quirkiness. Since then, FastCGI and similar technologies have matured (possibly legally) and there is now a new crop of popular web-servers, which aim to be very speedy (as well as
 less customisable and less suitable for hosting providers) such as <a href="http://www.wikipedia.org/wiki/Cherokee_%28webserver%29">Cherokee</a>, <a href="http://www.wikipedia.org/wiki/lighttpd">lighttpd</a> or <a href="http://www.wikipedia.org/wiki/nginx">nginx</a>
 that can utilise FastCGI as well, and you may opt to use instead of Apache, assuming your hosting allows that.</p>
+
 <p>So even if you're using Apache (and you should definitely use Apache 2 - not Apache 1), there are better alternatives for speeding up your applications than mod_perl, and you should only use mod_perl if you need more sophisticated control and functionality of Apache 2, in which case you may wish to also be asking that on <a href="http://perl.apache.org/maillist/modperl.html">the mod_perl
 mailing list</a>, or on a similar forum, and you are expected to be an advanced user.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_can_I_find_which_modules_a_Perl_program_or_module_depends_on.3F" title = "How can I find which modules a Perl program or module depends on?" %]
+
 <p>If you wish to use it on an program you have on the disk at run-time, then use <a href="http://metacpan.org/release/Devel-TraceUse">Devel-TraceUse</a>, which will report the used modules recursively.</p>
+
 <p>One can also use the <a href="http://deps.cpantesters.org/">CPAN dependencies</a> tool to determine the dependencies of a CPAN distribution or module.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "array-vs-array-ref" title = "What is the difference between an array and an array reference? What about a hash vs. a hash reference?" %]
+
 <p>There are several differences between arrays and array references. Array references are scalars and can be stores inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
+
 <ol>
 <li>
-<p>
-<p>One uses <code>$my_array[$idx]</code> to access an element of an array, and <code>$my_array_ref-&gt;[$idx]</code> to access an element of an array reference (or alternatively the more cluttered <code>$$my_array_ref[$idx]</code> or <code>${$my_array_ref}[$idx]</code></p>
-</p>
+<p>One uses <code>$my_array[$idx]</code> to access an element of an array, and <code>$my_array_ref-&gt;[$idx]</code> to access an element of an array reference (or alternatively the more cluttered <code>$$my_array_ref[$idx]</code> or <code>${$my_array_ref}[$idx]</code>)</p>
 </li>
 <li>
-<p>
 <p>One uses <code>@my_array</code> to access the array as a whole and <code>@$my_array_ref</code> to access the array referred to by the array reference as a whole.</p>
-</p>
 </li>
 </ol>
+
 <p>For more information, see some <a href="http://perl-begin.org/topics/references/">resources about references in Perl</a>.</p>
 
 [% END %]
@@ -1202,8 +1208,11 @@ operators</a> for built-in types.
 [% END %]
 
 [% WRAPPER h2_section id = "Some_Related_IRC_Channels_on_Freenode" title = "Some Related IRC Channels on Freenode" %]
+
 [% WRAPPER h3_section href = "irc://irc.freenode.net/perlcafe" id = "sharp_perlcafe" title = "#perlcafe" %]
+
 <p>The <a href="perlcafe/">Perl Café</a> exists to move off-topic discussions out of #perl. The channel is very lax, but often heavy on the irony. Examples of conversation include:</p>
+
 <ol>
 <li>
 <p>Café-speak ("teh hawt", "I buyed", "teh ghey", "n u") — you get the idea.</p>
@@ -1221,17 +1230,24 @@ operators</a> for built-in types.
 <p>Personal conversation during what would otherwise be a boring work day.</p>
 </li>
 </ol>
+
 <p>Sometimes the discussion gets more high-quality, but it's still a channel where chat occurs that some may find questionable. Viewer discretion is advised.</p>
-<p>Also see <a href="perlcafe/">its own page</a>.</p>
+
+<p>Also see <a href="perlcafe/">#perlcafe ’s own page</a>.</p>
 
 [% END %]
+
 [% WRAPPER h3_section href = "irc://irc.freenode.net/raku" id = "sharp_perl6" title = "#raku (previously \"#perl6\")" %]
+
 <p>Discussion for the development of <a href="https://raku.org/">the Raku programming language</a> (which used to be called "Perl 6"), and <a href="https://rakudo.org/">Rakudo</a>, and as usual on Freenode, a lot of off-topic discussion. Don't ask Perl 5 technical questions there - ask them on #perl.</p>
 
 [% END %]
+
 [% WRAPPER h3_section href = "irc://irc.freenode.net/lispcafe" id = "sharp_lispcafe" title = "#lispcafe" %]
+
 <p><a href="irc://irc.freenode.net/lispcafe">#lispcafe</a> is an off-shoot of #lisp and #perlcafe. The primary lisp channel #lisp is restricted to "on-topic" discussion of Common Lisp. Thus #lispcafe was founded to accept off-topic discussions. Unlike #perlcafe, #lispcafe attempts to be more civil. Discussions of Perl and other dynamic languages is
 acceptable on #lispcafe, so you might wish to visit it, introduce yourself and join the fun.</p>
+
 <ol>
 <li>
 <p>lispcafe has <a href="http://www.cliki.net/lispcafe">its own page</a> on the Common Lisp wiki.</p>
@@ -1239,7 +1255,9 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 </ol>
 
 [% END %]
+
 [% WRAPPER h3_section href = "irc://irc.freenode.net/perl-cats" id = "sharp_perl-cats" title = "#perl-cats" %]
+
 <p>Since many #perl'ers either like cats or even sometimes emulate ones, a channel was started for all things cats and Perl. It is pretty small, and we discuss many things besides cats. Some people there are just friends of regular #perl'ers (who also happen to like Perl). #perl-cats tends to be more civil than #perlcafe , but expect a lot of cat overload.</p>
 
 [% END %]
@@ -1247,77 +1265,137 @@ acceptable on #lispcafe, so you might wish to visit it, introduce yourself and j
 [% END %]
 
 [% WRAPPER h2_section id = "People" title = "People" %]
+
 <p><b>Note:</b> by matter a policy, a person may only add and edit their own entries, unless it is a cosmetic change.</p>
+
 [% WRAPPER h3_section id = "Channel_Owner" title = "Channel Owner" %]
+
 [% WRAPPER h4_section id = "thrig" title = "thrig" %]
+
 <p>The freenode #perl channel owner is thrig, also known as <a href="http://sial.org/">Jeremy Mates</a>. He holds the channel password and maintains the list of channel operators.</p>
+
 <p>Aside from that, thrig maintains the <a href="http://sial.org/">sial.org domain</a> with many useful resources for the channel or for Perl in general including <a href="http://sial.org/pbot/">a (now defunct) paste bot</a>, and <a href="http://sial.org/howto/perl/life-with-cpan/">"Life with CPAN"</a>.</p>
 
 [% END %]
 
 [% END %]
+
 [% WRAPPER h3_section id = "Channel_Operators" title = "Channel Operators" %]
+
 [% WRAPPER h4_section id = "apeiron" title = "apeiron" %]
+
 <p>He's just some guy, you know? apeiron is a USian with dreams of moving to Europe. As with most people and bots depicted here, Perl is his favorite language. Of the <a href="http://typelogic.com/intj.html">INTJ</a> personality type, he tends to focus more on solving problems than being the center of attention. Insatiably curious, he enjoys playing with new frameworks and applications. His
 interests are in free culture, free software, science, history, anthropology, music, philosophy, Shakespeare, and many other things. To be brief: a geek and a hippie.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "beth" title = "beth" %]
+
 <p>beth lives in <a href="http://www.wikipedia.org/wiki/Ithaca%2C_New_York">Ithaca, New York</a>. She works with Perl at Cornell university as a <a href="http://www.wikipedia.org/wiki/Bioinformatics">bioinformatics</a> analyst and is one of #perl's resident gurus.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "Chris62vw" title = "Chris62vw" %]
-<p>Chris is an American living in Las Vegas. He's the author and maintainer of <a href="http://chrisangell.com/incoming/chrisbot/v3">ChrisBot</a>, which is the codebase behind "perlbot", our resident infobot. He is rather hands-off when it comes to policing the channel and believes in minimal usage of operator privileges. In his spare time he enjoys spending time at the shooting range, eating
+
+<p>Chris is an American living in Las Vegas. He's the author and maintainer of <a href="http://chrisangell.com/incoming/chrisbot/v3">ChrisBot</a>, which was the codebase behind "perlbot", our resident infobot. He is rather hands-off when it comes to policing the channel and believes in minimal usage of operator privileges. In his spare time he enjoys spending time at the shooting range, eating
 sushi, and drinking beer with his friends.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "f00li5h" title = "f00li5h" %]
-<p>I am he. While coding I like to have a candle burning, and the sun setting. I try to treat IRC as <a href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a> for programming knowledge and am often looking for short term perl contracts, ideally telecommute. You may find I behave like a cat from time to time, this is a <a href="http://www.netjeff.com/humor/item.cgi?file=hire.txt">desired
+
+<p>I am he. While coding I like to have a candle burning, and the sun setting.
+I try to treat IRC as <a
+href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a> for programming
+knowledge and am often looking for short term perl contracts, ideally
+telecommute. You may find I behave like a cat from time to time, this is a <a
+href="http://www.netjeff.com/humor/item.cgi?file=hire.txt">desired
 behaviour</a> and not a bug.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "mst" title = "mst" %]
+
 <p>mst is the project founder of DBIx::Class, member of the Catalyst core team and lead tech at <a href="http://www.shadowcat.co.uk/">Shadowcat Systems</a>. He's also a sarcastic obnoxious english guy with a very dry sense of humour. Also known as "wielder of the chainsaw" for his high impact LARTing technique when somebody isn't paying attention to the people trying to help them.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "Paladin" title = "Paladin" %]
+
 <p>Paladin is a Canadian, living currently in New Westminster, BC. He is only around sporadically depending on the pressures of Real Life.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "simcop2387" title = "simcop2387" %]
+
 <p>simcop2387 is an American currently living in Georgia (the state, not the country). Perl is his favorite language and he spends most of his time coding strange esoteric projects in perl.</p>
 
 [% END %]
 
 [% END %]
+
 [% WRAPPER h3_section id = "Channel_Regulars" title = "Channel Regulars" %]
+
 [% WRAPPER h4_section id = "ivantis.5B.5E3.5D.2A" title = "ivantis[^3]*" %]
+
 <p>Awesome perl cat (mew). Living in Lawrence, KS. Enjoys freelance programming for Perl and PHP (well at least the perl part, who enjoys PHP?). Keeps <a href="http://irclogs.space-lab.us/perlstats.html">#perl stats</a>.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "alanhaggai" title = "alanhaggai" %]
+
 <p>alanhaggai is a programmer and web developer who got converted to Perl. He maintains <a href="http://alanhieu.ml/">a website</a> where he experiments with new CSS designs. He also maintains <a href="http://use.perl.org/~alanhaggai/journal/">a use Perl journal</a>.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "dazjorz" title = "dazjorz" %]
+
 <p>dazjorz is a Perl programmer by the name of Sjors Gielen. He mainly programs servers. His bot is DaZeus, but it's not in #perl, to his deep disappointment. His personal web site is at <a href="http://dazjorz.com/">http://dazjorz.com/</a>.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "pkrumins" title = "pkrumins" %]
+
 <p>pkrumins loves mathematics, physics and computer science. He has <a href="http://www.catonmat.net/">a blog titled <i>Good Coders Code - Great Reuse</i></a>.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "whoppix" title = "whoppix" %]
-<p>whoppix considers himself to be a rather average perl programmer. He does not have a livejournal, a blog, a website, a twitter account, or almost anything else web2.0 related. He is not at all interested and/or skilled in webdesign, relational databases and/or anything derived thereof. whoppix enjoys tinkering around with higher-level languages like perl, haskell, and sometimes writes
-implementations for simple esoteric languages, or even his own grammars (a task he regularly fails badly at). He also has some GTK+ experience, and is generally interested in event-based programming.</p>
-<p>In his spare time (when he's not programming) whoppix plays the piano and paints (and sometimes sells) sarcastic and/or post-ironic pictures, that reflect the dark gaping abyss of frustration in his soul. Or something like that.</p>
+
+<p>whoppix considers himself to be a rather average perl programmer. He does
+not have a livejournal, a blog, a website, a twitter account, or almost
+anything else Web-2.0 related. He is not at all interested and/or skilled in
+webdesign, relational databases and/or anything derived thereof. whoppix enjoys
+tinkering around with higher-level languages like Perl, Haskell, and sometimes
+writes implementations for simple esoteric languages, or even his own grammars
+(a task he regularly fails badly at). He also has some GTK+ experience, and is
+generally interested in event-based programming.</p>
+
+<p>In his spare time (when he's not programming) whoppix plays the piano and
+paints (and sometimes sells) sarcastic and/or post-ironic pictures, that
+reflect the dark gaping abyss of frustration in his soul. Or something like
+that.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "rindolf" title = "rindolf" %]
-<p>rindolf, also known as <a href="http://www.shlomifish.org/">Shlomi Fish</a>, or "shlomif", is an Israeli programmer born in 1977. He tries to be as helpful and friendly as possible and often is too friendly. If he expresses interest in you, either just answer his questions, or tell him to stop.</p>
-<p>Shlomi has many interests including: programming and software development, open-source use, development and advocacy, creative writing, applied philosophy and writing essays, biking, science, logic and applied logic, cognitive psychology, mathematics and puzzles, linguistics, history of the Old World, etc. He has a Bachelor of Science from <a href=
-"http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/">the Technion in Electrical Engineering</a>, but thinks it would be a stretch to call him an Electrical Engineer.</p>
+
+<p>rindolf, also known as <a href="http://www.shlomifish.org/">Shlomi Fish</a>,
+or "shlomif", is an Israeli programmer born in 1977. He tries to be as helpful
+and friendly as possible and often is too friendly. If he expresses interest in
+you, either just answer his questions, or tell him to stop.</p>
+
+<p>Shlomi has many interests including: programming and software development,
+open-source use, development and advocacy, creative writing, applied philosophy
+and writing essays, biking, science, logic and applied logic, cognitive
+psychology, mathematics and puzzles, linguistics, history of the Old World,
+etc. He has a Bachelor of Science from <a href=
+"http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/">the
+Technion in Electrical Engineering</a>, but thinks it would be a stretch to
+call him an Electrical Engineer.</p>
+
 <p>Perl is his favourite language. Among his contributions to the Perl world are:</p>
+
 <ol>
 <li>
 <p><a href="http://perl-begin.org/">The Perl Beginners' Site</a></p>
@@ -1329,49 +1407,71 @@ implementations for simple esoteric languages, or even his own grammars (a task 
 <p><a href="http://metacpan.org/author/SHLOMIF">Some CPAN Modules</a></p>
 </li>
 </ol>
+
 <p>He prides himself in being the "Black Sheep" of the Perl world, due to writing some controversial essays, and because he is considered a "Persona Non-grata" in some Perl communities.</p>
 
 [% END %]
 
 [% END %]
+
 [% WRAPPER h3_section id = "Bots" title = "Bots" %]
+
 [% WRAPPER h4_section id = "perlbot" title = "perlbot" %]
 <p>perlbot is the channel's infobot and utility bot. It only answers if addressed. Type "perlbot: perl" to learn about "perl", "perlbot: re" to learn about "re", etc. Originally Chris62vw's bot with the codebase in Chrisbot, it is not managed by simcop2387 and based on the superior buubot source (type "perlbot: source").</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "buubot" title = "buubot" %]
+
 <p>Another infobot written in perl, this time with plugins. buu wrote it and the source is also available and open-source.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "CPAN2" title = "CPAN2" %]
+
 <p>(Deprecated (banned), replaced by GumbyPAN) An announcement bot for the <a href="https://en.wikipedia.org/wiki/CPAN">CPAN</a> - the Comprehensive Perl Archive Network. Also can be queried. Its daddy is Zoffix.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "GumbyPAN" title = "GumbyPAN" %]
+
 <p>See CPAN2.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "GumbyBRAIN" title = "GumbyBRAIN" %]
+
 <p>GumbyBRAIN has recently left #perl, because he's noisy and not especially helpful for perl programmers.</p>
-<pre>f00li5h&gt; GumbyBRAIN: what do you want me to say about you in the wiki?
+
+<pre>
+f00li5h&gt; GumbyBRAIN: what do you want me to say about you in the wiki?
 GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's like bla bla bla bla and no you really want do.
 </pre>
+
 <p>GumbyBRAIN is BinGOs' experimental megahal bot and not an infobot (despite appearances to the contrary). Source at <a href="http://www.gumbybrain.com/">http://www.gumbybrain.com/</a></p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "farnsworth" title = "farnsworth" %]
+
 <p>Yet another bot written in perl created for testing the Math::Farnsworth module created by simcop2387, it features a Turing-complete programming language that rules all of its "commands". Its primary function is for doing math with unit tracking and conversions, but it will also do language conversions, and date manipulation also.</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "perlbot2" title = "perlbot2" %]
+
 <p>ivantis' home-made bot, written in perl (gu-duh!). Is currently banned by mst for being obnoxious, but may take his revenge soon! Replies to commands by name or by prefix character (&amp;).</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "f00bot" title = "f00bot" %]
+
 <p>f00li5h's useless instance of buubot, it's safe to ignore him</p>
 
 [% END %]
+
 [% WRAPPER h4_section id = "ivantis3.5B.60_.5D.2A" title = "ivantis3[`_]*" %]
+
 <p>ivantis' log-keeping bot. He doesn't do much.</p>
 
 [% END %]
@@ -1379,8 +1479,11 @@ GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's 
 [% END %]
 
 [% END %]
+
 [% WRAPPER h2_section id = "Our_Milestone_Pictures" title = "Our Milestone Pictures" %]
+
 <p>Here are our milestone pictures:</p>
+
 <ul>
 <li>
 <p><a href="http://www.shlomifish.org/Files/files/images/FreeNode-perl-400-participants.png">400 Participants</a></p>
@@ -1397,4 +1500,5 @@ GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's 
 </ul>
 
 [% END %]
+
 </div>
