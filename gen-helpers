@@ -78,23 +78,20 @@ while ( my $r = $tree->next_obj() )
             push @images_paths, $path;
         }
     }
-    elsif ( $r->is_dir() )
+    elsif ( $r->is_dir() and length($path) )
     {
-        if ( length($path) )
-        {
-            push @dirs_paths, $path;
-        }
+        push @dirs_paths, $path;
     }
 }
 path("$DIR/tt2.txt")->spew_raw( join "\n", ( sort { $a cmp $b } @tt ), "" );
 path("$DIR/include.mak")->spew_utf8(
     map {
-        my $key = $_;
         join( " ",
-            uc( "PERL_BEGIN" . "_" . $key ),
-            ":=", ( sort ( $key eq "dirs" ? @dirs_paths : @images_paths ) ) )
+            uc( "PERL_BEGIN" . "_" . $_->[0] ),
+            ":=", ( sort ( @{ $_->[1] } ) ) )
             . "\n"
-    } qw( dirs images )
+    } [ "dirs", \@dirs_paths ],
+    [ "images", \@images_paths ]
 );
 
 {
