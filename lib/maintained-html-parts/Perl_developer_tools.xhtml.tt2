@@ -2,6 +2,17 @@
 
 <h3 id="siteSub">From PerlNet</h3>
 
+[% BLOCK commercial_app %]
+
+<strong class="commercial" style="color:green;">$</strong>
+
+[% END %]
+
+[% IF 0 %]
+[% INCLUDE commercial_app %]
+[% PROCESS commercial_app %]
+[% END %]
+
 [% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
@@ -37,8 +48,9 @@ Helper Tools - applications such as GUI builders and reference documentation tha
 </ul>
 
 <p>
-Predominantly commercial programs are noted with <span
-style="color:green;">$</span>, although in some cases there may be exceptions
+Predominantly commercial programs are noted with
+<span style="color:green;">$</span>,
+although in some cases their licences may have exceptions
 for personal, educational, or government use.
 </p>
 
@@ -72,10 +84,10 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 <a href="http://padre.perlide.org/">Padre</a> - under heavy development.
 </li>
 <li>
-<span style="color:green;">$</span> Activestate <a href="http://www.activestate.com/Products/Komodo/">Komodo</a>
+[% INCLUDE commercial_app %] Activestate <a href="http://www.activestate.com/Products/Komodo/">Komodo</a>
 </li>
 <li>
-<span style="color:green;">$</span> IndigoSTAR <a href="http://www.indigostar.com/perledit.html">PerlEdit</a> .. Windows and Linux
+[% INCLUDE commercial_app %] IndigoSTAR <a href="http://www.indigostar.com/perledit.html">PerlEdit</a> .. Windows and Linux
 </li>
 
 </ul>
@@ -93,19 +105,19 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 <a href="http://www.perl-express.com/">Perl Express</a>.
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.dzsoft.com/perl-editor.html">DzSoft Perl Editor</a>
+[% INCLUDE commercial_app %] <a href="http://www.dzsoft.com/perl-editor.html">DzSoft Perl Editor</a>
 </li>
 <li>
-<span style="color:green;">$</span> EngInSite <a href="http://www.enginsite.com/Perl.htm">Perl Editor</a>.
+[% INCLUDE commercial_app %] EngInSite <a href="http://www.enginsite.com/Perl.htm">Perl Editor</a>.
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.perlscriptingtool.com/">Perl Scripting Tool</a>
+[% INCLUDE commercial_app %] <a href="http://www.perlscriptingtool.com/">Perl Scripting Tool</a>
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.perlwiz.biz/">PerlWiz</a>.
+[% INCLUDE commercial_app %] <a href="http://www.perlwiz.biz/">PerlWiz</a>.
 </li>
 <li>
-<span style="color:green;">$</span> Solution Soft <a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a>.
+[% INCLUDE commercial_app %] Solution Soft <a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a>.
 </li>
 
 </ul>
@@ -117,10 +129,10 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
 <ul>
 
 <li>
-<span style="color:green;">$</span> Late Night Software <a href="http://www.latenightsw.com/affrus/">Affrus</a>
+[% INCLUDE commercial_app %] Late Night Software <a href="http://www.latenightsw.com/affrus/">Affrus</a>
 </li>
 <li>
-<span style="color:green;">$</span> EPIC <a href="http://www.epic-ide.org/">EPIC</a>
+[% INCLUDE commercial_app %] EPIC <a href="http://www.epic-ide.org/">EPIC</a>
 </li>
 
 </ul>
@@ -147,7 +159,7 @@ See also <a href="http://directory.google.com/Top/Computers/Programming/Language
  ActiveState Komodo <a href="http://activestate.com/Products/komodo_ide/komodo_edit.mhtml">Edit</a> is an Open Source editor that supports Perl, PHP, Python, Ruby, and Tcl, plus JavaScript, CSS, HTML, and XML, and template languages like RHTML, Template-Toolkit, HTML-Smarty and Django
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.editrocket.com/features/perl_editor.html">Rocket</a> editor has Perl support
+[% INCLUDE commercial_app %] <a href="http://www.editrocket.com/features/perl_editor.html">Rocket</a> editor has Perl support
 </li>
 
 </ul>
@@ -178,13 +190,13 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 <a href="http://www.geany.org/">Geany</a> free editor, includes syntax support for Perl and others
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.editplus.com/">EditPlus</a>
+[% INCLUDE commercial_app %] <a href="http://www.editplus.com/">EditPlus</a>
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.textpad.com/">TextPad</a>
+[% INCLUDE commercial_app %] <a href="http://www.textpad.com/">TextPad</a>
 </li>
 <li>
-<span style="color:green;">$</span> <a href="http://www.ultraedit.com/">UltraEdit</a>
+[% INCLUDE commercial_app %] <a href="http://www.ultraedit.com/">UltraEdit</a>
 </li>
 
 </ul>
@@ -202,14 +214,14 @@ See also <a href="http://directory.google.com/Top/Computers/Software/Editors/">G
 Bare Bones Software’s <a href="http://www.barebones.com/products/textwrangler/index.shtml">TextWrangler</a>
 </li>
 <li>
-<span style="color:green;">$</span> Bare Bones Software’s <span style="color:green;">$</span> <a href="http://www.barebones.com/products/bbedit/">BBEdit</a>
+[% INCLUDE commercial_app %] Bare Bones Software’s [% INCLUDE commercial_app %] <a href="http://www.barebones.com/products/bbedit/">BBEdit</a>
 </li>
 <li>
-<span style="color:green;">$</span> TheCodingMonkeys’ <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>
+[% INCLUDE commercial_app %] TheCodingMonkeys’ <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>
 
 </li>
 <li>
-<span style="color:green;">$</span> Macromates’ <a href="http://macromates.com/">TextMate</a>
+[% INCLUDE commercial_app %] Macromates’ <a href="http://macromates.com/">TextMate</a>
 </li>
 
 </ul>
