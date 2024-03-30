@@ -2,7 +2,9 @@
 <h3 id="siteSub">From PerlNet</h3>
 <p>This is the FAQ for <a href="irc://irc.freenode.org/perl">Freenode's #perl channel</a>.</p>
 <section id="toc">
+
 <h2>Contents</h2>
+
 <ul>
 <li><a href="#Commonly_Asked_Questions">Commonly Asked Questions</a>
 <ul>
@@ -127,6 +129,7 @@
 <li><a href="#Our_Milestone_Pictures">Our Milestone Pictures</a></li>
 </ul>
 </section>
+
 [% WRAPPER h2_section id = "Commonly_Asked_Questions" title = "Commonly Asked Questions" %]
 
 [% WRAPPER h3_section id = "What_are_the_Rules_of_Conduct.3F" title = "What are the Guidelines of Conduct?" %]
@@ -139,32 +142,56 @@ First of all note that these are just "guidelines" in accordance with the <a hre
 </p>
 
 <ol>
-<li>Don't flood the channel with your paste. Instead use a pastebot - type <code>perlbot paste</code>.</li>
-<li>Be civil and friendly.</li>
-<li>Try to use proper English spelling, grammar, syntax, and phrasing. This will help the channel members understand your questions more easily and thus allow them to provide better answers.</li>
-<li>Whenever someone helps you then:
-<ol>
-<li>Thank them!</li>
-<li>Bump their karma. For example if <code>johndoe</code> helps you then say <code>johndoe++</code>.</li>
-</ol>
-</li>
-<li>When addressing a channel member, start your message with their nickname followed by a colon (":"). For example <code>johndoe: I understand it now.</code> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <code>@nick</code> because most clients will not highlight it specially.</li>
-<li>Do not private message (PM) a channel member using <code>/msg</code>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.</li>
-<li>Don't <b>overuse the evalbot</b> (<code>eval: 5+6</code>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <code>/join #perlbot</code>.</li>
-<li>If someone needs too much help and handholding, please ask them to chat on one of the side-channels such as <code>#perlcafe</code> or <code>#perl-cats</code>. This will help increase the signal-to-noise ratio of #perl.</li>
 <li>
-Try avoiding demoting the karma of humans (= "johndoe--"), as it is demotivating and antisocial.
+<p>Don't flood the channel with your paste. Instead use a pastebot - type <code>perlbot paste</code>.</p>
+</li>
+<li>
+<p>Be civil and friendly.</p>
+</li>
+<li>
+<p>Try to use proper English spelling, grammar, syntax, and phrasing. This will help the channel members understand your questions more easily and thus allow them to provide better answers.</p>
+</li>
+<li>
+<p>
+Whenever someone helps you then:
+</p>
+<ol>
+<li>
+<p>Thank them!</p>
+</li>
+<li>
+<p>Bump their karma. For example if <code>johndoe</code> helps you then say <code>johndoe++</code>.</p>
 </li>
 </ol>
-
-[% END %]
+</li>
+<li>
+<p>When addressing a channel member, start your message with their nickname followed by a colon (":"). For example <code>johndoe: I understand it now.</code> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <code>@nick</code> because most clients will not highlight it specially.</p>
+</li>
+<li>
+<p>Do not private message (PM) a channel member using <code>/msg</code>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.</p>
+</li>
+<li>
+<p>Don't <b>overuse the evalbot</b> (<code>eval: 5+6</code>). The eval bot is primarily meant for experts to show working snippets of code to people who need help. It is not meant as your personal evaluator. If you still want to experiment then <code>/join #perlbot</code>.</p>
+</li>
+<li>
+<p>If someone needs too much help and handholding, please ask them to chat on one of the side-channels such as <code>#perlcafe</code> or <code>#perl-cats</code>. This will help increase the signal-to-noise ratio of #perl.</p>
+</li>
+<li>
+<p>
+Try avoiding demoting the karma of humans (= "johndoe--"), as it is demotivating and antisocial.
+</p>
+</li>
+</ol>
 
 [% WRAPPER h4_section id = "Handling_criticism" title = "Handling criticism" %]
 
 <p>As usual the guideline is <b>Don't be right - be smart.</b>. When someone criticises you (and may be an op), you should: 1. Ask them what they mean. 2. Agree and empathise with them, 3. Try to negotiate a common ground. Don't try to be defensive-aggressive and try to prove the other side's wrong because that will only make them more angry at you.</p>
-<p>Naturally, this applies primarily to personal criticisms or those that influence one's behaviour in the channel. If you're having a "colour of the bikeshed" argument (i.e "Subversion vs. git vs. bzr vs. hg vs....") or a discussion about whether <code>$self-&gt;method(%args)</code> is better than <code>$self-&gt;method({%args})</code>, a silly off-topic discussion about whether <a href=
+
+<p>Naturally, this applies primarily to personal criticisms or those that influence one's behaviour in the channel. If you're having a "colour of the bikeshed" argument (i.e "Subversion vs. git vs. bzr vs. hg vs…"; <a href="https://bikeshed.com/">Reference</a>) or a discussion about whether <code>$self-&gt;method(%args)</code> is better than <code>$self-&gt;method({%args})</code>, a silly off-topic discussion about whether <a href=
 "http://www.shlomifish.org/humour/bits/facts/Chuck-Norris/">Chuck Norris</a> can beat Superman or Batman or not, or something like that, then probably much less is at stake there.</p>
+
 <p>For more information see:</p>
+
 <ul>
 <li>
 <p><a href="http://www.shlomifish.org/philosophy/books-recommends/#feeling_good">Feeling Good</a></p>
@@ -181,11 +208,16 @@ Try avoiding demoting the karma of humans (= "johndoe--"), as it is demotivating
 <p>Not all of the people on #perl are native English speakers. We also welcome people of all nationalities and native languages, even if their English is not perfect. However, we expect people to try to improve their written English in time, and learn from their mistakes. Improving your mastery of English will not only make it easier for you to communicate, but will also give you access to more
 high-quality material about Perl and programming in general (written either by native or non-native English speakers); allow you to better comment, document and communicate about your code; and finally, it will improve your skills as a programmer, because there is a general belief that people who speak and write human languages well, write better, more elegant and more idiomatic code.</p>
 <p>It's OK to have bad English, but you should try to improve it, because otherwise many native and non-native speakers (especially many geeks who are less capable of understanding the meaning of badly phrased sentences) will have a hard time understanding you.</p>
-<p>In addition to that, we should note that you should be tolerable of other people's not-so-idiomatic or possibly may-be-considered-derogatory English because they may speak, and think in a slightly different language than in English. For examples, in some languages there are non-derogatory words for a "female guy", whereas in English "girl" and "gal" are somewhat derogatory. As a result, a
+<p>In addition to that, we should note that you should try to tolerate other people's not-so-idiomatic or possibly may-be-considered-derogatory English because they may speak, and think in a slightly different language than in English. For examples, in some languages there are non-derogatory words for a "female guy", whereas in English "girl" and "gal" are somewhat derogatory. As a result, a
 non-native English speaker may use them this way. (See for example what <a href="http://shlomif.livejournal.com/55146.html">Shlomi Fish (rindolf) wrote about Hebrew words to describe humans</a>).</p>
-<p>Moreover, in some languages it is more natural to say "a guy from work", "a girl from work" than "my co-worker", and most Indo-European and Semitic languages have compulsory genders, including for inanimate objects, so it's natural for their English to be not-so-idiomatic.</p>
+
+<p>Moreover, in some languages it is more natural to say "a guy from work", "a girl from work" than "my co-worker", and most Indo-European and Semitic languages have compulsory genders, including for inanimate objects, so it's natural for their speakers’ English to be not-so-idiomatic.</p>
+
 <p>Finally, some foreign or non-foreign people may try to emulate some American, British, Australian, etc. culture, which they see on YouTube, Television, movies, etc. and while this may seem silly at times, should also be tolerated.</p>
+
 <p>So don't be too strict about which language is being said.</p>
+
+[% END %]
 
 [% END %]
 
@@ -308,7 +340,7 @@ non-native English speaker may use them this way. (See for example what <a href=
 
 [% END %]
 
-[% WRAPPER h4_section id = "Perl_Includes_CPAN" title = "Perl Includes CPAN" %]
+[% WRAPPER h3_section id = "Perl_Includes_CPAN" title = "Perl Includes CPAN" %]
 
 <p>One thing to note that is as opposed to some programming language channels on Freenode that limit themselves to the core language (which is sometimes fully specified in a standard), we not only have a problem in discussing non-core code, but even encourage you to use many high-quality, recommended, yet non-core, modules from <a href="https://perl-begin.org/topics/cpan/">CPAN</a> - the
 Comprehensive Perl Archive Network. To quote what Audrey Tang had said "UNIX is my IDE, perl 5 is my VM, CPAN is my language.".</p>
@@ -317,30 +349,38 @@ willingness to learn Perl, and <a href="http://community.livejournal.com/shlomif
 <p>If this is homework, and your professor gives some constraints on what you can use (*sigh*) or your pointy-haired-boss (PHB) is constraining you in various ways (double *sigh*), please mention it when asking your question and we may still help you if the non-CPAN-enabled solution is, while not ideal, is still doable elegantly.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Is_the_Channel_Logged" title = "Is the Channel Logged? Where can I find Logs?" %]
+
 <p>The channel policies probably forbid people from setting up public logs of the channel, so there are no public logs that we are aware of online. However, various people keep logs of everything that happens on <code>#perl</code> when they are present on the channel and keep these logs to themselves for their own reference and perusal, and they can supply you with excerpts of these logs.</p>
 <p>It is a good idea to configure your IRC client to log your conversations so you can later refer to them.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "I_need_help_with_tweaking_a_Perl_script_that_I_found.2C_and_I_don.27t_want_to_learn_Perl._Can_you_guys_help_me.3F" title = "I need help with tweaking a Perl script that I found, and I don't want to learn Perl. Can you guys help me?" %]
 <p>The best way to get assistance with a Perl problem is to demonstrate that you've taken some steps to try to find the answer yourself. This involves learning Perl enough to be able to fix the problem yourself. Learning Perl is not too hard and will prove useful into the future.</p>
 <p>Alternatively, you can pay someone to help you. Just ask on the channel if someone wishes to be paid. If you're trying to modify a Perl script without <a href="https://perl-begin.org/resources/">learning Perl</a> (or paying someone who knows Perl) then we're not going to help. As the old Greek idiom goes: "The gods help them that help themselves.".</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "I.27d_like_to_run_a_script_.28which_I_wrote_or_downloaded.29_on_a_cheap_.28or_free.29_web-hosting_that_only_gives_me_FTP._Can_you_help.3F" title = "I'd like to run a script (which I wrote or downloaded) on a cheap (or free) web-hosting that only gives me FTP. Can you help?" %]
+
 <p>Perl due to its architecture usually requires a bit more than an el-cheapo or "free" web-hosting. You need at least an ssh account, and often also a virtual server. There ain't no such thing as a free lunch. While many web-services are free, one has to understand that maintaining a server costs money, and the bandwidth costs money, and there's a lot of other costs. If you want something good,
 you have to pay for it, even in the modern Internet world. If you can't pay for it, you can try to find someone who'll host you free-of-charge, but note that it's also not trivial.</p>
 <p>So please pay for hosting, have an ssh access, be able to install more CPAN modules, and let us know what the logs show. If you don't have money, just learn more Perl and become a Perl programmer. There's a huge demand for them, at the moment, and we could always <a href="http://perl-begin.org/learn/get-a-job/">use your help</a>.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "I_need_help_with_a_non-Perl_Regular_Expression_.28PHP.2C_grep.2C_PCRE.2C_etc..29" title = "I need help with a non-Perl Regular Expression (PHP, grep, PCRE, etc.)" %]
 <p>If you're looking for assistance with a non-Perl problem, you've probably come to the wrong channel. You can try asking, but don't be surprised if you don't get an answer (or someone suggests you ask elsewhere) as Perl regular expressions are different from the regular expressions used by other programs and languages.</p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Can_you_recommend_a_good_Perl_Editor.2FIDE.3F" title = "Can you recommend a good Perl Editor/IDE?" %]
 <p>See: <a href="https://perl-begin.org/IDEs-and-tools/">Perl developer tools</a></p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Why_doesn.27t_my_script_run.3F" title = "Why doesn't my script run?" %]
 <p>There can be several reasons:</p>
 <ol>
@@ -360,7 +400,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ol>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Why_doesn.27t_my_script_work.3F" title = "Why doesn't my script work?" %]
+
 <p>First of all it would be useful for you to tell us exactly how it doesn't work. Does it produce the wrong output? Does it not do what you want to do?</p>
 <ol>
 <li>
@@ -375,7 +417,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ol>
 
 [% END %]
+
 [% WRAPPER h3_section id = "How_should_I_write_my_code.3F" title = "How should I write my code?" %]
+
 <p>Well, to quote the omniscient perlbot:</p>
 <pre>  &lt;perlbot&gt; no strict no warnings no help. That's the #perl motto!
 </pre>
@@ -407,7 +451,9 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 <p>For more information refer to the <a href="http://perl-begin.org/tutorials/bad-elements/">“Perl Elements to avoid page”</a> and to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735.do"><i>Perl Best Practices</i></a></p>
 
 [% END %]
+
 [% WRAPPER h3_section id = "I_need_to_parse_HTML_with_Perl_.28and_my_Regular_Expression_does_not_work.29" title = "I need to parse HTML with Perl (and my Regular Expression does not work)" %]
+
 <p>If you want to parse HTML with Perl, then <a href="http://htmlparsing.icenine.ca/">regular expressions are probably not the answer</a>. Instead look at:</p>
 <ul>
 <li>
@@ -428,6 +474,7 @@ you have to pay for it, even in the modern Internet world. If you can't pay for 
 </ul>
 
 [% END %]
+
 [% WRAPPER h3_section id = "Can_I_write_Graphical_User-Interfaces_.28GUIs.29_in_Perl.3F_And_How.3F" title = "Can I write Graphical User-Interfaces (GUIs) in Perl? And How?" %]
 <p>Yes, you can. Here's how:</p>
 <ol>
