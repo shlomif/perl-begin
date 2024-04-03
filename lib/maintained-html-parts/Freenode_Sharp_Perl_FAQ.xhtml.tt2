@@ -1133,7 +1133,8 @@ add the -d:Trace flag.
 
 <p>You get an output like:</p>
 
-<pre>   shlomif[cfg-ini]:$module$ perl -d:Trace tag-release.pl 2&gt;&amp;1 | head -10
+<pre>
+   shlomif[cfg-ini]:$module$ perl -d:Trace tag-release.pl 2&gt;&amp;1 | head -10
    &gt;&gt; tag-release.pl:9:     (map { m{\$VERSION *= *'([^']+)'}?? ($1)?: () }
    &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All/Base.pm:44:         my $self = $class-&gt;new(@_);
    &gt;&gt; /usr/lib/perl5/vendor_perl/5.12.1/IO/All.pm:94:     my $self = shift;
@@ -1496,8 +1497,11 @@ perlbot is the channel's infobot and utility bot. It only answers if addressed. 
 <p>GumbyBRAIN has recently left #perl, because he's noisy and not especially helpful for perl programmers.</p>
 
 <pre>
-f00li5h&gt; GumbyBRAIN: what do you want me to say about you in the wiki?
-GumbyBRAIN&gt; I was wondering if there are reportadly some non-drm songs, it's like bla bla bla bla and no you really want do.
+f00li5h&gt; GumbyBRAIN: what do you want me to say about
+you in the wiki?
+GumbyBRAIN&gt; I was wondering if there are reportadly some
+non-drm songs, it's like bla bla bla bla and no you really
+want do.
 </pre>
 
 <p>GumbyBRAIN is BinGOs' experimental megahal bot and not an infobot (despite appearances to the contrary). Source at <a href="http://www.gumbybrain.com/">http://www.gumbybrain.com/</a></p>
