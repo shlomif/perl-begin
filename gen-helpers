@@ -5,6 +5,7 @@ use warnings;
 use 5.014;
 use autodie;
 
+use Carp               ();
 use Path::Tiny         qw/ path /;
 use File::Find::Object ();
 
@@ -12,22 +13,22 @@ my $LATEMP_ROOT_SOURCE_DIR = path($0)->parent->absolute;
 
 my $DIR = 'lib/make';
 
-sub _exec
+sub _run_cli_command
 {
     my ( $cmd, $err ) = @_;
 
     if ( system(@$cmd) )
     {
-        say "@$cmd";
-        die $err;
+        say "Running [@$cmd] failed!";
+        Carp::confess($err);
     }
     return;
 }
 
-_exec( [ $^X, "$LATEMP_ROOT_SOURCE_DIR/bin/my-cookiecutter.pl" ],
+_run_cli_command( [ $^X, "$LATEMP_ROOT_SOURCE_DIR/bin/my-cookiecutter.pl" ],
     'cookiecutter failed.' );
 
-_exec(
+_run_cli_command(
     [
         "gmake",
         "--silent",
@@ -40,12 +41,12 @@ _exec(
 
 if (0)
 {
-    _exec( [ "gmake", "-s", "src/style.css" ], "style.css" );
+    _run_cli_command( [ "gmake", "-s", "src/style.css" ], "style.css" );
 }
 else
 {
     path("./dest")->mkpath();
-    _exec(
+    _run_cli_command(
         [
             "pysassc",
             "--style",
