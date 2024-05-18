@@ -255,6 +255,8 @@ class="bless" alt="Share/Bookmark"/></a></p>
 [% IF perl_begin_sidebar %]
 [% perl_begin_sidebar %]
 [% ELSE %]
+
+[% BLOCK removed_right_sidebar %]
 <h3 class="hide">Sidebar</h3>
 <div id="right-sidebar">
 <div class="testimonials">
@@ -280,6 +282,8 @@ pages</a></li>
 </ul>
 </div>
 </div>
+[% END # / removed_right_sidebar %]
+
 [% END %]
 </div>
 <h3 class="hide">Footer</h3>

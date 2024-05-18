@@ -6,5 +6,7 @@ function position_divs() {
     );
 }
 
-$(document).ready(position_divs);
-$(window).resize(position_divs);
+if (false) {
+    $(document).ready(position_divs);
+    $(window).resize(position_divs);
+}
