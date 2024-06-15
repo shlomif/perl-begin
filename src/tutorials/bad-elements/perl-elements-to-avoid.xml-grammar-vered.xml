@@ -3151,6 +3151,18 @@ So using "-1" as the third argument may or may not be what you want.
 
 </item>
 
+<item xml:id="standalone-xml-tags-in-html">
+
+<info>
+<title>Standalone XML tags in HTML</title>
+</info>
+
+<p>
+Some HTML parsers will think certain standalone XHTML tags, such as <code>&lt;iframe…/&gt;</code> are only an opening tag rather than an opening tag followed by a closing tag ( <code>&lt;iframe…&gt;&lt;/iframe&gt;</code> ).
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
@@ -3158,8 +3170,8 @@ So using "-1" as the third argument may or may not be what you want.
 </info>
 
 <p>
-This is a short list of the sources from which this advice was taken which
-also contains material for further reading:
+This is a short list of the sources from which this advice was taken, and
+which also contain material for further reading:
 </p>
 
 <ol>
