@@ -52,6 +52,7 @@ SCM
 SQL
 SQL-based
 Shlomi
+Standalone
 Stylesheet
 Sys
 Szabo
