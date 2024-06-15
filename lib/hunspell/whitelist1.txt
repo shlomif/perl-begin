@@ -115,6 +115,7 @@ plugins
 pure-Perl
 shlomif
 shlomifish
+standalone
 stylesheet
 templating
 toolkit
