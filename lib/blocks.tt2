@@ -238,7 +238,7 @@ type="text/html"
 style="overflow:hidden;margin:0;padding:0;width:160px;height:40px"
 ></object></div>
 <h3 class="hide">Content</h3>
-<main id="content">
+<main[% main_class.as_html() %] id="content">
 <h1>[% title %]</h1>
 <div class="full_width_notice"><b><a href="[% base_path %]learn/">Learn Perl
 Now!</a></b><br/>

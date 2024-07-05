@@ -21,6 +21,7 @@ use HTML::Widgets::NavMenu::EscapeHtml qw( escape_html );
 use HTML::Latemp::AddToc               ();
 use Module::Format::AsHTML             ();
 use MyNavData                          ();
+use Set::CSS v0.2.0                    ();
 
 my $cpan    = Module::Format::AsHTML->new;
 my $src_dir = $LATEMP_ROOT_SOURCE_DIR->child(qw# src #);
@@ -192,6 +193,7 @@ LINKS:
 
     $vars->{base_path}           = $base_path;
     $vars->{leading_path_string} = $leading_path_string;
+    $vars->{main_class}          = Set::CSS->new();
     $vars->{nav_links}           = $nav_links_html;
     $vars->{nav_menu_html}       = join( '', @$nav_html );
     $vars->{share_link}          = escape_html(

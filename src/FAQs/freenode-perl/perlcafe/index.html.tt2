@@ -1,6 +1,8 @@
 [%- SET title = "Freenode’s #perlcafe Channel" -%]
 [%- SET more_keywords = ", humour, humor, offtopic, irc, freenode, channel, chat, chatroom" -%]
 
+[%- main_class.addClass("fancy_sects", "faq") -%]
+
 [%- PROCESS "blocks.tt2" -%]
 
 [%- WRAPPER wrap_html -%]
