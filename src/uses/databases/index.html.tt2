@@ -1,8 +1,11 @@
 [%- SET title = "Working with Databases in Perl" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 There are many types of databases:
@@ -29,7 +32,9 @@ If you want a distributed database (similar to Google's BigTable), see our
 </li>
 </ul>
 
-<h2 id="sql">SQL Databases</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "sql" title = "SQL Databases" %]
 
 <p>
 The de-facto standard for working with SQL databases in Perl is
@@ -84,7 +89,9 @@ as <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection
 vulnerabilities</a>.
 </p>
 
-<h2 id="dbm">DBM Databases</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "dbm" title = "DBM Databases" %]
 
 <ul>
 
@@ -134,14 +141,18 @@ hash/array DBM that supports transactions. Reported to be slow, however.
 
 </ul>
 
-<h2 id="xbase">XBase Databases</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "xbase" title = "XBase Databases" %]
 
 <p>
 There seems to be [%- WRAPPER cpan_dist d = "DBD-XBase" -%]an
 XBase module on CPAN[%- END -%] . It seems to be pure-Perl, so it may be slow.
 </p>
 
-<h2 id="distributed">Distributed Databases ("No SQL", etc.)</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "distributed" title = "Distributed Databases (“No SQL”, etc.)" %]
 
 <p>
 Recently, to meet the growing demand for data of some web sites, some people
@@ -166,7 +177,9 @@ interface to <a href="http://www.mongodb.org/">MongoDB</a>.
 
 </ul>
 
-<h2 id="links">Links</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "links" title = "Links" %]
 
 <ul>
 <li>
@@ -189,5 +202,7 @@ part from Practical mod_perl</b></a> - provides many useful insights.
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]
