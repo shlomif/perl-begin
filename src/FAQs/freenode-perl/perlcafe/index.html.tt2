@@ -7,8 +7,6 @@
 
 [%- WRAPPER wrap_html -%]
 
-<div class="fancy_sects faq">
-
 <toc />
 
 [% WRAPPER h2_section id = "intro" title = "Introduction" %]
@@ -353,7 +351,5 @@ Be careful from accumulating too much wisdom. It's not wise to be too wise.
 </ol>
 
 [% END %]
-
-</div>
 
 [% END %]
