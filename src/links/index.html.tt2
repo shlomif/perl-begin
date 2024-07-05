@@ -89,6 +89,14 @@ blogosphere in the leading week.
 </p>
 </li>
 
+<li>
+<p>
+<a href="https://learn.perl.org/">Learn Perl ( learn.perl.org )</a> - a
+beginners site with a similar objective to perl-begin, but different content
+and strategy. It might work better for you.
+</p>
+</li>
+
 </ul>
 
 [% END %]
