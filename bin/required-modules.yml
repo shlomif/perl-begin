@@ -12,6 +12,7 @@ required:
         HTML::Toc: 0
         Module::Format::AsHTML: 0
         Perl::Tidy: 20200110
+        Set::CSS: v0.2.0
         String::ShellQuote: 0
         Test::File::IsSorted: 0
         XML::Grammar::Vered: v0.2.0
