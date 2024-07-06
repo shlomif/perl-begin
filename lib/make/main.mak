@@ -148,8 +148,9 @@ JQUERY_JS := $(TARGET)/js/jq.js
 $(JQUERY_JS): $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,node_modules/jquery/dist/jquery.min.js)
 	$(call COPY)
 
-all_deps: $(JQUERY_JS)
 all_deps: $(JQUERYUI_JS_DESTS)
+all_deps: $(JQUERY_JS)
+all_deps: jquery_ui_webpack_dest
 
 TEST_ENV += LATEMP_ROOT_SOURCE_DIR="$(LATEMP_ABS_ROOT_SOURCE_DIR)"
 
