@@ -2,6 +2,7 @@ TARGET = dest
 LATEMP_ABS_ROOT_SOURCE_DIR := $(shell cd $(LATEMP_ROOT_SOURCE_DIR)/ && pwd)
 LATEMP_ROOT_BUILD_DIR := .
 MKDIR := mkdir -p
+MULTI_YUI = ./bin/cat-o
 
 all: all_deps latemp_targets perl_for_newbies_extra_data iperl_extra_data \
 	todo_done_data htaccess
@@ -13,6 +14,7 @@ include lib/make/include.mak
 include lib/make/sf-filefind-rules.mak
 include lib/make/p4n.mak
 include lib/make/deps.mak
+include lib/make/jquery-ui-webpack.mak
 
 DEST_ARC_PAGE = $(TARGET)/source/index.html
 
@@ -147,6 +149,7 @@ $(JQUERY_JS): $(addprefix $(LATEMP_ROOT_SOURCE_DIR)/,node_modules/jquery/dist/jq
 	$(call COPY)
 
 all_deps: $(JQUERY_JS)
+all_deps: $(JQUERYUI_JS_DESTS)
 
 TEST_ENV += LATEMP_ROOT_SOURCE_DIR="$(LATEMP_ABS_ROOT_SOURCE_DIR)"
 
