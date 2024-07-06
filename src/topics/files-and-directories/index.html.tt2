@@ -1,6 +1,6 @@
 [%- SET title = "Files and Directories Handling in Perl" -%]
 [% BLOCK page_extra_head_elements %]
-<script src="[% base_path %]js/jquery-ui.min.js"></script>
+<script src="[% base_path %]js/jquery-ui/tot.js"></script>
 <link rel="stylesheet" type="text/css" href="[% base_path %]css/smoothness/jquery-ui-1.9.2.custom.min.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="[% base_path %]jqui-override.css" media="screen" />
 [% END %]
