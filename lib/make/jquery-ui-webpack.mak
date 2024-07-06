@@ -27,6 +27,8 @@ JQUERYUI_JS_DESTS = $(patsubst $(JQUISRCDIR)/%.js,$(JQUIDESTDIR)/%.js,$(JQUERYUI
 $(JQUERYUI_JS_DESTS): $(JQUIDESTDIR)/%.js: $(JQUISRCDIR)/%.js
 	$(MULTI_YUI) -o $@ $<
 
+jquery_ui_webpack_dest: $(JQUI_webpack_dest)
+
 jquery_ui_srcs: $(JQUERYUI_JS_SRCS)
 
 jquery_ui_put_srcs:
