@@ -70,7 +70,7 @@ Using Plack and PSGI is more recommended than using the old CGI.pm interface.
 
 [% END %]
 
-[% WRAPPER h2_section id="frameworks" title="Web Frameworks" %]
+[% WRAPPER h2_section id = "frameworks" title = "Web Frameworks" %]
 
 [% WRAPPER h3_section href = "http://www.mojolicious.org/" id = "mojo" title = "Mojolicious and Mojolicious::Lite" %]
 
@@ -81,7 +81,7 @@ a micro-web-development framework, similar to <a href="#dancer">Dancer</a>.
 </p>
 
 <p>
-Being self-contained ("The Web in a box"), Mojolicious re-invents many
+Being self-contained (<q>The Web in a box</q>), Mojolicious re-invents many
 <a href="[% base_path %]topics/cpan/">CPAN</a> wheels (possibly better, but still
 different), which may be a good or a bad thing.
 </p>
@@ -102,6 +102,11 @@ It started as a Perl port of the Ruby micro-framework
 <a href="http://www.sinatrarb.com/">Sinatra</a>.
 </p>
 
+<p>
+It is probably better (in 2024-07-23) to use <a href="#mojo">Mojolicious and
+Mojolicious::Lite</a>.
+</p>
+
 [% END %]
 
 [% WRAPPER h3_section href = "http://www.catalystframework.org/" id = "catalyst" title = "Catalyst" %]
@@ -119,15 +124,15 @@ one can build web applications with ease.
 <p>
 CGI::Application is an older attempt at a web development framework for
 Perl, but is likely no longer recommended and is showing its age. If you're
-interested in developing web applications quickly you should look at
-<a href="#dancer">Dancer</a> instead.
+interested in developing web applications quickly, you should look at
+<a href="#mojo">Mojolicious and Mojolicious::Lite</a> instead.
 </p>
 
 [% END %]
 
 [% END %]
 
-[% WRAPPER h2_section id="preproc" title="Frameworks as Preprocessors"%]
+[% WRAPPER h2_section id = "preproc" title = "Frameworks as Preprocessors" %]
 
 [% WRAPPER h3_section href = "http://www.masonhq.com/" id = "mason" title = "HTML::Mason" %]
 
