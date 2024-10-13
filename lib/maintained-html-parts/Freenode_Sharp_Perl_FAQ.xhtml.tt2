@@ -334,7 +334,7 @@ non-native English speaker may use them this way. (See for example what <a href=
 <p>Computing in general. (UNIX, Linux, Mac OS X, history of computing, etc.)</p>
 </li>
 <li>
-<p>Other programming languages - C and C++; Perl alternatives like PHP, Python or Ruby; Lisp and Scheme; Haskell, O'Caml, etc.; Assembler; and more exotic languages.</p>
+<p>Other programming languages - C and C++; Perl alternatives like PHP, Python or Ruby; Lisp and Scheme; Haskell, OCaml, etc.; Assembly; and more exotic languages.</p>
 <ul>
 <li>
 <p>We still try to focus on Perl, though.</p>
@@ -452,7 +452,7 @@ free-of-charge, but note that it's also not trivial.</p>
 
 [% WRAPPER h3_section id = "Why_doesn.27t_my_script_work.3F" title = "Why doesn't my script work?" %]
 
-<p>First of all it would be useful for you to tell us exactly how it doesn't work. Does it produce the wrong output? Does it not do what you want to do?</p>
+<p>First of all it would be useful for you to tell us exactly how it doesn't work. Does it produce the wrong output? Does it not do what you want it to do?</p>
 
 <ol>
 <li>
@@ -629,11 +629,16 @@ program directly a bad idea.</p>
 
 [% WRAPPER h3_section id = "How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F" title = "How can I have printf return a value instead of outputting to a filehandle?" %]
 
-<p>See <a href="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>. sprintf is like printf, only it returns the output as a string. Its use is preferable over printf most of the time. Note that its semantics are different than C's sprintf. In C you do:</p>
+<p>See <a href="http://perldoc.perl.org/functions/sprintf.html">sprintf</a>. sprintf is like printf, only it returns the output as a string. Its use is preferable over printf most of the time. Note that its semantics are different than C's sprintf. In C you call it like:</p>
 
-<pre>  char buffer[1024];
-  sprintf(buffer, "%d Days until %s's birthday.", days, name);
+<pre>    char buffer[1024];
+    sprintf(buffer, "%d Days until %s's birthday.", days, name);
 </pre>
+
+<p>
+This is while hopefully making sure the buffer is large enough for the formatted string
+(see <a href="https://en.wikipedia.org/wiki/Buffer_overflow">buffer overflow</a>).
+</p>
 
 <p>And in Perl you do:</p>
 
@@ -648,10 +653,19 @@ program directly a bad idea.</p>
 
 <ul>
 <li>
-<p><a href="http://www.pm.org/">Your local Perl Monger group</a></p>
+<p>
+<a href="https://perl-begin.org/resources/#get_help">Resources for getting help with Perl</a>
+</p>
 </li>
 <li>
-<p><a href="http://perlmonks.org/">Perl Monks forum</a></p>
+<p>
+<a href="http://www.pm.org/">Your local Perl Monger group</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://perlmonks.org/">Perl Monks forum</a>
+</p>
 </li>
 </ul>
 
