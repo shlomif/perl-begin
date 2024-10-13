@@ -12,8 +12,8 @@
     "jquery": "^3.7.1",
     "jquery-ui": "^1.14.0",
     "prettier": "^3.3.3",
-    "sass": "^1.79.3",
-    "webpack": "^5.94.0"
+    "sass": "^1.79.5",
+    "webpack": "^5.95.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
