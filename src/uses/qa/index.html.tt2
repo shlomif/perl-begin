@@ -30,39 +30,53 @@ Consumers</a> that can read TAP, process it and do something with the results.
 <ul>
 
 <li>
+<p>
 <a href="https://github.com/shlomif/what-you-should-know-about-automated-testing">"What you should know about automated software testing"</a> - a short, programming language-agnostic introduction on GitHub (under CC0/Public Domain).
+</p>
 </li>
 
 <li id="szabgab_course">
+<p>
 <a href="http://www.szabgab.com/talks/perl_in_testing/">Testing with Perl</a> -
 complete online slides for the course by
 <a href="http://www.szabgab.com/">Gabor Szabo</a>.
+</p>
 </li>
 
 <li id="test_tutorial">
+<p>
 <a href="https://metacpan.org/module/Test::Tutorial">Test::Tutorial</a> -
 introduces writing tests with the Perl test modules.
+</p>
 </li>
 
 <li id="modern_perl">
+<p>
 <a href="[% base_path %]tutorials/modern-perl/"><i>Modern Perl</i></a> -
 the book by chromatic has chapter 9 dedicated to Testing.
+</p>
 </li>
 
 <li id="perl_for_newbies">
+<p>
 <a href="[% base_path %]tutorials/perl-for-newbies/">“Perl for Perl Newbies”</a> -
 the fifth part of this tutorial covers testing among other good practices.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://shop.oreilly.com/product/9780596100926.do"><i>Perl Testing:
 A Developer’s Notebook</i></a> - a comprehensive and informative
 book (but somewhat out-of-date) about testing in Perl.
+</p>
 </li>
 
 <li>
+<p>
 <a href="[% base_path %]books/#beginning-perl"><i>Beginning Perl</i></a> - the latest
 edition of this book contains a chapter about QA.
+</p>
 </li>
 
 </ul>
