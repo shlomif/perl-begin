@@ -10,10 +10,10 @@
   "dependencies": {
     "html-minifier": "^4.0.0",
     "jquery": "^3.7.1",
-    "jquery-ui": "^1.14.0",
+    "jquery-ui": "^1.14.1",
     "prettier": "^3.3.3",
-    "sass": "^1.79.5",
-    "webpack": "^5.95.0"
+    "sass": "^1.81.0",
+    "webpack": "^5.96.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
