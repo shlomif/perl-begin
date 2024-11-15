@@ -1,7 +1,9 @@
 [%- SET title = "Perl for Quality Assurance and Testing" -%]
 [%- PROCESS "blocks.tt2" -%]
-[%- WRAPPER wrap_html -%]
 
+[%- main_class.addClass("fancy_sects") -%]
+
+[%- WRAPPER wrap_html -%]
 
 <p>
 Perl is commonly used for testing software, hardware and networks and for
@@ -10,7 +12,7 @@ has a lot of information about it. So does
 <a href="http://perl-qa.hexten.net/wiki/index.php/Main_Page">the Perl QA Wiki</a>.
 </p>
 
-<h2 id="tap">TAP - the "Test Anything Protocol"</h2>
+[% WRAPPER h2_section id = "tap" title = "TAP - the “Test Anything Protocol”" %]
 
 <p>
 <a href="http://testanything.org/">TAP</a> is a simple protocol for test
@@ -25,7 +27,9 @@ Perl has several
 Consumers</a> that can read TAP, process it and do something with the results.
 </p>
 
-<h2 id="tutorials">Tutorials and Courses</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "tutorials" title = "Tutorials and Courses" %]
 
 <ul>
 
@@ -80,5 +84,7 @@ edition of this book contains a chapter about QA.
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]
