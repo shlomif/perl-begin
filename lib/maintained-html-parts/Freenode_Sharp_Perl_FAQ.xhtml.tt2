@@ -779,7 +779,7 @@ operator to check if it doesn't match a regular expression.</p>
 
 [% END %]
 
-[% WRAPPER h3_section id = "Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F" title = "Which method to do $TASK_X is faster? How can I optimise my Perl programs?" %]
+[% WRAPPER h3_section id = "Which_method_to_do_.24TASK_X_is_faster.3F_How_can_I_optimise_my_Perl_programs.3F" title = "Which method to do \$TASK_X is faster? How can I optimise my Perl programs?" %]
 
 <p>Questions such as this come out very often on #perl. The answers to them are that:</p>
 

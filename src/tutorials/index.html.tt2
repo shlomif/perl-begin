@@ -147,7 +147,8 @@ These are video tutorials (and so-called screencasts), that are used to
 introduce Perl for beginners.
 </p>
 
-[% IF _include__broken_udemy_link %]
+[% SET include__broken_udemy_link = '' %]
+[% IF include__broken_udemy_link %]
 
 <h3 id="beginner_perl_maven"><a href="http://ude.my/vryTdy">Beginner Perl Maven</a></h3>
 
@@ -164,7 +165,8 @@ A Perl tutorial consisting of video and text by
 <a href="http://szabgab.com/">Gabor Szabo</a>.
 </p>
 
-[% IF _include__show_me_do_spam_links %]
+[% SET include__show_me_do_spam_links = '' -%]
+[% IF include__show_me_do_spam_links %]
 
 <h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's
 “Introduction to Perl” series by Steven Devijver</a></h3>

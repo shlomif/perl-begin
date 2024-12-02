@@ -27,7 +27,7 @@ each book.
 
 [% SET modern_perl_book_url = "http://www.onyxneon.com/books/modern_perl/" %]
 
-[% WRAPPER h3_section href = modern_perl_book_ur id = "modern-perl" title = "Modern Perl" %]
+[% WRAPPER h3_section href = modern_perl_book_url id = "modern-perl" title = "Modern Perl" %]
 
 <p>
 A book by chromatic, a well-known Perl programmer, writer, and author, about

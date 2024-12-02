@@ -1,4 +1,12 @@
+[%- SET body_params = '' -%]
+[%- SET desc = '' -%]
+[%- SET extra_h_header_contents = '' -%]
+[%- SET href = '' -%]
 [% SET html_lang = "en" %]
+[%- SET more_keywords = '' -%]
+[%- SET perl_begin_sidebar = '' -%]
+[%- SET sect_class = '' -%]
+[%- SET xhtml1 = '' -%]
 
 [% PROCESS "h_sections.tt2" %]
 [%- BLOCK h5_section -%]
