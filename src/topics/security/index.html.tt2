@@ -1,4 +1,4 @@
-[%- SET title = "Debugging Perl Programs" -%]
+[%- SET title = "Security in Perl" -%]
 [%- PROCESS "blocks.tt2" -%]
 [%- PROCESS "tut_blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
