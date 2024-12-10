@@ -35,8 +35,8 @@ are also many UNIX-oriented file-system-builtins listed on [% WRAPPER pdoc d = "
 
 <p>
 These are a set of examples for manipulating files and directories using Perl.
-Each will be shown in several versions including ones using IO-All, ones using
-core modules, and if relevant ones from the command line.
+Each will be shown in several versions including ones using Path::Tiny, ones
+using core modules, and if relevant ones from the command line.
 </p>
 
 <script>

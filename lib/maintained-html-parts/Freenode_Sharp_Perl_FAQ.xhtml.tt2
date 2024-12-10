@@ -1085,7 +1085,7 @@ the file or to insert it into the middle of the file while only using a single f
    rename($new_fn, $filename);
 </pre>
 
-<p>You can also look at higher-level abstractions such as <a href="http://perldoc.perl.org/Tie/File.html">Tie::File</a> or <a href="http://metacpan.org/release/IO-All/">IO-All</a> for more idiomatic ways to achieve the same thing.</p>
+<p>You can also look at higher-level abstractions such as <a href="http://perldoc.perl.org/Tie/File.html">Tie::File</a> or <a href="https://metacpan.org/pod/Path::Tiny">Path::Tiny</a> for more idiomatic ways to achieve the same thing.</p>
 
 [% END %]
 

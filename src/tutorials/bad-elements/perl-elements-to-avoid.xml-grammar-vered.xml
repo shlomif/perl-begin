@@ -360,8 +360,7 @@ while (my $line = &lt;$fh&gt;)
 <p>
 You should avoid them all. Instead the proper way to read an entire file
 into a long string is to either use CPAN distributions for that such as
-<cpan_self_dist d="Path-Tiny" /> or
-<cpan_self_dist d="IO-All" />, or alternatively
+<cpan_self_dist d="Path-Tiny" />, or alternatively
 write down the following function and use it:
 </p>
 <code_blk syntax="perl">

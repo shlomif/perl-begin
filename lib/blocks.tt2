@@ -31,48 +31,64 @@ Useful modules for files and directories handling are:
 <ul>
 
 <li>
+<p>
 [% cpan.self_dist( "d" => "Path-Tiny", ) %] - a module that provides a “fast
 utility for working with file paths” and which despite its name, provides a
 comprehensive and rich API.
+</p>
 </li>
 
 <li>
+<p>
 [% cpan.self_dist( "d" => "File-Slurper", ) %] - a module for fast and easy input
 and output from files and directories. The interface is procedural
 and quite Spartan, but is still useful. (<b>Note:</b> Using File-Slurp,
 and File-Slurp-Tiny which were found to be broken, is no longer recommended.)
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://perldoc.perl.org/File/Spec.html">File::Spec</a> - a core module
 to handle file and directory paths portably.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://perldoc.perl.org/File/Basename.html">File::Basename</a> - a
 core module to portably extract the basename, the dirname, the suffix and
 other file paths parsing.
+</p>
 </li>
 
 <li>
+<p>
 [% cpan.self_dist( "d" => "String-ShellQuote", ) %]
  - quote strings for passing through the shell. Also see the list forms of
 system.
+</p>
 </li>
 
 <li>
+<p>
 [% cpan.self_mod( "m" => "File::Path", ) %] - a core module to create or remove directory
 trees (portably).
+</p>
 </li>
 
 <li>
+<p>
 [% cpan.self_mod( "m" => "File::Copy", ) %] - a core module to copy files.
+</p>
 </li>
 
 <li>
+<p>
 [% cpan.self_dist( "d" => "IO-All", ) %] - a no longer recommended
 all-in-one IO package with a lot of syntactic sugar, but quite a
 few quirks and bugs. Non-core.
+</p>
 </li>
 
 </ul>
@@ -114,8 +130,8 @@ succinct interface for finding what you want.
 <p>
 [% cpan.self_dist( "d" => "Path-Iterator-Rule", ) %] provides an object oriented and
 iterative file finder, and there's also
-[% cpan.self_dist( "d" => "Path-Class-Rule", ) %]
- and [% cpan.self_dist( "d" => "IO-All-Rule", ) %]. Also of interest is its
+[% cpan.self_dist( "d" => "Path-Class-Rule", ) %].
+Also of interest is its
 <a href="https://metacpan.org/module/Path::Iteartor::Rule#SEE-ALSO">“See Also”</a>
 section, which contains links to other implementations, and a comparison
 of them.
