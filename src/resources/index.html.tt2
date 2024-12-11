@@ -67,7 +67,7 @@ Take courses for learning Perl.
 </dd>
 
 <dt id="exercises">
-<a href="[% base_path %]exercises">Exercises and Challenges</a>
+<a href="[% base_path %]exercises/">Exercises and Challenges</a>
 </dt>
 <dd>
 Collections of exercises and challenges to be solved by writing programs.
