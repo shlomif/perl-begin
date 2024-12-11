@@ -1,9 +1,6 @@
 # Quicktask v1.2
 
 CURRENT TASKS:
-    - Add separate pages for CSV / JSON / YAML / etc. parsing
-        * So they will be in the site's nav menu
-      @ Added [Sun 2020-10-04]
     - Mention XML Schemas / RELAX NG / DTD / Schematron
         * XML page
       @ Added [Sun 2020-10-04]

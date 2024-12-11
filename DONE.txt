@@ -329,3 +329,8 @@ and src/topics/files-and-directories/index.html.wml
         - appending to files.
         - copying files.
         - deleting a directory tree.
+
+    - Add separate pages for CSV / JSON / YAML / etc. parsing
+        * So they will be in the site's nav menu
+      @ Added [Sun 2020-10-04]
+      @ rejected
