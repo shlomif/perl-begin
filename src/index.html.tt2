@@ -19,7 +19,7 @@ written quickly, while still performing well in most cases.
 In order to learn Perl, <a href="[% base_path %]resources/">see our
 pages of various online resources</a>, and then
 see our <a href="[% base_path %]topics/">topics</a> and
-<a href="[% base_path %]uses/">common uses</a> page.
+<a href="[% base_path %]uses/">common uses</a> pages.
 </p>
 
 [% BLOCK useless_evangelism %]
