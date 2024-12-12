@@ -3,9 +3,10 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- PROCESS "tut_blocks.tt2" -%]
 [%- PROCESS "hyperpolyglot.tt2" -%]
-[%- WRAPPER wrap_html -%]
 
-<div class="fancy_sects">
+[%- main_class.addClass("fancy_sects") -%]
+
+[%- WRAPPER wrap_html -%]
 
 <toc />
 
@@ -204,7 +205,5 @@ Several basic videos introducing Perl for beginners available on the
 [% END %]
 
 [% END %]
-
-</div>
 
 [% END %]
