@@ -2,7 +2,9 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="note">Note</h2>
+<div class="fancy_sects">
+
+[% WRAPPER h2_section id = "note" title = "Note" %]
 
 <p>
 This page was retrieved from the corresponding page at the currently offline
@@ -13,6 +15,10 @@ Australia</a> and the original Perl Artistic License. It was restored here
 from the wayback machine.
 </p>
 
+[% END %]
+
 [% INCLUDE "lib/maintained-html-parts/Perl_developer_tools.xhtml.tt2" %]
+
+</div>
 
 [% END %]

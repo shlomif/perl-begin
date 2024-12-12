@@ -2,6 +2,8 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+<div class="fancy_sects">
+
 <toc />
 
 [% WRAPPER h2_section id = "IDEs" title = "IDEs" %]
@@ -185,5 +187,7 @@ view the results.
 [% END %]
 
 [% INCLUDE "gui_db.tt2" %]
+
+</div>
 
 [% END %]
