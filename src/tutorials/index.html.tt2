@@ -52,8 +52,7 @@ started.
 [%- END -%]
 [%- END -%]
 
-<h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc
-Tutorials</a></h3>
+<h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc Tutorials</a></h3>
 
 <p>
 The tutorials that ship as part of the perl core. Start with
@@ -62,8 +61,7 @@ The tutorials that ship as part of the perl core. Start with
 other tutorials</a>.
 </p>
 
-<h3 id="perl-com-intro"><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's
-Beginners Introduction to Perl</a></h3>
+<h3 id="perl-com-intro"><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's Beginners Introduction to Perl</a></h3>
 
 <p>
 A 6-part tutorial that covers the basics without too many details. Again,
@@ -71,17 +69,13 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
-<h3 id="lpw-perl-beginners"><a
-href="http://www.slideshare.net/davorg/lpw-begin">LPW: Beginners Perl by Dave
-Cross</a></h3>
+<h3 id="lpw-perl-beginners"><a href="http://www.slideshare.net/davorg/lpw-begin">LPW: Beginners Perl by Dave Cross</a></h3>
 
 <p>
 Presentation slides by Dave Cross.
 </p>
 
-<h3 id="one-liners-explained"><a
-href="https://catonmat.net/perl-one-liners-explained-part-one">Perl One-Liners
-Explained by Peteris Krumins</a></h3>
+<h3 id="one-liners-explained"><a href="https://catonmat.net/perl-one-liners-explained-part-one">Perl One-Liners Explained by Peteris Krumins</a></h3>
 
 <p>
 A series of posts about useful perl "one-liners" that may serve as a teach-by-example.
@@ -124,9 +118,7 @@ programming.
 
 <h2 id="other_lists">Other Lists</h2>
 
-<h3 id="perlmonks"><a
-href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's
-Tutorials</a></h3>
+<h3 id="perlmonks"><a href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's Tutorials</a></h3>
 
 <p>
 Several tutorials as hosted on the popular “Perlmonks.org” site. They
@@ -168,8 +160,7 @@ A Perl tutorial consisting of video and text by
 [% SET include__show_me_do_spam_links = '' -%]
 [% IF include__show_me_do_spam_links %]
 
-<h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's
-“Introduction to Perl” series by Steven Devijver</a></h3>
+<h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's “Introduction to Perl” series by Steven Devijver</a></h3>
 
 <p>
 Several basic videos introducing Perl for beginners available on the
