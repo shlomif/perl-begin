@@ -5,9 +5,11 @@
 [%- PROCESS "hyperpolyglot.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
+<div class="fancy_sects">
+
 <toc />
 
-<h2 id="note">Note</h2>
+[% WRAPPER h2_section id = "note" title = "Note" %]
 
 <p>
 These online tutorials can provide an introduction to Perl so you can start
@@ -21,9 +23,11 @@ If you prefer a tutorial written in a different human language, please try
 checking the <a href="localized/">foreign languages page</a>
 </p>
 
-<h2 id="our_list">Our List of Tutorials</h2>
+[% END %]
 
-<h3 id="perl_tut_org"><a href="http://perl-tutorial.org/">Perl Tutorial Hub</a></h3>
+[% WRAPPER h2_section id = "our_list" title = "Our List of Tutorials" %]
+
+[% WRAPPER h3_section href = "http://perl-tutorial.org/" id = "perl_tut_org" title = "Perl Tutorial Hub" %]
 
 <p>
 An authoritative list of recommended tutorials. An <a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials" id="perl5_wiki">older list</a> can be found on the Perl 5 Wiki.
@@ -52,7 +56,9 @@ started.
 [%- END -%]
 [%- END -%]
 
-<h3 id="perldoc_tutorials"><a href="http://perldoc.perl.org/index-tutorials.html">The Perldoc Tutorials</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://perldoc.perl.org/index-tutorials.html" id = "perldoc_tutorials" title = "The Perldoc Tutorials" %]
 
 <p>
 The tutorials that ship as part of the perl core. Start with
@@ -61,7 +67,9 @@ The tutorials that ship as part of the perl core. Start with
 other tutorials</a>.
 </p>
 
-<h3 id="perl-com-intro"><a href="http://www.perl.com/pub/a/2001/01/begperl6.html">Perl.com's Beginners Introduction to Perl</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.perl.com/pub/a/2001/01/begperl6.html" id = "perl-com-intro" title = "Perl.com's Beginners Introduction to Perl" %]
 
 <p>
 A 6-part tutorial that covers the basics without too many details. Again,
@@ -69,13 +77,17 @@ reading the man pages is expected afterwards, but this tutorial should get
 you started.
 </p>
 
-<h3 id="lpw-perl-beginners"><a href="http://www.slideshare.net/davorg/lpw-begin">LPW: Beginners Perl by Dave Cross</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://www.slideshare.net/davorg/lpw-begin" id = "lpw-perl-beginners" title = "LPW: Beginners Perl by Dave Cross" %]
 
 <p>
 Presentation slides by Dave Cross.
 </p>
 
-<h3 id="one-liners-explained"><a href="https://catonmat.net/perl-one-liners-explained-part-one">Perl One-Liners Explained by Peteris Krumins</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "https://catonmat.net/perl-one-liners-explained-part-one" id = "one-liners-explained" title = "Perl One-Liners Explained by Peteris Krumins" %]
 
 <p>
 A series of posts about useful perl "one-liners" that may serve as a teach-by-example.
@@ -86,7 +98,11 @@ Note that writing perl for production use requires <a href="[% base_path %]tutor
 Note that Krumins also published <a href="https://nostarch.com/perloneliners">a book</a> based on the series available in print or as an ebook.
 </p>
 
-<h2 id="advanced">Tutorials for Advanced Users</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "advanced" title = "Tutorials for Advanced Users" %]
 
 <p>
 These are tutorials for user with prior knowledge of programming. They
@@ -99,13 +115,15 @@ for that</a>, some of which are freely available online.
 
 [% INCLUDE hyperpolyglot_php_perl_python_ruby %]
 
-<h3 id="learnxinyminutes"><a href="https://learnxinyminutes.com/docs/perl/">Learn perl in Y minutes</a></h3>
+[% WRAPPER h3_section href = "https://learnxinyminutes.com/docs/perl/" id = "learnxinyminutes" title = "Learn perl in Y minutes" %]
 
 <p>
 A short tutorial from the "Learn X in Y minutes" website.
 </p>
 
-<h3 id="perl_in_2hours"><a href="http://qntm.org/files/perl/perl.html">“Learn Perl in about 2 hours 30 minutes”</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://qntm.org/files/perl/perl.html" id = "perl_in_2hours" title = "“Learn Perl in about 2 hours 30 minutes”" %]
 
 <p>
 A tutorial which is short, to the point, and informative, but on the other
@@ -116,23 +134,33 @@ programming.
 
 </div>
 
-<h2 id="other_lists">Other Lists</h2>
+[% END %]
 
-<h3 id="perlmonks"><a href="http://perlmonks.org/index.pl?node=Tutorials">Perlmonks.org's Tutorials</a></h3>
+[% END %]
+
+[% WRAPPER h2_section id = "other_lists" title = "Other Lists" %]
+
+[% WRAPPER h3_section href = "http://perlmonks.org/index.pl?node=Tutorials" id = "perlmonks" title = "Perlmonks.org's Tutorials" %]
 
 <p>
 Several tutorials as hosted on the popular “Perlmonks.org” site. They
 cover various topics.
 </p>
 
-<h3 id="perlmeme"><a href="http://perlmeme.org/">Perlmeme.org</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://perlmeme.org/" id = "perlmeme" title = "Perlmeme.org" %]
 
 <p>
 Several tutorials, “Frequently Asked Questions”, and “Howto” documents
 on various subjects.
 </p>
 
-<h2 id="video">Video Tutorials</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "video" title = "Video Tutorials" %]
 
 <p>
 These are video tutorials (and so-called screencasts), that are used to
@@ -142,7 +170,7 @@ introduce Perl for beginners.
 [% SET include__broken_udemy_link = '' %]
 [% IF include__broken_udemy_link %]
 
-<h3 id="beginner_perl_maven"><a href="http://ude.my/vryTdy">Beginner Perl Maven</a></h3>
+[% WRAPPER h3_section href = "http://ude.my/vryTdy" id = "beginner_perl_maven" title = "Beginner Perl Maven" %]
 
 <p>
 An online introductory Perl course by Gabor Szabo on Udemy.
@@ -150,7 +178,9 @@ An online introductory Perl course by Gabor Szabo on Udemy.
 
 [% END %]
 
-<h3 id="szabgab_video_and_text"><a href="http://perlmaven.com/perl-tutorial">Perl Tutorial by Gabor Szabo</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://perlmaven.com/perl-tutorial" id = "szabgab_video_and_text" title = "Perl Tutorial by Gabor Szabo" %]
 
 <p>
 A Perl tutorial consisting of video and text by
@@ -160,7 +190,9 @@ A Perl tutorial consisting of video and text by
 [% SET include__show_me_do_spam_links = '' -%]
 [% IF include__show_me_do_spam_links %]
 
-<h3 id="show_me_do"><a href="http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries">ShowMeDo's “Introduction to Perl” series by Steven Devijver</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries" id = "show_me_do" title = "ShowMeDo's “Introduction to Perl” series by Steven Devijver" %]
 
 <p>
 Several basic videos introducing Perl for beginners available on the
@@ -168,5 +200,11 @@ Several basic videos introducing Perl for beginners available on the
 </p>
 
 [% END %]
+
+[% END %]
+
+[% END %]
+
+</div>
 
 [% END %]
