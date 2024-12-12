@@ -1,5 +1,8 @@
 [%- SET title = "Links to Perl Exercises and Challenges" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
 [% WRAPPER h2_section id = "intro" title = "Introduction" %]
