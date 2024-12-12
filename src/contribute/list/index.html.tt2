@@ -5,74 +5,102 @@
 <ul>
 
 <li>
+<p>
 <a href="http://www.shlomifish.org/"><b>Shlomi Fish</b></a> -
 Founded perl-begin and did most of the work on the initial versions.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://www.cthulhu-burger.org/"><b>Dave Goehrig</b></a> -
 Contributed the essay "What the Books Don't Teach You" to the Wiki.
+</p>
 </li>
 
 <li>
+<p>
 <b>Marilyn Matty</b> -
 Gave some web design and content tips.
+</p>
 </li>
 
 <li>
+<p>
 <b>Mark Fowler</b> -
 Suggested two important additions to the articles section.
+</p>
 </li>
 
 <li>
+<p>
 <a href="mailto:gw@actamail.com">G. Wolfgang</a> - Contributed the
 GoFlexiblePro design on which the design of this site is based.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://stackoverflow.com/questions/74570/css-bad-gray-line-to-the-side-of-the-navigation-bar-on-http-perl-begin-org">Shog9, Stephen Wrighton and other
 Stack Overflow members</a> - Helped to fix a problem with the site's CSS.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://alanhieu.ml/">Alan Haggai Alavi</a> - Contributed many
 corrections to the text of the site and helped revamp the site style to
 make it fluid and stretchable.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://ali.as/">Adam Kennedy</a> - supplied important input for
 improving the site.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://szabgab.com/">Gabor Szabo (szabgab)</a> - reported some
 broken links and typos, projected the Padre IDE project and has provided
 lots of other support for making Perl 5 and Perl 6 more accessible
+</p>
 </li>
 
 <li>
+<p>
 <b>tm604</b> - provided some input for the pages and gave a CSS tip for making
 the top of the pages look nicer.
+</p>
 </li>
 
 <li>
+<p>
 <b>slakmagik</b> - reported a code typo in
 <a href="[% base_path %]tutorials/bad-elements/">bad Perl elements page</a>.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://www.webhostingsearch.com/">WebHostingSearch</a> - Sponsoring
 Perl-Begin since 2009.
+</p>
 </li>
 
 <li>
+<p>
 <b>Seppo Yli-Olli</b> - reported a typo.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://www.technostall.com/">Chankey Pathak</a>
 (<a href="mailto:chankey@cpan.org">E-mail</a>) - reported a broken link.
+</p>
 </li>
 
 </ul>
