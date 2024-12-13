@@ -1,0 +1,96 @@
+[% BLOCK useless_evangelism %]
+
+<h2 id="right-tool">The Right Tool for the Job</h2>
+
+<p>
+There are many cases in which Perl is the right tool for the job:
+</p>
+
+<ol>
+
+<li>
+<b>System Administration</b> - Perl is available on almost
+every Unix system, and is easily installable on Microsoft Windows. It is
+more robust and more portable for many tasks than writing
+<a href="http://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> scripts,
+to say nothing of Win32's
+<a href="http://en.wikipedia.org/wiki/Cmd.exe">cmd.exe</a>.
+<a href="[% base_path %]uses/sys-admin/">Read more…</a>
+</li>
+
+<li>
+<b>Web automation</b> - some CPAN modules allow interacting with web sites
+easily and affordably. This is useful to automate such web sites, and to
+test web sites you created.
+</li>
+
+<li>
+<b>Writing web applications</b> - Perl was the first popular solution for
+writing CGI scripts and even large scale web applications, and is still very
+popular. It is extensively used by such large, highly scalable sites such as
+<a href="http://amazon.com/">Amazon.com</a> or
+<a href="http://www.livejournal.com/">Live Journal</a>, and by countless of
+smaller sites. <a href="[% base_path %]uses/web/">Read more…</a>.
+</li>
+
+<li>
+<b>Software Testing and Quality Assurance</b> - Perl has an extensive set
+of <a href="http://perl-qa.yi.org/">tools for automated or semi-automated
+software testing</a>. These tools can often be used to test applications
+written in other languages, and certainly network servers.
+<a href="[% base_path %]uses/qa/">Read more…</a>
+</li>
+
+</ol>
+
+[% END %]
+
+[% BLOCK whs_note %]
+;;; Due for removal in 2011-05-20
+;;; or renewal.
+<h2 id="whs-note">Appreciation Note:</h2>
+
+<p>
+We would hereby like to say a big thanks to the folks over at
+WebHostingSearch. With their help, we can keep Perl-Begin live and develop
+it to serve you better. For those of you who need a specific
+<a href="http://www.webhostingsearch.com/">web host</a> (for example
+one that supports Perl and PHP) then we recommend you to pay them a visit.
+</p>
+[% END %]
+
+[% BLOCK web_hosting_break_note %]
+;;; Placed on 2011-05-31
+;;; Pending for renewal every 3 months.
+
+<hr />
+
+<h2 id="whb-note">Note:</h2>
+
+<p>
+Starting your website is daunting, but you can make it easy with the
+<a href="http://www.webhostingbreak.com/">best web hosting</a> for your
+needs. Compare and save.
+</p>
+
+[% END %]
+
+[% BLOCK we_dont_need_no_hype %]
+<h2 id="hype">Hype? We don't need no stinkin' hype!</h2>
+
+<p>
+<a href="http://www.perl.org/">Perl</a> was probably <b>never hyped</b>. While
+many people said they liked Perl or that it superior to other languages in
+some respects, it <b>became popular by its qualities</b>, and being the right
+tool for the right job at the right time. On the contrary there's a lot of
+<a href="http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt">Fear,
+Uncertainty and Doubt (FUD)</a> flames about Perl.
+</p>
+
+<p>
+But we <b>don't want any hype</b>, and we don't mind the FUD. Perl is great, we
+like it, and it's often the right tool for the job. So if you want to learn
+Perl, welcome aboard!
+</p>
+
+[% END %]
