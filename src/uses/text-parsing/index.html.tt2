@@ -1,9 +1,12 @@
 [%- SET title = "Text Parsing in Perl" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 [%- PROCESS "Inc/html-selector-xpath.tt2" -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 Perl has a rightful reputation as a good language for parsing text and even
@@ -15,7 +18,9 @@ a hammer, everything starts to look like a nail."), and it should be
 avoided. Here we give some more options.
 </p>
 
-<h2 id="with-what-to-parse">With What to Parse Stuff?</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "with-what-to-parse" title = "With What to Parse Stuff?" %]
 
 <ul>
 
@@ -103,9 +108,11 @@ recommended</a> in our "Files and Directories" page.
 
 </ul>
 
-<h2 id="advanced-parsing">Advanced Parsing Techniques</h2>
+[% END %]
 
-<h3 id="parser-generators">Parser Generators</h3>
+[% WRAPPER h2_section id = "advanced-parsing" title = "Advanced Parsing Techniques" %]
+
+[% WRAPPER h3_section id = "parser-generators" title = "Parser Generators" %]
 
 <p>
 For many grammars (such as those of most programming languages, which involve
@@ -162,8 +169,9 @@ can then yield an "abstract syntax tree (AST)" that will allow you to process
 valid texts of this language as a human would understand them.
 </p>
 
-<h3 id="incremental-extraction">Incremental Extraction in Regular Expressions
-Using \G and /g</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "incremental-extraction" title = "Incremental Extraction in Regular Expressions Using \\G and /g" %]
 
 <p>
 Sometimes, you'll find that writing everything in one regular expression
@@ -197,6 +205,10 @@ while ($string =~ m{\G.*?\[([^\]]+)\]}cg)
 <p>
 This example is a bit contrived, but should be illustrative enough.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% INCLUDE text_processing_links %]
 
