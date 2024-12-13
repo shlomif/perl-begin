@@ -18,17 +18,21 @@ Unfortunately, we can no longer mirror it, due to the fact that this
 site has some web advertising.
 </p>
 
-<h2 id="read_online">Read Online</h2>
+[% WRAPPER h2_section id = "read_online" title = "Read Online" %]
 
 <p>
 <a href="http://modernperlbooks.com/books/modern_perl/chapter_00.html"><b>Read
 Online</b></a>
 </p>
 
-<h2 id="epub">EPUB</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "epub" title = "EPUB" %]
 
 <p>
 <a href="http://www.onyxneon.com/books/modern_perl/modern_perl.epub">Modern Perl EPUB</a>
 </p>
+
+[% END %]
 
 [% END %]

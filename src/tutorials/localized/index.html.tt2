@@ -2,24 +2,29 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="french-intro"><a href="http://www.lea-linux.org/documentations/index.php/Dev-perl">French Intro to Perl</a></h2>
+[% WRAPPER h2_section href = "http://www.lea-linux.org/documentations/index.php/Dev-perl" id = "french-intro" title = "French Intro to Perl" %]
 
 <p>
 An introduction to Perl in the French language.
 </p>
 
-<h2 id="perl-heb-tut"><a href="http://www.shmuelfomberg.com/perlhebtut/">Hebrew Perl Tutorial</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://www.shmuelfomberg.com/perlhebtut/" id = "perl-heb-tut" title = "Hebrew Perl Tutorial" %]
 
 <p>
 A Tutorial for Perl in Hebrew written by Shmuel Fomberg.
 </p>
 
-<h2 id="perl-tut-hub"><a href="http://perl-tutorial.org/">The Perl Tutorial
-Hub</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://perl-tutorial.org/" id = "perl-tut-hub" title = "The Perl Tutorial Hub" %]
 
 <p>
 Contains links to recommended tutorials, some of which are available in some
 non-English human languages.
 </p>
+
+[% END %]
 
 [% END %]

@@ -2,19 +2,18 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2>Perl Training</h2>
-
 <p>
 If you are not very auto-didactic, you may wish to take some courses at
 a Perl training provider.
 </p>
 
-<h2 id="perltraining.org"><a href="http://perltraining.org/">The Perl
-Training Directory</a></h2>
+[% WRAPPER h2_section href = "http://perltraining.org/" id = "perltraining.org" title = "The Perl Training Directory" %]
 
 <p>
 A comprehensive directory of training providers, maintained by
 <a href="http://www.szabgab.com/">Gabor Szabo</a>.
 </p>
+
+[% END %]
 
 [% END %]

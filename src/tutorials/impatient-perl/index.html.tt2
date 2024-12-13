@@ -15,6 +15,8 @@ Impatient Perl is meant as a quick introduction to Perl, preferably to people
 who are already familiar with similar languages.
 </p>
 
-<h2><a href="iperl.html">Access the Online Text</a></h2>
+[% WRAPPER h2_section href = "iperl.html" id = "online-html" title = "Access the Online Text" %]
+
+[% END %]
 
 [% END %]
