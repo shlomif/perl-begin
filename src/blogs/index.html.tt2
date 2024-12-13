@@ -1,5 +1,8 @@
 [%- SET title = "Links to Perl Blogs" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
 [% WRAPPER h2_section href = "http://perlweekly.com/" id = "perl_weekly" title = "Perl Weekly" %]
