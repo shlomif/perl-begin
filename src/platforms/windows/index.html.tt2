@@ -10,9 +10,9 @@ of the box. Most Perl code written by people who know what they are doing
 will be like that, and this is the case for most CPAN Perl modules as well.
 </p>
 
-<h2 id="resources">Resources</h2>
+[% WRAPPER h2_section id = "resources" title = "Resources" %]
 
-<h3 id="web-sites">Web Sites</h3>
+[% WRAPPER h3_section id = "web-sites" title = "Web Sites" %]
 
 <ul>
 <li>
@@ -21,7 +21,9 @@ Portal</a>.
 </li>
 </ul>
 
-<h3 id="strawberry-perl">Strawberry Perl</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "strawberry-perl" title = "Strawberry Perl" %]
 
 <p>
 <a href="http://strawberryperl.com/">Strawberry Perl</a> is an open-source,
@@ -41,9 +43,12 @@ as of March 2014, DWIM Perl for Windows was last updated only for
 perl 5.14.2, which is now discontinued by the upstream perl 5 maintainers,
 and so its use is not recommended until it will be updated again.
 </p>
+
 [% END %]
 
-<h3 id="mailing-lists">Mailing Lists</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "mailing-lists" title = "Mailing Lists" %]
 
 <p>
 ActiveState has <a
@@ -53,5 +58,9 @@ effectively answered in beginners mailing lists as well. However, this
 mailing list may also prove to be helpful when dealing with Win32-specific Perl
 extensions.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% END %]

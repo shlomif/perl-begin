@@ -23,9 +23,9 @@ downloading the latest Perl source from
 the <code>INSTALL</code> file.
 </p>
 
-<h2 id="tips">Tips</h2>
+[% WRAPPER h2_section id = "tips" title = "Tips" %]
 
-<h3 id="perldoc">Setting up a local Perldoc</h3>
+[% WRAPPER h3_section id = "perldoc" title = "Setting up a local Perldoc" %]
 
 <p>
 The [%- WRAPPER pdoc d = "perldoc" -%][%- END -%]
@@ -51,5 +51,9 @@ Alternatively one can access the <a href="http://perldoc.perl.org/">online
 perl documentation</a>, which may deviate from what you have.
 </li>
 </ol>
+
+[% END %]
+
+[% END %]
 
 [% END %]

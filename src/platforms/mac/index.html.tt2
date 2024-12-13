@@ -9,7 +9,7 @@ which I never worked with. Mac OS X is still highly recommended from the
 aspect of running Perl or otherwise.
 </p>
 
-<h2 id="system_perl">Note! Do not use the system perl!</h2>
+[% WRAPPER h2_section id = "system_perl" title = "Note! Do not use the system perl!" %]
 
 <p>
 It is important not to use the system perl on Mac OS X, because messing
@@ -17,5 +17,7 @@ with it can break your system in subtle ways. Instead, install
 a version of perl from sources
 using <a href="http://perlbrew.pl/">perlbrew</a>.
 </p>
+
+[% END %]
 
 [% END %]
