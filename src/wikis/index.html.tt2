@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="note">Note</h2>
+[% WRAPPER h2_section id = "note" title = "Note" %]
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Wiki">A wiki</a> is a site that the main
@@ -12,25 +12,32 @@ and correction. Perl wikis can provide useful resources of information for
 Perl beginners and other people interested in Perl.
 </p>
 
+[% END %]
+
 <toc />
 
-<h2 id="central">Central Perl Wikis</h2>
+[% WRAPPER h2_section id = "central" title = "Central Perl Wikis" %]
 
 <ul>
 
 <li>
+<p>
 <a href="http://www.perlfoundation.org/perl5/index.cgi">The Perl 5 Wiki</a> -
 the Official Wiki for Perl 5.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://perl.net.au/">perl.net.au - Wiki for Perl
 from Perl Australia</a> - a MediaWiki-based Wiki from Perl Australia. See
 <a href="http://perl.net.au/wiki/New_to_Perl">its resources for
 Beginners</a>.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://en.wikipedia.org/wiki/Perl">Perl at the
 English Wikipedia</a> - The wikipedia is a multi-lingual world-editable
 encyclopaedia. The Perl Page contains links to other pages inside the wikipedia
@@ -38,56 +45,79 @@ about Perl.<br />
 
 <ul>
 <li>
+<p>
 <a href="http://en.wikipedia.org/wiki/Category:Perl">Wikipedia's Perl
 category</a> - a category of Perl-related Wikipedia articles with several
 sub-categories.
+</p>
 </li>
 </ul>
 
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://en.wikibooks.org/wiki/Programming:Perl">"Programming Perl" in
 the wikibooks</a> - a Book about Perl programming in the Wikibooks project.
+</p>
 </li>
 
 </ul>
 
 [% INCLUDE rosetta_code %]
 
-<h2 id="specialised">Wikis on Specialised Topics</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "specialised" title = "Wikis on Specialised Topics" %]
 
 <ul>
 <li>
+<p>
 <a href="http://win32.perl.org/wiki/index.php?title=Main_Page">Win32 Perl
 Wiki</a> - a Wiki for Perl on Microsoft Windows.
+</p>
 </li>
 <li>
+<p>
 <a href="http://perl-qa.yi.org/">The Perl QA Wiki</a> - wiki about QA (Quality
 Assurance or testing) of Perl and with Perl.
+</p>
 </li>
 </ul>
 
-<h2 id="local-groups">Local Perl Groups' Wikis</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "local-groups" title = "Local Perl Groups' Wikis" %]
 
 <ul>
 <li>
+<p>
 <a href="http://wiki.perl.org.il/">Israeli Perl Mongers Wiki</a>. Also see
 <a href="http://wiki.osdc.org.il/">the wiki for the OSDC::Israel
 conference</a>.
+</p>
 </li>
 <li>
+<p>
 <a href="http://pdx.pm.org/kwiki/">Portland Perl Mongers Wiki</a>.
+</p>
 </li>
 </ul>
 
-<h2 id="more-lists">More lists of Wikis</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "more-lists" title = "More lists of Wikis" %]
 
 <ul>
 <li>
+<p>
 <a href="http://perl.net.au/wiki/List_of_all_known_Perl_Wikis">List
 of all Known Perl Wikis</a>
+</p>
 </li>
 </ul>
+
+[% END %]
 
 [% END %]
