@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="what-is-irc">What is the IRC?</h2>
+[% WRAPPER h2_section id = "what-is-irc" title = "What is the IRC?" %]
 
 <p>
 IRC stands for <b>Internet Relay Chat</b>, and is a protocol for chatting
@@ -36,7 +36,9 @@ that some networks are not recommended for asking Perl questions on, due to
 the treatment of beginner question, or general unfriendliness.
 </p>
 
-<h2 id="links">Links for More Information</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "links" title = "Links for More Information" %]
 
 <ul>
 
@@ -57,10 +59,12 @@ List/Comparison of IRC Clients</a>
 
 </ul>
 
+[% END %]
+
 [% SET freenode_url = "http://freenode.net/", freenode_name = "Freenode" , webchat = "https://webchat.freenode.net/" %]
 [% SET freenode_url = "https://libera.chat/", freenode_name = "Libera Chat" , webchat = "https://web.libera.chat/" %]
 
-<h2 id="freenode"><a href="[% freenode_url %]">[% freenode_name %]</a></h2>
+[% WRAPPER h2_section href = "${freenode_url}" id = "freenode" title = "${freenode_name}" %]
 
 <p>
 This is most probably the best network for getting help in Perl and
@@ -76,13 +80,17 @@ Check out the [% irc_channel( chan=>"perl", net=>"freenode" )%] channel
 [% freenode_name %] has a <a href="[% webchat %]">web-based interface</a>.
 </p>
 
-<h2 id="oftc"><a href="http://www.oftc.net/">OFTC</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://www.oftc.net/" id = "oftc" title = "OFTC" %]
 
 <p>
-The channel [% irc_channel( chan=>"perl", net=>"oftc" )%] accepts beginner questions.
+The channel [% irc_channel( chan=>"perl", net=>"oftc" ) %] accepts beginner questions.
 </p>
 
-<h2 id="irc.perl.org">What about irc.perl.org?</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "irc.perl.org" title = "What about irc.perl.org?" %]
 
 <p>
 For completeness sake, we should mention the
@@ -99,5 +107,7 @@ Once you have become more experienced with Perl, and wish to contribute
 to Perl-related projects, you can gather up the courage to visit
 irc.perl.org and make use of it.
 </p>
+
+[% END %]
 
 [% END %]
