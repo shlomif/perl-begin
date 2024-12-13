@@ -1,10 +1,13 @@
 [%- SET title = "Mailing Lists" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
 <toc />
 
-<h2 id="overview">Overview</h2>
+[% WRAPPER h2_section id = "overview" title = "Overview" %]
 
 <p>
 An <a href="http://en.wikipedia.org/wiki/Electronic_mailing_list">electronic
@@ -20,22 +23,27 @@ Otherwise, you may consider joining one of the mailing lists listed here,
 which have a more international focus.
 </p>
 
-<h2 id="beginners-mailing-lists">Perl Beginners Mailing Lists</h2>
+[% END %]
 
-<h3 id="learn-perl-org"><a href="http://learn.perl.org/faq/beginners.html">perl.org’s Beginners Mailing List</a></h3>
+[% WRAPPER h2_section id = "beginners-mailing-lists" title = "Perl Beginners Mailing Lists" %]
+
+[% WRAPPER h3_section href = "http://learn.perl.org/faq/beginners.html" id = "learn-perl-org" title = "perl.org’s Beginners Mailing List" %]
 
 <p>
 A mailing lists for beginners. Moderate volume.
 </p>
 
-<h3 id="yahoogroups-perl-beginner"><a href="http://groups.yahoo.com/group/perl-beginner/">Yahoo Groups Perl-Beginner Mailing List</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://groups.yahoo.com/group/perl-beginner/" id = "yahoogroups-perl-beginner" title = "Yahoo Groups Perl-Beginner Mailing List" %]
 
 <p>
 An international mailing list for beginners in English.
 </p>
 
+[% END %]
 
-<h3 id="spanish-mailing-list"><a href="http://tlali.iztacala.unam.mx/mailman/listinfo/perl">Spanish-Speaking Mailing List</a></h3>
+[% WRAPPER h3_section href = "http://tlali.iztacala.unam.mx/mailman/listinfo/perl" id = "spanish-mailing-list" title = "Spanish-Speaking Mailing List" %]
 
 <p>
 This mailing list has many beginners and several gurus that can help them.
@@ -44,7 +52,11 @@ talks (which beginners may be able to benefit from). The discussions are held
 in Spanish.
 </p>
 
-<h2 id="perl_mongers">Perl Mongers Mailing Lists</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "perl_mongers" title = "Perl Mongers Mailing Lists" %]
 
 <p>
 You can try to subscribe to a local Perl Mongers mailing list as
@@ -62,18 +74,20 @@ Perl Mongers groups also often host or organise meetups, workshops
 even more about Perl.
 </p>
 
-<h2 id="resources">Resources of Interest</h2>
+[% END %]
 
-<h3 id="perl-5-wiki-list"><a href="http://www.perlfoundation.org/perl5/index.cgi?mailing_lists">List
-of Mailing Lists on the Perl 5 Wiki</a></h3>
+[% WRAPPER h2_section id = "resources" title = "Resources of Interest" %]
+
+[% WRAPPER h3_section href = "http://www.perlfoundation.org/perl5/index.cgi?mailing_lists" id = "perl-5-wiki-list" title = "List of Mailing Lists on the Perl 5 Wiki" %]
 
 <p>
 A comprehensive list of the Perl mailing lists, that is under active
 work.
 </p>
 
-<h3 id="perl-mailing-list-db"><a href="http://lists.cpan.org/" rel="nofollow">The
-Perl Mailing List Database</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://lists.cpan.org/" id = "perl-mailing-list-db" title = "The Perl Mailing List Database" %]
 
 <p>
 An out-of-date list of the Perl mailing lists worldwide. Some of them are
@@ -81,26 +95,36 @@ for specific Perl technologies and not directly related to "core" or
 "general use" Perl functionality.
 </p>
 
-<h3 id="yahoogroups-list"><a href="http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1">Yahoo Groups Perl Lists</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "http://dir.groups.yahoo.com/dir/Computers___Internet/Programming_Languages/Perl?show_groups=1" id = "yahoogroups-list" title = "Yahoo Groups Perl Lists" %]
 
 <p>
 Many international Perl groups on many topics. Including some on very
 specific Perl technologies.
 </p>
 
-<h3 id="insert-your-own">Insert your Mailing List Here</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "insert-your-own" title = "Insert your Mailing List Here" %]
 
 <p>
 Do you have a Perl mailing list for beginners? If not, do you wish to
 start one? Let us know and we'll link to it from here. The more the better.
 </p>
 
-<h3 id="perl-begin-mailing-list">Our Own Mailing List</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "perl-begin-mailing-list" title = "Our Own Mailing List" %]
 
 <p>
 We used to have our own mailing list for beginners, but it did not prove
 popular and now <a href="#learn-perl-org">the perl.org mailing list</a>
 is preferable.
 </p>
+
+[% END %]
+
+[% END %]
 
 [% END %]
