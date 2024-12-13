@@ -2,20 +2,24 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="tutorial"><a href="[% base_path %]tutorials/perl-for-newbies/">A
-Local Tutorial</a></h2>
+[% WRAPPER h2_section href = "${base_path}tutorials/perl-for-newbies/" id = "tutorial" title = "A Local Tutorial" %]
 
 <p>
 A local introductory tutorial that you can read on this site.
 </p>
 
 [% BLOCK old_wiki_link %]
-<h2 id="wiki"><a href="<wiki_link />">Wiki</a></h2>
+
+[% WRAPPER h2_section href = "<wiki_link />" id = "wiki" title = "Wiki" %]
 
 <p>
 This is a portion of the site in which anyone can edit any page. It aims
 to eventually become a good reference for Perl beginners.
 </p>
+[% END %]
+
+[% END %]
+
 [% END %]
 
 [% END %]

@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="testimonials">Testimonials</h2>
+[% WRAPPER h2_section id = "testimonials" title = "Testimonials" %]
 
 <ul>
 
@@ -61,9 +61,11 @@ achievement)… Perl contributed significantly to the project.</q>
 
 </ul>
 
-<h2 id="companies-and-projects">Companies and Projects</h2>
+[% END %]
 
-<h3 id="web-companies">Web Companies</h3>
+[% WRAPPER h2_section id = "companies-and-projects" title = "Companies and Projects" %]
+
+[% WRAPPER h3_section id = "web-companies" title = "Web Companies" %]
 
 <ul>
 <li>
@@ -80,7 +82,9 @@ achievement)… Perl contributed significantly to the project.</q>
 </li>
 </ul>
 
-<h3 id="software">Software</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "software" title = "Software" %]
 
 <ul>
 <li>
@@ -93,5 +97,9 @@ achievement)… Perl contributed significantly to the project.</q>
 <a href="http://www.frozen-bubble.org/">Frozen Bubble</a>
 </li>
 </ul>
+
+[% END %]
+
+[% END %]
 
 [% END %]

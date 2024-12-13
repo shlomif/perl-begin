@@ -2,7 +2,7 @@
 [%- PROCESS "blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 A lot of people have been wondering about the relationship between the
@@ -12,7 +12,9 @@ under development language known as "Perl 6". In order to avoid confusion,
 this page would like to clarify the situation.
 </p>
 
-<h2 id="different">Perl 6 is different from Perl 5</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "different" title = "Perl 6 is different from Perl 5" %]
 
 <p>
 Perl 6 is a completely different language from Perl 5, and also incompatible.
@@ -20,8 +22,9 @@ To some extent, the Perl 6 community of developers is different than that of
 Perl 5. Perl 6 is not meant to displace Perl 5.
 </p>
 
-<h2 id="perl5_not_going_away">Perl 5 (the language) and
-perl 5 (the implementation) are not going away</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "perl5_not_going_away" title = "Perl 5 (the language) and perl 5 (the implementation) are not going away" %]
 
 <p>
 The perl 5 implementation is still under constant development, and is
@@ -34,7 +37,9 @@ improvements (and incompatible with Perl 5). It is assumed that Perl 5 will
 be used, improved and supported for many years to come.
 </p>
 
-<h2 id="positive_influence">Perl 6 has positively influenced Perl 5</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "positive_influence" title = "Perl 6 has positively influenced Perl 5" %]
 
 <p>
 Perl 6 features have proved to be a useful inspiration for recent Perl 5
@@ -50,7 +55,9 @@ Myths" presentation</a> that while some people think that "Perl 6 is killing
 Perl 5", it has in fact saved it and advanced it.
 </p>
 
-<h2 id="is_perl_6_still_perl">Is Perl 6 Still Perl?</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "is_perl_6_still_perl" title = "Is Perl 6 Still Perl?" %]
 
 <p>
 That depends on who you ask. Some people feel that Perl 6 is so radically
@@ -64,7 +71,9 @@ not, because it is already called Perl 6 and either people will like it as
 such or not, regardless of the name.
 </p>
 
-<h2 id="how_to_learn_perl_6">How do I learn Perl 6?</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "how_to_learn_perl_6" title = "How do I learn Perl 6?" %]
 
 <p>
 The focus of Perl-Begin.org is about Perl 5. To learn Perl 6, you may wish
@@ -96,7 +105,9 @@ to consider these resources:
 
 </ol>
 
-<h2 id="more">More Information And Opinions</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "more" title = "More Information And Opinions" %]
 
 <p>
 For more information about this topic, see:
@@ -118,5 +129,7 @@ For more information about this topic, see:
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]

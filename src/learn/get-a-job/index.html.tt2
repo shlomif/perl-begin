@@ -40,9 +40,9 @@ used by such very large, very busy, sites as
 smaller sites. Furthermore, it often plays a large part behind the scenes.
 </p>
 
-<h2 id="we-need-you">We need you!</h2>
+[% WRAPPER h2_section id = "we-need-you" title = "We need you!" %]
 
-<h3 id="get-a-job">Get a job.</h3>
+[% WRAPPER h3_section id = "get-a-job" title = "Get a job." %]
 
 <p>
 There are plenty of jobs there looking for good Perl developers. You can find
@@ -63,7 +63,9 @@ sites</a>
 </li>
 </ul>
 
-<h3 id="learn-perl-now">Learn Perl</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "learn-perl-now" title = "Learn Perl" %]
 
 <p>
 Are you already a programmer, and you now need to learn Perl? Do you have
@@ -87,7 +89,11 @@ or buy <a href="[% base_path %]books/">a different book</a>. Then browse
 <a href="[% base_path %]">the rest of the site</a>.
 </p>
 
-<h2 id="what_can_be_done">What can I do with Perl?</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "what_can_be_done" title = "What can I do with Perl?" %]
 
 <p>
 Almost anything. Traditionally, Perl has been used for writing
@@ -117,5 +123,7 @@ Many other uses were later found for Perl: writing network servers, GUI
 programs, <a href="[% base_path %]uses/bio-info/">Bio-informatics</a>, <a
 href="[% base_path %]uses/qa/">Quality Assurance and Testing</a>, and web automation.
 </p>
+
+[% END %]
 
 [% END %]
