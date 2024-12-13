@@ -1,8 +1,11 @@
 [%- SET title = "Web Forums" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
-<h2 id="stackoverflow"><a href="http://stackoverflow.com/">Stack Overflow</a></h2>
+[% WRAPPER h2_section href = "http://stackoverflow.com/" id = "stackoverflow" title = "Stack Overflow" %]
 
 <p>
 A free-of-charge and high-quality Questions and Answers board which allows
@@ -12,7 +15,9 @@ people's questions. There's an active
 category</a> there.
 </p>
 
-<h2 id="perlmonks"><a href="http://www.perlmonks.org/">Perl Monks</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://www.perlmonks.org/" id = "perlmonks" title = "Perl Monks" %]
 
 <p>
 The premier web forum for Perl people. It's in English, and offers
@@ -22,7 +27,9 @@ there so make sure to have a thick skin when asking there and not to
 be insulted.
 </p>
 
-<h2 id="reddit_r_perl"><a href="http://www.reddit.com/r/perl/">Reddit’s /r/perl subreddit</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://www.reddit.com/r/perl/" id = "reddit_r_perl" title = "Reddit’s /r/perl subreddit" %]
 
 <p>
 Reddit is a quality and popular web-based system of forums - like a more
@@ -36,7 +43,9 @@ While most beginner questions can and should be posted to Stack Overflow,
 reddit.com and its sub forums are useful for general discussion and news.
 </p>
 
-<h2 id="openstudy"><a href="[% openstudy_group_url %]">Perl for Beginners Study Group on OpenStudy</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = openstudy_group_url id = "openstudy" title = "Perl for Beginners Study Group on OpenStudy" %]
 
 [% PROCESS openstudy_button %]
 
@@ -45,9 +54,11 @@ A study group for Perl beginners over at OpenStudy.com ("Make the world
 your study group.").
 </p>
 
-[%IF 0%]
+[% END %]
 
-<h2 id="use_perl"><a href="http://use.perl.org/">use Perl; (use.perl.org)</a></h2>
+[% IF 0 %]
+
+[% WRAPPER h2_section href = "http://use.perl.org/" id = "use_perl" title = "use Perl; (use.perl.org)" %]
 
 <p>
 A News site and a central blogs site for the Perl community. Uses the same
@@ -55,15 +66,17 @@ Perl-based and open-source engine as Slashdot, but tends to be much more
 civil. Complete archive of all past discussions is available.
 </p>
 
-<h2 id="sitepoint"><a href="http://www.sitepoint.com/forums/forumdisplay.php?f=36">SitePoint's
-"Perl, Python and Other Languages"' Forum</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://www.sitepoint.com/forums/forumdisplay.php?f=36" id = "sitepoint" title = "SitePoint's “Perl, Python and Other Languages” Forum" %]
 
 <p>
 A forum for Perl web-development.
 </p>
 
-<h2 id="livejournal"><a href="http://community.livejournal.com/perl/">The Perl Community on
-LiveJournal</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "http://community.livejournal.com/perl/" id = "livejournal" title = "The Perl Community on LiveJournal" %]
 
 <p>
 A low-volume forum, but one that attracted many experts,
@@ -72,18 +85,24 @@ and can offer a lot of good advice.
 
 [% END %]
 
-<h2 id="localised">Localised Forums</h2>
+[% END %]
 
-<h3 id="hebrew"><a href="http://www.whatsup.org.il/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=23">Whatsup’s Hebrew Programming Forum</a></h3>
+[% WRAPPER h2_section id = "localised" title = "Localised Forums" %]
+
+[% WRAPPER h3_section href = "http://www.whatsup.org.il/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=23" id = "hebrew" title = "Whatsup’s Hebrew Programming Forum" %]
 
 <p>
 A forum in Hebrew hosted on the
 <a href="http://www.whatsup.org.il/">Whatsup.org.il Israeli Linux Portal</a>.
 </p>
 
-<h2 id="what_to_avoid">What to Avoid</h2>
+[% END %]
 
-<h3 id="facebook">The Facebook Perl Forums</h3>
+[% END %]
+
+[% WRAPPER h2_section id = "what_to_avoid" title = "What to Avoid" %]
+
+[% WRAPPER h3_section id = "facebook" title = "The Facebook Perl Forums" %]
 
 <p>
 The Facebook’s forums system is intended for casual talk and correspondence,
@@ -92,5 +111,9 @@ display. Use a <a href="[% base_path %]mailing-lists/">mailing list</a> or a bet
 web forum to get help, or alternatively
 try asking on <a href="[% base_path %]irc/">IRC (Chat)</a>
 </p>
+
+[% END %]
+
+[% END %]
 
 [% END %]
