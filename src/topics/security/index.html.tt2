@@ -3,7 +3,7 @@
 [%- PROCESS "tut_blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 Some resources for writing more secure Perl code.
@@ -24,5 +24,7 @@ Some resources for writing more secure Perl code.
 </li>
 
 </ol>
+
+[% END %]
 
 [% END %]
