@@ -8,33 +8,60 @@ cover some of the more common uses and explain how to get started with
 using Perl for them.
 </p>
 
-<h2 id="bio-info"><a href="bio-info/">Bio-Informatics</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/bio-info/" id = "bio-info" title = "Bio-Informatics" %]
 
-<h2 id="databases"><a href="databases/">Databases</a></h2>
+[% END %]
 
-<h2 id="email"><a href="email/">E-mail Handling with Perl</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/databases/" id = "databases" title = "Databases" %]
 
-<h2 id="games"><a href="games/">Games and Multimedia</a></h2>
+[% END %]
 
-<h2 id="gui"><a href="GUI/">GUI (Graphical User Interface) Development</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/email/" id = "email" title = "E-mail Handling with Perl" %]
 
-<h2 id="networking"><a href="multitasking/">Multi-tasking and Networking</a></h2>
+[% END %]
 
-<h2 id="qa"><a href="qa/">Quality Assurance (QA) and Testing</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/games/" id = "games" title = "Games and Multimedia" %]
 
-<h2 id="remote-login"><a href="remote-login-and-commands/">Telnet/SSH (Remote login and command
-execution)</a></h2>
+[% END %]
 
-<h2 id="sys-admin"><a href="sys-admin/">System Administration</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/GUI/" id = "gui" title = "GUI (Graphical User Interface) Development" %]
 
-<h2 id="text-gen"><a href="text-generation/">Text Generation</a></h2>
+[% END %]
 
-<h2 id="text-parse"><a href="text-parsing/">Text Parsing</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/multitasking/" id = "networking" title = "Multi-tasking and Networking" %]
 
-<h2 id="web-automation"><a href="web-automation/">Web Automation</a></h2>
+[% END %]
 
-<h2 id="web"><a href="web/">Web and CGI Programming</a></h2>
+[% WRAPPER h2_section href = "${base_path}uses/qa/" id = "qa" title = "Quality Assurance (QA) and Testing" %]
 
-<h2 id="xml"><a href="xml/">XML Manipulation</a></h2>
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/remote-login-and-commands/" id = "remote-login" title = "Telnet/SSH (Remote login and command execution)" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/sys-admin/" id = "sys-admin" title = "System Administration" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/text-generation/" id = "text-gen" title = "Text Generation" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/text-parsing/" id = "text-parse" title = "Text Parsing" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/web-automation/" id = "web-automation" title = "Web Automation" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/web/" id = "web" title = "Web and CGI Programming" %]
+
+[% END %]
+
+[% WRAPPER h2_section href = "${base_path}uses/xml/" id = "xml" title = "XML Manipulation" %]
+
+[% END %]
 
 [% END %]
