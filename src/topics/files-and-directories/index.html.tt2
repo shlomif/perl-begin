@@ -16,8 +16,7 @@ aim to facilitate the task even further.
 
 <toc />
 
-
-<h2 id="basics">The Basics</h2>
+[% WRAPPER h2_section id = "basics" title = "The Basics" %]
 
 <p>
 For the basics, read about the open function (on
@@ -31,7 +30,9 @@ are also many UNIX-oriented file-system-builtins listed on [% WRAPPER pdoc d = "
 
 [% INCLUDE files_and_directories_modules %]
 
-<h2 id="examples">Examples</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "examples" title = "Examples" %]
 
 <p>
 These are a set of examples for manipulating files and directories using Perl.
@@ -46,5 +47,7 @@ using core modules, and if relevant ones from the command line.
 </script>
 
 [% files_and_dirs() %]
+
+[% END %]
 
 [% END %]
