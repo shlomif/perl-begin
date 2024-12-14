@@ -3,7 +3,7 @@
 [%- PROCESS "tut_blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 <b>Hashes</b> (also known as "associative arrays", or in other languages
@@ -12,10 +12,11 @@ arbitrary values. Perl has a convenient syntax to support hashes as first
 order data structures.
 </p>
 
-<h2 id="tutorials">Tutorials</h2>
+[% END %]
 
-<h3 id="hash-cookbook"><a href="The_Hash_Cookbook.odp">The
-Hash Cookbook</a></h3>
+[% WRAPPER h2_section id = "tutorials" title = "Tutorials" %]
+
+[% WRAPPER h3_section href = "The_Hash_Cookbook.odp" id = "hash-cookbook" title = "The Hash Cookbook" %]
 
 <p>
 This is a presentation (in OpenDocument format) about hashes by "Jerusalem
@@ -48,5 +49,9 @@ The second talk in the series discusses hashes.
 </p>
 
 [%- END -%]
+
+[% END %]
+
+[% END %]
 
 [% END %]
