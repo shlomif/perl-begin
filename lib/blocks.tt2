@@ -254,13 +254,13 @@ title="Study group for Perl Beginners: ask questions, get answers and share stud
 </div>
 <div id="page-container">
 <h3 class="hide">Main Navigation</h3>
-<div id="left-sidebar">
+<nav id="left-sidebar">
 [% nav_menu_html %]
 <object data=
 "https://duckduckgo.com/search.html?width=100&amp;site=perl-begin.org&amp;prefill=Search%20DuckDuckGo"
 type="text/html"
 style="overflow:hidden;margin:0;padding:0;width:160px;height:40px"
-></object></div>
+></object></nav>
 <h3 class="hide">Content</h3>
 <main[% main_class.as_html() %] id="content">
 <h1>[% title %]</h1>
