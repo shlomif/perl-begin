@@ -206,7 +206,7 @@ LINKS:
     );
     $vars->{slurp_bad_elems} = sub {
         return path("lib/docbook/5/rendered/bad-elements.xhtml")->slurp_utf8()
-            =~ s{\$\(ROOT\)}{$base_path}gr;
+            =~ s{\$\(ROOT\)/?}{$base_path}gr;
     };
     my $html = '';
     $template->process( "$src_dir/$input_tt2_page_path.tt2",

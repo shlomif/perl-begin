@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 2;
+use Test::More tests => 3;
 
 use XML::LibXML ();
 
@@ -23,3 +23,12 @@ is( $r->size(), 0, "No double backslash", );
 # TEST
 $r = $xpc->find( qq{//x:code[text() = "\\1"]}, $doc );
 ok( ( $r->size() >= 1 ), "right code elem", );
+
+$r = $xpc->find( qq{//x:a}, $doc );
+foreach my $el ( $r->get_nodelist )
+{
+    die if $el->getAttribute("href") =~ m#\A[\./]*//#ms;
+}
+
+# TEST
+pass("list end");
