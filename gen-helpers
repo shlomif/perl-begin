@@ -47,7 +47,7 @@ else
 {
     path("./dest")->mkpath();
     my $srcdir = path("$LATEMP_ROOT_SOURCE_DIR/lib/sass");
-    foreach my $x ( grep { $_->basename !~ /print/ }
+    foreach my $x ( grep { 1 or $_->basename !~ /print/ }
         $srcdir->children(qr#\.scss\z#) )
     {
         _run_cli_command(
