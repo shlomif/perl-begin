@@ -1,5 +1,8 @@
 [%- SET title = "Perl for XML Processing" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 [%- PROCESS "Inc/html-selector-xpath.tt2" -%]
 
@@ -10,9 +13,9 @@ various recommended modules from CPAN (= Comprehensive Perl Archive Network).
 
 <toc />
 
-<h2 id="technologies">Technologies of Interest</h2>
+[% WRAPPER h2_section id = "technologies" title = "Technologies of Interest" %]
 
-<h3 id="XML-LibXML">[% cpan.self_dist( "d" => "XML-LibXML", ) %]</h3>
+[% WRAPPER h3_section href = "https://metacpan.org/dist/XML-LibXML/" id = "XML-LibXML" title = "XML-LibXML" %]
 
 <p>
 XML-LibXML is the de-facto standard for XML processing in Perl. It's a
@@ -31,9 +34,9 @@ One note is that you should be aware of XML namespaces and how they interact
 with the DOM and the XML-LibXML API before using this library.
 </p>
 
-<div class="sub_section">
+[% END %]
 
-<h3 id="xpath">XPath</h3>
+[% WRAPPER h3_section id = "xpath" title = "XPath" %]
 
 <p>
 <a href="https://en.wikipedia.org/wiki/XPath">XPath</a> is an
@@ -72,9 +75,7 @@ To learn about XPath, consult the following resources:
 
 </ul>
 
-<div class="sub_section">
-
-<h4 id="custom_xpath_functions">Custom XPath Functions</h4>
+[% WRAPPER h4_section id = "custom_xpath_functions" title = "Custom XPath Functions" %]
 
 <p>
 XML::LibXML allows the programmer to register custom XPath functions, coded
@@ -82,13 +83,11 @@ in Perl, in order to help working with XPath. For more information, see
 [% cpan.self_mod( "m" => "XML::LibXML::XPathContext", ) %] .
 </p>
 
-</div>
+[% END %]
 
-</div>
+[% END %]
 
-<div class="sub_section">
-
-<h3 id="xslt">XSLT</h3>
+[% WRAPPER h3_section id = "xslt" title = "XSLT" %]
 
 <p>
 <a href="http://en.wikipedia.org/wiki/XSLT">XSLT</a> stands for
@@ -135,21 +134,25 @@ well.
 
 </ul>
 
-</div>
+[% END %]
 
-<h2 id="web-pages">Web Pages about Perl and XML</h2>
+[% END %]
 
-<h3 id="perl-xml-project"><a href="http://perl-xml.sourceforge.net/">The Perl XML Project
-Home Page</a></h3>
+[% WRAPPER h2_section id = "web-pages" title = "Web Pages about Perl and XML" %]
 
-<h4 id="perl-xml-faq"><a href="http://perl-xml.sourceforge.net/faq/">Their Frequently Asked
-Questions List (FAQ)</a></h4>
+[% WRAPPER h3_section href = "http://perl-xml.sourceforge.net/" id = "perl-xml-project" title = "The Perl XML Project Home Page" %]
 
-<h2 id="what-to-avoid">What to Avoid</h2>
+[% WRAPPER h4_section href = "http://perl-xml.sourceforge.net/faq/" id = "perl-xml-faq" title = "Their Frequently Asked Questions List (FAQ)" %]
 
-<div class="sub_section">
+[% END %]
 
-<h3 id="xml-simple">XML-Simple</h3>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "what-to-avoid" title = "What to Avoid" %]
+
+[% WRAPPER h3_section id = "xml-simple" title = "XML-Simple" %]
 
 <p>
 XML-Simple is not so simple when done properly and takes the wrong approach
@@ -157,7 +160,9 @@ to dealing with XML. Please avoid using it. Look at XML-LibXML for an easy
 and fast alternative.
 </p>
 
-<h3 id="parsing-xml-using-regexes">Parsing XML Using Regular Expressions</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "parsing-xml-using-regexes" title = "Parsing XML Using Regular Expressions" %]
 
 <p>
 You should also avoid parsing XML using regular expressions, because it
@@ -181,9 +186,11 @@ use a parser. For more information see:
 
 </ol>
 
-</div>
+[% END %]
 
-<h2 id="xml-grammars">Modules for Dealing with Specific Grammars</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "xml-grammars" title = "Modules for Dealing with Specific Grammars" %]
 
 <p>
 In addition to generic XML parsers and manipulators, there are many
@@ -214,5 +221,7 @@ manipulate OpenOffice.org-like ODF (OpenDocument format) files.
 </li>
 
 </ul>
+
+[% END %]
 
 [% END %]
