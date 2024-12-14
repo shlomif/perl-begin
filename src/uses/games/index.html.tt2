@@ -9,7 +9,7 @@ games, demos and other multimedia programs. And the good news is that they
 can do it with Perl.
 </p>
 
-<h2 id="sdl-perl"><a href="http://sdl.perl.org/">SDL Perl</a></h2>
+[% WRAPPER h2_section href = "http://sdl.perl.org/" id = "sdl-perl" title = "SDL Perl" %]
 
 <p>
 SDL Perl provides Perl bindings to the open-source and cross-platform
@@ -20,7 +20,7 @@ has been utilised in several Perl and many other non-Perl games, both
 open-source and commercial ones.
 </p>
 
-<h3 id="sdl-perl-resources">Resources for Learning about SDL-Perl</h3>
+[% WRAPPER h3_section id = "sdl-perl-resources" title = "Resources for Learning about SDL-Perl" %]
 
 <ul>
 
@@ -42,7 +42,9 @@ on CPAN</a>.
 
 </ul>
 
-<h3 id="sdl-perl-examples">Example Games and Applications</h3>
+[% END %]
+
+[% WRAPPER h3_section id = "sdl-perl-examples" title = "Example Games and Applications" %]
 
 <ul>
 
@@ -55,7 +57,11 @@ bubbles at the board in order to drop all bubbles.
 
 </ul>
 
-<h2 id="other-mediums">Other Mediums</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "other-mediums" title = "Other Mediums" %]
 
 <p>
 One can also prepare desktop games using standard GUI (Graphical User
@@ -68,5 +74,7 @@ Browser-based games are also an option (with some help from JavaScript
 and possibly AJAX) and you can see our <a href="[% base_path %]uses/web/">Perl
 web development page</a> for more information.
 </p>
+
+[% END %]
 
 [% END %]
