@@ -42,7 +42,7 @@ one. This page gives some resources for learning about hashes.
 
 [% END %]
 
-[% WRAPPER h3_section href = "${base_path}topics/modules-and-packages" id = "modules" title = "Modules and Packages" %]
+[% WRAPPER h3_section href = "${base_path}topics/modules-and-packages/" id = "modules" title = "Modules and Packages" %]
 
 <p>
 Encapsulate code in reusable units, and make sure symbols live in their own
