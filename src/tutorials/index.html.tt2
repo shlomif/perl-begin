@@ -34,6 +34,8 @@ checking the <a href="localized/">foreign languages page</a>
 An authoritative list of recommended tutorials. An <a href="http://www.perlfoundation.org/perl5/index.cgi?recommended_online_tutorials" id="perl5_wiki">older list</a> can be found on the Perl 5 Wiki.
 </p>
 
+[%- END -%]
+
 [%- WRAPPER perl_for_newbies_entry -%]
 
 <p>
@@ -56,8 +58,6 @@ started.
 </p>
 [%- END -%]
 [%- END -%]
-
-[% END %]
 
 [% WRAPPER h3_section href = "http://perldoc.perl.org/index-tutorials.html" id = "perldoc_tutorials" title = "The Perldoc Tutorials" %]
 
@@ -112,8 +112,6 @@ are also written in English. There are also
 for that</a>, some of which are freely available online.
 </p>
 
-<div class="sub_section">
-
 [% INCLUDE hyperpolyglot_php_perl_python_ruby %]
 
 [% WRAPPER h3_section href = "https://learnxinyminutes.com/docs/perl/" id = "learnxinyminutes" title = "Learn perl in Y minutes" %]
@@ -132,8 +130,6 @@ hand does not mention and cover <a href="[% base_path %]topics/cpan/">CPAN</a>,
 or Moose/Mouse/Moo and other modern ways for doing Perl object-oriented
 programming.
 </p>
-
-</div>
 
 [% END %]
 
@@ -169,6 +165,7 @@ introduce Perl for beginners.
 </p>
 
 [% SET include__broken_udemy_link = '' %]
+
 [% IF include__broken_udemy_link %]
 
 [% WRAPPER h3_section href = "http://ude.my/vryTdy" id = "beginner_perl_maven" title = "Beginner Perl Maven" %]
@@ -193,14 +190,14 @@ A Perl tutorial consisting of video and text by
 
 [% END %]
 
+[% END %]
+
 [% WRAPPER h3_section href = "http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries" id = "show_me_do" title = "ShowMeDo's “Introduction to Perl” series by Steven Devijver" %]
 
 <p>
 Several basic videos introducing Perl for beginners available on the
 <a href="http://showmedo.com/">ShowMeDo site</a>
 </p>
-
-[% END %]
 
 [% END %]
 
