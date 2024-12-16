@@ -3,7 +3,7 @@
 [%- PROCESS "tut_blocks.tt2" -%]
 [%- WRAPPER wrap_html -%]
 
-<h2 id="intro">Introduction</h2>
+[% WRAPPER h2_section id = "intro" title = "Introduction" %]
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented
@@ -22,7 +22,9 @@ object-oriented programming (because it is often an overkill), it does allow
 OOP when one needs and wants to.
 </p>
 
-<h2 id="moose">Moose</h2>
+[% END %]
+
+[% WRAPPER h2_section id = "moose" title = "Moose" %]
 
 <p>
 <a href="http://www.iinteractive.com/moose/"><b>Moose</b></a> is a post-modern
@@ -34,7 +36,7 @@ a lot of information about it including introductory talks, articles, and
 links.
 </p>
 
-<h3 id="Moo">Moo</h3>
+[% WRAPPER h3_section id = "Moo" title = "Moo" %]
 
 <p>
 <a href="https://metacpan.org/release/Moo"><b>Moo</b></a> is an object system
@@ -57,7 +59,11 @@ Moo provides the class building features of Moose but not the meta-programming
 instead of Moose.)
 </p>
 
-<h2 id="tutorials">Tutorials</h2>
+[% END %]
+
+[% END %]
+
+[% WRAPPER h2_section id = "tutorials" title = "Tutorials" %]
 
 [%- WRAPPER modern_perl_entry -%]
 
@@ -88,4 +94,7 @@ low level and how they work behind the scenes.
 
 [% # TODO : Add Modern Perl.
 %]
+
+[% END %]
+
 [% END %]
