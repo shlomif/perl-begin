@@ -8,25 +8,31 @@ when doing Perl development. They are mostly common to the particular task
 one is trying to achieve with Perl and its domain.
 </p>
 
-<h3 id="date-and-time"><a href="date-and-time/">Date and Time Handling</a></h3>
+[% WRAPPER h3_section href = "${base_path}topics/date-and-time/" id = "date-and-time" title = "Date and Time Handling" %]
 
 <p>
 Handling Dates and Times (parsing, formatting, manipulating, etc.) in Perl.
 </p>
 
-<h3 id="debug"><a href="debugging/">Debugging Perl Programs</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/debugging/" id = "debug" title = "Debugging Perl Programs" %]
 
 <p>
 When bugs occur, learn how to find their cause and correct them effectively.
 </p>
 
-<h3 id="files-and-dirs"><a href="files-and-directories/">Files and Directories Handling</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/files-and-directories/" id = "files-and-dirs" title = "Files and Directories Handling" %]
 
 <p>
 How to handle files and directories in Perl.
 </p>
 
-<h3 id="hashes"><a href="hashes/">Hashes</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/hashes/" id = "hashes" title = "Hashes" %]
 
 <p>
 Hashes (also known as “associative arrays”, “maps”, or “dictionaries”) are
@@ -34,14 +40,18 @@ one of Perl’s three fundamental data structures, and its least understood
 one. This page gives some resources for learning about hashes.
 </p>
 
-<h3 id="modules"><a href="modules-and-packages">Modules and Packages</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/modules-and-packages" id = "modules" title = "Modules and Packages" %]
 
 <p>
 Encapsulate code in reusable units, and make sure symbols live in their own
 namespaces. The precursor for <a href="#oop">Object-Oriented Programming</a>.
 </p>
 
-<h3 id="references"><a href="references/">References</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/references/" id = "references" title = "References" %]
 
 <p>
 References allow the programmer to store an aggregate data structure in a
@@ -49,27 +59,35 @@ simple variable, which can be passed around more easily, to represent complex,
 nested data structures, and also serve as the basis of Perl's object system.
 </p>
 
-<h3 id="regexps"><a href="regular-expressions/">Regular Expressions</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/regular-expressions/" id = "regexps" title = "Regular Expressions" %]
 
 <p>
 Regular expressions enable one to match simple or complex patterns in text
 , extract them, and process them.
 </p>
 
-<h3 id="oop"><a href="object-oriented/">Object-Oriented Programming (OOP) in Perl</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/object-oriented/" id = "oop" title = "Object-Oriented Programming (OOP) in Perl" %]
 
 <p>
 Learn about how to write classes, objects, and other concepts of
 Object-Oriented Programming in Perl.
 </p>
 
-<h3 id="optimise"><a href="optimising-and-profiling/">Optimising and Profiling</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/optimising-and-profiling/" id = "optimise" title = "Optimising and Profiling" %]
 
 <p>
 How to make your Perl programs run faster.
 </p>
 
-<h3 id="scoping"><a href="scoping/">Scoping and Variables in Perl</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/scoping/" id = "scoping" title = "Scoping and Variables in Perl" %]
 
 <p>
 Scoping is Perl's way of making sure variables are localised and don't
@@ -77,12 +95,16 @@ interfere with variables of the same name in different places (or alternatively,
 are not confused with different variables of similar names).
 </p>
 
-<h3 id="cpan"><a href="cpan/">Using CPAN with Perl</a></h3>
+[% END %]
+
+[% WRAPPER h3_section href = "${base_path}topics/cpan/" id = "cpan" title = "Using CPAN with Perl" %]
 
 <p>
 CPAN is the Comprehensive Perl Archive Network, which contains a wealth
 of open-source and reusable source code, that can be used in your applications.
 Follow the link to learn how to effectively use CPAN.
 </p>
+
+[% END %]
 
 [% END %]
