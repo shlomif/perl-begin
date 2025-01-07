@@ -1,5 +1,11 @@
-function _toggle_nav_control__is_on() {
+function _toggle_nav_control__get_button() {
     const elem = $("#toggle_nav_control");
+
+    return elem;
+}
+
+function _toggle_nav_control__is_on() {
+    const elem = _toggle_nav_control__get_button();
 
     return (!(elem.hasClass("off")));
 }
@@ -7,7 +13,7 @@ function _toggle_nav_control__is_on() {
 const _toggle_nav_control__localStorage_key = "toggle_nav_state";
 
 function toggle_nav_control() {
-    const elem = $("#toggle_nav_control");
+    const elem = _toggle_nav_control__get_button();
 
     let newtext;
     let newval;
