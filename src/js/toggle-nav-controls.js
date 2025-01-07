@@ -9,15 +9,17 @@ const _toggle_nav_control__localStorage_key = "toggle_nav_state";
 function toggle_nav_control() {
     const elem = $("#toggle_nav_control");
 
+    let newtext;
     let newval;
     if (!_toggle_nav_control__is_on()) {
-        elem.text("Hide Navigation Controls");
+        newtext = "Hide Navigation Controls";
         newval = "on";
     }
     else {
-        elem.text("Show Navigation Controls");
+        newtext = "Show Navigation Controls";
         newval = "off";
     }
+    elem.text(newtext);
     localStorage.setItem(_toggle_nav_control__localStorage_key, newval);
     $(".page-nav-bar, .bread").toggleClass("vis");
     elem.toggleClass("off");
