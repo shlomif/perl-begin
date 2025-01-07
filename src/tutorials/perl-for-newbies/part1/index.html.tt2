@@ -1,1 +1,1 @@
-[% PROCESS "perl-for-newbies.tt2" idx="1" %]
+[% PROCESS "perl-for-newbies.tt2" idx = "1" %]
