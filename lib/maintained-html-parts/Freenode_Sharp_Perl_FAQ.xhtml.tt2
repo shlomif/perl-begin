@@ -173,7 +173,7 @@ Whenever someone helps you then:
 </ol>
 </li>
 <li>
-<p>When addressing a channel member, start your message with their nickname followed by a colon (":"). For example <code>johndoe: I understand it now.</code> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <code>@nick</code> because most clients will not highlight it specially.</p>
+<p>When addressing a channel member, start your message with their nickname followed by a colon (":"). For example <code>johndoe: I understand it now.</code> Your IRC client may have an option to make this easier. Do not use forum/twitter-like notation of <code>@nick</code> because most clients will not highlight it in a special way.</p>
 </li>
 <li>
 <p>Do not private message (PM) a channel member using <code>/msg</code>, in order to ask a technical question, or to answer a question that they are asking you. This is considered rude, and you are preventing the other channel members from participating in the conversation and helping as well.</p>
@@ -429,7 +429,7 @@ free-of-charge, but note that it's also not trivial.</p>
 
 <p>Are you sure you got the she-bang right?</p>
 
-<p>This should look like <code>#!/usr/bin/perl</code> or <code>#!/path/to/perl</code>. On Windows you can just write <code>#!perl</code> but it is recommended to write <code>#!/usr/bin/perl</code> (Windows will ignore the path). If you're writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the
+<p>This should look like <code>#!/usr/bin/perl</code> or <code>#!/path/to/perl</code> or <code>#!/usr/bin/env perl</code> . On Windows you can just write <code>#!perl</code> but it is recommended to write <code>#!/usr/bin/perl</code> (Windows will ignore the path). If you're writing your program on one operating system and running it on another, check that your she-bang line does not contain any errant characters such as the
 <a href="http://en.wikipedia.org/wiki/Carriage_return">carriage return</a>. This won't be a problem if you're using any switches on this line.</p>
 
 </li>
