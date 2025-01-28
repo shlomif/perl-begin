@@ -3162,6 +3162,18 @@ Some HTML parsers will think certain standalone XHTML tags, such as <code>&lt;if
 
 </item>
 
+<item xml:id="mark-generated-but-vcs-tracked-files-as-such">
+
+<info>
+<title>Mark generated but version control system-tracked files as such</title>
+</info>
+
+<p>
+<b>to do</b>
+</p>
+
+</item>
+
 </section>
 <section xml:id="sources_of_advice">
 <info>
