@@ -11,9 +11,9 @@
     "html-minifier": "^4.0.0",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.14.1",
-    "prettier": "^3.4.2",
-    "sass": "^1.83.4",
-    "webpack": "^5.97.1"
+    "prettier": "^3.5.3",
+    "sass": "^1.86.3",
+    "webpack": "^5.98.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
