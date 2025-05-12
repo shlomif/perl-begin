@@ -44,7 +44,7 @@
 <li><a href="#How_can_I_have_printf_return_a_value_instead_of_outputting_to_a_filehandle.3F">How can I have printf return a value instead of outputting to a filehandle?</a></li>
 <li><a href="#Where_else_can_I_go_for_help.3F">Where else can I go for help?</a></li>
 <li><a href="#How_do_I_know_the_index_of_the_element_in_a_foreach_loop.3F">How do I know the index of the element in a foreach loop?</a></li>
-<li><a href="#Is_there_anyway_to_compile_Perl_code_to_an_executable.3F">Is there anyway to compile Perl code to an executable?</a></li>
+<li><a href="#Is_there_anyway_to_compile_Perl_code_to_an_executable.3F">Is there any way to compile Perl code to an executable?</a></li>
 <li><a href="#How_do_I_perform_operations_on_entire_directories_.28delete_them.2C_copy_them.2C_etc..29.3F">How do I perform operations on entire directories (delete them, copy them, etc.)?</a></li>
 <li><a href="#I_want_to_run_a_shell_command_from_Perl.2C_and_possibly_trap_its_output._How.3F">I want to run a shell command from Perl, and possibly trap its output. How?</a></li>
 <li><a href="#How_can_I_Merge_Two_Hashes.3F">How can I Merge Two Hashes?</a></li>
@@ -686,7 +686,7 @@ This is while hopefully making sure the buffer is large enough for the formatted
 
 [% END %]
 
-[% WRAPPER h3_section id = "Is_there_anyway_to_compile_Perl_code_to_an_executable.3F" title = "Is there anyway to compile Perl code to an executable?" %]
+[% WRAPPER h3_section id = "Is_there_anyway_to_compile_Perl_code_to_an_executable.3F" title = "Is there any way to compile Perl code to an executable?" %]
 
 <p>One option is <a href="http://par.perl.org/">PAR - The Perl Archiver</a>, which prepares an .exe that contains all your code, ready to run. This way is is easier to deploy on platforms that don't have perl5, some of the Perl modules or extensions, or certain C libraries.</p>
 
@@ -1035,7 +1035,7 @@ application as a module and a short, bootstrapping, script that invokes it.</p>
 
    {
        my $count = 0;
-       $string =~ s{(H)}{(++$count == 3)?? "G"?: $1}ge;
+       $string =~ s{(H)}{(++$count == 3) ? "G" : $1}ge;
    }
 </pre>
 
@@ -1222,7 +1222,7 @@ advanced user.</p>
 
 [% WRAPPER h3_section id = "array-vs-array-ref" title = "What is the difference between an array and an array reference? What about a hash vs. a hash reference?" %]
 
-<p>There are several differences between arrays and array references. Array references are scalars and can be stores inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
+<p>There are several differences between arrays and array references. Array references are scalars and can be stored inside other arrays or hashes to create nested or composite data structures. Arrays have a more convenient syntax. Arrays and scalars are accessed differently:</p>
 
 <ol>
 
