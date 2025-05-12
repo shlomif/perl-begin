@@ -219,7 +219,7 @@ high-quality material about Perl and programming in general (written either by n
 <p>In addition to that, we should note that you should try to tolerate other people's not-so-idiomatic or possibly may-be-considered-derogatory English because they may speak, and think in a slightly different language than in English. For examples, in some languages there are non-derogatory words for a "female guy", whereas in English "girl" and "gal" are somewhat derogatory. As a result, a
 non-native English speaker may use them this way. (See for example what <a href="http://shlomif.livejournal.com/55146.html">Shlomi Fish (rindolf) wrote about Hebrew words to describe humans</a>).</p>
 
-<p>Moreover, in some languages it is more natural to say "a guy from work", "a girl from work" than "my co-worker", and most Indo-European and Semitic languages have compulsory genders, including for inanimate objects, so it's natural for their speakers’ English to be not-so-idiomatic.</p>
+<p>Moreover, in some languages it is more natural to say "a guy from work", "a girl from work" rather than "my co-worker", and most Indo-European and Semitic languages have compulsory genders, including for inanimate objects, so it's natural for their speakers’ English to be not-so-idiomatic.</p>
 
 <p>Finally, some foreign or non-foreign people may try to emulate some American, British, Australian, etc. culture, which they see on YouTube, Television, movies, etc. and while this may seem silly at times, should also be tolerated.</p>
 
@@ -502,7 +502,7 @@ free-of-charge, but note that it's also not trivial.</p>
 </li>
 </ol>
 
-<p>For more information refer to the <a href="http://perl-begin.org/tutorials/bad-elements/">“Perl Elements to avoid page”</a> and to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735.do"><i>Perl Best Practices</i></a></p>
+<p>For more information refer to the <a href="http://perl-begin.org/tutorials/bad-elements/">“Perl Elements to avoid page”</a> and to Damian Conway’s book <a href="http://shop.oreilly.com/product/9780596001735.do"><i>Perl Best Practices</i></a> .</p>
 
 [% END %]
 
