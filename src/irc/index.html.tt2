@@ -1,5 +1,8 @@
 [%- SET title = "IRC Channels for Perl Q&amp;A" -%]
 [%- PROCESS "blocks.tt2" -%]
+
+[%- main_class.addClass("fancy_sects") -%]
+
 [%- WRAPPER wrap_html -%]
 
 [% WRAPPER h2_section id = "what-is-irc" title = "What is the IRC?" %]
@@ -43,18 +46,24 @@ the treatment of beginner question, or general unfriendliness.
 <ul>
 
 <li>
+<p>
 <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">Wikipedia page
 on the "Internet Relay Chat"</a>
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://www.irchelp.org/">IRC Help</a> - comprehensive helps and FAQs
 about IRC.
+</p>
 </li>
 
 <li>
+<p>
 <a href="http://en.wikipedia.org/wiki/List_of_IRC_clients">The Wikipedia's
 List/Comparison of IRC Clients</a>
+</p>
 </li>
 
 </ul>
