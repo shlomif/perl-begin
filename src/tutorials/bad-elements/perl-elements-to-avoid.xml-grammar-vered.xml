@@ -3150,6 +3150,14 @@ So using "-1" as the third argument may or may not be what you want.
 
 </item>
 
+<item xml:id="sorted-hash-keys">
+
+<info>
+<title>Keep hash keys sorted</title>
+</info>
+
+</item>
+
 <item xml:id="standalone-xml-tags-in-html">
 
 <info>
