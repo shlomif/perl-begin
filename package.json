@@ -8,12 +8,12 @@
     "lib": "lib"
   },
   "dependencies": {
-    "html-minifier-next": "^4.12.2",
-    "jquery": "^3.7.1",
-    "jquery-ui": "^1.14.1",
-    "prettier": "^3.7.4",
-    "sass": "^1.97.1",
-    "webpack": "^5.104.1"
+    "html-minifier-next": "^5.1.1",
+    "jquery": "^4.0.0",
+    "jquery-ui": "^1.14.2",
+    "prettier": "^3.8.1",
+    "sass": "^1.97.3",
+    "webpack": "^5.105.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
