@@ -38,7 +38,7 @@ If you want a distributed database (similar to Google's BigTable), see our
 
 <p>
 The de-facto standard for working with SQL databases in Perl is
-<a href="http://dbi.perl.org/">DBI</a> (short for Database Interface). It
+<a href="http://dbi.perl.org/">DBI</a> (short for “Database Interface”). It
 provides a unified way to perform SQL queries across many database
 backends: [%- WRAPPER cpan_dist d = "DBD-Pg" -%]PostgreSQL[%- END -%],
  [% WRAPPER cpan_dist d = "DBD-SQLite" -%]SQLite[%- END -%],
