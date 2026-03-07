@@ -129,6 +129,10 @@ programming - many of which can be solved in Perl.
 
 [% WRAPPER h3_section href = "https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ_with_ToC__generated.md#i-feel-like-programming-something-but-i-dont-know-what-can-you-suggest-some-good-ideas-for-programs" id = "sharp-prog-faq" title = "“I feel like programming something, but I don't know what. Can you suggest some good ideas for programs?”" %]
 
+<p>
+From a FAQ of the Freenode ##programming channel (= chat room).
+</p>
+
 [% END %]
 
 [% END %]

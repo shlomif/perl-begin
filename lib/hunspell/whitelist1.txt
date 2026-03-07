@@ -15,6 +15,7 @@ CSS
 CSV
 Cthulhu
 Firefox
+Freenode
 Freenode's
 GPL
 Gabor
@@ -130,7 +131,6 @@ wikis
 ==== In: dest/FAQs/index.html
 
 -q
-Freenode
 perldoc
 
 ==== In: dest/IDEs-and-tools/Perl_developer_tools/index.html , dest/IDEs-and-tools/index.html
@@ -315,7 +315,6 @@ exe
 ==== In: dest/irc/index.html
 
 Chatzilla
-Freenode
 HexChat
 IRC-jargon
 OFTC
@@ -418,7 +417,6 @@ AddToAny
 Analytics
 CC-by-nc-sa
 DWIM
-Freenode
 GFDLed
 LWP
 MediaWiki
