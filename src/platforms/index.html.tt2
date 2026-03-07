@@ -12,7 +12,7 @@ reflects the UNIX culture to a large extent.
 [% WRAPPER h2_section href = "mac/" id = "mac-os" title = "Mac OS (PowerPC, Intel, etc.)" %]
 
 <p>
-Mac OS X, being mostly compatible with UNIX can, easily run Perl 5, as
+Mac OS X, being mostly compatible with UNIX, can easily run Perl 5, as
 compiled and installed from the source. Mac OS Classic requires MacPerl,
 which I never worked with. Mac OS X is still much more preferable
 from the aspect of running Perl or otherwise.
