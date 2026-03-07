@@ -35,21 +35,34 @@ be installed by:
 </p>
 
 <ol>
+
 <li>
+<p>
 Installing the "perl-doc" or "perldoc" package using your distribution's
 package manager. See its documentation or support for details
+</p>
 </li>
+
 <li>
+<p>
 Installing <a href="http://docperl.sourceforge.net/">DocPerl</a>
 which is a web-interface to the local Perl documentation.
+</p>
 </li>
+
 <li>
+<p>
 Installing [% cpan.self_mod( "m" => "tkpod", ) %] which is a Perl/Tk-based interface.
+</p>
 </li>
+
 <li>
+<p>
 Alternatively one can access the <a href="http://perldoc.perl.org/">online
 perl documentation</a>, which may deviate from what you have.
+</p>
 </li>
+
 </ol>
 
 [% END %]
