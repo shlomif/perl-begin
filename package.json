@@ -8,11 +8,11 @@
     "lib": "lib"
   },
   "dependencies": {
-    "html-minifier-next": "^5.1.7",
+    "html-minifier-next": "^5.2.2",
     "jquery": "^4.0.0",
     "jquery-ui": "^1.14.2",
     "prettier": "^3.8.1",
-    "sass": "^1.97.3",
+    "sass": "^1.99.0",
     "webpack": "^5.105.4"
   },
   "scripts": {
@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/shlomif/perl-begin#readme",
   "devDependencies": {
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^7.0.2"
   }
 }
