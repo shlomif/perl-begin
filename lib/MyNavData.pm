@@ -67,14 +67,16 @@ my $tree_contents = {
                     title => "Perl Tutorial for Beginners",
                     subs  => [
                         {
-                            text  => "Part 1",
+                            text  => "Part 1: basics: variables, flow control",
                             url   => "tutorials/perl-for-newbies/part1/",
-                            title => "Perl Basics",
+                            title => "basics: variables, flow control",
                         },
                         {
-                            text  => "Part 2",
+                            text =>
+"Part 2: Data structures, strict/warnings, userland functions",
                             url   => "tutorials/perl-for-newbies/part2/",
-                            title => "Real Programming with Perl",
+                            title =>
+"Data structures, strict/warnings, userland functions",
                         },
                         {
                             text  => "Part 3",
