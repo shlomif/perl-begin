@@ -12,19 +12,18 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Carp                                   qw/ confess /;
-use Getopt::Long                           qw/ GetOptions /;
-use Path::Tiny                             qw/ cwd path tempdir tempfile /;
-use Docker::CLI::Wrapper::Container v0.0.4 ();
+use Carp qw/ confess /;
 
 sub run
 {
     my $size = 100;
+    my $ret  = "";
     foreach my $h ( reverse 1 .. 6 )
     {
-        printf "    h%d {\n       font-size: %d%%;\n    }\n", $h,
-            ( $size += 10 );
+        $ret .= sprintf( "    h%d {\n       font-size: %d%%;\n    }\n",
+            $h, ( $size += 10 ) );
     }
+    primtf( "%s", $ret );
     exit(0);
 }
 
